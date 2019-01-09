@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      solidity = false;
-    };
+    flags = { debug = false; solidity = false; };
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "web3";
-        version = "0.8.2.0";
-      };
+      identifier = { name = "web3"; version = "0.8.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Alexander Krupenkin 2016";
       maintainer = "mail@akru.me";
@@ -25,7 +13,7 @@
       synopsis = "Ethereum API for Haskell";
       description = "Web3 is a Haskell client library for Ethereum";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,9 +45,9 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vinyl)
-        ] ++ pkgs.lib.optional (flags.solidity) (hsPkgs.containers);
-        libs = pkgs.lib.optional (flags.solidity) (pkgs."solidity");
-      };
+          ] ++ (pkgs.lib).optional (flags.solidity) (hsPkgs.containers);
+        libs = (pkgs.lib).optional (flags.solidity) (pkgs."solidity");
+        };
       tests = {
         "live" = {
           depends = [
@@ -100,8 +88,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vinyl)
             (hsPkgs.web3)
-          ];
-        };
+            ];
+          };
         "unit" = {
           depends = [
             (hsPkgs.OneTuple)
@@ -137,8 +125,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vinyl)
             (hsPkgs.web3)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

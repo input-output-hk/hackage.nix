@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lucid";
-        version = "2.9.11";
-      };
+      identifier = { name = "lucid"; version = "2.9.11"; };
       license = "BSD-3-Clause";
       copyright = "2014-2017 Chris Done";
       maintainer = "chrisdone@gmail.com, oleg.grenrus@iki.fi";
@@ -22,7 +13,7 @@
       synopsis = "Clear to write, read and edit DSL for HTML";
       description = "Clear to write, read and edit DSL for HTML.\n\n* Names are consistent, and do not conflict with base or are keywords (all have suffix @_@)\n\n* Same combinator can be used for attributes and elements (e.g. 'style_')\n\n* For more, read <https://chrisdone.com/posts/lucid the blog post>\n\nSee the \"Lucid\" module for more documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.hashable)
           (hsPkgs.mmorph)
           (hsPkgs.unordered-containers)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.bifunctors)
             (hsPkgs.text)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.text)
             (hsPkgs.bytestring)
             (hsPkgs.lucid)
-          ];
-        };
+            ];
+          };
         "bench-io" = {
           depends = [
             (hsPkgs.base)
@@ -71,8 +62,8 @@
             (hsPkgs.transformers)
             (hsPkgs.text)
             (hsPkgs.lucid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

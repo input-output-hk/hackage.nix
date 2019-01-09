@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      optimized = false;
-      static = false;
-    };
+    flags = { optimized = false; static = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pairing";
-        version = "0.1.4";
-      };
+      identifier = { name = "pairing"; version = "0.1.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "Adjoint Inc (info@adjoint.io)";
@@ -25,7 +13,7 @@
       synopsis = "Optimal ate pairing over Barreto-Naehrig curves";
       description = "Optimal ate pairing over Barreto-Naehrig curves";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +25,8 @@
           (hsPkgs.protolude)
           (hsPkgs.random)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-circuit-compiler" = {
           depends = [
@@ -55,9 +43,9 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.wl-pprint-text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "pairing-benchmarks" = {
           depends = [
@@ -74,8 +62,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.wl-pprint-text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

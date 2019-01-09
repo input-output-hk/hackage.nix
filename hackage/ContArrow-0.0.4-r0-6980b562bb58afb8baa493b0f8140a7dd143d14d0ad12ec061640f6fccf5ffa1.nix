@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "ContArrow";
-        version = "0.0.4";
-      };
+      identifier = { name = "ContArrow"; version = "0.0.4"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2007, 2008 Evgeny Jukov";
       maintainer = "Evgeny Jukov <masloed@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Control.Arrow.Transformer.Cont";
       description = "A library providing Control.Arrow.Transformer.Cont";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.arrows)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.arrows) ]; };
+      };
+    }

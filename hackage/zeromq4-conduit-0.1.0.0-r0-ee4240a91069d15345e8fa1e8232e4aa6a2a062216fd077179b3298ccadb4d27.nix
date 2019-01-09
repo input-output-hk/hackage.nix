@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zeromq4-conduit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "zeromq4-conduit"; version = "0.1.0.0"; };
       license = "LGPL-2.1-only";
       copyright = "2017 Andy Georges";
       maintainer = "Andy Georges";
@@ -22,7 +13,7 @@
       synopsis = "Conduit wrapper around zeromq4-haskell";
       description = "Conduit wrapper around zeromq4-haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +28,12 @@
           (hsPkgs.conduit)
           (hsPkgs.semigroups)
           (hsPkgs.zeromq4-haskell)
-        ];
-      };
-      tests = {
-        "zeromq4-conduit-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.zeromq4-conduit)
           ];
         };
+      tests = {
+        "zeromq4-conduit-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.zeromq4-conduit) ];
+          };
+        };
       };
-    };
-  }
+    }

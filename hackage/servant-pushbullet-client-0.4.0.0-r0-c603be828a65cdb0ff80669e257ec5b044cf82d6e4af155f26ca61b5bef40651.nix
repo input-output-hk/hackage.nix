@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-pushbullet-client";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "servant-pushbullet-client"; version = "0.4.0.0"; };
       license = "MIT";
       copyright = "Jacob Thomas Errington, 2017";
       maintainer = "git@mail.jerrington.me";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to the Pushbullet API using servant-client";
       description = "This library describes the Pushbullet API as a type, and uses servant-client\nto generate Haskell functions for accessing the API. A number of useful types\nare added so that dealing with raw JSON is avoided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.time)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

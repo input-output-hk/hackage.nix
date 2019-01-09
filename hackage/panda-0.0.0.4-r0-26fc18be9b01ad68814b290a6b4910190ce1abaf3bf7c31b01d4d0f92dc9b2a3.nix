@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "panda";
-        version = "0.0.0.4";
-      };
+      identifier = { name = "panda"; version = "0.0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Simple Static Blog Engine";
       description = "Simple Static Blog Engine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.kibro)
           (hsPkgs.HaXml)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

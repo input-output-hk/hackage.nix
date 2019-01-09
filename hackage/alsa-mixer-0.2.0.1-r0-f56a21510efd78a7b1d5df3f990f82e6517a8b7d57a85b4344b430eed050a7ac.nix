@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "alsa-mixer";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "alsa-mixer"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Thomas Tuegel";
       maintainer = "Thomas Tuegel <ttuegel@gmail.com>";
@@ -22,18 +13,12 @@
       synopsis = "Bindings to the ALSA simple mixer API.";
       description = "This package provides bindings to the ALSA simple mixer API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.alsa-core)
-          (hsPkgs.unix)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.alsa-core) (hsPkgs.unix) ];
         libs = [ (pkgs."asound") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

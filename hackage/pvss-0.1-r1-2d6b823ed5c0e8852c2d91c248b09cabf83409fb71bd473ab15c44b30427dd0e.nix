@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pvss";
-        version = "0.1";
-      };
+      identifier = { name = "pvss"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 IOHK";
       maintainer = "vincent.hanquez@iohk.io";
@@ -22,7 +13,7 @@
       synopsis = "Public Verifiable Secret Sharing";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.cryptonite)
           (hsPkgs.cryptonite-openssl)
           (hsPkgs.integer-gmp)
-        ];
-      };
+          ];
+        };
       exes = {
         "pvss-exe" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.hourglass)
             (hsPkgs.cryptonite)
             (hsPkgs.pvss)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "pvss-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.pvss)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dump = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghc-prof";
-        version = "1.4.1.4";
-      };
+      identifier = { name = "ghc-prof"; version = "1.4.1.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013-2018 Mitsutoshi Aoe";
       maintainer = "Mitsutoshi Aoe <maoe@foldr.in>";
@@ -22,7 +13,7 @@
       synopsis = "Library for parsing GHC time and allocation profiling reports";
       description = "ghc-prof is a library for parsing GHC time and allocation profiling reports.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.scientific)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "dump" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.ghc-prof)
             (hsPkgs.scientific)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "regression" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.temporary)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

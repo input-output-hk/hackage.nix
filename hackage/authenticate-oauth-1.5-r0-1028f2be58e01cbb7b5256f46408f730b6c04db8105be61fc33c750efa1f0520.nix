@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "authenticate-oauth";
-        version = "1.5";
-      };
+      identifier = { name = "authenticate-oauth"; version = "1.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hiromi Ishii";
@@ -22,7 +13,7 @@
       synopsis = "Library to authenticate with OAuth for Haskell web applications.";
       description = "OAuth authentication, e.g. Twitter.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.http-types)
           (hsPkgs.blaze-builder)
           (hsPkgs.blaze-builder-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

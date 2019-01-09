@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-fast-devel";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "yesod-fast-devel"; version = "0.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Fast live-reloading for yesod applications.";
       description = "https://github.com/haskellbr/yesod-fast-devel";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yesod-fast-devel" = {
@@ -41,8 +32,8 @@
             (hsPkgs.system-filepath)
             (hsPkgs.temporary)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { newtime = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hailgun";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "hailgun"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "(c) 2014 Robert Massaioli";
       maintainer = "robertmassaioli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Mailgun REST api interface for Haskell.";
       description = "Mailgun is an online service that sends emails. It is a great point of\nintegration for many SaaS services and this Haskell library cleanly interfaces\nwith Mailgun so that you can send emails from your Haskell applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,12 +29,9 @@
           (hsPkgs.exceptions)
           (hsPkgs.tagsoup)
           (hsPkgs.filepath)
-        ] ++ (if flags.newtime
+          ] ++ (if flags.newtime
           then [ (hsPkgs.time) ]
-          else [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]);
+          else [ (hsPkgs.time) (hsPkgs.old-locale) ]);
+        };
       };
-    };
-  }
+    }

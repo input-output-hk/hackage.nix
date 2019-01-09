@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-ede";
-        version = "0.5.1";
-      };
+      identifier = { name = "servant-ede"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "2015 Alp Mestanogullari";
       maintainer = "alpmestan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Combinators for rendering EDE templates in servant web applications";
       description = "Combinators for rendering EDE templates in servant web applications.\n\nDocumentation and examples available at \"Servant.EDE\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.xss-sanitize)
-        ];
-      };
+          ];
+        };
       exes = {
         "servant-ede-example" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.servant-server)
             (hsPkgs.servant-ede)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

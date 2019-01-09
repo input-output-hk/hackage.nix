@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "verilog";
-        version = "0.0.1";
-      };
+      identifier = { name = "verilog"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tom Hawkins <tomahawkins@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "A Verilog parser.";
       description = "This parser supports a very small subset of Verilog-95.\nIt is intended primarly for machine generated, synthesizable code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.polyparse)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.polyparse) ];
+        };
       };
-    };
-  }
+    }

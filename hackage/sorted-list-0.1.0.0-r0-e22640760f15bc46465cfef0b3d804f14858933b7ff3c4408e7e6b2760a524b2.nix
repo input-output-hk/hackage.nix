@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sorted-list";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "sorted-list"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dhelta.diaz@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Type-enforced sorted lists and related functions.";
       description = "Type-enforced sorted lists and related functions.\n\nFeel free to try this library, but take in account\nthat it's still in development, so it might lack\nsome features. If you need them, do not hesitate\nto ask by opening an issue at the bug-tracker.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

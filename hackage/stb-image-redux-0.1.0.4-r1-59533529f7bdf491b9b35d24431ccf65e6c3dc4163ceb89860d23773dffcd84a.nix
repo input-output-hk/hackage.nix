@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stb-image-redux";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "stb-image-redux"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Alexis Williams";
       maintainer = "sasinestro@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Image loading and writing microlibrary";
       description = "See <https://github.com/SASinestro/stb-image-redux/blob/master/README.md>.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };
       tests = {
         "stb-image-redux-tests" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.stb-image-redux)
             (hsPkgs.vector)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

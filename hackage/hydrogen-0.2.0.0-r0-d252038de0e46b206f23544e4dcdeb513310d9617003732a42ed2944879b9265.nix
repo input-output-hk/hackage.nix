@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hydrogen";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hydrogen"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2013-2015 Karl Voelker";
       maintainer = "hydrogen@karlv.net";
@@ -22,7 +13,7 @@
       synopsis = "An alternate Prelude";
       description = "This is an alternative to \"Prelude\" that is not meant to depart drastically\nfrom the standard. The principles of Hydrogen are:\n\n1. Be total, not partial.\n2. Use 'Data.Text.Text', not 'Data.String.String'.\n3. Use generic functions, not \"Data.List\" functions.\n4. Whatever is omitted should be replaced.\n\nTo use this package, use the `NoImplicitPrelude` language option, and import\n\"H.Prelude\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.pretty)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.Cabal)
             (hsPkgs.hydrogen)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

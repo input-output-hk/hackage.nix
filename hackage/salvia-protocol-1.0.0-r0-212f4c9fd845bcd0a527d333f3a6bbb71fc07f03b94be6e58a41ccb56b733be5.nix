@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "salvia-protocol";
-        version = "1.0.0";
-      };
+      identifier = { name = "salvia-protocol"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sfvisser@cs.uu.nl";
@@ -22,7 +13,7 @@
       synopsis = "Protocol suite for the Salvia webserver, including functionality for URI, HTTP, Cookie and MIME.";
       description = "Protocol suite for the Salvia webserver, including functionality for URI, HTTP, Cookie and MIME.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.parsec)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

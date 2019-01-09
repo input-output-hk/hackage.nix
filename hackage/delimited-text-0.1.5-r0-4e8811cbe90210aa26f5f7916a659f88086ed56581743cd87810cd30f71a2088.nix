@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "delimited-text";
-        version = "0.1.5";
-      };
+      identifier = { name = "delimited-text"; version = "0.1.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Stefan Kersten 2008-2009";
       maintainer = "Stefan Kersten <sk@xdv.org>";
@@ -22,7 +13,7 @@
       synopsis = "Parse character delimited textual data";
       description = "Parse character delimited textual data";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring-show)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hyperion";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hyperion"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nicolas.mattia@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Reliable performance measurement with robust data export.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,24 +39,16 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "hyperion-micro-benchmark-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hyperion)
-            (hsPkgs.process)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.hyperion) (hsPkgs.process) ];
+          };
         "hyperion-end-to-end-benchmark-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hyperion)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hyperion) (hsPkgs.process) ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -76,8 +59,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

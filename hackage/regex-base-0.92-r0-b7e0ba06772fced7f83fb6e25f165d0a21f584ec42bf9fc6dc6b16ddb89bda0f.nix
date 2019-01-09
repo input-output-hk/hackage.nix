@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "regex-base";
-        version = "0.92";
-      };
+      identifier = { name = "regex-base"; version = "0.92"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2006, Christopher Kuklewicz";
       maintainer = "TextRegexLazy@personal.mightyreason.com";
@@ -22,13 +13,6 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "Interface API for regex-posix,pcre,parsec,tdfa,dfa";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

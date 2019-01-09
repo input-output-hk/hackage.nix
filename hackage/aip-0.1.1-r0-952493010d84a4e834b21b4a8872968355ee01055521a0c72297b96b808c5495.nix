@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aip";
-        version = "0.1.1";
-      };
+      identifier = { name = "aip"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
@@ -22,7 +13,7 @@
       synopsis = "Aeronautical Information Package (AIP)";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nDocument management for the airservices Aeronautical Information Package (AIP).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,16 +40,9 @@
           (hsPkgs.time)
           (hsPkgs.utf8-string)
           (hsPkgs.unordered-containers)
-        ];
-      };
-      exes = {
-        "aip" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.aip)
           ];
         };
-      };
+      exes = { "aip" = { depends = [ (hsPkgs.base) (hsPkgs.aip) ]; }; };
       tests = {
         "tests" = {
           depends = [
@@ -70,8 +54,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

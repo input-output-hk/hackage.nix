@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "getopt-generics";
-        version = "0.11.0.3";
-      };
+      identifier = { name = "getopt-generics"; version = "0.11.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Zalora South East Asia Pte Ltd";
       maintainer = "linh.nguyen@zalora.com, soenkehahn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Create command line interfaces with ease";
       description = "Create command line interfaces with ease";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.base-orphans)
           (hsPkgs.generics-sop)
           (hsPkgs.tagged)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.silently)
             (hsPkgs.filepath)
             (hsPkgs.safe)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

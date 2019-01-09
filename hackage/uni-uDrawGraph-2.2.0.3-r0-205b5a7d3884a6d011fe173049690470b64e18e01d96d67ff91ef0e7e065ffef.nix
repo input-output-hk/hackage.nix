@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "uni-uDrawGraph";
-        version = "2.2.0.3";
-      };
+      identifier = { name = "uni-uDrawGraph"; version = "2.2.0.3"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "c.maeder@jacobs-university.de";
@@ -22,7 +13,7 @@
       synopsis = "Graphs binding";
       description = "Binding to uDrawGraph (formerly daVinci)\n<http://www.informatik.uni-bremen.de/uDrawGraph/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.uni-posixutil)
           (hsPkgs.uni-reactor)
           (hsPkgs.uni-graphs)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "xml-parsec";
-        version = "1.0.2";
-      };
+      identifier = { name = "xml-parsec"; version = "1.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "";
@@ -22,14 +13,10 @@
       synopsis = "Parsing XML with Parsec";
       description = "Helper functions to use a Parsec-based parser for XML documents.\nThis was originally developed as part of the Barracuda\nad-hoc P2P chat client.\n\nThe Darcs repository can be found at <http://repos.mroot.net/sep07-adhoc>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.HaXml)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.HaXml) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ghcid";
-        version = "0.7.1";
-      };
+      identifier = { name = "ghcid"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2014-2018";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "GHCi based bare bones IDE";
       description = "Either \\\"GHCi as a daemon\\\" or \\\"GHC + a bit of an IDE\\\". A very simple Haskell development tool which shows you the errors in your project and updates them whenever you save. Run @ghcid --topmost --command=ghci@, where @--topmost@ makes the window on top of all others (Windows only) and @--command@ is the command to start GHCi on your project (defaults to @ghci@ if you have a @.ghci@ file, or else to @cabal repl@).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.process)
           (hsPkgs.ansi-terminal)
           (hsPkgs.cmdargs)
-        ];
-      };
+          ];
+        };
       exes = {
         "ghcid" = {
           depends = [
@@ -50,11 +41,11 @@
             (hsPkgs.cmdargs)
             (hsPkgs.ansi-terminal)
             (hsPkgs.terminal-size)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
+          };
         };
-      };
       tests = {
         "ghcid_test" = {
           depends = [
@@ -71,10 +62,10 @@
             (hsPkgs.cmdargs)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
+          };
         };
       };
-    };
-  }
+    }

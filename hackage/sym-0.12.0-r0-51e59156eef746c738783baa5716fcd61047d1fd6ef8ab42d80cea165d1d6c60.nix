@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sym";
-        version = "0.12.0";
-      };
+      identifier = { name = "sym"; version = "0.12.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anders.claesson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Permutations, patterns, and statistics";
       description = "Definitions for permutations with an emphasis on permutation\npatterns and permutation statistics.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.array)
           (hsPkgs.hashable)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "Props" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.sym)
             (hsPkgs.hashable)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

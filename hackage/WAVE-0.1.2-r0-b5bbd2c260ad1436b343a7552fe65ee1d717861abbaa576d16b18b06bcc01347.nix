@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "WAVE";
-        version = "0.1.2";
-      };
+      identifier = { name = "WAVE"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 Bart Massey";
       maintainer = "Bart Massey <bart@cs.pdx.edu>";
@@ -22,13 +13,8 @@
       synopsis = "WAVE audio file IO library";
       description = "Module for reading and writing audio files in WAVE format.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "htn";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "htn"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Yuji Kamiya";
       maintainer = "y.kamiya0@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "resolver using htn algorithm";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
       tests = {
         "test" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.htn)
             (hsPkgs.hspec)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

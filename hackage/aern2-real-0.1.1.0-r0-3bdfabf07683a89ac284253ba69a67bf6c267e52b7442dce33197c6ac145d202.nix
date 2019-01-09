@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "aern2-real";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "aern2-real"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2017 Michal Konecny";
       maintainer = "Michal Konecny <mikkonecny@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Exact real numbers via Cauchy sequences and MPFR";
       description = "Exact real numbers as Cauchy sequences of MPFR approximations.\n\nSee module \"AERN2.Real\" for further documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.aeson)
           (hsPkgs.mixed-types-num)
           (hsPkgs.aern2-mp)
-        ];
-      };
+          ];
+        };
       exes = {
         "aern2-real-benchOp" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.aern2-real)
             (hsPkgs.random)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.aern2-real)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

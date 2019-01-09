@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-routes";
-        version = "1.1.2";
-      };
+      identifier = { name = "yesod-routes"; version = "1.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Efficient routing for Yesod.";
       description = "Provides an efficient routing system, a parser and TH code generation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
           (hsPkgs.path-pieces)
-        ];
-      };
+          ];
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.containers)
             (hsPkgs.template-haskell)
             (hsPkgs.path-pieces)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

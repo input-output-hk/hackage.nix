@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rest-snap";
-        version = "0.1.17.4";
-      };
+      identifier = { name = "rest-snap"; version = "0.1.17.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Rest driver for Snap.";
       description = "Rest driver for Snap.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.uri-encode)
           (hsPkgs.utf8-string)
           (hsPkgs.rest-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

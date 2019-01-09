@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dbus-client";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "dbus-client"; version = "0.3.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "D-Bus client libraries";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.dbus-core)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

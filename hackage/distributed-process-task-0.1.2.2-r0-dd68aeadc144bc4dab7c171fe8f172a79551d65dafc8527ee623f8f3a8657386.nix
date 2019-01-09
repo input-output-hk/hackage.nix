@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { perf = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distributed-process-task";
-        version = "0.1.2.2";
-      };
+      identifier = { name = "distributed-process-task"; version = "0.1.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Tim Watson 2012 - 2013";
       maintainer = "Facundo Domínguez <facundo.dominguez@tweag.io>";
@@ -22,7 +13,7 @@
       synopsis = "Task Framework for The Cloud Haskell Application Platform";
       description = "The Task Framework intends to provide tools for task management, work scheduling and distributed task coordination.\nThese capabilities build on the Async Framework as well as other tools and libraries.\nThe framework is currently a work in progress. The current release includes a simple bounded blocking queue\nimplementation only, as an example of the kind of capability and API that we intend to produce.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,13 +33,13 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.5") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.5") [
           (hsPkgs.template-haskell)
           (hsPkgs.derive)
           (hsPkgs.uniplate)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "TaskQueueTests" = {
           depends = [
@@ -83,8 +74,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

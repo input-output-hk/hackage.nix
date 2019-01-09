@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "data-list-sequences";
-        version = "0.1";
-      };
+      identifier = { name = "data-list-sequences"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "jkramer@nex.scrapping.cc";
@@ -22,10 +13,6 @@
       synopsis = "Utilities for working with sequences within lists.";
       description = "Find sequences within lists.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

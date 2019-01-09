@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-simple";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "network-simple"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Renzo Carbonara 2013";
       maintainer = "renzocarbonaraλgmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Simple network sockets usage patterns.";
       description = "Simple network sockets usage patterns.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.network) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rethinkdb";
-        version = "2.2.0.5";
-      };
+      identifier = { name = "rethinkdb"; version = "2.2.0.5"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Etienne Laurin <etienne@atnnn.com>";
@@ -22,7 +13,7 @@
       synopsis = "A driver for RethinkDB 2.2";
       description = "A driver for the RethinkDB database server";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,25 +32,16 @@
           (hsPkgs.binary)
           (hsPkgs.scientific)
           (hsPkgs.base64-bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "proto2hs" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.attoparsec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.attoparsec) ];
+          };
         };
-      };
       tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -69,8 +51,8 @@
             (hsPkgs.text)
             (hsPkgs.aeson)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

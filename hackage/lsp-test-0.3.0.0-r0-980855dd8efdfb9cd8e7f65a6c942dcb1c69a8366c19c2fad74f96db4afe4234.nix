@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "lsp-test";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "lsp-test"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Luke Lau";
       maintainer = "luke_lau@icloud.com";
@@ -22,7 +13,7 @@
       synopsis = "Functional test framework for LSP servers.";
       description = "A test framework for writing tests against\n<https://microsoft.github.io/language-server-protocol/ Language Server Protocol servers>.\n@Language.Haskell.LSP.Test@ launches your server as a subprocess and allows you to simulate a session\ndown to the wire, and @Language.Haskell.LSP.Test@ can replay captured sessions from\n<haskell-lsp-test https://hackage.haskell.org/package/haskell-lsp>.\nIt's currently used for testing in <https://github.com/haskell/haskell-ide-engine haskell-ide-engine>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,10 +38,10 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.yi-rope)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.aeson)
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

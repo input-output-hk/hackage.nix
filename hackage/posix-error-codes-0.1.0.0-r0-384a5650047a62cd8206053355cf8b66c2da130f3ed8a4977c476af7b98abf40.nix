@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "posix-error-codes";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "posix-error-codes"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2016 Yghor Kerscher";
       maintainer = "kerscher@acm.org";
@@ -22,10 +13,6 @@
       synopsis = "POSIX error codes";
       description = "A more readable version of ERRNO codes for POSIX-compatible programs.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

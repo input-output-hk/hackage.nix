@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { nooverlap = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent";
-        version = "0.7.0.1";
-      };
+      identifier = { name = "persistent"; version = "0.7.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe, multi-backend data serialization.";
       description = "Type-safe, data serialization. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.mtl)
           (hsPkgs.aeson)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

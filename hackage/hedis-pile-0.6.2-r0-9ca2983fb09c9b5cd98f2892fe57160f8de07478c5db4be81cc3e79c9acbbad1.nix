@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hedis-pile";
-        version = "0.6.2";
-      };
+      identifier = { name = "hedis-pile"; version = "0.6.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexander Dorofeev <aka.spin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Caching mandatory data with Redis";
       description = "Solution for caching mandatory data with Redis.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.hedis-tags)
           (hsPkgs.string-conversions)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.lifted-base)
             (hsPkgs.string-conversions)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

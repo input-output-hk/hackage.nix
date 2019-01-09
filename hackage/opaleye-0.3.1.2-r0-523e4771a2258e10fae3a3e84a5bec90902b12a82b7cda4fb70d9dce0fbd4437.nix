@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "opaleye";
-        version = "0.3.1.2";
-      };
+      identifier = { name = "opaleye"; version = "0.3.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Purely Agile";
@@ -22,7 +13,7 @@
       synopsis = "An SQL-generating DSL targeting PostgreSQL";
       description = "An SQL-generating DSL targeting PostgreSQL.  Allows\nPostgres queries to be written within Haskell in a\ntypesafe and composable fashion.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.time)
           (hsPkgs.time-locale-compat)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.profunctors)
             (hsPkgs.product-profunctors)
             (hsPkgs.opaleye)
-          ];
-        };
+            ];
+          };
         "tutorial" = {
           depends = [
             (hsPkgs.base)
@@ -62,8 +53,8 @@
             (hsPkgs.product-profunctors)
             (hsPkgs.time)
             (hsPkgs.opaleye)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

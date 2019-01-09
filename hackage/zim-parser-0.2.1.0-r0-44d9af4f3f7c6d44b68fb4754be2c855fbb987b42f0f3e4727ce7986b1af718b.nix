@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zim-parser";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "zim-parser"; version = "0.2.1.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (c) 2015 Robbin C.";
       maintainer = "Robbin C. <robbinch33@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Read and parse ZIM files";
       description = "zim-parser is a library to read and parse ZIM (http://openzim.org) files.\nZiM files contain offline web content (eg. Wikipedia) which can be browsed\nlocally without an Internet connection.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.conduit-extra)
           (hsPkgs.binary-conduit)
           (hsPkgs.lzma)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.binary-conduit)
             (hsPkgs.lzma)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

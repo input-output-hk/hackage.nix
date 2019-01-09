@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "format-status";
-        version = "0.1.2.4";
-      };
+      identifier = { name = "format-status"; version = "0.1.2.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "A utility for writing the date to dzen2.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "format-status" = {
@@ -32,8 +23,8 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
             (hsPkgs.data-concurrent-queue)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

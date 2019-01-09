@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apportionment";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "apportionment"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@henning-thielemann.de";
@@ -22,14 +13,10 @@
       synopsis = "Round a set of numbers while maintaining its sum";
       description = "Round a set of numbers while maintaining its sum.\nAccording procedures are used to assign seats to parties in a parliament.\nYou may also use it to round percentages that sum up to 100%.\n<https://en.wikipedia.org/wiki/Apportionment_(politics)>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.containers)
-          (hsPkgs.utility-ht)
-          (hsPkgs.base)
-        ];
+        depends = [ (hsPkgs.containers) (hsPkgs.utility-ht) (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

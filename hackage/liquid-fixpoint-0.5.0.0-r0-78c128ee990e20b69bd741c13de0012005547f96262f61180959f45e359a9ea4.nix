@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "liquid-fixpoint";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "liquid-fixpoint"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2010-15 Ranjit Jhala, University of California, San Diego.";
       maintainer = "jhala@cs.ucsd.edu";
@@ -22,7 +13,7 @@
       synopsis = "Predicate Abstraction-based Horn-Clause/Implication Constraint Solver";
       description = "This package is a Haskell wrapper to the SMTLIB-based\nHorn-Clause/Logical Implication constraint solver used\nfor Liquid Types.\n\nThe package includes:\n\n1. Types for Expressions, Predicates, Constraints, Solutions\n\n2. Code for solving constraints\n\nRequirements\n\nIn addition to the .cabal dependencies you require\n\n- A Z3 (<http://z3.codeplex.com>) or CVC4 (<http://cvc4.cs.nyu.edu>) binary.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -59,16 +50,11 @@
           (hsPkgs.fgl)
           (hsPkgs.fgl-visualize)
           (hsPkgs.dotgen)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") (hsPkgs.located-base)) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.ascii-progress);
-      };
-      exes = {
-        "fixpoint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.liquid-fixpoint)
-          ];
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.2") (hsPkgs.located-base)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.ascii-progress);
         };
-      };
+      exes = {
+        "fixpoint" = { depends = [ (hsPkgs.base) (hsPkgs.liquid-fixpoint) ]; };
+        };
       tests = {
         "test" = {
           depends = [
@@ -80,8 +66,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-rerun)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

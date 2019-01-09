@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bins";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "bins"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Justin Le 2018";
       maintainer = "justin@jle.im";
@@ -22,7 +13,7 @@
       synopsis = "Aggregate continuous values into discrete bins";
       description = "Please see the README on GitHub at <https://github.com/mstksg/bins#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.reflection)
           (hsPkgs.tagged)
           (hsPkgs.vector-sized)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

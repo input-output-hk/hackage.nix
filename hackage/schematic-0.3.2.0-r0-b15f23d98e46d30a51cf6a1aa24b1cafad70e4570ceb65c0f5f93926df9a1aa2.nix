@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "schematic";
-        version = "0.3.2.0";
-      };
+      identifier = { name = "schematic"; version = "0.3.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "denis.redozubov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON-biased spec and validation tool";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.validationt)
           (hsPkgs.vector)
           (hsPkgs.vinyl)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.validationt)
             (hsPkgs.vinyl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

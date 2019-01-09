@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "sloth";
-        version = "0.0.1";
-      };
+      identifier = { name = "sloth"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jan Christiansen <jac@informatik.uni-kiel.de>";
@@ -22,14 +13,10 @@
       synopsis = "Testing for minimal strictness";
       description = "Sloth is a library for testing whether functions are minmally strict.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.process)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

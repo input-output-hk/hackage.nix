@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "join-api";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "join-api"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Kevin Cotrone";
       maintainer = "kevincotrone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for Join push notifications";
       description = "Bindings to the API for Join's notification system";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.aeson)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

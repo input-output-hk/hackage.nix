@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "tuple-th";
-        version = "0.1";
-      };
+      identifier = { name = "tuple-th"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anotheraddress@gmx.de";
@@ -22,13 +13,8 @@
       synopsis = "Generate (non-recursive) utility functions for tuples of statically known size";
       description = "Template Haskell functions for generating functions similar to those in Data.List for tuples of statically known size.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
+      };
+    }

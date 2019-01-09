@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "markup";
-        version = "4.2.0";
-      };
+      identifier = { name = "markup"; version = "4.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "Abstraction for HTML-embedded content";
       description = "Please see the README on Github at <https://github.com/githubuser/markup#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers-base)
           (hsPkgs.urlpath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

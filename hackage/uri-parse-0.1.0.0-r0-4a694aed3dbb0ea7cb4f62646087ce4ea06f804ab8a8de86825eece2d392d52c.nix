@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "uri-parse";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "uri-parse"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Savanni D'Gerinel";
       maintainer = "savanni@luminescent-dreams.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple library for parsing and generating URIs";
       description = "A simple library for parsing and generating URIs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.http-types)
           (hsPkgs.lens)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "uri-parse-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.data-default)
             (hsPkgs.hspec)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

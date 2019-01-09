@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mbug";
-        version = "1.3";
-      };
+      identifier = { name = "mbug"; version = "1.3"; };
       license = "GPL-3.0-only";
       copyright = "2018 Dmitry Bogatov";
       maintainer = "KAction@gnu.org";
@@ -22,7 +13,7 @@
       synopsis = "download bugs mailboxes";
       description = "See readme at https://gitlab.com/iu-guest/mbug";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.xdg-basedir)
-        ];
-      };
+          ];
+        };
       exes = {
         "mbug" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.xdg-basedir)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-uri = true;
-      developer = false;
-    };
+    flags = { network-uri = true; developer = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "webdriver";
-        version = "0.8.0.4";
-      };
+      identifier = { name = "webdriver"; version = "0.8.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "kallisti.dev@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "a Haskell client for the Selenium WebDriver protocol";
       description = "A Selenium WebDriver client for Haskell.\nYou can use it to automate browser sessions\nfor testing, system administration, etc.\n\nFor more information about Selenium itself, see\n<http://seleniumhq.org/>\n\nTo find out what's been changed in this version and others,\nsee the change log at\n<https://github.com/kallisti-dev/hs-webdriver/blob/master/CHANGELOG.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,10 +40,7 @@
           (hsPkgs.exceptions)
           (hsPkgs.scientific)
           (hsPkgs.data-default-class)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        };
       };
-    };
-  }
+    }

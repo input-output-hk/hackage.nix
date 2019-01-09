@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai";
-        version = "3.0.0.1";
-      };
+      identifier = { name = "wai"; version = "3.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Web Application Interface.";
       description = "Provides a common protocol for communication between web applications and web servers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.http-types)
           (hsPkgs.text)
           (hsPkgs.vault)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.hspec)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "promises";
-        version = "0.2";
-      };
+      identifier = { name = "promises"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Lazy demand-driven promises";
       description = "Lazy demand-driven promises";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.primitive)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.primitive) ]; };
+      };
+    }

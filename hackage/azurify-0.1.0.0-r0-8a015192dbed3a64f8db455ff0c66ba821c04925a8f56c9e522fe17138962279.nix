@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "azurify";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "azurify"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "arno@vanlumig.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple library for accessing Azure blob storage";
       description = "An interface for a few basic functions of the Microsoft Azure blob storage. Creating and deleting containers as well as uploading, downloading and breaking leases of blobs is supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.hxt)
           (hsPkgs.cmdargs)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "azurify" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.hxt)
             (hsPkgs.cmdargs)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

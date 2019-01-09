@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "unix-handle";
-        version = "0.0.0";
-      };
+      identifier = { name = "unix-handle"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2010, Anders Kaseorg";
       maintainer = "andersk@mit.edu";
@@ -22,13 +13,8 @@
       synopsis = "POSIX operations on Handles";
       description = "This package provides versions of functions from\n\"System.Posix.Files\" that operate on 'System.IO.Handle' instead of\n'System.IO.FilePath' or 'System.Posix.Fd'.  This is useful to\nprevent race conditions that may arise from looking up the same path\ntwice.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.unix) ]; };
+      };
+    }

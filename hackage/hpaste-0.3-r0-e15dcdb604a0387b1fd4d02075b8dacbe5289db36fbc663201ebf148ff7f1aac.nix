@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hpaste";
-        version = "0.3";
-      };
+      identifier = { name = "hpaste"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "emertens@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An online pastebin, written in Haskell.";
       description = "Haskell pastebin, using HAppS";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "hpaste" = {
@@ -35,8 +26,8 @@
             (hsPkgs.hscolour)
             (hsPkgs.binary)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

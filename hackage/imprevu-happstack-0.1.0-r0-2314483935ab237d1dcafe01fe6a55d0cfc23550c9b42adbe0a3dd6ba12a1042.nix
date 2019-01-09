@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "imprevu-happstack";
-        version = "0.1.0";
-      };
+      identifier = { name = "imprevu-happstack"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Corentin Dupont";
       maintainer = "Corentin Dupont";
@@ -22,7 +13,7 @@
       synopsis = "Imprevu support for Happstack";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,16 +36,12 @@
           (hsPkgs.safe)
           (hsPkgs.HTTP)
           (hsPkgs.NoTrace)
-        ];
-      };
-      tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.imprevu-happstack)
-            (hsPkgs.Cabal)
           ];
         };
+      tests = {
+        "test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.imprevu-happstack) (hsPkgs.Cabal) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "ad";
-        version = "0.20";
-      };
+      identifier = { name = "ad"; version = "0.20"; };
       license = "BSD-3-Clause";
       copyright = "Edward Kmett 2010\nBarak Pearlmutter and Jeffrey Mark Siskind 2008-2009";
       maintainer = "ekmett@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Automatic Differentiation";
       description = "Forward, reverse, and higher-order automatic differentiation combinators with a common API.\n\nType-level \\\"branding\\\" is used to prevent the end user from confusing infinitesimals.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.mlist)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-snap";
-        version = "0.8";
-      };
+      identifier = { name = "servant-snap"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "2014 Zalora South East Asia Pte Ltd";
       maintainer = "alpmestan@gmail.com imalsogreg@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A family of combinators for defining webservices APIs and serving them";
       description = "Interpret a Servant API as a Snap server, using any Snaplets you like.\n\nYou can learn about the basics of servant in the Servant <https://haskell-servant.readthedocs.io tutorial>, and about the basics of Snap at the Snaplets <http://snapframework.com/docs/tutorials/snaplets-tutorial tutorial>\n\n<https://github.com/haskell-servant/servant-snap/blob/master/example/greet.hs Here>\nis a runnable example, with comments, that defines a dummy API and implements\na webserver that serves this API, using this package. One route delegates to the <https://hackage.haskell.org/package/snap/docs/Snap-Snaplet-Auth.html Auth> snaplet, another delegates to <https://hackage.haskell.org/package/snap/docs/Snap-Snaplet-Heist.html Heist>.\n\n<https://github.com/haskell-servant/servant-snap/blob/master/CHANGELOG.md CHANGELOG>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.snap-server)
           (hsPkgs.transformers)
           (hsPkgs.word8)
-        ];
-      };
+          ];
+        };
       exes = {
         "snap-greet" = {
           depends = [
@@ -69,9 +60,9 @@
             (hsPkgs.snap-server)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -106,8 +97,8 @@
             (hsPkgs.temporary)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

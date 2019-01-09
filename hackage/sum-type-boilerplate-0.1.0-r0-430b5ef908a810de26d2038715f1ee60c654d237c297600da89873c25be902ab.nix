@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sum-type-boilerplate";
-        version = "0.1.0";
-      };
+      identifier = { name = "sum-type-boilerplate"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Reaver";
@@ -22,14 +13,9 @@
       synopsis = "Library for reducing the boilerplate involved with sum types";
       description = "Library for reducing the boilerplate involved in creating and manipulating sum types";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
       tests = {
         "spec" = {
           depends = [
@@ -37,15 +23,11 @@
             (hsPkgs.template-haskell)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "style" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.template-haskell)
-            (hsPkgs.hlint)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.hlint) ];
+          };
         };
       };
-    };
-  }
+    }

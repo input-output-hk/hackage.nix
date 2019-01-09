@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hackager";
-        version = "1.3.0.0";
-      };
+      identifier = { name = "hackager"; version = "1.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Terei <code@davidterei.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hackage testing tool";
       description = "Hackager is a program for compiling the entirety of Hackage as a way of\ntesting a Haskell compiler.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hackager" = {
@@ -35,8 +26,8 @@
             (hsPkgs.mtl)
             (hsPkgs.process)
             (hsPkgs.regex-tdfa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

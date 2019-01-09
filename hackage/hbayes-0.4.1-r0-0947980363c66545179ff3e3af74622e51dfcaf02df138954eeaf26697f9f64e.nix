@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      local = false;
-      profile = false;
-    };
+    flags = { local = false; profile = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hbayes";
-        version = "0.4.1";
-      };
+      identifier = { name = "hbayes"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012, alpheccar";
       maintainer = "misc@alpheccar.org";
@@ -25,7 +13,7 @@
       synopsis = "Inference with Discrete Bayesian Networks";
       description = "Algorithms for inference with Discrete Bayesian Networks.\nIt is a very preliminary version. It has only been tested on very simple\nexamples where it worked. It should be considered as experimental and not used\nin any production work.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +35,7 @@
           (hsPkgs.test-framework)
           (hsPkgs.test-framework-hunit)
           (hsPkgs.HUnit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

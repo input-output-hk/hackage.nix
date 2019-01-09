@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "merkle-patricia-db";
-        version = "0.1.0";
-      };
+      identifier = { name = "merkle-patricia-db"; version = "0.1.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "jamshidnh@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A modified Merkle Patricia DB";
       description = "The modified Merkle Patricia DB described in the Ethereum Yellowpaper";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.mtl)
           (hsPkgs.memory)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-merkle-patricia-db" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-contrib)
             (hsPkgs.merkle-patricia-db)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

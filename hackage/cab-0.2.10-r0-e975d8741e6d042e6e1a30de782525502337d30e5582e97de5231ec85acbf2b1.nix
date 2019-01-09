@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cab";
-        version = "0.2.10";
-      };
+      identifier = { name = "cab"; version = "0.2.10"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "A maintenance command of Haskell cabal packages";
       description = "This is a MacPorts-like maintenance command of\nHaskell cabal packages. Some part of this program is a wrapper to\n\"ghc-pkg\" and \"cabal\".\nIf you are always confused due to inconsistency of two commands,\nor if you want a way to check all outdated packages,\nor if you want a way to remove outdated packages recursively,\nthis command helps you.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.process)
           (hsPkgs.process-conduit)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       exes = {
         "cab" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.process-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitlib-cmdline";
-        version = "3.1.0.2";
-      };
+      identifier = { name = "gitlib-cmdline"; version = "3.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Gitlib repository backend that uses the git command-line tool.";
       description = "Gitlib repository backend that uses the git command-line tool.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "smoke" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.tagged)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

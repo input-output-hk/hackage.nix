@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-proto-lens";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "servant-proto-lens"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "plredmond@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "servant API Content-Type instances for use with proto-lens generated modules";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.http-media)
           (hsPkgs.proto-lens)
           (hsPkgs.servant)
-        ];
-      };
+          ];
+        };
       tests = {
         "servant-proto-lens-test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

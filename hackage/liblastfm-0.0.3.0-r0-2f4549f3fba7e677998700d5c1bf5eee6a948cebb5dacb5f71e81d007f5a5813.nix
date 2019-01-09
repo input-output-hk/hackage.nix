@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "liblastfm";
-        version = "0.0.3.0";
-      };
+      identifier = { name = "liblastfm"; version = "0.0.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Wrapper to Lastfm API";
       description = "Simple but complete wrapper to Lastfm API. Can send some stuff and receive reponses from Lastfm. JSON/XML parsing is an exercise for the user.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.aeson)
           (hsPkgs.xml)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

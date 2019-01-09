@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "applicative-fail";
-        version = "1.1.1";
-      };
+      identifier = { name = "applicative-fail"; version = "1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Applicative functor and monad which collects all your fails";
       description = "Applicative functor to perform parse-like actions and\ncollect warnings/failures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.mtl)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.mtl)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

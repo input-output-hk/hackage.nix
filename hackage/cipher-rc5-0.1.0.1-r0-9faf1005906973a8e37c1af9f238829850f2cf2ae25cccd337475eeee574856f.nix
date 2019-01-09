@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cipher-rc5";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "cipher-rc5"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Finn Espen Gundersen <finn@gundersen.net>";
       maintainer = "Finn Espen Gundersen <finn@gundersen.net>";
@@ -22,13 +13,8 @@
       synopsis = "Pure RC5 implementation";
       description = "Pure RC5 implementation";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.split)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.split) ]; };
+      };
+    }

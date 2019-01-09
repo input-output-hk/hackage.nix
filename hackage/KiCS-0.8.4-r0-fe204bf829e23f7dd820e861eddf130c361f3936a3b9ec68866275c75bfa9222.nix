@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "KiCS";
-        version = "0.8.4";
-      };
+      identifier = { name = "KiCS"; version = "0.8.4"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Bernd Braßel";
@@ -22,7 +13,7 @@
       synopsis = "A compiler from Curry to Haskell";
       description = "This package builds two binaries, kics and kicsi, respectively.\nThe first is the Curry to Haskell compiler, the latter a text\nbased interactive environment.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "kics" = {
@@ -35,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.containers)
             (hsPkgs.curry-base)
-          ];
-        };
+            ];
+          };
         "kicsi" = {
           depends = [
             (hsPkgs.base)
@@ -48,8 +39,8 @@
             (hsPkgs.containers)
             (hsPkgs.readline)
             (hsPkgs.curry-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

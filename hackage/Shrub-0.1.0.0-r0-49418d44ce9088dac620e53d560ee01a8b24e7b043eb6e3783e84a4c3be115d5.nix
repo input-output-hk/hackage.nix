@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Shrub";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "Shrub"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014-2015 Rob O'Callahan";
       maintainer = "rcallahan@eurekagenomics.com";
@@ -22,10 +13,6 @@
       synopsis = "4-way trie fuzzy search";
       description = "Nucleotide sequence approximate matching";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

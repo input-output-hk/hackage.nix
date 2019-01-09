@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       skiptests = true;
@@ -12,13 +6,10 @@
       usebinary = true;
       quickcheck1 = false;
       oldbase = false;
-    };
+      };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "RSA";
-        version = "1.0.6";
-      };
+      identifier = { name = "RSA"; version = "1.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Adam Wick <awick@galois.com>";
@@ -28,35 +19,23 @@
       synopsis = "Implementation of RSA, using the padding schemes of PKCS#1 v2.1.";
       description = "This library implements the RSA encryption and signature\nalgorithms for arbitrarily-sized ByteStrings. While the\nimplementations work, they are not necessarily the fastest ones\non the planet. Particularly key generation. The algorithms\nincluded are based of RFC 3447, or the Public-Key Cryptography\nStandard for RSA, version 2.1 (a.k.a, PKCS#1 v2.1).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = (([
-          (hsPkgs.bytestring)
-          (hsPkgs.random)
-        ] ++ [
+        depends = (([ (hsPkgs.bytestring) (hsPkgs.random) ] ++ [
           (hsPkgs.base)
           (hsPkgs.SHA)
-        ]) ++ pkgs.lib.optional (flags.usebinary) (hsPkgs.binary)) ++ pkgs.lib.optional (flags.includemd5 && flags.usebinary) (hsPkgs.pureMD5);
-      };
+          ]) ++ (pkgs.lib).optional (flags.usebinary) (hsPkgs.binary)) ++ (pkgs.lib).optional (flags.includemd5 && flags.usebinary) (hsPkgs.pureMD5);
+        };
       exes = {
         "test_rsa" = {
-          depends = pkgs.lib.optionals (!flags.skiptests) (([
+          depends = (pkgs.lib).optionals (!flags.skiptests) (([
             (hsPkgs.bytestring)
             (hsPkgs.test-framework)
-          ] ++ [
-            (hsPkgs.base)
-            (hsPkgs.SHA)
-          ]) ++ (if flags.quickcheck1
-            then [
-              (hsPkgs.QuickCheck)
-              (hsPkgs.test-framework-quickcheck)
-            ]
-            else [
-              (hsPkgs.QuickCheck)
-              (hsPkgs.test-framework-quickcheck2)
-            ]));
+            ] ++ [ (hsPkgs.base) (hsPkgs.SHA) ]) ++ (if flags.quickcheck1
+            then [ (hsPkgs.QuickCheck) (hsPkgs.test-framework-quickcheck) ]
+            else [ (hsPkgs.QuickCheck) (hsPkgs.test-framework-quickcheck2) ]));
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "haskoin-script";
-        version = "0.0.1";
-      };
+      identifier = { name = "haskoin-script"; version = "0.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "plaprade+hackage@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Implementation of Bitcoin script parsing and evaluation";
       description = "This package provides functions for parsing and evaluating bitcoin\ntransaction scripts. Data types are provided for building and\ndeconstructing all of the standard input and output script types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.haskoin-crypto)
           (hsPkgs.haskoin-util)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-haskoin-script" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsverilog";
-        version = "0.1.0";
-      };
+      identifier = { name = "hsverilog"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Synthesizable Verilog DSL supporting for multiple clock and reset";
       description = "Synthesizable Verilog DSL supporting for multiple clock and reset";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.shakespeare)
           (hsPkgs.text)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.transformers)
             (hsPkgs.text)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

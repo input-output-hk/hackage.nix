@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack-contrib";
-        version = "2009.4.30";
-      };
+      identifier = { name = "hack-contrib"; version = "2009.4.30"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hack contrib";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.unix)
           (hsPkgs.time)
           (hsPkgs.hack)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

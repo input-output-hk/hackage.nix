@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HaRe";
-        version = "0.6";
-      };
+      identifier = { name = "HaRe"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Brown";
@@ -22,16 +13,12 @@
       synopsis = "the Haskell Refactorer.";
       description = "A full Haskell 98 refactoring tool. HaRe supports the full Haskell 98 standard, implemented in Haskell and supporting Emacs and VIm.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hare-evaluate" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hint)
-            (hsPkgs.filepath)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.hint) (hsPkgs.filepath) ];
+          };
         "hare" = {
           depends = [
             (hsPkgs.base)
@@ -46,8 +33,8 @@
             (hsPkgs.pretty)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "hare-client" = {
           depends = [
             (hsPkgs.base)
@@ -62,8 +49,8 @@
             (hsPkgs.pretty)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

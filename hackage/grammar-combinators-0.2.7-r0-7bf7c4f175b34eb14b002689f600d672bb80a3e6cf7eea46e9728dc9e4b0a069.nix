@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.1";
-      identifier = {
-        name = "grammar-combinators";
-        version = "0.2.7";
-      };
+      identifier = { name = "grammar-combinators"; version = "0.2.7"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Dominique Devriese <dominique.devriese@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A parsing library of context-free grammar combinators.";
       description = "The grammar-combinators library is a novel parsing library using\nan explicit representation of recursion to provide various novel\nfeatures, for grammar analysis, transformation and parsing\nfunctionality.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.graphviz)
           (hsPkgs.fgl)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

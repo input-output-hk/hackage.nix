@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "ad";
-        version = "0.12";
-      };
+      identifier = { name = "ad"; version = "0.12"; };
       license = "BSD-3-Clause";
       copyright = "Edward Kmett 2010";
       maintainer = "ekmett@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Mixed-Mode Automatic Differentiation.";
       description = "Forward, reverse, and higher-order automatic differentiation with a common API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

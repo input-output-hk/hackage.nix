@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "manatee-imageviewer";
-        version = "0.0.1";
-      };
+      identifier = { name = "manatee-imageviewer"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2009 ~ 2010 Andy Stewart";
       maintainer = "Andy Stewart <lazycat.manatee@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Image viewer extension for Manatee.";
       description = "manatee-imageviewer is image viewer extension for Manatee (Haskell/Gtk+ Integrated Live Environment)";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,10 +31,8 @@
           (hsPkgs.regex-tdfa)
           (hsPkgs.filepath)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
+      exes = { "manatee-imageviewer" = {}; };
       };
-      exes = {
-        "manatee-imageviewer" = {};
-      };
-    };
-  }
+    }

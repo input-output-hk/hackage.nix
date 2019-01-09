@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hell";
-        version = "2.1";
-      };
+      identifier = { name = "hell"; version = "2.1"; };
       license = "BSD-3-Clause";
       copyright = "2013 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell shell based on shell-conduit";
       description = "A Haskell shell based on shell-conduit";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,10 +39,10 @@
           (hsPkgs.shell-conduit)
           (hsPkgs.conduit)
           (hsPkgs.conduit-extra)
-        ] ++ (if compiler.isGhc && compiler.version.ge "7.6"
+          ] ++ (if compiler.isGhc && (compiler.version).ge "7.6"
           then [ (hsPkgs.time) ]
           else [ (hsPkgs.old-time) ]);
-      };
+        };
       exes = {
         "hell" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.transformers)
             (hsPkgs.base)
             (hsPkgs.hell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

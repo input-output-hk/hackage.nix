@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-unlift";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "monad-unlift"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "FP Complete";
       maintainer = "michael@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Typeclasses for representing monad transformer unlifting";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.stm)
           (hsPkgs.constraints)
           (hsPkgs.resourcet)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

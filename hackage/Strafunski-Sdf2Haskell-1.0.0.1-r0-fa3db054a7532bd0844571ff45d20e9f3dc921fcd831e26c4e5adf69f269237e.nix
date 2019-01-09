@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Strafunski-Sdf2Haskell";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "Strafunski-Sdf2Haskell"; version = "1.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "darmanithird@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Converts SDF to Haskell";
       description = "Generates code for using SDF grammars in Haskell. See <http://www.syntax-definition.org/> for more information about SDF.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Sdf2Haskell" = {
@@ -36,8 +27,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.haskell-src)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

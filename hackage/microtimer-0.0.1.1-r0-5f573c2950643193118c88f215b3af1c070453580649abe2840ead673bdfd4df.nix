@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "microtimer";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "microtimer"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Bryan O'Sullivan 2009-2010,\n(c) Austin Seipp 2013";
       maintainer = "Austin Seipp <aseipp@pobox.com>";
@@ -22,13 +13,8 @@
       synopsis = "A tiny library for benchmarking IO actions.";
       description = "A tiny library for benchmarking IO actions.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
+      };
+    }

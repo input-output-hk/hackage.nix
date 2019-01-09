@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "process-streaming";
-        version = "0.6.6.0";
-      };
+      identifier = { name = "process-streaming"; version = "0.6.6.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diaz_carrete@yahoo.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming interface to system processes.";
       description = "Concurrent, streaming access to the input and outputs of system processes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.conceit)
           (hsPkgs.contravariant)
           (hsPkgs.foldl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.lens)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
@@ -109,8 +100,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

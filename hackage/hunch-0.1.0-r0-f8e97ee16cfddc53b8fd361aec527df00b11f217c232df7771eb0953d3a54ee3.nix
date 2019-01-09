@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hunch";
-        version = "0.1.0";
-      };
+      identifier = { name = "hunch"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "braga.logan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "CSS-like syntax for file system manipulation.";
       description = "Hunch is a command-line, system-agnostic application that allows quick creation of file system entries with a custom DSL resembling CSS selectors.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hunch" = {
@@ -34,9 +25,9 @@
             (hsPkgs.split)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hunch-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

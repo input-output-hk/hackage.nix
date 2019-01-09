@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      hlint = true;
-      build-examples = false;
-      llvm = false;
-    };
+    flags = { hlint = true; build-examples = false; llvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-cacophony";
-        version = "0.2.0";
-      };
+      identifier = { name = "pipes-cacophony"; version = "0.2.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "jgalt@centromere.net";
@@ -26,7 +13,7 @@
       synopsis = "Pipes for Noise-secured network connections.";
       description = "A set of pipes to secure network connections with the\n<https://github.com/trevp/noise/blob/master/noise.md Noise> protocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +21,11 @@
           (hsPkgs.bytestring)
           (hsPkgs.cacophony)
           (hsPkgs.pipes)
-        ];
-      };
+          ];
+        };
       exes = {
         "echo-server" = {
-          depends = pkgs.lib.optionals (flags.build-examples) [
+          depends = (pkgs.lib).optionals (flags.build-examples) [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.auto-update)
@@ -56,10 +43,10 @@
             (hsPkgs.text)
             (hsPkgs.unix)
             (hsPkgs.unix-time)
-          ];
-        };
+            ];
+          };
         "echo-client" = {
-          depends = pkgs.lib.optionals (flags.build-examples) [
+          depends = (pkgs.lib).optionals (flags.build-examples) [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -74,16 +61,16 @@
             (hsPkgs.pipes-network)
             (hsPkgs.pipes-parse)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

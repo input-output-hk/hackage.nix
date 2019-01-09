@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "merge-bash-history";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "merge-bash-history"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Jiri Marsicek";
       maintainer = "jiri.marsicek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.data-ordlist)
           (hsPkgs.errors)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "merge-bash-history" = {
           depends = [
@@ -40,16 +31,13 @@
             (hsPkgs.merge-bash-history)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "MergeBashHistory-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.merge-bash-history)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.merge-bash-history) ];
+          };
         };
       };
-    };
-  }
+    }

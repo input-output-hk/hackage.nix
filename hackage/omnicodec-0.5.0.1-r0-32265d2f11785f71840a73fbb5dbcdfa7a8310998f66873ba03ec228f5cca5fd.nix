@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "omnicodec";
-        version = "0.5.0.1";
-      };
+      identifier = { name = "omnicodec"; version = "0.5.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Magnus Therning, 2007-2011";
       maintainer = "magnus@therning.org";
@@ -22,7 +13,7 @@
       synopsis = "data encoding and decoding command line utilities";
       description = "Two simple command line tools built on dataenc.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "odec" = {
@@ -32,9 +23,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.mtl)
             (hsPkgs.dataenc)
-          ];
-        };
+            ];
+          };
         "oenc" = {};
+        };
       };
-    };
-  }
+    }

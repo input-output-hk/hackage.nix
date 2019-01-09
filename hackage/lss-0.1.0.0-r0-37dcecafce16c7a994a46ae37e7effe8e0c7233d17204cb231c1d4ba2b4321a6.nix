@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lss";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "lss"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -22,7 +13,7 @@
       synopsis = "Lexical Style Sheets - a language for writing styles that is focused around lexical (ie, static) scoping and re-use of large components.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.filepath)
           (hsPkgs.containers)
           (hsPkgs.attoparsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-lss" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.text)
             (hsPkgs.hspec2)
             (hsPkgs.lss)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "spdx";
-        version = "1";
-      };
+      identifier = { name = "spdx"; version = "1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2018 Oleg Grenrus";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "SPDX license expression language, Extras";
       description = "Cabal provides SPDX types. This package provides some extras.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.Cabal)
           (hsPkgs.containers)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +32,9 @@
             (hsPkgs.spdx)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.spdx)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

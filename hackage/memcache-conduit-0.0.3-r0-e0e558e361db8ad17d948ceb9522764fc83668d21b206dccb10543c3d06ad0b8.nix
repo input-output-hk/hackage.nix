@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { sample = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "memcache-conduit";
-        version = "0.0.3";
-      };
+      identifier = { name = "memcache-conduit"; version = "0.0.3"; };
       license = "MIT";
       copyright = "(c) 2015 GREE, Inc.";
       maintainer = "Kiyoshi Ikehara";
@@ -22,7 +13,7 @@
       synopsis = "Conduit library for memcache procotol";
       description = "This package provides conduit functions for memcache protocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-binary)
           (hsPkgs.memcache-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "memcache-sample-hemcached" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.conduit-extra)
             (hsPkgs.memcache-haskell)
             (hsPkgs.memcache-conduit)
-          ];
-        };
+            ];
+          };
         "memcache-sample-proxy" = {
           depends = [
             (hsPkgs.base)
@@ -71,8 +62,8 @@
             (hsPkgs.monad-control)
             (hsPkgs.memcache-haskell)
             (hsPkgs.memcache-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

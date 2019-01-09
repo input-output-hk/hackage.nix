@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "tamarin-prover-utils";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "tamarin-prover-utils"; version = "0.4.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "Benedikt Schmidt, Simon Meier, ETH Zurich, 2010-2012";
       maintainer = "Simon Meier <simon.meier@inf.ethz.ch>";
@@ -22,7 +13,7 @@
       synopsis = "Utility library for the tamarin prover.";
       description = "This is an internal library of the Tamarin prover for\nsecurity protocol verification\n(<hackage.haskell.org/package/tamarin-prover>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.time)
           (hsPkgs.binary)
           (hsPkgs.dlist)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

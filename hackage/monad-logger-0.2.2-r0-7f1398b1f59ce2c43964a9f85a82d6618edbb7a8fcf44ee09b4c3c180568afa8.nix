@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monad-logger";
-        version = "0.2.2";
-      };
+      identifier = { name = "monad-logger"; version = "0.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "A class of monads which can log messages.";
       description = "This package uses template-haskell for determining source code locations of messages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.conduit)
           (hsPkgs.fast-logger)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ogmarkup";
-        version = "2.3";
-      };
+      identifier = { name = "ogmarkup"; version = "2.3"; };
       license = "MIT";
       copyright = "2016 Ogma Project";
       maintainer = "contact@thomasletan.fr";
@@ -22,15 +13,11 @@
       synopsis = "A lightweight markup language for story writers";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.megaparsec)
-          (hsPkgs.mtl)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.megaparsec) (hsPkgs.mtl) ];
+        };
       tests = {
         "ogmadown-test" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.shakespeare)
             (hsPkgs.megaparsec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

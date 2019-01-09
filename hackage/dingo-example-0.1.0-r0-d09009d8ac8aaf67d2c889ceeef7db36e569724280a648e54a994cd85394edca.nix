@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0.1";
-      identifier = {
-        name = "dingo-example";
-        version = "0.1.0";
-      };
+      identifier = { name = "dingo-example"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Bardur Arantsson <bardur@scientician.net>";
@@ -22,7 +13,7 @@
       synopsis = "Dingo Example";
       description = "Example application for the Dingo Rich Internet Application platform.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dingo-example" = {
@@ -38,8 +29,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

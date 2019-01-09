@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bloodhound-amazonka-auth";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "bloodhound-amazonka-auth"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Michael Xavier";
       maintainer = "michael@michaelxavier.net";
@@ -22,7 +13,7 @@
       synopsis = "Adds convenient Amazon ElasticSearch Service authentication to Bloodhound.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.http-types)
           (hsPkgs.exceptions)
           (hsPkgs.uri-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.lens)
             (hsPkgs.aeson)
             (hsPkgs.retry)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

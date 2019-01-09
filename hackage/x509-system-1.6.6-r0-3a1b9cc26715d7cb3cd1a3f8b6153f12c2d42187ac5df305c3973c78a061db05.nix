@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "x509-system";
-        version = "1.6.6";
-      };
+      identifier = { name = "x509-system"; version = "1.6.6"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Handle per-operating-system X.509 accessors and storage";
       description = "System X.509 handling";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,11 +27,11 @@
           (hsPkgs.pem)
           (hsPkgs.x509)
           (hsPkgs.x509-store)
-        ] ++ pkgs.lib.optionals (system.isWindows) [
+          ] ++ (pkgs.lib).optionals (system.isWindows) [
           (hsPkgs.Win32)
           (hsPkgs.asn1-encoding)
-        ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."Crypt32");
+          ];
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."Crypt32");
+        };
       };
-    };
-  }
+    }

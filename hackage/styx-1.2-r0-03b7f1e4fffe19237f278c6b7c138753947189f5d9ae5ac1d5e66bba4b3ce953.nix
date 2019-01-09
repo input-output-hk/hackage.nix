@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "styx";
-        version = "1.2";
-      };
+      identifier = { name = "styx"; version = "1.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jeanphilippe.bernardy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A generator of nix files";
       description = "Soon to appear.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "styx" = {
@@ -37,8 +28,8 @@
             (hsPkgs.containers)
             (hsPkgs.aeson)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-doctests = true;
-    };
+    flags = { test-doctests = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "bytes";
-        version = "0.15.2";
-      };
+      identifier = { name = "bytes"; version = "0.15.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013-2015 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Sharing code for serialization between binary and cereal";
       description = "Sharing code for serialization between binary and cereal";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,18 +31,18 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.scientific)
           (hsPkgs.void)
-        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs.ghc-prim);
+        };
       tests = {
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests || compiler.isGhc && (compiler.version).ge "8")) [
             (hsPkgs.base)
             (hsPkgs.bytes)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

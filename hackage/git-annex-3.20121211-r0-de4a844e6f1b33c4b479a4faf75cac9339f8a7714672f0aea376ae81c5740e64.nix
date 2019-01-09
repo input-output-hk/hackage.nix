@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       s3 = true;
@@ -16,13 +10,10 @@
       pairing = true;
       xmpp = true;
       dns = true;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "git-annex";
-        version = "3.20121211";
-      };
+      identifier = { name = "git-annex"; version = "3.20121211"; };
       license = "LicenseRef-GPL";
       copyright = "2010-2012 Joey Hess";
       maintainer = "Joey Hess <joey@kitenet.net>";
@@ -32,7 +23,7 @@
       synopsis = "manage files with git, without checking their contents into git";
       description = "git-annex allows managing files with git, without checking the file\ncontents into git. While that may seem paradoxical, it is useful when\ndealing with files larger than git can currently easily handle, whether due\nto limitations in memory, time, or disk space.\n\nEven without file content tracking, being able to manage files with git,\nmove files around and delete files with versioned directory trees, and use\nbranches and distributed clones, are all very handy reasons to use git. And\nannexed files can co-exist in the same git repository with regularly\nversioned files, which is convenient for maintaining documents, Makefiles,\netc that are associated with annexed files but that benefit from full\nrevision control.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "git-annex" = {
@@ -67,12 +58,12 @@
             (hsPkgs.edit-distance)
             (hsPkgs.process)
             (hsPkgs.SafeSemaphore)
-          ] ++ pkgs.lib.optional (flags.s3) (hsPkgs.hS3)) ++ pkgs.lib.optionals (flags.webdav) [
+            ] ++ (pkgs.lib).optional (flags.s3) (hsPkgs.hS3)) ++ (pkgs.lib).optionals (flags.webdav) [
             (hsPkgs.DAV)
             (hsPkgs.http-conduit)
             (hsPkgs.xml-conduit)
             (hsPkgs.http-types)
-          ]) ++ pkgs.lib.optional (flags.assistant && !system.isWindows && !system.isSolaris) (hsPkgs.stm)) ++ pkgs.lib.optional (system.isLinux && flags.inotify) (hsPkgs.hinotify)) ++ pkgs.lib.optional (system.isLinux && flags.dbus) (hsPkgs.dbus)) ++ pkgs.lib.optionals (flags.webapp && flags.assistant) [
+            ]) ++ (pkgs.lib).optional (flags.assistant && !system.isWindows && !system.isSolaris) (hsPkgs.stm)) ++ (pkgs.lib).optional (system.isLinux && flags.inotify) (hsPkgs.hinotify)) ++ (pkgs.lib).optional (system.isLinux && flags.dbus) (hsPkgs.dbus)) ++ (pkgs.lib).optionals (flags.webapp && flags.assistant) [
             (hsPkgs.yesod)
             (hsPkgs.yesod-static)
             (hsPkgs.case-insensitive)
@@ -90,16 +81,16 @@
             (hsPkgs.template-haskell)
             (hsPkgs.yesod-default)
             (hsPkgs.data-default)
-          ]) ++ pkgs.lib.optionals (flags.pairing && flags.webapp) [
+            ]) ++ (pkgs.lib).optionals (flags.pairing && flags.webapp) [
             (hsPkgs.network-multicast)
             (hsPkgs.network-info)
-          ]) ++ pkgs.lib.optionals (flags.xmpp && flags.assistant) [
+            ]) ++ (pkgs.lib).optionals (flags.xmpp && flags.assistant) [
             (hsPkgs.network-protocol-xmpp)
             (hsPkgs.gnutls)
             (hsPkgs.xml-types)
-          ]) ++ pkgs.lib.optional (flags.xmpp && flags.assistant && flags.dns) (hsPkgs.dns);
+            ]) ++ (pkgs.lib).optional (flags.xmpp && flags.assistant && flags.dns) (hsPkgs.dns);
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -134,8 +125,8 @@
             (hsPkgs.bloomfilter)
             (hsPkgs.edit-distance)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

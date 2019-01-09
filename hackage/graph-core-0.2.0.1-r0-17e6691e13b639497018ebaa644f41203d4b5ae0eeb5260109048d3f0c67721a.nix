@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "graph-core";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "graph-core"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "(c) 2014 factis research GmbH";
       maintainer = "Alexander Thiemann <thiemann@cp-med.com>";
@@ -22,7 +13,7 @@
       synopsis = "Fast, memory efficient and persistent graph implementation";
       description = "A small package providing a powerful and easy to use Haskell graph implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.mtl)
           (hsPkgs.safecopy)
-        ];
-      };
+          ];
+        };
       tests = {
         "graph-core-tests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.mtl)
             (hsPkgs.safecopy)
             (hsPkgs.HTF)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

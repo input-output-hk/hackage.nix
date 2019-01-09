@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hadoop-tools";
-        version = "0.3";
-      };
+      identifier = { name = "hadoop-tools"; version = "0.3"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Jacob Stanley <jacob@stanley.io>";
@@ -22,7 +13,7 @@
       synopsis = "Fast command line tools for working with Hadoop.";
       description = "Fast command line tools for working with Hadoop.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hh" = {
@@ -43,8 +34,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

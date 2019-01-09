@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "th-fold";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "th-fold"; version = "0.0.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,13 +13,8 @@
       synopsis = "TH fold generator";
       description = "Very rough-around-the-edges template haskell\nfunction for generating basic catamorphisms for\nalgebraic data types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
+      };
+    }

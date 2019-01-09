@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "linux-namespaces";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "linux-namespaces"; version = "0.1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Marios Titas <rednebΑΤgmxDΟΤcom>";
@@ -22,17 +13,11 @@
       synopsis = "Work with linux namespaces: create new or enter existing ones";
       description = "This library provides bindings to the @unshare(2)@ and @setns(2)@ linux\nsystem calls.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-          (hsPkgs.bytestring)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.unix) (hsPkgs.bytestring) ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

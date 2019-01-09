@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "butterflies";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "butterflies"; version = "0.3.0.2"; };
       license = "GPL-3.0-only";
       copyright = "(C) 2013,2018  Claude Heiland-Allen <claude@mathr.co.uk>";
       maintainer = "claude@mathr.co.uk";
@@ -22,11 +13,9 @@
       synopsis = "butterfly tilings";
       description = "various tilings with butterflies (after M C Escher 1950)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "butterflies-flat" = {
           depends = [
@@ -38,8 +27,8 @@
             (hsPkgs.repa)
             (hsPkgs.repa-devil)
             (hsPkgs.butterflies)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

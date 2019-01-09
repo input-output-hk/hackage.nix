@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "numhask";
-        version = "0.0.5";
-      };
+      identifier = { name = "numhask"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A numeric prelude";
       description = "Classes for numbers, higher-dimension representable objects, and algebras that combine them. See NumHask.Examples for usage.\n\n> import NumHask.Prelude";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.adjunctions)
           (hsPkgs.distributive)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "satchmo-examples";
-        version = "1.3";
-      };
+      identifier = { name = "satchmo-examples"; version = "1.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Johannes Waldmann";
@@ -22,7 +13,7 @@
       synopsis = "examples that show how to use satchmo";
       description = "examples that show how to use satchmo";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Factor" = {
@@ -33,8 +24,8 @@
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
-          ];
-        };
+            ];
+          };
         "HC" = {
           depends = [
             (hsPkgs.satchmo)
@@ -43,8 +34,8 @@
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
-          ];
-        };
+            ];
+          };
         "VC" = {
           depends = [
             (hsPkgs.satchmo)
@@ -53,8 +44,8 @@
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

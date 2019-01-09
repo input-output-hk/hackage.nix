@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SpacePrivateers";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "SpacePrivateers"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tuukka.turto@oktaeder.net";
@@ -22,7 +13,7 @@
       synopsis = "Simple space pirate roguelike";
       description = "Space Privateers is a roguelike game set in space.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "SpacePrivateers" = {
@@ -34,8 +25,8 @@
             (hsPkgs.filepath)
             (hsPkgs.template-haskell)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "test-karya";
-        version = "0.0.3";
-      };
+      identifier = { name = "test-karya"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Evan Laforge <qdunkan@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Testing framework.";
       description = "This is Karya's test framework, extracted to be usable standalone.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.process)
           (hsPkgs.pretty)
           (hsPkgs.haskell-src)
-        ];
-      };
+          ];
+        };
       exes = {
         "test-karya-generate" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.text)
             (hsPkgs.pcre-heavy)
             (hsPkgs.pcre-light)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

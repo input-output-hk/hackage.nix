@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "temporal-music-notation";
-        version = "0.2.0";
-      };
+      identifier = { name = "temporal-music-notation"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<anton.kholomiov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "music notation";
       description = "Library for expressing musical ideas. Includes composable score representation, microsound tunings, flexible pitch and volume control.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.vector)
           (hsPkgs.data-default)
           (hsPkgs.temporal-media)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

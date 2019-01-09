@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "graphql-api";
-        version = "0.3.0";
-      };
+      identifier = { name = "graphql-api"; version = "0.3.0"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Jonathan M. Lange <jml@mumak.net>, Tom Hunger <tehunger@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "GraphQL API";
       description = "Implement [GraphQL](http://graphql.org/) servers in Haskell.\n\nProvides a Servant-like type-based API for defining GraphQL schemas and\nimplementing handlers for those schemas.\n\nSee [README.md](https://github.com/haskell-graphql/graphql-api#graphql-api) for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.scientific)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "graphql-api-doctests" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.exceptions)
             (hsPkgs.protolude)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "graphql-api-tests" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -66,9 +57,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.graphql-api)
             (hsPkgs.protolude)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

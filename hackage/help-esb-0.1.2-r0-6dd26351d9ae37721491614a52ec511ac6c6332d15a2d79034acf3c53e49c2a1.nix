@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "help-esb";
-        version = "0.1.2";
-      };
+      identifier = { name = "help-esb"; version = "0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "alex.martin@help.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell client for the Help.com team's ESB.";
       description = "A Haskell client for the Help.com team's ESB.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.uuid)
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

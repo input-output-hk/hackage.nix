@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "test-framework-quickcheck2";
         version = "0.3.0.5";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Haskell Libraries <libraries@haskell.org>";
@@ -22,7 +16,7 @@
       synopsis = "QuickCheck-2 support for the test-framework package.";
       description = "Allows @QuickCheck-2@ properties to be used with the </package/test-framework test-framework package>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.base)
           (hsPkgs.extensible-exceptions)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

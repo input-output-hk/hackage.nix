@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ttask";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "ttask"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tokiwo Ousaka";
       maintainer = "its.out.of.tune.this.my.music@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "This is task management tool for yourself, that inspired by scrum.";
       description = "Please see README.md (ja)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.extra)
           (hsPkgs.safe)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "ttask" = {
           depends = [
@@ -41,16 +32,11 @@
             (hsPkgs.ttask)
             (hsPkgs.optparse-declarative)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "ttask-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ttask)
-          ];
+        "ttask-test" = { depends = [ (hsPkgs.base) (hsPkgs.ttask) ]; };
         };
       };
-    };
-  }
+    }

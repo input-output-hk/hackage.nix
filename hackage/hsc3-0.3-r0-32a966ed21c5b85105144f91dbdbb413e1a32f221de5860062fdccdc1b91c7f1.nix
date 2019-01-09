@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hsc3";
-        version = "0.3";
-      };
+      identifier = { name = "hsc3"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2006-2008";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell SuperCollider";
       description = "hsc3 provides Sound.SC3, a haskell module that\nfacilitates using haskell as a client to the\nSuperCollider synthesis server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.hosc)
           (hsPkgs.network)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

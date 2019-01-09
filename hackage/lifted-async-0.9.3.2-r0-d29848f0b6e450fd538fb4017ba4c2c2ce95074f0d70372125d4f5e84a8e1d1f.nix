@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      monad-control-1 = true;
-    };
+    flags = { monad-control-1 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lifted-async";
-        version = "0.9.3.2";
-      };
+      identifier = { name = "lifted-async"; version = "0.9.3.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2017 Mitsutoshi Aoe";
       maintainer = "Mitsutoshi Aoe <maoe@foldr.in>";
@@ -24,7 +13,7 @@
       synopsis = "Run lifted IO operations asynchronously and wait for their results";
       description = "This package provides IO operations from @async@ package lifted to any\ninstance of 'MonadBase' or 'MonadBaseControl'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,14 +21,10 @@
           (hsPkgs.async)
           (hsPkgs.lifted-base)
           (hsPkgs.transformers-base)
-        ] ++ (if flags.monad-control-1
-          then [
-            (hsPkgs.monad-control)
-          ] ++ [ (hsPkgs.constraints) ]
-          else [
-            (hsPkgs.monad-control)
-          ]);
-      };
+          ] ++ (if flags.monad-control-1
+          then [ (hsPkgs.monad-control) ] ++ [ (hsPkgs.constraints) ]
+          else [ (hsPkgs.monad-control) ]);
+        };
       tests = {
         "test-lifted-async" = {
           depends = [
@@ -52,8 +37,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-th)
-          ];
-        };
+            ];
+          };
         "regression-tests" = {
           depends = [
             (hsPkgs.base)
@@ -62,9 +47,9 @@
             (hsPkgs.mtl)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-th)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark-lifted-async" = {
           depends = [
@@ -73,8 +58,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.lifted-async)
-          ];
-        };
+            ];
+          };
         "benchmark-lifted-async-threaded" = {
           depends = [
             (hsPkgs.base)
@@ -82,8 +67,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.lifted-async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

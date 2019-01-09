@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "dependency";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dependency"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Dependency resolution for package management";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,25 +24,17 @@
           (hsPkgs.microlens)
           (hsPkgs.deepseq)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       tests = {
         "dependency-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.dependency)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.dependency) (hsPkgs.hspec) ];
+          };
         };
-      };
       benchmarks = {
         "dependency-bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.dependency)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.dependency) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

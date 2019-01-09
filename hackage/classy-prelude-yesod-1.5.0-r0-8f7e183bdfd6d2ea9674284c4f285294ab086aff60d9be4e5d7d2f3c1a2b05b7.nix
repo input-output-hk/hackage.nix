@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "classy-prelude-yesod";
-        version = "1.5.0";
-      };
+      identifier = { name = "classy-prelude-yesod"; version = "1.5.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Provide a classy prelude including common Yesod functionality.";
       description = "See docs and README at <http://www.stackage.org/package/classy-prelude-yesod>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.yesod)
           (hsPkgs.yesod-newsfeed)
           (hsPkgs.yesod-static)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

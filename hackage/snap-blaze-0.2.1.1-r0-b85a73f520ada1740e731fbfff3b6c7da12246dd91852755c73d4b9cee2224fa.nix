@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snap-blaze";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "snap-blaze"; version = "0.2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -22,14 +13,10 @@
       synopsis = "blaze-html integration for Snap";
       description = "blaze-html integration for Snap";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.blaze-html)
-          (hsPkgs.snap-core)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.blaze-html) (hsPkgs.snap-core) ];
+        };
       };
-    };
-  }
+    }

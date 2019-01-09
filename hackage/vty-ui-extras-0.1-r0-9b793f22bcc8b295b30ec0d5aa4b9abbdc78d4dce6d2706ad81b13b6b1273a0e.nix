@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "vty-ui-extras";
-        version = "0.1";
-      };
+      identifier = { name = "vty-ui-extras"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jonathan Daugherty <jtd@galois.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extra vty-ui functionality not included in the core library";
       description = "Extra vty-ui functionality not included in the core library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.vty-ui)
           (hsPkgs.regex-pcre)
           (hsPkgs.regex-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

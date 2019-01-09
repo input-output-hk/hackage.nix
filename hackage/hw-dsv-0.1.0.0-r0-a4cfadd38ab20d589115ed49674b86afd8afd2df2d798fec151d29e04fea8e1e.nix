@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bmi2 = false;
-      sse42 = true;
-    };
+    flags = { bmi2 = false; sse42 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-dsv";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hw-dsv"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/newhoggy/hw-dsv#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +25,8 @@
           (hsPkgs.hw-rankselect)
           (hsPkgs.hw-rankselect-base)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "hw-dsv" = {
           depends = [
@@ -55,9 +43,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.resourcet)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hw-dsv-space" = {
           depends = [
@@ -72,11 +60,9 @@
             (hsPkgs.hw-rankselect-base)
             (hsPkgs.vector)
             (hsPkgs.weigh)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
-        };
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         "hw-dsv-test" = {
           depends = [
             (hsPkgs.base)
@@ -93,12 +79,10 @@
             (hsPkgs.hw-rankselect-base)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -116,8 +100,8 @@
             (hsPkgs.mmap)
             (hsPkgs.vector)
             (hsPkgs.weigh)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

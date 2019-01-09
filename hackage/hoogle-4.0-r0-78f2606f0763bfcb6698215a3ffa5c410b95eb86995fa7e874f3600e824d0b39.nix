@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.1.4";
-      identifier = {
-        name = "hoogle";
-        version = "4.0";
-      };
+      identifier = { name = "hoogle"; version = "4.0"; };
       license = "LicenseRef-GPL";
       copyright = "Neil Mitchell 2004-2008";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell API Search";
       description = "Hoogle is a Haskell API search engine, which allows you to\nsearch many standard Haskell libraries by either function name,\nor by approximate type signature.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hoogle" = {
@@ -37,8 +28,8 @@
             (hsPkgs.uniplate)
             (hsPkgs.mtl)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

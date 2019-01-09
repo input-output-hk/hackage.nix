@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "repa-array";
-        version = "4.0.0.2";
-      };
+      identifier = { name = "repa-array"; version = "4.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Bulk array representations and operators.";
       description = "NOTE: This is an ALPHA version of Repa 4. The API is not yet complete with\nrespect to Repa 3. Some important functions are still missing, and the docs\nmay not be up-to-date.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.repa-eval)
           (hsPkgs.repa-stream)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

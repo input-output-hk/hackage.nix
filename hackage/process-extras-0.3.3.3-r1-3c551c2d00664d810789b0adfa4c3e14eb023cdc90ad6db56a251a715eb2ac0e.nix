@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "process-extras";
-        version = "0.3.3.3";
-      };
+      identifier = { name = "process-extras"; version = "0.3.3.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Process extras";
       description = "Extra functionality for the Process library\n<http://hackage.haskell.org/package/process>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.deepseq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

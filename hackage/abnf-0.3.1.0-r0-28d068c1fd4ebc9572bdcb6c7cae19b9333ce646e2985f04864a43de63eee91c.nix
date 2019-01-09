@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "abnf";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "abnf"; version = "0.3.1.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "mz.bremerhaven@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parse ABNF and generate parsers for the specified document";
       description = "You can use this library to parse an ABNF document and\ngenerate a parser from that ABNF to read a document\ndescribed by the ABNF.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.megaparsec)
           (hsPkgs.attoparsec)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.abnf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Ketchup";
-        version = "0.2.0";
-      };
+      identifier = { name = "Ketchup"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "zikyky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A super small web framework for those who don't like big and fancy codebases";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.directory)
           (hsPkgs.network)
           (hsPkgs.regex-posix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

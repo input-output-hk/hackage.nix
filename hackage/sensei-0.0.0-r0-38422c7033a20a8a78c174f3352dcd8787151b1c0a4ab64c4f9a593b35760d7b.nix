@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sensei";
-        version = "0.0.0";
-      };
+      identifier = { name = "sensei"; version = "0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "Automatically run Hspec tests on file modifications";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.filepath)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       exes = {
         "sensei-web" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.filepath)
             (hsPkgs.unix)
             (hsPkgs.sensei)
-          ];
-        };
+            ];
+          };
         "seito" = {
           depends = [
             (hsPkgs.base)
@@ -88,8 +79,8 @@
             (hsPkgs.filepath)
             (hsPkgs.unix)
             (hsPkgs.sensei)
-          ];
-        };
+            ];
+          };
         "sensei" = {
           depends = [
             (hsPkgs.base)
@@ -110,9 +101,9 @@
             (hsPkgs.filepath)
             (hsPkgs.unix)
             (hsPkgs.sensei)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -139,8 +130,8 @@
             (hsPkgs.mockery)
             (hsPkgs.silently)
             (hsPkgs.interpolate)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

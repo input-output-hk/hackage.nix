@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "codec-beam";
-        version = "0.2.0";
-      };
+      identifier = { name = "codec-beam"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "h.kofigumbs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Erlang VM byte code assembler";
       description = "Erlang VM byte code assembler.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.zlib)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "codec-beam-tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

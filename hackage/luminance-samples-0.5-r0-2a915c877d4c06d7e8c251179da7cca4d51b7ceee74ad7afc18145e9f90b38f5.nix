@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "luminance-samples";
-        version = "0.5";
-      };
+      identifier = { name = "luminance-samples"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "Dimitri Sabadie";
       maintainer = "Dimitri Sabadie <dimitri.sabadie@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Luminance samples";
       description = "Luminance samples used as tutorial help";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "HelloWorld" = {
@@ -33,8 +24,8 @@
             (hsPkgs.mtl)
             (hsPkgs.resourcet)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "HelloWorldUniform" = {
           depends = [
             (hsPkgs.base)
@@ -43,8 +34,8 @@
             (hsPkgs.mtl)
             (hsPkgs.resourcet)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "DepthTest" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +45,8 @@
             (hsPkgs.mtl)
             (hsPkgs.resourcet)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "Blending" = {
           depends = [
             (hsPkgs.base)
@@ -65,8 +56,8 @@
             (hsPkgs.mtl)
             (hsPkgs.resourcet)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "Texture" = {
           depends = [
             (hsPkgs.base)
@@ -77,8 +68,8 @@
             (hsPkgs.mtl)
             (hsPkgs.resourcet)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "Blit" = {
           depends = [
             (hsPkgs.base)
@@ -88,8 +79,8 @@
             (hsPkgs.mtl)
             (hsPkgs.resourcet)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ldif";
-        version = "0.0.6";
-      };
+      identifier = { name = "ldif"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "radoslav.dorcik@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The LDAP Data Interchange Format (LDIF) parser";
       description = "LDIF files parser implementation using Parsec and based\non RFC 2849 - The LDAP Data Interchange Format (LDIF).\n\nCurrent implementation is unfinished and need to be enhanced\nfor base64 encoded values and various DN escaping.\n\nIt includes following tool:\n\n- diffLDIF command generates change LDIF between two\ncontent LDIF files.\n- ldif2html command generates hypertext HTML browsable\nLDIF file.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,18 +25,13 @@
           (hsPkgs.cmdargs)
           (hsPkgs.parsec)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       exes = {
         "diffLDIF" = {};
         "ldif2html" = {};
         "ldifmodify" = {};
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-          ];
+        "test" = { depends = [ (hsPkgs.base) (hsPkgs.HUnit) ]; };
         };
       };
-    };
-  }
+    }

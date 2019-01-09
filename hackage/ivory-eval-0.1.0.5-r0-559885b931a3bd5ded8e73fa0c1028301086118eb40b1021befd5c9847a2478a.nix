@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ivory-eval";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "ivory-eval"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "2014 Galois, Inc.";
       maintainer = "leepike@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple concrete evaluator for Ivory programs";
       description = "Warning!  This module is experimental and its implementation may change dramatically.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.monadLib)
           (hsPkgs.ivory)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.monadLib)
             (hsPkgs.ivory)
             (hsPkgs.ivory-eval)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

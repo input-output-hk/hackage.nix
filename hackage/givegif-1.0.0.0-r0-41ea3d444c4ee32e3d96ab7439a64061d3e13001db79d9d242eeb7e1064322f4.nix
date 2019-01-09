@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "givegif";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "givegif"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Pascal Hartig <phartig@rdrei.net>";
@@ -22,7 +13,7 @@
       synopsis = "CLI Giphy search tool with previews in iTerm 2";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.base64-bytestring)
           (hsPkgs.containers)
           (hsPkgs.optparse-applicative)
-        ];
-      };
+          ];
+        };
       exes = {
         "givegif" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.wreq)
             (hsPkgs.transformers)
             (hsPkgs.errors)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.hspec)
             (hsPkgs.lens)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

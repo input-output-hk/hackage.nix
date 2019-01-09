@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "large-hashable";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "large-hashable"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2015 - 2016 factis research GmbH";
       maintainer = "Stefan Wehr <wehr@cp-med.com>";
@@ -22,7 +13,7 @@
       synopsis = "Efficiently hash (large) Haskell values";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.utf8-light)
           (hsPkgs.vector)
           (hsPkgs.void)
-        ];
-      };
+          ];
+        };
       tests = {
         "large-hashable-test" = {
           depends = [
@@ -62,9 +53,9 @@
             (hsPkgs.time)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "large-hashable-benchmark" = {
           depends = [
@@ -80,8 +71,8 @@
             (hsPkgs.byteable)
             (hsPkgs.transformers)
             (hsPkgs.bytes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

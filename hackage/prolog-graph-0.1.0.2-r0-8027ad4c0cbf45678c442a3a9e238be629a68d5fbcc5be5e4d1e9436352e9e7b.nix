@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "prolog-graph";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "prolog-graph"; version = "0.1.0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "bartsch@cs.uni-bonn.de";
@@ -22,7 +13,7 @@
       synopsis = "A command line tool to visualize query resolution in Prolog.";
       description = "This package installs the command line tool `hsprolog-graph` that\ngenerates images of resolution trees for given Prolog queries.\n\nSee @hsprolog-graph --help@ for more information on usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hsprolog-graph" = {
@@ -35,8 +26,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.text)
             (hsPkgs.graphviz)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

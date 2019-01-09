@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clifford";
-        version = "0.1.0.13";
-      };
+      identifier = { name = "clifford"; version = "0.1.0.13"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sophie@traumapony.org";
@@ -22,7 +13,7 @@
       synopsis = "A Clifford algebra library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.MemoTrie)
           (hsPkgs.semigroupoids)
           (hsPkgs.monoid-extras)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.numeric-prelude)
             (hsPkgs.QuickCheck)
             (hsPkgs.nats)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "basic-ops" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.criterion)
             (hsPkgs.numeric-prelude)
             (hsPkgs.stream-fusion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

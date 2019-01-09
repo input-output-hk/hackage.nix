@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "align-text";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "align-text"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "dhchoi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple unix filter to align text on specified substrings";
       description = "A simple unix filter to align text on specified substrings";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "align" = {
@@ -30,8 +21,8 @@
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      blaze_html_0_5 = true;
-      embed_data_files = false;
-    };
+    flags = { blaze_html_0_5 = true; embed_data_files = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pandoc";
-        version = "1.11";
-      };
+      identifier = { name = "pandoc"; version = "1.11"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2006-2013 John MacFarlane";
       maintainer = "John MacFarlane <jgm@berkeley.edu>";
@@ -25,7 +13,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read markdown and (subsets of) HTML,\nreStructuredText, LaTeX, DocBook, MediaWiki markup,\nand Textile, and it can write markdown, reStructuredText,\nHTML, LaTeX, ConTeXt, Docbook, OpenDocument, ODT,\nWord docx, RTF, MediaWiki, Textile, groff man pages,\nplain text, Emacs Org-Mode, AsciiDoc, EPUB (v2 and v3),\nFictionBook2, and S5, Slidy and Slideous HTML slide shows.\n\nPandoc extends standard markdown syntax with footnotes,\nembedded LaTeX, definition lists, tables, and other\nfeatures. A compatibility mode is provided for those\nwho need a drop-in replacement for Markdown.pl.\n\nIn contrast to existing tools for converting markdown\nto HTML, which use regex substitutions, pandoc has\na modular design: it consists of a set of readers,\nwhich parse text in a given format and produce a native\nrepresentation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,13 +45,10 @@
           (hsPkgs.highlighting-kate)
           (hsPkgs.data-default)
           (hsPkgs.temporary)
-        ] ++ (if flags.blaze_html_0_5
-          then [
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-          ]
+          ] ++ (if flags.blaze_html_0_5
+          then [ (hsPkgs.blaze-html) (hsPkgs.blaze-markup) ]
           else [ (hsPkgs.blaze-html) ]);
-      };
+        };
       exes = {
         "pandoc" = {
           depends = [
@@ -78,8 +63,8 @@
             (hsPkgs.highlighting-kate)
             (hsPkgs.HTTP)
             (hsPkgs.citeproc-hs)
-          ];
-        };
+            ];
+          };
         "make-pandoc-man-pages" = {
           depends = [
             (hsPkgs.pandoc)
@@ -88,9 +73,9 @@
             (hsPkgs.filepath)
             (hsPkgs.old-time)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -112,9 +97,9 @@
             (hsPkgs.HUnit)
             (hsPkgs.containers)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -123,8 +108,8 @@
             (hsPkgs.syb)
             (hsPkgs.criterion)
             (hsPkgs.json)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

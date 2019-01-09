@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "multipool-persistent-postgresql";
         version = "0.1.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +16,7 @@
       synopsis = "Read and write appropriately from both master and replicated postgresql instances.";
       description = "Please see the README on GitHub at <https://github.com/iand675/multipool#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +31,8 @@
           (hsPkgs.postgresql-common-persistent)
           (hsPkgs.unliftio-core)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "multipool-persistent-postgresql-test" = {
           depends = [
@@ -54,8 +48,8 @@
             (hsPkgs.postgresql-common-persistent)
             (hsPkgs.unliftio-core)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

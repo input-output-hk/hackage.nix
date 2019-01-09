@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "path-io";
-        version = "1.3.2";
-      };
+      identifier = { name = "path-io"; version = "1.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Interface to ‘directory’ package for users of ‘path’";
       description = "Interface to ‘directory’ package for users of ‘path’.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unix-compat)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.path-io)
             (hsPkgs.transformers)
             (hsPkgs.unix-compat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

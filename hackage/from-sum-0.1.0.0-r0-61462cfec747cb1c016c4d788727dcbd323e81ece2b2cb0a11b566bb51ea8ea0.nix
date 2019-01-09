@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "from-sum";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "from-sum"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -22,19 +13,13 @@
       synopsis = "Canonical fromMaybeM and fromEitherM functions.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "from-sum-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         };
       };
-    };
-  }
+    }

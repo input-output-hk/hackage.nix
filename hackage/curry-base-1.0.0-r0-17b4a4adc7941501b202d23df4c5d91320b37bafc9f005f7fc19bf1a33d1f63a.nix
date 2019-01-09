@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      broken-directory = false;
-      old-time = false;
-    };
+    flags = { broken-directory = false; old-time = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "curry-base";
-        version = "1.0.0";
-      };
+      identifier = { name = "curry-base"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "fte@informatik.uni-kiel.de";
@@ -25,7 +13,7 @@
       synopsis = "Functions for manipulating Curry programs";
       description = "This package serves as a foundation for Curry compilers.\nIt defines the intermediate language formats FlatCurry.\nAdditionally, it provides functionality for the smooth\nintegration of compiler frontends and backends.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -37,26 +25,16 @@
           (hsPkgs.extra)
           (hsPkgs.parsec)
           (hsPkgs.pretty)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.4") [
           (hsPkgs.either)
           (hsPkgs.contravariant)
           (hsPkgs.semigroupoids)
-        ]) ++ (if flags.broken-directory
-          then [
-            (hsPkgs.time)
-            (hsPkgs.directory)
-            (hsPkgs.base)
-          ]
+          ]) ++ (if flags.broken-directory
+          then [ (hsPkgs.time) (hsPkgs.directory) (hsPkgs.base) ]
           else if flags.old-time
-            then [
-              (hsPkgs.old-time)
-              (hsPkgs.directory)
-            ]
-            else [
-              (hsPkgs.time)
-              (hsPkgs.directory)
-            ]);
-      };
+            then [ (hsPkgs.old-time) (hsPkgs.directory) ]
+            else [ (hsPkgs.time) (hsPkgs.directory) ]);
+        };
       tests = {
         "test-base" = {
           depends = [
@@ -65,8 +43,8 @@
             (hsPkgs.curry-base)
             (hsPkgs.filepath)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

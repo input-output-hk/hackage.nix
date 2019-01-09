@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tabl";
-        version = "1.0.2";
-      };
+      identifier = { name = "tabl"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Daniel Lovasko";
       maintainer = "Daniel Lovasko <daniel.lovasko@gmail.com>";
@@ -22,14 +13,8 @@
       synopsis = "Table layout";
       description = "Text.Tabl arranges multiple Text instances into a\ntable layout while providing means of alignment\nvisual decoration both horizontally and vertically.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.safe)
-          (hsPkgs.text)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.safe) (hsPkgs.text) ]; };
+      };
+    }

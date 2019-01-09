@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "leksah";
-        version = "0.6.0";
-      };
+      identifier = { name = "leksah"; version = "0.6.0"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2009 Juergen Nicklisch-Franken, Hamish Mackenzie";
       maintainer = "maintainer@leksah.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell IDE written in Haskell";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "leksah" = {
@@ -48,12 +39,12 @@
             (hsPkgs.regex-base)
             (hsPkgs.utf8-string)
             (hsPkgs.array)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32") ++ pkgs.lib.optional (system.isOsx) (pkgs."igemacintegration");
-        };
+          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32") ++ (pkgs.lib).optional (system.isOsx) (pkgs."igemacintegration");
+          };
         "leksahecho" = {};
+        };
       };
-    };
-  }
+    }

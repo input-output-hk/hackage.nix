@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { werror = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "structural-induction";
-        version = "0.1.2";
-      };
+      identifier = { name = "structural-induction"; version = "0.1.2"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "Dan Rosén <danr@chalmers.se>";
@@ -22,7 +13,7 @@
       synopsis = "Instantiate structural induction schemas for algebraic data types";
       description = "See documentation for Induction.Structural";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.pretty)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       tests = {
         "walk" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.testing-feat)
             (hsPkgs.geniplate)
             (hsPkgs.safe)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

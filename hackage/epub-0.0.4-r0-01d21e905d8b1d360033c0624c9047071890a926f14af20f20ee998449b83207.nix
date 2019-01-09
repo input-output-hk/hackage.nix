@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "epub";
-        version = "0.0.4";
-      };
+      identifier = { name = "epub"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "radoslav.dorcik@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "EPUB E-Book construction support library";
       description = "\nEPUB E-Book Construction support library, for the details look\nat http://en.wikipedia.org/wiki/EPUB.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.zip-archive)
           (hsPkgs.xml)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       exes = { "xhtml2epub" = {}; };
-    };
-  }
+      };
+    }

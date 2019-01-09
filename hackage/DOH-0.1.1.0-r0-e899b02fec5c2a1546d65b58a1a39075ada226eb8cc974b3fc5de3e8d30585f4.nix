@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "DOH";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "DOH"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "yigitozkavci8@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Complete API bindings for DigitalOcean API V2";
       description = "Complete API bindings for DigitalOcean API V2\n\nTo get started, see @Network.DigitalOcean@ module below.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.containers)
           (hsPkgs.filepath)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "do-test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.filepath)
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

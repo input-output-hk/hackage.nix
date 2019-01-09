@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "clckwrks-plugin-mailinglist";
         version = "0.3.0.2";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2012 Jeremy Shaw, SeeReason Partners LLC";
       maintainer = "Jeremy Shaw <jeremy@n-heptane.com>";
@@ -22,7 +16,7 @@
       synopsis = "mailing list plugin for clckwrks";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,7 +51,7 @@
           (hsPkgs.web-plugins)
           (hsPkgs.web-routes)
           (hsPkgs.web-routes-th)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

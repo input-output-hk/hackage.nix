@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hjs";
-        version = "0.2";
-      };
+      identifier = { name = "hjs"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Mark Wassell 2007";
       maintainer = "mwassell@bigpond.net.au";
@@ -22,7 +13,7 @@
       synopsis = "Javascript Parser";
       description = "A Javascript parser and interpreter.\nWorks as per ECMA-262 plus some parts of JS >=1.5.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "hjs" = {
@@ -31,8 +22,8 @@
             (hsPkgs.parsec)
             (hsPkgs.mtl)
             (hsPkgs.regex-compat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

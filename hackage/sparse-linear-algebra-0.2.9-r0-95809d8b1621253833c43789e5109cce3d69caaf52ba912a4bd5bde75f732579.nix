@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sparse-linear-algebra";
-        version = "0.2.9";
-      };
+      identifier = { name = "sparse-linear-algebra"; version = "0.2.9"; };
       license = "GPL-3.0-only";
       copyright = "2016 Marco Zocca";
       maintainer = "zocca.marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "Sparse linear algebra algorithms and datastructures for scientific computation, in native Haskell. Iterative linear solvers, matrix factorizations, linear eigensolvers and related utilities.";
       description = "/Overview/\n\nThe @sparse-linear-algebra@ library provides iterative linear solvers, matrix decompositions, eigenvalue computations and related utilities. The user interface is provided by the top-level module \"Numeric.LinearAlgebra.Sparse\":\n\n@\nimport           Numeric.LinearAlgebra.Sparse\n@\n\nPlease refer to the README file for usage examples.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.writer-cps-transformers)
           (hsPkgs.QuickCheck)
           (hsPkgs.hspec)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.primitive)
             (hsPkgs.sparse-linear-algebra)
             (hsPkgs.vector-space)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "scenegraph";
-        version = "0.1";
-      };
+      identifier = { name = "scenegraph"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Mark Wassell 2008";
       maintainer = "Mark Wassell <mwassell@bigpond.net.au>";
@@ -22,7 +13,7 @@
       synopsis = "Scene Graph";
       description = "Scene Graph Library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.array)
           (hsPkgs.old-time)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

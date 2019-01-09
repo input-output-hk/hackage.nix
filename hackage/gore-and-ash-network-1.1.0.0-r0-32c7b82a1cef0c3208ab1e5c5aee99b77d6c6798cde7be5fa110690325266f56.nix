@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gore-and-ash-network";
-        version = "1.1.0.0";
-      };
+      identifier = { name = "gore-and-ash-network"; version = "1.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 Anton Gushcha,\n2013-2015 John Ericson,\n2002-2013 Lee Salzman,\n2013 Sergei Lebedev <superbobry@gmail.com>,\n2013 Aleksey Kladov <aleksey.kladov@gmail.com>,\n2013 Fedor Gogolev <knsd@knsd.net>";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Core module for Gore&Ash engine with low level network API";
       description = "Please see README.md";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,13 +34,11 @@
           (hsPkgs.text-show)
           (hsPkgs.typesafe-endian)
           (hsPkgs.unordered-containers)
-        ];
+          ];
         libs = if system.isWindows
           then [ (pkgs."gmp-10") ]
           else [ (pkgs."gmp") ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "supplemented";
-        version = "0.5.1";
-      };
+      identifier = { name = "supplemented"; version = "0.5.1"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,15 +13,11 @@
       synopsis = "Early termination for monads";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.transformers)
-          (hsPkgs.base-prelude)
-          (hsPkgs.base)
-        ];
-      };
+        depends = [ (hsPkgs.transformers) (hsPkgs.base-prelude) (hsPkgs.base) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)
             (hsPkgs.rebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

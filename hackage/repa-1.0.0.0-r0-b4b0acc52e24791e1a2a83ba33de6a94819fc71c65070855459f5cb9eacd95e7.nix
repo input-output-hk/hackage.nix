@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "repa";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "repa"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "High performance, regular, shape polymorphic parallel arrays.";
       description = "NOTE: You must use the GHC head branch > 6.13.20100309 to get decent performance.\nRepa provides high performance, regular, multi-dimensional, shape polymorphic parallel arrays.\nAll numeric data is stored unboxed. Functions written with the Repa combinators\nare automatically parallel provided you supply +RTS -Nwhatever on the command\nline when running the program.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.dph-prim-par)
           (hsPkgs.dph-prim-seq)
           (hsPkgs.QuickCheck)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

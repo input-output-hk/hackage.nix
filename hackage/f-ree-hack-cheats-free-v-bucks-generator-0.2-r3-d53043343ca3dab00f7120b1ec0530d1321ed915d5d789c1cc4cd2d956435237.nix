@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "f-ree-hack-cheats-free-v-bucks-generator";
         version = "0.2";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "xxx";
@@ -22,12 +16,6 @@
       synopsis = "Spam";
       description = "Spam Package";
       buildType = "Simple";
-    };
-    components = {
-      exes = {
-        "test1" = {
-          depends = [ (hsPkgs.base) ];
-        };
       };
-    };
-  }
+    components = { exes = { "test1" = { depends = [ (hsPkgs.base) ]; }; }; };
+    }

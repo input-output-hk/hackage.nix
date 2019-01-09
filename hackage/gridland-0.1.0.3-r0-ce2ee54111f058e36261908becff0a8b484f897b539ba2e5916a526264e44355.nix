@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demo = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gridland";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "gridland"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "https://github.com/jxv";
@@ -22,7 +13,7 @@
       synopsis = "Grid-based multimedia engine";
       description = "Learn Haskell by drawing sprites and playing music and sound effects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,15 +32,15 @@
           (hsPkgs.mtl)
           (hsPkgs.array)
           (hsPkgs.safe)
-        ];
-      };
-      exes = {
-        "demo" = {
-          depends = pkgs.lib.optionals (flags.demo) [
-            (hsPkgs.base)
-            (hsPkgs.gridland)
           ];
         };
+      exes = {
+        "demo" = {
+          depends = (pkgs.lib).optionals (flags.demo) [
+            (hsPkgs.base)
+            (hsPkgs.gridland)
+            ];
+          };
+        };
       };
-    };
-  }
+    }

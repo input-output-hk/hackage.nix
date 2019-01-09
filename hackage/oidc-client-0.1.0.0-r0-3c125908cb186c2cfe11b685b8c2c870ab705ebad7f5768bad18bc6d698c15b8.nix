@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-uri = true;
-      build-examples = false;
-    };
+    flags = { network-uri = true; build-examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "oidc-client";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "oidc-client"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 Sho Kuroda";
       maintainer = "Sho Kuroda <krdlab@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "OpenID Connect 1.0 library for RP";
       description = "This package supports implementing of an OpenID Connect 1.0 Relying Party.\n\nExamples: <https://github.com/krdlab/haskell-oidc-client/tree/master/examples>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,14 +29,11 @@
           (hsPkgs.jose-jwt)
           (hsPkgs.time)
           (hsPkgs.crypto-random)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-      };
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        };
       exes = {
         "scotty-example" = {
-          depends = pkgs.lib.optionals (flags.build-examples) [
+          depends = (pkgs.lib).optionals (flags.build-examples) [
             (hsPkgs.base)
             (hsPkgs.oidc-client)
             (hsPkgs.bytestring)
@@ -66,17 +51,13 @@
             (hsPkgs.http-client)
             (hsPkgs.tls)
             (hsPkgs.http-client-tls)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "oidc-client-spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.oidc-client)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.oidc-client) ];
+          };
         };
       };
-    };
-  }
+    }

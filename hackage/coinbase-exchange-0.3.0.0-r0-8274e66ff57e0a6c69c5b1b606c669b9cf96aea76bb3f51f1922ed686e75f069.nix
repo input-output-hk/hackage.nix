@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "coinbase-exchange";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "coinbase-exchange"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrewrademacher@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Connector library for the coinbase exchange.";
       description = "Access library for the coinbase exchange. Allows the use\nof both the public market data API as well as the private\naccount data API. Additionally provides types to connect\nto the streaming API via a websocket.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +45,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.unordered-containers)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       exes = {
         "sandbox" = {
           depends = [
@@ -79,9 +70,9 @@
             (hsPkgs.scientific)
             (hsPkgs.unordered-containers)
             (hsPkgs.coinbase-exchange)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-coinbase" = {
           depends = [
@@ -104,8 +95,8 @@
             (hsPkgs.aeson)
             (hsPkgs.unordered-containers)
             (hsPkgs.coinbase-exchange)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

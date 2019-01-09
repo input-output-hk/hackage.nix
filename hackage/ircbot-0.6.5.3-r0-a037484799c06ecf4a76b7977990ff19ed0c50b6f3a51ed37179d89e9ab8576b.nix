@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ircbot";
-        version = "0.6.5.3";
-      };
+      identifier = { name = "ircbot"; version = "0.6.5.3"; };
       license = "BSD-3-Clause";
       copyright = "2012 SeeReason Partners LLC";
       maintainer = "jeremy@seereason.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for writing IRC bots";
       description = "A simple library for an IRC bot";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.random)
           (hsPkgs.stm)
           (hsPkgs.SafeSemaphore)
-        ];
-      };
+          ];
+        };
       exes = {
         "demo" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.random)
             (hsPkgs.stm)
             (hsPkgs.SafeSemaphore)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

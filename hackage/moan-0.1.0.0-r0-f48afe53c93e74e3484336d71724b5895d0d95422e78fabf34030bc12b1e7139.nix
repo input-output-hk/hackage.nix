@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "moan";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "moan"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "vjeran.crnjak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Language-agnostic analyzer for positional morphosyntactic tags";
       description = "Implementation of a space-efficient morphosyntactic analyzer.\nIt solves a problem of providing a set of possible tags for a given word.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.tagset-positional)
           (hsPkgs.regex-tdfa-text)
           (hsPkgs.regex-tdfa)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

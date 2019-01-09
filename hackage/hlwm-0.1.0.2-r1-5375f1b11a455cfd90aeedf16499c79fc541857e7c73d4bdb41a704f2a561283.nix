@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hlwm";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "hlwm"; version = "0.1.0.2"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "<hpd@hpdeifel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to the herbstluftwm window manager";
       description = "A client-side IPC implementation for herbstluftwm.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,11 +22,9 @@
           (hsPkgs.transformers)
           (hsPkgs.stm)
           (hsPkgs.unix)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       exes = {
         "hherbstclient" = {
           depends = [
@@ -45,11 +34,9 @@
             (hsPkgs.stm)
             (hsPkgs.unix)
             (hsPkgs.hlwm)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hsc2hs)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          };
         };
       };
-    };
-  }
+    }

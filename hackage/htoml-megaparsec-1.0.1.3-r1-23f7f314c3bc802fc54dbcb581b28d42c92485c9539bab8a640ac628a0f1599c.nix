@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "htoml-megaparsec";
-        version = "1.0.1.3";
-      };
+      identifier = { name = "htoml-megaparsec"; version = "1.0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013-2016 Cies Breijs, 2017 Vanessa McHale";
       maintainer = "Vanessa McHale <vanessa.mchale@reconfigure.io>";
@@ -22,7 +13,7 @@
       synopsis = "Parser for TOML files";
       description = "TOML is an obvious and minimal format for config files.\nThis package provides a TOML parser\nbuilt with the Megaparsec.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       tests = {
         "htoml-test" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.time)
             (hsPkgs.htoml-megaparsec)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "strelka-wai";
-        version = "1";
-      };
+      identifier = { name = "strelka-wai"; version = "1"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "WAI compatibility layer for \"strelka\"";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

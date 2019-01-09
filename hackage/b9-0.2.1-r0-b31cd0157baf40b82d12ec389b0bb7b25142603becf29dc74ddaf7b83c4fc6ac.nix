@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "b9";
-        version = "0.2.1";
-      };
+      identifier = { name = "b9"; version = "0.2.1"; };
       license = "MIT";
       copyright = "2015 Sven Heyll <svh@posteo.de>";
       maintainer = "svh@posteo.de";
@@ -22,7 +13,7 @@
       synopsis = "A build tool and library for virtual machines.";
       description = "An experimental tool and library for creating, modifying, running\nand sharing virtual machines.\nThis tools focuses on speed, reliability and correctness.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +45,8 @@
           (hsPkgs.vector)
           (hsPkgs.yaml)
           (hsPkgs.bifunctors)
-        ];
-      };
+          ];
+        };
       exes = {
         "b9c" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

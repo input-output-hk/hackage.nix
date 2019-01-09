@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "claferwiki";
-        version = "0.3.5.1";
-      };
+      identifier = { name = "claferwiki"; version = "0.3.5.1"; };
       license = "MIT";
       copyright = "Michał Antkiewicz, Chris Walker, Luke Michael Brown";
       maintainer = "Michał Antkiewicz <mantkiew@gsd.uwaterloo.ca>";
@@ -22,7 +13,7 @@
       synopsis = "A wiki-based IDE for literate modeling with Clafer";
       description = "A wiki-based IDE for literate modeling with Clafer. A Plugin for the Gitit wiki which collects code blocks written in Clafer (.clafer), compiles them, renders into HTML and Dot, and replaces the code blocks with the results.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.pandoc-types)
           (hsPkgs.gitit)
           (hsPkgs.clafer)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { testing = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "treemap-html-tools";
-        version = "0.1";
-      };
+      identifier = { name = "treemap-html-tools"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Radoslav Dorcik <radoslav.dorcik@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Treemap related commands for producing foldable TreeMap HTML.";
       description = "Contains various commands for TreeMap generation,\nfor example dirmap produces the foldable treemap for\ngiven directory tree structure.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.filepath)
           (hsPkgs.containers)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       exes = { "dirmap" = {}; };
-    };
-  }
+      };
+    }

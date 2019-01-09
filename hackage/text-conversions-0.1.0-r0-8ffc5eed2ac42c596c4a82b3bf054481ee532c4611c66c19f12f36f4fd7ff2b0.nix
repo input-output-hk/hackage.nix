@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-conversions";
-        version = "0.1.0";
-      };
+      identifier = { name = "text-conversions"; version = "0.1.0"; };
       license = "ISC";
       copyright = "";
       maintainer = "lexi.lambda@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Safe conversions between textual types";
       description = "Safe conversions between textual types";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.errors)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "text-conversions-test-suite" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-discover)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

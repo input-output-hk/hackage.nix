@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddc-war";
-        version = "0.4.1.3";
-      };
+      identifier = { name = "ddc-war"; version = "0.4.1.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Disciplined Disciple Compiler test driver and buildbot.";
       description = "Disciplined Disciple Compiler test driver and buildbot.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ddc-war" = {
@@ -35,8 +26,8 @@
             (hsPkgs.process)
             (hsPkgs.filepath)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

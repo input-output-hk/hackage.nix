@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-thrift";
-        version = "0.8.0.0";
-      };
+      identifier = { name = "language-thrift"; version = "0.8.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Abhinav Gupta <mail@abhinavg.net>";
@@ -22,7 +13,7 @@
       synopsis = "Parser and pretty printer for the Thrift IDL format.";
       description = "This package provides a parser and pretty printer for the\n<http://thrift.apache.org/docs/idl Thrift IDL format>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.megaparsec)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.language-thrift)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "find-clumpiness";
-        version = "0.2.1.2";
-      };
+      identifier = { name = "find-clumpiness"; version = "0.2.1.2"; };
       license = "GPL-3.0-only";
       copyright = "Copyright 2017 Gregory W. Schwartz";
       maintainer = "gsch@mail.med.upenn.edu";
@@ -22,7 +13,7 @@
       synopsis = "Find the clumpiness of labels in a tree";
       description = "Use a clumpiness measure to find the aggregation relationship between labels inside of a tree.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.aeson)
           (hsPkgs.BiobaseNewick)
           (hsPkgs.listsafe)
-        ];
-      };
+          ];
+        };
       exes = {
         "find-clumpiness" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
             (hsPkgs.BiobaseNewick)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

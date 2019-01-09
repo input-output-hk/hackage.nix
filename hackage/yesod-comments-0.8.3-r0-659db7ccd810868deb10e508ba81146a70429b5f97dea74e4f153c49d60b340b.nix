@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-comments";
-        version = "0.8.3";
-      };
+      identifier = { name = "yesod-comments"; version = "0.8.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@pbrisbin.com";
@@ -22,7 +13,7 @@
       synopsis = "A generic comments interface for a Yesod application";
       description = "A generic comments interface for a Yesod application";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.directory)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

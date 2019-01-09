@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "asif";
-        version = "1.0.0";
-      };
+      identifier = { name = "asif"; version = "1.0.0"; };
       license = "MIT";
       copyright = "Arbor Networks";
       maintainer = "tyler.durden@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/packetloop/asif#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.text)
           (hsPkgs.thyme)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "asif" = {
           depends = [
@@ -74,9 +65,9 @@
             (hsPkgs.text)
             (hsPkgs.thyme)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "asif-test" = {
           depends = [
@@ -105,8 +96,8 @@
             (hsPkgs.text)
             (hsPkgs.thyme)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

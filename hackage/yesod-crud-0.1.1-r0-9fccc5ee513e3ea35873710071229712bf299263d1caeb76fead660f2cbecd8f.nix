@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-crud";
-        version = "0.1.1";
-      };
+      identifier = { name = "yesod-crud"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Christopher League";
       maintainer = "league@contrapunctus.net";
@@ -22,7 +13,7 @@
       synopsis = "Generic administrative CRUD operations as a Yesod subsite";
       description = "This package helps you build administrative CRUD\noperations (Create, Retrieve, Update, Delete) into\nyour web site, as Yesod subsites. There is a demo\nsite in the @example@ directory in the distribution.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-form)
           (hsPkgs.yesod-persistent)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

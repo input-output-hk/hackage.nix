@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arion";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "arion"; version = "0.1.0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "karun012@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Watcher and runner for Hspec";
       description = "Watcher and runner for Hspec";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "arion" = {
@@ -39,9 +30,9 @@
             (hsPkgs.process)
             (hsPkgs.directory)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.safe)
             (hsPkgs.process)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

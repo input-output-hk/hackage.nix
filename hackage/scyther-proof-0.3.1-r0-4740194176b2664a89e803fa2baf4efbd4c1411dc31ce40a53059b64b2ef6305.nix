@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { threaded = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "scyther-proof";
-        version = "0.3.1";
-      };
+      identifier = { name = "scyther-proof"; version = "0.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "Simon Meier, ETH Zurich, 2009-2011";
       maintainer = "Simon Meier <simon.meier@inf.ethz.ch>";
@@ -22,7 +13,7 @@
       synopsis = "Automatic generation of Isabelle/HOL correctness proofs for security protocols.";
       description = "scyther-proof is a security protocol verification tool\nbased on an algorithm similar to the Scyther tool developed\nby Cas Cremers\n(<http://people.inf.ethz.ch/cremersc/scyther/index.html>).\nThe theory underlying scyther-proof is described in the\npaper \\\"Strong Invariants for the Efficient Construction of\nMachine-Checked Protocol Security Proofs\\\" by Meier,\nCremers, and Basin available from\n<http://people.inf.ethz.ch/meiersi/publications/index.html>\n\nParts of the infrastructure underlying scyther-proof are\nreused in other projects by the same author. Therefore,\nmost of its modules are exported in the corresponding\nscyther-proof library. However, this library is not yet\nthought for general use. Please contact the author, if you\nwould like to build upon/extend scyther-proof.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,11 +31,9 @@
           (hsPkgs.tagsoup)
           (hsPkgs.json)
           (hsPkgs.uniplate)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       exes = {
         "scyther-proof" = {
           depends = [
@@ -63,8 +52,8 @@
             (hsPkgs.tagsoup)
             (hsPkgs.json)
             (hsPkgs.uniplate)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

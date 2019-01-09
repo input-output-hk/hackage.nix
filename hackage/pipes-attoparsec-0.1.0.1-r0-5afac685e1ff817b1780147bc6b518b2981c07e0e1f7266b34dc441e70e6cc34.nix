@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pipes-attoparsec";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "pipes-attoparsec"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Paolo Capriotti 2012-2012,\nRenzo Carbonara 2012-";
       maintainer = "renzocarbonaraλgmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities to convert an Attoparsec parser into a pipe Pipe.";
       description = "Utilities to convert an Attoparsec 'Data.Attoparsec.Types.Parser' into\na 'Control.Proxy.Synonym.Pipe'.\n\nSee \"Control.Proxy.Attoparsec.Tutorial\" for an extensive introduction with\nexamples.\n\nVersion 0.1.* is not backwards compatible with previous versions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

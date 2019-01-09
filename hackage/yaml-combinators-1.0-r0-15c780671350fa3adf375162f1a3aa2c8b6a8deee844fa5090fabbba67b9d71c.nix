@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yaml-combinators";
-        version = "1.0";
-      };
+      identifier = { name = "yaml-combinators"; version = "1.0"; };
       license = "MIT";
       copyright = "(c) 2015 Signal Vine, LLC\n(c) 2017 Roman Cheplyaka";
       maintainer = "roma@ro-che.info";
@@ -22,7 +13,7 @@
       synopsis = "YAML parsing combinators for improved validation and error reporting";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,14 +38,9 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.unordered-containers)
             (hsPkgs.yaml-combinators)
-          ];
-        };
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

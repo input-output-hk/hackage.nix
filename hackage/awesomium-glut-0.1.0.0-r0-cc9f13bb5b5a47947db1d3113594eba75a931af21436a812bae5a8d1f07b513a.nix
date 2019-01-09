@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "awesomium-glut";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "awesomium-glut"; version = "0.1.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "(c) 2012 Maksymilian Owsianny";
       maintainer = "Maksymilian.Owsianny+AwesomiumGLUT@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for using Awesomium with GLUT.";
       description = "This package contains utilities for integrating\nAwesomium with GLUT (Mainly functions for\nmarshalling input).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.awesomium)
           (hsPkgs.base)
           (hsPkgs.GLUT)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

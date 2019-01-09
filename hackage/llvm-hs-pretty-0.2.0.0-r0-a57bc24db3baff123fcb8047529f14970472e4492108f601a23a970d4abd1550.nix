@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "llvm-hs-pretty";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "llvm-hs-pretty"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "stephen.m.diehl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pretty printer for LLVM IR.";
       description = "Pretty printer for LLVM IR.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.llvm-hs-pure)
           (hsPkgs.text)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.llvm-hs-pretty)
             (hsPkgs.llvm-hs)
             (hsPkgs.llvm-hs-pure)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

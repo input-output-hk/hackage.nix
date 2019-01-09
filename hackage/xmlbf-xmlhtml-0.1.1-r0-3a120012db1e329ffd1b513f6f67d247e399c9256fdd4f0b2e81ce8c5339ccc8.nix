@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xmlbf-xmlhtml";
-        version = "0.1.1";
-      };
+      identifier = { name = "xmlbf-xmlhtml"; version = "0.1.1"; };
       license = "Apache-2.0";
       copyright = "Copyright 2017-2018 Renzo Carbonara";
       maintainer = "ren§ren*zone";
@@ -22,7 +13,7 @@
       synopsis = "xmlhtml backend support for the xmlbf library.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.xmlbf)
           (hsPkgs.xmlhtml)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "ihaskell-parsec";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "ihaskell-parsec"; version = "0.2.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.gibiansky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "IHaskell display instances for Parsec";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.parsec)
           (hsPkgs.here)
           (hsPkgs.ihaskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "graph-rewriting-cl";
-        version = "0.2.2";
-      };
+      identifier = { name = "graph-rewriting-cl"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010, Jan Rochel";
       maintainer = "jan@rochel.info";
@@ -22,7 +13,7 @@
       synopsis = "Interactive graph rewriting system implementing various well-known combinators";
       description = "Currently the following combinators are supported: S K I B C S' B' C' W";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cl" = {
@@ -35,8 +26,8 @@
             (hsPkgs.parsec)
             (hsPkgs.GLUT)
             (hsPkgs.OpenGL)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

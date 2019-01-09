@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      profiling = false;
-      with-example = false;
-    };
+    flags = { profiling = false; with-example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "configifier";
-        version = "0.1.1";
-      };
+      identifier = { name = "configifier"; version = "0.1.1"; };
       license = "AGPL-3.0-only";
       copyright = "zerobuzz.net";
       maintainer = "Matthias Fischmann <mf@zerobuzz.net>";
@@ -25,7 +13,7 @@
       synopsis = "parser for config files, shell variables, command line args.";
       description = "See <https://github.com/zerobuzz/configifier/blob/master/README.md README>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +31,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "configifier-example" = {
           depends = [
@@ -56,9 +44,9 @@
             (hsPkgs.string-conversions)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -76,8 +64,8 @@
             (hsPkgs.string-conversions)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

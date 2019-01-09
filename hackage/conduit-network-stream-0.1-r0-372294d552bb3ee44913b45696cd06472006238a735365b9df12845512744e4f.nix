@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "conduit-network-stream";
-        version = "0.1";
-      };
+      identifier = { name = "conduit-network-stream"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mail@nils.cc";
@@ -22,7 +13,7 @@
       synopsis = "A base layer for network protocols using Conduits";
       description = "A base layer for network protocols using Conduits";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.conduit)
           (hsPkgs.network-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

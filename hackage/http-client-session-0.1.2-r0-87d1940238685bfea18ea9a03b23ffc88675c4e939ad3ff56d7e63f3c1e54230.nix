@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-client-session";
-        version = "0.1.2";
-      };
+      identifier = { name = "http-client-session"; version = "0.1.2"; };
       license = "MIT";
       copyright = "(c) 2016, Sannsyn AS";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A simple abstraction over the \"http-client\" connection manager";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.either)
           (hsPkgs.mtl-prelude)
           (hsPkgs.base-prelude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

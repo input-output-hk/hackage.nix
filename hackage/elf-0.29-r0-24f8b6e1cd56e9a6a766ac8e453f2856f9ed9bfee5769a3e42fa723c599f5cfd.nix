@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "elf";
-        version = "0.29";
-      };
+      identifier = { name = "elf"; version = "0.29"; };
       license = "BSD-3-Clause";
       copyright = "Erik Charlebois";
       maintainer = "Baojun Wang <wangbj@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "An Elf parser";
       description = "Parser for ELF object format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.binary)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.binary) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.hspec)
             (hsPkgs.containers)
             (hsPkgs.elf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

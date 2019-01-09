@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      production = false;
-      web = true;
-      devel = false;
-    };
+    flags = { production = false; web = true; devel = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tkyprof";
-        version = "0.0.1";
-      };
+      identifier = { name = "tkyprof"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mitsutoshi Aoe <maoe@foldr.in>";
@@ -26,7 +13,7 @@
       synopsis = "A visualizer for GHC Profiling Reports";
       description = "A visualizer for GHC Profiling Reports";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
@@ -55,17 +42,17 @@
             (hsPkgs.yesod-form)
             (hsPkgs.yesod-json)
             (hsPkgs.yesod-static)
-          ] ++ pkgs.lib.optionals (flags.production) (pkgs.lib.optional (!flags.web) (hsPkgs.wai-handler-webkit));
-          pkgconfig = pkgs.lib.optionals (flags.production) (pkgs.lib.optional (!flags.web) (pkgconfPkgs.QtWebKit));
-        };
+            ] ++ (pkgs.lib).optionals (flags.production) ((pkgs.lib).optional (!flags.web) (hsPkgs.wai-handler-webkit));
+          pkgconfig = (pkgs.lib).optionals (flags.production) ((pkgs.lib).optional (!flags.web) (pkgconfPkgs.QtWebKit));
+          };
         "prof2json" = {
           depends = [
             (hsPkgs.filepath)
             (hsPkgs.mtl)
             (hsPkgs.blaze-builder)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

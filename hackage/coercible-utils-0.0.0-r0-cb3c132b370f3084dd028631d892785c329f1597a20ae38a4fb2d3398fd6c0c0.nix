@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "coercible-utils";
-        version = "0.0.0";
-      };
+      identifier = { name = "coercible-utils"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Simon Jakobi, chessai";
       maintainer = "simon.jakobi@gmail.com";
@@ -22,27 +13,18 @@
       synopsis = "Utility functions for Coercible types.";
       description = "Utility functions for Coercible types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "coercible-utils-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.coercible-utils)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.coercible-utils) ];
+          };
         };
-      };
       benchmarks = {
         "coercible-utils-benchmark" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.gauge)
-            (hsPkgs.coercible-utils)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.gauge) (hsPkgs.coercible-utils) ];
+          };
         };
       };
-    };
-  }
+    }

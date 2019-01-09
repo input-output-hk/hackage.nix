@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Fungi";
-        version = "1.0.3";
-      };
+      identifier = { name = "Fungi"; version = "1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomasedingcode@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An interpreter for Funge-98 programming languages, including Befunge.";
       description = "Fungi is a standards compliant Funge-98 interpreter equipped with an integrated debugger.\nSupports funges of arbitrary dimensions, including Unefunge, Befunge, and Trefunge.\nAllows limited control of funge cell size.\nSeveral fingerprints are implemented.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "fungi" = {
@@ -40,8 +31,8 @@
             (hsPkgs.random)
             (hsPkgs.tuple)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

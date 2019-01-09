@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "tabs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tabs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomasedingcode@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Indents source files";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.filepath)
           (hsPkgs.monadlist)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "tabs" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.filepath)
             (hsPkgs.monadlist)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bmi2 = false;
-      sse42 = false;
-    };
+    flags = { bmi2 = false; sse42 = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-json";
-        version = "0.9.0.1";
-      };
+      identifier = { name = "hw-json"; version = "0.9.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Memory efficient JSON parser";
       description = "Memory efficient JSON parser. Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +35,8 @@
           (hsPkgs.hw-parser)
           (hsPkgs.text)
           (hsPkgs.word8)
-        ];
-      };
+          ];
+        };
       exes = {
         "hw-json" = {
           depends = [
@@ -67,9 +55,9 @@
             (hsPkgs.hw-mquery)
             (hsPkgs.lens)
             (hsPkgs.optparse-applicative)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.semigroups);
+          };
         };
-      };
       tests = {
         "hw-json-test" = {
           depends = [
@@ -86,9 +74,9 @@
             (hsPkgs.containers)
             (hsPkgs.hspec)
             (hsPkgs.hw-json)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -104,8 +92,8 @@
             (hsPkgs.criterion)
             (hsPkgs.directory)
             (hsPkgs.hw-json)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

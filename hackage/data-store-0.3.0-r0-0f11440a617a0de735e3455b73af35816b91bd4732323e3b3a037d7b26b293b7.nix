@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "data-store";
-        version = "0.3.0";
-      };
+      identifier = { name = "data-store"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "maintainer+the.palmik@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Type safe, in-memory dictionary with multidimensional keys.";
       description = "Type safe, in-memory dictionary with multidimensional keys.\nSimilar to ixset, higgsset, tables. But offers: type safe interface,\nauto-increment dimensions, specifying the relationships between the key dimension and the elements (one-one, one-many, many-one, many-many), performance.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.cereal)
           (hsPkgs.deepseq)
           (hsPkgs.safecopy)
-        ];
-      };
+          ];
+        };
       tests = {
         "data-store-tests" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "data-store-benchmark-01" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

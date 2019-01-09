@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conduit-throttle";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "conduit-throttle"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Moritz Schulte";
       maintainer = "mtesseract@silverratio.net";
@@ -22,7 +13,7 @@
       synopsis = "Throttle Conduit Producers";
       description = "This packages is based on the throttle-io-stream package and provides functionality for throttling Conduit producers according to a provided configuration.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.unliftio-core)
           (hsPkgs.throttle-io-stream)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       tests = {
         "conduit-test" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.conduit-throttle)
             (hsPkgs.throttle-io-stream)
             (hsPkgs.stm-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

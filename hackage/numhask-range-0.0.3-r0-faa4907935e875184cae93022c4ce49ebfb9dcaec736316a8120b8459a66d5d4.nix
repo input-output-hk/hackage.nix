@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "numhask-range";
-        version = "0.0.3";
-      };
+      identifier = { name = "numhask-range"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Numbers that are range representations";
       description = "Numbers that represent ranges of all sorts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.linear)
           (hsPkgs.formatting)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.numhask)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

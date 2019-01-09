@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { quickcheck2 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "FComp";
-        version = "1.0.1";
-      };
+      identifier = { name = "FComp"; version = "1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2014 University of Oxford";
       maintainer = "jpm@cs.ox.ac.uk";
@@ -22,7 +13,7 @@
       synopsis = "Compose music";
       description = "Compose music";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.midi)
           (hsPkgs.random)
           (hsPkgs.time)
-        ] ++ [ (hsPkgs.QuickCheck) ];
-      };
+          ] ++ [ (hsPkgs.QuickCheck) ];
+        };
       exes = {
         "fcomp" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.midi)
             (hsPkgs.random)
             (hsPkgs.time)
-          ] ++ [ (hsPkgs.QuickCheck) ];
+            ] ++ [ (hsPkgs.QuickCheck) ];
+          };
         };
       };
-    };
-  }
+    }

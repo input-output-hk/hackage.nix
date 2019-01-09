@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "flat";
-        version = "0.2.2";
-      };
+      identifier = { name = "flat"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Pasqualino `Titto` Assini";
       maintainer = "tittoassini@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Principled and efficient bit-oriented binary serialization.";
       description = "See the <http://github.com/tittoassini/flat online tutorial>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "flat-test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.text)
             (hsPkgs.flat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

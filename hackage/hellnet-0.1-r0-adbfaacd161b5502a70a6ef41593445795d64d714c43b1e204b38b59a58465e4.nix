@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "hellnet";
-        version = "0.1";
-      };
+      identifier = { name = "hellnet"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "voker57@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple, distributed, anonymous data sharing network.";
       description = "Hellnet is a project to create simple, distributed, anonymous data sharing network.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,32 +37,22 @@
           (hsPkgs.utf8-string)
           (hsPkgs.RSA)
           (hsPkgs.uri)
-        ];
-      };
-      exes = {
-        "hell-insert" = {
-          depends = [ (hsPkgs.base) ];
-        };
-        "hell-get" = {
-          depends = [
-            (hsPkgs.regex-posix)
           ];
         };
+      exes = {
+        "hell-insert" = { depends = [ (hsPkgs.base) ]; };
+        "hell-get" = { depends = [ (hsPkgs.regex-posix) ]; };
         "hell-meta" = {};
-        "hell-nodes" = {
-          depends = [ (hsPkgs.base) ];
-        };
-        "hell-fsck" = {
-          depends = [ (hsPkgs.base) ];
-        };
+        "hell-nodes" = { depends = [ (hsPkgs.base) ]; };
+        "hell-fsck" = { depends = [ (hsPkgs.base) ]; };
         "hell-serve" = {
           depends = [
             (hsPkgs.Lucu)
             (hsPkgs.network)
             (hsPkgs.mtl)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

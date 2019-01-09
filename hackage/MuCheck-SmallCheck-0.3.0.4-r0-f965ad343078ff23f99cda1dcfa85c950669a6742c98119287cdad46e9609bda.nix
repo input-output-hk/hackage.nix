@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "MuCheck-SmallCheck";
-        version = "0.3.0.4";
-      };
+      identifier = { name = "MuCheck-SmallCheck"; version = "0.3.0.4"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "rahul@gopinath.org";
@@ -22,23 +13,15 @@
       synopsis = "Automated Mutation Testing for SmallCheck tests";
       description = "This package contains the test adapter for SmallCheck tests to use it with MuCheck";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.smallcheck)
-          (hsPkgs.MuCheck)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.smallcheck) (hsPkgs.MuCheck) ];
+        };
       exes = {
         "mucheck-smallcheck" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.smallcheck)
-            (hsPkgs.MuCheck)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.smallcheck) (hsPkgs.MuCheck) ];
+          };
         };
       };
-    };
-  }
+    }

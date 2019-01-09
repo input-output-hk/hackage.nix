@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "bitset";
-        version = "1.2";
-      };
+      identifier = { name = "bitset"; version = "1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Sergei Lebedev <superbobry@gmail.com>";
@@ -22,14 +13,9 @@
       synopsis = "A compact functional set data structure.";
       description = "A /bit set/ is a compact data structure, which maintains a set of members\nfrom a type that can be enumerated (i. e. has an `Enum' instance). Current\nimplementations uses @Integer@ for as bit storage and provides most of the\nexpected set operations: insertion, deletion, intersection, membership\ntesting etc.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.deepseq)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.deepseq) ]; };
       tests = {
         "bitset-tests" = {
           depends = [
@@ -38,9 +24,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.bitset)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bitset-benchmarks" = {
           depends = [
@@ -48,8 +34,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.bitset)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

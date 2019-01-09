@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "wait-handle";
-        version = "0.1";
-      };
+      identifier = { name = "wait-handle"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "vi <vi@zalora.com>";
@@ -22,10 +13,6 @@
       synopsis = "Packaging of 'WaitHandle', extracted from Max Bolingbroke's OpenShake. Wait\nhandles are MVars which can only be written to once, and from which values\ncan never be removed.";
       description = "Packaging of 'WaitHandle', extracted from Max Bolingbroke's OpenShake. Wait\nhandles are MVars which can only be written to once, and from which values\ncan never be removed.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

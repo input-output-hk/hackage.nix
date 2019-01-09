@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-executables = false;
-    };
+    flags = { build-executables = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "time-warp";
-        version = "1.1.1.2";
-      };
+      identifier = { name = "time-warp"; version = "1.1.1.2"; };
       license = "MIT";
       copyright = "2016 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -24,7 +13,7 @@
       synopsis = "Distributed systems execution emulation";
       description = "This package allows to write scenarios over distributed\nsystems, which can be launched as either real program or\nfast emulation without need to wait for delays and with\nnetwork nastiness manually controlled.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -74,8 +63,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "ping-pong" = {
           depends = [
@@ -91,8 +80,8 @@
             (hsPkgs.text)
             (hsPkgs.time-warp)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "socket-state" = {
           depends = [
             (hsPkgs.base)
@@ -110,8 +99,8 @@
             (hsPkgs.text)
             (hsPkgs.time-warp)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "net-playground" = {
           depends = [
             (hsPkgs.async)
@@ -137,8 +126,8 @@
             (hsPkgs.time-warp)
             (hsPkgs.transformers)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "bench-sender" = {
           depends = [
             (hsPkgs.async)
@@ -165,8 +154,8 @@
             (hsPkgs.time-warp)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "bench-receiver" = {
           depends = [
             (hsPkgs.attoparsec)
@@ -188,8 +177,8 @@
             (hsPkgs.time-units)
             (hsPkgs.time-warp)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "bench-log-reader" = {
           depends = [
             (hsPkgs.attoparsec)
@@ -216,9 +205,9 @@
             (hsPkgs.time-units)
             (hsPkgs.time-warp)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "time-warp-test" = {
           depends = [
@@ -240,8 +229,8 @@
             (hsPkgs.time-warp)
             (hsPkgs.transformers)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "case-insensitive-match";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "case-insensitive-match"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Michael Hatfield";
       maintainer = "github@michael-hatfield.com";
@@ -22,24 +13,20 @@
       synopsis = "A simplified, faster way to do case-insensitive matching.";
       description = "A way to do case-insensitive string matching and comparison with less\noverhead and more speed. The 'Data.CaseInsensitive.Eq' module offers\nsimplified syntax and optimized instances for 'ByteString', 'String' and\n'Text'. In particular, the 'ByteString' implementation assumes ISO-8859-1\n(8-bit) encoding and performs benchmark testing significantly faster than\nother implementations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
+        };
       exes = {
         "readme-example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.case-insensitive-match)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-basics" = {
           depends = [
@@ -49,9 +36,9 @@
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-others" = {
           depends = [
@@ -62,8 +49,8 @@
             (hsPkgs.case-insensitive)
             (hsPkgs.random-strings)
             (hsPkgs.criterion)
-          ];
-        };
+            ];
+          };
         "bench-tagsoup" = {
           depends = [
             (hsPkgs.base)
@@ -72,8 +59,8 @@
             (hsPkgs.case-insensitive-match)
             (hsPkgs.criterion)
             (hsPkgs.tagsoup)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

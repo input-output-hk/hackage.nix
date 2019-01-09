@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       test-properties = true;
@@ -14,13 +8,10 @@
       threaded = true;
       llvm = false;
       optimized = true;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "structures";
-        version = "0.2";
-      };
+      identifier = { name = "structures"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -30,7 +21,7 @@
       synopsis = "\"Advanced\" Data Structures";
       description = "This package is a playground for working with several types of advanced data structures including\nwavelet trees and cache oblivious lookahead arrays.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,11 +42,11 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
-          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.structures)
             (hsPkgs.deepseq)
@@ -63,26 +54,26 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
-          ];
-        };
+            ];
+          };
         "hunit" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hunit)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hunit)) [
             (hsPkgs.base)
             (hsPkgs.structures)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-th)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -92,9 +83,9 @@
             (hsPkgs.filepath)
             (hsPkgs.semigroups)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "maps" = {
           depends = [
@@ -106,8 +97,8 @@
             (hsPkgs.structures)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "lookups" = {
           depends = [
             (hsPkgs.array)
@@ -119,8 +110,8 @@
             (hsPkgs.structures)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "inserts" = {
           depends = [
             (hsPkgs.array)
@@ -132,8 +123,8 @@
             (hsPkgs.structures)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

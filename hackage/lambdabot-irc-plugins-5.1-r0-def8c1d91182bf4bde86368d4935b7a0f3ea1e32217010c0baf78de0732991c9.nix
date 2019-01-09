@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lambdabot-irc-plugins";
-        version = "5.1";
-      };
+      identifier = { name = "lambdabot-irc-plugins"; version = "5.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,7 +13,7 @@
       synopsis = "IRC plugins for lambdabot.";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nProvided plugins:\n\n[irc] Lets lambdabot connect to IRC.\n\n[localtime] Check user's local time.\n\n[log] Log IRC channels.\n\n[topic] Modify channel topics.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.time)
           (hsPkgs.SafeSemaphore)
           (hsPkgs.split)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

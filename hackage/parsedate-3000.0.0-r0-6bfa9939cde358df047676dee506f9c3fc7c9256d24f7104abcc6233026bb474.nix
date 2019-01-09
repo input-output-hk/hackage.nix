@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "parsedate";
-        version = "3000.0.0";
-      };
+      identifier = { name = "parsedate"; version = "3000.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert";
       maintainer = "bjorn@bringert.net";
@@ -22,18 +13,12 @@
       synopsis = "Data and time parsing for CalendarTime";
       description = "This library provides a function for parsing dates and times\ngiven a date format string.\nThis package creates CalendarTime values and is meant\nfor use with the old-time package. New code should\nuse the time package, which now includes parsing, instead.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.parsec)
-        ] ++ (if flags.split-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.old-time)
-            (hsPkgs.old-locale)
-          ]
+        depends = [ (hsPkgs.parsec) ] ++ (if flags.split-base
+          then [ (hsPkgs.base) (hsPkgs.old-time) (hsPkgs.old-locale) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

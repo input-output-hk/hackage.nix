@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "templater";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "templater"; version = "0.0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "geraud@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Simple string templater";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.attoparsec)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.attoparsec) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

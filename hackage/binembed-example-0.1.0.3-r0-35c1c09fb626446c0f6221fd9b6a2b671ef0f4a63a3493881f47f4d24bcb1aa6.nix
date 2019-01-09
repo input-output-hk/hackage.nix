@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "binembed-example";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "binembed-example"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "claude@mathr.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Example project using binembed to embed data in object files.";
       description = "binembed-example prints out its source code, embedded into it\nat compile time using the \"binembed\" package.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "binembed-example" = {
@@ -32,8 +23,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "di";
-        version = "0.2";
-      };
+      identifier = { name = "di"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Renzo Carbonara 2017";
       maintainer = "renλren.zone";
@@ -22,7 +13,7 @@
       synopsis = "Easy, powerful, structured and typeful logging without monad towers.";
       description = "Easy, powerful, structured and typeful logging without monad towers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

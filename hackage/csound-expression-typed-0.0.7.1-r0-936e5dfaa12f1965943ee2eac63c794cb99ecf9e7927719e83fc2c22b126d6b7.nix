@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "csound-expression-typed";
-        version = "0.0.7.1";
-      };
+      identifier = { name = "csound-expression-typed"; version = "0.0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<anton.kholomiov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "typed core for the library csound-expression";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.wl-pprint)
           (hsPkgs.stable-maps)
           (hsPkgs.csound-expression-dynamic)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

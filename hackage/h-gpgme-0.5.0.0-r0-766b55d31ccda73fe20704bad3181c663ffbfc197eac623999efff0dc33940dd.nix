@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "h-gpgme";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "h-gpgme"; version = "0.5.0.0"; };
       license = "MIT";
       copyright = "(c) Reto Habluetzel 2018";
       maintainer = "rethab@protonmail.ch";
@@ -22,7 +13,7 @@
       synopsis = "High Level Binding for GnuPG Made Easy (gpgme)";
       description = "High Level Binding for GnuPG Made Easy (gpgme): A Haskell API for the gpgme C library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.email-validate)
           (hsPkgs.time)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

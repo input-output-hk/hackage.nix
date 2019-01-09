@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-streaming-server";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "servant-streaming-server"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Julian K. Arni";
       maintainer = "jkarni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Server instances for the 'servant-streaming' package.";
       description = "This package defines instances that allow using the 'StreamBody' and 'StreamResponse' combinators in 'servant' servers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.streaming)
           (hsPkgs.streaming-wai)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.streaming-wai)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

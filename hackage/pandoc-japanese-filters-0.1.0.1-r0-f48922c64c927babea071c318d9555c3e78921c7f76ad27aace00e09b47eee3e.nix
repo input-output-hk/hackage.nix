@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pandoc-japanese-filters";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "pandoc-japanese-filters"; version = "0.1.0.1"; };
       license = "GPL-2.0-only";
       copyright = "(c) Hiromi ISHII 2015";
       maintainer = "Hiromi ISHII <konn.jinro_at_gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Japanese-specific markup filters for pandoc.";
       description = "Japanese-specific markup filters for pandoc.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tate-math-to-svg-filter" = {
@@ -37,8 +28,8 @@
             (hsPkgs.text)
             (hsPkgs.shelly)
             (hsPkgs.effin)
-          ];
-        };
+            ];
+          };
         "math-to-svg-filter" = {
           depends = [
             (hsPkgs.base)
@@ -51,8 +42,8 @@
             (hsPkgs.text)
             (hsPkgs.shelly)
             (hsPkgs.effin)
-          ];
-        };
+            ];
+          };
         "japanese-filter" = {
           depends = [
             (hsPkgs.HaTeX)
@@ -64,8 +55,8 @@
             (hsPkgs.pandoc-types)
             (hsPkgs.text)
             (hsPkgs.hxt)
-          ];
-        };
+            ];
+          };
         "env-to-div-filter" = {
           depends = [
             (hsPkgs.HaTeX)
@@ -77,8 +68,8 @@
             (hsPkgs.pandoc-types)
             (hsPkgs.text)
             (hsPkgs.hxt)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

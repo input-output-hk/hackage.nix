@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cookie";
-        version = "0.4.4";
-      };
+      identifier = { name = "cookie"; version = "0.4.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP cookie parsing and rendering";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <https://www.stackage.org/package/cookie>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.data-default-class)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

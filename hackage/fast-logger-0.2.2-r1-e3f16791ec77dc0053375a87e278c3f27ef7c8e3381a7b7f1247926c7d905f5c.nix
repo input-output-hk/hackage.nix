@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fast-logger";
-        version = "0.2.2";
-      };
+      identifier = { name = "fast-logger"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "A fast logging system";
       description = "A fast logging system";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,10 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.text)
-        ] ++ (if system.isWindows
-          then [
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-          ]
-          else [
-            (hsPkgs.unix)
-            (hsPkgs.unix-time)
-          ]);
-      };
+          ] ++ (if system.isWindows
+          then [ (hsPkgs.old-locale) (hsPkgs.time) ]
+          else [ (hsPkgs.unix) (hsPkgs.unix-time) ]);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -51,8 +36,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.fast-logger)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "database-migrate";
-        version = "0.1.1";
-      };
+      identifier = { name = "database-migrate"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Mark Hibberd";
       maintainer = "Mark Hibberd <mark@hibberd.id.au>";
@@ -22,7 +13,7 @@
       synopsis = "Database versioning and migration (experimental)";
       description = "A database versioning and migration library.\n\n/Note/: This library is under heavy development, currently\nthe PostgreSQL implementation is functional, but\nexpected to change. It is intended that a type safe\nmigration api, command line tools and MySql support be added\nbefore this library will be considered stable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.either)
           (hsPkgs.transformers)
           (hsPkgs.cmdargs)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

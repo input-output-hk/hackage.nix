@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hcheat";
-        version = "2009.5.13";
-      };
+      identifier = { name = "hcheat"; version = "2009.5.13"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,13 +13,6 @@
       synopsis = "A collection of code cheatsheet";
       description = "Starting with Google Analytics";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mps)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mps) ]; }; };
+    }

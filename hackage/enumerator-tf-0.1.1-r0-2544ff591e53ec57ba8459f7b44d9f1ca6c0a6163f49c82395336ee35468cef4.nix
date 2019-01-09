@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "enumerator-tf";
-        version = "0.1.1";
-      };
+      identifier = { name = "enumerator-tf"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "John Millikin <jmillikin@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Enumerator instances for monads-tf classes";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.monads-tf)
-          (hsPkgs.enumerator)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.monads-tf) (hsPkgs.enumerator) ];
+        };
       };
-    };
-  }
+    }

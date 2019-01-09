@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      cabal19 = true;
-      listlike = true;
-    };
+    flags = { cabal19 = true; listlike = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "debian";
-        version = "3.79.4";
-      };
+      identifier = { name = "debian"; version = "3.79.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -25,7 +13,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering some basic data types defined by\nthe Debian policy manual - version numbers, control file syntax, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -53,24 +41,14 @@
           (hsPkgs.Unixutils)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ] ++ (if flags.listlike
-          then [
-            (hsPkgs.process-listlike)
-          ]
-          else [
-            (hsPkgs.process-extras)
-          ])) ++ [ (hsPkgs.Cabal) ];
-      };
+          ] ++ (if flags.listlike
+          then [ (hsPkgs.process-listlike) ]
+          else [ (hsPkgs.process-extras) ])) ++ [ (hsPkgs.Cabal) ];
+        };
       exes = {
-        "fakechanges" = {
-          depends = [ (hsPkgs.Cabal) ];
-        };
-        "debian-report" = {
-          depends = [ (hsPkgs.Cabal) ];
-        };
-        "apt-get-build-depends" = {
-          depends = [ (hsPkgs.Cabal) ];
+        "fakechanges" = { depends = [ (hsPkgs.Cabal) ]; };
+        "debian-report" = { depends = [ (hsPkgs.Cabal) ]; };
+        "apt-get-build-depends" = { depends = [ (hsPkgs.Cabal) ]; };
         };
       };
-    };
-  }
+    }

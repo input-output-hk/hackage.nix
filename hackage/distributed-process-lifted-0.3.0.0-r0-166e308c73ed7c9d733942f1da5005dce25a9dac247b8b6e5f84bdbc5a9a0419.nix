@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "distributed-process-lifted";
         version = "0.3.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@jeremyhuffman.com";
@@ -22,7 +16,7 @@
       synopsis = "monad-control style typeclass and transformer instances for Process monad.";
       description = "This package provides typeclasses and functions for lifting functions and control operations (such as spawnLocal) from the @Process@ monad\ninto transformer stacks based on the Process monad. It uses\n<http://hackage.haskell.org/package/monad-control-1.0.0.1/docs/Control-Monad-Trans-Control.html#t:MonadTransControl MonadTransControl>\nand a new typeclass 'Control.Distributed.Process.Lifted.Class.MonadProcessBase' which plays the same role as\n<http://hackage.haskell.org/package/monad-control-1.0.0.1/docs/Control-Monad-Trans-Control.html#t:MonadBaseControl MonadBaseControl>.\nInstances are provided for all the <http://hackage.haskell.org/package/transformers transformers> types - so stacks based on any of these\n(e.g. @ReaderT Config Process a@) can be used seamlessly.\n\nThe Control.Distributed.Process.Lifted module exports all the same symbols as found in\nControl.Distributed.Process, but they are all generalized.\nWhere appropriate it re-exports the more general functions from lifted-base (e.g. catch) rather than the versions re-implemented for @Process@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +30,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.mtl)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "testlifted" = {
           depends = [
@@ -55,8 +49,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.rematch)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

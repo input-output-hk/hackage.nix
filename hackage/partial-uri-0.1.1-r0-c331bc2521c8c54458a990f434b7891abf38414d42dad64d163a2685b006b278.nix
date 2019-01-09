@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "partial-uri";
-        version = "0.1.1";
-      };
+      identifier = { name = "partial-uri"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "© 2012 Stephen Paul Weber";
       maintainer = "Stephen Paul Weber <singpolyma@singpolyma.net>";
@@ -22,13 +13,8 @@
       synopsis = "Datatype for passing around unresolved URIs.";
       description = "Datatype wrapping URI that has not been fully resolved yet (such as\na route in a webapp without the application root).";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.network) ]; };
+      };
+    }

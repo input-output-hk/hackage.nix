@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "clckwrks-plugin-bugs";
-        version = "0.6.0";
-      };
+      identifier = { name = "clckwrks-plugin-bugs"; version = "0.6.0"; };
       license = "BSD-3-Clause";
       copyright = "2012 Jeremy Shaw, SeeReason Partners LLC";
       maintainer = "Jeremy Shaw <jeremy@n-heptane.com>";
@@ -22,7 +13,7 @@
       synopsis = "bug tracking plugin for clckwrks";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.web-plugins)
           (hsPkgs.web-routes)
           (hsPkgs.web-routes-th)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

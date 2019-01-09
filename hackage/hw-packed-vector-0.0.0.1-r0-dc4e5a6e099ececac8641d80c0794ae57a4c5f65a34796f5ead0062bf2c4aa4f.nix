@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "hw-packed-vector";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "hw-packed-vector"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Packed Vector";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.hw-string-parse)
           (hsPkgs.safe)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "hw-packed-vector-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.hw-prim)
             (hsPkgs.QuickCheck)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      integration = false;
-    };
+    flags = { integration = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kafka-client";
-        version = "0.7.0.1";
-      };
+      identifier = { name = "kafka-client"; version = "0.7.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Abhinav Gupta <mail@abhinavg.net>";
@@ -24,7 +13,7 @@
       synopsis = "Low-level Haskell client library for Apache Kafka 0.7.";
       description = "This package implements a low-level client client library to interface\nwith <http://kafka.apache.org/ Apache Kafka> 0.7.\n\n__Kafka 0.8 and newer are not yet supported.__";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +26,8 @@
           (hsPkgs.snappy)
           (hsPkgs.time)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -50,8 +39,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.time)
             (hsPkgs.kafka-client)
-          ];
-        };
+            ];
+          };
         "integration-test" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +55,8 @@
             (hsPkgs.temporary)
             (hsPkgs.time)
             (hsPkgs.kafka-client)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

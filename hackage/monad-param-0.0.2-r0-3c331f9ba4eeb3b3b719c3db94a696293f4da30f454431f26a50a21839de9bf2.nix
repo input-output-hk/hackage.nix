@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "monad-param";
-        version = "0.0.2";
-      };
+      identifier = { name = "monad-param"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2006-2007, Edward Kmett";
       maintainer = "Edward Kmett <ekmett@gmail.com>";
@@ -22,14 +13,8 @@
       synopsis = "Parameterized monads";
       description = "Implements parameterized monads by overloading the monad sugar with more liberal types.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.stm)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.stm) ]; };
+      };
+    }

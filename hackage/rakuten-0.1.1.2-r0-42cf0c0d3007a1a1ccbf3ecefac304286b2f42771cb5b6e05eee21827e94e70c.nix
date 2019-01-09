@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rakuten";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "rakuten"; version = "0.1.1.2"; };
       license = "MIT";
       copyright = "2017-2018 MATSUBARA Nobutada";
       maintainer = "MATSUBARA Nobutada";
@@ -22,7 +13,7 @@
       synopsis = "The Rakuten API in Haskell";
       description = "See README at <https://github.com/matsubara0507/rakuten#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.lens)
           (hsPkgs.req)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.servant-server)
             (hsPkgs.text)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

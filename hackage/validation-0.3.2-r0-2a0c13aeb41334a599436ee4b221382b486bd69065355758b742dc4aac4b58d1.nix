@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "validation";
-        version = "0.3.2";
-      };
+      identifier = { name = "validation"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "Tony Morris, Nick Partridge";
       maintainer = "Tony Morris, Nick Partridge";
@@ -22,7 +13,7 @@
       synopsis = "A data-type like Either but with an accumulating Applicative";
       description = "A data-type like Either but with an accumulating Applicative";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.bifunctors)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

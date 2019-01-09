@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hakyll-dhall";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "hakyll-dhall"; version = "0.2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Justin Le 2018";
       maintainer = "justin@jle.im";
@@ -22,7 +13,7 @@
       synopsis = "Dhall compiler for Hakyll";
       description = "Please see the README on GitHub at <https://github.com/mstksg/hakyll-dhall#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.prettyprinter)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "hakyll-dhall-test-app" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.dhall)
             (hsPkgs.hakyll)
             (hsPkgs.hakyll-dhall)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

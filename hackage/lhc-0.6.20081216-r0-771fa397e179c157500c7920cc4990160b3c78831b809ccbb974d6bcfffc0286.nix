@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       base4 = true;
       threaded = false;
       lhc-regress = false;
       with-base = false;
-    };
+      };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "lhc";
-        version = "0.6.20081216";
-      };
+      identifier = { name = "lhc"; version = "0.6.20081216"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "lhc@projects.haskell.org";
@@ -27,7 +18,7 @@
       synopsis = "LHC Haskell Compiler";
       description = "lhc is a haskell compiler which aims to produce the most efficient programs possible via whole\nprogram analysis and other optimizations.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "lhc" = {
@@ -54,18 +45,13 @@
             (hsPkgs.filepath)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.ansi-terminal)
-          ] ++ (if flags.base4
-            then [
-              (hsPkgs.base)
-              (hsPkgs.syb)
-            ]
+            ] ++ (if flags.base4
+            then [ (hsPkgs.base) (hsPkgs.syb) ]
             else [ (hsPkgs.base) ]);
-        };
+          };
         "lhc-regress" = {
-          depends = [
-            (hsPkgs.process)
-          ] ++ [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.process) ] ++ [ (hsPkgs.base) ];
+          };
         };
       };
-    };
-  }
+    }

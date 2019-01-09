@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "plot-light";
-        version = "0.2.9";
-      };
+      identifier = { name = "plot-light"; version = "0.2.9"; };
       license = "BSD-3-Clause";
       copyright = "2017 Marco Zocca";
       maintainer = "zocca marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "A lightweight plotting library, exporting to SVG";
       description = "This library provides drawing and plotting datastructures and functions; it is aimed in particular at scientific visualization, but it also exposes its plotting primitives and a general purpose 2D geometry library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.data-default)
           (hsPkgs.hspec)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       exes = {
         "scatter" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.colour)
             (hsPkgs.blaze-svg)
             (hsPkgs.scientific)
-          ];
-        };
+            ];
+          };
         "timeseries" = {
           depends = [
             (hsPkgs.base)
@@ -64,8 +55,8 @@
             (hsPkgs.colour)
             (hsPkgs.blaze-svg)
             (hsPkgs.scientific)
-          ];
-        };
+            ];
+          };
         "heatmap" = {
           depends = [
             (hsPkgs.base)
@@ -77,9 +68,9 @@
             (hsPkgs.palette)
             (hsPkgs.blaze-svg)
             (hsPkgs.scientific)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -87,8 +78,8 @@
             (hsPkgs.plot-light)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

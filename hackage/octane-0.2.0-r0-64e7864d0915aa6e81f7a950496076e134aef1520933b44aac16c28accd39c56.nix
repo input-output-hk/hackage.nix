@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "octane";
-        version = "0.2.0";
-      };
+      identifier = { name = "octane"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,7 +13,7 @@
       synopsis = "A Rocket League replay parser.";
       description = "<https://github.com/tfausak/octane#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,9 @@
           (hsPkgs.containers)
           (hsPkgs.data-binary-ieee754)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "octane" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.octane)
           ];
         };
-      };
+      exes = { "octane" = { depends = [ (hsPkgs.base) (hsPkgs.octane) ]; }; };
       tests = {
         "octane-test-suite" = {
           depends = [
@@ -51,8 +35,8 @@
             (hsPkgs.octane)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

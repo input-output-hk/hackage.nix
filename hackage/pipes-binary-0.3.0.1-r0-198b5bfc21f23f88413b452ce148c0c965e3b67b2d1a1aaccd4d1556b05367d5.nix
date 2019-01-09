@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pipes-binary";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "pipes-binary"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Renzo Carbonara 2013-2014";
       maintainer = "renzocarbonaraλgmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Encode and decode binary streams using the pipes and binary libraries.";
       description = "Encode and decode binary Pipes streams using the @binary@ library.\n\nSee the @changelog@ file in the source distribution to learn about any\nimportant changes between version.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.pipes-bytestring)
           (hsPkgs.profunctors)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

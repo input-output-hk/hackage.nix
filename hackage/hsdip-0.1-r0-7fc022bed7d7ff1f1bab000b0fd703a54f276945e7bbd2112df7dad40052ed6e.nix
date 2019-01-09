@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hsdip";
-        version = "0.1";
-      };
+      identifier = { name = "hsdip"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Evan Martin <martine@danga.com>";
@@ -22,7 +13,7 @@
       synopsis = "hsdip - a Diplomacy parser/renderer";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.parsec)
           (hsPkgs.HUnit)
           (hsPkgs.cairo)
-        ];
-      };
+          ];
+        };
       exes = { "hsdip" = {}; };
-    };
-  }
+      };
+    }

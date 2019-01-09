@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "cipher-aes128";
-        version = "0.6";
-      };
+      identifier = { name = "cipher-aes128"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "Thomas M. DuBuisson";
       maintainer = "thomas.dubuisson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "AES and common modes using AES-NI when available.";
       description = "Cipher-aes128 is an implementation of AES and common modes of operation.  It borrows Hanquez's C AES code (see 'cipher-aes') but\nis unique due to including compile-time detection of\nNI compiler support, a slightly more functional interface\nfor GCM operations, exposure of 'Ptr' based operations via the .Internal module, and build-in crypto-api support.\nCipher-aes128 was originally developed as \"'cipher-aes' plus trampolines\", which has since been adopted into cipher-aes.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,11 +22,11 @@
           (hsPkgs.crypto-api)
           (hsPkgs.tagged)
           (hsPkgs.cereal)
-        ];
-      };
+          ];
+        };
       exes = {
         "aes128_test" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.crypto-api-tests)
             (hsPkgs.test-framework)
@@ -44,9 +35,9 @@
             (hsPkgs.tagged)
             (hsPkgs.cereal)
             (hsPkgs.crypto-api)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.tagged)
             (hsPkgs.cereal)
             (hsPkgs.cipher-aes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

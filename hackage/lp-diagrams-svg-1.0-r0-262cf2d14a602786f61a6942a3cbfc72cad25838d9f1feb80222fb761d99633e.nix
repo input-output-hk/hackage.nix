@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "lp-diagrams-svg";
-        version = "1.0";
-      };
+      identifier = { name = "lp-diagrams-svg"; version = "1.0"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "jeanphilippe.bernardy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "SVG Backend for lp-diagrams";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.FontyFruity)
           (hsPkgs.vector)
           (hsPkgs.optparse-applicative)
-        ];
-      };
+          ];
+        };
       exes = {
         "lp-diagrams-svg-example" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.containers)
             (hsPkgs.lens)
             (hsPkgs.FontyFruity)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wave";
-        version = "0.1.2";
-      };
+      identifier = { name = "wave"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov@openmailbox.org>";
@@ -22,7 +13,7 @@
       synopsis = "Work with WAVE and RF64 files";
       description = "Work with WAVE and RF64 files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.data-default-class)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hspec)
             (hsPkgs.temporary)
             (hsPkgs.wave)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

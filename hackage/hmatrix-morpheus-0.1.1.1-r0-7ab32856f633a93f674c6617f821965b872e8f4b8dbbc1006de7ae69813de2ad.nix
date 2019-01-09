@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { openblas = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hmatrix-morpheus";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "hmatrix-morpheus"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Alexander Ignatyev";
       maintainer = "ignatyev.alexander@gmail.com";
@@ -22,21 +13,15 @@
       synopsis = "Low-level machine learning auxiliary functions.";
       description = "Purely functional interface to morpheus based on hmatrix.\nMorpheus library contains a bunch of cache line aware numerical algorithms\nsuitable for using as a low-level primitives to build machine learning applications.\n\nExamples are in \"Numeric.Morpheus\" module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hmatrix)
-        ];
-        libs = pkgs.lib.optionals (system.isLinux) (if flags.openblas
+        depends = [ (hsPkgs.base) (hsPkgs.hmatrix) ];
+        libs = (pkgs.lib).optionals (system.isLinux) (if flags.openblas
           then [ (pkgs."openblas") ]
-          else [
-            (pkgs."blas")
-            (pkgs."lapack")
-          ]);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
-      };
+          else [ (pkgs."blas") (pkgs."lapack") ]);
+        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate");
+        };
       tests = {
         "hmatrix-morpheus-test" = {
           depends = [
@@ -48,9 +33,9 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "hmatrix-morpheus-bench" = {
           depends = [
@@ -58,8 +43,8 @@
             (hsPkgs.hmatrix-morpheus)
             (hsPkgs.hmatrix)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

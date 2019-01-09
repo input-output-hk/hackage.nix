@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sv-cassava";
-        version = "0.3";
-      };
+      identifier = { name = "sv-cassava"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017-2018, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "george@wils.online";
@@ -22,7 +13,7 @@
       synopsis = "Integration to use sv with cassava's parser";
       description = "This package provides functions allowing you to use cassava's parser\ntogether with sv-core's decoding.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.validation)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "hunit" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.text)
             (hsPkgs.validation)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

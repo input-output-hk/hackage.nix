@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "LDAP";
-        version = "0.6.7";
-      };
+      identifier = { name = "LDAP"; version = "0.6.7"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2005-2010 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,20 +13,14 @@
       synopsis = "Haskell binding for C LDAP API";
       description = "This package provides LDAP interface code for Haskell programs,\nbinding to the C LDAP API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.base) ];
         libs = [ (pkgs."ldap") ];
-      };
+        };
       exes = {
-        "runtests" = {
-          depends = [ (hsPkgs.base) ];
-          libs = [ (pkgs."ldap") ];
+        "runtests" = { depends = [ (hsPkgs.base) ]; libs = [ (pkgs."ldap") ]; };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "NanoProlog";
-        version = "0.1";
-      };
+      identifier = { name = "NanoProlog"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jurriën Stutterheim";
@@ -22,7 +13,7 @@
       synopsis = "Very small  interpreter for a Prolog-like language";
       description = "This package was developed to demonstrate the ideas behind\nthe Prolog language. It contains a very small interpreter\n(@Language.Prolog.Nanoprolog@) which can be run on its\nown. It reads a file with definitions, and then prompts\nfor a goal. All possibe solutions are printed, preceded by\na tree showing which rules were applied in which order.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,12 +21,8 @@
           (hsPkgs.uu-parsinglib)
           (hsPkgs.ListLike)
           (hsPkgs.containers)
-        ];
-      };
-      exes = {
-        "nano-prolog" = {
-          depends = [ (hsPkgs.base) ];
+          ];
         };
+      exes = { "nano-prolog" = { depends = [ (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

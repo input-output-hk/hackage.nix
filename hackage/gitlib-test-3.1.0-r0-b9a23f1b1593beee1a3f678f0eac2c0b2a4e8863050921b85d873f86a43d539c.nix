@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitlib-test";
-        version = "3.1.0";
-      };
+      identifier = { name = "gitlib-test"; version = "3.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Test library for confirming gitlib backend compliance";
       description = "Test library for confirming gitlib backend compliance";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

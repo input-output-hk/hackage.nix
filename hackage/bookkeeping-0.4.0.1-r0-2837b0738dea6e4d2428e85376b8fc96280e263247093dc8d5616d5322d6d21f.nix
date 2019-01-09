@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bookkeeping";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "bookkeeping"; version = "0.4.0.1"; };
       license = "MIT";
       copyright = "2017 Kadzuya Okamoto";
       maintainer = "arow.okamoto+github@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A module for bookkeeping by double entry.";
       description = "A module for bookkeeping by double entry. This module provides a way to do bookkeeping programmatically.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,23 +22,20 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transaction)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "bookkeeping-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bookkeeping)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.bookkeeping) ];
+          };
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)
             (hsPkgs.bookkeeping)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "yahoo-web-search";
-        version = "0.2";
-      };
+      identifier = { name = "yahoo-web-search"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Gordon Stewart, 2008";
       maintainer = "gstew5@gmail.com";
@@ -22,15 +13,10 @@
       synopsis = "Yahoo Web Search Services";
       description = "Documentation of the Yahoo Web Search APIs is available\nfrom the following URL: http:\\/\\/developer.yahoo.com\\/search\\/web\\/.\n\nExample code is provided in the base of the project directory.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.HTTP)
-          (hsPkgs.network)
-          (hsPkgs.xml)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.HTTP) (hsPkgs.network) (hsPkgs.xml) ];
+        };
       };
-    };
-  }
+    }

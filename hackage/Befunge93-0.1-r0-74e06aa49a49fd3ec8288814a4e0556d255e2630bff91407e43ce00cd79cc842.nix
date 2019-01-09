@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Befunge93";
-        version = "0.1";
-      };
+      identifier = { name = "Befunge93"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "brandon.m.simmons@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An interpreter for the Befunge-93 Programming Language";
       description = "An interpreter for the '93 spec of the esoteric programming language Befunge";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Befunge93" = {
@@ -31,8 +22,8 @@
             (hsPkgs.mtl)
             (hsPkgs.array)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

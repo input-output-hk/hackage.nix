@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reformat";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "reformat"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2018 Johann Lee <me@qinka.pro>";
       maintainer = "qinka@live.com";
@@ -22,13 +13,8 @@
       synopsis = "The parser and render to parsec and render the string.";
       description = "A frame work wih parser and render to reformat the key infors.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.parsec) ]; };
+      };
+    }

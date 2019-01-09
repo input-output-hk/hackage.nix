@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "basement";
-        version = "0.0.2";
-      };
+      identifier = { name = "basement"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez";
       maintainer = "vincent@snarc.org";
@@ -22,13 +13,8 @@
       synopsis = "Foundation scrap box of array & string";
       description = "Foundation most basic primitives without any dependencies";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) ]; };
+      };
+    }

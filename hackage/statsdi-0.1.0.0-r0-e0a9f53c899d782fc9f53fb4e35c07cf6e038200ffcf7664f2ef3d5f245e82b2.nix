@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "statsdi";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "statsdi"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Ilya Ostrovskiy";
       maintainer = "first-name@thenumber200-thewordproof.cc";
@@ -22,7 +13,7 @@
       synopsis = "A lovely [Dog]StatsD implementation";
       description = "An implementation of DogStatsD for collecting and pushing metrics";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       tests = {
         "statsdi-test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

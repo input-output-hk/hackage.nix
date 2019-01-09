@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "async-timer";
-        version = "0.1.4.1";
-      };
+      identifier = { name = "async-timer"; version = "0.1.4.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016-2018 Moritz Clasmeier";
       maintainer = "mtesseract@silverratio.net";
@@ -22,7 +13,7 @@
       synopsis = "Provides API for timer based execution of IO actions";
       description = "This is a lightweight package built on top of the async package\nproviding easy to use periodic timers. This can be used for executing\nIO actions periodically.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.safe-exceptions)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "async-timer-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.lifted-async)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

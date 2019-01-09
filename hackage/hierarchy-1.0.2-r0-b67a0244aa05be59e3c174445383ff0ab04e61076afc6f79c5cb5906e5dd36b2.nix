@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hierarchy";
-        version = "1.0.2";
-      };
+      identifier = { name = "hierarchy"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Predicated traversal of generated trees";
       description = "Predicated traversal of generated trees.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.transformers-compat)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2.0") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2.0") (hsPkgs.semigroups);
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
             (hsPkgs.transformers-compat)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2.0") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2.0") (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Ranka";
-        version = "0.1";
-      };
+      identifier = { name = "Ranka"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "newanon@yandex.ru";
@@ -22,7 +13,7 @@
       synopsis = "HTTP to XMPP omegle chats gate.";
       description = "HTTP to XMPP omegle chats gate. Simple example of\nNetwork.XMPP library usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Ranka" = {
@@ -33,8 +24,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.json)
             (hsPkgs.HTTP)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

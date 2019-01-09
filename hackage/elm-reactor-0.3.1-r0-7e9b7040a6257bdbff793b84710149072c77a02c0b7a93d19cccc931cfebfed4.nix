@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "elm-reactor";
-        version = "0.3.1";
-      };
+      identifier = { name = "elm-reactor"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2011-2015 Evan Czaplicki";
       maintainer = "info@elm-lang.org";
@@ -22,7 +13,7 @@
       synopsis = "Interactive development tool for Elm programs";
       description = "Provides an interactive development tool that makes it easy\nto develop and debug Elm programs. It will automatically\ncompile any Elm program—independent of editor. It permits\nhot-swapping and time-traveling debugging.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "elm-reactor" = {
@@ -49,8 +40,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.websockets)
             (hsPkgs.websockets-snap)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

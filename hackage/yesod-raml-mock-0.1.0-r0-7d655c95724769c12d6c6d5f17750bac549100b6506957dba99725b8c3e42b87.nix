@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-raml-mock";
-        version = "0.1.0";
-      };
+      identifier = { name = "yesod-raml-mock"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A mock-handler generator library from RAML.";
       description = "A mock-handler generator library from RAML.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.yaml)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.vector)
             (hsPkgs.yesod-test)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

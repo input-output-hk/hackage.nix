@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "starter";
-        version = "0.3.0";
-      };
+      identifier = { name = "starter"; version = "0.3.0"; };
       license = "MPL-2.0";
       copyright = "2018 Raghu Kaippully";
       maintainer = "rkaippully@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Develop applications without restarts";
       description = "Please see the README on Github at <https://github.com/rkaippully/starter#readme>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.fsnotify)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.fsnotify) ]; };
+      };
+    }

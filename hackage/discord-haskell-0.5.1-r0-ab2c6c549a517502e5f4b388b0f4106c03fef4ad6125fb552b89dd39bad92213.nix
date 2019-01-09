@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "discord-haskell";
-        version = "0.5.1";
-      };
+      identifier = { name = "discord-haskell"; version = "0.5.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ksfish5@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Write bots for Discord in Haskell";
       description = "Functions and data types to write discord bots.\nOfficial discord docs <https://discordapp.com/developers/docs/reference>.\n\nSee the project readme for quickstart notes\n<https://github.com/aquarial/discord-haskell#discord-haskell>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.vector)
           (hsPkgs.websockets)
           (hsPkgs.wuss)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gremlin-haskell";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "gremlin-haskell"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Daishi Nakajima";
       maintainer = "nakaji.dayo@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Graph database client for TinkerPop3 Gremlin Server";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.mtl)
           (hsPkgs.stm)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       exes = {
         "gremlin-haskell-examples" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.lens-aeson)
             (hsPkgs.unordered-containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "gremlin-haskell-test" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.aeson-qq)
             (hsPkgs.mtl)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xml2json";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "xml2json"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yi.codeplayer@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "translate xml to json";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.blaze-builder-conduit)
           (hsPkgs.attoparsec-conduit)
           (hsPkgs.tagstream-conduit)
-        ];
-      };
+          ];
+        };
       exes = {
         "xml2json" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.blaze-builder-conduit)
             (hsPkgs.attoparsec-conduit)
             (hsPkgs.tagstream-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "zoneinfo";
-        version = "0.4";
-      };
+      identifier = { name = "zoneinfo"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Aylett <mark.aylett@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "ZoneInfo library.";
       description = "ZoneInfo library.";
       buildType = "Configure";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
+      };
+    }

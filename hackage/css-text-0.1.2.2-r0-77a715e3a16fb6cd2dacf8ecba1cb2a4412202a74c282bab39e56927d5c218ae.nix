@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "css-text";
-        version = "0.1.2.2";
-      };
+      identifier = { name = "css-text"; version = "0.1.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>, Greg Weber <greg@gregweber.info>";
@@ -22,15 +13,11 @@
       synopsis = "CSS parser and renderer.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.attoparsec)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.attoparsec) ];
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

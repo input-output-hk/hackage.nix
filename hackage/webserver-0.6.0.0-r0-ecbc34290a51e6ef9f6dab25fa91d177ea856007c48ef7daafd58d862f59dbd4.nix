@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "webserver";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "webserver"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John W. Lato <jwlato@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP server library";
       description = "A simple but practical HTTP server library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.unix)
           (hsPkgs.process)
           (hsPkgs.c10k)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

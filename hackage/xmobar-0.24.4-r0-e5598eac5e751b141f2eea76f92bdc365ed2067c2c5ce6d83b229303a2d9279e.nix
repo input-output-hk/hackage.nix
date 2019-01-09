@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       with_xft = false;
@@ -22,13 +16,10 @@
       with_rtsopts = true;
       with_uvmeter = false;
       with_conduit = false;
-    };
+      };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "xmobar";
-        version = "0.24.4";
-      };
+      identifier = { name = "xmobar"; version = "0.24.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jose A. Ortega Ruiz <jao@gnu.org>";
@@ -38,7 +29,7 @@
       synopsis = "A Minimalistic Text Based Status Bar";
       description = "Xmobar is a minimalistic text based status bar.\n\nInspired by the Ion3 status bar, it supports similar\nfeatures, like dynamic color management, output templates,\nand extensibility through plugins.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "xmobar" = {
@@ -59,24 +50,24 @@
             (hsPkgs.parsec)
             (hsPkgs.HTTP)
             (hsPkgs.stm)
-          ] ++ pkgs.lib.optionals (flags.with_conduit) [
+            ] ++ (pkgs.lib).optionals (flags.with_conduit) [
             (hsPkgs.http-conduit)
             (hsPkgs.http-types)
-          ]) ++ pkgs.lib.optionals (flags.with_xft || flags.all_extensions) [
+            ]) ++ (pkgs.lib).optionals (flags.with_xft || flags.all_extensions) [
             (hsPkgs.utf8-string)
             (hsPkgs.X11-xft)
-          ]) ++ pkgs.lib.optional (flags.with_utf8 || flags.all_extensions) (hsPkgs.utf8-string)) ++ pkgs.lib.optional (flags.with_inotify || flags.all_extensions) (hsPkgs.hinotify)) ++ pkgs.lib.optional (flags.with_mpd || flags.all_extensions) (hsPkgs.libmpd)) ++ pkgs.lib.optionals (flags.with_alsa || flags.all_extensions) [
+            ]) ++ (pkgs.lib).optional (flags.with_utf8 || flags.all_extensions) (hsPkgs.utf8-string)) ++ (pkgs.lib).optional (flags.with_inotify || flags.all_extensions) (hsPkgs.hinotify)) ++ (pkgs.lib).optional (flags.with_mpd || flags.all_extensions) (hsPkgs.libmpd)) ++ (pkgs.lib).optionals (flags.with_alsa || flags.all_extensions) [
             (hsPkgs.alsa-mixer)
             (hsPkgs.alsa-core)
-          ]) ++ pkgs.lib.optionals (flags.with_datezone || flags.all_extensions) [
+            ]) ++ (pkgs.lib).optionals (flags.with_datezone || flags.all_extensions) [
             (hsPkgs.timezone-olson)
             (hsPkgs.timezone-series)
-          ]) ++ pkgs.lib.optional (flags.with_mpris || flags.all_extensions) (hsPkgs.dbus)) ++ pkgs.lib.optional (flags.with_dbus || flags.all_extensions) (hsPkgs.dbus);
+            ]) ++ (pkgs.lib).optional (flags.with_mpris || flags.all_extensions) (hsPkgs.dbus)) ++ (pkgs.lib).optional (flags.with_dbus || flags.all_extensions) (hsPkgs.dbus);
           libs = ([
             (pkgs."Xrandr")
             (pkgs."Xrender")
-          ] ++ pkgs.lib.optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw")) ++ pkgs.lib.optional (flags.with_xpm || flags.all_extensions) (pkgs."Xpm");
+            ] ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw")) ++ (pkgs.lib).optional (flags.with_xpm || flags.all_extensions) (pkgs."Xpm");
+          };
         };
       };
-    };
-  }
+    }

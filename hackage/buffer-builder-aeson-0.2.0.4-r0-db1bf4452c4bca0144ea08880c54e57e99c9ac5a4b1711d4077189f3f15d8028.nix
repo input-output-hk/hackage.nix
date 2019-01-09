@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "buffer-builder-aeson";
-        version = "0.2.0.4";
-      };
+      identifier = { name = "buffer-builder-aeson"; version = "0.2.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "andy.friesen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Serialize Aeson values with Data.BufferBuilder";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.vector)
           (hsPkgs.scientific)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.hashable)
             (hsPkgs.attoparsec)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "json-bench" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.criterion)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

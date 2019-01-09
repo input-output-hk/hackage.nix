@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "log2json";
-        version = "0.1";
-      };
+      identifier = { name = "log2json"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "harold@hotelling.net";
@@ -22,7 +13,7 @@
       synopsis = "Turn log file records into JSON.";
       description = "Take an httpd.conf style LogFormat string and parse\nlog files into JSON records.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
@@ -32,8 +23,8 @@
             (hsPkgs.containers)
             (hsPkgs.parsec)
             (hsPkgs.json)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

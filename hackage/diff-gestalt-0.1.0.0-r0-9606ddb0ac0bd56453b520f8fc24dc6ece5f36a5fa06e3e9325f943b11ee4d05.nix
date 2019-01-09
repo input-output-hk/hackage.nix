@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "diff-gestalt";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "diff-gestalt"; version = "0.1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "none";
       maintainer = "chrismwendt@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A diff algorithm based on recursive longest common substrings";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,12 @@
           (hsPkgs.string-similarity)
           (hsPkgs.KMP)
           (hsPkgs.QuickCheck)
-        ];
-      };
-      tests = {
-        "diff-gestalt-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Diff)
-            (hsPkgs.diff-gestalt)
           ];
         };
+      tests = {
+        "diff-gestalt-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Diff) (hsPkgs.diff-gestalt) ];
+          };
+        };
       };
-    };
-  }
+    }

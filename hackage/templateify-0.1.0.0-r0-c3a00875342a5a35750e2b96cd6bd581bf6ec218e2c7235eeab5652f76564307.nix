@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "templateify";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "templateify"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "w@xy30.com";
@@ -22,7 +13,7 @@
       synopsis = "Make template from website";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "templateify" = {
@@ -31,8 +22,8 @@
             (hsPkgs.tagsoup)
             (hsPkgs.uniplate)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

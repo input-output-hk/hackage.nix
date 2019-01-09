@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-packages";
-        version = "0.2.4.3";
-      };
+      identifier = { name = "haskell-packages"; version = "0.2.4.3"; };
       license = "MIT";
       copyright = "(c) Roman Cheplyaka 2012";
       maintainer = "Roman Cheplyaka <roma@ro-che.info>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell suite library for package management and integration with Cabal";
       description = "See <http://documentup.com/haskell-suite/haskell-packages>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.transformers-compat)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.tagged)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

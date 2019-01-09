@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sequence";
-        version = "0.9.5";
-      };
+      identifier = { name = "sequence"; version = "0.9.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "atzeus@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A type class for sequences and various sequence data structures.";
       description = "A type class for sequences and various sequence data structures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

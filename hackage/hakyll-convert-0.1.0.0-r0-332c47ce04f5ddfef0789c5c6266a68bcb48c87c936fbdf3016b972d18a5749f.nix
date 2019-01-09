@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hakyll-convert";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hakyll-convert"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Eric Kow <eric.kow@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Convert from other blog engines to Hakyll.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.xml)
-        ];
-      };
+          ];
+        };
       exes = {
         "hakyll-convert" = {
           depends = [
@@ -49,16 +40,16 @@
             (hsPkgs.hakyll-convert)
             (hsPkgs.text)
             (hsPkgs.xml)
-          ];
-        };
+            ];
+          };
         "hakyll-convert-demo" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hakyll)
             (hsPkgs.hakyll-convert)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

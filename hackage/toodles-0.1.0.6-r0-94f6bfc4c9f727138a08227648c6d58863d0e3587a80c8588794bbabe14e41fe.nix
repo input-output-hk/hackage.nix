@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "toodles";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "toodles"; version = "0.1.0.6"; };
       license = "MIT";
       copyright = "2018 Avi Press";
       maintainer = "mail@avi.press";
@@ -22,7 +13,7 @@
       synopsis = "Manage the TODO entries in your code";
       description = "See the README on GitHub at <https://github.com/aviaviavi/toodles#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "toodles" = {
@@ -47,8 +38,8 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      yi = false;
-      dyre = true;
-    };
+    flags = { yi = false; dyre = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "leksah";
-        version = "0.10.0.1";
-      };
+      identifier = { name = "leksah"; version = "0.10.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2010 Juergen Nicklisch-Franken, Hamish Mackenzie";
       maintainer = "maintainer@leksah.org";
@@ -25,7 +13,7 @@
       synopsis = "Haskell IDE written in Haskell";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -57,20 +45,20 @@
           (hsPkgs.network)
           (hsPkgs.ghc)
           (hsPkgs.strict)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [
             (hsPkgs.unix)
-          ])) ++ pkgs.lib.optional (system.isOsx) (hsPkgs.ige-mac-integration)) ++ pkgs.lib.optional (flags.yi) (hsPkgs.yi)) ++ pkgs.lib.optional (flags.yi && flags.dyre) (hsPkgs.dyre);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
-      };
+            ])) ++ (pkgs.lib).optional (system.isOsx) (hsPkgs.ige-mac-integration)) ++ (pkgs.lib).optional (flags.yi) (hsPkgs.yi)) ++ (pkgs.lib).optional (flags.yi && flags.dyre) (hsPkgs.dyre);
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
+        };
       exes = {
         "leksah" = {
           depends = ((((if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)
-            ]) ++ pkgs.lib.optional (system.isOsx) (hsPkgs.ige-mac-integration)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.12.3" && flags.yi) (hsPkgs.yi)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.12.3" && flags.yi && flags.dyre) (hsPkgs.dyre)) ++ (if compiler.isGhc && compiler.version.lt "6.12.3"
+              ]) ++ (pkgs.lib).optional (system.isOsx) (hsPkgs.ige-mac-integration)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "6.12.3" && flags.yi) (hsPkgs.yi)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "6.12.3" && flags.yi && flags.dyre) (hsPkgs.dyre)) ++ (if compiler.isGhc && (compiler.version).lt "6.12.3"
             then [
               (hsPkgs.Cabal)
               (hsPkgs.base)
@@ -100,13 +88,10 @@
               (hsPkgs.network)
               (hsPkgs.ghc)
               (hsPkgs.strict)
-            ]
-            else [
-              (hsPkgs.leksah)
-              (hsPkgs.base)
-            ]);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
+              ]
+            else [ (hsPkgs.leksah) (hsPkgs.base) ]);
+          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
+          };
         };
       };
-    };
-  }
+    }

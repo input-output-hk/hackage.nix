@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      nolib = false;
-      buildtests = false;
-    };
+    flags = { nolib = false; buildtests = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "yaml";
-        version = "0.4.1";
-      };
+      identifier = { name = "yaml"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -25,7 +13,7 @@
       synopsis = "Low-level binding to the libyaml C library.";
       description = "Provides support for parsing and emitting Yaml documents. Includes the full C library in the package so you don't need to worry about any non-Haskell dependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,11 +21,11 @@
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
           (hsPkgs.enumerator)
-        ];
-      };
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
@@ -47,8 +35,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.enumerator)
             (hsPkgs.MonadCatchIO-transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

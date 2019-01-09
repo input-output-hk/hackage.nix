@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Commando";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "Commando"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "lyndon@sordina.net";
@@ -22,7 +13,7 @@
       synopsis = "Watch some files; Rerun a command";
       description = "Watch some files; Rerun a command";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "commando" = {
@@ -34,8 +25,8 @@
             (hsPkgs.system-fileio)
             (hsPkgs.fsnotify)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

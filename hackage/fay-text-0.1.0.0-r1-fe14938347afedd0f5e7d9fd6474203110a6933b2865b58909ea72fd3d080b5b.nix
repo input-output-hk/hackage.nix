@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fay-text";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fay-text"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2013 Michael Snoyman, Adam Bergmark";
       maintainer = "adam@edea.se";
@@ -22,14 +13,10 @@
       synopsis = "Fay Text type represented as JavaScript strings";
       description = "Text type represented as JavaScript strings for Fay and Data.Text for GHC. Use with OverloadedStrings and RebindableSyntax to have Fay treat string literals as Text.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.text)
-          (hsPkgs.fay)
-          (hsPkgs.fay-base)
-        ];
+        depends = [ (hsPkgs.text) (hsPkgs.fay) (hsPkgs.fay-base) ];
+        };
       };
-    };
-  }
+    }

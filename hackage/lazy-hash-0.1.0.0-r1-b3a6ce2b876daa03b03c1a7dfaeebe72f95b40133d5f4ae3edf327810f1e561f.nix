@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lazy-hash";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "lazy-hash"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "(@) jsagemue \$ uni-koeln.de";
@@ -22,7 +13,7 @@
       synopsis = "Identifiers for not-yet-computed values";
       description = "This package gives a way to assign values with largely\nunique keys, without ever actually spending the time needed to\ncompute the value. The basic idea is to hash the source code of some\nexpression (in other words, its unnormalised AST), rather than\nthe value (its normal form).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.haskell-src-meta)
           (hsPkgs.tagged)
           (hsPkgs.vector-space)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

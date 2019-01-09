@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rehoo";
-        version = "0.1.2";
-      };
+      identifier = { name = "rehoo"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@newartisans.com>";
@@ -22,7 +13,7 @@
       synopsis = "Rebuild default.hoo from many .hoo files in the current directory";
       description = "Rebuild default.hoo from many .hoo files in the current directory";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "rehoo" = {
@@ -37,8 +28,8 @@
             (hsPkgs.monad-loops)
             (hsPkgs.split)
             (hsPkgs.SafeSemaphore)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

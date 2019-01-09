@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Data-Angle";
-        version = "0.9";
-      };
+      identifier = { name = "Data-Angle"; version = "0.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "kecskes.adam@outlook.com";
@@ -22,10 +13,6 @@
       synopsis = "Geometric angles";
       description = "A library for dealing with geometric angles (Degrees, Turns, Radians). For the sake of simplicity, the angles are represented in Radians";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "manatee-core";
-        version = "0.0.3";
-      };
+      identifier = { name = "manatee-core"; version = "0.0.3"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2009 ~ 2010 Andy Stewart";
       maintainer = "Andy Stewart <lazycat.manatee@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "The core of Manatee.";
       description = "manatee-core is core package of Manatee (Haskell/Gtk+ Integrated Live Environment)\n\nTo provide basic communication protocol and toolkit.\n\nManual look <http://haskell.org/haskellwiki/Manatee>\n\nScreenshot at <http://goo.gl/MkVw>\n\nIRC channel:\n\nirc.freenode.net 6667 <##manatee>\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,7 +51,7 @@
           (hsPkgs.binary)
           (hsPkgs.directory)
           (hsPkgs.haskell-src-exts)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

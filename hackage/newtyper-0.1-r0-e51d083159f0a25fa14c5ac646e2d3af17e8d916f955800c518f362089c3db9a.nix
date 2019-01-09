@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "newtyper";
-        version = "0.1";
-      };
+      identifier = { name = "newtyper"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dylan@techtangents.com";
@@ -22,14 +13,10 @@
       synopsis = "Extra functions for the Control.Newtype typeclass";
       description = "Extra functions for the Control.Newtype typeclass";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.Kleislify)
-          (hsPkgs.newtype)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.Kleislify) (hsPkgs.newtype) ];
+        };
       };
-    };
-  }
+    }

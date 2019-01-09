@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "graylog";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "graylog"; version = "0.1.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2016 Andrew Rademacher";
       maintainer = "andrewrademacher@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Support for graylog output.";
       description = "Support for sending GELF formatted messages to graylog over\nchunked UDP.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-state" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nirum";
-        version = "0.3.2";
-      };
+      identifier = { name = "nirum"; version = "0.3.2"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2016–2018 Nirum team";
       maintainer = "Nirum team";
@@ -22,7 +13,7 @@
       synopsis = "IDL compiler and RPC/distributed object framework for microservices";
       description = "Nirum is an IDL compiler and RPC/distributed object framework for microservices, built on top of the modern Web server technologies such as RESTful HTTP and JSON.\nYou can find how the language looks like from source codes in the examples/ directory.\nSee also README.md for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.uri)
-        ];
-      };
+          ];
+        };
       exes = {
         "nirum" = {
           depends = [
@@ -73,9 +64,9 @@
             (hsPkgs.semver)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hlint" = {
           depends = [
@@ -96,8 +87,8 @@
             (hsPkgs.semver)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -124,8 +115,8 @@
             (hsPkgs.temporary)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "targets" = {
           depends = [
             (hsPkgs.base)
@@ -145,8 +136,8 @@
             (hsPkgs.text)
             (hsPkgs.turtle)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

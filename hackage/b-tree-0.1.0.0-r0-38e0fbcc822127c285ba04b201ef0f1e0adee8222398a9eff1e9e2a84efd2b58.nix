@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "b-tree";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "b-tree"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bgamari.foss@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Immutable disk-based B* trees";
       description = "Immutable disk-based B* trees";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.mmap)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "btree-benchmark" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.vector)
             (hsPkgs.errors)
             (hsPkgs.mmap)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

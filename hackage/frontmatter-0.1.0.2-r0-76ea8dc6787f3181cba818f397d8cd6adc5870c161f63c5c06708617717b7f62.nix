@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "frontmatter";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "frontmatter"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "Copyright (c) 2015 Pedro Tacla Yamada";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parses frontmatter as used in Jekyll markdown files.";
       description = "Parses frontmatter as used in Jekyll markdown files.\n\nProvides a parser that'll parse the frontmatter only and\none that'll execute a YAML parser on it, so that it's a\nYAML frontmatter parser.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.frontmatter)
             (hsPkgs.text)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

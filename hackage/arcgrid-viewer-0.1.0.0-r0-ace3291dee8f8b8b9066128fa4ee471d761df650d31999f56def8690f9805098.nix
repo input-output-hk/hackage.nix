@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arcgrid-viewer";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "arcgrid-viewer"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nbrk@linklevel.net";
@@ -22,7 +13,7 @@
       synopsis = "Simple viewer for ESRI/ArcInfo (ArcGrid) geospatial data";
       description = "A simple viewer for ESRI/ArcInfo (ArcGrid) files. Users\ncan pan, zoom and rotate the rendered dataset.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "arcgrid-viewer" = {
@@ -32,8 +23,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.arcgrid)
             (hsPkgs.gloss)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

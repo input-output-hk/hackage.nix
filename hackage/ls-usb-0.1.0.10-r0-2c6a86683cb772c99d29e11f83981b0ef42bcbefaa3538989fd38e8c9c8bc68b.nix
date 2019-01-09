@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ls-usb";
-        version = "0.1.0.10";
-      };
+      identifier = { name = "ls-usb"; version = "0.1.0.10"; };
       license = "BSD-3-Clause";
       copyright = "2009–2011 Roel van Dijk <vandijk.roel@gmail.com>";
       maintainer = "Roel van Dijk <vandijk.roel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "List USB devices";
       description = "A small utility for displaying information about USB devices\nconnected to your system.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ls-usb" = {
@@ -34,8 +25,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.usb)
             (hsPkgs.usb-id-database)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

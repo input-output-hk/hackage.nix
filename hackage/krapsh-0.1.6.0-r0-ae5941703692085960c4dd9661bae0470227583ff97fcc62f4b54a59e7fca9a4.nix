@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "krapsh";
-        version = "0.1.6.0";
-      };
+      identifier = { name = "krapsh"; version = "0.1.6.0"; };
       license = "Apache-2.0";
       copyright = "2016 Kraps-Haskell contributors";
       maintainer = "krapsh@yandex.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for Spark Dataframes and Datasets";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       tests = {
         "krapsh-test" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.raw-strings-qq)
             (hsPkgs.QuickCheck)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "krapsh-test-integration" = {
           depends = [
             (hsPkgs.aeson)
@@ -82,8 +73,8 @@
             (hsPkgs.raw-strings-qq)
             (hsPkgs.QuickCheck)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

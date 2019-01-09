@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-kinesis-client";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "aws-kinesis-client"; version = "0.4.0.0"; };
       license = "Apache-2.0";
       copyright = "Copyright (c) 2013-2015 PivotCloud, Inc.";
       maintainer = "jon@jonmsterling.com";
@@ -22,7 +13,7 @@
       synopsis = "A producer & consumer client library for AWS Kinesis";
       description = "This package provides a Producer client for bulk-writing messages to a\nKinesis stream through a bounded queue, and a Consumer client for reading\nmessages round-robin from all shards of a Kiensis stream.  Additionally, a\nrudimentary CLI interface to the Consumer is provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,8 +43,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "kinesis-cli" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

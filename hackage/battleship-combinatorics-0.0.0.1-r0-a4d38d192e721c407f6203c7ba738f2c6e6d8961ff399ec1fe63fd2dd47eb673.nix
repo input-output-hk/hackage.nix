@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "battleship-combinatorics";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "battleship-combinatorics"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Compute number of possible arrangements in the battleship game";
       description = "Compute number of possible arrangements in the battleship game\nwith different methods.\n\n<https://en.wikipedia.org/wiki/Battleship_(game)>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,25 +35,25 @@
           (hsPkgs.utility-ht)
           (hsPkgs.prelude-compat)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       exes = {
         "battleship-combinatorics" = {
           depends = [
             (hsPkgs.battleship-combinatorics)
             (hsPkgs.containers)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "battleship-combinatorics-test" = {
           depends = [
             (hsPkgs.battleship-combinatorics)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

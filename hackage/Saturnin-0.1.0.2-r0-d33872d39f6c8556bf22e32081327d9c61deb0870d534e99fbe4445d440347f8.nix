@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "Saturnin";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "Saturnin"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2015 Jan Matějka <yac@blesmrt.net>";
       maintainer = "<yac@blesmrt.net>";
@@ -22,7 +13,7 @@
       synopsis = "Saturnin  CI / Job System";
       description = "Saturnin  CI / Job System";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,16 +37,11 @@
           (hsPkgs.mtl)
           (hsPkgs.either)
           (hsPkgs.exceptions)
-        ];
-      };
-      exes = {
-        "saturnin" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Saturnin)
           ];
         };
-      };
+      exes = {
+        "saturnin" = { depends = [ (hsPkgs.base) (hsPkgs.Saturnin) ]; };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -65,14 +51,9 @@
             (hsPkgs.either)
             (hsPkgs.data-default)
             (hsPkgs.hspec)
-          ];
-        };
-        "style" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "style" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

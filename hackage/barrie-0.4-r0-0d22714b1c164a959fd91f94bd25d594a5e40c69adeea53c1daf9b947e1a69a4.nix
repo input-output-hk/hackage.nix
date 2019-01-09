@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0.2";
-      identifier = {
-        name = "barrie";
-        version = "0.4";
-      };
+      identifier = { name = "barrie"; version = "0.4"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Fraser Wilson";
       maintainer = "blancolioni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pure Gtk GUI library";
       description = "Implementation of an idea for supporting certain kinds of GUI:\nthat is state based, user-driven ones.  The GUI is intended to\nmanipulate a state, and it is responsive rather than active.\nConfiguration is an example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.gtk)
           (hsPkgs.glib)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

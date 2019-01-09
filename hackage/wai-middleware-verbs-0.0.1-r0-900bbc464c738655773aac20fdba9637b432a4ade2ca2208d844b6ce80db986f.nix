@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-verbs";
-        version = "0.0.1";
-      };
+      identifier = { name = "wai-middleware-verbs"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Route different middleware responses based on the incoming HTTP verb.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.transformers)
           (hsPkgs.wai)
           (hsPkgs.wai-transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

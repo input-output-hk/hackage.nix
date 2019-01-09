@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "MusicBrainz-libdiscid";
-        version = "0.4.1.1";
-      };
+      identifier = { name = "MusicBrainz-libdiscid"; version = "0.4.1.1"; };
       license = "LicenseRef-LGPL";
       copyright = "2013 André Twupack";
       maintainer = "André Twupack";
@@ -22,15 +13,11 @@
       synopsis = "Binding to libdiscid by MusicBrainz";
       description = "Binding to libdiscid by MusicBrainz.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.vector)
-        ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."winmm");
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.vector) ];
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."winmm");
+        };
       };
-    };
-  }
+    }

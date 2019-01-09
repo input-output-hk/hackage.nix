@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "frame";
-        version = "0.1";
-      };
+      identifier = { name = "frame"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Adam Dunkley";
       maintainer = "\"Adam Dunkley\" <acd07u@cs.nott.ac.uk>";
@@ -22,7 +13,7 @@
       synopsis = "A simple web framework.";
       description = "A simple web framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,12 +35,8 @@
           (hsPkgs.happstack-server)
           (hsPkgs.happstack-fastcgi)
           (hsPkgs.HTTP)
-        ];
-      };
-      exes = {
-        "frame-shell" = {
-          depends = [ (hsPkgs.pretty) ];
+          ];
         };
+      exes = { "frame-shell" = { depends = [ (hsPkgs.pretty) ]; }; };
       };
-    };
-  }
+    }

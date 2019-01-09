@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "azure-email";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "azure-email"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 (c) Layer 3 Communications, LLC.";
       maintainer = "dcartwright@layer3com.com";
@@ -22,7 +13,7 @@
       synopsis = "send email with microsoft azure";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.time)
           (hsPkgs.uuid)
           (hsPkgs.wreq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

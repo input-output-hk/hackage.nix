@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "voicebase";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "voicebase"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Daisee Pty Ltd";
       maintainer = "jappie.klooster@daisee.com";
@@ -22,7 +13,7 @@
       synopsis = "Upload audio files to voicebase to get a transcription";
       description = "voicebase bindings for <http://voicebase.readthedocs.io/en/v2-beta/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.roundtrip-aeson)
           (hsPkgs.text)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       exes = {
         "voicebase" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
             (hsPkgs.voicebase)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "voicebase-test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.hspec)
             (hsPkgs.roundtrip-aeson)
             (hsPkgs.voicebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

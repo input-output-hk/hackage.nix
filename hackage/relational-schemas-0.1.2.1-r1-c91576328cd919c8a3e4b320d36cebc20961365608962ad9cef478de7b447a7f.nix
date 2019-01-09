@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "relational-schemas";
-        version = "0.1.2.1";
-      };
+      identifier = { name = "relational-schemas"; version = "0.1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013 2014 Kei Hibino, Shohei Murayama, Shohei Yasutake, Sho KURODA";
       maintainer = "ex8k.hibino@gmail.com, shohei.murayama@gmail.com, amutake.s@gmail.com, krdlab@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "RDBMSs' schema templates for relational-query";
       description = "This package contains some RDBMSs' schema structure definitions.\nSupported RDBMS schemas are below:\n- IBM DB2\n- PostgreSQL\n- Microsoft SQLServer\n- SQLite3\n- Oracle\n- MySQL";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.persistable-record)
           (hsPkgs.relational-query)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xml-html-conduit-lens";
-        version = "0.3.2.0";
-      };
+      identifier = { name = "xml-html-conduit-lens"; version = "0.3.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Fumiaki Kinoshita, 2014 Matvey Aksenov";
       maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Optics for xml-conduit and html-conduit";
       description = "Optics for xml-conduit and html-conduit";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,15 +24,10 @@
           (hsPkgs.text)
           (hsPkgs.xml-conduit)
           (hsPkgs.html-conduit)
-        ];
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "hspec" = {
           depends = [
             (hsPkgs.base)
@@ -50,8 +36,8 @@
             (hsPkgs.lens)
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-html-conduit-lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

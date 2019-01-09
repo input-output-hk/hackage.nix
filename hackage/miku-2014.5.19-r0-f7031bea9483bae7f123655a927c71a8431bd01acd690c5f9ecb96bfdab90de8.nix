@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "miku";
-        version = "2014.5.19";
-      };
+      identifier = { name = "miku"; version = "2014.5.19"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A minimum web dev DSL in Haskell";
       description = "A simple library for fast web prototyping in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

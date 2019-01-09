@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "jack";
-        version = "0.5";
-      };
+      identifier = { name = "jack"; version = "0.5"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,17 +13,11 @@
       synopsis = "Bindings for the JACK Audio Connection Kit";
       description = "Very basic bindings for the JACK Audio Connection Kit";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-        libs = [ (pkgs."jack") ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; libs = [ (pkgs."jack") ]; };
       exes = {
-        "amplify" = {
-          depends = [ (hsPkgs.base) ];
-          libs = [ (pkgs."jack") ];
+        "amplify" = { depends = [ (hsPkgs.base) ]; libs = [ (pkgs."jack") ]; };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "temporary";
-        version = "1.3";
-      };
+      identifier = { name = "temporary"; version = "1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mateusz Kowalczyk <fuuzetsu@fuuzetsu.co.uk>, Roman Cheplyaka <roma@ro-che.info>";
@@ -22,7 +13,7 @@
       synopsis = "Portable temporary file and directory support";
       description = "Functions for creating temporary files and directories.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.transformers)
           (hsPkgs.exceptions)
           (hsPkgs.random)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.temporary)
             (hsPkgs.filepath)
             (hsPkgs.base-compat)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

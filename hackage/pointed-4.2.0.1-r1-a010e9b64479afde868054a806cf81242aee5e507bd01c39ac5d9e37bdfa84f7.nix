@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pointed";
-        version = "4.2.0.1";
-      };
+      identifier = { name = "pointed"; version = "4.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Pointed and copointed data";
       description = "Pointed and copointed data";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.stm)
           (hsPkgs.tagged)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

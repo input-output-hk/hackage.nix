@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-logging";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "simple-logging"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2017 Luka Horvat";
       maintainer = "luka.horvat9@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Logging effect to plug into the simple-effects framework";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,16 +29,12 @@
           (hsPkgs.mtl)
           (hsPkgs.string-conv)
           (hsPkgs.lens)
-        ];
-      };
-      tests = {
-        "logging-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.logging)
-            (hsPkgs.simple-effects)
           ];
         };
+      tests = {
+        "logging-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.logging) (hsPkgs.simple-effects) ];
+          };
+        };
       };
-    };
-  }
+    }

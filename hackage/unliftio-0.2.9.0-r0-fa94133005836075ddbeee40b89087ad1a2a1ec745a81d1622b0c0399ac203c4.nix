@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "unliftio";
-        version = "0.2.9.0";
-      };
+      identifier = { name = "unliftio"; version = "0.2.9.0"; };
       license = "MIT";
       copyright = "2017 FP Complete";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "The MonadUnliftIO typeclass for unlifting monads to IO (batteries included)";
       description = "Please see the documentation and README at <https://www.stackage.org/package/unliftio>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -36,8 +27,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unliftio-core)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.10") (hsPkgs.nats);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.10") (hsPkgs.nats);
+        };
       tests = {
         "unliftio-spec" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.transformers)
             (hsPkgs.unliftio)
             (hsPkgs.unliftio-core)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
-      };
       benchmarks = {
         "conc-bench" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unliftio)
             (hsPkgs.unliftio-core)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

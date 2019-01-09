@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      vty = false;
-      happs = false;
-    };
+    flags = { vty = false; happs = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hledger";
-        version = "0.5.1";
-      };
+      identifier = { name = "hledger"; version = "0.5.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -25,7 +13,7 @@
       synopsis = "A ledger-compatible text-based accounting tool.";
       description = "hledger is a partial haskell clone of John Wiegley's \"ledger\" text-based\naccounting tool. It generates ledger-compatible register & balance reports\nfrom a plain text journal, and demonstrates a functional implementation of ledger.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +28,8 @@
           (hsPkgs.HUnit)
           (hsPkgs.filepath)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "hledger" = {
           depends = ([
@@ -64,14 +52,14 @@
             (hsPkgs.csv)
             (hsPkgs.split)
             (hsPkgs.utf8-string)
-          ] ++ pkgs.lib.optional (flags.vty) (hsPkgs.vty)) ++ pkgs.lib.optionals (flags.happs) [
+            ] ++ (pkgs.lib).optional (flags.vty) (hsPkgs.vty)) ++ (pkgs.lib).optionals (flags.happs) [
             (hsPkgs.happstack)
             (hsPkgs.happstack-data)
             (hsPkgs.happstack-server)
             (hsPkgs.happstack-state)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nn";
-        version = "0.2.0";
-      };
+      identifier = { name = "nn"; version = "0.2.0"; };
       license = "MIT";
       copyright = "2018 Sascha Grunert";
       maintainer = "mail@saschagrunert.de";
@@ -22,15 +13,11 @@
       synopsis = "A tiny neural network";
       description = "Please see the README on Github at <https://github.com/saschagrunert/nn#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-          (hsPkgs.split)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.random) (hsPkgs.split) ];
+        };
       tests = {
         "nn-test" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { werror = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "beam-postgres";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "beam-postgres"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "travis@athougies.net";
@@ -22,7 +13,7 @@
       synopsis = "Connection layer between beam and postgres";
       description = "Beam driver for <https://www.postgresql.org/ PostgreSQL>, an advanced open-source RDBMS";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.network-uri)
           (hsPkgs.unordered-containers)
           (hsPkgs.haskell-src-exts)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

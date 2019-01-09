@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "imj-measure-stdout";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "imj-measure-stdout"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 - 2018 Olivier Sohn";
       maintainer = "olivier.sohn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An application to determine the maximum capacity of stdout buffer.";
       description = "The program helps you determine the maximum capacity of your stdout buffer.\n\nIt was initially developped to diagnose screen tearing issues\nin a terminal-based game I was developping, and more specifically, to see the\neffect of the following action :\n\n> hSetBuffering stdout \$ BlockBuffering \$ Just maxBound\n\nUsing this program, I found that, on my system, the previous call quadruples\nstdout's capacity, from 2048 to 8192 bytes.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "imj-measure-stdout-exe" = {
@@ -30,8 +21,8 @@
             (hsPkgs.base)
             (hsPkgs.imj-prelude)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

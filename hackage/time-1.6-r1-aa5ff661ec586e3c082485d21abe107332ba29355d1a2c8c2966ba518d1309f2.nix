@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "time";
-        version = "1.6";
-      };
+      identifier = { name = "time"; version = "1.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<ashley@semantic.org>";
@@ -22,21 +13,18 @@
       synopsis = "A time library";
       description = "A time library";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
-        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
-      };
+          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+        };
       tests = {
         "ShowDefaultTZAbbreviations" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.time)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.time) ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -46,8 +34,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

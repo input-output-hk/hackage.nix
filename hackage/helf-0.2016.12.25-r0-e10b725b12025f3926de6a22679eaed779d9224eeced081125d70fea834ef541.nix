@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "helf";
-        version = "0.2016.12.25";
-      };
+      identifier = { name = "helf"; version = "0.2016.12.25"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Andreas Abel <andreas.abel@ifi.lmu.de>";
@@ -22,7 +13,7 @@
       synopsis = "Typechecking terms of the Edinburgh Logical Framework (LF).";
       description = "HELF = Haskell implementation of the Edinburgh Logical Framework\n\nHELF implements only a subset of the Twelf syntax and functionality.\nIt type-checks LF definitions, but does not do type reconstruction.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "helf" = {
@@ -33,12 +24,12 @@
             (hsPkgs.mtl)
             (hsPkgs.pretty)
             (hsPkgs.QuickCheck)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
-          ];
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
         };
       };
-    };
-  }
+    }

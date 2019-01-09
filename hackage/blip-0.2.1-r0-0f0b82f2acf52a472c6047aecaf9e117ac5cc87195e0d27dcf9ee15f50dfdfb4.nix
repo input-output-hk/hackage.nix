@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "blip";
-        version = "0.2.1";
-      };
+      identifier = { name = "blip"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bernie Pope <florbitous@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Python to bytecode compiler.";
       description = "Compiles Python 3 source code to bytecode. The resulting\nbytecode is written to a '.pyc' file, compatible with the\nCPython implementation (the default Python interpreter).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "blip" = {
@@ -37,8 +28,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.old-time)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

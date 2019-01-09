@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "git-monitor";
-        version = "3.1.1.5";
-      };
+      identifier = { name = "git-monitor"; version = "3.1.1.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@newartisans.com>";
@@ -22,7 +13,7 @@
       synopsis = "Passively snapshots working tree changes efficiently.";
       description = "Passively snapshots working tree changes efficiently.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "git-monitor" = {
@@ -46,8 +37,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.lifted-async)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

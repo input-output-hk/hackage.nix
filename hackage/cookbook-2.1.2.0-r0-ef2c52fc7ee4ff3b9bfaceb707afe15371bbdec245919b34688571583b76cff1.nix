@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cookbook";
-        version = "2.1.2.0";
-      };
+      identifier = { name = "cookbook"; version = "2.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nathanpisarski@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Tiered general-purpose libraries with domain-specific applications.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.strict)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.strict) ];
+        };
       };
-    };
-  }
+    }

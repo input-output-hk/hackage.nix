@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "anatomy";
-        version = "0.3";
-      };
+      identifier = { name = "anatomy"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "i.am@toogeneric.com";
@@ -22,7 +13,7 @@
       synopsis = "Anatomy: Atomo documentation system";
       description = "A Scribble-like documentation language/builder for Atomo.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.tagsoup)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "anatomy" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.tagsoup)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

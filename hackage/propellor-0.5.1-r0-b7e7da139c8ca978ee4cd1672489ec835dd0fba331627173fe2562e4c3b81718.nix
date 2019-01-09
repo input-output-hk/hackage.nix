@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "propellor";
-        version = "0.5.1";
-      };
+      identifier = { name = "propellor"; version = "0.5.1"; };
       license = "LicenseRef-GPL";
       copyright = "2014 Joey Hess";
       maintainer = "Joey Hess <joey@kitenet.net>";
@@ -22,7 +13,7 @@
       synopsis = "property-based host configuration management in haskell";
       description = "Propellor enures that the system it's run in satisfies a list of\nproperties, taking action as necessary when a property is not yet met.\n\nIt is configured using haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.mtl)
           (hsPkgs.MonadCatchIO-transformers)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "propellor" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.mtl)
             (hsPkgs.MonadCatchIO-transformers)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-        };
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         "config" = {
           depends = [
             (hsPkgs.MissingH)
@@ -89,8 +80,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.mtl)
             (hsPkgs.MonadCatchIO-transformers)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

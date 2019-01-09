@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "authenticate";
-        version = "0.6.6";
-      };
+      identifier = { name = "authenticate"; version = "0.6.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Authentication methods for Haskell web applications.";
       description = "Focus is on remote authentication methods, such as OpenID,\nrpxnow and Google.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.utf8-string)
           (hsPkgs.network)
           (hsPkgs.xml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

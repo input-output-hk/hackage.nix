@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-binary";
-        version = "0.5.2.1";
-      };
+      identifier = { name = "postgresql-binary"; version = "0.5.2.1"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Encoders and decoders for the PostgreSQL's binary format";
       description = "An API for dealing with PostgreSQL's binary data format.\n\nIt can be used to implement high level APIs for Postgres.\nE.g., <http://hackage.haskell.org/package/hasql-postgres \"hasql-postgres\">\nis based on this library.\n\nIt supports all Postgres versions starting from 8.3\nand is tested against 8.3, 9.3 and 9.4\nwith the @integer_datetimes@ setting off and on.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.placeholders)
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.text)
             (hsPkgs.bytestring)
             (hsPkgs.base-prelude)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "decoding" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
-          ];
-        };
+            ];
+          };
         "encoding" = {
           depends = [
             (hsPkgs.postgresql-binary)
@@ -80,8 +71,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

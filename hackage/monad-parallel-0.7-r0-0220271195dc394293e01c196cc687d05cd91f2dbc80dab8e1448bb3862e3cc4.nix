@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "monad-parallel";
-        version = "0.7";
-      };
+      identifier = { name = "monad-parallel"; version = "0.7"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2010 Mario Blazevic";
       maintainer = "blamario@yahoo.com";
@@ -22,14 +13,10 @@
       synopsis = "Parallel execution of monadic computations";
       description = "This package defines classes of monads that can perform multiple executions in parallel and combine their results. For\nany monad that's an instance of the class, the package re-implements a subset of the Control.Monad interface, but with\nparallel execution.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parallel)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.parallel) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

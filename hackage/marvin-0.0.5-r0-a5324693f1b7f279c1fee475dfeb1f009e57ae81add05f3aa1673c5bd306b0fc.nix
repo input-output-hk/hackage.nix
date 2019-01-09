@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "marvin";
-        version = "0.0.5";
-      };
+      identifier = { name = "marvin"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Justus Adam";
       maintainer = "dev@justus.science";
@@ -22,7 +13,7 @@
       synopsis = "A modular chat bot";
       description = "The proper documentation is on readthedocs: https://marvin.readthedocs.io";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.marvin-interpolate)
           (hsPkgs.lifted-base)
           (hsPkgs.lifted-async)
-        ];
-      };
+          ];
+        };
       exes = {
         "marvin-pp" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.mono-traversable)
             (hsPkgs.text)
             (hsPkgs.aeson)
-          ];
-        };
+            ];
+          };
         "marvin-init" = {
           depends = [
             (hsPkgs.base)
@@ -78,8 +69,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.mono-traversable)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

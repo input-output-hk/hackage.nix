@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       darcs28 = true;
@@ -12,13 +6,10 @@
       highlighter = false;
       closing = true;
       ssh = true;
-    };
+      };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "darcsden";
-        version = "1.1";
-      };
+      identifier = { name = "darcsden"; version = "1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Alex Suraci <suraci.alex@gmail.com>, Simon Michael <simon@joyful.com>";
@@ -28,7 +19,7 @@
       synopsis = "Darcs repository UI and hosting/collaboration app (hub.darcs.net branch).";
       description = "A web application and SSH server for browsing and hosting darcs\nrepositories and collaborating with others.\n\nInstallation: http://hub.darcs.net/simon/darcsden/README.md\n\nRelease notes: http://hub.darcs.net/simon/darcsden/ANNOUNCE.md";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "darcsden" = {
@@ -69,20 +60,20 @@
             (hsPkgs.utf8-string)
             (hsPkgs.xhtml)
             (hsPkgs.xml)
-          ] ++ [
+            ] ++ [
             (hsPkgs.darcs)
-          ]) ++ pkgs.lib.optional (flags.highlightingkate) (hsPkgs.highlighting-kate)) ++ pkgs.lib.optional (flags.highlighter) (hsPkgs.highlighter)) ++ pkgs.lib.optional (flags.ssh) (hsPkgs.ssh)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32-services-wrapper);
-        };
+            ]) ++ (pkgs.lib).optional (flags.highlightingkate) (hsPkgs.highlighting-kate)) ++ (pkgs.lib).optional (flags.highlighter) (hsPkgs.highlighter)) ++ (pkgs.lib).optional (flags.ssh) (hsPkgs.ssh)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32-services-wrapper);
+          };
         "darcsden-ssh" = {
           depends = [
             (hsPkgs.darcs)
-          ] ++ pkgs.lib.optional (flags.ssh) (hsPkgs.ssh);
-        };
+            ] ++ (pkgs.lib).optional (flags.ssh) (hsPkgs.ssh);
+          };
         "darcsden-post-hook" = {
           depends = [
             (hsPkgs.darcs)
-          ] ++ pkgs.lib.optional (flags.closing) (hsPkgs.pcre-light);
-        };
+            ] ++ (pkgs.lib).optional (flags.closing) (hsPkgs.pcre-light);
+          };
         "darcsden-test" = {
           depends = [
             (hsPkgs.aeson)
@@ -91,8 +82,8 @@
             (hsPkgs.redis)
             (hsPkgs.text)
             (hsPkgs.webdriver)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

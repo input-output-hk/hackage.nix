@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "identifiers";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "identifiers"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "awagner83@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Numeric identifiers for values.";
       description = "Useful for situations where repeated-storage requirements\nof values become too costly.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.ListLike)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "main" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "identifiers-hashable" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.text)
             (hsPkgs.bytestring)
             (hsPkgs.identifiers)
-          ];
-        };
+            ];
+          };
         "identifiers-listlike" = {
           depends = [
             (hsPkgs.base)
@@ -71,8 +62,8 @@
             (hsPkgs.text)
             (hsPkgs.bytestring)
             (hsPkgs.identifiers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

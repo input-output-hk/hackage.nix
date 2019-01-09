@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { poppler = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hxournal";
-        version = "0.6.6.1";
-      };
+      identifier = { name = "hxournal"; version = "0.6.6.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A pen notetaking program written in haskell";
       description = "notetaking program written in haskell and gtk2hs";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.poppler
@@ -52,7 +43,7 @@
             (hsPkgs.TypeCompose)
             (hsPkgs.Diff)
             (hsPkgs.dyre)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -78,16 +69,12 @@
             (hsPkgs.TypeCompose)
             (hsPkgs.Diff)
             (hsPkgs.dyre)
-          ];
-      };
+            ];
+        };
       exes = {
         "hxournal" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.hxournal)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.cmdargs) (hsPkgs.hxournal) ];
+          };
         };
       };
-    };
-  }
+    }

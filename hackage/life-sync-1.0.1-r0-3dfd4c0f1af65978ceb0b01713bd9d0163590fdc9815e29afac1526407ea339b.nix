@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "life-sync";
-        version = "1.0.1";
-      };
+      identifier = { name = "life-sync"; version = "1.0.1"; };
       license = "MIT";
       copyright = "2018 Kowainik";
       maintainer = "xrom.xkov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Synchronize personal configs across multiple machines";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.relude)
           (hsPkgs.text)
           (hsPkgs.tomland)
-        ];
-      };
+          ];
+        };
       exes = {
         "life" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.life-sync)
             (hsPkgs.optparse-applicative)
             (hsPkgs.path)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "life-sync-test" = {
           depends = [
@@ -63,11 +54,9 @@
             (hsPkgs.path)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hedgehog)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.tasty-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).tasty-discover) ];
+          };
         };
       };
-    };
-  }
+    }

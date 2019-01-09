@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "funcons-intgen";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "funcons-intgen"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "Copyright (C) 2015 L. Thomas van Binsbergen and Neil Schulthorpe";
       maintainer = "L. Thomas van Binsbergen <ltvanbinsbergen@acm.org>";
@@ -22,7 +13,7 @@
       synopsis = "Generate Funcons interpreters from CBS description files";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cbsc" = {
@@ -41,8 +32,8 @@
             (hsPkgs.regex-applicative)
             (hsPkgs.iml-tools)
             (hsPkgs.funcons-values)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

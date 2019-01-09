@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-src-exts-prisms";
-        version = "1.18.2.0";
-      };
+      identifier = { name = "haskell-src-exts-prisms"; version = "1.18.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Daniel Waterworth";
       maintainer = "da.waterworth@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Prisms with newtype wrappers for haskell-src-exts";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.template-haskell)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

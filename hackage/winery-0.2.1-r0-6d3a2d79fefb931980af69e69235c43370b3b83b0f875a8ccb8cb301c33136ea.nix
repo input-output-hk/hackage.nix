@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "winery";
-        version = "0.2.1";
-      };
+      identifier = { name = "winery"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018 Fumiaki Kinoshita";
       maintainer = "fumiexcel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sustainable serialisation library";
       description = "Please see the README on Github at <https://github.com/fumieval/winery#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "winery" = {
           depends = [
@@ -62,9 +53,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.winery)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -85,9 +76,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.winery)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-winery" = {
           depends = [
@@ -113,8 +104,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.winery)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

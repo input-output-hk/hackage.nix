@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fsh-csv";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fsh-csv"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "iostreamer007@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "csv parser for fsh";
       description = "This is a csv parser for fsh. To use this parser, use the -p flag and pass 'csv' as argument";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hint)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.hint) ]; };
+      };
+    }

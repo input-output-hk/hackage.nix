@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      buildexamples = false;
-    };
+    flags = { splitbase = true; buildexamples = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "midi-alsa";
-        version = "0.1.3";
-      };
+      identifier = { name = "midi-alsa"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -25,7 +13,7 @@
       synopsis = "Convert between datatypes of the midi and the alsa packages";
       description = "MIDI is the Musical Instrument Digital Interface,\nALSA is the Advanced Linux Sound Architecture.\nThis package provides accessors to data structures\nof the ALSA sequencer interface\nvia the more specific types from the @midi@ package.\nThe package also contains an orphan instance\nfor the @alsa-seq:Event@ type of the @midi:Message.Class.Check@ class.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +21,7 @@
           (hsPkgs.alsa-seq)
           (hsPkgs.data-accessor)
           (hsPkgs.utility-ht)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "mps";
-        version = "2008.11.6";
-      };
+      identifier = { name = "mps"; version = "2008.11.6"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "message passing style helpers";
       description = "message passing style helpers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.parsec)
           (hsPkgs.utf8-string)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

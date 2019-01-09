@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-mongodb";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pipes-mongodb"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "bill@casarin.me";
@@ -22,7 +13,7 @@
       synopsis = "Stream results from MongoDB";
       description = "Stream results from MongoDB";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.mongoDB)
           (hsPkgs.monad-control)
           (hsPkgs.pipes)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-pipes-mongodb" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.mongoDB)
             (hsPkgs.monad-control)
             (hsPkgs.pipes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

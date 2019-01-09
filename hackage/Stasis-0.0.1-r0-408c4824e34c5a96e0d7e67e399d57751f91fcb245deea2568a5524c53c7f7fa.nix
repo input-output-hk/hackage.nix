@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Stasis";
-        version = "0.0.1";
-      };
+      identifier = { name = "Stasis"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Courtney Robinson";
       maintainer = "zcourts";
@@ -22,18 +13,9 @@
       synopsis = "A simple MVCC like library";
       description = "Multi-version concurrency control";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      exes = { "Stasis" = { depends = [ (hsPkgs.base) ]; }; };
       };
-      exes = {
-        "Stasis" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
-    };
-  }
+    }

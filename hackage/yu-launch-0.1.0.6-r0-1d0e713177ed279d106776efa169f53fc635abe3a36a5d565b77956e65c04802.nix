@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yu-launch";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "yu-launch"; version = "0.1.0.6"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2017 Johann Lee";
       maintainer = "qinka@live.com";
@@ -22,7 +13,7 @@
       synopsis = "The launcher for Yu.";
       description = "The launcher for Yu.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yu-launch" = {
@@ -33,8 +24,8 @@
             (hsPkgs.yu-core)
             (hsPkgs.cmdargs)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

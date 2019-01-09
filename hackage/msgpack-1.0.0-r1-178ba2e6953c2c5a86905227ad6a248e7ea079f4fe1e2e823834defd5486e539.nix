@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "msgpack";
-        version = "1.0.0";
-      };
+      identifier = { name = "msgpack"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2009-2015, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell implementation of MessagePack";
       description = "A Haskell implementation of MessagePack <http://msgpack.org/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.binary)
           (hsPkgs.data-binary-ieee754)
-        ];
-      };
+          ];
+        };
       tests = {
         "msgpack-tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.msgpack)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

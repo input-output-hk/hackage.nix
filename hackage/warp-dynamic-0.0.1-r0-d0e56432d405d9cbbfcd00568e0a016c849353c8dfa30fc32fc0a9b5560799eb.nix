@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "warp-dynamic";
-        version = "0.0.1";
-      };
+      identifier = { name = "warp-dynamic"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Dynamic configurable warp HTTP server";
       description = "Dynamic configurable warp HTTP server";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,15 +23,10 @@
           (hsPkgs.http-types)
           (hsPkgs.wai)
           (hsPkgs.warp)
-        ];
-      };
-      exes = {
-        "warpd" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.warp-dynamic)
           ];
         };
+      exes = {
+        "warpd" = { depends = [ (hsPkgs.base) (hsPkgs.warp-dynamic) ]; };
+        };
       };
-    };
-  }
+    }

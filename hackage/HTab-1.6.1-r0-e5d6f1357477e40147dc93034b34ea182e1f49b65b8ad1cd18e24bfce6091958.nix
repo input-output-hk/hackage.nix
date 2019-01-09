@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "HTab";
-        version = "1.6.1";
-      };
+      identifier = { name = "HTab"; version = "1.6.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "guillaumh@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tableau based theorem prover for hybrid logics";
       description = "Tableau based theorem prover for hybrid logics";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "htab" = {
@@ -37,8 +28,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.cmdargs)
             (hsPkgs.hylolib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

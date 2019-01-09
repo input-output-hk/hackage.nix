@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "JuicyPixels-repa";
-        version = "0.2";
-      };
+      identifier = { name = "JuicyPixels-repa"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Thomas M. DuBuisson 2012";
       maintainer = "Thomas.DuBuisson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Convenience functions to obtain array representations of images.";
       description = "This wraps the Juicy.Pixels library to convert into 'Repa' and\n'Data.Vector.Storable' formats.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.vector)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

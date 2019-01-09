@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bytestring-in-base = true;
-    };
+    flags = { bytestring-in-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "wordcloud";
-        version = "0.0";
-      };
+      identifier = { name = "wordcloud"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Done <chrisdone@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Library for generating word/tag clouds.";
       description = "Library for generating word/tag cloud images from histograms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.random)
           (hsPkgs.data-default)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

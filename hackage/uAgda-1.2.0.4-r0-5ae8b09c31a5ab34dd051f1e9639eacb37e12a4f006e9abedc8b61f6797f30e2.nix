@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "uAgda";
-        version = "1.2.0.4";
-      };
+      identifier = { name = "uAgda"; version = "1.2.0.4"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "jeanphilippe.bernardy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simplistic dependently-typed language with parametricity.";
       description = "uAgda implements an experimental dependently-typed language\n(and proof assistant by the Curry-Howard isomorphism), extended with support for parametricity.\n\nSee the share/tutorial directory for how to get started.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "uAgda" = {
@@ -37,8 +28,8 @@
             (hsPkgs.transformers)
             (hsPkgs.mtl)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

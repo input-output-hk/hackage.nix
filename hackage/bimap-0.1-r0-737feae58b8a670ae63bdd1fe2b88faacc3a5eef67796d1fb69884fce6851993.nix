@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3.0";
-      identifier = {
-        name = "bimap";
-        version = "0.1";
-      };
+      identifier = { name = "bimap"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "scook0@gmail.com";
@@ -22,13 +13,6 @@
       synopsis = "Bidirectional mapping between two key types";
       description = "A data structure representing a bidirectional mapping between two\nkey types. Each value in the bimap is associated with exactly one\nvalue of the opposite type.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-query";
-        version = "2.2.0";
-      };
+      identifier = { name = "postgresql-query"; version = "2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sql interpolating quasiquote plus some kind of primitive ORM\nusing it";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.transformers-compat)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

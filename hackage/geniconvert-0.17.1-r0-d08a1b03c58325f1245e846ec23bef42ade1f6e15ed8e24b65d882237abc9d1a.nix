@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "geniconvert";
-        version = "0.17.1";
-      };
+      identifier = { name = "geniconvert"; version = "0.17.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "eric.kow@loria.fr";
@@ -22,7 +13,7 @@
       synopsis = "Conversion utility for the GenI generator";
       description = "Conversion utility for the GenI generator";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "geniconvert" = {
@@ -37,8 +28,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.HaXml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

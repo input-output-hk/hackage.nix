@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "github-release";
-        version = "1.0.7";
-      };
+      identifier = { name = "github-release"; version = "1.0.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,7 +13,7 @@
       synopsis = "Upload files to GitHub releases.";
       description = "GitHub Release uploads files to GitHub releases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +28,12 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.uri-templater)
-        ];
-      };
-      exes = {
-        "github-release" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.github-release)
           ];
         };
+      exes = {
+        "github-release" = {
+          depends = [ (hsPkgs.base) (hsPkgs.github-release) ];
+          };
+        };
       };
-    };
-  }
+    }

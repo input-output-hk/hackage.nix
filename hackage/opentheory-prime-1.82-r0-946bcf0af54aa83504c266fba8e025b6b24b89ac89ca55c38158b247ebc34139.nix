@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "opentheory-prime";
-        version = "1.82";
-      };
+      identifier = { name = "opentheory-prime"; version = "1.82"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Leslie-Hurd <joe@gilith.com>";
@@ -22,7 +13,7 @@
       synopsis = "Prime natural numbers";
       description = "Prime natural numbers - this package was automatically generated from the\nOpenTheory package natural-prime-1.82";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.opentheory)
           (hsPkgs.opentheory-divides)
           (hsPkgs.opentheory-stream)
-        ];
-      };
+          ];
+        };
       tests = {
         "opentheory-prime-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.opentheory)
             (hsPkgs.opentheory-divides)
             (hsPkgs.opentheory-stream)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

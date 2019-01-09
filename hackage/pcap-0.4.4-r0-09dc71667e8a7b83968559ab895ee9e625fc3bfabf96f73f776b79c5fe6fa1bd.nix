@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bytestring-in-base = true;
-    };
+    flags = { bytestring-in-base = true; };
     package = {
       specVersion = "1.2.1";
-      identifier = {
-        name = "pcap";
-        version = "0.4.4";
-      };
+      identifier = { name = "pcap"; version = "0.4.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
@@ -24,19 +13,16 @@
       synopsis = "A system-independent interface for user-level packet capture";
       description = "A system-independent interface for user-level packet capture";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.haskell98)
           (hsPkgs.network)
           (hsPkgs.time)
-        ] ++ (if flags.bytestring-in-base
+          ] ++ (if flags.bytestring-in-base
           then [ (hsPkgs.base) ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-          ]);
+          else [ (hsPkgs.base) (hsPkgs.bytestring) ]);
+        };
       };
-    };
-  }
+    }

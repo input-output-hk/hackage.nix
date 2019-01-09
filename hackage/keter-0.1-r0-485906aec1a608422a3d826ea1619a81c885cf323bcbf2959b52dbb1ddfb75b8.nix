@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "keter";
-        version = "0.1";
-      };
+      identifier = { name = "keter"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Web application deployment manager, focusing on Haskell web frameworks";
       description = "Handles deployment of web apps, using Nginx as a reverse proxy to achieve zero downtime deployments. For more information, please see the README on Github: <https://github.com/snoyberg/keter#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,15 +38,8 @@
           (hsPkgs.hinotify)
           (hsPkgs.system-filepath)
           (hsPkgs.system-fileio)
-        ];
-      };
-      exes = {
-        "keter" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.keter)
           ];
         };
+      exes = { "keter" = { depends = [ (hsPkgs.base) (hsPkgs.keter) ]; }; };
       };
-    };
-  }
+    }

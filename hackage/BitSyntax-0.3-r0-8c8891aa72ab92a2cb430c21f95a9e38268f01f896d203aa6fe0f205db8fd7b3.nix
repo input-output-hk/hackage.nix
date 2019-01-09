@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "BitSyntax";
-        version = "0.3";
-      };
+      identifier = { name = "BitSyntax"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,14 +13,14 @@
       synopsis = "A module to aid in the (de)serialisation of binary data";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

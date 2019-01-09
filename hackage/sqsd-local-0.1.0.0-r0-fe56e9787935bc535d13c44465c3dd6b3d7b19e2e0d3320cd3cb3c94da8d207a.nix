@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sqsd-local";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "sqsd-local"; version = "0.1.0.0"; };
       license = "MPL-2.0";
       copyright = "AllRightsReserved";
       maintainer = "oskar.wickstrom@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sqsd-local" = {
@@ -37,16 +28,13 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.wreq)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "sqsd-local-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.sqsd-local)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.sqsd-local) ];
+          };
         };
       };
-    };
-  }
+    }

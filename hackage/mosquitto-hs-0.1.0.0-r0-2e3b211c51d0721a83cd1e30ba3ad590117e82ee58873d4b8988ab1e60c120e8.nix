@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mosquitto-hs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mosquitto-hs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Ray Bhawnani";
       maintainer = "anishray@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Mosquitto client library bindings";
       description = "Low-level bindings to the Mosquitto client library. libmosquitto — MQTT version 3.1 client library";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

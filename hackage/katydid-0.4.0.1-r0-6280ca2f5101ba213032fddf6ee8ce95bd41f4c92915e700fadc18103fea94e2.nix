@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "katydid";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "katydid"; version = "0.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Walter Schulze";
       maintainer = "awalterschulze@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A haskell implementation of Katydid";
       description = "Please see the README on GitHub at <https://github.com/katydid/katydid-haskell#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.regex-tdfa)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "katydid-exe" = {
           depends = [
@@ -60,9 +51,9 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "katydid-test" = {
           depends = [
@@ -87,9 +78,9 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "katydid-benchmark" = {
           depends = [
@@ -111,8 +102,8 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

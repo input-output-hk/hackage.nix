@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "log";
-        version = "0.5.0";
-      };
+      identifier = { name = "log"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Andrzej Rybczak <andrzej@rybczak.net>";
@@ -22,7 +13,7 @@
       synopsis = "Structured logging solution with multiple backends";
       description = "A library that provides a way to record structured log messages with multiple backends.\n\nSupported backends:\n\n* standard output\n\n* PostgreSQL";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,7 +42,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

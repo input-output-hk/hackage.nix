@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dicom";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "dicom"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) DICOM Grid Inc. 2015";
       maintainer = "paf31@cantab.net";
@@ -22,7 +13,7 @@
       synopsis = "A library for reading and writing DICOM files in the Explicit VR Little Endian transfer syntax.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.binary)
           (hsPkgs.pretty)
           (hsPkgs.safe)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

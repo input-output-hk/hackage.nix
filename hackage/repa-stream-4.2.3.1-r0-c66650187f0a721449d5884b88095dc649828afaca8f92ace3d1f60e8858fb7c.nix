@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "repa-stream";
-        version = "4.2.3.1";
-      };
+      identifier = { name = "repa-stream"; version = "4.2.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Stream functions not present in the vector library.";
       description = "Stream functions not present in the vector library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.primitive)
           (hsPkgs.mtl)
           (hsPkgs.repa-scalar)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

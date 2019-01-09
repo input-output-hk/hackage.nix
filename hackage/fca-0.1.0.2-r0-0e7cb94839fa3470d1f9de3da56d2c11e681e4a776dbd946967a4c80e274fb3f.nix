@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fca";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "fca"; version = "0.1.0.2"; };
       license = "AGPL-3.0-only";
       copyright = "Raymond Racine";
       maintainer = "ray.racine@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Algo for Formal Concept Analysis";
       description = "Formal Concept Analysis, Lindig's FastLattice Algo";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

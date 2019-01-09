@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      x11 = false;
-      carbon = false;
-    };
+    flags = { x11 = false; carbon = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "skype4hs";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "skype4hs"; version = "0.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "emonkak@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Skype Desktop API binding for Haskell";
       description = "Skype Desktop API binding for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.word8)
-        ] ++ pkgs.lib.optional (system.isLinux || system.isFreebsd || flags.x11) (hsPkgs.X11);
-        frameworks = pkgs.lib.optional (system.isOsx || flags.carbon) (pkgs."Carbon");
+          ] ++ (pkgs.lib).optional (system.isLinux || system.isFreebsd || flags.x11) (hsPkgs.X11);
+        frameworks = (pkgs.lib).optional (system.isOsx || flags.carbon) (pkgs."Carbon");
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "damnpacket";
-        version = "0.2.0";
-      };
+      identifier = { name = "damnpacket"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@joelt.io";
@@ -22,7 +13,7 @@
       synopsis = "Parsing dAmn packets";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.trifecta)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "render" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.containers)
             (hsPkgs.damnpacket)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "parse" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.containers)
             (hsPkgs.criterion)
             (hsPkgs.damnpacket)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

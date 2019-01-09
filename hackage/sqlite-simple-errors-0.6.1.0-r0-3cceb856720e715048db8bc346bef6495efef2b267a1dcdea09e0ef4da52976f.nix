@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sqlite-simple-errors";
-        version = "0.6.1.0";
-      };
+      identifier = { name = "sqlite-simple-errors"; version = "0.6.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Joe Canero";
       maintainer = "jmc41493@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wrapper around errors from sqlite-simple";
       description = "Wrapper around errors from sqlite-simple. Get easy-to-pattern-match\ndata types for constraint errors.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.sqlite-simple)
           (hsPkgs.text)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "sqlite-simple-errors-test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.sqlite-simple)
             (hsPkgs.text)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

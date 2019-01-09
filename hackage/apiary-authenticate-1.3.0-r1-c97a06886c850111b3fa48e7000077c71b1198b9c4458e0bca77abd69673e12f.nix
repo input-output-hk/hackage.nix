@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apiary-authenticate";
-        version = "1.3.0";
-      };
+      identifier = { name = "apiary-authenticate"; version = "1.3.0"; };
       license = "MIT";
       copyright = "(c) 2014-2015 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "authenticate support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/auth.hs>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.blaze-builder)
           (hsPkgs.web-routing)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

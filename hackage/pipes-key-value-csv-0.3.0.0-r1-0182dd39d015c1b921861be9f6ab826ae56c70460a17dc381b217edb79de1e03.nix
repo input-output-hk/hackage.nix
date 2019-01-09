@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-key-value-csv";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "pipes-key-value-csv"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Marcin Mrotek, 2015";
       maintainer = "marcin.jan.mrotek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming processing of CSV files preceded by key-value pairs.";
       description = "Nonstandard CSV files, with the table preceded by a header consisting of key-value pairs are often the output format of varius test equipment, such as digital oscilloscopes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text)
           (hsPkgs.vinyl)
           (hsPkgs.vinyl-utils)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-kvc" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vinyl)
             (hsPkgs.vinyl-utils)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

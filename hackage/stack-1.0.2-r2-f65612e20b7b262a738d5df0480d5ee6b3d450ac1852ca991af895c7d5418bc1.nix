@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       integration-tests = false;
       disable-git-info = false;
       static = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack";
-        version = "1.0.2";
-      };
+      identifier = { name = "stack"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "manny@fpcomplete.com";
@@ -26,7 +17,7 @@
       synopsis = "The Haskell Tool Stack";
       description = "Please see the README.md for usage information, and\nthe wiki on Github for more details.  Also, note that\nthe API for the library is not currently stable, and may\nchange significantly, even between minor releases. It is\ncurrently only intended for use by the executable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -108,10 +99,10 @@
           (hsPkgs.hastache)
           (hsPkgs.project-template)
           (hsPkgs.uuid)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       exes = {
         "stack" = {
           depends = ([
@@ -142,12 +133,12 @@
             (hsPkgs.conduit)
             (hsPkgs.transformers)
             (hsPkgs.http-client)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32)) ++ pkgs.lib.optionals (!flags.disable-git-info) [
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32)) ++ (pkgs.lib).optionals (!flags.disable-git-info) [
             (hsPkgs.gitrev)
             (hsPkgs.optparse-simple)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "stack-test" = {
           depends = [
@@ -174,8 +165,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
             (hsPkgs.retry)
-          ];
-        };
+            ];
+          };
         "stack-integration-test" = {
           depends = [
             (hsPkgs.base)
@@ -193,8 +184,8 @@
             (hsPkgs.async)
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

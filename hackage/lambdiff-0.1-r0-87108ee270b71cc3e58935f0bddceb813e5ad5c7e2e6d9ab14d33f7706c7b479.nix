@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "lambdiff";
-        version = "0.1";
-      };
+      identifier = { name = "lambdiff"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jamie@bu.mp";
@@ -22,7 +13,7 @@
       synopsis = "Diff Viewer";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "lambdiff" = {
@@ -34,8 +25,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.gtk)
             (hsPkgs.attoparsec-enumerator)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

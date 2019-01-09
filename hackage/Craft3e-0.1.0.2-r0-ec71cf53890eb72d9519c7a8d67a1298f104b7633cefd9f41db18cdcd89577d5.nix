@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Craft3e";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "Craft3e"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "(c) Addison Wesley";
       maintainer = "Simon Thompson <s.j.thompson@kent.ac.uk>";
@@ -22,7 +13,7 @@
       synopsis = "Code for Haskell: the Craft of Functional Programming, 3rd ed.";
       description = "\nUse as follows:\n\n1. Download via: @cabal unpack@\n\n2. Go to directory: @cd Craft3e-<version>@\n\n3. Install dependencies: @cabal install@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,12 +23,12 @@
           (hsPkgs.time)
           (hsPkgs.mtl)
           (hsPkgs.HUnit)
-        ];
-      };
+          ];
+        };
       exes = {
         "performanceI" = {};
         "performanceIA" = {};
         "performanceIS" = {};
+        };
       };
-    };
-  }
+    }

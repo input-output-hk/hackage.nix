@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "extensible";
-        version = "0.4.7";
-      };
+      identifier = { name = "extensible"; version = "0.4.7"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017 Fumiaki Kinoshita";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extensible, efficient, optics-friendly data types and effects";
       description = "Poly-kinded extensible records, variants, effects, tangles";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,15 +34,10 @@
           (hsPkgs.monad-skeleton)
           (hsPkgs.StateVar)
           (hsPkgs.QuickCheck)
-        ];
-      };
-      tests = {
-        "effects" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.extensible)
           ];
         };
+      tests = {
+        "effects" = { depends = [ (hsPkgs.base) (hsPkgs.extensible) ]; };
         "bits" = {
           depends = [
             (hsPkgs.base)
@@ -59,8 +45,8 @@
             (hsPkgs.lens)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

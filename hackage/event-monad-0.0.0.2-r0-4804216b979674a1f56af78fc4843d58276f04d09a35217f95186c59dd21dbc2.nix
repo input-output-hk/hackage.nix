@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "event-monad";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "event-monad"; version = "0.0.0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <james.cook@usma.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Event-graph simulation monad transformer";
       description = "An interface for and simple implementation of an\nevent-graph simulation system as a monad transformer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.priority-queue)
           (hsPkgs.stateref)
           (hsPkgs.wl-pprint)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

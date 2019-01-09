@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-platform";
-        version = "1.1.6.1";
-      };
+      identifier = { name = "yesod-platform"; version = "1.1.6.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Meta package for Yesod";
       description = "Instead of allowing version ranges of dependencies, this package requires specific versions to avoid dependency hell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -156,7 +147,7 @@
           (hsPkgs.yesod-test)
           (hsPkgs.zlib-bindings)
           (hsPkgs.zlib-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

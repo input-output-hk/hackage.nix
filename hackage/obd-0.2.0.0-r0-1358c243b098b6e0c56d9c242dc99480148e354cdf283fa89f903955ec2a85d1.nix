@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "obd";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "obd"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2016 Henri Verroken";
       maintainer = "henriverroken@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Communicate to OBD interfaces over ELM327";
       description = "Haskell library to communicate with OBD-II over ELM327,\nwith terminal and simulator included.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.stm)
           (hsPkgs.stm-chans)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "obd-terminal" = {
           depends = [
@@ -50,24 +41,17 @@
             (hsPkgs.mtl)
             (hsPkgs.optparse-applicative)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "obd-example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.obd)
             (hsPkgs.lens)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
+      tests = { "obd-test" = { depends = [ (hsPkgs.base) (hsPkgs.obd) ]; }; };
       };
-      tests = {
-        "obd-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.obd)
-          ];
-        };
-      };
-    };
-  }
+    }

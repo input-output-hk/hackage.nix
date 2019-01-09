@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "CMQ";
-        version = "0.0.12";
-      };
+      identifier = { name = "CMQ"; version = "0.0.12"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 cmq authors";
       maintainer = "J.Fritsch@cs.cardiff.ac.uk";
@@ -22,7 +13,7 @@
       synopsis = "cwmwl udp message queue";
       description = "CMQ is a lightweight message queue using the UDP protocol as transport protocol. It trades guarantees, consistency mechanisms, (shared) state and transactions for robustness, scalability and performance. CMQ fares especially well in modern Layer 2 switches in data center networks, as well as in the presence of errors.\nThis library provides CMQ version = 0.0.12";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.PSQueue)
           (hsPkgs.time)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

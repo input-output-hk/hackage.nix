@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ixset";
-        version = "1.1.1";
-      };
+      identifier = { name = "ixset"; version = "1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Happstack team <happs@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "Efficient relational queries on Haskell sets.";
       description = "Create and query sets that are indexed by multiple indices.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.safecopy)
           (hsPkgs.template-haskell)
           (hsPkgs.syb-with-class)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "test-ixset" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.ixset)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

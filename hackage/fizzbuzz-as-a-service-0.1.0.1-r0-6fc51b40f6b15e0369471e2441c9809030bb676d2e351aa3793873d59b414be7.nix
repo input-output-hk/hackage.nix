@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fizzbuzz-as-a-service";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "fizzbuzz-as-a-service"; version = "0.1.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "FizzBuzz as a service.";
       description = "FizzBuzz as a service.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "fizzbuzz-server" = {
@@ -32,8 +23,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.network-simple)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

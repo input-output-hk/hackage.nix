@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jvm-binary";
-        version = "0.1.0";
-      };
+      identifier = { name = "jvm-binary"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Christian Gram Kalhauge <kalhauge@cs.ucla.edu>";
@@ -22,7 +13,7 @@
       synopsis = "A library for reading Java class-files";
       description = "A library for reading Java class-files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "jvm-binary-test" = {
           depends = [
@@ -65,9 +56,9 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "jvm-binary-benchmarks" = {
           depends = [
@@ -85,8 +76,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

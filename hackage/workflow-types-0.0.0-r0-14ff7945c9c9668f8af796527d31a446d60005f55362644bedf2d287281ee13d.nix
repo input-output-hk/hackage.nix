@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "workflow-types";
-        version = "0.0.0";
-      };
+      identifier = { name = "workflow-types"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Spiros Boosalis";
       maintainer = "samboosalis@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Automate keyboard\\/mouse\\/clipboard\\/application interaction.";
       description = "TODO";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +28,12 @@
           (hsPkgs.comonad)
           (hsPkgs.exceptions)
           (hsPkgs.Earley)
-        ];
-      };
-      exes = {
-        "workflow-types-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.workflow-types)
           ];
         };
+      exes = {
+        "workflow-types-example" = {
+          depends = [ (hsPkgs.base) (hsPkgs.workflow-types) ];
+          };
+        };
       };
-    };
-  }
+    }

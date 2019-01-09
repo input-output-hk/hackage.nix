@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Hastodon";
-        version = "0.1.0";
-      };
+      identifier = { name = "Hastodon"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "syucream1031@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "mastodon client module for Haskell";
       description = "mastodon client module for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.http-conduit)
           (hsPkgs.MissingH)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

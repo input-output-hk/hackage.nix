@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "expand";
-        version = "0.0.1";
-      };
+      identifier = { name = "expand"; version = "0.0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "jaccokrijnen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Extensible Pandoc";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.uu-parsinglib)
           (hsPkgs.AspectAG)
           (hsPkgs.HList)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-conduit";
-        version = "3.0.0.2";
-      };
+      identifier = { name = "wai-conduit"; version = "3.0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "conduit wrappers for WAI";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-conduit>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.http-types)
           (hsPkgs.blaze-builder)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hosc";
-        version = "0.1";
-      };
+      identifier = { name = "hosc"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2006-2007";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Open Sound Control";
       description = "Haskell implementation of the Open Sound Control byte protocol";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.binary)
           (hsPkgs.network)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

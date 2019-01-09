@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "cabalmdvrpm";
-        version = "0.0.1";
-      };
+      identifier = { name = "cabalmdvrpm"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2006-2007 Olivier Thauvin";
       maintainer = "Olivier Thauvin <nanardon@nanardon.zarb.org>";
@@ -22,7 +13,7 @@
       synopsis = "Create mandriva rpm from cabal package";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.base)
           (hsPkgs.Cabal)
           (hsPkgs.cabalrpmdeps)
-        ];
-      };
+          ];
+        };
       exes = {
         "cabalmdvspec" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.cabalrpmdeps)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "twitter-types-lens";
-        version = "0.7.2";
-      };
+      identifier = { name = "twitter-types-lens"; version = "0.7.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "taka@himura.jp";
@@ -22,7 +13,7 @@
       synopsis = "Twitter JSON types (lens powered)";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.twitter-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

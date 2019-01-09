@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "relational-query";
-        version = "0.12.0.1";
-      };
+      identifier = { name = "relational-query"; version = "0.12.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013-2018 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Typeful, Modular, Relational, algebraic query engine";
       description = "This package contiains typeful relation structure and\nrelational-algebraic query building DSL which can\ntranslate into SQL query.\nSupported query features are below:\n- Type safe query building\n- Restriction, Join, Aggregation\n- Modularized relations\n- Typed placeholders";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.sql-words)
           (hsPkgs.names-th)
           (hsPkgs.persistable-record)
-        ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
+        };
       tests = {
         "sqls" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.relational-query)
             (hsPkgs.containers)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
+          };
         "sqlsArrow" = {
           depends = [
             (hsPkgs.base)
@@ -62,8 +53,8 @@
             (hsPkgs.relational-query)
             (hsPkgs.containers)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
+          };
         };
       };
-    };
-  }
+    }

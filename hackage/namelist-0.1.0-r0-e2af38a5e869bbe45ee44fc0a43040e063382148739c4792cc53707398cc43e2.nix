@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "namelist";
-        version = "0.1.0";
-      };
+      identifier = { name = "namelist"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2015 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "fortran90 namelist parser/pretty printer";
       description = "fortran90 namelist parser/pretty printer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.parsec)
           (hsPkgs.data-default-class)
-        ];
-      };
+          ];
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.case-insensitive)
             (hsPkgs.QuickCheck)
             (hsPkgs.namelist)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

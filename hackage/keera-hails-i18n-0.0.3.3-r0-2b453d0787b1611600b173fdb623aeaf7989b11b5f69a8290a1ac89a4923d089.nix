@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "keera-hails-i18n";
-        version = "0.0.3.3";
-      };
+      identifier = { name = "keera-hails-i18n"; version = "0.0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.es";
@@ -22,7 +13,7 @@
       synopsis = "Rapid Gtk Application Development - I18N";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.utf8-string)
           (hsPkgs.hgettext)
           (hsPkgs.setlocale)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

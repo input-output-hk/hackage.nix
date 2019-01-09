@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "packed-multikey-map";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "packed-multikey-map"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "(@) jsagemue \$ uni-koeln.de";
@@ -22,7 +13,7 @@
       synopsis = "Efficient “spreadsheet table” like maps with multiple marginals";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.constraints)
           (hsPkgs.QuickCheck)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.packed-multikey-map)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

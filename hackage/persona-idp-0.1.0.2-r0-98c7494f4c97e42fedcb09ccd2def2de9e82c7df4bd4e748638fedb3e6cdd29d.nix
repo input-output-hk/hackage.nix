@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "persona-idp";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "persona-idp"; version = "0.1.0.2"; };
       license = "AGPL-3.0-only";
       copyright = "Copyright (C) 2013, 2014, 2015  Fraser Tweedale";
       maintainer = "frase@frase.id.au";
@@ -22,7 +13,7 @@
       synopsis = "Persona (BrowserID) Identity Provider";
       description = "\npersona-idp is a simple Mozilla Persona (formerly BrowserID)\nidentity provider (IdP) intended to be run behind an HTTP\nserver providing TLS termination and user authentication.\n\nFor full documentation see\n<https://github.com/frasertweedale/hs-persona-idp>.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "persona" = {
@@ -50,8 +41,8 @@
             (hsPkgs.crypto-random)
             (hsPkgs.jose)
             (hsPkgs.persona)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

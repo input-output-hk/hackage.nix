@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "attoparsec-iteratee";
-        version = "0.2.0";
-      };
+      identifier = { name = "attoparsec-iteratee"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "greg@gregorycollins.net";
@@ -22,7 +13,7 @@
       synopsis = "An adapter to convert attoparsec Parsers into blazing-fast Iteratees";
       description = "An adapter to convert attoparsec Parsers into blazing-fast Iteratees";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.iteratee)
           (hsPkgs.monads-fd)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

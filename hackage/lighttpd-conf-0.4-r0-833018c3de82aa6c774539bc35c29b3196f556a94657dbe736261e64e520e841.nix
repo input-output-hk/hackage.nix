@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.3";
-      identifier = {
-        name = "lighttpd-conf";
-        version = "0.4";
-      };
+      identifier = { name = "lighttpd-conf"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) Matt Morrow";
       maintainer = "Matt Morrow <mjm2002@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Lighttpd configuration file tools.";
       description = "Lighttpd configuration file tools. Haddock docs are at\n<http://code.haskell.org/~morrow/code/haskell/web/lighttpd-conf/haddock/>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,11 +23,11 @@
           (hsPkgs.pretty)
           (hsPkgs.bytestring)
           (hsPkgs.packedstring)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       };
-    };
-  }
+    }

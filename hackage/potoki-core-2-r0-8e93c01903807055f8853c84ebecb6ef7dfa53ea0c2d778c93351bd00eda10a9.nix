@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "potoki-core";
-        version = "2";
-      };
+      identifier = { name = "potoki-core"; version = "2"; };
       license = "MIT";
       copyright = "(c) 2017, Metrix.AI";
       maintainer = "Metrix.AI Ninjas <ninjas@metrix.ai>";
@@ -22,7 +13,7 @@
       synopsis = "Low-level components of \"potoki\"";
       description = "Provides everything required for building custom instances of\nthe \\\"potoki\\\" abstractions.\nConsider this library to be the Internals modules of \\\"potoki\\\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.unagi-chan)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

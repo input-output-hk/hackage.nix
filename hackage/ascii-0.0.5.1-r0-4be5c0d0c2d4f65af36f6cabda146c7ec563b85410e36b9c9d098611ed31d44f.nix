@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ascii";
-        version = "0.0.5.1";
-      };
+      identifier = { name = "ascii"; version = "0.0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Martin, Julie Moronuki";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe, bytestring-based ASCII values.";
       description = "Type-safe, bytestring-based ASCII values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.hashable)
           (hsPkgs.semigroups)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

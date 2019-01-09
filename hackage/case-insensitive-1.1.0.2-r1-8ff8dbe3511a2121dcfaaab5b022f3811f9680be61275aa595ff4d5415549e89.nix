@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "case-insensitive";
-        version = "1.1.0.2";
-      };
+      identifier = { name = "case-insensitive"; version = "1.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2011 Bas van Dijk";
       maintainer = "Bas van Dijk <v.dijk.bas@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Case insensitive string comparison";
       description = "The module @Data.CaseInsensitive@ provides the 'CI' type\nconstructor which can be parameterised by a string-like\ntype like: 'String', 'ByteString', 'Text',\netc.. Comparisons of values of the resulting type will be\ninsensitive to cases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-case-insensitive" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-case-insensitive" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

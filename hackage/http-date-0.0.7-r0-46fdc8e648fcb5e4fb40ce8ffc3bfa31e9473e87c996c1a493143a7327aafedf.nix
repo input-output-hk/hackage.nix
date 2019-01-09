@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "http-date";
-        version = "0.0.7";
-      };
+      identifier = { name = "http-date"; version = "0.0.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP Date parser/formatter";
       description = "Fast parser and formatter for HTTP Date";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -42,14 +33,9 @@
             (hsPkgs.http-date)
             (hsPkgs.old-locale)
             (hsPkgs.time)
-          ];
-        };
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

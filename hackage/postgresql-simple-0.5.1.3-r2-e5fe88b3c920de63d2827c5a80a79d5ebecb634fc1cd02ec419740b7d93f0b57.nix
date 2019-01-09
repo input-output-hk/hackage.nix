@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "postgresql-simple";
-        version = "0.5.1.3";
-      };
+      identifier = { name = "postgresql-simple"; version = "0.5.1.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 MailRank, Inc.\n(c) 2011-2015 Leon P Smith";
       maintainer = "Leon P Smith <leon@melding-monads.com>";
@@ -22,7 +13,7 @@
       synopsis = "Mid-Level PostgreSQL client library";
       description = "Mid-Level PostgreSQL client library, forked from mysql-simple.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.uuid-types)
           (hsPkgs.scientific)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.6")) (hsPkgs.ghc-prim);
+        };
       tests = {
         "test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) (hsPkgs.ghc-prim);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.6")) (hsPkgs.ghc-prim);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "squeal-postgresql";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "squeal-postgresql"; version = "0.1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017 Morphism, LLC";
       maintainer = "eitan.chatav@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Squeal PostgreSQL Library";
       description = "Squeal is a type-safe embedding of PostgreSQL in Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       exes = {
         "squeal-postgresql-example" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "squeal-postgresql-spec" = {
           depends = [
@@ -66,14 +57,11 @@
             (hsPkgs.generics-sop)
             (hsPkgs.hspec)
             (hsPkgs.squeal-postgresql)
-          ];
-        };
+            ];
+          };
         "squeal-postgresql-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) ];
+          };
         };
       };
-    };
-  }
+    }

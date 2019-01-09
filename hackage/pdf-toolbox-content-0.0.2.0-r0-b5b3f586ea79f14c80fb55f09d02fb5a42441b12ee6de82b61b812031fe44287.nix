@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pdf-toolbox-content";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "pdf-toolbox-content"; version = "0.0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Yuras Shumovich 2013";
       maintainer = "Yuras Shumovich <shumovichy@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A collection of tools for processing PDF files";
       description = "Tools for processing PDF content streams";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.io-streams)
           (hsPkgs.encoding)
           (hsPkgs.pdf-toolbox-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

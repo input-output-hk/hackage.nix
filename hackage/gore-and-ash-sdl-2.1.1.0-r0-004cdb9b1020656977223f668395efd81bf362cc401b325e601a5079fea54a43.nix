@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gore-and-ash-sdl";
-        version = "2.1.1.0";
-      };
+      identifier = { name = "gore-and-ash-sdl"; version = "2.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Gore&Ash core module for integration with SDL library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

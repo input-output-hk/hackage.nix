@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "uu-parsinglib";
-        version = "2.1.0";
-      };
+      identifier = { name = "uu-parsinglib"; version = "2.1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "doaitse@swierstra.net";
@@ -22,13 +13,8 @@
       synopsis = "New version of the Utrecht University parser combinator library";
       description = "New version of the Utrecht University parser combinator library, containing monadic, online, error correction, annotation free, applicative style parser combinators, now based on Control.Applicative";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack-network";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "stack-network"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Sean McGroarty";
       maintainer = "Sean McGroarty <mcgroas@tcd.ie>";
@@ -22,7 +13,7 @@
       synopsis = "A program for extending Stack to add distributed capabilities";
       description = "See README at <https://github.com/McGizzle/stack-network#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.temporary)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "stack-network" = {
           depends = [
@@ -82,9 +73,9 @@
             (hsPkgs.temporary)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "distributed-test" = {
           depends = [
@@ -117,8 +108,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

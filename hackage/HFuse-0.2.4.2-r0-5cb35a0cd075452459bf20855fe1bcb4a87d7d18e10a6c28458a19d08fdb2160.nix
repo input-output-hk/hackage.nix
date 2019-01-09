@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HFuse";
-        version = "0.2.4.2";
-      };
+      identifier = { name = "HFuse"; version = "0.2.4.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Montez Fitzpatrick <montezf@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "HFuse is a binding for the Linux FUSE library.";
       description = "Bindings for the FUSE library, compatible with OSXFUSE and FreeBSD.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.unix) (hsPkgs.bytestring) ];
         libs = [ (pkgs."fuse") ];
+        };
       };
-    };
-  }
+    }

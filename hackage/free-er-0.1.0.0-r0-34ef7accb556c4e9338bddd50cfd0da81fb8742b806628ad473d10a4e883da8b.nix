@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "free-er";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "free-er"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Ömer Sinan Ağacan";
       maintainer = "Ömer Sinan Ağacan <omeragacan@gmail.com>";
@@ -22,18 +13,11 @@
       synopsis = "An extensible effects library";
       description = "See examples directory for some example effect definitions and handlers.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
-        "free-er-examples" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.free-er)
-          ];
+        "free-er-examples" = { depends = [ (hsPkgs.base) (hsPkgs.free-er) ]; };
         };
       };
-    };
-  }
+    }

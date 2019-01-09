@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "SVGFonts";
-        version = "0.1";
-      };
+      identifier = { name = "SVGFonts"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Tillmann.Vogt@rwth-aachen.de";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "parse svg-font files and generate outlines of letters and sentences";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Fonts" = {
@@ -33,8 +24,8 @@
             (hsPkgs.GLUT)
             (hsPkgs.xml)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

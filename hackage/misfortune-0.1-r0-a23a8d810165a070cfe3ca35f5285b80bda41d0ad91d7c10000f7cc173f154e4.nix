@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "misfortune";
-        version = "0.1";
-      };
+      identifier = { name = "misfortune"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,7 +13,7 @@
       synopsis = "fortune-mod clone";
       description = "fortune-mod clone, in library and executable form.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,17 +28,17 @@
           (hsPkgs.text)
           (hsPkgs.utf8-string)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "misfortune" = {
           depends = [
             (hsPkgs.monad-loops)
             (hsPkgs.regex-base)
             (hsPkgs.regex-pcre)
-          ];
-        };
+            ];
+          };
         "misfortune-strfile" = {};
+        };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "partial-semigroup-hedgehog";
         version = "0.4.0.1";
-      };
+        };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,14 +16,14 @@
       synopsis = "Property testing for partial semigroups using Hedgehog";
       description = "Provides a Hedgehog property to check the @PartialSemigroup@ associativity\naxiom.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.hedgehog)
           (hsPkgs.partial-semigroup)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

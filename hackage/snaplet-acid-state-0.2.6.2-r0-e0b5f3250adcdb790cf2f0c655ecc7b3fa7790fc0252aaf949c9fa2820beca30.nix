@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snaplet-acid-state";
-        version = "0.2.6.2";
-      };
+      identifier = { name = "snaplet-acid-state"; version = "0.2.6.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mightybyte@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "acid-state snaplet for Snap Framework";
       description = "This snaplet makes it easy to use acid-state in a Snap\napplication.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

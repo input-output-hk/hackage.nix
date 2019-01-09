@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "call-haskell-from-anything";
         version = "0.1.0.2";
-      };
+        };
       license = "MIT";
       copyright = "";
       maintainer = "Niklas Hambüchen (mail@nh2.me)";
@@ -22,7 +16,7 @@
       synopsis = "Python-to-Haskell function calls";
       description = "";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +26,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.mtl)
           (hsPkgs.attoparsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "call-haskell-from-anything.so" = {
           depends = [
@@ -42,8 +36,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.msgpack)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

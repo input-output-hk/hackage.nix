@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "bamboo-theme-mini-html5";
         version = "2009.11.27";
-      };
+        };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "bamboo mini html5 theme";
       description = "bamboo mini html5 theme";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,7 +50,7 @@
           (hsPkgs.bamboo)
           (hsPkgs.moe)
           (hsPkgs.yuuko)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

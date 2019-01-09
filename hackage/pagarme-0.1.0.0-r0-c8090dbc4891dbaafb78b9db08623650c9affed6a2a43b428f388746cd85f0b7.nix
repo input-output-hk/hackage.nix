@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pagarme";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pagarme"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "diogo@biazus.me";
@@ -22,7 +13,7 @@
       synopsis = "Pagarme API wrapper";
       description = "Pagarme API wrapper";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.aeson)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "testbin" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.pagarme)
             (hsPkgs.wreq)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

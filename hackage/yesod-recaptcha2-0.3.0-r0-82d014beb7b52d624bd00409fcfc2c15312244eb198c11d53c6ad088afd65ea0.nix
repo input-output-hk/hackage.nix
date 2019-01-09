@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "yesod-recaptcha2";
-        version = "0.3.0";
-      };
+      identifier = { name = "yesod-recaptcha2"; version = "0.3.0"; };
       license = "MIT";
       copyright = "© ncaq";
       maintainer = "ncaq@ncaq.net";
@@ -22,7 +13,7 @@
       synopsis = "yesod recaptcha2";
       description = "recaptcha2 for yesod-form";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.yesod-auth)
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-form)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

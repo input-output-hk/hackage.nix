@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "peyotls-codec";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "peyotls-codec"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yoshikuni Jujo <PAF01143@nifty.ne.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Codec parts of Pretty Easy YOshikuni-made TLS library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.crypto-pubkey)
           (hsPkgs.crypto-pubkey-types)
           (hsPkgs.bytable)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

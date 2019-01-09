@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-query";
-        version = "0.1.0";
-      };
+      identifier = { name = "stackage-query"; version = "0.1.0"; };
       license = "MIT";
       copyright = "Jens Petersen";
       maintainer = "juhpetersen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Stackage package query";
       description = "Tool to query package versions in Stackage";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "stackage" = {
@@ -37,8 +28,8 @@
             (hsPkgs.stackage-types)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

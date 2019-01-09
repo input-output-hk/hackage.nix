@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "chell";
-        version = "0.1.2";
-      };
+      identifier = { name = "chell"; version = "0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Quiet test runner";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

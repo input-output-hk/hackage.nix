@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "computations";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "computations"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2012–2015 Wolfgang Jeltsch";
       maintainer = "wolfgang@cs.ioc.ee";
@@ -22,10 +13,6 @@
       synopsis = "Advanced notions of computation";
       description = "This package provides a framework for computations with certain\nconsistency constraints. Based on this framework, it implements\nresourceful computations, which are an alternative to the @IO@\nmondad. In the case of resourceful computations, the consistency\nconstraint is a single-use policy, also known as linearity.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

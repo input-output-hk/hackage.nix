@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "representable-profunctors";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "representable-profunctors"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Representable profunctors";
       description = "Representable profunctors";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.comonad)
           (hsPkgs.profunctors)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

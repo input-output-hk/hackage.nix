@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "rounding";
-        version = "0.3.0";
-      };
+      identifier = { name = "rounding"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ekmett@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Explicit floating point rounding mode wrappers";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.numeric-extras)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.numeric-extras) ];
+        };
       };
-    };
-  }
+    }

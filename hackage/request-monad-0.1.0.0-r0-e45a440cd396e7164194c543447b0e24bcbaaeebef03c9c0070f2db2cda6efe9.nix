@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "request-monad";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "request-monad"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Tom Hulihan <hulihan.tom159@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "A transformer for generic requests";
       description = "An MTL-style monad that can be used to perform requests. Using RequestT\nsimplifies writing generic middleware.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

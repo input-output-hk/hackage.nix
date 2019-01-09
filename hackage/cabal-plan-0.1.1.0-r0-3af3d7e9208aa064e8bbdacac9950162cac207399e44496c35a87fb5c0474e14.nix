@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-plan";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "cabal-plan"; version = "0.1.1.0"; };
       license = "GPL-3.0-only";
       copyright = "2016 Herbert Valerio Riedel";
       maintainer = "hvr@gnu.org";
@@ -22,7 +13,7 @@
       synopsis = "Library and utiltity for processing cabal's plan.json file";
       description = "This package provides a library for decoding @plan.json@ files as\nwell as simple tool @cabal-plan@ for extracting and pretty printing\nthe information contained in the @plan.json@ file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.base16-bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "cabal-plan" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.mtl)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

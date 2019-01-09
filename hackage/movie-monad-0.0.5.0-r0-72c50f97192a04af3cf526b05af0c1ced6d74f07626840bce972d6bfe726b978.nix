@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "movie-monad";
-        version = "0.0.5.0";
-      };
+      identifier = { name = "movie-monad"; version = "0.0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2017 David Lettier";
       maintainer = "Lettier";
@@ -22,7 +13,7 @@
       synopsis = "Plays videos using GStreamer and GTK+.";
       description = "A free and simple to use video player made with Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "movie-monad" = {
@@ -47,8 +38,8 @@
             (hsPkgs.gi-gst)
             (hsPkgs.gi-gstvideo)
             (hsPkgs.gi-gtk)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

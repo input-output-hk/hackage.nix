@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "casr-logbook-reports-meta-html";
         version = "0.0.1";
-      };
+        };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (C) 2016 Tony Morris";
       maintainer = "Tony Morris";
@@ -22,7 +16,7 @@
       synopsis = "HTML output for reports on meta-information about entries in a CASR 61.345 logbook";
       description = "<<https://i.imgur.com/p6LT40r.png>>\n\nHTML output for reports on meta-information about entries in a CASR 61.345 logbook\n\n<<https://i.imgur.com/Lfhcmtg.png>>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +30,8 @@
           (hsPkgs.lucid)
           (hsPkgs.lens)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -47,8 +41,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

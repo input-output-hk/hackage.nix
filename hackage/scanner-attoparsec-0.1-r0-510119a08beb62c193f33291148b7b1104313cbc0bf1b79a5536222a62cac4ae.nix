@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scanner-attoparsec";
-        version = "0.1";
-      };
+      identifier = { name = "scanner-attoparsec"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Yuras Shumovich 2016";
       maintainer = "shumovichy@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Inject attoparsec parser with backtracking into non-backtracking scanner";
       description = "Backtracking kills performance, so scanner package doesn't support it.\nBut sometimes you just need it. E.g. you have a mostly non-backtracking\nparser, but a small bit of its grammar is too complex to transform it\nto non-backtracking form. In that case you can inject a backtracking\nattoparsec parser into otherwise non-backtracking scanner.\n\nSee also http://hackage.haskell.org/scanner";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-          (hsPkgs.scanner)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.attoparsec) (hsPkgs.scanner) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.hspec)
             (hsPkgs.scanner-attoparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

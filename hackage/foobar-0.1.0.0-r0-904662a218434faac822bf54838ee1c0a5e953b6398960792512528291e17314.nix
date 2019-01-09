@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "foobar";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "foobar"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Author name here";
       maintainer = "example@example.com";
@@ -22,26 +13,14 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-      };
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
-        "foobar-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.foobar)
-          ];
+        "foobar-exe" = { depends = [ (hsPkgs.base) (hsPkgs.foobar) ]; };
         };
-      };
       tests = {
-        "foobar-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.foobar)
-          ];
+        "foobar-test" = { depends = [ (hsPkgs.base) (hsPkgs.foobar) ]; };
         };
       };
-    };
-  }
+    }

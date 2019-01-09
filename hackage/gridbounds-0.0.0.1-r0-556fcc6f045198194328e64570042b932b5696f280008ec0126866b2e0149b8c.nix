@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gridbounds";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "gridbounds"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "firas@zaidan.de";
@@ -22,7 +13,7 @@
       synopsis = "Collision detection for GridBox";
       description = "This package adds collision detection to GridBox. It is based on Earclipper and GJK.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.gridbox)
           (hsPkgs.earclipper)
           (hsPkgs.gjk)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.gjk)
             (hsPkgs.gridbounds)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

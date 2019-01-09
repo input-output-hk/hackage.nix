@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "LParse";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "LParse"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "(c) 2017 Marcus Völker";
       maintainer = "marcus.voelker@rwth-aachen.de";
@@ -22,15 +13,9 @@
       synopsis = "A continuation-based parser library";
       description = "A parser library using continuations with a possibility for failure to build parsers in a clear and concise manner.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
+      "library" = { depends = [ (hsPkgs.base) ]; };
+      tests = { "test-lparse" = { depends = [ (hsPkgs.base) ]; }; };
       };
-      tests = {
-        "test-lparse" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
-    };
-  }
+    }

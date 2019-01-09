@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      withquickcheck = false;
-      withutils = true;
-    };
+    flags = { withquickcheck = false; withutils = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fixplate";
-        version = "0.1.6";
-      };
+      identifier = { name = "fixplate"; version = "0.1.6"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011-2015 Balazs Komuves";
       maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
@@ -25,12 +13,12 @@
       synopsis = "Uniplate-style generic traversals for optionally annotated fixed-point types.";
       description = "Uniplate-style generic traversals for fixed-point types, which can be\noptionally annotated with attributes. We also provide recursion schemes,\na generic zipper, generic pretty-printer, generic tries, generic hashing,\nand generic tree visualization. See the module \"Data.Generics.Fixplate\" and\nthen the individual modules for more detailed information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
-        ] ++ pkgs.lib.optional (flags.withutils) (hsPkgs.containers)) ++ pkgs.lib.optional (flags.withquickcheck) (hsPkgs.QuickCheck);
+          ] ++ (pkgs.lib).optional (flags.withutils) (hsPkgs.containers)) ++ (pkgs.lib).optional (flags.withquickcheck) (hsPkgs.QuickCheck);
+        };
       };
-    };
-  }
+    }

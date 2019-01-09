@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prometheus";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "prometheus"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "All Rights Reserved";
       maintainer = "luke@hoersten.org";
@@ -22,7 +13,7 @@
       synopsis = "Prometheus Haskell Client";
       description = "Idiomatic Haskell client for Prometheus.io monitoring.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.transformers)
           (hsPkgs.wai)
           (hsPkgs.warp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

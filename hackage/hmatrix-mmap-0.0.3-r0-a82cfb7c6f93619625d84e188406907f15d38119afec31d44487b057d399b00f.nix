@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hmatrix-mmap";
-        version = "0.0.3";
-      };
+      identifier = { name = "hmatrix-mmap"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Daniel Peebles 2010, (c) Alan Falloon 2011";
       maintainer = "Alan Falloon <alan.falloon@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Memory map Vector from disk into memory efficiently";
       description = "Memory map Data.Packed.Vector.Vector from disk into memory efficiently.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mmap)
-          (hsPkgs.hmatrix)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mmap) (hsPkgs.hmatrix) ];
+        };
       };
-    };
-  }
+    }

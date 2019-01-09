@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hfiar";
-        version = "2.0.4";
-      };
+      identifier = { name = "hfiar"; version = "2.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2010 Fernando \"Brujo\" Benavides";
       maintainer = "greenmellon@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Four in a Row in Haskell!!";
       description = "The classical game, implemented with wxHaskell";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,17 +23,12 @@
           (hsPkgs.mtl)
           (hsPkgs.eprocess)
           (hsPkgs.eprocess)
-        ];
-      };
-      exes = {
-        "hfiar" = {
-          depends = [
-            (hsPkgs.wxcore)
-            (hsPkgs.wxcore)
-            (hsPkgs.wx)
-            (hsPkgs.wx)
           ];
         };
+      exes = {
+        "hfiar" = {
+          depends = [ (hsPkgs.wxcore) (hsPkgs.wxcore) (hsPkgs.wx) (hsPkgs.wx) ];
+          };
+        };
       };
-    };
-  }
+    }

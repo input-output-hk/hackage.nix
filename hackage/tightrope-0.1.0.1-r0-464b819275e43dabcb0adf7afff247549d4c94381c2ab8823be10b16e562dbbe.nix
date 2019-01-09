@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tightrope";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "tightrope"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ianthehenry@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Nice API for a Slackbot";
       description = "Making bots for Slack is hard! But wait: now it's easy.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.containers)
           (hsPkgs.http-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "github-backup";
-        version = "1.20120126";
-      };
+      identifier = { name = "github-backup"; version = "1.20120126"; };
       license = "LicenseRef-GPL";
       copyright = "2012 Joey Hess";
       maintainer = "Joey Hess <joey@kitenet.net>";
@@ -22,7 +13,7 @@
       synopsis = "backs up everything github knows about a repository, to the repository";
       description = "github-backup is a simple tool you run in a git repository you cloned from\nGithub. It backs up everything Github knows about the repository, including\nother forks, issues, comments, milestones, pull requests, and watchers.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "github-backup" = {
@@ -41,8 +32,8 @@
             (hsPkgs.IfElse)
             (hsPkgs.pretty-show)
             (hsPkgs.github)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mulang";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mulang"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "franco@mumuki.org";
@@ -22,7 +13,7 @@
       synopsis = "The Mu Language, a non-computable extended Lambda Calculus";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.haskell-src)
           (hsPkgs.aeson)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.haskell-src)
             (hsPkgs.hspec)
             (hsPkgs.mulang)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

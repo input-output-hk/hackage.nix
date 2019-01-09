@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "genvalidity-hspec-aeson";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "genvalidity-hspec-aeson"; version = "0.3.0.1"; };
       license = "MIT";
       copyright = "Copyright: (c) 2016-2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com,\nnick.van.den.broeck666@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Standard spec's for aeson-related instances";
       description = "Standard spec's for aeson-related Instances";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.genvalidity)
           (hsPkgs.genvalidity-hspec)
           (hsPkgs.hspec)
-        ];
-      };
+          ];
+        };
       tests = {
         "genvalidity-hspec-aeson-doctests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.genvalidity-property)
             (hsPkgs.hspec)
             (hsPkgs.validity)
-          ];
-        };
+            ];
+          };
         "genvalidity-hspec-aeson-test" = {
           depends = [
             (hsPkgs.aeson)
@@ -61,8 +52,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.validity)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

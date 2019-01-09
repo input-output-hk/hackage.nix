@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kafka-device-vrpn";
-        version = "0.1.5.0";
-      };
+      identifier = { name = "kafka-device-vrpn"; version = "0.1.5.0"; };
       license = "MIT";
       copyright = "(c) 2016 Brian W Bush";
       maintainer = "Brian W Bush <consult@brianwbush.info>";
@@ -22,7 +13,7 @@
       synopsis = "VRPN events via a Kafka message broker";
       description = "This package contains functions for passing VRPN \\<<https://github.com/vrpn/vrpn/wiki>\\> events to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.kafka-device)
           (hsPkgs.milena)
           (hsPkgs.vrpn)
-        ];
-      };
+          ];
+        };
       exes = {
         "kafka-device-vrpn" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.kafka-device)
             (hsPkgs.milena)
             (hsPkgs.vrpn)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

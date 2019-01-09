@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ureader";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ureader"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013, Sam T.";
       maintainer = "Sam T. <pxqr.sta@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Minimalistic CLI RSS reader.";
       description = "`ureader` is minimalistic command line RSS reader with unicode\nand color support. Everything it does is fetch RSS documents,\nmerge them according to specified options, format and flush\nresulting feed to stdout. So `ureader` could be used with\npagers like `more(1)` or in linux terminal.\n\n[/Release Notes/]\n\n* /0.1.0.0:/ Initial version.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ureader" = {
@@ -49,8 +40,8 @@
             (hsPkgs.xml)
             (hsPkgs.feed)
             (hsPkgs.tagsoup)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

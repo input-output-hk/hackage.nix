@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "RoyalMonad";
-        version = "1000.7";
-      };
+      identifier = { name = "RoyalMonad"; version = "1000.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "atzeus@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "All hail the Royal Monad!";
       description = "All hail the Royal Monad!";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

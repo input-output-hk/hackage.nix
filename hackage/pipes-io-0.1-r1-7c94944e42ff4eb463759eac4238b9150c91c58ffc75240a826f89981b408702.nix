@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-io";
-        version = "0.1";
-      };
+      identifier = { name = "pipes-io"; version = "0.1"; };
       license = "Apache-2.0";
       copyright = "Copyright 2016 Yin Guanhao <yinguanhao@gmail.com>";
       maintainer = "Yin Guanhao <yinguanhao@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "Stateful IO streams based on pipes";
       description = "`pipes-io` allows you to use pipes and `Parser`s more easily in the\nIO monad, providing a interface similar to that of `io-streams`.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.pipes)
-          (hsPkgs.pipes-parse)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.pipes) (hsPkgs.pipes-parse) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.pipes-io)
             (hsPkgs.pipes)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

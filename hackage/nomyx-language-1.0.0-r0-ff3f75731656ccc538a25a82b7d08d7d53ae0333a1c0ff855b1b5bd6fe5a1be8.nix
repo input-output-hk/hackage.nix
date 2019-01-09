@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "nomyx-language";
-        version = "1.0.0";
-      };
+      identifier = { name = "nomyx-language"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2012 Corentin Dupont";
       maintainer = "Corentin Dupont";
@@ -22,7 +13,7 @@
       synopsis = "Language to express rules for Nomic";
       description = "A DSL to express rules in a Nomic game. See package Nomyx for a full game implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.monad-loops)
           (hsPkgs.imprevu)
           (hsPkgs.shortcut)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

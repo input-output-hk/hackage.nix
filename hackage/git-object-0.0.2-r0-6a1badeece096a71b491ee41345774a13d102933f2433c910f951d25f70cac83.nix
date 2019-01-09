@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "git-object";
-        version = "0.0.2";
-      };
+      identifier = { name = "git-object"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Git object and its parser";
       description = "This package provides data types for\nGit objects, enumerator-based parser\nof Git object files and manipulation\nfunctions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.enumerator)
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-enumerator)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

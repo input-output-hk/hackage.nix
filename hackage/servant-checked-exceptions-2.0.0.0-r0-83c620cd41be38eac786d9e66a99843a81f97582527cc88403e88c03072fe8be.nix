@@ -1,20 +1,12 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexample = false;
-    };
+    flags = { buildexample = false; };
     package = {
       specVersion = "1.10";
       identifier = {
         name = "servant-checked-exceptions";
         version = "2.0.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2017-2018 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -24,7 +16,7 @@
       synopsis = "Checked exceptions for Servant APIs.";
       description = "Please see <https://github.com/cdepillabout/servant-checked-exceptions#readme README.md>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +37,8 @@
           (hsPkgs.text)
           (hsPkgs.wai)
           (hsPkgs.world-peace)
-        ];
-      };
+          ];
+        };
       exes = {
         "servant-checked-exceptions-example-client" = {
           depends = [
@@ -60,8 +52,8 @@
             (hsPkgs.servant-checked-exceptions)
             (hsPkgs.servant-client)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "servant-checked-exceptions-example-docs" = {
           depends = [
             (hsPkgs.base)
@@ -72,8 +64,8 @@
             (hsPkgs.servant-checked-exceptions)
             (hsPkgs.servant-docs)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "servant-checked-exceptions-example-server" = {
           depends = [
             (hsPkgs.base)
@@ -87,9 +79,9 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "servant-checked-exceptions-test" = {
           depends = [
@@ -104,8 +96,8 @@
             (hsPkgs.servant-checked-exceptions)
             (hsPkgs.servant-server)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

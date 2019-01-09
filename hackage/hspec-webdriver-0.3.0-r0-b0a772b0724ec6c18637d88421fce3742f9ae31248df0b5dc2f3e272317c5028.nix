@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspec-webdriver";
-        version = "0.3.0";
-      };
+      identifier = { name = "hspec-webdriver"; version = "0.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "John Lenz <lenz@math.uic.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Write end2end web application tests using webdriver and hspec";
       description = "For end to end testing of web applications from Haskell, the\n<https://hackage.haskell.org/package/webdriver webdriver> package is a great tool but just\ncontains the code to communicate with the browser.  This package integrates webdriver\nwith <http://hspec.github.io hspec>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.webdriver)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

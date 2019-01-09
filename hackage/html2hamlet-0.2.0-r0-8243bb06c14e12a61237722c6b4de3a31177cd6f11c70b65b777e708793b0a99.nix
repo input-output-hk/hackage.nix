@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "html2hamlet";
-        version = "0.2.0";
-      };
+      identifier = { name = "html2hamlet"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tanaka.hideyuki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "HTML to Hamlet converter";
       description = "HTML to Hamlet converter";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "html2hamlet" = {
@@ -36,8 +27,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.http-conduit)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

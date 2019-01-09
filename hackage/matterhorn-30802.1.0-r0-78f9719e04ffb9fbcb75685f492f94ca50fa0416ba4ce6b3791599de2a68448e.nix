@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "matterhorn";
-        version = "30802.1.0";
-      };
+      identifier = { name = "matterhorn"; version = "30802.1.0"; };
       license = "BSD-3-Clause";
       copyright = "©2016-2017 AUTHORS.txt";
       maintainer = "Getty Ritter <gdritter@galois.com>";
@@ -22,7 +13,7 @@
       synopsis = "Terminal client for the MatterMost chat system";
       description = "This is a terminal client for the MatterMost chat\nsystem. Please see the README for a list of\nfeatures and information on getting started.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "matterhorn" = {
@@ -56,9 +47,9 @@
             (hsPkgs.gitrev)
             (hsPkgs.Hclip)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test_messages" = {
           depends = [
@@ -96,8 +87,8 @@
             (hsPkgs.vector)
             (hsPkgs.vty)
             (hsPkgs.xdg-basedir)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

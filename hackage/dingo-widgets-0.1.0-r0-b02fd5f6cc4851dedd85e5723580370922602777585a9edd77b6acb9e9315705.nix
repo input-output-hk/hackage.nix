@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0.1";
-      identifier = {
-        name = "dingo-widgets";
-        version = "0.1.0";
-      };
+      identifier = { name = "dingo-widgets"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Bardur Arantsson <bardur@scientician.net>";
@@ -22,7 +13,7 @@
       synopsis = "Dingo Widgets";
       description = "This package contains a set of widgets for the Dingo Rich Internet Application platform.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

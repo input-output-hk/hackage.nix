@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monad-unify";
-        version = "0.2.1";
-      };
+      identifier = { name = "monad-unify"; version = "0.2.1"; };
       license = "MIT";
       copyright = "(c) Phil Freeman 2013";
       maintainer = "Phil Freeman <paf31@cantab.net>";
@@ -22,7 +13,7 @@
       synopsis = "Generic first-order unification";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.mtl)
           (hsPkgs.syb)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

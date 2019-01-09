@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "ihaskell-hatex";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "ihaskell-hatex"; version = "0.2.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.gibiansky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "IHaskell display instances for hatex";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.text)
           (hsPkgs.HaTeX)
           (hsPkgs.ihaskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

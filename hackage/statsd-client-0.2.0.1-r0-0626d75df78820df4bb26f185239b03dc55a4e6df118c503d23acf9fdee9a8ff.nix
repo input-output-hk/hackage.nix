@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "statsd-client";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "statsd-client"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "© Keith Duncan";
       maintainer = "Keith Duncan";
@@ -22,7 +13,7 @@
       synopsis = "Statsd UDP client";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.time-units)
           (hsPkgs.crypto-api)
           (hsPkgs.DRBG)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

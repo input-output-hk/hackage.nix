@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      llvm = false;
-    };
+    flags = { debug = false; llvm = false; };
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "WordAlignment";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "WordAlignment"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2013-2017";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -25,7 +13,7 @@
       synopsis = "Bigram word pair alignments.";
       description = "The library provides fast dynamic programming algorithms to\nalign word pairs using either a simple or a bigram scoring\nscheme. Simple schemes are unigram schemes in nature but use an\nad-hoc scoring scheme. Bigram schemes use actual training data\nfor bigram frequences.\n\nThe WordAlign executable provides a wrapper around the provided\nalignment algorithms. Call WordAlign without any arguments (or\njust *WordAlign manual* to display the README.md).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -62,8 +50,8 @@
           (hsPkgs.LinguisticsTypes)
           (hsPkgs.NaturalLanguageAlphabets)
           (hsPkgs.PrimitiveArray)
-        ];
-      };
+          ];
+        };
       exes = {
         "WordAlign" = {
           depends = [
@@ -89,9 +77,9 @@
             (hsPkgs.LinguisticsTypes)
             (hsPkgs.NaturalLanguageAlphabets)
             (hsPkgs.WordAlignment)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "properties" = {
           depends = [
@@ -108,8 +96,8 @@
             (hsPkgs.DPutils)
             (hsPkgs.NaturalLanguageAlphabets)
             (hsPkgs.WordAlignment)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hxt-cache";
-        version = "9.1.0";
-      };
+      identifier = { name = "hxt-cache"; version = "9.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010 Uwe Schmidt";
       maintainer = "Uwe Schmidt <uwe@fh-wedel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Cache for HXT XML Documents and other binary data";
       description = "Extension for caching XML documents and other binary data in cache directory\nof the local filesystem\n\nChanges from 9.0.2: dependency of old-time changed to time, dependecy of directory changed to >=1.2 to work with ghc-7.6\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.time)
           (hsPkgs.unix)
           (hsPkgs.SHA)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

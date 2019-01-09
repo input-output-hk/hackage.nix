@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xxhash-ffi";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "xxhash-ffi"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Henri Verroken";
       maintainer = "henriverroken@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Bindings to the C implementation the xxHash algorithm";
       description = "Bindings to the C implementation the xxHash algorithm. xxHash provides 32-bit and 64-bit extremely fast non-cryptographic hash functions.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
       tests = {
         "xxhash-ffi-test" = {
           depends = [
@@ -38,9 +24,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "xxhash-ffi-bench" = {
           depends = [
@@ -53,8 +39,8 @@
             (hsPkgs.hashable)
             (hsPkgs.murmur-hash)
             (hsPkgs.xxhash)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "acme-year";
-        version = "2014";
-      };
+      identifier = { name = "acme-year"; version = "2014"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "joeyadams3.14159@gmail.com";
@@ -22,28 +13,18 @@
       synopsis = "Get the current year";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.acme-year)
-            (hsPkgs.time)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.acme-year) (hsPkgs.time) ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.acme-year)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.acme-year) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

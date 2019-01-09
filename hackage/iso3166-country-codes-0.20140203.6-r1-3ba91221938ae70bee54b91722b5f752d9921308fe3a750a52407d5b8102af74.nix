@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "iso3166-country-codes";
         version = "0.20140203.6";
-      };
+        };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "jon.fairbairn@cl.cam.ac.uk";
@@ -22,14 +16,10 @@
       synopsis = "A datatype for ISO 3166 country codes";
       description = "Defines datatype CountryCode that has a two\nletter constructor corresponding to each of the two letter\nISO 3166 country codes, and mappings from that type to the\nofficial name of the country.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-          (hsPkgs.http-conduit)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.base) (hsPkgs.http-conduit) ];
+        };
       };
-    };
-  }
+    }

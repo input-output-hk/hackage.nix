@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "grakn";
-        version = "0.3.0";
-      };
+      identifier = { name = "grakn"; version = "0.3.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "community@grakn.ai";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell client for Grakn";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.http-client)
           (hsPkgs.mtl)
           (hsPkgs.http-media)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.markdown-unlit)
             (hsPkgs.MissingH)
-          ];
-        };
+            ];
+          };
         "accept" = {
           depends = [
             (hsPkgs.base)
@@ -80,8 +71,8 @@
             (hsPkgs.hspec)
             (hsPkgs.markdown-unlit)
             (hsPkgs.MissingH)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

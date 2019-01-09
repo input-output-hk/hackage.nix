@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "markdown";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "markdown"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Convert Markdown to HTML, with XSS protection";
       description = "This library leverages existing high-performance libraries (attoparsec, blaze-html, text, and conduit), and should integrate well with existing codebases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.data-default)
           (hsPkgs.xss-sanitize)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.system-filepath)
             (hsPkgs.transformers)
             (hsPkgs.conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-bytestring = false;
-    };
+    flags = { network-bytestring = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "http-conduit";
-        version = "1.4.1.2";
-      };
+      identifier = { name = "http-conduit"; version = "1.4.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -24,7 +13,7 @@
       synopsis = "HTTP client package with conduit interface and HTTPS support.";
       description = "This package uses attoparsec for parsing the actual contents of the HTTP connection. It also provides higher-level functions which allow you to avoid direct usage of conduits. See <http://www.yesodweb.com/book/http-conduit> for more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,13 +49,10 @@
           (hsPkgs.void)
           (hsPkgs.regex-compat)
           (hsPkgs.mtl)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -108,8 +94,8 @@
             (hsPkgs.network-conduit)
             (hsPkgs.resourcet)
             (hsPkgs.void)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

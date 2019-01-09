@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mtgoxapi";
-        version = "0.5";
-      };
+      identifier = { name = "mtgoxapi"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 - 2014 Jan Vornberger";
       maintainer = "Jan Vornberger <jan@uos.de>";
@@ -22,7 +13,7 @@
       synopsis = "Library to communicate with Mt.Gox";
       description = "See Network.MtGoxAPI for documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.either)
           (hsPkgs.errors)
           (hsPkgs.watchdog)
-        ];
-      };
+          ];
+        };
       tests = {
         "testsuite" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       curl = true;
@@ -22,13 +16,10 @@
       libiconv = false;
       hashed-storage-diff = false;
       use-time-1point5 = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "darcs";
-        version = "2.10.0";
-      };
+      identifier = { name = "darcs"; version = "2.10.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "<darcs-devel@darcs.net>";
@@ -38,7 +29,7 @@
       synopsis = "a distributed, interactive, smart revision control system";
       description = "Darcs is a free, open source revision control\nsystem. It is:\n\n* Distributed: Every user has access to the full\ncommand set, removing boundaries between server and\nclient or committer and non-committers.\n\n* Interactive: Darcs is easy to learn and efficient to\nuse because it asks you questions in response to\nsimple commands, giving you choices in your work\nflow. You can choose to record one change in a file,\nwhile ignoring another. As you update from upstream,\nyou can review each patch name, even the full \"diff\"\nfor interesting patches.\n\n* Smart: Originally developed by physicist David\nRoundy, darcs is based on a unique algebra of\npatches.\n\nThis smartness lets you respond to changing demands\nin ways that would otherwise not be possible. Learn\nmore about spontaneous branches with darcs.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ((((((([
@@ -74,28 +65,25 @@
           (hsPkgs.dataenc)
           (hsPkgs.unix-compat)
           (hsPkgs.cryptohash)
-        ] ++ pkgs.lib.optionals (system.isWindows) [
+          ] ++ (pkgs.lib).optionals (system.isWindows) [
           (hsPkgs.unix-compat)
           (hsPkgs.Win32)
-        ]) ++ (if flags.use-local-data-map-strict
-          then [
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-          ]
+          ]) ++ (if flags.use-local-data-map-strict
+          then [ (hsPkgs.containers) (hsPkgs.deepseq) ]
           else [
             (hsPkgs.containers)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.use-time-1point5
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.use-time-1point5
           then [ (hsPkgs.time) ]
           else [
             (hsPkgs.time)
             (hsPkgs.old-locale)
-          ])) ++ pkgs.lib.optionals (flags.http) [
+            ])) ++ (pkgs.lib).optionals (flags.http) [
           (hsPkgs.network)
           (hsPkgs.HTTP)
-        ]) ++ pkgs.lib.optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ pkgs.lib.optional (flags.hashed-storage-diff) (hsPkgs.lcs)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
-        libs = pkgs.lib.optionals (flags.curl) (pkgs.lib.optional (!flags.pkgconfig) (pkgs."curl"));
-        pkgconfig = pkgs.lib.optionals (flags.curl) (pkgs.lib.optional (flags.pkgconfig) (pkgconfPkgs.libcurl));
-      };
+          ]) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ (pkgs.lib).optional (flags.hashed-storage-diff) (hsPkgs.lcs)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+        libs = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (!flags.pkgconfig) (pkgs."curl"));
+        pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs.libcurl));
+        };
       exes = {
         "darcs" = {
           depends = [
@@ -103,9 +91,9 @@
             (hsPkgs.darcs)
             (hsPkgs.filepath)
             (hsPkgs.regex-compat-tdfa)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "darcs-test" = {
           depends = [
@@ -130,8 +118,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
-        };
+            ];
+          };
         "hashed-storage-test" = {
           depends = [
             (hsPkgs.base)
@@ -153,8 +141,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.process)
             (hsPkgs.zip-archive)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "freddy";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "freddy"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "indrek@urgas.eu";
@@ -22,7 +13,7 @@
       synopsis = "RabbitMQ Messaging API supporting request-response";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.uuid)
           (hsPkgs.random)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.random)
             (hsPkgs.data-default)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

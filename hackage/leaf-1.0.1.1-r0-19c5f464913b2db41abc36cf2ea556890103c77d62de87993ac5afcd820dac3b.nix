@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "leaf";
-        version = "1.0.1.1";
-      };
+      identifier = { name = "leaf"; version = "1.0.1.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "dimitri.sabadie@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple portfolio generator";
       description = "leaf is a simple generator with easy getting started and full support of Markdown.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "leaf" = {
@@ -33,8 +24,8 @@
             (hsPkgs.pandoc)
             (hsPkgs.blaze-html)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

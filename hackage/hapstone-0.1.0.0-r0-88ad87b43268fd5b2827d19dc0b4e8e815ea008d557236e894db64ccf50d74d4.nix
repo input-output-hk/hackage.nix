@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hapstone";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hapstone"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Inokentiy Babushkin";
       maintainer = "inokentiy.babushkin@googlemail.com";
@@ -22,15 +13,13 @@
       synopsis = "Capstone bindings for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."capstone") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "hapstone-test" = {
           depends = [
@@ -39,8 +28,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

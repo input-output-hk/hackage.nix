@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "pipes-bytestring";
-        version = "2.1.0";
-      };
+      identifier = { name = "pipes-bytestring"; version = "2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2012-2014 Gabriel Gonzalez";
       maintainer = "Gabriel439@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "ByteString support for pipes";
       description = "This library provides @pipes@ utilities for @ByteString@s";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.pipes-group)
           (hsPkgs.pipes-parse)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

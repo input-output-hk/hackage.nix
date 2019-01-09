@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pandoc-filter-graphviz";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pandoc-filter-graphviz"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jean-pierre+git@prunetwork.fr";
@@ -22,7 +13,7 @@
       synopsis = "A Pandoc filter to use graphviz";
       description = "Interpret '~~~ graphviz' bloc as a call to graphviz software and substritude text with produced picture.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pandoc-filter-graphviz" = {
@@ -39,8 +30,8 @@
             (hsPkgs.process)
             (hsPkgs.pandoc-types)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

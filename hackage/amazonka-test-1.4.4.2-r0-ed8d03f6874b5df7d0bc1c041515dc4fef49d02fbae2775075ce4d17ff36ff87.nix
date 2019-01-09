@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "amazonka-test";
-        version = "1.4.4.2";
-      };
+      identifier = { name = "amazonka-test"; version = "1.4.4.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2013-2016 Brendan Hay";
       maintainer = "Brendan Hay <brendan.g.hay@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Common functionality for Amazonka library test-suites.";
       description = "Common functionality depended upon by test suites of the various @amazonka-*@\nservice libraries.\n\nThe external interface of this library is stable with respect to the\ndownstream Amazonka libraries, only, and as such is not suitable\nfor use in non-Amazonka projects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

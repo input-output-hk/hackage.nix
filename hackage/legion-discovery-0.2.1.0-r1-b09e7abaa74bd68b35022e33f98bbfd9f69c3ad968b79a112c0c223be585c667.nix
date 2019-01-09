@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "legion-discovery";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "legion-discovery"; version = "0.2.1.0"; };
       license = "Apache-2.0";
       copyright = "2016 Rick Owens";
       maintainer = "rick@owensmurray.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,23 +40,17 @@
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "legion-discovery" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.legion-discovery)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.legion-discovery) ];
+          };
         };
-      };
       tests = {
         "legion-discovery-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.legion-discovery)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.legion-discovery) ];
+          };
         };
       };
-    };
-  }
+    }

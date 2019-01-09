@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jord";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "jord"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Cedric Liegeois";
       maintainer = "Cedric Liegeois <ofmooseandmen@yahoo.com>";
@@ -22,27 +13,17 @@
       synopsis = "Geographical Position Calculations";
       description = "Please see the README on GitHub at <https://github.com/ofmooseandmen/jord#readme>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "jord-benchmarks" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.jord)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.jord) ];
+          };
         "jord-repl" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskeline)
-            (hsPkgs.jord)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.haskeline) (hsPkgs.jord) ];
+          };
         };
-      };
       tests = {
         "jord-test" = {
           depends = [
@@ -50,8 +31,8 @@
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.jord)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

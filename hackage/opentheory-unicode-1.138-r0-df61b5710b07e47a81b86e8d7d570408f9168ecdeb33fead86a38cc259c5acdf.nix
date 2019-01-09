@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "opentheory-unicode";
-        version = "1.138";
-      };
+      identifier = { name = "opentheory-unicode"; version = "1.138"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Leslie-Hurd <joe@gilith.com>";
@@ -22,7 +13,7 @@
       synopsis = "Unicode characters";
       description = "Unicode characters - this package was automatically generated from the\nOpenTheory package char-1.138";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.opentheory-bits)
           (hsPkgs.opentheory-parser)
           (hsPkgs.opentheory-probability)
-        ];
-      };
+          ];
+        };
       tests = {
         "opentheory-unicode-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.opentheory-bits)
             (hsPkgs.opentheory-parser)
             (hsPkgs.opentheory-probability)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

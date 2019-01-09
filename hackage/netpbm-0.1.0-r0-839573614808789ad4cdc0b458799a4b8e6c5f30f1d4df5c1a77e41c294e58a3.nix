@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "netpbm";
-        version = "0.1.0";
-      };
+      identifier = { name = "netpbm"; version = "0.1.0"; };
       license = "MIT";
       copyright = "2013 Niklas Hambüchen <mail@nh2.me>";
       maintainer = "Niklas Hambüchen <mail@nh2.me>";
@@ -22,7 +13,7 @@
       synopsis = "Loading PBM, PGM, PPM image files";
       description = "This package contains pure Haskell parsers for the netpbm image formats: PBM, PGM and PPM, for both ASCII and binary encodings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.vector-th-unbox)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

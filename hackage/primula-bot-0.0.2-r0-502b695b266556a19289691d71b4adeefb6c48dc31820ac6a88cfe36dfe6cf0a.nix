@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "primula-bot";
-        version = "0.0.2";
-      };
+      identifier = { name = "primula-bot"; version = "0.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "newanon@yandex.ru";
@@ -22,7 +13,7 @@
       synopsis = "Jabber-bot for primula-board ImageBoard";
       description = "Jabber-bot for communication with primula-board.\nSettings stored in ~/.primularc file.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "primula-bot" = {
@@ -36,8 +27,8 @@
             (hsPkgs.mtl)
             (hsPkgs.directory)
             (hsPkgs.ConfigFile)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

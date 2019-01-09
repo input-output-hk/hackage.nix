@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gtk-sni-tray";
-        version = "0.1.5.0";
-      };
+      identifier = { name = "gtk-sni-tray"; version = "0.1.5.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Ivan Malison";
       maintainer = "IvanMalison@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A standalone StatusNotifierItem/AppIndicator tray";
       description = "Please see the README on Github at <https://github.com/IvanMalison/gtk-sni-tray#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,11 +40,9 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.unix)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.gtk+-3.0)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+        };
       exes = {
         "gtk-sni-tray-standalone" = {
           depends = [
@@ -69,8 +58,8 @@
             (hsPkgs.status-notifier-item)
             (hsPkgs.text)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

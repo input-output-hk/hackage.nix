@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-ekg";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "servant-ekg"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Servant Contributors <haskell-servant-maintainers@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "Helpers for using ekg with servant";
       description = "Helpers for using ekg with servant";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       exes = {
         "bench" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.hspec)
             (hsPkgs.unordered-containers)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

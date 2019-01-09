@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reflex-gloss-scene";
-        version = "0.1";
-      };
+      identifier = { name = "reflex-gloss-scene"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2015 Oliver Batchelor";
       maintainer = "saulzar@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple scene-graph using reflex and gloss";
       description = "A scenegraph library using gloss and gloss-reflex, with support for picking,\ncontinuous time animations and monad based switching. An example of a framework\ncreated using the reflex-transformers package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.profunctors)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "animations" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.linear)
             (hsPkgs.lens)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "collections" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +66,8 @@
             (hsPkgs.linear)
             (hsPkgs.lens)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "frpzoo" = {
           depends = [
             (hsPkgs.base)
@@ -90,8 +81,8 @@
             (hsPkgs.linear)
             (hsPkgs.lens)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

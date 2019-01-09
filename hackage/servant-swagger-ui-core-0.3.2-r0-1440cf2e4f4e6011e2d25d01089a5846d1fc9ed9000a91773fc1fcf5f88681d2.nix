@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "servant-swagger-ui-core";
-        version = "0.3.2";
-      };
+      identifier = { name = "servant-swagger-ui-core"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant swagger ui core components";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)\n\nSee servant-swagger-ui, servant-swagger-ui-jensoleg or\nservant-swagger-ui-redoc for \"concrete\" implementations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
           (hsPkgs.wai-app-static)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

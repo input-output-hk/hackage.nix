@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dom-parser";
-        version = "2.0.0";
-      };
+      identifier = { name = "dom-parser"; version = "2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "makeit@typeable.io";
@@ -22,7 +13,7 @@
       synopsis = "Simple monadic DOM parser";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.type-fun)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-lens)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.shakespeare)
             (hsPkgs.text)
             (hsPkgs.xml-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

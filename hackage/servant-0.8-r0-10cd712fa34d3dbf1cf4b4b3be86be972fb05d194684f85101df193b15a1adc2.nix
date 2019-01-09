@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant";
-        version = "0.8";
-      };
+      identifier = { name = "servant"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "2014-2016 Zalora South East Asia Pte Ltd, Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "A family of combinators for defining webservices APIs";
       description = "A family of combinators for defining webservices APIs and serving them\n\nYou can learn about the basics in the <http://haskell-servant.readthedocs.org/en/stable/tutorial/index.html tutorial>.\n\n<https://github.com/haskell-servant/servant/blob/master/servant/CHANGELOG.md CHANGELOG>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.string-conversions)
           (hsPkgs.network-uri)
           (hsPkgs.vault)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.string-conversions)
             (hsPkgs.text)
             (hsPkgs.url)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +60,8 @@
             (hsPkgs.filemanip)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

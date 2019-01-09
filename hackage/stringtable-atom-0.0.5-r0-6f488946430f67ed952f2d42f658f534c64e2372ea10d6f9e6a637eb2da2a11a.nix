@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "stringtable-atom";
-        version = "0.0.5";
-      };
+      identifier = { name = "stringtable-atom"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "John Meacham 2008, Audrey Tang 2008";
       maintainer = "audreyt@audreyt.org";
@@ -22,7 +13,7 @@
       synopsis = "Memoize Strings as Atoms for fast comparison and sorting, with maps and sets";
       description = "Memoize Strings as Atoms for fast comparison and sorting, with maps and sets";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

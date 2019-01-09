@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pg-store";
-        version = "0.2";
-      };
+      identifier = { name = "pg-store"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Ole Krüger 2015";
       maintainer = "Ole Krüger <ole@vprsm.de>";
@@ -22,7 +13,7 @@
       synopsis = "Simple storage interface to PostgreSQL";
       description = "Simple storage interface to PostgreSQL";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.haskell-src-meta)
           (hsPkgs.aeson)
           (hsPkgs.scientific)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

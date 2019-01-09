@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "baserock-schema";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "baserock-schema"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Daniel Firth";
       maintainer = "locallycompact@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://gitlab.com/locallycompact/baserock-schema#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.transformers)
           (hsPkgs.turtle)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "baserock" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.transformers)
             (hsPkgs.turtle)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "earthquake-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.transformers)
             (hsPkgs.turtle)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

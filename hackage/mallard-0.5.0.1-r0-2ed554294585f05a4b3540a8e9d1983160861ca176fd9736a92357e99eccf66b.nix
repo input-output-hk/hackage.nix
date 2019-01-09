@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mallard";
-        version = "0.5.0.1";
-      };
+      identifier = { name = "mallard"; version = "0.5.0.1"; };
       license = "MIT";
       copyright = "2017 Andrew Rademacher <andrewrademacher@icloud.com>";
       maintainer = "andrewrademacher@icloud.com";
@@ -22,7 +13,7 @@
       synopsis = "Database migration and testing as a library.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.path-io)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "mallard" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.path-io)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

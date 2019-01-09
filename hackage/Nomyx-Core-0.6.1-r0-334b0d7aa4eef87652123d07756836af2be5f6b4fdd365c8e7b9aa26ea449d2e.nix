@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Nomyx-Core";
-        version = "0.6.1";
-      };
+      identifier = { name = "Nomyx-Core"; version = "0.6.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "corentin.dupont@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Nomic game in haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,7 +51,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

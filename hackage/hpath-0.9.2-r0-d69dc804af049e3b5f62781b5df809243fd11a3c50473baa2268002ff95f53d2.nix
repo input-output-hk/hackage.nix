@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hpath";
-        version = "0.9.2";
-      };
+      identifier = { name = "hpath"; version = "0.9.2"; };
       license = "BSD-3-Clause";
       copyright = "Julian Ospald 2016";
       maintainer = "Julian Ospald <hasufell@posteo.de>";
@@ -22,7 +13,7 @@
       synopsis = "Support for well-typed paths";
       description = "Support for well-typed paths, utilizing ByteString under the hood.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.unix-bytestring)
           (hsPkgs.utf8-string)
           (hsPkgs.word8)
-        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.unbuildable);
-      };
+          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.unbuildable);
+        };
       tests = {
         "doctests-hpath" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.doctest)
             (hsPkgs.hpath)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.unbuildable);
-        };
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.unbuildable);
+          };
         "doctests-posix" = {
           depends = [
             (hsPkgs.base)
@@ -58,8 +49,8 @@
             (hsPkgs.doctest)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.unbuildable);
-        };
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.unbuildable);
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -72,8 +63,8 @@
             (hsPkgs.unix)
             (hsPkgs.unix-bytestring)
             (hsPkgs.utf8-string)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.unbuildable);
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.unbuildable);
+          };
         };
       };
-    };
-  }
+    }

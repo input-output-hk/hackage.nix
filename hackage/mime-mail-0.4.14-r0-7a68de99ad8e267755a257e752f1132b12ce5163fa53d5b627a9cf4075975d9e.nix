@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mime-mail";
-        version = "0.4.14";
-      };
+      identifier = { name = "mime-mail"; version = "0.4.14"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Compose MIME email messages.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/mime-mail>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clash-ghc";
-        version = "0.99.2";
-      };
+      identifier = { name = "clash-ghc"; version = "0.99.2"; };
       license = "BSD-2-Clause";
       copyright = "Copyright © 2012-2016, University of Twente,\n2016-2017, Myrtle Software Ltd,\n2017     , QBayLogic, Google Inc.";
       maintainer = "Christiaan Baaij <christiaan.baaij@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "CAES Language for Synchronous Hardware";
       description = "CλaSH (pronounced ‘clash’) is a functional hardware description language that\nborrows both its syntax and semantics from the functional programming language\nHaskell. The CλaSH compiler transforms these high-level descriptions to\nlow-level synthesizable VHDL, Verilog, or SystemVerilog.\n\nFeatures of CλaSH:\n\n* Strongly typed, but with a very high degree of type inference, enabling both\nsafe and fast prototyping using concise descriptions.\n\n* Interactive REPL: load your designs in an interpreter and easily test all\nyour component without needing to setup a test bench.\n\n* Higher-order functions, with type inference, result in designs that are\nfully parametric by default.\n\n* Synchronous sequential circuit design based on streams of values, called\n@Signal@s, lead to natural descriptions of feedback loops.\n\n* Support for multiple clock domains, with type safe clock domain crossing.\n\n\nThis package provides:\n\n* CλaSH Compiler binary using GHC/Haskell as a frontend\n\n\nPrelude library: <http://hackage.haskell.org/package/clash-prelude>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,25 +48,19 @@
           (hsPkgs.uniplate)
           (hsPkgs.reflection)
           (hsPkgs.integer-gmp)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       exes = {
         "clash" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.clash-ghc)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.clash-ghc) ];
           libs = [ (pkgs."pthread") ];
-        };
+          };
         "clashi" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.clash-ghc)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.clash-ghc) ];
           libs = [ (pkgs."pthread") ];
+          };
         };
       };
-    };
-  }
+    }

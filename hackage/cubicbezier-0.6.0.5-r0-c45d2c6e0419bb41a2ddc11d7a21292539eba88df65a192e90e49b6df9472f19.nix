@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cubicbezier";
-        version = "0.6.0.5";
-      };
+      identifier = { name = "cubicbezier"; version = "0.6.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Kristof Bastiaensen (2017)";
       maintainer = "Kristof Bastiaensen";
@@ -22,7 +13,7 @@
       synopsis = "Efficient manipulating of 2D cubic bezier curves.";
       description = "This library supports efficient manipulating of 2D cubic bezier curves, for use in graphics or typography.  Supported features are:\n\nEvaluating bezier curves and derivatives, affine transformations on bezier curves, arclength and inverse arclength, intersections between two curves, intersection between a curve and a line, curvature and radius of curvature, finding tangents parallel to a vector, finding inflection points and cusps.\n\nIt also supports polynomial root finding with Bernstein polynomials.\n\nThe module \"Geom2D.CubicBezier\" exports all the cubic bezier functions.  The module \"Geom2D\"\ncontains general 2D geometry functions and transformations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.mtl)
           (hsPkgs.fast-math)
           (hsPkgs.vector-space)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.parsec)
             (hsPkgs.cubicbezier)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

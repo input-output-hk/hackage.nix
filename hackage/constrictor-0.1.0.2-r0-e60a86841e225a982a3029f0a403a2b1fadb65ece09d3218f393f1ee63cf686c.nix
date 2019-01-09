@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "constrictor";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "constrictor"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "2018 (c) chessai";
       maintainer = "chessai1996@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "strict versions of many things in base";
       description = "This package provides strict versions of many functions in\nbase, including some functions not present, such as\n'foldlMapA', 'foldlMapM', 'foldrMapA', and foldrMapM.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.transformers) ]; };
+      };
+    }

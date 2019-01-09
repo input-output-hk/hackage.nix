@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stm-containers";
-        version = "1.1.0.2";
-      };
+      identifier = { name = "stm-containers"; version = "1.1.0.2"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Containers for STM";
       description = "This library is based on an STM-specialized implementation of\nHash Array Mapped Trie.\nIt provides efficient implementations of @Map@, @Set@\nand other data structures,\nwhich starting from version @1@ perform even better than their counterparts from \\\"unordered-containers\\\",\nbut also scale well on concurrent access patterns.\n\nFor details on performance of the library, which are a bit outdated, see\n<http://nikita-volkov.github.io/stm-containers/ this blog post>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.list-t)
           (hsPkgs.stm-hamt)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.quickcheck-text)
             (hsPkgs.rerebase)
             (hsPkgs.stm-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

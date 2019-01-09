@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-classes";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "monad-classes"; version = "0.3.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "M Farkas-Dyck <strake888@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "more flexible mtl";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.reflection)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.ghc-prim)
             (hsPkgs.conduit)
             (hsPkgs.mmorph)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

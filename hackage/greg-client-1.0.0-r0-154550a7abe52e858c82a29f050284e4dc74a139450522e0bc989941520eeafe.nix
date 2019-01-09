@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "greg-client";
-        version = "1.0.0";
-      };
+      identifier = { name = "greg-client"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Eugene Kirpichov, Dmitry Astapov 2010";
       maintainer = "Eugene Kirpichov <ekirpichov@gmail.com>, Dmitry Astapov <dastapov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A scalable distributed logger with a high-precision global time axis.";
       description = "Haskell client to the \\\"greg\\\" distributed logger with a high-precision global time axis (<http://code.google.com/p/greg/>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.network)
           (hsPkgs.clock)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

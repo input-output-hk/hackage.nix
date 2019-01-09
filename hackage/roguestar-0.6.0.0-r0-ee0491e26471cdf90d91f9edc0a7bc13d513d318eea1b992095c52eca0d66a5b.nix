@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "roguestar";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "roguestar"; version = "0.6.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Christopher Lane Hinson <lane@downstairspeople.org>";
@@ -22,7 +13,7 @@
       synopsis = "Sci-fi roguelike game.  Client application.";
       description = "Requires roguestar-engine and roguestar-glut.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "roguestar" = {
@@ -33,8 +24,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

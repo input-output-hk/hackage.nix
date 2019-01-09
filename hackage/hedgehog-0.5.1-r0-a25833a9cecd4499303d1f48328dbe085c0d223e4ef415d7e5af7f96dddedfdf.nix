@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hedgehog";
-        version = "0.5.1";
-      };
+      identifier = { name = "hedgehog"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jacob Stanley <jacob@stanley.io>";
@@ -22,7 +13,7 @@
       synopsis = "Hedgehog will eat all your bugs.";
       description = "Hedgehog is a modern property-based testing system, in the spirit of\nQuickCheck. Hedgehog uses integrated shrinking, so shrinks obey the\ninvariants of generated values by construction.\n\nTo get started quickly, see the examples:\n<https://github.com/hedgehogqa/haskell-hedgehog/tree/master/hedgehog-example>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -50,8 +41,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.wl-pprint-annotated)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "test" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.pretty-show)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

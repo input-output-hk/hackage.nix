@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "linode";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "linode"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "arnaudpourseb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to the Linode API";
       description = "Haskell bindings to the Linode API. Rent servers hourly or monthly.\n\nThis package contains some helpers to create and configure Linode instances. The API key can be created on the Linode website.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       tests = {
         "linode-test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

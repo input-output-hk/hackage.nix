@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "DPutils";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "DPutils"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2016";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -22,7 +13,7 @@
       synopsis = "utilities for DP";
       description = "Small set of utility functions\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.stringsearch)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -58,9 +49,9 @@
             (hsPkgs.tasty-th)
             (hsPkgs.vector)
             (hsPkgs.DPutils)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.criterion)
             (hsPkgs.vector)
             (hsPkgs.DPutils)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

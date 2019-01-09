@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "equational-reasoning";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "equational-reasoning"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "konn.jinro_at_gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Proof assistant for Haskell using DataKinds & PolyKinds";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.singletons)
           (hsPkgs.tagged)
           (hsPkgs.void)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

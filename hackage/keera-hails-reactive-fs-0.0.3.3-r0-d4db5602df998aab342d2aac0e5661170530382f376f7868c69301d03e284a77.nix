@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "keera-hails-reactive-fs";
-        version = "0.0.3.3";
-      };
+      identifier = { name = "keera-hails-reactive-fs"; version = "0.0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.es";
@@ -22,7 +13,7 @@
       synopsis = "Haskell on Rails - Files as Reactive Values";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.fsnotify)
           (hsPkgs.keera-hails-reactivevalues)
           (hsPkgs.system-filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

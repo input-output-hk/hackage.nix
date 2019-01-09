@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "batch-rename";
-        version = "0.1.0.9";
-      };
+      identifier = { name = "batch-rename"; version = "0.1.0.9"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "collger@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Make Linux or MacOS do things like \"rename *.mp3 *.mp4\"";
       description = "Do you remember the convenient command `ren' in MSDOS?\nWhen you want to change all your .mp3 files to .mp4.\nSimply type \\\"ren *.mp3 *.mp4.\\\".\nI really like this.\nBut in linux\\/Mac world, people keep asking how.(http:\\/\\/bit.ly\\/2cIskUu)\nSo maybe this little tool can help you a lot.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "batch_rename" = {
@@ -31,8 +22,8 @@
             (hsPkgs.Glob)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

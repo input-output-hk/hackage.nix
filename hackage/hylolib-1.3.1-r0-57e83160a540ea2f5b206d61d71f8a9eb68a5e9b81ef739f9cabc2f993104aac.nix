@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "hylolib";
-        version = "1.3.1";
-      };
+      identifier = { name = "hylolib"; version = "1.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "dgorin@dc.uba.ar";
@@ -22,7 +13,7 @@
       synopsis = "Tools for hybrid logics related programs";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.uniplate)
           (hsPkgs.uniplate)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

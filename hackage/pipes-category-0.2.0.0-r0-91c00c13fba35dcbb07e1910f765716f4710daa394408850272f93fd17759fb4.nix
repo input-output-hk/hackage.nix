@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-category";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "pipes-category"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "Allows instances for Category, Arrow and ArrowChoice for Pipes.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.mtl)
           (hsPkgs.pipes)
           (hsPkgs.pipes-extras)
-        ];
-      };
+          ];
+        };
       tests = {
         "pipes-category-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.pipes-category)
             (hsPkgs.transformers)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

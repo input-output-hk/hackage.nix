@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "minio-hs";
-        version = "0.1.0";
-      };
+      identifier = { name = "minio-hs"; version = "0.1.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "aditya.mmy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Minio client library, compatible with S3 like services.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "minio-hs-test" = {
           depends = [
@@ -93,8 +84,8 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
             (hsPkgs.xml-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

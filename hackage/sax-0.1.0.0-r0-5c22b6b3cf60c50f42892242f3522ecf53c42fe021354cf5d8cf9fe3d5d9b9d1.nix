@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sax";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "sax"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "denis.redozubov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Monadic streaming parser based on xeno xml parsing library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.streaming)
           (hsPkgs.text)
           (hsPkgs.xeno)
-        ];
-      };
+          ];
+        };
       tests = {
         "xeno-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.sax)
             (hsPkgs.hspec)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

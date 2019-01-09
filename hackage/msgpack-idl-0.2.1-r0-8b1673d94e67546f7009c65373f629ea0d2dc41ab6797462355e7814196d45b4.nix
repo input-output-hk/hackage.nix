@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "msgpack-idl";
-        version = "0.2.1";
-      };
+      identifier = { name = "msgpack-idl"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "An IDL Compiler for MessagePack";
       description = "An IDL Compiler for MessagePack <http://msgpack.org/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.directory)
           (hsPkgs.msgpack)
           (hsPkgs.peggy)
-        ];
-      };
+          ];
+        };
       exes = {
         "mpidl" = {
           depends = [
@@ -47,17 +38,13 @@
             (hsPkgs.cmdargs)
             (hsPkgs.peggy)
             (hsPkgs.msgpack-idl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "mpidl-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.msgpack-idl)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.msgpack-idl) ];
+          };
         };
       };
-    };
-  }
+    }

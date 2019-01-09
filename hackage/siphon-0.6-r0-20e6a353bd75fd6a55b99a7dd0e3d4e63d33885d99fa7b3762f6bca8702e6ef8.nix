@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "siphon";
-        version = "0.6";
-      };
+      identifier = { name = "siphon"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "2016 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Encode and decode CSV files";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.vector)
           (hsPkgs.pipes)
           (hsPkgs.attoparsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "siphon-test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.profunctors)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

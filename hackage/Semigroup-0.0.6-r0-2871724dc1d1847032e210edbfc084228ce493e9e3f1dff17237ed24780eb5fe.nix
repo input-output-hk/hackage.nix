@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Semigroup";
-        version = "0.0.6";
-      };
+      identifier = { name = "Semigroup"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "2010 Tony Morris";
       maintainer = "code@tmorris.net";
@@ -22,7 +13,7 @@
       synopsis = "A semigroup";
       description = "A semigroup is a binary associative operation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

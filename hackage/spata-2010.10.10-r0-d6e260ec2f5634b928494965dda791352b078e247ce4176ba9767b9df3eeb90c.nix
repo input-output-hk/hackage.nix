@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "spata";
-        version = "2010.10.10";
-      };
+      identifier = { name = "spata"; version = "2010.10.10"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,15 +13,10 @@
       synopsis = "brainless form validation";
       description = "tiny validation library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mps)
-          (hsPkgs.mtl)
-          (hsPkgs.dlist)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mps) (hsPkgs.mtl) (hsPkgs.dlist) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "paranoia";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "paranoia"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 Dmitry \"troydm\" Geurkov";
       maintainer = "d.geurkov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "http proxy server";
       description = "HTTP Proxy Server for stalking clients";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.unix)
           (hsPkgs.wai)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "paranoia" = {
           depends = [
@@ -51,16 +42,11 @@
             (hsPkgs.paranoia)
             (hsPkgs.hdaemonize)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "paranoia-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.paranoia)
-          ];
+        "paranoia-test" = { depends = [ (hsPkgs.base) (hsPkgs.paranoia) ]; };
         };
       };
-    };
-  }
+    }

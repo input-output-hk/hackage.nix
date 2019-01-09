@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { maintainer = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vimeta";
-        version = "0.2.3.0";
-      };
+      identifier = { name = "vimeta"; version = "0.2.3.0"; };
       license = "BSD-2-Clause";
       copyright = "Copyright (c) 2013-2017 Peter Jones";
       maintainer = "Peter Jones <pjones@devalot.com>";
@@ -22,7 +13,7 @@
       synopsis = "Frontend for video metadata tagging tools";
       description = "Vimeta is a tool to fetch video metadata from the interwebs and\nupdate video files using a tagging tool.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,15 +41,8 @@
           (hsPkgs.transformers)
           (hsPkgs.xdg-basedir)
           (hsPkgs.yaml)
-        ];
-      };
-      exes = {
-        "vimeta" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.vimeta)
           ];
         };
+      exes = { "vimeta" = { depends = [ (hsPkgs.base) (hsPkgs.vimeta) ]; }; };
       };
-    };
-  }
+    }

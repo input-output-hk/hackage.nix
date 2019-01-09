@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsqml";
-        version = "0.1.0";
-      };
+      identifier = { name = "hsqml"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2012 Robin KAY";
       maintainer = "komadori@gekkou.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Haskell binding for Qt Quick";
       description = "A Haskell binding for Qt Quick.\nGeneral documentation is present in the 'Graphics.QML' module.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,18 +24,16 @@
           (hsPkgs.text)
           (hsPkgs.tagged)
           (hsPkgs.transformers)
-        ];
-        libs = pkgs.lib.optionals (system.isWindows) [
+          ];
+        libs = (pkgs.lib).optionals (system.isWindows) [
           (pkgs."QtCore4")
           (pkgs."QtGui4")
           (pkgs."QtDeclarative4")
           (pkgs."stdc++")
-        ];
-        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.QtDeclarative);
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+          ];
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.QtDeclarative);
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "hsqml-test1" = {
           depends = [
@@ -52,8 +41,8 @@
             (hsPkgs.directory)
             (hsPkgs.network)
             (hsPkgs.hsqml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

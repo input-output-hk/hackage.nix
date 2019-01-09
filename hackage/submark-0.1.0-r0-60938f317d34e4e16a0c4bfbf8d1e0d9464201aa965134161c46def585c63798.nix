@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "submark";
-        version = "0.1.0";
-      };
+      identifier = { name = "submark"; version = "0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2017 Hong Minhee";
       maintainer = "hong.minhee@gmail.com";
@@ -22,15 +13,9 @@
       synopsis = "Extract a part from CommonMark/Markdown docs";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.cmark)
-          (hsPkgs.text)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.cmark) (hsPkgs.text) ]; };
       exes = {
         "submark" = {
           depends = [
@@ -39,9 +24,9 @@
             (hsPkgs.text)
             (hsPkgs.submark)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hlint" = {
           depends = [
@@ -49,8 +34,8 @@
             (hsPkgs.cmark)
             (hsPkgs.text)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -59,8 +44,8 @@
             (hsPkgs.hspec)
             (hsPkgs.submark)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

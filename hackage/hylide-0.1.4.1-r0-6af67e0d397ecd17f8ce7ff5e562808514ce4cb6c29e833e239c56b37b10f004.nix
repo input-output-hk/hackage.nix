@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hylide";
-        version = "0.1.4.1";
-      };
+      identifier = { name = "hylide"; version = "0.1.4.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "freshdried@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "WebGL renderer for livecoding shaders with Hylogen";
       description = "WebGL renderer for livecoding shaders with Hylogen";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hylogen)
-          (hsPkgs.vector-space)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.hylogen) (hsPkgs.vector-space) ];
+        };
       exes = {
         "hylide" = {
           depends = [
@@ -48,8 +35,8 @@
             (hsPkgs.wai)
             (hsPkgs.http-types)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

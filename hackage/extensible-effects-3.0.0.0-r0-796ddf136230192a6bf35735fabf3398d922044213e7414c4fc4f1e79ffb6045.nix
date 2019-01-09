@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      lib-werror = false;
-      force-openunion-51 = false;
-    };
+    flags = { lib-werror = false; force-openunion-51 = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "extensible-effects";
-        version = "3.0.0.0";
-      };
+      identifier = { name = "extensible-effects"; version = "3.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "suhailshergill@gmail.com";
@@ -25,15 +13,15 @@
       synopsis = "An Alternative to Monad Transformers";
       description = "This package introduces datatypes for typeclass-constrained effects,\nas an alternative to monad-transformer based (datatype-constrained)\napproach of multi-layered effects.\nAny help is appreciated!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.transformers);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.transformers);
+        };
       tests = {
         "extensible-effects-tests" = {
           depends = [
@@ -48,9 +36,9 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.doctest)
             (hsPkgs.extensible-effects)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "extensible-effects-benchmarks" = {
           depends = [
@@ -63,8 +51,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

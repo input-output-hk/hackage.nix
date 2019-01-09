@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      sge = false;
-    };
+    flags = { debug = false; sge = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SciFlow";
-        version = "0.5.0";
-      };
+      identifier = { name = "SciFlow"; version = "0.5.0"; };
       license = "MIT";
       copyright = "(c) 2016 Kai Zhang";
       maintainer = "kai@kzhang.org";
@@ -25,7 +13,7 @@
       synopsis = "Scientific workflow management system";
       description = "SciFlow is to help programmers design complex workflows\nwith ease.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +38,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           (hsPkgs.yaml)
-        ] ++ pkgs.lib.optional (flags.sge) (hsPkgs.drmaa);
+          ] ++ (pkgs.lib).optional (flags.sge) (hsPkgs.drmaa);
+        };
       };
-    };
-  }
+    }

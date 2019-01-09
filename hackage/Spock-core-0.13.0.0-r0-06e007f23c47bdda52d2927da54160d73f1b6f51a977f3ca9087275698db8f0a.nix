@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Spock-core";
-        version = "0.13.0.0";
-      };
+      identifier = { name = "Spock-core"; version = "0.13.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 - 2017 Alexander Thiemann";
       maintainer = "Alexander Thiemann <mail@athiemann.net>";
@@ -22,7 +13,7 @@
       synopsis = "Another Haskell web framework for rapid development";
       description = "Barebones high performance type safe web framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +45,8 @@
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       tests = {
         "spockcoretests" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.transformers-base)
             (hsPkgs.unordered-containers)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

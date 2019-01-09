@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nero";
-        version = "0.2";
-      };
+      identifier = { name = "nero"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 J. Daniel Navarro";
       maintainer = "Danny Navarro <j@dannynavarro.net>";
@@ -22,7 +13,7 @@
       synopsis = "Lens-based HTTP toolkit";
       description = "This package represents the core of the @Nero@ HTTP toolkit.\n\nCheck the <https://github.com/jdnavarro/nero#nero README> for a more\ndetailed explanation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,12 @@
           (hsPkgs.text)
           (hsPkgs.bifunctors)
           (hsPkgs.lens)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Glob)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Glob) (hsPkgs.doctest) ];
+          };
         "examples" = {
           depends = [
             (hsPkgs.base)
@@ -51,8 +38,8 @@
             (hsPkgs.nero)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

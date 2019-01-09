@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-suite = false;
-      examples = false;
-    };
+    flags = { test-suite = false; examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-memo";
-        version = "0.1.1";
-      };
+      identifier = { name = "monad-memo"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Eduard.Sergeev@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Memoization monad transformer";
       description = "Memoization monad transformer supporting mutual recursive function definitions\nand most of the standard monad transformers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.transformers)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +34,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

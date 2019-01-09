@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      normalize-signature-v4-date = true;
-      old-locale = false;
-    };
+    flags = { normalize-signature-v4-date = true; old-locale = false; };
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "aws-general";
-        version = "0.2.1";
-      };
+      identifier = { name = "aws-general"; version = "0.2.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 AlephCloud, Inc.";
       maintainer = "Lars Kuhtz <lars@alephcloud.com>";
@@ -25,7 +13,7 @@
       synopsis = "Bindings for Amazon Web Services (AWS) General Reference";
       description = "Bindings for Amazon Web Services (AWS) General Reference including AWS Signature V4.\n\n/API Version: 1.0/\n\n<http://docs.aws.amazon.com/general/latest/gr/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,13 +33,10 @@
           (hsPkgs.quickcheck-instances)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ (if flags.old-locale
-          then [
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-          ]
+          ] ++ (if flags.old-locale
+          then [ (hsPkgs.old-locale) (hsPkgs.time) ]
           else [ (hsPkgs.time) ]);
-      };
+        };
       tests = {
         "signature-v4" = {
           depends = [
@@ -75,8 +60,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

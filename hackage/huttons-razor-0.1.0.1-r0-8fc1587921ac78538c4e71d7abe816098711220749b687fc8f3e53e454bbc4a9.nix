@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "huttons-razor";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "huttons-razor"; version = "0.1.0.1"; };
       license = "BSD-2-Clause";
       copyright = "© 2015 Steven Shaw";
       maintainer = "steven@steshaw.org";
@@ -22,16 +13,12 @@
       synopsis = "Quick implemention of Hutton's Razor";
       description = "Quick implemention of Hutton's Razor";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "huttons-razor" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.parsec-numbers)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.parsec-numbers) ];
+          };
         };
       };
-    };
-  }
+    }

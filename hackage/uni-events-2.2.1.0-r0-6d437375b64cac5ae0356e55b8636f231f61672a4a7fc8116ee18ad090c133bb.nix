@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "uni-events";
-        version = "2.2.1.0";
-      };
+      identifier = { name = "uni-events"; version = "2.2.1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Christian.Maeder@dfki.de";
@@ -22,14 +13,10 @@
       synopsis = "Event handling for the uniform workbench";
       description = "uni events";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.uni-util)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.uni-util) ];
+        };
       };
-    };
-  }
+    }

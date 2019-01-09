@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Haskelloids";
-        version = "0.1.0";
-      };
+      identifier = { name = "Haskelloids"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mrehayden@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "A reproduction of the Atari 1979 classic \"Asteroids\"";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Haskelloids" = {
@@ -35,8 +26,8 @@
             (hsPkgs.hmatrix)
             (hsPkgs.HGL)
             (hsPkgs.Yampa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

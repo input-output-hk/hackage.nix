@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasql-th";
-        version = "0.2.1";
-      };
+      identifier = { name = "hasql-th"; version = "0.2.1"; };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Template Haskell utilities for Hasql";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.base-prelude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

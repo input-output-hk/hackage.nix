@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "base32-bytestring";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "base32-bytestring"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013, Sam Truzjan";
       maintainer = "Sam Truzjan <pxqr.sta@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Fast base32 and base32hex codec for ByteStrings";
       description = "base32 and base32hex codec according to RFC4648\n<http://tools.ietf.org/html/rfc4648>\n\nThe package API is similar to base64-bytestring.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.cpu)
           (hsPkgs.bits-extras)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -40,9 +31,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.base32-bytestring)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

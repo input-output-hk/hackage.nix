@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ghc-man-completion";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "ghc-man-completion"; version = "0.0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "headprogrammingczar@gmail.com";
@@ -22,16 +13,12 @@
       synopsis = "Generate a bash completion from the GHC manpage";
       description = "Parses the output of GHC's man page and generates a bash completion file.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ghc-man-completion" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.process) ];
+          };
         };
       };
-    };
-  }
+    }

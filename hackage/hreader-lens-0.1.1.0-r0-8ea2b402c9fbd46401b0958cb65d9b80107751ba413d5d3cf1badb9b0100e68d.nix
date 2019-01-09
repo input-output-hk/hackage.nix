@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hreader-lens";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "hreader-lens"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "denis.redozubov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Optics for hreader package";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.hset)
           (hsPkgs.lens)
           (hsPkgs.profunctors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yam-app";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "yam-app"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Daniel YU";
       maintainer = "Daniel YU <leptonyu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Yam App";
       description = "Base Module for Yam";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.resource-pool)
           (hsPkgs.reflection)
           (hsPkgs.persistent-sqlite)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

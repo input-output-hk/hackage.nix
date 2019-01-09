@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       tests = true;
@@ -12,13 +6,10 @@
       mkl = false;
       unsafe = false;
       vector = false;
-    };
+      };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hmatrix";
-        version = "0.9.3.0";
-      };
+      identifier = { name = "hmatrix"; version = "0.9.3.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Alberto Ruiz <aruiz@um.es>";
@@ -28,7 +19,7 @@
       synopsis = "Linear algebra and numerical computation";
       description = "Purely functional interface to basic linear algebra\nand other numerical computations, internally implemented using\nGSL, BLAS and LAPACK.\n\nSee also hmatrix-special and hmatrix-glpk.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -36,30 +27,30 @@
           (hsPkgs.array)
           (hsPkgs.storable-complex)
           (hsPkgs.process)
-        ] ++ pkgs.lib.optional (flags.vector) (hsPkgs.vector)) ++ pkgs.lib.optionals (flags.tests) [
+          ] ++ (pkgs.lib).optional (flags.vector) (hsPkgs.vector)) ++ (pkgs.lib).optionals (flags.tests) [
           (hsPkgs.QuickCheck)
           (hsPkgs.HUnit)
-        ];
-        libs = (pkgs.lib.optionals (flags.mkl) (if system.isX86_64
+          ];
+        libs = ((pkgs.lib).optionals (flags.mkl) (if system.isX86_64
           then [
             (pkgs."gsl")
             (pkgs."mkl_lapack")
             (pkgs."mkl_intel_lp64")
             (pkgs."mkl_sequential")
             (pkgs."mkl_core")
-          ]
+            ]
           else [
             (pkgs."gsl")
             (pkgs."mkl_lapack")
             (pkgs."mkl_intel")
             (pkgs."mkl_sequential")
             (pkgs."mkl_core")
-          ]) ++ pkgs.lib.optional (system.isOsx) (pkgs."gsl")) ++ pkgs.lib.optionals (system.isWindows) [
+            ]) ++ (pkgs.lib).optional (system.isOsx) (pkgs."gsl")) ++ (pkgs.lib).optionals (system.isWindows) [
           (pkgs."gsl-0")
           (pkgs."blas")
           (pkgs."lapack")
-        ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
+          ];
+        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate");
+        };
       };
-    };
-  }
+    }

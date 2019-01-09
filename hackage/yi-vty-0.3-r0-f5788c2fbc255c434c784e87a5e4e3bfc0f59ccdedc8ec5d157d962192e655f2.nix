@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "yi-vty";
-        version = "0.3";
-      };
+      identifier = { name = "yi-vty"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -22,8 +13,6 @@
       synopsis = "The Haskell-Scriptable Editor, helper package";
       description = "This is a dummy package: do not install it! \"cabal install yi -fvty\" is what you want.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

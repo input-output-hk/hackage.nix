@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-content-type";
-        version = "0.0.4";
-      };
+      identifier = { name = "wai-middleware-content-type"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Route to different middlewares based on the incoming Accept header.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.wai)
           (hsPkgs.wai-transformers)
           (hsPkgs.wai-util)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

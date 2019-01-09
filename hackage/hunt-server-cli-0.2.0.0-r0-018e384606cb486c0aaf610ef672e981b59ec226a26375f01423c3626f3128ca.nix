@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hunt-server-cli";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hunt-server-cli"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "Chris Reumann, Ulf Sauer, Sebastian Philipp";
       maintainer = "Chris Reumann, Ulf Sauer, Sebastian Philipp";
@@ -22,7 +13,7 @@
       synopsis = "A Command line Interface for the Hunt server.";
       description = "A Command line Interface for the Hunt server.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hunt-server-cli" = {
@@ -49,8 +40,8 @@
             (hsPkgs.conduit-extra)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

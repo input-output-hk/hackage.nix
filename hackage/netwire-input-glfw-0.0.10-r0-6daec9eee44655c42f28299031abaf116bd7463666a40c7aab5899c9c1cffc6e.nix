@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "netwire-input-glfw";
-        version = "0.0.10";
-      };
+      identifier = { name = "netwire-input-glfw"; version = "0.0.10"; };
       license = "MIT";
       copyright = "Pavel Krajcevski, 2014-2018";
       maintainer = "Krajcevski@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "GLFW instance of netwire-input";
       description = "This package contains the necessary glue to allow the use\nof wires from the netwire-input package. In general, the\ntypes associated here should be used only sparingly to\nplumb the input state through your netwire program.\nOtherwise, the state should not be modified directly.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.GLFW-b)
           (hsPkgs.stm)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "glfw-input-example" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.containers)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

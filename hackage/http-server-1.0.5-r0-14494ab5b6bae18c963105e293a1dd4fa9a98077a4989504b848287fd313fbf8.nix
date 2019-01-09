@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "http-server";
-        version = "1.0.5";
-      };
+      identifier = { name = "http-server"; version = "1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diatchki@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for writing Haskell web servers.";
       description = "A library for writing Haskell web servers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -32,14 +23,11 @@
           (hsPkgs.url)
           (hsPkgs.utf8-string)
           (hsPkgs.text)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
           else [
             (hsPkgs.network)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

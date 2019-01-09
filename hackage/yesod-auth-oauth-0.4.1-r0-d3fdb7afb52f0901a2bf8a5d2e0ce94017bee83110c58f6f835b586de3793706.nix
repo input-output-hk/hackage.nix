@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      oauth-not-supported = true;
-    };
+    flags = { oauth-not-supported = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "yesod-auth-oauth";
-        version = "0.4.1";
-      };
+      identifier = { name = "yesod-auth-oauth"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "konn.jinro_at_gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "OAuth wrapper for yesod-auth";
       description = "OAuth client interface for yesod-auth.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,11 +26,9 @@
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-form)
           (hsPkgs.transformers)
-        ] ++ (if flags.oauth-not-supported
-          then [
-            (hsPkgs.authenticate-oauth)
-          ]
+          ] ++ (if flags.oauth-not-supported
+          then [ (hsPkgs.authenticate-oauth) ]
           else [ (hsPkgs.authenticate) ]);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "hexml";
-        version = "0.3.3";
-      };
+      identifier = { name = "hexml"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2017";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,23 +13,15 @@
       synopsis = "XML subset DOM parser";
       description = "An XML DOM-style parser, that only parses a subset of XML, but is designed to be fast.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.extra)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.extra) ];
+        };
       tests = {
         "hexml-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.hexml)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.hexml) ];
+          };
         };
       };
-    };
-  }
+    }

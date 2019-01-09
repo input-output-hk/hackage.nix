@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "bronyradiogermany-streaming";
         version = "1.0.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "darcs@m.doomanddarkness.eu";
@@ -22,7 +16,7 @@
       synopsis = "Streaming interface for the BronyRadioGermany API.";
       description = "This is a streaming interface for the API of BronyRadioGermany. Features: get the currently played song, the entire song history, the AutoDj track list, vote statistics, and the raw audio streams; it can also post up- and downvotes, as well as song requests. If you prefer conduit over streaming, please have a look at bronyradiogermany-conduit.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.case-insensitive)
           (hsPkgs.http-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

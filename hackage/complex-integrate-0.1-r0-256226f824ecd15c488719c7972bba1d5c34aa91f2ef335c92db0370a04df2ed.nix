@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "complex-integrate";
-        version = "0.1";
-      };
+      identifier = { name = "complex-integrate"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "hijarian@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "A simple integration function to integrate a complex-valued complex functions";
       description = "Small and simple library for integration of complex functions.\nIntegrates functions along straight lines. Compatible with real-valued functions.\nUses Simpson's method.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "plivo";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "plivo"; version = "0.2.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "© 2013 Stephen Paul Weber";
       maintainer = "Stephen Paul Weber <singpolyma@singpolyma.net>";
@@ -22,7 +13,7 @@
       synopsis = "Plivo API wrapper for Haskell";
       description = "This package provides types representing requests to Plivo API endpoints\nand a function that calls the endpoints correctly, given the request.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.old-locale)
           (hsPkgs.errors)
           (hsPkgs.unexceptionalio)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

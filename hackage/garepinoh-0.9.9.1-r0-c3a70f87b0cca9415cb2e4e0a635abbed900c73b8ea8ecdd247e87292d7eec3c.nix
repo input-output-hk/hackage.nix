@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "garepinoh";
-        version = "0.9.9.1";
-      };
+      identifier = { name = "garepinoh"; version = "0.9.9.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "Public Domain";
       maintainer = "Mekeor Melire <mekeor.melire@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "reverse prefix notation calculator and calculation library";
       description = "Another concatenative and stack-based calculator using\nreverse prefix (– not polish! –) notation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,23 +21,15 @@
           (hsPkgs.numbers)
           (hsPkgs.haskeline)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "garepinoh" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskeline)
-            (hsPkgs.transformers)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.haskeline) (hsPkgs.transformers) ];
+          };
         "garepiboh" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskeline)
-            (hsPkgs.transformers)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.haskeline) (hsPkgs.transformers) ];
+          };
         };
       };
-    };
-  }
+    }

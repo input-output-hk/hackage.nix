@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "formatting";
-        version = "6.3.4";
-      };
+      identifier = { name = "formatting"; version = "6.3.4"; };
       license = "BSD-3-Clause";
       copyright = "2013 Chris Done, Shachaf Ben-Kiki, Martijn van Steenbergen, Mike Meyer, 2011 MailRank, Inc.";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Combinator-based type-safe formatting (like printf() or FORMAT)";
       description = "Combinator-based type-safe formatting (like printf() or FORMAT), modelled from the HoleyMonoids package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.integer-gmp)
           (hsPkgs.semigroups)
-        ];
-      };
+          ];
+        };
       tests = {
         "formatting-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.formatting)
             (hsPkgs.hspec)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "digestive-functors-hsp";
-        version = "0.5.0";
-      };
+      identifier = { name = "digestive-functors-hsp"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@n-heptane.com";
@@ -22,7 +13,7 @@
       synopsis = "HSP support for digestive-functors";
       description = "This is an HSP frontend for the digestive-functors library.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.hsp)
           (hsPkgs.hsx)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

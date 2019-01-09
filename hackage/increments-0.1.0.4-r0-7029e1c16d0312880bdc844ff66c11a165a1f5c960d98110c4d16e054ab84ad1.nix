@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "increments";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "increments"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jwlato@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "type classes for incremental updates to data";
       description = "incremental updates to large data structures";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.beamable)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "increments-tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.beamable)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apiary-clientsession";
-        version = "0.13.1";
-      };
+      identifier = { name = "apiary-clientsession"; version = "0.13.1"; };
       license = "MIT";
       copyright = "(c) 2014 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "clientsession support for apiary web framework.";
       description = "examples:\n\n<https://github.com/philopon/apiary/blob/master/examples/csrf.hs>\n\n<https://github.com/philopon/apiary/blob/master/examples/auth.hs>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.base64-bytestring)
           (hsPkgs.http-types)
           (hsPkgs.blaze-html)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happs-tutorial";
-        version = "0.7.1";
-      };
+      identifier = { name = "happs-tutorial"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "2008 Thomas Hartman";
       maintainer = "Creighton Hogg <wchogg at gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Happstack Tutorial that is its own web 2.0-type demo.";
       description = "A nice way to learn how to build web sites with Happstack";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "happs-tutorial" = {
@@ -47,8 +38,8 @@
             (hsPkgs.parsec)
             (hsPkgs.happstack-helpers)
             (hsPkgs.DebugTraceHelpers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

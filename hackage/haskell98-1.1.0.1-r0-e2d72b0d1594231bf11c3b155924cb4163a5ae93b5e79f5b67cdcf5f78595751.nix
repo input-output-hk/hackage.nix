@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haskell98";
-        version = "1.1.0.1";
-      };
+      identifier = { name = "haskell98"; version = "1.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "libraries@haskell.org";
@@ -22,7 +13,7 @@
       synopsis = "Compatibility with Haskell 98";
       description = "This package provides compatibility with the modules of Haskell\n98 and the FFI addendum, by means of wrappers around modules from\nthe base package (which in many cases have additional features).\nHowever Prelude, Numeric and Foreign are provided directly by\nthe base package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.old-locale)
           (hsPkgs.process)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

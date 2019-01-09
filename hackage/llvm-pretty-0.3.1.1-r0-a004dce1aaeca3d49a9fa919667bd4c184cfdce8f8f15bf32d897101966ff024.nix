@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "llvm-pretty";
-        version = "0.3.1.1";
-      };
+      identifier = { name = "llvm-pretty"; version = "0.3.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "awesomelyawesome@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A pretty printing library inspired by the llvm binding.";
       description = "A pretty printing library that was inspired by the LLVM binding by Lennart\nAugustsson.  The library provides a monadic interface to a pretty printer,\nthat allows functions to be defined and called, generating the corresponding\nLLVM assemblly when run.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.pretty)
           (hsPkgs.monadLib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

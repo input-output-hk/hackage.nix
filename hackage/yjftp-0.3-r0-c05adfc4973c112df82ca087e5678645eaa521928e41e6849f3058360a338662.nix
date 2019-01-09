@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "yjftp";
-        version = "0.3";
-      };
+      identifier = { name = "yjftp"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Yoshikuni Jujo <PAF01143@nifty.ne.jp>";
@@ -22,7 +13,7 @@
       synopsis = "CUI FTP client like 'ftp', 'ncftp'";
       description = "FTP client\nJust CUI FTP client";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,14 +22,8 @@
           (hsPkgs.directory)
           (hsPkgs.process)
           (hsPkgs.ftphs)
-        ];
-      };
-      exes = {
-        "yjftp" = {
-          depends = [
-            (hsPkgs.hsConfigure)
           ];
         };
+      exes = { "yjftp" = { depends = [ (hsPkgs.hsConfigure) ]; }; };
       };
-    };
-  }
+    }

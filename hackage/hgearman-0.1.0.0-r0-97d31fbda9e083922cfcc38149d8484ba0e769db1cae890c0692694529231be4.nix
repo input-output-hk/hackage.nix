@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hgearman";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hgearman"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2015, Jason Pesron";
       maintainer = "jrperson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Gearman client for Haskell.";
       description = "Gearman client for Haskell (not reccomended for production use).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.mtl)
           (hsPkgs.monad-control)
           (hsPkgs.resource-pool)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

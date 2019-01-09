@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "liboleg";
-        version = "0.2";
-      };
+      identifier = { name = "liboleg"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Don Stewart <dons@galois.com>";
@@ -22,7 +13,7 @@
       synopsis = "A collection of Oleg Kiselyov's Haskell modules (2009-2008)";
       description = "A collection of Oleg Kiselyov's Haskell modules (2009-2008) (released with his permission)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.unix)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

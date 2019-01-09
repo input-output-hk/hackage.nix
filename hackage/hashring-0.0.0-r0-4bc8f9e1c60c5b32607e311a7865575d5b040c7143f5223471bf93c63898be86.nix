@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "hashring";
-        version = "0.0.0";
-      };
+      identifier = { name = "hashring"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael S. Craig <mkscrg@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "Efficient consistent hashing.";
       description = "An efficient implementation of consistent hashing. See the documentation for\n@Data.HashRing@ for more info.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.hashable)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.hashable) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

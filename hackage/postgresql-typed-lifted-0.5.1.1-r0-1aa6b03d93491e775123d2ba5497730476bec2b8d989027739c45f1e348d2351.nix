@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-typed-lifted";
-        version = "0.5.1.1";
-      };
+      identifier = { name = "postgresql-typed-lifted"; version = "0.5.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Evan Cofsky";
       maintainer = "evan@theunixman.com";
@@ -22,7 +13,7 @@
       synopsis = "postgresql-typed operations lifted to any instance of MonadBase or MonadBaseControl.";
       description = "Provides generalized lifted operations for postgresql-typed. Version numbers track postgresql-typed.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.transformers-base)
           (hsPkgs.postgresql-typed)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

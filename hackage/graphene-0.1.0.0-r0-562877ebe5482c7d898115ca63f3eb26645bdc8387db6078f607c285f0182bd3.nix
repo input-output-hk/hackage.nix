@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "graphene";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "graphene"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "bkovach13@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Graph Library built as a final project for a Graph Theory class";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.bifunctors)
           (hsPkgs.containers)
           (hsPkgs.hashable)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

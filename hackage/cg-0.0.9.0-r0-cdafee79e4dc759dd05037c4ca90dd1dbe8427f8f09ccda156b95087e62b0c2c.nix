@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cg";
-        version = "0.0.9.0";
-      };
+      identifier = { name = "cg"; version = "0.0.9.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2015 Pepijn Kokke";
       maintainer = "pepijn.kokke@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parser for categorial grammars.";
       description = "Parser for categorial grammars.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "CG" = {
@@ -44,8 +35,8 @@
             (hsPkgs.split)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

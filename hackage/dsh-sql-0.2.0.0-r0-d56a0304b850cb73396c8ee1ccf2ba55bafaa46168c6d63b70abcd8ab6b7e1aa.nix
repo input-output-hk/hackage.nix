@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debuggraph = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "dsh-sql";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "dsh-sql"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "alex@etc-network.de";
@@ -22,7 +13,7 @@
       synopsis = "SQL backend for Database Supported Haskell (DSH)";
       description = "This package provides an SQL backend for Database Supported Haskell\n(DSH). It provides the ability to generate SQL code and execute DSH\nqueries on supported SQL database engines. Currently, only\nPostgreSQL is supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "sqltests" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "writer-cps-lens";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "writer-cps-lens"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "Lens instances for the stricter CPS WriterT and RWST";
       description = "Control.Lens Wrapped, Magnify and Zoomed instances for the stricter WriterT and RWST from writer-cps-transformers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.lens)
           (hsPkgs.profunctors)
           (hsPkgs.writer-cps-mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

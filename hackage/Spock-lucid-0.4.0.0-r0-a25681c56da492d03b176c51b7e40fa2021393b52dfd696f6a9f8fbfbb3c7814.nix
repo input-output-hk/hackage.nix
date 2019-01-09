@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Spock-lucid";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "Spock-lucid"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yom@artyom.me";
@@ -22,7 +13,7 @@
       synopsis = "Lucid support for Spock";
       description = "Lucid support for Spock";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.base)
           (hsPkgs.lucid)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

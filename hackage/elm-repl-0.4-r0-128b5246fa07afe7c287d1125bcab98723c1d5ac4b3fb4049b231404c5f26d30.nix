@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "elm-repl";
-        version = "0.4";
-      };
+      identifier = { name = "elm-repl"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2011-2014 Evan Czaplicki";
       maintainer = "info@elm-lang.org";
@@ -22,7 +13,7 @@
       synopsis = "a REPL for Elm";
       description = "A read-eval-print-loop (REPL) for evaluating Elm expressions,\ndefinitions, ADTs, and module imports. This tool is meant to\nhelp you play with small expressions and interact with\nfunctions deep inside of larger projects.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "elm-repl" = {
@@ -41,9 +32,9 @@
             (hsPkgs.mtl)
             (hsPkgs.parsec)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.mtl)
             (hsPkgs.parsec)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

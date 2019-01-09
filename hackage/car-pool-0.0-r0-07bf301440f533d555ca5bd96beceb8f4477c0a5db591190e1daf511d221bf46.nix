@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "car-pool";
-        version = "0.0";
-      };
+      identifier = { name = "car-pool"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Simple web-server for organizing car-pooling for an event";
       description = "Simple web-server for organizing car-pooling for an event";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "car-pool" = {
@@ -40,8 +31,8 @@
             (hsPkgs.containers)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rl-satton";
-        version = "0.1.0";
-      };
+      identifier = { name = "rl-satton"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016, Sergey Mironov";
       maintainer = "grrwlf@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Collection of Reinforcement Learning algorithms";
       description = "rl-satton provides implementation of algorithms, described in the\n'Reinforcement Learing: An Introduction' book by Richard S. Satton and Andrew\nG. Barto. In particular, TD(0), TD(lambda), Q-learing are implemented.\nCode readability was placed above performance.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.free)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

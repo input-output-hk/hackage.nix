@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-flowtyped";
-        version = "0.7.1";
-      };
+      identifier = { name = "aeson-flowtyped"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mike@quasimal.com";
@@ -22,7 +13,7 @@
       synopsis = "Create Flow type definitions from Haskell data types.";
       description = "Create Flow type definitions from Haskell data types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.wl-pprint)
           (hsPkgs.free)
           (hsPkgs.scientific)
-        ];
-      };
+          ];
+        };
       tests = {
         "aeson-flowtyped" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.aeson-flowtyped)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

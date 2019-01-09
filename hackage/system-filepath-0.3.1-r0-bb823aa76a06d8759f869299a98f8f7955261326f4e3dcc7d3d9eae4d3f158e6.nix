@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "system-filepath";
-        version = "0.3.1";
-      };
+      identifier = { name = "system-filepath"; version = "0.3.1"; };
       license = "MIT";
       copyright = "Copyright (c) John Millikin 2010";
       maintainer = "jmillikin@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "High-level, byte-based file and directory path manipulations";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
+        };
       };
-    };
-  }
+    }

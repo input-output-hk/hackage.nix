@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pcgen";
-        version = "2.0.1";
-      };
+      identifier = { name = "pcgen"; version = "2.0.1"; };
       license = "Apache-2.0";
       copyright = "2017 Daniel Gee";
       maintainer = "zefria@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "A fast, pseudorandom number generator.";
       description = "A fast pseudorandom number generator, as presented by M.E. O'Neill on\nhttp://www.pcg-random.org, See that site for information on the particulars\nof the technique used. This particular implementation uses two Word64 of\ninternal data and produces a Word32 of output per step. On 64-bit machines\nit's two to three times as fast as StdGen and uses the same amount of space.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.random) ]; };
       tests = {
         "pcgen-tests" = {
           depends = [
@@ -38,9 +24,9 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "pcgen-bench" = {
           depends = [
@@ -49,8 +35,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack-lib";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "stack-lib"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Clinton Mead";
       maintainer = "clintonmead@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wrapper to use stack as a library";
       description = "Some wrapper functions around [stack](https://hackage.haskell.org/package/stack) intended to make it easier to use [stack](https://hackage.haskell.org/package/stack) as a library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.stack)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

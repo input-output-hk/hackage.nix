@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "udev";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "udev"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013, Sam Truzjan";
       maintainer = "pxqr.sta@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "libudev bindings";
       description = "libudev bindings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,30 +21,22 @@
           (hsPkgs.bytestring)
           (hsPkgs.unix)
           (hsPkgs.posix-paths)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.libudev)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.libudev) ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       exes = {
         "hidraw" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.udev)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.udev) ];
+          };
         "monitor" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.udev)
             (hsPkgs.select)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mono-traversable";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "mono-traversable"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Type classes for mapping, folding, and traversing monomorphic containers";
       description = "Monomorphic variants of the Functor, Foldable, and Traversable typeclasses. Contains even more experimental code for abstracting containers and sequences.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.comonad)
           (hsPkgs.vector-instances)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.semigroups)
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sqlcli-odbc";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "sqlcli-odbc"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Mihai Giurgeanu";
       maintainer = "mihai.giurgeanu@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Specific ODBC definitions to be used by SQL CLI clients.";
       description = "You should use this package if you intend to use sqlcli package\nto connect to ODBC datasources.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.sqlcli)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.sqlcli) ]; };
+      };
+    }

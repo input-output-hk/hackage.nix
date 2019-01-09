@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tn";
-        version = "1.0.2";
-      };
+      identifier = { name = "tn"; version = "1.0.2"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2015 Peter Harpending";
       maintainer = "Peter Harpending <peter@harpending.org>";
@@ -22,7 +13,7 @@
       synopsis = "A simple daily journal program";
       description = "tn is a simple program to keep daily journals. It's terrible right now, so\nplease don't try to use it.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tn" = {
@@ -36,8 +27,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

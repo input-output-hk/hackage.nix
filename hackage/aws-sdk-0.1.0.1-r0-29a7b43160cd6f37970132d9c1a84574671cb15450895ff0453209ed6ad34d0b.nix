@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aws-sdk";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "aws-sdk"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "AWS SDK for Haskell Developers";
       maintainer = "Yusuke Nomura <yunomu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "AWS SDK for Haskell";
       description = "An AWS(Amazon Web Services) liblary for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,16 +39,12 @@
           (hsPkgs.mtl)
           (hsPkgs.lifted-base)
           (hsPkgs.transformers-base)
-        ];
-      };
-      tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
           ];
         };
+      tests = {
+        "test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.QuickCheck) ];
+          };
+        };
       };
-    };
-  }
+    }

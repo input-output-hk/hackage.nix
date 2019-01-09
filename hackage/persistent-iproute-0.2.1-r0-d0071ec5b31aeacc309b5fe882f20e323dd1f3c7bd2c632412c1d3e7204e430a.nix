@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "persistent-iproute";
-        version = "0.2.1";
-      };
+      identifier = { name = "persistent-iproute"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "lanablack@amok.cc";
@@ -22,7 +13,7 @@
       synopsis = "Persistent instances for types in iproute";
       description = "Persistent instances and operators for types in iproute to use with PostgreSQL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.path-pieces)
           (hsPkgs.persistent)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

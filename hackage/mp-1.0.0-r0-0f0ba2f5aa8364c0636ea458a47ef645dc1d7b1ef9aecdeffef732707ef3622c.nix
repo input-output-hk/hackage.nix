@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "mp";
-        version = "1.0.0";
-      };
+      identifier = { name = "mp"; version = "1.0.0"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Piotr Borek <piotrborek@op.pl>";
@@ -22,7 +13,7 @@
       synopsis = "Music player for linux.";
       description = "Music player for linux.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mp" = {
@@ -59,8 +50,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.stm)
             (hsPkgs.simple-ui)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "resource-effect";
-        version = "0.1.1";
-      };
+      identifier = { name = "resource-effect"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cgaebel@uwaterloo.ca";
@@ -22,15 +13,15 @@
       synopsis = "A port of the package 'resourcet' for extensible effects.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.extensible-effects)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.extensible-effects)
             (hsPkgs.mtl)
             (hsPkgs.resource-effect)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

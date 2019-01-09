@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haddock";
-        version = "2.2.0";
-      };
+      identifier = { name = "haddock"; version = "2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Simon Marlow, David Waern";
       maintainer = "David Waern <david.waern@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A documentation-generation tool for Haskell libraries";
       description = "Haddock is a documentation-generation tool for Haskell\nlibraries";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
@@ -37,8 +28,8 @@
             (hsPkgs.pretty)
             (hsPkgs.containers)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hly";
-        version = "0.12";
-      };
+      identifier = { name = "hly"; version = "0.12"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2010-2012";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell LilyPond";
       description = "A very lightweight embedding of the lilypond\ntypesetting model in haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.filepath)
           (hsPkgs.hmt)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

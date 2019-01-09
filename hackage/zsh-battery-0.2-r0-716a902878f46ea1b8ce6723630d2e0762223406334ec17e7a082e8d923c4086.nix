@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "zsh-battery";
-        version = "0.2";
-      };
+      identifier = { name = "zsh-battery"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mats.rauhala@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Ascii bars representing battery status";
       description = "Ascii bars representing battery status for zsh.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "zsh-battery" = {
@@ -31,8 +22,8 @@
             (hsPkgs.mtl)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

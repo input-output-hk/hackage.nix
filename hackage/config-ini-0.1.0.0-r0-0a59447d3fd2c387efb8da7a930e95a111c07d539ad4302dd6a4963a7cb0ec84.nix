@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-examples = false;
-    };
+    flags = { build-examples = false; };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "config-ini";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "config-ini"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "©2016 Getty Ritter";
       maintainer = "Getty Ritter <gettyritter@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "A library for simple INI-based configuration files.";
       description = "The @config-ini@ library is a small monadic language\nfor writing simple configuration languages with convenient,\nhuman-readable error messages.\n\n> parseConfig :: IniParser (Text, Int, Bool)\n> parseConfig = section \"NETWORK\" \$ do\n>   user <- field        \"user\"\n>   port <- fieldOf      \"port\" number\n>   enc  <- fieldFlagDef \"encryption\" True\n>   return (user, port, enc)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,24 +22,16 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.transformers)
           (hsPkgs.megaparsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "basic-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.config-ini)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.config-ini) ];
+          };
         "config-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.config-ini)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.config-ini) ];
+          };
         };
-      };
       tests = {
         "test-ini-compat" = {
           depends = [
@@ -60,8 +41,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test-prewritten" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +50,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

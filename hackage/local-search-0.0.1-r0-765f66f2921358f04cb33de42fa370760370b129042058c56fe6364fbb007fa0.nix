@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "local-search";
-        version = "0.0.1";
-      };
+      identifier = { name = "local-search"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2010 Richard Senington";
       maintainer = "sc06r2s@leeds.ac.uk";
@@ -22,14 +13,10 @@
       synopsis = "AA first attempt at generalised local search within Haskell, for applications in combinatorial optimisation.";
       description = "This library represents a first attempt at creating a generalised library for\nlocal (non-exhaustive) search in Haskell.  It is based on work presented to\nIFL2010, a draft of which is currently available on the homepage. The library\nmodels local search space using a rose tree, with child nodes forming the\nneighbourhood of any solution. The tree can then be transformed by various\ncombinators to implement different searching strategies; the result is then\n\"navigated\" to yield a sequence of solutions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-          (hsPkgs.containers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.random) (hsPkgs.containers) ];
+        };
       };
-    };
-  }
+    }

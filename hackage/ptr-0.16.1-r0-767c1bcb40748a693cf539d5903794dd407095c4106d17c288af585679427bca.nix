@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ptr";
-        version = "0.16.1";
-      };
+      identifier = { name = "ptr"; version = "0.16.1"; };
       license = "MIT";
       copyright = "(c) 2017, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Abstractions for operations on pointers";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.bug)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.bug)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

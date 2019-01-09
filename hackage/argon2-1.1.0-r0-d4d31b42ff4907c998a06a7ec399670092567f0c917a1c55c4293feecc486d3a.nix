@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "argon2";
-        version = "1.1.0";
-      };
+      identifier = { name = "argon2"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings to libargon2 - the reference implementation of the Argon2 password-hashing function";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.tasty)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

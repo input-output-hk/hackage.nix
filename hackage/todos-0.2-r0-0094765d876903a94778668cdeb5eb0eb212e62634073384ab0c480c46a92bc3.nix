@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "todos";
-        version = "0.2";
-      };
+      identifier = { name = "todos"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "portnov84@rambler.ru";
@@ -22,7 +13,7 @@
       synopsis = "Easy-to-use TODOs manager.";
       description = "todos is a simple TODO manager. TODO records theirself are described in\nplain-text file, and todos allows you to show only needed of\nthem. So, todos works as specialized `grep' utility.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "todos" = {
@@ -42,8 +33,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.data-hash)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

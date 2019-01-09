@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "iteratee-parsec";
-        version = "0.0.5";
-      };
+      identifier = { name = "iteratee-parsec"; version = "0.0.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "uzytkownik2@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Package allowing parsec parser initeratee";
       description = "Package providing instances of Stream in\nIteratee monad.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.ListLike)
           (hsPkgs.parsec)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

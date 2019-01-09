@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pure-io";
-        version = "0.1.0";
-      };
+      identifier = { name = "pure-io"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2014 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,14 +13,8 @@
       synopsis = "Pure IO monad.";
       description = "Pure IO monad.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.safe)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.safe) (hsPkgs.mtl) ]; };
+      };
+    }

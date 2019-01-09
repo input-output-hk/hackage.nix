@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reroute";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "reroute"; version = "0.3.1.0"; };
       license = "MIT";
       copyright = "(c) 2014 - 2015 Alexander Thiemann <mail@athiemann.net>, Tim Baumann <tim@timbaumann.info>";
       maintainer = "Alexander Thiemann <mail@athiemann.net>";
@@ -22,7 +13,7 @@
       synopsis = "abstract implementation of typed and untyped web routing";
       description = "abstraction over how urls with/without parameters are mapped to their corresponding handlers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.hvect)
-        ];
-      };
+          ];
+        };
       tests = {
         "reroute-test" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.hvect)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "reroute-benchmarks" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.path-pieces)
             (hsPkgs.graph-core)
             (hsPkgs.hvect)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

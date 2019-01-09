@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sibe";
-        version = "0.2.0.4";
-      };
+      identifier = { name = "sibe"; version = "0.2.0.4"; };
       license = "GPL-3.0-only";
       copyright = "2016 Mahdi Dibaiee";
       maintainer = "mdibaiee@aol.com";
@@ -22,7 +13,7 @@
       synopsis = "Machine Learning algorithms";
       description = "Haskell Machine Learning";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.Chart)
           (hsPkgs.Chart-cairo)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       exes = {
         "example-xor" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.sibe)
             (hsPkgs.hmatrix)
             (hsPkgs.data-default-class)
-          ];
-        };
+            ];
+          };
         "example-word2vec" = {
           depends = [
             (hsPkgs.base)
@@ -63,16 +54,16 @@
             (hsPkgs.vector)
             (hsPkgs.directory)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "example-424" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.sibe)
             (hsPkgs.hmatrix)
             (hsPkgs.data-default-class)
-          ];
-        };
+            ];
+          };
         "example-notmnist" = {
           depends = [
             (hsPkgs.base)
@@ -86,8 +77,8 @@
             (hsPkgs.data-default-class)
             (hsPkgs.Chart)
             (hsPkgs.Chart-cairo)
-          ];
-        };
+            ];
+          };
         "example-naivebayes-doc-classifier" = {
           depends = [
             (hsPkgs.base)
@@ -95,8 +86,8 @@
             (hsPkgs.hmatrix)
             (hsPkgs.containers)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

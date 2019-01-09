@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "safe-lazy-io";
-        version = "0.1";
-      };
+      identifier = { name = "safe-lazy-io"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Nicolas Pouillard";
       maintainer = "Nicolas Pouillard <nicolas.pouillard@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A library providing safe lazy IO features.";
       description = "Provides a safer API for incremental IO processing in a way very\nclose to standard lazy IO.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.parallel)
           (hsPkgs.strict-io)
           (hsPkgs.extensible-exceptions)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

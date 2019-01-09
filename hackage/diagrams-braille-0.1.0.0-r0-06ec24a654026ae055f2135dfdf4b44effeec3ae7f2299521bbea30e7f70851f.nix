@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "diagrams-braille";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "diagrams-braille"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Mario Lang";
       maintainer = "mlang@blind.guru";
@@ -22,7 +13,7 @@
       synopsis = "Braille diagrams with plain text";
       description = "Please see the README on Github at <https://github.com/mlang/diagrams-braille#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.mtl)
           (hsPkgs.optparse-applicative)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "brlclock" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.mtl)
             (hsPkgs.optparse-applicative)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "brldia" = {
           depends = [
             (hsPkgs.JuicyPixels)
@@ -76,8 +67,8 @@
             (hsPkgs.mtl)
             (hsPkgs.optparse-applicative)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

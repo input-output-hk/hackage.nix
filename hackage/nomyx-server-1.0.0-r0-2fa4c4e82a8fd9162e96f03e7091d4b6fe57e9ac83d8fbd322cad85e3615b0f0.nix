@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "nomyx-server";
-        version = "1.0.0";
-      };
+      identifier = { name = "nomyx-server"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "corentin.dupont@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Nomic game in haskell";
       description = "A Nomic game in Haskell, with a dedicated language to create new rules.\n\nNomyx is a fabulous and strange game where you have the right to change the rules in the middle of the game!\nIndeed, changing the rules is the goal of the game. Changing a rule is considered as a move. Of course even that could be changed!";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "nomyx-server" = {
@@ -44,17 +35,13 @@
             (hsPkgs.time)
             (hsPkgs.lens)
             (hsPkgs.hslogger)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.nomyx-server)
-            (hsPkgs.Cabal)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.nomyx-server) (hsPkgs.Cabal) ];
+          };
         };
       };
-    };
-  }
+    }

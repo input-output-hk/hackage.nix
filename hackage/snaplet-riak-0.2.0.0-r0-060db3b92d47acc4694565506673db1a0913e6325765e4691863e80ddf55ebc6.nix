@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "snaplet-riak";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "snaplet-riak"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "paul@statusfailed.com";
@@ -22,7 +13,7 @@
       synopsis = "A Snaplet for the Riak database";
       description = "A Snaplet allowing easy use of the Riak database within\nthe Snap framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.riak)
           (hsPkgs.riak-protobuf)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

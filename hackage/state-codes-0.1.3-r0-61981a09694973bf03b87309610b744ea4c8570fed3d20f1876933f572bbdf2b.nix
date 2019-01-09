@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "state-codes";
-        version = "0.1.3";
-      };
+      identifier = { name = "state-codes"; version = "0.1.3"; };
       license = "MIT";
       copyright = "2017 Agustin Camino";
       maintainer = "agustin.camino@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "ISO 3166-2:US state codes and i18n names";
       description = "This package provides the ISO 3166-2:US state codes and i18n names";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.text)
           (hsPkgs.aeson)
           (hsPkgs.shakespeare)
-        ];
-      };
+          ];
+        };
       tests = {
         "state-codes-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.state-codes)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nakadi-client";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "nakadi-client"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Moritz Schulte";
       maintainer = "mtesseract@silverratio.net";
@@ -22,7 +13,7 @@
       synopsis = "Client library for the Nakadi Event Broker";
       description = "This package implements a client library for interacting with the Nakadi event broker system developed by Zalando.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,8 +46,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "nakadi-client-test-suite" = {
           depends = [
@@ -100,8 +91,8 @@
             (hsPkgs.vector)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

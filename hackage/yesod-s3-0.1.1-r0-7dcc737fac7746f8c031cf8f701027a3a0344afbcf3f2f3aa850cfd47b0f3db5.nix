@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-s3";
-        version = "0.1.1";
-      };
+      identifier = { name = "yesod-s3"; version = "0.1.1"; };
       license = "MIT";
       copyright = "Copyright (C) 2013 Timo von Holtz";
       maintainer = "tvh@tvholtz.de";
@@ -22,7 +13,7 @@
       synopsis = "Simple Helper Library for using Amazon's Simple Storage Service (S3) with Yesod";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.mtl)
           (hsPkgs.conduit-extra)
           (hsPkgs.resourcet)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

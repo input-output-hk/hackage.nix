@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       yi = false;
@@ -13,13 +7,10 @@
       gtk3 = true;
       webkit = true;
       loc = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "leksah";
-        version = "0.13.4.3";
-      };
+      identifier = { name = "leksah"; version = "0.13.4.3"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2014 Juergen Nicklisch-Franken, Hamish Mackenzie";
       maintainer = "maintainer@leksah.org";
@@ -29,7 +20,7 @@
       synopsis = "Haskell IDE written in Haskell";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((((((([
@@ -70,78 +61,70 @@
           (hsPkgs.hlint)
           (hsPkgs.vado)
           (hsPkgs.shakespeare)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [
             (hsPkgs.unix)
-          ])) ++ pkgs.lib.optionals (system.isOsx) (if flags.gtk3
-          then [
-            (hsPkgs.gtk3-mac-integration)
-          ]
+            ])) ++ (pkgs.lib).optionals (system.isOsx) (if flags.gtk3
+          then [ (hsPkgs.gtk3-mac-integration) ]
           else [
             (hsPkgs.gtk-mac-integration)
-          ])) ++ pkgs.lib.optional (flags.yi) (hsPkgs.yi)) ++ pkgs.lib.optional (flags.yi && flags.dyre) (hsPkgs.dyre)) ++ (if flags.gtk3
-          then [
-            (hsPkgs.gtk3)
-            (hsPkgs.gtksourceview3)
-          ]
+            ])) ++ (pkgs.lib).optional (flags.yi) (hsPkgs.yi)) ++ (pkgs.lib).optional (flags.yi && flags.dyre) (hsPkgs.dyre)) ++ (if flags.gtk3
+          then [ (hsPkgs.gtk3) (hsPkgs.gtksourceview3) ]
           else [
             (hsPkgs.gtk)
             (hsPkgs.gtksourceview2)
-          ])) ++ pkgs.lib.optionals (flags.webkit) ([
+            ])) ++ (pkgs.lib).optionals (flags.webkit) ([
           (hsPkgs.jsaddle)
           (hsPkgs.ghcjs-codemirror)
           (hsPkgs.hamlet)
           (hsPkgs.blaze-html)
           (hsPkgs.lens)
           (hsPkgs.pretty-show)
-        ] ++ (if flags.gtk3
-          then [
-            (hsPkgs.webkitgtk3)
-            (hsPkgs.webkitgtk3-javascriptcore)
-          ]
+          ] ++ (if flags.gtk3
+          then [ (hsPkgs.webkitgtk3) (hsPkgs.webkitgtk3-javascriptcore) ]
           else [
             (hsPkgs.webkit)
             (hsPkgs.webkit-javascriptcore)
-          ]))) ++ pkgs.lib.optionals (flags.loc && system.isLinux) [
+            ]))) ++ (pkgs.lib).optionals (flags.loc && system.isLinux) [
           (hsPkgs.hgettext)
           (hsPkgs.setlocale)
-        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs.binary-shared);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
-      };
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs.binary-shared);
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
+        };
       exes = {
         "leksah" = {
           depends = ([
             (hsPkgs.leksah)
             (hsPkgs.base)
             (hsPkgs.gtk3)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32)) ++ pkgs.lib.optionals (system.isLinux && flags.loc) [
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32)) ++ (pkgs.lib).optionals (system.isLinux && flags.loc) [
             (hsPkgs.hgettext)
             (hsPkgs.setlocale)
-          ];
-          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
-        };
+            ];
+          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
+          };
         "bewleksah" = {
-          depends = pkgs.lib.optionals (!(!flags.webkit)) ([
+          depends = (pkgs.lib).optionals (!(!flags.webkit)) ([
             (hsPkgs.leksah)
             (hsPkgs.base)
             (hsPkgs.jsaddle)
             (hsPkgs.ghcjs-dom)
-          ] ++ (if flags.gtk3
+            ] ++ (if flags.gtk3
             then [
               (hsPkgs.gtk3)
               (hsPkgs.gtksourceview3)
               (hsPkgs.webkitgtk3)
               (hsPkgs.webkitgtk3-javascriptcore)
-            ]
+              ]
             else [
               (hsPkgs.gtk)
               (hsPkgs.gtksourceview2)
               (hsPkgs.webkit)
               (hsPkgs.webkit-javascriptcore)
-            ]));
+              ]));
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = ([
@@ -156,18 +139,14 @@
             (hsPkgs.transformers)
             (hsPkgs.glib)
             (hsPkgs.monad-loops)
-          ] ++ (if flags.gtk3
-            then [
-              (hsPkgs.gtk3)
-              (hsPkgs.gtksourceview3)
-              (hsPkgs.webkitgtk3)
-            ]
+            ] ++ (if flags.gtk3
+            then [ (hsPkgs.gtk3) (hsPkgs.gtksourceview3) (hsPkgs.webkitgtk3) ]
             else [
               (hsPkgs.gtk)
               (hsPkgs.gtksourceview2)
               (hsPkgs.webkit)
-            ])) ++ pkgs.lib.optional (flags.yi) (hsPkgs.yi);
+              ])) ++ (pkgs.lib).optional (flags.yi) (hsPkgs.yi);
+          };
         };
       };
-    };
-  }
+    }

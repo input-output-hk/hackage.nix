@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "gitson";
-        version = "0.4.1";
-      };
+      identifier = { name = "gitson"; version = "0.4.1"; };
       license = "Apache-2.0";
       copyright = "2014 Greg V <floatboth@me.com>";
       maintainer = "floatboth@me.com";
@@ -22,7 +13,7 @@
       synopsis = "A document store library for Git + JSON.";
       description = "A simple document store library for Git + JSON, based on Aeson. Uses command line git. Transactions use flock, so it's safe even across completely separate programs!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,16 +28,12 @@
           (hsPkgs.flock)
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)
-        ];
-      };
-      tests = {
-        "examples" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Glob)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "examples" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Glob) (hsPkgs.doctest) ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -58,9 +45,9 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -73,8 +60,8 @@
             (hsPkgs.criterion)
             (hsPkgs.hastache)
             (hsPkgs.statistics)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "regex-pcre";
-        version = "0.94.1";
-      };
+      identifier = { name = "regex-pcre"; version = "0.94.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2006, Christopher Kuklewicz";
       maintainer = "TextRegexLazy@personal.mightyreason.com";
@@ -22,7 +13,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The PCRE backend to accompany regex-base, see www.pcre.org";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -32,12 +23,9 @@
             (hsPkgs.array)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
-          ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.regex-base)
-          ];
+            ]
+          else [ (hsPkgs.base) (hsPkgs.regex-base) ];
         libs = [ (pkgs."pcre") ];
+        };
       };
-    };
-  }
+    }

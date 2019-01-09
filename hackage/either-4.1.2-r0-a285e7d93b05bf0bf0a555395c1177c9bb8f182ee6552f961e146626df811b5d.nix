@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "either";
-        version = "4.1.2";
-      };
+      identifier = { name = "either"; version = "4.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2014 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "An either monad transformer";
       description = "An either monad transformer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

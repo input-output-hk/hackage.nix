@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "dwarfadt";
-        version = "0.4";
-      };
+      identifier = { name = "dwarfadt"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "eyal.lotem@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "High-level wrapper around the dwarf library";
       description = "dwarf is an excellent library to read dwarf files, but the output of\nparsing dwarf is very low-level and difficult to work with.\n\nThis library intends to wrap dwarf and return a simple ADT representing\nthe DWARF information in a high-level way, easy to work with.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.containers)
           (hsPkgs.transformers)
           (hsPkgs.pretty)
-        ];
-      };
+          ];
+        };
       exes = {
         "dumpdwarf" = {
           depends = [
@@ -44,15 +35,11 @@
             (hsPkgs.dwarfadt)
             (hsPkgs.dwarf-el)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "dumpadt" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.dwarfadt)
-            (hsPkgs.dwarf-el)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.dwarfadt) (hsPkgs.dwarf-el) ];
+          };
         };
       };
-    };
-  }
+    }

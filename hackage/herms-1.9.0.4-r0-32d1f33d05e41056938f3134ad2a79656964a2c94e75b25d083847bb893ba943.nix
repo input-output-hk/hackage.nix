@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "herms";
-        version = "1.9.0.4";
-      };
+      identifier = { name = "herms"; version = "1.9.0.4"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "jack.c.kiefer@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A command-line manager for delicious kitchen recipes";
       description = "HeRM's: a Haskell-based Recipe Manager for delicious kitchen recipes";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "herms" = {
@@ -39,8 +30,8 @@
             (hsPkgs.semigroups)
             (hsPkgs.split)
             (hsPkgs.vty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

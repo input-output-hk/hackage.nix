@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sym-plot";
-        version = "0.3.0";
-      };
+      identifier = { name = "sym-plot"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anders.claesson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Plot permutations; an addition to the sym package";
       description = "This packade adds plots to the sym package. It has been factored out\nof that package because diagrams is a rather heavy dependency.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.sym)
           (hsPkgs.diagrams-lib)
           (hsPkgs.diagrams-cairo)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

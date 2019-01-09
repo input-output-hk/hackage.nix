@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "hactor";
-        version = "1.2.0.0";
-      };
+      identifier = { name = "hactor"; version = "1.2.0.0"; };
       license = "MIT";
       copyright = "Copyright Forkk 2014";
       maintainer = "forkk@forkk.net";
@@ -22,7 +13,7 @@
       synopsis = "Lightweight Erlang-style actors for Haskell.";
       description = "Hactor is a library which aims to provide lightweight Erlang-style actors for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.resourcet)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

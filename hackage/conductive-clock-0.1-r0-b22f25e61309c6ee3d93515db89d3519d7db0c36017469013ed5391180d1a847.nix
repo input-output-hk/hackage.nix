@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "conductive-clock";
-        version = "0.1";
-      };
+      identifier = { name = "conductive-clock"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "renick@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "a library for displaying musical time in a terminal-based clock";
       description = "This library is for generating strings containing clock time, sending them across OSC, and displaying them in a terminal. In addition to the library functions, it contains a sample executable for displaying musical time in a terminal-based clock.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.hosc)
           (hsPkgs.parseargs)
           (hsPkgs.vty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

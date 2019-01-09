@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ehs";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "ehs"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "Copyright (C) 2014, Yu Fukuzawa";
       maintainer = "Yu Fukuzawa <minpou.primer@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "embedded Haskell by using quasiquotes.";
       description = "embedded Haskell by using quasiquotes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.haskell-src-meta)
           (hsPkgs.template-haskell)
           (hsPkgs.dlist)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "comonads-fd";
-        version = "1.8.0.2";
-      };
+      identifier = { name = "comonads-fd"; version = "1.8.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Comonad transformers using functional dependencies";
       description = "Comonad transformers using functional dependencies";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.comonad)
           (hsPkgs.comonad-transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

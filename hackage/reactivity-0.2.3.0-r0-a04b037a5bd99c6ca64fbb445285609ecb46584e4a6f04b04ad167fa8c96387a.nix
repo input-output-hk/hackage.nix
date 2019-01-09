@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "reactivity";
-        version = "0.2.3.0";
-      };
+      identifier = { name = "reactivity"; version = "0.2.3.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2015 by James Candy";
       maintainer = "info@alkalisoftware.net";
@@ -22,7 +13,7 @@
       synopsis = "(Yet another) alternate implementation of push-pull FRP. This is based on the Reactive package (http://haskell.org/haskellwiki/reactive).";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.ConcurrentUtils)
           (hsPkgs.parallel)
           (hsPkgs.list-extras)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-text-format";
-        version = "0.1";
-      };
+      identifier = { name = "simple-text-format"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Justus Adam";
       maintainer = "dev@justus.science";
@@ -22,15 +13,11 @@
       synopsis = "Simple text based format strings with named identifiers.";
       description = "A simple library for format strings based on text and attoparsec. See the readme for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.attoparsec)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.attoparsec) ];
+        };
       tests = {
         "simple-text-format-test" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
             (hsPkgs.microlens-platform)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mybitcoin-sci";
-        version = "0.2";
-      };
+      identifier = { name = "mybitcoin-sci"; version = "0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "lemmih@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Binding to mybitcoin.com's Shopping Cart Interface.";
       description = "See <http://bitcoin.org> and <http://mybitcoin.com> for more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.mtl)
           (hsPkgs.split)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

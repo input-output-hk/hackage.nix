@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "test-simple";
-        version = "0.1.6";
-      };
+      identifier = { name = "test-simple"; version = "0.1.6"; };
       license = "BSD-3-Clause";
       copyright = "Boris Sukholitko, 2012";
       maintainer = "boriss@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple Perl inspired testing";
       description = "Test.Simple provides simple, Perl inspired primitives for easy testing. It outputs test\nresults in TAP format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.state-plus)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "Main" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.executable-path)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

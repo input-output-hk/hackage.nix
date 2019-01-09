@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "IsNull";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "IsNull"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jmacristovao@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A typeclass to determine if a given value is null.";
       description = "A typeclass to determine if a given foldable type\n(or other) is empty ~ null ~ invalid.\nThe definition is intentionally vague, to cover types\nfrom Either to Text and Sets.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.HUnit)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

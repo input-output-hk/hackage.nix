@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { use_xft = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gsmenu";
-        version = "1.1";
-      };
+      identifier = { name = "gsmenu"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "athas@sigkill.dk";
@@ -22,7 +13,7 @@
       synopsis = "A visual generic menu";
       description = "Standalone port of XMonadContrib's GridSelect.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "gsmenu" = {
@@ -33,11 +24,11 @@
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.parsec)
-          ] ++ pkgs.lib.optionals (flags.use_xft) [
+            ] ++ (pkgs.lib).optionals (flags.use_xft) [
             (hsPkgs.X11-xft)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

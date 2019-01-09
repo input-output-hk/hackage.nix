@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "data-accessor-monads-fd";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "data-accessor-monads-fd"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Use Accessor to access state in monads-fd State monad class";
       description = "Use Accessor to access state in monads-fd State monad class";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.monads-fd)
           (hsPkgs.transformers)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

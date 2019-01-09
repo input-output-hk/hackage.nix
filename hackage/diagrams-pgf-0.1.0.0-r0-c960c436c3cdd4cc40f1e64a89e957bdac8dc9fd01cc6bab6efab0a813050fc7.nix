@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "diagrams-pgf";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "diagrams-pgf"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "c.chalmers@me.com";
@@ -22,7 +13,7 @@
       synopsis = "PGF backend for diagrams drawing EDSL.";
       description = "This package provides a modular backend for rendering diagrams created\nwith the diagrams EDSL using the TeX library PGF.\n\nSupport for rendering LaTeX, ConTeXt and plain TeX files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.vector)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      threaded = true;
-      gpl = true;
-    };
+    flags = { threaded = true; gpl = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hlint";
-        version = "1.9.10";
-      };
+      identifier = { name = "hlint"; version = "1.9.10"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2006-2014";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Source code suggestions";
       description = "HLint gives suggestions on how to improve your source code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,12 +27,8 @@
           (hsPkgs.cmdargs)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.uniplate)
-        ] ++ pkgs.lib.optional (flags.gpl) (hsPkgs.hscolour);
-      };
-      exes = {
-        "hlint" = {
-          depends = [ (hsPkgs.base) ];
+          ] ++ (pkgs.lib).optional (flags.gpl) (hsPkgs.hscolour);
         };
+      exes = { "hlint" = { depends = [ (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

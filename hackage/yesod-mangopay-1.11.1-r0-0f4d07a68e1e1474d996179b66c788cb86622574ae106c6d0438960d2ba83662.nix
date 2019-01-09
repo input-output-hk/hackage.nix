@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      library-only = true;
-    };
+    flags = { dev = false; library-only = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-mangopay";
-        version = "1.11.1";
-      };
+      identifier = { name = "yesod-mangopay"; version = "1.11.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Prowdsponsor";
       maintainer = "Prowdsponsor <opensource@prowdsponsor.com>";
@@ -25,7 +13,7 @@
       synopsis = "Yesod library for MangoPay API access";
       description = "This package provides convenience functions when using both\n@yesod@ and @mangopay@ packages.  It also includes a test\napplication that is built when the library-only flag is set to\n@False@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +28,8 @@
           (hsPkgs.yesod)
           (hsPkgs.yesod-core)
           (hsPkgs.persistent-template)
-        ];
-      };
+          ];
+        };
       exes = {
         "yesod-mangopay" = {
           depends = [
@@ -82,8 +70,8 @@
             (hsPkgs.yesod-static)
             (hsPkgs.lifted-base)
             (hsPkgs.country-codes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

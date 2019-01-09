@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "freelude";
-        version = "0.3.2.0";
-      };
+      identifier = { name = "freelude"; version = "0.3.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Clinton Mead";
       maintainer = "clintonmead@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A generalisation of the Category->Functor->Applicative->Monad hierarchy and more";
       description = "This package generalises classes like Category, Functor etc to allow them to be defined on more data types, for example, tuples and sets, whilst still attempting to maintain backward compatability.\n\nSee the module \"Freelude\" for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.indextype)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.indextype)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

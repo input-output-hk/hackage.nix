@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "xmobar";
-        version = "0.3";
-      };
+      identifier = { name = "xmobar"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "andrea.rossato@unibz.it";
@@ -22,7 +13,7 @@
       synopsis = "A Statusbar for the XMonad Window Manager";
       description = "Xmobar is a minimal status bar for the XMonad Window Manager.\n\nIt was inspired by the Ion3 status bar, and supports similar features.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "xmobar" = {
@@ -32,8 +23,8 @@
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "xmb-cpu" = {
           depends = [
             (hsPkgs.base)
@@ -41,8 +32,8 @@
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "xmb-mem" = {
           depends = [
             (hsPkgs.base)
@@ -50,8 +41,8 @@
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "xmb-net" = {
           depends = [
             (hsPkgs.base)
@@ -59,8 +50,8 @@
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "xmb-weather" = {
           depends = [
             (hsPkgs.base)
@@ -68,8 +59,8 @@
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "curve25519";
-        version = "0.2.3";
-      };
+      identifier = { name = "curve25519"; version = "0.2.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Adam Wick <awick@uhsure.com>";
@@ -22,15 +13,11 @@
       synopsis = "Fast implementations of the curve25519 elliptic curve primitives.";
       description = "Haskell bindings and extensions to the curve25519-donna\ncodebase.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.crypto-api)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.crypto-api) ];
+        };
       tests = {
         "test-curve25519" = {
           depends = [
@@ -45,8 +32,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

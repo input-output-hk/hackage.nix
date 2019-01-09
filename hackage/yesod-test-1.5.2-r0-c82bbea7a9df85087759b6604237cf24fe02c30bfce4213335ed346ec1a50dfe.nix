@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-test";
-        version = "1.5.2";
-      };
+      identifier = { name = "yesod-test"; version = "1.5.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman, Greg Weber, Nubis <nubis@woobiz.com.ar>";
@@ -22,7 +13,7 @@
       synopsis = "integration testing for WAI/Yesod Applications";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-test>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-types)
           (hsPkgs.yesod-core)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.wai)
             (hsPkgs.lifted-base)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

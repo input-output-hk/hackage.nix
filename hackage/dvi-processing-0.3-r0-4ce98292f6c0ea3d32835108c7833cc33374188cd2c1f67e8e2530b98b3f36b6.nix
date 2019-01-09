@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dvi-processing";
-        version = "0.3";
-      };
+      identifier = { name = "dvi-processing"; version = "0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Read/write DVI and TFM file";
       description = "Read/write DVI and TFM file, including typesetting and other features";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.filepath)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

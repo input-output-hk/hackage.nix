@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      hlint = true;
-      doctest = true;
-      llvm = false;
-    };
+    flags = { hlint = true; doctest = true; llvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cacophony";
-        version = "0.2.0";
-      };
+      identifier = { name = "cacophony"; version = "0.2.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "jgalt@centromere.net";
@@ -26,7 +13,7 @@
       synopsis = "A library implementing the Noise protocol.";
       description = "This library implements the <https://github.com/trevp/noise/blob/master/noise.md Noise>\nprotocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +23,8 @@
           (hsPkgs.lens)
           (hsPkgs.memory)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-cacophony" = {
           depends = [
@@ -48,27 +35,23 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.doctest)) [
+          depends = (pkgs.lib).optionals (!(!flags.doctest)) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
+      benchmarks = { "bench" = { depends = [ (hsPkgs.base) ]; }; };
       };
-      benchmarks = {
-        "bench" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
-    };
-  }
+    }

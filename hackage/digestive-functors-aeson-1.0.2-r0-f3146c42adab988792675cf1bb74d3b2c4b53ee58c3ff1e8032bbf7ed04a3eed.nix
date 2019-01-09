@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "digestive-functors-aeson";
-        version = "1.0.2";
-      };
+      identifier = { name = "digestive-functors-aeson"; version = "1.0.2"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2012 Oliver Charles";
       maintainer = "Oliver Charles <ollie@ocharles.org.uk>";
@@ -22,7 +13,7 @@
       synopsis = "Run digestive-functors forms against JSON";
       description = "This package allows you to run a form created by digestive functors against a\nJSON document that has been parsed by Aeson.\n\nFor changes, please see http://github.com/ocharles/changelog.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.lens)
           (hsPkgs.safe)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

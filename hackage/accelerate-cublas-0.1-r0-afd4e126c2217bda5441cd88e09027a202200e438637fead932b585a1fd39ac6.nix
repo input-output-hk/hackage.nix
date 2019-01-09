@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "accelerate-cublas";
-        version = "0.1";
-      };
+      identifier = { name = "accelerate-cublas"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -24,7 +13,7 @@
       synopsis = "Basic Linear Algebra using native CUBLAS library";
       description = "Basic Linear Algebra using native CUBLAS library.\nCurrently only support for the most basic batched matrix operations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +27,8 @@
           (hsPkgs.vector)
           (hsPkgs.utility-ht)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       exes = {
         "accelerate-cublas-demo" = {
           depends = [
@@ -50,9 +39,9 @@
             (hsPkgs.accelerate)
             (hsPkgs.random)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "newton-inverse" = {
           depends = [
@@ -68,8 +57,8 @@
             (hsPkgs.random)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

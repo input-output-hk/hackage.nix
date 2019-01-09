@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "zlib-bindings";
-        version = "0.1.1.4";
-      };
+      identifier = { name = "zlib-bindings"; version = "0.1.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,15 +13,11 @@
       synopsis = "Low-level bindings to the zlib package.";
       description = "Provides necessary functions for producing a streaming interface. This is used for example by @zlib-conduit@ and @zlib-enum@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.zlib)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.zlib) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.zlib-bindings)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

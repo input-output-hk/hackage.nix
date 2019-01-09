@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "torch";
-        version = "0.1";
-      };
+      identifier = { name = "torch"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nonowarn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple unit test library (or framework)";
       description = "Unit test writing and running with writer monads.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.mtl)
           (hsPkgs.QuickCheck)
           (hsPkgs.parallel)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

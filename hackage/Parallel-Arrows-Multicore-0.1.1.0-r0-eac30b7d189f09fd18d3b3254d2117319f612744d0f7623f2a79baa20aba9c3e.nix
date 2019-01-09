@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Parallel-Arrows-Multicore";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "Parallel-Arrows-Multicore"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Martin Braun";
@@ -22,7 +13,7 @@
       synopsis = "GpH based backend for @Parallel-Arrows-Definition@ in a multicore variant.";
       description = "GpH based backend for @Parallel-Arrows-Definition@ in a multicore variant. Use this backend for shared-memory programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.parallel)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.hspec)
             (hsPkgs.parallel)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

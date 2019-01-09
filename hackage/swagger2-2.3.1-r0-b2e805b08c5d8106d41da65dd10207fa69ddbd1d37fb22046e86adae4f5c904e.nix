@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "swagger2";
-        version = "2.3.1";
-      };
+      identifier = { name = "swagger2"; version = "2.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2016, GetShopTV";
       maintainer = "nickolay@getshoptv.com";
@@ -22,7 +13,7 @@
       synopsis = "Swagger 2.0 data model";
       description = "This library is intended to be used for decoding and encoding Swagger 2.0 API\nspecifications as well as manipulating them.\n\nThe original Swagger 2.0 specification is available at http://swagger.io/specification/.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.uuid-types)
           (hsPkgs.vector)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -74,19 +65,17 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.utf8-string)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
-        };
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

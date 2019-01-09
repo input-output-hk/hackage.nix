@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ripple-federation";
-        version = "0.2";
-      };
+      identifier = { name = "ripple-federation"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "© 2014 Stephen Paul Weber";
       maintainer = "Stephen Paul Weber <singpolyma@singpolyma.net>";
@@ -22,7 +13,7 @@
       synopsis = "Utilities and types to work with the Ripple federation protocol";
       description = "To resolve federation names, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.io-streams)
           (hsPkgs.unexceptionalio)
           (hsPkgs.base58address)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

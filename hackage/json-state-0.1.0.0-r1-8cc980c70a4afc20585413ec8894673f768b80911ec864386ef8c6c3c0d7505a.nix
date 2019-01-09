@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-state";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "json-state"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "♡ Copying is an act of love. Please copy, reuse and share.";
       maintainer = "fr33domlover@riseup.net";
@@ -22,7 +13,7 @@
       synopsis = "Keep program state in JSON files.";
       description = "If your program manages simple state data not shared with other programs,\nthis package provide a lightweight alternative to full ACID databases. It\nallows you to load state from JSON files and update those files\nasynchronously and periodically. Version control (using Git) is supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.libgit)
           (hsPkgs.time-units)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

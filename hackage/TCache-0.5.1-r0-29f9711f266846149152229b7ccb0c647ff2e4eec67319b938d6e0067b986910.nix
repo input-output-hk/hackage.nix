@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "TCache";
-        version = "0.5.1";
-      };
+      identifier = { name = "TCache"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "agocorona@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A Transactional data cache with configurable persitence";
       description = "-------------------------------------------------";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.old-time)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.old-time) ];
+        };
       };
-    };
-  }
+    }

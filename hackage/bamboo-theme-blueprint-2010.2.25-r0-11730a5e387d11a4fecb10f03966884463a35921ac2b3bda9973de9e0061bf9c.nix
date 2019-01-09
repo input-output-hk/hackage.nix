@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bamboo-theme-blueprint";
-        version = "2010.2.25";
-      };
+      identifier = { name = "bamboo-theme-blueprint"; version = "2010.2.25"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "bamboo blueprint theme";
       description = "bamboo blueprint theme";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.hack)
           (hsPkgs.hack-contrib)
           (hsPkgs.bamboo)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

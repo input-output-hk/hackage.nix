@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "astrds";
-        version = "0.1.1";
-      };
+      identifier = { name = "astrds"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Clara Loeh <darcs@wuisch.org>";
@@ -22,7 +13,7 @@
       synopsis = "an incomplete 2d space game";
       description = "astrds is an intentionally incomplete 2d space game. The code\nis intended to be a playground for Haskell programmers who want\nto add their own features and extensions. The\nimplementation is based on SDL and OpenGL and includes\nsimple audio and joystick support.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "astrds" = {
@@ -39,8 +30,8 @@
             (hsPkgs.SDL-mixer)
             (hsPkgs.unix)
             (hsPkgs.MonadRandom)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

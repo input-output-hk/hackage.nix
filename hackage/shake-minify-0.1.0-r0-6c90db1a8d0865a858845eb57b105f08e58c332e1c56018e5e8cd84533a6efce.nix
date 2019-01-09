@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shake-minify";
-        version = "0.1.0";
-      };
+      identifier = { name = "shake-minify"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "luke@hoersten.org";
@@ -22,7 +13,7 @@
       synopsis = "Shake Minify Actions";
       description = "Shake minify actions for CSS and JS files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.hjsmin)
           (hsPkgs.shake)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

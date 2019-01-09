@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "liveplot";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "liveplot"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2017 Richard Marko";
       maintainer = "srk@48.io";
@@ -22,7 +13,7 @@
       synopsis = "Liveplotting";
       description = "Live plotting with OpenGL. This Haskell library allows feeding live data via Pipes to OpenGL plots.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.vector)
           (hsPkgs.vinyl)
           (hsPkgs.vinyl-gl)
-        ];
-      };
+          ];
+        };
       exes = {
         "liveplot" = {
           depends = [
@@ -57,14 +48,9 @@
             (hsPkgs.mvc)
             (hsPkgs.pipes)
             (hsPkgs.liveplot)
-          ];
-        };
-        "liveplot-demo" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.liveplot)
-          ];
+            ];
+          };
+        "liveplot-demo" = { depends = [ (hsPkgs.base) (hsPkgs.liveplot) ]; };
         };
       };
-    };
-  }
+    }

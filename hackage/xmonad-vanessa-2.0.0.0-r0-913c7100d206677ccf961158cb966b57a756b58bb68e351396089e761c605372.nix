@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xmonad-vanessa";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "xmonad-vanessa"; version = "2.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017-2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Custom xmonad, which builds with stack or cabal.";
       description = "Custom xmonad example, plus several bits of functionality for managing media within XMonad.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.process)
           (hsPkgs.X11)
           (hsPkgs.alsa-mixer)
-        ];
-      };
+          ];
+        };
       exes = {
         "xmonad" = {
           depends = [
@@ -46,15 +37,10 @@
             (hsPkgs.xmonad-spotify)
             (hsPkgs.xmonad-volume)
             (hsPkgs.containers)
-          ];
+            ];
+          };
+        "getkb" = { depends = [ (hsPkgs.base) (hsPkgs.xmonad-vanessa) ]; };
         };
-        "getkb" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.xmonad-vanessa)
-          ];
-        };
-      };
       tests = {
         "xmonad-test" = {
           depends = [
@@ -62,8 +48,8 @@
             (hsPkgs.xmonad-vanessa)
             (hsPkgs.hspec)
             (hsPkgs.xmonad)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

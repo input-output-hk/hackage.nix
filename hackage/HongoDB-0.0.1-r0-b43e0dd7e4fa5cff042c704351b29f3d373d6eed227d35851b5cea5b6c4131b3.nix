@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HongoDB";
-        version = "0.0.1";
-      };
+      identifier = { name = "HongoDB"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tanaka.hideyuki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Simple Key Value Store";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,16 +30,12 @@
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-binary)
           (hsPkgs.hashable)
-        ];
-      };
-      tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.random)
           ];
         };
+      tests = {
+        "test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.random) ];
+          };
+        };
       };
-    };
-  }
+    }

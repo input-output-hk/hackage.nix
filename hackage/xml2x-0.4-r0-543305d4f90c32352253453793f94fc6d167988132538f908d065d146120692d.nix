@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "xml2x";
-        version = "0.4";
-      };
+      identifier = { name = "xml2x"; version = "0.4"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Ketil Malde <ketil@malde.org>";
@@ -22,7 +13,7 @@
       synopsis = "Convert BLAST output in XML format to CSV or HTML";
       description = "xml2x - convert blast output in XML format, either to a (csv)\ntable suitable for e.g. importing into Excel or OOCalc, or\nto HTML.  Optionally annotating the output with GO terms.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "xml2x" = {
@@ -34,8 +25,8 @@
             (hsPkgs.array)
             (hsPkgs.xhtml)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

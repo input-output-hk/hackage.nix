@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      curl = false;
-      libcurl = false;
-      threaded = true;
-    };
+    flags = { curl = false; libcurl = false; threaded = true; };
     package = {
       specVersion = "1.10.2";
-      identifier = {
-        name = "leksah-server";
-        version = "0.13.1.1";
-      };
+      identifier = { name = "leksah-server"; version = "0.13.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2011 Juergen Nicklisch-Franken, Hamish Mackenzie";
       maintainer = "maintainer@leksah.org";
@@ -26,7 +13,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -53,23 +40,21 @@
           (hsPkgs.transformers)
           (hsPkgs.strict)
           (hsPkgs.text)
-        ] ++ [
+          ] ++ [
           (hsPkgs.haddock)
-        ]) ++ (if compiler.isGhc && compiler.version.ge "7.2"
+          ]) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
           then [ (hsPkgs.process) ]
-          else [
-            (hsPkgs.process-leksah)
-          ])) ++ (if system.isWindows
+          else [ (hsPkgs.process-leksah) ])) ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [
             (hsPkgs.unix)
-          ])) ++ pkgs.lib.optional (flags.libcurl) (hsPkgs.curl);
-        libs = pkgs.lib.optionals (system.isWindows) [
+            ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs.curl);
+        libs = (pkgs.lib).optionals (system.isWindows) [
           (pkgs."kernel32")
           (pkgs."pango-1.0")
           (pkgs."glib-2.0")
-        ];
-      };
+          ];
+        };
       exes = {
         "leksah-server" = {
           depends = ((([
@@ -96,23 +81,21 @@
             (hsPkgs.transformers)
             (hsPkgs.strict)
             (hsPkgs.text)
-          ] ++ [
+            ] ++ [
             (hsPkgs.haddock)
-          ]) ++ (if compiler.isGhc && compiler.version.ge "7.2"
+            ]) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
             then [ (hsPkgs.process) ]
-            else [
-              (hsPkgs.process-leksah)
-            ])) ++ (if system.isWindows
+            else [ (hsPkgs.process-leksah) ])) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)
-            ])) ++ pkgs.lib.optional (flags.libcurl) (hsPkgs.curl);
-          libs = pkgs.lib.optionals (system.isWindows) [
+              ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs.curl);
+          libs = (pkgs.lib).optionals (system.isWindows) [
             (pkgs."kernel32")
             (pkgs."pango-1.0")
             (pkgs."glib-2.0")
-          ];
-        };
+            ];
+          };
         "leksahecho" = {
           depends = [
             (hsPkgs.base)
@@ -124,13 +107,11 @@
             (hsPkgs.attoparsec)
             (hsPkgs.transformers)
             (hsPkgs.text)
-          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
+            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
             then [ (hsPkgs.process) ]
-            else [
-              (hsPkgs.process-leksah)
-            ]);
+            else [ (hsPkgs.process-leksah) ]);
+          };
         };
-      };
       tests = {
         "test-tool" = {
           depends = [
@@ -140,12 +121,10 @@
             (hsPkgs.HUnit)
             (hsPkgs.transformers)
             (hsPkgs.conduit)
-          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
+            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
             then [ (hsPkgs.process) ]
-            else [
-              (hsPkgs.process-leksah)
-            ]);
+            else [ (hsPkgs.process-leksah) ]);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "savage";
-        version = "1.0.1";
-      };
+      identifier = { name = "savage"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Daniel Cartwright <dcartwright@layer3com.com>";
@@ -22,7 +13,7 @@
       synopsis = "re-export of the random generators from Hedgehog";
       description = "re-export of the random generators from Hedgehog:\n<https://github.com/hedgehogqa>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -50,7 +41,7 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.wl-pprint-annotated)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mirror-tweet";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mirror-tweet"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "masakazu.minamiyama@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tweet mirror";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mirror-tweet" = {
@@ -36,8 +27,8 @@
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

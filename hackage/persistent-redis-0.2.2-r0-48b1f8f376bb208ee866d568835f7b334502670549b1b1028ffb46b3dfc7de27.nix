@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent-redis";
-        version = "0.2.2";
-      };
+      identifier = { name = "persistent-redis"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Pavel Ryzhov <paul@paulrz.cz>";
@@ -22,7 +13,7 @@
       synopsis = "Backend for persistent library using Redis.";
       description = "Based on the Redis package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.binary)
           (hsPkgs.scientific)
-        ];
-      };
+          ];
+        };
       tests = {
         "basic" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.monad-control)
             (hsPkgs.utf8-string)
             (hsPkgs.persistent-redis)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

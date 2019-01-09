@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hiccup";
-        version = "0.2";
-      };
+      identifier = { name = "hiccup"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "consalus+hiccup@google.com";
@@ -22,16 +13,10 @@
       synopsis = "Simple tcl interpeter";
       description = "A simplistic interpreter for a subset of tcl";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
-        "hiccup" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-          ];
+        "hiccup" = { depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.mtl) ]; };
         };
       };
-    };
-  }
+    }

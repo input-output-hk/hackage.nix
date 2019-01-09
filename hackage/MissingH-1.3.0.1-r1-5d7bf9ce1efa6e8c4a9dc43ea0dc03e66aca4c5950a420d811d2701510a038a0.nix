@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "MissingH";
-        version = "1.3.0.1";
-      };
+      identifier = { name = "MissingH"; version = "1.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2004-2014 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,7 +13,7 @@
       synopsis = "Large utility library";
       description = "MissingH is a library of all sorts of utility functions for\nHaskell programmers.  It is written in pure Haskell and thus should\nbe extremely portable and easy to use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -34,7 +25,7 @@
           (hsPkgs.regex-compat)
           (hsPkgs.filepath)
           (hsPkgs.hslogger)
-        ] ++ (if flags.splitbase
+          ] ++ (if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.base)
@@ -46,11 +37,11 @@
             (hsPkgs.old-locale)
             (hsPkgs.array)
             (hsPkgs.time)
-          ]
+            ]
           else [
             (hsPkgs.base)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "runtests" = {
           depends = ([
@@ -66,7 +57,7 @@
             (hsPkgs.testpack)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
-          ] ++ (if flags.splitbase
+            ] ++ (if flags.splitbase
             then [
               (hsPkgs.base)
               (hsPkgs.base)
@@ -78,11 +69,11 @@
               (hsPkgs.old-locale)
               (hsPkgs.array)
               (hsPkgs.time)
-            ]
+              ]
             else [
               (hsPkgs.base)
-            ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

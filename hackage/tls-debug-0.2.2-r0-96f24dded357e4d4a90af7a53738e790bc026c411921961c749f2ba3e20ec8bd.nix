@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tls-debug";
-        version = "0.2.2";
-      };
+      identifier = { name = "tls-debug"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Set of programs for TLS testing and debugging";
       description = "A set of program to test and debug various aspect of the TLS package.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tls-stunnel" = {
@@ -35,8 +26,8 @@
             (hsPkgs.cprng-aes)
             (hsPkgs.tls)
             (hsPkgs.tls-extra)
-          ];
-        };
+            ];
+          };
         "tls-checkciphers" = {
           depends = [
             (hsPkgs.base)
@@ -46,8 +37,8 @@
             (hsPkgs.certificate)
             (hsPkgs.tls)
             (hsPkgs.tls-extra)
-          ];
-        };
+            ];
+          };
         "tls-retrievecertificate" = {
           depends = [
             (hsPkgs.base)
@@ -59,8 +50,8 @@
             (hsPkgs.certificate)
             (hsPkgs.tls)
             (hsPkgs.tls-extra)
-          ];
-        };
+            ];
+          };
         "tls-simpleclient" = {
           depends = [
             (hsPkgs.base)
@@ -71,8 +62,8 @@
             (hsPkgs.certificate)
             (hsPkgs.tls)
             (hsPkgs.tls-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

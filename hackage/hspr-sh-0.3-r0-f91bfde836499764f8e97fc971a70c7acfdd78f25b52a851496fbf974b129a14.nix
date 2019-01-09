@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hspr-sh";
-        version = "0.3";
-      };
+      identifier = { name = "hspr-sh"; version = "0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Niklas Broberg <nibro@cs.chalmers.se>";
@@ -22,13 +13,8 @@
       synopsis = "Session handler for HSP";
       description = "A simple session handler for the HSP package, needed\nby the HSPR tools.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.old-time)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.old-time) ]; };
+      };
+    }

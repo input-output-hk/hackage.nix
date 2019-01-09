@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "filesystem-conduit";
-        version = "0.0.0";
-      };
+      identifier = { name = "filesystem-conduit"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Use system-filepath data types with conduits.";
       description = "Provides ability to traverse a folder structure efficiently, as well as convenience wrappers for reading from and writing to files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,10 +25,10 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.conduit)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.blaze-builder)
             (hsPkgs.transformers)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

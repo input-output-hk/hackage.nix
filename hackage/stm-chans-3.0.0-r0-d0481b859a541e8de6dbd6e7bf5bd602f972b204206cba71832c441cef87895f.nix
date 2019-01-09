@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "stm-chans";
-        version = "3.0.0";
-      };
+      identifier = { name = "stm-chans"; version = "3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011--2013 wren ng thornton";
       maintainer = "wren@community.haskell.org";
@@ -22,13 +13,6 @@
       synopsis = "Additional types of channels for STM.";
       description = "Additional types of channels for STM.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.stm)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.stm) ]; }; };
+    }

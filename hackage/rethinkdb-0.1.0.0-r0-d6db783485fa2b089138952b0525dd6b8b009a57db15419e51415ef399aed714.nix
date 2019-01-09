@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rethinkdb";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "rethinkdb"; version = "0.1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Etienne Laurin <etienne@atnnn.com>";
@@ -22,7 +13,7 @@
       synopsis = "RethinkDB client library for haskell";
       description = "This library is modelled upon the official RethinkDB API for\nPython and Javascript.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.network)
           (hsPkgs.ghc-prim)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Measure";
-        version = "0.0.1";
-      };
+      identifier = { name = "Measure"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tony Morris";
@@ -22,10 +13,6 @@
       synopsis = "A library for units of measurement";
       description = "A library for units of measurement";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

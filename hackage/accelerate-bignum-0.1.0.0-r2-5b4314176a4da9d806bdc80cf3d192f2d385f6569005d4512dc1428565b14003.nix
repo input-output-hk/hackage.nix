@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm-cpu = true;
-      llvm-ptx = true;
-    };
+    flags = { llvm-cpu = true; llvm-ptx = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "accelerate-bignum";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "accelerate-bignum"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "BSD3";
       maintainer = "Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>";
@@ -25,7 +13,7 @@
       synopsis = "Fixed-length large integer arithmetic for Accelerate";
       description = "This package provides fixed-length large integer types and arithmetic\noperations for Accelerate. Signed and unsigned 96, 128, 160, 192, 224, 256,\nand 512-bit types are predefined.\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -33,16 +21,16 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.template-haskell)
           (hsPkgs.accelerate)
-        ] ++ pkgs.lib.optionals (flags.llvm-cpu) [
+          ] ++ (pkgs.lib).optionals (flags.llvm-cpu) [
           (hsPkgs.accelerate-llvm)
           (hsPkgs.accelerate-llvm-native)
           (hsPkgs.llvm-hs-pure)
-        ]) ++ pkgs.lib.optionals (flags.llvm-ptx) [
+          ]) ++ (pkgs.lib).optionals (flags.llvm-ptx) [
           (hsPkgs.accelerate-llvm)
           (hsPkgs.accelerate-llvm-ptx)
           (hsPkgs.llvm-hs-pure)
-        ];
-      };
+          ];
+        };
       tests = {
         "accelerate-bignum-test" = {
           depends = ([
@@ -51,9 +39,9 @@
             (hsPkgs.accelerate-bignum)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ] ++ pkgs.lib.optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ pkgs.lib.optional (flags.llvm-ptx) (hsPkgs.accelerate-llvm-ptx);
+            ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs.accelerate-llvm-ptx);
+          };
         };
-      };
       benchmarks = {
         "accelerate-bignum-bench" = {
           depends = ([
@@ -66,8 +54,8 @@
             (hsPkgs.vector)
             (hsPkgs.vector-th-unbox)
             (hsPkgs.wide-word)
-          ] ++ pkgs.lib.optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ pkgs.lib.optional (flags.llvm-ptx) (hsPkgs.accelerate-llvm-ptx);
+            ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs.accelerate-llvm-ptx);
+          };
         };
       };
-    };
-  }
+    }

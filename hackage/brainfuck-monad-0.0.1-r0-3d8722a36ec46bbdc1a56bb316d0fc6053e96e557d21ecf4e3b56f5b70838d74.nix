@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "brainfuck-monad";
-        version = "0.0.1";
-      };
+      identifier = { name = "brainfuck-monad"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014 Joey Hess";
       maintainer = "Joey Hess <id@joeyh.name>";
@@ -22,13 +13,8 @@
       synopsis = "BrainFuck monad";
       description = "This is a BrainFuck monad, for generating brainfuck programs.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.base) ]; };
+      };
+    }

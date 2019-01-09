@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      example = false;
-      test-client = false;
-    };
+    flags = { example = false; test-client = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "react-flux";
-        version = "1.0.0";
-      };
+      identifier = { name = "react-flux"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Lenz <wuzzeb@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "A binding to React based on the Flux application architecture for GHCJS";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,42 +26,38 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
-        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+        };
       exes = {
         "todo" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.react-flux)
-            (hsPkgs.deepseq)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.react-flux) (hsPkgs.deepseq) ];
+          };
         "todo-node" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.deepseq)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test-client-13" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.time)
             (hsPkgs.deepseq)
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          };
         "test-client-14" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.time)
             (hsPkgs.deepseq)
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          };
         "route-example" = {
-          depends = pkgs.lib.optionals (flags.example) [
+          depends = (pkgs.lib).optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.time)
@@ -83,8 +67,8 @@
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          };
         };
       };
-    };
-  }
+    }

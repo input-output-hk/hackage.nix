@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "simple-genetic-algorithm-mr";
         version = "0.4.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mail@eax.me";
@@ -22,7 +16,7 @@
       synopsis = "Simple parallel genetic algorithm implementation";
       description = "Simple parallel genetic algorithm implementation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +25,8 @@
           (hsPkgs.parallel)
           (hsPkgs.MonadRandom)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "ga-sin-example" = {
           depends = [
@@ -42,8 +36,8 @@
             (hsPkgs.parallel)
             (hsPkgs.MonadRandom)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

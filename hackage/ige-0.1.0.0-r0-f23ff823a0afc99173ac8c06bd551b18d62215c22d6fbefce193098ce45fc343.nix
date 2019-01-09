@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ige";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ige"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "owen@olynch.me";
@@ -22,7 +13,7 @@
       synopsis = "An keyboard-driven interactive graph editor";
       description = "`IGE` attempts to build a reusable library for implementing graph editors. The intent is to allow a new class of programming languages that have non-linear structure. See `glance` (an alternative syntax for haskell) for one example of such a structure. Other applications include circuit design, commutative diagram drawing, server configuration. Currently a very early alpha.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ige" = {
@@ -50,8 +41,8 @@
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

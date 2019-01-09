@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-conduit-tls";
-        version = "0.6.0.1";
-      };
+      identifier = { name = "network-conduit-tls"; version = "0.6.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Create TLS-aware network code with conduits";
       description = "Uses the tls package for a pure-Haskell implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.transformers)
           (hsPkgs.tls-extra)
           (hsPkgs.crypto-api)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

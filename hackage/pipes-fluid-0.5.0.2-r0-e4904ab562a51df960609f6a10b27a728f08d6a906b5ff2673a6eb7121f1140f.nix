@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-fluid";
-        version = "0.5.0.2";
-      };
+      identifier = { name = "pipes-fluid"; version = "0.5.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "Reactively combines Producers so that a value is yielded as soon as possible.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.these)
-        ];
-      };
+          ];
+        };
       tests = {
         "pipes-fluid-test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.pipes-misc)
             (hsPkgs.stm)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

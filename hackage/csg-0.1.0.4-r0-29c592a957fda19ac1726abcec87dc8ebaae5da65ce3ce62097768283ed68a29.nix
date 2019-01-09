@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { triples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "csg";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "csg"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dima@dzhus.org";
@@ -22,7 +13,7 @@
       synopsis = "Analytical CSG (Constructive Solid Geometry) library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.simple-vec3)
           (hsPkgs.strict)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "csg-raycaster" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.strict)
             (hsPkgs.system-filepath)
             (hsPkgs.turtle)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "csg-doctests" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.doctest)
             (hsPkgs.doctest-driver-gen)
             (hsPkgs.simple-vec3)
-          ];
-        };
+            ];
+          };
         "csg-tests" = {
           depends = [
             (hsPkgs.base)
@@ -69,9 +60,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "csg-benchmark" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.simple-vec3)
             (hsPkgs.strict)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

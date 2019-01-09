@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cprng-aes-effect";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "cprng-aes-effect"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "tob@butter.sh";
@@ -22,7 +13,7 @@
       synopsis = "Run random effect using cprng-aes, a crypto pseudo number generator.";
       description = "Any help (especially documentation) is welcome";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.crypto-random)
           (hsPkgs.crypto-random-effect)
           (hsPkgs.extensible-effects)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

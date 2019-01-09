@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stripe-http-streams";
-        version = "2.2.0";
-      };
+      identifier = { name = "stripe-http-streams"; version = "2.2.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2016 David M. Johnson, Jeremy Shaw";
       maintainer = "djohnson.m@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Stripe API for Haskell - http-streams backend";
       description = "\n<<https://stripe.com/img/navigation/logo@2x.png>>\n\n[Access Stripe API using http-streams]\nThis package provides access to the Stripe API using `stripe-core` and `http-streams`. See also the `stripe` package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.io-streams)
           (hsPkgs.stripe-core)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.stripe-core)
             (hsPkgs.stripe-http-streams)
             (hsPkgs.stripe-tests)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

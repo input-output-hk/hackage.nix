@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      examples = false;
-      debug = false;
-      debugoutput = false;
-    };
+    flags = { examples = false; debug = false; debugoutput = false; };
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "ADPfusionSet";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "ADPfusionSet"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2016-2017";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -26,7 +13,7 @@
       synopsis = "Dynamic programming for Set data structures.";
       description = "<http://www.bioinf.uni-leipzig.de/Software/gADP/ generalized Algebraic Dynamic Programming>\n\nExtensions of ADPfusion for set-(like) data structures.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +34,8 @@
           (hsPkgs.DPutils)
           (hsPkgs.OrderedBits)
           (hsPkgs.PrimitiveArray)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -60,8 +47,8 @@
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.tasty-th)
             (hsPkgs.ADPfusionSet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

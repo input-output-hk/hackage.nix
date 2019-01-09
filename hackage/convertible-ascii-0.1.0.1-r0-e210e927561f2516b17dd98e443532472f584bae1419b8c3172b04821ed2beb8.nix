@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "convertible-ascii";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "convertible-ascii"; version = "0.1.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "PHO <pho at cielonegro dot org>";
@@ -22,7 +13,7 @@
       synopsis = "convertible instances for ascii";
       description = "\nThis package provides convertible instances for ascii:\n\n* <http://hackage.haskell.org/package/convertible-text>\n\n* <http://hackage.haskell.org/package/ascii>\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.convertible-text)
           (hsPkgs.failure)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

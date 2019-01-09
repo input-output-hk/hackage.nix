@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "normalize";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "normalize"; version = "0.3.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright: (c) 2017 Gregory W. Schwartz";
       maintainer = "gsch@mail.med.upenn.edu";
@@ -22,7 +13,7 @@
       synopsis = "Normalize data using a variety of methods.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.cassava)
           (hsPkgs.statistics)
-        ];
-      };
+          ];
+        };
       exes = {
         "normalize" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.cassava)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

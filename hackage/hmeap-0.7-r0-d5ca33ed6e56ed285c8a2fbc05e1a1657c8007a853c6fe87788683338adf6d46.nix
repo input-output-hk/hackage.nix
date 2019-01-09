@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hmeap";
-        version = "0.7";
-      };
+      identifier = { name = "hmeap"; version = "0.7"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2007-2009";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Meapsoft Parser";
       description = "Parser for the anaylsis files produced by the\nMeapsoft feature extractor.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring-lexing)
           (hsPkgs.delimited-text)
           (hsPkgs.parsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

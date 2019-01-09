@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "system-fileio";
-        version = "0.3.3";
-      };
+      identifier = { name = "system-fileio"; version = "0.3.3"; };
       license = "MIT";
       copyright = "John Millikin 2011";
       maintainer = "John Millikin <jmillikin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "High-level filesystem interaction";
       description = "This is a small wrapper around the \\\"directory\\\", \\\"unix\\\", and \\\"Win32\\\"\npackages for use with \\\"system-filepath\\\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,9 +23,9 @@
           (hsPkgs.system-filepath)
           (hsPkgs.text)
           (hsPkgs.time)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
+        };
       };
-    };
-  }
+    }

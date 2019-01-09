@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bf-cata";
-        version = "1.0";
-      };
+      identifier = { name = "bf-cata"; version = "1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Arie Middelkoop";
       maintainer = "Arie Middelkoop <ariem@cs.uu.nl>";
@@ -22,13 +13,8 @@
       synopsis = "";
       description = "Evaluation combinators for breadth-first evaluated catamorphisms";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.base) ]; };
+      };
+    }

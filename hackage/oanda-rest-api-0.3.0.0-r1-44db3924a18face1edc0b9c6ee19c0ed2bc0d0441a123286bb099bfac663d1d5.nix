@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "oanda-rest-api";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "oanda-rest-api"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2016 John David Reaver";
       maintainer = "johndreaver@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Client to the OANDA REST API";
       description = "Client to the OANDA REST API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.text)
           (hsPkgs.thyme)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "style" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.thyme)
             (hsPkgs.vector)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +66,8 @@
             (hsPkgs.oanda-rest-api)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

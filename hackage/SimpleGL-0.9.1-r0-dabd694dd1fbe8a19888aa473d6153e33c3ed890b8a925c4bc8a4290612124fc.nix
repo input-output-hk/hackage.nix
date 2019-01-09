@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "SimpleGL";
-        version = "0.9.1";
-      };
+      identifier = { name = "SimpleGL"; version = "0.9.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "marc.coiffier@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Simple Graphics Library from the SimpleH framework.";
       description = "synopsis: A Simple Graphics Library from the SimpleH framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.OpenGL)
           (hsPkgs.JuicyPixels)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

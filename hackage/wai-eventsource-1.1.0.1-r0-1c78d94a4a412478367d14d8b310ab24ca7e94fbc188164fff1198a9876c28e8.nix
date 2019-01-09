@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-eventsource";
-        version = "1.1.0.1";
-      };
+      identifier = { name = "wai-eventsource"; version = "1.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "greg@gregweber.info";
@@ -22,7 +13,7 @@
       synopsis = "WAI support for server-sent events";
       description = "WAI support for server-sent events";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.wai)
           (hsPkgs.warp)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

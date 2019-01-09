@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildtests = false;
-      nolib = false;
-    };
+    flags = { buildtests = false; nolib = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "data-object-yaml";
-        version = "0.0.0";
-      };
+      identifier = { name = "data-object-yaml"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -25,7 +13,7 @@
       synopsis = "Support for serialising Haskell to and from Yaml.";
       description = "Binds to the libyaml library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,18 +23,18 @@
           (hsPkgs.text)
           (hsPkgs.convertible-text)
           (hsPkgs.attempt)
-        ];
-      };
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

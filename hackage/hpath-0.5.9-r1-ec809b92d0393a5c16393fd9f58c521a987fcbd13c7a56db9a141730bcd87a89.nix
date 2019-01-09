@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hpath";
-        version = "0.5.9";
-      };
+      identifier = { name = "hpath"; version = "0.5.9"; };
       license = "GPL-2.0-only";
       copyright = "Julian Ospald 2016";
       maintainer = "Julian Ospald <hasufell@posteo.de>";
@@ -22,7 +13,7 @@
       synopsis = "Support for well-typed paths";
       description = "Support for well-typed paths, utilizing ByteString under the hood.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.unix-bytestring)
           (hsPkgs.utf8-string)
           (hsPkgs.word8)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests-hpath" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.doctest)
             (hsPkgs.hpath)
-          ];
-        };
+            ];
+          };
         "doctests-posix" = {
           depends = [
             (hsPkgs.base)
@@ -56,8 +47,8 @@
             (hsPkgs.doctest)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -68,9 +59,9 @@
             (hsPkgs.process)
             (hsPkgs.unix)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench.hs" = {
           depends = [
@@ -82,8 +73,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

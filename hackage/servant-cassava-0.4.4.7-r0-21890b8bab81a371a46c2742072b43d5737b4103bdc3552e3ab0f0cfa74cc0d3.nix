@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-cassava";
-        version = "0.4.4.7";
-      };
+      identifier = { name = "servant-cassava"; version = "0.4.4.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jkarni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant CSV content-type for cassava";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.servant)
           (hsPkgs.http-media)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

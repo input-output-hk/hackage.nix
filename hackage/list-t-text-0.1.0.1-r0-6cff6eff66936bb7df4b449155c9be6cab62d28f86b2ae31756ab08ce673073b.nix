@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "list-t-text";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "list-t-text"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A streaming text codec";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.list-t)
           (hsPkgs.mtl-prelude)
           (hsPkgs.base-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.list-t)
             (hsPkgs.transformers)
             (hsPkgs.base-prelude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "numhask-array";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "numhask-array"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "n-dimensional arrays";
       description = "n-dimensional arrays founded on numhask.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.protolude)
           (hsPkgs.singletons)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.numhask-prelude)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hgis";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hgis"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Vanessa McHale";
       maintainer = "tmchale@wisc.edu";
@@ -22,7 +13,7 @@
       synopsis = "Package and command-line for GIS with Haskell";
       description = "Package containting functions to make graphs, read\nshapefiles, and compute areas/perimeters of\ngeographic features.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,27 +30,14 @@
           (hsPkgs.directory)
           (hsPkgs.colour)
           (hsPkgs.data-default)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.cairo)
-        ];
-      };
-      exes = {
-        "hgis" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hgis)
           ];
+        pkgconfig = [ (pkgconfPkgs.cairo) ];
         };
-      };
+      exes = { "hgis" = { depends = [ (hsPkgs.base) (hsPkgs.hgis) ]; }; };
       tests = {
         "hgis-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hgis)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hgis) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "universum";
-        version = "0.1.12";
-      };
+      identifier = { name = "universum"; version = "0.1.12"; };
       license = "MIT";
       copyright = "2016-2016 Stephen Diehl, 2016-2016 Serokell";
       maintainer = "hi@serokell.io";
@@ -22,7 +13,7 @@
       synopsis = "Custom prelude used in Serokell";
       description = "Custom prelude used in Serokell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.text-format)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

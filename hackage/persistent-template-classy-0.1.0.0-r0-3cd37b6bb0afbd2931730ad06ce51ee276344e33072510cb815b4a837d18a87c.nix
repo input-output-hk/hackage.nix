@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "persistent-template-classy";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2018 Kostiantyn Rybnikov";
       maintainer = "k-bx@k-bx.com";
@@ -22,7 +16,7 @@
       synopsis = "Generate classy lens field accessors for persistent models";
       description = "Generate classy lens field accessors for persistent models.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +27,8 @@
           (hsPkgs.persistent-template)
           (hsPkgs.template-haskell)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "persistent-template-classy-example" = {
           depends = [
@@ -46,8 +40,8 @@
             (hsPkgs.persistent-template-classy)
             (hsPkgs.template-haskell)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

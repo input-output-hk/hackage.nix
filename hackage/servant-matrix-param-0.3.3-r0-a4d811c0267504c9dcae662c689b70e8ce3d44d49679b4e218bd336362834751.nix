@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       with-servant-aeson-specs = false;
       with-servant-server = false;
       with-servant-client = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-matrix-param";
-        version = "0.3.3";
-      };
+      identifier = { name = "servant-matrix-param"; version = "0.3.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "soenkehahn@gmail.com";
@@ -26,23 +17,23 @@
       synopsis = "Matrix parameter combinator for servant";
       description = "Matrix parameter combinator for servant";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
           (hsPkgs.base)
           (hsPkgs.servant)
-        ] ++ pkgs.lib.optional (flags.with-servant-aeson-specs) (hsPkgs.servant-aeson-specs)) ++ pkgs.lib.optionals (flags.with-servant-server) [
+          ] ++ (pkgs.lib).optional (flags.with-servant-aeson-specs) (hsPkgs.servant-aeson-specs)) ++ (pkgs.lib).optionals (flags.with-servant-server) [
           (hsPkgs.servant-server)
           (hsPkgs.http-api-data)
           (hsPkgs.containers)
           (hsPkgs.string-conversions)
           (hsPkgs.text)
-        ]) ++ pkgs.lib.optionals (flags.with-servant-client) [
+          ]) ++ (pkgs.lib).optionals (flags.with-servant-client) [
           (hsPkgs.servant-client)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -63,15 +54,11 @@
             (hsPkgs.bytestring)
             (hsPkgs.transformers)
             (hsPkgs.aeson)
-          ];
-        };
+            ];
+          };
         "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.servant)
-            (hsPkgs.doctest)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.servant) (hsPkgs.doctest) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "funflow";
-        version = "1.3.2";
-      };
+      identifier = { name = "funflow"; version = "1.3.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "nicholas.clarke@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Workflows with arrows";
       description = "An arrow with resumable computations and logging";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -69,10 +60,10 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ] ++ (if system.isLinux
+          ] ++ (if system.isLinux
           then [ (hsPkgs.hinotify) ]
-          else pkgs.lib.optional (system.isOsx || system.isFreebsd) (hsPkgs.kqueue));
-      };
+          else (pkgs.lib).optional (system.isOsx || system.isFreebsd) (hsPkgs.kqueue));
+        };
       exes = {
         "ffexecutord" = {
           depends = [
@@ -86,9 +77,9 @@
             (hsPkgs.unix)
             (hsPkgs.safe-exceptions)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-funflow" = {
           depends = [
@@ -101,8 +92,8 @@
             (hsPkgs.text)
             (hsPkgs.safe-exceptions)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "unit-tests" = {
           depends = [
             (hsPkgs.base)
@@ -121,8 +112,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.temporary)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

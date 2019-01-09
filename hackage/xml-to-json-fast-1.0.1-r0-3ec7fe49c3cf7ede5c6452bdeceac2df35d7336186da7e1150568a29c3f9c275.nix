@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xml-to-json-fast";
-        version = "1.0.1";
-      };
+      identifier = { name = "xml-to-json-fast"; version = "1.0.1"; };
       license = "MIT";
       copyright = "Copyright Noam Lewis, 2014";
       maintainer = "jones.noamle@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Fast, light converter of xml to json capable of handling huge xml files";
       description = "Assumes input xml is valid, which allows constant memory usage (<4 MB) and faster parsing. For a fully-featured, but memory-bound converter see the xml-to-json package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.tagsoup)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.tagsoup) (hsPkgs.text) ];
+        };
       exes = {
         "xml-to-json-fast" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.xml-to-json-fast)
             (hsPkgs.process)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

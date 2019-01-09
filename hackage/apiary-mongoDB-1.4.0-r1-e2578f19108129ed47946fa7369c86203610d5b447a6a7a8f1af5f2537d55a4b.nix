@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apiary-mongoDB";
-        version = "1.4.0";
-      };
+      identifier = { name = "apiary-mongoDB"; version = "1.4.0"; };
       license = "MIT";
       copyright = "(c) 2014-2015 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "mongoDB support for apiary web framework.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.text)
           (hsPkgs.types-compat)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

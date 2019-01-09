@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Hawk";
-        version = "0.0.2";
-      };
+      identifier = { name = "Hawk"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Björn Peemöller <fh-wedel@gmx.de>, Stefan Roggensack, Alexander Treptow <alextreptow@gmx.de>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Web Application Kit";
       description = "A library and framework to create Web Applications with Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,7 +43,7 @@
           (hsPkgs.regex-posix)
           (hsPkgs.json-b)
           (hsPkgs.bytestring-trie)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

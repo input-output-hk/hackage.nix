@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "MonadCompose";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "MonadCompose"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "info@alkalisoftware.net";
@@ -22,7 +13,7 @@
       synopsis = "Methods for composing monads.";
       description = "Methods for composing monads, including an IO monad transformer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.monad-products)
           (hsPkgs.transformers)
           (hsPkgs.MaybeT)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

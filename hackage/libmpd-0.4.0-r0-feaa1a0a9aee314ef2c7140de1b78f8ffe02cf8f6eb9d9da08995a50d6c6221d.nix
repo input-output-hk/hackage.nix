@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test = false;
-      coverage = false;
-      old_base = false;
-    };
+    flags = { test = false; coverage = false; old_base = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "libmpd";
-        version = "0.4.0";
-      };
+      identifier = { name = "libmpd"; version = "0.4.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Ben Sinclair 2005-2009, Joachim Fasting 2010";
       maintainer = "Joachim Fasting <joachim.fasting@gmail.com>";
@@ -26,7 +13,7 @@
       synopsis = "An MPD client library.";
       description = "A client library for MPD, the Music Player Daemon\n(<http://www.musicpd.org/>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.filepath)
           (hsPkgs.utf8-string)
-        ] ++ [ (hsPkgs.base) ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        };
       exes = {
         "test" = {
           depends = [
@@ -45,8 +32,8 @@
             (hsPkgs.filepath)
             (hsPkgs.utf8-string)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

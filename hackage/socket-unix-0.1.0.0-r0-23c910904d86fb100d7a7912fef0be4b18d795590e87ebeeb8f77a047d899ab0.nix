@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "socket-unix";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "socket-unix"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Vyacheslav Hashov";
       maintainer = "vyacheslavhashov@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "A Unix domain sockets";
       description = "A Unix domain socket extension for the socket library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.socket)
-          (hsPkgs.bytestring)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.socket) (hsPkgs.bytestring) ];
+        };
       tests = {
         "default" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.unix)
             (hsPkgs.async)
-          ];
-        };
+            ];
+          };
         "threaded" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +41,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.unix)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

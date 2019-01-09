@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "heatitup";
-        version = "0.5.3.3";
-      };
+      identifier = { name = "heatitup"; version = "0.5.3.3"; };
       license = "GPL-3.0-only";
       copyright = "2018 Gregory W. Schwartz";
       maintainer = "gsch@pennmedicine.upenn.edu";
@@ -22,7 +13,7 @@
       synopsis = "Find and annotate ITDs.";
       description = "Find and annotate ITDs using suffix trees and characterize the exogenous segments within the spacer using heat diffusion.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.stringsearch)
           (hsPkgs.suffixtree)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "heatitup" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.pipes-csv)
             (hsPkgs.safe)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

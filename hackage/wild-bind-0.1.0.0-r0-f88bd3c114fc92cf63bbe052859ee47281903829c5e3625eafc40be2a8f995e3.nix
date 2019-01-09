@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wild-bind";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wild-bind"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Toshio Ito <debug.ito@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Dynamic key binding framework";
       description = "Dynamic key binding framework. See https://github.com/debug-ito/wild-bind";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.text)
           (hsPkgs.containers)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.stm)
             (hsPkgs.microlens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dtab";
-        version = "1.0";
-      };
+      identifier = { name = "dtab"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "miketolly@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Harmonix (Guitar Hero, Rock Band) DTA/DTB metadata library";
       description = "Read\\/write\\/encryption functions for the DTA\\/DTB metadata format used by\nHarmonix Music Systems in their games, including the Guitar Hero, Rock Band,\nand Karaoke Revolution series. Provides both a library and executable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,16 +25,12 @@
           (hsPkgs.array)
           (hsPkgs.pretty)
           (hsPkgs.containers)
-        ];
-      };
-      exes = {
-        "dtab" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.dtab)
           ];
         };
+      exes = {
+        "dtab" = {
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.dtab) ];
+          };
+        };
       };
-    };
-  }
+    }

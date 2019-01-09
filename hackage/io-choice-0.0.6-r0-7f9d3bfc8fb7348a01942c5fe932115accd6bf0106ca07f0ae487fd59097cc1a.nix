@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "io-choice";
-        version = "0.0.6";
-      };
+      identifier = { name = "io-choice"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Choice for IO and lifted IO";
       description = "Choice for IO and lifted IO";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.lifted-base)
             (hsPkgs.monad-control)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

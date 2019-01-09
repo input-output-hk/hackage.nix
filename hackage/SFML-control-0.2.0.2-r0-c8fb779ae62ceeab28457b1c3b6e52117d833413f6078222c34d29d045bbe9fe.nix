@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SFML-control";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "SFML-control"; version = "0.2.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Higher level library on top of SFML";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.mtl)
           (hsPkgs.SFML)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

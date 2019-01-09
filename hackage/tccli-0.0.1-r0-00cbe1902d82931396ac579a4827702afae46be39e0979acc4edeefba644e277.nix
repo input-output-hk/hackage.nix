@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "tccli";
-        version = "0.0.1";
-      };
+      identifier = { name = "tccli"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voker57@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "TokyoCabinet CLI interface";
       description = "Simple TokyoCabinet CLI interface";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tchcli" = {
@@ -31,8 +22,8 @@
             (hsPkgs.tokyocabinet-haskell)
             (hsPkgs.bytestring)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

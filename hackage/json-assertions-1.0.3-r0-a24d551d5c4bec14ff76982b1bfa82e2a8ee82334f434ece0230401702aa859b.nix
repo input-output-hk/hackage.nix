@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-assertions";
-        version = "1.0.3";
-      };
+      identifier = { name = "json-assertions"; version = "1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Oliver Charles (c) 2013";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "Test that your (Aeson) JSON encoding matches your expectations";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.indexed-free)
           (hsPkgs.lens)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

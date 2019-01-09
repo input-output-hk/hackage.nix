@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "copilot-cbmc";
-        version = "0.1";
-      };
+      identifier = { name = "copilot-cbmc"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "leepike@galois.com";
@@ -22,7 +13,7 @@
       synopsis = ".";
       description = ".";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.pretty)
           (hsPkgs.copilot-sbv)
           (hsPkgs.copilot-c99)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      check-bounds = false;
-    };
+    flags = { check-bounds = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arithmoi";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "arithmoi"; version = "0.7.0.0"; };
       license = "MIT";
       copyright = "(c) 2011 Daniel Fischer, 2016-2018 Andrew Lelechenko, Carter Schonwald";
       maintainer = "Carter Schonwald  carter at wellposed dot com,\nAndrew Lelechenko andrew dot lelechenko at gmail dot com";
@@ -24,7 +13,7 @@
       synopsis = "Efficient basic number-theoretic functions.";
       description = "A library of basic functionality needed for\nnumber-theoretic calculations. The aim of this library\nis to provide efficient implementations of the functions.\nPrimes and related things (totients, factorisation),\npowers (integer roots and tests, modular exponentiation).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -38,8 +27,8 @@
           (hsPkgs.exact-pi)
           (hsPkgs.integer-logarithms)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.nats)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+        };
       tests = {
         "spec" = {
           depends = ([
@@ -54,16 +43,13 @@
             (hsPkgs.transformers)
             (hsPkgs.integer-gmp)
             (hsPkgs.vector)
-          ] ++ (if compiler.isGhc && compiler.version.lt "7.10"
-            then [
-              (hsPkgs.smallcheck)
-              (hsPkgs.nats)
-            ]
+            ] ++ (if compiler.isGhc && (compiler.version).lt "7.10"
+            then [ (hsPkgs.smallcheck) (hsPkgs.nats) ]
             else [
               (hsPkgs.smallcheck)
-            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
+              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+          };
         };
-      };
       benchmarks = {
         "criterion" = {
           depends = ([
@@ -74,8 +60,8 @@
             (hsPkgs.random)
             (hsPkgs.integer-logarithms)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.nats)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

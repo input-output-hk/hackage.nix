@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "acme-cuteboy";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "acme-cuteboy"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "chessai1996@gmail.com";
@@ -22,18 +13,11 @@
       synopsis = "Maybe gives you a cute boy";
       description = "A package which exists solely to try and give\nthe user a cute boy. Executable and library are both\navailable.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
-        "CuteBoy" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.acme-cuteboy)
-          ];
+        "CuteBoy" = { depends = [ (hsPkgs.base) (hsPkgs.acme-cuteboy) ]; };
         };
       };
-    };
-  }
+    }

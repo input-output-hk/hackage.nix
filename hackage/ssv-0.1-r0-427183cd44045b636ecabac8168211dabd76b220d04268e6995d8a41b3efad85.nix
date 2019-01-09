@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "ssv";
-        version = "0.1";
-      };
+      identifier = { name = "ssv"; version = "0.1"; };
       license = "MIT";
       copyright = "Copyright © 2011 Bart Massey";
       maintainer = "bart@cs.pdx.edu";
@@ -22,18 +13,9 @@
       synopsis = "Comma-separated-value (CSV) read, show and write routines";
       description = "This modules provides conversion routines to and\nfrom the infamous \"comma separated value\" (CSV) format.\nIt attempts to adhere to the spirit and (mostly) to the\nletter of RFC 4180, which defines the 'text/csv' MIME\ntype.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      exes = { "csvclean" = { depends = [ (hsPkgs.base) ]; }; };
       };
-      exes = {
-        "csvclean" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
-    };
-  }
+    }

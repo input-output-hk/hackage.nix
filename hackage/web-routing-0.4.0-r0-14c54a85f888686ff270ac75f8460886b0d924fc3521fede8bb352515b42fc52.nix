@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "web-routing";
-        version = "0.4.0";
-      };
+      identifier = { name = "web-routing"; version = "0.4.0"; };
       license = "MIT";
       copyright = "(c) 2015 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "simple routing library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,11 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.primitive)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
-      };
+      tests = {
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -48,8 +34,8 @@
             (hsPkgs.web-routing)
             (hsPkgs.criterion)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      no-tests = false;
-      examples = false;
-    };
+    flags = { no-tests = false; examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "drawille";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "drawille"; version = "0.1.0.6"; };
       license = "GPL-3.0-only";
       copyright = "(c) Pedro Yamada";
       maintainer = "Pedro Yamada <tacla.yamada@gmail.com>";
@@ -25,41 +13,36 @@
       synopsis = "A port of asciimoo's drawille to haskell";
       description = "A tiny library for drawing with braille.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
       exes = {
         "senoid" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.AC-Angle)
-          ];
-        };
+            ];
+          };
         "image2term" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.friday)
             (hsPkgs.terminal-size)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
-          depends = pkgs.lib.optionals (!flags.no-tests) [
+          depends = (pkgs.lib).optionals (!flags.no-tests) [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-icu-normalized";
-        version = "0.1.6";
-      };
+      identifier = { name = "text-icu-normalized"; version = "0.1.6"; };
       license = "GPL-3.0-only";
       copyright = "©2016 Evan Cofsky";
       maintainer = "evan@theunixman.com";
@@ -22,7 +13,7 @@
       synopsis = "Dealing with Strict Text in NFC normalization.";
       description = "Handle Text in NFC normalization.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.lens)
           (hsPkgs.text)
           (hsPkgs.text-icu)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

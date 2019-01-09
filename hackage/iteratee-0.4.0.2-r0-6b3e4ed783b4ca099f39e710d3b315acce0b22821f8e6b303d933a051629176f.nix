@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      buildtests = false;
-    };
+    flags = { splitbase = true; buildtests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "iteratee";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "iteratee"; version = "0.4.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John W. Lato <jwlato@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Iteratee-based I/O";
       description = "The Iteratee monad provides strict, safe, and functional I/O. In addition\nto pure Iteratee processors, file IO and combinator functions are provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -34,18 +22,18 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.transformers)
-        ] ++ [
+          ] ++ [
           (hsPkgs.base)
-        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "testIteratee" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ] ++ [ (hsPkgs.base) ];
+            ] ++ [ (hsPkgs.base) ];
+          };
         };
       };
-    };
-  }
+    }

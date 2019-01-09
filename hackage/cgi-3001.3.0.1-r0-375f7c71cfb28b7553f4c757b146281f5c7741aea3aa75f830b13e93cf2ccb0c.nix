@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-uri = true;
-      old-mtl = false;
-    };
+    flags = { network-uri = true; old-mtl = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cgi";
-        version = "3001.3.0.1";
-      };
+      identifier = { name = "cgi"; version = "3001.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert, John Chee, Andy Gill, Anders Kaseorg,\nIan Lynagh, Erik Meijer, Sven Panne, Jeremy Shaw";
       maintainer = "John Chee <cheecheeo@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "A library for writing CGI programs";
       description = "This is a Haskell library for writing CGI programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -37,28 +25,16 @@
           (hsPkgs.time)
           (hsPkgs.containers)
           (hsPkgs.multipart)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]
-          else [
-            (hsPkgs.network)
-          ])) ++ (if flags.old-mtl
-          then [
-            (hsPkgs.mtl)
-            (hsPkgs.mtl-compat)
-          ]
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
+          else [ (hsPkgs.network) ])) ++ (if flags.old-mtl
+          then [ (hsPkgs.mtl) (hsPkgs.mtl-compat) ]
           else [ (hsPkgs.mtl) ]);
-      };
+        };
       tests = {
         "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.QuickCheck)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.QuickCheck) ];
+          };
         };
       };
-    };
-  }
+    }

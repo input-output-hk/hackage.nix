@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hsemail";
-        version = "1.5";
-      };
+      identifier = { name = "hsemail"; version = "1.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2004-2010 Peter Simons";
       maintainer = "Peter Simons <simons@cryp.to>";
@@ -22,7 +13,7 @@
       synopsis = "Internet Message Parsers";
       description = "Parsers for the syntax defined in RFC2821 and 2822";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.old-time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

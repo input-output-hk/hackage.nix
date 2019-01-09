@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "digestive-functors-blaze";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "digestive-functors-blaze"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -22,7 +13,7 @@
       synopsis = "Blaze frontend for the digestive-functors library";
       description = "Blaze frontend for the digestive-functors library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.blaze-markup)
           (hsPkgs.digestive-functors)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

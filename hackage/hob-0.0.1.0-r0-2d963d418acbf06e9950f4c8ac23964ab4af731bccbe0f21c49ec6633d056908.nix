@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hob";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "hob"; version = "0.0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) Sarunas Valaskevicius";
       maintainer = "Sarunas Valaskevicius <rakatan@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A source code editor aiming for the convenience of use";
       description = "A simple command based code editor being developed for the mouse-free workflow.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.system-filepath)
           (hsPkgs.gtk-largeTreeStore)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "hob" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.gtksourceview3)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.hob)
             (hsPkgs.text)
             (hsPkgs.gtksourceview3)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

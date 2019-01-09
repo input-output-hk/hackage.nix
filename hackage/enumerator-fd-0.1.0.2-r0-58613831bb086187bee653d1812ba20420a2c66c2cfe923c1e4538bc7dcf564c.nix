@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "enumerator-fd";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "enumerator-fd"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "Copyright (c) John Millikin 2010";
       maintainer = "jmillikin@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Enumerator instances for monads-fd classes";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.enumerator)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.enumerator) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ismtp";
-        version = "2.0.1";
-      };
+      identifier = { name = "ismtp"; version = "2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 Ertugrul Söylemez";
       maintainer = "Ertugrul Söylemez <es@ertes.de>";
@@ -22,7 +13,7 @@
       synopsis = "Advanced ESMTP library";
       description = "This library provides fast, incremental client-side ESMTP sessions\nfor mail exchangers and mail transfer agents.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.network)
           (hsPkgs.unix)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

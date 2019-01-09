@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "wai-routes";
-        version = "0.8.0";
-      };
+      identifier = { name = "wai-routes"; version = "0.8.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ajnsit@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Typesafe URLs for Wai applications.";
       description = "Provides easy to use typesafe URLs for Wai Applications. See README for more information. Also see examples/ directory for usage examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.filepath)
           (hsPkgs.cookie)
           (hsPkgs.data-default-class)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.hspec-wai)
             (hsPkgs.hspec-wai-json)
             (hsPkgs.wai-routes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

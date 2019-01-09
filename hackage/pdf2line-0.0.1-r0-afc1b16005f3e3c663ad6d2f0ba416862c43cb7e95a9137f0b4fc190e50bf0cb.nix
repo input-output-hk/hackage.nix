@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "pdf2line";
-        version = "0.0.1";
-      };
+      identifier = { name = "pdf2line"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "2008 Audrey Tang; distributed with parts of \"xpdf\" by Glyph & Cog, LLC.";
       maintainer = "Audrey Tang <audreyt@audreyt.org>";
@@ -22,7 +13,7 @@
       synopsis = "Simple command-line utility to convert PDF into text";
       description = "Simple command-line utility to convert PDF into text";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pdf2line" = {
@@ -34,8 +25,8 @@
             (hsPkgs.containers)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
-        };
+            ];
+          };
         "pdfdump" = {
           depends = [
             (hsPkgs.base)
@@ -45,8 +36,8 @@
             (hsPkgs.containers)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

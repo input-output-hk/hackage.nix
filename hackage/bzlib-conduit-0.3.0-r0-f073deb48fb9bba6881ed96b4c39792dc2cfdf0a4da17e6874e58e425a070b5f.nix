@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bzlib-conduit";
-        version = "0.3.0";
-      };
+      identifier = { name = "bzlib-conduit"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012, Hideyuki Tanaka";
       maintainer = "Michael Snoyman";
@@ -22,7 +13,7 @@
       synopsis = "Streaming compression/decompression via conduits.";
       description = "Please see the README and docs at <https://www.stackage.org/package/bzlib-conduit>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,9 +24,9 @@
           (hsPkgs.data-default)
           (hsPkgs.mtl)
           (hsPkgs.resourcet)
-        ];
-        libs = pkgs.lib.optional (!system.isWindows) (pkgs."bz2");
-      };
+          ];
+        libs = (pkgs.lib).optional (!system.isWindows) (pkgs."bz2");
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.mtl)
             (hsPkgs.random)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.data-default)
             (hsPkgs.mtl)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

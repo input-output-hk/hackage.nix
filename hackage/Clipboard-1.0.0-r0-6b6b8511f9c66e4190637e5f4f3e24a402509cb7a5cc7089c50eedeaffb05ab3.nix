@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Clipboard";
-        version = "1.0.0";
-      };
+      identifier = { name = "Clipboard"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Daniel Diaz <danieldiaz@asofilak.es>";
@@ -22,13 +13,8 @@
       synopsis = "Access to the Windows Clipboard.";
       description = "/Clipboard/ is a package that allows you to interact with the Windows Clipboard easily.\n\nBased on the Win32 package.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.Win32)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.Win32) ]; };
+      };
+    }

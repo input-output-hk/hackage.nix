@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "super-user-spark";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "super-user-spark"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Configure your dotfile deployment with a DSL.";
       description = "Configure your dotfile deployment with a DSL.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "spark" = {
@@ -44,9 +35,9 @@
             (hsPkgs.transformers)
             (hsPkgs.unix)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spark-tests" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unix)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

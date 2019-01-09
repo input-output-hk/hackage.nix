@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "math-functions";
-        version = "0.1.5.1";
-      };
+      identifier = { name = "math-functions"; version = "0.1.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
@@ -22,7 +13,7 @@
       synopsis = "Special functions and Chebyshev polynomials";
       description = "This library provides implementations of special mathematical\nfunctions and Chebyshev polynomials.  These functions are often\nuseful in statistical and numerical computing.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.erf)
           (hsPkgs.vector)
           (hsPkgs.vector-th-unbox)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

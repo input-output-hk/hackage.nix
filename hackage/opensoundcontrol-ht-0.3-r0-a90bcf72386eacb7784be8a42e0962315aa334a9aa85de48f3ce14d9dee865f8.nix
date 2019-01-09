@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "opensoundcontrol-ht";
-        version = "0.3";
-      };
+      identifier = { name = "opensoundcontrol-ht"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <supercollider@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell OpenSoundControl utilities";
       description = "Some additional modules I use\nin connection with the SuperCollider wrapper hsc3 by Rohan Drape.\nIt contains:\n\n* a @Transport@ handle type for writing to files\n\n* a @Transport@ monad type for writing to a bytestring without IO.\n\nAlso see the supercollider-ht package which uses this one.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,13 +22,9 @@
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.utility-ht)
-        ] ++ (if flags.splitbase
-          then [
-            (hsPkgs.random)
-            (hsPkgs.process)
-            (hsPkgs.base)
-          ]
+          ] ++ (if flags.splitbase
+          then [ (hsPkgs.random) (hsPkgs.process) (hsPkgs.base) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "yesod-auth-ldap";
-        version = "0.0.3";
-      };
+      identifier = { name = "yesod-auth-ldap"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Litchard";
@@ -22,7 +13,7 @@
       synopsis = "LDAP Authentication for Yesod.";
       description = "LDAP Authentication for Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.yesod-form)
           (hsPkgs.transformers)
           (hsPkgs.authenticate-ldap)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

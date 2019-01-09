@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blockchain";
-        version = "0.0.3";
-      };
+      identifier = { name = "blockchain"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2017 Tyler Olson";
       maintainer = "tydotg@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generic blockchain implementation.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Extra";
-        version = "1.33";
-      };
+      identifier = { name = "Extra"; version = "1.33"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Fox <david@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "A grab bag of modules.";
       description = "A hodge-podge of functions and modules that do not have a better home";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.HUnit)
           (hsPkgs.random)
           (hsPkgs.filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

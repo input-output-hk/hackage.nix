@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ethereum-analyzer";
-        version = "0.0.1";
-      };
+      identifier = { name = "ethereum-analyzer"; version = "0.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "k_@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "A Ethereum contract analyzer.";
       description = "A Ethereum contract analyzer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -65,8 +56,8 @@
           (hsPkgs.wai-middleware-prometheus)
           (hsPkgs.warp)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       exes = {
         "ethereum-analyzer" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.ethereum-analyzer-deps)
             (hsPkgs.hflags)
             (hsPkgs.monad-logger)
-          ];
-        };
+            ];
+          };
         "ea-dump-contract" = {
           depends = [
             (hsPkgs.base)
@@ -87,9 +78,9 @@
             (hsPkgs.monad-logger)
             (hsPkgs.mtl)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -101,8 +92,8 @@
             (hsPkgs.hoopl)
             (hsPkgs.hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

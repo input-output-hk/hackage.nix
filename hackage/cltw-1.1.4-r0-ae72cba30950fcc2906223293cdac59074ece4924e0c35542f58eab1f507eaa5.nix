@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "cltw";
-        version = "1.1.4";
-      };
+      identifier = { name = "cltw"; version = "1.1.4"; };
       license = "BSD-3-Clause";
       copyright = "2010 Dino Morelli";
       maintainer = "Dino Morelli <dino@ui3.info>";
@@ -22,7 +13,7 @@
       synopsis = "Command line Twitter utility";
       description = "A tool for performing some Twitter API functions\nfrom the command line.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cltw" = {
@@ -32,8 +23,8 @@
             (hsPkgs.mtl)
             (hsPkgs.random)
             (hsPkgs.tagsoup)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

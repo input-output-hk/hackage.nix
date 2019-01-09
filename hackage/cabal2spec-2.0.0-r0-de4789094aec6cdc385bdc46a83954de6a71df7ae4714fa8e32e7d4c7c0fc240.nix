@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal2spec";
-        version = "2.0.0";
-      };
+      identifier = { name = "cabal2spec"; version = "2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "simons@cryp.to";
@@ -22,7 +13,7 @@
       synopsis = "Convert Cabal files into rpm spec files";
       description = "Convert Cabal files into a\n<http://ftp.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html spec file>\nsuitable for building the package with the RPM package manager. This tool\nprimarily targets the <http://www.suse.com/ SUSE> and\n<http://www.opensuse.org openSUSE> familiy of distributions. Support for\nother RPM-based distributions is currently not available. Check out\n<http://hackage.haskell.org/package/cabal-rpm cabal-rpm> if you need this.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.Cabal)
           (hsPkgs.filepath)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "cabal2spec" = {
           depends = [
@@ -40,9 +31,9 @@
             (hsPkgs.cabal2spec)
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "regression-test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.filepath)
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

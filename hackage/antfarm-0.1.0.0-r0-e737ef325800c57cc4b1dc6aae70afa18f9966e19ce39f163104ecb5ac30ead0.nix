@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "antfarm";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "antfarm"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "eric.kow@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Referring expressions for definitions";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "antfarm" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.minimorph)
             (hsPkgs.mtl)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "antfarm-test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "vivid";
-        version = "0.4.2.0";
-      };
+      identifier = { name = "vivid"; version = "0.4.2.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Tom Murphy";
@@ -22,7 +13,7 @@
       synopsis = "Sound synthesis with SuperCollider";
       description = "Music and sound synthesis with SuperCollider.\n\nExample usage (after installing and booting SuperCollider):\n\n@\n&#123;&#45;\\# LANGUAGE DataKinds, ExtendedDefaultRules \\#&#45;&#125;\n@\n\n> import Vivid\n>\n> playSong :: VividAction m => m ()\n> playSong = do\n>    fork \$ do\n>       s0 <- synth theSound (36 ::I \"note\")\n>       wait 1\n>       free s0\n>    s1 <- synth theSound (60 ::I \"note\")\n>    forM_ [62,66,64] \$ \\note -> do\n>       wait (1/4)\n>       set s1 (note ::I \"note\")\n>    wait (1/4)\n>    free s1\n>\n> theSound :: SynthDef '[\"note\"]\n> theSound = sd (0 ::I \"note\") \$ do\n>    wobble <- sinOsc (freq_ 5) ? KR ~* 10 ~+ 10\n>    s <- 0.1 ~* sinOsc (freq_ \$ midiCPS (V::V \"note\") ~+ wobble)\n>    out 0 [s,s]\n>\n> main :: IO ()\n> main = do\n>    putStrLn \"Simplest:\"\n>    playSong\n>\n>    putStrLn \"With precise timing:\"\n>    doScheduledIn 0.1 playSong\n>    wait 1\n>\n>    putStrLn \"Written to a file, non-realtime synthesis:\"\n>    putStrLn \"(Need to quit the running server for NRT)\"\n>    quitSCServer\n>    writeNRT \"song.wav\" playSong";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.utf8-string)
           (hsPkgs.vivid-osc)
           (hsPkgs.vivid-supercollider)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

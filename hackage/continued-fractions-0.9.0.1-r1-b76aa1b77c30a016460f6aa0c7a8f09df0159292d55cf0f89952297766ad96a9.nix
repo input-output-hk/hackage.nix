@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "continued-fractions";
-        version = "0.9.0.1";
-      };
+      identifier = { name = "continued-fractions"; version = "0.9.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,10 +13,6 @@
       synopsis = "Continued fractions.";
       description = "A type and some functions for manipulating and\nevaluating continued fractions.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

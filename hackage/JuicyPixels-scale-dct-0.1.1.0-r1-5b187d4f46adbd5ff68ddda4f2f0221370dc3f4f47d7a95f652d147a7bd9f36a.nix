@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "JuicyPixels-scale-dct";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "JuicyPixels-scale-dct"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Scale JuicyPixels images with DCT";
       description = "Scale JuicyPixels Images with DCT";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.fft)
           (hsPkgs.carray)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.JuicyPixels-scale-dct)
             (hsPkgs.JuicyPixels-util)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

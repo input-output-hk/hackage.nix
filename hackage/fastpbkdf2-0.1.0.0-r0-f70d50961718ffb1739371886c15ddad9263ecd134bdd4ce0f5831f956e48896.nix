@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fastpbkdf2";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fastpbkdf2"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Alfredo Di Napoli";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -22,20 +13,14 @@
       synopsis = "Haskell bindings to the fastpbkdf2 C library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = if system.isWindows || system.isWindows
-          then [
-            (pkgs."eay32")
-            (pkgs."ssl32")
-          ]
+          then [ (pkgs."eay32") (pkgs."ssl32") ]
           else [ (pkgs."crypto") ];
-      };
+        };
       tests = {
         "fastpbkdf2-hs-test" = {
           depends = [
@@ -45,9 +30,9 @@
             (hsPkgs.fastpbkdf2)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "fastpbkdf2-bench" = {
           depends = [
@@ -57,8 +42,8 @@
             (hsPkgs.fastpbkdf2)
             (hsPkgs.cryptonite)
             (hsPkgs.pbkdf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

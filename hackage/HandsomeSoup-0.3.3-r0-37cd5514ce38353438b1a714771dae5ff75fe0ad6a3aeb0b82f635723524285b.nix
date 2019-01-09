@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HandsomeSoup";
-        version = "0.3.3";
-      };
+      identifier = { name = "HandsomeSoup"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bluemangroupie@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Work with HTML more easily in HXT";
       description = "See examples and full readme on the Github page: https:\\/\\/github.com\\/egonSchiele\\/HandsomeSoup";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,17 +28,13 @@
           (hsPkgs.network)
           (hsPkgs.network-uri)
           (hsPkgs.hxt-http)
-        ];
-      };
-      exes = {
-        "handsomesoup" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HandsomeSoup)
-            (hsPkgs.hxt)
           ];
         };
-      };
+      exes = {
+        "handsomesoup" = {
+          depends = [ (hsPkgs.base) (hsPkgs.HandsomeSoup) (hsPkgs.hxt) ];
+          };
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -57,8 +42,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HandsomeSoup)
             (hsPkgs.hxt)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

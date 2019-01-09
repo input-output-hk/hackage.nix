@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snaplet-haxl";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "snaplet-haxl"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chris@christopherbiscardi.com";
@@ -22,7 +13,7 @@
       synopsis = "Snaplet for Facebook's Haxl";
       description = "A Snaplet for the integration of Haxl DataSources with Snap.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.snap)
           (hsPkgs.MonadCatchIO-transformers)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      new_type_eq = false;
-    };
+    flags = { new_type_eq = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "HList";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "HList"; version = "0.5.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "oleg@pobox.com";
@@ -24,7 +13,7 @@
       synopsis = "Heterogeneous lists";
       description = "HList provides many operations to create and manipulate\nheterogenous lists (HLists) whose length and element\ntypes are known at compile-time. HLists are used to implement\n\n* records\n\n* variants\n\n* type-indexed products (TIP)\n\n* type-indexed co-products (TIC)\n\n* keyword arguments\n\nUser code should import \"Data.HList\" or\n\"Data.HList.CommonMain\" for a slightly more limited scope";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +26,8 @@
           (hsPkgs.tagged)
           (hsPkgs.profunctors)
           (hsPkgs.array)
-        ] ++ pkgs.lib.optional (flags.new_type_eq) (hsPkgs.base);
-      };
+          ] ++ (pkgs.lib).optional (flags.new_type_eq) (hsPkgs.base);
+        };
       tests = {
         "examples" = {
           depends = [
@@ -57,15 +46,15 @@
             (hsPkgs.array)
             (hsPkgs.semigroups)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "doctests" = {
-          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.9" && (compiler.isGhc && compiler.version.le "7.11")) [
+          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.9" && (compiler.isGhc && (compiler.version).le "7.11")) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.process)
-          ];
-        };
+            ];
+          };
         "properties" = {
           depends = [
             (hsPkgs.base)
@@ -78,8 +67,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.array)
             (hsPkgs.syb)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.11") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.11") (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

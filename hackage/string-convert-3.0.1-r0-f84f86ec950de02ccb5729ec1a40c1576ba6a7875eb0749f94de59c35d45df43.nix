@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "string-convert";
-        version = "3.0.1";
-      };
+      identifier = { name = "string-convert"; version = "3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tobias Dammers";
       maintainer = "tdammers@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Universal string conversions";
       description = "Provides functions and typeclasses for transparent\nconversions between various string types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "couch-simple";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "couch-simple"; version = "0.0.1.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2015, Michael Alan Dorman";
       maintainer = "mdorman@jaunder.io";
@@ -22,7 +13,7 @@
       synopsis = "A modern, lightweight, complete client for CouchDB";
       description = "Based on http-client, with intended extensions for streaming through Conduit and other libraries.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.bytestring-builder);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs.bytestring-builder);
+        };
       tests = {
         "test" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.uuid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

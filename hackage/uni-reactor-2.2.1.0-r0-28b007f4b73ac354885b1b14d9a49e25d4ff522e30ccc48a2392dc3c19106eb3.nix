@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "uni-reactor";
-        version = "2.2.1.0";
-      };
+      identifier = { name = "uni-reactor"; version = "2.2.1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Christian.Maeder@dfki.de";
@@ -22,7 +13,7 @@
       synopsis = "Reactors for the uniform workbench";
       description = "uni reactor";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.directory)
           (hsPkgs.uni-util)
           (hsPkgs.uni-events)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

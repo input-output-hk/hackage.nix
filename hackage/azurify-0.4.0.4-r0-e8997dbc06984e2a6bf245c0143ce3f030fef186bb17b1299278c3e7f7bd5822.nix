@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      no-hxt = false;
-      library-only = false;
-    };
+    flags = { no-hxt = false; library-only = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "azurify";
-        version = "0.4.0.4";
-      };
+      identifier = { name = "azurify"; version = "0.4.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Greg Weber <greg@gregweber.info>, arno@vanlumig.com";
@@ -25,7 +13,7 @@
       synopsis = "A simple library for accessing Azure blob storage";
       description = "An interface for a few basic functions of the Microsoft Azure blob storage. Creating and deleting containers as well as uploading, downloading and breaking leases of blobs is supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +34,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.old-locale)
           (hsPkgs.unix-compat)
-        ] ++ pkgs.lib.optional (!flags.no-hxt) (hsPkgs.hxt);
-      };
+          ] ++ (pkgs.lib).optional (!flags.no-hxt) (hsPkgs.hxt);
+        };
       exes = {
         "azurify" = {
           depends = [
@@ -70,8 +58,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.directory)
             (hsPkgs.unix-compat)
-          ] ++ pkgs.lib.optional (!flags.no-hxt) (hsPkgs.hxt);
+            ] ++ (pkgs.lib).optional (!flags.no-hxt) (hsPkgs.hxt);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "preliminaries";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "preliminaries"; version = "0.1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2016 Yghor Kerscher";
       maintainer = "kerscher@acm.org";
@@ -22,7 +13,7 @@
       synopsis = "A larger alternative to the Prelude.";
       description = "A GHC-only alternative to the Prelude with a large amount of imports available by default.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.mtl)
           (hsPkgs.parallel)
           (hsPkgs.stm-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

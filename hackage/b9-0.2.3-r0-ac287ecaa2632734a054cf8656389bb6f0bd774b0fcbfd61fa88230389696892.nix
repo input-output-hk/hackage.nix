@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "b9";
-        version = "0.2.3";
-      };
+      identifier = { name = "b9"; version = "0.2.3"; };
       license = "MIT";
       copyright = "2015 Sven Heyll <svh@posteo.de>";
       maintainer = "svh@posteo.de";
@@ -22,7 +13,7 @@
       synopsis = "A build tool and library for virtual machine images.";
       description = "Create, modify, use and share virtual machine images;\nassemble and generate all associated files from templates.\nAll assembled files can be accessed by vm-build scripts as\nshared directory in the build container, and/or\ncan be written to directories, ISO- or VFAT-images.\nISO/VFAT images are created so 'cloud-init' can recognize them.\nVM-Build are executed in LXC containers managed through libvirt.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +45,8 @@
           (hsPkgs.vector)
           (hsPkgs.yaml)
           (hsPkgs.bifunctors)
-        ];
-      };
+          ];
+        };
       exes = {
         "b9c" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

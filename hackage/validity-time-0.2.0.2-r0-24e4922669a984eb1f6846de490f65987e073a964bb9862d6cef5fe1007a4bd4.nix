@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "validity-time";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "validity-time"; version = "0.2.0.2"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017-2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com,\nnick.van.den.broeck666@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Validity instances for time";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-          (hsPkgs.validity)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.time) (hsPkgs.validity) ];
+        };
       };
-    };
-  }
+    }

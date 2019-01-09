@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghci-hexcalc";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "ghci-hexcalc"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Takenobu Tani";
       maintainer = "takenobu.hs@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "GHCi as a Hex Calculator interactive";
       description = "This package defines operations for an interactive hex-caluclator using GHCi.\nThis is a simple and casual interactive tool like Perl and Excel\nfor daily work.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "test-ghci-hexcalc" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
             (hsPkgs.ghci-hexcalc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

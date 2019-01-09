@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unpacked-validation";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "unpacked-validation"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2018 chessai";
       maintainer = "chessai1996@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An unpacked validation data type";
       description = "The 'Validation' type and associated operations.\n\nThis library is intended to be a drop-in replacement for /Data.Valiation/. To shave off pointer chasing, it uses -XUnboxedSums to represent the 'Validation' type as two machine words that are contiguous in memory, without loss of expressiveness that 'Validation' provides.\n\nThis library provides pattern synonyms Failure and Success, which allow users to pattern match on an Unpacked Validation in a familiar way.\n\nFunctions are also provided for converting an Unpacked Validation to the validation library's These, and vice versa.\n\nThis library is in alpha, and the internals are likely to change.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.unpacked-either)
           (hsPkgs.validation)
-        ];
-      };
+          ];
+        };
       tests = {
         "unpacked-validation-test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.unpacked-validation)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-classes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

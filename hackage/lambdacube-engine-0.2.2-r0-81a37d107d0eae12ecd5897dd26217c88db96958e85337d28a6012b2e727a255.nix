@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "lambdacube-engine";
-        version = "0.2.2";
-      };
+      identifier = { name = "lambdacube-engine"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "csaba (dot) hruska (at) gmail (dot) com";
@@ -22,7 +13,7 @@
       synopsis = "3D rendering engine written entirely in Haskell";
       description = "LambdaCube is a 3D rendering engine written entirely in Haskell.\nIt targets newer graphics hardware. The engine uses Ogre3D's mesh\nand material file format. The main goal of this project is to\nprovide a modern and feature rich graphical backend for various\nHaskell projects (e.g. FRP libraries).\n\nWhile the interface looks huge on the surface, the only part of\ninterest to application developers is the \"Graphics.LambdaCube\"\nmodule, and possibly \"Graphics.LambdaCube.Loader.StbImage\".  The\nrest is only exposed to make low-level interfacing possible.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.xml)
           (hsPkgs.zip-archive)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

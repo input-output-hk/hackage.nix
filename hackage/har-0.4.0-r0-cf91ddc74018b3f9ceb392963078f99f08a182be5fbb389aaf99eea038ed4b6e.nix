@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "har";
-        version = "0.4.0";
-      };
+      identifier = { name = "har"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "@2015-2017 Haisheng Wu";
       maintainer = "freizl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "HAR spec in Haskell";
       description = "\nData type of HAR spec: <https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/HAR/Overview.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

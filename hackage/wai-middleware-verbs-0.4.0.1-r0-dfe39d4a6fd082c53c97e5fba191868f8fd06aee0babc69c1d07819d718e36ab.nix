@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-verbs";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "wai-middleware-verbs"; version = "0.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "Route Wai middlewares based on HTTP verbs";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/wai-middleware-verbs#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.wai)
           (hsPkgs.wai-transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

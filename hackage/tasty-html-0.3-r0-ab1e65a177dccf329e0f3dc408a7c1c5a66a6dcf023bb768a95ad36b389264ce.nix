@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty-html";
-        version = "0.3";
-      };
+      identifier = { name = "tasty-html"; version = "0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "j@dannyavarro.net, roma@ro-che.info";
@@ -22,7 +13,7 @@
       synopsis = "Render tasty output to HTML";
       description = "A tasty ingredient to output test results in HTML5.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.blaze-html)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

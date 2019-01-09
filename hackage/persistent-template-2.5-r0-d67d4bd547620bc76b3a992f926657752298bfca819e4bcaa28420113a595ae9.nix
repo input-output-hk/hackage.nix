@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent-template";
-        version = "2.5";
-      };
+      identifier = { name = "persistent-template"; version = "2.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>, Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe, non-relational, multi-backend persistence.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/persistent-template>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.path-pieces)
           (hsPkgs.http-api-data)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

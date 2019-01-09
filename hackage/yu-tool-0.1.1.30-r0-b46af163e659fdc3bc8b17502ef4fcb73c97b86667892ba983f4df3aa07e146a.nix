@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yu-tool";
-        version = "0.1.1.30";
-      };
+      identifier = { name = "yu-tool"; version = "0.1.1.30"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2017-2018 Johann Lee <me@qinka.pro>";
       maintainer = "qinka@live.com";
@@ -22,7 +13,7 @@
       synopsis = "Tool for Yu";
       description = "Tool for Yu";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yu" = {
@@ -35,8 +26,8 @@
             (hsPkgs.echo)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

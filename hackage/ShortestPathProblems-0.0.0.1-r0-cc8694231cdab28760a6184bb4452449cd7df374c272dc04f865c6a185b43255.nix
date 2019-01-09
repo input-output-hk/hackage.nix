@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      debugoutput = false;
-    };
+    flags = { debug = false; debugoutput = false; };
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "ShortestPathProblems";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "ShortestPathProblems"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2016";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -25,7 +13,7 @@
       synopsis = "grammars for TSP and SHP";
       description = "Grammars and default implementations for the shortest\nHamiltonian path and Travelling Salesman problems.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +25,8 @@
           (hsPkgs.ADPfusionSet)
           (hsPkgs.FormalGrammars)
           (hsPkgs.PrimitiveArray)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -49,8 +37,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.vector)
             (hsPkgs.ShortestPathProblems)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

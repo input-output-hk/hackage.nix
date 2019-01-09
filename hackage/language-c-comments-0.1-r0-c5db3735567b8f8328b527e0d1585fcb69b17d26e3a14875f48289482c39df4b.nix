@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "language-c-comments";
-        version = "0.1";
-      };
+      identifier = { name = "language-c-comments"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ghulette@gmail.com";
@@ -22,17 +13,11 @@
       synopsis = "Extracting comments from C code";
       description = "Language C Comments is a Haskell library for extracting\ncomments from C code.  It will parse both single- and\nmulti-line comments, and correctly handles split lines.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.language-c)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.language-c) ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-fay";
-        version = "0.4.0.4";
-      };
+      identifier = { name = "yesod-fay"; version = "0.4.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for using the Fay Haskell-to-JS compiler with Yesod.";
       description = "For initial discussion, see <http://www.yesodweb.com/blog/2012/10/yesod-fay-js>. This is a work-in-progress.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.pureMD5)
           (hsPkgs.utf8-string)
           (hsPkgs.monad-loops)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

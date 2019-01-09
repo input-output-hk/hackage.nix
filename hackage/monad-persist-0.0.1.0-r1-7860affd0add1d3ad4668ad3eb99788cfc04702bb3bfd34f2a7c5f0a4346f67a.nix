@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-persist";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "monad-persist"; version = "0.0.1.0"; };
       license = "ISC";
       copyright = "2017 CJ Affiliate by Conversant";
       maintainer = "Alexis King <lexi.lambda@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "An mtl-style typeclass and transformer for persistent.";
       description = "An mtl-style typeclass and transformer for persistent.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.persistent)
           (hsPkgs.text)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "monad-persist-test-suite" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.persistent-sqlite)
             (hsPkgs.persistent-template)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

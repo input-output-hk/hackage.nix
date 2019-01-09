@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "secure-sockets";
-        version = "1.2.3";
-      };
+      identifier = { name = "secure-sockets"; version = "1.2.3"; };
       license = "BSD-3-Clause";
       copyright = "Google Inc. 2010";
       maintainer = "dave@natulte.net";
@@ -22,7 +13,7 @@
       synopsis = "Secure point-to-point connectivity library";
       description = "This library simplifies the task of securely connecting two\nservers to each other, with strong authentication and\nencryption on the wire.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.HsOpenSSL)
           (hsPkgs.network)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

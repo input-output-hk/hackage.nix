@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sorting";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "sorting"; version = "1.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "© 2015 Hardy Jones";
       maintainer = "jones3.hardy@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Utils for sorting.";
       description = "Utils for sorting.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

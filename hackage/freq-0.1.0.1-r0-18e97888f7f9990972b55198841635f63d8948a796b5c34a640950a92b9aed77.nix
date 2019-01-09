@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "freq";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "freq"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "dcartwright@layer3com.com";
@@ -22,7 +13,7 @@
       synopsis = "Are you ready to get freaky?";
       description = "This library provides a way to train a model that predicts\nthe \"randomness\" of an input ByteString.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.primitive)
-        ];
-      };
+          ];
+        };
       exes = {
         "freq-train" = {
           depends = [
@@ -39,9 +30,9 @@
             (hsPkgs.freq)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.containers)
             (hsPkgs.freq)
             (hsPkgs.hedgehog)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.containers)
             (hsPkgs.freq)
             (hsPkgs.gauge)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

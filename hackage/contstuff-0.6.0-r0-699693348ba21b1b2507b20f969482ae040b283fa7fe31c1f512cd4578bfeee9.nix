@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "contstuff";
-        version = "0.6.0";
-      };
+      identifier = { name = "contstuff"; version = "0.6.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 Ertugrul Söylemez";
       maintainer = "Ertugrul Söylemez <es@ertes.de>";
@@ -22,10 +13,6 @@
       synopsis = "Fast, easy to use CPS-based monads";
       description = "This library implements fast and easy to use CPS-based monad\ntransformers.  Most of the usual monads are implemented.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

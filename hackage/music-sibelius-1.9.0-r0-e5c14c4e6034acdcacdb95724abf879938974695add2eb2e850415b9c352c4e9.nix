@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "music-sibelius";
-        version = "1.9.0";
-      };
+      identifier = { name = "music-sibelius"; version = "1.9.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hans Hoglund <hans@hanshoglund.se>";
@@ -22,7 +13,7 @@
       synopsis = "Interaction with Sibelius.";
       description = "Import music from Sibelius (experimental).\n\nThis library is part of the Music Suite, see <http://music-suite.github.io>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.music-pitch-literal)
           (hsPkgs.music-preludes)
           (hsPkgs.aeson)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

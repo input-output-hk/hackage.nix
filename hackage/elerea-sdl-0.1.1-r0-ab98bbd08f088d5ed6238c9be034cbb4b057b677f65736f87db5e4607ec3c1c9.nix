@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "elerea-sdl";
-        version = "0.1.1";
-      };
+      identifier = { name = "elerea-sdl"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "© 2011-2012 Stephen Paul Weber";
       maintainer = "Stephen Paul Weber <singpolyma@singpolyma.net>";
@@ -22,14 +13,8 @@
       synopsis = "Elerea FRP wrapper for SDL";
       description = "This is an FRP wrapper for SDL using Elerea.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.elerea)
-          (hsPkgs.SDL)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.elerea) (hsPkgs.SDL) ]; };
+      };
+    }

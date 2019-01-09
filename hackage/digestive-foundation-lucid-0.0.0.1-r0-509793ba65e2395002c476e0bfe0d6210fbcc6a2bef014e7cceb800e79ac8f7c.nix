@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "digestive-foundation-lucid";
         version = "0.0.0.1";
-      };
+        };
       license = "MIT";
       copyright = "(c) 2014 Athan Clark";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Speed up form designing using digestive functors and foundation";
       description = "Generate foundation forms out of digestive views";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +27,7 @@
           (hsPkgs.lucid-foundation)
           (hsPkgs.http-types)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

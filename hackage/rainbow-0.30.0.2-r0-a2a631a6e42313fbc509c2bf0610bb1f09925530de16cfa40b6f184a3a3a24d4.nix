@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rainbow";
-        version = "0.30.0.2";
-      };
+      identifier = { name = "rainbow"; version = "0.30.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2013-2018 Omari Norman";
       maintainer = "omari@smileystation.com";
@@ -22,7 +13,7 @@
       synopsis = "Print text to terminal with colors and effects";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.lens-simple)
           (hsPkgs.process)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "colorTest" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.lens-simple)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "rainbow-instances" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -52,8 +43,8 @@
             (hsPkgs.lens-simple)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test256color" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -62,8 +53,8 @@
             (hsPkgs.lens-simple)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test8color" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -72,8 +63,8 @@
             (hsPkgs.lens-simple)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

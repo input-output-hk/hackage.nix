@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hnormalise";
-        version = "0.4.8.0";
-      };
+      identifier = { name = "hnormalise"; version = "0.4.8.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Ghent University";
       maintainer = "itkovian@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Log message normalisation tool producing structured JSON messages";
       description = "Log message normalisation tool producing structured JSON messages";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "hnormalise-0mq" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.yaml)
             (hsPkgs.zeromq4-haskell)
             (hsPkgs.zeromq4-conduit)
-          ];
-        };
+            ];
+          };
         "hnormalise" = {
           depends = [
             (hsPkgs.base)
@@ -103,9 +94,9 @@
             (hsPkgs.lifted-base)
             (hsPkgs.monad-control)
             (hsPkgs.transformers-base)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hnormalise-test" = {
           depends = [
@@ -122,9 +113,9 @@
             (hsPkgs.ip)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "hnormalise-bench" = {
           depends = [
@@ -135,8 +126,8 @@
             (hsPkgs.hnormalise)
             (hsPkgs.random)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

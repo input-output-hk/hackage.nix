@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yaml-light-lens";
-        version = "0.3.1.2";
-      };
+      identifier = { name = "yaml-light-lens"; version = "0.3.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2013 Anthony Cowley";
       maintainer = "acowley@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lens interface to yaml-light.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,15 +23,10 @@
           (hsPkgs.containers)
           (hsPkgs.lens)
           (hsPkgs.yaml-light)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       };
-    };
-  }
+    }

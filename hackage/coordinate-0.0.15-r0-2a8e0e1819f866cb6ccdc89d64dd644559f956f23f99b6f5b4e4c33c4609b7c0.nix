@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "coordinate";
-        version = "0.0.15";
-      };
+      identifier = { name = "coordinate"; version = "0.0.15"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013-2014 Tony Morris";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A representation of latitude and longitude";
       description = "A representation of latitude and longitude";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.lens)
           (hsPkgs.tagged)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

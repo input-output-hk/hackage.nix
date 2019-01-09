@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-markdown";
-        version = "0.8.5";
-      };
+      identifier = { name = "yesod-markdown"; version = "0.8.5"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Patrick Brisbin <pbrisbin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Tools for using markdown in a yesod application";
       description = "A subset of pandoc functionality useful for markdown processing in yesod applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.hamlet)
           (hsPkgs.persistent)
           (hsPkgs.temporary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

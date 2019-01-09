@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "laborantin-hs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "laborantin-hs"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "lucas@dicioccio.fr";
@@ -22,7 +13,7 @@
       synopsis = "an experiment management framework";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.directory)
           (hsPkgs.random)
           (hsPkgs.hslogger)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

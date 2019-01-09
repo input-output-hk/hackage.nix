@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      applicativeinbase = true;
-    };
+    flags = { applicativeinbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "action-permutations";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "action-permutations"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ross Paterson <ross@soi.city.ac.uk>";
@@ -24,15 +13,12 @@
       synopsis = "Execute a set of actions (e.g. parsers) in each possible order";
       description = "Sequence a set of Alternative actions in each possible order,\nbased on \\\"Parsing Permutation Phrases\\\", by Arthur Baars,\nAndres Loeh and S. Doaitse Swierstra, /Haskell Workshop 2001/.\nThis is particularly useful for constructing a parser for\npermutations of elements.\nThis version has a slightly different interface from the paper.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.applicativeinbase
           then [ (hsPkgs.base) ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.special-functors)
-          ];
+          else [ (hsPkgs.base) (hsPkgs.special-functors) ];
+        };
       };
-    };
-  }
+    }

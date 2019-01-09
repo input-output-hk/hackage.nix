@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "content-store";
-        version = "0.2.0";
-      };
+      identifier = { name = "content-store"; version = "0.2.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "clumens@redhat.com";
@@ -22,7 +13,7 @@
       synopsis = "Store and retrieve data from an on-disk store";
       description = "This module provides a way to store and retrieve arbitrary\ndata from an on-disk store, similar to how a source\ncontrol system works but without the assumptions of such\na system.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.temporary)
             (hsPkgs.content-store)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

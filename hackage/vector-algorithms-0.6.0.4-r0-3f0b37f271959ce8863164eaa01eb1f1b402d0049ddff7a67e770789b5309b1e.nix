@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       boundschecks = true;
@@ -12,13 +6,10 @@
       internalchecks = false;
       bench = false;
       properties = true;
-    };
+      };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "vector-algorithms";
-        version = "0.6.0.4";
-      };
+      identifier = { name = "vector-algorithms"; version = "0.6.0.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008,2009,2010,2011,2012,2013,2014 Dan Doel";
       maintainer = "Dan Doel <dan.doel@gmail.com>";
@@ -28,7 +19,7 @@
       synopsis = "Efficient algorithms for vector arrays";
       description = "Efficient algorithms for vector arrays";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.vector)
           (hsPkgs.primitive)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "vector-algorithms-bench" = {
           depends = [
@@ -46,20 +37,20 @@
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "properties" = {
-          depends = pkgs.lib.optionals (!(!flags.properties)) [
+          depends = (pkgs.lib).optionals (!(!flags.properties)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.QuickCheck)
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aws-sdk";
-        version = "0.11.0";
-      };
+      identifier = { name = "aws-sdk"; version = "0.11.0"; };
       license = "BSD-3-Clause";
       copyright = "AWS SDK for Haskell Developers";
       maintainer = "Yusuke Nomura <yunomu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "AWS SDK for Haskell";
       description = "AWS (Amazon Web Services) sdk for Haskell.\n\nThis library closesly follows the official sdk.\nTo find more documentation, you can lookup functions in the official sdk docs for other languages:\n<http://docs.amazonwebservices.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/ec2/model/DescribeInstancesRequest.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,8 +43,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.parallel)
           (hsPkgs.iproute)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.iproute)
             (hsPkgs.tls)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

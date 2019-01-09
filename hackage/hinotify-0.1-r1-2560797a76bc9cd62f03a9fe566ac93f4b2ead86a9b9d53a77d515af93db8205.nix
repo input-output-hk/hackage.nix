@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hinotify";
-        version = "0.1";
-      };
+      identifier = { name = "hinotify"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Lennart Kolmodin";
@@ -22,10 +13,6 @@
       synopsis = "Haskell binding to INotify";
       description = "Haskell binding to INotify";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

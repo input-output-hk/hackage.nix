@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug-typed-queries = false;
-    };
+    flags = { debug-typed-queries = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "typedquery";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "typedquery"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "©2014-2015 Marcin Tolysz";
       maintainer = "tolysz@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Parser for SQL augmented with types";
       description = "Base package for parsing queries";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,10 +25,10 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optionals (flags.debug-typed-queries) [
+          ] ++ (pkgs.lib).optionals (flags.debug-typed-queries) [
           (hsPkgs.rawstring-qm)
           (hsPkgs.haskell-src-exts)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

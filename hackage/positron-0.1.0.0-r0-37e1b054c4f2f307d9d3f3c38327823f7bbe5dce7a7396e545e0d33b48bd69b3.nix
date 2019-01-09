@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "positron";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "positron"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "2016 XT";
       maintainer = "e@xtendo.org";
@@ -22,7 +13,7 @@
       synopsis = "Experiment";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,15 +24,10 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.base)
-        ];
-      };
-      tests = {
-        "positron-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.positron)
           ];
         };
+      tests = {
+        "positron-test" = { depends = [ (hsPkgs.base) (hsPkgs.positron) ]; };
+        };
       };
-    };
-  }
+    }

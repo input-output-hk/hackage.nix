@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "restless-git";
-        version = "0.6";
-      };
+      identifier = { name = "restless-git"; version = "0.6"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "mikael@brockman.se";
@@ -22,7 +13,7 @@
       synopsis = "Easy Git repository serialization";
       description = "This is an opinionated library for reading and writing\nHaskell data from/to Git repositories.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.time)
           (hsPkgs.HSH)
           (hsPkgs.clock)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.temporary)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

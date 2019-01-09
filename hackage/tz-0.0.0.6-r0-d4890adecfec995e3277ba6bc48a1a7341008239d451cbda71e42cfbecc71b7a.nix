@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tz";
-        version = "0.0.0.6";
-      };
+      identifier = { name = "tz"; version = "0.0.0.6"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Mihaly Barasz <klao@nilcons.com>, Gergely Risko <errge@nilcons.com>";
@@ -22,7 +13,7 @@
       synopsis = "Efficient time zone handling";
       description = "The goal of this package is to provide a library that can read time\nzone info files (aka. Olson files), and does time zone conversions\nin a /pure/ and /efficient/ way.\n\nWe also provide platform-independent and/or compiled-in access to\nthe standard Time Zone Dabase by the means of the companion @tzdata@\npackage <http://hackage.haskell.org/package/tzdata>.\n\nThe package is currently in a draft phase, I'm still experimenting\nwith different ideas wrt. scope\\/API\\/implementation\\/etc. All\ncomments are welcome!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.time)
           (hsPkgs.tzdata)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "th-test" = {
           depends = [
             (hsPkgs.tz)
@@ -61,8 +52,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th)
-          ];
-        };
+            ];
+          };
         "test-all" = {
           depends = [
             (hsPkgs.tz)
@@ -72,9 +63,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.timezone-olson)
             (hsPkgs.timezone-series)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "bench_c" = {
           depends = [
             (hsPkgs.tz)
@@ -95,8 +86,8 @@
             (hsPkgs.bindings-posix)
             (hsPkgs.criterion)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "bench_greg" = {
           depends = [
             (hsPkgs.tz)
@@ -105,8 +96,8 @@
             (hsPkgs.lens)
             (hsPkgs.thyme)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

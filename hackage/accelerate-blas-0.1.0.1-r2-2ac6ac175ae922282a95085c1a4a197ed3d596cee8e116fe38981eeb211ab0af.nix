@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm-cpu = true;
-      llvm-ptx = true;
-    };
+    flags = { llvm-cpu = true; llvm-ptx = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "accelerate-blas";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "accelerate-blas"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tmcdonell@cse.unsw.edu.au";
@@ -25,19 +13,19 @@
       synopsis = "Numeric Linear Algebra in Accelerate";
       description = "Linear systems, matrix decompositions, and other numerical computations for\nuse in Accelerate. Most operations are implemented efficiently via FFI calls\nto BLAS and LAPACK\n\nFor further information refer to the main /Accelerate/ package:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
           (hsPkgs.accelerate)
-        ] ++ pkgs.lib.optionals (flags.llvm-cpu) [
+          ] ++ (pkgs.lib).optionals (flags.llvm-cpu) [
           (hsPkgs.accelerate-llvm)
           (hsPkgs.accelerate-llvm-native)
           (hsPkgs.blas-hs)
           (hsPkgs.llvm-hs-pure)
           (hsPkgs.storable-complex)
-        ]) ++ pkgs.lib.optionals (flags.llvm-ptx) [
+          ]) ++ (pkgs.lib).optionals (flags.llvm-ptx) [
           (hsPkgs.accelerate-llvm)
           (hsPkgs.accelerate-llvm-ptx)
           (hsPkgs.bytestring)
@@ -48,8 +36,8 @@
           (hsPkgs.llvm-hs-pure)
           (hsPkgs.mtl)
           (hsPkgs.storable-complex)
-        ];
-      };
+          ];
+        };
       tests = {
         "accelerate-blas-test" = {
           depends = ([
@@ -57,9 +45,9 @@
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-blas)
             (hsPkgs.hedgehog)
-          ] ++ pkgs.lib.optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ pkgs.lib.optional (flags.llvm-ptx) (hsPkgs.accelerate-llvm-ptx);
+            ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs.accelerate-llvm-ptx);
+          };
         };
-      };
       benchmarks = {
         "accelerate-blas-bench" = {
           depends = ([
@@ -71,8 +59,8 @@
             (hsPkgs.mwc-random-accelerate)
             (hsPkgs.deepseq)
             (hsPkgs.hmatrix)
-          ] ++ pkgs.lib.optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ pkgs.lib.optional (flags.llvm-ptx) (hsPkgs.accelerate-llvm-ptx);
+            ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs.accelerate-llvm-ptx);
+          };
         };
       };
-    };
-  }
+    }

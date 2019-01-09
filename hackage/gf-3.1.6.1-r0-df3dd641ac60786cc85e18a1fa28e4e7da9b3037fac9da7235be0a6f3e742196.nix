@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { interrupt = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "gf";
-        version = "3.1.6.1";
-      };
+      identifier = { name = "gf"; version = "3.1.6.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Grammatical Framework";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       exes = {
         "gf" = {
           depends = [
@@ -48,14 +39,14 @@
             (hsPkgs.pretty)
             (hsPkgs.mtl)
             (hsPkgs.haskeline)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
-          ];
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
         };
       };
-    };
-  }
+    }

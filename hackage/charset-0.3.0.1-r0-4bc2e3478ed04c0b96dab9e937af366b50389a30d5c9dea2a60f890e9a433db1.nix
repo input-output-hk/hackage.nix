@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      oldtypeable = false;
-    };
+    flags = { oldtypeable = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "charset";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "charset"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Edward Kmett 2010-2012";
       maintainer = "ekmett@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Fast unicode character sets based on complemented PATRICIA tries";
       description = "Fast unicode character sets based on complemented PATRICIA tries";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.semigroups)
           (hsPkgs.unordered-containers)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

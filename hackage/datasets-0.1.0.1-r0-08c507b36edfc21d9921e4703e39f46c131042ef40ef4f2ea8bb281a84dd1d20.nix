@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "datasets";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "datasets"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Tom Nielsen <tanielsen@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Classical data sets for statistics and machine learning";
       description = "Classical machine learning and statistics datasets from\nthe UCI Machine Learning Repository and other sources.\n\n> import Numeric.Datasets (getDataset)\n> import Numeric.Datasets.Iris (iris)\n>\n> main = do\n>   irises <- getDataset iris\n>   print (length irises)\n>   print (head irises)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.vector)
           (hsPkgs.text)
           (hsPkgs.stringsearch)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

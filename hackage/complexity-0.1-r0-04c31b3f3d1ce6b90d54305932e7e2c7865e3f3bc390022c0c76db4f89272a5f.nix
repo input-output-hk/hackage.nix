@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "complexity";
-        version = "0.1";
-      };
+      identifier = { name = "complexity"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Roel van Dijk";
       maintainer = "vandijk.roel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Empirical algorithmic complexity";
       description = "Determine the complexity of functions by testing them on inputs of various sizes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.colour)
           (hsPkgs.Chart)
           (hsPkgs.hstats)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

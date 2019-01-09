@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "liszt";
-        version = "0.1";
-      };
+      identifier = { name = "liszt"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018 Fumiaki Kinoshita";
       maintainer = "fumiexcel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Append only key-list database";
       description = "Please see the README on GitHub at <https://github.com/fumieval/liszt#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.winery)
-        ];
-      };
+          ];
+        };
       exes = {
         "liszt" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.winery)
-          ];
-        };
+            ];
+          };
         "lisztd" = {
           depends = [
             (hsPkgs.base)
@@ -94,8 +85,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.winery)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

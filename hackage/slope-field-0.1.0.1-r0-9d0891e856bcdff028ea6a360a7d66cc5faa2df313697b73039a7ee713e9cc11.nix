@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "slope-field";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "slope-field"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "2016 Mahdi Dibaiee";
       maintainer = "mdibaiee@aol.com";
@@ -22,15 +13,15 @@
       synopsis = "Visualize mathematical function's slope fields";
       description = "Visualize mathematical function's slope fields";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.mathexpr)
           (hsPkgs.data-default-class)
-        ];
-      };
+          ];
+        };
       exes = {
         "slope-field" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.lens)
             (hsPkgs.data-default-class)
             (hsPkgs.colour)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

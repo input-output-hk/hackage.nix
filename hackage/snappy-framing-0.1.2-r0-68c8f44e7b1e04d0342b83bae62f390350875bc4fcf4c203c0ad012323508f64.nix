@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snappy-framing";
-        version = "0.1.2";
-      };
+      identifier = { name = "snappy-framing"; version = "0.1.2"; };
       license = "MPL-2.0";
       copyright = "Copyright (c) 2013 Kim Altintop";
       maintainer = "kim.altintop@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Snappy Framing Format in Haskell";
       description = "Implementation of the Snappy framing format (SVN revision 71, cf.\n<http://code.google.com/p/snappy/source/browse/trunk/framing_format.txt?r=71>)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.snappy)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

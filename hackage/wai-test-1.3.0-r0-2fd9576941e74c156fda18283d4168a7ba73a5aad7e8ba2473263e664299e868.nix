@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wai-test";
-        version = "1.3.0";
-      };
+      identifier = { name = "wai-test"; version = "1.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Unit test framework (built on HUnit) for WAI applications.";
       description = "Unit test framework (built on HUnit) for WAI applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.HUnit)
           (hsPkgs.http-types)
           (hsPkgs.case-insensitive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

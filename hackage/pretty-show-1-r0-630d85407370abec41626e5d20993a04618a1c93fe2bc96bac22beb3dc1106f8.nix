@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "pretty-show";
-        version = "1";
-      };
+      identifier = { name = "pretty-show"; version = "1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "iavor.diatchki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools for working with derived Show instances.";
       description = "We provide a library and an executable for\nworking with derived Show instances.  By using\nthe library, we can parse derived Show instances\ninto a generic data structure.  The tool uses\nthe library to produce human-readable versions\nof Show instances, which can be quite handy\nfor debugging Haskell programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.array)
           (hsPkgs.haskell-lexer)
           (hsPkgs.pretty)
-        ];
-      };
+          ];
+        };
       exes = {
         "ppsh" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.array)
             (hsPkgs.haskell-lexer)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

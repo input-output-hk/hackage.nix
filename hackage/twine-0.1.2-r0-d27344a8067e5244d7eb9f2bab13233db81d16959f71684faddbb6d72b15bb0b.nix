@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "twine";
-        version = "0.1.2";
-      };
+      identifier = { name = "twine"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jimmyjazz14@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "very simple template language";
       description = "very simple template language";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.parsec)
           (hsPkgs.containers)
           (hsPkgs.convertible)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

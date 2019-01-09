@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vinyl-plus";
-        version = "0.1.1";
-      };
+      identifier = { name = "vinyl-plus"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Vinyl records utilities";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,16 +24,12 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.ghc-prim)
           (hsPkgs.profunctors)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.vinyl)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.vinyl) (hsPkgs.doctest) ];
+          };
+        };
       };
-    };
-  }
+    }

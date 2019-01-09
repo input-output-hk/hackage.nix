@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "idiii";
-        version = "0.1.3.2";
-      };
+      identifier = { name = "idiii"; version = "0.1.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Wagner <christopher.t.wagner@gmail.com>, Alexey Alekhin <alekhin.alexey@gmail.com>, Bart Massey <bart.massey@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "ID3v2 (tagging standard for MP3 files) library";
       description = "ID3v2 (tagging standard for MP3 files) library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,17 +25,13 @@
           (hsPkgs.utf8-string)
           (hsPkgs.containers)
           (hsPkgs.MissingH)
-        ];
-      };
-      exes = {
-        "read-idiii" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.idiii)
           ];
         };
-      };
+      exes = {
+        "read-idiii" = {
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.idiii) ];
+          };
+        };
       tests = {
         "test" = {
           depends = [
@@ -53,8 +40,8 @@
             (hsPkgs.process)
             (hsPkgs.directory)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

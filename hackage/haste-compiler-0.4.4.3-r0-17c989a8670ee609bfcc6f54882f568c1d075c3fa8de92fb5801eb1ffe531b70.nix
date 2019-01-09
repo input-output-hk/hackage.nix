@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      portable = false;
-      static = false;
-      only-library = false;
-    };
+    flags = { portable = false; static = false; only-library = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haste-compiler";
-        version = "0.4.4.3";
-      };
+      identifier = { name = "haste-compiler"; version = "0.4.4.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anton@ekblad.cc";
@@ -26,7 +13,7 @@
       synopsis = "Haskell To ECMAScript compiler";
       description = "This package provides a featureful compiler from Haskell to\nJavascript. It generates small, fast code, makes use of\nstandard Haskell libraries, integrates with Cabal, supports\nmost GHC extensions and works on Windows, Linux and OSX.\nBug reports are highly appreciated.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +38,8 @@
           (hsPkgs.websockets)
           (hsPkgs.network)
           (hsPkgs.network-uri)
-        ];
-      };
+          ];
+        };
       exes = {
         "haste-boot" = {
           depends = [
@@ -69,8 +56,8 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.ghc)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "hastec" = {
           depends = [
             (hsPkgs.base)
@@ -90,8 +77,8 @@
             (hsPkgs.shellmate)
             (hsPkgs.either)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "haste-inst" = {
           depends = [
             (hsPkgs.base)
@@ -99,8 +86,8 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.ghc)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "haste-pkg" = {
           depends = [
             (hsPkgs.base)
@@ -109,8 +96,8 @@
             (hsPkgs.ghc)
             (hsPkgs.process)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "haste-install-his" = {
           depends = [
             (hsPkgs.base)
@@ -118,8 +105,8 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.ghc)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "haste-copy-pkg" = {
           depends = [
             (hsPkgs.base)
@@ -127,8 +114,8 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.ghc)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "haste-cat" = {
           depends = [
             (hsPkgs.base)
@@ -143,8 +130,8 @@
             (hsPkgs.random)
             (hsPkgs.data-default)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dense";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dense"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Christopher Chalmers 2016";
       maintainer = "c.chalmers@me.com";
@@ -22,7 +13,7 @@
       synopsis = "Mutable and immutable dense multidimensional arrays";
       description = "Multidimentional array library build on top of the vector package,\nusing indices from the linear package. Native support for mutable\narrays, stencils and parallel computation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.vector)
             (hsPkgs.doctest)
             (hsPkgs.simple-reflect)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

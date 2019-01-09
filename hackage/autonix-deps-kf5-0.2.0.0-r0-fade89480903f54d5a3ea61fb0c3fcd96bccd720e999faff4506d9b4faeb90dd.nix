@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "autonix-deps-kf5";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "autonix-deps-kf5"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014 Thomas Tuegel";
       maintainer = "ttuegel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate dependencies for KDE 5 Nix expressions";
       description = "@autonix-deps-kf5@ automatically detects dependencies for KDE Frameworks 5\nand related software collections. The generated dependencies are used to\nautomatically create expressions for use by the Nix package manager.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.lens)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "kf5-deps" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.containers)
             (hsPkgs.lens)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

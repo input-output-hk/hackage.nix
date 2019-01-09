@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-smsc-ru";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "servant-smsc-ru"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant client for smsc.ru service for sending SMS to cell phones";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.servant-client)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-servant-smsc-ru" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3-lang";
-        version = "0.15";
-      };
+      identifier = { name = "hsc3-lang"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2007-2014";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell SuperCollider Language";
       description = "Haskell library defining operations from the\nSuperCollider language class library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.random-shuffle)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

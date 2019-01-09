@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      template-haskell-210 = true;
-      template-haskell-212 = false;
-    };
+    flags = { template-haskell-210 = true; template-haskell-212 = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "th-data-compat";
-        version = "0.0.2.4";
-      };
+      identifier = { name = "th-data-compat"; version = "0.0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016-2017 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -25,12 +13,10 @@
       synopsis = "Compatibility for data definition template of TH";
       description = "This package contains wrapped name definitions of\ndata definition template";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [ (hsPkgs.base) ] ++ [
-          (hsPkgs.template-haskell)
-        ];
+        depends = [ (hsPkgs.base) ] ++ [ (hsPkgs.template-haskell) ];
+        };
       };
-    };
-  }
+    }

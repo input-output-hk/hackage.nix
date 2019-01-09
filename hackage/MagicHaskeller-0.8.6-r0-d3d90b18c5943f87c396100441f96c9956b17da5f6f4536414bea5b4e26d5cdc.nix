@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghcapi = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "MagicHaskeller";
-        version = "0.8.6";
-      };
+      identifier = { name = "MagicHaskeller"; version = "0.8.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Susumu Katayama <skata@cs.miyazaki-u.ac.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Automatic inductive functional programmer by systematic search";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,11 +26,11 @@
           (hsPkgs.directory)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
-        ] ++ pkgs.lib.optionals (flags.ghcapi) [
+          ] ++ (pkgs.lib).optionals (flags.ghcapi) [
           (hsPkgs.ghc)
           (hsPkgs.old-time)
           (hsPkgs.ghc-paths)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "graphtype";
-        version = "0.1.2";
-      };
+      identifier = { name = "graphtype"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Dmitry Astapov";
       maintainer = "Max Desyatov <explicitcall at gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple tool to illustrate dependencies between Haskell types";
       description = "This tools produces diagrams of Haskell type interdependencies in the given source.\nActual drawing is done by graphviz tools (dot).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "graphtype" = {
@@ -33,8 +24,8 @@
             (hsPkgs.containers)
             (hsPkgs.haskell98)
             (hsPkgs.dotgen)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

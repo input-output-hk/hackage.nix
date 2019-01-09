@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "conduit";
-        version = "1.2.1";
-      };
+      identifier = { name = "conduit"; version = "1.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming data processing library.";
       description = "@conduit@ is a solution to the streaming data problem, allowing for production, transformation, and consumption of streams of data in constant memory. It is an alternative to lazy I\\/O which guarantees deterministic resource handling, and fits in the same general solution space as @enumerator@\\/@iteratee@ and @pipes@. For a tutorial, please visit <https://haskell.fpcomplete.com/user/snoyberg/library-documentation/conduit-overview>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.mtl)
           (hsPkgs.void)
           (hsPkgs.mmorph)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.void)
             (hsPkgs.containers)
             (hsPkgs.exceptions)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "optimize-201408" = {
           depends = [
@@ -68,16 +59,16 @@
             (hsPkgs.mwc-random)
             (hsPkgs.criterion)
             (hsPkgs.kan-extensions)
-          ];
-        };
+            ];
+          };
         "unfused" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.criterion)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

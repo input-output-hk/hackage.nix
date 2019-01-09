@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "web-routes-th";
-        version = "0.22.3";
-      };
+      identifier = { name = "web-routes-th"; version = "0.22.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "partners@seereason.com";
@@ -22,7 +13,7 @@
       synopsis = "Support for deriving PathInfo using Template Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.split)
           (hsPkgs.web-routes)
-        ];
-      };
+          ];
+        };
       tests = {
         "Test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.web-routes)
             (hsPkgs.web-routes-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

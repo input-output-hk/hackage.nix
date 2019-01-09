@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jot";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "jot"; version = "0.1.0.2"; };
       license = "ISC";
       copyright = "2018 Daniel Firth";
       maintainer = "locallycompact@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tiny markdown notebook";
       description = "Jot is a little notebook. It makes little notepages with timestamps that you can customize.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "jot" = {
@@ -37,8 +28,8 @@
             (hsPkgs.time)
             (hsPkgs.turtle)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

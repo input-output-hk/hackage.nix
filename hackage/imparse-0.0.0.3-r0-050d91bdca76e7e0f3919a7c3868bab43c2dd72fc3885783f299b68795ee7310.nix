@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "imparse";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "imparse"; version = "0.0.0.3"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Andrei Lapets <lapets@bu.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Multi-platform parser analyzer and generator.";
       description = "Multi-platform parser analyzer and generator.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.richreports)
           (hsPkgs.parsec)
           (hsPkgs.indents)
-        ];
-      };
+          ];
+        };
       exes = {
         "imparse" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.richreports)
             (hsPkgs.parsec)
             (hsPkgs.indents)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

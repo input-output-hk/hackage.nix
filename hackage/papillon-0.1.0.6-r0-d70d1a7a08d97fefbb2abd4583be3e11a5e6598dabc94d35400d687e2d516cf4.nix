@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "papillon";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "papillon"; version = "0.1.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yoshikuni Jujo <PAF01143@nifty.ne.jp>";
@@ -22,7 +13,7 @@
       synopsis = "packrat parser";
       description = "see examples directory";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.monads-tf)
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "papillon" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.monads-tf)
             (hsPkgs.transformers)
             (hsPkgs.papillon)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

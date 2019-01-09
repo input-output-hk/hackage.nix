@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "typerbole";
-        version = "0.0.0.5";
-      };
+      identifier = { name = "typerbole"; version = "0.0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "2016 Fionan Haralddottir";
       maintainer = "ma302fh@gold.ac.uk";
@@ -22,7 +13,7 @@
       synopsis = "A typesystems library with exaggerated claims";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.th-lift)
           (hsPkgs.megaparsec)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       tests = {
         "typerbole-testing" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.either)
             (hsPkgs.semigroups)
             (hsPkgs.syb)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

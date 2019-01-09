@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "angel";
-        version = "0.4.2";
-      };
+      identifier = { name = "angel"; version = "0.4.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Xavier <michael@michaelxavier.net>";
@@ -22,7 +13,7 @@
       synopsis = "Process management and supervision daemon";
       description = "@angel@ is a daemon that runs and monitors other processes.  It\nis similar to djb's `daemontools` or the Ruby project `god`.\n\nIt's goals are to keep a set of services running, and to facilitate\nthe easy configuration and restart of those services.\nSee the homepage for documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "angel" = {
@@ -39,17 +30,11 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.time)
-          ];
+        "spec" = { depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.time) ]; };
         };
       };
-    };
-  }
+    }

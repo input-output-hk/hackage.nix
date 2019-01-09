@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "steeloverseer";
-        version = "2.0.0.1";
-      };
+      identifier = { name = "steeloverseer"; version = "2.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "schell.scivally@synapsegrop.com";
@@ -22,7 +13,7 @@
       synopsis = "A file watcher and development tool.";
       description = "A command line tool that responds to filesystem events.\nAllows the user to automatically execute commands after\nfiles are added or updated. Watches files using regular\nexpressions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.stm)
           (hsPkgs.text)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "sos" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.semigroups)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

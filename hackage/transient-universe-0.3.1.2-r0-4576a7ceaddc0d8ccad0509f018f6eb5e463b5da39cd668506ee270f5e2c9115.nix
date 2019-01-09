@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "transient-universe";
-        version = "0.3.1.2";
-      };
+      identifier = { name = "transient-universe"; version = "0.3.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "agocorona@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Remote execution and map-reduce: distributed computing for Transient";
       description = "See <http://github.com/agocorona/transient>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,11 +28,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.transient)
-        ] ++ (if compiler.isGhcjs && compiler.version.ge "0.1"
-          then [
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.ghcjs-prim)
-          ]
+          ] ++ (if compiler.isGhcjs && (compiler.version).ge "0.1"
+          then [ (hsPkgs.ghcjs-base) (hsPkgs.ghcjs-prim) ]
           else [
             (hsPkgs.HTTP)
             (hsPkgs.TCache)
@@ -54,7 +42,7 @@
             (hsPkgs.network-uri)
             (hsPkgs.vector)
             (hsPkgs.websockets)
-          ]);
+            ]);
+        };
       };
-    };
-  }
+    }

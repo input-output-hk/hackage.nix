@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      linuxstatic = false;
-    };
+    flags = { linuxstatic = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "darkplaces-rcon-util";
-        version = "0.1";
-      };
+      identifier = { name = "darkplaces-rcon-util"; version = "0.1"; };
       license = "GPL-2.0-only";
       copyright = "(c) Slava Bacherikov 2015";
       maintainer = "slava@bacher09.org";
@@ -24,7 +13,7 @@
       synopsis = "Darplaces rcon utility";
       description = "This is implementation of rcon shell for darkplaces engine.\n....\nFeatures\n....\n* Simple and easy CLI interface\n* Supports both ipv4 and ipv6 protocols\n* Bookmarks and default options\n* Saves command history to file\n* Internal commands and smart autocomplete for them\n* Suspend support with <kbd>Ctrl</kbd>+<kbd>z</kdb>\n....\nFor more info visit https://github.com/bacher09/darkplaces-rcon/blob/master/darkplaces-rcon-util/README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +33,8 @@
           (hsPkgs.darkplaces-rcon)
           (hsPkgs.text)
           (hsPkgs.haskeline)
-        ];
-      };
+          ];
+        };
       exes = {
         "drcon" = {
           depends = [
@@ -59,9 +48,9 @@
             (hsPkgs.darkplaces-rcon-util)
             (hsPkgs.text)
             (hsPkgs.haskeline)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "rcon-util-tests" = {
           depends = [
@@ -73,8 +62,8 @@
             (hsPkgs.text)
             (hsPkgs.hspec-core)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

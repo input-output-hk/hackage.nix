@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arbor-postgres";
-        version = "0.0.2";
-      };
+      identifier = { name = "arbor-postgres"; version = "0.0.2"; };
       license = "MIT";
       copyright = "Arbor Networks";
       maintainer = "mayhem@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "Convenience types and functions for postgresql-simple.";
       description = "Please see the README on Github at <https://github.com/arbor/arbor-postgres#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.postgresql-simple)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

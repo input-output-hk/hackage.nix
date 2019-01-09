@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cf";
-        version = "0.4.1";
-      };
+      identifier = { name = "cf"; version = "0.4.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "mitchell.v.riley@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "Exact real arithmetic using continued fractions";
       description = "Continued fraction arithmetic using Gosper's algorithm for the\nbasic operations, and Vuillemin and Lester's techniques for\ntranscendental functions.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -36,8 +25,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

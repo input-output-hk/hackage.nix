@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "reducers";
-        version = "0.3";
-      };
+      identifier = { name = "reducers"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Semigroups, specialized containers and a general map/reduce framework";
       description = "Semigroups, specialized containers and a general map/reduce framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.comonad)
           (hsPkgs.pointed)
           (hsPkgs.keys)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

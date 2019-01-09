@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vector-builder";
-        version = "0.1.1";
-      };
+      identifier = { name = "vector-builder"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Vector builder";
       description = "An API for efficient construction of vectors with abstraction over their size.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.vector-builder)
             (hsPkgs.rebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-middleware-route";
-        version = "0.5.0";
-      };
+      identifier = { name = "wai-middleware-route"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexander Dorofeev <aka.spin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Wai dispatch middleware";
       description = "\\\"Just enough\\\" helpers for use @yesod-routes@ with @WAI@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.wai)
           (hsPkgs.yesod-routes)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

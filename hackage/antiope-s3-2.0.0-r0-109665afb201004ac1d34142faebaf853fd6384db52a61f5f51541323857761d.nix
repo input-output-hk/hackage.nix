@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "antiope-s3";
-        version = "2.0.0";
-      };
+      identifier = { name = "antiope-s3"; version = "2.0.0"; };
       license = "MIT";
       copyright = "Arbor Networks";
       maintainer = "mayhem@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/arbor/antiope#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.network-uri)
           (hsPkgs.resourcet)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "antiope-s3-test" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.network-uri)
             (hsPkgs.resourcet)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

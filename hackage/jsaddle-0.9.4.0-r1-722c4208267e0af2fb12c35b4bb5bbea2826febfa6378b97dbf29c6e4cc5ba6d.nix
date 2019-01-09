@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      call-stacks = false;
-      check-unchecked = false;
-    };
+    flags = { call-stacks = false; check-unchecked = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsaddle";
-        version = "0.9.4.0";
-      };
+      identifier = { name = "jsaddle"; version = "0.9.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Interface for JavaScript that works with GHCJS and GHC";
       description = "This package provides an EDSL for calling JavaScript that\ncan be used both from GHCJS and GHC.  When using GHC\nthe application is run using Warp and WebSockets to\ndrive a small JavaScipt helper.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,11 +25,8 @@
           (hsPkgs.primitive)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ (if compiler.isGhcjs && true
-          then [
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.ghcjs-prim)
-          ]
+          ] ++ (if compiler.isGhcjs && true
+          then [ (hsPkgs.ghcjs-base) (hsPkgs.ghcjs-prim) ]
           else [
             (hsPkgs.attoparsec)
             (hsPkgs.containers)
@@ -57,7 +42,7 @@
             (hsPkgs.time)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ]);
+            ]);
+        };
       };
-    };
-  }
+    }

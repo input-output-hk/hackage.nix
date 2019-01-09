@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "court";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "court"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014, Thomas Feron";
       maintainer = "tho.feron@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple and flexible CI system";
       description = "Simple and flexible CI system.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "court" = {
@@ -39,16 +30,16 @@
             (hsPkgs.text)
             (hsPkgs.aeson)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "court-darcs-plugin" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

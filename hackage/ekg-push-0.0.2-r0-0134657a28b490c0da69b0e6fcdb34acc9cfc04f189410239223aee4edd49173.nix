@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ekg-push";
-        version = "0.0.2";
-      };
+      identifier = { name = "ekg-push"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "andrew.darqui@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Small framework to push metric deltas to a broadcast channel using the ekg-core library.";
       description = "This library lets you push metric samples to a broadcast channel. Consumers can then persist the samples as they wish.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,12 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
-      };
-      exes = {
-        "basic" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ekg-core)
-            (hsPkgs.ekg-push)
           ];
         };
+      exes = {
+        "basic" = {
+          depends = [ (hsPkgs.base) (hsPkgs.ekg-core) (hsPkgs.ekg-push) ];
+          };
+        };
       };
-    };
-  }
+    }

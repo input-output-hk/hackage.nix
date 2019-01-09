@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "deiko-config";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "deiko-config"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 Yorick Laupa";
       maintainer = "yo.eight@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Small and typesafe configuration library.";
       description = "Small and typesafe configuration library. The library provides good error messages and comes with a bottom-up typechecker in order to catch more configuration errors.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.transformers)
           (hsPkgs.containers)
           (hsPkgs.exceptions)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

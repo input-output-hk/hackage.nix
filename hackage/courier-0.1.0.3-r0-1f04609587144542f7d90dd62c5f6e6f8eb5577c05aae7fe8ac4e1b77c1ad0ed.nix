@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "courier";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "courier"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "Copyright (c) 2013 Phil Hargett";
       maintainer = "phil@haphazardhouse.net";
@@ -22,7 +13,7 @@
       synopsis = "A message-passing library, intended for simplifying network applications";
       description = "Inspired by Erlang's simple message-passing facilities, courier provides roughly similar\ncapabilities. Applications simply create one or more 'Network.Endpoints.Endpoint's,\nbind each to a 'Network.Transport.Transport' using a given name, then can freely\nsend / receive messages to other endpoints just by referencing the name each endpoint\nbound to its transport.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.network-simple)
           (hsPkgs.stm)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-courier" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.hslogger)
             (hsPkgs.stm)
             (hsPkgs.courier)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

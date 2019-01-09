@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ag-pictgen";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "ag-pictgen"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Arie Middelkoop, Atze Dijkstra";
       maintainer = "Atze Dijkstra <atzedijkstra@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Attribute Grammar picture generation";
       description = "Attribute Grammar picture generation";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "ag-pictgen" = {
@@ -31,8 +22,8 @@
             (hsPkgs.uulib)
             (hsPkgs.uuagc)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

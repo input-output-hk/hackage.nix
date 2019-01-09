@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitter";
-        version = "0.2.0";
-      };
+      identifier = { name = "gitter"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yuriy Syrovetskiy <cblp@cblp.su>";
@@ -22,7 +13,7 @@
       synopsis = "Gitter.im API client";
       description = "Gitter.im is a programmers-oriented GitHub-based web-chat.\nThis package provides a (partial) implementation of its API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.wreq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

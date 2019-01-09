@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "purescript";
-        version = "0.10.6";
-      };
+      identifier = { name = "purescript"; version = "0.10.6"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013-16 Phil Freeman, (c) 2014-16 Gary Burgess";
       maintainer = "Phil Freeman <paf31@cantab.net>";
@@ -22,7 +13,7 @@
       synopsis = "PureScript Programming Language Compiler";
       description = "A small strongly, statically typed programming language with expressive types, inspired by Haskell and compiling to Javascript.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -79,8 +70,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "psc" = {
           depends = [
@@ -102,8 +93,8 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "psci" = {
           depends = [
             (hsPkgs.base)
@@ -131,8 +122,8 @@
             (hsPkgs.wai-websockets)
             (hsPkgs.warp)
             (hsPkgs.websockets)
-          ];
-        };
+            ];
+          };
         "psc-docs" = {
           depends = [
             (hsPkgs.base)
@@ -148,8 +139,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
-          ];
-        };
+            ];
+          };
         "psc-publish" = {
           depends = [
             (hsPkgs.base)
@@ -159,8 +150,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "psc-package" = {
           depends = [
             (hsPkgs.base)
@@ -174,8 +165,8 @@
             (hsPkgs.system-filepath)
             (hsPkgs.text)
             (hsPkgs.turtle)
-          ];
-        };
+            ];
+          };
         "psc-hierarchy" = {
           depends = [
             (hsPkgs.base)
@@ -188,8 +179,8 @@
             (hsPkgs.parsec)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "psc-bundle" = {
           depends = [
             (hsPkgs.base)
@@ -205,8 +196,8 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "psc-ide-server" = {
           depends = [
             (hsPkgs.base)
@@ -223,8 +214,8 @@
             (hsPkgs.stm)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "psc-ide-client" = {
           depends = [
             (hsPkgs.base)
@@ -234,9 +225,9 @@
             (hsPkgs.network)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -271,8 +262,8 @@
             (hsPkgs.transformers-compat)
             (hsPkgs.utf8-string)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

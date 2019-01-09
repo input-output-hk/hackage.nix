@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pier";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "pier"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "judah.jacobson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Yet another Haskell build system.";
       description = "A build system for Haskell projects, built on top of [shake](http://shakebuild.com).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pier" = {
@@ -43,8 +34,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

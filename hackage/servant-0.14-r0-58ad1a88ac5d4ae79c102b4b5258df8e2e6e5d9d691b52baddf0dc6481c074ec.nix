@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant";
-        version = "0.14";
-      };
+      identifier = { name = "servant"; version = "0.14"; };
       license = "BSD-3-Clause";
       copyright = "2014-2016 Zalora South East Asia Pte Ltd, Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "A family of combinators for defining webservices APIs";
       description = "A family of combinators for defining webservices APIs and serving them\n\nYou can learn about the basics in the <http://haskell-servant.readthedocs.org/en/stable/tutorial/index.html tutorial>.\n\n<https://github.com/haskell-servant/servant/blob/master/servant/CHANGELOG.md CHANGELOG>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.string-conversions)
           (hsPkgs.network-uri)
           (hsPkgs.vault)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -60,19 +51,17 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.servant)
             (hsPkgs.doctest)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

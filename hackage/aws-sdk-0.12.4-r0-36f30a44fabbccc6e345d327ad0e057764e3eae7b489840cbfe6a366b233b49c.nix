@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      conduit-1-1 = true;
-    };
+    flags = { debug = false; conduit-1-1 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aws-sdk";
-        version = "0.12.4";
-      };
+      identifier = { name = "aws-sdk"; version = "0.12.4"; };
       license = "BSD-3-Clause";
       copyright = "AWS SDK for Haskell Developers";
       maintainer = "Yusuke Nomura <yunomu@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "AWS SDK for Haskell";
       description = "AWS (Amazon Web Services) sdk for Haskell.\n\nThis library closesly follows the official sdk.\nTo find more documentation, you can lookup functions in the official sdk docs for other languages:\n<http://docs.amazonwebservices.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/ec2/model/DescribeInstancesRequest.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,14 +43,10 @@
           (hsPkgs.parallel)
           (hsPkgs.iproute)
           (hsPkgs.tls)
-        ] ++ (if flags.conduit-1-1
-          then [
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.resourcet)
-          ]
+          ] ++ (if flags.conduit-1-1
+          then [ (hsPkgs.conduit) (hsPkgs.conduit-extra) (hsPkgs.resourcet) ]
           else [ (hsPkgs.conduit) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -80,13 +64,10 @@
             (hsPkgs.tls)
             (hsPkgs.time)
             (hsPkgs.random)
-          ] ++ (if flags.conduit-1-1
-            then [
-              (hsPkgs.conduit)
-              (hsPkgs.resourcet)
-            ]
+            ] ++ (if flags.conduit-1-1
+            then [ (hsPkgs.conduit) (hsPkgs.resourcet) ]
             else [ (hsPkgs.conduit) ]);
+          };
         };
       };
-    };
-  }
+    }

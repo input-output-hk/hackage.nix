@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "haskelldb-hdbc";
-        version = "0.10";
-      };
+      identifier = { name = "haskelldb-hdbc"; version = "0.10"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "haskelldb-users@lists.sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "HaskellDB support for HDBC. You will also need one\nor more back-end specific packages.";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.haskelldb)
           (hsPkgs.HDBC)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

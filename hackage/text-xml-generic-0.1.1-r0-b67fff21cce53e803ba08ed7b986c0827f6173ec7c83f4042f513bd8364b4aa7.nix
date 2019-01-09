@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "text-xml-generic";
-        version = "0.1.1";
-      };
+      identifier = { name = "text-xml-generic"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Oscar Finnsson";
@@ -22,7 +13,7 @@
       synopsis = "Serialize Data to XML (strings).";
       description = "@Text.XML.Generic@ can automatically serialize from the Data-type class to XML-strings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

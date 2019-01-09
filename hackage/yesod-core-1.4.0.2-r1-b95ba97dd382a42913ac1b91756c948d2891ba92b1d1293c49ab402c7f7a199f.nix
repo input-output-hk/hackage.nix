@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-core";
-        version = "1.4.0.2";
-      };
+      identifier = { name = "yesod-core"; version = "1.4.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "Yesod is a framework designed to foster creation of RESTful web application that have strong compile-time guarantees of correctness. It also affords space efficient code and portability to many deployment backends, from CGI to stand-alone serving.\n\nThe Yesod documentation site <http://www.yesodweb.com/> has much more information, tutorials and information on some of the supporting packages, like Hamlet and Persistent.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -68,8 +59,8 @@
           (hsPkgs.conduit-extra)
           (hsPkgs.exceptions)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-routes" = {
           depends = [
@@ -82,8 +73,8 @@
             (hsPkgs.random)
             (hsPkgs.path-pieces)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -109,9 +100,9 @@
             (hsPkgs.shakespeare)
             (hsPkgs.streaming-commons)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "widgets" = {
           depends = [
@@ -122,8 +113,8 @@
             (hsPkgs.transformers)
             (hsPkgs.yesod-core)
             (hsPkgs.blaze-html)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

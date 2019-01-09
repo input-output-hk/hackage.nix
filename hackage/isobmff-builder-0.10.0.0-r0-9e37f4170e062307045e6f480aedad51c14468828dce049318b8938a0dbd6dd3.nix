@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "isobmff-builder";
-        version = "0.10.0.0";
-      };
+      identifier = { name = "isobmff-builder"; version = "0.10.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Sven Heyll";
       maintainer = "sven.heyll@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A (bytestring-) builder for the ISO-14496-12 base media file format";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.lens)
           (hsPkgs.time)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.isobmff-builder)
             (hsPkgs.binary)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

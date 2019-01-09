@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "craze";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "craze"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Eduardo Trujillo <ed@chromabits.com>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP Racing Library";
       description = "A micro-library for racing HTTP GET requests";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.async)
           (hsPkgs.data-default-class)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "craze-example" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.text)
             (hsPkgs.craze)
             (hsPkgs.optparse-generic)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "craze-spec" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.http-types)
             (hsPkgs.haxy)
             (hsPkgs.HTTP)
-          ];
-        };
+            ];
+          };
         "craze-doctest" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +66,8 @@
             (hsPkgs.craze)
             (hsPkgs.doctest)
             (hsPkgs.doctest-discover)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

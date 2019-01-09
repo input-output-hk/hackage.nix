@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { threaded = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "csv-to-qif";
-        version = "0.3";
-      };
+      identifier = { name = "csv-to-qif"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Ingolf Wagner";
       maintainer = "Ingolf Wagner <palipalo9@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A small program that will read csv files and create qif files";
       description = "Binary to convert a wide range of csv files to qif files.\nThe main target is to read them into GnuCash.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "to-qif" = {
@@ -32,9 +23,9 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.spreadsheet)
             (hsPkgs.explicit-exception)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tester" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.Cabal)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

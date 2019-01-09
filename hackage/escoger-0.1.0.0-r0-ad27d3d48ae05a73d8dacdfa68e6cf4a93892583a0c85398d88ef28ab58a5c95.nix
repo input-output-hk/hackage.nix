@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "escoger";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "escoger"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "hello@travisstaton.com";
@@ -22,7 +13,7 @@
       synopsis = "Terminal fuzzy selector";
       description = "Interactive fuzzy selector for the terminal. Escoger accepts\na newline separated input on stdin, and provides an interactive\nprompt to select one of these lines to output to stdout.";
       buildType = "Simple";
-    };
+      };
     components = {
       sublibs = {
         "escoger-lib" = {
@@ -34,9 +25,9 @@
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       exes = {
         "escoger" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.vector)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.vector)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

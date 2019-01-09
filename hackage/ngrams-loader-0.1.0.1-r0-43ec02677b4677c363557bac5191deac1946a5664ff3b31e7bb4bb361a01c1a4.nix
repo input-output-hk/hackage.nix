@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ngrams-loader";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "ngrams-loader"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "Copyright (C) 2014 Yorick Laupa";
       maintainer = "Yorick Laupa <yo.eight@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Ngrams loader based on http://www.ngrams.info format";
       description = "Ngrams loader based on http://www.ngrams.info format";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,16 +24,12 @@
           (hsPkgs.resourcet)
           (hsPkgs.sqlite-simple)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "ngrams-loader" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ngrams-loader)
-            (hsPkgs.parseargs)
           ];
         };
+      exes = {
+        "ngrams-loader" = {
+          depends = [ (hsPkgs.base) (hsPkgs.ngrams-loader) (hsPkgs.parseargs) ];
+          };
+        };
       };
-    };
-  }
+    }

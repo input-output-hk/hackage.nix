@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "protocol-buffers";
-        version = "1.0.0";
-      };
+      identifier = { name = "protocol-buffers"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Christopher Edward Kuklewicz";
       maintainer = "Chris Kuklewicz <protobuf@personal.mightyreason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Parse Google Protocol Buffer specifications";
       description = "Parse proto files and generate Haskell code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.parsec)
           (hsPkgs.utf8-string)
           (hsPkgs.haskell-src)
-        ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
           then [
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -41,8 +32,8 @@
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
             (hsPkgs.syb)
-          ]
+            ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

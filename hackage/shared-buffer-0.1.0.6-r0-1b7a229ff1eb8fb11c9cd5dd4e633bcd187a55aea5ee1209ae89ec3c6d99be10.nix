@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "shared-buffer";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "shared-buffer"; version = "0.1.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jwlato@gmail.com";
@@ -22,18 +13,12 @@
       synopsis = "A circular buffer built on shared memory";
       description = "A circular buffer built on shared memory";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-          (hsPkgs.bytestring)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.unix) (hsPkgs.bytestring) ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       tests = {
         "shared-buffer-tests" = {
           depends = [
@@ -44,11 +29,9 @@
             (hsPkgs.base)
             (hsPkgs.unix)
             (hsPkgs.bytestring)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hsc2hs)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoodle-extra";
-        version = "0.1";
-      };
+      identifier = { name = "hoodle-extra"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "extra hoodle tools";
       description = "extra hoodle tools";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "networkedit" = {
@@ -38,8 +29,8 @@
             (hsPkgs.process)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "idfilepathdb" = {
           depends = [
             (hsPkgs.aeson)
@@ -66,8 +57,8 @@
             (hsPkgs.hoodle-types)
             (hsPkgs.hoodle-parser)
             (hsPkgs.xournal-parser)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

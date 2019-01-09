@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haxr";
-        version = "3000.10.3.1";
-      };
+      identifier = { name = "haxr"; version = "3000.10.3.1"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert, 2003-2006";
       maintainer = "Brent Yorgey <byorgey@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "XML-RPC client and server library.";
       description = "HaXR is a library for writing XML-RPC\nclient and server applications in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,10 +31,7 @@
           (hsPkgs.utf8-string)
           (hsPkgs.template-haskell)
           (hsPkgs.blaze-builder)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "octane";
-        version = "0.16.1";
-      };
+      identifier = { name = "octane"; version = "0.16.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,7 +13,7 @@
       synopsis = "Parse Rocket League replays.";
       description = "Octane parses Rocket League replays.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "octane" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
             (hsPkgs.octane)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "octane-test-suite" = {
           depends = [
@@ -70,17 +61,13 @@
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "octane-benchmark" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.octane)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.octane) ];
+          };
         };
       };
-    };
-  }
+    }

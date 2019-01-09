@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fn";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "fn"; version = "0.1.2.0"; };
       license = "ISC";
       copyright = "2015 Daniel Patterson";
       maintainer = "dbp@dbpmail.net";
@@ -22,7 +13,7 @@
       synopsis = "A functional web framework.";
       description = "Please see README.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "fn-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.text)
             (hsPkgs.http-types)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

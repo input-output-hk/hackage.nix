@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demo = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "happindicator3";
-        version = "0.2.1";
-      };
+      identifier = { name = "happindicator3"; version = "0.2.1"; };
       license = "LGPL-2.1-only";
       copyright = "";
       maintainer = "mlacorte365@gmail.com";
@@ -22,18 +13,12 @@
       synopsis = "Binding to the appindicator library.";
       description = "libappindicator is a library for setting up indicator\nitems and menus on indicator panels, as used in the\nUnity environment in Ubuntu. This binding allows\nlibappindicator to be used from Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.glib)
-          (hsPkgs.gtk3)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.appindicator3-0.1)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.glib) (hsPkgs.gtk3) ];
+        pkgconfig = [ (pkgconfPkgs.appindicator3-0.1) ];
+        };
       exes = {
         "demo" = {
           depends = [
@@ -41,8 +26,8 @@
             (hsPkgs.text)
             (hsPkgs.gtk3)
             (hsPkgs.happindicator3)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

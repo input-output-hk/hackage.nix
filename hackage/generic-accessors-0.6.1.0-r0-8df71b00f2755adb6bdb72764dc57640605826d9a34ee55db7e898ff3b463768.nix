@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "generic-accessors";
-        version = "0.6.1.0";
-      };
+      identifier = { name = "generic-accessors"; version = "0.6.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013-2015, Greg Horn";
       maintainer = "gregmainland@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "stringly-named getters for generic data";
       description = "Get a Tree or list of (String, Lens a X) pairs for use in plotting and data inspection";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.cereal)
           (hsPkgs.TypeCompose)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

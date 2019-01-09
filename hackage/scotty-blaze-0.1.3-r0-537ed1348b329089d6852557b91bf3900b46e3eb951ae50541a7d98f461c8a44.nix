@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "scotty-blaze";
-        version = "0.1.3";
-      };
+      identifier = { name = "scotty-blaze"; version = "0.1.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "will@casarin.me";
@@ -22,7 +13,7 @@
       synopsis = "blaze-html integration for Scotty";
       description = "blaze-html integration for Scotty";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.scotty)
           (hsPkgs.wai)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-links";
-        version = "0.2.1";
-      };
+      identifier = { name = "yesod-links"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@pbrisbin.com";
@@ -22,14 +13,10 @@
       synopsis = "A typeclass which simplifies creating link widgets throughout your site";
       description = "A yesod goody, yesod links";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.yesod-core)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.yesod-core) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wl-pprint-extras";
-        version = "3.4";
-      };
+      identifier = { name = "wl-pprint-extras"; version = "3.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011-2012 Edward A. Kmett,\nCopyright (C) 2000 Daan Leijen";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A free monad based on the Wadler/Leijen pretty printer";
       description = "A free monad based on the Wadler/Leijen pretty printer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.utf8-string)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

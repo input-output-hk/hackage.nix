@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "relational-postgresql8";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "relational-postgresql8"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 Shohei Murayama";
       maintainer = "shohei.murayama@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL v8.x driver for haskell-relational-record";
       description = "This package contains a driver of old PostgreSQL for haskell-relational-record.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.relational-query)
           (hsPkgs.relational-query-HDBC)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

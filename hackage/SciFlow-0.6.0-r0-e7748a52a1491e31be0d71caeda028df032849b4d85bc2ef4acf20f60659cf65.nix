@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { drmaa = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SciFlow";
-        version = "0.6.0";
-      };
+      identifier = { name = "SciFlow"; version = "0.6.0"; };
       license = "MIT";
       copyright = "(c) 2015-2017 Kai Zhang";
       maintainer = "kai@kzhang.org";
@@ -22,7 +13,7 @@
       synopsis = "Scientific workflow management system";
       description = "SciFlow is a DSL for building scientific workflows.\nWorkflows built with SciFlow can be run either on desktop\ncomputers or in grid computing environments that\nsupport DRMAA.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,7 +45,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           (hsPkgs.yaml)
-        ] ++ pkgs.lib.optional (flags.drmaa) (hsPkgs.drmaa);
+          ] ++ (pkgs.lib).optional (flags.drmaa) (hsPkgs.drmaa);
+        };
       };
-    };
-  }
+    }

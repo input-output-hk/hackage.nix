@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "nanoAgda";
-        version = "1.0.0";
-      };
+      identifier = { name = "nanoAgda"; version = "1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "jeanphilippe.bernardy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A toy dependently-typed language";
       description = "nanoAgda implements a type-checker for a toy dependently-typed\nlanguage.\nThe goal of the project is to provide a minimal type-checker\nwith dependent types that can be easily fiddled with.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "nanoAgda" = {
@@ -35,8 +26,8 @@
             (hsPkgs.BNFC-meta)
             (hsPkgs.transformers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

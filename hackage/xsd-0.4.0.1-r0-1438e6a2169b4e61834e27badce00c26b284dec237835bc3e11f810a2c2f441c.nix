@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xsd";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "xsd"; version = "0.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2010 Tony Morris, 2013 Stefan Wehr";
       maintainer = "Stefan Wehr <wehr@factisresearch.com>";
@@ -22,7 +13,7 @@
       synopsis = "XML Schema data structures";
       description = "XML Schema data structures (XSD)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

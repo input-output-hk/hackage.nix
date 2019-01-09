@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "stack-hpc-coveralls";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "stack-hpc-coveralls"; version = "0.0.2.0"; };
       license = "ISC";
       copyright = "Copyright (c) 2015 Michele Lacchia";
       maintainer = "michelelacchia@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.http-client)
           (hsPkgs.lens)
           (hsPkgs.lens-aeson)
-        ];
-      };
+          ];
+        };
       exes = {
         "shc" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.docopt)
             (hsPkgs.stack-hpc-coveralls)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "shc-test" = {
           depends = [
@@ -66,14 +57,9 @@
             (hsPkgs.deepseq)
             (hsPkgs.aeson)
             (hsPkgs.time)
-          ];
-        };
-        "style" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "style" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

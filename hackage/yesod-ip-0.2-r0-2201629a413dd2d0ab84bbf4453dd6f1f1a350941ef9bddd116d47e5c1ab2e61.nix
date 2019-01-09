@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-ip";
-        version = "0.2";
-      };
+      identifier = { name = "yesod-ip"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Code for using the ip package with yesod";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.yesod-form)
           (hsPkgs.persistent)
           (hsPkgs.ip)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

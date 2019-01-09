@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "anansi-pandoc";
-        version = "0.1";
-      };
+      identifier = { name = "anansi-pandoc"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "John Millikin <jmillikin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Looms which use Pandoc to parse and produce a variety of formats.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.pandoc)
           (hsPkgs.monads-tf)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

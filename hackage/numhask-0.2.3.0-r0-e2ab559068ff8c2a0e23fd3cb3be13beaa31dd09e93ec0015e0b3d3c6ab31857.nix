@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "numhask";
-        version = "0.2.3.0";
-      };
+      identifier = { name = "numhask"; version = "0.2.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "numeric classes";
       description = "A numeric class heirarchy.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

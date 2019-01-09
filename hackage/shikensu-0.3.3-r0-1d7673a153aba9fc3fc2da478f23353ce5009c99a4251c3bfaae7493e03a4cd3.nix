@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shikensu";
-        version = "0.3.3";
-      };
+      identifier = { name = "shikensu"; version = "0.3.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "icid.asset@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A small toolset for building static websites";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.Glob)
           (hsPkgs.unordered-containers)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

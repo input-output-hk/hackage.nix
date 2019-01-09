@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-postal";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "haskell-postal"; version = "0.2.1.0"; };
       license = "MIT";
       copyright = "2018 Fábián Tamás László";
       maintainer = "Fábián Tamás László <giganetom@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell binding for the libpostal library";
       description = "Provides an interface for the libpostal NLP library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,11 +21,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.inline-c)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.libpostal)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.libpostal) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,11 +32,9 @@
             (hsPkgs.text)
             (hsPkgs.inline-c)
             (hsPkgs.hspec)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.libpostal)
-          ];
+            ];
+          pkgconfig = [ (pkgconfPkgs.libpostal) ];
+          };
         };
       };
-    };
-  }
+    }

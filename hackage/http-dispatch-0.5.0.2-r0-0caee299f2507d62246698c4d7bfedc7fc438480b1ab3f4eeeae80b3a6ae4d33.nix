@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-dispatch";
-        version = "0.5.0.2";
-      };
+      identifier = { name = "http-dispatch"; version = "0.5.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Owain Lewis";
       maintainer = "owain@owainlewis.com";
@@ -22,7 +13,7 @@
       synopsis = "High level HTTP client for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.base64-bytestring)
           (hsPkgs.case-insensitive)
-        ];
-      };
+          ];
+        };
       tests = {
         "http-dispatch-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.http-dispatch)
             (hsPkgs.hspec)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

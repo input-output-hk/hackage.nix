@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "test-framework-hunit";
-        version = "0.2.2";
-      };
+      identifier = { name = "test-framework-hunit"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "batterseapower@hotmail.com";
@@ -22,13 +13,12 @@
       synopsis = "HUnit support for the test-framework package.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.test-framework)
-          (hsPkgs.HUnit)
-        ] ++ [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.test-framework) (hsPkgs.HUnit) ] ++ [
+          (hsPkgs.base)
+          ];
+        };
       };
-    };
-  }
+    }

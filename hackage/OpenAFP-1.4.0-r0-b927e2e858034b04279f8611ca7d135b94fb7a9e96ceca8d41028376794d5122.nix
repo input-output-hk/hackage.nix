@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "OpenAFP";
-        version = "1.4.0";
-      };
+      identifier = { name = "OpenAFP"; version = "1.4.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "audreyt@audreyt.org";
@@ -22,7 +13,7 @@
       synopsis = "IBM AFP document format parser and generator";
       description = "IBM AFP document format parser and generator";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.hashtables)
           (hsPkgs.hashable)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

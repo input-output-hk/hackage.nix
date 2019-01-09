@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskey-mtl";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haskey-mtl"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017, Henri Verroken, Steven Keuchel";
       maintainer = "steven.keuchel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A monad transformer supporting Haskey transactions.";
       description = "This library provides a monad transformer supporting Haskey transactions,\nwith default lifted instances for all mtl monad transformers.\n\nFor more information on how to use this package, visit\n<https://github.com/haskell-haskey/haskey-mtl>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.transformers)
           (hsPkgs.haskey-btree)
           (hsPkgs.haskey)
-        ];
-      };
+          ];
+        };
       tests = {
         "haskey-mtl-example" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

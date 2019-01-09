@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hjson";
-        version = "1.1";
-      };
+      identifier = { name = "hjson"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voker57@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON parsing library";
       description = "JSON parsing library with simple and sane API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.parsec)
           (hsPkgs.containers)
           (hsPkgs.safe)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

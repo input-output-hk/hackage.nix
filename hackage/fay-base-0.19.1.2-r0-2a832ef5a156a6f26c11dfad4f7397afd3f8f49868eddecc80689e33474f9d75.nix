@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fay-base";
-        version = "0.19.1.2";
-      };
+      identifier = { name = "fay-base"; version = "0.19.1.2"; };
       license = "BSD-3-Clause";
       copyright = "2012 Chris Done";
       maintainer = "adam@bergmark.nl";
@@ -22,13 +13,6 @@
       synopsis = "The base package for Fay.";
       description = "The base package for Fay.\nThis package amongst others exports Prelude and FFI which you probably want to use with Fay.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.fay)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.fay) ]; }; };
+    }

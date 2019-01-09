@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-middleware-catch";
-        version = "0.3.6";
-      };
+      identifier = { name = "wai-middleware-catch"; version = "0.3.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "aka.spin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wai error catching middleware";
       description = "Error handling middleware for 'Wai'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.lifted-base)
           (hsPkgs.http-types)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

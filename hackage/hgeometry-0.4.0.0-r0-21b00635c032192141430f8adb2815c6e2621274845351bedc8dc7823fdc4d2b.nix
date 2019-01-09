@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hgeometry";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "hgeometry"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "f.staals@uu.nl";
@@ -22,7 +13,7 @@
       synopsis = "Data types for geometric objects, geometric algorithms, and data  structures.";
       description = "HGeometry provides some basic geometry types, and geometric algorithms and\ndata structures for them. The main two focusses are: (1) Strong type safety,\nand (2) implementations of geometric algorithms and data structures with good\nasymptotic running time guarantees.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,15 +37,10 @@
           (hsPkgs.hexpat)
           (hsPkgs.mtl)
           (hsPkgs.random)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "bapc_examples" = {
           depends = [
             (hsPkgs.base)
@@ -64,8 +50,8 @@
             (hsPkgs.lens)
             (hsPkgs.data-clist)
             (hsPkgs.linear)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

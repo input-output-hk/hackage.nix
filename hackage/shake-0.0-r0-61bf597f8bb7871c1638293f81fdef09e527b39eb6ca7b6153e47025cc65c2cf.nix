@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { testprog = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "shake";
-        version = "0.0";
-      };
+      identifier = { name = "shake"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2011";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Build system creator";
       description = "Write build systems. NOT READY FOR USE YET. DO NOT USE THIS PACKAGE.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.parallel-io)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = { "shake" = {}; };
-    };
-  }
+      };
+    }

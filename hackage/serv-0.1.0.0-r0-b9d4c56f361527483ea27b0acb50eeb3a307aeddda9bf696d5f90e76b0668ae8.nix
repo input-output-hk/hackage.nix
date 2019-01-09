@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "serv";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "serv"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Joseph Abrahamson";
       maintainer = "me@jspha.com";
@@ -22,7 +13,7 @@
       synopsis = "Dependently typed API server framework";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       exes = {
         "test-server" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "serv-test" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

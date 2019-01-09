@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "amqp";
-        version = "0.18.0";
-      };
+      identifier = { name = "amqp"; version = "0.18.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Holger Reinhardt <hreinhardt@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Client library for AMQP servers (currently only RabbitMQ)";
       description = "Client library for AMQP servers (currently only RabbitMQ)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,22 +29,15 @@
           (hsPkgs.connection)
           (hsPkgs.vector)
           (hsPkgs.stm)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       exes = {
         "amqp-builder" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.xml)
-            (hsPkgs.containers)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.xml) (hsPkgs.containers) ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -70,13 +54,10 @@
             (hsPkgs.connection)
             (hsPkgs.vector)
             (hsPkgs.stm)
-          ] ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
+            ] ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
             else [ (hsPkgs.network) ]);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "concurrency-benchmarks";
-        version = "0.1.1";
-      };
+      identifier = { name = "concurrency-benchmarks"; version = "0.1.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2018 Harendra Kumar";
       maintainer = "Harendra Kumar";
@@ -22,7 +13,7 @@
       synopsis = "Benchmarks to compare concurrency APIs";
       description = "Benchmarks to compare the pure concurrency overhead of various flavors of\nconcurrent @streamly@ streams and the @async@ package.\n\nUse @cabal new-bench@ or @stack bench@ to run the benchmarks. To generate\ncharts, run the benchmarks with @--csv-raw=results.csv@ option and then run\n@makecharts results.csv@. Charts are generated in the @charts@ directory.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "makecharts" = {
@@ -39,9 +30,9 @@
             (hsPkgs.transformers)
             (hsPkgs.typed-process)
             (hsPkgs.getopt-generics)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.async)
             (hsPkgs.random)
             (hsPkgs.streamly)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

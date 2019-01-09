@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty-discover";
-        version = "1.0.0";
-      };
+      identifier = { name = "tasty-discover"; version = "1.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2016 Luke Murphy";
       maintainer = "Luke Murphy <lukewm@riseup.net>";
@@ -22,7 +13,7 @@
       synopsis = "Automatically discover and run Tasty framework tests.";
       description = "Automatically discover and run Tasty framework tests.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.tasty-hunit)
           (hsPkgs.tasty-quickcheck)
           (hsPkgs.tasty-hspec)
-        ];
-      };
+          ];
+        };
       exes = {
         "tasty-discover" = {
           depends = [
@@ -44,16 +35,11 @@
             (hsPkgs.directory)
             (hsPkgs.tasty-discover)
             (hsPkgs.tasty-th)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "unit-tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tasty-discover)
-          ];
+        "unit-tests" = { depends = [ (hsPkgs.base) (hsPkgs.tasty-discover) ]; };
         };
       };
-    };
-  }
+    }

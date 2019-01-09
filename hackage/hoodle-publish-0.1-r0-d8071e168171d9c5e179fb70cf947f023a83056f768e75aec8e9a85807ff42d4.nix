@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoodle-publish";
-        version = "0.1";
-      };
+      identifier = { name = "hoodle-publish"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "publish hoodle files as a static web site";
       description = "This package provieds a simple tool hoodle-publish which make a static web site from a directory containing hoodle files";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hoodle-publish" = {
@@ -52,8 +43,8 @@
             (hsPkgs.hoodle-types)
             (hsPkgs.hoodle-parser)
             (hsPkgs.hoodle-render)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

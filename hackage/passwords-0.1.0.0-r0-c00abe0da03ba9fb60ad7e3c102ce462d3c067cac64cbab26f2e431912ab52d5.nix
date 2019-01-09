@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "passwords";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "passwords"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "maxim.kulkin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Password generation/validation functions";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.random)
           (hsPkgs.MonadRandom)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "debian";
-        version = "3.33";
-      };
+      identifier = { name = "debian"; version = "3.33"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "david@seereason.com";
@@ -22,7 +13,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering some basic data types defined by\nthe Debian policy manual - version numbers, control file syntax, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.HaXml)
           (hsPkgs.Unixutils)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "fakechanges" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.HaXml)
             (hsPkgs.Unixutils)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "debian-report" = {
           depends = [
             (hsPkgs.base)
@@ -95,8 +86,8 @@
             (hsPkgs.HaXml)
             (hsPkgs.Unixutils)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "cabal-debian" = {
           depends = [
             (hsPkgs.base)
@@ -120,8 +111,8 @@
             (hsPkgs.Unixutils)
             (hsPkgs.zlib)
             (hsPkgs.Cabal)
-          ];
-        };
+            ];
+          };
         "apt-get-build-depends" = {
           depends = [
             (hsPkgs.base)
@@ -144,8 +135,8 @@
             (hsPkgs.HaXml)
             (hsPkgs.Unixutils)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

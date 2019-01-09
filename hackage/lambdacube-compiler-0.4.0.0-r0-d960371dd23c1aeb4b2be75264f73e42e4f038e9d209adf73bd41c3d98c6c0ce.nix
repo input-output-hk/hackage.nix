@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      onlytestsuite = false;
-      profiling = false;
-      coverage = false;
-    };
+    flags = { onlytestsuite = false; profiling = false; coverage = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambdacube-compiler";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "lambdacube-compiler"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "csaba.hruska@gmail.com";
@@ -26,7 +13,7 @@
       synopsis = "LambdaCube 3D is a DSL to program GPUs";
       description = "LambdaCube 3D is a domain specific language and library that makes it\npossible to program GPUs in a purely functional style.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +31,8 @@
           (hsPkgs.text)
           (hsPkgs.lambdacube-ir)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "lambdacube-compiler-unit-tests" = {
           depends = [
@@ -56,8 +43,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
-        };
+            ];
+          };
         "lambdacube-compiler-test-suite" = {
           depends = [
             (hsPkgs.aeson)
@@ -79,8 +66,8 @@
             (hsPkgs.time)
             (hsPkgs.lambdacube-ir)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "lc" = {
           depends = [
             (hsPkgs.base)
@@ -89,8 +76,8 @@
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "lambdacube-compiler-coverage-test-suite" = {
           depends = [
             (hsPkgs.aeson)
@@ -111,8 +98,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ramus";
-        version = "0.1.2";
-      };
+      identifier = { name = "ramus"; version = "0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Nikita Tchayka";
@@ -22,11 +13,9 @@
       synopsis = "Elm signal system for Haskell";
       description = "Ramus is a direct port of purescript-signal into Haskell, offering the Elm signal system for Haskell.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "ramus-test-suite" = {
           depends = [
@@ -35,17 +24,13 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-io)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "ramus-benchmarks" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ramus)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.ramus) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

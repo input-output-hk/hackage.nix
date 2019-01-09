@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "pony";
-        version = "1.0";
-      };
+      identifier = { name = "pony"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dons@galois.com";
@@ -22,12 +13,8 @@
       synopsis = "Can I have a pony?";
       description = "You can have a pony!";
       buildType = "Simple";
-    };
-    components = {
-      exes = {
-        "can-i-have-a-pony" = {
-          depends = [ (hsPkgs.base) ];
-        };
       };
-    };
-  }
+    components = {
+      exes = { "can-i-have-a-pony" = { depends = [ (hsPkgs.base) ]; }; };
+      };
+    }

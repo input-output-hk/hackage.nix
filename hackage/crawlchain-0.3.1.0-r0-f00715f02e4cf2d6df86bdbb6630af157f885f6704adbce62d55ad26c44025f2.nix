@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "crawlchain";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "crawlchain"; version = "0.3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "7a3ggptwts@snkmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simulation user crawl paths";
       description = "Library for simulating user crawl paths (trees) with selectors - takes an initial action and a chain of processing actions to crawl a tree (lazy, depth first) searching for a matching branch.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.tagsoup)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "http-tests" = {
           depends = [
@@ -50,16 +41,16 @@
             (hsPkgs.split)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "html-tests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.crawlchain)
             (hsPkgs.split)
             (hsPkgs.tagsoup)
-          ];
-        };
+            ];
+          };
         "crawling-tests" = {
           depends = [
             (hsPkgs.base)
@@ -73,8 +64,8 @@
             (hsPkgs.time)
             (hsPkgs.tagsoup)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

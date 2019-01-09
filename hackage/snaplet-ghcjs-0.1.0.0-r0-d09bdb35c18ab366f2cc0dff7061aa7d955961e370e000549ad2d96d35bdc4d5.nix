@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snaplet-ghcjs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "snaplet-ghcjs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "a.johncant@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Serve javascript files compiled with GHCJS";
       description = "Dynamically compile Haskell with GHCJS and serve it as JavaScript.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.filepath)
           (hsPkgs.process)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

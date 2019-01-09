@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "comonad-transformers";
-        version = "0.7.0";
-      };
+      identifier = { name = "comonad-transformers"; version = "0.7.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell 98 comonad transformers";
       description = "Haskell 98 comonad transformers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.prelude-extras)
           (hsPkgs.syb-extras)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.syb-extras);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs.syb-extras);
+        };
       };
-    };
-  }
+    }

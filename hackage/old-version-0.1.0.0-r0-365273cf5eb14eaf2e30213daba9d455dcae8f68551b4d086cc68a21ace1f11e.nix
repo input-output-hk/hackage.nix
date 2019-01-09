@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "old-version";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "old-version"; version = "0.1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "See LICENSE file";
       maintainer = "chris@code.sc";
@@ -22,10 +13,6 @@
       synopsis = "A general library for representation and manipulation of versions.";
       description = "Basic versioning library.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

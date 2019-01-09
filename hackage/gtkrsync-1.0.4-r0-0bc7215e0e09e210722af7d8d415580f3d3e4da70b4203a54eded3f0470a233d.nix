@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "gtkrsync";
-        version = "1.0.4";
-      };
+      identifier = { name = "gtkrsync"; version = "1.0.4"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2007-2010 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,7 +13,7 @@
       synopsis = "Gnome rsync progress display";
       description = "gtkrsync is a simple GUI that displays a running status display\nbuilt from rsync.  This status display includes a per-file and overall status\nbar, overall estimated time to completion, and an expandable button that shows\nall rsync status output.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "gtkrsync" = {
@@ -35,8 +26,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.MissingH)
             (hsPkgs.process)
-          ];
-        };
+            ];
+          };
         "gtkrsyncp" = {
           depends = [
             (hsPkgs.base)
@@ -47,8 +38,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.MissingH)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

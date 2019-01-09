@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "postgresql-common-persistent";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +16,7 @@
       synopsis = "Persistent compatibility for postgresql-common";
       description = "Please see the README on GitHub at <https://github.com/iand675/postgresql-common-persistent#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +25,8 @@
           (hsPkgs.persistent)
           (hsPkgs.postgresql-common)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "postgresql-common-persistent-test" = {
           depends = [
@@ -42,8 +36,8 @@
             (hsPkgs.postgresql-common)
             (hsPkgs.postgresql-common-persistent)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

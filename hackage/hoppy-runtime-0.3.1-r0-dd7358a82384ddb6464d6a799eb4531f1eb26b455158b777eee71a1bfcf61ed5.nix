@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hoppy-runtime";
-        version = "0.3.1";
-      };
+      identifier = { name = "hoppy-runtime"; version = "0.3.1"; };
       license = "Apache-2.0";
       copyright = "Copyright 2015-2017 Bryan Gardiner";
       maintainer = "Bryan Gardiner <bog@khumba.net>";
@@ -22,7 +13,7 @@
       synopsis = "C++ FFI generator - Runtime support";
       description = "Hoppy generates Haskell bindings to C++ libraries.\n\nThis package provides common runtime functionality used by generated\nbindings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

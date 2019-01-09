@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "preprocess-haskell";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "preprocess-haskell"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ben@benjaminsummers.net";
@@ -22,7 +13,7 @@
       synopsis = "Preprocess Haskell Repositories.";
       description = "Do all of the dirty work required to get a Haskell repo\nready for straightforward static-analysis.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.directory)
           (hsPkgs.here)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

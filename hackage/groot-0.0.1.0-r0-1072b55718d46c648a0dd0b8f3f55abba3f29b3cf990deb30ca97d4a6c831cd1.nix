@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "groot";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "groot"; version = "0.0.1.0"; };
       license = "Apache-2.0";
       copyright = "2017 A. Alonso Dominguez";
       maintainer = "alonso.domin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Command line utility to manage AWS ECS resources";
       description = "`groot` is a command line application with the purpose of remote managing AWS ECS Clusters and their associated resources (Tasks, Instances, Services, etc.)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -68,8 +59,8 @@
           (hsPkgs.uuid)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "groot" = {
           depends = [
@@ -109,9 +100,9 @@
             (hsPkgs.uuid)
             (hsPkgs.vector)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "groot-test" = {
           depends = [
@@ -155,8 +146,8 @@
             (hsPkgs.uuid)
             (hsPkgs.vector)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

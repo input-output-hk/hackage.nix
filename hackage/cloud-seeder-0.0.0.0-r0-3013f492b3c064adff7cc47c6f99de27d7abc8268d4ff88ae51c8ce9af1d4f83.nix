@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cloud-seeder";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "cloud-seeder"; version = "0.0.0.0"; };
       license = "ISC";
       copyright = "2017 CJ Affiliate by Conversant";
       maintainer = "Alexis King <lexi.lambda@gmail.com>, Michael Arnold <michaelaarnold@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A tool for interacting with AWS CloudFormation";
       description = "This package provides a DSL for creating deployment configurations, as well\nas an interpreter that reads deployment configurations in order to deploy\napplication stacks to AWS CloudFormation using Amazonka.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,16 +32,11 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
-      exes = {
-        "cloud-seeder" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cloud-seeder)
           ];
         };
-      };
+      exes = {
+        "cloud-seeder" = { depends = [ (hsPkgs.base) (hsPkgs.cloud-seeder) ]; };
+        };
       tests = {
         "cloud-seeder-test-suite" = {
           depends = [
@@ -66,8 +52,8 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

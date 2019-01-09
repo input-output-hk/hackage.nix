@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hashable";
-        version = "1.1.2.2";
-      };
+      identifier = { name = "hashable"; version = "1.1.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johan.tibell@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A class for types that can be converted to a hash value";
       description = "This package defines a class, 'Hashable', for types that\ncan be converted to a hash value.  This class\nexists for the benefit of hashing-based data\nstructures.  The package provides instances for\nbasic types and a way to combine hash values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.ghc-prim)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

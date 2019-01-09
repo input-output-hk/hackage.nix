@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nicovideo-translator";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "nicovideo-translator"; version = "0.2.0.0"; };
       license = "AGPL-3.0-only";
       copyright = "(c) 2015–2016 Hong Minhee";
       maintainer = "hong.minhee@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Nico Nico Douga (ニコニコ動画) Comment Translator";
       description = "Translate comments (written in Japanese) on\nNico Nico Douga (ニコニコ動画) to your language.\n\nSee also README.md for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,15 +38,12 @@
           (hsPkgs.warp)
           (hsPkgs.wreq)
           (hsPkgs.xml-conduit)
-        ];
-      };
-      exes = {
-        "nicovideo-translator" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.nicovideo-translator)
           ];
         };
+      exes = {
+        "nicovideo-translator" = {
+          depends = [ (hsPkgs.base) (hsPkgs.nicovideo-translator) ];
+          };
+        };
       };
-    };
-  }
+    }

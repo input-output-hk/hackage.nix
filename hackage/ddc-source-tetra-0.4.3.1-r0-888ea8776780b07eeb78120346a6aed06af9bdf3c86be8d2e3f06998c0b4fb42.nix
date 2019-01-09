@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddc-source-tetra";
-        version = "0.4.3.1";
-      };
+      identifier = { name = "ddc-source-tetra"; version = "0.4.3.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Disciplined Disciple Compiler source language.";
       description = "Disciplined Disciple Compiler Tetra source language.\nDisciple Tetra is the main source language of DDC.\nThe word Tetra refers to the four base kinds:\n'Data', 'Region', 'Effect' and 'Witness'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.ddc-core)
           (hsPkgs.ddc-core-salt)
           (hsPkgs.ddc-core-tetra)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

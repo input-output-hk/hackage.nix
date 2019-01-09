@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       small_base = true;
@@ -12,13 +6,10 @@
       contravariant = true;
       distributive = true;
       comonad = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "semigroupoids-syntax";
-        version = "0.0.1";
-      };
+      identifier = { name = "semigroupoids-syntax"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 NICTA Limited";
       maintainer = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ> <dibblego>";
@@ -28,7 +19,7 @@
       synopsis = "RebindableSyntax using the semigroupoids package";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\nRebindableSyntax using the semigroupoids package";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -36,8 +27,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
           (hsPkgs.semigroupoids)
-        ] ++ pkgs.lib.optional (flags.containers) (hsPkgs.containers)) ++ pkgs.lib.optional (flags.contravariant) (hsPkgs.contravariant)) ++ pkgs.lib.optional (flags.distributive) (hsPkgs.distributive)) ++ pkgs.lib.optional (flags.comonad) (hsPkgs.comonad);
-      };
+          ] ++ (pkgs.lib).optional (flags.containers) (hsPkgs.containers)) ++ (pkgs.lib).optional (flags.contravariant) (hsPkgs.contravariant)) ++ (pkgs.lib).optional (flags.distributive) (hsPkgs.distributive)) ++ (pkgs.lib).optional (flags.comonad) (hsPkgs.comonad);
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

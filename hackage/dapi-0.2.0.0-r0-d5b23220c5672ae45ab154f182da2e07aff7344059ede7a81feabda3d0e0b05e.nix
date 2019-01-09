@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "dapi";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "dapi"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2013 Omari Norman";
       maintainer = "omari@smileystation.com";
@@ -22,7 +13,7 @@
       synopsis = "Prints a series of dates";
       description = "dapi prints a series of dates to the console. You can filter the\ndates based on multiple criteria, such as day of the week, day,\nmonth, and more. Slightly more information is at the homepage link\ngiven below.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dapi" = {
@@ -38,8 +29,8 @@
             (hsPkgs.multiarg)
             (hsPkgs.old-locale)
             (hsPkgs.rainbow)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

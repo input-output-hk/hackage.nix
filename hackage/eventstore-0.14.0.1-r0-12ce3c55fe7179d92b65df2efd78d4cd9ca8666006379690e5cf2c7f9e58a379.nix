@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eventstore";
-        version = "0.14.0.1";
-      };
+      identifier = { name = "eventstore"; version = "0.14.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yo.eight@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "EventStore TCP Client";
       description = "EventStore TCP Client <http://geteventstore.com>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.connection)
           (hsPkgs.classy-prelude)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "integration-tests" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.connection)
             (hsPkgs.classy-prelude)
             (hsPkgs.uuid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

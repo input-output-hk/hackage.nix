@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-example = false;
-    };
+    flags = { build-example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-extra";
-        version = "3.0.22.0";
-      };
+      identifier = { name = "wai-extra"; version = "3.0.22.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -24,7 +13,7 @@
       synopsis = "Provides some basic WAI handlers and middleware.";
       description = "Provides basic WAI handler and middleware functionality:\n\n* WAI Testing Framework\n\nHspec testing facilities and helpers for WAI.\n\n* Event Source/Event Stream\n\nSend server events to the client. Compatible with the JavaScript\nEventSource API.\n\n* Accept Override\n\nOverride the Accept header in a request. Special handling for the\n_accept query parameter (which is used throughout WAI override the\nAccept header).\n\n* Add Headers\n\nWAI Middleware for adding arbitrary headers to an HTTP request.\n\n* Clean Path\n\nClean a request path to a canonical form.\n\n* GZip Compression\n\nNegotiate HTTP payload gzip compression.\n\n* HTTP Basic Authentication\n\nWAI Basic Authentication Middleware which uses Authorization header.\n\n* JSONP\n\n\\\"JSON with Padding\\\" middleware. Automatic wrapping of JSON\nresponses to convert into JSONP.\n\n* Method Override / Post\n\nAllows overriding of the HTTP request method via the _method query string\nparameter.\n\n* Request Logging\n\nRequest logging middleware for development and production environments\n\n* Request Rewrite\n\nRewrite request path info based on a custom conversion rules.\n\n* Stream Files\n\nConvert ResponseFile type responses into ResponseStream type.\n\n* Virtual Host\n\nRedirect incoming requests to a new host based on custom rules.\n\n\nAPI docs and the README are available at <http://www.stackage.org/package/wai-extra>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -59,11 +48,11 @@
           (hsPkgs.zlib)
           (hsPkgs.aeson)
           (hsPkgs.iproute)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "example" = {
-          depends = pkgs.lib.optionals (flags.build-example) [
+          depends = (pkgs.lib).optionals (flags.build-example) [
             (hsPkgs.base)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
@@ -71,9 +60,9 @@
             (hsPkgs.time)
             (hsPkgs.http-types)
             (hsPkgs.blaze-builder)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -93,8 +82,8 @@
             (hsPkgs.cookie)
             (hsPkgs.time)
             (hsPkgs.case-insensitive)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

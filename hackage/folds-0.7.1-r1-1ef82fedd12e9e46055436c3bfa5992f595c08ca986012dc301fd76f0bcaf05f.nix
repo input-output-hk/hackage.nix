@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-doctests = true;
-      test-hlint = true;
-      optimize = true;
-    };
+    flags = { test-doctests = true; test-hlint = true; optimize = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "folds";
-        version = "0.7.1";
-      };
+      identifier = { name = "folds"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2009-2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -26,7 +13,7 @@
       synopsis = "Beautiful Folding";
       description = "This package is a playground full of comonadic folds.\n\nThis style of fold is documented in <https://www.fpcomplete.com/user/edwardk/cellular-automata/part-2 \"Cellular Automata, Part II: PNGs and Moore\">\n\nThis package can be seen as what happens if you chase Max Rabkin's <http://squing.blogspot.com/2008/11/beautiful-folding.html \"Beautiful Folding\"> to its logical conclusion.\n\nMore information on this approach can be found in the <http://conal.net/blog/posts/another-lovely-example-of-type-class-morphisms \"Another lovely example of type class morphisms\"> and <http://conal.net/blog/posts/more-beautiful-fold-zipping \"More beautiful fold zipping\"> posts by Conal Elliott, as well as in Gabriel Gonzales' <http://www.haskellforall.com/2013/08/composable-streaming-folds.html \"Composable Streaming Folds\">";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -47,17 +34,17 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.tagged)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.11") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs.tagged)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.11") (hsPkgs.semigroups);
+        };
       tests = {
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests || compiler.isGhc && (compiler.version).ge "8")) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
@@ -66,8 +53,8 @@
             (hsPkgs.filepath)
             (hsPkgs.mtl)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

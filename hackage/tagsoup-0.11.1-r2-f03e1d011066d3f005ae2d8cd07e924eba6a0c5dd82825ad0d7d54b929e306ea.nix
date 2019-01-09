@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      testprog = false;
-      download = true;
-    };
+    flags = { testprog = false; download = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tagsoup";
-        version = "0.11.1";
-      };
+      identifier = { name = "tagsoup"; version = "0.11.1"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2006-2010";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Parsing and extracting information from (possibly malformed) HTML/XML documents";
       description = "TagSoup is a library for parsing HTML/XML. It supports the HTML 5 specification,\nand can be used to parse either well-formed XML, or unstructured and malformed HTML\nfrom the web. The library also provides useful functions to extract information\nfrom an HTML document, making it ideal for screen-scraping.\n\nUsers should start from the \"Text.HTML.TagSoup\" module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,17 +21,17 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
-        ] ++ pkgs.lib.optional (flags.download) (hsPkgs.network);
-      };
+          ] ++ (pkgs.lib).optional (flags.download) (hsPkgs.network);
+        };
       exes = {
         "tagsoup" = {
-          depends = pkgs.lib.optionals (flags.testprog) [
+          depends = (pkgs.lib).optionals (flags.testprog) [
             (hsPkgs.QuickCheck)
             (hsPkgs.time)
             (hsPkgs.deepseq)
             (hsPkgs.HTTP)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

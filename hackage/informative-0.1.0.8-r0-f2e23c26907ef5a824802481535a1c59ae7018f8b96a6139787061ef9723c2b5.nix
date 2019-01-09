@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "informative";
-        version = "0.1.0.8";
-      };
+      identifier = { name = "informative"; version = "0.1.0.8"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "m@doomanddarkness.eu";
@@ -22,7 +13,7 @@
       synopsis = "A yesod subsite serving a wiki.";
       description = "A yesod subsite serving a wiki.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.yesod-form)
           (hsPkgs.highlighting-kate)
           (hsPkgs.time-locale-compat)
-        ];
-      };
+          ];
+        };
       exes = {
         "informative-test" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.yesod-form)
             (hsPkgs.highlighting-kate)
             (hsPkgs.time-locale-compat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

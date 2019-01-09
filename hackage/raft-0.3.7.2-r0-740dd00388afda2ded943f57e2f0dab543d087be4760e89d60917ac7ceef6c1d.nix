@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { minimal = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "raft";
-        version = "0.3.7.2";
-      };
+      identifier = { name = "raft"; version = "0.3.7.2"; };
       license = "MIT";
       copyright = "(c) 2005-16 Brian W Bush";
       maintainer = "Brian W Bush <consult@brianwbush.info>";
@@ -22,7 +13,7 @@
       synopsis = "Miscellaneous Haskell utilities for data structures and data manipulation.";
       description = "This Haskell library contains miscellaneous data structures and data manipulation functions for general uses.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,13 +28,13 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.tostring)
-        ] ++ pkgs.lib.optionals (!flags.minimal) [
+          ] ++ (pkgs.lib).optionals (!flags.minimal) [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.parallel)
           (hsPkgs.scientific)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

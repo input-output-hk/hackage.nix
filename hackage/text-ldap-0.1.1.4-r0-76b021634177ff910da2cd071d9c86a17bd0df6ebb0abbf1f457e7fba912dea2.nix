@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "text-ldap";
-        version = "0.1.1.4";
-      };
+      identifier = { name = "text-ldap"; version = "0.1.1.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parser and Printer for LDAP text data stream";
       description = "This package contains Parser and Printer for\nLDAP text data stream like OpenLDAP backup LDIF.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,24 +25,16 @@
           (hsPkgs.dlist)
           (hsPkgs.semigroups)
           (hsPkgs.base64-bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "parseTest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.text-ldap)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text-ldap) ];
+          };
         "ppTest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.text-ldap)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text-ldap) ];
+          };
         };
-      };
       tests = {
         "pp" = {
           depends = [
@@ -63,8 +46,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.Cabal)
             (hsPkgs.cabal-test-compat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

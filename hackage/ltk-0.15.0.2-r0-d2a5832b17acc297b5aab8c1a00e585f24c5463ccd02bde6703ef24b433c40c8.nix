@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ltk";
-        version = "0.15.0.2";
-      };
+      identifier = { name = "ltk"; version = "0.15.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "Juergen \"jutaro\" Nicklisch-Franken";
       maintainer = "maintainer@leksah.org";
@@ -22,7 +13,7 @@
       synopsis = "Leksah tool kit";
       description = "UI Framework used by leksah";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.transformers)
           (hsPkgs.ghc)
           (hsPkgs.gtk3)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-easy";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "aws-easy"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2018 Richard Cook";
       maintainer = "rcook@rcook.org";
@@ -22,7 +13,7 @@
       synopsis = "Helper function and types for working with amazonka";
       description = "This package provides assorted functions and some Template Haskell to simplify working the @amazonka@ family of packages for interacting with Amazon Web Services.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.lens)
           (hsPkgs.resourcet)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "aws-easy-demo" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.split)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

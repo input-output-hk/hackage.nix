@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-client";
-        version = "0.5.5";
-      };
+      identifier = { name = "http-client"; version = "0.5.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "An HTTP client engine";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/http-client>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,13 +37,10 @@
           (hsPkgs.filepath)
           (hsPkgs.mime-types)
           (hsPkgs.ghc-prim)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-uri)
-          ]
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network) (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       tests = {
         "spec" = {
           depends = [
@@ -74,8 +62,8 @@
             (hsPkgs.zlib)
             (hsPkgs.async)
             (hsPkgs.streaming-commons)
-          ];
-        };
+            ];
+          };
         "spec-nonet" = {
           depends = [
             (hsPkgs.base)
@@ -98,8 +86,8 @@
             (hsPkgs.async)
             (hsPkgs.streaming-commons)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

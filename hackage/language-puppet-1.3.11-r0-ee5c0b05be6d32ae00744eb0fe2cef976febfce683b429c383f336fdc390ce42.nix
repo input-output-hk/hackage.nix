@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-puppet";
-        version = "1.3.11";
-      };
+      identifier = { name = "language-puppet"; version = "1.3.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools to parse and evaluate the Puppet DSL.";
       description = "This is a set of tools that is supposed to fill all your Puppet needs : syntax checks, catalog compilation, PuppetDB queries, simulationg of complex interactions between nodes, Puppet master replacement, and more !";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -70,8 +61,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "puppetresources" = {
           depends = [
@@ -95,8 +86,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "yera" = {
           depends = [
             (hsPkgs.base)
@@ -106,8 +97,8 @@
             (hsPkgs.strict-base-types)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "pdbquery" = {
           depends = [
             (hsPkgs.base)
@@ -125,9 +116,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-evals" = {
           depends = [
@@ -137,8 +128,8 @@
             (hsPkgs.lens)
             (hsPkgs.megaparsec)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "test-lexer" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -149,8 +140,8 @@
             (hsPkgs.vector)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "test-expr" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -162,8 +153,8 @@
             (hsPkgs.strict-base-types)
             (hsPkgs.hspec)
             (hsPkgs.hspec-megaparsec)
-          ];
-        };
+            ];
+          };
         "test-hiera" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -177,8 +168,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
             (hsPkgs.hslogger)
-          ];
-        };
+            ];
+          };
         "test-puppetdb" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -189,8 +180,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.mtl)
-          ];
-        };
+            ];
+          };
         "erbparser" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -198,8 +189,8 @@
             (hsPkgs.strict-base-types)
             (hsPkgs.lens)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -214,8 +205,8 @@
             (hsPkgs.scientific)
             (hsPkgs.mtl)
             (hsPkgs.hspec-megaparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

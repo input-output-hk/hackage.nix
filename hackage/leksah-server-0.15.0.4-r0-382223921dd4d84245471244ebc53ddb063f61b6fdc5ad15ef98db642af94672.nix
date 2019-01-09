@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      threaded = true;
-      network-uri = true;
-    };
+    flags = { threaded = true; network-uri = true; };
     package = {
       specVersion = "1.10.2";
-      identifier = {
-        name = "leksah-server";
-        version = "0.15.0.4";
-      };
+      identifier = { name = "leksah-server"; version = "0.15.0.4"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2011 Juergen Nicklisch-Franken, Hamish Mackenzie";
       maintainer = "maintainer@leksah.org";
@@ -25,7 +13,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -54,36 +42,29 @@
           (hsPkgs.strict)
           (hsPkgs.text)
           (hsPkgs.HTTP)
-        ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
+          ] ++ (if compiler.isGhc && (compiler.version).ge "7.10"
           then [
             (hsPkgs.haddock-api)
             (hsPkgs.haddock-library)
             (hsPkgs.bin-package-db)
-          ]
-          else if compiler.isGhc && compiler.version.ge "7.8"
+            ]
+          else if compiler.isGhc && (compiler.version).ge "7.8"
             then [ (hsPkgs.haddock-api) ]
             else [
               (hsPkgs.haddock)
-            ])) ++ (if compiler.isGhc && compiler.version.ge "7.2"
+              ])) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
           then [ (hsPkgs.process) ]
-          else [
-            (hsPkgs.process-leksah)
-          ])) ++ (if system.isWindows
+          else [ (hsPkgs.process-leksah) ])) ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
-          else [
-            (hsPkgs.unix)
-          ])) ++ (if flags.network-uri
-          then [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]
+          else [ (hsPkgs.unix) ])) ++ (if flags.network-uri
+          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
           else [ (hsPkgs.network) ]);
-        libs = pkgs.lib.optionals (system.isWindows) [
+        libs = (pkgs.lib).optionals (system.isWindows) [
           (pkgs."kernel32")
           (pkgs."pango-1.0")
           (pkgs."glib-2.0")
-        ];
-      };
+          ];
+        };
       exes = {
         "leksah-server" = {
           depends = ((([
@@ -112,36 +93,29 @@
             (hsPkgs.strict)
             (hsPkgs.text)
             (hsPkgs.HTTP)
-          ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
+            ] ++ (if compiler.isGhc && (compiler.version).ge "7.10"
             then [
               (hsPkgs.haddock-api)
               (hsPkgs.haddock-library)
               (hsPkgs.bin-package-db)
-            ]
-            else if compiler.isGhc && compiler.version.ge "7.8"
+              ]
+            else if compiler.isGhc && (compiler.version).ge "7.8"
               then [ (hsPkgs.haddock-api) ]
               else [
                 (hsPkgs.haddock)
-              ])) ++ (if compiler.isGhc && compiler.version.ge "7.2"
+                ])) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
             then [ (hsPkgs.process) ]
-            else [
-              (hsPkgs.process-leksah)
-            ])) ++ (if system.isWindows
+            else [ (hsPkgs.process-leksah) ])) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
-            else [
-              (hsPkgs.unix)
-            ])) ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
+            else [ (hsPkgs.unix) ])) ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
             else [ (hsPkgs.network) ]);
-          libs = pkgs.lib.optionals (system.isWindows) [
+          libs = (pkgs.lib).optionals (system.isWindows) [
             (pkgs."kernel32")
             (pkgs."pango-1.0")
             (pkgs."glib-2.0")
-          ];
-        };
+            ];
+          };
         "leksahecho" = {
           depends = [
             (hsPkgs.base)
@@ -155,16 +129,12 @@
             (hsPkgs.attoparsec)
             (hsPkgs.transformers)
             (hsPkgs.text)
-          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
+            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
             then [ (hsPkgs.process) ]
-            else [
-              (hsPkgs.process-leksah)
-            ]);
+            else [ (hsPkgs.process-leksah) ]);
+          };
+        "leksahtrue" = { depends = [ (hsPkgs.base) ]; };
         };
-        "leksahtrue" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
       tests = {
         "test-tool" = {
           depends = [
@@ -176,12 +146,10 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.resourcet)
-          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
+            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
             then [ (hsPkgs.process) ]
-            else [
-              (hsPkgs.process-leksah)
-            ]);
+            else [ (hsPkgs.process-leksah) ]);
+          };
         };
       };
-    };
-  }
+    }

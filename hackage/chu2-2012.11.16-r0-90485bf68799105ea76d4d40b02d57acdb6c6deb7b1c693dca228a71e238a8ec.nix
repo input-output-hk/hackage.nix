@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "chu2";
-        version = "2012.11.16";
-      };
+      identifier = { name = "chu2"; version = "2012.11.16"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "FFI for Chu2 Agda Web Server Interface";
       description = "FFI for Chu2 Agda Web Server Interface";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.hack2)
           (hsPkgs.hack2-handler-snap-server)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

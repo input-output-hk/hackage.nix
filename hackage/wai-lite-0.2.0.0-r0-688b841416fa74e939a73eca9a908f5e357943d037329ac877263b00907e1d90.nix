@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "wai-lite";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "wai-lite"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "amit@amitlevy.com";
@@ -22,7 +13,7 @@
       synopsis = "DEPCRECATED (use package \"simple\" instead) A minimalist web framework for WAI web applications";
       description = "A minimalist web framework for WAI web applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dublincore-xml-conduit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dublincore-xml-conduit"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "koral@mailoo.org";
@@ -22,7 +13,7 @@
       synopsis = "XML streaming parser/renderer for the Dublin Core standard elements.";
       description = "Cf README file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.uri-bytestring)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "Tests" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.uri-bytestring)
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

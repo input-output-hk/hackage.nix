@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "swearjure";
-        version = "1.0.0";
-      };
+      identifier = { name = "swearjure"; version = "1.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "jeannikl@hypirion.com";
@@ -22,7 +13,7 @@
       synopsis = "Clojure without alphanumerics.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "swearjure" = {
@@ -39,8 +30,8 @@
             (hsPkgs.system-fileio)
             (hsPkgs.system-filepath)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

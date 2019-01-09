@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dhcp-lease-parser";
-        version = "0.1";
-      };
+      identifier = { name = "dhcp-lease-parser"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parse a DHCP lease file";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.chronos)
           (hsPkgs.ip)
-        ];
-      };
+          ];
+        };
       tests = {
         "dhcp-lease-parser-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.chronos)
             (hsPkgs.ip)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

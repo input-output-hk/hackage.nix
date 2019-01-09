@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws";
-        version = "0.7.6.4";
-      };
+      identifier = { name = "aws"; version = "0.7.6.4"; };
       license = "BSD-3-Clause";
       copyright = "See contributors list in README and LICENSE file";
       maintainer = "aristidb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Web Services (AWS) for Haskell";
       description = "Bindings for Amazon Web Services (AWS), with the aim of supporting all AWS services. To see a high level overview of the library, see the README at <https://github.com/aristidb/aws/blob/master/README.org>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,24 +44,24 @@
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       exes = {
         "GetObject" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.http-conduit)
             (hsPkgs.conduit)
-          ];
-        };
+            ];
+          };
         "SimpleDb" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "distribution-nixpkgs";
-        version = "1";
-      };
+      identifier = { name = "distribution-nixpkgs"; version = "1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Peter Simons <simons@cryp.to>";
@@ -22,7 +13,7 @@
       synopsis = "Types and functions to manipulate the Nixpkgs distribution.";
       description = "Types and functions to represent, query, and manipulate the Nixpkgs distribution.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.pretty)
           (hsPkgs.process)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.doctest)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

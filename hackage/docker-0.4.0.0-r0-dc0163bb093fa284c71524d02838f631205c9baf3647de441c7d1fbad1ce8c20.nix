@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "docker";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "docker"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "BSD3";
       maintainer = "Deni Bertovic <deni@denibertovic.com>";
@@ -22,7 +13,7 @@
       synopsis = "An API client for docker written in Haskell";
       description = "See API documentation below.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,8 +51,8 @@
           (hsPkgs.x509)
           (hsPkgs.x509-store)
           (hsPkgs.x509-system)
-        ];
-      };
+          ];
+        };
       tests = {
         "docker-hs-tests" = {
           depends = [
@@ -84,8 +75,8 @@
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

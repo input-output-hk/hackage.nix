@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "banwords";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "banwords"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@housejeffries.com";
@@ -22,7 +13,7 @@
       synopsis = "Generalized word blacklister";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.data-default)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chatty";
-        version = "0.7.0.1";
-      };
+      identifier = { name = "chatty"; version = "0.7.0.1"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "chatty@mcohrs.eu";
@@ -22,7 +13,7 @@
       synopsis = "Some monad transformers and typeclasses for abstraction of global dependencies.";
       description = "Some monad transformers and typeclasses abstracting global dependencies, like Text in- and output (incl. here-strings, pipes, recorders and file-redirections on a per-function scope),\nprocess spawning, time and random number retrieval.\nNote that the author does not recommend using this package for new projects. Please use packages better suited for individual purpose.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.ansi-terminal)
           (hsPkgs.chatty-utils)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

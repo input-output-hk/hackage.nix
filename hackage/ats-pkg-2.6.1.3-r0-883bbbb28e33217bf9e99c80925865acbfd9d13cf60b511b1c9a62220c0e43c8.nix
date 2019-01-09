@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-      no-executable = false;
-    };
+    flags = { development = false; no-executable = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ats-pkg";
-        version = "2.6.1.3";
-      };
+      identifier = { name = "ats-pkg"; version = "2.6.1.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "A build tool for ATS";
       description = "A collection of scripts to simplify building ATS projects.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,11 +45,9 @@
           (hsPkgs.binary)
           (hsPkgs.dependency)
           (hsPkgs.ats-setup)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.cpphs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        };
       exes = {
         "atspkg" = {
           depends = [
@@ -75,8 +61,8 @@
             (hsPkgs.composition-prelude)
             (hsPkgs.text)
             (hsPkgs.shake)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

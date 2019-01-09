@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "camfort";
-        version = "0.62";
-      };
+      identifier = { name = "camfort"; version = "0.62"; };
       license = "BSD-3-Clause";
       copyright = "2012-2016 University of Cambridge";
       maintainer = "dom.orchard@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "CamFort - Cambridge Fortran infrastructure";
       description = "CamFort is a tool for the analysis, transformation, and extension of Fortran code base.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,12 +36,12 @@
           (hsPkgs.language-fortran)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       exes = {
         "camfort" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.language-fortran)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

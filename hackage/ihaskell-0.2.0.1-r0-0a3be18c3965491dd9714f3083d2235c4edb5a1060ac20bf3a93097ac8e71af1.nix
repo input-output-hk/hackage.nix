@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ihaskell";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "ihaskell"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.gibiansky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell backend kernel for the IPython project.";
       description = "IHaskell is a Haskell backend kernel for the IPython project. This allows using Haskell via\na console or notebook interface. Additional packages may be installed to provide richer data visualizations.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.text)
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "IHaskell" = {
           depends = [
@@ -81,13 +72,13 @@
             (hsPkgs.text)
             (hsPkgs.mtl)
             (hsPkgs.template-haskell)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.cpphs)
-          ];
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).cpphs)
+            ];
+          };
         };
-      };
       tests = {
         "hspec" = {
           depends = [
@@ -116,8 +107,8 @@
             (hsPkgs.text)
             (hsPkgs.mtl)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pocket-dns";
-        version = "0.1.0";
-      };
+      identifier = { name = "pocket-dns"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Multi-backend (zookeeper and sqlite) DNS Server using persistent-library";
       description = "Multi-backend (zookeeper and sqlite) DNS Server using persistent-library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.transformers)
           (hsPkgs.aeson)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "pocket-dns" = {
           depends = [
@@ -66,9 +57,9 @@
             (hsPkgs.monad-control)
             (hsPkgs.unordered-containers)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -83,8 +74,8 @@
             (hsPkgs.cabal-test-bin)
             (hsPkgs.shakespeare)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

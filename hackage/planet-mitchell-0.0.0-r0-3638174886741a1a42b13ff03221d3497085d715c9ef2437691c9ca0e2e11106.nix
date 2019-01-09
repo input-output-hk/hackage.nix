@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "planet-mitchell";
-        version = "0.0.0";
-      };
+      identifier = { name = "planet-mitchell"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018, Mitchell Rosen";
       maintainer = "Mitchell Rosen <mitchellwrosen@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Planet Mitchell";
       description = "Planet Mitchell.\n\nThis package provides a curated, highly unstable collection of reorganized\nre-exports. Mostly for personal use at the moment, me but please poke around\nand see README.md for a bit more information ;)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -124,7 +115,7 @@
           (hsPkgs.vector-builder)
           (hsPkgs.weigh)
           (hsPkgs.writer-cps-mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

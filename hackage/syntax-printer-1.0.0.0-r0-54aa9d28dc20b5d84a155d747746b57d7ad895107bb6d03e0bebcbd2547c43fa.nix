@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "syntax-printer";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "syntax-printer"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "Paweł Nowak 2014";
       maintainer = "Paweł Nowak <pawel834@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Text and ByteString printers for 'syntax'.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.bifunctors)
           (hsPkgs.semigroupoids)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

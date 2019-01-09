@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "process-conduit";
-        version = "1.2.0.1";
-      };
+      identifier = { name = "process-conduit"; version = "1.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011-2013, Hideyuki Tanaka";
       maintainer = "Michael Snoyman";
@@ -22,7 +13,7 @@
       synopsis = "Conduits for processes (deprecated)";
       description = "This package is deprecated. Please use Data.Conduit.Process from conduit-extra instead. The original code is maintained in Data.Conduit.ProcessOld for those wishing to use the older API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.shakespeare-text)
           (hsPkgs.shakespeare)
-        ];
-      };
+          ];
+        };
       tests = {
         "process-conduit-test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.conduit-extra)
             (hsPkgs.resourcet)
             (hsPkgs.process-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

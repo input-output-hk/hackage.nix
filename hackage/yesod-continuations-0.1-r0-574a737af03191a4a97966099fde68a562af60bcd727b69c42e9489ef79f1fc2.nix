@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "yesod-continuations";
-        version = "0.1";
-      };
+      identifier = { name = "yesod-continuations"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "matt@softmechanics.net";
@@ -22,7 +13,7 @@
       synopsis = "Continuations for Yesod";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,10 +25,8 @@
           (hsPkgs.hashable)
           (hsPkgs.system-uuid)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
+      exes = { "yesodContinuationsTest" = {}; };
       };
-      exes = {
-        "yesodContinuationsTest" = {};
-      };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "time-locale-vietnamese";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "time-locale-vietnamese"; version = "1.0.0.0"; };
       license = "Apache-2.0";
       copyright = "(c) 2017 Tung Dao";
       maintainer = "me@tungdao.com";
@@ -22,13 +13,8 @@
       synopsis = "Vietnamese locale for date and time format";
       description = "Vietnamese locale for date and time format";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
+      };
+    }

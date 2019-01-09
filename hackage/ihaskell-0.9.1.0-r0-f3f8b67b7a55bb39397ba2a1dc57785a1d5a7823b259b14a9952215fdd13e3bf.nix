@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { binpkgdb = false; };
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "ihaskell";
-        version = "0.9.1.0";
-      };
+      identifier = { name = "ihaskell"; version = "0.9.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.gibiansky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell backend kernel for the IPython project.";
       description = "IHaskell is a Haskell backend kernel for the IPython project. This allows using Haskell via\na console or notebook interface. Additional packages may be installed to provide richer data visualizations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -60,8 +51,8 @@
           (hsPkgs.uuid)
           (hsPkgs.vector)
           (hsPkgs.ipython-kernel)
-        ] ++ pkgs.lib.optional (flags.binpkgdb) (hsPkgs.bin-package-db)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs.ghc-boot);
-      };
+          ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs.bin-package-db)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs.ghc-boot);
+        };
       exes = {
         "ihaskell" = {
           depends = [
@@ -78,9 +69,9 @@
             (hsPkgs.unix)
             (hsPkgs.directory)
             (hsPkgs.ipython-kernel)
-          ] ++ pkgs.lib.optional (flags.binpkgdb) (hsPkgs.bin-package-db);
+            ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs.bin-package-db);
+          };
         };
-      };
       tests = {
         "hspec" = {
           depends = [
@@ -97,8 +88,8 @@
             (hsPkgs.text)
             (hsPkgs.shelly)
             (hsPkgs.setenv)
-          ] ++ pkgs.lib.optional (flags.binpkgdb) (hsPkgs.bin-package-db);
+            ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs.bin-package-db);
+          };
         };
       };
-    };
-  }
+    }

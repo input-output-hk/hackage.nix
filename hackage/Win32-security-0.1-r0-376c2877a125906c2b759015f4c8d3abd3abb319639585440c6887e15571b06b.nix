@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-tests = false;
-    };
+    flags = { build-tests = false; };
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "Win32-security";
-        version = "0.1";
-      };
+      identifier = { name = "Win32-security"; version = "0.1"; };
       license = "MIT";
       copyright = "Anton Dessiatov, 2015";
       maintainer = "anton.dessiatov@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Haskell bindings to a security-related functions of the Windows API";
       description = "This package contains bindings for security-related functions of the Windows API.\nIts main features are account name/SID lookup and editing securable objects access control lists.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,29 +21,29 @@
           (hsPkgs.text)
           (hsPkgs.Win32)
           (hsPkgs.Win32-errors)
-        ];
-      };
+          ];
+        };
       exes = {
         "win32-security-sid-lookup" = {
-          depends = pkgs.lib.optionals (flags.build-tests) [
+          depends = (pkgs.lib).optionals (flags.build-tests) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.Win32-security)
-          ];
-        };
+            ];
+          };
         "win32-security-file-security" = {
-          depends = pkgs.lib.optionals (flags.build-tests) [
+          depends = (pkgs.lib).optionals (flags.build-tests) [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.Win32-security)
-          ];
-        };
+            ];
+          };
         "win32-security-get-process-sid" = {
-          depends = pkgs.lib.optionals (flags.build-tests) [
+          depends = (pkgs.lib).optionals (flags.build-tests) [
             (hsPkgs.base)
             (hsPkgs.Win32-security)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

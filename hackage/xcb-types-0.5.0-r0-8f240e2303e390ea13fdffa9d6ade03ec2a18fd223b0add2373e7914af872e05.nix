@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "xcb-types";
-        version = "0.5.0";
-      };
+      identifier = { name = "xcb-types"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Antoine Latter <aslatter@gmail.com>";
@@ -22,15 +13,10 @@
       synopsis = "Parses XML files used by the XCB project";
       description = "This package provides types which mirror the structures\nused in the XCB code generation XML files.\n\nSee project http://xcb.freedesktop.org/ for more information about the XCB\nproject.\n\nThe XML files describe the data-types, events and requests used by the\nX Protocol, and are used to auto-generate large parts of the XCB project.\n\nThis package parses these XML files into Haskell data structures.\n\nIf you want to do something with these XML descriptions but don't want\nto learn XSLT, this package should help.\n\nThis version of xcb-types is intended to fully parse the X Protocol\ndescription version 1.4.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.xml)
-          (hsPkgs.pretty)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.xml) (hsPkgs.pretty) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

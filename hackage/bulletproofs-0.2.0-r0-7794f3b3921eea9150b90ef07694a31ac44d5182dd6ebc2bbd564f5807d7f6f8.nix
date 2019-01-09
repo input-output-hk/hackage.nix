@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bulletproofs";
-        version = "0.2.0";
-      };
+      identifier = { name = "bulletproofs"; version = "0.2.0"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Adjoint Inc (info@adjoint.io)";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/githubuser/bulletproofs#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.memory)
           (hsPkgs.protolude)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "bulletproofs-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

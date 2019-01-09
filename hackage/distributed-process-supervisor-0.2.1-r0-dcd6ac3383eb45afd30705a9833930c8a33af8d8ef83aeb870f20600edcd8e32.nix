@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "distributed-process-supervisor";
         version = "0.2.1";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Tim Watson 2012 - 2013";
       maintainer = "Tim Watson <watson.timothy@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Supervisors for The Cloud Haskell Application Platform";
       description = "A part of the Cloud Haskell framework\nThis package implements a process which supervises a set of other processes, referred to as its children.\nThese child processes can be either workers (i.e., processes that do something useful in your application)\nor other supervisors. In this way, supervisors may be used to build a hierarchical process structure\ncalled a supervision tree, which provides a convenient structure for building fault tolerant software.\nFor detailed information see \"Control.Distributed.Process.Supervisor\"";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +38,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "SupervisorTests" = {
           depends = [
@@ -79,8 +73,8 @@
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
             (hsPkgs.exceptions)
-          ];
-        };
+            ];
+          };
         "NonThreadedSupervisorTests" = {
           depends = [
             (hsPkgs.base)
@@ -113,8 +107,8 @@
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
             (hsPkgs.exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

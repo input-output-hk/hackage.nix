@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.5";
-      identifier = {
-        name = "LslPlus";
-        version = "0.1.1";
-      };
+      identifier = { name = "LslPlus"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Robert Greayer 2008.";
       maintainer = "robgreayer@yahoo.com";
@@ -22,7 +13,7 @@
       synopsis = "An execution and testing framework for the Linden Scripting Language (LSL)";
       description = "Provides a framework for executing Linden Scripting Language scripts offline,\ni.e. outside a Second Life&#xAE; simulator.  The primary product is the LslPlus executable,\nwhich works in cooperation with the LSL Plus Eclipse plugin (the executable is not\nmuch use standalone).  It also provides a library, which includes a parser and\ncorresponding quasiquoter, a unit test framework for LSL, and a simulator for running\nscripts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
           (hsPkgs.syb)
-        ];
-      };
+          ];
+        };
       exes = {
         "LslPlus" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.template-haskell)
             (hsPkgs.syb)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

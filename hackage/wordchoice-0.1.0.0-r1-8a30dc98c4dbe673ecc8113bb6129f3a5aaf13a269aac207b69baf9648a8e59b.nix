@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wordchoice";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wordchoice"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Author name here";
       maintainer = "example@example.com";
@@ -22,7 +13,7 @@
       synopsis = "Get word counts and distributions";
       description = "A command line tool to compute the word distribution from various types of document, converting to text with pandoc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,23 +27,15 @@
           (hsPkgs.system-filepath)
           (hsPkgs.Chart-diagrams)
           (hsPkgs.lens)
-        ];
-      };
-      exes = {
-        "wordchoice" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wordchoice)
           ];
         };
-      };
+      exes = {
+        "wordchoice" = { depends = [ (hsPkgs.base) (hsPkgs.wordchoice) ]; };
+        };
       tests = {
         "wordchoice-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wordchoice)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.wordchoice) ];
+          };
         };
       };
-    };
-  }
+    }

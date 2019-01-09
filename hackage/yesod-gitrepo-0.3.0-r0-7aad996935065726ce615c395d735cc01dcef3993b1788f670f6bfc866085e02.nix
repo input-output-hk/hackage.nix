@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-gitrepo";
-        version = "0.3.0";
-      };
+      identifier = { name = "yesod-gitrepo"; version = "0.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Host content provided by a Git repo";
       description = "Please see the README and generated docs at <https://www.stackage.org/package/yesod-gitrepo>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.unliftio)
           (hsPkgs.wai)
           (hsPkgs.yesod-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

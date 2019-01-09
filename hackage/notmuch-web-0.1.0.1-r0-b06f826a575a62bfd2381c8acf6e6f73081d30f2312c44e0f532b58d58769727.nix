@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      library-only = false;
-    };
+    flags = { dev = false; library-only = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "notmuch-web";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "notmuch-web"; version = "0.1.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "John Lenz <lenz@math.uic.edu>";
@@ -25,7 +13,7 @@
       synopsis = "A web interface to the notmuch email indexer";
       description = "An email client for the notmuch email indexer (<http://notmuchmail.org>),\nbuilt using Yesod.  This project implements a web server and uses bootstrap\nand jquery for the UI.  The client is fully functional, with searching, viewing,\nand composing email messages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -76,8 +64,8 @@
           (hsPkgs.yesod-default)
           (hsPkgs.yesod-form)
           (hsPkgs.yesod-static)
-        ];
-      };
+          ];
+        };
       exes = {
         "notmuch-web" = {
           depends = [
@@ -86,9 +74,9 @@
             (hsPkgs.pwstore-fast)
             (hsPkgs.text)
             (hsPkgs.yesod-default)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -97,8 +85,8 @@
             (hsPkgs.yesod-test)
             (hsPkgs.yesod-default)
             (hsPkgs.yesod-core)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

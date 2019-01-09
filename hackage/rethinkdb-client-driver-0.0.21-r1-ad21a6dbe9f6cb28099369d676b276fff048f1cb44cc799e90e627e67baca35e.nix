@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rethinkdb-client-driver";
-        version = "0.0.21";
-      };
+      identifier = { name = "rethinkdb-client-driver"; version = "0.0.21"; };
       license = "MIT";
       copyright = "";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Client driver for RethinkDB";
       description = "This is an alternative client driver for RethinkDB. It is not complete\nyet, but the basic structure is in place and the driver can make\nsimple queries.\n\nIts main focus is on type safety, which it achieves quite well. It also\nuses the new JSON protocol which should give it a speed boost (and make\nthe driver compatible with GHC 7.8).\n\nNote that the driver is neither thread-safe nor reentrant. If you have\na multi-threaded application, I recommend using 'resource-pool'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

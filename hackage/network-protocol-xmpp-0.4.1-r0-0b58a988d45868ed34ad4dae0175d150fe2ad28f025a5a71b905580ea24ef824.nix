@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "network-protocol-xmpp";
-        version = "0.4.1";
-      };
+      identifier = { name = "network-protocol-xmpp"; version = "0.4.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "John Millikin <jmillikin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Client library for the XMPP protocol.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.monads-tf)
           (hsPkgs.libxml-sax)
           (hsPkgs.xml-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

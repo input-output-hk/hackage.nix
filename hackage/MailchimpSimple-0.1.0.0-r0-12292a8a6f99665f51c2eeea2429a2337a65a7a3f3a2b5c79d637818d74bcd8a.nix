@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "MailchimpSimple";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "MailchimpSimple"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dan9131@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell library to handle mailing lists in MailchimpSimple using its JSON API.";
       description = "Library to handle mailing lists in MailchimpSimple using its JSON API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.vector)
           (hsPkgs.time)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

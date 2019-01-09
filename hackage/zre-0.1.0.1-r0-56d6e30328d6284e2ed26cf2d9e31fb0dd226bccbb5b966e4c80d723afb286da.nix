@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zre";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "zre"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Richard Marko";
       maintainer = "srk@48.io";
@@ -22,7 +13,7 @@
       synopsis = "ZRE protocol implementation";
       description = "See README.rst";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.time)
           (hsPkgs.uuid)
           (hsPkgs.zeromq4-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "zre" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.repline)
             (hsPkgs.stm)
             (hsPkgs.zre)
-          ];
-        };
+            ];
+          };
         "mzre" = {
           depends = [
             (hsPkgs.base)
@@ -72,8 +63,8 @@
             (hsPkgs.stm)
             (hsPkgs.lifted-async)
             (hsPkgs.zre)
-          ];
-        };
+            ];
+          };
         "zreworker" = {
           depends = [
             (hsPkgs.base)
@@ -83,8 +74,8 @@
             (hsPkgs.monad-control)
             (hsPkgs.lifted-async)
             (hsPkgs.zre)
-          ];
-        };
+            ];
+          };
         "zgossip_server" = {
           depends = [
             (hsPkgs.base)
@@ -94,8 +85,8 @@
             (hsPkgs.monad-control)
             (hsPkgs.lifted-async)
             (hsPkgs.zre)
-          ];
-        };
+            ];
+          };
         "zrematch" = {
           depends = [
             (hsPkgs.base)
@@ -105,8 +96,8 @@
             (hsPkgs.monad-control)
             (hsPkgs.lifted-async)
             (hsPkgs.zre)
-          ];
-        };
+            ];
+          };
         "zretime" = {
           depends = [
             (hsPkgs.base)
@@ -114,8 +105,8 @@
             (hsPkgs.time)
             (hsPkgs.lifted-async)
             (hsPkgs.zre)
-          ];
-        };
+            ];
+          };
         "zrecat" = {
           depends = [
             (hsPkgs.base)
@@ -123,16 +114,9 @@
             (hsPkgs.time)
             (hsPkgs.lifted-async)
             (hsPkgs.zre)
-          ];
+            ];
+          };
         };
+      tests = { "zre-test" = { depends = [ (hsPkgs.base) (hsPkgs.zre) ]; }; };
       };
-      tests = {
-        "zre-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.zre)
-          ];
-        };
-      };
-    };
-  }
+    }

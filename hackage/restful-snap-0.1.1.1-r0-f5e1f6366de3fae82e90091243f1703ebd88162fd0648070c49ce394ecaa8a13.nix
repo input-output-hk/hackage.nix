@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "restful-snap";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "restful-snap"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Soostone Inc";
       maintainer = "ozataman@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "A convention-based RESTful routing mechanism for snap";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.time)
           (hsPkgs.xmlhtml)
           (hsPkgs.errors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

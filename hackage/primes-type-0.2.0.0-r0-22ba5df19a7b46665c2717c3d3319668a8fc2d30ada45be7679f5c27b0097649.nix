@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "primes-type";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "primes-type"; version = "0.2.0.0"; };
       license = "ISC";
       copyright = "2017 Ignat Insarov";
       maintainer = "kindaro@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Type-safe prime numbers.";
       description = "This library provides type safe prime numbers. The idea is based upon the concept of a predicate type from type theory.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.primes)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.primes) ]; };
       tests = {
         "primes-type-test" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.primes)
             (hsPkgs.primes-type)
             (hsPkgs.HTF)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mecab";
-        version = "0.2.0";
-      };
+      identifier = { name = "mecab"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "A Haskell binding to MeCab";
       description = "A Haskell binding to MeCab <http://mecab.sourceforge.net/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
         libs = [ (pkgs."mecab") ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-route";
-        version = "0.1.0";
-      };
+      identifier = { name = "wai-route"; version = "0.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2014 Roman S. Borschel";
       maintainer = "Roman S. Borschel <roman@pkaboo.org>";
@@ -22,7 +13,7 @@
       synopsis = "Minimalistic, efficient routing for WAI";
       description = "\nSimple routing for applications using the WAI, based on an\nefficient tree structure. Routes are defined as string literals\nand path segments prefixed with a ':' indicate captures.\n\nA sample is available at: <https://github.com/romanb/wai-route/blob/master/sample/Main.hs>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.http-types)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-route-sample" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-route)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "wai-route-test" = {
           depends = [
             (hsPkgs.base)
@@ -58,8 +49,8 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.wai-route)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

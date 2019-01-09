@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-postgresql-orm";
-        version = "0.6.0";
-      };
+      identifier = { name = "simple-postgresql-orm"; version = "0.6.0"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "amit@amitlevy.com";
@@ -22,7 +13,7 @@
       synopsis = "Connector package for integrating postgresql-orm with the Simple web framework";
       description = "Connector package for integrating postgresql-orm with the Simple web framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.postgresql-orm)
           (hsPkgs.simple)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

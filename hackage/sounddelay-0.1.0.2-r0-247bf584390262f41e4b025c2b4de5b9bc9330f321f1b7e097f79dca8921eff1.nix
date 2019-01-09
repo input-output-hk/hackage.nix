@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sounddelay";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "sounddelay"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008 Bart Massey";
       maintainer = "Bart Massey <bart@cs.pdx.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Audio delay line";
       description = "An audio file delay line for WAVE files.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "delay" = {
@@ -31,8 +22,8 @@
             (hsPkgs.containers)
             (hsPkgs.parseargs)
             (hsPkgs.WAVE)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

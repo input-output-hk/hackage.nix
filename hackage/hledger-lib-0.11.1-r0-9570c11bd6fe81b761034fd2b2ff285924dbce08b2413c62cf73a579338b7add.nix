@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hledger-lib";
-        version = "0.11.1";
-      };
+      identifier = { name = "hledger-lib"; version = "0.11.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "Core types and utilities for working with hledger (or c++ ledger) data.";
       description = "This is the reusable core of the hledger financial app; use it to\nbuild hledger and c++-ledger compatible finance tools.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.time)
           (hsPkgs.utf8-string)
           (hsPkgs.HUnit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

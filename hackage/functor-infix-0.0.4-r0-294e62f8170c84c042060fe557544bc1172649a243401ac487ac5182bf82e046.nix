@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "functor-infix";
-        version = "0.0.4";
-      };
+      identifier = { name = "functor-infix"; version = "0.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "vi@zalora.com";
@@ -22,13 +13,8 @@
       synopsis = "Infix operators for mapping over compositions of functors. Lots of them.";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
+      };
+    }

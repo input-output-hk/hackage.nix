@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-      buildtests = false;
-    };
+    flags = { buildexamples = false; buildtests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "synthesizer-llvm";
-        version = "0.3";
-      };
+      identifier = { name = "synthesizer-llvm"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -25,7 +13,7 @@
       synopsis = "Efficient signal processing using runtime compilation";
       description = "Efficient signal processing\nusing runtime compilation and vector instructions.\nIt uses LLVM library, thus it is not bound to a specific CPU.\nIf you compile with Cabal flag @buildExamples@\nyou get the executable @synthi-llvm-server@,\nthat is a realtime software synthesizer\nthat receives MIDI events via ALSA\nand in response plays some tones via ALSA.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,14 +44,14 @@
           (hsPkgs.transformers)
           (hsPkgs.utility-ht)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       exes = {
         "synthi-llvm-example" = {};
         "synthi-llvm-server" = {};
         "synthi-llvm-test" = {
-          depends = pkgs.lib.optional (flags.buildtests) (hsPkgs.QuickCheck);
+          depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs.QuickCheck);
+          };
         };
       };
-    };
-  }
+    }

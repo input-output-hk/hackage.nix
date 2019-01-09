@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ghci-haskeline";
-        version = "0.1";
-      };
+      identifier = { name = "ghci-haskeline"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "BSD3";
       maintainer = "Judah Jacobson <judah.jacobson@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of ghci using the Haskeline line-input library.";
       description = "This package reimplements ghci using the GHC API and the Haskeline\npackage for line input in command-line programs.\n\nThis is an unofficial package; thus any bugs may be the fault of\nthe maintainer rather than of the GHC team.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ghci-haskeline" = {
@@ -37,10 +28,10 @@
             (hsPkgs.mtl)
             (hsPkgs.haskeline)
             (hsPkgs.ghc-paths)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
+          };
         };
       };
-    };
-  }
+    }

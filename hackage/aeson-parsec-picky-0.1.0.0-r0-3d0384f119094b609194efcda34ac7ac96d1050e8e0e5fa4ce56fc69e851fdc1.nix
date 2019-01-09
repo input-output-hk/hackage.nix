@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-parsec-picky";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "aeson-parsec-picky"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015, Matej Kollar";
       maintainer = "208115@mail.muni.cz";
@@ -22,7 +13,7 @@
       synopsis = "Alternative JSON parser based on Parsec and Aeson";
       description = "JSON parser with nice error messages and\nlittle more strict syntax (whitespace-wise).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

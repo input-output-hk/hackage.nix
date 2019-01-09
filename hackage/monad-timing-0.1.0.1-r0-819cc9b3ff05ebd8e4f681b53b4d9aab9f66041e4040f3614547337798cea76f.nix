@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-timing";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "monad-timing"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@jude.bio";
@@ -22,7 +13,7 @@
       synopsis = "Monad transformer for recording timing events";
       description = "Monad transformer for recording timing events";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,15 +25,10 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
-      tests = {
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
           ];
         };
+      tests = {
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         "sanity" = {
           depends = [
             (hsPkgs.base)
@@ -50,8 +36,8 @@
             (hsPkgs.hspec)
             (hsPkgs.monad-timing)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

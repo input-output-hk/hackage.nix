@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4.0";
-      identifier = {
-        name = "BiobaseVienna";
-        version = "0.0.2.1";
-      };
+      identifier = { name = "BiobaseVienna"; version = "0.0.2.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2010";
       maintainer = "choener@tbi.univie.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "ViennaRNA parameter library";
       description = "Import and export of ViennaRNA-style parameters for RNA\nsecondary structure prediction.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.Biobase)
           (hsPkgs.BiobaseTurner)
           (hsPkgs.BiobaseTypes)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

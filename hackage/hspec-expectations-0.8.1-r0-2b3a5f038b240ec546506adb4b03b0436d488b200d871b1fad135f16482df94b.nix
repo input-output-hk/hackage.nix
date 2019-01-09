@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hspec-expectations";
-        version = "0.8.1";
-      };
+      identifier = { name = "hspec-expectations"; version = "0.8.1"; };
       license = "MIT";
       copyright = "(c) 2011-2015 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,15 +13,11 @@
       synopsis = "Catchy combinators for HUnit";
       description = "Catchy combinators for HUnit: <https://github.com/hspec/hspec-expectations#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.HUnit)
-          (hsPkgs.call-stack)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.call-stack) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.call-stack)
             (hsPkgs.nanospec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "matrix-market-pure";
-        version = "0.1";
-      };
+      identifier = { name = "matrix-market-pure"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s.astanin@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Pure and composable reader and writer of the Matrix Market format.";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clr-typed";
-        version = "0.2.0";
-      };
+      identifier = { name = "clr-typed"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016-2017 Tim Matthews";
       maintainer = "pepeiborra@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A strongly typed Haskell interface to the CLR type system";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.text)
           (hsPkgs.ghc-prim)
           (hsPkgs.clr-marshal)
-        ];
-      };
+          ];
+        };
       tests = {
         "clr-typed-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.clr-marshal)
             (hsPkgs.hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

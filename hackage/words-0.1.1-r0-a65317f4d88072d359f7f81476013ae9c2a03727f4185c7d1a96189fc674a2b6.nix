@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "words";
-        version = "0.1.1";
-      };
+      identifier = { name = "words"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Smith <cdsmith@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Cross-platform access to a list of words";
       description = "This is a simple wrapper around getting a list of words,\nthat works in a common across multiple platforms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.text)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.text) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "perf";
-        version = "0.1.1";
-      };
+      identifier = { name = "perf"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "low-level performance statistics";
       description = "\nSee <<https://tonyday567.github.io/perf>> for example results and write-up.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.tdigest)
           (hsPkgs.containers)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "perf-examples" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.tdigest)
             (hsPkgs.chart-unit)
             (hsPkgs.mwc-probability)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

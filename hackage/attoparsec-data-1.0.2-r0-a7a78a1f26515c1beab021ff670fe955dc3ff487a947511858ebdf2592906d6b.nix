@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "attoparsec-data";
-        version = "1.0.2";
-      };
+      identifier = { name = "attoparsec-data"; version = "1.0.2"; };
       license = "MIT";
       copyright = "(c) 2017, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Parsers for the standard Haskell data types";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.attoparsec-time)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

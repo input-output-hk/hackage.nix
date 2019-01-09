@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "jwt";
-        version = "0.4.1";
-      };
+      identifier = { name = "jwt"; version = "0.4.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "stefan@saasen.me";
@@ -22,7 +13,7 @@
       synopsis = "JSON Web Token (JWT) decoding and encoding";
       description = "JSON Web Token (JWT) is a compact URL-safe means of representing claims to be transferred between two parties.\n\nTo get started, see the documentation for the \"Web.JWT\" module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,11 +29,8 @@
           (hsPkgs.data-default)
           (hsPkgs.http-types)
           (hsPkgs.time)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-      };
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        };
       tests = {
         "testsuite" = {
           depends = [
@@ -64,11 +52,8 @@
             (hsPkgs.data-default)
             (hsPkgs.http-types)
             (hsPkgs.time)
-          ] ++ [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ];
+            ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+          };
         };
       };
-    };
-  }
+    }

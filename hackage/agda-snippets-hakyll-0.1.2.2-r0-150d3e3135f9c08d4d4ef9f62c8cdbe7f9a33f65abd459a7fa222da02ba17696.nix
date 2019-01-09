@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "agda-snippets-hakyll";
-        version = "0.1.2.2";
-      };
+      identifier = { name = "agda-snippets-hakyll"; version = "0.1.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Liam O'Connor, 2015";
       maintainer = "liamoc@cse.unsw.edu.au";
@@ -22,7 +13,7 @@
       synopsis = "Literate Agda support using agda-snippets, for Hakyll pages.";
       description = "This library provides basic functions to use in Hakyll web-pages to generate\ncolourised and hyperlinked Agda source code snippets for literate Agda documents.\n\nIt makes use of the @agda-snippets@ library and will (hopefully) be kept up to\ndate with the latest Agda versions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.pandoc)
           (hsPkgs.filepath)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

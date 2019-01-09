@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eventful-sqlite";
-        version = "0.2.0";
-      };
+      identifier = { name = "eventful-sqlite"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Reaver";
@@ -22,7 +13,7 @@
       synopsis = "SQLite implementations for eventful";
       description = "SQLite implementations for eventful";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.persistent)
           (hsPkgs.text)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.eventful-test-helpers)
             (hsPkgs.persistent-sqlite)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

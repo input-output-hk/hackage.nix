@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "planet-mitchell-test";
-        version = "0.0.0";
-      };
+      identifier = { name = "planet-mitchell-test"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018, Mitchell Rosen";
       maintainer = "Mitchell Rosen <mitchellwrosen@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Planet Mitchell";
       description = "Companion package of <https://hackage.haskell.org/package/planet-mitchell planet-mitchell>,\nfor testing and benchmarking.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.tasty-hunit)
           (hsPkgs.tasty-rerun)
           (hsPkgs.weigh)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

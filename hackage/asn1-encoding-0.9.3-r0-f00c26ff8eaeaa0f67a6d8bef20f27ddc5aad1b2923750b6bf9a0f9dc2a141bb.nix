@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "asn1-encoding";
-        version = "0.9.3";
-      };
+      identifier = { name = "asn1-encoding"; version = "0.9.3"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -22,7 +13,7 @@
       synopsis = "ASN1 data reader and writer in RAW, BER and DER forms";
       description = "ASN1 data reader and writer in raw form with supports for high level forms of ASN1 (BER, and DER).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.hourglass)
           (hsPkgs.asn1-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests-asn1-encoding" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.asn1-types)
             (hsPkgs.asn1-encoding)
             (hsPkgs.hourglass)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stm-supply";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "stm-supply"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Joe Canero";
       maintainer = "jmc41493@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "STM wrapper around Control.Concurrent.Supply.";
       description = "STM wrapper around \"Control.Concurrent.Supply\" for thread-safe ID generation.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.concurrent-supply)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.concurrent-supply) ]; };
       tests = {
         "stm-supply-test" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.random)
             (hsPkgs.QuickCheck)
             (hsPkgs.Unique)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "avers";
-        version = "0.0.1";
-      };
+      identifier = { name = "avers"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "empty";
       description = "empty";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.resource-pool)
           (hsPkgs.rethinkdb-client-driver)
           (hsPkgs.scrypt)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

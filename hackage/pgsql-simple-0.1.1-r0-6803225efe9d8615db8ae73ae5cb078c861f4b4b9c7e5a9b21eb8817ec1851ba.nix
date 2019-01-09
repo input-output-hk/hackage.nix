@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pgsql-simple";
-        version = "0.1.1";
-      };
+      identifier = { name = "pgsql-simple"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2011 Chris Done, 2011 MailRank, Inc.";
       maintainer = "Chris Done <chrisdone@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A mid-level PostgreSQL client library.";
       description = "A mid-level client library for the PostgreSQL database, intended to be\nfast and easy to use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.MonadCatchIO-transformers)
           (hsPkgs.utf8-string)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

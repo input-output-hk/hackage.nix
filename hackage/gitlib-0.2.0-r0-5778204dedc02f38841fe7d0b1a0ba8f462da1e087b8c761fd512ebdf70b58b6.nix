@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitlib";
-        version = "0.2.0";
-      };
+      identifier = { name = "gitlib"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Higher-level types for working with hlibgit2";
       description = "Higher-level types for working with hlibgit2";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.stringable)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       tests = {
         "smoke" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.stringable)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

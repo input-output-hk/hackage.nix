@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "lattices";
-        version = "1.1";
-      };
+      identifier = { name = "lattices"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Max Bolingbroke <batterseapower@hotmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Fine-grained library for constructing and manipulating lattices";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

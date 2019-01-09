@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "vado";
-        version = "0.0.1";
-      };
+      identifier = { name = "vado"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Runs commands on remote machines using ssh";
       description = "Lets you quickly run ssh on a machine that you have an sshfs connection to.\nIt works out the username, host and the directory on the host based on the current directory and the output of 'mount'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.filepath)
           (hsPkgs.process)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "vado" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "vamount" = {
           depends = [
             (hsPkgs.base)
@@ -53,9 +44,9 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-vado" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

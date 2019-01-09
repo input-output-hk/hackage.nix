@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { long-tests = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-quickcheck";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "servant-quickcheck"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jkarni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "QuickCheck entire APIs";
       description = "This packages provides QuickCheck properties that are tested across an entire\nAPI.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.hspec)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.bifunctors);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.bifunctors);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-io)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

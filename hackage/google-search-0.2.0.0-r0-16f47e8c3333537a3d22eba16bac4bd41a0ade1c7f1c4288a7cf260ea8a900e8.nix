@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-time = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "google-search";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "google-search"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2013 Liyang HU";
       maintainer = "google-search@liyang.hu";
@@ -22,7 +13,7 @@
       synopsis = "EDSL for Google and GMail search expressions";
       description = "Construct well-typed search expressions for use in various Google services.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,12 +21,9 @@
           (hsPkgs.free)
           (hsPkgs.nats)
           (hsPkgs.text)
-        ] ++ (if flags.old-time
-          then [
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-          ]
+          ] ++ (if flags.old-time
+          then [ (hsPkgs.old-locale) (hsPkgs.time) ]
           else [ (hsPkgs.time) ]);
+        };
       };
-    };
-  }
+    }

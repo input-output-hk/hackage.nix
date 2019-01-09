@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-logger-syslog";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "monad-logger-syslog"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "greg@gregweber.info";
@@ -22,7 +13,7 @@
       synopsis = "rsyslog output for monad-logger";
       description = "rsyslog output for monad-logger";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.transformers)
           (hsPkgs.text)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "smoke" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.monad-logger)
             (hsPkgs.monad-logger-syslog)
             (hsPkgs.shelly)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

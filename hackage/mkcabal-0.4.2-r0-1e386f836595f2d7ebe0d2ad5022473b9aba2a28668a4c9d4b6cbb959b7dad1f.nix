@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "mkcabal";
-        version = "0.4.2";
-      };
+      identifier = { name = "mkcabal"; version = "0.4.2"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Don Stewart, 2005-2008";
       maintainer = "dons@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate cabal files for a Haskell project";
       description = "Generate cabal files for a Haskell project";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mkcabal" = {
@@ -31,16 +22,16 @@
             (hsPkgs.pcre-light)
             (hsPkgs.readline)
             (hsPkgs.extensible-exceptions)
-          ] ++ (if flags.small_base
+            ] ++ (if flags.small_base
             then [
               (hsPkgs.base)
               (hsPkgs.pretty)
               (hsPkgs.old-locale)
               (hsPkgs.old-time)
               (hsPkgs.directory)
-            ]
+              ]
             else [ (hsPkgs.base) ]);
+          };
         };
       };
-    };
-  }
+    }

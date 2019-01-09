@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Stream";
-        version = "0.2.1";
-      };
+      identifier = { name = "Stream"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Wouter Swierstra <wss@cs.nott.ac.uk>";
@@ -22,10 +13,6 @@
       synopsis = "A library for manipulating infinite lists.";
       description = "This package implements functions, analogous\nto those from Data.List, to create and manipulate infinite lists.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "time-quote";
-        version = "1.9.0.0";
-      };
+      identifier = { name = "time-quote"; version = "1.9.0.0"; };
       license = "GPL-3.0-only";
       copyright = "(C) 2018  Thomas Tuegel <ttuegel@mailbox.org>";
       maintainer = "Thomas Tuegel <ttuegel@mailbox.org>";
@@ -22,15 +13,11 @@
       synopsis = "Quasi-quoters for dates and times";
       description = "@time-quote@ provides quasi-quoters to parse dates and times according to ISO 8601 formats. By using quasi-quotes for literals, parse errors are found by the compiler.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.time)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.time) ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.doctest-discover)
             (hsPkgs.template-haskell)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

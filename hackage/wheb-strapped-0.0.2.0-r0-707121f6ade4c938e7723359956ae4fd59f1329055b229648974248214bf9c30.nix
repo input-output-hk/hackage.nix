@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wheb-strapped";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "wheb-strapped"; version = "0.0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@khanson.io";
@@ -22,7 +13,7 @@
       synopsis = "Strapped templates for Wheb";
       description = "Implements basic functionality for:\n\n* <http://hackage.haskell.org/package/StrappedTemplates StrappedTemplates>\n\n* <http://hackage.haskell.org/package/Wheb Wheb>\n\n/In action:/\n\nUse with language extensions /OverloadedStrings/, /FlexibleInstances/, /MultiParamTypeClasses/\n\n>  import           Control.Monad.Except\n>\n>  import           Web.Wheb\n>  import           Web.Wheb.Plugins.Strapped\n>  import           Text.Strapped\n>\n>  type MyApp = WhebT MyGlobalCtx () IO\n>\n>  data MyGlobalCtx = MyGlobalCtx (StrappedContainer MyApp)\n>\n>  instance StrappedApp MyGlobalCtx MyApp where\n>      getStrappedContainer (MyGlobalCtx g) = g\n>\n>  main :: IO ()\n>  main = do\n>   opts <- generateOptions \$ do\n>     sc <- initStrapped \"examples/resources\" \".html\"\n>     addGET \".\" rootPat \$ renderTemplate \"index.html\" (emptyBucket)\n>     return (MyGlobalCtx sc, ())\n>   runWhebServer opts";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.Wheb)
           (hsPkgs.StrappedTemplates)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

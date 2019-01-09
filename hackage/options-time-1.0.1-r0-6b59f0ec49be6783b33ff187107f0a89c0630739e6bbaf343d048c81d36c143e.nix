@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-locale = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "options-time";
-        version = "1.0.1";
-      };
+      identifier = { name = "options-time"; version = "1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "John Millikin <john@john-millikin.com>";
@@ -22,19 +13,13 @@
       synopsis = "Command-line option types for dates and times.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.options)
-        ] ++ (if flags.old-locale
-          then [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]
+        depends = [ (hsPkgs.base) (hsPkgs.options) ] ++ (if flags.old-locale
+          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
           else [ (hsPkgs.time) ]);
-      };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,8 +28,8 @@
             (hsPkgs.options)
             (hsPkgs.options-time)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

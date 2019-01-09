@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "ihaskell-gnuplot";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "ihaskell-gnuplot"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Doro Rose <dororose@hotmail.com>,\nAndrew Gibiansky <andrew.gibiansky@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "IHaskell display instance for Gnuplot (from gnuplot package)";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.gnuplot)
           (hsPkgs.ihaskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-server";
-        version = "0.8.1";
-      };
+      identifier = { name = "servant-server"; version = "0.8.1"; };
       license = "BSD-3-Clause";
       copyright = "2014-2016 Zalora South East Asia Pte Ltd, Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "A family of combinators for defining webservices APIs and serving them";
       description = "A family of combinators for defining webservices APIs and serving them\n\nYou can learn about the basics in the <http://haskell-servant.readthedocs.org/en/stable/tutorial/index.html tutorial>.\n\n<https://github.com/haskell-servant/servant/blob/master/servant-server/example/greet.hs Here>\nis a runnable example, with comments, that defines a dummy API and implements\na webserver that serves this API, using this package.\n\n<https://github.com/haskell-servant/servant/blob/master/servant-server/CHANGELOG.md CHANGELOG>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.wai-app-static)
           (hsPkgs.warp)
           (hsPkgs.word8)
-        ];
-      };
+          ];
+        };
       exes = {
         "greet" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.warp)
             (hsPkgs.wai)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -96,8 +87,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
@@ -106,8 +97,8 @@
             (hsPkgs.filemanip)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "indices";
-        version = "1.5.0";
-      };
+      identifier = { name = "indices"; version = "1.5.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "eleventynine@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "indices";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.tagged)
-          (hsPkgs.template-haskell)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.tagged) (hsPkgs.template-haskell) ];
+        };
       };
-    };
-  }
+    }

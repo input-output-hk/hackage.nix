@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "keenser";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "keenser"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016";
       maintainer = "jamesdabbs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector-space)
-        ];
-      };
+          ];
+        };
       exes = {
         "keenser-exe" = {
           depends = [
@@ -62,16 +53,11 @@
             (hsPkgs.monad-logger)
             (hsPkgs.text)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "keenser-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.keenser)
-          ];
+        "keenser-test" = { depends = [ (hsPkgs.base) (hsPkgs.keenser) ]; };
         };
       };
-    };
-  }
+    }

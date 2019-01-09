@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "aivika-experiment-cairo";
-        version = "4.3.1";
-      };
+      identifier = { name = "aivika-experiment-cairo"; version = "4.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012-2015. David Sorokin <david.sorokin@gmail.com>";
       maintainer = "David Sorokin <david.sorokin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Cairo backend for the Aivika simulation library";
       description = "This package complements the Aivika and Aivika Experiment packages\nand it allows rendering the charts using the Chart-cairo library.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.Chart-cairo)
           (hsPkgs.aivika-experiment)
           (hsPkgs.aivika-experiment-chart)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

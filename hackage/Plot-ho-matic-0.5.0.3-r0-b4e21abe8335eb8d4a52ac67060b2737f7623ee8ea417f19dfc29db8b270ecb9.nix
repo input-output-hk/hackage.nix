@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Plot-ho-matic";
-        version = "0.5.0.3";
-      };
+      identifier = { name = "Plot-ho-matic"; version = "0.5.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013-2014, Greg Horn";
       maintainer = "gregmainland@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Real-time line plotter for protobuf-like data";
       description = "Plot-ho-matic provides real-time plotting of time-series data with a simple interface ('addHistoryChannel').\nThere is also a more general interface to plot arbitrary data ('addChannel').\n\nSee the example on <http://www.github.com/ghorn/Plot-ho-matic> to help get started.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,16 +29,16 @@
           (hsPkgs.cairo)
           (hsPkgs.text)
           (hsPkgs.generic-accessors)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.Plot-ho-matic)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

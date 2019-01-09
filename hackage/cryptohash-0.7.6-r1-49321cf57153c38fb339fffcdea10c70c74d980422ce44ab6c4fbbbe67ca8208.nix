@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test = false;
-      benchmark = false;
-      cryptoapi = true;
-    };
+    flags = { test = false; benchmark = false; cryptoapi = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cryptohash";
-        version = "0.7.6";
-      };
+      identifier = { name = "cryptohash"; version = "0.7.6"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -26,41 +13,41 @@
       synopsis = "collection of crypto hashes, fast, pure and practical";
       description = "A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,\nwith performance close to the fastest implementations available in others languages.\n\nThe implementations are made in C with a haskell FFI wrapper that hide the C implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
-        ] ++ pkgs.lib.optionals (flags.cryptoapi) [
+          ] ++ (pkgs.lib).optionals (flags.cryptoapi) [
           (hsPkgs.crypto-api)
           (hsPkgs.tagged)
           (hsPkgs.cereal)
-        ];
-      };
+          ];
+        };
       exes = {
         "Tests" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)
-          ] ++ pkgs.lib.optionals (flags.cryptoapi) [
+            ] ++ (pkgs.lib).optionals (flags.cryptoapi) [
             (hsPkgs.crypto-api)
             (hsPkgs.tagged)
             (hsPkgs.cereal)
-          ];
-        };
+            ];
+          };
         "Bench" = {
-          depends = pkgs.lib.optionals (flags.benchmark) [
+          depends = (pkgs.lib).optionals (flags.benchmark) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
-          ] ++ pkgs.lib.optionals (flags.cryptoapi) [
+            ] ++ (pkgs.lib).optionals (flags.cryptoapi) [
             (hsPkgs.crypto-api)
             (hsPkgs.tagged)
             (hsPkgs.cereal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

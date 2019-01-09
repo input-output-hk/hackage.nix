@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsemail-ns";
-        version = "1.7.7";
-      };
+      identifier = { name = "hsemail-ns"; version = "1.7.7"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Peter Simons";
       maintainer = "phlummox2@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Internet Message Parsers";
       description = "Nonstandard parsers for the syntax defined in RFC2822, forked from hsemail proper - permits lf line-ends in addition to crlf. Should not be used for parsing incoming emails, only emails stored on disk.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.old-time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-hsemail" = {
           depends = [
@@ -39,14 +30,9 @@
             (hsPkgs.hspec)
             (hsPkgs.parsec)
             (hsPkgs.old-time)
-          ];
-        };
-        "doctest-hsemail" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctest-hsemail" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

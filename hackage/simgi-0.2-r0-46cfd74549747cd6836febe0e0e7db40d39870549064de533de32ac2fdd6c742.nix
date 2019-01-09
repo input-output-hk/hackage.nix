@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "simgi";
-        version = "0.2";
-      };
+      identifier = { name = "simgi"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "(C) 2009 Markus Dittrich";
       maintainer = "<haskelladdict@users.sourceforge.net>";
@@ -22,7 +13,7 @@
       synopsis = "stochastic simulation engine";
       description = "simgi is a stochastic simulation engine to model\nmolecular systems using Gillespie's method.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "simgi" = {
@@ -34,8 +25,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.random)
             (hsPkgs.mersenne-random-pure64)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

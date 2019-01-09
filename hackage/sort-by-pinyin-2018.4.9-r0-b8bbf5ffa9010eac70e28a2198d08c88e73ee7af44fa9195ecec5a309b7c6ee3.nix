@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "sort-by-pinyin";
-        version = "2018.4.9";
-      };
+      identifier = { name = "sort-by-pinyin"; version = "2018.4.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "sort by pinyin";
       description = "Sort Simplified Chinese by pinyin";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
           (hsPkgs.here)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

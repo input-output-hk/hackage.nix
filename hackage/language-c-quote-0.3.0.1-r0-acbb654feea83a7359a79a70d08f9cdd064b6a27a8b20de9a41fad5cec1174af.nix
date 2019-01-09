@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-c-quote";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "language-c-quote"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006-2011 Harvard University";
       maintainer = "mainland@eecs.harvard.edu";
@@ -22,7 +13,7 @@
       synopsis = "C/CUDA quasiquoting library.";
       description = "This package provides a general parser for the C language, including most GCC\nextensions and some CUDA extensions.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.syb)
           (hsPkgs.symbol)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.language-c-quote)
             (hsPkgs.srcloc)
             (hsPkgs.symbol)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

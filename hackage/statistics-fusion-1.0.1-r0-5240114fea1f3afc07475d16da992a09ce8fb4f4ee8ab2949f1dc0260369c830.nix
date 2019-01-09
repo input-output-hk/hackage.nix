@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "statistics-fusion";
-        version = "1.0.1";
-      };
+      identifier = { name = "statistics-fusion"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Don Stewart 2008, 2009.";
       maintainer = "dons@galois.com";
@@ -22,13 +13,8 @@
       synopsis = "An implementation of high performance, minimal statistics functions";
       description = "This package is obsolete. Please use O\\'Sullivan\\'s /statistics/\npackage: <http://hackage.haskell.org/package/statistics>\n";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };
+      };
+    }

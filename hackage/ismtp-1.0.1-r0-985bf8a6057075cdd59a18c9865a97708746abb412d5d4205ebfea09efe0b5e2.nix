@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ismtp";
-        version = "1.0.1";
-      };
+      identifier = { name = "ismtp"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 Ertugrul Söylemez";
       maintainer = "Ertugrul Söylemez <es@ertes.de>";
@@ -22,7 +13,7 @@
       synopsis = "Fast, incremental ESMTP sessions";
       description = "This library provides fast, incremental SMTP sessions, so you can\ncontrol each aspect of the session.  It uses iteratees and\nblaze-builder for fast I/O.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.network-fancy)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

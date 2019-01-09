@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "streaming-commons";
-        version = "0.1.2.4";
-      };
+      identifier = { name = "streaming-commons"; version = "0.1.2.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Common lower-level functions needed by various streaming data libraries";
       description = "Provides low-dependency functionality commonly needed by various streaming data libraries, such as conduit and pipes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,13 +27,10 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.zlib)
-        ] ++ (if system.isWindows
-          then [
-            (hsPkgs.Win32)
-            (hsPkgs.filepath)
-          ]
+          ] ++ (if system.isWindows
+          then [ (hsPkgs.Win32) (hsPkgs.filepath) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -58,9 +46,9 @@
             (hsPkgs.network)
             (hsPkgs.text)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
-      };
       benchmarks = {
         "count-chars" = {
           depends = [
@@ -68,15 +56,11 @@
             (hsPkgs.criterion)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "decode-memory-usage" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      websockets_0_11 = true;
-    };
+    flags = { websockets_0_11 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-subscriber";
-        version = "0.6.0.1";
-      };
+      identifier = { name = "servant-subscriber"; version = "0.6.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Robert Klotzner";
       maintainer = "robert Dot klotzner A T gmx Dot at";
@@ -24,7 +13,7 @@
       synopsis = "When REST is not enough ...";
       description = "Please see Readme.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,16 +43,16 @@
           (hsPkgs.wai)
           (hsPkgs.wai-websockets)
           (hsPkgs.warp)
-        ] ++ [ (hsPkgs.websockets) ];
-      };
+          ] ++ [ (hsPkgs.websockets) ];
+        };
       exes = {
         "subscriber-psGenerator" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.servant-subscriber)
             (hsPkgs.purescript-bridge)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

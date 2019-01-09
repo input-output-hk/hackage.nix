@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { production = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hledger-web";
-        version = "0.13";
-      };
+      identifier = { name = "hledger-web"; version = "0.13"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "A hledger add-on command providing a web interface.";
       description = "A hledger add-on command providing a web interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hledger-web" = {
@@ -42,8 +33,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.wai-extra)
             (hsPkgs.file-embed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

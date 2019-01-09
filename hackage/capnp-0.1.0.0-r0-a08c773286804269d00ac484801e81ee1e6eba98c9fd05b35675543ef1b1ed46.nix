@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "capnp";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "capnp"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016-2018 haskell-capnp contributors (see CONTRIBUTORS file).";
       maintainer = "ian@zenhack.net";
@@ -22,7 +13,7 @@
       synopsis = "Cap'n Proto for Haskell";
       description = "A native Haskell implementation of the Cap'N Proto cerialization format.\n\nThis library is currently serialization-only. RPC support is planned but not\nyet implemented. It works, but bear in mind that the API is considered\nunstable, and is likely to change to accomodate RPC, facilitate improved\nperformance, etc.\n\nThe 'Data.Capnp.Tutorial' module is the best place to start reading; the\nreference documentation can seem bewildering without that context.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.cpu)
           (hsPkgs.data-default)
           (hsPkgs.data-default-instances-vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "capnpc-haskell" = {
           depends = [
@@ -65,9 +56,9 @@
             (hsPkgs.filepath)
             (hsPkgs.utf8-string)
             (hsPkgs.wl-pprint-text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "simple-tests" = {
           depends = [
@@ -99,8 +90,8 @@
             (hsPkgs.heredoc)
             (hsPkgs.deepseq)
             (hsPkgs.pretty-show)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

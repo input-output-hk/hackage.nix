@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "marquise";
-        version = "4.0.0";
-      };
+      identifier = { name = "marquise"; version = "4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2013-2015 Anchor Systems, Pty Ltd and Others";
       maintainer = "Anchor Engineering <engineering@anchor.com.au>";
@@ -22,7 +13,7 @@
       synopsis = "Client library for Vaultaire";
       description = "Marquise is a collection of a library and two executables for use with Vaultaire.\n\n1. A client and server library for reading/writing to the vault and spool files.\nThis provides streaming reads and writes to the vault using\n[pipes](https://hackage.haskell.org/package/pipes) as well as writing to spool\nfiles with automatic caching and rotation.\n\n2. An executable `marquised`, a daemon which writes data to the vault from spool\nfiles generated from users of the marquise library.\n\n3. An executable `data`, used for easily inspecting data in the vault as well as\nmarquise cache files.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,8 +51,8 @@
           (hsPkgs.zeromq4-haskell)
           (hsPkgs.time)
           (hsPkgs.vaultaire-common)
-        ];
-      };
+          ];
+        };
       exes = {
         "marquised" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.containers)
             (hsPkgs.vaultaire-common)
             (hsPkgs.marquise)
-          ];
-        };
+            ];
+          };
         "data" = {
           depends = [
             (hsPkgs.base)
@@ -93,9 +84,9 @@
             (hsPkgs.packer)
             (hsPkgs.vaultaire-common)
             (hsPkgs.marquise)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spool-test" = {
           depends = [
@@ -103,8 +94,8 @@
             (hsPkgs.hspec)
             (hsPkgs.bytestring)
             (hsPkgs.marquise)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

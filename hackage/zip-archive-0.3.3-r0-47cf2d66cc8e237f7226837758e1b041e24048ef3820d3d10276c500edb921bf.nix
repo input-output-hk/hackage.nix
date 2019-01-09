@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { executable = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zip-archive";
-        version = "0.3.3";
-      };
+      identifier = { name = "zip-archive"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jgm@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "Library for creating and modifying zip archives.";
       description = "The zip-archive library provides functions for creating, modifying,\nand extracting files from zip archives.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.digest)
           (hsPkgs.directory)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "zip-archive" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.directory)
             (hsPkgs.bytestring)
             (hsPkgs.zip-archive)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-zip-archive" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.zip-archive)
             (hsPkgs.temporary)
             (hsPkgs.filepath)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

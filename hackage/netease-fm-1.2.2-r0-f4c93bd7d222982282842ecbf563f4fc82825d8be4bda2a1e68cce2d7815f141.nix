@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "netease-fm";
-        version = "1.2.2";
-      };
+      identifier = { name = "netease-fm"; version = "1.2.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 foreverbell";
       maintainer = "dql.foreverbell@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "NetEase Cloud Music FM client in Haskell.";
       description = "NetEase Cloud Music FM client.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.aeson)
           (hsPkgs.base64-bytestring)
           (hsPkgs.cryptonite)
-        ];
-      };
+          ];
+        };
       exes = {
         "netease-fm" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.brick)
             (hsPkgs.vty)
             (hsPkgs.netease-fm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

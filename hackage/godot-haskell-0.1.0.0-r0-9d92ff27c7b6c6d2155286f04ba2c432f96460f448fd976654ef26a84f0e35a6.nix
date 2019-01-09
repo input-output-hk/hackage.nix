@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "godot-haskell";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "godot-haskell"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 David Kraeutmann";
       maintainer = "kane@kane.cx";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for the Godot game engine API";
       description = "This package contains Haskell bindings for GDNative and the Godot API. For details and examples, see README.md\nThis is intended to be used with Godot master 91e5782. Versioning scheme subject to change as I figure out a good way to maintain a link to the Godot versioning.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,11 +32,9 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       sublibs = {
         "generate" = {
           depends = [
@@ -64,8 +53,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

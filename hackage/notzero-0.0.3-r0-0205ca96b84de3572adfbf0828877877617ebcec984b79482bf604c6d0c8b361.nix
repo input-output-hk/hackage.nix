@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "notzero";
-        version = "0.0.3";
-      };
+      identifier = { name = "notzero"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 NICTA Limited";
       maintainer = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ> <dibblego>";
@@ -22,7 +13,7 @@
       synopsis = "A data type for representing numeric values, except zero.";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\nA data type for representing numeric values, except zero. This might be useful in working with process exit codes.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.bifunctors)
           (hsPkgs.lens)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "Hish";
-        version = "0.1.0";
-      };
+      identifier = { name = "Hish"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jaiyalas@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Generating a beautiful and useful prompt.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.MissingH)
           (hsPkgs.process)
           (hsPkgs.regex-tdfa)
-        ];
-      };
+          ];
+        };
       exes = {
         "hish" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.MissingH)
             (hsPkgs.process)
             (hsPkgs.regex-tdfa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "aeson-injector";
-        version = "1.0.2.0";
-      };
+      identifier = { name = "aeson-injector"; version = "1.0.2.0"; };
       license = "MIT";
       copyright = "2016 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Injecting fields into aeson values";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.swagger2)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-aeson-injector" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

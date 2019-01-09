@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      optimize = false;
-      profiling = false;
-      tracing = false;
-    };
+    flags = { optimize = false; profiling = false; tracing = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hnix";
-        version = "0.5.0";
-      };
+      identifier = { name = "hnix"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -26,7 +13,7 @@
       synopsis = "Haskell implementation of the Nix language";
       description = "Haskell implementation of the Nix language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -71,21 +58,17 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.xml)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs.base16-bytestring)
           (hsPkgs.cryptohash-md5)
           (hsPkgs.cryptohash-sha1)
           (hsPkgs.cryptohash-sha256)
           (hsPkgs.cryptohash-sha512)
           (hsPkgs.serialise)
-        ]) ++ (if compiler.isGhcjs && true
+          ]) ++ (if compiler.isGhcjs && true
           then [ (hsPkgs.hashable) ]
-          else [
-            (hsPkgs.hashable)
-            (hsPkgs.haskeline)
-            (hsPkgs.pretty-show)
-          ]);
-      };
+          else [ (hsPkgs.hashable) (hsPkgs.haskeline) (hsPkgs.pretty-show) ]);
+        };
       exes = {
         "hnix" = {
           depends = [
@@ -110,16 +93,16 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs.base16-bytestring)
             (hsPkgs.cryptohash-md5)
             (hsPkgs.cryptohash-sha1)
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.cryptohash-sha512)
             (hsPkgs.serialise)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hnix-tests" = {
           depends = [
@@ -156,16 +139,16 @@
             (hsPkgs.transformers)
             (hsPkgs.unix)
             (hsPkgs.unordered-containers)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs.base16-bytestring)
             (hsPkgs.cryptohash-md5)
             (hsPkgs.cryptohash-sha1)
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.cryptohash-sha512)
             (hsPkgs.serialise)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "hnix-benchmarks" = {
           depends = [
@@ -187,15 +170,15 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs.base16-bytestring)
             (hsPkgs.cryptohash-md5)
             (hsPkgs.cryptohash-sha1)
             (hsPkgs.cryptohash-sha256)
             (hsPkgs.cryptohash-sha512)
             (hsPkgs.serialise)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { upload = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yackage";
-        version = "0.3.0";
-      };
+      identifier = { name = "yackage"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Personal Hackage replacement for testing new packages.";
       description = "This package installs a yackage executable that runs a simplistic hackage-like server. It allows you to upload packages produced via cabal sdist and install them via cabal. The trick is to add the yackage repository to your cabal config file, with a line such as:\n\nremote-repo: yackage:http://localhost:3500/";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yackage" = {
@@ -46,16 +37,16 @@
             (hsPkgs.yesod-form)
             (hsPkgs.http-types)
             (hsPkgs.blaze-html)
-          ];
-        };
+            ];
+          };
         "yackage-upload" = {
-          depends = pkgs.lib.optionals (flags.upload) [
+          depends = (pkgs.lib).optionals (flags.upload) [
             (hsPkgs.base)
             (hsPkgs.http-enumerator)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

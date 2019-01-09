@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { doctest = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "record-syntax";
-        version = "0.1.1";
-      };
+      identifier = { name = "record-syntax"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A library for parsing and processing the Haskell syntax sprinkled with anonymous records";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.filepath)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "hspec" = {
           depends = [
             (hsPkgs.record)
@@ -55,9 +46,9 @@
             (hsPkgs.hspec)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "demo" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.conversion-text)
             (hsPkgs.text)
             (hsPkgs.base-prelude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

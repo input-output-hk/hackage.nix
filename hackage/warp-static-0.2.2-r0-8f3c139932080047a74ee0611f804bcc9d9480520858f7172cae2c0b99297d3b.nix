@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "warp-static";
-        version = "0.2.2";
-      };
+      identifier = { name = "warp-static"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Static file server based on Warp and wai-app-static";
       description = "Serve up static files by running the warp executable. Based on Warp and wai-app-static.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "warp" = {
@@ -36,8 +27,8 @@
             (hsPkgs.containers)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

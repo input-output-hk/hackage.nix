@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "hw-rankselect";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hw-rankselect"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Conduits for tokenizing streams.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,13 @@
           (hsPkgs.hw-bits)
           (hsPkgs.hw-prim)
           (hsPkgs.vector)
-        ];
-      };
-      exes = {
-        "hw-rankselect-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hw-rankselect)
           ];
         };
-      };
+      exes = {
+        "hw-rankselect-example" = {
+          depends = [ (hsPkgs.base) (hsPkgs.hw-rankselect) ];
+          };
+        };
       tests = {
         "hw-rankselect-test" = {
           depends = [
@@ -50,9 +38,9 @@
             (hsPkgs.hw-rankselect)
             (hsPkgs.QuickCheck)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -64,8 +52,8 @@
             (hsPkgs.hw-rankselect)
             (hsPkgs.mmap)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

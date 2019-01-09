@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "influxdb";
-        version = "1.2.2";
-      };
+      identifier = { name = "influxdb"; version = "1.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014-2017 Mitsutoshi Aoe";
       maintainer = "Mitsutoshi Aoe <maoe@foldr.in>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell client library for InfluxDB";
       description = "@influxdb@ is a Haskell client library for InfluxDB.\n\nRead \"Database.InfluxDB\" for a quick start guide.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "influx-random-points" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "influx-write-udp" = {
           depends = [
             (hsPkgs.base)
@@ -71,9 +62,9 @@
             (hsPkgs.lens)
             (hsPkgs.network)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-suite" = {
           depends = [
@@ -88,8 +79,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

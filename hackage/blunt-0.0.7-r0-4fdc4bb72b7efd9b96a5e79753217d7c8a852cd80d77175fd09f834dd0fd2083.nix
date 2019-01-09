@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blunt";
-        version = "0.0.7";
-      };
+      identifier = { name = "blunt"; version = "0.0.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak <taylor@fausak.me>";
@@ -22,7 +13,7 @@
       synopsis = "Point-free Haskell as a service.";
       description = "<https://github.com/tfausak/blunt>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,15 +26,8 @@
           (hsPkgs.containers)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.transformers)
-        ];
-      };
-      exes = {
-        "blunt" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.blunt)
           ];
         };
+      exes = { "blunt" = { depends = [ (hsPkgs.base) (hsPkgs.blunt) ]; }; };
       };
-    };
-  }
+    }

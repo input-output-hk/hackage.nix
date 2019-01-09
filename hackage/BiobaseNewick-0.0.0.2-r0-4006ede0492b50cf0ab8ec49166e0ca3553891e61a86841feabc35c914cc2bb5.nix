@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "BiobaseNewick";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "BiobaseNewick"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2015-2017";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -22,7 +13,7 @@
       synopsis = "Newick file format parser.";
       description = "This is a simple parser for Newick trees. The parser returns a\nrose tree. Each node is labelled with the node name (or an\nempty string for anonymous nodes) and a distance (0 if not\ngiven).\n\nIncludes conversion to an efficient static forest.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.text-binary)
           (hsPkgs.vector)
           (hsPkgs.ForestStructures)
-        ];
-      };
+          ];
+        };
       exes = {
         "TestForestStructure" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.vector)
             (hsPkgs.BiobaseNewick)
             (hsPkgs.ForestStructures)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "properties" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

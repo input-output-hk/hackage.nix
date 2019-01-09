@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "osm-download";
-        version = "0.1.1";
-      };
+      identifier = { name = "osm-download"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas.DuBuisson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Download Open Street Map tiles";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.http-conduit)
           (hsPkgs.bytestring)
           (hsPkgs.gps)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pureMD5";
-        version = "1.1.0.0";
-      };
+      identifier = { name = "pureMD5"; version = "1.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas DuBuisson";
@@ -22,7 +13,7 @@
       synopsis = "MD5 implementations that should become part of a ByteString Crypto package.";
       description = "An unrolled implementation of MD5 purely in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.cereal)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

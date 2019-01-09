@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "roles";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "roles"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2017 Matt Noonan, (C) 2014 Edward A. Kmett";
       maintainer = "Matt Noonan <matt.noonan@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Composable class-based roles";
       description = "Composable class-based roles";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

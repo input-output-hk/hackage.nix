@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "clean-home";
-        version = "0.0.3";
-      };
+      identifier = { name = "clean-home"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.es";
@@ -22,7 +13,7 @@
       synopsis = "Keep your home dir clean by finding old conf files";
       description = "clean-home searches for config files in your \$HOME\nthat no installed package/program will need.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "clean-home" = {
@@ -33,8 +24,8 @@
             (hsPkgs.directory)
             (hsPkgs.containers)
             (hsPkgs.IfElse)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

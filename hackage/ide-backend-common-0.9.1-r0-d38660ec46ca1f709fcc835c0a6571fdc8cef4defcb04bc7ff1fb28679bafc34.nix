@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ide-backend-common";
-        version = "0.9.1";
-      };
+      identifier = { name = "ide-backend-common"; version = "0.9.1"; };
       license = "MIT";
       copyright = "(c) 2015 FP Complete";
       maintainer = "Duncan Coutts <duncan@well-typed.com>";
@@ -22,7 +13,7 @@
       synopsis = "Shared library used be ide-backend and ide-backend-server";
       description = "Should not be used by end users";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.attoparsec)
           (hsPkgs.template-haskell)
           (hsPkgs.pretty-show)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "normalization-insensitive";
-        version = "2.0";
-      };
+      identifier = { name = "normalization-insensitive"; version = "2.0"; };
       license = "BSD-3-Clause";
       copyright = "2011 Bas van Dijk,\n2016 Patrick Pelletier";
       maintainer = "Patrick Pelletier <code@funwithsoftware.org>";
@@ -22,7 +13,7 @@
       synopsis = "Normalization insensitive string comparison";
       description = "The module @Data.Unicode.NormalizationInsensitive@ provides\nthe 'NI' type constructor which can be parameterized by a\nstring-like type like: 'String', 'ByteString', 'Text',\netc.. Comparisons of values of the resulting type will be\ninsensitive to normalization.\nThis is very similar in spirit to the @case-insensitive@\npackage, and is in fact based on the same code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
           (hsPkgs.unicode-transforms)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-normalization-insensitive" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-normalization-insensitive" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

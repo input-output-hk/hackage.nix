@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "taskpool";
-        version = "0.0.3";
-      };
+      identifier = { name = "taskpool"; version = "0.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Manage pools of possibly interdependent tasks using STM and async";
       description = "A taskpool is a network of tasks (where connection indicates dependency),\nwhere up to N independent tasks at time may execute concurrently.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.async)
           (hsPkgs.stm)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.fgl)
             (hsPkgs.containers)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

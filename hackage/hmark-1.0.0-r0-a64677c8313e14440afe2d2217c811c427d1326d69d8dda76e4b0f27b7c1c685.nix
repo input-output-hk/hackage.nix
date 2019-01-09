@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "hmark";
-        version = "1.0.0";
-      };
+      identifier = { name = "hmark"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voker57@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A tool and library for Markov chains based text generation.";
       description = "A tool and library for Markov chains based text generation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,12 +23,8 @@
           (hsPkgs.safe)
           (hsPkgs.utf8-string)
           (hsPkgs.bytestring)
-        ];
-      };
-      exes = {
-        "hmark" = {
-          depends = [ (hsPkgs.base) ];
+          ];
         };
+      exes = { "hmark" = { depends = [ (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

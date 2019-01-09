@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "indentation-core";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "indentation-core"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ömer Sinan Ağacan <omeragacan@gmail.com>\nAleksey Kliger <aleksey@lambdageek.org>";
@@ -22,13 +13,6 @@
       synopsis = "Indentation sensitive parsing combinators core library";
       description = "Indentation sensitive parsing combinators core library\n\nThis is the core for the indentation package.\nFor common use, consider one of the front-ends:\nindentation-parsec or indentation-trifecta.  For\nboth, or for backward compatability, install\nindentation.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

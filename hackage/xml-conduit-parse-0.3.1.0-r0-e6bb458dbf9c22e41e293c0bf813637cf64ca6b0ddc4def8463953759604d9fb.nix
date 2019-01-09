@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xml-conduit-parse";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "xml-conduit-parse"; version = "0.3.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral <koral@mailoo.org>";
@@ -22,7 +13,7 @@
       synopsis = "Streaming XML parser based on conduits.";
       description = "This library provides an alternative, hopefully higher-level implementation for the parsing part of @xml-conduit@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

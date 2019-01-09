@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "phraskell";
-        version = "0.1.4";
-      };
+      identifier = { name = "phraskell"; version = "0.1.4"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "dimitri.sabadie@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A fractal viewer.";
       description = "A fractal viewer with some cool features like changing colorscheme, screenshot, buddhabrot, and so on.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "phraskell" = {
@@ -31,8 +22,8 @@
             (hsPkgs.SDL)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws";
-        version = "0.11";
-      };
+      identifier = { name = "aws"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "See contributors list in README and LICENSE file";
       maintainer = "aristidb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Web Services (AWS) for Haskell";
       description = "Bindings for Amazon Web Services (AWS), with the aim of supporting all AWS services. To see a high level overview of the library, see the README at <https://github.com/aristidb/aws/blob/master/README.org>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -62,30 +53,30 @@
           (hsPkgs.utf8-string)
           (hsPkgs.vector)
           (hsPkgs.xml-conduit)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.6")) (hsPkgs.ghc-prim);
+        };
       exes = {
         "GetObject" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.http-conduit)
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
-          ];
-        };
+            ];
+          };
         "MultipartUpload" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.http-conduit)
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "NukeBucket" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.http-conduit)
@@ -93,17 +84,17 @@
             (hsPkgs.conduit-extra)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "SimpleDb" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "DynamoDb" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.aws)
             (hsPkgs.base)
             (hsPkgs.data-default)
@@ -111,18 +102,18 @@
             (hsPkgs.http-conduit)
             (hsPkgs.text)
             (hsPkgs.conduit)
-          ];
-        };
+            ];
+          };
         "Sqs" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.aws)
             (hsPkgs.errors)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "sqs-tests" = {
           depends = [
@@ -145,8 +136,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
-          ];
-        };
+            ];
+          };
         "dynamodb-tests" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -168,8 +159,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

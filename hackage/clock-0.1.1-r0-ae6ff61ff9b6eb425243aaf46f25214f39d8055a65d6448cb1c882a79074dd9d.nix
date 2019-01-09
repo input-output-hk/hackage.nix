@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "clock";
-        version = "0.1.1";
-      };
+      identifier = { name = "clock"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Cetin Sert";
       maintainer = "Cetin Sert <cetin@sertcom.de>";
@@ -22,10 +13,6 @@
       synopsis = "low-level binding to time.h: clock_gettime and clock_getres";
       description = "low-level binding to time.h: clock_gettime and clock_getres.\nclock_settime will be added in later versions.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

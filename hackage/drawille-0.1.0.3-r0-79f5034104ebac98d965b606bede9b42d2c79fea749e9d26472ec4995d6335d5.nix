@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "drawille";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "drawille"; version = "0.1.0.3"; };
       license = "GPL-3.0-only";
       copyright = "(c) Pedro Yamada";
       maintainer = "Pedro Yamada <tacla.yamada@gmail.com>";
@@ -22,22 +13,13 @@
       synopsis = "A port of asciimoo's drawille to haskell";
       description = "A tiny library for drawing with braille.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
       exes = {
         "senoid" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.AC-Angle)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.AC-Angle) ];
+          };
         "image2term" = {
           depends = [
             (hsPkgs.base)
@@ -45,9 +27,9 @@
             (hsPkgs.friday)
             (hsPkgs.terminal-size)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -55,8 +37,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

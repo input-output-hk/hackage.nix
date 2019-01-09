@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "boomslang";
-        version = "0.0.4";
-      };
+      identifier = { name = "boomslang"; version = "0.0.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Brian Lewis <brian@lorf.org>, Ian Taylor <ian@lorf.org>";
@@ -22,11 +13,11 @@
       synopsis = "Boomshine clone";
       description = "A clone of Boomshine (see <http://www.k2xl.com/games/boomshine/>).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "boomslang" = {
-          depends = if compiler.isGhc && compiler.version.ge "6.12"
+          depends = if compiler.isGhc && (compiler.version).ge "6.12"
             then [
               (hsPkgs.GLFW-b)
               (hsPkgs.MonadRandom)
@@ -37,7 +28,7 @@
               (hsPkgs.data-accessor-template)
               (hsPkgs.font-opengl-basic4x6)
               (hsPkgs.mtl)
-            ]
+              ]
             else [
               (hsPkgs.GLFW-b)
               (hsPkgs.MonadRandom)
@@ -49,8 +40,8 @@
               (hsPkgs.font-opengl-basic4x6)
               (hsPkgs.mtl)
               (hsPkgs.template-haskell)
-            ];
+              ];
+          };
         };
       };
-    };
-  }
+    }

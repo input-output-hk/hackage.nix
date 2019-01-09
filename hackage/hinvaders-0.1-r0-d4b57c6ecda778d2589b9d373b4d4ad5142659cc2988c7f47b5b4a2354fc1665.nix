@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hinvaders";
-        version = "0.1";
-      };
+      identifier = { name = "hinvaders"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,16 +13,12 @@
       synopsis = "Space Invaders";
       description = "A simple clone of Space Invaders for playing on one's terminal.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hinvaders" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.random)
-            (hsPkgs.haskell98)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.random) (hsPkgs.haskell98) ];
+          };
         };
       };
-    };
-  }
+    }

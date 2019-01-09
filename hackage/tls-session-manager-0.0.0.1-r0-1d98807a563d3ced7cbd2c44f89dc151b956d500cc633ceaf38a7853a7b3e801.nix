@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tls-session-manager";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "tls-session-manager"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "kazu@iij.ad.jp";
@@ -22,7 +13,7 @@
       synopsis = "In-memory TLS session manager";
       description = "TLS session manager with limitation, automatic pruning, energy saving and replay resistance";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.clock)
           (hsPkgs.psqueues)
           (hsPkgs.tls)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

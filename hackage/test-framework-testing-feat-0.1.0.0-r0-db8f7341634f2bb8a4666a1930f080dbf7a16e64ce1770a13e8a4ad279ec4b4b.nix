@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "test-framework-testing-feat";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Copyright 2013 Jonathan Fischoff, Max Bolingbroke";
       maintainer = "jonathangfischoff@gmail.com";
@@ -22,23 +16,23 @@
       synopsis = "A test framework provider for testing-feat";
       description = "A test provider for testing-feat copied from test-framework-quickcheck2 by Max Bolingbroke";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.test-framework)
           (hsPkgs.testing-feat)
-        ];
-      };
+          ];
+        };
       tests = {
         "Tests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.testing-feat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

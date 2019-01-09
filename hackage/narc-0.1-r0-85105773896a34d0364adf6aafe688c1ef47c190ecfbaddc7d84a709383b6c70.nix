@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "narc";
-        version = "0.1";
-      };
+      identifier = { name = "narc"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ezra@ezrakilty.net";
@@ -22,7 +13,7 @@
       synopsis = "Query SQL databases using Nested Relational Calculus embedded in Haskell.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.mtl)
           (hsPkgs.random)
           (hsPkgs.HDBC)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

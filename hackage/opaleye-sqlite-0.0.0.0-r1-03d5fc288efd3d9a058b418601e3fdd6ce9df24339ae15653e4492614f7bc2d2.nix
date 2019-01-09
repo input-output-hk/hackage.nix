@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "opaleye-sqlite";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "opaleye-sqlite"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014-2015 Purely Agile Limited";
       maintainer = "Purely Agile";
@@ -22,7 +13,7 @@
       synopsis = "An SQL-generating DSL targeting SQLite";
       description = "An SQL-generating DSL targeting SQLite.  Allows\nSQLite queries to be written within Haskell in a\ntypesafe and composable fashion.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.time-locale-compat)
           (hsPkgs.uuid)
           (hsPkgs.void)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.semigroups)
             (hsPkgs.sqlite-simple)
             (hsPkgs.opaleye-sqlite)
-          ];
-        };
+            ];
+          };
         "tutorial" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +58,8 @@
             (hsPkgs.sqlite-simple)
             (hsPkgs.time)
             (hsPkgs.opaleye-sqlite)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

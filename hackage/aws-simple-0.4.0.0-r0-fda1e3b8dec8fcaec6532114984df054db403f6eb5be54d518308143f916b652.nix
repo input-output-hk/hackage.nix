@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-simple";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "aws-simple"; version = "0.4.0.0"; };
       license = "MIT";
       copyright = "2016 - 2017 Alexander Thiemann <mail@athiemann.net>";
       maintainer = "mail@athiemann.net";
@@ -22,7 +13,7 @@
       synopsis = "Dead simple bindings to commonly used AWS Services";
       description = "Simple bindings to commonly used AWS services";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.amazonka-sqs)
           (hsPkgs.unordered-containers)
           (hsPkgs.timespan)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

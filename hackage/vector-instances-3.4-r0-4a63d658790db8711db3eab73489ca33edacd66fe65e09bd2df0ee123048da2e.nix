@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { hashable = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "vector-instances";
-        version = "3.4";
-      };
+      identifier = { name = "vector-instances"; version = "3.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ekmett@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Orphan Instances for 'Data.Vector'";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.comonad)
           (hsPkgs.pointed)
           (hsPkgs.keys)
-        ] ++ pkgs.lib.optional (flags.hashable) (hsPkgs.hashable);
+          ] ++ (pkgs.lib).optional (flags.hashable) (hsPkgs.hashable);
+        };
       };
-    };
-  }
+    }

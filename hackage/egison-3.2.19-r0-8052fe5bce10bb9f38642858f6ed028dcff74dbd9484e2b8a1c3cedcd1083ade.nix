@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "egison";
-        version = "3.2.19";
-      };
+      identifier = { name = "egison"; version = "3.2.19"; };
       license = "MIT";
       copyright = "";
       maintainer = "Satoshi Egi <egi@egison.org>";
@@ -22,7 +13,7 @@
       synopsis = "Programming language with non-linear pattern-matching against unfree data types";
       description = "An interpreter for Egison, the programming langugage that realized non-linear pattern-matching against unfree data types.\nWith Egison, you can represent pattern-matching against unfree data types intuitively,\nespecially for collection data, such as lists, multisets, sets.\nWe can find Egison programs in @lib@ and @sample@ directories.\nThis package also include Emacs Lisp file @egison-mode.el@ in @elisp@ directory.\n\nThe following code is the program that determins poker-hands written in Egison.\nAll hands are expressed in a single pattern.\nWe can run this code online at <http://www.egison.org/demonstrations/poker-hands.html>.\n\n<<http://www.egison.org/images/poker-hands.png>>\n\nThe pattern-matching of Egison is very powerful.\nWe can use it for pattern-matching against graphs, too.\nEgison is not popular at all now.\nPlease help us to make Egison popular.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text)
           (hsPkgs.regex-posix)
           (hsPkgs.direct-sqlite)
-        ];
-      };
+          ];
+        };
       exes = {
         "egison" = {
           depends = [
@@ -64,9 +55,9 @@
             (hsPkgs.strict-io)
             (hsPkgs.bytestring)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -78,9 +69,9 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -90,8 +81,8 @@
             (hsPkgs.criterion)
             (hsPkgs.transformers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

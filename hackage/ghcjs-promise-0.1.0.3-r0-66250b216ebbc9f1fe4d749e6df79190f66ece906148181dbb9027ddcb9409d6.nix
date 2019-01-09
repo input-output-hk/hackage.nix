@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghcjs-promise";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "ghcjs-promise"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "vwwv@correo.ugr.es";
@@ -22,14 +13,10 @@
       synopsis = "Bidirectional bidings to javascript's promise.";
       description = "Bidirectional bidings to javascript's promise.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghcjs-base)
-          (hsPkgs.protolude)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.ghcjs-base) (hsPkgs.protolude) ];
+        };
       };
-    };
-  }
+    }

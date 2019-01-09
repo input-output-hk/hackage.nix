@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "saferoute";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "saferoute"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014, Peter Harpending";
       maintainer = "Peter Harpending <pharpend2@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple type-safe routing library.";
       description = "saferoute is a type-safe routing library for web applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.blaze-html)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

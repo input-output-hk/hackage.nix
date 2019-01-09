@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "belka";
-        version = "0.8";
-      };
+      identifier = { name = "belka"; version = "0.8"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP client DSL";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.bug)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.bug)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "futhark";
-        version = "0.7.4";
-      };
+      identifier = { name = "futhark"; version = "0.7.4"; };
       license = "ISC";
       copyright = "";
       maintainer = "Troels Henriksen athas@sigkill.dk";
@@ -22,7 +13,7 @@
       synopsis = "An optimising compiler for a functional, array-oriented language.";
       description = "See the website at https://futhark-lang.org";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -69,12 +60,12 @@
           (hsPkgs.versions)
           (hsPkgs.zip-archive)
           (hsPkgs.zlib)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       exes = {
         "futhark" = {
           depends = [
@@ -125,8 +116,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-bench" = {
           depends = [
             (hsPkgs.aeson)
@@ -176,8 +167,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-c" = {
           depends = [
             (hsPkgs.aeson)
@@ -227,8 +218,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-cs" = {
           depends = [
             (hsPkgs.aeson)
@@ -278,8 +269,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-csopencl" = {
           depends = [
             (hsPkgs.aeson)
@@ -329,8 +320,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-dataset" = {
           depends = [
             (hsPkgs.aeson)
@@ -380,8 +371,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-doc" = {
           depends = [
             (hsPkgs.aeson)
@@ -431,8 +422,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-opencl" = {
           depends = [
             (hsPkgs.aeson)
@@ -482,8 +473,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-pkg" = {
           depends = [
             (hsPkgs.aeson)
@@ -533,8 +524,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-py" = {
           depends = [
             (hsPkgs.aeson)
@@ -584,8 +575,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-pyopencl" = {
           depends = [
             (hsPkgs.aeson)
@@ -635,8 +626,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futhark-test" = {
           depends = [
             (hsPkgs.aeson)
@@ -686,8 +677,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "futharki" = {
           depends = [
             (hsPkgs.ansi-terminal)
@@ -735,9 +726,9 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         };
-      };
       tests = {
         "unit" = {
           depends = [
@@ -790,8 +781,8 @@
             (hsPkgs.versions)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

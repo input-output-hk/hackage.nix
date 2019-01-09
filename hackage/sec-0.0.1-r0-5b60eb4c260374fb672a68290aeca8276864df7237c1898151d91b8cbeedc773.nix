@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sec";
-        version = "0.0.1";
-      };
+      identifier = { name = "sec"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Steffen Siering <steffen dot siering -> gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Semantic Editor Combinators.";
       description = "Semantic Editor Combinators as described by Conal Elliott\n(See: <http://conal.net/blog/posts/semantic-editor-combinators/>)\nand Template Haskell support for automatically creating semantic\neditor combinators from Algebraic Data Types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
+      };
+    }

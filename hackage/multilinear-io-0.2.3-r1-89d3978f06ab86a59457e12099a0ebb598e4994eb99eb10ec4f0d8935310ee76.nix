@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "multilinear-io";
-        version = "0.2.3";
-      };
+      identifier = { name = "multilinear-io"; version = "0.2.3"; };
       license = "BSD-3-Clause";
       copyright = "2018 Artur M. Brodzki";
       maintainer = "artur@brodzki.org";
@@ -22,7 +13,7 @@
       synopsis = "Input/output capability for multilinear package.";
       description = "Input & output capability for multilinear package <https://hackage.haskell.org/package/multilinear>. Supports various file formats: binary, CSV, JSON. More information available on GitHub: <https://github.com/ArturB/multilinear-io#readme>. As the library utilizes new Conduit interface (>= 1.3.0), it doesn't and won't compile with Stackage snaphots LTS-10 and older.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       tests = {
         "binary" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.multilinear)
             (hsPkgs.multilinear-io)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "csv" = {
           depends = [
             (hsPkgs.base)
@@ -59,8 +50,8 @@
             (hsPkgs.multilinear)
             (hsPkgs.multilinear-io)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "json" = {
           depends = [
             (hsPkgs.base)
@@ -69,9 +60,9 @@
             (hsPkgs.multilinear)
             (hsPkgs.multilinear-io)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "multilinear-io-bench" = {
           depends = [
@@ -83,8 +74,8 @@
             (hsPkgs.multilinear)
             (hsPkgs.multilinear-io)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

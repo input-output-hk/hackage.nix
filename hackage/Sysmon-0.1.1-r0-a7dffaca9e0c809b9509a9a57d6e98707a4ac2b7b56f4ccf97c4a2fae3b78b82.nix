@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Sysmon";
-        version = "0.1.1";
-      };
+      identifier = { name = "Sysmon"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "virukav@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sybase 15 sysmon reports processor";
       description = "A library for processing Sysbase 15 sysmon reports.\nSysmon parses and stores the reports in the interval map.\nThe interval is defined by the report's time range.\nThe library main features are parsing sysmon reports, querying the\ntime interval, aggregating the multiple sysmon reports covered by the\nrequested time interval, providing some hints. The hints properties are\nconfigured.\nSee the Log.hs for the exported functions and examples/Sample.hs for the\nusage example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.MissingH)
           (hsPkgs.vector)
           (hsPkgs.statistics)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

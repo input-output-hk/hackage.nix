@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "persistent-mongoDB";
-        version = "0.6.3";
-      };
+      identifier = { name = "persistent-mongoDB"; version = "0.6.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Backend for the persistent library using mongoDB.";
       description = "Backend for the persistent library using mongoDB.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.data-object)
           (hsPkgs.neither)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

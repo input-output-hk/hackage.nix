@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "flamingra";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "flamingra"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@lelf.lu";
@@ -22,11 +13,9 @@
       synopsis = "FlameGraphs of profiling";
       description = "Hack to turn the profiling output into the format suitable for FlameGraph.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "flamingra" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.pipes)
             (hsPkgs.optparse-applicative)
             (hsPkgs.either)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

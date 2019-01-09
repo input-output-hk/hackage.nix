@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conduit-algorithms";
-        version = "0.0.8.0";
-      };
+      identifier = { name = "conduit-algorithms"; version = "0.0.8.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Luis Pedro Coelho";
@@ -22,7 +13,7 @@
       synopsis = "Conduit-based algorithms";
       description = "Algorithms on Conduits, including higher level asynchronous processing and some other utilities.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unliftio-core)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.lzma-conduit);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.lzma-conduit);
+        };
       tests = {
         "conduit-algorithms-test" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unliftio-core)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.lzma-conduit);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.lzma-conduit);
+          };
         };
       };
-    };
-  }
+    }

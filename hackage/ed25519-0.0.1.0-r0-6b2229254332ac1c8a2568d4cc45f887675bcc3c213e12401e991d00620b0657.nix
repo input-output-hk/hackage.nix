@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       test-properties = true;
@@ -14,13 +8,10 @@
       threaded = true;
       llvm = false;
       optimized = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ed25519";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "ed25519"; version = "0.0.1.0"; };
       license = "MIT";
       copyright = "Copyright (c) Austin Seipp 2013";
       maintainer = "Austin Seipp <aseipp@pobox.com>";
@@ -30,17 +21,12 @@
       synopsis = "ed25519 cryptographic signatures";
       description = "This package provides a simple, portable implementation of the\ned25519 public-key signature system. It also includes support for\ndetached signatures.\n\nThe underlying implementation uses the @ref10@ implementation of\ned25519 from SUPERCOP, and should be relatively fast.\n\nFor more information (including how to get a copy of the software)\nvisit <http://ed25519.cr.yp.to>.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
       tests = {
         "properties" = {
-          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.ed25519)
             (hsPkgs.bytestring)
@@ -49,10 +35,10 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
-          ];
-        };
+            ];
+          };
         "hunit" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hunit)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hunit)) [
             (hsPkgs.base)
             (hsPkgs.ed25519)
             (hsPkgs.bytestring)
@@ -61,16 +47,16 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-th)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -79,9 +65,9 @@
             (hsPkgs.doctest)
             (hsPkgs.filepath)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench1" = {
           depends = [
@@ -90,8 +76,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.ed25519)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

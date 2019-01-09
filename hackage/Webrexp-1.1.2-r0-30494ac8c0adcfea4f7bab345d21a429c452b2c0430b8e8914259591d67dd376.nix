@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { optimize = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Webrexp";
-        version = "1.1.2";
-      };
+      identifier = { name = "Webrexp"; version = "1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Vincent Berthoux (twinside@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Regexp-like engine to scrap web data";
       description = "A web scrapping utility mixing CSS selector syntax and regular expressions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.text)
           (hsPkgs.vector)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "webrexp" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.text)
             (hsPkgs.vector)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

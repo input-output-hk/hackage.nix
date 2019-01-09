@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cndict";
-        version = "0.4.8";
-      };
+      identifier = { name = "cndict"; version = "0.4.8"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Lemmih <lemmih@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Chinese/Mandarin <-> English dictionary, Chinese lexer.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.cassava)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

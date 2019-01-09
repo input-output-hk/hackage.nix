@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "compact-socket";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "compact-socket"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "omeragacan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Socket functions for compact normal form.";
       description = "A sample implementation of transmitting compact normal forms over sockets.  Needs a custom version of GHC, see https://github.com/gcampax/ghc/releases";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.filepath)
           (hsPkgs.network)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

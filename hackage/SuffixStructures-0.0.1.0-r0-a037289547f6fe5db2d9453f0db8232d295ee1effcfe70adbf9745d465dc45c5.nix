@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SuffixStructures";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "SuffixStructures"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2014 - 2015";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -22,7 +13,7 @@
       synopsis = "Suffix array construction";
       description = "Suffix array construction in Haskell. Currently, only a naive\nmethod is provided. More advanced construction methods might\nfollow.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
           (hsPkgs.vector-binary-instances)
-        ];
-      };
+          ];
+        };
       exes = {
         "mkesa" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "BenchmarkSuffixStructures" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.mwc-random)
             (hsPkgs.SuffixStructures)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

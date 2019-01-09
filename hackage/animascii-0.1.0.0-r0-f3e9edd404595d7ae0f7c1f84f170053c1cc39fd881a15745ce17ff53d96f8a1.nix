@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.23";
-      identifier = {
-        name = "animascii";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "animascii"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "© 2018 Francesco Ariis";
       maintainer = "fa-ml@ariis.it";
@@ -22,7 +13,7 @@
       synopsis = "text-file based ASCII animator";
       description = "Make sure to read the README before installing!";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "animascii" = {
@@ -37,9 +28,9 @@
             (hsPkgs.text)
             (hsPkgs.process)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.parsec)
             (hsPkgs.ansi-terminal-game)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

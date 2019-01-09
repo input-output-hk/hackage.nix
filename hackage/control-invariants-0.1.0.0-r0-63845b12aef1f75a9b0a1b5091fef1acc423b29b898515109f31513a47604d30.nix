@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "control-invariants";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "control-invariants"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "simon@cse.yorku.ca";
@@ -22,7 +13,7 @@
       synopsis = "Invariants and contract monitoring";
       description = "Invariants and contract monitoring";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.th-lift)
           (hsPkgs.th-printf)
           (hsPkgs.QuickCheck)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "log-utils";
-        version = "0.2.2";
-      };
+      identifier = { name = "log-utils"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Scrive AB";
       maintainer = "Andrzej Rybczak <andrzej@scrive.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utils for working with logs";
       description = "Two utilities for working with logs:\nlog-server and log-fetcher.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "log-server" = {
@@ -46,8 +37,8 @@
             (hsPkgs.vector)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "log-fetcher" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +58,8 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
             (hsPkgs.unjson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

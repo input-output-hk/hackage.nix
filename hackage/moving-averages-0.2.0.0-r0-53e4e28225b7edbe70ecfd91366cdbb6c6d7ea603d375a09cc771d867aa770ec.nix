@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "moving-averages";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "moving-averages"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2017";
       maintainer = "sayhi@joshuaclayton.me";
@@ -22,19 +13,13 @@
       synopsis = "This is a library for calculating moving averages on lists of numbers.";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "moving-averages-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.moving-averages)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.moving-averages) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

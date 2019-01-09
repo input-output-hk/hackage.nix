@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blacktip";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "blacktip"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "2014, Chris Allen";
       maintainer = "cma@bitemyapp.com";
@@ -22,7 +13,7 @@
       synopsis = "Decentralized, k-ordered unique ID generator.";
       description = "Clone of Boundary's Flake unique id service for Haskell, itself based on Snowflake.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,17 +29,13 @@
           (hsPkgs.deepseq-generics)
           (hsPkgs.deepseq)
           (hsPkgs.bytestring)
-        ];
-      };
-      tests = {
-        "tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.blacktip)
-            (hsPkgs.hspec)
           ];
         };
-      };
+      tests = {
+        "tests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.blacktip) (hsPkgs.hspec) ];
+          };
+        };
       benchmarks = {
         "benches" = {
           depends = [
@@ -58,8 +45,8 @@
             (hsPkgs.network-info)
             (hsPkgs.time)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

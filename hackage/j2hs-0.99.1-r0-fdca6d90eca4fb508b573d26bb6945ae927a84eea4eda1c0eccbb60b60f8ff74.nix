@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "j2hs";
-        version = "0.99.1";
-      };
+      identifier = { name = "j2hs"; version = "0.99.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
@@ -22,7 +13,7 @@
       synopsis = "j2hs";
       description = "j2hs";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "j2hs" = {
@@ -43,8 +34,8 @@
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.strict)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

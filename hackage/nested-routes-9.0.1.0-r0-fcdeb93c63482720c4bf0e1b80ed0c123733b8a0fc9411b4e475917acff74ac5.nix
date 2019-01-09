@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nested-routes";
-        version = "9.0.1.0";
-      };
+      identifier = { name = "nested-routes"; version = "9.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Declarative, compositional Wai responses";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/pred-trie#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.wai-middleware-content-type)
           (hsPkgs.wai-middleware-verbs)
           (hsPkgs.wai-transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.wai-middleware-content-type)
             (hsPkgs.wai-middleware-verbs)
             (hsPkgs.wai-transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

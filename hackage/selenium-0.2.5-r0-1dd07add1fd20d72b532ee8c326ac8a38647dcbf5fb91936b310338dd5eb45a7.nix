@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "selenium";
-        version = "0.2.5";
-      };
+      identifier = { name = "selenium"; version = "0.2.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Aaron Tomb <atomb@galois.com>";
@@ -22,7 +13,7 @@
       synopsis = "Test web applications through a browser.";
       description = "NOTE: This package is considered deprecated as of April\n2012. The 'webdriver' package on Hackage is more complete\nand uses the more modern WebDriver protocol used by\nrecent Selenium versions.\nHaskell bindings to communicate with a Selenium Remote\nControl server. This package makes it possible to use\nHaskell to write test scripts that exercise web\napplications through a web browser.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -33,14 +24,14 @@
             (hsPkgs.network)
             (hsPkgs.mtl)
             (hsPkgs.HUnit)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.HTTP)
             (hsPkgs.network)
             (hsPkgs.mtl)
             (hsPkgs.HUnit)
-          ];
+            ];
+        };
       };
-    };
-  }
+    }

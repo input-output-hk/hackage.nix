@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "active";
-        version = "0.1.0.18";
-      };
+      identifier = { name = "active"; version = "0.1.0.18"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Brent Yorgey";
       maintainer = "byorgey@cis.upenn.edu";
@@ -22,7 +13,7 @@
       synopsis = "Abstractions for animation";
       description = "\"Active\" abstraction for animated things with finite start and end times.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.vector-space)
           (hsPkgs.newtype)
-        ];
-      };
+          ];
+        };
       tests = {
         "active-tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.vector-space)
             (hsPkgs.newtype)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

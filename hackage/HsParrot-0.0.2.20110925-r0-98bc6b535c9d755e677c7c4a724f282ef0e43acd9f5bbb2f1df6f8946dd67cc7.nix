@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "HsParrot";
-        version = "0.0.2.20110925";
-      };
+      identifier = { name = "HsParrot"; version = "0.0.2.20110925"; };
       license = "BSD-3-Clause";
       copyright = "Audrey Tang, 2008";
       maintainer = "audreyt@audreyt.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell integration with Parrot virtual machine";
       description = "Haskell integration with Parrot virtual machine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.pretty)
           (hsPkgs.HsSyck)
           (hsPkgs.pugs-DrIFT)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "keera-hails-reactive-yampa";
         version = "0.0.3.3";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.co.uk";
@@ -22,7 +16,7 @@
       synopsis = "Haskell on Rails - FRP Yampa Signal Functions as RVs";
       description = "Yampa-driven Functional Reactive Signal Functions,\nas reactive values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.keera-callbacks)
           (hsPkgs.time)
           (hsPkgs.Yampa)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

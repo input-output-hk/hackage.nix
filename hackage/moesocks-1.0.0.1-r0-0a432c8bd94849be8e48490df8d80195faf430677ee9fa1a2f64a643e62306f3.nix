@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "moesocks";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "moesocks"; version = "1.0.0.1"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) 2015 Jinjing Wang";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A functional firewall killer";
       description = "A SOCKS5 proxy using the client / server architecture.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "moesocks" = {
@@ -51,8 +42,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unix)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

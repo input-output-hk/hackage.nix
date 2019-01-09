@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hjsonschema";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "hjsonschema"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@housejeffries.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell implementation of JSON Schema v4.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.vector)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       tests = {
         "local" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
-        };
+            ];
+          };
         "remote" = {
           depends = [
             (hsPkgs.aeson)
@@ -70,8 +61,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

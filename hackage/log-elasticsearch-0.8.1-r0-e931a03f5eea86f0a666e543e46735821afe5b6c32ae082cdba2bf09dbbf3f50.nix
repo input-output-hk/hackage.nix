@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "log-elasticsearch";
-        version = "0.8.1";
-      };
+      identifier = { name = "log-elasticsearch"; version = "0.8.1"; };
       license = "BSD-3-Clause";
       copyright = "Scrive AB";
       maintainer = "Andrzej Rybczak <andrzej@rybczak.net>,\nJonathan Jouty <jonathan@scrive.com>,\nMikhail Glushenkov <mikhail@scrive.com>,\nOleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Structured logging solution (Elasticsearch back end)";
       description = "Elasticsearch back end for the 'log' library.\nDepends on 'log-base'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

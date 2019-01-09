@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       test-properties = true;
@@ -12,13 +6,10 @@
       test-hlint = true;
       optimize = true;
       llvm = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sparse";
-        version = "0.7.0.1";
-      };
+      identifier = { name = "sparse"; version = "0.7.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -28,7 +19,7 @@
       synopsis = "A playground of sparse linear algebra primitives using Morton ordering";
       description = "A playground of sparse linear algebra primitives using Morton ordering\n\nThe design of this library is described in the series \\\"Revisiting Matrix Multiplication\\\" on FP Complete's School of Haskell.\n\n<https://www.fpcomplete.com/user/edwardk/revisiting-matrix-multiplication/>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,11 +32,11 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
-          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.hybrid-vectors)
@@ -58,16 +49,16 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
@@ -78,9 +69,9 @@
             (hsPkgs.mtl)
             (hsPkgs.semigroups)
             (hsPkgs.simple-reflect)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "mm" = {
           depends = [
@@ -90,8 +81,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.sparse)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "bit-vector";
-        version = "0.2.0";
-      };
+      identifier = { name = "bit-vector"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "acfoltzer@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Simple bit vectors for Haskell";
       description = "Operations for using a vector of Booleans as a bit vector. Intended more for pedagogical purposes than for serious applications";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };
       tests = {
         "Tests" = {
           depends = [
@@ -40,8 +26,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.bit-vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

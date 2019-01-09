@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "neat-interpolation";
-        version = "0.3.2.1";
-      };
+      identifier = { name = "neat-interpolation"; version = "0.3.2.1"; };
       license = "MIT";
       copyright = "(c) 2013, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A quasiquoter for neat and simple multiline text interpolation";
       description = "A quasiquoter for producing Text values with support for\na simple interpolation of input values.\nIt removes the excessive indentation from the input and\naccurately manages the indentation of all lines of the interpolated variables.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,16 @@
           (hsPkgs.template-haskell)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "api-tests" = {
           depends = [
             (hsPkgs.neat-interpolation)
             (hsPkgs.HTF)
             (hsPkgs.base-prelude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

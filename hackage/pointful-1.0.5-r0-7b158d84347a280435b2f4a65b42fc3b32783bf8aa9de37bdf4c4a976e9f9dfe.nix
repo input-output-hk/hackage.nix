@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { separatesyb = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pointful";
-        version = "1.0.5";
-      };
+      identifier = { name = "pointful"; version = "1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mikhail Glushenkov <mikhail.glushenkov@gmail.com>";
@@ -22,33 +13,27 @@
       synopsis = "Pointful refactoring tool";
       description = "Stand-alone command-line version of the pointful plugin\nfor Lambdabot.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.containers)
           (hsPkgs.haskell-src)
           (hsPkgs.mtl)
-        ] ++ (if flags.separatesyb
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-          ]
+          ] ++ (if flags.separatesyb
+          then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
-      };
+        };
       exes = {
         "pointful" = {
           depends = [
             (hsPkgs.containers)
             (hsPkgs.haskell-src)
             (hsPkgs.mtl)
-          ] ++ (if flags.separatesyb
-            then [
-              (hsPkgs.base)
-              (hsPkgs.syb)
-            ]
+            ] ++ (if flags.separatesyb
+            then [ (hsPkgs.base) (hsPkgs.syb) ]
             else [ (hsPkgs.base) ]);
+          };
         };
       };
-    };
-  }
+    }

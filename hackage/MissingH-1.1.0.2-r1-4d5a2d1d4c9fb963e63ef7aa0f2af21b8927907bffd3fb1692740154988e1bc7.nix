@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "MissingH";
-        version = "1.1.0.2";
-      };
+      identifier = { name = "MissingH"; version = "1.1.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2004-2009 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,7 +13,7 @@
       synopsis = "Large utility library";
       description = "MissingH is a library of all sorts of utility functions for\nHaskell programmers.  It is written in pure Haskell and thus should\nbe extremely portable and easy to use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -35,7 +26,7 @@
           (hsPkgs.regex-compat)
           (hsPkgs.filepath)
           (hsPkgs.hslogger)
-        ] ++ (if flags.splitbase
+          ] ++ (if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.base)
@@ -46,19 +37,15 @@
             (hsPkgs.containers)
             (hsPkgs.old-locale)
             (hsPkgs.array)
-          ]
+            ]
           else [
             (hsPkgs.base)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "runtests" = {
-          depends = [
-            (hsPkgs.testpack)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
-          ];
+          depends = [ (hsPkgs.testpack) (hsPkgs.QuickCheck) (hsPkgs.HUnit) ];
+          };
         };
       };
-    };
-  }
+    }

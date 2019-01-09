@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bindings-wlc";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "bindings-wlc"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Ashley Towns";
       maintainer = "mail@ashleytowns.id.au";
@@ -22,22 +13,16 @@
       synopsis = "Bindings against the wlc library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-DSL)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
         libs = [ (pkgs."wlc") ];
-      };
+        };
       tests = {
         "bindings-wlc-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bindings-wlc)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.bindings-wlc) ];
+          };
         };
       };
-    };
-  }
+    }

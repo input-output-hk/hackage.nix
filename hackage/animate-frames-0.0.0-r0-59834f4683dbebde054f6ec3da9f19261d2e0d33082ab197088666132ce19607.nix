@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "animate-frames";
-        version = "0.0.0";
-      };
+      identifier = { name = "animate-frames"; version = "0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Vargas";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Convert sprite frames to animate files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,16 +30,13 @@
           (hsPkgs.text)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
-      exes = {
-        "animate-frames" = {
-          depends = [
-            (hsPkgs.animate-frames)
-            (hsPkgs.base)
           ];
         };
-      };
+      exes = {
+        "animate-frames" = {
+          depends = [ (hsPkgs.animate-frames) (hsPkgs.base) ];
+          };
+        };
       tests = {
         "animate-frames-test-suite" = {
           depends = [
@@ -56,8 +44,8 @@
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

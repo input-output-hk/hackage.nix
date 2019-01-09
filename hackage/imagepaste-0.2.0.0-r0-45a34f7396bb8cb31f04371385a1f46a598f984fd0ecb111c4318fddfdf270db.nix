@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "imagepaste";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "imagepaste"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "baltazar.bz@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Command-line image paste utility";
       description = "Command-line utility to paste images to image hosting sites.\nImage hosting sites are internally called engines. Some engines\nsupport pasting not just image files but any files so with\nsome engines the program can be used as a file sharing client.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "imagepaste" = {
@@ -38,8 +29,8 @@
             (hsPkgs.HTTP)
             (hsPkgs.json)
             (hsPkgs.vcs-revision)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

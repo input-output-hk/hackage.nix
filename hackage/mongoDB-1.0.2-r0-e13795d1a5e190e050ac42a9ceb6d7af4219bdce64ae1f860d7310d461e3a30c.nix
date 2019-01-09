@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "mongoDB";
-        version = "1.0.2";
-      };
+      identifier = { name = "mongoDB"; version = "1.0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010-2010 10gen Inc. & Scott Parish";
       maintainer = "Tony Hannan <tony@10gen.com>";
@@ -22,7 +13,7 @@
       synopsis = "Driver (client) for MongoDB, a free, scalable, fast, document DBMS";
       description = "This package lets you connect to MongoDB servers and update/query their data. Please see the example in Database.MongoDB and the tutorial from the homepage. For information about MongoDB itself, see www.mongodb.org.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.parsec)
           (hsPkgs.random)
           (hsPkgs.random-shuffle)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

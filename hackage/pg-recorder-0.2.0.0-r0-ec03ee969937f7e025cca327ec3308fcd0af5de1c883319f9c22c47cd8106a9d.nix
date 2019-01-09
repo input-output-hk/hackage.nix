@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pg-recorder";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "pg-recorder"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Diogo Biazus";
       maintainer = "diogo@biazus.me";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,17 +30,13 @@
           (hsPkgs.bytestring)
           (hsPkgs.stringsearch)
           (hsPkgs.contravariant)
-        ];
-      };
-      exes = {
-        "pg-recorder" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pg-recorder)
-            (hsPkgs.protolude)
           ];
         };
-      };
+      exes = {
+        "pg-recorder" = {
+          depends = [ (hsPkgs.base) (hsPkgs.pg-recorder) (hsPkgs.protolude) ];
+          };
+        };
       tests = {
         "pg-recorder-test" = {
           depends = [
@@ -61,8 +48,8 @@
             (hsPkgs.postgresql-libpq)
             (hsPkgs.hasql)
             (hsPkgs.hasql-pool)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent-template";
-        version = "2.0.0.3";
-      };
+      identifier = { name = "persistent-template"; version = "2.0.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>, Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe, non-relational, multi-backend persistence.";
       description = "This library provides just the general interface and helper functions. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.tagged)
           (hsPkgs.path-pieces)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

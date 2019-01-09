@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "psc-ide";
-        version = "0.5.0";
-      };
+      identifier = { name = "psc-ide"; version = "0.5.0"; };
       license = "MIT";
       copyright = "2015 Christoph Hegemann";
       maintainer = "christoph.hegemann1337@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Language support for the PureScript programming language";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.regex-tdfa)
           (hsPkgs.text)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       exes = {
         "psc-ide" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)
             (hsPkgs.network)
-          ];
-        };
+            ];
+          };
         "psc-ide-server" = {
           depends = [
             (hsPkgs.base)
@@ -64,9 +55,9 @@
             (hsPkgs.directory)
             (hsPkgs.psc-ide)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.mtl)
             (hsPkgs.hspec)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

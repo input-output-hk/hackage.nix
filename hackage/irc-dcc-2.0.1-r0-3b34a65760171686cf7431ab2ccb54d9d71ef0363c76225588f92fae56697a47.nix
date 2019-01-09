@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "irc-dcc";
-        version = "2.0.1";
-      };
+      identifier = { name = "irc-dcc"; version = "2.0.1"; };
       license = "MIT";
       copyright = "2016 Jan Gerlinger";
       maintainer = "git@jangerlinger.de";
@@ -22,7 +13,7 @@
       synopsis = "A DCC message parsing and helper library for IRC clients";
       description = "DCC (Direct Client-to-Client) is an IRC sub-protocol for\nestablishing and maintaining direct connections to\nexchange messages and files.\n\nSee <http://www.irchelp.org/irchelp/rfc/ctcpspec.html> for\nmore details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.safe-exceptions)
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "irc-dcc-test" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

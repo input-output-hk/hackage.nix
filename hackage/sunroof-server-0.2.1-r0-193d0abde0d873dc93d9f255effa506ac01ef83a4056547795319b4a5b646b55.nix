@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sunroof-server";
-        version = "0.2.1";
-      };
+      identifier = { name = "sunroof-server"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 The University of Kansas";
       maintainer = "Jan Bracker <jbra@informatik.uni-kiel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Monadic Javascript Compiler - Server Utilities";
       description = "Utilities to use Sunroof together with Kansas-Comet to create web applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.tagged)
           (hsPkgs.time)
           (hsPkgs.sunroof-compiler)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

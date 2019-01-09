@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-typescript";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "aeson-typescript"; version = "0.1.0.6"; };
       license = "BSD-3-Clause";
       copyright = "2018 CodeDown";
       maintainer = "tom@codedown.io";
@@ -22,7 +13,7 @@
       synopsis = "Generate TypeScript definition files from your ADTs";
       description = "Please see the README on Github at <https://github.com/codedownio/aeson-typescript#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.th-abstraction)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "aeson-typescript-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.text)
             (hsPkgs.th-abstraction)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

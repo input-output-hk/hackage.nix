@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "streaming-attoparsec";
-        version = "1.0.0";
-      };
+      identifier = { name = "streaming-attoparsec"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Colin Woodbury, colingw@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Attoparsec integration for the streaming ecosystem";
       description = "Attoparsec integration for the streaming ecosystem.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.streaming)
           (hsPkgs.streaming-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "streaming-attoparsec-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.streaming-bytestring)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

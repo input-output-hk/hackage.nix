@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sphinxesc";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "sphinxesc"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Mackey RMS";
@@ -22,7 +13,7 @@
       synopsis = "Transform queries for sphinx input";
       description = "Transform queries for sphinx input";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,16 @@
           (hsPkgs.parsec)
           (hsPkgs.split)
           (hsPkgs.MissingH)
-        ];
-      };
+          ];
+        };
       exes = {
         "sphinxesc" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.sphinxesc)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

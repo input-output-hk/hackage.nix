@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod";
-        version = "1.4.1.5";
-      };
+      identifier = { name = "yesod"; version = "1.4.1.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,7 +45,7 @@
           (hsPkgs.streaming-commons)
           (hsPkgs.wai-logger)
           (hsPkgs.semigroups)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-recaptcha";
-        version = "1.2";
-      };
+      identifier = { name = "yesod-recaptcha"; version = "1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "felipe.lessa@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Dead simple support for reCAPTCHA on Yesod applications.";
       description = "This package provides support for reCAPTCHA\n(<http://www.google.com/recaptcha>) on Yesod applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.http-conduit)
           (hsPkgs.http-types)
           (hsPkgs.conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

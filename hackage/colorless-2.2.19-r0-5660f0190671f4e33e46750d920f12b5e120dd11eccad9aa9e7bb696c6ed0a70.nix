@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "colorless";
-        version = "2.2.19";
-      };
+      identifier = { name = "colorless"; version = "2.2.19"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Joe Vargas";
@@ -22,7 +13,7 @@
       synopsis = "Colorless | The Programmatic IDL";
       description = "Colorless | The Programmatic IDL";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text-conversions)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "colorless-suite" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.text)
             (hsPkgs.tuple)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

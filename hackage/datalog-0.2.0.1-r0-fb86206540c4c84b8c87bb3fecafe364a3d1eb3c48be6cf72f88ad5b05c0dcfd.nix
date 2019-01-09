@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "datalog";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "datalog"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tristan@nochair.net";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of datalog in Haskell";
       description = "This is an implementation of datalog in pure Haskell.\nIt is implemented as a library and can be used from within\nany Haskell application.  As a consequence, it supports both\nstandard Datalog operations and arbitrary predicates written\nin Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "datalog-repl" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "NQueensTest" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "AncestorTest" = {
           depends = [
             (hsPkgs.datalog)
@@ -76,8 +67,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "WorksForTest" = {
           depends = [
             (hsPkgs.datalog)
@@ -88,8 +79,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

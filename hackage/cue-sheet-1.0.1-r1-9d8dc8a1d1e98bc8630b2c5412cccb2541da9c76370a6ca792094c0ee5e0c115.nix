@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "cue-sheet";
-        version = "1.0.1";
-      };
+      identifier = { name = "cue-sheet"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Support for construction, rendering, and parsing of CUE sheets";
       description = "Support for construction, rendering, and parsing of CUE sheets.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.megaparsec)
           (hsPkgs.mtl)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.hspec-megaparsec)
             (hsPkgs.megaparsec)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

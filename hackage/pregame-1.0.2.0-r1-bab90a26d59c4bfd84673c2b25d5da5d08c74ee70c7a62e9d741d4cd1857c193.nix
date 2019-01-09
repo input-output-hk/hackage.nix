@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "pregame";
-        version = "1.0.2.0";
-      };
+      identifier = { name = "pregame"; version = "1.0.2.0"; };
       license = "MIT";
       copyright = "2014-2016";
       maintainer = "https://github.com/jxv";
@@ -22,7 +13,7 @@
       synopsis = "Prelude for applications";
       description = "* Re-exports subsections of common and/or practical libraries\n* Fixing Haskell's historical baggage is out of scope";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.tuple)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

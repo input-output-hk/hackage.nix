@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "buchhaltung";
-        version = "0.0.7";
-      };
+      identifier = { name = "buchhaltung"; version = "0.0.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "Johannes Gerer <oss@johannesgerer.com>";
@@ -22,7 +13,7 @@
       synopsis = "Automates most of your plain text accounting data entry in ledger format.";
       description = "Automatic import and deduplication (from CSV\\/FinTS\\/HBCI\\/OFX), bayesian account matching, and efficient manual entry of <http://plaintextaccounting.org/ ledger> transactions.\n\nSee <https://github.com/johannesgerer/buchhaltung Readme> on Github.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -72,8 +63,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "buchhaltung" = {
           depends = [
@@ -123,8 +114,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

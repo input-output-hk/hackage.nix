@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "dockercook";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "dockercook"; version = "0.4.0.0"; };
       license = "MIT";
       copyright = "(c) 2014 factis research GmbH";
       maintainer = "Alexander Thiemann <thiemann@cp-med.com>";
@@ -22,7 +13,7 @@
       synopsis = "A build tool for multiple docker image layers";
       description = "Build and manage multiple docker image layers to speed up deployment";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,8 +48,8 @@
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "dockercook" = {
           depends = [
@@ -69,9 +60,9 @@
             (hsPkgs.hslogger)
             (hsPkgs.optparse-applicative)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "dockercook-test" = {
           depends = [
@@ -80,8 +71,8 @@
             (hsPkgs.dockercook)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

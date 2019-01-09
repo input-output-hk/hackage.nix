@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "attoparsec-ip";
-        version = "0.0.3";
-      };
+      identifier = { name = "attoparsec-ip"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2018 (c) Local Cooking Inc.";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "Parse IP data types with attoparsec";
       description = "Please see the README on GitHub at <https://github.com/githubuser/purescript-iso#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.base)
           (hsPkgs.ip)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "purescript-iso-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

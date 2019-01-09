@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "text-ansi";
-        version = "0.1.0";
-      };
+      identifier = { name = "text-ansi"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018, Mitchell Rosen";
       maintainer = "Mitchell Rosen <mitchellwrosen@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Text styling for ANSI terminals.";
       description = "Text styling for ANSI terminals using SGR codes, as defined by the\n<https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-048.pdf ECMA-48>\nstandard.\n\nSupports foreground\\/background color, bold\\/faint intensity, italic,\nsingle\\/double underline, strikethrough, frame, encircle, and overline escape\nsequences. Some styles may not work on your terminal.\n\nAlso features terminal detection, so redirecting styled output to a file will\nautomatically strip the ANSI escape sequences.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.text-builder)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.text-builder) ];
+        };
       };
-    };
-  }
+    }

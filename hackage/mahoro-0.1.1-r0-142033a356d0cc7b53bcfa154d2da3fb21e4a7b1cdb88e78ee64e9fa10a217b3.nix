@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "mahoro";
-        version = "0.1.1";
-      };
+      identifier = { name = "mahoro"; version = "0.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "newanon@yandex.ru";
@@ -22,7 +13,7 @@
       synopsis = "chans to XMPP gate";
       description = "Chans (ImageBoards) to XMPP gate. Supports Wakaba,\nKusaba and other engines.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mahoro" = {
@@ -41,8 +32,8 @@
             (hsPkgs.directory)
             (hsPkgs.ConfigFile)
             (hsPkgs.curl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

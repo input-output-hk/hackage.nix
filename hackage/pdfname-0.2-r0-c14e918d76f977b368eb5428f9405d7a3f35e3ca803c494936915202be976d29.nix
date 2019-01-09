@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pdfname";
-        version = "0.2";
-      };
+      identifier = { name = "pdfname"; version = "0.2"; };
       license = "MIT";
       copyright = "Andrés Sicard-Ramírez 2017";
       maintainer = "Andrés Sicard-Ramírez <asr@eafit.edu.co>";
@@ -22,7 +13,7 @@
       synopsis = "Name a PDF file using information from the pdfinfo command";
       description = "The @pdfname@ command-line program names a PDF file using the\nauthor, year of creation and title information extracted from the\n@pdfinfo@ program.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pdfname" = {
@@ -33,8 +24,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.pdfinfo)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

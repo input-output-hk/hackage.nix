@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "validate-input";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "validate-input"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 Alexander Thiemann";
       maintainer = "Alexander Thiemann <mail@athiemann.net>";
@@ -22,7 +13,7 @@
       synopsis = "Input validation combinator library";
       description = "A small Haskell combinator library that provides a simple way of\nvalidating user provided data structures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.pcre-heavy)
           (hsPkgs.stringable)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "validate-input-tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.validate-input)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

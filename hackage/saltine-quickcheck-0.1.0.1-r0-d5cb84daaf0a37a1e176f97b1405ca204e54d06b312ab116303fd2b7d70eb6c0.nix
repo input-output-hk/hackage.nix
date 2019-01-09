@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "saltine-quickcheck";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "saltine-quickcheck"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "tsuraan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Quickcheck implementations for some NaCl data";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,9 +23,9 @@
           (hsPkgs.hex)
           (hsPkgs.QuickCheck)
           (hsPkgs.saltine)
-        ];
+          ];
         libs = [ (pkgs."sodium") ];
-      };
+        };
       tests = {
         "test-all" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.saltine-quickcheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

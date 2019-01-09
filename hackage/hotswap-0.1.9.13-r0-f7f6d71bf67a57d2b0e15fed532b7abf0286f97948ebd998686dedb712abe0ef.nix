@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hotswap";
-        version = "0.1.9.13";
-      };
+      identifier = { name = "hotswap"; version = "0.1.9.13"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "eleventynine@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Simple code hotswapping.";
       description = "A simple, high-level interface to plugins.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.plugins)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.plugins) ]; };
+      };
+    }

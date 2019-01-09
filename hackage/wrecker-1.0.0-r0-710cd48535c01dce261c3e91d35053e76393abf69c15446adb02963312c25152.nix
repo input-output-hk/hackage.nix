@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wrecker";
-        version = "1.0.0";
-      };
+      identifier = { name = "wrecker"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 skedge.me";
       maintainer = "jonathangfischoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An HTTP Performance Benchmarker";
       description = "'wrecker' is a library and executable for creating HTTP benchmarks. It is designed for\nbenchmarking a series of dependent requests.\n'wrecker' includes a wrapped version of the `wreq` Session API\n, mainly through 'Network.Wreq.Wrecker'.\nSee <https://github.com/skedgeme/wrecker#readme> for more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -77,8 +68,8 @@
           (hsPkgs.authenticate-oauth)
           (hsPkgs.threads-extras)
           (hsPkgs.tdigest)
-        ];
-      };
+          ];
+        };
       exes = {
         "wreck" = {
           depends = [
@@ -90,8 +81,8 @@
             (hsPkgs.http-client-tls)
             (hsPkgs.wreq)
             (hsPkgs.lens)
-          ];
-        };
+            ];
+          };
         "example-server" = {
           depends = [
             (hsPkgs.base)
@@ -107,8 +98,8 @@
             (hsPkgs.wai)
             (hsPkgs.network)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "example-client" = {
           depends = [
             (hsPkgs.base)
@@ -120,8 +111,8 @@
             (hsPkgs.text)
             (hsPkgs.http-client)
             (hsPkgs.connection)
-          ];
-        };
+            ];
+          };
         "example" = {
           depends = [
             (hsPkgs.base)
@@ -142,9 +133,9 @@
             (hsPkgs.network)
             (hsPkgs.connection)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "wrecker-test" = {
           depends = [
@@ -168,8 +159,8 @@
             (hsPkgs.next-ref)
             (hsPkgs.connection)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

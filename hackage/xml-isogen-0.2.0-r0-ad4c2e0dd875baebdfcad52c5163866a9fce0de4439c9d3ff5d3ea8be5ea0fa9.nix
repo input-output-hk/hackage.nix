@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "xml-isogen";
-        version = "0.2.0";
-      };
+      identifier = { name = "xml-isogen"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "makeit@typeable.io";
@@ -22,7 +13,7 @@
       synopsis = "Generate XML-isomorphic types";
       description = "TemplateHaskell generators for XML-isomorphic data types, including\ninstances for parsing and rendering. A convenient DSL to define those\ntypes.\nThis is similar to XSD but is Haskell-specific.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,15 +27,10 @@
           (hsPkgs.text)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-conduit-writer)
-        ];
-      };
-      tests = {
-        "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.xml-isogen)
           ];
         };
+      tests = {
+        "spec" = { depends = [ (hsPkgs.base) (hsPkgs.xml-isogen) ]; };
+        };
       };
-    };
-  }
+    }

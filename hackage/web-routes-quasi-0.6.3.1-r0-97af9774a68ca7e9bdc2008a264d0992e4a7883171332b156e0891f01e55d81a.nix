@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "web-routes-quasi";
-        version = "0.6.3.1";
-      };
+      identifier = { name = "web-routes-quasi"; version = "0.6.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,18 +13,14 @@
       synopsis = "Define data types and parse/build functions for web-routes via a quasi-quoted DSL";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.text) ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
@@ -43,8 +30,8 @@
             (hsPkgs.wai)
             (hsPkgs.web-encodings)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

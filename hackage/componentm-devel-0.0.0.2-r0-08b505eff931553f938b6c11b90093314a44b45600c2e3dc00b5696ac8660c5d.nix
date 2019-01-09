@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "componentm-devel";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "componentm-devel"; version = "0.0.0.2"; };
       license = "MIT";
       copyright = "© 2017-current Roman Gonzalez";
       maintainer = "open-source@roman-gonzalez.info";
@@ -22,7 +13,7 @@
       synopsis = "Easy REPL driven development using ComponentM";
       description = "This library enhances the componentm with auto-reloading\ncapabilites for your application, allowing to ensure cleanup\nof resources when doing REPL driven development, or when using\nghcid";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.foreign-store)
           (hsPkgs.rio)
           (hsPkgs.teardown)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

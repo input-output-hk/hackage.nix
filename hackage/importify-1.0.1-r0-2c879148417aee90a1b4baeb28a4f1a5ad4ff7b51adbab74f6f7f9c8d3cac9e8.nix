@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "importify";
-        version = "1.0.1";
-      };
+      identifier = { name = "importify"; version = "1.0.1"; };
       license = "MIT";
       copyright = "2017 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -22,7 +13,7 @@
       synopsis = "Tool for haskell imports refactoring";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.universum)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "importify" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.log-warper)
             (hsPkgs.optparse-applicative)
             (hsPkgs.universum)
-          ];
-        };
+            ];
+          };
         "golden-generator" = {
           depends = [
             (hsPkgs.base)
@@ -73,9 +64,9 @@
             (hsPkgs.path)
             (hsPkgs.path-io)
             (hsPkgs.universum)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "importify-test" = {
           depends = [
@@ -89,8 +80,8 @@
             (hsPkgs.path-io)
             (hsPkgs.universum)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

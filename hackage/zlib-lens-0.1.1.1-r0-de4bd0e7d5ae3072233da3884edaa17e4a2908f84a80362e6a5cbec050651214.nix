@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zlib-lens";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "zlib-lens"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2014 Edward Kmett and Eric Mertens";
       maintainer = "Edward Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Lenses for zlib";
       description = "Lenses for zlib";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.zlib)
           (hsPkgs.profunctors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

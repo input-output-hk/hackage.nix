@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rebindable";
-        version = "0.1.1";
-      };
+      identifier = { name = "rebindable"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Sean Lee <freshdried@gmail.com>";
@@ -22,14 +13,14 @@
       synopsis = "A library to facilitate rebinding of Haskell syntax";
       description = "A library to facilitate rebinding of Haskell syntax";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.indexed)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

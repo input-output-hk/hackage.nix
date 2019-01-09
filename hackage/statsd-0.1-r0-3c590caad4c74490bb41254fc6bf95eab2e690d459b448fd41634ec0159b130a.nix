@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "statsd";
-        version = "0.1";
-      };
+      identifier = { name = "statsd"; version = "0.1"; };
       license = "LGPL-3.0-only";
       copyright = "Copyright (C) 2014 Mitchell Rosen";
       maintainer = "mitchellwrosen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "StatsD API.";
       description = "This package provides a simple interface to <https://github.com/etsy/statsd/ StatsD>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.mtl)
           (hsPkgs.network)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

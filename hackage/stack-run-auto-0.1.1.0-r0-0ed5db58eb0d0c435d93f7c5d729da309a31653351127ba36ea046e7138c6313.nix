@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack-run-auto";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "stack-run-auto"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2015 Pedro Tacla Yamada";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.async)
           (hsPkgs.extract-dependencies)
           (hsPkgs.file-modules)
-        ];
-      };
+          ];
+        };
       exes = {
         "module-package" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.extract-dependencies)
             (hsPkgs.file-modules)
             (hsPkgs.stack-run-auto)
-          ];
-        };
+            ];
+          };
         "stack-run-auto" = {
           depends = [
             (hsPkgs.base)
@@ -73,9 +64,9 @@
             (hsPkgs.extract-dependencies)
             (hsPkgs.file-modules)
             (hsPkgs.stack-run-auto)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "stack-run-auto-test" = {
           depends = [
@@ -92,8 +83,8 @@
             (hsPkgs.extract-dependencies)
             (hsPkgs.file-modules)
             (hsPkgs.stack-run-auto)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      profile = false;
-      eventlog = false;
-      development = false;
-    };
+    flags = { profile = false; eventlog = false; development = false; };
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "ats-pkg";
-        version = "3.2.2.3";
-      };
+      identifier = { name = "ats-pkg"; version = "3.2.2.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -26,7 +13,7 @@
       synopsis = "A build tool for ATS";
       description = "A collection of scripts to simplify building ATS projects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +43,8 @@
           (hsPkgs.dependency)
           (hsPkgs.filemanip)
           (hsPkgs.quaalude)
-        ];
-      };
+          ];
+        };
       sublibs = {
         "quaalude" = {
           depends = [
@@ -76,12 +63,10 @@
             (hsPkgs.binary)
             (hsPkgs.text)
             (hsPkgs.mtl)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-          build-tools = [
-            (hsPkgs.buildPackages.cpphs)
-          ];
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+          };
         };
-      };
       exes = {
         "atspkg" = {
           depends = [
@@ -100,8 +85,8 @@
             (hsPkgs.shake)
             (hsPkgs.cli-setup)
             (hsPkgs.quaalude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

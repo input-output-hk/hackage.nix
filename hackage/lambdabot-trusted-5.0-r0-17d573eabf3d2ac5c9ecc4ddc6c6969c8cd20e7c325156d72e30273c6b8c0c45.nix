@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lambdabot-trusted";
-        version = "5.0";
-      };
+      identifier = { name = "lambdabot-trusted"; version = "5.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Bertram Felgenhauer <int-e@gmx.de>";
@@ -22,14 +13,10 @@
       synopsis = "Lambdabot trusted code.";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nThis small package provides functions used by\nthe \\@run command.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.oeis)
-          (hsPkgs.QuickCheck)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.oeis) (hsPkgs.QuickCheck) ];
+        };
       };
-    };
-  }
+    }

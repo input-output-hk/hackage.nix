@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { programs = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "multiarg";
-        version = "0.30.0.8";
-      };
+      identifier = { name = "multiarg"; version = "0.30.0.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2011-2015 Omari Norman";
       maintainer = "omari@smileystation.com";
@@ -22,31 +13,29 @@
       synopsis = "Command lines for options that take multiple arguments";
       description = "multiarg helps you build command-line parsers for\nprograms with options that take more than one argument.\nSee the documentation in the Multiarg module for details.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "grover" = {
-          depends = pkgs.lib.optionals (flags.programs) [
+          depends = (pkgs.lib).optionals (flags.programs) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
-          ];
-        };
+            ];
+          };
         "telly" = {
-          depends = pkgs.lib.optionals (flags.programs) [
+          depends = (pkgs.lib).optionals (flags.programs) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "multiarg-tests" = {
           depends = [
@@ -55,8 +44,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

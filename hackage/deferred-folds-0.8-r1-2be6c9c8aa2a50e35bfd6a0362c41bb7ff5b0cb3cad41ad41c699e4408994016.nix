@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "deferred-folds";
-        version = "0.8";
-      };
+      identifier = { name = "deferred-folds"; version = "0.8"; };
       license = "MIT";
       copyright = "(c) 2018, Metrix.AI";
       maintainer = "Metrix.AI Tech Team <tech@metrix.ai>";
@@ -22,7 +13,7 @@
       synopsis = "Abstractions over deferred folds";
       description = "This library is in an experimental state.\nUsers should be prepared for frequent updates.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.foldl)
           (hsPkgs.primitive)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

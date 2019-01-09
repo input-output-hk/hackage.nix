@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "webdriver-w3c";
-        version = "0.0.1";
-      };
+      identifier = { name = "webdriver-w3c"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "2018 Automattic, Inc.";
       maintainer = "nathan.bloomfield@a8c.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to the WebDriver API";
       description = "Please see the README on Github at <https://github.com/nbloomf/webdriver-w3c#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,32 +45,24 @@
           (hsPkgs.uri-encode)
           (hsPkgs.vector)
           (hsPkgs.wreq)
-        ];
-      };
-      exes = {
-        "webdriver-w3c-intro" = {
-          depends = [
-            (hsPkgs.webdriver-w3c)
-            (hsPkgs.base)
-            (hsPkgs.tasty)
           ];
         };
+      exes = {
+        "webdriver-w3c-intro" = {
+          depends = [ (hsPkgs.webdriver-w3c) (hsPkgs.base) (hsPkgs.tasty) ];
+          };
         "wd-tasty-demo" = {
           depends = [
             (hsPkgs.webdriver-w3c)
             (hsPkgs.base)
             (hsPkgs.tasty)
             (hsPkgs.tasty-expected-failure)
-          ];
-        };
+            ];
+          };
         "wd-parallel-stress-test" = {
-          depends = [
-            (hsPkgs.webdriver-w3c)
-            (hsPkgs.base)
-            (hsPkgs.tasty)
-          ];
+          depends = [ (hsPkgs.webdriver-w3c) (hsPkgs.base) (hsPkgs.tasty) ];
+          };
         };
-      };
       tests = {
         "webdriver-w3c-test" = {
           depends = [
@@ -110,8 +93,8 @@
             (hsPkgs.text)
             (hsPkgs.vector)
             (hsPkgs.wreq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

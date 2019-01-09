@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tibetan-utils";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "tibetan-utils"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Vanessa McHale";
       maintainer = "tmchale@wisc.edu";
@@ -22,7 +13,7 @@
       synopsis = "Parse and display tibetan numerals";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.composition)
           (hsPkgs.text-show)
           (hsPkgs.either)
-        ];
-      };
+          ];
+        };
       tests = {
         "tibetan-utils-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.hspec-megaparsec)
             (hsPkgs.text)
             (hsPkgs.megaparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

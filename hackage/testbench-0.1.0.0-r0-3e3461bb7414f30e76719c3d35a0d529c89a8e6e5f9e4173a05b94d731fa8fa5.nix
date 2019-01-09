@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "testbench";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "testbench"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Create tests and benchmarks together";
       description = "Test your benchmarks!  Benchmark your tests!\n\nIt's too easy to accidentally try and benchmark apples and oranges\ntogether.  Wouldn't it be nice if you could somehow guarantee that\nyour benchmarks satisfy some simple tests (e.g. a group of comparisons\nall return the same value)?\n\nFurthermore, trying to compare multiple inputs/functions against each\nother requires a lot of boilerplate, making it even easier to\naccidentally compare the wrong things (e.g. using `whnf` instead of\n`nf`).\n\n/testbench/ aims to help solve these problems and more by making it\neasier to write unit tests and benchmarks together by stating up-front\nwhat requirements are needed and then using simple functions to state\nthe next parameter to be tested/benchmarked.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.HUnit)
           (hsPkgs.statistics)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "examples" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.containers)
             (hsPkgs.criterion)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

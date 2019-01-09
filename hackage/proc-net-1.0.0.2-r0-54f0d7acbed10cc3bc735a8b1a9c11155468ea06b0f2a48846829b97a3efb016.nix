@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "proc-net";
-        version = "1.0.0.2";
-      };
+      identifier = { name = "proc-net"; version = "1.0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "procnet.hs@mcohrs.eu";
@@ -22,7 +13,7 @@
       synopsis = "Parse /proc/net/{tcp,tcp6,udp,udp6}";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.attoparsec)
           (hsPkgs.network)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

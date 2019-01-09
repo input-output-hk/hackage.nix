@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "pipes-transduce";
-        version = "0.3.4.0";
-      };
+      identifier = { name = "pipes-transduce"; version = "0.3.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Daniel Diaz";
       maintainer = "diaz_carrete@yahoo.com";
@@ -22,7 +13,7 @@
       synopsis = "Interfacing pipes with foldl folds.";
       description = "A fold-like datatype for pipes Producers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.pipes-bytestring)
           (hsPkgs.void)
           (hsPkgs.conceit)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.pipes)
             (hsPkgs.doctest)
             (hsPkgs.foldl)
-          ];
-        };
+            ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.foldl)
             (hsPkgs.pipes)
             (hsPkgs.pipes-transduce)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

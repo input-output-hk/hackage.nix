@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { allow-bsd = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-sendfile";
-        version = "0.2.18";
-      };
+      identifier = { name = "simple-sendfile"; version = "0.2.18"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,14 +13,14 @@
       synopsis = "Cross platform library for the sendfile system call";
       description = "Cross platform library for the sendfile system call.\nThis library tries to call minimum system calls which\nare the bottleneck of web servers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.network)
           (hsPkgs.bytestring)
-        ] ++ (if system.isFreebsd && flags.allow-bsd
+          ] ++ (if system.isFreebsd && flags.allow-bsd
           then [ (hsPkgs.unix) ]
           else if system.isOsx
             then [ (hsPkgs.unix) ]
@@ -40,8 +31,8 @@
                 (hsPkgs.conduit-extra)
                 (hsPkgs.transformers)
                 (hsPkgs.resourcet)
-              ]);
-      };
+                ]);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.process)
             (hsPkgs.simple-sendfile)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

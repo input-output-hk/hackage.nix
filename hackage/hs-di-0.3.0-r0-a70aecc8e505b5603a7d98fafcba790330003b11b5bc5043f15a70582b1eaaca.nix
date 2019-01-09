@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hs-di";
-        version = "0.3.0";
-      };
+      identifier = { name = "hs-di"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Milan Nagy";
       maintainer = "123.wizek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Dependency Injection library for Haskell";
       description = "Dependency Injection library for Haskell to allow powerful unit testing and mocking (compile-time type-checked)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.compose-ltr)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "hs-di-cases" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.haskell-src-meta)
             (hsPkgs.containers)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hs-di-test" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.interpolatedstring-perl6)
             (hsPkgs.interpolate)
             (hsPkgs.regex-tdfa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hydra-print";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hydra-print"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2013, Ryan Newton";
       maintainer = "Ryan Newton <rrnewton@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "NCurses interface to view multiple ByteString streams in parallel.";
       description = "Output from parallel subprocesses is an ugly, many-headed beast.\nPiping though hydra-print provides a NCurses interface to a dynamic\nset output streams, displayed without interleaving.  This is a\ncommon problem, for example, with parallel compiles, or\ndata-processing scripts.\n\nSpecifically, this small library will split the screen when\nparallelism occurs, and unsplit it when the parallelism is\nfinished (i.e. dynamically growing and losing \\\"heads\\\").\nThe @io-streams@ library is used for all stream inputs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.process)
           (hsPkgs.time)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       exes = {
         "hydra-view" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.process)
             (hsPkgs.time)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "hydra-head" = {
           depends = [
             (hsPkgs.base)
@@ -82,9 +73,9 @@
             (hsPkgs.process)
             (hsPkgs.time)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-hydra-print" = {
           depends = [
@@ -109,8 +100,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

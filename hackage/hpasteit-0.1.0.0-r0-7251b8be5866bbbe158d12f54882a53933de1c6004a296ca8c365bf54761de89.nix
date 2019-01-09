@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hpasteit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hpasteit"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012 Patrick Palka";
       maintainer = "patrick@parcs.ath.cx";
@@ -22,7 +13,7 @@
       synopsis = "A command-line client for hpaste.org";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hpasteit" = {
@@ -33,8 +24,8 @@
             (hsPkgs.http-conduit)
             (hsPkgs.http-types)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nirum";
-        version = "0.1.0";
-      };
+      identifier = { name = "nirum"; version = "0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2016 Nirum team";
       maintainer = "Nirum team";
@@ -22,7 +13,7 @@
       synopsis = "Distributed object framework built on top of\nREST HTTP and JSON";
       description = "Distributed object framework for microservices,\nbuilt on top of RESTful HTTP and JSON";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,22 +26,12 @@
           (hsPkgs.megaparsec)
           (hsPkgs.semver)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
-        "nirum" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.nirum)
-          ];
+        "nirum" = { depends = [ (hsPkgs.base) (hsPkgs.nirum) ]; };
+        "nirum-static" = { depends = [ (hsPkgs.base) (hsPkgs.nirum) ]; };
         };
-        "nirum-static" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.nirum)
-          ];
-        };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -69,14 +50,9 @@
             (hsPkgs.semver)
             (hsPkgs.temporary)
             (hsPkgs.text)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

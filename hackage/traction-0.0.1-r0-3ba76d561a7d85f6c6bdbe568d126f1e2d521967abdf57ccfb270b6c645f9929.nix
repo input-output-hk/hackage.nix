@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "traction";
-        version = "0.0.1";
-      };
+      identifier = { name = "traction"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Mark Hibberd";
       maintainer = "Mark Hibberd <mark@hibberd.id.au>";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "A few tools for using postgresql-simple.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.transformers-either)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.resource-pool)
             (hsPkgs.text)
             (hsPkgs.traction)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

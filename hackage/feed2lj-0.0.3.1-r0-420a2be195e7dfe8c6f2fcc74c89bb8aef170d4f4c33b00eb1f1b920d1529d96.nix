@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { nano-md5 = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "feed2lj";
-        version = "0.0.3.1";
-      };
+      identifier = { name = "feed2lj"; version = "0.0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "(unsupported)";
       description = "(unsupported)";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "feed2lj" = {
@@ -38,10 +29,10 @@
             (hsPkgs.curl)
             (hsPkgs.feed)
             (hsPkgs.tagsoup)
-          ] ++ (if flags.nano-md5
+            ] ++ (if flags.nano-md5
             then [ (hsPkgs.nano-md5) ]
             else [ (hsPkgs.pureMD5) ]);
+          };
         };
       };
-    };
-  }
+    }

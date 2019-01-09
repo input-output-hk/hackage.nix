@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "colchis";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "colchis"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diaz_carrete@yahoo.com";
@@ -22,7 +13,7 @@
       synopsis = "Rudimentary JSON-RPC 2.0 client over raw TCP.";
       description = "Rudimentary JSON-RPC 2.0 client over raw TCP.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.void)
           (hsPkgs.conceit)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

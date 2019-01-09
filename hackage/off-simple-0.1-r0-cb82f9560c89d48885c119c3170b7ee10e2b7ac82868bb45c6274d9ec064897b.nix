@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "off-simple";
-        version = "0.1";
-      };
+      identifier = { name = "off-simple"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "acfoltzer@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A parser for simplified-syntax OFF files";
       description = "A simple datatype and parser for 3D OFF files,\nloosely based on\n<http://people.sc.fsu.edu/~jburkardt/data/off/off.html>,\nbut uses the file header to determine whether the object's\nfaces contain color values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec3)
-          (hsPkgs.vector)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.parsec3) (hsPkgs.vector) ];
+        };
       };
-    };
-  }
+    }

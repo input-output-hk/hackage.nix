@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-gcl";
-        version = "0.2";
-      };
+      identifier = { name = "language-gcl"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "rhymoid@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Something similar to Dijkstra's guarded command language";
       description = "language-gcl provides the abstract syntax and parsers for\nbasic building blocks for programming languages,\nbased on Edsger W. Dijkstra's guarded command language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsers)
-          (hsPkgs.bifunctors)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.parsers) (hsPkgs.bifunctors) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsqml-datamodel-vinyl";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "hsqml-datamodel-vinyl"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "marcin.jan.mrotek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "HsQML DataModel instances for Vinyl Rec.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.type-list)
           (hsPkgs.vinyl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

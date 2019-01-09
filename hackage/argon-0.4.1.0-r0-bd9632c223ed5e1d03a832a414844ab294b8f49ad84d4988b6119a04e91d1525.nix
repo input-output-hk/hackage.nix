@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "argon";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "argon"; version = "0.4.1.0"; };
       license = "ISC";
       copyright = "2015 Michele Lacchia";
       maintainer = "michelelacchia@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Measure your code's complexity";
       description = "Argon performs static analysis on your code in order to compute cyclomatic\ncomplexity. It is a quantitative measure of the number of linearly\nindipendent paths through the code.\n\nThe intended usage is through Argon's executable, which accepts a list of\nfiles or directories to analyze. The data can be optionally exported to\nJSON.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.Cabal)
           (hsPkgs.containers)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "argon" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.docopt)
             (hsPkgs.pipes)
             (hsPkgs.pipes-safe)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "argon-test" = {
           depends = [
@@ -69,14 +60,9 @@
             (hsPkgs.filepath)
             (hsPkgs.pipes)
             (hsPkgs.pipes-safe)
-          ];
-        };
-        "style" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "style" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

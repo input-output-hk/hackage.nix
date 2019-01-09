@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aviation-cessna172-diagrams";
-        version = "0.0.2";
-      };
+      identifier = { name = "aviation-cessna172-diagrams"; version = "0.0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2017, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Tony Morris, Joshua Morris";
@@ -22,7 +13,7 @@
       synopsis = "Diagrams for the Cessna 172 aircraft in aviation.";
       description = "<<http://i.imgur.com/0h9dFhl.png>>\n\nDiagrams for the Cessna 172 aircraft in aviation.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.plots)
           (hsPkgs.hgeometry)
           (hsPkgs.colour)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.parsec)
             (hsPkgs.quickcheck-text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

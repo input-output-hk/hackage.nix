@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "milena";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "milena"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014, Tyler Holien";
       maintainer = "tyler.holien@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Kafka client for Haskell.";
       description = "The protocol module is stable (the only changes will be to support changes in the Kafka protocol). The API is functional but subject to change.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.lifted-base)
           (hsPkgs.murmur-hash)
           (hsPkgs.listsafe)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

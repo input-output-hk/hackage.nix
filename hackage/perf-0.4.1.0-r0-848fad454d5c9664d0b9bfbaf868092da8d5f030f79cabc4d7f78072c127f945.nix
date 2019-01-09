@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "perf";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "perf"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Low-level run time measurement.";
       description = "A set of tools to accurately measure time performance of Haskell programs.\nperf aims to be lightweight by having minimal dependencies on standard libraries.\nSee the Perf module for an example and full API documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,15 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
-      tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = { "test" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; }; };
       };
-    };
-  }
+    }

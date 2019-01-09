@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "lazysplines";
-        version = "0.2";
-      };
+      identifier = { name = "lazysplines"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "gbazerman@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Differential solving with lazy splines";
       description = "Differential solving with lazy splines. Source code to accompany the draft paper at <http://gbaz.github.io/slides/ode-draft-2009.pdf>. See the source of Numeric.LazySplines.Examples for usage.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.base) ]; };
+      };
+    }

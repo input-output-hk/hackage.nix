@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-mixal";
-        version = "0.1";
-      };
+      identifier = { name = "language-mixal"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Jonathan Daugherty, 2013";
       maintainer = "Jonathan Daugherty <cygnus@foobox.com>";
@@ -22,7 +13,7 @@
       synopsis = "Parser, pretty-printer, and AST types for the MIXAL\nassembly language";
       description = "MIXAL parser and pretty-printer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,12 @@
           (hsPkgs.parsec)
           (hsPkgs.mtl)
           (hsPkgs.pretty)
-        ];
-      };
-      exes = {
-        "mixal-pretty" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pretty)
-            (hsPkgs.language-mixal)
           ];
         };
+      exes = {
+        "mixal-pretty" = {
+          depends = [ (hsPkgs.base) (hsPkgs.pretty) (hsPkgs.language-mixal) ];
+          };
+        };
       };
-    };
-  }
+    }

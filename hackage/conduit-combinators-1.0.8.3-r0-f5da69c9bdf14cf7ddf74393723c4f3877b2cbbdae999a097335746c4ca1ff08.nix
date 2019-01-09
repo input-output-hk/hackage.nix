@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { monotrav1 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "conduit-combinators";
-        version = "1.0.8.3";
-      };
+      identifier = { name = "conduit-combinators"; version = "1.0.8.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Commonly used conduit functions, for both chunked and unchunked data";
       description = "Provides a replacement for Data.Conduit.List, as well as a convenient Conduit module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -43,11 +34,11 @@
           (hsPkgs.resourcet)
           (hsPkgs.monad-control)
           (hsPkgs.filepath)
-        ] ++ [
+          ] ++ [
           (hsPkgs.chunked-data)
           (hsPkgs.mono-traversable)
-        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "test" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

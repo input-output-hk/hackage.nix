@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "TrieMap";
-        version = "4.0.1";
-      };
+      identifier = { name = "TrieMap"; version = "4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "wasserman.louis@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Automatic type inference of generalized tries with Template Haskell.";
       description = "Provides a efficient and compact implementation of generalized tries, and Template Haskell tools to generate\nthe necessary translation code.  This is meant as a drop-in replacement for Data.Map, and can be used anywhere\n@Data.Map@ can be used.\n\nThe most recent release combines zipper-based ideas from recently proposed changes to Data.Map, as well\nas heavily optimized ByteString and Vector instances based on the vector package.\nFor best performance, use @cabal install -fllvm -O2@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.primitive)
           (hsPkgs.unpack-funcs)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

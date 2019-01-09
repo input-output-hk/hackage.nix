@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      base4 = true;
-      tests = false;
-    };
+    flags = { base4 = true; tests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack";
-        version = "0.4.1";
-      };
+      identifier = { name = "happstack"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Happstack team <happs@googlegroups.com>";
@@ -25,7 +13,7 @@
       synopsis = "The haskell application server stack + code generation";
       description = "The haskell application server stack";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,28 +30,17 @@
           (hsPkgs.mtl)
           (hsPkgs.old-time)
           (hsPkgs.utf8-string)
-        ] ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-            (hsPkgs.hsx)
-          ]
+          ] ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.syb) (hsPkgs.hsx) ]
           else [
             (hsPkgs.haskell-src-exts)
             (hsPkgs.hsx)
             (hsPkgs.HStringTemplate)
-          ]);
-      };
+            ]);
+        };
       exes = {
-        "happstack" = {
-          depends = [
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-          ];
-        };
-        "happstack-tests" = {
-          depends = [ (hsPkgs.HUnit) ];
+        "happstack" = { depends = [ (hsPkgs.directory) (hsPkgs.filepath) ]; };
+        "happstack-tests" = { depends = [ (hsPkgs.HUnit) ]; };
         };
       };
-    };
-  }
+    }

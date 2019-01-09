@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { shell = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "picologic";
-        version = "0.1";
-      };
+      identifier = { name = "picologic"; version = "0.1"; };
       license = "MIT";
       copyright = "2014 Stephen Diehl";
       maintainer = "stephen.m.diehl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for symbolic predicate logic expressions";
       description = "`picologic` provides symbolic logic expressions that can be integrated with the `picosat` solver.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,11 +23,11 @@
           (hsPkgs.mtl)
           (hsPkgs.pretty)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "picologic" = {
-          depends = pkgs.lib.optionals (flags.shell) [
+          depends = (pkgs.lib).optionals (flags.shell) [
             (hsPkgs.base)
             (hsPkgs.picosat)
             (hsPkgs.containers)
@@ -45,8 +36,8 @@
             (hsPkgs.parsec)
             (hsPkgs.process)
             (hsPkgs.haskeline)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

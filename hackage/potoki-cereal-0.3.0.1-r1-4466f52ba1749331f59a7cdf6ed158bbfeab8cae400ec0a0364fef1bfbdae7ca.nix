@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "potoki-cereal";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "potoki-cereal"; version = "0.3.0.1"; };
       license = "MIT";
       copyright = "(c) 2017, Metrix.AI";
       maintainer = "Metrix.AI Tech Team <tech@metrix.ai>";
@@ -22,7 +13,7 @@
       synopsis = "Streaming serialization";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.cereal)
           (hsPkgs.potoki-core)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "android";
-        version = "0.0.2";
-      };
+      identifier = { name = "android"; version = "0.0.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "ivan.perez@keera.co.uk";
@@ -22,13 +13,8 @@
       synopsis = "Android methods exposed to Haskell";
       description = "Haskell bindings to the Android ecosystem";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.process)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
+      };
+    }

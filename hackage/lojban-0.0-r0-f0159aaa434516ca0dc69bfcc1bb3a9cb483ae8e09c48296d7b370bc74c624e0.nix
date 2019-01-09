@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "lojban";
-        version = "0.0";
-      };
+      identifier = { name = "lojban"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "<Project description>";
       description = "<Project description>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.xml)
           (hsPkgs.strict)
           (hsPkgs.parsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

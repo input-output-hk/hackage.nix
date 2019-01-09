@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haskell-neo4j-client";
-        version = "0.3.0.12";
-      };
+      identifier = { name = "haskell-neo4j-client"; version = "0.3.0.12"; };
       license = "MIT";
       copyright = "(c) 2014 Antoni Silvestre";
       maintainer = "antoni.silvestre@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell neo4j client";
       description = "Library to interact with Neo4j databases.\n\nThis library covers:\n\n-Cypher transactions\n\n-CRUD operations for nodes, relationships, labels and indexes\n\n-Batch calls for CRUD operations.\n\n\nAll code has been tested with Neo4j versions 2.0.3,  2.1.5 and 2.1.7";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-haskell-neo4j-rest-client" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.hashable)
             (hsPkgs.monad-control)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

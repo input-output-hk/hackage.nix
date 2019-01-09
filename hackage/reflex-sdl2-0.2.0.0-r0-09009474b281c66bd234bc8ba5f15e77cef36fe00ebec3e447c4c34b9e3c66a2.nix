@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reflex-sdl2";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "reflex-sdl2"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017 Schell Scivally";
       maintainer = "schell@takt.com";
@@ -22,7 +13,7 @@
       synopsis = "SDL2 and reflex FRP";
       description = "A minimal host for sdl2 based reflex apps.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +28,12 @@
           (hsPkgs.ref-tf)
           (hsPkgs.sdl2)
           (hsPkgs.stm)
-        ];
-      };
-      exes = {
-        "reflex-sdl2-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.reflex-sdl2)
           ];
         };
+      exes = {
+        "reflex-sdl2-exe" = {
+          depends = [ (hsPkgs.base) (hsPkgs.reflex-sdl2) ];
+          };
+        };
       };
-    };
-  }
+    }

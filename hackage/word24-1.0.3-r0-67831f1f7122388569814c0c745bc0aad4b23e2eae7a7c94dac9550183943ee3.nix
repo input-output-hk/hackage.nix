@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "word24";
-        version = "1.0.3";
-      };
+      identifier = { name = "word24"; version = "1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John W. Lato, jwlato@gmail.com";
@@ -22,21 +13,19 @@
       synopsis = "24-bit word and int types for GHC";
       description = "24-bit Word and Int data types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "testWord24" = {
           depends = [
             (hsPkgs.base)
-          ] ++ pkgs.lib.optionals (flags.buildtests) [
+            ] ++ (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "discrete-intervals";
-        version = "0.0.2";
-      };
+      identifier = { name = "discrete-intervals"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Daniel Cartwright <dcartwright@layer3com.com>";
@@ -22,10 +13,6 @@
       synopsis = "Discrete Intervals";
       description = "A 'Data.Interval' is a closed, convex set of discrete values.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

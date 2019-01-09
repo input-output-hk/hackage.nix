@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-raml-docs";
-        version = "0.1.1";
-      };
+      identifier = { name = "yesod-raml-docs"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A html documentation generator library for RAML.";
       description = "A html documentation generator library for RAML.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.yaml)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

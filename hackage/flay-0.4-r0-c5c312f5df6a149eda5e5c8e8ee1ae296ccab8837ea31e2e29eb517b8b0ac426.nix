@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "flay";
-        version = "0.4";
-      };
+      identifier = { name = "flay"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Renzo Carbonara 2017-2018";
       maintainer = "renλren!zone";
@@ -22,15 +13,11 @@
       synopsis = "Work generically on your datatype without knowing its shape nor its contents.";
       description = "Work generically on your datatype without knowing its shape nor its contents using\na principlied approach.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.constraints)
-          (hsPkgs.transformers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.constraints) (hsPkgs.transformers) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

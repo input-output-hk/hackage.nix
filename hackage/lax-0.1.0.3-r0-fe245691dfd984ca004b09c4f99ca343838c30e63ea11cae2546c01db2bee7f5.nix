@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "lax";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "lax"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "© 2007–2008 Brandenburg University of Technology, Cottbus;\n© 2011–2012 Wolfgang Jeltsch";
       maintainer = "wolfgang@cs.ioc.ee";
@@ -22,10 +13,6 @@
       synopsis = "Lax arrows";
       description = "Lax arrows are variants of other arrows which are &#x201C;less strict&#x201D; than\nthe original arrows.  They can be used, for example, to produce I\\/O fixpoints in\nsituations where @fixIO@ would fail.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

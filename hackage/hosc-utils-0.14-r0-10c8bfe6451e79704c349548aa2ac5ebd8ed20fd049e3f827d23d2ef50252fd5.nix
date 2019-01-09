@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hosc-utils";
-        version = "0.14";
-      };
+      identifier = { name = "hosc-utils"; version = "0.14"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape and others, 2006-2013";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Open Sound Control Utilities";
       description = "hosc-utils";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hosc-json-cat" = {
@@ -35,8 +26,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "hosc-json-cgi" = {
           depends = [
             (hsPkgs.base)
@@ -49,8 +40,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
             (hsPkgs.www-minus)
-          ];
-        };
+            ];
+          };
         "hosc-json-console" = {
           depends = [
             (hsPkgs.base)
@@ -62,8 +53,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "hosc-json-nrt" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +66,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "hosc-json-ws" = {
           depends = [
             (hsPkgs.base)
@@ -89,8 +80,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
             (hsPkgs.websockets)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

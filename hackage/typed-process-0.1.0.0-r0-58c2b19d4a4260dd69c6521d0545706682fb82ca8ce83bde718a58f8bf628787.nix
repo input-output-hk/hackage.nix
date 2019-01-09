@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "typed-process";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "typed-process"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Run external processes, with strong typing of streams";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.process)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "typed-process-test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.http-conduit)
             (hsPkgs.temporary)
             (hsPkgs.typed-process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

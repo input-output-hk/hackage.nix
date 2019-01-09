@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-devel";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "wai-devel"; version = "0.0.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "njagi@urbanslug.com";
@@ -22,7 +13,7 @@
       synopsis = "A web server for the development of WAI compliant web applications.";
       description = "A development server for WAI applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,16 +48,11 @@
           (hsPkgs.file-embed)
           (hsPkgs.websockets)
           (hsPkgs.split)
-        ];
-      };
-      exes = {
-        "wai-devel" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wai-devel)
           ];
         };
-      };
+      exes = {
+        "wai-devel" = { depends = [ (hsPkgs.base) (hsPkgs.wai-devel) ]; };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -74,8 +60,8 @@
             (hsPkgs.hspec)
             (hsPkgs.stm)
             (hsPkgs.wai-devel)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

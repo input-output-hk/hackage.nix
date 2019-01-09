@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "nymphaea";
-        version = "0.3";
-      };
+      identifier = { name = "nymphaea"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Cale Gibbard <cgibbard@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "An interactive GUI for manipulating L-systems";
       description = "An L-system is a small grammar specifying fractal functions, famous\nfor their uncanny resemblance to plants and other lifeforms.\nnymphaea displays these L-systems in an attractive visual manner, and\nallows you to manipulate them.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "nymphaea" = {
@@ -36,8 +27,8 @@
             (hsPkgs.gtk)
             (hsPkgs.glade)
             (hsPkgs.cairo)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

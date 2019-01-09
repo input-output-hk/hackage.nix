@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "autonix-deps";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "autonix-deps"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014 Thomas Tuegel";
       maintainer = "ttuegel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for Nix expression dependency generation";
       description = "@autonix-deps@ is a library for building automatic dependency detectors for\nsoftware collections to be built using the Nix package manager.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
           (hsPkgs.xml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

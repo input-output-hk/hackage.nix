@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hricket";
-        version = "0.5";
-      };
+      identifier = { name = "hricket"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 Anthony Simpson";
       maintainer = "DiscipleRayne@gmail.com";
@@ -22,15 +13,10 @@
       synopsis = "A Cricket scoring application.";
       description = "An application to help with scoring Cricket dart games.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "hricket" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-          ];
+        "hricket" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
         };
       };
-    };
-  }
+    }

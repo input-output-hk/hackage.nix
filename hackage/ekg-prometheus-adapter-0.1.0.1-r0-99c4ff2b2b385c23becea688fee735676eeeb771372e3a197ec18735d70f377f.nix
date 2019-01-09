@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ekg-prometheus-adapter";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "ekg-prometheus-adapter"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2016 Alfredo Di Napoli";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Easily expose your EKG metrics to Prometheus";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,15 +24,12 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
-      tests = {
-        "tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ekg-prometheus-adapter)
           ];
         };
+      tests = {
+        "tests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.ekg-prometheus-adapter) ];
+          };
+        };
       };
-    };
-  }
+    }

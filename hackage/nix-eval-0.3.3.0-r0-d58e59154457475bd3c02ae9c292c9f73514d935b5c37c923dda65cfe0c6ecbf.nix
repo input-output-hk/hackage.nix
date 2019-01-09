@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nix-eval";
-        version = "0.3.3.0";
-      };
+      identifier = { name = "nix-eval"; version = "0.3.3.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "chriswarbo@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Evaluate Haskell expressions using Nix to get packages";
       description = "Evaluate Haskell expressions using Nix to get packages";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.process)
           (hsPkgs.strict)
           (hsPkgs.hindent)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.nix-eval)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

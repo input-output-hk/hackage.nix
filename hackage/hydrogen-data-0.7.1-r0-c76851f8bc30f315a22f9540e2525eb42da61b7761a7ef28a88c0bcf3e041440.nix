@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "hydrogen-data";
-        version = "0.7.1";
-      };
+      identifier = { name = "hydrogen-data"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "julfleischer@paypal.com";
@@ -22,7 +13,7 @@
       synopsis = "Hydrogen Data";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.nicify)
           (hsPkgs.parsec)
           (hsPkgs.uuid)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

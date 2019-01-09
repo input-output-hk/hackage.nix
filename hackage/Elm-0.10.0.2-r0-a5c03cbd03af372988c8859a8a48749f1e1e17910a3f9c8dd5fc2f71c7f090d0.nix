@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "Elm";
-        version = "0.10.0.2";
-      };
+      identifier = { name = "Elm"; version = "0.10.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2011-2013 Evan Czaplicki";
       maintainer = "info@elm-lang.org";
@@ -22,7 +13,7 @@
       synopsis = "The Elm language module.";
       description = "Elm aims to make client-side web-development more pleasant.\nIt is a statically/strongly typed, functional reactive\nlanguage to HTML, CSS, and JS. This package provides a\nlibrary for Elm compilation in Haskell and a compiler\nexecutable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.transformers)
           (hsPkgs.union-find)
           (hsPkgs.uniplate)
-        ];
-      };
+          ];
+        };
       exes = {
         "elm" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.transformers)
             (hsPkgs.union-find)
             (hsPkgs.uniplate)
-          ];
-        };
+            ];
+          };
         "elm-doc" = {
           depends = [
             (hsPkgs.aeson)
@@ -86,17 +77,13 @@
             (hsPkgs.parsec)
             (hsPkgs.pretty)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-elm" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.HTF)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.HTF) ];
+          };
         };
       };
-    };
-  }
+    }

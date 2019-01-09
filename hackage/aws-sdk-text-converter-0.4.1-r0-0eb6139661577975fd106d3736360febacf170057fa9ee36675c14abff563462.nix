@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-sdk-text-converter";
-        version = "0.4.1";
-      };
+      identifier = { name = "aws-sdk-text-converter"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yusuke Nomura <yunomu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "The text converter for aws-sdk.";
       description = "The text converter for aws-sdk.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.strptime)
           (hsPkgs.safe)
           (hsPkgs.iproute)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

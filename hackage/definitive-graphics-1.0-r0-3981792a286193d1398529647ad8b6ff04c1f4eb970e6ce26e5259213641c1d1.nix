@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "definitive-graphics";
-        version = "1.0";
-      };
+      identifier = { name = "definitive-graphics"; version = "1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "marc.coiffier@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A definitive package allowing you to open windows, read image files and render text to be displayed or saved";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.transformers)
           (hsPkgs.zlib)
           (hsPkgs.stb-truetype)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

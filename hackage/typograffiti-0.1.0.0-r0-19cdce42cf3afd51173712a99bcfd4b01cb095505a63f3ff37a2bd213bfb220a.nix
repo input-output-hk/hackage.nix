@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "typograffiti";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "typograffiti"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Schell Scivally";
       maintainer = "schell@takt.com";
@@ -22,7 +13,7 @@
       synopsis = "Display TTF fonts in OpenGL. Includes caching for fast rendering.";
       description = "Please see the README on GitHub at <https://github.com/githubuser/typograffiti#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.stm)
           (hsPkgs.template-haskell)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "typograffiti-exe" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.template-haskell)
             (hsPkgs.typograffiti)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "typograffiti-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.typograffiti)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

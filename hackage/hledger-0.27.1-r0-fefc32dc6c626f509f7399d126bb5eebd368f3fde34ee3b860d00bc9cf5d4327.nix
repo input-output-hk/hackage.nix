@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      threaded = true;
-      curses = true;
-      old-locale = false;
-    };
+    flags = { threaded = true; curses = true; old-locale = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hledger";
-        version = "0.27.1";
-      };
+      identifier = { name = "hledger"; version = "0.27.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -26,7 +13,7 @@
       synopsis = "Command-line interface for the hledger accounting tool";
       description = "This is hledger’s command-line interface.\nIts basic function is to read a plain text file describing\nfinancial transactions and produce useful reports.\nhledger is a cross-platform program for tracking money, time, or\nany other commodity, using double-entry accounting and a simple,\neditable file format. It is inspired by and largely compatible\nwith ledger(1).  hledger provides command-line, curses and web\ninterfaces, and aims to be a reliable, practical tool for daily\nuse.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -53,20 +40,17 @@
           (hsPkgs.tabular)
           (hsPkgs.utf8-string)
           (hsPkgs.wizards)
-        ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
+          ] ++ (if compiler.isGhc && (compiler.version).ge "7.10"
           then [ (hsPkgs.shakespeare) ]
           else [
             (hsPkgs.shakespeare)
             (hsPkgs.shakespeare-text)
-          ])) ++ (if flags.old-locale
-          then [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]
+            ])) ++ (if flags.old-locale
+          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
           else [
             (hsPkgs.time)
-          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs.pretty-show)) ++ pkgs.lib.optional (!system.isWindows && flags.curses) (hsPkgs.terminfo);
-      };
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs.pretty-show)) ++ (pkgs.lib).optional (!system.isWindows && flags.curses) (hsPkgs.terminfo);
+        };
       exes = {
         "hledger" = {
           depends = ((([
@@ -94,21 +78,18 @@
             (hsPkgs.utf8-string)
             (hsPkgs.wizards)
             (hsPkgs.hledger)
-          ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
+            ] ++ (if compiler.isGhc && (compiler.version).ge "7.10"
             then [ (hsPkgs.shakespeare) ]
             else [
               (hsPkgs.shakespeare)
               (hsPkgs.shakespeare-text)
-            ])) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+              ])) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [
               (hsPkgs.time)
-            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs.pretty-show)) ++ pkgs.lib.optional (!system.isWindows && flags.curses) (hsPkgs.terminfo);
+              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs.pretty-show)) ++ (pkgs.lib).optional (!system.isWindows && flags.curses) (hsPkgs.terminfo);
+          };
         };
-      };
       tests = {
         "test" = {
           depends = ((([
@@ -138,21 +119,18 @@
             (hsPkgs.hledger)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
+            ] ++ (if compiler.isGhc && (compiler.version).ge "7.10"
             then [ (hsPkgs.shakespeare) ]
             else [
               (hsPkgs.shakespeare)
               (hsPkgs.shakespeare-text)
-            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs.pretty-show)) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs.pretty-show)) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [
               (hsPkgs.time)
-            ])) ++ pkgs.lib.optional (!system.isWindows && flags.curses) (hsPkgs.terminfo);
+              ])) ++ (pkgs.lib).optional (!system.isWindows && flags.curses) (hsPkgs.terminfo);
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -167,13 +145,10 @@
             (hsPkgs.process)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ] ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
+          };
         };
       };
-    };
-  }
+    }

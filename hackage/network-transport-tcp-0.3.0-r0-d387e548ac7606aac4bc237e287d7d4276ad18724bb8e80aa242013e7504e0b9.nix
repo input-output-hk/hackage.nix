@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-transport-tcp";
-        version = "0.3.0";
-      };
+      identifier = { name = "network-transport-tcp"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Well-Typed LLP";
       maintainer = "edsko@well-typed.com, dcoutts@well-typed.com";
@@ -22,7 +13,7 @@
       synopsis = "TCP instantiation of Network.Transport";
       description = "TCP instantiation of Network.Transport";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.network)
-        ];
-      };
+          ];
+        };
       tests = {
         "TestTCP" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.network)
             (hsPkgs.network-transport)
             (hsPkgs.network-transport-tcp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

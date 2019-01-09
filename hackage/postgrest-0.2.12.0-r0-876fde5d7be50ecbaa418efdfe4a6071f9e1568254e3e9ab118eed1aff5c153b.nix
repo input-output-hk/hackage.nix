@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ci = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgrest";
-        version = "0.2.12.0";
-      };
+      identifier = { name = "postgrest"; version = "0.2.12.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "cred+github@begriffs.com";
@@ -22,7 +13,7 @@
       synopsis = "REST API for any Postgres database";
       description = "Reads the schema of a PostgreSQL database and creates RESTful routes\nfor the tables and views, supporting all HTTP verbs that security\npermits.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -68,8 +59,8 @@
           (hsPkgs.parsec)
           (hsPkgs.errors)
           (hsPkgs.bifunctors)
-        ];
-      };
+          ];
+        };
       exes = {
         "postgrest" = {
           depends = [
@@ -116,9 +107,9 @@
             (hsPkgs.parsec)
             (hsPkgs.errors)
             (hsPkgs.bifunctors)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -173,8 +164,8 @@
             (hsPkgs.parsec)
             (hsPkgs.errors)
             (hsPkgs.bifunctors)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

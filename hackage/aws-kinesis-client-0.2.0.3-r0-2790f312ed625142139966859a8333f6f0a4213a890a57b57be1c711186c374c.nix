@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-kinesis-client";
-        version = "0.2.0.3";
-      };
+      identifier = { name = "aws-kinesis-client"; version = "0.2.0.3"; };
       license = "Apache-2.0";
       copyright = "Copyright (c) 2013-2014 PivotCloud, Inc.";
       maintainer = "jon@jonmsterling.com";
@@ -22,7 +13,7 @@
       synopsis = "A producer & consumer client library for AWS Kinesis";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "kinesis-cli" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

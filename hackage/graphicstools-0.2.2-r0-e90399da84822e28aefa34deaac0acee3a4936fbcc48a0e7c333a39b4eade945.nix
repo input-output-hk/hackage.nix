@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "graphicstools";
-        version = "0.2.2";
-      };
+      identifier = { name = "graphicstools"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "matti.j.eskelinen@jyu.fi";
@@ -22,7 +13,7 @@
       synopsis = "Tools for creating graphical UIs, based on wxHaskell.";
       description = "This library provides interfaces for creating easily\ngraphical UIs especially for computer vision purposes,\nand for rendering information in graphical form.\nImplementations are provided for CV libraries.\nExample applications are included.\n(This is an early preview version)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.CV)
           (hsPkgs.wxcore)
           (hsPkgs.wx)
-        ];
-      };
+          ];
+        };
       exes = {
         "cvexample" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.wx)
             (hsPkgs.CV)
             (hsPkgs.graphicstools)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

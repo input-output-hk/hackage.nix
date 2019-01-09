@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-snake";
-        version = "1.0.0";
-      };
+      identifier = { name = "haskell-snake"; version = "1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Przemysław Kamiński <cgenie@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Snake game implemetation in Haskell using SDL2";
       description = "See README at <https://github.com/CGenie/haskell-snake>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.sdl2-ttf)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskell-snake" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.sdl2-ttf)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

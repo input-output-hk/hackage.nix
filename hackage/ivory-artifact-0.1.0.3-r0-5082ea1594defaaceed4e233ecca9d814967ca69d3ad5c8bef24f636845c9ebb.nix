@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ivory-artifact";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "ivory-artifact"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "leepike@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Manage additional data files during Ivory compilation.";
       description = "Mostly used by other Ivory libraries and backends and typically shouldn't have to be used directly by the user.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.utf8-string)
           (hsPkgs.HStringTemplate)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

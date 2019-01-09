@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hamtsolo";
-        version = "1.0.3";
-      };
+      identifier = { name = "hamtsolo"; version = "1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2017 Jacek Galowicz";
       maintainer = "jacek@galowicz.de";
@@ -22,7 +13,7 @@
       synopsis = "Intel AMT serial-over-lan (SOL) client";
       description = "hamtsolo lets you connect to Intel computers with enabled\nAMT and establish a serial-over-lan (SOL) connection.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hamtsolo" = {
@@ -42,8 +33,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.stm-conduit)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

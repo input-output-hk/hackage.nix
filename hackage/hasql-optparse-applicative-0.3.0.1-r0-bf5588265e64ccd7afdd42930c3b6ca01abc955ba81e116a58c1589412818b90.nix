@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hasql-optparse-applicative";
         version = "0.3.0.1";
-      };
+        };
       license = "MIT";
       copyright = "(c) 2016, Sannsyn AS";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +16,7 @@
       synopsis = "\"optparse-applicative\" parsers for \"hasql\"";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +24,7 @@
           (hsPkgs.hasql-pool)
           (hsPkgs.optparse-applicative)
           (hsPkgs.base-prelude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

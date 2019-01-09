@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "purescript";
-        version = "0.3.12";
-      };
+      identifier = { name = "purescript"; version = "0.3.12"; };
       license = "MIT";
       copyright = "(c) 2013-14 Phil Freeman, (c) 2014 Gary Burgess, and other contributors";
       maintainer = "Phil Freeman <paf31@cantab.net>";
@@ -22,7 +13,7 @@
       synopsis = "PureScript Programming Language Compiler";
       description = "A small compile-to-JS language with extensible records and type-safe blocks";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.pattern-arrows)
           (hsPkgs.monad-unify)
-        ];
-      };
+          ];
+        };
       exes = {
         "psc" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.syb)
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "psci" = {
           depends = [
             (hsPkgs.base)
@@ -68,8 +59,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
             (hsPkgs.process)
-          ];
-        };
+            ];
+          };
         "docgen" = {
           depends = [
             (hsPkgs.base)
@@ -78,9 +69,9 @@
             (hsPkgs.utf8-string)
             (hsPkgs.process)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -95,8 +86,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

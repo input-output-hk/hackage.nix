@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eve-cli";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "eve-cli"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/ChrisPenner/eve-cli#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.vty)
-        ];
-      };
+          ];
+        };
       exes = {
         "eve-cli-exe" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             (hsPkgs.vty)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "eve-cli-test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             (hsPkgs.vty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

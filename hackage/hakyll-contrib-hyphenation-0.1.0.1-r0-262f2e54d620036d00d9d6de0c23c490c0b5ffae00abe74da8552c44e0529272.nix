@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hakyll-contrib-hyphenation";
         version = "0.1.0.1";
-      };
+        };
       license = "MIT";
       copyright = "";
       maintainer = "Pavel Kretov <firegurafiku@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Automatic hyphenation for Hakyll";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.hyphenation)
           (hsPkgs.tagsoup)
           (hsPkgs.hakyll)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

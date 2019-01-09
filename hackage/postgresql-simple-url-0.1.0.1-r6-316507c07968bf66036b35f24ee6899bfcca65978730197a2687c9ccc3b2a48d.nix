@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-simple-url";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "postgresql-simple-url"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "Copyright © 2014 Futurice OY, Oleg Grenrus";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Parse postgres:// url into ConnectInfo";
       description = "The 'Database.PostgreSQL.Simple.URL' module in this package exports\ntwo helper functions 'parseDatabaseUrl' and 'urlToConnectInfo'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.split)
           (hsPkgs.network-uri)
           (hsPkgs.postgresql-simple)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.postgresql-simple)
             (hsPkgs.postgresql-simple-url)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

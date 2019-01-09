@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "mxnet-nn";
-        version = "0.0.1.3";
-      };
+      identifier = { name = "mxnet-nn"; version = "0.0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Jiasen Wu";
       maintainer = "jiasenwu@hotmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Train a neural network with MXNet in Haskell.";
       description = "High level APIs to rain a neural network with MXNet in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mtl)
           (hsPkgs.lens)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       exes = {
         "lenet" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.streaming-bytestring)
             (hsPkgs.ghc-prim)
             (hsPkgs.mxnet-nn)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

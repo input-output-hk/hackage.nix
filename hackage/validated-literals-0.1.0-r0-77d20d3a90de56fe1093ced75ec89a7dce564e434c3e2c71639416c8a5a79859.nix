@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "validated-literals";
-        version = "0.1.0";
-      };
+      identifier = { name = "validated-literals"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2015 Merijn Verstraaten";
       maintainer = "Merijn Verstraaten <merijn@inconsistent.nl>";
@@ -22,14 +13,14 @@
       synopsis = "Compile-time checking for partial smart-constructors";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

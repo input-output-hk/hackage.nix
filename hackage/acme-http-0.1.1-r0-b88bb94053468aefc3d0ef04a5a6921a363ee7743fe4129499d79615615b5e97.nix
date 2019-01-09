@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "acme-http";
-        version = "0.1.1";
-      };
+      identifier = { name = "acme-http"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2012 Jeremy Shaw, SeeReason Partners LLC";
       maintainer = "jeremy@n-heptane.com";
@@ -22,7 +13,7 @@
       synopsis = "fastest Haskell PONG server in the world";
       description = "winning the PONG benchmark at all costs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.mtl)
           (hsPkgs.network)
           (hsPkgs.pretty)
-        ];
-      };
+          ];
+        };
       exes = { "pong" = {}; };
-    };
-  }
+      };
+    }

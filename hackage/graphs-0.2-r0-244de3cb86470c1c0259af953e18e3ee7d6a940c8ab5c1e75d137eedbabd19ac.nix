@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "graphs";
-        version = "0.2";
-      };
+      identifier = { name = "graphs"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple monadic graph library";
       description = "A simple monadic graph library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.transformers)
           (hsPkgs.containers)
           (hsPkgs.void)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

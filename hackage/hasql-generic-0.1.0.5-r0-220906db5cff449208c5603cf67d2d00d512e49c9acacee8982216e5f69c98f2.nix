@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasql-generic";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "hasql-generic"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "2017 Chris Kahn";
       maintainer = "chris@kahn.pro";
@@ -22,7 +13,7 @@
       synopsis = "Generic encoder and decoder deriving for Hasql";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.time)
           (hsPkgs.uuid)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

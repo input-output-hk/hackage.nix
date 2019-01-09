@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lifted-async";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "lifted-async"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2012 Mitsutoshi Aoe";
       maintainer = "Mitsutoshi Aoe <maoe@foldr.in>";
@@ -22,7 +13,7 @@
       synopsis = "Run lifted IO operations asynchronously and wait for their results";
       description = "This package provides IO operations from @async@ package lifted to any\ninstance of 'MonadBase' or 'MonadBaseControl'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.lifted-base)
           (hsPkgs.monad-control)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-lifted-async" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark-lifted-async" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.lifted-async)
-          ];
-        };
+            ];
+          };
         "benchmark-lifted-async-threaded" = {
           depends = [
             (hsPkgs.base)
@@ -65,8 +56,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.lifted-async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

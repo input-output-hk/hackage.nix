@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "qtah-generator";
-        version = "0.2.1";
-      };
+      identifier = { name = "qtah-generator"; version = "0.2.1"; };
       license = "LGPL-3.0-only";
       copyright = "Copyright 2015-2016 Bryan Gardiner";
       maintainer = "Bryan Gardiner <bog@khumba.net>";
@@ -22,11 +13,9 @@
       synopsis = "Generator for Qtah Qt bindings";
       description = "Qtah is a set of Qt bindings for Haskell.  This package is a Hoppy FFI\ngenerator.  You shouldn't need it directly; rather, qtah-cpp and qtah use it\nas part of their build processes.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "qtah-generator" = {
           depends = [
@@ -40,8 +29,8 @@
             (hsPkgs.mtl)
             (hsPkgs.process)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "attoparsec-text-enumerator";
         version = "0.2.0.0";
-      };
+        };
       license = "MIT";
       copyright = "Copyright (c) Felipe Lessa 2010, John Millikin 2010";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Convert an attoparsec-text parser into an iteratee";
       description = "Convert an attoparsec-text parser into an iteratee.\n\nThis library is basically a translation of the original\nattoparsec-enumerator library to use text instead of\nbytestrings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +24,7 @@
           (hsPkgs.attoparsec-text)
           (hsPkgs.text)
           (hsPkgs.enumerator)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

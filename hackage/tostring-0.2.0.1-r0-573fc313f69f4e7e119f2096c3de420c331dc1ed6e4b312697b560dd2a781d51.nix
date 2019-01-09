@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "tostring";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "tostring"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,14 +13,10 @@
       synopsis = "The ToString class";
       description = "A type class for converting text types to String.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.utf8-string)
-          (hsPkgs.text)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.utf8-string) (hsPkgs.text) ];
+        };
       };
-    };
-  }
+    }

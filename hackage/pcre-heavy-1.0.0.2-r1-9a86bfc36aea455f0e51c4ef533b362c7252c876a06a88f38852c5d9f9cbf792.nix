@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pcre-heavy";
-        version = "1.0.0.2";
-      };
+      identifier = { name = "pcre-heavy"; version = "1.0.0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "2015-2018 Greg V <greg@unrelenting.technology>";
       maintainer = "greg@unrelenting.technology";
@@ -22,7 +13,7 @@
       synopsis = "A regexp (regex) library on top of pcre-light you can actually use.";
       description = "A regular expressions library that does not suck.\nBased on <https://hackage.haskell.org/package/pcre-light pcre-light>.\nTakes and returns <https://hackage.haskell.org/package/stringable Stringables> everywhere.\nIncludes a QuasiQuoter for regexps that does compile time checking.\nSEARCHES FOR MULTIPLE MATCHES! DOES REPLACEMENT!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,16 +24,12 @@
           (hsPkgs.string-conversions)
           (hsPkgs.semigroups)
           (hsPkgs.template-haskell)
-        ];
-      };
-      tests = {
-        "examples" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Glob)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "examples" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Glob) (hsPkgs.doctest) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ratel";
-        version = "0.3.7";
-      };
+      identifier = { name = "ratel"; version = "0.3.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,7 +13,7 @@
       synopsis = "Notify Honeybadger about exceptions.";
       description = "Ratel notifies Honeybadger about exceptions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.http-types)
           (hsPkgs.text)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "ratel-test-suite" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.ratel)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

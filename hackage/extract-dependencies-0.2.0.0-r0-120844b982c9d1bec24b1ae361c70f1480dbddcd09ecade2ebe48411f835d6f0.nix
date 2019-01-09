@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "extract-dependencies";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "extract-dependencies"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2015 André Barnabá";
       maintainer = "asakeron@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Given a hackage package outputs the list of its dependencies.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.Cabal)
           (hsPkgs.package-description-remote)
-        ];
-      };
+          ];
+        };
       exes = {
         "extract-dependencies" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.containers)
             (hsPkgs.Cabal)
             (hsPkgs.package-description-remote)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "opendatatable";
-        version = "0.0.0";
-      };
+      identifier = { name = "opendatatable"; version = "0.0.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "fabian.bergmark@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for working with Open Data Tables";
       description = "Open Data Table definition, parser and pickler.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.th-lift)
           (hsPkgs.hxt)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

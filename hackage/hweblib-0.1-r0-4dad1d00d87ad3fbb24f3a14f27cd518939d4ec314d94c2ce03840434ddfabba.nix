@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hweblib";
-        version = "0.1";
-      };
+      identifier = { name = "hweblib"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "aycan.irican@core.gen.tr";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Web Library";
       description = "The library includes attoparsec based incremental parsers for\nrfc2616 (http) and rfc3986 (uri). rfcs 2045, 2046, 2109, 2388, 2617\nare planned.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.monads-fd)
           (hsPkgs.transformers)
           (hsPkgs.attoparsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

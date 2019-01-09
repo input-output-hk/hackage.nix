@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "twitter-types";
-        version = "0.6.1";
-      };
+      identifier = { name = "twitter-types"; version = "0.6.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Takahiro HIMURA <taka@himura.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Twitter JSON parser and types";
       description = "This package uses enumerator package for access Twitter API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.aeson)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.twitter-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

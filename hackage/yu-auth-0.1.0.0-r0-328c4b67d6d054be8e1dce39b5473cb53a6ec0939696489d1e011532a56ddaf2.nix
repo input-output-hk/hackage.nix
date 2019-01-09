@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { client = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yu-auth";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "yu-auth"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2017 Johann Lee";
       maintainer = "qinka@live.com";
@@ -22,7 +13,7 @@
       synopsis = "Auth module for Yu.";
       description = "Helper of auth via SHA for Yu";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.cryptonite)
           (hsPkgs.yu-utils)
           (hsPkgs.memory)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-core" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.yu-auth)
-          ];
-        };
+            ];
+          };
         "test-auth" = {
           depends = [
             (hsPkgs.base)
@@ -52,8 +43,8 @@
             (hsPkgs.yesod-test)
             (hsPkgs.yesod-core)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

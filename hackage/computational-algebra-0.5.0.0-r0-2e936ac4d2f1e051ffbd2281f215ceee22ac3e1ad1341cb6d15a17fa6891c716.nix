@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "computational-algebra";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "computational-algebra"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) Hiromi ISHII 2017";
       maintainer = "konn.jinro_at_gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Well-kinded computational algebra library, currently supporting Groebner basis.";
       description = "Dependently-typed computational algebra library for Groebner basis.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -63,16 +54,16 @@
           (hsPkgs.singletons)
           (hsPkgs.arithmoi)
           (hsPkgs.ghc-typelits-knownnat)
-        ];
-      };
+          ];
+        };
       exes = {
         "groebner-prof" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
             (hsPkgs.deepseq)
-          ];
-        };
+            ];
+          };
         "solve" = {
           depends = [
             (hsPkgs.semigroups)
@@ -89,15 +80,15 @@
             (hsPkgs.convertible)
             (hsPkgs.lens)
             (hsPkgs.MonadRandom)
-          ];
-        };
+            ];
+          };
         "algebraic" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.algebraic-prelude)
             (hsPkgs.computational-algebra)
-          ];
-        };
+            ];
+          };
         "ipsolve" = {
           depends = [
             (hsPkgs.semigroups)
@@ -118,8 +109,8 @@
             (hsPkgs.lens)
             (hsPkgs.MonadRandom)
             (hsPkgs.singletons)
-          ];
-        };
+            ];
+          };
         "faugere-prof" = {
           depends = [
             (hsPkgs.criterion)
@@ -138,8 +129,8 @@
             (hsPkgs.lens)
             (hsPkgs.deepseq)
             (hsPkgs.MonadRandom)
-          ];
-        };
+            ];
+          };
         "hensel-prof" = {
           depends = [
             (hsPkgs.criterion)
@@ -158,8 +149,8 @@
             (hsPkgs.lens)
             (hsPkgs.deepseq)
             (hsPkgs.MonadRandom)
-          ];
-        };
+            ];
+          };
         "sandpit-poly" = {
           depends = [
             (hsPkgs.semigroups)
@@ -169,8 +160,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.algebra)
             (hsPkgs.sized)
-          ];
-        };
+            ];
+          };
         "quotient" = {
           depends = [
             (hsPkgs.semigroups)
@@ -181,9 +172,9 @@
             (hsPkgs.algebra)
             (hsPkgs.sized)
             (hsPkgs.reflection)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-multi-table" = {
           depends = [
@@ -208,8 +199,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.vector)
             (hsPkgs.equational-reasoning)
-          ];
-        };
+            ];
+          };
         "singular-test" = {
           depends = [
             (hsPkgs.algebra)
@@ -236,8 +227,8 @@
             (hsPkgs.matrix)
             (hsPkgs.text)
             (hsPkgs.singletons)
-          ];
-        };
+            ];
+          };
         "monomial-order-test" = {
           depends = [
             (hsPkgs.constraints)
@@ -256,8 +247,8 @@
             (hsPkgs.vector)
             (hsPkgs.equational-reasoning)
             (hsPkgs.sized)
-          ];
-        };
+            ];
+          };
         "linear-test" = {
           depends = [
             (hsPkgs.constraints)
@@ -283,8 +274,8 @@
             (hsPkgs.vector)
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "matrix-test" = {
           depends = [
             (hsPkgs.constraints)
@@ -310,8 +301,8 @@
             (hsPkgs.vector)
             (hsPkgs.matrix)
             (hsPkgs.equational-reasoning)
-          ];
-        };
+            ];
+          };
         "specs" = {
           depends = [
             (hsPkgs.constraints)
@@ -341,8 +332,8 @@
             (hsPkgs.text)
             (hsPkgs.singletons)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "new-div-test" = {
           depends = [
             (hsPkgs.constraints)
@@ -367,9 +358,9 @@
             (hsPkgs.vector)
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "unipol-bench" = {
           depends = [
@@ -387,8 +378,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.vector)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "normal-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -405,8 +396,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.vector)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "elimination-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -423,8 +414,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.vector)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "quotient-bench-randomized" = {
           depends = [
             (hsPkgs.constraints)
@@ -450,8 +441,8 @@
             (hsPkgs.matrix)
             (hsPkgs.equational-reasoning)
             (hsPkgs.monomorphic)
-          ];
-        };
+            ];
+          };
         "monomial-order-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -477,8 +468,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.vector)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "linear-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -508,8 +499,8 @@
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
             (hsPkgs.monomorphic)
-          ];
-        };
+            ];
+          };
         "division-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -539,8 +530,8 @@
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
             (hsPkgs.monomorphic)
-          ];
-        };
+            ];
+          };
         "sugar-paper-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -570,8 +561,8 @@
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
             (hsPkgs.monomorphic)
-          ];
-        };
+            ];
+          };
         "solve-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -601,8 +592,8 @@
             (hsPkgs.random)
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "coercion-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -632,8 +623,8 @@
             (hsPkgs.random)
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "faugere4-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -662,8 +653,8 @@
             (hsPkgs.random)
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "unipol-mult-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -692,8 +683,8 @@
             (hsPkgs.random)
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
-          ];
-        };
+            ];
+          };
         "unipol-div-bench" = {
           depends = [
             (hsPkgs.constraints)
@@ -722,8 +713,8 @@
             (hsPkgs.random)
             (hsPkgs.equational-reasoning)
             (hsPkgs.matrix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-sandbox";
-        version = "0.1.1";
-      };
+      identifier = { name = "stackage-sandbox"; version = "0.1.1"; };
       license = "MIT";
       copyright = "2015 FP Complete Corporation";
       maintainer = "danburton@fpcomplete.com";
@@ -22,11 +13,9 @@
       synopsis = "Work with shared stackage sandboxes";
       description = "Work with shared stackage sandboxes";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "stackage-sandbox" = {
           depends = [
@@ -42,8 +31,8 @@
             (hsPkgs.conduit-combinators)
             (hsPkgs.conduit-extra)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

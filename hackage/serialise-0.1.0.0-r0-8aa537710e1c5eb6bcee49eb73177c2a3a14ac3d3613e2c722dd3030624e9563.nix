@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { newtime15 = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "serialise";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "serialise"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2017 Duncan Coutts,\n2015-2017 Well-Typed LLP,\n2015 IRIS Connect Ltd";
       maintainer = "duncan@community.haskell.org, ben@smart-cactus.org";
@@ -22,7 +13,7 @@
       synopsis = "A binary serialisation library for Haskell values.";
       description = "This package (formerly @binary-serialise-cbor@) provides pure, efficient\nserialization of Haskell values directly into @ByteString@s for storage or\ntransmission purposes. By providing a set of type class instances, you can\nalso serialise any custom data type you have as well.\n\nThe underlying binary format used is the 'Concise Binary Object\nRepresentation', or CBOR, specified in RFC 7049. As a result,\nserialised Haskell values have implicit structure outside of the\nHaskell program itself, meaning they can be inspected or analyzed\nwith custom tools.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,13 +29,10 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ (if flags.newtime15
+          ] ++ (if flags.newtime15
           then [ (hsPkgs.time) ]
-          else [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]);
-      };
+          else [ (hsPkgs.time) (hsPkgs.old-locale) ]);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -74,9 +62,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "instances" = {
           depends = [
@@ -88,13 +76,10 @@
             (hsPkgs.serialise)
             (hsPkgs.deepseq)
             (hsPkgs.criterion)
-          ] ++ (if flags.newtime15
+            ] ++ (if flags.newtime15
             then [ (hsPkgs.time) ]
-            else [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]);
-        };
+            else [ (hsPkgs.time) (hsPkgs.old-locale) ]);
+          };
         "micro" = {
           depends = [
             (hsPkgs.base)
@@ -110,8 +95,8 @@
             (hsPkgs.cereal)
             (hsPkgs.cereal-vector)
             (hsPkgs.store)
-          ];
-        };
+            ];
+          };
         "versus" = {
           depends = [
             (hsPkgs.array)
@@ -135,13 +120,10 @@
             (hsPkgs.pretty)
             (hsPkgs.criterion)
             (hsPkgs.store)
-          ] ++ (if flags.newtime15
+            ] ++ (if flags.newtime15
             then [ (hsPkgs.time) ]
-            else [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]);
+            else [ (hsPkgs.time) (hsPkgs.old-locale) ]);
+          };
         };
       };
-    };
-  }
+    }

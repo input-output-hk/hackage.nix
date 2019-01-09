@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildcli = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Bitly";
-        version = "0.0.1";
-      };
+      identifier = { name = "Bitly"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sergey Astanin <s.astanin@gmail.com>";
@@ -22,22 +13,11 @@
       synopsis = "A library and a command line tool to access bit.ly URL shortener.";
       description = "This package allows to use bit.ly and j.mp URL\nshortening service from Haskell. Currently it supports\nshorten and expand requests.\n\nAPI key is required. Please find yours at <http://bit.ly/account/>.\n\nAn optional command line utility is provided (use `-f buildCLI` to build it).";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.HTTP)
-          (hsPkgs.HaXml)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.HTTP) (hsPkgs.HaXml) ]; };
       exes = {
-        "bitly" = {
-          depends = [
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-          ];
+        "bitly" = { depends = [ (hsPkgs.filepath) (hsPkgs.directory) ]; };
         };
       };
-    };
-  }
+    }

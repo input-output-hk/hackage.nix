@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "errors-ext";
-        version = "0.4.2";
-      };
+      identifier = { name = "errors-ext"; version = "0.4.2"; };
       license = "LicenseRef-Apache";
       copyright = "2017, 2018 Warlock <internalmike@gmail.com>";
       maintainer = "Warlock <internalmike@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "`bracket`-like functions for `ExceptT` over `IO` monad.";
       description = "Please see the README on GitHub at <https://github.com/A1-Triard/errors-ext#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "errors-ext-test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.monad-loops)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

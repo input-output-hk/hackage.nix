@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "judge";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "judge"; version = "0.1.3.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "ns@slak.ws";
@@ -22,7 +13,7 @@
       synopsis = "Tableau-based theorem prover for justification logic.";
       description = "An implementation of a decision procedure for classical\npropositional logic and justification logic.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.terminal-size)
           (hsPkgs.utf8-string)
           (hsPkgs.texmath)
-        ];
-      };
+          ];
+        };
       exes = {
         "judge" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.optparse-applicative)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

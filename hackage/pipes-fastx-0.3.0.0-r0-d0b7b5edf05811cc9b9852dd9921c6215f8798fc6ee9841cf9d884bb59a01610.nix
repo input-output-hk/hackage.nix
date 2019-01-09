@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-fastx";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "pipes-fastx"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014-2015";
       maintainer = "ropoctl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming parsers for Fasta and Fastq";
       description = "Streaming parsers for Fasta and Fastq";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.pipes)
           (hsPkgs.pipes-bytestring)
           (hsPkgs.pipes-attoparsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

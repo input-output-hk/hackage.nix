@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "summoner";
-        version = "1.2.0";
-      };
+      identifier = { name = "summoner"; version = "1.2.0"; };
       license = "MPL-2.0";
       copyright = "2018 Kowainik";
       maintainer = "xrom.xkov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tool for scaffolding completely configured production Haskell projects.";
       description = "Tool for scaffolding completely configured production Haskell projects.\nSee [README.md](https://github.com/kowainik/summoner#-summoner) for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,16 +32,9 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.tomland)
-        ];
-      };
-      exes = {
-        "summon" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.summoner)
           ];
         };
-      };
+      exes = { "summon" = { depends = [ (hsPkgs.base) (hsPkgs.summoner) ]; }; };
       tests = {
         "summoner-test" = {
           depends = [
@@ -62,8 +46,8 @@
             (hsPkgs.relude)
             (hsPkgs.tomland)
             (hsPkgs.summoner)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HarmTrace";
-        version = "1.0";
-      };
+      identifier = { name = "HarmTrace"; version = "1.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2010--2011 Universiteit Utrecht";
       maintainer = "bash@cs.uu.nl, jpm@cs.uu.nl";
@@ -22,7 +13,7 @@
       synopsis = "Harmony Analysis and Retrieval of Music";
       description = "HarmTrace: Harmony Analysis and Retrieval of Music\nwith Type-level Representations of Abstract\nChords Entities\n\nWe present HarmTrace, a system\nfor automatically analysing the harmony of music\nsequences. HarmTrace is described in the paper:\n\n* Jose Pedro Magalhaes and W. Bas de Haas.\n/Experience Report: Functional Modelling of Musical Harmony./\nInternational Conference on Functional Programming,\n2011.\n<http://dreixel.net/research/pdf/fmmh.pdf>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "harmtrace" = {
@@ -46,8 +37,8 @@
             (hsPkgs.binary)
             (hsPkgs.hmatrix)
             (hsPkgs.hmatrix-gsl-stats)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "parsec-parsers";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "parsec-parsers"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "Parsing instances for Parsec";
       description = "This permits @parsec@ parsers to be written using the combinators from the @parsers@ package.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsers)
-          (hsPkgs.parsec)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.parsers) (hsPkgs.parsec) ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jvm-streaming";
-        version = "0.3";
-      };
+      identifier = { name = "jvm-streaming"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 EURL Tweag.";
       maintainer = "m@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Expose Java iterators as streams from the streaming package.";
       description = "Please see README.md.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.singletons)
           (hsPkgs.streaming)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.jvm)
             (hsPkgs.jvm-streaming)
             (hsPkgs.streaming)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "micro-benchmarks" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.jvm-streaming)
             (hsPkgs.streaming)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

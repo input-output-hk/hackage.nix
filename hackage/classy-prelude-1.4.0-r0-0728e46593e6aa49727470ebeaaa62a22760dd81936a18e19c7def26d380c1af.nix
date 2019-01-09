@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "classy-prelude";
-        version = "1.4.0";
-      };
+      identifier = { name = "classy-prelude"; version = "1.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "A typeclass-based Prelude.";
       description = "See docs and README at <http://www.stackage.org/package/classy-prelude>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.vector-instances)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.hspec)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

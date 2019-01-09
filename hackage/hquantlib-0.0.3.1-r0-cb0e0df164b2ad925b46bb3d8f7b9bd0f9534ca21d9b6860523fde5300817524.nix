@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { optimize = true; };
     package = {
       specVersion = "1.18.0";
-      identifier = {
-        name = "hquantlib";
-        version = "0.0.3.1";
-      };
+      identifier = { name = "hquantlib"; version = "0.0.3.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Pavel Ryzhov <pavel.ryzhov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "HQuantLib is a port of essencial parts of QuantLib to Haskell";
       description = "HQuantLib is intended to be a functional style port of QuantLib (http://quantlib.org)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
           (hsPkgs.HerbiePlugin)
-        ];
-      };
+          ];
+        };
       exes = {
         "mctest" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.parallel)
             (hsPkgs.mersenne-random)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "main-test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

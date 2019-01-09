@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "packer";
-        version = "0.1.8";
-      };
+      identifier = { name = "packer"; version = "0.1.8"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Fast byte serializer and unserializer";
       description = "Fast byte serializer and unserializer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.ghc-prim)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-packer" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.packer)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

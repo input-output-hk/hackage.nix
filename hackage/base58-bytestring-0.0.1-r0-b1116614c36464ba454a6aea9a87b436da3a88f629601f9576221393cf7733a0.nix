@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "base58-bytestring";
-        version = "0.0.1";
-      };
+      identifier = { name = "base58-bytestring"; version = "0.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Implementation of BASE58 transcoding for ByteStrings";
       description = "Implementation of BASE58 transcoding copy-pasted from\nhaskoin package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.containers) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

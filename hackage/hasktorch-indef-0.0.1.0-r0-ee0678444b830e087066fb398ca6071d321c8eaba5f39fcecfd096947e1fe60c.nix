@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { cuda = false; };
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "hasktorch-indef";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "hasktorch-indef"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sam Stites <fnz@fgvgrf.vb>, Austin Huang <nhfgvau@nyhz.zvg.rqh> - cipher:ROT13";
@@ -22,7 +13,7 @@
       synopsis = "Core Hasktorch abstractions wrapping FFI bindings";
       description = "The hasktorch-indef package constitutes the main user API for hasktorch. It uses backpack signatures to generically glue low-level FFI bindings to a high-level interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,20 +34,20 @@
           (hsPkgs.transformers)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optionals (flags.cuda) [
+          ] ++ (pkgs.lib).optionals (flags.cuda) [
           (hsPkgs.hasktorch-types-thc)
           (hsPkgs.cuda)
-        ];
-      };
+          ];
+        };
       sublibs = {
         "hasktorch-indef-floating" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hasktorch-indef)
             (hsPkgs.hasktorch-signatures-partial)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec-double-th" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.singletons)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

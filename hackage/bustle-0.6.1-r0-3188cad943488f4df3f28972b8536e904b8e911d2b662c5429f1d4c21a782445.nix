@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      hgettext = true;
-      interactivetests = false;
-      threaded = true;
-    };
+    flags = { hgettext = true; interactivetests = false; threaded = true; };
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "bustle";
-        version = "0.6.1";
-      };
+      identifier = { name = "bustle"; version = "0.6.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Will Thompson <will@willthompson.co.uk>";
@@ -26,7 +13,7 @@
       synopsis = "Draw sequence diagrams of D-Bus traffic";
       description = "Draw sequence diagrams of D-Bus traffic";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "bustle" = {
@@ -47,14 +34,12 @@
             (hsPkgs.process)
             (hsPkgs.text)
             (hsPkgs.time)
-          ] ++ pkgs.lib.optionals (flags.hgettext) [
+            ] ++ (pkgs.lib).optionals (flags.hgettext) [
             (hsPkgs.hgettext)
             (hsPkgs.setlocale)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.glib-2.0)
-          ];
-        };
+            ];
+          pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+          };
         "test-monitor" = {
           depends = [
             (hsPkgs.base)
@@ -70,11 +55,9 @@
             (hsPkgs.pango)
             (hsPkgs.pcap)
             (hsPkgs.text)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.glib-2.0)
-          ];
-        };
+            ];
+          pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+          };
         "dump-messages" = {
           depends = [
             (hsPkgs.base)
@@ -84,9 +67,9 @@
             (hsPkgs.mtl)
             (hsPkgs.pcap)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-pcap-crash" = {
           depends = [
@@ -97,14 +80,9 @@
             (hsPkgs.mtl)
             (hsPkgs.pcap)
             (hsPkgs.text)
-          ];
-        };
-        "test-regions" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
+        "test-regions" = { depends = [ (hsPkgs.base) (hsPkgs.QuickCheck) ]; };
         "test-renderer" = {
           depends = [
             (hsPkgs.base)
@@ -120,8 +98,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

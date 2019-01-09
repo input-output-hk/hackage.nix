@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "th-expand-syns";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "th-expand-syns"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniels@community.haskell.org";
@@ -22,7 +13,7 @@
       synopsis = "Expands type synonyms in Template Haskell ASTs";
       description = "Expands type synonyms in Template Haskell ASTs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.syb)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

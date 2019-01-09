@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "spike";
-        version = "0.2";
-      };
+      identifier = { name = "spike"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "gtener@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Experimental web browser";
       description = "Experimental web browser based on WebKit-Gtk+";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "spike" = {
@@ -40,11 +31,9 @@
             (hsPkgs.glib)
             (hsPkgs.random)
             (hsPkgs.global-variables)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.libsoup-gnome-2.4)
-          ];
+            ];
+          pkgconfig = [ (pkgconfPkgs.libsoup-gnome-2.4) ];
+          };
         };
       };
-    };
-  }
+    }

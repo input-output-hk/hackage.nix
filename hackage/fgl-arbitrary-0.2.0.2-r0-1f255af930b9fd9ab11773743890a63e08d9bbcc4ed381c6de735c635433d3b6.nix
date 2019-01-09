@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fgl-arbitrary";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "fgl-arbitrary"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Ivan Lazar Miljenovic";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "QuickCheck support for fgl";
       description = "Provides Arbitrary instances for fgl graphs (to avoid adding a\nQuickCheck dependency for fgl whilst still making the instances\navailable to others).\n\nAlso available are non-fgl-specific functions for generating\ngraph-like data structures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.fgl)
-          (hsPkgs.QuickCheck)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.fgl) (hsPkgs.QuickCheck) ];
+        };
       tests = {
         "fgl-arbitrary-tests" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

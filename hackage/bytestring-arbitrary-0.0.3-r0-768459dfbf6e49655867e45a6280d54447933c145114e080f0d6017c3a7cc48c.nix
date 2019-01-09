@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bytestring-arbitrary";
-        version = "0.0.3";
-      };
+      identifier = { name = "bytestring-arbitrary"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tsuraan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Arbitrary instances for ByteStrings";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.cryptohash)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-all" = {
           depends = [
@@ -40,9 +31,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.cryptohash)
             (hsPkgs.bytestring-arbitrary)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark-all" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.criterion)
             (hsPkgs.bytestring-arbitrary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

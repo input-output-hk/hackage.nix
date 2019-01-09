@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-store";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "binary-store"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel.casanueva@plowtech.net";
@@ -22,7 +13,7 @@
       synopsis = "Format to store data using the binary transform.";
       description = "...";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.binary-transform)
           (hsPkgs.bzlib)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "binary-store-tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.binary-list)
             (hsPkgs.binary-store)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

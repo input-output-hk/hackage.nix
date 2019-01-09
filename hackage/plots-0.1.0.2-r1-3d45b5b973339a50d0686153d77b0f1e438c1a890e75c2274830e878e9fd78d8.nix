@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "plots";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "plots"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "c.chalmers@me.com";
@@ -22,7 +13,7 @@
       synopsis = "Diagrams based plotting library.";
       description = "Diagrams based plotting library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,7 +46,7 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.intervals)
           (hsPkgs.base-orphans)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

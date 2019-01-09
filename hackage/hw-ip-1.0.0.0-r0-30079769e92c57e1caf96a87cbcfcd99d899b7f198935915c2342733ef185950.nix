@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "hw-ip";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "hw-ip"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 John Ky, David Turnbull, Jian Wan";
       maintainer = "newhoggy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for manipulating IP addresses and CIDR blocks";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.hw-bits)
           (hsPkgs.iproute)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "hw-ip-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.hw-hspec-hedgehog)
             (hsPkgs.hw-ip)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

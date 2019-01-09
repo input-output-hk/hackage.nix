@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Dust";
-        version = "2.0";
-      };
+      identifier = { name = "Dust"; version = "2.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "brandon@ischool.utexas.edu";
@@ -22,7 +13,7 @@
       synopsis = "Polymorphic protocol engine";
       description = "Dust is a polymorphic protocol engine designed to circumvent Internet filtering based on protocol identification";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,9 +32,9 @@
           (hsPkgs.directory)
           (hsPkgs.split)
           (hsPkgs.cipher-aes)
-        ];
-        libs = pkgs.lib.optional (system.isLinux || system.isOsx) (pkgs."crypto");
-      };
+          ];
+        libs = (pkgs.lib).optional (system.isLinux || system.isOsx) (pkgs."crypto");
+        };
       tests = {
         "crypto" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.cereal)
             (hsPkgs.ghc-prim)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "core" = {
           depends = [
             (hsPkgs.base)
@@ -74,8 +65,8 @@
             (hsPkgs.cereal)
             (hsPkgs.ghc-prim)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

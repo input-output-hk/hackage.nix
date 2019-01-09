@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "genvalidity-hspec-binary";
-        version = "0.2.0.3";
-      };
+      identifier = { name = "genvalidity-hspec-binary"; version = "0.2.0.3"; };
       license = "MIT";
       copyright = "2017-2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com,\nnick.van.den.broeck666@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Standard spec's for binary-related Instances";
       description = "Standard spec's for cereal-related Instances, see https://hackage.haskell.org/package/binary.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.genvalidity)
           (hsPkgs.genvalidity-hspec)
           (hsPkgs.hspec)
-        ];
-      };
+          ];
+        };
       tests = {
         "genvalidity-hspec-binary-doctests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.genvalidity-property)
             (hsPkgs.hspec)
             (hsPkgs.validity)
-          ];
-        };
+            ];
+          };
         "genvalidity-hspec-binary-test" = {
           depends = [
             (hsPkgs.base)
@@ -55,8 +46,8 @@
             (hsPkgs.genvalidity-property)
             (hsPkgs.hspec)
             (hsPkgs.validity)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

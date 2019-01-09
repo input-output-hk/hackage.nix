@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bird";
-        version = "0.0.11";
-      };
+      identifier = { name = "bird"; version = "0.0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Parker, Matt <moonmaster9000@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple, sinatra-inspired web framework.";
       description = "Bird is a hack-compatible framework for simple websites.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.hack-handler-happstack)
           (hsPkgs.data-default)
           (hsPkgs.rallod)
-        ];
-      };
+          ];
+        };
       exes = { "bird" = {}; };
-    };
-  }
+      };
+    }

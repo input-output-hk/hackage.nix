@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "VKHS";
-        version = "0.0.3";
-      };
+      identifier = { name = "VKHS"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012, Sergey Mironov";
       maintainer = "ierton@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides access to Vkontakte (popular Russian social network) API";
       description = "Provides access to Vkontakte API methods. Library requires no interaction\nwith user during Implicit-flow authentication.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.bimap)
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

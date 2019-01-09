@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bio-sequence";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "bio-sequence"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Biocad";
       maintainer = "yakovlev@biocad.ru";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "sequence-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "similarity" = {
           depends = [
             (hsPkgs.base)
@@ -51,8 +42,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

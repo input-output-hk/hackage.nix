@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "danibot";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "danibot"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2015 Daniel Diaz";
       maintainer = "diaz_carrete@yahoo.com";
@@ -22,7 +13,7 @@
       synopsis = "Basic Slack bot framework.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,16 +36,16 @@
           (hsPkgs.async)
           (hsPkgs.foldl)
           (hsPkgs.streaming)
-        ];
-      };
+          ];
+        };
       exes = {
         "danibot" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.danibot)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

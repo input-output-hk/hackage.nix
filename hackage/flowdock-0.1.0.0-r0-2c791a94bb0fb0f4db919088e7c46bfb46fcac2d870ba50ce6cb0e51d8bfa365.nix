@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "flowdock";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "flowdock"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@brewtown.co";
@@ -22,7 +13,7 @@
       synopsis = "Flowdock client library for Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

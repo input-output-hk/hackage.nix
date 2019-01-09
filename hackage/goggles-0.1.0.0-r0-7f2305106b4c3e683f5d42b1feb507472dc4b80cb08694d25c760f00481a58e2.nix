@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "goggles";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "goggles"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Marco Zocca";
       maintainer = "zocca.marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "Interface to Google Cloud APIs";
       description = "Interface to Google Cloud APIs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.filepath)
           (hsPkgs.hspec)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.goggles)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

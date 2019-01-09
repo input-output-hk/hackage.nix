@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "goggles-gcs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "goggles-gcs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Marco Zocca";
       maintainer = "zocca.marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "`goggles` interface to Google Cloud Storage";
       description = "`goggles` interface to Google Cloud Storage";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.memory)
           (hsPkgs.exceptions)
           (hsPkgs.req)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

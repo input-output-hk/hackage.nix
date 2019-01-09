@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "unix-process-conduit";
-        version = "0.1.0";
-      };
+      identifier = { name = "unix-process-conduit"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Run processes on Unix systems, with a conduit interface";
       description = "This library allows you to provide @conduit@ datatypes for the input and output streams. Note that you must compile your programs with @-threaded@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.conduit)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.conduit)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shellmate";
-        version = "0.3.2.1";
-      };
+      identifier = { name = "shellmate"; version = "0.3.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anton@ekblad.cc";
@@ -22,7 +13,7 @@
       synopsis = "Simple interface for shell scripting in Haskell.";
       description = "Aims to simplify development of cross-platform shell scripts and similar things.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.process)
           (hsPkgs.directory)
           (hsPkgs.temporary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

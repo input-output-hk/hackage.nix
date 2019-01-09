@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hasktorch-signatures-partial";
         version = "0.0.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sam Stites <fnz@fgvgrf.vb>, Austin Huang <nhfgvau@nyhz.zvg.rqh> - cipher:ROT13";
@@ -22,14 +16,14 @@
       synopsis = "Functions to partially satisfy tensor signatures";
       description = "Undefined functions to satisfy backpack signatures (never be exported in core)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.hasktorch-types-th)
           (hsPkgs.hasktorch-signatures-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hdf5-lite";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "hdf5-lite"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Marco Zocca";
       maintainer = "zocca.marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "High-level bindings to the HDF5 \"lite\" interface";
       description = "This library wraps the simplified (\"lite\") interface to the HDF5 data format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,12 +26,10 @@
           (hsPkgs.text)
           (hsPkgs.template-haskell)
           (hsPkgs.vector)
-        ];
+          ];
         libs = [ (pkgs."hdf5") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -48,8 +37,8 @@
             (hsPkgs.hdf5-lite)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

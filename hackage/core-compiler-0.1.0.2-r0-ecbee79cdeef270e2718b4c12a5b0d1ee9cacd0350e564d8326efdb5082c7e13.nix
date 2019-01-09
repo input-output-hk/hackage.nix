@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "core-compiler";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "core-compiler"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "2016 David Anekstein";
       maintainer = "aneksteind@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "compile your own mini functional language with Core";
       description = "This package doubles as a compiler and as a module with which anyone can compile their own functional programming language by parsing into the 'CoreExpr' datatype";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,20 +21,16 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "core-compiler-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.core-compiler)
-            (hsPkgs.array)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
           ];
         };
+      exes = {
+        "core-compiler-exe" = {
+          depends = [ (hsPkgs.base) (hsPkgs.core-compiler) (hsPkgs.array) ];
+          build-tools = [
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
+        };
       };
-    };
-  }
+    }

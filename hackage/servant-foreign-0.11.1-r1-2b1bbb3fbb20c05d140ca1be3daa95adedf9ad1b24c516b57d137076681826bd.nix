@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-foreign";
-        version = "0.11.1";
-      };
+      identifier = { name = "servant-foreign"; version = "0.11.1"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Helpers for generating clients for servant APIs in any programming language";
       description = "Helper types and functions for generating client functions for servant APIs in any programming language\n\nThis package provides types and functions that collect all the data needed to generate client functions in the programming language of your choice. This effectively means you only have to write the code that \"pretty-prints\" this data as some code in your target language.\n\nSee the servant-js package for an example\n\n<https://github.com/haskell-servant/servant/blob/master/servant-foreign/CHANGELOG.md CHANGELOG>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.base-compat)
           (hsPkgs.lens)
           (hsPkgs.http-types)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,11 +32,9 @@
             (hsPkgs.servant)
             (hsPkgs.servant-foreign)
             (hsPkgs.hspec)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

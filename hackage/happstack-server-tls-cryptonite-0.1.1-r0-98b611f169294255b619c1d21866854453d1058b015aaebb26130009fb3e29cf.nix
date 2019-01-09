@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "happstack-server-tls-cryptonite";
         version = "0.1.1";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2012 Jeremy Shaw, 2015 Andrey Sverdlichenko";
       maintainer = "blaze@ruddy.ru";
@@ -22,7 +16,7 @@
       synopsis = "Extend happstack-server with native HTTPS support (TLS/SSL)";
       description = "Extend happstack-server with native HTTPS support (TLS/SSL)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +31,7 @@
           (hsPkgs.sendfile)
           (hsPkgs.time)
           (hsPkgs.tls)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

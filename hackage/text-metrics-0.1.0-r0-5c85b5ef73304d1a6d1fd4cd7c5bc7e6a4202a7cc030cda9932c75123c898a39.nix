@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-metrics";
-        version = "0.1.0";
-      };
+      identifier = { name = "text-metrics"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov@openmailbox.org>";
@@ -22,14 +13,14 @@
       synopsis = "Calculate various string metrics efficiently";
       description = "Calculate various string metrics efficiently.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.nats);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -38,9 +29,9 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.text-metrics)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.nats);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats);
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.text)
             (hsPkgs.text-metrics)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.nats);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats);
+          };
         };
       };
-    };
-  }
+    }

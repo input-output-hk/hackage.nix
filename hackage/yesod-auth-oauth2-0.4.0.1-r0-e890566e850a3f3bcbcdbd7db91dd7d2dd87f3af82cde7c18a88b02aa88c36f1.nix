@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-auth-oauth2";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "yesod-auth-oauth2"; version = "0.4.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Pat Brisbin <pbrisbin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "OAuth 2.0 authentication plugins";
       description = "Library to authenticate with OAuth 2.0 for Yesod web applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.uri-bytestring)
           (hsPkgs.yesod-auth)
           (hsPkgs.yesod-core)
-        ];
-      };
+          ];
+        };
       exes = {
         "yesod-auth-oauth2-example" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.yesod)
             (hsPkgs.yesod-auth)
             (hsPkgs.yesod-auth-oauth2)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.hspec)
             (hsPkgs.uri-bytestring)
             (hsPkgs.yesod-auth-oauth2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

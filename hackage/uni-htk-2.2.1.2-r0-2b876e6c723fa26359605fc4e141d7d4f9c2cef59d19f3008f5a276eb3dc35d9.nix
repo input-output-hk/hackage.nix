@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "uni-htk";
-        version = "2.2.1.2";
-      };
+      identifier = { name = "uni-htk"; version = "2.2.1.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "c.maeder@jacobs-university.de";
@@ -22,7 +13,7 @@
       synopsis = "Graphical User Interface for Haskell Programs";
       description = "GUI toolkit based on Tcl\\/Tk";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.uni-events)
           (hsPkgs.uni-posixutil)
           (hsPkgs.uni-reactor)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsonsql";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "jsonsql"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "(c) 2014 Daniel Choi";
       maintainer = "dhchoi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Interpolate JSON object values into SQL strings";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "jsonsql" = {
@@ -39,8 +30,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.string-qq)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

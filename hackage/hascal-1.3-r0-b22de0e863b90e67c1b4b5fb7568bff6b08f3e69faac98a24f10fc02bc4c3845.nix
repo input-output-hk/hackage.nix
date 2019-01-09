@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hascal";
-        version = "1.3";
-      };
+      identifier = { name = "hascal"; version = "1.3"; };
       license = "LicenseRef-GPL";
       copyright = "2012 Mekeor Melire";
       maintainer = "Mekeor Melire <mekeor.melire@googlemail.com>";
@@ -22,21 +13,9 @@
       synopsis = "A minimal, extensible and precise calculator";
       description = "Hascal is a minimal calculator with infix-operations\nsupporting addition, subtraction, division, multiplication,\nexponentiation and logarithming.\nFuthermore, it's easy to add custom operators.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.numbers)
-        ];
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.numbers) ]; };
+      exes = { "hascal" = { depends = [ (hsPkgs.base) (hsPkgs.numbers) ]; }; };
       };
-      exes = {
-        "hascal" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.numbers)
-          ];
-        };
-      };
-    };
-  }
+    }

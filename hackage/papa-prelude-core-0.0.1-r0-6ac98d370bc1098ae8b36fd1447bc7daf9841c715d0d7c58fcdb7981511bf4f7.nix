@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "papa-prelude-core";
-        version = "0.0.1";
-      };
+      identifier = { name = "papa-prelude-core"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Tony Morris";
@@ -22,11 +13,9 @@
       synopsis = "Prelude with only useful functions";
       description = "Prelude with only useful functions";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -36,8 +25,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

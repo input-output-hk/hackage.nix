@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      doctest = true;
-      httpbin = false;
-    };
+    flags = { doctest = true; httpbin = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wreq";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "wreq"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014 Bryan O'Sullivan";
       maintainer = "bos@serpentine.com";
@@ -25,7 +13,7 @@
       synopsis = "An easy-to-use HTTP client library.";
       description = "\nA web client library that is designed for ease of use.\n\nTutorial: <http://www.serpentine.com/wreq/tutorial.html>\n\nFeatures include:\n\n* Simple but powerful `lens`-based API\n\n* A solid test suite, and built on reliable libraries like\nhttp-client and lens\n\n* Session handling includes connection keep-alive and pooling, and\ncookie persistence\n\n* Automatic response body decompression\n\n* Powerful multipart form and file upload handling\n\n* Support for JSON requests and responses, including navigation of\nschema-less responses\n\n* Basic and OAuth2 bearer authentication\n\n* Early TLS support via the tls package";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,11 +30,11 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "httpbin" = {
-          depends = pkgs.lib.optionals (!(!flags.httpbin)) [
+          depends = (pkgs.lib).optionals (!(!flags.httpbin)) [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -57,9 +45,9 @@
             (hsPkgs.snap-core)
             (hsPkgs.snap-server)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -75,16 +63,16 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.text)
             (hsPkgs.wreq)
-          ];
-        };
+            ];
+          };
         "doctest" = {
-          depends = pkgs.lib.optionals (!(!flags.doctest)) [
+          depends = (pkgs.lib).optionals (!(!flags.doctest)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

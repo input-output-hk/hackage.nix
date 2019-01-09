@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debugandersenconstraints = false;
-      debugandersengraph = false;
-    };
+    flags = { debugandersenconstraints = false; debugandersengraph = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "llvm-analysis";
-        version = "0.3.0";
-      };
+      identifier = { name = "llvm-analysis"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "travitch@cs.wisc.edu";
@@ -25,7 +13,7 @@
       synopsis = "A Haskell library for analyzing LLVM bitcode";
       description = "A Haskell library for analyzing LLVM bitcode.  To convert\nbitcode to the format used by this library, see the\nllvm-data-interop package.\n\nThis library attempts to provide some basic program analysis\ninfrastructure and aims to scale to large bitcode files.\n\nThere are some useful tools built on top of this library\navailable in the llvm-tools package.\n\nChanges since 0.2.0:\n* LLVM 3.3 support (contributed by Patrick Hulin)\n* Metadata format change.  Metadata type entries no longer have\na MetaDWFile.  Instead, file and directory names are stored\ndirectly in each MetaDW*Type.  This change lets us more easily\naccommodate changes in LLVM 3.3 (while supporting older versions).\n* Under LLVM 3.3, the 'metaCompileUnitIsMain' field of MetaDWCompileUnit\nis always False.  This disappeared in LLVM 3.3, but removing it would\nbe an unnecessary API break, I think.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,8 +48,8 @@
           (hsPkgs.test-framework-hunit)
           (hsPkgs.itanium-abi)
           (hsPkgs.uniplate)
-        ];
-      };
+          ];
+        };
       tests = {
         "CallGraphTests" = {
           depends = [
@@ -72,8 +60,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.llvm-analysis)
             (hsPkgs.llvm-data-interop)
-          ];
-        };
+            ];
+          };
         "BlockReturnTests" = {
           depends = [
             (hsPkgs.base)
@@ -82,8 +70,8 @@
             (hsPkgs.filepath)
             (hsPkgs.llvm-analysis)
             (hsPkgs.llvm-data-interop)
-          ];
-        };
+            ];
+          };
         "ReturnTests" = {
           depends = [
             (hsPkgs.base)
@@ -94,8 +82,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.llvm-data-interop)
             (hsPkgs.llvm-analysis)
-          ];
-        };
+            ];
+          };
         "AccessPathTests" = {
           depends = [
             (hsPkgs.base)
@@ -104,8 +92,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.llvm-data-interop)
             (hsPkgs.llvm-analysis)
-          ];
-        };
+            ];
+          };
         "ClassHierarchyTests" = {
           depends = [
             (hsPkgs.base)
@@ -116,8 +104,8 @@
             (hsPkgs.llvm-analysis)
             (hsPkgs.llvm-data-interop)
             (hsPkgs.itanium-abi)
-          ];
-        };
+            ];
+          };
         "AndersenTests" = {
           depends = [
             (hsPkgs.base)
@@ -126,8 +114,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.llvm-data-interop)
             (hsPkgs.llvm-analysis)
-          ] ++ pkgs.lib.optional (flags.debugandersengraph) (hsPkgs.graphviz);
+            ] ++ (pkgs.lib).optional (flags.debugandersengraph) (hsPkgs.graphviz);
+          };
         };
       };
-    };
-  }
+    }

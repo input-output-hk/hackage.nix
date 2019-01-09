@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "loopy";
-        version = "0.0.1";
-      };
+      identifier = { name = "loopy"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Emily Mitchell 2009-2011";
       maintainer = "Emily Mitchell <emily.g.h.mitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Find all biological feedback loops within an ecosystem graph.";
       description = "Find all biological feedback loops within an ecosystem graph.\nThis software is very much in development, and can probably only be used\nin conjunction with emailing the author! Documentation and cleanups to follow.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "loopy" = {
@@ -36,8 +27,8 @@
             (hsPkgs.process)
             (hsPkgs.directory)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

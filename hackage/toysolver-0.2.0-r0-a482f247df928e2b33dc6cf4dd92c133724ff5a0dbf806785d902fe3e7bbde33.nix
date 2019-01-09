@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       forcechar8 = false;
@@ -14,13 +8,10 @@
       exceptions06 = true;
       random1013 = true;
       time15 = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "toysolver";
-        version = "0.2.0";
-      };
+      identifier = { name = "toysolver"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "masahiro.sakai@gmail.com";
@@ -30,7 +21,7 @@
       synopsis = "Assorted decision procedures for SAT, Max-SAT, PB, MIP, etc";
       description = "Toy-level implementation of some decision procedures";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -64,18 +55,15 @@
           (hsPkgs.data-interval)
           (hsPkgs.finite-field)
           (hsPkgs.sign)
-        ] ++ [
+          ] ++ [
           (hsPkgs.temporary)
           (hsPkgs.exceptions)
-        ]) ++ (if flags.random1013
-          then [
-            (hsPkgs.base)
-            (hsPkgs.random)
-          ]
+          ]) ++ (if flags.random1013
+          then [ (hsPkgs.base) (hsPkgs.random) ]
           else [
             (hsPkgs.random)
-          ])) ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
-      };
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
+        };
       exes = {
         "toysolver" = {
           depends = [
@@ -88,8 +76,8 @@
             (hsPkgs.OptDir)
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "toysat" = {
           depends = ([
             (hsPkgs.base)
@@ -105,21 +93,21 @@
             (hsPkgs.unbounded-delays)
             (hsPkgs.vector-space)
             (hsPkgs.toysolver)
-          ] ++ (if flags.time15
+            ] ++ (if flags.time15
             then [ (hsPkgs.time) ]
             else [
               (hsPkgs.time)
               (hsPkgs.old-locale)
-            ])) ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
-        };
+              ])) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
+          };
         "toyfmf" = {
-          depends = pkgs.lib.optionals (flags.buildtoyfmf) [
+          depends = (pkgs.lib).optionals (flags.buildtoyfmf) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
             (hsPkgs.logic-TPTP)
-          ];
-        };
+            ];
+          };
         "lpconvert" = {
           depends = [
             (hsPkgs.base)
@@ -127,8 +115,8 @@
             (hsPkgs.filepath)
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "pbconvert" = {
           depends = [
             (hsPkgs.base)
@@ -136,44 +124,28 @@
             (hsPkgs.filepath)
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "sudoku" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.toysolver)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.toysolver) ];
+          };
         "nqueens" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.toysolver)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.toysolver) ];
+          };
         "knapsack" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.toysolver)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.toysolver) ];
+          };
         "htc" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.toysolver)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.toysolver) ];
+          };
         "pigeonhole" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.filepath)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "maxsatverify" = {
           depends = [
             (hsPkgs.base)
@@ -181,8 +153,8 @@
             (hsPkgs.containers)
             (hsPkgs.filepath)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "pbverify" = {
           depends = [
             (hsPkgs.base)
@@ -190,9 +162,9 @@
             (hsPkgs.containers)
             (hsPkgs.filepath)
             (hsPkgs.toysolver)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "TestSAT" = {
           depends = [
@@ -206,8 +178,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestSimplex" = {
           depends = [
             (hsPkgs.base)
@@ -218,8 +190,8 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "TestSimplex2" = {
           depends = [
             (hsPkgs.base)
@@ -230,8 +202,8 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "TestMIPSolver2" = {
           depends = [
             (hsPkgs.base)
@@ -244,8 +216,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.OptDir)
             (hsPkgs.stm)
-          ];
-        };
+            ];
+          };
         "TestPolynomial" = {
           depends = [
             (hsPkgs.base)
@@ -260,8 +232,8 @@
             (hsPkgs.data-interval)
             (hsPkgs.finite-field)
             (hsPkgs.prettyclass)
-          ];
-        };
+            ];
+          };
         "TestAReal" = {
           depends = [
             (hsPkgs.base)
@@ -274,8 +246,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.data-interval)
-          ];
-        };
+            ];
+          };
         "TestArith" = {
           depends = [
             (hsPkgs.base)
@@ -290,8 +262,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestContiTraverso" = {
           depends = [
             (hsPkgs.base)
@@ -305,8 +277,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestCongruenceClosure" = {
           depends = [
             (hsPkgs.base)
@@ -318,8 +290,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestLPFile" = {
           depends = [
             (hsPkgs.base)
@@ -331,8 +303,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestMPSFile" = {
           depends = [
             (hsPkgs.base)
@@ -344,8 +316,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestPBFile" = {
           depends = [
             (hsPkgs.base)
@@ -356,8 +328,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestSDPFile" = {
           depends = [
             (hsPkgs.base)
@@ -368,8 +340,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestUtil" = {
           depends = [
             (hsPkgs.base)
@@ -381,9 +353,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "BenchmarkSATLIB" = {
           depends = [
@@ -394,8 +366,8 @@
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

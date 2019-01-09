@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      simd = true;
-      llvm = true;
-    };
+    flags = { simd = true; llvm = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reedsolomon";
-        version = "0.0.3.0";
-      };
+      identifier = { name = "reedsolomon"; version = "0.0.3.0"; };
       license = "MIT";
       copyright = "(c) 2015, Nicolas Trangez\n(c) 2015, Klaus Post\n(c) 2015, Backblaze";
       maintainer = "ikke@nicolast.be";
@@ -25,7 +13,7 @@
       synopsis = "Reed-Solomon Erasure Coding in Haskell";
       description = "Please see README.md";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,11 +26,11 @@
           (hsPkgs.bytestring)
           (hsPkgs.profunctors)
           (hsPkgs.gitrev)
-        ];
-      };
+          ];
+        };
       exes = {
         "reedsolomon-simple-encoder" = {
-          depends = pkgs.lib.optionals (!system.isWindows) [
+          depends = (pkgs.lib).optionals (!system.isWindows) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.vector)
@@ -50,10 +38,10 @@
             (hsPkgs.filepath)
             (hsPkgs.bytestring-mmap)
             (hsPkgs.reedsolomon)
-          ];
-        };
+            ];
+          };
         "reedsolomon-simple-decoder" = {
-          depends = pkgs.lib.optionals (!system.isWindows) [
+          depends = (pkgs.lib).optionals (!system.isWindows) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.vector)
@@ -61,8 +49,8 @@
             (hsPkgs.filepath)
             (hsPkgs.bytestring-mmap)
             (hsPkgs.reedsolomon)
-          ];
-        };
+            ];
+          };
         "reedsolomon-simple-bench" = {
           depends = [
             (hsPkgs.base)
@@ -71,8 +59,8 @@
             (hsPkgs.criterion)
             (hsPkgs.statistics)
             (hsPkgs.reedsolomon)
-          ];
-        };
+            ];
+          };
         "reedsolomon-profiling" = {
           depends = [
             (hsPkgs.base)
@@ -82,9 +70,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.clock)
             (hsPkgs.reedsolomon)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "reedsolomon-test" = {
           depends = [
@@ -103,9 +91,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
             (hsPkgs.reedsolomon)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "reedsolomon-bench" = {
           depends = [
@@ -117,8 +105,8 @@
             (hsPkgs.exceptions)
             (hsPkgs.criterion)
             (hsPkgs.reedsolomon)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

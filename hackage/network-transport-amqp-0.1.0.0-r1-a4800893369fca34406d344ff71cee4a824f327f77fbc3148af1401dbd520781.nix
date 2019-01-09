@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      distributed-process-tests = false;
-    };
+    flags = { distributed-process-tests = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-transport-amqp";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "network-transport-amqp"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "AMQP-based transport layer for distributed-process (aka Cloud Haskell)";
       description = "AMQP-based transport layer for distributed-process (aka Cloud Haskell)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +32,8 @@
           (hsPkgs.text)
           (hsPkgs.lens-family)
           (hsPkgs.lens-family-th)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs.ghc-prim);
+        };
       tests = {
         "amqp-tests" = {
           depends = [
@@ -55,8 +44,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.network-transport-tests)
-          ];
-        };
+            ];
+          };
         "api-tests" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +55,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.network-transport-tests)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

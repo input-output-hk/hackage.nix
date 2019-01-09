@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clang-pure";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "clang-pure"; version = "0.2.0.2"; };
       license = "Apache-2.0";
       copyright = "Copyright 2014 Google Inc. All Rights Reserved.";
       maintainer = "chpatrick@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pure C++ code analysis with libclang";
       description = "Pure C++ code analysis with libclang.\n\nRefer to <http://clang.llvm.org/doxygen/group__CINDEX.html libclang's documentation> for usage.\nIn general, the naming scheme is @clang_getCursorType -> cursorType@, @CXCursor -> `Cursor`@.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,12 +28,10 @@
           (hsPkgs.singletons)
           (hsPkgs.microlens)
           (hsPkgs.microlens-contra)
-        ];
+          ];
         libs = [ (pkgs."clang") ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       exes = {
         "find-classes" = {
           depends = [
@@ -52,24 +41,24 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.hashable)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "list-fun-types" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.clang-pure)
             (hsPkgs.lens)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "list-structs" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.clang-pure)
             (hsPkgs.lens)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambdacube-core";
-        version = "0.2.0";
-      };
+      identifier = { name = "lambdacube-core"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "csaba (dot) hruska (at) gmail (dot) com";
@@ -22,7 +13,7 @@
       synopsis = "LambdaCube 3D IR";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-trie)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

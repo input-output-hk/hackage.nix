@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "maclight";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "maclight"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Tycho Andersen <tycho@tycho.ws>";
@@ -22,7 +13,7 @@
       synopsis = "Control screen and keyboard backlights on MACs under Linux";
       description = "Maclight is both a library and a command line program for\ncontrolling the backlight on Macbooks under linux.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.filepath)
           (hsPkgs.parsec)
           (hsPkgs.strict)
-        ];
-      };
+          ];
+        };
       exes = {
         "maclight" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.strict)
             (hsPkgs.maclight)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "MaclightTest.hs" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

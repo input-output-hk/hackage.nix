@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pid1";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "pid1"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "2016 Michael Snoyman";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Do signal handling and orphan reaping for Unix PID1 init processes";
       description = "Please see README.md or view Haddocks at <https://www.stackage.org/package/pid1>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,8 @@
           (hsPkgs.process)
           (hsPkgs.unix)
           (hsPkgs.directory)
-        ];
-      };
-      exes = {
-        "pid1" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pid1)
           ];
         };
+      exes = { "pid1" = { depends = [ (hsPkgs.base) (hsPkgs.pid1) ]; }; };
       };
-    };
-  }
+    }

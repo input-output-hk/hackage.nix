@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Gamgine";
-        version = "0.3";
-      };
+      identifier = { name = "Gamgine"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel.trstenjak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Some kind of game library or set of utilities.";
       description = "Some kind of game library or set of utilities, which are mostly/certainly only usable for my own toy projects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.zlib)
           (hsPkgs.ListZipper)
           (hsPkgs.composition)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

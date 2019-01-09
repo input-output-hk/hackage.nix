@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "weather-api";
-        version = "0.0.1";
-      };
+      identifier = { name = "weather-api"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "peter@standalone.su";
@@ -22,15 +13,10 @@
       synopsis = "Weather api implemented in haskell";
       description = "This library implement generic api for retrieving weather\nby http, and has google weather api as example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-          (hsPkgs.hxt)
-          (hsPkgs.HTTP)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.network) (hsPkgs.hxt) (hsPkgs.HTTP) ];
+        };
       };
-    };
-  }
+    }

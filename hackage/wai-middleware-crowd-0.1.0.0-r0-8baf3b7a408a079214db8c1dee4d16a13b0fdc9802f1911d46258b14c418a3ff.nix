@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-crowd";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wai-middleware-crowd"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Middleware and utilities for using Atlassian Crowd authentication";
       description = "See README";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.cookie)
           (hsPkgs.http-client-tls)
           (hsPkgs.unix-compat)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-crowd" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.wai-app-static)
             (hsPkgs.wai-middleware-crowd)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

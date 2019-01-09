@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "typesafe-precure";
-        version = "0.6.1.1";
-      };
+      identifier = { name = "typesafe-precure"; version = "0.6.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Yuji Yamamoto";
       maintainer = "whosekiteneverfly@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe transformations and purifications of PreCures (Japanese Battle Heroine)";
       description = "See README.md for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,16 +29,12 @@
           (hsPkgs.th-data-compat)
           (hsPkgs.th-strict-compat)
           (hsPkgs.th-utilities)
-        ];
-      };
-      tests = {
-        "typesafe-precure-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.typesafe-precure)
-            (hsPkgs.hspec)
           ];
         };
+      tests = {
+        "typesafe-precure-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.typesafe-precure) (hsPkgs.hspec) ];
+          };
+        };
       };
-    };
-  }
+    }

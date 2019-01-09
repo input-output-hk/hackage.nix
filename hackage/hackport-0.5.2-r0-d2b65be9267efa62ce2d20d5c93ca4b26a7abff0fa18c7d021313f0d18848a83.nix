@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hackport";
-        version = "0.5.2";
-      };
+      identifier = { name = "hackport"; version = "0.5.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Gentoo Haskell team <haskell@gentoo.org>";
@@ -22,7 +13,7 @@
       synopsis = "Hackage and Portage integration tool";
       description = "A command line tool to manage an overlay of Gentoo ebuilds\nthat are generated from a hackage repo of Cabal packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hackport" = {
@@ -65,9 +56,9 @@
             (hsPkgs.process)
             (hsPkgs.old-time)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-resolve-category" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.time)
             (hsPkgs.unix)
             (hsPkgs.xml)
-          ];
-        };
+            ];
+          };
         "test-print-deps" = {
           depends = [
             (hsPkgs.base)
@@ -104,8 +95,8 @@
             (hsPkgs.time)
             (hsPkgs.unix)
             (hsPkgs.xml)
-          ];
-        };
+            ];
+          };
         "test-normalize-deps" = {
           depends = [
             (hsPkgs.base)
@@ -122,8 +113,8 @@
             (hsPkgs.time)
             (hsPkgs.unix)
             (hsPkgs.xml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

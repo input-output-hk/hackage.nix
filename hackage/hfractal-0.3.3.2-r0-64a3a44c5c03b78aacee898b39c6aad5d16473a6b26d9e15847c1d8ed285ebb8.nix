@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hfractal";
-        version = "0.3.3.2";
-      };
+      identifier = { name = "hfractal"; version = "0.3.3.2"; };
       license = "BSD-3-Clause";
       copyright = "2009-2009 Chris Holdsworth";
       maintainer = "Chris Holdsworth <chrisholdsworth@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "OpenGL fractal renderer";
       description = "An OpenGL fractal browser with multicore support and the capability to output high quality png images.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hfractal" = {
@@ -37,8 +28,8 @@
             (hsPkgs.GLUT)
             (hsPkgs.colour)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "exitcode";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "exitcode"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2017 Commonwealth Scientific and Industrial Research Organisation (CSIRO)";
       maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
@@ -22,7 +13,7 @@
       synopsis = "Monad transformer for exit codes";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nMonad transformer for exit codes";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "log-effect";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "log-effect"; version = "0.4.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tob@butter.sh";
@@ -22,7 +13,7 @@
       synopsis = "An extensible log effect using extensible-effects";
       description = "Any help (especially documentation) is very welcome,";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.extensible-effects)
           (hsPkgs.fast-logger)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

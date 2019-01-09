@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stream";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "stream"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 FP Complete";
       maintainer = "michael@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.mtl)
           (hsPkgs.streaming-commons)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "stream-test" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.hspec)
             (hsPkgs.stream)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "stream-bench" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.stream)
             (hsPkgs.temporary)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

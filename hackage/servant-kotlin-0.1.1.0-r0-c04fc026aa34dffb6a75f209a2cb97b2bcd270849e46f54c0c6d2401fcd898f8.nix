@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-kotlin";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "servant-kotlin"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "2017-2018 MATSUBARA Nobutada";
       maintainer = "MATSUBARA Nobutada";
@@ -22,7 +13,7 @@
       synopsis = "Automatically derive Kotlin class to query servant webservices";
       description = "See README at <https://github.com/matsubara0507/servant-kotlin#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.wl-pprint-text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "generate-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.wl-pprint-text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

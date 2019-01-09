@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "call";
-        version = "0.0";
-      };
+      identifier = { name = "call"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Fumiaki Kinoshita 2014";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "The call game engine";
       description = "Call is a minimalistic game engine which supports 2D graphics and sounds.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,7 +42,7 @@
           (hsPkgs.hashable)
           (hsPkgs.objective)
           (hsPkgs.bindings-portaudio)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

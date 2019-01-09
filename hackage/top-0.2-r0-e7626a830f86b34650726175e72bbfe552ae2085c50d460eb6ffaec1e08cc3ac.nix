@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "top";
-        version = "0.2";
-      };
+      identifier = { name = "top"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Pasqualino `Titto` Assini";
       maintainer = "tittoassini@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Top (typed oriented protocol) API";
       description = "See the <http://github.com/tittoassini/top online tutorial>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -44,7 +35,7 @@
           (hsPkgs.extra)
           (hsPkgs.time)
           (hsPkgs.pretty)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.th-lift)) ++ (if compiler.isGhcjs && true
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.th-lift)) ++ (if compiler.isGhcjs && true
           then [ (hsPkgs.ghcjs-base) ]
           else [
             (hsPkgs.websockets)
@@ -52,8 +43,8 @@
             (hsPkgs.acid-state)
             (hsPkgs.safecopy)
             (hsPkgs.filepath)
-          ]);
-      };
+            ]);
+        };
       tests = {
         "top-test-repo" = {
           depends = [
@@ -63,15 +54,11 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "top-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.filemanip)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.filemanip) ];
+          };
         };
       };
-    };
-  }
+    }

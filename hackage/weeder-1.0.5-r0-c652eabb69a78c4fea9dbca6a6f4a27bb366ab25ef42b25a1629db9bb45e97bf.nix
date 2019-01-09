@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "weeder";
-        version = "1.0.5";
-      };
+      identifier = { name = "weeder"; version = "1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2017-2018";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Detect dead code";
       description = "Find redundant package dependencies or redundant module exports.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,15 +33,8 @@
           (hsPkgs.foundation)
           (hsPkgs.process)
           (hsPkgs.extra)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
-      };
-      exes = {
-        "weeder" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.weeder)
-          ];
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
         };
+      exes = { "weeder" = { depends = [ (hsPkgs.base) (hsPkgs.weeder) ]; }; };
       };
-    };
-  }
+    }

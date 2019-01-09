@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { profile = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "reactive-thread";
-        version = "0.3.2.1";
-      };
+      identifier = { name = "reactive-thread"; version = "0.3.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "strager.nds@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Reactive programming via imperative threads";
       description = "Reactive programming with threads.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.monad-parallel)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "example-sdl" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.SDL)
             (hsPkgs.stm)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

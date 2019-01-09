@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "xhaskell-library";
-        version = "0.0.4";
-      };
+      identifier = { name = "xhaskell-library"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2009, Kenny Zhuo Ming Lu and Martin Sulzmann";
       maintainer = "luzhuomi@gmail.com, martin.sulzmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "Regex algorithm implementation using partial derivatives";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,12 +22,9 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
-        ] ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.ghc-prim)
-          ]
+          ] ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.ghc-prim) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

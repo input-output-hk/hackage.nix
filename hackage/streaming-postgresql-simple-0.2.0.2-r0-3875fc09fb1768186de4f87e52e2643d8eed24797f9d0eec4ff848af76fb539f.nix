@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "streaming-postgresql-simple";
         version = "0.2.0.2";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +16,7 @@
       synopsis = "Stream postgresql-query results using the streaming library";
       description = "This package provides incremental streaming functions for the @postgresql-simple@ library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +29,7 @@
           (hsPkgs.safe-exceptions)
           (hsPkgs.streaming)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

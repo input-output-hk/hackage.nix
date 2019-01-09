@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cursor";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "cursor"; version = "0.0.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2018 Tom Sydney Kerckhove";
       maintainer = "syd@cs-syd.eu";
@@ -22,7 +13,7 @@
       synopsis = "Purely Functional Cursors";
       description = "Purely Functional Cursors for common data structures";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.validity)
           (hsPkgs.validity-containers)
           (hsPkgs.validity-text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

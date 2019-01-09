@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bein";
-        version = "0.3.3";
-      };
+      identifier = { name = "bein"; version = "0.3.3"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "fred.ross@epfl.ch";
@@ -22,7 +13,7 @@
       synopsis = "Bein is a provenance and workflow management system for bioinformatics.";
       description = "To avoid having thousands of files produced in a random way from a bunch of scripts, as is typically the case for a bioinformaticist, Bein keeps track of scripts, and their executions on various inputs.  It provides a web front end, and will integrate with LSF clusters.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "beinctl" = {
@@ -32,8 +23,8 @@
             (hsPkgs.HDBC-postgresql)
             (hsPkgs.process)
             (hsPkgs.happstack-util)
-          ];
-        };
+            ];
+          };
         "beind" = {
           depends = [
             (hsPkgs.base)
@@ -50,14 +41,9 @@
             (hsPkgs.stm)
             (hsPkgs.mtl)
             (hsPkgs.filepath)
-          ];
-        };
-        "beinclient" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.network)
-          ];
-        };
+            ];
+          };
+        "beinclient" = { depends = [ (hsPkgs.base) (hsPkgs.network) ]; };
         "beinminion" = {
           depends = [
             (hsPkgs.base)
@@ -72,8 +58,8 @@
             (hsPkgs.mtl)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "beinhttpd" = {
           depends = [
             (hsPkgs.base)
@@ -95,8 +81,8 @@
             (hsPkgs.old-locale)
             (hsPkgs.utf8-string)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

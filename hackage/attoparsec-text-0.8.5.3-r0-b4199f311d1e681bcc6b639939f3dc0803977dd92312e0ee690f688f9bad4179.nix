@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "attoparsec-text";
-        version = "0.8.5.3";
-      };
+      identifier = { name = "attoparsec-text"; version = "0.8.5.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "(deprecated)";
       description = "This package has been deprecated.  Now the @attoparsec@\nincludes all functionality from this library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.text)
           (hsPkgs.containers)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

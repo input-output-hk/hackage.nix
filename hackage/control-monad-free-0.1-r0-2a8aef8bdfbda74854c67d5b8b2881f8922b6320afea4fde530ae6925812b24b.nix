@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "control-monad-free";
-        version = "0.1";
-      };
+      identifier = { name = "control-monad-free"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "lrpalmer@gmail.com";
@@ -22,13 +13,6 @@
       synopsis = "A monad transformer for free monads.";
       description = "A monad transformer for free monads.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

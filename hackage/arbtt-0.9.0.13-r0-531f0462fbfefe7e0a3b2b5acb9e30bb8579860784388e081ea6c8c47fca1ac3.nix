@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-locale = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arbtt";
-        version = "0.9.0.13";
-      };
+      identifier = { name = "arbtt"; version = "0.9.0.13"; };
       license = "LicenseRef-GPL";
       copyright = "Joachim Breitner 2009-2013";
       maintainer = "Joachim Breitner <mail@joachim-breitner.de>";
@@ -22,7 +13,7 @@
       synopsis = "Automatic Rule-Based Time Tracker";
       description = "arbtt is a background daemon that stores which windows are open, which one\nhas the focus and how long since your last action (and possbly more sources\nlater), and stores this. It is also a program that will, based on\nexpressive rules you specify, derive what you were doing, and what for.\n\nThe documentation, which includes the changelog, can also be found at\n<http://arbtt.nomeata.de/doc/users_guide/>.\n\nWARNING: The log file might contain very sensitive private data. Make sure\nyou understand the consequences of a full-time logger and be careful with this\ndata.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "arbtt-capture" = {
@@ -36,25 +27,22 @@
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
-          ] ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [
               (hsPkgs.time)
-            ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if system.isWindows
+              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
-            else pkgs.lib.optional (!system.isOsx) (hsPkgs.X11));
+            else (pkgs.lib).optional (!system.isOsx) (hsPkgs.X11));
           libs = if system.isWindows
             then [ (pkgs."psapi") ]
-            else pkgs.lib.optional (!system.isOsx) (pkgs."Xss");
-          frameworks = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optionals (system.isOsx) [
+            else (pkgs.lib).optional (!system.isOsx) (pkgs."Xss");
+          frameworks = (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optionals (system.isOsx) [
             (pkgs."Foundation")
             (pkgs."Carbon")
             (pkgs."IOKit")
-          ]);
-        };
+            ]);
+          };
         "arbtt-stats" = {
           depends = ([
             (hsPkgs.base)
@@ -73,13 +61,10 @@
             (hsPkgs.array)
             (hsPkgs.terminal-progress-bar)
             (hsPkgs.bytestring-progress)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
-        };
+          };
         "arbtt-dump" = {
           depends = ([
             (hsPkgs.base)
@@ -95,13 +80,10 @@
             (hsPkgs.transformers)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
-        };
+          };
         "arbtt-import" = {
           depends = ([
             (hsPkgs.base)
@@ -115,13 +97,10 @@
             (hsPkgs.transformers)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
-        };
+          };
         "arbtt-recover" = {
           depends = ([
             (hsPkgs.base)
@@ -132,14 +111,11 @@
             (hsPkgs.utf8-string)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
+          };
         };
-      };
       tests = {
         "test" = {
           depends = ([
@@ -157,13 +133,10 @@
             (hsPkgs.containers)
             (hsPkgs.pcre-light)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
+          };
         };
       };
-    };
-  }
+    }

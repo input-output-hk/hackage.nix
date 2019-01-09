@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dummyclipboard = false;
-    };
+    flags = { dummyclipboard = false; };
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "passman-cli";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "passman-cli"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2017 Matthew Harm Bekkema";
       maintainer = "mbekkema97@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Deterministic password generator command line interface";
       description = "Generates unique passwords deterministically from a single master password.\nA hash of the master password is stored on disk to prevent accidentally\ngenerating a password from a mistyped master password.\n\nThis is the command line interface to passman.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "passman-cli" = {
@@ -38,8 +27,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ] ++ pkgs.lib.optional (!flags.dummyclipboard) (hsPkgs.X11);
+            ] ++ (pkgs.lib).optional (!flags.dummyclipboard) (hsPkgs.X11);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "spe";
-        version = "0.3";
-      };
+      identifier = { name = "spe"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anders.claesson@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Combinatorial species lite";
       description = "A simple library for combinatorial species. If you\nwant something more substantial, then you will most likely\nbe happier with the species package by Brent Yorgey:\n<http://hackage.haskell.org/package/species>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

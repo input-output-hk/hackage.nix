@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "serverless-haskell";
-        version = "0.3.1";
-      };
+      identifier = { name = "serverless-haskell"; version = "0.3.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "akotlyarov@seek.com.au";
@@ -22,7 +13,7 @@
       synopsis = "Deploying Haskell code onto AWS Lambda using Serverless";
       description = "Utilities to help process the events from AWS Lambda when deployed with the serverless-haskell plugin.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.time)
             (hsPkgs.unix)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

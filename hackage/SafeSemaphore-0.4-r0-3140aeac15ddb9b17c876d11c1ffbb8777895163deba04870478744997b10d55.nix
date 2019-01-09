@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "SafeSemaphore";
-        version = "0.4";
-      };
+      identifier = { name = "SafeSemaphore"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Kuklewicz <haskell@list.mightyreason.com>";
@@ -22,19 +13,13 @@
       synopsis = "Much safer replacement for QSemN and QSem";
       description = "This provides a much safer semaphore than the QSem in base.  Performance has not been compared.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "TestSafeSemaphore" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.SafeSemaphore)
-            (hsPkgs.HUnit)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.SafeSemaphore) (hsPkgs.HUnit) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fortytwo";
-        version = "0.0.2";
-      };
+      identifier = { name = "fortytwo"; version = "0.0.2"; };
       license = "MIT";
       copyright = "Gianlua Guarini";
       maintainer = "gianluca.guarini@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Interactive terminal prompt";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,11 @@
           (hsPkgs.text)
           (hsPkgs.terminfo)
           (hsPkgs.ansi-terminal)
-        ];
-      };
-      exes = {
-        "examples" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.fortytwo)
           ];
         };
-      };
+      exes = {
+        "examples" = { depends = [ (hsPkgs.base) (hsPkgs.fortytwo) ]; };
+        };
       tests = {
         "spec" = {
           depends = [
@@ -48,15 +34,11 @@
             (hsPkgs.process)
             (hsPkgs.async)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "doctest" = {
-          depends = [
-            (hsPkgs.fortytwo)
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          depends = [ (hsPkgs.fortytwo) (hsPkgs.base) (hsPkgs.doctest) ];
+          };
         };
       };
-    };
-  }
+    }

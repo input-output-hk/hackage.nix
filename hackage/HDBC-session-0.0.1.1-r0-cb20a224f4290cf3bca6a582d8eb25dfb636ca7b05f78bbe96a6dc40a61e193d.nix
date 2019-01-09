@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "HDBC-session";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "HDBC-session"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Bracketed connection for HDBC";
       description = "This package contains a base bracketed function\nto call close correctly against opend DB connection.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.HDBC)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.HDBC) ]; };
+      };
+    }

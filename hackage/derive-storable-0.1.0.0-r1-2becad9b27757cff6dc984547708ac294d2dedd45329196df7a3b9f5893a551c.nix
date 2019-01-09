@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "derive-storable";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "derive-storable"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "mateusz.p.kloczko@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "Deriving Storable instances using generics.";
       description = "The package allows for automatic derivation of Storable instances\nwith C-like memory layout.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "c_alignment" = {
           depends = [
@@ -34,16 +23,16 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.generic-storable)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.generic-storable)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

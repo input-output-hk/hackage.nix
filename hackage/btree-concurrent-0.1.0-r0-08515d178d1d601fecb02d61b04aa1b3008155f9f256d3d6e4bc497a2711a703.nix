@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "btree-concurrent";
-        version = "0.1.0";
-      };
+      identifier = { name = "btree-concurrent"; version = "0.1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "brinchj@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A backend agnostic, concurrent BTree";
       description = "A backend agnostic, concurrent BTree";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.filepath)
           (hsPkgs.cprng-aes)
           (hsPkgs.entropy)
-        ];
-      };
+          ];
+        };
       tests = {
         "quickcheck-highlevel" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.filepath)
             (hsPkgs.cprng-aes)
             (hsPkgs.entropy)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

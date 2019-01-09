@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      blaze_html_0_5 = false;
-    };
+    flags = { blaze_html_0_5 = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "xml2html";
-        version = "0.1.2.1";
-      };
+      identifier = { name = "xml2html"; version = "0.1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -24,7 +13,7 @@
       synopsis = "blaze-html instances for xml-conduit types";
       description = "blaze-html instances for xml-conduit types";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,12 +21,9 @@
           (hsPkgs.text)
           (hsPkgs.xml-conduit)
           (hsPkgs.containers)
-        ] ++ (if flags.blaze_html_0_5
-          then [
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-          ]
+          ] ++ (if flags.blaze_html_0_5
+          then [ (hsPkgs.blaze-html) (hsPkgs.blaze-markup) ]
           else [ (hsPkgs.blaze-html) ]);
+        };
       };
-    };
-  }
+    }

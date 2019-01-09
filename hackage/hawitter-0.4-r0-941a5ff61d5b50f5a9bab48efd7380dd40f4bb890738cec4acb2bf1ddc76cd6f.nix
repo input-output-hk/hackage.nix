@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hawitter";
-        version = "0.4";
-      };
+      identifier = { name = "hawitter"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Daiki Handa <xanxys@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A twitter client for GTK+. Beta version.";
       description = "A slick twitter client for GTK. Features syntax highlighting of tweets and URL linking.\nAutomatic URL shortening and 'timeline modifier' will be implemented in future versions.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hawitter" = {
@@ -48,8 +39,8 @@
             (hsPkgs.SHA)
             (hsPkgs.base64-string)
             (hsPkgs.clock)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

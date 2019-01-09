@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "googlepolyline";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "googlepolyline"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@lorne.me";
@@ -22,15 +13,11 @@
       synopsis = "Google Polyline Encoder/Decoder";
       description = "Encoding and decoding functions for Google Maps' polyline format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
+        };
       tests = {
         "test-googlepolyline" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

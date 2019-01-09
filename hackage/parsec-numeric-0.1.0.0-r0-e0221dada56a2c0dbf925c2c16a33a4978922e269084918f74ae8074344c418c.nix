@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "parsec-numeric";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "parsec-numeric"; version = "0.1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2017 Andrew Rademacher";
       maintainer = "andrewrademacher@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Parsec combinators for parsing Haskell numeric types.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.parsec) ]; };
       tests = {
         "parsec-numeric-test" = {
           depends = [
@@ -42,8 +28,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

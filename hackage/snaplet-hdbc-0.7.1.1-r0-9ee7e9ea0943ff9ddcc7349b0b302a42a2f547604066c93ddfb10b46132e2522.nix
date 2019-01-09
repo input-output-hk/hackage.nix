@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snaplet-hdbc";
-        version = "0.7.1.1";
-      };
+      identifier = { name = "snaplet-hdbc"; version = "0.7.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "j.stutterheim@me.com";
@@ -22,7 +13,7 @@
       synopsis = "HDBC snaplet for Snap Framework";
       description = "This snaplet consists of two parts: an HDBC abstraction snaplet\nand an HDBC authentication backend for Snap's authentication\nsnaplet.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

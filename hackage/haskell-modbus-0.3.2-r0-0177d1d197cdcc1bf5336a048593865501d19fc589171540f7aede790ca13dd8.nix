@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haskell-modbus";
-        version = "0.3.2";
-      };
+      identifier = { name = "haskell-modbus"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jhickner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A cereal-based parser for the Modbus protocol";
       description = "A cereal-based parser for the Modbus protocol";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.array)
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.cereal)
             (hsPkgs.bytestring)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

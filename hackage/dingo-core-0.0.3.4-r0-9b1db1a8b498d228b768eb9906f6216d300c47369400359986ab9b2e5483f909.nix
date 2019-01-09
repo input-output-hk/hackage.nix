@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0.1";
-      identifier = {
-        name = "dingo-core";
-        version = "0.0.3.4";
-      };
+      identifier = { name = "dingo-core"; version = "0.0.3.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "Bardur Arantsson <bardur@scientician.net>";
@@ -22,7 +13,7 @@
       synopsis = "Dingo is a Rich Internet Application platform based on the Warp web server.";
       description = "Dingo is a Rich Internet Application platform based on the Warp web server. It allows you to write code which looks very much like regular GUI code and have it work in the browser.\nThis package contains the core modules.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,7 +45,7 @@
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
           (hsPkgs.web-css)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

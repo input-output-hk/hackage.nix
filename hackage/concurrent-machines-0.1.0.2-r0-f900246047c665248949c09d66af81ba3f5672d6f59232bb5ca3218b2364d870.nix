@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "concurrent-machines";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "concurrent-machines"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 Anthony Cowley";
       maintainer = "acowley@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Concurrent networked stream transducers";
       description = "A simple use-case for this library is to run the stages\nof a pipelined streaming computation concurrently. If\ndata is streaming through multiple processing stages, you\nmight build a machine like\n\n@\nstep1 >~> step2 >~> step3\n@\n\nThe @>~>@ operator connects the machines on\neither side with a one-element buffer. This means that\ndata is pulled from upstream sources eagerly (perhaps\npulling one more value than will be consumed by\ndownstream), but it also means that each stage can be\nworking simultaneously, increasing throughput of the\nentire pipeline.\n\nA few small examples are available in the @examples@\ndirectory of the source repository.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.async)
           (hsPkgs.lifted-async)
           (hsPkgs.semigroups)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.transformers)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

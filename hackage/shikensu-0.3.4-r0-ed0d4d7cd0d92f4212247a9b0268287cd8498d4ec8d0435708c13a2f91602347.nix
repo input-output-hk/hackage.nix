@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shikensu";
-        version = "0.3.4";
-      };
+      identifier = { name = "shikensu"; version = "0.3.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "Steven Vandevelde <icid.asset@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Run a sequence of functions on in-memory representations of files";
       description = "See README at <https://github.com/icidasset/shikensu#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       tests = {
         "spec" = {
@@ -38,8 +29,8 @@
             (hsPkgs.text)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

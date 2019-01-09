@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "conduit";
-        version = "1.3.0.1";
-      };
+      identifier = { name = "conduit"; version = "1.3.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming data processing library.";
       description = "`conduit` is a solution to the streaming data problem, allowing for production,\ntransformation, and consumption of streams of data in constant memory. It is an\nalternative to lazy I\\/O which guarantees deterministic resource handling.\n\nFor more information about conduit in general, and how this package in\nparticular fits into the ecosystem, see [the conduit\nhomepage](https://github.com/snoyberg/conduit#readme).\n\nHackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/conduit>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,13 +30,10 @@
           (hsPkgs.text)
           (hsPkgs.filepath)
           (hsPkgs.directory)
-        ] ++ (if system.isWindows
-          then [
-            (hsPkgs.Win32)
-            (hsPkgs.filepath)
-          ]
+          ] ++ (if system.isWindows
+          then [ (hsPkgs.Win32) (hsPkgs.filepath) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       tests = {
         "conduit-test" = {
           depends = [
@@ -68,9 +56,9 @@
             (hsPkgs.silently)
             (hsPkgs.filepath)
             (hsPkgs.unliftio)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "optimize-201408" = {
           depends = [
@@ -84,16 +72,16 @@
             (hsPkgs.mwc-random)
             (hsPkgs.gauge)
             (hsPkgs.kan-extensions)
-          ];
-        };
+            ];
+          };
         "unfused" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.gauge)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "load-balancing";
-        version = "1.0.1.1";
-      };
+      identifier = { name = "load-balancing"; version = "1.0.1.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "rowens@sumall.com";
@@ -22,7 +13,7 @@
       synopsis = "Client-side load balancing utilities.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.hslogger)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

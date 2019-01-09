@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "github-backup";
-        version = "1.20141222";
-      };
+      identifier = { name = "github-backup"; version = "1.20141222"; };
       license = "LicenseRef-GPL";
       copyright = "2012 Joey Hess";
       maintainer = "Joey Hess <joey@kitenet.net>";
@@ -22,7 +13,7 @@
       synopsis = "backs up everything github knows about a repository, to the repository";
       description = "github-backup is a simple tool you run in a git repository you cloned from\nGithub. It backs up everything Github knows about the repository, including\nother forks, issues, comments, milestones, pull requests, and watchers.\nAlso includes gitriddance, which can be used to close all open issues and\npull requests.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "github-backup" = {
@@ -46,16 +37,10 @@
             (hsPkgs.github)
             (hsPkgs.base)
             (hsPkgs.base)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
-            else [
-              (hsPkgs.network)
-              (hsPkgs.network)
-            ]);
-        };
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
+            else [ (hsPkgs.network) (hsPkgs.network) ]);
+          };
         "gitriddance" = {
           depends = ([
             (hsPkgs.github)
@@ -74,16 +59,10 @@
             (hsPkgs.IfElse)
             (hsPkgs.directory)
             (hsPkgs.mtl)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
-            else [
-              (hsPkgs.network)
-              (hsPkgs.network)
-            ]);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
+            else [ (hsPkgs.network) (hsPkgs.network) ]);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hamilton";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hamilton"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Justin Le 2016";
       maintainer = "justin@jle.im";
@@ -22,7 +13,7 @@
       synopsis = "Physics on generalized coordinate systems using Hamiltonian Mechanics and AD";
       description = "See README.md (or read online at <https://github.com/mstksg/hamilton#readme>)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.hmatrix-gsl)
           (hsPkgs.typelits-witnesses)
           (hsPkgs.vector-sized)
-        ];
-      };
+          ];
+        };
       exes = {
         "hamilton-examples" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.vector)
             (hsPkgs.vector-sized)
             (hsPkgs.vty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

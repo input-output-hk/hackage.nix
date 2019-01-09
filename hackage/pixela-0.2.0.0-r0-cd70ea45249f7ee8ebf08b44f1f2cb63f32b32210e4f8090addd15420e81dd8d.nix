@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "pixela";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "pixela"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Kazuki Okamoto";
       maintainer = "kazuki.okamoto@kakkun61.com";
@@ -22,7 +13,7 @@
       synopsis = "Pixela client.";
       description = "Pixela (<https://pixe.la/>) client library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uri-encode)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "pixela-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.uri-encode)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

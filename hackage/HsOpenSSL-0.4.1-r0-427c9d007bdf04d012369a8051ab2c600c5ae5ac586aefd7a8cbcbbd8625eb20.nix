@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HsOpenSSL";
-        version = "0.4.1";
-      };
+      identifier = { name = "HsOpenSSL"; version = "0.4.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "PHO <pho at cielonegro.org>";
@@ -22,7 +13,7 @@
       synopsis = "(Part of) OpenSSL binding for Haskell";
       description = "HsOpenSSL is a (part of) OpenSSL binding for Haskell. It can\ngenerate RSA and DSA keys, read and write PEM files, generate\nmessage digests, sign and verify messages, encrypt and decrypt\nmessages.";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -32,11 +23,8 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
             (hsPkgs.network)
-          ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.time)
-          ];
+            ]
+          else [ (hsPkgs.base) (hsPkgs.time) ];
+        };
       };
-    };
-  }
+    }

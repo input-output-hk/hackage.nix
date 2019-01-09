@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      normalize-signature-v4-date = true;
-    };
+    flags = { normalize-signature-v4-date = true; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "aws-general";
-        version = "0.1";
-      };
+      identifier = { name = "aws-general"; version = "0.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 AlephCloud, Inc.";
       maintainer = "Lars Kuhtz <lars@alephcloud.com>";
@@ -24,7 +13,7 @@
       synopsis = "Bindings for AWS General API Version 0.1";
       description = "Bindings for AWS General API including AWS Signature V4.\n\n/API Version: 1.0/\n\n<http://docs.aws.amazon.com/general/latest/gr/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +35,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "signature-v4" = {
           depends = [
@@ -71,8 +60,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

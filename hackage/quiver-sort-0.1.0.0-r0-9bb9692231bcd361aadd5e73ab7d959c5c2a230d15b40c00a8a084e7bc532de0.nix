@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "quiver-sort";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "quiver-sort"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sort the values in a quiver";
       description = "Allows sorting values within a Quiver, including using external\nfiles for large/long pipelines.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.temporary)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "sorting-tests" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

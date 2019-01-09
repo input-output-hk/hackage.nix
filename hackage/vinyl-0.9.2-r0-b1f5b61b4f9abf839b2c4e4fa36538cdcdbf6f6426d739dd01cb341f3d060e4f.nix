@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vinyl";
-        version = "0.9.2";
-      };
+      identifier = { name = "vinyl"; version = "0.9.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "acowley@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Extensible Records";
       description = "Extensible records for Haskell with lenses.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.array)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) (hsPkgs.array) ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.doctest)
             (hsPkgs.singletons)
             (hsPkgs.vinyl)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -48,9 +35,9 @@
             (hsPkgs.microlens)
             (hsPkgs.hspec)
             (hsPkgs.should-not-typecheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "storable" = {
           depends = [
@@ -62,15 +49,11 @@
             (hsPkgs.microlens)
             (hsPkgs.linear)
             (hsPkgs.primitive)
-          ];
-        };
+            ];
+          };
         "equality" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.vinyl)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.vinyl) ];
+          };
         "accessors" = {
           depends = [
             (hsPkgs.base)
@@ -78,8 +61,8 @@
             (hsPkgs.tagged)
             (hsPkgs.vinyl)
             (hsPkgs.microlens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

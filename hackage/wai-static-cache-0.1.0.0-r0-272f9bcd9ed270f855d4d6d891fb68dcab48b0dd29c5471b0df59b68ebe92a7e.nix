@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-static-cache";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wai-static-cache"; version = "0.1.0.0"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "mr.hugo.gomes@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple cache for serving static files in a WAI middleware";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

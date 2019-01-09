@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "plot-gtk";
-        version = "0.1";
-      };
+      identifier = { name = "plot-gtk"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) A.V.H. McPhail 2010";
       maintainer = "haskell.vivian.mcphail <at> gmail <dot> com";
@@ -22,7 +13,7 @@
       synopsis = "GTK plots and interaction with GHCi";
       description = "Allows use of 'plot' package with GTK\n\n* Provides a mechanism to display and update plots from GHCi\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.gtk)
           (hsPkgs.hmatrix)
           (hsPkgs.plot)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

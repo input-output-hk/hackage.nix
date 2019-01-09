@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "NumberTheory";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "NumberTheory"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "chris.p.fredrickson@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "A library for number theoretic computations, written in Haskell.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.primes)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.primes) ];
+        };
       tests = {
         "NumberTheory_Tests" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.containers)
             (hsPkgs.HUnit)
             (hsPkgs.primes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

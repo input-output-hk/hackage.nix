@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      libev = false;
-      portable = false;
-      gnutls = false;
-    };
+    flags = { libev = false; portable = false; gnutls = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snap-server";
-        version = "0.5.0";
-      };
+      identifier = { name = "snap-server"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "snap@snapframework.com";
@@ -26,7 +13,7 @@
       synopsis = "A fast, iteratee-based, epoll-enabled web server for the Snap Framework";
       description = "Snap is a simple and fast web development framework and server written in\nHaskell. For more information or to download the latest version, you can\nvisit the Snap project website at <http://snapframework.com/>.\n\nThe Snap HTTP server is a high performance, epoll-enabled, iteratee-based web\nserver library written in Haskell. Together with the @snap-core@ library upon\nwhich it depends, it provides a clean and efficient Haskell programming\ninterface to the HTTP protocol.\n\nHigher-level facilities for building web applications (like user/session\nmanagement, component interfaces, data modeling, etc.) are planned but not\nyet implemented, so this release will mostly be of interest for those who:\n\n* need a fast and minimal HTTP API at roughly the same level of abstraction\nas Java servlets, or\n\n* are interested in contributing to the Snap Framework project.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -58,11 +45,11 @@
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
           (hsPkgs.PSQueue)
-        ] ++ pkgs.lib.optional (!(flags.portable || system.isWindows)) (hsPkgs.unix)) ++ pkgs.lib.optional (flags.libev) (hsPkgs.hlibev);
-        libs = pkgs.lib.optionals (flags.gnutls) [
+          ] ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs.unix)) ++ (pkgs.lib).optional (flags.libev) (hsPkgs.hlibev);
+        libs = (pkgs.lib).optionals (flags.gnutls) [
           (pkgs."gnutls")
           (pkgs."gcrypt")
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

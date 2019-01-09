@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "linear-code";
-        version = "0.2.0";
-      };
+      identifier = { name = "linear-code"; version = "0.2.0"; };
       license = "GPL-3.0-only";
       copyright = "2018, Wanja Chresta";
       maintainer = "wanja dot hs at chrummibei dot ch";
@@ -22,7 +13,7 @@
       synopsis = "A simple library for linear codes (coding theory, error correction)";
       description = "Please see the README on GitHub at <https://github.com/wchresta/linear-code#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.matrix-static)
           (hsPkgs.random)
           (hsPkgs.random-shuffle)
-        ];
-      };
+          ];
+        };
       tests = {
         "linear-code-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "lambdabot-utils";
-        version = "4.1";
-      };
+      identifier = { name = "lambdabot-utils"; version = "4.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Cale Gibbard <cgibbard@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utility libraries for the advanced IRC bot, Lambdabot";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nOur own custom libraries for various plugin functions.\n\nAltTime.hs: alternate version of the time library\n\nMiniHTTP.hs: a mini http server\n\nProcess.hs: a wrapper over System.Process\n\nRegex.hsc: a fast packed string regex library\n\nSerial.hs:: a serialisation API\n\nUtil.hs: miscellaneous string, and other, functions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.random)
           (hsPkgs.tagsoup)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

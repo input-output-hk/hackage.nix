@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "FractalArt";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "FractalArt"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Tom.TSmeets@Gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generates colorful wallpapers";
       description = "This application generates colorful images as a wallpaper";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "FractalArt" = {
@@ -35,9 +26,9 @@
             (hsPkgs.primitive)
             (hsPkgs.vector)
             (hsPkgs.JuicyPixels)
-          ];
-          libs = pkgs.lib.optional (system.isLinux) (pkgs."X11") ++ pkgs.lib.optional (system.isOsx) (pkgs."objc");
+            ];
+          libs = (pkgs.lib).optional (system.isLinux) (pkgs."X11") ++ (pkgs.lib).optional (system.isOsx) (pkgs."objc");
+          };
         };
       };
-    };
-  }
+    }

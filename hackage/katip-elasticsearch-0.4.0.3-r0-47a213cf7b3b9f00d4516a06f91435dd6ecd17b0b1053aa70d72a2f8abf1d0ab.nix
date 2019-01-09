@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "katip-elasticsearch";
-        version = "0.4.0.3";
-      };
+      identifier = { name = "katip-elasticsearch"; version = "0.4.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Soostone Inc, 2015-2017";
       maintainer = "michael.xavier@soostone.com";
@@ -22,7 +13,7 @@
       synopsis = "ElasticSearch scribe for the Katip logging framework.";
       description = "See README.md for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.http-types)
           (hsPkgs.time)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -73,9 +64,9 @@
             (hsPkgs.stm)
             (hsPkgs.bytestring)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -89,8 +80,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

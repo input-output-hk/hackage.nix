@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hpack";
-        version = "0.29.5";
-      };
+      identifier = { name = "hpack"; version = "0.29.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "An alternative format for Haskell packages";
       description = "See README at <https://github.com/sol/hpack#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "hpack" = {
           depends = [
@@ -76,9 +67,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -111,8 +102,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

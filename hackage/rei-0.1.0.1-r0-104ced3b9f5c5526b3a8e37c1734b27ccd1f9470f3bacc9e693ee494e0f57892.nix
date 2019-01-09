@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rei";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "rei"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Daniel";
@@ -22,7 +13,7 @@
       synopsis = "Process lists easily";
       description = "A tool built for processing lists easily";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "rei" = {
@@ -34,8 +25,8 @@
             (hsPkgs.directory)
             (hsPkgs.containers)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

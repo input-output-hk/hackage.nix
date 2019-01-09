@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.6";
-      identifier = {
-        name = "opentheory";
-        version = "1.76";
-      };
+      identifier = { name = "opentheory"; version = "1.76"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Leslie-Hurd <joe@gilith.com>";
@@ -22,7 +13,7 @@
       synopsis = "The Haskell base";
       description = "The Haskell base - automatically generated from the opentheory package\nhaskell-1.76";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.random)
           (hsPkgs.QuickCheck)
           (hsPkgs.opentheory-primitive)
-        ];
-      };
+          ];
+        };
       exes = {
         "opentheory-test" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.random)
             (hsPkgs.QuickCheck)
             (hsPkgs.opentheory-primitive)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

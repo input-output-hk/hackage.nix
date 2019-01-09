@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bioace";
-        version = "0.0";
-      };
+      identifier = { name = "bioace"; version = "0.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "dfornika@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for reading ace assembly files";
       description = "Library for reading ace assembly files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bioalign)
           (hsPkgs.bytestring)
           (hsPkgs.parsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

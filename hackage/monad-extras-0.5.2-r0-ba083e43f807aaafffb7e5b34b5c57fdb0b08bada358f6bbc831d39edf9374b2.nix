@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-extras";
-        version = "0.5.2";
-      };
+      identifier = { name = "monad-extras"; version = "0.5.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johnw@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Extra utility functions for working with monads";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

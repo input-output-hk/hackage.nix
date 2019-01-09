@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "halive";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "halive"; version = "0.1.0.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "lukexi@me.com";
@@ -22,14 +13,9 @@
       synopsis = "A live recompiler";
       description = "Live recompiler for Haskell\n\n<<http://lukexi.github.io/HaliveDemo.gif>>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.foreign-store)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.foreign-store) ]; };
       exes = {
         "halive" = {
           depends = [
@@ -42,8 +28,8 @@
             (hsPkgs.filepath)
             (hsPkgs.fsnotify)
             (hsPkgs.system-filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

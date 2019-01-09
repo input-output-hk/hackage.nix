@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mwc-random-monad";
-        version = "0.1";
-      };
+      identifier = { name = "mwc-random-monad"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexey Khudyakov <alexey.skladnoy@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Monadic interface for mwc-random";
       description = "Simple monadit interface for mwc-random.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.primitive)
           (hsPkgs.vector)
           (hsPkgs.mwc-random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

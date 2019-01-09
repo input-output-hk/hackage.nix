@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jacobi-roots";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "jacobi-roots"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2013 Greg Horn";
       maintainer = "gregmainland@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "roots of two shifted jacobi polynomials to double precision";
       description = "This package provides pre-computed roots to the shifted Radau and Legendre polynomials. Roots to order of a few hundred are provided.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

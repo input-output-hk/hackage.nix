@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      integration-tests = false;
-    };
+    flags = { integration-tests = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yandex-translate";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "yandex-translate"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "slava@bacher09.org";
@@ -24,7 +13,7 @@
       synopsis = "Bindings to Yandex translate API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +28,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.transformers)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       tests = {
         "yandex-tests" = {
           depends = [
@@ -52,8 +41,8 @@
             (hsPkgs.data-default-class)
             (hsPkgs.transformers)
             (hsPkgs.yandex-translate)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

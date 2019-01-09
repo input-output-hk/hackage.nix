@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "yi-vty";
-        version = "0.2";
-      };
+      identifier = { name = "yi-vty"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "dons@cse.unsw.edu.au";
@@ -22,7 +13,7 @@
       synopsis = "Vty backend for Yi";
       description = "Core functions for the Vty backend of Yi.\nNote that you will need the yi package to use this.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.vty)
           (hsPkgs.regex-posix)
           (hsPkgs.filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

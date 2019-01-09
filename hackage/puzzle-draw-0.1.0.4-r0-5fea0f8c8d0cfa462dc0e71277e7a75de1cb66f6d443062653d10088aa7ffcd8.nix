@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { cairo = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "puzzle-draw";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "puzzle-draw"; version = "0.1.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "rfvollmert@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Creating graphics for pencil puzzles.";
       description = "puzzle-draw is a library and tool for drawing pencil\npuzzles using Diagrams. It aims to provide a utility\nlayer on top of Diagrams to help with drawing arbitrary\npuzzles, and to support several specific puzzles types\nIn addition, it includes functionality for parsing\npuzzle data from a YAML file format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,10 +31,10 @@
           (hsPkgs.mtl)
           (hsPkgs.optparse-applicative)
           (hsPkgs.filepath)
-        ] ++ (if flags.cairo
+          ] ++ (if flags.cairo
           then [ (hsPkgs.diagrams-cairo) ]
           else [ (hsPkgs.diagrams-svg) ]);
-      };
+        };
       exes = {
         "drawpuzzle" = {
           depends = [
@@ -54,11 +45,11 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.aeson)
             (hsPkgs.filepath)
-          ] ++ (if flags.cairo
+            ] ++ (if flags.cairo
             then [ (hsPkgs.diagrams-cairo) ]
             else [ (hsPkgs.diagrams-svg) ]);
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.diagrams-svg)
             (hsPkgs.bytestring)
             (hsPkgs.puzzle-draw)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

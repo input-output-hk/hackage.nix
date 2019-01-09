@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-default";
-        version = "0.4.0";
-      };
+      identifier = { name = "yesod-default"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Patrick Brisbin <pbrisbin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Default config and main functions for your yesod application";
       description = "Convenient wrappers for your the configuration and\nexecution of your yesod application";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.shakespeare-css)
           (hsPkgs.shakespeare-js)
           (hsPkgs.template-haskell)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

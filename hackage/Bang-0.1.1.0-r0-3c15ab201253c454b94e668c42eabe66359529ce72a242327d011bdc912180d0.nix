@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Bang";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "Bang"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "bkovach13@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Drum Machine DSL for Haskell";
       description = "This library consists of a DSL for piecing together drum compositions. It uses a MIDI backend\nand is only currently available for use on Mac OSX. Much of the library was inspired by previous work done by Yale's\n@<http://haskell.cs.yale.edu/euterpea/ Euterpea>@ project and Paul Hudak\\'s @<http://cpsc.yale.edu/sites/default/files/files/tr1259.pdf paper>@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.stm)
           (hsPkgs.hmidi)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "resourcet";
-        version = "1.2.2";
-      };
+      identifier = { name = "resourcet"; version = "1.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Deterministic allocation and freeing of scarce resources.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/resourcet>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.unliftio-core)
           (hsPkgs.primitive)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.exceptions)
             (hsPkgs.hspec)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bhoogle";
-        version = "0.1.2.4";
-      };
+      identifier = { name = "bhoogle"; version = "0.1.2.4"; };
       license = "BSD-3-Clause";
       copyright = "2018 Andre Van Der Merwe";
       maintainer = "andre@andrevdm.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple terminal GUI for local hoogle.";
       description = "bhoogle is a terminal GUI layer over local hoogle. It provides search ahead and sub-string filtering in addition to the usual type-search.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "bhoogle" = {
@@ -41,8 +32,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.time)
             (hsPkgs.hoogle)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

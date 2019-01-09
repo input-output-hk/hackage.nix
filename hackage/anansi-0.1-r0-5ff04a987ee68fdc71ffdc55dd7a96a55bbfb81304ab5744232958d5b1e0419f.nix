@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "anansi";
-        version = "0.1";
-      };
+      identifier = { name = "anansi"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple literate programming preprocessor";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.containers)
           (hsPkgs.filepath)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = { "anansi" = {}; };
-    };
-  }
+      };
+    }

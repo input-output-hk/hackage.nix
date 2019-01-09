@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "html-entities";
-        version = "1.1.4.1";
-      };
+      identifier = { name = "html-entities"; version = "1.1.4.1"; };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A codec library for HTML-escaped text and HTML-entities";
       description = "This library provides the following APIs for coding and decoding of\nHTML-escaped text:\n\n* \\\"attoparsec\\\" parser\n\n* Text decoder\n\n* Encoding text builder";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.filepath)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

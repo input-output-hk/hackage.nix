@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "DocTest";
-        version = "0.0.1";
-      };
+      identifier = { name = "DocTest"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "simon.hengel@web.de";
@@ -22,7 +13,7 @@
       synopsis = "Test interactive Haskell examples";
       description = "DocTest checks examples in source code comments.\nIt is modeled after doctest for Python\n(<http://docs.python.org/library/doctest.html>).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "doctest" = {
@@ -34,8 +25,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.plugins)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

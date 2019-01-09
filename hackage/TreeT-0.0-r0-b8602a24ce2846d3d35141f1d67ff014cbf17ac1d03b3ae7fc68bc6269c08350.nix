@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "TreeT";
-        version = "0.0";
-      };
+      identifier = { name = "TreeT"; version = "0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "gopinath@eecs.oregonstate.edu";
@@ -22,14 +13,10 @@
       synopsis = "Transformer for Data.Tree";
       description = "This library implements a transformer for the Data.Tree package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

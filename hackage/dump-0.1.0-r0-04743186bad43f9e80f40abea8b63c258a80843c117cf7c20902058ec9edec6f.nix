@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dump";
-        version = "0.1.0";
-      };
+      identifier = { name = "dump"; version = "0.1.0"; };
       license = "MIT";
       copyright = "©2015 Milán Nagy";
       maintainer = "dumplibhs.psssst@dfgh.net";
@@ -22,7 +13,7 @@
       synopsis = "Dumps the names and values of expressions to ease debugging.";
       description = "Example: `let a=1 in [d|a, a+1|] == \"(a) = 1, (a+1) = 2\"`";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.haskell-src-meta)
           (hsPkgs.interpolatedstring-perl6)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.haskell-src-meta)
             (hsPkgs.interpolatedstring-perl6)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

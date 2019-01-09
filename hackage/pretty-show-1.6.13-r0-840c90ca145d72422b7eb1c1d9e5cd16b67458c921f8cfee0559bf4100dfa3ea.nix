@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pretty-show";
-        version = "1.6.13";
-      };
+      identifier = { name = "pretty-show"; version = "1.6.13"; };
       license = "MIT";
       copyright = "";
       maintainer = "iavor.diatchki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools for working with derived `Show` instances and generic\ninspection of values.";
       description = "We provide a library and an executable for working with derived 'Show'\ninstances. By using the library, we can parse derived 'Show' instances into a\ngeneric data structure. The @ppsh@ tool uses the library to produce\nhuman-readable versions of 'Show' instances, which can be quite handy for\ndebugging Haskell programs.  We can also render complex generic values into\nan interactive Html page, for easier examination.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,18 +23,11 @@
           (hsPkgs.pretty)
           (hsPkgs.filepath)
           (hsPkgs.ghc-prim)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
-      exes = {
-        "ppsh" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pretty-show)
           ];
+        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        };
+      exes = {
+        "ppsh" = { depends = [ (hsPkgs.base) (hsPkgs.pretty-show) ]; };
         };
       };
-    };
-  }
+    }

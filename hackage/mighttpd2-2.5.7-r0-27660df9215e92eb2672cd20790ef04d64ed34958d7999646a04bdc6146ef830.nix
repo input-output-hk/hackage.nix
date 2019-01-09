@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mighttpd2";
-        version = "2.5.7";
-      };
+      identifier = { name = "mighttpd2"; version = "2.5.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "High performance web server on WAI/warp";
       description = "High performance web server to handle static\nfiles and CGI on WAI/warp.\nReverse proxy functionality is also provided\nto connect web applications behind.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mighty" = {
@@ -49,8 +40,8 @@
             (hsPkgs.wai-logger)
             (hsPkgs.wai-logger-prefork)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "mkindex" = {
           depends = [
             (hsPkgs.base)
@@ -58,9 +49,9 @@
             (hsPkgs.old-locale)
             (hsPkgs.directory)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -89,8 +80,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th-prime)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

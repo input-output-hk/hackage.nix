@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sarsi";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "sarsi"; version = "0.0.1.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "alois.cochard@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A universal quickfix toolkit and his protocol.";
       description = "Usage overview can be found in the <http://github.com/aloiscochard/sarsi#sarsi README>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,16 +34,12 @@
           (hsPkgs.process)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
-      exes = {
-        "sarsi" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.sarsi)
           ];
         };
+      exes = {
+        "sarsi" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Cabal) (hsPkgs.sarsi) ];
+          };
         "sarsi-hs" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +50,8 @@
             (hsPkgs.process)
             (hsPkgs.text)
             (hsPkgs.fsnotify)
-          ];
-        };
+            ];
+          };
         "sarsi-nvim" = {
           depends = [
             (hsPkgs.base)
@@ -82,8 +69,8 @@
             (hsPkgs.text)
             (hsPkgs.vector)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "sarsi-sbt" = {
           depends = [
             (hsPkgs.base)
@@ -93,8 +80,8 @@
             (hsPkgs.machines-process)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

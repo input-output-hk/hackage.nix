@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hascas";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hascas"; version = "0.1.0.0"; };
       license = "LicenseRef-Apache";
       copyright = "2016 Saurabh Rawat";
       maintainer = "saurabh.rawat90@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Cassandra driver for haskell";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.data-binary-ieee754)
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "hascas-test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.hspec)
             (hsPkgs.mtl)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

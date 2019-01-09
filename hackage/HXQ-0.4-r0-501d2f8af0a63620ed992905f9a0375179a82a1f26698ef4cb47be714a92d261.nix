@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HXQ";
-        version = "0.4";
-      };
+      identifier = { name = "HXQ"; version = "0.4"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "fegaras@cse.uta.edu";
@@ -22,7 +13,7 @@
       synopsis = "A Compiler from XQuery to Haskell";
       description = "A Compiler from XQuery to Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "xquery" = {
@@ -30,8 +21,8 @@
             (hsPkgs.base)
             (hsPkgs.haskell98)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-doctest";
-        version = "1.0.4";
-      };
+      identifier = { name = "cabal-doctest"; version = "1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Oleg Grenrus";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "A Setup.hs helper for doctests running";
       description = "Currently (beginning of 2017), there isn't @cabal doctest@\ncommand. Yet, to properly work doctest needs plenty of configuration.\nThis library provides the common bits for writing custom Setup.hs\nSee <https://github.com/haskell/cabal/issues/2327 Cabal/2327> for the progress\nof @cabal doctest@, i.e. whether this library is obsolete.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.Cabal)
           (hsPkgs.filepath)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

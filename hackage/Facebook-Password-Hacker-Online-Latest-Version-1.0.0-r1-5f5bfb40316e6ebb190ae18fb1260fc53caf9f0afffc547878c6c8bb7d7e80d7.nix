@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "Facebook-Password-Hacker-Online-Latest-Version";
         version = "1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "none";
@@ -22,7 +16,7 @@
       synopsis = "spam";
       description = "spam.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +26,8 @@
           (hsPkgs.servant)
           (hsPkgs.servant-auth)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -42,8 +36,8 @@
             (hsPkgs.servant-auth-docs)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -55,11 +49,9 @@
             (hsPkgs.servant-auth-docs)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

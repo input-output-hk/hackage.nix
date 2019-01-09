@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "archlinux";
-        version = "1.3";
-      };
+      identifier = { name = "archlinux"; version = "1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ArchHaskell Team <arch-haskell@haskell.org>";
@@ -22,7 +13,7 @@
       synopsis = "Support for working with Arch Linux packages.";
       description = "Support for working with Arch Linux packages.\nSee also the cabal2arch tool <http://hackage.haskell.org/package/cabal2arch>\nfor conversion between Hackage and AUR.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

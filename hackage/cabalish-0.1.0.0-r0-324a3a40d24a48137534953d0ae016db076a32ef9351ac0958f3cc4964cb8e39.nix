@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabalish";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "cabalish"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c)2017 Robert Fischer";
       maintainer = "smokejumperit+stack@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides access to the cabal file data for shell scripts";
       description = "Use \"cabalish name\" to get the name from the local cabal file in a shell script, or \"cabalish version\" to get the version from the local cabal file in a shell script.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabalish" = {
@@ -34,8 +25,8 @@
             (hsPkgs.directory)
             (hsPkgs.Cabal)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

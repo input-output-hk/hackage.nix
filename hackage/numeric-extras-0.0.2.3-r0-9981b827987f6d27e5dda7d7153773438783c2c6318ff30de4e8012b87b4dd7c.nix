@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "numeric-extras";
-        version = "0.0.2.3";
-      };
+      identifier = { name = "numeric-extras"; version = "0.0.2.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ekmett@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Useful tools from the C standard library";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

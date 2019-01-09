@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       native-dns = true;
       debug-expensive-assertions = false;
       debug-conflict-sets = false;
       debug-tracetree = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-install";
-        version = "2.4.1.0";
-      };
+      identifier = { name = "cabal-install"; version = "2.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2003-2018, Cabal Development Team";
       maintainer = "Cabal Development Team <cabal-devel@haskell.org>";
@@ -27,7 +18,7 @@
       synopsis = "The command-line interface for Cabal and Hackage.";
       description = "The \\'cabal\\' command-line program simplifies the process of managing\nHaskell software by automating the fetching, configuration, compilation\nand installation of Haskell libraries and programs.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "cabal" = {
@@ -62,17 +53,15 @@
             (hsPkgs.text)
             (hsPkgs.zip-archive)
             (hsPkgs.parsec)
-          ] ++ pkgs.lib.optionals (flags.native-dns) (if system.isWindows
+            ] ++ (pkgs.lib).optionals (flags.native-dns) (if system.isWindows
             then [ (hsPkgs.windns) ]
-            else [
-              (hsPkgs.resolv)
-            ])) ++ (if system.isWindows
+            else [ (hsPkgs.resolv) ])) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)
-            ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs.tracetree);
-          libs = pkgs.lib.optional (system.isAix) (pkgs."bsd");
+              ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs.tracetree);
+          libs = (pkgs.lib).optional (system.isAix) (pkgs."bsd");
+          };
         };
       };
-    };
-  }
+    }

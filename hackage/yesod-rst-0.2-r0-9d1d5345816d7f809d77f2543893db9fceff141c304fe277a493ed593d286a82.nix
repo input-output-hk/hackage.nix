@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-rst";
-        version = "0.2";
-      };
+      identifier = { name = "yesod-rst"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Pascal Wittmann <mail@pascal-wittmann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Tools for using reStructuredText (RST) in a yesod application";
       description = "A subset of pandoc functionality useful for RST processing in yesod applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.yesod-form)
           (hsPkgs.hamlet)
           (hsPkgs.persistent)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

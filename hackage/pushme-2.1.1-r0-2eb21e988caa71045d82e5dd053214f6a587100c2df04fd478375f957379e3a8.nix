@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pushme";
-        version = "2.1.1";
-      };
+      identifier = { name = "pushme"; version = "2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Tool to synchronize directories with rsync, zfs or git-annex";
       description = "Script I use for synchronizing data among machines.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pushme" = {
@@ -56,8 +47,8 @@
             (hsPkgs.unix)
             (hsPkgs.unordered-containers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

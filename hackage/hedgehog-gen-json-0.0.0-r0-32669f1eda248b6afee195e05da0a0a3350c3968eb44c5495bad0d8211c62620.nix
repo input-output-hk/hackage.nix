@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hedgehog-gen-json";
-        version = "0.0.0";
-      };
+      identifier = { name = "hedgehog-gen-json"; version = "0.0.0"; };
       license = "MIT";
       copyright = "2017 Amr Hassan";
       maintainer = "amr.hassan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON generators for Hedgehog";
       description = "Generate JSON values for Hedgehog tests";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.protolude)
           (hsPkgs.scientific)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hedgehog)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

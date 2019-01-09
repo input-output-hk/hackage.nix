@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "DisTract";
-        version = "0.2.5";
-      };
+      identifier = { name = "DisTract"; version = "0.2.5"; };
       license = "BSD-3-Clause";
       copyright = "Matthew Sackman";
       maintainer = "Matthew Sackman <matthew@wellquite.org>";
@@ -22,7 +13,7 @@
       synopsis = "Distributed Bug Tracking System";
       description = "A distributed bug tracker layered on top of Monotone.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.pretty)
           (hsPkgs.directory)
           (hsPkgs.process)
-        ];
-      };
+          ];
+        };
       exes = {
         "DisTractNewBug" = {};
         "DisTractModifyBug" = {};
@@ -50,6 +41,6 @@
         "DisTractFormatNew" = {};
         "DisTractSortBugs" = {};
         "DisTractInstaller" = {};
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fold-debounce-conduit";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "fold-debounce-conduit"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Toshio Ito <debug.ito@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Regulate input traffic from conduit Source with Control.FoldDebounce";
       description = "Regulate input traffic from conduit Source with Control.FoldDebounce. See \"Data.Conduit.FoldDebounce\"";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.stm)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.transformers)
             (hsPkgs.resourcet)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

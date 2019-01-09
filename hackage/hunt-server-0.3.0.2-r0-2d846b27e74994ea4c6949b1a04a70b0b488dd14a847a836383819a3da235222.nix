@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { statsd = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hunt-server";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "hunt-server"; version = "0.3.0.2"; };
       license = "MIT";
       copyright = "Chris Reumann, Ulf Sauer, Sebastian Philipp";
       maintainer = "Chris Reumann, Ulf Sauer, Sebastian Philipp";
@@ -22,7 +13,7 @@
       synopsis = "A search and indexing engine server.";
       description = "Standalone search server based on the Hunt searchengine.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hunt-server" = {
@@ -51,8 +42,8 @@
             (hsPkgs.warp)
             (hsPkgs.cmdargs)
             (hsPkgs.ekg-core)
-          ] ++ pkgs.lib.optional (flags.statsd) (hsPkgs.ekg-statsd);
+            ] ++ (pkgs.lib).optional (flags.statsd) (hsPkgs.ekg-statsd);
+          };
         };
       };
-    };
-  }
+    }

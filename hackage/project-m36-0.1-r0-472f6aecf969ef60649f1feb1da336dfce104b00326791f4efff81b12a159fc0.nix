@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { profiler = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "project-m36";
-        version = "0.1";
-      };
+      identifier = { name = "project-m36"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "agentm@themactionfaction.com";
@@ -22,7 +13,7 @@
       synopsis = "Relational Algebra Engine";
       description = "A relational algebra engine which can be used to persist and query Haskell data types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -79,12 +70,12 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.Glob)
           (hsPkgs.cryptohash-sha256)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [
             (hsPkgs.unix)
-          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8") (hsPkgs.ghc-boot);
-      };
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8") (hsPkgs.ghc-boot);
+        };
       exes = {
         "tutd" = {
           depends = [
@@ -127,8 +118,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.stm-containers)
             (hsPkgs.list-t)
-          ];
-        };
+            ];
+          };
         "project-m36-server" = {
           depends = [
             (hsPkgs.base)
@@ -161,8 +152,8 @@
             (hsPkgs.stm-containers)
             (hsPkgs.list-t)
             (hsPkgs.base64-bytestring)
-          ];
-        };
+            ];
+          };
         "bigrel" = {
           depends = [
             (hsPkgs.base)
@@ -204,8 +195,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "Example-SimpleClient" = {
           depends = [
             (hsPkgs.base)
@@ -245,8 +236,8 @@
             (hsPkgs.project-m36)
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
-          ];
-        };
+            ];
+          };
         "Example-OutOfTheTarpit" = {
           depends = [
             (hsPkgs.base)
@@ -290,8 +281,8 @@
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)
             (hsPkgs.project-m36)
-          ];
-        };
+            ];
+          };
         "Example-Hair" = {
           depends = [
             (hsPkgs.base)
@@ -335,8 +326,8 @@
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)
             (hsPkgs.project-m36)
-          ];
-        };
+            ];
+          };
         "project-m36-websocket-server" = {
           depends = [
             (hsPkgs.base)
@@ -366,9 +357,9 @@
             (hsPkgs.time)
             (hsPkgs.network-transport-tcp)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-tutoriald" = {
           depends = [
@@ -407,8 +398,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-tutoriald-atomfunctionscript" = {
           depends = [
             (hsPkgs.base)
@@ -426,8 +417,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-tutoriald-databasecontextfunctionscript" = {
           depends = [
             (hsPkgs.base)
@@ -445,8 +436,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-relation" = {
           depends = [
             (hsPkgs.base)
@@ -481,8 +472,8 @@
             (hsPkgs.stm-containers)
             (hsPkgs.project-m36)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "test-static-optimizer" = {
           depends = [
             (hsPkgs.base)
@@ -517,8 +508,8 @@
             (hsPkgs.stm-containers)
             (hsPkgs.project-m36)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "test-transactiongraph-persist" = {
           depends = [
             (hsPkgs.base)
@@ -555,8 +546,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-relation-import-csv" = {
           depends = [
             (hsPkgs.base)
@@ -590,8 +581,8 @@
             (hsPkgs.filepath)
             (hsPkgs.stm-containers)
             (hsPkgs.project-m36)
-          ];
-        };
+            ];
+          };
         "test-tutoriald-import-tutoriald" = {
           depends = [
             (hsPkgs.base)
@@ -628,8 +619,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-relation-export-csv" = {
           depends = [
             (hsPkgs.base)
@@ -663,8 +654,8 @@
             (hsPkgs.filepath)
             (hsPkgs.stm-containers)
             (hsPkgs.project-m36)
-          ];
-        };
+            ];
+          };
         "test-transactiongraph-merge" = {
           depends = [
             (hsPkgs.base)
@@ -706,8 +697,8 @@
             (hsPkgs.stm-containers)
             (hsPkgs.list-t)
             (hsPkgs.project-m36)
-          ];
-        };
+            ];
+          };
         "test-server" = {
           depends = [
             (hsPkgs.base)
@@ -746,8 +737,8 @@
             (hsPkgs.project-m36)
             (hsPkgs.network-transport)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-scripts" = {
           depends = [
             (hsPkgs.base)
@@ -787,8 +778,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-websocket-server" = {
           depends = [
             (hsPkgs.base)
@@ -833,8 +824,8 @@
             (hsPkgs.MonadRandom)
             (hsPkgs.network-transport-tcp)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-isomorphic-schemas" = {
           depends = [
             (hsPkgs.base)
@@ -875,8 +866,8 @@
             (hsPkgs.aeson)
             (hsPkgs.uuid-aeson)
             (hsPkgs.project-m36)
-          ];
-        };
+            ];
+          };
         "test-atomable" = {
           depends = [
             (hsPkgs.base)
@@ -920,8 +911,8 @@
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test-multiprocess-access" = {
           depends = [
             (hsPkgs.base)
@@ -964,9 +955,9 @@
             (hsPkgs.project-m36)
             (hsPkgs.random)
             (hsPkgs.MonadRandom)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -1002,8 +993,8 @@
             (hsPkgs.criterion)
             (hsPkgs.stm-containers)
             (hsPkgs.project-m36)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

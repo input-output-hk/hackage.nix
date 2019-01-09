@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fsnotify-conduit";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "fsnotify-conduit"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "2016-2018 FP Complete";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Get filesystem notifications as a stream of events";
       description = "Please see the README and docs at <https://www.stackage.org/package/fsnotify-conduit>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.fsnotify)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "fsnotify-conduit-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.temporary)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

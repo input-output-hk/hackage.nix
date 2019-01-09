@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "resource-embed";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "resource-embed"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tdammers@gmail.com";
@@ -22,16 +13,12 @@
       synopsis = "Embed data files via C and FFI.";
       description = "Compiles data files into C code and generates some FFI wrapper code to integrate them into Haskell projects.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "resource-embed" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.directory) ];
+          };
         };
       };
-    };
-  }
+    }

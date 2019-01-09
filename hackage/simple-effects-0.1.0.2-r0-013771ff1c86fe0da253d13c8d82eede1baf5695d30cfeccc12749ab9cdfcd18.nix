@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-effects";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "simple-effects"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Luka Horvat";
       maintainer = "luka.horvat9@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple effect system that integrates with MTL";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.transformers-base)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "bench-effects" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.interlude-l)
             (hsPkgs.lens)
             (hsPkgs.simple-effects)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

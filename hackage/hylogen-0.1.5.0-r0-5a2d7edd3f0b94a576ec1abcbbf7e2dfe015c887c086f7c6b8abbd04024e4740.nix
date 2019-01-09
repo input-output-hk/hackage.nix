@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hylogen";
-        version = "0.1.5.0";
-      };
+      identifier = { name = "hylogen"; version = "0.1.5.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "freshdried@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "GLSL embedded in Haskell";
       description = "GLSL embedded in Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector-space)
-          (hsPkgs.data-reify)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.vector-space) (hsPkgs.data-reify) ];
+        };
       };
-    };
-  }
+    }

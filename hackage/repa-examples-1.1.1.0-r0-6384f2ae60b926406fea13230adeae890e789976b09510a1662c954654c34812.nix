@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "repa-examples";
-        version = "1.1.1.0";
-      };
+      identifier = { name = "repa-examples"; version = "1.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Examples using the Repa array library.";
       description = "Examples using the Repa array library.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "repa-fft2d" = {
@@ -33,8 +24,8 @@
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
             (hsPkgs.repa-io)
-          ];
-        };
+            ];
+          };
         "repa-fft2d-highpass" = {
           depends = [
             (hsPkgs.base)
@@ -43,8 +34,8 @@
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
             (hsPkgs.repa-io)
-          ];
-        };
+            ];
+          };
         "repa-laplace" = {
           depends = [
             (hsPkgs.base)
@@ -52,8 +43,8 @@
             (hsPkgs.dph-base)
             (hsPkgs.repa)
             (hsPkgs.repa-io)
-          ];
-        };
+            ];
+          };
         "repa-mmult" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.repa-io)
             (hsPkgs.repa-algorithms)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

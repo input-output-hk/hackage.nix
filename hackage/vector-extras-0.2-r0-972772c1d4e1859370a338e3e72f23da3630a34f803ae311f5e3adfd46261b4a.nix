@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vector-extras";
-        version = "0.2";
-      };
+      identifier = { name = "vector-extras"; version = "0.2"; };
       license = "MIT";
       copyright = "(c) 2018, Metrix.AI";
       maintainer = "Metrix.AI Tech Team <tech@metrix.ai>";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for the \"vector\" library";
       description = "This library is in an experimental state.\nUsers should be prepared for frequent updates.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.hashable)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

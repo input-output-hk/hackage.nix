@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "translate-cli";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "translate-cli"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017";
       maintainer = "as@99n.de";
@@ -22,7 +13,7 @@
       synopsis = "Translation cli tool";
       description = "Translation cli tool";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.aeson)
           (hsPkgs.aeson-lens)
-        ];
-      };
+          ];
+        };
       exes = {
         "translate" = {
           depends = [
@@ -41,17 +32,13 @@
             (hsPkgs.translate-cli)
             (hsPkgs.turtle)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "translate-cli-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.translate-cli)
-            (hsPkgs.HUnit)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.translate-cli) (hsPkgs.HUnit) ];
+          };
         };
       };
-    };
-  }
+    }

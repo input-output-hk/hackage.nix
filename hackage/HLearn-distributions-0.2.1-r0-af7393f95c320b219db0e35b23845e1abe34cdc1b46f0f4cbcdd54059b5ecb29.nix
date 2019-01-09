@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HLearn-distributions";
-        version = "0.2.1";
-      };
+      identifier = { name = "HLearn-distributions"; version = "0.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "mike@izbicki.me";
@@ -22,7 +13,7 @@
       synopsis = "Distributions for use with the HLearn library";
       description = "This module is used to estimate statistical distributions from data.  The focus is a clean interface inspired by algebra.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.MonadRandom)
           (hsPkgs.math-functions)
           (hsPkgs.normaldistribution)
-        ];
-      };
+          ];
+        };
       exes = {
         "HLearn-Distributions-Criterion" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.criterion)
             (hsPkgs.vector)
             (hsPkgs.statistics)
-          ];
-        };
+            ];
+          };
         "HLearn-Distributions-SpaceTests" = {
           depends = [
             (hsPkgs.HLearn-algebra)
@@ -64,8 +55,8 @@
             (hsPkgs.vector)
             (hsPkgs.logfloat)
             (hsPkgs.statistics)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

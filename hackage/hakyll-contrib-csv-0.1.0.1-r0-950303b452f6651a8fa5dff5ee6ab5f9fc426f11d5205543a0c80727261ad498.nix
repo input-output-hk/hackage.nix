@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hakyll-contrib-csv";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hakyll-contrib-csv"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Erik Stevenson";
       maintainer = "eriknstevenson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate Html tables from Csv files";
       description = "A Hakyll extension for incorporating Csv data into your static site.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.cassava)
           (hsPkgs.hakyll)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "hakyll-contrib-csv-spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.cassava)
             (hsPkgs.hakyll-contrib-csv)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

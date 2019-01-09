@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      s3upload-exe = false;
-    };
+    flags = { s3upload-exe = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "amazonka-s3-streaming";
-        version = "0.2.0.4";
-      };
+      identifier = { name = "amazonka-s3-streaming"; version = "0.2.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016 Commonwealth Scientific and Industrial Research Organisation (CSIRO)";
       maintainer = "Alex.Mason@data61.csiro.au";
@@ -24,7 +13,7 @@
       synopsis = "Provides conduits to upload data to S3 using the Multipart API";
       description = "Provides a conduit based streaming interface and a concurrent interface to\nuploading data to S3 using the Multipart API. Also provides method to upload\nfiles or bytestrings of known size in parallel. Please see README.md.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -44,11 +33,11 @@
           (hsPkgs.mmap)
           (hsPkgs.deepseq)
           (hsPkgs.http-client)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.11") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.11") [
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
-        ]) ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.foundation);
-      };
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.foundation);
+        };
       exes = {
         "s3upload" = {
           depends = [
@@ -61,8 +50,8 @@
             (hsPkgs.conduit)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

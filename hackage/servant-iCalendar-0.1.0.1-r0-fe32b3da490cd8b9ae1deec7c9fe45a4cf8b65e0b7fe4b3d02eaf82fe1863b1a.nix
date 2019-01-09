@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-iCalendar";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "servant-iCalendar"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Francesco Gazzetta <francygazz@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Servant support for iCalendar";
       description = "Servant support for iCalendar";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.servant)
           (hsPkgs.iCalendar)
           (hsPkgs.data-default)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

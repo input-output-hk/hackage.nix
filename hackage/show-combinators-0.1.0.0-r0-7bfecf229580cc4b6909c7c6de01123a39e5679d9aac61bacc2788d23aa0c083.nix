@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "show-combinators";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "show-combinators"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Li-yao Xia";
       maintainer = "lysxia@gmail.com";
@@ -22,18 +13,11 @@
       synopsis = "Combinators to write Show instances";
       description = "A minimal pretty-printing library for Show instances in Haskell.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.show-combinators)
-            (hsPkgs.base)
-          ];
+        "test" = { depends = [ (hsPkgs.show-combinators) (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

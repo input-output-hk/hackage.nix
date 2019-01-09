@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "llsd";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "llsd"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2009-2010 Linden Lab";
       maintainer = "zero@lindenlab.com";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of the LLSD data system";
       description = ".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,16 +36,16 @@
           (hsPkgs.time)
           (hsPkgs.utf8-string)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       exes = {
         "llsdutil" = {};
         "testllsd" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

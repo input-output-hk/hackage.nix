@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hreader";
-        version = "0.2.0";
-      };
+      identifier = { name = "hreader"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generalization of MonadReader and ReaderT";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.mtl)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

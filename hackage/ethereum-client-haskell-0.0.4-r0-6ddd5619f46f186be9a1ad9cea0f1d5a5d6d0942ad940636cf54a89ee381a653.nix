@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ethereum-client-haskell";
-        version = "0.0.4";
-      };
+      identifier = { name = "ethereum-client-haskell"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jamshidnh@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell version of an Ethereum client";
       description = "The client described in the Ethereum Yellowpaper";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ethereumH" = {
@@ -51,8 +42,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vector)
             (hsPkgs.ansi-wl-pprint)
-          ];
-        };
+            ];
+          };
         "queryEth" = {
           depends = [
             (hsPkgs.base)
@@ -78,9 +69,9 @@
             (hsPkgs.leveldb-haskell)
             (hsPkgs.array)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-ethereumH" = {
           depends = [
@@ -89,8 +80,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

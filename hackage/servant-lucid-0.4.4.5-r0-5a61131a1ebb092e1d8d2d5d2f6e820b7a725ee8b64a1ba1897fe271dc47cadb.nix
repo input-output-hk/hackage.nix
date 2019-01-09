@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-lucid";
-        version = "0.4.4.5";
-      };
+      identifier = { name = "servant-lucid"; version = "0.4.4.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jkarni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant support for lucid";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.http-media)
           (hsPkgs.lucid)
           (hsPkgs.servant)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

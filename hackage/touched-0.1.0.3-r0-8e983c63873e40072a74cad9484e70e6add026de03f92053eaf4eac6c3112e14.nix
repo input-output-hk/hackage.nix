@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "touched";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "touched"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "Copyright (c) 2015 to Alex Crough";
       maintainer = "alex@crough.org";
@@ -22,7 +13,7 @@
       synopsis = "Library (and cli) to execute a procedure on file change.";
       description = "A small, IO-heavy library that monitors files for changes and runs either a system shell command or a Haskell `IO ()` action.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,12 @@
           (hsPkgs.directory)
           (hsPkgs.process)
           (hsPkgs.time)
-        ];
-      };
-      exes = {
-        "touched" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.touched)
-            (hsPkgs.cmdargs)
           ];
         };
+      exes = {
+        "touched" = {
+          depends = [ (hsPkgs.base) (hsPkgs.touched) (hsPkgs.cmdargs) ];
+          };
+        };
       };
-    };
-  }
+    }

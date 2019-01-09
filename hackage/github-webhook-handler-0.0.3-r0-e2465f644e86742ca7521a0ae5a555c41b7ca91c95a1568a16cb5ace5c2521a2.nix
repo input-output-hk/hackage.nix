@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "github-webhook-handler";
-        version = "0.0.3";
-      };
+      identifier = { name = "github-webhook-handler"; version = "0.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "GitHub WebHook Handler";
       description = "Generic definition of a GitHub Webhook Handler. Specialized version for Snap\ncan be found in the 'github-webhook-handler-snap' package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.vector)
           (hsPkgs.cryptohash)
           (hsPkgs.uuid)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hpaco-lib";
-        version = "0.28.0.2";
-      };
+      identifier = { name = "hpaco-lib"; version = "0.28.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tdammers@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Modular template compiler library";
       description = "Template compiler library, compiles template code into\nPHP or Javascript, or interprets it directly.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.safe)
           (hsPkgs.file-embed)
           (hsPkgs.aeson)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

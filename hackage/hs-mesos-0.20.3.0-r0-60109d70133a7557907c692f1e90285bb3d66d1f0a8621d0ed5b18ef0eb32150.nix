@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hs-mesos";
-        version = "0.20.3.0";
-      };
+      identifier = { name = "hs-mesos"; version = "0.20.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Bindings to the Apache Mesos platform.\n\n<http://mesos.apache.org/ Apache Mesos> is a cluster manager that simplifies the complexity of running applications on a shared pool of servers.\n\nNote that this package currently requires 'libmesos' to be installed on your development system in order to build.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,13 +22,9 @@
           (hsPkgs.lens)
           (hsPkgs.managed)
           (hsPkgs.template-haskell)
-        ];
-        libs = [
-          (pkgs."mesos")
-          (pkgs."stdc++")
-          (pkgs."protobuf")
-        ];
-      };
+          ];
+        libs = [ (pkgs."mesos") (pkgs."stdc++") (pkgs."protobuf") ];
+        };
       exes = {
         "test-executor" = {
           depends = [
@@ -45,25 +32,19 @@
             (hsPkgs.hs-mesos)
             (hsPkgs.bytestring)
             (hsPkgs.lens)
-          ];
-          libs = [
-            (pkgs."mesos")
-            (pkgs."stdc++")
-          ];
-        };
+            ];
+          libs = [ (pkgs."mesos") (pkgs."stdc++") ];
+          };
         "test-framework" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hs-mesos)
             (hsPkgs.bytestring)
             (hsPkgs.lens)
-          ];
-          libs = [
-            (pkgs."mesos")
-            (pkgs."stdc++")
-          ];
+            ];
+          libs = [ (pkgs."mesos") (pkgs."stdc++") ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -76,8 +57,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.lens)
             (hsPkgs.managed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

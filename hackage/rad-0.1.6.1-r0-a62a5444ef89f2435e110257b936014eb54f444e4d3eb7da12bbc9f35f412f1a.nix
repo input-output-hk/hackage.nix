@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "rad";
-        version = "0.1.6.1";
-      };
+      identifier = { name = "rad"; version = "0.1.6.1"; };
       license = "BSD-3-Clause";
       copyright = "Edward Kmett 2010";
       maintainer = "ekmett@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Reverse Automatic Differentiation.";
       description = "Reverse-Mode Automatic Differentiation via overloading.\nExistential type \\\"branding\\\" is used to prevent sensitivity confusion.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.data-reify)
           (hsPkgs.containers)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

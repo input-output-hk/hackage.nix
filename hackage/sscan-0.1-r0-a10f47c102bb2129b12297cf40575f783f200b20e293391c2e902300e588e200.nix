@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sscan";
-        version = "0.1";
-      };
+      identifier = { name = "sscan"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "(C) 2017 Sean Whitton";
       maintainer = "spwhitton@spwhitton.name";
@@ -22,7 +13,7 @@
       synopsis = "text UI for scanning with SANE";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sscan" = {
@@ -39,8 +30,8 @@
             (hsPkgs.process)
             (hsPkgs.time)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

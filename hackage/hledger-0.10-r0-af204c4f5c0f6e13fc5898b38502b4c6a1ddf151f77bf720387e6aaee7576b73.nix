@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      vty = false;
-      web = false;
-      chart = false;
-    };
+    flags = { vty = false; web = false; chart = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hledger";
-        version = "0.10";
-      };
+      identifier = { name = "hledger"; version = "0.10"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -26,7 +13,7 @@
       synopsis = "A command-line (or curses or web-based) double-entry accounting tool.";
       description = "hledger reads a plain text ledger file or timelog\ndescribing your transactions and displays precise\nbalance and register reports via command-line, curses\nor web interface.  It is a remix, in haskell, of John\nWiegley's excellent c++ ledger.  hledger aims to be a\npractical, accessible tool for end users and a useful\nlibrary for finance-minded haskell programmers.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -47,7 +34,7 @@
           (hsPkgs.testpack)
           (hsPkgs.time)
           (hsPkgs.utf8-string)
-        ] ++ pkgs.lib.optional (flags.vty) (hsPkgs.vty)) ++ pkgs.lib.optionals (flags.web) [
+          ] ++ (pkgs.lib).optional (flags.vty) (hsPkgs.vty)) ++ (pkgs.lib).optionals (flags.web) [
           (hsPkgs.hsp)
           (hsPkgs.hsx)
           (hsPkgs.xhtml)
@@ -58,11 +45,11 @@
           (hsPkgs.hack-handler-simpleserver)
           (hsPkgs.HTTP)
           (hsPkgs.applicative-extras)
-        ]) ++ pkgs.lib.optionals (flags.chart) [
+          ]) ++ (pkgs.lib).optionals (flags.chart) [
           (hsPkgs.Chart)
           (hsPkgs.colour)
-        ];
-      };
+          ];
+        };
       exes = {
         "hledger" = {
           depends = (([
@@ -83,7 +70,7 @@
             (hsPkgs.testpack)
             (hsPkgs.time)
             (hsPkgs.utf8-string)
-          ] ++ pkgs.lib.optional (flags.vty) (hsPkgs.vty)) ++ pkgs.lib.optionals (flags.web) [
+            ] ++ (pkgs.lib).optional (flags.vty) (hsPkgs.vty)) ++ (pkgs.lib).optionals (flags.web) [
             (hsPkgs.hsp)
             (hsPkgs.hsx)
             (hsPkgs.xhtml)
@@ -94,11 +81,11 @@
             (hsPkgs.hack-handler-simpleserver)
             (hsPkgs.HTTP)
             (hsPkgs.applicative-extras)
-          ]) ++ pkgs.lib.optionals (flags.chart) [
+            ]) ++ (pkgs.lib).optionals (flags.chart) [
             (hsPkgs.Chart)
             (hsPkgs.colour)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "file-modules";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "file-modules"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Copyright (c) Pedro Tacla Yamada 2015";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Takes a Haskell source-code file and outputs the modules it\n. imports. Follows links to local modules as well.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.stm)
           (hsPkgs.stm-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "file-modules" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.haskell-src-exts)
             (hsPkgs.stm)
             (hsPkgs.stm-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

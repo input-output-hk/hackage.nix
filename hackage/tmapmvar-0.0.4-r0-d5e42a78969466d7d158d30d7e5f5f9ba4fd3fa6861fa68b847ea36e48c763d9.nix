@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tmapmvar";
-        version = "0.0.4";
-      };
+      identifier = { name = "tmapmvar"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2018 Local Cooking Inc.";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "A single-entity stateful Map in STM, similar to tmapchan";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/tmapmvar#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.hashable)
           (hsPkgs.stm)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tmapmvar-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tmapmvar)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

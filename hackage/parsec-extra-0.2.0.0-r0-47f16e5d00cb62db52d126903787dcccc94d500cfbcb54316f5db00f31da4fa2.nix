@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "parsec-extra";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "parsec-extra"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ariep@xs4all.nl";
@@ -22,14 +13,10 @@
       synopsis = "Some miscellaneous basic string parsers.";
       description = "Basic string parsers for integer numbers and case-insensitive string parsing.\nAlso an alternative parse function, which throws a monadic error on parse failure.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.monads-tf)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.monads-tf) ];
+        };
       };
-    };
-  }
+    }

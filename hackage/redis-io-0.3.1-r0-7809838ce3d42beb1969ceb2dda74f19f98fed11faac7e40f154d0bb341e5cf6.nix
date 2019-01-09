@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "redis-io";
-        version = "0.3.1";
-      };
+      identifier = { name = "redis-io"; version = "0.3.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2014 Toralf Wittner";
       maintainer = "Toralf Wittner <tw@dtex.org>";
@@ -22,7 +13,7 @@
       synopsis = "Yet another redis client.";
       description = "Yet another redis client.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.tinylog)
-        ];
-      };
+          ];
+        };
       tests = {
         "redis-io-tests" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tinylog)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "redis-io-bench" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.redis-resp)
             (hsPkgs.tinylog)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

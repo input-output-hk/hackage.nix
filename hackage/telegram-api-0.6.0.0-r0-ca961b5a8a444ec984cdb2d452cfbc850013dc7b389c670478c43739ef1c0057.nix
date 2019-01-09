@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "telegram-api";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "telegram-api"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Alexey Rodiontsev (c) 2016";
       maintainer = "alex.rodiontsev@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Telegram Bot API bindings";
       description = "High-level bindings to the Telegram Bot API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.mime-types)
           (hsPkgs.bytestring)
           (hsPkgs.string-conversions)
-        ];
-      };
+          ];
+        };
       tests = {
         "telegram-api-test" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

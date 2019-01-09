@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hfsevents";
-        version = "0.1";
-      };
+      identifier = { name = "hfsevents"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "stegeman@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "File/folder watching for OS X";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,9 +22,9 @@
           (hsPkgs.cereal)
           (hsPkgs.unix)
           (hsPkgs.text)
-        ];
+          ];
         libs = [ (pkgs."pthread") ];
         frameworks = [ (pkgs."Cocoa") ];
+        };
       };
-    };
-  }
+    }

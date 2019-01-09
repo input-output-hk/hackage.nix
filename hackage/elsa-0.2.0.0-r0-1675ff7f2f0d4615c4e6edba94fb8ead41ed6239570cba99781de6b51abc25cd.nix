@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "elsa";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "elsa"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "jhala@cs.ucsd.edu";
@@ -22,7 +13,7 @@
       synopsis = "A tiny language for understanding the lambda-calculus";
       description = "elsa is a small proof checker for verifying sequences of\nreductions of lambda-calculus terms. The goal is to help\nstudents build up intuition about lambda-terms, alpha-equivalence,\nbeta-reduction, and in general, the notion of computation\nby substitution.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,17 +27,11 @@
           (hsPkgs.filepath)
           (hsPkgs.dequeue)
           (hsPkgs.json)
-        ];
-      };
-      exes = {
-        "elsa" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.elsa)
           ];
         };
-      };
+      exes = {
+        "elsa" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.elsa) ]; };
+        };
       tests = {
         "test" = {
           depends = [
@@ -56,8 +41,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.elsa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

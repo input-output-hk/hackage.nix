@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-streams";
-        version = "0.8.3.2";
-      };
+      identifier = { name = "http-streams"; version = "0.8.3.2"; };
       license = "BSD-3-Clause";
       copyright = "© 2012-2015 Operational Dynamics Consulting, Pty Ltd and Others";
       maintainer = "Andrew Cowie <andrew@operationaldynamics.com>";
@@ -22,7 +13,7 @@
       synopsis = "An HTTP client using io-streams";
       description = "/Overview/\n\nAn HTTP client, using the Snap Framework's 'io-streams' library to\nhande the streaming IO. The API is optimized for ease of use for the\nrather common case of code needing to query web services and deal with\nthe result.\n\nThe library is exported in a single module; see \"Network.Http.Client\"\nfor full documentation.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,11 +33,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.aeson)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-      };
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        };
       tests = {
         "check" = {
           depends = [
@@ -80,16 +68,16 @@
             (hsPkgs.aeson)
             (hsPkgs.http-common)
             (hsPkgs.http-streams)
-          ];
-        };
+            ];
+          };
         "snippet" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.io-streams)
             (hsPkgs.http-streams)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

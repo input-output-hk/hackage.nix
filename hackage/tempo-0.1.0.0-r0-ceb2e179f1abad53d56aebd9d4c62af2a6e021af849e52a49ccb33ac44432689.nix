@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tempo";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tempo"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Timur Rubeko";
       maintainer = "timur@rubeko.com";
@@ -22,7 +13,7 @@
       synopsis = "Command-line tool to log time-tracking information into JIRA Tempo plugin";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.bytestring)
           (hsPkgs.base64-bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "tempo-git" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.tempo)
             (hsPkgs.mtl)
             (hsPkgs.MissingH)
-          ];
-        };
+            ];
+          };
         "tempo-simple" = {
           depends = [
             (hsPkgs.base)
@@ -57,16 +48,11 @@
             (hsPkgs.time)
             (hsPkgs.mtl)
             (hsPkgs.MissingH)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "tempo-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tempo)
-          ];
+        "tempo-test" = { depends = [ (hsPkgs.base) (hsPkgs.tempo) ]; };
         };
       };
-    };
-  }
+    }

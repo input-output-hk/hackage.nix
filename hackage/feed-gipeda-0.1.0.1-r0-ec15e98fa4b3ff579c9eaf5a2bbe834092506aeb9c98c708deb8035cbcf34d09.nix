@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "feed-gipeda";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "feed-gipeda"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Sebastian Graf";
       maintainer = "sgraf1337@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple project template from stack";
       description = "A service for easy handling of multiple repositories with <https://hackage.haskell.org/package/gipeda gipeda>.\n\nSee @--help@ for usage. Example invocation for benchmarking the whole of the @Pipes@ library:\n\n@\n\$ cat > feed-gipeda.yaml\nrepositories:\n- https:\\/\\/github.com\\/Gabriel439\\/Haskell-Pipes-Library\n^D\n\$ feed-gipeda --config=.\\/feed-gipeda.yaml --deploy-to=.\\/website\n@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.logging)
           (hsPkgs.temporary)
           (hsPkgs.concurrent-extra)
-        ];
-      };
+          ];
+        };
       exes = {
         "feed-gipeda" = {
           depends = [
@@ -62,9 +53,9 @@
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
             (hsPkgs.logging)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -90,8 +81,8 @@
             (hsPkgs.conduit-extra)
             (hsPkgs.text)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

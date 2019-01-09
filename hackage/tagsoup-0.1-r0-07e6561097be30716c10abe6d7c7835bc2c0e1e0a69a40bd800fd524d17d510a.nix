@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "tagsoup";
-        version = "0.1";
-      };
+      identifier = { name = "tagsoup"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,13 +13,8 @@
       synopsis = "Parsing and extracting information from (possibly malformed) HTML documents";
       description = "";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.network) ]; };
+      };
+    }

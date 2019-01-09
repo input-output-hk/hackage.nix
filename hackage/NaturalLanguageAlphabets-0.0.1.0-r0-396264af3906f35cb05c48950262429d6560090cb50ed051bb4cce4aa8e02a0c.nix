@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; };
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "NaturalLanguageAlphabets";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "NaturalLanguageAlphabets"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2014-2015";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -22,7 +13,7 @@
       synopsis = "Alphabet and word representations";
       description = "Provides different encoding for characters and words in natural\nlanguage processing. A character will often be encoded as a\nunicode text string as we deal with multi-symbol characters.\n\nInternal encoding of IMMC symbols are 0-based integers, which\nallows for the use of unboxed containers.\n\nA very simple unigram-based scoring scheme is also provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.vector-th-unbox)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "BenchmarkNLA" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.random)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

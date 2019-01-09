@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      utf8terminal = false;
-      utf8cgi = true;
-    };
+    flags = { utf8terminal = false; utf8cgi = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "PTQ";
-        version = "0.0.4";
-      };
+      identifier = { name = "PTQ"; version = "0.0.4"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Masahiro Sakai <masahiro.sakai AT gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "An implementation of Montague's PTQ.";
       description = "An implementation of Montague's PTQ (Proper Treatment of Quantification). It translates simple plain English sentences into formulas of intentional logic.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ptq" = {
@@ -34,8 +22,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.mtl)
             (hsPkgs.containers)
-          ] ++ pkgs.lib.optional (flags.utf8terminal) (hsPkgs.utf8-string);
-        };
+            ] ++ (pkgs.lib).optional (flags.utf8terminal) (hsPkgs.utf8-string);
+          };
         "ptq.cgi" = {
           depends = [
             (hsPkgs.base)
@@ -43,8 +31,8 @@
             (hsPkgs.mtl)
             (hsPkgs.containers)
             (hsPkgs.network)
-          ] ++ pkgs.lib.optional (flags.utf8cgi) (hsPkgs.utf8-string);
+            ] ++ (pkgs.lib).optional (flags.utf8cgi) (hsPkgs.utf8-string);
+          };
         };
       };
-    };
-  }
+    }

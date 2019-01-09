@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "uxadt";
-        version = "0.0.13.0";
-      };
+      identifier = { name = "uxadt"; version = "0.0.13.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Andrei Lapets <lapets@bu.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Universal (cross-language) extensible representation for algebraic data type instances.";
       description = "A library that supports a universal, cross-platform embedded representation for algebraic data type (ADT) values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.json)
           (hsPkgs.mtl)
           (hsPkgs.MissingH)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-client";
-        version = "0.3.4";
-      };
+      identifier = { name = "http-client"; version = "0.3.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "An HTTP client engine, intended as a base layer for more user-friendly packages.";
       description = "This codebase has been refactored from http-conduit.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.random)
           (hsPkgs.filepath)
           (hsPkgs.mime-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.zlib)
             (hsPkgs.async)
             (hsPkgs.streaming-commons)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

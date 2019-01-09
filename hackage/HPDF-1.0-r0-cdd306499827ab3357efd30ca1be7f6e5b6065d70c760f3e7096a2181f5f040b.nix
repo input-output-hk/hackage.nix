@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HPDF";
-        version = "1.0";
-      };
+      identifier = { name = "HPDF"; version = "1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2007, alpheccar";
       maintainer = "misc@NOSPAMalpheccar.org";
@@ -22,7 +13,7 @@
       synopsis = "Generation of PDF documents";
       description = "A PDF library allowing to generate multipage PDF documents with outlines, links ...";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.encoding)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

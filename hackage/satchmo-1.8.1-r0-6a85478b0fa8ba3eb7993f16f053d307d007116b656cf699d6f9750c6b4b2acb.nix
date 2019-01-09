@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "satchmo";
-        version = "1.8.1";
-      };
+      identifier = { name = "satchmo"; version = "1.8.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Johannes Waldmann";
@@ -22,7 +13,7 @@
       synopsis = "SAT encoding monad";
       description = "Encoding for boolean and integral constraints into (QBF-)CNF-SAT.\nThe encoder is provided as a State monad (hence the \"mo\" in \"satchmo\").\nThis package contains functions that construct problems,\nto solve them, you need package satchmo-backends.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.array)
           (hsPkgs.bytestring)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

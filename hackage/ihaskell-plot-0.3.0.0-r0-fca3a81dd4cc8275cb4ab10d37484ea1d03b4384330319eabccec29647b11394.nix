@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "ihaskell-plot";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "ihaskell-plot"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Sumit Sahrawat <sumit.sahrawat.apm13@itbhu.ac.in>,\nAndrew Gibiansky <andrew.gibiansky@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "IHaskell display instance for Plot (from plot package)";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.plot)
           (hsPkgs.bytestring)
           (hsPkgs.ihaskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servius";
-        version = "1.2.1.0";
-      };
+      identifier = { name = "servius"; version = "1.2.1.0"; };
       license = "MIT";
       copyright = "2015-2018 Michael Snoyman";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Warp web server with template rendering";
       description = "Please see README.md at https://www.stackage.org/package/servius";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "servius" = {
@@ -37,8 +28,8 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.wai-app-static)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

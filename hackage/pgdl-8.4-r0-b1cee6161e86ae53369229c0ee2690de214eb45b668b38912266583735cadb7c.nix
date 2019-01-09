@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pgdl";
-        version = "8.4";
-      };
+      identifier = { name = "pgdl"; version = "8.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "sifmelcara";
@@ -22,7 +13,7 @@
       synopsis = "simply download a video (or a file) from a webpage and xdg-open it.";
       description = "a terminal user interface program downloads video (or a file) from nginx file index page and xdg-open it.\n(Linux: xdg-open \"video.mp4\", MACOSX: open \"video.mp4\")\n\nClient: Only for Linux and MACOSX.\nServer: Only for nginx's file download page.\n\nThe program will sort the files and folders by date while files in nginx's download page just sort by name.\n\nFor shortcut keys, please visit <https://github.com/sifmelcara/pgdl> or press h in the program.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pgdl" = {
@@ -42,8 +33,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.array)
             (hsPkgs.http-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

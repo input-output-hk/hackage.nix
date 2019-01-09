@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "azure-servicebus";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "azure-servicebus"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Hemanth Kapila (c) 2014-2015";
       maintainer = "saihemanth@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell wrapper over Microsoft Azure ServiceBus REST API";
       description = "This library provides haskell wrappers over Microsoft Azure ServiceBus REST API.\nThe current version provides <http://msdn.microsoft.com/en-us/library/hh780762.aspx Runtime API> for queues.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.http-client)
           (hsPkgs.connection)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

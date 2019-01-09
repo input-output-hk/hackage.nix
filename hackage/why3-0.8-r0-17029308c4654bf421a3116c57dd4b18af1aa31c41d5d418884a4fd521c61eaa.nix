@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "why3";
-        version = "0.8";
-      };
+      identifier = { name = "why3"; version = "0.8"; };
       license = "MIT";
       copyright = "2012, 2014, 2015, Galois Inc.";
       maintainer = "sjw@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell support for the Why3 input format.";
       description = "This package implements the Why3 language parser and printer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,11 +29,11 @@
           (hsPkgs.pretty-show)
           (hsPkgs.profunctors)
           (hsPkgs.text)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       };
-    };
-  }
+    }

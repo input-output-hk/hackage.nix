@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "time-compat";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "time-compat"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dag.odenhall@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Compatibility with old-time for the time package";
       description = "Compatibility with the <old-time> package for the \\\"new\\\"\n<time> package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.old-time)
-          (hsPkgs.time)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.old-time) (hsPkgs.time) ];
+        };
       };
-    };
-  }
+    }

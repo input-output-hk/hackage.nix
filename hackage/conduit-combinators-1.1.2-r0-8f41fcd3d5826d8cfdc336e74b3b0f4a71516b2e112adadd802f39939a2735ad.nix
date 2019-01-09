@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { monotrav1 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conduit-combinators";
-        version = "1.1.2";
-      };
+      identifier = { name = "conduit-combinators"; version = "1.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Commonly used conduit functions, for both chunked and unchunked data";
       description = "See docs and README at <http://www.stackage.org/package/conduit-combinators>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -43,11 +34,11 @@
           (hsPkgs.unix-compat)
           (hsPkgs.vector)
           (hsPkgs.void)
-        ] ++ [
+          ] ++ [
           (hsPkgs.chunked-data)
           (hsPkgs.mono-traversable)
-        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "test" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "openssh-github-keys";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "openssh-github-keys"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "2015 Stack Builders Inc.";
       maintainer = "hackage@stackbuilders.com";
@@ -22,15 +13,11 @@
       synopsis = "Fetch OpenSSH keys from a GitHub team";
       description = "\nThis package fetches the OpenSSH public keys for all users from a\nGitHub team. It is intended to be executed from the AuthorizedKeys\ncommand in the sshd_config file, which then allows users to log in\nusing keys that they have in their Github accounts.\n\nPlease see the\n<https://github.com/stackbuilders/openssh-github-keys GitHub page>\nfor detailed usage information.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.octohat)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.octohat) (hsPkgs.text) ];
+        };
       exes = {
         "openssh-github-keys" = {
           depends = [
@@ -44,9 +31,9 @@
             (hsPkgs.unix)
             (hsPkgs.keyword-args)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "openssh-github-keys-test" = {
           depends = [
@@ -58,8 +45,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.parsec)
             (hsPkgs.keyword-args)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

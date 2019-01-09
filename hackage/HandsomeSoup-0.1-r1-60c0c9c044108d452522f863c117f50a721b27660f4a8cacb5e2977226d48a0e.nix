@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HandsomeSoup";
-        version = "0.1";
-      };
+      identifier = { name = "HandsomeSoup"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bluemangroupie@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Work with HTML more easily in HXT";
       description = "See examples and full readme on the Github page: https:\\/\\/github.com\\/egonSchiele\\/HandsomeSoup";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.MaybeT)
           (hsPkgs.hxt)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

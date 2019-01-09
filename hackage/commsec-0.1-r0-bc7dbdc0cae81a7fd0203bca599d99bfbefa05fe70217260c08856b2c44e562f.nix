@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "commsec";
-        version = "0.1";
-      };
+      identifier = { name = "commsec"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Thomas M. DuBuisson (2013)";
       maintainer = "thomas.dubuisson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Communications security\ndescription:        A basic communications security package that provides confidentiallity, integrity and replay detection.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.cipher-aes128)
           (hsPkgs.bytestring)
           (hsPkgs.crypto-api)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-crud-persist";
-        version = "0.3";
-      };
+      identifier = { name = "yesod-crud-persist"; version = "0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Flexible CRUD subsite usable with Yesod and Persistent.";
       description = "Flexible CRUD subsite usable with Yesod and Persistent.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.esqueleto)
           (hsPkgs.either)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

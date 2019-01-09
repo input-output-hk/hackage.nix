@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cabal-src";
-        version = "0.2.2.1";
-      };
+      identifier = { name = "cabal-src"; version = "0.2.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Alternative install procedure to avoid the diamond dependency issue.";
       description = "Please see the README.md file on Github for more information: <https://github.com/yesodweb/cabal-src/blob/master/README.md>.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal-src-install" = {
@@ -33,8 +24,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "mega-sdist" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +45,8 @@
             (hsPkgs.directory)
             (hsPkgs.conduit-extra)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "QuasiText";
-        version = "0.1.2.4";
-      };
+      identifier = { name = "QuasiText"; version = "0.1.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "eleventynine@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A QuasiQuoter for Text.";
       description = "A QuasiQuoter for interpolating values into Text strings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.haskell-src-meta)
           (hsPkgs.attoparsec)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

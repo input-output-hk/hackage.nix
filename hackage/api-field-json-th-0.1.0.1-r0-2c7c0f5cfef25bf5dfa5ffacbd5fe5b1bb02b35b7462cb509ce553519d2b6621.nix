@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "api-field-json-th";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "api-field-json-th"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Daishi Nakajima";
       maintainer = "nakaji.dayo@example.com";
@@ -22,7 +13,7 @@
       synopsis = "option of aeson's deriveJSON";
       description = "Utils for using aeson's deriveJSON with lens's makeFields";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.lens)
           (hsPkgs.split)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "api-field-json-th-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.aeson)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

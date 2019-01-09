@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { live-test = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "minio-hs";
-        version = "0.2.1";
-      };
+      identifier = { name = "minio-hs"; version = "0.2.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "dev@minio.io";
@@ -22,7 +13,7 @@
       synopsis = "A Minio client library, compatible with S3 like services.";
       description = "minio-hs provides simple APIs to access Minio and Amazon\nS3 compatible object storage server. For more details,\nplease see README.md.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +45,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "minio-hs-live-server-test" = {
           depends = [
@@ -95,8 +86,8 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
             (hsPkgs.xml-conduit)
-          ];
-        };
+            ];
+          };
         "minio-hs-test" = {
           depends = [
             (hsPkgs.base)
@@ -135,8 +126,8 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
             (hsPkgs.xml-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

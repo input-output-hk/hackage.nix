@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "netwire-input-javascript";
-        version = "0.0.2";
-      };
+      identifier = { name = "netwire-input-javascript"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ziocroc@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JavaScript instance of netwire-input";
       description = "GHCJS implementation of netwire-input.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.netwire)
           (hsPkgs.netwire-input)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

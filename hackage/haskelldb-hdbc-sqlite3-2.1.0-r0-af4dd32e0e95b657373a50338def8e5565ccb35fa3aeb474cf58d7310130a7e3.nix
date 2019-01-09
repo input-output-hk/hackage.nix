@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haskelldb-hdbc-sqlite3";
-        version = "2.1.0";
-      };
+      identifier = { name = "haskelldb-hdbc-sqlite3"; version = "2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "haskelldb-users@lists.sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "HaskellDB support for the HDBC SQLite driver.";
       description = "HaskellDB requires this driver if HDBC will be used to connect to a SQLlite3 database.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,10 +23,8 @@
           (hsPkgs.HDBC)
           (hsPkgs.HDBC-sqlite3)
           (hsPkgs.base)
-        ];
+          ];
+        };
+      exes = { "DBDirect-hdbc-sqlite3" = {}; };
       };
-      exes = {
-        "DBDirect-hdbc-sqlite3" = {};
-      };
-    };
-  }
+    }

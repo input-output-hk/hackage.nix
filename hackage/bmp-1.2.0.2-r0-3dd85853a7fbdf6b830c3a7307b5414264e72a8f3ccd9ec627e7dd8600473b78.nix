@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bmp";
-        version = "1.2.0.2";
-      };
+      identifier = { name = "bmp"; version = "1.2.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "benl@ouroborus.net";
@@ -22,14 +13,10 @@
       synopsis = "Read and write uncompressed BMP image files.";
       description = "Read and write uncompressed BMP image files. 100% robust Haskell implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.binary)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.binary) ];
+        };
       };
-    };
-  }
+    }

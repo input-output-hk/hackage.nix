@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conffmt";
-        version = "0.2.3.0";
-      };
+      identifier = { name = "conffmt"; version = "0.2.3.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2016 Pedro Tacla Yamada";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A .conf file formatter";
       description = "\"conffmt\" is a @.conf@ file formatter that serves as an example of @language-conf@";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "conffmt" = {
@@ -33,8 +24,8 @@
             (hsPkgs.megaparsec)
             (hsPkgs.language-conf)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

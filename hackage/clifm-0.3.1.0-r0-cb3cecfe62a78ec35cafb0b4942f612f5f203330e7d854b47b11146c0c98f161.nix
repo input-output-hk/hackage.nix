@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clifm";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "clifm"; version = "0.3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "pasqu4le@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Command Line Interface File Manager";
       description = "A terminal-based File Manager with multiple panes/tabs interface, basic file operations and mouse support.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "clifm" = {
@@ -38,8 +29,8 @@
             (hsPkgs.process)
             (hsPkgs.pointedlist)
             (hsPkgs.byteunits)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ochintin-daicho";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "ochintin-daicho"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "2017 Kadzuya Okamoto";
       maintainer = "arow.okamoto+github@gmail.com";
@@ -22,30 +13,23 @@
       synopsis = "A module to manage payroll books for Japanese companies.";
       description = "A module to manage payroll books for Japanese companies. This enable to export data to tax withholding book, etc...";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bookkeeping)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bookkeeping) (hsPkgs.text) ];
+        };
       tests = {
         "ochintin-daicho-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ochintin-daicho)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.ochintin-daicho) ];
+          };
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)
             (hsPkgs.ochintin-daicho)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

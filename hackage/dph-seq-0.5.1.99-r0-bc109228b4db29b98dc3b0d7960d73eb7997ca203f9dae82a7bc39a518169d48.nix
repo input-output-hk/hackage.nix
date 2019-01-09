@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dph-seq";
-        version = "0.5.1.99";
-      };
+      identifier = { name = "dph-seq"; version = "0.5.1.99"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@cse.unsw.edu.au>";
@@ -22,8 +13,6 @@
       synopsis = "(deprecated)";
       description = "This package used to export DPH array primitives, but they're in dph-prim-seq now.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

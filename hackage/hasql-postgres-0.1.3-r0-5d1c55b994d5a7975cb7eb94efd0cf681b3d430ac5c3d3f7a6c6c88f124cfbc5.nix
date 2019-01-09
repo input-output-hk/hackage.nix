@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasql-postgres";
-        version = "0.1.3";
-      };
+      identifier = { name = "hasql-postgres"; version = "0.1.3"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A \"PostgreSQL\" backend for the \"hasql\" library";
       description = "This library provides a \\\"PostgreSQL\\\" driver for\n<http://hackage.haskell.org/package/hasql the \"hasql\" library>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.mtl-prelude)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "library-tests" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.hasql-postgres)
@@ -101,9 +92,9 @@
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "competition" = {
           depends = [
@@ -126,8 +117,8 @@
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "profiling" = {
           depends = [
             (hsPkgs.postgresql-simple)
@@ -144,8 +135,8 @@
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

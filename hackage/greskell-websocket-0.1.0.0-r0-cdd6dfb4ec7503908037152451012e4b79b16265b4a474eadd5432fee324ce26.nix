@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      server-test = false;
-    };
+    flags = { server-test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "greskell-websocket";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "greskell-websocket"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Toshio Ito <debug.ito@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Haskell client for Gremlin Server using WebSocket serializer";
       description = "Haskell client for [Gremlin Server](http://tinkerpop.apache.org/docs/current/reference/#gremlin-server) using WebSocket serializer.\nSee [README.md](https://github.com/debug-ito/greskell/blob/master/README.md) for detail.\n\nThis package is based on [greskell-core](http://hackage.haskell.org/package/greskell-core),\nand best used with [greskell](http://hackage.haskell.org/package/greskell) package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +31,8 @@
           (hsPkgs.hashtables)
           (hsPkgs.safe-exceptions)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -56,10 +45,10 @@
             (hsPkgs.vector)
             (hsPkgs.greskell-core)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "server-test" = {
-          depends = pkgs.lib.optionals (flags.server-test) [
+          depends = (pkgs.lib).optionals (flags.server-test) [
             (hsPkgs.base)
             (hsPkgs.greskell-websocket)
             (hsPkgs.greskell-core)
@@ -74,8 +63,8 @@
             (hsPkgs.stm)
             (hsPkgs.vector)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

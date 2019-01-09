@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "transient-universe-tls";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "transient-universe-tls"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "agocorona@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "transient with secure communications";
       description = "Secure communications for transient";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.data-default)
           (hsPkgs.network)
           (hsPkgs.x509-store)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

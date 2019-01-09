@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { werror = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "beam-sqlite";
-        version = "0.3.2.2";
-      };
+      identifier = { name = "beam-sqlite"; version = "0.3.2.2"; };
       license = "MIT";
       copyright = "(C) 2017-2018 Travis Athougies";
       maintainer = "travis@athougies.net";
@@ -22,7 +13,7 @@
       synopsis = "Beam driver for SQLite";
       description = "Beam driver for the <https://sqlite.org/ SQLite> embedded database.\nSee <http://tathougies.github.io/beam/user-guide/backends/beam-sqlite/ here>\nfor more information";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -41,7 +32,7 @@
           (hsPkgs.network-uri)
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
-        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32)) ++ pkgs.lib.optional (system.isFreebsd || system.isNetbsd || system.isOsx || system.isLinux || system.isSolaris) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32)) ++ (pkgs.lib).optional (system.isFreebsd || system.isNetbsd || system.isOsx || system.isLinux || system.isSolaris) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

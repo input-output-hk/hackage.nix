@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "list-zipper";
-        version = "0.0.8";
-      };
+      identifier = { name = "list-zipper"; version = "0.0.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
@@ -22,7 +13,7 @@
       synopsis = "A list zipper";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nA list zipper.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.tasty-hedgehog)
             (hsPkgs.transformers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clit";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "clit"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Vanessa McHale";
       maintainer = "tmchale@wisc.edu";
@@ -22,7 +13,7 @@
       synopsis = "Post tweets from stdin";
       description = "a Command Line Interface Tweeter";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +28,8 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.lens)
           (hsPkgs.data-default)
-        ];
-      };
-      exes = {
-        "tweet" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.clit)
           ];
         };
+      exes = { "tweet" = { depends = [ (hsPkgs.base) (hsPkgs.clit) ]; }; };
       };
-    };
-  }
+    }

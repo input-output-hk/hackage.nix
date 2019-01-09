@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mackerel-client";
-        version = "0.0.5";
-      };
+      identifier = { name = "mackerel-client"; version = "0.0.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "itchyny <itchyny@hatena.ne.jp>";
@@ -22,7 +13,7 @@
       synopsis = "An API client library for Mackerel";
       description = "This library provides bindings to Mackerel APIs.\n\nThe official site of Mackerel: <https://mackerel.io/>.\nThe reference of Mackerel API: <https://mackerel.io/api-docs/>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.data-default)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.data-default)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

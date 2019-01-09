@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "algebraic";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "algebraic"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 Wojciech Danilo";
       maintainer = "Wojciech Danilo <wojciech.danilo@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "General linear algebra structures.";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.accelerate)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.accelerate) ]; };
+      };
+    }

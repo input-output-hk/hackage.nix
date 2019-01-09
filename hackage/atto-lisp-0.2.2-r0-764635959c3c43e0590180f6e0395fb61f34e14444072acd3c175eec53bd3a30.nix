@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "atto-lisp";
-        version = "0.2.2";
-      };
+      identifier = { name = "atto-lisp"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas Schilling <nominolo@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Efficient parsing and serialisation of S-Expressions.";
       description = "Efficient parsing and serialisation of S-Expressions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.containers)
           (hsPkgs.deepseq)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "localization";
-        version = "1.0.0.20180213";
-      };
+      identifier = { name = "localization"; version = "1.0.0.20180213"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Julien Moutinho <julm+localization@autogeree.net>";
@@ -22,7 +13,7 @@
       synopsis = "Library for localization (l10n)";
       description = "Use advanced type-level code to check existence of localizations\n(usually a textual rendition into some human languages).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

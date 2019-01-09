@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm = false;
-      opt = true;
-    };
+    flags = { llvm = false; opt = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lol-apps";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "lol-apps"; version = "0.2.0.1"; };
       license = "GPL-2.0-only";
       copyright = "Eric Crockett, Chris Peikert";
       maintainer = "Eric Crockett <ecrockett0@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Lattice-based cryptographic applications using <https://hackage.haskell.org/package/lol lol>.";
       description = "This library contains example cryptographic applications built using\n<https://hackage.haskell.org/package/lol lol>,\na general-purpose library for ring-based lattice cryptography.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +28,8 @@
           (hsPkgs.protocol-buffers-descriptor)
           (hsPkgs.singletons)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       exes = {
         "homomprf" = {
           depends = [
@@ -58,8 +46,8 @@
             (hsPkgs.numeric-prelude)
             (hsPkgs.singletons)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "khprf" = {
           depends = [
             (hsPkgs.arithmoi)
@@ -71,8 +59,8 @@
             (hsPkgs.MonadRandom)
             (hsPkgs.mtl)
             (hsPkgs.numeric-prelude)
-          ];
-        };
+            ];
+          };
         "symmshe" = {
           depends = [
             (hsPkgs.arithmoi)
@@ -82,9 +70,9 @@
             (hsPkgs.lol-cpp)
             (hsPkgs.MonadRandom)
             (hsPkgs.numeric-prelude)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-apps" = {
           depends = [
@@ -107,9 +95,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-apps" = {
           depends = [
@@ -131,8 +119,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vector)
             (hsPkgs.repa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

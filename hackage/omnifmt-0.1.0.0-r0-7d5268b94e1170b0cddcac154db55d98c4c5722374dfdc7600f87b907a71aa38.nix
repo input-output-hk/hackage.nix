@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "omnifmt";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "omnifmt"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "public@hjwylde.com";
@@ -22,7 +13,7 @@
       synopsis = "A pretty-printer wrapper to faciliate ease of formatting during development.";
       description = "omnifmt automatically formats code via external pretty-printers.\nThe idea was taken from gofmt, just with a bit of expansion to more languages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "omnifmt" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.temporary)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

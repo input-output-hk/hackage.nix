@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demo = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-rpc-client";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "json-rpc-client"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Kristen Kozak <grayjay@wordroute.com>";
@@ -22,7 +13,7 @@
       synopsis = "JSON-RPC 2.0 on the client side.";
       description = "Functions for creating a JSON-RPC 2.0 client.  See\n<http://www.jsonrpc.org/specification>. This library supports\nbatch requests and notifications, as well as single method\ncalls.  It also provides a function for creating corresponding\nserver-side methods with the package\n<http://hackage.haskell.org/package/json-rpc-server json-rpc-server>.\nThis library does not handle transport, so a function for\ncommunicating with the server must be provided.\nThe demo folder contains an example client and server that can\nbe compiled with the demo flag.  See \"Network.JsonRpc.Client\"\nfor details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +25,11 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "demo-server" = {
-          depends = pkgs.lib.optionals (flags.demo) [
+          depends = (pkgs.lib).optionals (flags.demo) [
             (hsPkgs.base)
             (hsPkgs.json-rpc-client)
             (hsPkgs.json-rpc-server)
@@ -46,10 +37,10 @@
             (hsPkgs.bytestring)
             (hsPkgs.mtl)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "demo-client" = {
-          depends = pkgs.lib.optionals (flags.demo) [
+          depends = (pkgs.lib).optionals (flags.demo) [
             (hsPkgs.base)
             (hsPkgs.json-rpc-client)
             (hsPkgs.json-rpc-server)
@@ -58,9 +49,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.mtl)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

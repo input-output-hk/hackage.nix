@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lexer-applicative";
-        version = "2.0";
-      };
+      identifier = { name = "lexer-applicative"; version = "2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Roman Cheplyaka <roma@ro-che.info>";
@@ -22,15 +13,11 @@
       synopsis = "Simple lexer based on applicative regular expressions";
       description = "Simple lexer based on applicative regular expressions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.srcloc)
-          (hsPkgs.regex-applicative)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.srcloc) (hsPkgs.regex-applicative) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.lexer-applicative)
             (hsPkgs.srcloc)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

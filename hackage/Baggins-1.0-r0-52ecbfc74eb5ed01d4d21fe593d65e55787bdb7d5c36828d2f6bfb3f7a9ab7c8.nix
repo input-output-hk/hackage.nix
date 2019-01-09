@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Baggins";
-        version = "1.0";
-      };
+      identifier = { name = "Baggins"; version = "1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "pierre-etienne.meunier@lif.univ-mrs.fr";
@@ -22,7 +13,7 @@
       synopsis = "Tools for self-assembly";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.cairo)
           (hsPkgs.containers)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

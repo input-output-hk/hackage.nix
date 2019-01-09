@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "url-generic";
-        version = "0.1";
-      };
+      identifier = { name = "url-generic"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2010 Chris Done";
       maintainer = "none";
@@ -22,14 +13,8 @@
       synopsis = "Parse/format generic key/value URLs from record data types.";
       description = "Parse\\/format generic key\\/value URLs from record data types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.syb)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.syb) (hsPkgs.mtl) ]; };
+      };
+    }

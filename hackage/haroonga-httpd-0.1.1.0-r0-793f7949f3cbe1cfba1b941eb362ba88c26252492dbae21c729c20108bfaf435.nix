@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haroonga-httpd";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "haroonga-httpd"; version = "0.1.1.0"; };
       license = "LGPL-2.1-only";
       copyright = "";
       maintainer = "cosmo0920.wp@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Yet another Groonga http server.";
       description = "Yet another Groonga http server written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haroonga-httpd" = {
@@ -38,8 +29,8 @@
             (hsPkgs.wai-extra)
             (hsPkgs.optparse-applicative)
             (hsPkgs.haroonga)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

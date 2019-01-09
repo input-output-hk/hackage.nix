@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "flight-kml";
-        version = "1.0.1";
-      };
+      identifier = { name = "flight-kml"; version = "1.0.1"; };
       license = "MPL-2.0";
       copyright = "© 2017-2018 Phil de Joux, © 2017-2018 Block Scope Limited";
       maintainer = "phil.dejoux@blockscope.com";
@@ -22,7 +13,7 @@
       synopsis = "Parsing of pilot tracklogs dumped as KML.";
       description = "Provides parsing of dumped tracklogs. In hang gliding and paragliding competitions when FS and GpsDump are paired in competition mode a pilot's tracklog is dumped as KML. This is exlained in detail on the FS wiki.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.siggy-chardust)
           (hsPkgs.split)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.split)
             (hsPkgs.template-haskell)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "parse" = {
           depends = [
             (hsPkgs.aeson)
@@ -73,8 +64,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

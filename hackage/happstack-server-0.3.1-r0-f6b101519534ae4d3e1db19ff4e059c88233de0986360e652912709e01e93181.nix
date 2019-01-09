@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      base4 = true;
-      tests = false;
-    };
+    flags = { base4 = true; tests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-server";
-        version = "0.3.1";
-      };
+      identifier = { name = "happstack-server"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Happstack team <happs@googlegroups.com>";
@@ -25,7 +13,7 @@
       synopsis = "Web related tools and services.";
       description = "Web framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -51,15 +39,11 @@
           (hsPkgs.utf8-string)
           (hsPkgs.xhtml)
           (hsPkgs.zlib)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optionals (flags.base4) [
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optionals (flags.base4) [
           (hsPkgs.base)
           (hsPkgs.syb)
-        ]) ++ pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
-      };
-      exes = {
-        "happstack-server-tests" = {
-          depends = [ (hsPkgs.HUnit) ];
+          ]) ++ (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
         };
+      exes = { "happstack-server-tests" = { depends = [ (hsPkgs.HUnit) ]; }; };
       };
-    };
-  }
+    }

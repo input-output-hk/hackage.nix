@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "strict-concurrency";
-        version = "0.1";
-      };
+      identifier = { name = "strict-concurrency"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007 Don Stewart";
       maintainer = "Don Stewart <dons@galois.com>";
@@ -22,10 +13,6 @@
       synopsis = "Strict concurrency abstractions";
       description = "This package provides strict versions of some standard Haskell\nconcurrency abstractions (MVars,Chans), which provide control\nover where evaluation takes place not offered by the default\nlazy types. This may be useful for deciding when and where\nevaluation occurs, leading to improved time or space use,\ndepending on the circumstances.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

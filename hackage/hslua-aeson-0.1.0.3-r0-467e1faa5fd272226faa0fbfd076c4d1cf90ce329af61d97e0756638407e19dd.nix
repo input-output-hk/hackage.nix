@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hslua-aeson";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "hslua-aeson"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "© 2017 Albert Krewinkel";
       maintainer = "tarleb+hslua@zeitkraut.de";
@@ -22,7 +13,7 @@
       synopsis = "Glue between aeson and hslua";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "hslua-aeson-test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

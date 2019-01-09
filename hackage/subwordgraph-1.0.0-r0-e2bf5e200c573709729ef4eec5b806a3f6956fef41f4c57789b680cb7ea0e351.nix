@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "subwordgraph";
-        version = "1.0.0";
-      };
+      identifier = { name = "subwordgraph"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "adambak1992@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Subword graph implementation";
       description = "An implementation of a classic Subword Graph (aka DAWG) data structure for solving string related problems on a single word.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.mtl)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.mtl) ];
+        };
       tests = {
         "test-subwordgraph" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.containers)
             (hsPkgs.mtl)
             (hsPkgs.subwordgraph)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

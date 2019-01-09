@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      comparison-bench = false;
-      small-bench = false;
-    };
+    flags = { comparison-bench = false; small-bench = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "store";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "store"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2016 FP Complete";
       maintainer = "Michael Sloan <sloan@fpcomplete.com>";
@@ -25,7 +13,7 @@
       synopsis = "Fast binary serialization";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -64,8 +52,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.void)
           (hsPkgs.th-orphans)
-        ];
-      };
+          ];
+        };
       tests = {
         "store-test" = {
           depends = [
@@ -105,9 +93,9 @@
             (hsPkgs.void)
             (hsPkgs.th-orphans)
             (hsPkgs.store)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "store-bench" = {
           depends = [
@@ -148,13 +136,13 @@
             (hsPkgs.th-orphans)
             (hsPkgs.criterion)
             (hsPkgs.store)
-          ] ++ pkgs.lib.optionals (flags.comparison-bench) [
+            ] ++ (pkgs.lib).optionals (flags.comparison-bench) [
             (hsPkgs.cereal)
             (hsPkgs.binary)
             (hsPkgs.vector-binary-instances)
             (hsPkgs.cereal-vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

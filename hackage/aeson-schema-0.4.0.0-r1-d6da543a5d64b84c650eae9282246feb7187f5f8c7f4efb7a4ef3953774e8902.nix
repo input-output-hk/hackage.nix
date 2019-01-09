@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aeson-schema";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "aeson-schema"; version = "0.4.0.0"; };
       license = "MIT";
       copyright = "(c) 2012-2015 Tim Baumann\n(c) 2015 Mateusz Kowalczyk";
       maintainer = "Mateusz Kowalczyk <fuuzetsu@fuuzetsu.co.uk>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell JSON schema validator and parser generator";
       description = "This library provides validation of JSON values against schemata. Given a schema, it can also produce data types corresponding to the schema and a parser.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.regex-compat)
           (hsPkgs.regex-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.regex-compat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

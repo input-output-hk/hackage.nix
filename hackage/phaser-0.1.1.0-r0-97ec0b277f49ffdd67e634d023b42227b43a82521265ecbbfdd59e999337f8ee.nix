@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "phaser";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "phaser"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "quick.dudley@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Incremental multiple pass parser library.";
       description = "A combinator library for incremental multiple pass parsers.\nMostly inspired by the Text.ParserCombinators.ReadP module in the Base package\nand the conduit package. It has similar capabilities to ReadP as well as\nmore detailed error reporting and the capacity for multiple passes (such as\nlexing and parsing)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.bytestring) ];
+        };
       };
-    };
-  }
+    }

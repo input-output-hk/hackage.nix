@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "acme-everything";
-        version = "2015.4.15.1";
-      };
+      identifier = { name = "acme-everything"; version = "2015.4.15.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky(λ)gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Everything.";
       description = "Install everything.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -7999,7 +7990,7 @@
           (hsPkgs.zot)
           (hsPkgs.zsh-battery)
           (hsPkgs.ztail)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

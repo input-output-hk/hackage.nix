@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "gmndl";
-        version = "0.2";
-      };
+      identifier = { name = "gmndl"; version = "0.2"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "claudiusmaximus@goto10.org";
@@ -22,7 +13,7 @@
       synopsis = "Mandelbrot Set explorer using GTK";
       description = "A Mandelbrot Set explorer, with (currently) only one\ncontrol (left-click to center and zoom in).  Multple\nrender threads use higher precision maths at higher\nzoom levels.  Suggested usage:\n\n@gmndl +RTS -N -qa -RTS --width=640 --height=480@";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "gmndl" = {
@@ -35,8 +26,8 @@
             (hsPkgs.OpenGL)
             (hsPkgs.priority-queue)
             (hsPkgs.qd)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

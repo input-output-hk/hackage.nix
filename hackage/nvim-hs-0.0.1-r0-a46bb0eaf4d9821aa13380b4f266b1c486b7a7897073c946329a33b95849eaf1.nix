@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nvim-hs";
-        version = "0.0.1";
-      };
+      identifier = { name = "nvim-hs"; version = "0.0.1"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) Sebastian Witte";
       maintainer = "woozletoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell plugin backend for neovim";
       description = "This package provides a plugin provider for neovim. It allows you to write\nplugins for one of the great editors of our time in the best programming\nlanguage of our time! ;-)\n\nYou should find all the documentation you need inside the \"Neovim\" module. All\nother modules are considered internal, so don't be annoyed if using things\nfrom there may break your code.\n\nIf you spot any errors or if you have great ideas, feel free to open an issue\non github.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,17 +46,13 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.utf8-string)
-        ];
-      };
-      exes = {
-        "nvim-hs" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.nvim-hs)
-            (hsPkgs.data-default)
           ];
         };
-      };
+      exes = {
+        "nvim-hs" = {
+          depends = [ (hsPkgs.base) (hsPkgs.nvim-hs) (hsPkgs.data-default) ];
+          };
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -101,8 +88,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

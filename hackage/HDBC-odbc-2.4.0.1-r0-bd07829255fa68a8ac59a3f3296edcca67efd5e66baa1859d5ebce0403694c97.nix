@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildtests = false;
-      buildstresstest = false;
-    };
+    flags = { buildtests = false; buildstresstest = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HDBC-odbc";
-        version = "2.4.0.1";
-      };
+      identifier = { name = "HDBC-odbc"; version = "2.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2005-2011 John Goerzen";
       maintainer = "Anton Dessiatov <anton.dessiatov@gmail.com>\nNicolas Wu <nicolas.wu@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "ODBC driver for HDBC";
       description = "This package provides an ODBC database backend for HDBC.\nIt is cross-platform and supports unixODBC on Unix/Linux/POSIX platforms\nand Microsoft ODBC on Windows.  It is also the preferred way to access\nMySQL databases from Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,14 +23,14 @@
           (hsPkgs.time)
           (hsPkgs.utf8-string)
           (hsPkgs.bytestring)
-        ];
+          ];
         libs = if system.isWindows || system.isWindows
           then [ (pkgs."odbc32") ]
           else [ (pkgs."odbc") ];
-      };
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.testpack)
@@ -51,20 +39,20 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
             (hsPkgs.convertible)
-          ];
+            ];
           libs = if system.isWindows || system.isWindows
             then [ (pkgs."odbc32") ]
             else [ (pkgs."odbc") ];
-        };
+          };
         "stresstest" = {
-          depends = pkgs.lib.optionals (flags.buildstresstest) [
+          depends = (pkgs.lib).optionals (flags.buildstresstest) [
             (hsPkgs.base)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-odbc)
             (hsPkgs.random)
             (hsPkgs.resource-pool)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

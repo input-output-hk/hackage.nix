@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-      modifyfilter = true;
-    };
+    flags = { buildexamples = false; modifyfilter = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "alsa-seq";
-        version = "0.6.0.3";
-      };
+      identifier = { name = "alsa-seq"; version = "0.6.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert, Iavor S. Diatchki, Dylan Simon, Henning Thielemann";
       maintainer = "Henning Thielemann <alsa@henning-thielemann.de>";
@@ -25,7 +13,7 @@
       synopsis = "Binding to the ALSA Library API (MIDI sequencer).";
       description = "This package provides access to ALSA sequencer (MIDI support).\nFor audio support see alsa-pcm.\nIncluded are some simple example programs.\nFor more example programs including a GUI, see the alsa-gui programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,11 +27,9 @@
           (hsPkgs.poll)
           (hsPkgs.extensible-exceptions)
           (hsPkgs.base)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.alsa)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.alsa) ];
+        };
       exes = {
         "alsa-seq-dump" = {
           depends = [
@@ -55,8 +41,8 @@
             (hsPkgs.data-accessor)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-seq-send-note" = {
           depends = [
             (hsPkgs.alsa-core)
@@ -67,8 +53,8 @@
             (hsPkgs.data-accessor)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-seq-broadcast" = {
           depends = [
             (hsPkgs.alsa-core)
@@ -79,8 +65,8 @@
             (hsPkgs.data-accessor)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-seq-list-ports" = {
           depends = [
             (hsPkgs.alsa-core)
@@ -91,8 +77,8 @@
             (hsPkgs.data-accessor)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-seq-melody" = {
           depends = [
             (hsPkgs.alsa-core)
@@ -103,8 +89,8 @@
             (hsPkgs.data-accessor)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-seq-list-subscribers" = {
           depends = [
             (hsPkgs.alsa-core)
@@ -115,8 +101,8 @@
             (hsPkgs.data-accessor)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-seq-beat" = {
           depends = [
             (hsPkgs.alsa-core)
@@ -127,8 +113,8 @@
             (hsPkgs.data-accessor)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-seq-sysex" = {
           depends = [
             (hsPkgs.alsa-core)
@@ -139,8 +125,8 @@
             (hsPkgs.data-accessor)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

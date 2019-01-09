@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hsshellscript";
-        version = "3.3.0";
-      };
+      identifier = { name = "hsshellscript"; version = "3.3.0"; };
       license = "LicenseRef-LGPL";
       copyright = "(c)2004-2011 by Volker Wysk";
       maintainer = "hsss@volker-wysk.de";
@@ -22,7 +13,7 @@
       synopsis = "Haskell for Unix shell scripting tasks";
       description = "A Haskell-library for tasks which are usually done in\nshell scripts. This includes parsing command line\narguments; dealing with paths; some commands for dealing\nwith files; calling external programs and subroutines as\nseparate processes; pipes and redirection of input and\noutput; and error handling.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,10 +22,8 @@
           (hsPkgs.directory)
           (hsPkgs.parsec)
           (hsPkgs.random)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

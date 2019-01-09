@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "rainbox";
-        version = "0.14.0.0";
-      };
+      identifier = { name = "rainbox"; version = "0.14.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2014-2015 Omari Norman";
       maintainer = "omari@smileystation.com";
@@ -22,7 +13,7 @@
       synopsis = "Two-dimensional box pretty printing, with colors";
       description = "Prints boxes in two dimensions, with colors.  Boxes are\nautomatically padded with necessary whitespace.\n\nFor more information, please see the Haddock documentation and\n\n<http://www.github.com/massysett/rainbox>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "rainbox-properties" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "rainbox-visual" = {
           depends = [
             (hsPkgs.base)
@@ -56,8 +47,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "ghc-paths";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "ghc-paths"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) Simon Marlow";
       maintainer = "Simon Marlow <marlowsd@gmail.com>";
@@ -22,10 +13,6 @@
       synopsis = "Knowledge of GHC's installation directories";
       description = "Knowledge of GHC's installation directories";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

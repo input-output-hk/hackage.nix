@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      use-ioref = false;
-      build-wikipedia-benchmark = false;
-    };
+    flags = { use-ioref = false; build-wikipedia-benchmark = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "traildb";
-        version = "0.1.4.1";
-      };
+      identifier = { name = "traildb"; version = "0.1.4.1"; };
       license = "MIT";
       copyright = "AdRoll Inc (c) 2016-2017";
       maintainer = "mikko.juola@adroll.com";
@@ -25,7 +13,7 @@
       synopsis = "TrailDB bindings for Haskell";
       description = "Check out README.md for information on these bindings.\n\nTrailDB project home page is at traildb.io";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,21 +29,14 @@
           (hsPkgs.transformers)
           (hsPkgs.unix)
           (hsPkgs.vector)
-        ];
-        libs = [
-          (pkgs."traildb")
-          (pkgs."Judy")
-        ];
-      };
+          ];
+        libs = [ (pkgs."traildb") (pkgs."Judy") ];
+        };
       exes = {
         "traildb-wikipedia-benchmark" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.traildb)
-            (hsPkgs.vector)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.traildb) (hsPkgs.vector) ];
+          };
         };
-      };
       benchmarks = {
         "bench-traildb" = {
           depends = [
@@ -67,8 +48,8 @@
             (hsPkgs.directory)
             (hsPkgs.random)
             (hsPkgs.traildb)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

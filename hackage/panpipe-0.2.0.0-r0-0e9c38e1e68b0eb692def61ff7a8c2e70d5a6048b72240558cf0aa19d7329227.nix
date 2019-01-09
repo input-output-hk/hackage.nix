@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "panpipe";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "panpipe"; version = "0.2.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "chriswarbo@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pandoc filter to execute code blocks";
       description = "Executes pandoc code blocks annotated with 'pipe'";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,9 @@
           (hsPkgs.pandoc)
           (hsPkgs.pandoc-types)
           (hsPkgs.temporary)
-        ];
-      };
-      exes = {
-        "panpipe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.panpipe)
           ];
         };
-      };
+      exes = { "panpipe" = { depends = [ (hsPkgs.base) (hsPkgs.panpipe) ]; }; };
       tests = {
         "test" = {
           depends = [
@@ -51,8 +35,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.pandoc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

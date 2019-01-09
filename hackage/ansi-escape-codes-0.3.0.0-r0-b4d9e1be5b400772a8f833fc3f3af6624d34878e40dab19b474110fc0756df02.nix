@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ansi-escape-codes";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "ansi-escape-codes"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "joegesualdo@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Haskell package to generate ANSI escape codes for styling strings in the terminal.";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

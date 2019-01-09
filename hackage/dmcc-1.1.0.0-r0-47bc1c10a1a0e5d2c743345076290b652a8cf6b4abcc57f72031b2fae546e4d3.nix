@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "dmcc";
-        version = "1.1.0.0";
-      };
+      identifier = { name = "dmcc"; version = "1.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dima@dzhus.org";
@@ -22,7 +13,7 @@
       synopsis = "AVAYA DMCC API bindings and WebSockets server for AVAYA";
       description = "Partial implementation of CSTA Phase III XML Protocol (ECMA-323) with AVAYA (DMCC 6.3) extensions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.unliftio)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-hamlet)
-        ];
-      };
+          ];
+        };
       exes = {
         "dmcc-ws" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.unix)
             (hsPkgs.unliftio)
             (hsPkgs.websockets)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

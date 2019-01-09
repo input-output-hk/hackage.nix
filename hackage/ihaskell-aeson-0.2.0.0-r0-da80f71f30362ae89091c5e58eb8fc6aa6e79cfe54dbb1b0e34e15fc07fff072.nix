@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "ihaskell-aeson";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "ihaskell-aeson"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.gibiansky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "IHaskell display instances for Aeson";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.aeson-pretty)
           (hsPkgs.chunked-data)
           (hsPkgs.ihaskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

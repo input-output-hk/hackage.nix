@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "WebBits";
-        version = "2.1";
-      };
+      identifier = { name = "WebBits"; version = "2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2007-2011 Brown University and Claudiu Saftoiu";
       maintainer = "Arjun Guha <arjun@cs.brown.edu>";
@@ -22,7 +13,7 @@
       synopsis = "JavaScript analysis tools";
       description = "WebBits is a collection of libraries for working with JavaScript.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.pretty)
           (hsPkgs.containers)
           (hsPkgs.syb)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

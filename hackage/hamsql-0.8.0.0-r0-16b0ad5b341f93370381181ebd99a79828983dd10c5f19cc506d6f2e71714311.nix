@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hamsql";
-        version = "0.8.0.0";
-      };
+      identifier = { name = "hamsql"; version = "0.8.0.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2014-2016 Michael Herold et al.";
       maintainer = "Michael Herold <quabla@hemio.de>";
@@ -22,7 +13,7 @@
       synopsis = "HamSql";
       description = "Interpreter for SQL-structure definitions in Yaml (YamSql)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,23 +33,11 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
-      };
-      exes = {
-        "hamsql" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hamsql)
           ];
         };
-      };
+      exes = { "hamsql" = { depends = [ (hsPkgs.base) (hsPkgs.hamsql) ]; }; };
       tests = {
-        "hamsql-tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hamsql)
-          ];
+        "hamsql-tests" = { depends = [ (hsPkgs.base) (hsPkgs.hamsql) ]; };
         };
       };
-    };
-  }
+    }

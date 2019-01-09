@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monad-par-extras";
-        version = "0.3.3";
-      };
+      identifier = { name = "monad-par-extras"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Ryan Newton 2012";
       maintainer = "Ryan Newton <rrnewton@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Combinators and extra features for Par monads";
       description = "The modules below provide additional\ndata structures, and other added capabilities\nlayered on top of the 'Par' monad.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.random)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "HasBigDecimal";
-        version = "0.1.1";
-      };
+      identifier = { name = "HasBigDecimal"; version = "0.1.1"; };
       license = "Apache-2.0";
       copyright = "2018 Thomas Mahler";
       maintainer = "thma@apache.org";
@@ -22,11 +13,9 @@
       synopsis = "A library for arbitrary precision decimal numbers.";
       description = "A native Haskell implementation of arbitrary precicion decimal numbers, based on Haskell Integers. Inspired by Java BigDecimals";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "HasBigDecimal-test" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.HasBigDecimal)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

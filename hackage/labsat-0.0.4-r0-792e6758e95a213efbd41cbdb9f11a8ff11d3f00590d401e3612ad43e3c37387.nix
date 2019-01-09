@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "labsat";
-        version = "0.0.4";
-      };
+      identifier = { name = "labsat"; version = "0.0.4"; };
       license = "MIT";
       copyright = "Copyright (C) 2015-2018 Swift Navigation, Inc.";
       maintainer = "Swift Navigation <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "LabSat TCP Interface Wrapper";
       description = "labsat provides a wrapper around the LabSat3 TCP interface";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.scientific)
           (hsPkgs.preamble)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "labsat" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.preamble)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.preamble)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mxnet-dataiter";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mxnet-dataiter"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Jiasen Wu";
       maintainer = "jiasenwu@hotmail.com";
@@ -22,7 +13,7 @@
       synopsis = "mxnet dataiters";
       description = "Providing the mxnet dataiters as Stream or Conduit";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.conduit-combinators)
           (hsPkgs.mxnet)
           (hsPkgs.mxnet-nn)
-        ];
-      };
+          ];
+        };
       tests = {
         "streaming" = {
           depends = [
@@ -43,16 +34,16 @@
             (hsPkgs.streaming)
             (hsPkgs.mxnet)
             (hsPkgs.mxnet-dataiter)
-          ];
-        };
+            ];
+          };
         "conduit" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.mxnet)
             (hsPkgs.mxnet-dataiter)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

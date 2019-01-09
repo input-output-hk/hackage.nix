@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "generics-eot";
-        version = "0.2";
-      };
+      identifier = { name = "generics-eot"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "soenkehahn@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "A library for generic programming that aims to be easy to understand";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "spec" = {
           depends = [
@@ -35,8 +24,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.interpolate)
             (hsPkgs.doctest)
-          ];
-        };
+            ];
+          };
         "quickcheck" = {
           depends = [
             (hsPkgs.base)
@@ -47,8 +36,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

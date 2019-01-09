@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "generic-aeson";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "generic-aeson"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Derivation of Aeson instances using GHC generics.";
       description = "Derivation of Aeson instances using GHC generics.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

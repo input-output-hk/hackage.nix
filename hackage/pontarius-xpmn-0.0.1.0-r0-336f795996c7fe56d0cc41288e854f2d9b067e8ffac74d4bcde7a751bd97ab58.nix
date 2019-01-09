@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pontarius-xpmn";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "pontarius-xpmn"; version = "0.0.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright © Jon Kristensen, 2010-2011";
       maintainer = "jon.kristensen@pontarius.org";
@@ -22,7 +13,7 @@
       synopsis = "Extended Personal Media Network (XPMN) library";
       description = "Manages Extended Personal Media Network (XPMN) devices.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.xml-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

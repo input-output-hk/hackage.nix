@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "genesis-test";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "genesis-test"; version = "0.1.0.0"; };
       license = "ISC";
       copyright = "2017 CJ Affiliate by Conversant";
       maintainer = "Alexis King <lexi.lambda@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Opinionated bootstrapping for Haskell web services.";
       description = "Opinionated bootstrapping for Haskell web services.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.persistent-postgresql)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "genesis-test-test-suite" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.monad-persist)
             (hsPkgs.persistent-template)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

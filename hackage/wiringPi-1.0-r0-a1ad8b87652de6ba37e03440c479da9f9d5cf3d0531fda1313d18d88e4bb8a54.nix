@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wiringPi";
-        version = "1.0";
-      };
+      identifier = { name = "wiringPi"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "© Patrick Pelletier, 2017";
       maintainer = "code@funwithsoftware.org";
@@ -22,46 +13,21 @@
       synopsis = "Access GPIO pins on Raspberry Pi via wiringPi library";
       description = "This is a Haskell binding to the <http://wiringpi.com/ wiringPi library>,\nwhich allows you to interface with the GPIO pins on the\n<https://www.raspberrypi.org/ Raspberry Pi>.\nUnlike some other solutions for using the Raspberry Pi's GPIO pins,\nwiringPi provides access to more advanced features, such as\nenabling the internal pull-up or pull-down resistors.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        libs = pkgs.lib.optional (!system.isX86_64) (pkgs."wiringPi");
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+        libs = (pkgs.lib).optional (!system.isX86_64) (pkgs."wiringPi");
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       exes = {
-        "pwm-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wiringPi)
-          ];
-        };
-        "output-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wiringPi)
-          ];
-        };
+        "pwm-example" = { depends = [ (hsPkgs.base) (hsPkgs.wiringPi) ]; };
+        "output-example" = { depends = [ (hsPkgs.base) (hsPkgs.wiringPi) ]; };
         "write-byte-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wiringPi)
-          ];
-        };
-        "turn-off" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wiringPi)
-          ];
-        };
-        "wiringPi-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wiringPi)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.wiringPi) ];
+          };
+        "turn-off" = { depends = [ (hsPkgs.base) (hsPkgs.wiringPi) ]; };
+        "wiringPi-test" = { depends = [ (hsPkgs.base) (hsPkgs.wiringPi) ]; };
         };
       };
-    };
-  }
+    }

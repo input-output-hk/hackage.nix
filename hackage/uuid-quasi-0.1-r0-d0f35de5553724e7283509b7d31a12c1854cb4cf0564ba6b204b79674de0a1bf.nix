@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "uuid-quasi";
-        version = "0.1";
-      };
+      identifier = { name = "uuid-quasi"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Lars Petersen";
       maintainer = "info@lars-petersen.net";
@@ -22,7 +13,7 @@
       synopsis = "Supplemental package for 'uuid' allowing quasiquotation.";
       description = "This library is allows quasiquotation (expressions and patterns) of 'UUID's.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.base)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

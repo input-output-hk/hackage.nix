@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pool";
-        version = "0.1.2";
-      };
+      identifier = { name = "pool"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,14 +13,14 @@
       synopsis = "Thread-safe resource pools.";
       description = "Useful for stuff like database connection pools.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.monad-control)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

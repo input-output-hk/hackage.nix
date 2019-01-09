@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "checkmate";
-        version = "0.3.1";
-      };
+      identifier = { name = "checkmate"; version = "0.3.1"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2017 Hong Minhee";
       maintainer = "hong.minhee@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate checklists relevant to a given patch";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.containers)
           (hsPkgs.github)
           (hsPkgs.monad-parallel)
-        ];
-      };
+          ];
+        };
       exes = {
         "checkmate" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.checkmate)
             (hsPkgs.optparse-applicative)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hlint" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.range)
             (hsPkgs.text)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -85,8 +76,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-text)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

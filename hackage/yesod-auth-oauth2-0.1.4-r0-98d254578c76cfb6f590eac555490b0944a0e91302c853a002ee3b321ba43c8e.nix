@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-auth-oauth2";
-        version = "0.1.4";
-      };
+      identifier = { name = "yesod-auth-oauth2"; version = "0.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Pat Brisbin <pat@thoughtbot.com>";
@@ -22,7 +13,7 @@
       synopsis = "OAuth 2.0 authentication plugins";
       description = "Library to authenticate with OAuth 2.0 for Yesod web applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,9 +33,9 @@
           (hsPkgs.hoauth2)
           (hsPkgs.lifted-base)
           (hsPkgs.vector)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

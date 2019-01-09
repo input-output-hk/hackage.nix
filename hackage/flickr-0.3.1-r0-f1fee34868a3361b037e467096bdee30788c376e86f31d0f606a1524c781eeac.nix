@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-base = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "flickr";
-        version = "0.3.1";
-      };
+      identifier = { name = "flickr"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sof@forkIO.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell binding to the Flickr API";
       description = "The flickr API binding lets you access flickr.com's\nresources and methods from Haskell.\nImplements the full API, as specified by <http://flickr.com/services/api/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,16 +25,14 @@
           (hsPkgs.random)
           (hsPkgs.utf8-string)
           (hsPkgs.filepath)
-        ] ++ [ (hsPkgs.base) ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        };
       exes = {
         "showPublic" = {};
         "searchPics" = {};
-        "gallery" = {
-          depends = [ (hsPkgs.xhtml) ];
-        };
+        "gallery" = { depends = [ (hsPkgs.xhtml) ]; };
         "uploader" = {};
         "mtags" = {};
+        };
       };
-    };
-  }
+    }

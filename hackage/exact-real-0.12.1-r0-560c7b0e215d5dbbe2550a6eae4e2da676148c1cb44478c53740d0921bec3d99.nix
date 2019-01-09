@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "exact-real";
-        version = "0.12.1";
-      };
+      identifier = { name = "exact-real"; version = "0.12.1"; };
       license = "MIT";
       copyright = "2015 Joe Hermaszewski";
       maintainer = "Joe Hermaszewski <keep.it.real@monoid.al>";
@@ -22,7 +13,7 @@
       synopsis = "Exact real arithmetic";
       description = "A type to represent exact real numbers using fast binary Cauchy sequences.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.integer-gmp)
           (hsPkgs.memoize)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,25 +36,21 @@
             (hsPkgs.random)
             (hsPkgs.checkers)
             (hsPkgs.exact-real)
-          ];
-        };
+            ];
+          };
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.exact-real)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.exact-real) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scotty-binding-play";
-        version = "1.0";
-      };
+      identifier = { name = "scotty-binding-play"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yusuke Nomura <yunomu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "The Play Framework style data binding in Scotty.";
       description = "The Play Framework style data binding in Scotty.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.scotty)
           (hsPkgs.template-haskell)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

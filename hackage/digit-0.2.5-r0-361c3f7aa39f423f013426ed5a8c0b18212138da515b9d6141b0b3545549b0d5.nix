@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "digit";
-        version = "0.2.5";
-      };
+      identifier = { name = "digit"; version = "0.2.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2010-2016 NICTA Limited";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A data-type representing digits 0-9 and other combinations";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\n@Digit@ is a data-type that represents the digits 0-9 and other combinations.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.template-haskell)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

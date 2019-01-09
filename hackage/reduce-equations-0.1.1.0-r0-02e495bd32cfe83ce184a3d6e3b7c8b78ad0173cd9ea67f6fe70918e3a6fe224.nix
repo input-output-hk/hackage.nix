@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reduce-equations";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "reduce-equations"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chriswarbo@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simplify a set of equations by removing redundancies";
       description = "Simplify a set of equations by removing redundancies";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,17 +28,13 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.stringable)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "reduce-equations" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.reduce-equations)
-            (hsPkgs.aeson)
           ];
         };
-      };
+      exes = {
+        "reduce-equations" = {
+          depends = [ (hsPkgs.base) (hsPkgs.reduce-equations) (hsPkgs.aeson) ];
+          };
+        };
       tests = {
         "test" = {
           depends = [
@@ -65,8 +52,8 @@
             (hsPkgs.text)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

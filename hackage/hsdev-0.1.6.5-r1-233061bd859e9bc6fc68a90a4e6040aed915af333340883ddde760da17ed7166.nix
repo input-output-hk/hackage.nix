@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsdev";
-        version = "0.1.6.5";
-      };
+      identifier = { name = "hsdev"; version = "0.1.6.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voidex@live.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell development library and tool with support of autocompletion, symbol info, go to declaration, find references etc.";
       description = "Haskell development library and tool with support of autocompletion, symbol info, go to declaration, find references, hayoo search etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -75,10 +66,10 @@
           (hsPkgs.uniplate)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       exes = {
         "hsdev" = {
           depends = [
@@ -100,8 +91,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "hsinspect" = {
           depends = [
             (hsPkgs.base)
@@ -118,8 +109,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "hsclearimports" = {
           depends = [
             (hsPkgs.base)
@@ -137,8 +128,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "hscabal" = {
           depends = [
             (hsPkgs.base)
@@ -152,8 +143,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "hshayoo" = {
           depends = [
             (hsPkgs.base)
@@ -167,8 +158,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "hsautofix" = {
           depends = [
             (hsPkgs.base)
@@ -181,9 +172,9 @@
             (hsPkgs.mtl)
             (hsPkgs.optparse-applicative)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -200,8 +191,8 @@
             (hsPkgs.lens)
             (hsPkgs.mtl)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

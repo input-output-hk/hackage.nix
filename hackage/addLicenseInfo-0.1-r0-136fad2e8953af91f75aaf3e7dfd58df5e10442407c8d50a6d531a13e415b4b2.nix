@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "addLicenseInfo";
-        version = "0.1";
-      };
+      identifier = { name = "addLicenseInfo"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "unmaintained";
@@ -22,15 +13,10 @@
       synopsis = "Adds license info to the top of a file.";
       description = "Adds license info to the top of a file.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "addLicenseInfo" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
+        "addLicenseInfo" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
         };
       };
-    };
-  }
+    }

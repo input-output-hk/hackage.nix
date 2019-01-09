@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "biohazard";
-        version = "0.6.9";
-      };
+      identifier = { name = "biohazard"; version = "0.6.9"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2010-2017 Udo Stenzel";
       maintainer = "udo.stenzel@eva.mpg.de";
@@ -22,7 +13,7 @@
       synopsis = "bioinformatics support library";
       description = "This is a collection of modules I separated from\nvarious bioinformatics tools.  The hope is to make\nthem reusable and easier to maintain.  Also includes\nsome of these tools and a bunch that work on mitochondrial\nsequences.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -58,8 +49,8 @@
           (hsPkgs.vector-binary-instances)
           (hsPkgs.vector-th-unbox)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "test-pileup" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.random)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "redeye-dar" = {
           depends = [
             (hsPkgs.aeson-pretty)
@@ -87,8 +78,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "redeye-single" = {
           depends = [
             (hsPkgs.aeson)
@@ -104,8 +95,8 @@
             (hsPkgs.unix)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "redeye-flow" = {
           depends = [
             (hsPkgs.aeson)
@@ -120,8 +111,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "afroengineer" = {
           depends = [
             (hsPkgs.base)
@@ -131,8 +122,8 @@
             (hsPkgs.directory)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "bam-fixpair" = {
           depends = [
             (hsPkgs.async)
@@ -145,32 +136,32 @@
             (hsPkgs.transformers)
             (hsPkgs.unix)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "bam-meld" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "bam-resample" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "bam-rewrap" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "bam-rmdup" = {
           depends = [
             (hsPkgs.base)
@@ -179,15 +170,11 @@
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "bam-trim" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.biohazard) (hsPkgs.bytestring) ];
+          };
         "fastq2bam" = {
           depends = [
             (hsPkgs.base)
@@ -195,8 +182,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "jivebunny" = {
           depends = [
             (hsPkgs.aeson)
@@ -212,16 +199,16 @@
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
             (hsPkgs.vector-th-unbox)
-          ];
-        };
+            ];
+          };
         "mt-anno" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.biohazard)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "mt-ccheck" = {
           depends = [
             (hsPkgs.base)
@@ -229,8 +216,8 @@
             (hsPkgs.biohazard)
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "latest-npm-version";
-        version = "0.1.0";
-      };
+      identifier = { name = "latest-npm-version"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "phartig@rdrei.net";
@@ -22,7 +13,7 @@
       synopsis = "Find the latest version of a package on npm";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.pipes-attoparsec)
           (hsPkgs.transformers)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       exes = {
         "latest-npm-version" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.pipes-attoparsec)
             (hsPkgs.transformers)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

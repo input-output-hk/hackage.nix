@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "socks";
-        version = "0.5.1";
-      };
+      identifier = { name = "socks"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Socks proxy (version 5) implementation.";
       description = "Socks proxy (version 5) implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

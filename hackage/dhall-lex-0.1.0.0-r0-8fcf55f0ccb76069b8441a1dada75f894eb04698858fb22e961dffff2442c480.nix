@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "dhall-lex";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dhall-lex"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Lexer for the Dhall language";
       description = "Lexer for Dhall written with [Alex](https://www.haskell.org/alex/doc/html/index.html). This package has few dependencies and is fast.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +21,8 @@
           (hsPkgs.array)
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "dhall-lex-test" = {
           depends = [
@@ -42,9 +31,9 @@
             (hsPkgs.hspec)
             (hsPkgs.bytestring)
             (hsPkgs.hspec-dirstream)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "dhall-lex-bench" = {
           depends = [
@@ -52,8 +41,8 @@
             (hsPkgs.dhall-lex)
             (hsPkgs.criterion)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

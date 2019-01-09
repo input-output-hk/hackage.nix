@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chr-core";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "chr-core"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "atzedijkstra@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Constraint Handling Rules";
       description = "Constraint Handling Rules evaluation engine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.chr-data)
           (hsPkgs.chr-pretty)
           (hsPkgs.logict-state)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

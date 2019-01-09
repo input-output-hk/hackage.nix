@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haiji";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "haiji"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014, Noriyuki OHKAWA";
       maintainer = "Noriyuki OHKAWA <n.ohkawa@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A typed template engine, subset of jinja2";
       description = "Haiji is a template engine which is subset of jinja2.\nThis is designed to free from the unintended rendering result\nby strictly typed variable interpolation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,16 +29,12 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.scientific)
           (hsPkgs.data-default)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.filepath)
           ];
         };
+      tests = {
+        "doctests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.filepath) ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -59,8 +46,8 @@
             (hsPkgs.text)
             (hsPkgs.process-extras)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

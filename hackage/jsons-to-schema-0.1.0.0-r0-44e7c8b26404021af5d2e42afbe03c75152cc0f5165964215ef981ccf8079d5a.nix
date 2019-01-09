@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsons-to-schema";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "jsons-to-schema"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Gareth Tan";
       maintainer = "Gareth Tan";
@@ -22,7 +13,7 @@
       synopsis = "JSON to JSON Schema";
       description = "A JSON Schema Draft 4 Generator from JSON Instances";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.safe)
           (hsPkgs.scientific)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       exes = {
         "jsons-to-schema-exe" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.conduit-combinators)
             (hsPkgs.bytestring)
             (hsPkgs.hjsonschema)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "jsons-to-schema-test" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.uniplate)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

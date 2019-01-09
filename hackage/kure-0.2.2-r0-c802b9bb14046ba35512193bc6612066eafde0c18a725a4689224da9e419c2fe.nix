@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "kure";
-        version = "0.2.2";
-      };
+      identifier = { name = "kure"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006-2008 Andy Gill";
       maintainer = "Andy Gill <andygill@ku.edu>";
@@ -22,10 +13,6 @@
       synopsis = "Combinators for Strategic Programming";
       description = "KURE is a DSL for building rewriting DSLs.\nKURE shares combinator names and concepts with Stratego, but unlike Stratego, KURE is strongly typed.\nKURE is similar to Strafunski, but has a lightweight generic traversal mechanism using type families\nrather than SYB,\nand the KURE combinators are parameterized to provide the ability to have context sensitive rewrites.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

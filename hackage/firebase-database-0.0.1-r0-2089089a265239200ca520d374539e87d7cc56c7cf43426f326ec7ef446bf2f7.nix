@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "firebase-database";
-        version = "0.0.1";
-      };
+      identifier = { name = "firebase-database"; version = "0.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2018 Nick Hamilton";
       maintainer = "Nick Hamilton <projects@nickhamilton.ninja>";
@@ -22,7 +13,7 @@
       synopsis = "Google Firebase Database SDK";
       description = "SDK for connecting to Google's Firebase Database, using Firebase REST endpoints.\n\nUses Server-Sent Events (SSE) protocol to receive real-time updates from the Firebase server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.mtl)
           (hsPkgs.nano-http)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -69,16 +60,11 @@
             (hsPkgs.mtl)
             (hsPkgs.nano-http)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
-        "criterion" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-          ];
+        "criterion" = { depends = [ (hsPkgs.base) (hsPkgs.criterion) ]; };
         };
       };
-    };
-  }
+    }

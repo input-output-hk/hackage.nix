@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "simple-server";
-        version = "0.0.1";
-      };
+      identifier = { name = "simple-server"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jcollard@unm.edu";
@@ -22,7 +13,7 @@
       synopsis = "Simple Server interface";
       description = "This library provides a very simple interface for creating a server that sends and recieves ByteString messages and attempts to remove concurrency so the programmer can focus on the functionality of the server. A simple ChatServer example is available in the Examples module";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.containers)
           (hsPkgs.network)
           (hsPkgs.unbounded-delays)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

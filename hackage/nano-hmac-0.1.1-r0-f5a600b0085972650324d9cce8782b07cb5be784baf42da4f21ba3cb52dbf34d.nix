@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "nano-hmac";
-        version = "0.1.1";
-      };
+      identifier = { name = "nano-hmac"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<hitesh.jasani@gmail.com>";
@@ -22,16 +13,13 @@
       synopsis = "Bindings to OpenSSL HMAC.";
       description = "Bindings to OpenSSL HMAC.  Initially only supporting md5.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.split-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-          ]
+          then [ (hsPkgs.base) (hsPkgs.bytestring) ]
           else [ (hsPkgs.base) ];
         libs = [ (pkgs."crypto") ];
+        };
       };
-    };
-  }
+    }

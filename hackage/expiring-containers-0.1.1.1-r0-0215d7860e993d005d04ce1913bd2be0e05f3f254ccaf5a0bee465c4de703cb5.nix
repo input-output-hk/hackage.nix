@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "expiring-containers";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "expiring-containers"; version = "0.1.1.1"; };
       license = "MIT";
       copyright = "(c) 2018, Metrix.AI";
       maintainer = "Metrix.AI Ninjas <ninjas@metrix.ai>";
@@ -22,7 +13,7 @@
       synopsis = "Expiring containers";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.containers)
           (hsPkgs.int-multimap)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

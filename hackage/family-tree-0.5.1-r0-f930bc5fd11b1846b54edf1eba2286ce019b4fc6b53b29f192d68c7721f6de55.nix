@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "family-tree";
-        version = "0.5.1";
-      };
+      identifier = { name = "family-tree"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nvd1234@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A family tree library for the Haskell programming language.";
       description = "A family tree library for the Haskell programming language.\nUses \"Control.Lens\" for modification and \"Data.Binary\" for\nserialization.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.intervals)
           (hsPkgs.tables)
           (hsPkgs.hashable)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

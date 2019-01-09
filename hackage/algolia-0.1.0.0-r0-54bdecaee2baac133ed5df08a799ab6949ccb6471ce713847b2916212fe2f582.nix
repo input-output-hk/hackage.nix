@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "algolia";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "algolia"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "A client implementing the Algolia search API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uri-templater)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "algolia-test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-discover)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

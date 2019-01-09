@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "inline-java";
-        version = "0.8.2";
-      };
+      identifier = { name = "inline-java"; version = "0.8.2"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 EURL Tweag.";
       maintainer = "m@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Java interop via inline Java code in Haskell modules.";
       description = "Please see README.md.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.text)
           (hsPkgs.template-haskell)
           (hsPkgs.temporary)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.hspec)
             (hsPkgs.inline-java)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

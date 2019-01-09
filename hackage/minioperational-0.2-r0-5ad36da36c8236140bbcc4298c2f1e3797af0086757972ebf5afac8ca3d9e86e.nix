@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "minioperational";
-        version = "0.2";
-      };
+      identifier = { name = "minioperational"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Fumiaki Kinoshita";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "fast and simple operational monad";
       description = "This package provides tiny implementation of operational monad.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.transformers) ]; };
+      };
+    }

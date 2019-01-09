@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "human-parse";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "human-parse"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "A lawless typeclass for parsing text entered by humans.";
       description = "An unprincipled best-effort informal attempt to figure out what a human is saying.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.text) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "strict-data";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "strict-data"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Alexander Thiemann <mail@athiemann.net>\n, 2017 factis research GmbH";
       maintainer = "mail@athiemann.net";
@@ -22,7 +13,7 @@
       synopsis = "A collection of commonly used strict data structures";
       description = "A collection of commonly used strict data structures";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.util-plus)
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
-        ];
-      };
+          ];
+        };
       tests = {
         "strict-data-test" = {
           depends = [
@@ -58,14 +49,11 @@
             (hsPkgs.deepseq)
             (hsPkgs.hashable)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "strict-data-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) ];
+          };
         };
       };
-    };
-  }
+    }

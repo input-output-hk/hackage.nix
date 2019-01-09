@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conduit-parse";
-        version = "0.1.2.1";
-      };
+      identifier = { name = "conduit-parse"; version = "0.1.2.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "koral <koral@mailoo.org>";
@@ -22,7 +13,7 @@
       synopsis = "Parsing framework based on conduit.";
       description = "Please refer to README.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.safe)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

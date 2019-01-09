@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { feuerbach = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-classes-logging";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "monad-classes-logging"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Edward George";
       maintainer = "edwardgeorge@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "monad-classes based typeclass for Ollie's logging-effect LoggingT";
       description = "monad-classes based typeclass for Ollie's logging-effect LoggingT";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.logging-effect)
           (hsPkgs.transformers)
-        ] ++ [ (hsPkgs.monad-classes) ];
-      };
+          ] ++ [ (hsPkgs.monad-classes) ];
+        };
       tests = {
         "monad-classes-logging-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.transformers)
             (hsPkgs.monad-classes-logging)
-          ] ++ [ (hsPkgs.monad-classes) ];
+            ] ++ [ (hsPkgs.monad-classes) ];
+          };
         };
       };
-    };
-  }
+    }

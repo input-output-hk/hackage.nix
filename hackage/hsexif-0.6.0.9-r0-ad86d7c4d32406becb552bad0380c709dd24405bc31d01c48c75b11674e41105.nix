@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { iconv = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsexif";
-        version = "0.6.0.9";
-      };
+      identifier = { name = "hsexif"; version = "0.6.0.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "etouzery@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "EXIF handling library in pure Haskell";
       description = "The hsexif library provides functions for working with EXIF data\ncontained in JPEG files. Currently it only supports reading the data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.time)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (flags.iconv) (hsPkgs.iconv);
-      };
+          ] ++ (pkgs.lib).optional (flags.iconv) (hsPkgs.iconv);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.containers)
             (hsPkgs.time)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (flags.iconv) (hsPkgs.iconv);
+            ] ++ (pkgs.lib).optional (flags.iconv) (hsPkgs.iconv);
+          };
         };
       };
-    };
-  }
+    }

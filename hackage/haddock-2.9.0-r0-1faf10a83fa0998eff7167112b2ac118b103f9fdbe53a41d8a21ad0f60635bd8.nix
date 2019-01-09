@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      in-ghc-tree = false;
-      test = false;
-    };
+    flags = { in-ghc-tree = false; test = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haddock";
-        version = "2.9.0";
-      };
+      identifier = { name = "haddock"; version = "2.9.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Simon Marlow, David Waern";
       maintainer = "David Waern <david.waern@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "A documentation-generation tool for Haskell libraries";
       description = "Haddock is a documentation-generation tool for Haskell\nlibraries";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -38,8 +26,8 @@
           (hsPkgs.xhtml)
           (hsPkgs.Cabal)
           (hsPkgs.ghc)
-        ] ++ pkgs.lib.optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths)) ++ pkgs.lib.optional (flags.test) (hsPkgs.QuickCheck);
-      };
+          ] ++ (pkgs.lib).optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths)) ++ (pkgs.lib).optional (flags.test) (hsPkgs.QuickCheck);
+        };
       exes = {
         "haddock" = {
           depends = ([
@@ -52,8 +40,8 @@
             (hsPkgs.xhtml)
             (hsPkgs.Cabal)
             (hsPkgs.ghc)
-          ] ++ pkgs.lib.optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths)) ++ pkgs.lib.optional (flags.test) (hsPkgs.QuickCheck);
+            ] ++ (pkgs.lib).optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths)) ++ (pkgs.lib).optional (flags.test) (hsPkgs.QuickCheck);
+          };
         };
       };
-    };
-  }
+    }

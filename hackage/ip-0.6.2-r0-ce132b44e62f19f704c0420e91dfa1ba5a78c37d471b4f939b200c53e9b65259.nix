@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ip";
-        version = "0.6.2";
-      };
+      identifier = { name = "ip"; version = "0.6.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for IP and MAC addresses";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.hashable)
           (hsPkgs.text)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "ip-test" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.criterion)
             (hsPkgs.text)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

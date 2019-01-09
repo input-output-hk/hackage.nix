@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "PrimitiveArray";
-        version = "0.5.4.0";
-      };
+      identifier = { name = "PrimitiveArray"; version = "0.5.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2010-2014";
       maintainer = "choener@tbi.univie.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "Efficient multidimensional arrays";
       description = "This library provides efficient multidimensional arrays.\n\nIn general all operations are (highly) unsafe, no\nbounds-checking or other sanity-checking is performed.\nOperations are aimed toward efficiency as much as possible.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.vector-th-unbox)
           (hsPkgs.repa)
           (hsPkgs.QuickCheck)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

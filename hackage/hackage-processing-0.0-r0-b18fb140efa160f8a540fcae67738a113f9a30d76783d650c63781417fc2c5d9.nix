@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hackage-processing";
-        version = "0.0";
-      };
+      identifier = { name = "hackage-processing"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@henning-thielemann.de";
@@ -22,7 +13,7 @@
       synopsis = "Process 00-index.tar.gz from Hackage";
       description = "Currently it only contains a program\nfor fetching contributions of an author to Hackage\nand format it as a LaTeX table.\n\n> hackage-find-contribution thielemann";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hackage-find-contribution" = {
@@ -31,8 +22,8 @@
             (hsPkgs.hackage-db)
             (hsPkgs.containers)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

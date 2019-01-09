@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "musicbrainz-email";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "musicbrainz-email"; version = "1.0.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "Send an email to all MusicBrainz editors";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mime-mail)
           (hsPkgs.optparse-applicative)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "musicbrainz-emailer" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.xmlhtml)
-          ];
-        };
+            ];
+          };
         "enqueue-mail" = {
           depends = [
             (hsPkgs.aeson)
@@ -68,9 +59,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.postgresql-simple)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -98,8 +89,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.xmlhtml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tsvsql";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "tsvsql"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "dhchoi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Template tsv into SQL";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tsvsql" = {
@@ -34,8 +25,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
             (hsPkgs.attoparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

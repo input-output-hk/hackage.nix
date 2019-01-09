@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wsjtx-udp";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "wsjtx-udp"; version = "0.1.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Marc.Fontaine@gmx.de";
@@ -22,7 +13,7 @@
       synopsis = "WSJT-X UDP protocol";
       description = "Utilities for the WSJT-X UDP protocol.\nEncoding and decoding USP packages to binary and JSON and a UDP server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,15 +25,10 @@
           (hsPkgs.binary-parsers)
           (hsPkgs.aeson)
           (hsPkgs.network)
-        ];
-      };
-      exes = {
-        "wsjtx-dump-udp" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wsjtx-udp)
           ];
         };
+      exes = {
+        "wsjtx-dump-udp" = { depends = [ (hsPkgs.base) (hsPkgs.wsjtx-udp) ]; };
+        };
       };
-    };
-  }
+    }

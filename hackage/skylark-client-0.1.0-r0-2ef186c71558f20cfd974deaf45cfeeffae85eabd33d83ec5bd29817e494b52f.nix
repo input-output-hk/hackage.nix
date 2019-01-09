@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "skylark-client";
-        version = "0.1.0";
-      };
+      identifier = { name = "skylark-client"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2017 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Skylark client.";
       description = "Skylark network client.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.http-types)
           (hsPkgs.preamble)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       exes = {
         "skylark-client" = {
           depends = [
@@ -44,14 +35,11 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.preamble)
             (hsPkgs.skylark-client)
-          ];
-        };
+            ];
+          };
         "shake-skylark-client" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.shakers)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.shakers) ];
+          };
         };
       };
-    };
-  }
+    }

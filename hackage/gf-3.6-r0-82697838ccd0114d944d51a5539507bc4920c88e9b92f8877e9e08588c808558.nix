@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       interrupt = true;
       server = true;
       custom-binary = true;
       c-runtime = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gf";
-        version = "3.6";
-      };
+      identifier = { name = "gf"; version = "3.6"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Thomas Hallgren";
@@ -27,7 +18,7 @@
       synopsis = "Grammatical Framework";
       description = "GF, Grammatical Framework, is a programming language for multilingual grammar applications";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,13 +31,13 @@
           (hsPkgs.random)
           (hsPkgs.pretty)
           (hsPkgs.mtl)
-        ] ++ pkgs.lib.optional (!flags.custom-binary) (hsPkgs.binary);
-        libs = pkgs.lib.optionals (flags.c-runtime) [
+          ] ++ (pkgs.lib).optional (!flags.custom-binary) (hsPkgs.binary);
+        libs = (pkgs.lib).optionals (flags.c-runtime) [
           (pkgs."gu")
           (pkgs."pgf")
-        ];
-        build-tools = pkgs.lib.optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs);
-      };
+          ];
+        build-tools = (pkgs.lib).optional (flags.c-runtime) ((hsPkgs.buildPackages).hsc2hs);
+        };
       exes = {
         "gf" = {
           depends = (([
@@ -68,24 +59,24 @@
             (hsPkgs.haskeline)
             (hsPkgs.parallel)
             (hsPkgs.utf8-string)
-          ] ++ pkgs.lib.optionals (flags.server) [
+            ] ++ (pkgs.lib).optionals (flags.server) [
             (hsPkgs.httpd-shed)
             (hsPkgs.network)
             (hsPkgs.json)
             (hsPkgs.cgi)
-          ]) ++ (if system.isWindows
+            ]) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)
-            ])) ++ pkgs.lib.optionals (!flags.custom-binary) [
+              ])) ++ (pkgs.lib).optionals (!flags.custom-binary) [
             (hsPkgs.binary)
             (hsPkgs.data-binary-ieee754)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
-          ];
-        };
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
         "pgf-shell" = {
           depends = [
             (hsPkgs.gf)
@@ -93,9 +84,9 @@
             (hsPkgs.containers)
             (hsPkgs.mtl)
             (hsPkgs.lifted-base)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "rgl-tests" = {
           depends = [
@@ -105,8 +96,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "gf-tests" = {
           depends = [
             (hsPkgs.base)
@@ -114,8 +105,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

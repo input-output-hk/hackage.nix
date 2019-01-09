@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-py";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "servant-py"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2017 Erik Aker";
       maintainer = "eraker@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Automatically derive python functions to query servant webservices.";
       description = "Automatically derive python functions to query servant webservices.\n\nSupports deriving functions using Python's requests library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.servant-foreign)
           (hsPkgs.servant)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "servant-py-exe" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.text)
             (hsPkgs.filepath)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "servant-py-test" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.servant)
             (hsPkgs.servant-foreign)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

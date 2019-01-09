@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yahoo-finance-conduit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "yahoo-finance-conduit"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2014 Alexander Thiemann <mail@agrafix.net>";
       maintainer = "mail@agrafix.net";
@@ -22,7 +13,7 @@
       synopsis = "Streaming aproach to the yahoo finance api";
       description = "Small library streaming stock market data from the yahoo finance api";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.cassava)
           (hsPkgs.vector)
           (hsPkgs.attoparsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

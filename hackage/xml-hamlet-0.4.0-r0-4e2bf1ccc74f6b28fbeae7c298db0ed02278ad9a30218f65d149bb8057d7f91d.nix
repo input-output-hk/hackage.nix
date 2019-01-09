@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xml-hamlet";
-        version = "0.4.0";
-      };
+      identifier = { name = "xml-hamlet"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Hamlet-style quasiquoter for XML content";
       description = "Hamlet-style quasiquoter for XML content";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.parsec)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.parsec)
             (hsPkgs.xml-hamlet)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

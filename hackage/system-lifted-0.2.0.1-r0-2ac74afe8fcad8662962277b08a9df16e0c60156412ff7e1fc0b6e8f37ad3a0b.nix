@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "system-lifted";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "system-lifted"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jmacristovao@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lifted versions of System functions.";
       description = "Lifted versions of functions provided in System.Directory,\nSystem.Environment and others.\nUser can derive instances for EitherT, ErrorT, MaybeT, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.directory)
           (hsPkgs.time)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       exes = {
         "main" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.directory)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

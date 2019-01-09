@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "data-object-yaml";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "data-object-yaml"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Serialize data to and from Yaml files";
       description = "Provides high level conversions based on the data-object package. Parsing and emitting is handled by the yaml package, which in turn uses the libyaml C library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,18 +26,18 @@
           (hsPkgs.failure)
           (hsPkgs.transformers)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

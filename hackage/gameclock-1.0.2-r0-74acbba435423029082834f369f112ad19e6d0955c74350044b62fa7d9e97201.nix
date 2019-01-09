@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "gameclock";
-        version = "1.0.2";
-      };
+      identifier = { name = "gameclock"; version = "1.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "quuxman@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Game clock that shows two analog clock faces";
       description = "A game clock with optional Fischer time, two clock face styles, and other options";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hsclock" = {
@@ -30,13 +21,10 @@
             (hsPkgs.cairo)
             (hsPkgs.gtk)
             (hsPkgs.glib)
-          ] ++ (if flags.small_base
-            then [
-              (hsPkgs.base)
-              (hsPkgs.old-time)
-            ]
+            ] ++ (if flags.small_base
+            then [ (hsPkgs.base) (hsPkgs.old-time) ]
             else [ (hsPkgs.base) ]);
+          };
         };
       };
-    };
-  }
+    }

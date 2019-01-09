@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hgeos";
-        version = "0.1.8.0";
-      };
+      identifier = { name = "hgeos"; version = "0.1.8.0"; };
       license = "MIT";
       copyright = "(C) 2016 Richard Cook";
       maintainer = "Richard Cook <rcook@rcook.org>";
@@ -22,20 +13,13 @@
       synopsis = "Simple Haskell bindings to GEOS C API";
       description = "Simple Haskell bindings to the <https://trac.osgeo.org/geos/ GEOS>\n<http://geos.osgeo.org/doxygen/geos__c_8h_source.html C API> heavily inspired\nby <https://github.com/django/django/tree/master/django/contrib/gis/geos Django GEOS bindings>";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-        libs = [ (pkgs."geos_c") ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; libs = [ (pkgs."geos_c") ]; };
       tests = {
         "hgeos-app" = {
-          depends = [
-            (hsPkgs.MissingH)
-            (hsPkgs.base)
-            (hsPkgs.hgeos)
-          ];
+          depends = [ (hsPkgs.MissingH) (hsPkgs.base) (hsPkgs.hgeos) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-nix";
-        version = "1.0";
-      };
+      identifier = { name = "language-nix"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Peter Simons <simons@cryp.to>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell AST and Parsers for the Nix language";
       description = "This library provides parsec combinators that parse Nix into an AST.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.containers)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "parse-nix" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
-        };
+            ];
+          };
         "run-nix" = {
           depends = [
             (hsPkgs.base)
@@ -55,9 +46,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "self-test" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

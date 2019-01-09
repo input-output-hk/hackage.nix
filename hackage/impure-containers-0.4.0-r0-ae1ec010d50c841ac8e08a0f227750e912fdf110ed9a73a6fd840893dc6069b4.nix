@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       unsafe-tricks = true;
@@ -12,13 +6,10 @@
       debug = false;
       sse42 = false;
       portable = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "impure-containers";
-        version = "0.4.0";
-      };
+      identifier = { name = "impure-containers"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -28,7 +19,7 @@
       synopsis = "Mutable containers in haskell";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.vector)
           (hsPkgs.containers)
           (hsPkgs.ghc-prim)
-        ] ++ pkgs.lib.optional (!flags.portable && flags.unsafe-tricks && (compiler.isGhc && true)) (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (!flags.portable && flags.unsafe-tricks && (compiler.isGhc && true)) (hsPkgs.ghc-prim);
+        };
       tests = {
         "impure-containers-test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.vector)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

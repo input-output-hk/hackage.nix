@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "typed-process";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "typed-process"; version = "0.2.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Run external processes, with strong typing of streams";
       description = "Please see the tutorial at <https://haskell-lang.org/library/typed-process>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.process)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "typed-process-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.temporary)
             (hsPkgs.transformers)
             (hsPkgs.typed-process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

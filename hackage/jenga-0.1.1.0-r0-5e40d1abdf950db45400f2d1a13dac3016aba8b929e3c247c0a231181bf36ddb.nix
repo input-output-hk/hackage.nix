@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jenga";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "jenga"; version = "0.1.1.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "erikd@mega-nerd.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate a cabal freeze file from a stack.yaml";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.http-types)
           (hsPkgs.text)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "jenga" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.jenga)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

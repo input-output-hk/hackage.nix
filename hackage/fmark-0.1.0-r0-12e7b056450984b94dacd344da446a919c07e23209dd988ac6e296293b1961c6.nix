@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fmark";
-        version = "0.1.0";
-      };
+      identifier = { name = "fmark"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "José Lopes <jabolopes@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Friendly Markup language without syntax.";
       description = "Fmark (Friendly Markup) is a very simple markup language without\nsyntax and simple but sophisticated document styling, capable of\nproducing PDF and XML files.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "fmark" = {
@@ -33,8 +24,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.Unixutils)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspec-wai-json";
-        version = "0.6.0";
-      };
+      identifier = { name = "hspec-wai-json"; version = "0.6.0"; };
       license = "MIT";
       copyright = "(c) 2012-2014 Fujimura Daisuke,\n(c) 2014 Simon Hengel";
       maintainer = "Fujimura Daisuke <me@fujimuradaisuke.com>, Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "Testing JSON APIs with hspec-wai";
       description = "Testing JSON APIs with hspec-wai";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.aeson)
           (hsPkgs.aeson-qq)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.hspec-wai-json)
             (hsPkgs.hspec-wai)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

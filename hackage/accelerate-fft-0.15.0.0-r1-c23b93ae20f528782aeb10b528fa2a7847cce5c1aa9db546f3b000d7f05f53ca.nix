@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { cuda = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "accelerate-fft";
-        version = "0.15.0.0";
-      };
+      identifier = { name = "accelerate-fft"; version = "0.15.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Manuel M T Chakravarty <chak@cse.unsw.edu.au>";
@@ -22,17 +13,17 @@
       synopsis = "FFT using the Accelerate library";
       description = "Rank-polymorphic discrete Fourier transform (DFT), computed with a fast\nFourier transform (FFT) algorithm using the Accelerate library\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.accelerate)
           (hsPkgs.base)
-        ] ++ pkgs.lib.optionals (flags.cuda) [
+          ] ++ (pkgs.lib).optionals (flags.cuda) [
           (hsPkgs.accelerate-cuda)
           (hsPkgs.cuda)
           (hsPkgs.cufft)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

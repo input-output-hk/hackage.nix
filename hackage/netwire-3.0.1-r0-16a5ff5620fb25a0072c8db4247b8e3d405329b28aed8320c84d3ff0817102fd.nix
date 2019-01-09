@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "netwire";
-        version = "3.0.1";
-      };
+      identifier = { name = "netwire"; version = "3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Ertugrul Söylemez";
       maintainer = "Ertugrul Söylemez <es@ertes.de>";
@@ -22,7 +13,7 @@
       synopsis = "Fast generic automaton arrow transformer for AFRP";
       description = "This library implements a fast and powerful generic automaton arrow\ntransformer for arrowized functional reactive programming or\nautomaton programming in general.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.stm)
           (hsPkgs.vector)
           (hsPkgs.vector-space)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

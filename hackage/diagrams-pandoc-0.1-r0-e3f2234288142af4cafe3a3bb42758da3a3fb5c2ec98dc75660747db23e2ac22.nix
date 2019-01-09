@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "diagrams-pandoc";
-        version = "0.1";
-      };
+      identifier = { name = "diagrams-pandoc"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diagrams-discuss@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "A pandoc filter to express diagrams inline using the haskell EDSL _diagrams_";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "diagrams-pandoc" = {
@@ -36,8 +27,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "type-natural";
-        version = "0.0.5.0";
-      };
+      identifier = { name = "type-natural"; version = "0.0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) Hiromi ISHII 2013";
       maintainer = "konn.jinro_at_gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Type-level natural and proofs of their properties.";
       description = "Type-level natural numbers and proofs of their properties.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.equational-reasoning)
           (hsPkgs.monomorphic)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

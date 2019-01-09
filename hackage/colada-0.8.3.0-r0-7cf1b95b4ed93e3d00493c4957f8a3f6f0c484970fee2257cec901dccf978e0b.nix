@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "colada";
-        version = "0.8.3.0";
-      };
+      identifier = { name = "colada"; version = "0.8.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "pitekus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Colada implements incremental word class class induction\nusing online LDA";
       description = "Colada implements incremental word class class induction using\nLatent Dirichlet Allocation (LDA) with an Online Gibbs sampler.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.mtl)
           (hsPkgs.swift-lda)
           (hsPkgs.nlp-scores)
-        ];
-      };
+          ];
+        };
       exes = {
         "colada" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.mtl)
             (hsPkgs.swift-lda)
             (hsPkgs.nlp-scores)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

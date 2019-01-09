@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "text-printer";
-        version = "0.1";
-      };
+      identifier = { name = "text-printer"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2013 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";
       maintainer = "Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Abstract interface for text builders/printers.";
       description = "This package provides an interface for injecting text into monoids such as\nbuilders and printers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.pretty)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
             (hsPkgs.text-printer)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

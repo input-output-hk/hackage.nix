@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "imm";
-        version = "1.2.1.0";
-      };
+      identifier = { name = "imm"; version = "1.2.1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "koral <koral@mailoo.org>";
@@ -22,7 +13,7 @@
       synopsis = "Execute arbitrary actions for each unread element of RSS/Atom feeds";
       description = "Cf README file";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -72,16 +63,10 @@
           (hsPkgs.xml)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-types)
-        ];
-      };
-      exes = {
-        "imm" = {
-          depends = [
-            (hsPkgs.imm)
-            (hsPkgs.base)
-            (hsPkgs.free)
           ];
         };
+      exes = {
+        "imm" = { depends = [ (hsPkgs.imm) (hsPkgs.base) (hsPkgs.free) ]; };
+        };
       };
-    };
-  }
+    }

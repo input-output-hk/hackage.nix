@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wasm";
-        version = "1.0.0";
-      };
+      identifier = { name = "wasm"; version = "1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ilya Rezvov <rezvov.ilya@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "WebAssembly Language Toolkit and Interpreter";
       description = "This package contains fully spec-compatible tooling for WebAssembly.\nFeatures include:\n\n* WebAssembly Text Representation Parser\n\n* WebAssembly Binary Representation encoder and decoder\n\n* Spec-compatible Module validator (checked with Spec Core Test Suite)\n\n* Spec-compatible Interpreter (checked with Spec Core Test Suite)\n\n* Extended scipting grammar parser and executor\n\n* WebAssembly Module building eDSL";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,12 +29,12 @@
           (hsPkgs.vector)
           (hsPkgs.ieee754)
           (hsPkgs.deepseq)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       exes = {
         "wasm" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.bytestring)
             (hsPkgs.base64-bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -67,12 +58,12 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.wasm)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.alex)
-            (hsPkgs.buildPackages.happy)
-          ];
+            ((hsPkgs.buildPackages).alex)
+            ((hsPkgs.buildPackages).happy)
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-static";
-        version = "1.0.0.2";
-      };
+      identifier = { name = "yesod-static"; version = "1.0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>, Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Static file serving subsite for Yesod Web Framework.";
       description = "Static file serving subsite for Yesod Web Framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.conduit)
           (hsPkgs.crypto-conduit)
           (hsPkgs.cryptohash)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.conduit)
             (hsPkgs.crypto-conduit)
             (hsPkgs.cryptohash)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

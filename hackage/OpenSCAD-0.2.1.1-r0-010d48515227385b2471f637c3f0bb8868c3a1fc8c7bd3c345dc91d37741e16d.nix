@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "OpenSCAD";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "OpenSCAD"; version = "0.2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mwm@mired.org";
@@ -22,7 +13,7 @@
       synopsis = "ADT wrapper and renderer for OpenSCAD models.";
       description = "An algebraic data type for describing OpenSCAD models,\nfunctions to make building such models easier, and\nfunctions for rendering an ADT into an OpenSCAD program.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.colour)
           (hsPkgs.filepath)
           (hsPkgs.semigroups)
-        ];
-      };
+          ];
+        };
       tests = {
         "Units" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

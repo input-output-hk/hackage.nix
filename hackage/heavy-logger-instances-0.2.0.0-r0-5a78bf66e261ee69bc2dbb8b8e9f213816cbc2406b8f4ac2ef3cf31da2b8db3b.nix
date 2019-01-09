@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "heavy-logger-instances";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "heavy-logger-instances"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Ilya Portnov";
       maintainer = "portnov84@rambler.ru";
@@ -22,7 +13,7 @@
       synopsis = "Orphan instances for data types in heavy-logger package";
       description = "This package contains orphan instances for data types in heavy-logger package for:\n* Binary type class (from binary package)\n* MonadThrow, MonadCatch, MonadMask type classes (from exceptions package) for LoggingT transformer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.text-format-heavy)
-        ];
-      };
+          ];
+        };
       tests = {
         "binary-test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.text-format-heavy)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

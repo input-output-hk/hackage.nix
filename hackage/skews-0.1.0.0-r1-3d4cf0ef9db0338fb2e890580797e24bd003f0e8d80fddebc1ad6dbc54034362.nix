@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "skews";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "skews"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "yuji-yamamoto@iij.ad.jp";
@@ -22,7 +13,7 @@
       synopsis = "A very quick-and-dirty WebSocket server.";
       description = "A very quick-and-dirty WebSocket server. Intended for use with unit tests.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.deque)
           (hsPkgs.websockets)
-        ];
-      };
+          ];
+        };
       tests = {
         "mock-ws-server-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.hspec)
             (hsPkgs.network)
             (hsPkgs.websockets)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

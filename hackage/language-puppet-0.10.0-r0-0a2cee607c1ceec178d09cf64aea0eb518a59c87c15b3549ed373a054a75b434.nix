@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { hruby = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-puppet";
-        version = "0.10.0";
-      };
+      identifier = { name = "language-puppet"; version = "0.10.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools to parse and evaluate the Puppet DSL.";
       description = "This is a set of tools that is supposed to fill all your Puppet needs : syntax checks, catalog compilation, PuppetDB queries, simulationg of complex interactions between nodes, Puppet master replacement, and more !";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,8 +51,8 @@
           (hsPkgs.stm)
           (hsPkgs.hspec)
           (hsPkgs.yaml)
-        ] ++ pkgs.lib.optional (flags.hruby) (hsPkgs.hruby);
-      };
+          ] ++ (pkgs.lib).optional (flags.hruby) (hsPkgs.hruby);
+        };
       exes = {
         "puppetresources" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.regex-pcre-builtin)
             (hsPkgs.lens)
             (hsPkgs.aeson)
-          ];
-        };
+            ];
+          };
         "pdbquery" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -95,9 +86,9 @@
             (hsPkgs.lens)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-lexer" = {
           depends = [
@@ -109,8 +100,8 @@
             (hsPkgs.vector)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "test-expr" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -119,8 +110,8 @@
             (hsPkgs.parsec)
             (hsPkgs.vector)
             (hsPkgs.ansi-wl-pprint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cabal-db";
-        version = "0.1.2";
-      };
+      identifier = { name = "cabal-db"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "cabal-db";
       description = "cabal-db";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal-db" = {
@@ -38,8 +29,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.pretty)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

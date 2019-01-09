@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lambdabot-core";
-        version = "5.0.1";
-      };
+      identifier = { name = "lambdabot-core"; version = "5.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,7 +13,7 @@
       synopsis = "Lambdabot core functionality";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nManage plugins, network connections, configurations\nand much more.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,7 +47,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

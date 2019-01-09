@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xmltv";
-        version = "0.0.1";
-      };
+      identifier = { name = "xmltv"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "per.odlund@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Show tv channels in the terminal";
       description = "A program for showing whats on tv in the terminal using xmltv.\nComes with a lib and a program to fetch and prettyprint the info.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.time)
           (hsPkgs.old-locale)
           (hsPkgs.xml)
-        ];
-      };
+          ];
+        };
       exes = {
         "tv" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.network-uri)
             (hsPkgs.unix)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

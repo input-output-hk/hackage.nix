@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lightning-haskell";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "lightning-haskell"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Connor Moreside";
       maintainer = "connor@moresi.de";
@@ -22,7 +13,7 @@
       synopsis = "Haskell client for lightning-viz REST API";
       description = "A Haskell client for lightning-viz server. <http://lightning-viz.org/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.api-builder)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "test-integration" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +60,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { optimize = true; };
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "hquantlib";
-        version = "0.0.2.3";
-      };
+      identifier = { name = "hquantlib"; version = "0.0.2.3"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Pavel Ryzhov <pavel.ryzhov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "HQuantLib is a port of essencial parts of QuantLib to Haskell";
       description = "HQuantLib is intended to be a functional style port of QuantLib (http://quantlib.org)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.hmatrix-special)
           (hsPkgs.parallel)
           (hsPkgs.mersenne-random)
-        ];
-      };
+          ];
+        };
       tests = {
         "main-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

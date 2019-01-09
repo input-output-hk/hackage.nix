@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack-bump";
-        version = "0.7.1.0";
-      };
+      identifier = { name = "stack-bump"; version = "0.7.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Dead simple version bumping for hpack packages";
       description = "Runs tests and build with stack, then bumps the package with a tagged commit.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "stack-bump" = {
@@ -40,9 +31,9 @@
             (hsPkgs.ansi-terminal)
             (hsPkgs.Glob)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hspec" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.filepath)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

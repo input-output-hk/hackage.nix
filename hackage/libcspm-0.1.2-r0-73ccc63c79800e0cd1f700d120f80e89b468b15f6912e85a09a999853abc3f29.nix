@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "libcspm";
-        version = "0.1.2";
-      };
+      identifier = { name = "libcspm"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Thomas Gibson-Robinson";
       maintainer = "Thomas Gibson-Robinson <thomas.gibsonrobinson@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A library providing a parser, type checker and evaluator for CSPM.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.pretty)
           (hsPkgs.directory)
           (hsPkgs.graph-wrapper)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.filepath)
             (hsPkgs.mtl)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "th-orphans";
-        version = "0.5.1.3";
-      };
+      identifier = { name = "th-orphans"; version = "0.5.1.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Matt Morrow";
       maintainer = "Michael Sloan <mgsloan at gmail>";
@@ -22,15 +13,12 @@
       synopsis = "Orphan instances for TH datatypes";
       description = "In particular, instances for Ord and Lift.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.th-lift)
-        ] ++ [
+        depends = [ (hsPkgs.base) (hsPkgs.th-lift) ] ++ [
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

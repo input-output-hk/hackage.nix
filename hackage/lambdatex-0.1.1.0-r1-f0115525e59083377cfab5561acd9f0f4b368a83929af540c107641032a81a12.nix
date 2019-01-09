@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambdatex";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "lambdatex"; version = "0.1.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "2015 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Type-Safe LaTeX EDSL";
       description = "ΛTeX, pronounced 'LambdaTeX' is a Haskell EDSL that adds type-safety to LaTeX.\nΛTeX-generated LaTeX code should compile without errors.\nTODO(kerckhove) big fancy example";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.transformers)
           (hsPkgs.directory)
           (hsPkgs.async)
-        ];
-      };
+          ];
+        };
       tests = {
         "lambdatex-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.quickcheck-text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

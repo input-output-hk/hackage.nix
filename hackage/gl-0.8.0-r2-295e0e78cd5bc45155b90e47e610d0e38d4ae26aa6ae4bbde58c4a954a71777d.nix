@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      usenativewindowslibraries = true;
-      useglxgetprocaddress = true;
-    };
+    flags = { usenativewindowslibraries = true; useglxgetprocaddress = true; };
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "gl";
-        version = "0.8.0";
-      };
+      identifier = { name = "gl"; version = "0.8.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2014-2017 Edward A. Kmett,\nCopyright © 2014-2017 Gabríel Arthúr Pétursson,\nCopyright © 2013 Sven Panne";
       maintainer = "ekmett@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Complete OpenGL raw bindings";
       description = "Complete OpenGL raw bindings";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,13 +22,13 @@
           (hsPkgs.fixed)
           (hsPkgs.half)
           (hsPkgs.transformers)
-        ];
+          ];
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."opengl32") ]
-          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIos) (pkgs."GL"));
-        frameworks = pkgs.lib.optionals (!(system.isWindows && flags.usenativewindowslibraries)) (if system.isOsx
+          else (pkgs.lib).optionals (!system.isOsx) ((pkgs.lib).optional (!system.isIos) (pkgs."GL"));
+        frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) (if system.isOsx
           then [ (pkgs."OpenGL") ]
-          else pkgs.lib.optional (system.isIos) (pkgs."OpenGLES"));
+          else (pkgs.lib).optional (system.isIos) (pkgs."OpenGLES"));
+        };
       };
-    };
-  }
+    }

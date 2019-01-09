@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { openssh = false; };
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "crypto-pubkey-openssh";
-        version = "0.2.0";
-      };
+      identifier = { name = "crypto-pubkey-openssh"; version = "0.2.0"; };
       license = "MIT";
       copyright = "Fedor Gogolev <knsd@knsd.net>";
       maintainer = "Fedor Gogolev <knsd@knsd.net>";
@@ -22,7 +13,7 @@
       synopsis = "OpenSSH public keys parser";
       description = "OpenSSH public keys parser";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.crypto-pubkey-types)
           (hsPkgs.pem)
           (hsPkgs.asn1-data)
-        ];
-      };
+          ];
+        };
       tests = {
         "crypto-pubkey-openssh-tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.temporary)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

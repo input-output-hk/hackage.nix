@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "filediff";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "filediff"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bgwines@cs.stanford.edu";
@@ -22,7 +13,7 @@
       synopsis = "Diffing and patching module";
       description = "`filediff` is a Haskell library for creating diffs, and applying diffs to files and directories.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.data-default)
           (hsPkgs.tasty)
           (hsPkgs.tasty-hunit)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-filediff" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.transformers)
             (hsPkgs.filediff)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

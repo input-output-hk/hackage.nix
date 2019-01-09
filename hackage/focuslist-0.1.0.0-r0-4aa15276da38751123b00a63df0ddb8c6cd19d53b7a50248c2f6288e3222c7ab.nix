@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildreadme = false;
-    };
+    flags = { buildreadme = false; };
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "focuslist";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "focuslist"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017-2018 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Lists with a focused element";
       description = "Please see <https://github.com/cdepillabout/focuslist#readme README.md>.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,17 +22,17 @@
           (hsPkgs.lens)
           (hsPkgs.mono-traversable)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       exes = {
         "focuslist-readme" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.focuslist)
             (hsPkgs.markdown-unlit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "focuslist-doctests" = {
           depends = [
@@ -51,8 +40,8 @@
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "focuslist-test" = {
           depends = [
             (hsPkgs.base)
@@ -65,8 +54,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hedgehog)
             (hsPkgs.tasty-hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

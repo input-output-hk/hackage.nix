@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "CLASE";
-        version = "2008.9.23";
-      };
+      identifier = { name = "CLASE"; version = "2008.9.23"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "clase@zonetora.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Cursor Library for A Structured Editor";
       description = "A library to aid the development of structured editors that\nrequire a zipper-like interface to the language being edited.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.filepath)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

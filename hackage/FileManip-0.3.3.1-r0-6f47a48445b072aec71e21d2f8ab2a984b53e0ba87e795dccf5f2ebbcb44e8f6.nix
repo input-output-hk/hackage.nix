@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "FileManip";
-        version = "0.3.3.1";
-      };
+      identifier = { name = "FileManip"; version = "0.3.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bryan O'Sullivan";
@@ -22,7 +13,7 @@
       synopsis = "Expressive file and directory manipulation for Haskell.";
       description = "/DEPRECATED/.  Use the @filemanip@ package (all lowercase)\ninstead.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -34,14 +25,14 @@
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.extensible-exceptions)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.extensible-exceptions)
-          ];
+            ];
+        };
       };
-    };
-  }
+    }

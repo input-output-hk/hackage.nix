@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "haskelm";
-        version = "0.0.4";
-      };
+      identifier = { name = "haskelm"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2014 Joey Eremondi";
       maintainer = "joey@eremondi.com";
@@ -22,7 +13,7 @@
       synopsis = "Elm to Haskell translation";
       description = "Library and binary to translate Haskell code into Elm code";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.split)
           (hsPkgs.binary)
           (hsPkgs.haskell-src-exts)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskelm" = {
           depends = [
@@ -68,9 +59,9 @@
             (hsPkgs.Elm)
             (hsPkgs.binary)
             (hsPkgs.haskell-src-exts)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-haskelm" = {
           depends = [
@@ -93,8 +84,8 @@
             (hsPkgs.Elm)
             (hsPkgs.binary)
             (hsPkgs.haskell-src-exts)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

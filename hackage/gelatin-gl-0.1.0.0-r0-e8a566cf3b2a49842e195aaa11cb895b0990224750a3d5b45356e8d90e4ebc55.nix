@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gelatin-gl";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "gelatin-gl"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "schell.scivally@synapsegroup.com";
@@ -22,7 +13,7 @@
       synopsis = "OpenGL rendering routines for the gelatin-picture graphics\nEDSL.";
       description = "This package provides most of a backend to\ngelatin-picture, a DSL for decribing two dimensional\npictures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.containers)
           (hsPkgs.lens)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "gelatin-gl-example" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.lens)
             (hsPkgs.vector)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

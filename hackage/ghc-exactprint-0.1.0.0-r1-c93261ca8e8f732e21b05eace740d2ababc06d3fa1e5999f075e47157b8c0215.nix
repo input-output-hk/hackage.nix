@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghc-exactprint";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ghc-exactprint"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "alan.zimm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "ExactPrint for GHC";
       description = "Using the API Annotations available from GHC 7.10 RC2, this\nlibrary provides a means to round trip any* code that can\nbe compiled by GHC\n\n* any currently excludes anything using CPP or lhs.\n\nThe dependency footprint is deliberately kept small so that\nit can easily be tested against GHC HEAD";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
           (hsPkgs.syb)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.HUnit)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

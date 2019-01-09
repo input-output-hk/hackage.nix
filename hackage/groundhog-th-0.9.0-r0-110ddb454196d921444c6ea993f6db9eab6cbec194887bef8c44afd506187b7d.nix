@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "groundhog-th";
-        version = "0.9.0";
-      };
+      identifier = { name = "groundhog-th"; version = "0.9.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Boris Lykah <lykahb@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe datatype-database mapping library.";
       description = "This library helps to generate instances for Groundhog datatypes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.aeson)
           (hsPkgs.yaml)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

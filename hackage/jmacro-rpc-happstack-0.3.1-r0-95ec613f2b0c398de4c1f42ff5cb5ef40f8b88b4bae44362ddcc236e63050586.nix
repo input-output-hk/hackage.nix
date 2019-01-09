@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "jmacro-rpc-happstack";
-        version = "0.3.1";
-      };
+      identifier = { name = "jmacro-rpc-happstack"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "gershomb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Happstack backend for jmacro-rpc";
       description = "Provides functions for serving jmacro-rpc json rpcs and panels from Happstack.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.containers)
           (hsPkgs.aeson)
           (hsPkgs.blaze-html)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

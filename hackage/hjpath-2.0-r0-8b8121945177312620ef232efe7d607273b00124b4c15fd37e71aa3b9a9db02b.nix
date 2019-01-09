@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hjpath";
-        version = "2.0";
-      };
+      identifier = { name = "hjpath"; version = "2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voker57@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "XPath-like syntax for querying JSON";
       description = "JPath is XPath-inspired query language to query JSON data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.hjson)
           (hsPkgs.parsec)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

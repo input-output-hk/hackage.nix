@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "colorless-http-client";
-        version = "0.0.2";
-      };
+      identifier = { name = "colorless-http-client"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Joe Vargas";
@@ -22,7 +13,7 @@
       synopsis = "Http Client addon for Colorless";
       description = "Http Client addon for Colorless";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.http-client)
           (hsPkgs.http-types)
           (hsPkgs.text-conversions)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

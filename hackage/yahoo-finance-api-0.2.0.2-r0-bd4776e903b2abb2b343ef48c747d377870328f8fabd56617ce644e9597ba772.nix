@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yahoo-finance-api";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "yahoo-finance-api"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com, mchaver@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Read quotes from Yahoo Finance API";
       description = "Haskell wrapper for the stock APIs provided by Yahoo Finance.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "yahoo-finance-api-test" = {
           depends = [
@@ -53,15 +44,11 @@
             (hsPkgs.safe)
             (hsPkgs.servant)
             (hsPkgs.servant-client)
-          ];
-        };
+            ];
+          };
         "yahoo-finance-api-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "access-token-provider";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "access-token-provider"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018 Moritz Clasmeier";
       maintainer = "mtesseract@silverratio.net";
@@ -22,7 +13,7 @@
       synopsis = "Provides Access Token for Services";
       description = "Access Token Provider supporting multiple provider backends,\nincluding OAuth2 Resource Owner Password Credentials Grant,\nfile-based token access (e.g. for Kubernetes) and fetching\ntokens from the environment (e.g. for local testing). The\npackage is configurable via environment variables.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.transformers)
           (hsPkgs.random)
           (hsPkgs.say)
-        ];
-      };
+          ];
+        };
       tests = {
         "access-token-provider-test" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.unliftio-core)
             (hsPkgs.unliftio)
             (hsPkgs.safe-exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xlsx";
-        version = "0.0.1";
-      };
+      identifier = { name = "xlsx"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "qrilka@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple and incomplete Excel file parser/writer";
       description = "This library can help you to get some data read and written in Office\nOpen XML xlsx format. Small subset of xlsx format is supported.\nTODO: add link to ECMA standard.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.old-time)
           (hsPkgs.old-locale)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       exes = {
         "test" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.old-time)
             (hsPkgs.old-locale)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "data-test" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

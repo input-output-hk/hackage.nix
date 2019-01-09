@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "temporal-media";
-        version = "0.0";
-      };
+      identifier = { name = "temporal-media"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<anton.kholomiov@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "data types for temporal media";
       description = "Ispired by the paper /An Algebraic Theory of Polymorphic Temporal Media/,\nPaul Hudak\n<http://haskell.cs.yale.edu/yale/papers/polymedia/hudak-RR-1259.pdf>,\nHaskore and Hommage";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.base) ]; };
+      };
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      internal-documentation = false;
-    };
+    flags = { internal-documentation = false; };
     package = {
       specVersion = "1.23";
-      identifier = {
-        name = "opencv-extra";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "opencv-extra"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Roel van Dijk <roel@lambdacube.nl>, Bas van Dijk <v.dijk.bas@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Haskell binding to OpenCV-3.x extra modules";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,12 +29,10 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
+          ];
         libs = [ (pkgs."stdc++") ];
-        pkgconfig = [
-          (pkgconfPkgs.opencv)
-        ];
-      };
+        pkgconfig = [ (pkgconfPkgs.opencv) ];
+        };
       tests = {
         "doc-images-opencv-extra" = {
           depends = [
@@ -65,8 +52,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

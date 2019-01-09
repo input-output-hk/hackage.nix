@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "servant-auth-token-persistent";
         version = "0.6.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2016 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Persistent backend for servant-auth-token server";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +36,7 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.uuid)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pandoc-include-code";
-        version = "0.1.0";
-      };
+      identifier = { name = "pandoc-include-code"; version = "0.1.0"; };
       license = "MPL-2.0";
       copyright = "";
       maintainer = "Oskar Wickström";
@@ -22,7 +13,7 @@
       synopsis = "A Pandoc filter for including code from source files";
       description = "A Pandoc filter for including code from source files.\nYou get to:\nKeep your examples and documentation compiled and in sync\nInclude small snippets from larger source files\nUse Markdown or LaTeX output in Pandoc";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pandoc-include-code" = {
@@ -33,8 +24,8 @@
             (hsPkgs.filepath)
             (hsPkgs.pcre-heavy)
             (hsPkgs.pandoc-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

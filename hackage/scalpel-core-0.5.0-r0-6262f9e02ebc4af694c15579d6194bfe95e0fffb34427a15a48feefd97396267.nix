@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scalpel-core";
-        version = "0.5.0";
-      };
+      identifier = { name = "scalpel-core"; version = "0.5.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "willcoster@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A high level web scraping library for Haskell.";
       description = "Scalpel core provides a subset of the scalpel web scraping library that is\nintended to have lightweight dependencies and to be free of all non-Haskell\ndependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.tagsoup)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "lib-tests" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.scalpel-core)
             (hsPkgs.tagsoup)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.scalpel-core)
             (hsPkgs.tagsoup)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

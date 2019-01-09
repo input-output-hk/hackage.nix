@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "manifolds-core";
-        version = "0.5.0.1";
-      };
+      identifier = { name = "manifolds-core"; version = "0.5.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "(@) jsagemue \$ uni-koeln.de";
@@ -22,7 +13,7 @@
       synopsis = "The basic classes for the manifolds hierarchy.";
       description = "The basic classes for the\n<http://hackage.haskell.org/package/manifolds manifolds> hierarchy.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.vector-space)
           (hsPkgs.tagged)
           (hsPkgs.call-stack)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

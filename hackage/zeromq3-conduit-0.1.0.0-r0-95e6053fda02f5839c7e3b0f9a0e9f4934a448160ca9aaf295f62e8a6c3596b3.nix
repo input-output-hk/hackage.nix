@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "zeromq3-conduit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "zeromq3-conduit"; version = "0.1.0.0"; };
       license = "LGPL-2.1-only";
       copyright = "Copyright (c) 2012, Nicolas Trangez";
       maintainer = "ikke@nicolast.be";
@@ -22,7 +13,7 @@
       synopsis = "Conduit bindings for zeromq3-haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.conduit)
           (hsPkgs.zeromq3-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

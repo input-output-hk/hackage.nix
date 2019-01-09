@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hdbi-conduit";
-        version = "1.2.0";
-      };
+      identifier = { name = "hdbi-conduit"; version = "1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Conduit glue for HDBI";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.hdbi)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

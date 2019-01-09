@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "interchangeable";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "interchangeable"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "arow.okamoto@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "A type class for interchangeable data.";
       description = "Library to use class 'Interchangeable' for interchangeable data.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

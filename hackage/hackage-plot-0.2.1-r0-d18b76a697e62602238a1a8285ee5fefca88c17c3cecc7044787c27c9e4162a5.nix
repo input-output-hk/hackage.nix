@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hackage-plot";
-        version = "0.2.1";
-      };
+      identifier = { name = "hackage-plot"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dons00@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate cumulative graphs of hackage uploads";
       description = "Generate cumulative graphs of hackage uploads";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hackage-plot" = {
@@ -31,7 +22,7 @@
             (hsPkgs.download-curl)
             (hsPkgs.parsedate)
             (hsPkgs.filepath)
-          ] ++ (if flags.small_base
+            ] ++ (if flags.small_base
             then [
               (hsPkgs.base)
               (hsPkgs.old-locale)
@@ -39,9 +30,9 @@
               (hsPkgs.directory)
               (hsPkgs.containers)
               (hsPkgs.bytestring)
-            ]
+              ]
             else [ (hsPkgs.base) ]);
+          };
         };
       };
-    };
-  }
+    }

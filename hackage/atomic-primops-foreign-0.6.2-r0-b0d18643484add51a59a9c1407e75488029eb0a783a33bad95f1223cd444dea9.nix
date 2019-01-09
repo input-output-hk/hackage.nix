@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "atomic-primops-foreign";
-        version = "0.6.2";
-      };
+      identifier = { name = "atomic-primops-foreign"; version = "0.6.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "rrnewton@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "An atomic counter implemented using the FFI.";
       description = "This is an alternate implementation of the counter interface\nprovided by the atomic-primops packag.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.bits-atomic)
-          (hsPkgs.base)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.bits-atomic) (hsPkgs.base) ]; };
       tests = {
         "test-atomic-primops-foreign" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "selfrestart";
-        version = "0.1.0";
-      };
+      identifier = { name = "selfrestart"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Niklas Hambüchen <mail@nh2.me>";
@@ -22,7 +13,7 @@
       synopsis = "Restarts the current executable (on binary change)";
       description = "Allows restarting the currently running executable.\n\nCan restart the running program binary using @exec()@,\neither manually or when the binary changes.\n\nAlso works with runhaskell/runghc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.directory)
           (hsPkgs.executable-path)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

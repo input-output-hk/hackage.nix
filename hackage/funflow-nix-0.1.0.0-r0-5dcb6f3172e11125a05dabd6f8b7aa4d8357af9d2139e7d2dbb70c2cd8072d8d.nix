@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "funflow-nix";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "funflow-nix"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "matthewtpickering@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utility functions for using funflow with nix";
       description = "This library provides functions to create flows which run commands\nin environments created by nix commands.\nIt is designed to be like the docker integration but the environments\nare created by nix rather than in a container.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.text)
           (hsPkgs.path)
           (hsPkgs.modern-uri)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.path-io)
             (hsPkgs.modern-uri)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.temporary)
             (hsPkgs.unix)
             (hsPkgs.modern-uri)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

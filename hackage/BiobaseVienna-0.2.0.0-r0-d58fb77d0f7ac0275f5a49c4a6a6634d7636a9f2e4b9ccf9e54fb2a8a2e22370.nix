@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "BiobaseVienna";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "BiobaseVienna"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2010-2012";
       maintainer = "choener@tbi.univie.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "Import Vienna energy parameters";
       description = "Importer and Exporter for Vienna energy files. Allows\nconverting Turner parameter files to Vienna parameter files.\n\nThis is the 2011 post-library split version, hence not\ndeprecated anymore.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,12 +29,8 @@
           (hsPkgs.vector)
           (hsPkgs.repa)
           (hsPkgs.PrimitiveArray)
-        ];
-      };
-      exes = {
-        "ViennaConverter" = {
-          depends = [ (hsPkgs.cmdargs) ];
+          ];
         };
+      exes = { "ViennaConverter" = { depends = [ (hsPkgs.cmdargs) ]; }; };
       };
-    };
-  }
+    }

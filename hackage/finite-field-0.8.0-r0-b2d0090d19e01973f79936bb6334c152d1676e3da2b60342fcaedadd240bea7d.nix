@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "finite-field";
-        version = "0.8.0";
-      };
+      identifier = { name = "finite-field"; version = "0.8.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "masahiro.sakai@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Finite Fields";
       description = "This is an implementation of finite fields.\nCurrently only prime fields are supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
           (hsPkgs.type-level-numbers)
-        ];
-      };
+          ];
+        };
       tests = {
         "TestPrimeField" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.finite-field)
             (hsPkgs.primes)
             (hsPkgs.type-level-numbers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

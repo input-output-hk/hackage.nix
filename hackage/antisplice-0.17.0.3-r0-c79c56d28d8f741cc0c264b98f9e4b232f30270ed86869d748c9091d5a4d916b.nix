@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "antisplice";
-        version = "0.17.0.3";
-      };
+      identifier = { name = "antisplice"; version = "0.17.0.3"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "marvin.cohrs@gmx.net";
@@ -22,7 +13,7 @@
       synopsis = "An engine for text-based dungeons.";
       description = "An engine for text-based dungeons.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.transformers)
           (hsPkgs.haskeline)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

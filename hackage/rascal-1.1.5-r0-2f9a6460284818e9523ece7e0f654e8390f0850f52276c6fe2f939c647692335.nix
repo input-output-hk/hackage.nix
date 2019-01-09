@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rascal";
-        version = "1.1.5";
-      };
+      identifier = { name = "rascal"; version = "1.1.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "Sylvain.Soliman@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A command-line client for Reddit";
       description = "Rascal is a command-line client for Reddit with colors,\nconfigurable sorting, threaded comments, and some day\nmost of Reddit's API available.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "rascal" = {
@@ -38,9 +29,9 @@
             (hsPkgs.directory)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Tests" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.HUnit)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demo = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "json-rpc-server";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "json-rpc-server"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Kristen Kozak <grayjay@wordroute.com>";
@@ -22,7 +13,7 @@
       synopsis = "JSON RPC 2.0 on the server side.";
       description = "An implemation of the server side of JSON RPC 2.0.\nSee <http://www.jsonrpc.org/specification>. This\nlibrary uses 'ByteString' for input and output,\nleaving the choice of transport up to the user.\nSee the 'Network.JsonRpc.Server' module for an example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,18 +25,18 @@
           (hsPkgs.vector)
           (hsPkgs.unordered-containers)
           (hsPkgs.attoparsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "demo" = {
-          depends = pkgs.lib.optionals (flags.demo) [
+          depends = (pkgs.lib).optionals (flags.demo) [
             (hsPkgs.base)
             (hsPkgs.json-rpc-server)
             (hsPkgs.mtl)
             (hsPkgs.happstack-server)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.vector)
             (hsPkgs.unordered-containers)
             (hsPkgs.attoparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

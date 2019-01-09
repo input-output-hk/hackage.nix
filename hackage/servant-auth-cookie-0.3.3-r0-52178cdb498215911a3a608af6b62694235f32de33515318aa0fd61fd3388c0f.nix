@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-auth-cookie";
-        version = "0.3.3";
-      };
+      identifier = { name = "servant-auth-cookie"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "Al Zohali <zohl@fmap.me>, Mark Karpov <markkarpov@opmbx.org>";
       maintainer = "Al Zohali <zohl@fmap.me>";
@@ -22,7 +13,7 @@
       synopsis = "Authentication via encrypted cookies";
       description = "Authentication via encrypted client-side cookies,\ninspired by client-session library by Michael Snoyman and based on\nideas of the paper \"A Secure Cookie Protocol\" by Alex Liu et al.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.wai)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs.tagged);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs.tagged);
+        };
       exes = {
         "example" = {
           depends = [
@@ -64,9 +55,9 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -81,9 +72,9 @@
             (hsPkgs.servant-auth-cookie)
             (hsPkgs.servant-server)
             (hsPkgs.time)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs.tagged);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs.tagged);
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -93,8 +84,8 @@
             (hsPkgs.cryptonite)
             (hsPkgs.servant-auth-cookie)
             (hsPkgs.servant-server)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

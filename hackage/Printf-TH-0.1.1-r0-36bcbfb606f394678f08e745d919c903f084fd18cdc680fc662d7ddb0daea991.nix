@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Printf-TH";
-        version = "0.1.1";
-      };
+      identifier = { name = "Printf-TH"; version = "0.1.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Marc Weber <marco-oweber@gmx.de>";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.base)
           (hsPkgs.template-haskell)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

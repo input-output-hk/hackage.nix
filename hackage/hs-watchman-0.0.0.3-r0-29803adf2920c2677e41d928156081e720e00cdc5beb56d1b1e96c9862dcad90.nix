@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hs-watchman";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "hs-watchman"; version = "0.0.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "mutantlemon@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Client library for Facebook's Watchman tool";
       description = "Client library for Facebook's Watchman tool";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.network)
           (hsPkgs.process)
           (hsPkgs.temporary)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "elm-get";
-        version = "0.1";
-      };
+      identifier = { name = "elm-get"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2013-2014 Evan Czaplicki";
       maintainer = "info@elm-lang.org";
@@ -22,7 +13,7 @@
       synopsis = "Tool for sharing and using Elm libraries";
       description = "elm-get lets you install, update, and publish Elm libraries";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "elm-get" = {
@@ -48,8 +39,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

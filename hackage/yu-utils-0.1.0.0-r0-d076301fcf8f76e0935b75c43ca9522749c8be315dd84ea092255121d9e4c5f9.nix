@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { client = false; };
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "yu-utils";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "yu-utils"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2017 Johann Lee";
       maintainer = "qinka@live.com";
@@ -22,7 +13,7 @@
       synopsis = "Utils for Yu";
       description = "Utils for Yu";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.gitrev)
           (hsPkgs.cmdargs)
           (hsPkgs.signal)
-        ] ++ pkgs.lib.optionals (!flags.client) [
+          ] ++ (pkgs.lib).optionals (!flags.client) [
           (hsPkgs.yesod-core)
           (hsPkgs.blaze-markup)
           (hsPkgs.blaze-html)
@@ -56,7 +47,7 @@
           (hsPkgs.xml-hamlet)
           (hsPkgs.mtl)
           (hsPkgs.http-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

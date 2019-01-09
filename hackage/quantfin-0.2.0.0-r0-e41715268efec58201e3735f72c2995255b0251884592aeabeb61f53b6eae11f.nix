@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "quantfin";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "quantfin"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "timothy.dees@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Quant finance library in pure Haskell.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,15 +27,10 @@
           (hsPkgs.mersenne-random-pure64)
           (hsPkgs.random-source)
           (hsPkgs.random)
-        ];
-      };
-      exes = {
-        "example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.quantfin)
           ];
         };
+      exes = {
+        "example" = { depends = [ (hsPkgs.base) (hsPkgs.quantfin) ]; };
+        };
       };
-    };
-  }
+    }

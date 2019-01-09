@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasql-cursor-query";
-        version = "0.4.2";
-      };
+      identifier = { name = "hasql-cursor-query"; version = "0.4.2"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A declarative abstraction over PostgreSQL Cursor";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.contravariant)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.foldl)
             (hsPkgs.rebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

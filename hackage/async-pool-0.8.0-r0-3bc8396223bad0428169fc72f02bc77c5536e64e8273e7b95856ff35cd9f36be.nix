@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "async-pool";
-        version = "0.8.0";
-      };
+      identifier = { name = "async-pool"; version = "0.8.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "A modified version of async that supports worker groups and many-to-many task dependencies";
       description = "This library modifies the @async@ package to allow for task pooling and\nmany-to-many dependencies between tasks.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.containers)
             (hsPkgs.hspec)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

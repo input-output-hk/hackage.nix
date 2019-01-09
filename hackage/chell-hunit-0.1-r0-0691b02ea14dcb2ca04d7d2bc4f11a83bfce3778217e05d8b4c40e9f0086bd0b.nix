@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "chell-hunit";
-        version = "0.1";
-      };
+      identifier = { name = "chell-hunit"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "";
@@ -22,15 +13,10 @@
       synopsis = "Quiet test runner (HUnit support)";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.chell)
-          (hsPkgs.HUnit)
-          (hsPkgs.text)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.chell) (hsPkgs.HUnit) (hsPkgs.text) ];
+        };
       };
-    };
-  }
+    }

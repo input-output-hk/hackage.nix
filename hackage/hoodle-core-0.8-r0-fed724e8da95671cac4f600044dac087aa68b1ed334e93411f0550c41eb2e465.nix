@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { poppler = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoodle-core";
-        version = "0.8";
-      };
+      identifier = { name = "hoodle-core"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Core library for hoodle";
       description = "Hoodle is a pen notetaking program written in haskell.\nhoodle-core is the core library written in haskell and\nusing gtk2hs";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,7 +47,7 @@
           (hsPkgs.cereal)
           (hsPkgs.base64-bytestring)
           (hsPkgs.old-locale)
-        ] ++ pkgs.lib.optional (flags.poppler) (hsPkgs.poppler);
+          ] ++ (pkgs.lib).optional (flags.poppler) (hsPkgs.poppler);
+        };
       };
-    };
-  }
+    }

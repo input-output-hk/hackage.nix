@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gloss-raster";
-        version = "1.9.3.1";
-      };
+      identifier = { name = "gloss-raster"; version = "1.9.3.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "benl@ouroborus.net";
@@ -22,7 +13,7 @@
       synopsis = "Parallel rendering of raster images.";
       description = "Parallel rendering of raster images.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.repa)
           (hsPkgs.gloss)
           (hsPkgs.gloss-rendering)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

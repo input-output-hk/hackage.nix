@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clash-prelude";
-        version = "0.3";
-      };
+      identifier = { name = "clash-prelude"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2013-2014 University of Twente";
       maintainer = "Christiaan Baaij <christiaan.baaij@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "CAES Language for Synchronous Hardware - Prelude library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.data-default)
           (hsPkgs.template-haskell)
           (hsPkgs.th-lift)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

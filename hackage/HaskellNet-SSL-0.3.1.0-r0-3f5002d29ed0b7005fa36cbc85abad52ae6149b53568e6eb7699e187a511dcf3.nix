@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      noupperbounds = false;
-    };
+    flags = { noupperbounds = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HaskellNet-SSL";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "HaskellNet-SSL"; version = "0.3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Daniel P. Wright";
       maintainer = "dani@dpwright.com";
@@ -24,7 +13,7 @@
       synopsis = "Helpers to connect to SSL/TLS mail servers with HaskellNet";
       description = "This package ties together the HaskellNet and connection\npackages to make it easy to open IMAP and SMTP connections\nover SSL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +24,7 @@
           (hsPkgs.network)
           (hsPkgs.bytestring)
           (hsPkgs.data-default)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "random-bytestring";
-        version = "0.1.0";
-      };
+      identifier = { name = "random-bytestring"; version = "0.1.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2017 Lars Kuhtz <lakuhtz@gmail.com>";
       maintainer = "Lars Kuhtz <lakuhtz@gmail.com>";
@@ -22,15 +13,15 @@
       synopsis = "Efficient generation of random bytestrings";
       description = "Efficient generation of random bytestrings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.mwc-random)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.nats);
+        };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.nats);
+          };
         "benchmark-compare" = {
           depends = [
             (hsPkgs.random-bytestring)
@@ -53,8 +44,8 @@
             (hsPkgs.mwc-random)
             (hsPkgs.primitive)
             (hsPkgs.random)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.nats);
+          };
         "eventlog-compare" = {
           depends = [
             (hsPkgs.random-bytestring)
@@ -67,8 +58,8 @@
             (hsPkgs.mwc-random)
             (hsPkgs.primitive)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

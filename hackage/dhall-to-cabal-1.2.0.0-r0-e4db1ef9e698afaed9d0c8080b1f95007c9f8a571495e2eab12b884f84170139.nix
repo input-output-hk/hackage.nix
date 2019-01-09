@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "dhall-to-cabal";
-        version = "1.2.0.0";
-      };
+      identifier = { name = "dhall-to-cabal"; version = "1.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "Compile Dhall expressions to Cabal files";
       description = "dhall-to-cabal takes Dhall expressions and compiles them into Cabal\nfiles. All of the features of Dhall are supported, such as let\nbindings and imports, and all features of Cabal are supported\n(including conditional stanzas).\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "dhall-to-cabal" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.prettyprinter)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "cabal-to-dhall" = {
           depends = [
             (hsPkgs.base)
@@ -62,9 +53,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.prettyprinter)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "golden-tests" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

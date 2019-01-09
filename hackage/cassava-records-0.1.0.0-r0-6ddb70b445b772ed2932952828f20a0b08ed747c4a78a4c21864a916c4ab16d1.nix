@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cassava-records";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "cassava-records"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Author name here";
       maintainer = "grdvnl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Auto-generation of records data type.";
       description = "cassava-records library helps in auto-creating record data types using Template Haskell by inferring types from the columns of a csv or compatible input file. The record and type classes instances generated can be seamlessly used with cassava(the haskell csv reader library) to load the data into these record types without dealing with any other level of abstraction.\nPlease see README on Github at <https://github.com/gdevanla/cassava-records#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "cassava-records-exe" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "cassava-records-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

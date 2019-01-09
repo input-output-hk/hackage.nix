@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "astro";
-        version = "0.4.2.0";
-      };
+      identifier = { name = "astro"; version = "0.4.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2016-2017 Alexander Ignatyev";
       maintainer = "Alexander Ignatyev";
@@ -22,15 +13,11 @@
       synopsis = "Amateur astronomical computations";
       description = "Amateur astronomical computations: rise and set times and azimuths,\ncoordinates, distances, angular sizes and other parameters\nof the Sun, the Moon, planets and stars.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-          (hsPkgs.matrix)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.time) (hsPkgs.matrix) ];
+        };
       tests = {
         "astro-test" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

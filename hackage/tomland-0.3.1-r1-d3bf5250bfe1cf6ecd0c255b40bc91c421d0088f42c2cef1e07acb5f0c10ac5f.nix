@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "tomland";
-        version = "0.3.1";
-      };
+      identifier = { name = "tomland"; version = "0.3.1"; };
       license = "MPL-2.0";
       copyright = "2018 Kowainik";
       maintainer = "xrom.xkov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "TOML parser";
       description = "See README.md for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "play-tomland" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tomland-test" = {
           depends = [
@@ -62,11 +53,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unordered-containers)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.tasty-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).tasty-discover) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hdph";
-        version = "0.0.1";
-      };
+      identifier = { name = "hdph"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Patrick Maier <C.Patrick.Maier@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell distributed parallel Haskell";
       description = "Haskell distributed parallel Haskell (HdpH) is a Haskell DSL\nfor distributed-memory parallelism, implemented entirely in\nHaskell (as supported by GHC).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.random)
           (hsPkgs.time)
           (hsPkgs.hdph-closure)
-        ];
-      };
+          ];
+        };
       exes = {
         "hello" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.random)
             (hsPkgs.time)
             (hsPkgs.hdph-closure)
-          ];
-        };
+            ];
+          };
         "fib" = {
           depends = [
             (hsPkgs.template-haskell)
@@ -80,8 +71,8 @@
             (hsPkgs.random)
             (hsPkgs.time)
             (hsPkgs.hdph-closure)
-          ];
-        };
+            ];
+          };
         "sumeuler" = {
           depends = [
             (hsPkgs.template-haskell)
@@ -99,8 +90,8 @@
             (hsPkgs.random)
             (hsPkgs.time)
             (hsPkgs.hdph-closure)
-          ];
-        };
+            ];
+          };
         "nbody" = {
           depends = [
             (hsPkgs.template-haskell)
@@ -118,8 +109,8 @@
             (hsPkgs.random)
             (hsPkgs.time)
             (hsPkgs.hdph-closure)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

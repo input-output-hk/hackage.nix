@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspec-jenkins";
-        version = "0.1.1";
-      };
+      identifier = { name = "hspec-jenkins"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "eagletmt@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Jenkins-friendly XML formatter for Hspec";
       description = "Jenkins-friendly XML formatter for Hspec";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hspec)
-          (hsPkgs.blaze-markup)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.blaze-markup) ];
+        };
       };
-    };
-  }
+    }

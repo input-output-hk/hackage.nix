@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "system-random-effect";
-        version = "0.3.1";
-      };
+      identifier = { name = "system-random-effect"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cgaebel@uwaterloo.ca";
@@ -22,7 +13,7 @@
       synopsis = "Random number generation for extensible effects.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.statistics)
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.extensible-effects)
             (hsPkgs.system-random-effect)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.criterion)
             (hsPkgs.extensible-effects)
             (hsPkgs.system-random-effect)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

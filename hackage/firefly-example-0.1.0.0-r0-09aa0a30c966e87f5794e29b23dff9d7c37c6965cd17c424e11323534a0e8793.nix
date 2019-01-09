@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "firefly-example";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "firefly-example"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple example using Firefly";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "firefly-example-exe" = {
@@ -34,8 +25,8 @@
             (hsPkgs.blaze-html)
             (hsPkgs.mtl)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

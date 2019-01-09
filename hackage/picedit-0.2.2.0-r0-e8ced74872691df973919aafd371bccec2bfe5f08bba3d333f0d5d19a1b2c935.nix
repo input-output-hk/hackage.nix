@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "picedit";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "picedit"; version = "0.2.2.0"; };
       license = "GPL-3.0-only";
       copyright = "2016 Mahdi Dibaiee";
       maintainer = "mdibaiee@aol.com";
@@ -22,7 +13,7 @@
       synopsis = "simple image manipulation functions";
       description = "Simple set of functions for image manipulation: contrast, brightnesss, rotation, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.hmatrix)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "picedit" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.picedit)
             (hsPkgs.cli)
             (hsPkgs.hmatrix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

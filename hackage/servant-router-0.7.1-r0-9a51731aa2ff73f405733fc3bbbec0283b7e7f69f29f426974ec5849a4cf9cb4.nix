@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-router";
-        version = "0.7.1";
-      };
+      identifier = { name = "servant-router"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Will Fancher";
       maintainer = "willfancher38@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant router for non-server applications.";
       description = "Write Servant APIs to be routed without a server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.network-uri)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "servant-router-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.servant-router)
             (hsPkgs.servant)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

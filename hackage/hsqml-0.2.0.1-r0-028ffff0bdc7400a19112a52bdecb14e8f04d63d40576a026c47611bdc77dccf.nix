@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      usepkgconfig = false;
-      threadedtestsuite = true;
-    };
+    flags = { usepkgconfig = false; threadedtestsuite = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsqml";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "hsqml"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2013 Robin KAY";
       maintainer = "komadori@gekkou.co.uk";
@@ -25,7 +13,7 @@
       synopsis = "Haskell binding for Qt Quick";
       description = "A Haskell binding for Qt Quick.\nGeneral documentation is present in the 'Graphics.QML' module.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.tagged)
           (hsPkgs.transformers)
-        ];
+          ];
         libs = if system.isWindows && !flags.usepkgconfig
           then [
             (pkgs."QtCore4")
@@ -44,22 +32,20 @@
             (pkgs."QtScript4")
             (pkgs."QtDeclarative4")
             (pkgs."stdc++")
-          ]
+            ]
           else [ (pkgs."stdc++") ];
-        frameworks = pkgs.lib.optionals (!(system.isWindows && !flags.usepkgconfig)) (pkgs.lib.optionals (system.isOsx && !flags.usepkgconfig) [
+        frameworks = (pkgs.lib).optionals (!(system.isWindows && !flags.usepkgconfig)) ((pkgs.lib).optionals (system.isOsx && !flags.usepkgconfig) [
           (pkgs."QtCore")
           (pkgs."QtGui")
           (pkgs."QtScript")
           (pkgs."QtDeclarative")
-        ]);
-        pkgconfig = pkgs.lib.optionals (!(system.isWindows && !flags.usepkgconfig)) (pkgs.lib.optionals (!(system.isOsx && !flags.usepkgconfig)) [
+          ]);
+        pkgconfig = (pkgs.lib).optionals (!(system.isWindows && !flags.usepkgconfig)) ((pkgs.lib).optionals (!(system.isOsx && !flags.usepkgconfig)) [
           (pkgconfPkgs.QtScript)
           (pkgconfPkgs.QtDeclarative)
-        ]);
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+          ]);
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "hsqml-test1" = {
           depends = [
@@ -71,8 +57,8 @@
             (hsPkgs.tagged)
             (hsPkgs.QuickCheck)
             (hsPkgs.hsqml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

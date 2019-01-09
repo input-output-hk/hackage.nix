@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nuxeo";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "nuxeo"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "alex@xn--wxa.email";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Nuxeo tools";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.conduit-extra)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "nuxeo" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.nuxeo)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

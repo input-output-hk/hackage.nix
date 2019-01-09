@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hpack-convert";
-        version = "1.0.1";
-      };
+      identifier = { name = "hpack-convert"; version = "1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Pedro Tacla Yamada <tacla.yamada@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Convert Cabal manifests into hpack's package.yamls";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.vector)
           (hsPkgs.aeson)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       exes = {
         "hpack-convert" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.vector)
             (hsPkgs.aeson)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -91,8 +82,8 @@
             (hsPkgs.mockery)
             (hsPkgs.interpolate)
             (hsPkgs.aeson-qq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

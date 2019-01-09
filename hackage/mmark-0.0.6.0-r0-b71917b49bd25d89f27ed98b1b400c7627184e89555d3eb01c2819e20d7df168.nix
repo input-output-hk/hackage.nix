@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "mmark";
-        version = "0.0.6.0";
-      };
+      identifier = { name = "mmark"; version = "0.0.6.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Strict markdown processor for writers";
       description = "Strict markdown processor for writers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -48,8 +39,8 @@
           (hsPkgs.text-metrics)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.void)) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.void)) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -64,12 +55,10 @@
             (hsPkgs.mmark)
             (hsPkgs.modern-uri)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
-      };
       benchmarks = {
         "bench-speed" = {
           depends = [
@@ -77,16 +66,16 @@
             (hsPkgs.criterion)
             (hsPkgs.mmark)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "bench-memory" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.mmark)
             (hsPkgs.text)
             (hsPkgs.weigh)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

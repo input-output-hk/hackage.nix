@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "acme-everything";
-        version = "2015.5.4";
-      };
+      identifier = { name = "acme-everything"; version = "2015.5.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky(λ)gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Install everything.";
       description = "Install everything.\n\nDon't be fooled by the small dependency footprint: the\nentirety of Hackage needs to be installed for this, and\nmost of it is done via transitive dependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -107,7 +98,7 @@
           (hsPkgs.wai-request-spec)
           (hsPkgs.yesod-gitrev)
           (hsPkgs.yesod-transloadit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

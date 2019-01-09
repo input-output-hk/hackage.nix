@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "exp-extended";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "exp-extended"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2015 Claude Heiland-Allen";
       maintainer = "claude@mathr.co.uk";
@@ -22,14 +13,10 @@
       synopsis = "floating point with extended exponent range";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.compensated)
-          (hsPkgs.log-domain)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.compensated) (hsPkgs.log-domain) ];
+        };
       };
-    };
-  }
+    }

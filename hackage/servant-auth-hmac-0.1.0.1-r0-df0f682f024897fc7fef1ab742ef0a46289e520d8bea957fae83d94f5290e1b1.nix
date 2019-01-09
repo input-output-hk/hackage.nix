@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-auth-hmac";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "servant-auth-hmac"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Al Zohali <zohl@fmap.me>";
@@ -22,7 +13,7 @@
       synopsis = "Authentication via HMAC";
       description = "Authentication via hashed message code (HMAC) based on RFC1945.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -68,9 +59,9 @@
             (hsPkgs.unix)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -97,8 +88,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
             (hsPkgs.with-location)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

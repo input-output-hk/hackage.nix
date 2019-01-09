@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "error-util";
-        version = "0.0.1.2";
-      };
+      identifier = { name = "error-util"; version = "0.0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Piotr Młodawski <remdezx+github@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Set of utils and operators for error handling";
       description = "Set of utils and operators for error handling";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.transformers) ]; };
+      };
+    }

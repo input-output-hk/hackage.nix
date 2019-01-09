@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      template_haskell = true;
-    };
+    flags = { template_haskell = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monad-logger";
-        version = "0.3.4.0";
-      };
+      identifier = { name = "monad-logger"; version = "0.3.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -24,7 +13,7 @@
       synopsis = "A class of monads which can log messages.";
       description = "This package uses template-haskell for determining source code locations of messages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +32,7 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
           (hsPkgs.blaze-builder)
-        ] ++ pkgs.lib.optional (flags.template_haskell) (hsPkgs.template-haskell);
+          ] ++ (pkgs.lib).optional (flags.template_haskell) (hsPkgs.template-haskell);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Monaris";
-        version = "0.1.6";
-      };
+      identifier = { name = "Monaris"; version = "0.1.6"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2013 Fumiaki Kinoshita";
       maintainer = "fumiexcel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple tetris clone";
       description = "A tetris clone written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Monaris" = {
@@ -34,8 +25,8 @@
             (hsPkgs.free)
             (hsPkgs.directory)
             (hsPkgs.free-game)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

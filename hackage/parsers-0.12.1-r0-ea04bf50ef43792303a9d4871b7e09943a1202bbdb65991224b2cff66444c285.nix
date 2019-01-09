@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "parsers";
-        version = "0.12.1";
-      };
+      identifier = { name = "parsers"; version = "0.12.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2010-2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Parsing combinators";
       description = "Parsing combinators";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.filepath)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
-        };
+            ];
+          };
         "quickcheck" = {
           depends = [
             (hsPkgs.attoparsec)
@@ -58,8 +49,8 @@
             (hsPkgs.parsers)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

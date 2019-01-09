@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clr-inline";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "clr-inline"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Jose Iborra";
       maintainer = "pepeiborra@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Quasiquoters for inline C# and F#";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.temporary)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -72,9 +63,9 @@
             (hsPkgs.temporary)
             (hsPkgs.transformers)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -101,8 +92,8 @@
             (hsPkgs.base)
             (hsPkgs.clr-inline)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

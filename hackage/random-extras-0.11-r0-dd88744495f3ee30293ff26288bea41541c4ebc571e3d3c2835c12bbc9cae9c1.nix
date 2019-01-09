@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "random-extras";
-        version = "0.11";
-      };
+      identifier = { name = "random-extras"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "aristidb@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Additional functions for random values.";
       description = "Additional functions for random values, based on random-fu. Inspired by random-shuffle.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.random-fu)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

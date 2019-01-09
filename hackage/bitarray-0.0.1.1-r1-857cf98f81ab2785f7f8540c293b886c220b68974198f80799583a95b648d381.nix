@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bitarray";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "bitarray"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Balazs Komuves";
       maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
@@ -22,13 +13,8 @@
       synopsis = "Mutable and immutable bit arrays";
       description = "Mutable and immutable bit arrays.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.array) ]; };
+      };
+    }

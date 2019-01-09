@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hpc";
-        version = "0.5.1.1";
-      };
+      identifier = { name = "hpc"; version = "0.5.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "libraries@haskell.org";
@@ -22,7 +13,7 @@
       synopsis = "Code Coverage Library for Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -31,8 +22,8 @@
             (hsPkgs.directory)
             (hsPkgs.old-time)
             (hsPkgs.containers)
-          ]
+            ]
           else [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

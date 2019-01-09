@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rasa-ext-bufs";
-        version = "0.1.1";
-      };
+      identifier = { name = "rasa-ext-bufs"; version = "0.1.1"; };
       license = "MIT";
       copyright = "2016 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Rasa Ext for useful buffer utilities";
       description = "Rasa Ext for useful buffer utilities";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.lens)
           (hsPkgs.text)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

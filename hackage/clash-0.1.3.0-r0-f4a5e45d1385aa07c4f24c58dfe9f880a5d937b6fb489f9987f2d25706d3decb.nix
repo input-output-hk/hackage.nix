@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "clash";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "clash"; version = "0.1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2009-2010 Christiaan Baaij &\nMatthijs Kooijman";
       maintainer = "christiaan.baaij@gmail.com & matthijs@stdin.nl";
@@ -22,7 +13,7 @@
       synopsis = "CAES Language for Synchronous Hardware (CLaSH)";
       description = "CLaSH is a tool-chain/language to translate subsets of\nHaskell to synthesizable VHDL. It does this by translating\nthe intermediate System Fc (GHC Core) representation to a\nVHDL AST, which is then written to file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.tfp)
           (hsPkgs.th-lift)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

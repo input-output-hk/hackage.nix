@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rfc";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "rfc"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c)2017 Robert Fischer";
       maintainer = "smokejumperit+rfc@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Robert Fischer's Common library, for all Robert Fischer's common needs.";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -67,7 +56,7 @@
           (hsPkgs.vector)
           (hsPkgs.lifted-async)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

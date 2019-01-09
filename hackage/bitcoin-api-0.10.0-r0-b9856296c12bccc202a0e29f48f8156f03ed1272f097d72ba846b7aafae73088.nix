@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bitcoin-api";
-        version = "0.10.0";
-      };
+      identifier = { name = "bitcoin-api"; version = "0.10.0"; };
       license = "MIT";
       copyright = "(c) 2015 Leon Mergen";
       maintainer = "leon@solatis.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides access to the RPC API of Bitcoin Core";
       description = "The Bitcoin Core application provides an HTTP RPC interface for communication.\nThis library implements access to these functions. It builds on top of the\n`bitcoin-tx` and `bitcoin-script`, and as such provides an extremely flexible\nenvironment to create, manipulate and store transactions and custom scripts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.bitcoin-block)
           (hsPkgs.bitcoin-tx)
           (hsPkgs.bitcoin-script)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.bitcoin-tx)
             (hsPkgs.bitcoin-script)
             (hsPkgs.bitcoin-api)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

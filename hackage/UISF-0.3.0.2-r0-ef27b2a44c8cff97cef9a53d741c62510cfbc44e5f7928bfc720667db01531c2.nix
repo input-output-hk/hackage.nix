@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "UISF";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "UISF"; version = "0.3.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2015 Daniel Winograd-Cort";
       maintainer = "Dan Winograd-Cort <dwc@cs.yale.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Library for Arrowized Graphical User Interfaces.";
       description = "UISF is a library for making arrowized GUIs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.OpenGL)
           (hsPkgs.deepseq)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

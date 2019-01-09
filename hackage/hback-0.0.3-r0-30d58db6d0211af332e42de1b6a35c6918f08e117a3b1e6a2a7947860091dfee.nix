@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hback";
-        version = "0.0.3";
-      };
+      identifier = { name = "hback"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Norbert Wojtowicz <wojtowicz.norbert@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "N-back memory game";
       description = "N-back memory game using gtk2hs.\n\nInstructions on installation and gameplay available at:\n<http://hback.googlecode.com/>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hback" = {
@@ -34,14 +25,10 @@
             (hsPkgs.gtk)
             (hsPkgs.cairo)
             (hsPkgs.svgcairo)
-          ] ++ (if flags.small_base
-            then [
-              (hsPkgs.base)
-              (hsPkgs.unix)
-              (hsPkgs.time)
-            ]
+            ] ++ (if flags.small_base
+            then [ (hsPkgs.base) (hsPkgs.unix) (hsPkgs.time) ]
             else [ (hsPkgs.base) ]);
+          };
         };
       };
-    };
-  }
+    }

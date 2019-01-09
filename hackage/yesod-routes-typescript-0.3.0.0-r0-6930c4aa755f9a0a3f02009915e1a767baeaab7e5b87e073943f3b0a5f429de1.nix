@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-routes-typescript";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "yesod-routes-typescript"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "max@docmunch.com";
@@ -22,7 +13,7 @@
       synopsis = "generate TypeScript routes for Yesod";
       description = "parse the Yesod routes data structure and generate routes that can be used in typescript";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-routes)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

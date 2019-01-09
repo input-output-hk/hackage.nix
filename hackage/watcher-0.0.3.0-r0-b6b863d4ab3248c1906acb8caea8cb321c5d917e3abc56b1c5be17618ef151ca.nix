@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "watcher";
-        version = "0.0.3.0";
-      };
+      identifier = { name = "watcher"; version = "0.0.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "nate@so8r.es";
@@ -22,7 +13,7 @@
       synopsis = "Opinionated filesystem watcher";
       description = "A filesystem watcher. Triggers added/changed/removed events\nwhen the filesystem changes. Can cache in an SQL database\nand bring itself back up to date after long periods of\ndowntime.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.system-fileio)
           (hsPkgs.system-filepath)
           (hsPkgs.hinotify)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "special-keys";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "special-keys"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mr.hugo.gomes@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple data types that help me here and there.";
       description = "Datatypes that I use as keys to index other data types. Here you will find a wrap of UUID and also constraints on Text so that it never exceeds a given number of characters.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.uuid)
           (hsPkgs.mwc-random)
           (hsPkgs.aeson)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

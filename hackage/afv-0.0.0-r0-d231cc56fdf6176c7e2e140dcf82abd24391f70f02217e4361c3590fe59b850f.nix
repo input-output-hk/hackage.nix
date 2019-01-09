@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "afv";
-        version = "0.0.0";
-      };
+      identifier = { name = "afv"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tom Hawkins <tomahawkins@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Model checking Atom generated C.";
       description = "A model checker for Atom generated, or similar, C code.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "afv" = {
@@ -34,8 +25,8 @@
             (hsPkgs.process)
             (hsPkgs.language-c)
             (hsPkgs.yices)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

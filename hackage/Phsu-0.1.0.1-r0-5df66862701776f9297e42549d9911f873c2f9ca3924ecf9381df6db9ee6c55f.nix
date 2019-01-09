@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Phsu";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "Phsu"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "utkarsh.lath@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Personal Happstack Server Utils";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Phsu" = {
@@ -52,8 +43,8 @@
             (hsPkgs.regex-pcre)
             (hsPkgs.friendly-time)
             (hsPkgs.string-conversions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snaplet-wordpress";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "snaplet-wordpress"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -22,7 +13,7 @@
       synopsis = "A snaplet that communicates with wordpress over its api.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.containers)
           (hsPkgs.vector)
           (hsPkgs.attoparsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-snaplet-wordpress" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.aeson)
             (hsPkgs.containers)
             (hsPkgs.hedis)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

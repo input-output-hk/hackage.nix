@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "binary-conduit";
-        version = "1.2";
-      };
+      identifier = { name = "binary-conduit"; version = "1.2"; };
       license = "MIT";
       copyright = "2013 Alexander Vershilov";
       maintainer = "alexander.vershilov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "data serialization/deserialization conduit library";
       description = "The binary-conduit package.\nAllow binary serialization using iterative conduit interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-binary-conduit" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.conduit)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

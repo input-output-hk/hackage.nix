@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "persistent";
-        version = "0.4.1";
-      };
+      identifier = { name = "persistent"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe, non-relational, multi-backend persistence.";
       description = "This library provides just the general interface and helper functions. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,11 +30,11 @@
           (hsPkgs.monad-peel)
           (hsPkgs.pool)
           (hsPkgs.blaze-html)
-        ];
-      };
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.haskell98)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
@@ -64,9 +55,9 @@
             (hsPkgs.HDBC-postgresql)
             (hsPkgs.HDBC)
             (hsPkgs.utf8-string)
-          ];
+            ];
           libs = [ (pkgs."sqlite3") ];
+          };
         };
       };
-    };
-  }
+    }

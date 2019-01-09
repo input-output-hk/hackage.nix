@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "union-map";
-        version = "0.0";
-      };
+      identifier = { name = "union-map"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "minpou.primer@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Heterogeneous map by open unions.";
       description = "Heterogeneous map implementation, not requires IO and Typeable likes";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

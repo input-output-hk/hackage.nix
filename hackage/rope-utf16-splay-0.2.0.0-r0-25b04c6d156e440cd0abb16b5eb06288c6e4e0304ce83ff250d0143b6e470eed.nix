@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rope-utf16-splay";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "rope-utf16-splay"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018 Olle Fredriksson";
       maintainer = "fredriksson.olle@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Ropes optimised for updating using UTF-16 code units and\nrow/column pairs.";
       description = "Ropes optimised for updating using UTF-16 code units and\nrow/column pairs.  This implementation uses splay trees\ninstead of the usual finger trees. According to my\nbenchmarks, splay trees are faster in most situations.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.text) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -40,8 +26,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

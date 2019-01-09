@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Learning";
-        version = "0.0.2";
-      };
+      identifier = { name = "Learning"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Bogdan Penkovsky";
       maintainer = "dev at penkovsky [dot] com";
@@ -22,7 +13,7 @@
       synopsis = "The most frequently used machine learning tools";
       description = "Please see the README on Github at <https://github.com/masterdezign/Learning#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.hmatrix)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "learning-pca" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.containers)
             (hsPkgs.hmatrix)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "learning-pca-advanced" = {
           depends = [
             (hsPkgs.Learning)
@@ -49,9 +40,9 @@
             (hsPkgs.containers)
             (hsPkgs.hmatrix)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Learning-test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.containers)
             (hsPkgs.hmatrix)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

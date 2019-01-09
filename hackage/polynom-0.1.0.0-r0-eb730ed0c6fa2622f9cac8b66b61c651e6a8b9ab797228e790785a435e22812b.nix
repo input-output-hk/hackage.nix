@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "polynom";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "polynom"; version = "0.1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "strake888@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Polynomial types and operations";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.algebra)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.tasty)
             (hsPkgs.smallcheck)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

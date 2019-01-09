@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "infinity";
-        version = "0.1.1";
-      };
+      identifier = { name = "infinity"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "austin@youareinferior.net";
@@ -22,7 +13,7 @@
       synopsis = "a tiny IRC bot";
       description = "a tiny IRC bot, extendable through\nplugins written in haskell";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "infinity" = {
@@ -32,8 +23,8 @@
             (hsPkgs.network)
             (hsPkgs.plugins)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

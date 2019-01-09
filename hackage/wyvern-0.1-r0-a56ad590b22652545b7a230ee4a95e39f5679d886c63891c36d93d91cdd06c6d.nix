@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wyvern";
-        version = "0.1";
-      };
+      identifier = { name = "wyvern"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel@wagner-home.com";
@@ -22,7 +13,7 @@
       synopsis = "An autoresponder for Dragon Go Server.";
       description = "Wyvern will play pre-planned sequences for you on the\nDragon Go Server.  Just feed it some SGF files outlining\nyour plan, and it will make moves in any games that are\nwaiting.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "wyvern" = {
@@ -39,8 +30,8 @@
             (hsPkgs.process)
             (hsPkgs.sgf)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

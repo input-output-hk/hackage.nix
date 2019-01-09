@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "engine-io-growler";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "engine-io-growler"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "This package provides an @engine-io@ @ServerAPI@ that is compatible with\n<http://hackage.haskell.org/package/growler Growler>. It also provides a few helper utilities for setting up @socket-io@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.pipes-wai)
           (hsPkgs.transformers)
           (hsPkgs.http-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "quickcheck-assertions";
-        version = "0.2.0";
-      };
+      identifier = { name = "quickcheck-assertions"; version = "0.2.0"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "HUnit like assertions for QuickCheck";
       description = "Library with convenient assertions for QuickCheck properties like in HUnit";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.ieee754)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.QuickCheck) (hsPkgs.ieee754) ];
+        };
       tests = {
         "main" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.hspec)
             (hsPkgs.quickcheck-assertions)
             (hsPkgs.ieee754)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

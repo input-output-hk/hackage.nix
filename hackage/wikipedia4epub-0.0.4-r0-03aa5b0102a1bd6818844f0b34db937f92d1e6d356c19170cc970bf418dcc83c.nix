@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wikipedia4epub";
-        version = "0.0.4";
-      };
+      identifier = { name = "wikipedia4epub"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "radoslav.dorcik@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wikipedia EPUB E-Book construction from Firefox history.";
       description = "\nWikipedia EPUB E-Book construction from Firefox History.\nIt dumps history and select only wikipedia articles, fetch\nthem and strip thier content before put into EPUB book\nfor E-Book readers.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,10 +35,8 @@
           (hsPkgs.zip-archive)
           (hsPkgs.xml)
           (hsPkgs.Cabal)
-        ];
+          ];
+        };
+      exes = { "wiki4e-mkepub-firefox" = {}; };
       };
-      exes = {
-        "wiki4e-mkepub-firefox" = {};
-      };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { build-tests = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "halfs";
-        version = "2.0";
-      };
+      identifier = { name = "halfs"; version = "2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Joel Stanley <intractable@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "The HAskelL File System (\"halfs\" -- intended for use on the HaLVM)";
       description = "A library implementing a file system suitable for use in\nHaLVMs.  Provides useful abstractions over the underlying\nblock layer.  Implemented atop FUSE.  Note: This is a new\nimplementation of the halfs project, and bears little to\nno resemblance to halfs 0.2.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.random)
           (hsPkgs.time)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       exes = {
         "halfs-tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.mtl)
             (hsPkgs.random)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "halfs" = {
           depends = [
             (hsPkgs.HFuse)
@@ -69,8 +60,8 @@
             (hsPkgs.directory)
             (hsPkgs.halfs)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

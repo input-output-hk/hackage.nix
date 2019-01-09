@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-ec2-knownhosts";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "aws-ec2-knownhosts"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Bitnomial, Inc. (c) 2015";
       maintainer = "luke@bitnomial.com, opensource@bitnomial.com";
@@ -22,7 +13,7 @@
       synopsis = "Capture and manage AWS EC2 known_host pubkeys";
       description = "Capture and manage AWS EC2 known_host pubkeys via the AWS API command line tool.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.process)
           (hsPkgs.text)
           (hsPkgs.text-format)
-        ];
-      };
+          ];
+        };
       exes = {
         "aws-ec2-pubkeys" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.io-streams)
             (hsPkgs.system-filepath)
             (hsPkgs.turtle)
-          ];
-        };
+            ];
+          };
         "aws-ec2-knownhosts" = {
           depends = [
             (hsPkgs.base)
@@ -57,8 +48,8 @@
             (hsPkgs.io-streams)
             (hsPkgs.system-filepath)
             (hsPkgs.turtle)
-          ];
-        };
+            ];
+          };
         "aws-ec2-keysync" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +58,8 @@
             (hsPkgs.io-streams)
             (hsPkgs.system-filepath)
             (hsPkgs.turtle)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

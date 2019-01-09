@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi-monokai";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "yi-monokai"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "fuuzetsu@fuuzetsu.co.uk";
@@ -22,13 +13,6 @@
       synopsis = "Monokai colour theme for the Yi text editor";
       description = "Monokai colour theme for Yi. Check source for yi.hs usage.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.yi)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.yi) ]; }; };
+    }

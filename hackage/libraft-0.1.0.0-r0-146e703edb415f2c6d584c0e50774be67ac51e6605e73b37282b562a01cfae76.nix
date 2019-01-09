@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "libraft";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "libraft"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Adjoint Inc.";
       maintainer = "info@adjoint.io";
@@ -22,7 +13,7 @@
       synopsis = "Raft consensus algorithm";
       description = "Please see the README on GitHub at <https://github.com/adjoint-io/raft#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.word8)
-        ];
-      };
+          ];
+        };
       exes = {
         "raft-example" = {
           depends = [
@@ -73,9 +64,9 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.word8)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "raft-test" = {
           depends = [
@@ -109,8 +100,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.word8)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

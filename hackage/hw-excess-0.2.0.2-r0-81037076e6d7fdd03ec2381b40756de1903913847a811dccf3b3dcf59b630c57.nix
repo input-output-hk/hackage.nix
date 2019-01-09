@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-excess";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "hw-excess"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Excess";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.vector)
           (hsPkgs.hw-rankselect-base)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       tests = {
         "hw-excess-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hw-excess)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

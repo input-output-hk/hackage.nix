@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yamlkeysdiff";
-        version = "0.5.1";
-      };
+      identifier = { name = "yamlkeysdiff"; version = "0.5.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "devel@antoine.catton.fr";
@@ -22,7 +13,7 @@
       synopsis = "Compares the keys from two yaml files";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yamlkeysdiff" = {
@@ -33,8 +24,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

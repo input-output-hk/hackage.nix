@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "network-messagepack-rpc-websocket";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yuji-yamamoto@iij.ad.jp, kazu@iij.ad.jp";
@@ -22,7 +16,7 @@
       synopsis = "WebSocket backend for MessagePack RPC";
       description = "WebSocket backend for \"network-messagepack-rpc\"";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.websockets)
           (hsPkgs.wss-client)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -48,8 +42,8 @@
             (hsPkgs.skews)
             (hsPkgs.text)
             (hsPkgs.wss-client)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

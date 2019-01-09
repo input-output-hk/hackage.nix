@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-aeson-specs";
-        version = "0.2";
-      };
+      identifier = { name = "servant-aeson-specs"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "soenkehahn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "generic tests for aeson serialization in servant";
       description = "tests for aeson serialization in servant";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.filepath)
           (hsPkgs.random)
           (hsPkgs.aeson-pretty)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.string-conversions)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "plot-light";
-        version = "0.1.0.9";
-      };
+      identifier = { name = "plot-light"; version = "0.1.0.9"; };
       license = "BSD-3-Clause";
       copyright = "2017 Marco Zocca";
       maintainer = "zocca marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "A lightweight plotting library, exporting to SVG";
       description = "A lightweight plotting library, exporting to SVG";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.colour)
           (hsPkgs.palette)
           (hsPkgs.blaze-svg)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.plot-light)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

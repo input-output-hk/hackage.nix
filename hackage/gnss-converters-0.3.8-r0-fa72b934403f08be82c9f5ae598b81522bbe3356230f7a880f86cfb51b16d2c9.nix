@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "gnss-converters";
-        version = "0.3.8";
-      };
+      identifier = { name = "gnss-converters"; version = "0.3.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016, 2017 Swift Navigation, Inc.";
       maintainer = "Swift Navigation <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "GNSS Converters.";
       description = "Haskell bindings for GNSS converters.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,16 +31,16 @@
           (hsPkgs.time)
           (hsPkgs.transformers-base)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "sbp2rtcm3" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.gnss-converters)
-          ];
-        };
+            ];
+          };
         "rtcm32sbp" = {
           depends = [
             (hsPkgs.base)
@@ -59,9 +50,9 @@
             (hsPkgs.conduit-extra)
             (hsPkgs.gnss-converters)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -82,8 +73,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

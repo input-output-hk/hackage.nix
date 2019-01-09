@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hsc3-sf-hsndfile";
-        version = "0.8";
-      };
+      identifier = { name = "hsc3-sf-hsndfile"; version = "0.8"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2010";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell SuperCollider SoundFile";
       description = "Provide hsc3-sf interface to Stefan\nKersten's hsndfile package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.hsndfile)
           (hsPkgs.hsndfile-vector)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

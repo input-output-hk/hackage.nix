@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "storable";
-        version = "0.1";
-      };
+      identifier = { name = "storable"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tomas Janousek <tomi@nomi.cz>";
@@ -22,13 +13,6 @@
       synopsis = "Storable type class for variable-sized data";
       description = "The module \"Data.Storable\" provides an extension to the\nForeign.Storable type class adding support for variable-sized\ndata types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sexp";
-        version = "0.5";
-      };
+      identifier = { name = "sexp"; version = "0.5"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "scvalex@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "S-Expression parsing/printing made fun and easy";
       description = "See the @README.md@ file and the homepage for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
           (hsPkgs.syb)
-        ];
-      };
+          ];
+        };
       exes = {
         "sexp" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.cmdargs)
             (hsPkgs.mtl)
             (hsPkgs.syb)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "conversions" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

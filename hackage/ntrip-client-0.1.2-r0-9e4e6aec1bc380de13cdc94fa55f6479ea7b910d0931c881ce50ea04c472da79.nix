@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ntrip-client";
-        version = "0.1.2";
-      };
+      identifier = { name = "ntrip-client"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "NTRIP client.";
       description = "Networked Transport of RTCM via Internet Protocol client.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.http-types)
           (hsPkgs.lens)
           (hsPkgs.uri-bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "ntrip-client" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.conduit)
             (hsPkgs.ntrip-client)
             (hsPkgs.optparse-generic)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pagure-hook-receiver";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pagure-hook-receiver"; version = "0.1.0.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "relrod@redhat.com";
@@ -22,7 +13,7 @@
       synopsis = "Receive hooks from pagure and do things with them";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

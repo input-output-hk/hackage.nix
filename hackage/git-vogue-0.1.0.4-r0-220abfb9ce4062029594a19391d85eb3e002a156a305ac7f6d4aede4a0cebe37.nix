@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { gpl = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "git-vogue";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "git-vogue"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Anchor Systems, Pty Ltd and Others";
       maintainer = "Anchor Engineering <engineering@anchor.com.au>";
@@ -22,7 +13,7 @@
       synopsis = "A framework for pre-commit checks.";
       description = "Make your Haskell git repositories fashionable.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.hlint)
           (hsPkgs.stylish-haskell)
           (hsPkgs.ghc-mod)
-        ];
-      };
+          ];
+        };
       exes = {
         "git-vogue" = {
           depends = [
@@ -52,16 +43,16 @@
             (hsPkgs.git-vogue)
             (hsPkgs.optparse-applicative)
             (hsPkgs.split)
-          ];
-        };
+            ];
+          };
         "git-vogue-cabal" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.git-vogue)
             (hsPkgs.process)
-          ];
-        };
+            ];
+          };
         "git-vogue-hlint" = {
           depends = [
             (hsPkgs.base)
@@ -74,8 +65,8 @@
             (hsPkgs.git-vogue)
             (hsPkgs.hscolour)
             (hsPkgs.process)
-          ];
-        };
+            ];
+          };
         "git-vogue-stylish" = {
           depends = [
             (hsPkgs.base)
@@ -86,8 +77,8 @@
             (hsPkgs.process)
             (hsPkgs.strict)
             (hsPkgs.stylish-haskell)
-          ];
-        };
+            ];
+          };
         "git-vogue-ghc-mod" = {
           depends = [
             (hsPkgs.base)
@@ -98,9 +89,9 @@
             (hsPkgs.process)
             (hsPkgs.strict)
             (hsPkgs.ghc-mod)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-git-setup" = {
           depends = [
@@ -112,8 +103,8 @@
             (hsPkgs.process)
             (hsPkgs.transformers)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "test-plugins" = {
           depends = [
             (hsPkgs.base)
@@ -124,8 +115,8 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

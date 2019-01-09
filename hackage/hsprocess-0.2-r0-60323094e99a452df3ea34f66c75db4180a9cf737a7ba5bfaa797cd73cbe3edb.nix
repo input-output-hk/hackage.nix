@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsprocess";
-        version = "0.2";
-      };
+      identifier = { name = "hsprocess"; version = "0.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "pastorelli.mario@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "The Haskell Stream Processor command line utility";
       description = "The Haskell Stream Processor is a command line utility to\nprocess streams using Haskell code. It is intended to be used\nin a UNIX pipeline. It offers a configuration system to\npersonalize imported modules and a way to represent values\non the console.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.containers) ];
+        };
       exes = {
         "hsp" = {
           depends = [
@@ -45,9 +32,9 @@
             (hsPkgs.stringsearch)
             (hsPkgs.process)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "reference" = {
           depends = [
@@ -60,8 +47,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

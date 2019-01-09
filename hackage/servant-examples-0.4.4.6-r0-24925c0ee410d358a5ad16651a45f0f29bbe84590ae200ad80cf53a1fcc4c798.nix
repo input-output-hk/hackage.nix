@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-examples";
-        version = "0.4.4.6";
-      };
+      identifier = { name = "servant-examples"; version = "0.4.4.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "alpmestan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Example programs for servant";
       description = "Example programs for servant,\nshowcasing solutions to common needs.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tutorial" = {
@@ -46,8 +37,8 @@
             (hsPkgs.transformers)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "t8-main" = {
           depends = [
             (hsPkgs.aeson)
@@ -57,8 +48,8 @@
             (hsPkgs.servant-client)
             (hsPkgs.servant-server)
             (hsPkgs.wai)
-          ];
-        };
+            ];
+          };
         "hackage" = {
           depends = [
             (hsPkgs.aeson)
@@ -68,8 +59,8 @@
             (hsPkgs.servant-client)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "wai-middleware" = {
           depends = [
             (hsPkgs.aeson)
@@ -80,8 +71,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "auth-combinator" = {
           depends = [
             (hsPkgs.aeson)
@@ -93,8 +84,8 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

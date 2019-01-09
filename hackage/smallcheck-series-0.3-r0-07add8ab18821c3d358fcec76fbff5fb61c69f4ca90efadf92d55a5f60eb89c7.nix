@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "smallcheck-series";
-        version = "0.3";
-      };
+      identifier = { name = "smallcheck-series"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "j@dannynavarro.net";
@@ -22,7 +13,7 @@
       synopsis = "Extra SmallCheck series and utilities";
       description = "Orphan @Serial@ instances and utilities to create and manipulate\n@Series@ for common types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,16 +24,12 @@
           (hsPkgs.transformers)
           (hsPkgs.logict)
           (hsPkgs.smallcheck)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Glob)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Glob) (hsPkgs.doctest) ];
+          };
+        };
       };
-    };
-  }
+    }

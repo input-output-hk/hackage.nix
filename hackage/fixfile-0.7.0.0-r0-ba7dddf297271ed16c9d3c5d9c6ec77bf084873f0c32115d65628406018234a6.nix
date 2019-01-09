@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fixfile";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "fixfile"; version = "0.7.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "Rev. Johnny Healey <rev.null@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "File-backed recursive data structures.";
       description = "This package is a library for datatype-generic disk serialization. It\nprovides a file abstraction that uses multi-version concurrency control\nto support transaction-aware isolation for multi-threaded access.\nThe base library comes with a collection of datatypes to provide sets and\nkey-value stores with different properties.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.containers)
           (hsPkgs.lens)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-fixfile" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.exceptions)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "obdd";
-        version = "0.2.7";
-      };
+      identifier = { name = "obdd"; version = "0.2.7"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Johannes Waldmann <waldmann@imn.htwk-leipzig.de>";
@@ -22,7 +13,7 @@
       synopsis = "Ordered Reduced Binary Decision Diagrams";
       description = "Construct, combine and query OBDDs;\nan efficient representation for formulas in propositional logic";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

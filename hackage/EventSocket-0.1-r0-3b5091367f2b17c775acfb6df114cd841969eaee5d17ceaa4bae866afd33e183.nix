@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "EventSocket";
-        version = "0.1";
-      };
+      identifier = { name = "EventSocket"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "vulpyne+haskelleventsocket@teliax.com";
@@ -22,7 +13,7 @@
       synopsis = "Interfaces with FreeSwitch Event Socket.";
       description = "Interfaces with FreeSwitch Event Socket. This should be considered an alpha release and has not been tested extensively.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "TTTAS";
-        version = "0.4.1";
-      };
+      identifier = { name = "TTTAS"; version = "0.4.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Universiteit Utrecht";
       maintainer = "Marcos Viera <mviera@fing.edu.uy>";
@@ -22,13 +13,8 @@
       synopsis = "Typed Transformations of Typed Abstract Syntax";
       description = "Library for Typed Transformations of Typed Abstract Syntax";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+      };
+    }

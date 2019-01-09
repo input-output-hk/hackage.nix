@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monte-carlo";
-        version = "0.6.1";
-      };
+      identifier = { name = "monte-carlo"; version = "0.6.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Patrick Perry <patperry@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A monad and transformer for Monte Carlo calculations.";
       description = "A monad and transformer for performing Monte Carlo\ncalculations. This monad carries and provides access to\na pseudo-random number generator. Internally, the monad\nmutates rather than copies the random gnerator state.  By\navoiding copies, it can deliver faster performance than\nmany pure random number implementations.  The package is\nbuilt around the facilities provided by the GNU Scientific\nLibrary (GSL).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.primitive)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "monte-carlo-test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

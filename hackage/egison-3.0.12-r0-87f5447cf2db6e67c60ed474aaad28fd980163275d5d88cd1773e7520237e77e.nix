@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "egison";
-        version = "3.0.12";
-      };
+      identifier = { name = "egison"; version = "3.0.12"; };
       license = "MIT";
       copyright = "";
       maintainer = "egi@egison.org";
@@ -22,7 +13,7 @@
       synopsis = "The world's first language with non-linear pattern-matching against unfree data";
       description = "An interpreter for Egison, the world's first programming langugage which realized non-linear pattern-matching with unfree data types.\nWith Egison, you can represent pattern-matching with unfree data types intuitively,\nespecially for collection data, such as lists, multisets, sets.\nYou can find Egison programs in \"lib/\" and \"sample/\" directories.\nThis package also include Emacs Lisp file \"egison-mode.el\" in \"elisp/\" directory.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.ghc-paths)
           (hsPkgs.strict-io)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "egison" = {
           depends = [
@@ -61,9 +52,9 @@
             (hsPkgs.regex-posix)
             (hsPkgs.strict-io)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -75,9 +66,9 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -87,8 +78,8 @@
             (hsPkgs.criterion)
             (hsPkgs.transformers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

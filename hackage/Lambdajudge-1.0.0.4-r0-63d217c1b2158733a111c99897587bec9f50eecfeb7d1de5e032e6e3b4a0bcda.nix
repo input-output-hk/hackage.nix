@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Lambdajudge";
-        version = "1.0.0.4";
-      };
+      identifier = { name = "Lambdajudge"; version = "1.0.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "ankitkumar.itbhu@gmail.com, venu.gangireddy@gmail.com, safalpandita@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library to easily host Haskell based programming competitions";
       description = "A library to easily host Haskell based programming competitions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.hspec)
           (hsPkgs.filepath)
           (hsPkgs.process)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.mtl)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

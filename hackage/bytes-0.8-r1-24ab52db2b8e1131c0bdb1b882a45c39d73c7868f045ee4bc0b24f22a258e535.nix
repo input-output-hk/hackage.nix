@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-doctests = true;
-      lib-werror = false;
-    };
+    flags = { test-doctests = true; lib-werror = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "bytes";
-        version = "0.8";
-      };
+      identifier = { name = "bytes"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Sharing code for serialization between binary and cereal";
       description = "Sharing code for serialization between binary and cereal";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,17 +28,17 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
           (hsPkgs.void)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

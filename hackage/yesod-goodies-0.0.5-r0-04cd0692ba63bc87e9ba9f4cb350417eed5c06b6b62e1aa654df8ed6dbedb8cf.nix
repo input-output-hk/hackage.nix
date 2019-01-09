@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-goodies";
-        version = "0.0.5";
-      };
+      identifier = { name = "yesod-goodies"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@pbrisbin.com";
@@ -22,7 +13,7 @@
       synopsis = "A collection of various small helpers useful in any yesod application.";
       description = "A collection of various small helpers useful in any yesod application.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.directory)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "selenium-server";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "selenium-server"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@joelt.io";
@@ -22,7 +13,7 @@
       synopsis = "Run the selenium standalone server for usage with webdriver";
       description = "Run the selenium standalone server for usage with webdriver";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.random)
           (hsPkgs.regex-tdfa)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.selenium-server)
             (hsPkgs.text)
             (hsPkgs.webdriver)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

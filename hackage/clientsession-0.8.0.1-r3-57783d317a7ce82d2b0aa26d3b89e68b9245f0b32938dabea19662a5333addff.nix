@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "clientsession";
-        version = "0.8.0.1";
-      };
+      identifier = { name = "clientsession"; version = "0.8.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Securely store session data in a client-side cookie.";
       description = "Achieves security through AES-CTR encryption and\nSkein-MAC-512-256 authentication.  Uses Base64\nencoding to avoid any issues with characters.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.base64-bytestring)
           (hsPkgs.entropy)
           (hsPkgs.cprng-aes)
-        ];
-      };
+          ];
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.containers)
             (hsPkgs.cereal)
             (hsPkgs.clientsession)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

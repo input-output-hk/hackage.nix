@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rattletrap";
-        version = "0.4.0";
-      };
+      identifier = { name = "rattletrap"; version = "0.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,7 +13,7 @@
       synopsis = "Parse and generate Rocket League replays.";
       description = "Rattletrap parses and generates Rocket League replays.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "rattletrap" = {
           depends = [
@@ -48,16 +39,11 @@
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.rattletrap)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "lint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
-        };
+        "lint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         "test" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +53,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

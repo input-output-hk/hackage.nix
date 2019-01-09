@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "amqp-conduit";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "amqp-conduit"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2015, Toru Tomita";
       maintainer = "toru.tomita@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Conduit bindings for AMQP (see amqp package)";
       description = "Conduit bindings for AMQP (see amqp package)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.mtl)
           (hsPkgs.monad-control)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-amqp-conduit" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.transformers)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

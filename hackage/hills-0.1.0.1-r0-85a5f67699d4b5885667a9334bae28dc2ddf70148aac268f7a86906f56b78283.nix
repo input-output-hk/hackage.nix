@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hills";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hills"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 David Fletcher";
       maintainer = "david@bubblycloud.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate STL models from SRTM elevation data.";
       description = "This program generates 3D models of areas of the\nearth's surface.\n\nIt uses the SRTM 90m elevation data from\nCGIAR-CSI which is downloadable free of charge\n(see <http://srtm.csi.cgiar.org/>).  It outputs STL.\n\nConsult README.md for full instructions.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hills" = {
@@ -35,8 +26,8 @@
             (hsPkgs.transformers)
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

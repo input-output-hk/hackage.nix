@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "mywatch";
-        version = "0.1.1";
-      };
+      identifier = { name = "mywatch"; version = "0.1.1"; };
       license = "MIT";
       copyright = "2016, Zalora South East Asia Pte. Ltd";
       maintainer = "Igor Pashev <pashev.igor@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "View MySQL processes";
       description = "View queries on multiple MySQL servers. Designed to work behind Sproxy.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mywatch" = {
@@ -50,8 +41,8 @@
             (hsPkgs.wai-extra)
             (hsPkgs.wai-middleware-static)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

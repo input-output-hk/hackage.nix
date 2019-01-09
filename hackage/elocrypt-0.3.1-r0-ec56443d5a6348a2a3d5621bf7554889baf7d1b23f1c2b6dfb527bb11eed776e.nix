@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "elocrypt";
-        version = "0.3.1";
-      };
+      identifier = { name = "elocrypt"; version = "0.3.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright: (c) 2015 Sean Gillespie";
       maintainer = "sean@mistersg.net";
@@ -22,24 +13,16 @@
       synopsis = "Generate easy-to-remember, hard-to-guess passwords";
       description = "Generates pronounceable, hard-to-guess passwords.. as hard as\nVince Carter's knee cartilage is.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.MonadRandom)
-          (hsPkgs.random)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.MonadRandom) (hsPkgs.random) ];
+        };
       exes = {
         "elocrypt" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.elocrypt)
-            (hsPkgs.random)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.elocrypt) (hsPkgs.random) ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -51,8 +34,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

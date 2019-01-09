@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-parser";
-        version = "0.5.1";
-      };
+      identifier = { name = "binary-parser"; version = "0.5.1"; };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A highly-efficient but limited parser API specialised for bytestrings";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

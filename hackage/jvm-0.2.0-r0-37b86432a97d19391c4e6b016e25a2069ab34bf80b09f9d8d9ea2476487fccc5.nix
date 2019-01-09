@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jvm";
-        version = "0.2.0";
-      };
+      identifier = { name = "jvm"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 EURL Tweag.";
       maintainer = "m@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Call JVM methods from Haskell.";
       description = "Please see README.md.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.singletons)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,10 +34,10 @@
             (hsPkgs.hspec)
             (hsPkgs.jvm)
             (hsPkgs.text)
-          ];
+            ];
           libs = [ (pkgs."pthread") ];
+          };
         };
-      };
       benchmarks = {
         "micro-benchmarks" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.criterion)
             (hsPkgs.jni)
             (hsPkgs.jvm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

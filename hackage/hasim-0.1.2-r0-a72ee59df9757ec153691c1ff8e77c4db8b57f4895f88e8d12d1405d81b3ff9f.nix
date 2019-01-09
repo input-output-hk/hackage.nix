@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hasim";
-        version = "0.1.2";
-      };
+      identifier = { name = "hasim"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008, Jochem Berndsen";
       maintainer = "jochem@functor.nl";
@@ -22,17 +13,12 @@
       synopsis = "Process-Based Discrete Event Simulation library";
       description = "Hasim is a library for process-based Discrete Event\nSimulation in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.mtl)
-        ] ++ (if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-          ]
+        depends = [ (hsPkgs.mtl) ] ++ (if flags.splitbase
+          then [ (hsPkgs.base) (hsPkgs.containers) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

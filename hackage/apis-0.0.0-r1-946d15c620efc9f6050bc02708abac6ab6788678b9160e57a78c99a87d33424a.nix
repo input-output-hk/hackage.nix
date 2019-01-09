@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apis";
-        version = "0.0.0";
-      };
+      identifier = { name = "apis"; version = "0.0.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "fabian.bergmark@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Template Haskell library for generating type safe web REST API calls";
       description = "A library that uses Open Data Tables and JSON Schemas to\ngenerate Haskell types and web REST API calls.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

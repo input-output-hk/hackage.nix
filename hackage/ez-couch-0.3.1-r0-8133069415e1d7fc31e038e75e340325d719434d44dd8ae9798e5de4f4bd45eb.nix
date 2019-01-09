@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ez-couch";
-        version = "0.3.1";
-      };
+      identifier = { name = "ez-couch"; version = "0.3.1"; };
       license = "MIT";
       copyright = "(c) 2013, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A high level library for working with CouchDB";
       description = "EZCouch is a library which takes a mission of bringing the topmost level of abstraction for working with CouchDB from Haskell. It abstracts away from loose concepts of this database and brings a strict static API over standard ADTs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.string-conversions)
           (hsPkgs.classy-prelude)
           (hsPkgs.classy-prelude-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

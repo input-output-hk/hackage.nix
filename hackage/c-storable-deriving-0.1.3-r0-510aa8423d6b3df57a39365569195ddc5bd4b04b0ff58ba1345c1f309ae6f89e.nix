@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "c-storable-deriving";
-        version = "0.1.3";
-      };
+      identifier = { name = "c-storable-deriving"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "maurer@matthewmaurer.org";
@@ -22,13 +13,8 @@
       synopsis = "Generate C-like storable instances from datatypes";
       description = "Automatically generates struct-rule based Storable\ninstances based on the Generic typeclass.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) ]; };
+      };
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hack2-handler-snap-server";
         version = "2011.10.30";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Hack2 Snap server handler";
       description = "Hack2 Snap server handler";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +34,7 @@
           (hsPkgs.snap-core)
           (hsPkgs.snap-server)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

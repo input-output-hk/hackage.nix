@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ethereum-analyzer-cli";
-        version = "3.3.4";
-      };
+      identifier = { name = "ethereum-analyzer-cli"; version = "3.3.4"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "k_@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "A CLI frontend for ethereum-analyzer.";
       description = "A CLI frontend for ethereum-analyzer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,16 +40,16 @@
           (hsPkgs.tostring)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "ea-analyze" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.ethereum-analyzer-cli)
             (hsPkgs.protolude)
-          ];
-        };
+            ];
+          };
         "ea-bytecode-vis" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +57,8 @@
             (hsPkgs.hflags)
             (hsPkgs.monad-logger)
             (hsPkgs.protolude)
-          ];
-        };
+            ];
+          };
         "ea-dump-contract" = {
           depends = [
             (hsPkgs.base)
@@ -76,8 +67,8 @@
             (hsPkgs.hflags)
             (hsPkgs.monad-logger)
             (hsPkgs.protolude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

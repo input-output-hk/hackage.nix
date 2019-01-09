@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cityhash";
-        version = "0.0.2";
-      };
+      identifier = { name = "cityhash"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "as@hacks.yi.org";
@@ -22,16 +13,12 @@
       synopsis = "bindings to Google CityHash";
       description = "This package implements a binding to the google CityHash family of hashing functions.\nSee <http://code.google.com/p/cityhash/> for more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.largeword)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.largeword) ];
         libs = [ (pkgs."stdc++") ];
-      };
+        };
       tests = {
         "properties" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.cityhash)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

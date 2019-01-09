@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fn-extra";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "fn-extra"; version = "0.2.0.0"; };
       license = "ISC";
       copyright = "2015 Daniel Patterson";
       maintainer = "Daniel Patterson <dbp@dbpmail.net>";
@@ -22,7 +13,7 @@
       synopsis = "Extras for Fn, a functional web framework.";
       description = "Please see README.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.lens)
           (hsPkgs.either)
           (hsPkgs.fn)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

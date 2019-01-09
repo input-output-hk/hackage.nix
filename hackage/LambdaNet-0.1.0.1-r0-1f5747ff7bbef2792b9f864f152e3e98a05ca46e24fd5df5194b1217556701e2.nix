@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "LambdaNet";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "LambdaNet"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2014";
       maintainer = "Joseph Barrow <jdb7hw@virginia.edu>";
@@ -22,7 +13,7 @@
       synopsis = "A configurable and extensible neural network library";
       description = "LambdaNet is an artificial neural network library that allows\nusers to compose their own networks from function primitives.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.split)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

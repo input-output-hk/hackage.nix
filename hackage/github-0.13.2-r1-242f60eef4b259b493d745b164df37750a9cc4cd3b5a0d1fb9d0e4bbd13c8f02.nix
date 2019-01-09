@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "github";
-        version = "0.13.2";
-      };
+      identifier = { name = "github"; version = "0.13.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2012-2013 Mike Burns, Copyright 2013-2015 John Wiegley";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Access to the Github API, v3.";
       description = "The Github API provides programmatic access to the full\nGithub Web site, from Issues to Gists to repos down to the underlying git data\nlike references and trees. This library wraps all of that, exposing a basic but\nHaskell-friendly set of functions and data structures.\n\nFor more of an overview please see the README: <https://github.com/jwiegley/github/blob/master/README.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.cryptohash)
           (hsPkgs.byteable)
           (hsPkgs.base16-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "github-test" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.byteable)
             (hsPkgs.base16-bytestring)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

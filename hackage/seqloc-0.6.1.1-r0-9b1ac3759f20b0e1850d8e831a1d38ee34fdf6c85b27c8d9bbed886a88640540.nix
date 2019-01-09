@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "seqloc";
-        version = "0.6.1.1";
-      };
+      identifier = { name = "seqloc"; version = "0.6.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "nick@ingolia.org";
@@ -22,7 +13,7 @@
       synopsis = "Handle sequence locations for bioinformatics";
       description = "Handle sequence locations for bioinformatics";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-seqloc" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.hashable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

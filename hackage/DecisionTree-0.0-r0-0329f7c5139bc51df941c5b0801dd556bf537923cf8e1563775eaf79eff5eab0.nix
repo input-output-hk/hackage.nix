@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "DecisionTree";
-        version = "0.0";
-      };
+      identifier = { name = "DecisionTree"; version = "0.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "aneumann@inf.fu-berlin.de";
@@ -22,13 +13,8 @@
       synopsis = "A very simple implementation of decision trees for discrete attributes.";
       description = "A very simple implementation of decision trees, built with ID3. You can use it to classify data with a set of discrete attributes.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

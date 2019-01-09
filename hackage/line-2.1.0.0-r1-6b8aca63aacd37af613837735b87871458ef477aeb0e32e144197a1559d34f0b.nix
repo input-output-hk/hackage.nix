@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "line";
-        version = "2.1.0.0";
-      };
+      identifier = { name = "line"; version = "2.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Jun <me@noraesae.net>";
       maintainer = "Jun <me@noraesae.net>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell SDK for the LINE API";
       description = "This package exports bindings to LINE APIs.\n\nIt provides the following features:\n\n* Internal auth signature validator\n\n* Webhook handled with handler function, WAI application, or Scotty action\n\n* Functions and types for <https://devdocs.line.me/en/#messaging-api LINE Messaging API>\n\nFor example usages, please see the\n<https://github.com/noraesae/line/tree/master/examples examples> directory.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.http-conduit)
           (hsPkgs.scotty)
-        ];
-      };
+          ];
+        };
       tests = {
         "line-test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.aeson)
             (hsPkgs.raw-strings-qq)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ltext";
-        version = "0.1.3";
-      };
+      identifier = { name = "ltext"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "2018 (c) Local Cooking Inc.";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "Parameterized file evaluator";
       description = "Please see the README on GitHub at <https://github.com/githubuser/template-dictionary#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "ltext" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "template-dictionary-test" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

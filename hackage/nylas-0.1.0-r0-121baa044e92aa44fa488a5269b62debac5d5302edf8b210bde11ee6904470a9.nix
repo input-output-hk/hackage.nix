@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nylas";
-        version = "0.1.0";
-      };
+      identifier = { name = "nylas"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2015, Brian Schroeder";
       maintainer = "bts@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Client for the Nylas API";
       description = "A client for the Nylas HTTP API, powered by lens and pipes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.wreq)
           (hsPkgs.pipes-http)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

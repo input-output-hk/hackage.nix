@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "printf-mauke";
-        version = "0.5.2";
-      };
+      identifier = { name = "printf-mauke"; version = "0.5.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<l.mai@web.de>";
@@ -22,7 +13,7 @@
       synopsis = "A Perl printf like formatter.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.data-default)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

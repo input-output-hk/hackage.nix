@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kawa";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "kawa"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomas.feron@redspline.com";
@@ -22,7 +13,7 @@
       synopsis = "Key-value store in single files.";
       description = "Simple command-line tool to manage some key-value store in a single file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.attoparsec)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       exes = {
         "kawa" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.directory)
             (hsPkgs.kawa)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.kawa)
             (hsPkgs.hedgehog)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

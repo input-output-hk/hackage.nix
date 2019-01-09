@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Yampa";
-        version = "0.9.3";
-      };
+      identifier = { name = "Yampa"; version = "0.9.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "George Giorgidze (giorgidze@gmail.com)";
@@ -22,13 +13,8 @@
       synopsis = "Library for programming hybrid systems.";
       description = "Domain-specific language embedded in Haskell for programming\nhybrid (mixed discrete-time and continuous-time) systems. Yampa is based on\nthe concepts of Functional Reactive Programming (FRP) and is structured using\narrow combinators.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.random) ]; };
+      };
+    }

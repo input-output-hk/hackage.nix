@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hois";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hois"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Greg Horn <gregmainland@gmail.com>";
@@ -22,20 +13,13 @@
       synopsis = "OIS bindings";
       description = "Bindings to the OIS input system.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-        libs = [ (pkgs."OIS") ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; libs = [ (pkgs."OIS") ]; };
       exes = {
         "OISConsole" = {
-          depends = [
-            (hsPkgs.hois)
-            (hsPkgs.base)
-            (hsPkgs.X11)
-          ];
+          depends = [ (hsPkgs.hois) (hsPkgs.base) (hsPkgs.X11) ];
+          };
         };
       };
-    };
-  }
+    }

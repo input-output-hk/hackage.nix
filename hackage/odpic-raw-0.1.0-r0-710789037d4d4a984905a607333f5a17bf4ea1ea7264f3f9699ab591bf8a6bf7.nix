@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "odpic-raw";
-        version = "0.1.0";
-      };
+      identifier = { name = "odpic-raw"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Daniel YU";
       maintainer = "leptonyu@gmail.com";
@@ -22,17 +13,12 @@
       synopsis = "";
       description = "A low-level client library for the Oracle database, implemented as\nbindings to the C ODPI API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = [ (pkgs."odpic") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

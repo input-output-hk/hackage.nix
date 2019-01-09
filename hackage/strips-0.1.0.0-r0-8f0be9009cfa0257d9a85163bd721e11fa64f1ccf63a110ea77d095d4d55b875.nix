@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "strips";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "strips"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Yuji Kamiya";
       maintainer = "y.kamiya0@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.mtl)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.mtl) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.hspec)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-hmac-auth";
-        version = "1.0.0";
-      };
+      identifier = { name = "wai-hmac-auth"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014, aidan coyne";
       maintainer = "coynea90@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "hmac authentication tools for WAI apps";
       description = "authenticate requests made to your WAI apps using HMAC.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.monad-loops)
           (hsPkgs.base64-bytestring)
           (hsPkgs.byteable)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.base64-bytestring)
             (hsPkgs.hspec)
             (hsPkgs.byteable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

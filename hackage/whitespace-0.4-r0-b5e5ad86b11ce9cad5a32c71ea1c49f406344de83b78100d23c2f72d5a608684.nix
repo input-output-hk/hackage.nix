@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "whitespace";
-        version = "0.4";
-      };
+      identifier = { name = "whitespace"; version = "0.4"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "harold@hotelling.net";
@@ -22,15 +13,10 @@
       synopsis = "Whitespace, an esoteric programming language.";
       description = "Whitespace, an esoteric programming language.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "wspace" = {
-          depends = [
-            (hsPkgs.haskell98)
-            (hsPkgs.random)
-          ];
+        "wspace" = { depends = [ (hsPkgs.haskell98) (hsPkgs.random) ]; };
         };
       };
-    };
-  }
+    }

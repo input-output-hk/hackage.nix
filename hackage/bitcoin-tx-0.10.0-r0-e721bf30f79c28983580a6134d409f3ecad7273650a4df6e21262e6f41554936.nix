@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bitcoin-tx";
-        version = "0.10.0";
-      };
+      identifier = { name = "bitcoin-tx"; version = "0.10.0"; };
       license = "MIT";
       copyright = "(c) 2015 Leon Mergen";
       maintainer = "leon@solatis.com";
@@ -22,7 +13,7 @@
       synopsis = "Utility functions for manipulating bitcoin transactions";
       description = "This library provides the same functionality as the bitcoin-tx command line\nutility, which was introduced in Bitcoin Core v0.10. These functions are\npure and require no communication with a bitcoin daemon.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.base16-bytestring)
           (hsPkgs.binary)
           (hsPkgs.bitcoin-script)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.bitcoin-tx)
             (hsPkgs.bitcoin-script)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

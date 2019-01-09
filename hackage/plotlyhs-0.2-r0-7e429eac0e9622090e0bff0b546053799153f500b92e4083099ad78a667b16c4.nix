@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "plotlyhs";
-        version = "0.2";
-      };
+      identifier = { name = "plotlyhs"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "tanielsen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings to Plotly.js";
       description = "Generate web-based plots with the Plotly.js library.\nFor examples, see <https://glutamate.github.io/plotlyhs/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.microlens-th)
           (hsPkgs.microlens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

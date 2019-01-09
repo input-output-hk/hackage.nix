@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hpack";
-        version = "0.2.0";
-      };
+      identifier = { name = "hpack"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "An alternative format for Haskell packages";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hpack" = {
@@ -36,9 +27,9 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.hspec)
             (hsPkgs.mockery)
             (hsPkgs.interpolate)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

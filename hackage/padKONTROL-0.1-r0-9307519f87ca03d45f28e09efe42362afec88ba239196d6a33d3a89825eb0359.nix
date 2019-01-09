@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "padKONTROL";
-        version = "0.1";
-      };
+      identifier = { name = "padKONTROL"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Controlling padKONTROL native mode";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.minioperational)
           (hsPkgs.transformers)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "HGamer3D-Data";
-        version = "0.5.0";
-      };
+      identifier = { name = "HGamer3D-Data"; version = "0.5.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "althainz@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Toolset for the Haskell Game Programmer - Data Definitions";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell. HGamer3D is available on Windows and Linux. This\npackage provides common data definitions and utility functions for HGamer3D.\nAlso in this package, the Entity Component System is placed.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.clock)
           (hsPkgs.stm)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

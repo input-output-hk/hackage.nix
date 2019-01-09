@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "abc-puzzle";
-        version = "0.1";
-      };
+      identifier = { name = "abc-puzzle"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "patrick.bahr@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate instances of the ABC logic puzzle.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "abc-puzzle" = {
@@ -32,8 +23,8 @@
             (hsPkgs.minisat)
             (hsPkgs.Safe)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

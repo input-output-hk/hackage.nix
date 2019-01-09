@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "wai-middleware-caching-redis";
         version = "0.2.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Yann Esposito © 2015";
       maintainer = "yann.esposito@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Cache Wai Middleware using Redis backend";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,15 +28,12 @@
           (hsPkgs.text)
           (hsPkgs.http-types)
           (hsPkgs.wai)
-        ];
-      };
-      tests = {
-        "wai-middleware-caching-redis-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wai-middleware-caching-redis)
           ];
         };
+      tests = {
+        "wai-middleware-caching-redis-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.wai-middleware-caching-redis) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "accentuateus";
-        version = "0.9.1";
-      };
+      identifier = { name = "accentuateus"; version = "0.9.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Spearhead Development, L.L.C.";
       maintainer = "Michael Schade <michael@spearheaddev.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell implementation of the Accentuate.us API.";
       description = "A Haskell implementation of the Accentuate.us API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.HTTP)
           (hsPkgs.json)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

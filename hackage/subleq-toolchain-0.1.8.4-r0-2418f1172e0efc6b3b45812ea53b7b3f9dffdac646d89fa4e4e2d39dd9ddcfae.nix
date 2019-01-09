@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "subleq-toolchain";
-        version = "0.1.8.4";
-      };
+      identifier = { name = "subleq-toolchain"; version = "0.1.8.4"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "mrty.ityt.pt@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Toolchain of subleq computer.";
       description = "Toolchain of subleq computer, which comprise of assembler and simulator.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.lens)
           (hsPkgs.parsec)
           (hsPkgs.pretty)
-        ];
-      };
+          ];
+        };
       exes = {
         "subleq" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.parsec)
             (hsPkgs.pretty)
             (hsPkgs.cmdargs)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-subleq-toolchain" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.pretty)
             (hsPkgs.template-haskell)
             (hsPkgs.subleq-toolchain)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "seqloc-datafiles";
-        version = "0.1.1";
-      };
+      identifier = { name = "seqloc-datafiles"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "nick@ingolia.org";
@@ -22,7 +13,7 @@
       synopsis = "Read and write BED and GTF format genome annotations";
       description = "Read and write BED and GTF format genome annotations";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.iteratee)
           (hsPkgs.seqloc)
-        ];
-      };
+          ];
+        };
       exes = {
         "gtf-to-bed" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.seqloc)
             (hsPkgs.transformers)
             (hsPkgs.monads-tf)
-          ];
-        };
+            ];
+          };
         "test-gtf" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.seqloc)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "test-bed" = {
           depends = [
             (hsPkgs.base)
@@ -77,8 +68,8 @@
             (hsPkgs.seqloc)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "gtf-introns" = {
           depends = [
             (hsPkgs.base)
@@ -91,8 +82,8 @@
             (hsPkgs.seqloc)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

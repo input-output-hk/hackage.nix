@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "sednaDBXML";
-        version = "0.1.2.5";
-      };
+      identifier = { name = "sednaDBXML"; version = "0.1.2.5"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Eric Jones (ericclaudejones at gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Sedna C API XML Binding";
       description = "Sedna native XML database bindings.\nhttp://www.sedna.org/";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.iteratee)
           (hsPkgs.mtl)
           (hsPkgs.text)
-        ];
+          ];
         libs = [ (pkgs."sedna") ];
+        };
       };
-    };
-  }
+    }

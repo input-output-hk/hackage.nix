@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snaplet-mysql-simple";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "snaplet-mysql-simple"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@ibotty.net";
@@ -22,7 +13,7 @@
       synopsis = "mysql-simple snaplet for the Snap Framework";
       description = "This snaplet contains support for using the MariaDB and MySQL\ndatabase with a Snap Framework application via the mysql-simple\npackage. It also includes an untested authentication backend.\nHeavily based on snaplet-postgresql-simple by Doug Beardsley.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

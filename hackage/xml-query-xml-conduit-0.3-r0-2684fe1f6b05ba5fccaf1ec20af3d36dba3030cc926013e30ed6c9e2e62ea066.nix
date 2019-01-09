@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xml-query-xml-conduit";
-        version = "0.3";
-      };
+      identifier = { name = "xml-query-xml-conduit"; version = "0.3"; };
       license = "MIT";
       copyright = "(c) 2015, Sannsyn AS";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A binding for the \"xml-query\" and \"xml-conduit\" libraries";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.text)
           (hsPkgs.base-prelude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

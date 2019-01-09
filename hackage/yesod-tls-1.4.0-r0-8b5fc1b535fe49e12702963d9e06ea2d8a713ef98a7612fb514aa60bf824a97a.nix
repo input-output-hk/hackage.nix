@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-tls";
-        version = "1.4.0";
-      };
+      identifier = { name = "yesod-tls"; version = "1.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Tamás László Fábián <giganetom@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Provides main functions using warp-tls for yesod projects";
       description = "This package makes possible to build Yesod web applications that provide SSL support.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.fast-logger)
           (hsPkgs.safe)
           (hsPkgs.directory)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

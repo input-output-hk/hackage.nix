@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack-handler-simpleserver";
-        version = "0.2.0";
-      };
+      identifier = { name = "hack-handler-simpleserver"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simplistic HTTP server handler for Hack.";
       description = "This should not be used in a production environment.\nHowever, it's useful for testing.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.web-encodings)
           (hsPkgs.failure)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

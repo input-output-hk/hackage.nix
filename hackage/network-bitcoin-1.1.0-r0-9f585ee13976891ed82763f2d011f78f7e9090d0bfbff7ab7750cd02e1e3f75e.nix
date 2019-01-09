@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-bitcoin";
-        version = "1.1.0";
-      };
+      identifier = { name = "network-bitcoin"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2012 Michael Hendricks <michael@ndrix.org>\n2012 Clark Gaebel <cgaebel@uwaterloo.ca>";
       maintainer = "Clark Gaebel <cgaebel@uwaterloo.ca>";
@@ -22,7 +13,7 @@
       synopsis = "An interface to bitcoind.";
       description = "This can be used to send Bitcoins, query balances, etc.  It\nrequires the Bitcoin daemon to be running and accessible via\nHTTP.\n\n> import Network.Bitcoin\n>\n> main = do\n>    balance <- getBalance auth\n>    putStrLn \$ show balance ++ \" BTC\"\n>  where\n>    auth = Auth \"http://127.0.0.1:8332\" \"user\" \"password\"\n\nTo learn more about Bitcoin, see <http://www.bitcoin.org>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.vector)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

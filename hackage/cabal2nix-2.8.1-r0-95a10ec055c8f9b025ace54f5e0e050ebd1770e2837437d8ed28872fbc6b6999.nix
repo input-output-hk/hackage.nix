@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "cabal2nix";
-        version = "2.8.1";
-      };
+      identifier = { name = "cabal2nix"; version = "2.8.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Peter Simons <simons@cryp.to>";
@@ -22,7 +13,7 @@
       synopsis = "Convert Cabal files into Nix build instructions.";
       description = "Convert Cabal files into Nix build instructions. Users of Nix can install the\nlatest version by running:\n\n> nix-env -i cabal2nix";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,15 +40,10 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.yaml)
-        ];
-      };
-      exes = {
-        "cabal2nix" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cabal2nix)
           ];
         };
+      exes = {
+        "cabal2nix" = { depends = [ (hsPkgs.base) (hsPkgs.cabal2nix) ]; };
         "hackage2nix" = {
           depends = [
             (hsPkgs.Cabal)
@@ -78,8 +64,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.pretty)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

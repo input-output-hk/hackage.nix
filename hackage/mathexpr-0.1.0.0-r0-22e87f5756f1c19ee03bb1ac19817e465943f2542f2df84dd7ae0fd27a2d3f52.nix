@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mathexpr";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mathexpr"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2016 Mahdi Dibaiee";
       maintainer = "mdibaiee@aol.com";
@@ -22,13 +13,8 @@
       synopsis = "Parse and evaluate math expressions with variables and functions";
       description = "A simple tool to evaluate math expressions as strings with support for custom functions and operators";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-default-class)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.data-default-class) ]; };
+      };
+    }

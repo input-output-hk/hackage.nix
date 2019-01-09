@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       interrupt = true;
@@ -12,13 +6,10 @@
       network-uri = true;
       custom-binary = true;
       c-runtime = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gf";
-        version = "3.9";
-      };
+      identifier = { name = "gf"; version = "3.9"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Thomas Hallgren";
@@ -28,7 +19,7 @@
       synopsis = "Grammatical Framework";
       description = "GF, Grammatical Framework, is a programming language for multilingual grammar applications";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -49,43 +40,30 @@
           (hsPkgs.process)
           (hsPkgs.haskeline)
           (hsPkgs.parallel)
-        ] ++ pkgs.lib.optionals (!flags.custom-binary) [
+          ] ++ (pkgs.lib).optionals (!flags.custom-binary) [
           (hsPkgs.binary)
           (hsPkgs.data-binary-ieee754)
-        ]) ++ pkgs.lib.optionals (flags.server) ([
+          ]) ++ (pkgs.lib).optionals (flags.server) ([
           (hsPkgs.httpd-shed)
           (hsPkgs.network)
           (hsPkgs.json)
           (hsPkgs.cgi)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]
-          else [
-            (hsPkgs.network)
-          ]))) ++ (if system.isWindows
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
+          else [ (hsPkgs.network) ]))) ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
-          else [
-            (hsPkgs.unix)
-            (hsPkgs.terminfo)
-          ]);
-        libs = pkgs.lib.optionals (flags.c-runtime) [
+          else [ (hsPkgs.unix) (hsPkgs.terminfo) ]);
+        libs = (pkgs.lib).optionals (flags.c-runtime) [
           (pkgs."pgf")
           (pkgs."gu")
-        ];
-        build-tools = pkgs.lib.optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs) ++ [
-          (hsPkgs.buildPackages.happy)
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
-      exes = {
-        "gf" = {
-          depends = [
-            (hsPkgs.gf)
-            (hsPkgs.base)
+          ];
+        build-tools = (pkgs.lib).optional (flags.c-runtime) ((hsPkgs.buildPackages).hsc2hs) ++ [
+          ((hsPkgs.buildPackages).happy)
+          ((hsPkgs.buildPackages).alex)
           ];
         };
+      exes = {
+        "gf" = { depends = [ (hsPkgs.gf) (hsPkgs.base) ]; };
         "pgf-shell" = {
           depends = [
             (hsPkgs.gf)
@@ -93,9 +71,9 @@
             (hsPkgs.containers)
             (hsPkgs.mtl)
             (hsPkgs.lifted-base)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "rgl-tests" = {
           depends = [
@@ -105,8 +83,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "gf-tests" = {
           depends = [
             (hsPkgs.base)
@@ -114,8 +92,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

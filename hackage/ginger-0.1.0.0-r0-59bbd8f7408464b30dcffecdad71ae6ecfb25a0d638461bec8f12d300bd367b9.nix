@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ginger";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ginger"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tdammers@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of the Jinja2 template language in Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "ginger" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

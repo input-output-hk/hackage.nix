@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bank-holiday-usa";
-        version = "0.1.1";
-      };
+      identifier = { name = "bank-holiday-usa"; version = "0.1.1"; };
       license = "MIT";
       copyright = "2015 brady.ouren <brady.ouren@gmail.com>";
       maintainer = "brady.ouren <brady.ouren@gmail.com>";
@@ -22,14 +13,9 @@
       synopsis = "A library for determining US bank holidays";
       description = "A library for determining US bank holidays";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

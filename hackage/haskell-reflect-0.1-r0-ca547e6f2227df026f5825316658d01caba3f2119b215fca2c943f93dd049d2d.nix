@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haskell-reflect";
-        version = "0.1";
-      };
+      identifier = { name = "haskell-reflect"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
@@ -22,7 +13,7 @@
       synopsis = "Reflect Haskell types.";
       description = "Reflect Haskell types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
           (hsPkgs.MonadCatchIO-mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "hsreflect" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.parsec)
             (hsPkgs.template-haskell)
             (hsPkgs.MonadCatchIO-mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

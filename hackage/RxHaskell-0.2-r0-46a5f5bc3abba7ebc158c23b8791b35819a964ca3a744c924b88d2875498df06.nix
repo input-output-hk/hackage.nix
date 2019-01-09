@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "RxHaskell";
-        version = "0.2";
-      };
+      identifier = { name = "RxHaskell"; version = "0.2"; };
       license = "MIT";
       copyright = "Copyright (c) 2013 Justin Spahr-Summers";
       maintainer = "justin.spahrsummers@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Reactive Extensions for Haskell";
       description = "An implementation of functional reactive programming based on Microsoft's Reactive Extensions for .NET: <http://msdn.microsoft.com/en-us/library/hh242985(v=VS.103).aspx>.\n\nRxHaskell offers a monadic API, making it easier to interleave side effects and imperative-style code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

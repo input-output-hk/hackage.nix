@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hscuid";
-        version = "1.2.0.1";
-      };
+      identifier = { name = "hscuid"; version = "1.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dan.buckmaster@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Collision-resistant IDs";
       description = "See README (link below).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,19 +24,16 @@
           (hsPkgs.hostname)
           (hsPkgs.mwc-random)
           (hsPkgs.text)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
-      };
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
+        };
       exes = {
         "perf-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hscuid)
-          ] ++ [ (hsPkgs.criterion) ];
+          depends = [ (hsPkgs.base) (hsPkgs.hscuid) ] ++ [ (hsPkgs.criterion) ];
+          };
         };
-      };
       tests = {
         "hscuid-test" = {
           depends = [
@@ -53,8 +41,8 @@
             (hsPkgs.containers)
             (hsPkgs.text)
             (hsPkgs.hscuid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

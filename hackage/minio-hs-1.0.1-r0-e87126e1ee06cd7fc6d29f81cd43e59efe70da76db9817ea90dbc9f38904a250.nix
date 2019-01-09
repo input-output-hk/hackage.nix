@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { live-test = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "minio-hs";
-        version = "1.0.1";
-      };
+      identifier = { name = "minio-hs"; version = "1.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "dev@minio.io";
@@ -22,7 +13,7 @@
       synopsis = "A Minio Haskell Library for Amazon S3 compatible cloud\nstorage.";
       description = "The Minio Haskell client library provides simple APIs to\naccess Minio, Amazon S3 and other API compatible cloud\nstorage servers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.unliftio)
           (hsPkgs.unliftio-core)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "minio-hs-live-server-test" = {
           depends = [
@@ -87,8 +78,8 @@
             (hsPkgs.unliftio)
             (hsPkgs.unliftio-core)
             (hsPkgs.xml-conduit)
-          ];
-        };
+            ];
+          };
         "minio-hs-test" = {
           depends = [
             (hsPkgs.base)
@@ -122,8 +113,8 @@
             (hsPkgs.unliftio)
             (hsPkgs.unliftio-core)
             (hsPkgs.xml-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

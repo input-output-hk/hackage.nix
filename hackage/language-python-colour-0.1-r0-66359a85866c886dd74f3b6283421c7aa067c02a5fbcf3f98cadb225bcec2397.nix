@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "language-python-colour";
-        version = "0.1";
-      };
+      identifier = { name = "language-python-colour"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Bernard James Pope";
       maintainer = "bjpop@csse.unimelb.edu.au";
@@ -22,7 +13,7 @@
       synopsis = "Generate coloured XHTML for Python code.";
       description = "Generate coloured XHTML for Python code.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pycol" = {
@@ -31,8 +22,8 @@
             (hsPkgs.base)
             (hsPkgs.language-python)
             (hsPkgs.xhtml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

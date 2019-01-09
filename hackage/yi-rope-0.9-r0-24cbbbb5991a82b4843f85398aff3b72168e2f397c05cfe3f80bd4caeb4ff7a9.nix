@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi-rope";
-        version = "0.9";
-      };
+      identifier = { name = "yi-rope"; version = "0.9"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "A rope data structure used by Yi";
       description = "A rope data structure used by Yi";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.fingertree)
           (hsPkgs.text)
           (hsPkgs.text-icu)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.text)
             (hsPkgs.yi-rope)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.text)
             (hsPkgs.yi-rope)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

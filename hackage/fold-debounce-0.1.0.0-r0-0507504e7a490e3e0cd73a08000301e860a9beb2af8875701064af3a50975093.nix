@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fold-debounce";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fold-debounce"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Toshio Ito <debug.ito@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Fold multiple events that happen in a given period of time.";
       description = "Fold multiple events that happen in a given period of time. See \"Control.FoldDebounce\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.data-default)
           (hsPkgs.stm)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.fold-debounce)
             (hsPkgs.hspec)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

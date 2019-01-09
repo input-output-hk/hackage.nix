@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fastly";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fastly"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "A highly experimental Fastly API client.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.thyme)
           (hsPkgs.old-locale)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       tests = {
         "fastly-test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.fastly)
             (hsPkgs.text)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

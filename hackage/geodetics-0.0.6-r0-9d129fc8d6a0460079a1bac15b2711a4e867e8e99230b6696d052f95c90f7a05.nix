@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "geodetics";
-        version = "0.0.6";
-      };
+      identifier = { name = "geodetics"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "Paul Johnson 2015.";
       maintainer = "Paul Johnson <paul@cogito.org.uk>";
@@ -22,15 +13,15 @@
       synopsis = "Terrestrial coordinate systems and geodetic calculations.";
       description = "Precise geographical coordinates (latitude & longitude), with conversion between\ndifferent reference frames and projections.\n\nCertain distinguished reference frames and grids are given distinct\ntypes so that coordinates expressed within them cannot be confused with\nfrom coordinates in other frames.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.dimensional)
           (hsPkgs.array)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "GeodeticTest" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.array)
             (hsPkgs.checkers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

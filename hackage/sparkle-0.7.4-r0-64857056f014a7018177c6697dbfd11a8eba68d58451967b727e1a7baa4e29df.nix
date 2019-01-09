@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sparkle";
-        version = "0.7.4";
-      };
+      identifier = { name = "sparkle"; version = "0.7.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016-2017 EURL Tweag";
       maintainer = "m@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Distributed Apache Spark applications in Haskell";
       description = "See https://www.stackage.org/package/sparkle.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.streaming)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "sparkle" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.text)
             (hsPkgs.unix)
             (hsPkgs.zip-archive)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

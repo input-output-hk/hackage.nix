@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fay";
-        version = "0.10.0.0";
-      };
+      identifier = { name = "fay"; version = "0.10.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2012 Chris Done";
       maintainer = "chrisdone@gmail.com, adam@edea.se";
@@ -22,7 +13,7 @@
       synopsis = "A compiler for Fay, a Haskell subset that compiles to JavaScript.";
       description = "Fay is a proper subset of Haskell which can be compiled (type-checked)\nwith GHC, and compiled to JavaScript. It is lazy, pure, with a Fay monad,\nan FFI, tail-recursion optimization (experimental). It implements no type\nsystem, for type-checking you should use GHC.\n\n/Documentation/\n\nSee documentation at <http://fay-lang.org/> or build your own documentation with:\n\n> \$ cabal unpack fay\n> \$ cd fay-*\n> \$ cabal install\n> \$ dist/build/fay-docs/fay-docs\n\n\n/Examples/\n\nSee <http://fay-lang.org/#examples>.\n\n/Release Notes/\n\n* Add TCO optimization.\n\n* Added uncurrying optimization for non-partial applications.\n\n* Add simple benchmarking program.\n\n* Add SVG logo.\n\n* Added Defined type and appropriate serialization.\n\n* Treat Maybe as a nullable value in conversions.\n\n* Added oscillator example.\n\n* Add optimization flag.\n* Support tuple serialization.\n* Fix list length in pats (closes #145).\n\n* Name resolution and some export list support.\n* Add codeworld space invaders example.\n\n* NoImplicitPrelude is now passed automatically to GHC. Does not break code that uses the pragma (see #134).\n\n* Add support for list comprehensions using desugaring from Haskell report. See #40 and #132.\n\n* Make error messages a tiny bit friendlier, and some general house-keeping.\n\n* Support negation expressions (see #116).\n\n* Rewrite readFromFay using only Data, no Read/Show requirements (see #112).\n\nSee full history at: <https://github.com/faylang/fay/commits>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.directory)
           (hsPkgs.groom)
           (hsPkgs.random)
-        ] ++ pkgs.lib.optionals (!flags.devel) [
+          ] ++ (pkgs.lib).optionals (!flags.devel) [
           (hsPkgs.HUnit)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
@@ -58,8 +49,8 @@
           (hsPkgs.test-framework)
           (hsPkgs.test-framework-hunit)
           (hsPkgs.test-framework-th)
-        ];
-      };
+          ];
+        };
       exes = {
         "fay" = {
           depends = [
@@ -87,8 +78,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.split)
             (hsPkgs.haskeline)
-          ];
-        };
+            ];
+          };
         "fay-tests" = {
           depends = [
             (hsPkgs.base)
@@ -116,8 +107,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th)
-          ];
-        };
+            ];
+          };
         "fay-docs" = {
           depends = [
             (hsPkgs.base)
@@ -146,8 +137,8 @@
             (hsPkgs.language-ecmascript)
             (hsPkgs.groom)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

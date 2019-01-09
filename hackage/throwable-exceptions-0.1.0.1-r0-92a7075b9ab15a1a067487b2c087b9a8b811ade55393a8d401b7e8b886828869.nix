@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "throwable-exceptions";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "throwable-exceptions"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "aiya000";
       maintainer = "aiya000.develop@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "throwable-exceptions gives the exception's value constructors";
       description = "throwable-exceptions gives the exception's value constructors";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.safe-exceptions)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.safe-exceptions) ]; };
       tests = {
         "test" = {
           depends = [
@@ -41,8 +27,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.throwable-exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

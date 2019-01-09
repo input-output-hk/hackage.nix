@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ruby-qq";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ruby-qq"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@joelt.io";
@@ -22,7 +13,7 @@
       synopsis = "rubyish quasiquoters";
       description = "Quasiquoters for @%w&#123;&#125;@, @%x&#123;&#125;@, @%r&#123;&#125;@, and @%q&#123;&#125;@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.process)
           (hsPkgs.template-haskell)
           (hsPkgs.trifecta)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

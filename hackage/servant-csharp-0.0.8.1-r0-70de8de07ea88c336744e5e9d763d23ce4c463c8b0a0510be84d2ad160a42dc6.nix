@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-csharp";
-        version = "0.0.8.1";
-      };
+      identifier = { name = "servant-csharp"; version = "0.0.8.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cutsea110@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate servant client library for C#";
       description = "Generate servant client library for C#";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
           (hsPkgs.uuid-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

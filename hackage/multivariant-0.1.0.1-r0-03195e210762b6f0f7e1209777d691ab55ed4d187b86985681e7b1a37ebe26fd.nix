@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "multivariant";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "multivariant"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016-2017 Anton Marchenko, Mansur Ziatdinov";
       maintainer = "gltronred@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Multivariant assignments generation language";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.tasty-hunit)
           (hsPkgs.QuickCheck)
           (hsPkgs.HUnit)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -60,9 +51,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.multivariant)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.multivariant)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

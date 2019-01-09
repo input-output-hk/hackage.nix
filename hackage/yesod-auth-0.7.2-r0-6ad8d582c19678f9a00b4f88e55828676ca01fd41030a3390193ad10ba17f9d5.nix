@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "yesod-auth";
-        version = "0.7.2";
-      };
+      identifier = { name = "yesod-auth"; version = "0.7.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Authentication for Yesod.";
       description = "Authentication for Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.http-enumerator)
           (hsPkgs.aeson-native)
           (hsPkgs.pwstore-fast)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

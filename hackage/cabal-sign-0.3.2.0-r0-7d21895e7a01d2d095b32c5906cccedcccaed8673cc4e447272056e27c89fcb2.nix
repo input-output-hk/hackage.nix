@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cabal-sign";
-        version = "0.3.2.0";
-      };
+      identifier = { name = "cabal-sign"; version = "0.3.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sign and verify Cabal packages.";
       description = "Sign and verify Cabal packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal-sign" = {
@@ -36,8 +27,8 @@
             (hsPkgs.cereal)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mighttpd";
-        version = "0.2.0";
-      };
+      identifier = { name = "mighttpd"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Simple Web Server in Haskell";
       description = "A simple but practical HTTP server in Haskell.\n'mighttpd' should be called 'mighty'.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mighttpd" = {
@@ -40,11 +31,9 @@
             (hsPkgs.unix)
             (hsPkgs.time)
             (hsPkgs.network)
-          ];
-        };
-        "mkindex" = {
-          depends = [ (hsPkgs.base) ];
+            ];
+          };
+        "mkindex" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

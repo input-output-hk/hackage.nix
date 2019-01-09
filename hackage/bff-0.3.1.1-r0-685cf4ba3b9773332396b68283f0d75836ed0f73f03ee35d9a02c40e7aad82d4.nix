@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      binaries = false;
-      stats = false;
-      render = false;
-    };
+    flags = { binaries = false; stats = false; render = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bff";
-        version = "0.3.1.1";
-      };
+      identifier = { name = "bff"; version = "0.3.1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Janis Voigtlaender";
@@ -26,7 +13,7 @@
       synopsis = "Bidirectionalization for Free! (POPL'09)";
       description = "This is an implementation of the ideas presented in \"Bidirectionalization\nfor Free!\" (paper at POPL'09) by Janis Voigtlaender.\n\nIt also includes an automatic deriver for the Zippable type class.\n\nUsing the cabal flag \"binaries\" will enable the creation of a web frontend\nto bff, in the form of a CGI program. Make sure you understand the\nsecurity implications before allowing untrusted access to the script.\n\nUsing the cabal flag \"stats\" will generate programs that collect performance\nstatistics about bff and print them as a table.\n\nUsing the cabal flag \"render\" will generate a program that renders collected\nperformance statistics as PDF files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,37 +26,37 @@
           (hsPkgs.haskell98)
           (hsPkgs.bimap)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       exes = {
         "bff-shell" = {
-          depends = pkgs.lib.optionals (flags.binaries) [
+          depends = (pkgs.lib).optionals (flags.binaries) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.hint)
-          ];
-        };
+            ];
+          };
         "bff-cgi" = {
-          depends = pkgs.lib.optionals (flags.binaries) [
+          depends = (pkgs.lib).optionals (flags.binaries) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.xhtml)
             (hsPkgs.cgi)
             (hsPkgs.hint)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "bff-stats" = {
-          depends = pkgs.lib.optional (flags.stats) (hsPkgs.benchpress);
-        };
+          depends = (pkgs.lib).optional (flags.stats) (hsPkgs.benchpress);
+          };
         "bff-stats-print" = {};
         "bff-stats-render" = {
-          depends = pkgs.lib.optionals (flags.render) [
+          depends = (pkgs.lib).optionals (flags.render) [
             (hsPkgs.Chart)
             (hsPkgs.data-accessor)
             (hsPkgs.colour)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

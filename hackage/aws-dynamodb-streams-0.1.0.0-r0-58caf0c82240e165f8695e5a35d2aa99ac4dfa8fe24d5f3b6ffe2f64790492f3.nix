@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-dynamodb-streams";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "aws-dynamodb-streams"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "Copyright (c) 2013-2014 PivotCloud, Inc.";
       maintainer = "jon@jonmsterling.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for Amazon DynamoDB Streams";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,7 +42,7 @@
           (hsPkgs.scientific)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

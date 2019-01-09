@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      avx2 = false;
-      bmi2 = false;
-      sse42 = true;
-    };
+    flags = { avx2 = false; bmi2 = false; sse42 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-simd";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "hw-simd"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2018 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -26,7 +13,7 @@
       synopsis = "SIMD library";
       description = "Please see the README on Github at <https://github.com/haskell-works/hw-simd#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,14 +26,12 @@
           (hsPkgs.hw-rankselect)
           (hsPkgs.hw-rankselect-base)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "hw-simd-test" = {
           depends = [
@@ -65,12 +50,12 @@
             (hsPkgs.hw-simd)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
             (hsPkgs.semigroups)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -89,11 +74,11 @@
             (hsPkgs.hw-simd)
             (hsPkgs.mmap)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
             (hsPkgs.semigroups)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

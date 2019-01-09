@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-hcl";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "language-hcl"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2016 Pedro Tacla Yamada";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "HCL parsers and pretty-printers for the Haskell programming language.";
       description = "@language-hcl@ contains HCL (Hashicorp Configuration Language) parsers and pretty-printers for the Haskell programming language.\n\"Data.HCL\" exports all the API surface in the package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.semigroups)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "hcl-benchmark" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.filepath)
             (hsPkgs.language-hcl)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

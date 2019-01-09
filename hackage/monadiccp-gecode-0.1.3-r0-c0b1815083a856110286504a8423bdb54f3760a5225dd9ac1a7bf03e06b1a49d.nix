@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monadiccp-gecode";
-        version = "0.1.3";
-      };
+      identifier = { name = "monadiccp-gecode"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jrt@informatik.uni-kiel.de";
@@ -22,7 +13,7 @@
       synopsis = "Constraint Programming";
       description = "Gecode extension for the Monadic Constraint Programming Framework (code generator and runtime solver backend)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.monadiccp)
-        ];
+          ];
         libs = [
           (pkgs."gecodesupport")
           (pkgs."gecodeset")
@@ -39,18 +30,11 @@
           (pkgs."gecodekernel")
           (pkgs."gecodesearch")
           (pkgs."stdc++")
-        ];
-        frameworks = [
-          (pkgs."gecode")
-        ];
-      };
-      tests = {
-        "Queens" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.monadiccp-gecode)
           ];
+        frameworks = [ (pkgs."gecode") ];
+        };
+      tests = {
+        "Queens" = { depends = [ (hsPkgs.base) (hsPkgs.monadiccp-gecode) ]; };
         };
       };
-    };
-  }
+    }

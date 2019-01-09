@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      chart = false;
-      vty = false;
-      web = false;
-    };
+    flags = { chart = false; vty = false; web = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hledger";
-        version = "0.12.1";
-      };
+      identifier = { name = "hledger"; version = "0.12.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -26,7 +13,7 @@
       synopsis = "A command-line (or curses or web-based) double-entry accounting tool.";
       description = "hledger reads a plain text general journal or time log\ndescribing your transactions and displays precise\nbalance and register reports via command-line, curses\nor web interface.  It is a remix, in haskell, of John\nWiegley's excellent c++ ledger.  hledger aims to be a\npractical, accessible tool for end users and a useful\nlibrary for finance-minded haskell programmers.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +34,8 @@
           (hsPkgs.split)
           (hsPkgs.time)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "hledger" = {
           depends = (([
@@ -69,19 +56,19 @@
             (hsPkgs.split)
             (hsPkgs.time)
             (hsPkgs.utf8-string)
-          ] ++ pkgs.lib.optionals (flags.chart) [
+            ] ++ (pkgs.lib).optionals (flags.chart) [
             (hsPkgs.Chart)
             (hsPkgs.colour)
             (hsPkgs.gtk2hs-buildtools)
-          ]) ++ pkgs.lib.optional (flags.vty) (hsPkgs.vty)) ++ pkgs.lib.optionals (flags.web) [
+            ]) ++ (pkgs.lib).optional (flags.vty) (hsPkgs.vty)) ++ (pkgs.lib).optionals (flags.web) [
             (hsPkgs.io-storage)
             (hsPkgs.yesod)
             (hsPkgs.hamlet)
             (hsPkgs.convertible-text)
             (hsPkgs.data-object)
             (hsPkgs.failure)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

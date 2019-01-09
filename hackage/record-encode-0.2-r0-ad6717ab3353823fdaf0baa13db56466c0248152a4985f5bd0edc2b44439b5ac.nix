@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "record-encode";
-        version = "0.2";
-      };
+      identifier = { name = "record-encode"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "2018 Marco Zocca";
       maintainer = "ocramz fripost org";
@@ -22,15 +13,11 @@
       synopsis = "Generic encoding of records";
       description = "Generic encoding of records. It currently provides a single, polymorphic function to encode sum types (i.e. categorical variables) as one-hot vectors.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.generics-sop)
-          (hsPkgs.vector)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.generics-sop) (hsPkgs.vector) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

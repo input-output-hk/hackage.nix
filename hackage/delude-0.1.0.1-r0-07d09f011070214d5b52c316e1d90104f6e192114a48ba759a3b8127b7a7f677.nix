@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "delude";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "delude"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "sgschlesinger@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Generalized the Prelude more functionally.";
       description = "Generalized Prelude";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

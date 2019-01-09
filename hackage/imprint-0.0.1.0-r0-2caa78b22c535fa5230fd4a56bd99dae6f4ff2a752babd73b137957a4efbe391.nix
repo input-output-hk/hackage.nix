@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "imprint";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "imprint"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Serialization of arbitrary Haskell expressions";
       description = "Serialization of arbitrary Haskell expressions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.constraints)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.constraints)
             (hsPkgs.hspec)
             (hsPkgs.imprint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

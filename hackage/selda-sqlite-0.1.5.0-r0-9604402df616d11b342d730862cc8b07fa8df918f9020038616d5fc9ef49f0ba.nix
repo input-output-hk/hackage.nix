@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { haste = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "selda-sqlite";
-        version = "0.1.5.0";
-      };
+      identifier = { name = "selda-sqlite"; version = "0.1.5.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "anton@ekblad.cc";
@@ -22,7 +13,7 @@
       synopsis = "SQLite backend for the Selda database EDSL.";
       description = "SQLite backend for the Selda database EDSL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,10 +21,10 @@
           (hsPkgs.exceptions)
           (hsPkgs.selda)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optionals (!flags.haste) [
+          ] ++ (pkgs.lib).optionals (!flags.haste) [
           (hsPkgs.direct-sqlite)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "th-reify-many";
-        version = "0.1.8";
-      };
+      identifier = { name = "th-reify-many"; version = "0.1.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Sloan <mgsloan at gmail>";
@@ -22,7 +13,7 @@
       synopsis = "Recurseively reify template haskell datatype info";
       description = "@th-reify-many@ provides functions for recursively reifying top\nlevel declarations.  The main intended use case is for enumerating\nthe names of datatypes reachable from an initial datatype, and\npassing these names to some function which generates instances.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,16 @@
           (hsPkgs.safe)
           (hsPkgs.template-haskell)
           (hsPkgs.th-expand-syns)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.th-reify-many)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

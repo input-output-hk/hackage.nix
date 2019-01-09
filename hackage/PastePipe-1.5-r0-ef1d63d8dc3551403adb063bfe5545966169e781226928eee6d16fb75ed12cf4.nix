@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "PastePipe";
-        version = "1.5";
-      };
+      identifier = { name = "PastePipe"; version = "1.5"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "creswick@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "CLI for pasting to lpaste.net";
       description = "PastePipe reads from standard in and posts to <lpaste.net>.\nIt will auto-detect your username, but that can be\noverridden with command line options (--user)\nTitles are set with -t, language with -l.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.HTTP)
           (hsPkgs.network)
           (hsPkgs.cmdargs)
-        ];
-      };
+          ];
+        };
       exes = {
         "pastepipe" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.HTTP)
             (hsPkgs.network)
             (hsPkgs.cmdargs)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

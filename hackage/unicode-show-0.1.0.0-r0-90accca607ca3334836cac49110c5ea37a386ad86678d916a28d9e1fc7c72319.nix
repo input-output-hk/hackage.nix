@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unicode-show";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "unicode-show"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Takayuki Muranushi";
       maintainer = "muranushi@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "print and show in unicode";
       description = "This package provides variants of 'show' and 'print' functions that does not escape non-ascii characters. Run ghci with  __@-interactive-print@__ flag to prints unicode characters. See <https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/interactive-evaluation.html#ghci-interactive-print Using a custom interactive printing function> section in the GHC manual.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "unicode-show-test" = {
           depends = [
@@ -37,8 +26,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

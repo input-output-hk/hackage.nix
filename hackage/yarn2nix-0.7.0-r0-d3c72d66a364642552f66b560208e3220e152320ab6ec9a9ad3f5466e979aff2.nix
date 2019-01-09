@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yarn2nix";
-        version = "0.7.0";
-      };
+      identifier = { name = "yarn2nix"; version = "0.7.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "mail@profpatsch.de";
@@ -22,7 +13,7 @@
       synopsis = "Convert yarn.lock files to nix expressions";
       description = "Convert @yarn.lock@ files to nix expressions. See @yarn2nix@ executable. Contains a nix library to call the generated nix files in @nix-lib/@. Library functions and module names might be restructured in the future.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.yarn-lock)
-        ];
-      };
+          ];
+        };
       exes = {
         "node-package-tool" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.yarn-lock)
             (hsPkgs.yarn2nix)
-          ];
-        };
+            ];
+          };
         "yarn2nix" = {
           depends = [
             (hsPkgs.aeson)
@@ -99,9 +90,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.yarn-lock)
             (hsPkgs.yarn2nix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "yarn2nix-tests" = {
           depends = [
@@ -131,8 +122,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.yarn-lock)
             (hsPkgs.yarn2nix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

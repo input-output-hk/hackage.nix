@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskey";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "haskey"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017, Henri Verroken, Steven Keuchel";
       maintainer = "steven.keuchel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A transcatoinal, ACID compliant, embeddable key-value store.";
       description = "Haskey is a transactional, ACID compliant, embeddable, scalable key-value\nstore written entirely in Haskell.\n\nFor more information on how to use this package, visit\n<https://github.com/haskell-haskey/haskey>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unix)
           (hsPkgs.xxhash-ffi)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskey-example" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.async)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "haskey-properties" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.haskey)
             (hsPkgs.haskey-btree)
-          ];
-        };
+            ];
+          };
         "haskey-integration" = {
           depends = [
             (hsPkgs.base)
@@ -92,8 +83,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.haskey)
             (hsPkgs.haskey-btree)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

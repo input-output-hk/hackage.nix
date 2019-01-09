@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mulang";
-        version = "3.6.1";
-      };
+      identifier = { name = "mulang"; version = "3.6.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "franco@mumuki.org";
@@ -22,7 +13,7 @@
       synopsis = "An intermediate language designed to perform advanced code analysis";
       description = "Mulang is an intermediate language, a combinators library for static code analysis and a multilanguage comand line tool";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,12 +34,12 @@
           (hsPkgs.split)
           (hsPkgs.hashable)
           (hsPkgs.process)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.happy)
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
+          ((hsPkgs.buildPackages).happy)
+          ((hsPkgs.buildPackages).alex)
+          ];
+        };
       exes = {
         "mulang" = {
           depends = [
@@ -59,13 +50,13 @@
             (hsPkgs.process)
             (hsPkgs.neat-interpolation)
             (hsPkgs.mulang)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
-          ];
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -76,12 +67,12 @@
             (hsPkgs.hspec)
             (hsPkgs.neat-interpolation)
             (hsPkgs.mulang)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
-          ];
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
         };
       };
-    };
-  }
+    }

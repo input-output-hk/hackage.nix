@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "telegram-bot";
-        version = "0.5.4.0";
-      };
+      identifier = { name = "telegram-bot"; version = "0.5.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Alexander Krupenkin";
       maintainer = "mail@akru.me";
@@ -22,7 +13,7 @@
       synopsis = "Telegram Bot microframework for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,24 +25,17 @@
           (hsPkgs.containers)
           (hsPkgs.pipes)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "hello-bot" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.telegram-bot)
-            (hsPkgs.text)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.telegram-bot) (hsPkgs.text) ];
+          };
         };
-      };
       tests = {
         "telegram-bot-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.telegram-bot)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.telegram-bot) ];
+          };
         };
       };
-    };
-  }
+    }

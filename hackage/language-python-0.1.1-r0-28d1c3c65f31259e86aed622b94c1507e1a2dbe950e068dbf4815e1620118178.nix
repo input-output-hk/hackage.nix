@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "language-python";
-        version = "0.1.1";
-      };
+      identifier = { name = "language-python"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2009 Bernard James Pope";
       maintainer = "bjpop@csse.unimelb.edu.au";
@@ -22,7 +13,7 @@
       synopsis = "Parsing and pretty printing of Python code.";
       description = "language-python is a Haskell library for parsing and pretty printing\nPython code. Currently it only supports Python version 3.0.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,11 +22,11 @@
           (hsPkgs.pretty)
           (hsPkgs.bytestring)
           (hsPkgs.array)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.happy)
-          (hsPkgs.buildPackages.alex)
-        ];
+          ((hsPkgs.buildPackages).happy)
+          ((hsPkgs.buildPackages).alex)
+          ];
+        };
       };
-    };
-  }
+    }

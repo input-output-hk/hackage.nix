@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cognimeta-utils";
-        version = "0.1.1";
-      };
+      identifier = { name = "cognimeta-utils"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2010-2012 Cognimeta Inc.";
       maintainer = "Patrick Premont <ppremont@cognimeta.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for Cognimeta products (such as perdure). API may change often.";
       description = "These utilities are used by Perdure and other internal Cognimeta products.\n\nPlease do not rely on these APIs. If parts of this are of interest to you please contact\n'ppremont@cognimeta.com' and we will consider creating a cleaner separate package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.data-lens-template)
           (hsPkgs.comonad-transformers)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       exes = {
         "cognimeta-utils" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

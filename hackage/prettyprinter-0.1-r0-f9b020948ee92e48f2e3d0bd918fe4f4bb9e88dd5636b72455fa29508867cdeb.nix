@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prettyprinter";
-        version = "0.1";
-      };
+      identifier = { name = "prettyprinter"; version = "0.1"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky at google>";
@@ -22,14 +13,14 @@
       synopsis = "A modern, extensible and well-documented prettyprinter.";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.void);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.void);
+        };
       exes = {
         "generate_readme" = {
           depends = [
@@ -37,17 +28,13 @@
             (hsPkgs.prettyprinter)
             (hsPkgs.text)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.QuickCheck)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.QuickCheck) ];
+          };
         "testsuite" = {
           depends = [
             (hsPkgs.base)
@@ -57,9 +44,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+          };
         };
-      };
       benchmarks = {
         "fusion" = {
           depends = [
@@ -71,16 +58,16 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.ansi-wl-pprint)
-          ];
-        };
+            ];
+          };
         "faster-unsafe-text" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.text)
             (hsPkgs.prettyprinter)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

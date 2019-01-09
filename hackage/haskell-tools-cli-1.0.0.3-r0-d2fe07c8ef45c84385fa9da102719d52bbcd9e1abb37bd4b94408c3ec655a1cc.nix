@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-tools-cli";
-        version = "1.0.0.3";
-      };
+      identifier = { name = "haskell-tools-cli"; version = "1.0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nboldi@elte.hu";
@@ -22,7 +13,7 @@
       synopsis = "Command-line frontend for Haskell-tools Refact";
       description = "Command-line frontend for Haskell-tools Refact. Not meant as a final product, only for demonstration purposes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.haskell-tools-refactor)
           (hsPkgs.haskell-tools-builtin-refactorings)
           (hsPkgs.haskell-tools-daemon)
-        ];
-      };
+          ];
+        };
       exes = {
         "ht-refact" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.haskell-tools-cli)
             (hsPkgs.haskell-tools-daemon)
             (hsPkgs.haskell-tools-builtin-refactorings)
-          ];
-        };
+            ];
+          };
         "ht-test-stackage" = {
           depends = [
             (hsPkgs.base)
@@ -64,9 +55,9 @@
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
             (hsPkgs.Glob)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "haskell-tools-cli-tests" = {
           depends = [
@@ -79,9 +70,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.haskell-tools-cli)
             (hsPkgs.haskell-tools-builtin-refactorings)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "cli-benchmark" = {
           depends = [
@@ -97,8 +88,8 @@
             (hsPkgs.haskell-tools-cli)
             (hsPkgs.haskell-tools-builtin-refactorings)
             (hsPkgs.haskell-tools-daemon)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

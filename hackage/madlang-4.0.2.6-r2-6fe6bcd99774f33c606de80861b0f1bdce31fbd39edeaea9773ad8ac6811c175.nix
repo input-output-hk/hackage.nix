@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-      library = false;
-    };
+    flags = { development = false; library = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "madlang";
-        version = "4.0.2.6";
-      };
+      identifier = { name = "madlang"; version = "4.0.2.6"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016-2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Randomized templating language DSL";
       description = "Madlang is a text templating language written in Haskell,\nmeant to explore computational creativity and generative\nliterature.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +38,8 @@
           (hsPkgs.zip-archive)
           (hsPkgs.recursion-schemes)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       exes = {
         "madlang" = {
           depends = [
@@ -61,9 +49,9 @@
             (hsPkgs.text)
             (hsPkgs.directory)
             (hsPkgs.megaparsec)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "madlang-test" = {
           depends = [
@@ -72,9 +60,9 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.hspec-megaparsec)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "madlang-bench" = {
           depends = [
@@ -83,8 +71,8 @@
             (hsPkgs.madlang)
             (hsPkgs.megaparsec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

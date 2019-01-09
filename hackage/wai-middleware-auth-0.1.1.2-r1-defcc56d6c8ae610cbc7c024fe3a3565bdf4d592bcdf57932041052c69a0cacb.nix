@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-auth";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "wai-middleware-auth"; version = "0.1.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "alexey@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Authentication middleware that secures WAI application";
       description = "See README";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,8 +46,8 @@
           (hsPkgs.wai-app-static)
           (hsPkgs.wai-extra)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-auth" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.optparse-simple)
             (hsPkgs.wai-middleware-auth)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

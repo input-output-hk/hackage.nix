@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "soegtk";
-        version = "0.12.1";
-      };
+      identifier = { name = "soegtk"; version = "0.12.1"; };
       license = "LGPL-2.1-only";
       copyright = "(c) 2001-2010 The Gtk2Hs Team";
       maintainer = "gtk2hs-users@lists.sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "GUI functions as used in the book \"The Haskell School of Expression\".";
       description = "An alternative implementation of the graphics library used in the book The Haskell\nSchool of Expression, by Paul Hudak, <http://www.haskell.org/soe/\nThis library builds on top of Gtk+.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.gtk)
           (hsPkgs.stm)
           (hsPkgs.old-time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

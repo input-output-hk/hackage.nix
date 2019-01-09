@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      reduce-core-output = false;
-    };
+    flags = { reduce-core-output = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hkt";
-        version = "0.0.1";
-      };
+      identifier = { name = "hkt"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "eliaslfox@gmail.com";
@@ -24,14 +13,9 @@
       synopsis = "A library for higher kinded types.";
       description = "A library for building and manipulating higher kinded data types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.protolude)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.protolude) ]; };
       tests = {
         "main" = {
           depends = [
@@ -41,8 +25,8 @@
             (hsPkgs.inspection-testing)
             (hsPkgs.protolude)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

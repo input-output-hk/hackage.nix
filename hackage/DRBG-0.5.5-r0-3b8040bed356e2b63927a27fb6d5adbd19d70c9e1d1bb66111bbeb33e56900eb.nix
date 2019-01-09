@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "DRBG";
-        version = "0.5.5";
-      };
+      identifier = { name = "DRBG"; version = "0.5.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas DuBuisson";
@@ -22,7 +13,7 @@
       synopsis = "Deterministic random bit generator (aka RNG, PRNG) based\nHMACs, Hashes, and Ciphers.";
       description = "Cryptographically secure RNGs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.mtl)
           (hsPkgs.cipher-aes128)
           (hsPkgs.entropy)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-drbg" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.parallel)
             (hsPkgs.prettyclass)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

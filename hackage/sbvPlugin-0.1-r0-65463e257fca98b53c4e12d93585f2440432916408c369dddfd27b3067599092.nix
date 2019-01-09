@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "sbvPlugin";
-        version = "0.1";
-      };
+      identifier = { name = "sbvPlugin"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Levent Erkok (erkokl@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Analyze Haskell expressions using SBV/SMT";
       description = "GHC plugin for analyzing expressions using SMT solvers, based\non the <http://hackage.haskell.org/package/sbv SBV> package.\n\nSee \"Data.SBV.Plugin\" for a quick example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.sbv)
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "sbvPluginTests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

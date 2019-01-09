@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yarn-lock";
-        version = "0.4.1";
-      };
+      identifier = { name = "yarn-lock"; version = "0.4.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "mail@profpatsch.de";
@@ -22,7 +13,7 @@
       synopsis = "Represent and parse yarn.lock files";
       description = "Types and parser for the lock file format of the npm successor yarn. All modules should be imported qualified.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.megaparsec)
           (hsPkgs.protolude)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "yarn-lock-tests" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.text)
             (hsPkgs.yarn-lock)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

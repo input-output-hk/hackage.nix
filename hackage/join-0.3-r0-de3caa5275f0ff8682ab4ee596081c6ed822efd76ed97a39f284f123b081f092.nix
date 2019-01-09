@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "join";
-        version = "0.3";
-      };
+      identifier = { name = "join"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "martin.sulzmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parallel Join Patterns with Guards and Propagation";
       description = "Parallel Join Patterns with Guards and Propagation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.stm)
           (hsPkgs.multisetrewrite)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "lambdabot";
-        version = "4.2.2";
-      };
+      identifier = { name = "lambdabot"; version = "4.2.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Cale Gibbard <cgibbard@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Lambdabot is a development tool and advanced IRC bot";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nIt operates as a command line tool, embedded in an editor,\nembedded in GHCi, via internet relay chat and on the web.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       exes = {
         "lambdabot" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.brainfuck)
             (hsPkgs.unlambda)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

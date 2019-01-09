@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0.1";
-      identifier = {
-        name = "hums";
-        version = "0.4.0";
-      };
+      identifier = { name = "hums"; version = "0.4.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Bardur Arantsson <bardur@scientician.net>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell UPnP Media Server";
       description = "A simple UPnP Media Server.\n\nCurrently this has only been tested with a PlayStation 3 client. Any help/patches for getting it to work with other clients would be much appreciated.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hums" = {
@@ -51,8 +42,8 @@
             (hsPkgs.case-insensitive)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

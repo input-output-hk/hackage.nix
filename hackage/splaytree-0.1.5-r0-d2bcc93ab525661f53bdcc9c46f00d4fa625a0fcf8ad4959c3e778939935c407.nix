@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "splaytree";
-        version = "0.1.5";
-      };
+      identifier = { name = "splaytree"; version = "0.1.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jwlato@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Provides an annotated splay tree";
       description = "Annotated splay trees (compare to 2-3 finger trees)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.deepseq)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.deepseq) ]; };
       tests = {
         "testSplay" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

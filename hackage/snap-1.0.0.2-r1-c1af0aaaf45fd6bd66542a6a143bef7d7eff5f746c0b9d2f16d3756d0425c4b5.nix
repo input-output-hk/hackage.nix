@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.4";
-      identifier = {
-        name = "snap";
-        version = "1.0.0.2";
-      };
+      identifier = { name = "snap"; version = "1.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "snap@snapframework.com";
@@ -22,7 +13,7 @@
       synopsis = "Top-level package for the Snap Web Framework";
       description = "This is the top-level package for the official Snap Framework libraries.\nIt includes:\n\n* The Snaplets API\n\n* Snaplets for sessions, authentication, and templates\n\nTo get started, issue the following sequence of commands:\n\n@\$ cabal install snap snap-templates\n\$ mkdir myproject\n\$ cd myproject\n\$ snap init@\n\nIf you have trouble or any questions, see our FAQ page\n(<http://snapframework.com/faq>) or the documentation\n(<http://snapframework.com/docs>).\n\nNote: since version 1.0, the \\\"snap\\\" executable program for generating\nstarter projects is provided by the @snap-templates@ package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.transformers-base)
           (hsPkgs.unordered-containers)
           (hsPkgs.xmlhtml)
-        ];
-      };
+          ];
+        };
       tests = {
         "testsuite" = {
           depends = [
@@ -104,8 +95,8 @@
             (hsPkgs.transformers-base)
             (hsPkgs.unordered-containers)
             (hsPkgs.xmlhtml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

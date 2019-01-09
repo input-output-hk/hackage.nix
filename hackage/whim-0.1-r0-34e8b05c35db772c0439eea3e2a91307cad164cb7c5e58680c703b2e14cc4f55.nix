@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "whim";
-        version = "0.1";
-      };
+      identifier = { name = "whim"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Evan Martin <martine@danga.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell window manager";
       description = "A simple X Windows window manager in Haskell; written before XMonad.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.process)
           (hsPkgs.containers)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = { "whim" = {}; };
-    };
-  }
+      };
+    }

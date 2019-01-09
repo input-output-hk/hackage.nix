@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "OpenAFP-Utils";
-        version = "1.4.1.1";
-      };
+      identifier = { name = "OpenAFP-Utils"; version = "1.4.1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "audreyt@audreyt.org";
@@ -22,7 +13,7 @@
       synopsis = "Assorted utilities to work with AFP data streams";
       description = "Assorted utilities to work with AFP data streams";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "afp2line2pdf" = {
@@ -31,8 +22,8 @@
             (hsPkgs.base)
             (hsPkgs.line2pdf)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "afp-olndump" = {
           depends = [
             (hsPkgs.OpenAFP)
@@ -40,8 +31,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "afp-tledump" = {
           depends = [
             (hsPkgs.OpenAFP)
@@ -49,8 +40,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "afp-dump" = {
           depends = [
             (hsPkgs.OpenAFP)
@@ -58,52 +49,19 @@
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.xhtml)
-          ];
-        };
-        "afp-page" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-          ];
-        };
-        "afp-replace" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-          ];
-        };
+            ];
+          };
+        "afp-page" = { depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) ]; };
+        "afp-replace" = { depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) ]; };
         "afp-scanudc" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-            (hsPkgs.directory)
-          ];
-        };
-        "afp-split" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-          ];
-        };
-        "afp-split-scb" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-          ];
-        };
+          depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) (hsPkgs.directory) ];
+          };
+        "afp-split" = { depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) ]; };
+        "afp-split-scb" = { depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) ]; };
         "afp-split-tcb" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-          ];
-        };
-        "afp-type" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-          ];
-        };
+          depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) (hsPkgs.filepath) ];
+          };
+        "afp-type" = { depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) ]; };
         "afp-udcfix" = {
           depends = [
             (hsPkgs.OpenAFP)
@@ -111,21 +69,12 @@
             (hsPkgs.regex-base)
             (hsPkgs.regex-posix)
             (hsPkgs.hashable)
-          ];
-        };
-        "afp-validate" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-          ];
-        };
+            ];
+          };
+        "afp-validate" = { depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) ]; };
         "afp2line" = {
-          depends = [
-            (hsPkgs.OpenAFP)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-          ];
+          depends = [ (hsPkgs.OpenAFP) (hsPkgs.base) (hsPkgs.containers) ];
+          };
         };
       };
-    };
-  }
+    }

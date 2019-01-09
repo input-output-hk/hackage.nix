@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "airtable-api";
-        version = "0.3.2.3";
-      };
+      identifier = { name = "airtable-api"; version = "0.3.2.3"; };
       license = "BSD-3-Clause";
       copyright = "AlphaSheets, Inc";
       maintainer = "Anand Srinivasan";
@@ -22,7 +13,7 @@
       synopsis = "Requesting and introspecting Tables within an Airtable project.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,15 +26,12 @@
           (hsPkgs.lens)
           (hsPkgs.unordered-containers)
           (hsPkgs.time)
-        ];
-      };
-      tests = {
-        "airtable-api-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.airtable-api)
           ];
         };
+      tests = {
+        "airtable-api-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.airtable-api) ];
+          };
+        };
       };
-    };
-  }
+    }

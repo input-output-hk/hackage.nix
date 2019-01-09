@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "language-typescript";
-        version = "0.0.2";
-      };
+      identifier = { name = "language-typescript"; version = "0.0.2"; };
       license = "MIT";
       copyright = "(c) DICOM Grid Inc. 2013";
       maintainer = "Phillip Freeman <paf31@cantab.net>";
@@ -22,14 +13,10 @@
       synopsis = "A library for working with TypeScript Definition files";
       description = "A library for working with TypeScript Definition files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.parsec)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.parsec) ];
+        };
       };
-    };
-  }
+    }

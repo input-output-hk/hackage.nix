@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "th-typegraph";
-        version = "0.33";
-      };
+      identifier = { name = "th-typegraph"; version = "0.33"; };
       license = "BSD-3-Clause";
       copyright = "(c) David Fox";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Graph of the subtype relation";
       description = "Build a graph whose nodes are Types and whose edges represent\nthe subtype relation: Char is a subtype of Maybe Char, Int is\na subtype of (Int, Double), and so on.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,12 +29,10 @@
           (hsPkgs.template-haskell)
           (hsPkgs.th-desugar)
           (hsPkgs.th-orphans)
-        ] ++ (if compiler.isGhcjs && true
-          then [
-            (hsPkgs.microlens-compat)
-          ]
+          ] ++ (if compiler.isGhcjs && true
+          then [ (hsPkgs.microlens-compat) ]
           else [ (hsPkgs.lens) ]);
-      };
+        };
       tests = {
         "th-typegraph-tests" = {
           depends = [
@@ -65,12 +54,10 @@
             (hsPkgs.th-desugar)
             (hsPkgs.th-orphans)
             (hsPkgs.th-reify-many)
-          ] ++ (if compiler.isGhcjs && true
-            then [
-              (hsPkgs.microlens-compat)
-            ]
+            ] ++ (if compiler.isGhcjs && true
+            then [ (hsPkgs.microlens-compat) ]
             else [ (hsPkgs.lens) ]);
+          };
         };
       };
-    };
-  }
+    }

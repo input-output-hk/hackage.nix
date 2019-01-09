@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "libxml";
-        version = "0.1";
-      };
+      identifier = { name = "libxml"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2006, Lemmih";
       maintainer = "Lemmih (lemmih@gmail.com)";
@@ -22,14 +13,11 @@
       synopsis = "Binding to libxml2";
       description = "Minimal binding to libxml2. Additional functions will be added when needed.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) ];
         libs = [ (pkgs."xml2") ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "sys-auth-smbclient";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "sys-auth-smbclient"; version = "2.0.0.0"; };
       license = "MIT";
       copyright = "(c) 2013 Kazuo Koga <obiwanko@me.com>";
       maintainer = "Kazuo Koga <obiwanko@me.com>";
@@ -22,22 +13,13 @@
       synopsis = "Auth with smbclient command";
       description = "This module provides a interface for executing\n@smbclient@ commands.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.process)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.text) ];
+        };
       tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

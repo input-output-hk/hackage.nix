@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glue";
-        version = "0.1.2";
-      };
+      identifier = { name = "glue"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "github@futurenotfound.com";
@@ -22,7 +13,7 @@
       synopsis = "Make better services.";
       description = "Implements common patterns used in building services that run smoothly and efficiently.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.ekg-core)
           (hsPkgs.text)
           (hsPkgs.monad-loops)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.text)
             (hsPkgs.monad-loops)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.text)
             (hsPkgs.monad-loops)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

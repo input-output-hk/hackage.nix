@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "genvalidity-mergeless";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "genvalidity-mergeless"; version = "0.0.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/NorfairKing/mergeless#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.genvalidity-containers)
           (hsPkgs.genvalidity-time)
           (hsPkgs.mergeless)
-        ];
-      };
+          ];
+        };
       tests = {
         "genvalidity-mergeless-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.time)
             (hsPkgs.typed-uuid)
             (hsPkgs.uuid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

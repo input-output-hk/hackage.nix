@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "moonshine";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "moonshine"; version = "2.0.0.0"; };
       license = "Apache-2.0";
       copyright = "2014";
       maintainer = "rowens@sumall.com";
@@ -22,7 +13,7 @@
       synopsis = "A web service framework for Haskell, similar in purpose to dropwizard.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.yaml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

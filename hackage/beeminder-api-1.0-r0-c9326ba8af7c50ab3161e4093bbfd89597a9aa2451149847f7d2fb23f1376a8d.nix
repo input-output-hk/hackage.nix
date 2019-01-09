@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "beeminder-api";
-        version = "1.0";
-      };
+      identifier = { name = "beeminder-api"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Daniel Wagner";
       maintainer = "greenrd@greenrd.org";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to the beeminder.com JSON API";
       description = "<<https://www.beeminder.com/images/logo_hi.png>>\n\n<http://beeminder.com> is a tool for incentivizing yourself to\naccomplish your quantifiable goals.  This package\nprovides Haskell bindings to beeminder's JSON API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.lens)
           (hsPkgs.monad-control)
           (hsPkgs.resourcet)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-kinesis-reshard";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "aws-kinesis-reshard"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "Copyright (c) 2013-2014 PivotCloud, Inc.";
       maintainer = "jon@jonmsterling.com";
@@ -22,7 +13,7 @@
       synopsis = "Reshard AWS Kinesis streams in response to Cloud Watch metrics";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "kinesis-reshard" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

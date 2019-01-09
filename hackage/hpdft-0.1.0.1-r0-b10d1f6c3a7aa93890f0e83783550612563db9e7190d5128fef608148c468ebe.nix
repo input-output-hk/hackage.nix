@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hpdft";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hpdft"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "k16.shikano@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "tools to poke pdf using haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.zlib)
           (hsPkgs.utf8-string)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

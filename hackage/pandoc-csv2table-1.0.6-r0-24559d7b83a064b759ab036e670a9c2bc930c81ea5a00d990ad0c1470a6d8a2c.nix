@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pandoc-csv2table";
-        version = "1.0.6";
-      };
+      identifier = { name = "pandoc-csv2table"; version = "1.0.6"; };
       license = "MIT";
       copyright = "(c) 2015 Wasif Hasan Baig";
       maintainer = "Wasif Hasan Baig <pr.wasif@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Convert CSV to Pandoc Table Markdown";
       description = "A Pandoc filter that replaces image inline or fenced code\nblocks with pandoc table markdown. CSV contents will be\nparsed by the pandoc markdown reader.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.text)
           (hsPkgs.pandoc)
           (hsPkgs.pandoc-types)
-        ];
-      };
+          ];
+        };
       exes = {
         "pandoc-csv2table" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.pandoc)
             (hsPkgs.pandoc-types)
             (hsPkgs.pandoc-csv2table)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

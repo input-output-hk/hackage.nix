@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "libroman";
-        version = "3.1.1";
-      };
+      identifier = { name = "libroman"; version = "3.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Alexander Hakki";
       maintainer = "ahk@ahakki.xyz";
@@ -22,14 +13,9 @@
       synopsis = "Use Roman Numerals as a Numeric Datatype (sort of)";
       description = "See Readme.md and Haddocks on Hackage";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.split)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.split) ]; };
       tests = {
         "libroman-test" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.libroman)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

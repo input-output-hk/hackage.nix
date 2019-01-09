@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "constraint-classes";
-        version = "0.3.0";
-      };
+      identifier = { name = "constraint-classes"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 guaraqe";
       maintainer = "guaraqe@openmailbox.org";
@@ -22,10 +13,6 @@
       synopsis = "Prelude classes using ConstraintKinds";
       description = "Please see README.org";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

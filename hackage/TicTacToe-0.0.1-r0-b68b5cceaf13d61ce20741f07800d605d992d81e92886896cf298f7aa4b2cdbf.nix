@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "TicTacToe";
-        version = "0.0.1";
-      };
+      identifier = { name = "TicTacToe"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A sub-project (exercise) for a functional programming course";
       description = "A sub-project (exercise) for a functional programming course";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.test-framework)
           (hsPkgs.test-framework-hunit)
           (hsPkgs.test-framework-quickcheck2)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

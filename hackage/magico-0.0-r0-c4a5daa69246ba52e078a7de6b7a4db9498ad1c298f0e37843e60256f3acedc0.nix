@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "magico";
-        version = "0.0";
-      };
+      identifier = { name = "magico"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@henning-thielemann.de";
@@ -22,7 +13,7 @@
       synopsis = "Compute solutions for Magico puzzle";
       description = "Compute solutions for Magico puzzle:\n<http://www.spectra-verlag.de/SID=96asni2sdrq0m0u98bd7qshij6/shopneu/start.php3>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "magico" = {
@@ -31,8 +22,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

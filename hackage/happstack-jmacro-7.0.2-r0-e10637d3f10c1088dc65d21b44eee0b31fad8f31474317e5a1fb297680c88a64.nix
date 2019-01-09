@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-jmacro";
-        version = "7.0.2";
-      };
+      identifier = { name = "happstack-jmacro"; version = "7.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@n-heptane.com";
@@ -22,7 +13,7 @@
       synopsis = "Support for using JMacro with Happstack";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.jmacro)
           (hsPkgs.pretty)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

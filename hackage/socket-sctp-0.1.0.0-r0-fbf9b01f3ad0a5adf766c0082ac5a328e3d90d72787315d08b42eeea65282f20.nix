@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "socket-sctp";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "socket-sctp"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "info@lars-petersen.net";
@@ -22,19 +13,13 @@
       synopsis = "STCP socket extensions library.";
       description = "This is a binding to the types and operations of `libsctp`.\nIt's intended to be used in conjunction with the `socket`\nlibrary.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.socket)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.socket) ];
         libs = [ (pkgs."sctp") ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       tests = {
         "SendReceiveMessage" = {
           depends = [
@@ -42,16 +27,16 @@
             (hsPkgs.bytestring)
             (hsPkgs.socket)
             (hsPkgs.socket-sctp)
-          ];
-        };
+            ];
+          };
         "TooSmallBuffer" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.socket)
             (hsPkgs.socket-sctp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

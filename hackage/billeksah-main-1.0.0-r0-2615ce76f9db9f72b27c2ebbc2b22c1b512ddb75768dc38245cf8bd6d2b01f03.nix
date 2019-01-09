@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "billeksah-main";
-        version = "1.0.0";
-      };
+      identifier = { name = "billeksah-main"; version = "1.0.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Juergen \"jutaro\" Nicklisch-Franken";
       maintainer = "maintainer@leksah.org";
@@ -22,7 +13,7 @@
       synopsis = "Leksah plugin base";
       description = "Plugin framework used by leksah";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "billeksah-main" = {
@@ -37,8 +28,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.billeksah-services)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

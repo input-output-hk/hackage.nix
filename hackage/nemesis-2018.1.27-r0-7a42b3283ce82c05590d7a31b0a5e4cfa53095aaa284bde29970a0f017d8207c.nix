@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "nemesis";
-        version = "2018.1.27";
-      };
+      identifier = { name = "nemesis"; version = "2018.1.27"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "a task management tool for Haskell";
       description = "Organize common shell tasks into a meaningful tree like structure with dependency tracking";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.mtl)
           (hsPkgs.process)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

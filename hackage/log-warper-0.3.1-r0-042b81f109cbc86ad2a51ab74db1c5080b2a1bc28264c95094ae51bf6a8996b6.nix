@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      patakdebugskovorodabardaq = false;
-    };
+    flags = { patakdebugskovorodabardaq = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "log-warper";
-        version = "0.3.1";
-      };
+      identifier = { name = "log-warper"; version = "0.3.1"; };
       license = "MIT";
       copyright = "2016-2016 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -24,7 +13,7 @@
       synopsis = "Flexible, configurable, monadic and pretty logging";
       description = "This package contains nice wrapper around hslogger library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +43,8 @@
           (hsPkgs.universum)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "play-log" = {
           depends = [
@@ -64,9 +53,9 @@
             (hsPkgs.hslogger)
             (hsPkgs.log-warper)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "log-test" = {
           depends = [
@@ -81,8 +70,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.universum)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

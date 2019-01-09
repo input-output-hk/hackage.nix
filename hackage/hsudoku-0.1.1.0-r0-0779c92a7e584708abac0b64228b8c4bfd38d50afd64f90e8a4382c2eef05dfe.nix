@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsudoku";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "hsudoku"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "marcelmoosbrugger@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sudoku game with a GTK3 interface";
       description = "This package realizes a graphical GTK3 sudoku game. Moreover it\nprovides modules for loading and solving sudoku grids.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.hxt)
           (hsPkgs.haskell-gi-base)
           (hsPkgs.gi-gtk)
-        ];
-      };
+          ];
+        };
       exes = {
         "hsudoku" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.haskell-gi-base)
             (hsPkgs.gi-gtk)
             (hsPkgs.hsudoku)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.hsudoku)
-          ];
-        };
+            ];
+          };
         "travis" = {
           depends = [
             (hsPkgs.base)
@@ -84,8 +75,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.hsudoku)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

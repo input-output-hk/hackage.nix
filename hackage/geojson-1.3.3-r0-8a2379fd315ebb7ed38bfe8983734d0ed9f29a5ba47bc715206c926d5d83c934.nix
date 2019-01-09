@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "geojson";
-        version = "1.3.3";
-      };
+      identifier = { name = "geojson"; version = "1.3.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013-2018";
       maintainer = "Andrew Newman";
@@ -22,7 +13,7 @@
       synopsis = "A thin GeoJSON Layer above the aeson library";
       description = "A thin GeoJSON Layer above the aeson library.\n\nIt currently conforms to version 1.0 of the GeoJSON spec which can be found here:\n\n<http://geojson.org/geojson-spec.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.transformers)
           (hsPkgs.validation)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "geojson-test" = {
           depends = [
@@ -49,14 +40,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.validation)
-          ];
-        };
-        "geojson-hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "geojson-hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

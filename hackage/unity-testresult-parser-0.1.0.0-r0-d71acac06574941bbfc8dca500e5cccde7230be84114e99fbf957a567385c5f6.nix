@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unity-testresult-parser";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "unity-testresult-parser"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 incertia";
       maintainer = "incertia@incertia.net";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Unity3D TestResults parser";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       exes = {
         "unity-testresult-parser" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.split)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

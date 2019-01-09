@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "packer-messagepack";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "packer-messagepack"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Moritz Schulte";
       maintainer = "mtesseract@silverratio.net";
@@ -22,7 +13,7 @@
       synopsis = "MessagePack Serialization an Deserialization for Packer";
       description = "This package implements MessagePack on top of the Packer package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.safe-exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "packer-msgpack-test-suite" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.safe-exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

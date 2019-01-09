@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "distributed-process-monad-control";
         version = "0.4.2";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@jeremyhuffman.com";
@@ -22,7 +16,7 @@
       synopsis = "Orphan instances for MonadBase and MonadBaseControl.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

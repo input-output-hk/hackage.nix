@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "brians-brain";
-        version = "0.0.1";
-      };
+      identifier = { name = "brians-brain"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Will Donnelly";
       maintainer = "Will Donnelly <will.donnelly@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell implementation of the Brian's Brain cellular automaton";
       description = "The Brian's Brain cellular automaton implemented in just 49 lines\nof Haskell, with fancy GUI and everything.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "brians-brain" = {
@@ -32,8 +23,8 @@
             (hsPkgs.SDL)
             (hsPkgs.random)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

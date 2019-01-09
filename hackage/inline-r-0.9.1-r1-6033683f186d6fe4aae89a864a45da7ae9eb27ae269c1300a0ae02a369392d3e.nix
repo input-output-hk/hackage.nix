@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "inline-r";
-        version = "0.9.1";
-      };
+      identifier = { name = "inline-r"; version = "0.9.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013-2015 Amgen, Inc.\nCopyright (c) 2015-2017 Tweag I/O Limited.";
       maintainer = "Mathieu Boespflug <m@tweag.io>";
@@ -22,7 +13,7 @@
       synopsis = "Seamlessly call R from Haskell and vice versa. No FFI required.";
       description = "For up to date Haddock documentation, please see\n<http://www.stackage.org/package/inline-r>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -46,15 +37,13 @@
           (hsPkgs.th-orphans)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ] ++ [
+          ] ++ [
           (hsPkgs.inline-c)
-        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."R");
-        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libR);
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."R");
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.libR);
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -77,8 +66,8 @@
             (hsPkgs.temporary)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-        };
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         "test-qq" = {
           depends = [
             (hsPkgs.inline-r)
@@ -88,8 +77,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.singletons)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test-shootout" = {
           depends = [
             (hsPkgs.inline-r)
@@ -100,9 +89,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-qq" = {
           depends = [
@@ -112,8 +101,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "bench-hexp" = {
           depends = [
             (hsPkgs.inline-r)
@@ -122,8 +111,8 @@
             (hsPkgs.primitive)
             (hsPkgs.vector)
             (hsPkgs.singletons)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

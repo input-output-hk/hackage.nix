@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conf-json";
-        version = "1.1";
-      };
+      identifier = { name = "conf-json"; version = "1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Imants Cekusins";
@@ -22,7 +13,7 @@
       synopsis = "read, parse json config";
       description = "read, parse json config to a Haskell type";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.directory)
           (hsPkgs.bytestring)
           (hsPkgs.aeson)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.directory)
             (hsPkgs.aeson)
             (hsPkgs.conf-json)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

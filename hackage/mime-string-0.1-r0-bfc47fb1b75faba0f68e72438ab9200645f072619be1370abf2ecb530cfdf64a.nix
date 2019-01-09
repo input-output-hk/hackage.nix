@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "mime-string";
-        version = "0.1";
-      };
+      identifier = { name = "mime-string"; version = "0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Ian Lynagh, 2005, 2007";
       maintainer = "igloo@earth.li";
@@ -22,7 +13,7 @@
       synopsis = "MIME implementation for String's.";
       description = "Implementation of the MIME RFCs 2045-2049.\nA bit rough around the edges.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.network)
           (hsPkgs.iconv)
           (hsPkgs.base64-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

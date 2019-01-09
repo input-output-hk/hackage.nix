@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "claferIG";
-        version = "0.3.8";
-      };
+      identifier = { name = "claferIG"; version = "0.3.8"; };
       license = "MIT";
       copyright = "";
       maintainer = "Jimmy Liang <jliang@gsd.uwaterloo.ca>";
@@ -22,7 +13,7 @@
       synopsis = "claferIG is an interactive tool that generates instances of Clafer models.";
       description = "Clafer is a powerful (equivalent to first-order predicate logic) yet lightweight structural modeling language. Despite simplicity and conciseness of Clafer, writing correct models remains challenging due to hard-to-predict interactions among all constraints expressed in the model. Clafer instance generator (ClaferIG) is an interactive tool that generates instances and counter examples of concrete clafers in a Clafer model. If the concrete clafers do not have contradicting constraints, the generator produces valid instance data. Otherwise, the generator produces an unsatisfiable core which included all contradicting constraints and generates a counter example by removing one constraint from the core. The generator can potentially produce many instances if the concrete clafers are not fully specialized. The generator produces different instances on-demand. With these capabilities, the instance generator can be used for debugging models: checking the consistency of the model and detecting under- and overconstraining of the model. The instance generator can also be used programmatically via API (the command line and interactive session interfaces only use the API).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.json-builder)
           (hsPkgs.string-conversions)
           (hsPkgs.clafer)
-        ];
-      };
+          ];
+        };
       exes = {
         "claferIG" = {
           depends = [
@@ -58,9 +49,9 @@
             (hsPkgs.haskeline)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-suite" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.clafer)
             (hsPkgs.claferIG)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

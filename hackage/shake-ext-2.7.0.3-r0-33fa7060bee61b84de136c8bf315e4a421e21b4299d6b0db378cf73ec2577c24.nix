@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "shake-ext";
-        version = "2.7.0.3";
-      };
+      identifier = { name = "shake-ext"; version = "2.7.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Helper functions for linting with shake";
       description = "This package provides several linters out of the box, for use with [shake](http://shakebuild.com/).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,10 +23,8 @@
           (hsPkgs.directory)
           (hsPkgs.Cabal)
           (hsPkgs.template-haskell)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.cpphs)
-        ];
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        };
       };
-    };
-  }
+    }

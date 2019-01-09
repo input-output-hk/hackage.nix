@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "hwormhole";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hwormhole"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2018 Least Authority TFA GmbH";
       maintainer = "Least Authority TFA GmbH";
@@ -22,7 +13,7 @@
       synopsis = "magic-wormhole client";
       description = "A secure way to send files over the Internet using the magic-wormhole protocol";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +45,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unix-compat)
           (hsPkgs.zip)
-        ];
-      };
+          ];
+        };
       exes = {
         "hwormhole-exe" = {
           depends = [
@@ -68,9 +59,9 @@
             (hsPkgs.protolude)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hwormhole-tests" = {
           depends = [
@@ -90,8 +81,8 @@
             (hsPkgs.hwormhole)
             (hsPkgs.magic-wormhole)
             (hsPkgs.hedgehog)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

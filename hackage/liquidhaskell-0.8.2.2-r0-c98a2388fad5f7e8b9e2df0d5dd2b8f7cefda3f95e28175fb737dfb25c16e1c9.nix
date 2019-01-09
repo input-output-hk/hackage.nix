@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      devel = false;
-      include = false;
-    };
+    flags = { devel = false; include = false; };
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "liquidhaskell";
-        version = "0.8.2.2";
-      };
+      identifier = { name = "liquidhaskell"; version = "0.8.2.2"; };
       license = "BSD-3-Clause";
       copyright = "2010-17 Ranjit Jhala & Niki Vazou & Eric L. Seidel, University of California, San Diego.";
       maintainer = "Ranjit Jhala <jhala@cs.ucsd.edu>";
@@ -25,7 +13,7 @@
       synopsis = "Liquid Types for Haskell";
       description = "Liquid Types for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -72,8 +60,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.ghc-prim)
           (hsPkgs.hpc)
-        ];
-      };
+          ];
+        };
       exes = {
         "liquid" = {
           depends = [
@@ -89,9 +77,9 @@
             (hsPkgs.located-base)
             (hsPkgs.liquidhaskell)
             (hsPkgs.hpc)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -113,8 +101,8 @@
             (hsPkgs.liquid-fixpoint)
             (hsPkgs.hpc)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "liquidhaskell-parser" = {
           depends = [
             (hsPkgs.base)
@@ -130,7 +118,7 @@
             (hsPkgs.syb)
             (hsPkgs.liquid-fixpoint)
             (hsPkgs.hpc)
-          ] ++ (if flags.devel
+            ] ++ (if flags.devel
             then [
               (hsPkgs.aeson)
               (hsPkgs.binary)
@@ -152,7 +140,7 @@
               (hsPkgs.unordered-containers)
               (hsPkgs.template-haskell)
               (hsPkgs.hpc)
-            ]
+              ]
             else [
               (hsPkgs.liquidhaskell)
               (hsPkgs.base)
@@ -165,8 +153,8 @@
               (hsPkgs.containers)
               (hsPkgs.template-haskell)
               (hsPkgs.bytestring)
-            ]);
+              ]);
+          };
         };
       };
-    };
-  }
+    }

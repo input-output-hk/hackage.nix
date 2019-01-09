@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ironforge";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "ironforge"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "marvin.cohrs@gmx.net";
@@ -22,7 +13,7 @@
       synopsis = "A technical demo for Antisplice.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ironforge" = {
@@ -32,8 +23,8 @@
             (hsPkgs.antisplice)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "afv";
-        version = "0.1.0";
-      };
+      identifier = { name = "afv"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tom Hawkins <tomahawkins@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Infinite state model checking of iterative C programs.";
       description = "AFV is an infinite state model checker that\nverifies iterative C programs by k-induction.\nAFV uses Yices as the backend SMT solver.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "afv" = {
@@ -34,8 +25,8 @@
             (hsPkgs.process)
             (hsPkgs.language-c)
             (hsPkgs.yices)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

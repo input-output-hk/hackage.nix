@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "emailparse";
-        version = "0.2.0.9";
-      };
+      identifier = { name = "emailparse"; version = "0.2.0.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michal@monad.cat";
@@ -22,7 +13,7 @@
       synopsis = "An email parser that will parse everything";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.strptime)
           (hsPkgs.either-unwrap)
-        ];
-      };
+          ];
+        };
       tests = {
         "emailparse-test" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

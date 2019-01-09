@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "duplo";
-        version = "1.6.19";
-      };
+      identifier = { name = "duplo"; version = "1.6.19"; };
       license = "MIT";
       copyright = "";
       maintainer = "ken@pixbi.com";
@@ -22,7 +13,7 @@
       synopsis = "Frontend development build tool";
       description = "Intuitive, simple building blocks for building composable, completely self-managed web applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,8 +43,8 @@
           (hsPkgs.wai)
           (hsPkgs.warp)
           (hsPkgs.MissingH)
-        ];
-      };
+          ];
+        };
       exes = {
         "duplo" = {
           depends = [
@@ -85,9 +76,9 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.MissingH)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -99,8 +90,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

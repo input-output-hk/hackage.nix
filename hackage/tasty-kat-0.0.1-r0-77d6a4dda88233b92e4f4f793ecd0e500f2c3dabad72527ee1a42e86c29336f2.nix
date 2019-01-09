@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty-kat";
-        version = "0.0.1";
-      };
+      identifier = { name = "tasty-kat"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -22,15 +13,11 @@
       synopsis = "Known Answer Tests (KAT) framework for tasty";
       description = "Tests running from simple KATs file (different formats/helper supported)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.tasty)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.tasty) ];
+        };
       tests = {
         "test-tasty-kat" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-kat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

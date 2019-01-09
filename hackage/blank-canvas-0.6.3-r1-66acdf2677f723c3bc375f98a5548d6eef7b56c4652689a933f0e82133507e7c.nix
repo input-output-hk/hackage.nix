@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blank-canvas";
-        version = "0.6.3";
-      };
+      identifier = { name = "blank-canvas"; version = "0.6.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 The University of Kansas";
       maintainer = "andygill@ku.edu";
@@ -22,7 +13,7 @@
       synopsis = "HTML5 Canvas Graphics Library";
       description = "@blank-canvas@ is a Haskell binding to the complete\n<https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API HTML5 Canvas API>.\n@blank-canvas@ allows Haskell users to write, in Haskell,\ninteractive images onto their web browsers. @blank-canvas@\ngives the user a single full-window canvas, and provides\nmany well-documented functions for rendering\nimages.\n\n@\n&#123;-&#35; LANGUAGE OverloadedStrings &#35;-&#125;\nmodule Main where\nimport Graphics.Blank                     -- import the blank canvas\n\nmain = blankCanvas 3000 \$ \\\\ context -> do -- start blank canvas on port 3000\n&#32;&#32;send context \$ do                       -- send commands to this specific context\n&#32;&#32;&#32;&#32;moveTo(50,50)\n&#32;&#32;&#32;&#32;lineTo(200,100)\n&#32;&#32;&#32;&#32;lineWidth 10\n&#32;&#32;&#32;&#32;strokeStyle \\\"red\\\"\n&#32;&#32;&#32;&#32;stroke()                              -- this draws the ink into the canvas\n@\n\n<<https://github.com/ku-fpg/blank-canvas/wiki/images/Red_Line.png>>\n\nFor more details, read the <https://github.com/ku-fpg/blank-canvas/wiki blank-canvas wiki>.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "wiki-suite" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.time)
             (hsPkgs.unix)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

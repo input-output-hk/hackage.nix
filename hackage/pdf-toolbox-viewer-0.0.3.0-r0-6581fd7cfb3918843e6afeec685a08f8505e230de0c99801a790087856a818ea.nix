@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pdf-toolbox-viewer";
-        version = "0.0.3.0";
-      };
+      identifier = { name = "pdf-toolbox-viewer"; version = "0.0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Yuras Shumovich 2012-2014";
       maintainer = "shumovichy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple pdf viewer";
       description = "Proof of concept, only for debuging";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pdf-toolbox-viewer" = {
@@ -41,8 +32,8 @@
             (hsPkgs.gtk)
             (hsPkgs.pdf-toolbox-document)
             (hsPkgs.pdf-toolbox-content)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

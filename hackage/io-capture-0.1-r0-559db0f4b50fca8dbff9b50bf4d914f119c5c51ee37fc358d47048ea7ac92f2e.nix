@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "io-capture";
-        version = "0.1";
-      };
+      identifier = { name = "io-capture"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nonowarn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "capture IO action's stdout and stderr";
       description = "capture IO action's stdout and stderr";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.unix)
           (hsPkgs.strict)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

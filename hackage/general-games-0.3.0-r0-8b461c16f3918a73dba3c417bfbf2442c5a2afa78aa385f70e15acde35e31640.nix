@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "general-games";
-        version = "0.3.0";
-      };
+      identifier = { name = "general-games"; version = "0.3.0"; };
       license = "MIT";
       copyright = "2017 Christopher A. Gorski";
       maintainer = "cgorski@cgorski.org";
@@ -22,15 +13,15 @@
       synopsis = "Library supporting simulation of a number of games";
       description = "Library providing framework for simulating outcomes of a variety\nof games, including Poker.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.random-shuffle)
           (hsPkgs.MonadRandom)
-        ];
-      };
+          ];
+        };
       tests = {
         "general-games-test" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.hspec)
             (hsPkgs.MonadRandom)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

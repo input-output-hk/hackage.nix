@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "throwable-exceptions";
-        version = "0.1.0.8";
-      };
+      identifier = { name = "throwable-exceptions"; version = "0.1.0.8"; };
       license = "MIT";
       copyright = "aiya000";
       maintainer = "aiya000.develop@gmail.com";
@@ -22,15 +13,15 @@
       synopsis = "throwable-exceptions gives the easy way to throw exceptions";
       description = "throwable-exceptions gives the easy way to throw exceptions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.safe-exceptions)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.throwable-exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

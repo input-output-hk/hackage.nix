@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambda-calculator";
-        version = "1.1.0";
-      };
+      identifier = { name = "lambda-calculator"; version = "1.1.0"; };
       license = "MIT";
       copyright = "2016 Sean Gillespie";
       maintainer = "sean@mistersg.net";
@@ -22,14 +13,9 @@
       synopsis = "A lambda calculus interpreter";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.parsec) ]; };
       exes = {
         "lambda-calculator" = {
           depends = [
@@ -38,9 +24,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.Shellac)
             (hsPkgs.Shellac-readline)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "lambda-calculus-test" = {
           depends = [
@@ -48,14 +34,11 @@
             (hsPkgs.lambda-calculator)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "lambda-calculus-lint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hlint) ];
+          };
         };
       };
-    };
-  }
+    }

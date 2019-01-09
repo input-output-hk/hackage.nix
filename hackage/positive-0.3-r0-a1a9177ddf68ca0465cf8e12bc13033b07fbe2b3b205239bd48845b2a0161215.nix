@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "positive";
-        version = "0.3";
-      };
+      identifier = { name = "positive"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hans Hoglund <hans@hanshoglund.se>";
@@ -22,13 +13,8 @@
       synopsis = "Positive numbers.";
       description = "Positive numbers.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.nats)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.nats) ]; };
+      };
+    }

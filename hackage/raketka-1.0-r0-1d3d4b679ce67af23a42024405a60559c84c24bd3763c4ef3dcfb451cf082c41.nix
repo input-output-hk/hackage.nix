@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "raketka";
-        version = "1.0";
-      };
+      identifier = { name = "raketka"; version = "1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Imants Cekusins";
@@ -22,7 +13,7 @@
       synopsis = "basic distributed-process node with configurable peers";
       description = "start multiple nodes, let them communicate.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.aeson)
           (hsPkgs.conf-json)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "raketka" = {
           depends = [
@@ -62,17 +53,13 @@
             (hsPkgs.aeson)
             (hsPkgs.conf-json)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.QuickCheck) ];
+          };
         };
       };
-    };
-  }
+    }

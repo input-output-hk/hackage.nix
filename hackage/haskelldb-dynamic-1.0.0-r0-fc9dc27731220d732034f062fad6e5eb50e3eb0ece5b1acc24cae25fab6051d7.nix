@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haskelldb-dynamic";
-        version = "1.0.0";
-      };
+      identifier = { name = "haskelldb-dynamic"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "haskelldb-users@lists.sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "HaskellDB support for the dynamically loaded drivers.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,14 +22,8 @@
           (hsPkgs.haskelldb)
           (hsPkgs.plugins)
           (hsPkgs.base)
-        ];
-      };
-      exes = {
-        "DBDirect-dynamic" = {
-          depends = [
-            (hsPkgs.haskelldb)
           ];
         };
+      exes = { "DBDirect-dynamic" = { depends = [ (hsPkgs.haskelldb) ]; }; };
       };
-    };
-  }
+    }

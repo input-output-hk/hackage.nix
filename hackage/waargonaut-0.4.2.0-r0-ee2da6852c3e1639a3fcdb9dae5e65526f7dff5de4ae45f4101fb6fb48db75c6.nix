@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "waargonaut";
-        version = "0.4.2.0";
-      };
+      identifier = { name = "waargonaut"; version = "0.4.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2018 Commonwealth Scientific and Industrial Research Organisation (CSIRO)";
       maintainer = "oᴉ˙ldɟb@uɐǝs";
@@ -22,7 +13,7 @@
       synopsis = "JSON wrangling";
       description = "Flexible, precise, and efficient JSON decoding/encoding library.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,8 +48,8 @@
           (hsPkgs.tagged)
           (hsPkgs.semigroupoids)
           (hsPkgs.natural)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.directory)
             (hsPkgs.template-haskell)
             (hsPkgs.waargonaut)
-          ];
-        };
+            ];
+          };
         "waarg-tests" = {
           depends = [
             (hsPkgs.base)
@@ -101,8 +92,8 @@
             (hsPkgs.natural)
             (hsPkgs.contravariant)
             (hsPkgs.waargonaut)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

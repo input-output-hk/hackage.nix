@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hCM";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hCM"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Marek Suchánek";
       maintainer = "suchama4@fit.cvut.cz";
@@ -22,32 +13,18 @@
       synopsis = "Conceptual modelling support for Haskell";
       description = "hCM is the result of finding a suitable way how to support conceptual\nmodelling within Haskell programming language in the most simple but smart manner.\nhCM should allow you to build conceptual model with Haskell freely without any\nrestrictions about selected representation of entities, relationships and model\nitself.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell-src)
-          (hsPkgs.hashable)
-        ];
-      };
-      exes = {
-        "hCM" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hCM)
-            (hsPkgs.hashable)
-          ];
+        depends = [ (hsPkgs.base) (hsPkgs.haskell-src) (hsPkgs.hashable) ];
         };
-      };
+      exes = {
+        "hCM" = { depends = [ (hsPkgs.base) (hsPkgs.hCM) (hsPkgs.hashable) ]; };
+        };
       tests = {
         "hCM-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hCM)
-            (hsPkgs.hashable)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hCM) (hsPkgs.hashable) ];
+          };
         };
       };
-    };
-  }
+    }

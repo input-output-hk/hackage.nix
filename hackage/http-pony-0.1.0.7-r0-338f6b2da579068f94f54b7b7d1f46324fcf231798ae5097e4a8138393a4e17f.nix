@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-pony";
-        version = "0.1.0.7";
-      };
+      identifier = { name = "http-pony"; version = "0.1.0.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nfjinjing@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A type unsafe http library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.pipes-safe)
           (hsPkgs.transformers)
           (hsPkgs.exceptions)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

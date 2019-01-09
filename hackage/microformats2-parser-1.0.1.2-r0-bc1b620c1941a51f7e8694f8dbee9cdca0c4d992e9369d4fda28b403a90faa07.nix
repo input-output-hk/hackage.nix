@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "microformats2-parser";
-        version = "1.0.1.2";
-      };
+      identifier = { name = "microformats2-parser"; version = "1.0.1.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "2015 Greg V <greg@unrelenting.technology>";
       maintainer = "greg@unrelenting.technology";
@@ -22,7 +13,7 @@
       synopsis = "A Microformats 2 parser.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.blaze-markup)
           (hsPkgs.xss-sanitize)
           (hsPkgs.pcre-heavy)
-        ];
-      };
+          ];
+        };
       exes = {
         "microformats2-parser" = {
           depends = [
@@ -67,9 +58,9 @@
             (hsPkgs.blaze-html)
             (hsPkgs.blaze-markup)
             (hsPkgs.microformats2-parser)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -88,8 +79,8 @@
             (hsPkgs.data-default)
             (hsPkgs.html-conduit)
             (hsPkgs.xml-lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

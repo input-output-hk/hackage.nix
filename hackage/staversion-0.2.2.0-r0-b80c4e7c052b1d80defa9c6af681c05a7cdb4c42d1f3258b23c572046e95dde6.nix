@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-test = false;
-    };
+    flags = { network-test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "staversion";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "staversion"; version = "0.2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Toshio Ito <debug.ito@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "What version is the package X in stackage lts-Y.ZZ?";
       description = "A command-line tool to look for version numbers for Haskell packages in specific stackage resolvers. See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,16 +38,11 @@
           (hsPkgs.pretty)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.process)
-        ];
-      };
-      exes = {
-        "staversion" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.staversion)
           ];
         };
-      };
+      exes = {
+        "staversion" = { depends = [ (hsPkgs.base) (hsPkgs.staversion) ]; };
+        };
       tests = {
         "spec" = {
           depends = [
@@ -72,8 +56,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.heredoc)
-          ];
-        };
+            ];
+          };
         "network-test" = {
           depends = [
             (hsPkgs.base)
@@ -83,8 +67,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.Cabal)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

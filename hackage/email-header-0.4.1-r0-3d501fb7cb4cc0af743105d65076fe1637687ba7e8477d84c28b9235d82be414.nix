@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "email-header";
-        version = "0.4.1";
-      };
+      identifier = { name = "email-header"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014-2018 Kyle Raftogianis";
       maintainer = "Kyle Raftogianis <knrafto@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Parsing and rendering of email and MIME headers";
       description = "Parsing and rendering of email and MIME headers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.text-icu)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

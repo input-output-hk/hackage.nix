@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "css-syntax";
-        version = "0.0.2";
-      };
+      identifier = { name = "css-syntax"; version = "0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "This package implments a parser for the CSS syntax";
       description = "See https://drafts.csswg.org/css-syntax/";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.scientific)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.text)
             (hsPkgs.hspec)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

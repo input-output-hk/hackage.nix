@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aosd";
-        version = "0.1";
-      };
+      identifier = { name = "aosd"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anotheraddress@gmx.de";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to libaosd, a library for Cairo-based on-screen displays";
       description = "<http://www.atheme.org/project/libaosd>\n\n@An advanced on screen display (OSD) library, which uses Cairo to create high quality rendered graphics to be overlaid on top of the screen.@\n\nExample:\n\n@\n&#123;-\\# LANGUAGE OverloadedStrings \\#-&#125;\nimport \"Graphics.Aosd.Pango\"\n\nmarkup = pSized 50 (pUnlines [pItalic \\\"AOSD\\\",\\\"Example\\\"])\n\nmain = aosdFlash\n\\           defaultOpts\n\\           (textRenderer markup) &#123; alignment = Just AlignCenter, colour = orange &#125;\n\\           (symDurations 3000 3000)\n@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,15 +24,10 @@
           (hsPkgs.bindings-DSL)
           (hsPkgs.cairo)
           (hsPkgs.pango)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.libaosd)
-          (pkgconfPkgs.libaosd-text)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.libaosd) (pkgconfPkgs.libaosd-text) ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       tests = {
         "test-aosd" = {
           depends = [
@@ -51,8 +37,8 @@
             (hsPkgs.pango)
             (hsPkgs.language-haskell-extract)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

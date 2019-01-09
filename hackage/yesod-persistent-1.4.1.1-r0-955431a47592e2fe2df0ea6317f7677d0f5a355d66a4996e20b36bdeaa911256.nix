@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-persistent";
-        version = "1.4.1.1";
-      };
+      identifier = { name = "yesod-persistent"; version = "1.4.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Some helpers for using Persistent from Yesod.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-persistent>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.conduit)
           (hsPkgs.resourcet)
           (hsPkgs.resource-pool)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.blaze-builder)
             (hsPkgs.persistent)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

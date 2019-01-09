@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "NumLazyByteString";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "NumLazyByteString"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas DuBuisson";
@@ -22,14 +13,10 @@
       synopsis = "Num, Enum, Eq, Integral, Ord, Real, and Show instances for Lazy ByteStrings";
       description = "Num, Enum, Eq, Integral, Ord, Real, and Show instances for Lazy ByteStrings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.binary)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.binary) ];
+        };
       };
-    };
-  }
+    }

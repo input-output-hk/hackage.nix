@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pisigma";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "pisigma"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thorsten Altenkirch <txa@cs.nott.ac.uk>,\nAndres Loeh <kspisigma@andres-loeh.de>";
@@ -22,7 +13,7 @@
       synopsis = "dependently typed core language";
       description = "dependently typed core language";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.parsec)
           (hsPkgs.text)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = { "pisigma" = {}; };
-    };
-  }
+      };
+    }

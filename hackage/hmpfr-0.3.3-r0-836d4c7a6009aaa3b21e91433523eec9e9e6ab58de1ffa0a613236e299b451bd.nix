@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      use-integer-simple = false;
-    };
+    flags = { use-integer-simple = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hmpfr";
-        version = "0.3.3";
-      };
+      identifier = { name = "hmpfr"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michal Konečný <mikkonecny@gmail.com>";
@@ -24,18 +13,14 @@
       synopsis = "Haskell binding to the MPFR library";
       description = "Haskell binding to the MPFR library. This version is compatible\nwith MPFR 2.4.* and later and will not work with previous releases\nof the MPFR library.\n\n/Since MPFR uses GMP, this library features infrequent but serious errors/\n/with a ghc (at least <= 7.2.1) that has been compiled with integer-gmp./\n/When using ghc, it is recommended to use one compiled with integer-simple./\n\nThe library includes both a pure and a mutable interface.\nThe mutable interface should have a lot less overhead\nthan the pure one.\n\nSome simple examples of usage can be found in demo/Demo.hs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-        ] ++ (if flags.use-integer-simple
+        depends = [ (hsPkgs.base) ] ++ (if flags.use-integer-simple
           then [ (hsPkgs.integer-simple) ]
           else [ (hsPkgs.integer-gmp) ]);
         libs = [ (pkgs."mpfr") ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

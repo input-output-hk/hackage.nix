@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "graph-rewriting-trs";
-        version = "0.1";
-      };
+      identifier = { name = "graph-rewriting-trs"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011, Jan Rochel";
       maintainer = "jan@rochel.info";
@@ -22,7 +13,7 @@
       synopsis = "Evaluate a first-order term rewrite system interactively using graph reduction";
       description = "Given a set of term rewriting rules (see examples) and a term with this tool you can interactively evaluate the corresponding term graph by applying the rules, which are translated into their graph rewriting equivalents.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "trs" = {
@@ -38,8 +29,8 @@
             (hsPkgs.OpenGL)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

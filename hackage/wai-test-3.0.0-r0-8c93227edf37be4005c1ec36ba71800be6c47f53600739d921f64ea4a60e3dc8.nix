@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-test";
-        version = "3.0.0";
-      };
+      identifier = { name = "wai-test"; version = "3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,10 +13,6 @@
       synopsis = "Unit test framework (built on HUnit) for WAI applications. (deprecated)";
       description = "Since WAI 3.0, this code has been merged into wai-extra.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.wai) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.wai) ]; }; };
+    }

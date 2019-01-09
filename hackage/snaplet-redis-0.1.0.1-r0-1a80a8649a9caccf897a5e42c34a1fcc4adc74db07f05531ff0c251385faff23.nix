@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snaplet-redis";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "snaplet-redis"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dima@dzhus.org";
@@ -22,7 +13,7 @@
       synopsis = "Redis support for Snap Framework";
       description = "This package provides a snaplet which wraps Redis\ninterface as implemented by Hedis library. Inline\ndocumentation contains usage examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.snap)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

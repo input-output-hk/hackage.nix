@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-lens";
-        version = "0.1";
-      };
+      identifier = { name = "wai-lens"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Richard Wallace";
       maintainer = "rwallace@thewallacepack.net";
@@ -22,7 +13,7 @@
       synopsis = "Lenses for WAI";
       description = "Lenses for WAI";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.vault)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

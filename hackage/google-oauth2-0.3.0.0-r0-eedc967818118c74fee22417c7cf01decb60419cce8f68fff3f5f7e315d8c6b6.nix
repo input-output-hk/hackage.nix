@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "google-oauth2";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "google-oauth2"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Pat Brisbin <pbrisbin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Google OAuth2 token negotiation";
       description = "See https://github.com/pbrisbin/google-oauth2#readme";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.uri-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.http-conduit)
             (hsPkgs.load-env)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

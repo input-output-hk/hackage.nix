@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { fast = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "variable-precision";
-        version = "0.3.1";
-      };
+      identifier = { name = "variable-precision"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Claude Heiland-Allen";
       maintainer = "claude@mathr.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "variable-precision floating point";
       description = "Software floating point with type-tagged variable mantissa precision,\nimplemented using a strict pair of 'Integer' and 'Int' scaled alike\nto 'decodeFloat'.  Version 0.2.1 added a fixed point number type.\n\nInstances of the usual numeric type classes are provided, along with\nadditional operators (with carefully chosen fixities) to coerce,\nadjust and reify precisions.\n\nThe intention with this library is to be relatively simple but still\nuseful, refer to the documentation for caveats concerning accuracy and\nassorted ill-behaviour.\n\nUsage with ghc(i)-7.0.4 might require @-fcontext-stack=100@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.complex-generic)
           (hsPkgs.floatshow)
           (hsPkgs.type-level-natural-number)
-        ] ++ pkgs.lib.optional (flags.fast) (hsPkgs.integer-gmp);
+          ] ++ (pkgs.lib).optional (flags.fast) (hsPkgs.integer-gmp);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "servant-pagination";
-        version = "2.1.2";
-      };
+      identifier = { name = "servant-pagination"; version = "2.1.2"; };
       license = "LGPL-3.0-only";
       copyright = "(c) 2018 Chordify";
       maintainer = "Chordify <haskelldevelopers@chordify.net>, Matthias Benkort <matthias.benkort@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe pagination for Servant APIs";
       description = "This module offers opinionated helpers to declare a type-safe and a flexible pagination\nmecanism for Servant APIs. This design, inspired by Heroku's API, provides a small framework\nto communicate about a possible pagination feature of an endpoint, enabling a client to\nconsume the API in different fashions (pagination with offset / limit, endless scroll using last\nreferenced resources, ascending and descending ordering, etc.)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.servant)
           (hsPkgs.servant-server)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       exes = {
         "servant-pagination-simple" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.servant-pagination)
             (hsPkgs.servant-server)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "servant-pagination-complex" = {
           depends = [
             (hsPkgs.base)
@@ -52,9 +43,9 @@
             (hsPkgs.servant-pagination)
             (hsPkgs.servant-server)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "servant-pagination-test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.hspec)
             (hsPkgs.servant-server)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

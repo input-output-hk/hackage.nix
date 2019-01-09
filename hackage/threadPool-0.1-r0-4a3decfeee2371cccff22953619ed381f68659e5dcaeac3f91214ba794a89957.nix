@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "threadPool";
-        version = "0.1";
-      };
+      identifier = { name = "threadPool"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "";
@@ -22,15 +13,10 @@
       synopsis = "Runs other programs in the manner of a thread pool";
       description = "Takes a single, optional argument which is the number\nof threads (the default is three).  Give it the commands to run, one\nper line, through standard input.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "threadpool" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
+        "threadpool" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
         };
       };
-    };
-  }
+    }

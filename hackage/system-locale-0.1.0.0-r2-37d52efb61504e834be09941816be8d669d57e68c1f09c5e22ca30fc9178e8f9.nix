@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "system-locale";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "system-locale"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016";
       maintainer = "moritz.kiefer@purelyfunctional.org";
@@ -22,7 +13,7 @@
       synopsis = "Get system locales";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,12 @@
           (hsPkgs.megaparsec)
           (hsPkgs.process)
           (hsPkgs.time)
-        ];
-      };
-      tests = {
-        "system-locale-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.system-locale)
           ];
         };
+      tests = {
+        "system-locale-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.system-locale) ];
+          };
+        };
       };
-    };
-  }
+    }

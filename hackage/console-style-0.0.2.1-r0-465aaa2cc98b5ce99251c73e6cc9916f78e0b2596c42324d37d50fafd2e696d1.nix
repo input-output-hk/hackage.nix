@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "console-style";
-        version = "0.0.2.1";
-      };
+      identifier = { name = "console-style"; version = "0.0.2.1"; };
       license = "MIT";
       copyright = "2016 Daniel Mendler";
       maintainer = "Daniel Mendler <mail@daniel-mendler.de>";
@@ -22,14 +13,14 @@
       synopsis = "Styled console text output using ANSI escape sequences.";
       description = "Styled console text output using ANSI escape sequences.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+        };
       };
-    };
-  }
+    }

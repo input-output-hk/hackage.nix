@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "orgstat";
-        version = "0.1.5";
-      };
+      identifier = { name = "orgstat"; version = "0.1.5"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "volhovm.cs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Statistics visualizer for org-mode";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.turtle)
           (hsPkgs.universum)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "orgstat" = {
           depends = [
@@ -67,9 +58,9 @@
             (hsPkgs.optparse-simple)
             (hsPkgs.orgstat)
             (hsPkgs.universum)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "orgstat-test" = {
           depends = [
@@ -85,8 +76,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.universum)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

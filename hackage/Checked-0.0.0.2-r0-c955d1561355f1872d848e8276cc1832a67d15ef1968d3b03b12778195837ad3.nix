@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Checked";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "Checked"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ronslow@xlegal.co.uk";
@@ -22,13 +13,8 @@
       synopsis = "Inbuilt checking for ultra reliable computing";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.text) ]; };
+      };
+    }

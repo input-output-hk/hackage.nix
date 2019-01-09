@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "basic-sop";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "basic-sop"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "edsko@well-typed.com";
@@ -22,7 +13,7 @@
       synopsis = "Basic examples and functions for generics-sop";
       description = "This library contains various small examples of generic functions\nwritten using the @<https://hackage.haskell.org/package/generics-sop generics-sop>@\nlibrary.\n\nIt is a good starting point if you want to see how generic functions\ncan be defined in the SOP style.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.text)
           (hsPkgs.QuickCheck)
           (hsPkgs.deepseq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

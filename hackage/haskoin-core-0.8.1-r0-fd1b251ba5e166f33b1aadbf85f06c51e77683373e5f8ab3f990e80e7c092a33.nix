@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskoin-core";
-        version = "0.8.1";
-      };
+      identifier = { name = "haskoin-core"; version = "0.8.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "xenog@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bitcoin & Bitcoin Cash library for Haskell";
       description = "Haskoin Core is a complete Bitcoin and Bitcoin Cash library of functions and data types for Haskell developers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -71,11 +62,9 @@
             (hsPkgs.string-conversions)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

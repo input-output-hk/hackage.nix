@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "implicit-logging";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "implicit-logging"; version = "0.2.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "rev.null@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A logging framework built around implicit parameters.";
       description = "This package provides a simple framework for adding logging to a program.\nIt supports customizable line formatting and user-provided log contexts.\nLog configuration information is passed around via implicit parameters.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.time)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

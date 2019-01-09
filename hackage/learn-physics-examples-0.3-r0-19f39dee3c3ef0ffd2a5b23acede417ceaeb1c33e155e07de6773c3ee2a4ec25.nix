@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "learn-physics-examples";
-        version = "0.3";
-      };
+      identifier = { name = "learn-physics-examples"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Scott N. Walck <walck@lvc.edu>";
@@ -22,7 +13,7 @@
       synopsis = "examples for learn-physics";
       description = "Executables that use the learn-physics library.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "learn-physics-PlaneWave" = {
@@ -31,60 +22,44 @@
             (hsPkgs.spatial-math)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
-          ];
-        };
+            ];
+          };
         "learn-physics-eFieldLine3D" = {
           depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
-          ];
-        };
+            ];
+          };
         "learn-physics-LorentzForceSimulation" = {
           depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
-          ];
-        };
+            ];
+          };
         "learn-physics-BCircularLoop" = {
           depends = [
             (hsPkgs.not-gloss)
             (hsPkgs.spatial-math)
             (hsPkgs.base)
             (hsPkgs.learn-physics)
-          ];
-        };
+            ];
+          };
         "learn-physics-sunEarth" = {
-          depends = [
-            (hsPkgs.gloss)
-            (hsPkgs.base)
-            (hsPkgs.learn-physics)
-          ];
-        };
+          depends = [ (hsPkgs.gloss) (hsPkgs.base) (hsPkgs.learn-physics) ];
+          };
         "learn-physics-eFieldLine2D" = {
-          depends = [
-            (hsPkgs.gloss)
-            (hsPkgs.base)
-            (hsPkgs.learn-physics)
-          ];
-        };
+          depends = [ (hsPkgs.gloss) (hsPkgs.base) (hsPkgs.learn-physics) ];
+          };
         "learn-physics-ElectricFluxPlot" = {
-          depends = [
-            (hsPkgs.gnuplot)
-            (hsPkgs.base)
-            (hsPkgs.learn-physics)
-          ];
-        };
+          depends = [ (hsPkgs.gnuplot) (hsPkgs.base) (hsPkgs.learn-physics) ];
+          };
         "learn-physics-DampedOscillator" = {
-          depends = [
-            (hsPkgs.gnuplot)
-            (hsPkgs.base)
-            (hsPkgs.learn-physics)
-          ];
+          depends = [ (hsPkgs.gnuplot) (hsPkgs.base) (hsPkgs.learn-physics) ];
+          };
         };
       };
-    };
-  }
+    }

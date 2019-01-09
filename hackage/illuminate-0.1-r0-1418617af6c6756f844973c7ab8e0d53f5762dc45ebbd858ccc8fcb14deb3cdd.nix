@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { executable = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "illuminate";
-        version = "0.1";
-      };
+      identifier = { name = "illuminate"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jgm@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "A fast syntax highlighting library built with alex.";
       description = "illuminate is a source-code syntax highlighting\nlibrary and a command-line highlighting tool.\nIt can produce output in HTML, XHTML, LaTeX, or\nANSI. It is smaller, less memory-hungry, and\nmuch faster than highlighting-kate.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +25,9 @@
           (hsPkgs.hscolour)
           (hsPkgs.filemanip)
           (hsPkgs.filepath)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       exes = {
         "illuminate" = {
           depends = [
@@ -47,11 +36,9 @@
             (hsPkgs.containers)
             (hsPkgs.xhtml)
             (hsPkgs.html)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.alex)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          };
         };
       };
-    };
-  }
+    }

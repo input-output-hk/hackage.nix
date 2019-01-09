@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "HGamer3D";
-        version = "0.6.1";
-      };
+      identifier = { name = "HGamer3D"; version = "0.6.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "althainz@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Toolset for the Haskell Game Programmer";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,13 +27,10 @@
           (hsPkgs.messagepack)
           (hsPkgs.clock)
           (hsPkgs.cereal)
-        ];
+          ];
         libs = if system.isWindows
           then [ (pkgs."hgamer3d061") ]
-          else [
-            (pkgs."hgamer3d061")
-            (pkgs."Urho3D")
-          ];
+          else [ (pkgs."hgamer3d061") (pkgs."Urho3D") ];
+        };
       };
-    };
-  }
+    }

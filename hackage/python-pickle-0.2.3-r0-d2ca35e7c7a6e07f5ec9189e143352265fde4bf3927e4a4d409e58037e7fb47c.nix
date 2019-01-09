@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "python-pickle";
-        version = "0.2.3";
-      };
+      identifier = { name = "python-pickle"; version = "0.2.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thu@hypered.be";
@@ -22,7 +13,7 @@
       synopsis = "Serialization/deserialization using Python Pickle format.";
       description = "This package implements serialization and deserialization of Python objects\nusing the Pickle format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.cereal)
           (hsPkgs.containers)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "pickle" = {
           depends = [
@@ -41,9 +32,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.cmdargs)
             (hsPkgs.python-pickle)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "pickled-values" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.process)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

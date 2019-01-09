@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "github-webhooks";
-        version = "0.9.1";
-      };
+      identifier = { name = "github-webhooks"; version = "0.9.1"; };
       license = "MIT";
       copyright = "(c) 2017-2018 OnRock Engineering";
       maintainer = "Kyle Van Berendonck <foss@onrock.engineering>";
@@ -22,7 +13,7 @@
       synopsis = "Aeson instances for GitHub Webhook payloads.";
       description = "Complete instances for decoding GitHub Webhook payloads (using @aeson@). See the README at <https://github.com/onrock-eng/github-webhooks#readme> for examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

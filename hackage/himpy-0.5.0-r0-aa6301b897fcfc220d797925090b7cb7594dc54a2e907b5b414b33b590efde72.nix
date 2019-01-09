@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "himpy";
-        version = "0.5.0";
-      };
+      identifier = { name = "himpy"; version = "0.5.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "pyr@spootnik.org";
@@ -22,7 +13,7 @@
       synopsis = "multithreaded snmp poller for riemann";
       description = "Himpy provides a multi-threaded snmp poller which reports\nto riemann.\n\nPolled MIBs are grouped in recipes and produce relative results\nwhereever possible (for instance, the storage recipe reports percents).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "himpy" = {
@@ -46,8 +37,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.vector)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

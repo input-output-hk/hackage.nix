@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "smallcheck";
-        version = "0.6.2";
-      };
+      identifier = { name = "smallcheck"; version = "0.6.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Roman Cheplyaka <roma@ro-che.info>";
@@ -22,15 +13,15 @@
       synopsis = "A property-based testing library";
       description = "SmallCheck is a testing library that allows to verify properties\nfor all test cases up to some depth. The test cases are generated\nautomatically by SmallCheck.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.2.1") [
           (hsPkgs.ghc-prim)
           (hsPkgs.dlist)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

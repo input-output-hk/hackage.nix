@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rest-types";
-        version = "1.9.0.1";
-      };
+      identifier = { name = "rest-types"; version = "1.9.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Silk Rest Framework Types";
       description = "Silk Rest Framework Types";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
           (hsPkgs.uuid)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

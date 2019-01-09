@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "webapi";
-        version = "0.3";
-      };
+      identifier = { name = "webapi"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "magesh85@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "WAI based library for web api";
       description = "WAI based library for web api";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.cookie)
           (hsPkgs.QuickCheck)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.time)
             (hsPkgs.QuickCheck)
             (hsPkgs.webapi)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

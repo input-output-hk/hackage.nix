@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-stm32";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "data-stm32"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Richard Marko";
       maintainer = "srk@48.io";
@@ -22,7 +13,7 @@
       synopsis = "ARM SVD and CubeMX XML parser and pretty printer for STM32 family";
       description = "ARM SVD and CubeMX XML parser and pretty printer for STM32 family";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.pretty-simple)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "mxmcu" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.pretty-simple)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "stm32-reference-pdf" = {
           depends = [
             (hsPkgs.ansi-wl-pprint)
@@ -64,8 +55,8 @@
             (hsPkgs.pretty-simple)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "svdparse" = {
           depends = [
             (hsPkgs.ansi-wl-pprint)
@@ -78,9 +69,9 @@
             (hsPkgs.pretty-simple)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "data-cubemx-test" = {
           depends = [
@@ -94,8 +85,8 @@
             (hsPkgs.pretty-simple)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

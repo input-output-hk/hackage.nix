@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsreadability";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "hsreadability"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Alexey Shmalko <rasen.dubi@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Access to the Readability API.";
       description = "This package provides Haskell bindings to the\n<http://www.readability.com/> API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.authenticate-oauth)
           (hsPkgs.http-types)
           (hsPkgs.xsd)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-hsreadability" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.file-embed)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

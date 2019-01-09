@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "servius";
-        version = "1.1.0.2";
-      };
+      identifier = { name = "servius"; version = "1.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Serve Shakespearean templates via Warp";
       description = "Does not support any variable interpolation. Supports Hamlet and Lucius files (must have .hamlet and .lucius file extensions, respectively).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "servius" = {
@@ -44,8 +35,8 @@
             (hsPkgs.transformers)
             (hsPkgs.wai)
             (hsPkgs.mime-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

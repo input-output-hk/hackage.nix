@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "serpentine";
-        version = "0.2";
-      };
+      identifier = { name = "serpentine"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "2010 Author Here";
       maintainer = "example@example.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.vinyl)
           (hsPkgs.pringletons)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.serpentine)
             (hsPkgs.text)
             (hsPkgs.singletons)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

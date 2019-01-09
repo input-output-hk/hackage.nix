@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "slack-notify-haskell";
-        version = "0.1";
-      };
+      identifier = { name = "slack-notify-haskell"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "t.t.mc1192.sf@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Slack notifier for Haskell project.";
       description = "Slack notifier for Haskell project.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,15 +24,12 @@
           (hsPkgs.http-client-tls)
           (hsPkgs.network)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.slack-notify-haskell)
           ];
         };
+      exes = {
+        "example" = {
+          depends = [ (hsPkgs.base) (hsPkgs.slack-notify-haskell) ];
+          };
+        };
       };
-    };
-  }
+    }

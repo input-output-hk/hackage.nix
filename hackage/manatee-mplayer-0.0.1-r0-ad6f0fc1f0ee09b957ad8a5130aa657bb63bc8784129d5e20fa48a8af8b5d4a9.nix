@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "manatee-mplayer";
-        version = "0.0.1";
-      };
+      identifier = { name = "manatee-mplayer"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2009 ~ 2010 Andy Stewart";
       maintainer = "Andy Stewart <lazycat.manatee@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Mplayer client extension for Manatee.";
       description = "manatee-mplayer is mplayer client extension for Manatee (Haskell/Gtk+ Integrated Live Environment)";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,11 +36,8 @@
           (hsPkgs.random)
           (hsPkgs.unix)
           (hsPkgs.process)
-        ];
+          ];
+        };
+      exes = { "manatee-mplayer-daemon" = {}; "manatee-mplayer" = {}; };
       };
-      exes = {
-        "manatee-mplayer-daemon" = {};
-        "manatee-mplayer" = {};
-      };
-    };
-  }
+    }

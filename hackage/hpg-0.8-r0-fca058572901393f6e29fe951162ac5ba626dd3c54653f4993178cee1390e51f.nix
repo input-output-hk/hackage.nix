@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      warn-as-error = false;
-    };
+    flags = { warn-as-error = false; };
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "hpg";
-        version = "0.8";
-      };
+      identifier = { name = "hpg"; version = "0.8"; };
       license = "ISC";
       copyright = "";
       maintainer = "fritjof@alokat.org";
@@ -24,15 +13,15 @@
       synopsis = "a simple password generator";
       description = "hpg is a free, open source password generator. It's design\nis pretty simple and it generates random passwords between\n1 and 2^16 -1 characters.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hpg" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.random)
-          ] ++ pkgs.lib.optional (system.isOpenbsd) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (system.isOpenbsd) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

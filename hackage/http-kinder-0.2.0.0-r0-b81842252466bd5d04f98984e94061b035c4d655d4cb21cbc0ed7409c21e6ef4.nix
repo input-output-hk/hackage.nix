@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-kinder";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "http-kinder"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Joseph Abrahamson";
       maintainer = "me@jspha.com";
@@ -22,7 +13,7 @@
       synopsis = "Generic kinds and types for working with HTTP";
       description = "Types and kinds for describing HTTP requests and responsts.\n\nSee the README for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.singletons)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "http-kinder-test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

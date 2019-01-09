@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16.0.3";
-      identifier = {
-        name = "vcache";
-        version = "0.1.1";
-      };
+      identifier = { name = "vcache"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 by David Barbour";
       maintainer = "dmbarbour@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "large, persistent, memcached values and structure sharing for Haskell";
       description = "VCache provides a nearly-transparent persistent memory for Haskell\nwith transactional variables, persistent roots, and large structured\nvalues. The virtual space is a memory-mapped file via LMDB, with\nstructure sharing and incremental GC.\n\nVCache is very similar to packages acid-state, perdure, and TCache.\nVCache is intended as an acid-state alternative, offering flexibility\nto model fine-grained variables or extremely large values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.filelock)
           (hsPkgs.easy-file)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

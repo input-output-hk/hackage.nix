@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       useegl = true;
       staticlinkes3 = false;
       staticlinkegl15 = false;
       buildexample = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "opengles";
-        version = "0.8.2";
-      };
+      identifier = { name = "opengles"; version = "0.8.2"; };
       license = "LGPL-3.0-only";
       copyright = "2014-2016 capsjac";
       maintainer = "capsjac <capsjac at gmail.com>";
@@ -27,7 +18,7 @@
       synopsis = "Functional interface for OpenGL 4.1+ and OpenGL ES 2.0+";
       description = "A functional OpenGL [ES] wrapper library.\nMade complicated OpenGL APIs easy yet keep flexible enough.\nResulting binary size is relatively small so that apps\nlaunches faster. Works on both desktop and mobile.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,25 +34,19 @@
           (hsPkgs.fixed)
           (hsPkgs.future-resource)
           (hsPkgs.packer)
-        ];
-        libs = pkgs.lib.optionals (system.isLinux) (if flags.useegl
-          then [
-            (pkgs."EGL")
-            (pkgs."GLESv2")
-          ]
+          ];
+        libs = (pkgs.lib).optionals (system.isLinux) (if flags.useegl
+          then [ (pkgs."EGL") (pkgs."GLESv2") ]
           else [
             (pkgs."GL")
-          ]) ++ pkgs.lib.optionals (system.isWindows) (if flags.useegl
-          then [
-            (pkgs."libEGL")
-            (pkgs."libGLESv2")
-          ]
+            ]) ++ (pkgs.lib).optionals (system.isWindows) (if flags.useegl
+          then [ (pkgs."libEGL") (pkgs."libGLESv2") ]
           else [ (pkgs."opengl32") ]);
-        frameworks = pkgs.lib.optionals (system.isIos) [
+        frameworks = (pkgs.lib).optionals (system.isIos) [
           (pkgs."QuartzCore")
           (pkgs."OpenGLES")
-        ] ++ pkgs.lib.optional (system.isOsx) (pkgs."OpenGL");
-      };
+          ] ++ (pkgs.lib).optional (system.isOsx) (pkgs."OpenGL");
+        };
       exes = {
         "windmill" = {
           depends = [
@@ -72,8 +57,8 @@
             (hsPkgs.time)
             (hsPkgs.bytestring)
             (hsPkgs.future-resource)
-          ];
-        };
+            ];
+          };
         "glsl-sandbox-player" = {
           depends = [
             (hsPkgs.base)
@@ -82,16 +67,11 @@
             (hsPkgs.time)
             (hsPkgs.bytestring)
             (hsPkgs.future-resource)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "opengles-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.opengles)
-          ];
+        "opengles-test" = { depends = [ (hsPkgs.base) (hsPkgs.opengles) ]; };
         };
       };
-    };
-  }
+    }

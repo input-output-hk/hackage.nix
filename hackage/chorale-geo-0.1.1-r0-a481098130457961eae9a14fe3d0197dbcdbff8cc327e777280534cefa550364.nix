@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "chorale-geo";
-        version = "0.1.1";
-      };
+      identifier = { name = "chorale-geo"; version = "0.1.1"; };
       license = "MIT";
       copyright = "2014-2016 Franz-Benjamin Mocnik";
       maintainer = "Franz-Benjamin Mocnik <mail@mocnik-science.net>";
@@ -22,15 +13,11 @@
       synopsis = "A module containing basic geo functions";
       description = "Chorale-Geo is a Haskell module that contains basic functions for geo\napplications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.chorale)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.binary) (hsPkgs.chorale) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -44,8 +31,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

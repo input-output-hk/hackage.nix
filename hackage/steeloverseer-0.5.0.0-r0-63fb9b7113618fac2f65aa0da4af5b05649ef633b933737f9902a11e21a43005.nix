@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "steeloverseer";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "steeloverseer"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "efsubenovex@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A file watcher.";
       description = "A command line tool that responds to filesystem events. Allows the user to automatically execute commands after files are added or updated. Watches files using regular expressions. Can be invoked interactively or as a daemon.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sos" = {
@@ -37,8 +28,8 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.daemons)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

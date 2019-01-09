@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-ast-quickcheck";
-        version = "0.2";
-      };
+      identifier = { name = "json-ast-quickcheck"; version = "0.2"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Compatibility layer for \"json-ast\" and \"QuickCheck\"";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.quickcheck-instances)
           (hsPkgs.QuickCheck)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

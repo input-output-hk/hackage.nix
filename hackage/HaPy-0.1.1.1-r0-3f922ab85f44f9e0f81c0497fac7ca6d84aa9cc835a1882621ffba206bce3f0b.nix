@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HaPy";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "HaPy"; version = "0.1.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ddf1991@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Haskell bindings for Python";
       description = "Call Haskell functions from Python!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.th-lift)
-          (hsPkgs.template-haskell)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.th-lift) (hsPkgs.template-haskell) ];
+        };
       };
-    };
-  }
+    }

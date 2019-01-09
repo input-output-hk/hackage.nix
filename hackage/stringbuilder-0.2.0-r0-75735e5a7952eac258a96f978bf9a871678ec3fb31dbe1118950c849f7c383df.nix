@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "stringbuilder";
-        version = "0.2.0";
-      };
+      identifier = { name = "stringbuilder"; version = "0.2.0"; };
       license = "MIT";
       copyright = "(c) 2011, 2012 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,14 +13,9 @@
       synopsis = "A monadic builder for multi-line string literals";
       description = "<https://github.com/sol/stringbuilder#readme>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.transformers) ]; };
       tests = {
         "spec" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.transformers)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

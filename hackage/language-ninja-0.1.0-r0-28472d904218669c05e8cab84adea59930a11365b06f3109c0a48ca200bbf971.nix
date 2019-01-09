@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-ninja";
-        version = "0.1.0";
-      };
+      identifier = { name = "language-ninja"; version = "0.1.0"; };
       license = "Apache-2.0";
       copyright = "Copyright 2017 Awake Security";
       maintainer = "opensource@awakesecurity.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for dealing with the Ninja build language.";
       description = "A Haskell library for parsing, pretty-printing, and\ncompiling the Ninja build language.\nThe best place to start reading this documentation is\nthe \"Language.Ninja\" module.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.versions)
-        ];
-      };
+          ];
+        };
       exes = {
         "ninja-lex" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "ninja-parse" = {
           depends = [
             (hsPkgs.language-ninja)
@@ -74,8 +65,8 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "ninja-compile" = {
           depends = [
             (hsPkgs.language-ninja)
@@ -88,9 +79,9 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -122,8 +113,8 @@
             (hsPkgs.turtle)
             (hsPkgs.unordered-containers)
             (hsPkgs.versions)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
@@ -131,8 +122,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
             (hsPkgs.cabal-doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

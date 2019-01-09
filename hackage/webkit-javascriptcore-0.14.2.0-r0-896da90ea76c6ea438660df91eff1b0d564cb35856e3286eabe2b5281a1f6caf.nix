@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "webkit-javascriptcore";
-        version = "0.14.2.0";
-      };
+      identifier = { name = "webkit-javascriptcore"; version = "0.14.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,13 +13,11 @@
       synopsis = "JavaScriptCore FFI from webkitgtk";
       description = "FFI for JavaScriptCore module from webkitgtk";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        pkgconfig = [
-          (pkgconfPkgs.webkit-1.0)
-        ];
+        pkgconfig = [ (pkgconfPkgs.webkit-1.0) ];
+        };
       };
-    };
-  }
+    }

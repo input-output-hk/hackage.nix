@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "sets";
-        version = "0.0.6";
-      };
+      identifier = { name = "sets"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "Ducktyped set interface for Haskell containers.";
       description = "Please see the README on Github at <https://github.com/athanclark/sets#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.witherable)
-        ];
-      };
+          ];
+        };
       tests = {
         "sets-test" = {
           depends = [
@@ -70,9 +61,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.witherable)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "sets-bench" = {
           depends = [
@@ -95,8 +86,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.witherable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

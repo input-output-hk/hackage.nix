@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lio-simple";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "lio-simple"; version = "0.0.0.3"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "hails@scs.stanford.edu";
@@ -22,7 +13,7 @@
       synopsis = "LIO support for the Simple web framework";
       description = "LIO support for the Simple web framework.\nSee the 'lio' and 'simple' packages for more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.lio)
           (hsPkgs.text)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       exes = {
         "lio-simple" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.simple-templates)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

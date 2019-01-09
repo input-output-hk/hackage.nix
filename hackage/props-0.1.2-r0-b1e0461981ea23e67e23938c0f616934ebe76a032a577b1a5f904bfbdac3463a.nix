@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "props";
-        version = "0.1.2";
-      };
+      identifier = { name = "props"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "alec@deviant-logic.net";
@@ -22,19 +13,13 @@
       synopsis = "Reusable quickcheck properties";
       description = "Properties of functions and relations, perhaps for use with quickcheck";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.QuickCheck)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.QuickCheck) ];
+          };
         };
       };
-    };
-  }
+    }

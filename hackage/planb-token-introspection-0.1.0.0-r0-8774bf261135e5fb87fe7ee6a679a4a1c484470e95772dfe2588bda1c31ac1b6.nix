@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "planb-token-introspection";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "planb-token-introspection"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018 Moritz Clasmeier";
       maintainer = "mtesseract@silverratio.net";
@@ -22,7 +13,7 @@
       synopsis = "Token Introspection for PlanB";
       description = "This package provides token introspection functionality\nfor the PlanB token provider.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "access-token-provider-test" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.http-types)
             (hsPkgs.unliftio-core)
             (hsPkgs.safe-exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

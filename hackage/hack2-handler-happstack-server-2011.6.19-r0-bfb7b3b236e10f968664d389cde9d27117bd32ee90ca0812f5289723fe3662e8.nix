@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hack2-handler-happstack-server";
         version = "2011.6.19";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Hack2 Happstack server handler";
       description = "Hack2 Happstack server handler";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +30,7 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.enumerator)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

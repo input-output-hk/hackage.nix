@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tinylog";
-        version = "0.10.5";
-      };
+      identifier = { name = "tinylog"; version = "0.10.5"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2014 Toralf Wittner";
       maintainer = "Toralf Wittner <tw@dtex.org>";
@@ -22,7 +13,7 @@
       synopsis = "Simplistic logging using fast-logger.";
       description = "Trivial logger on top of fast-logger.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unix-time)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "tinylog-bench" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.tinylog)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

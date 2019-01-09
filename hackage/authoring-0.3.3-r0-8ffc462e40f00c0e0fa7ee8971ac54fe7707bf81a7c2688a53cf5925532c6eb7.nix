@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "authoring";
-        version = "0.3.3";
-      };
+      identifier = { name = "authoring"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "(C) Takayuki Muranushi, 2013";
       maintainer = "muranushi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for writing papers";
       description = "This package is a combinator library for writing papers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.trifecta)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

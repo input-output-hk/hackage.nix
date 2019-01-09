@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16.0";
-      identifier = {
-        name = "pathfindingcore";
-        version = "1.2";
-      };
+      identifier = { name = "pathfindingcore"; version = "1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jason.bertsche@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "A toy pathfinding library";
       description = "A toy pathfinding library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.array)
-          (hsPkgs.base)
-          (hsPkgs.split)
-        ];
-      };
+        depends = [ (hsPkgs.array) (hsPkgs.base) (hsPkgs.split) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.pathfindingcore)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "digestive-functors-heist";
-        version = "0.8.8.0";
-      };
+      identifier = { name = "digestive-functors-heist"; version = "0.8.8.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -22,7 +13,7 @@
       synopsis = "Heist frontend for the digestive-functors library";
       description = "Heist frontend for the digestive-functors library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.xmlhtml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

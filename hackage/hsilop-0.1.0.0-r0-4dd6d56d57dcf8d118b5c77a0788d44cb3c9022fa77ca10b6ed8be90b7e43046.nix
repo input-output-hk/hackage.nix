@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsilop";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hsilop"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "micheleguerinirocco@me.com";
@@ -22,15 +13,10 @@
       synopsis = "RPN calculator";
       description = "ʜƨiloꟼ is a simple reverse polish notation calculator\nwith haskeline line editing capabilites.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "hsilop" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskeline)
-          ];
+        "hsilop" = { depends = [ (hsPkgs.base) (hsPkgs.haskeline) ]; };
         };
       };
-    };
-  }
+    }

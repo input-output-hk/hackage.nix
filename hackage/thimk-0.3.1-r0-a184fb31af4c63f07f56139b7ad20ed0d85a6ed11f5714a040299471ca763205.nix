@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "thimk";
-        version = "0.3.1";
-      };
+      identifier = { name = "thimk"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2010 Bart Massey";
       maintainer = "bart@cs.pdx.edu";
@@ -22,7 +13,7 @@
       synopsis = "Command-line spelling word suggestion tool";
       description = "\"thimk\" (an old joke) is a command-line spelling word\nsuggestion tool.  You give it a possibly-misspelled word,\nand it spits out one or more properly-spelled words in order\nof likelihood of similarity.\n\nThe latest change to the implementation is an addition\nof an optional precompiled SQlite database of phonetic\ncodes for the entire dictionary, created with\n\"thimk-makedb\".  This greatly speeds lookup, permitting\nreasonable performance on enormous dictionaries.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "thimk" = {
@@ -32,15 +23,15 @@
             (hsPkgs.edit-distance)
             (hsPkgs.phonetic-code)
             (hsPkgs.sqlite)
-          ];
-        };
+            ];
+          };
         "thimk-makedb" = {
           depends = [
             (hsPkgs.parseargs)
             (hsPkgs.sqlite)
             (hsPkgs.phonetic-code)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

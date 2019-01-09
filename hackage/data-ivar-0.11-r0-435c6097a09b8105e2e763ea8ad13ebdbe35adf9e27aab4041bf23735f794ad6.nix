@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "data-ivar";
-        version = "0.11";
-      };
+      identifier = { name = "data-ivar"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "lrpalmer@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Write-once variables with concurrency support";
       description = "Write-once variables, with the ability to block\non the first of a set of variables to become\navailable.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

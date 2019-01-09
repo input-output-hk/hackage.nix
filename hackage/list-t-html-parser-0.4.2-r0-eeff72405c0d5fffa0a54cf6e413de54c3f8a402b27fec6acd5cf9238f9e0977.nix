@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "list-t-html-parser";
-        version = "0.4.2";
-      };
+      identifier = { name = "list-t-html-parser"; version = "0.4.2"; };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Streaming HTML parser";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.either)
           (hsPkgs.mtl-prelude)
           (hsPkgs.base-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.either)
             (hsPkgs.text)
             (hsPkgs.base-prelude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

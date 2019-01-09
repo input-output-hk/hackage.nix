@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rest-core";
-        version = "0.31";
-      };
+      identifier = { name = "rest-core"; version = "0.31"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Rest API library.";
       description = "Rest API library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.uri-encode)
           (hsPkgs.utf8-string)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "rest-tests" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.rest-core)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

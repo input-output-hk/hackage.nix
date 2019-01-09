@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hledger-iadd";
-        version = "1.1";
-      };
+      identifier = { name = "hledger-iadd"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Hans-Peter Deifel";
       maintainer = "hpd@hpdeifel.de";
@@ -22,7 +13,7 @@
       synopsis = "A terminal UI as drop-in replacement for hledger add";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.xdg-basedir)
           (hsPkgs.unordered-containers)
           (hsPkgs.free)
-        ];
-      };
+          ];
+        };
       exes = {
         "hledger-iadd" = {
           depends = [
@@ -67,9 +58,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.free)
             (hsPkgs.megaparsec)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -85,8 +76,8 @@
             (hsPkgs.text-format)
             (hsPkgs.free)
             (hsPkgs.megaparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

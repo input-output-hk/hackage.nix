@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "senza";
-        version = "0.0";
-      };
+      identifier = { name = "senza"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An HTML building library without the need for pesky operators.";
       description = "An HTML building library without the need for pesky operators.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.blaze-markup)
           (hsPkgs.blaze-html)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

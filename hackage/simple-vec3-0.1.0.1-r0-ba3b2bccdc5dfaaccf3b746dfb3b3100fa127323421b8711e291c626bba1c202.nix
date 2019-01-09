@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "simple-vec3";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "simple-vec3"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<dima@dzhus.org>";
@@ -22,14 +13,9 @@
       synopsis = "Three-dimensional vectors of doubles with basic operations";
       description = "A class of 3-vectors with a set of basic methods for\ngeometry operations on vectors and an associated\nmatrix type. Several instances are provided for\nuse with \"Data.Vector.Unboxed\" and\n\"Data.Vector.Storable\" as container types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };
       benchmarks = {
         "simple-vec3-benchmark" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.criterion)
             (hsPkgs.simple-vec3)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

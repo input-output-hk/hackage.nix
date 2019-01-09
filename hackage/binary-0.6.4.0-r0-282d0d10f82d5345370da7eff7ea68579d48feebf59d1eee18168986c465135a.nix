@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "binary";
-        version = "0.6.4.0";
-      };
+      identifier = { name = "binary"; version = "0.6.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Lennart Kolmodin, Don Stewart <dons@galois.com>";
@@ -24,7 +13,7 @@
       synopsis = "Binary serialisation for Haskell values using lazy ByteStrings";
       description = "Efficient, pure binary serialisation using lazy ByteStrings.\nHaskell values may be encoded to and from binary formats,\nwritten to disk as binary, or sent over the network.\nSerialisation speeds of over 1 G\\/sec have been observed,\nso this library should be suitable for high performance\nscenarios.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.array)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") (pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") (hsPkgs.ghc-prim));
-      };
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.2.1") ((pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs.ghc-prim));
+        };
       tests = {
         "qc" = {
           depends = [
@@ -45,17 +34,13 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.binary) (hsPkgs.bytestring) ];
+          };
         "get" = {
           depends = [
             (hsPkgs.base)
@@ -64,8 +49,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.mtl)
-          ];
-        };
+            ];
+          };
         "builder" = {
           depends = [
             (hsPkgs.base)
@@ -74,8 +59,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

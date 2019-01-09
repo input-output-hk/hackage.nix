@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sets";
-        version = "0.0.5.1";
-      };
+      identifier = { name = "sets"; version = "0.0.5.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Ducktyped set interface for Haskell containers.";
       description = "Includes overloaded functions for common set operations. See @Data.Set.Class@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -53,17 +44,13 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.sets)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.sets) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

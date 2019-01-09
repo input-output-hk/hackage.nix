@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "ron";
-        version = "0.3";
-      };
+      identifier = { name = "ron"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "2018 Yuriy Syrovetskiy";
       maintainer = "Yuriy Syrovetskiy <haskell@cblp.su>";
@@ -22,7 +13,7 @@
       synopsis = "RON, RON-RDT, and RON-Schema";
       description = "Replicated Object Notation (RON), data types (RDT), and RON-Schema\n\nTypical usage:\n\n> import RON.Data\n> import RON.Schema.TH\n> import RON.Storage.IO as Storage\n>\n> \$(let note = StructLww \"Note\"\n>           [ (\"active\", field boole)\n>           , (\"text\",   field rgaString) ]\n>           def{saHaskellDeriving = [\"Eq\", \"Show\"]}\n>   in mkReplicated [DStructLww note])\n>\n> instance Collection Note where\n>     collectionName = \"note\"\n>\n> main :: IO ()\n> main = do\n>     let dataDir = \"./data/\"\n>     h <- Storage.newHandle dataDir\n>     runStorage h \$ do\n>         obj <- newObject\n>             Note{active = True, text = \"Выступить на FProg SPb\"}\n>         createDocument obj";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "bench" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.ron)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

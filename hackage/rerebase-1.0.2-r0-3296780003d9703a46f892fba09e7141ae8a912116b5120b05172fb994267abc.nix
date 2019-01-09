@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rerebase";
-        version = "1.0.2";
-      };
+      identifier = { name = "rerebase"; version = "1.0.2"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,10 +13,6 @@
       synopsis = "Reexports from \"base\" with a bunch of other standard libraries";
       description = "A rich drop-in replacement for \\\"base\\\".\nFor details and docs please visit\n<https://github.com/nikita-volkov/rerebase the project's GitHub page>.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.rebase) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.rebase) ]; }; };
+    }

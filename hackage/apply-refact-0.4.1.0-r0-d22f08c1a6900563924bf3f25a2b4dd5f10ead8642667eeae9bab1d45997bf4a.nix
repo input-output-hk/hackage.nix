@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apply-refact";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "apply-refact"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "matthewtpickering@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Perform refactorings specified by the refact library.";
       description = "Perform refactorings specified by the refact library. It is primarily used with HLint's --refactor flag.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.filemanip)
           (hsPkgs.unix-compat)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "refactor" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.filepath)
             (hsPkgs.temporary)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -84,8 +75,8 @@
             (hsPkgs.silently)
             (hsPkgs.temporary)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

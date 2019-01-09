@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "isotope";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "isotope"; version = "0.4.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2015 Michael Thomas";
       maintainer = "Michaelt293@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Isotopic masses and relative abundances.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.megaparsec)
           (hsPkgs.template-haskell)
           (hsPkgs.th-lift)
-        ];
-      };
+          ];
+        };
       tests = {
         "Element-isotopes-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.megaparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

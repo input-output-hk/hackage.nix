@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hspec-hedgehog";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "hspec-hedgehog"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "erikd@mega-nerd.com";
@@ -22,15 +13,11 @@
       synopsis = "Hedgehog support for the Hspec testing framework";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hedgehog)
-          (hsPkgs.hspec-core)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.hedgehog) (hsPkgs.hspec-core) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-core)
             (hsPkgs.hspec-hedgehog)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

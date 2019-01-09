@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "couchdb-conduit";
-        version = "0.10.2";
-      };
+      identifier = { name = "couchdb-conduit"; version = "0.10.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexander Dorofeev <aka.spin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Couch DB client library using http-conduit and aeson";
       description = "This package is a thin wrapper around http-conduit to access a Couch DB Database,\nusing the aeson package to parse and encode JSON data. http-conduit, aeson, and\nattoparsec fit togther so well that this package is mostly just a direct combination\nof these packages.  The single additional feature in this package is an attoparsec parser\nfor views, which allows constant memory processing of view returns.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.transformers-base)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

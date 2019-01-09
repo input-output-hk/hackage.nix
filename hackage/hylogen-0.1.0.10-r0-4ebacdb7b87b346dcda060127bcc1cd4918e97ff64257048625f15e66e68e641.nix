@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hylogen";
-        version = "0.1.0.10";
-      };
+      identifier = { name = "hylogen"; version = "0.1.0.10"; };
       license = "MIT";
       copyright = "";
       maintainer = "freshdried@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "an EDSL for live-coding fragment shaders";
       description = "an EDSL for live-coding fragment shaders";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector-space)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector-space) ]; };
       exes = {
         "hylogen" = {
           depends = [
@@ -43,8 +29,8 @@
             (hsPkgs.wai)
             (hsPkgs.http-types)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

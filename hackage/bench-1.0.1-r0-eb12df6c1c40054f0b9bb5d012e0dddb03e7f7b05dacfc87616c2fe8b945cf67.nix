@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bench";
-        version = "1.0.1";
-      };
+      identifier = { name = "bench"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Gabriel Gonzalez";
       maintainer = "Gabriel439@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Command-line benchmark tool";
       description = "Think of this as a more powerful alternative to the @time@\ncommand.  Use this command-line tool to benchmark a command\nusing Haskell's @criterion@ library.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "bench" = {
@@ -32,8 +23,8 @@
             (hsPkgs.text)
             (hsPkgs.silently)
             (hsPkgs.turtle)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

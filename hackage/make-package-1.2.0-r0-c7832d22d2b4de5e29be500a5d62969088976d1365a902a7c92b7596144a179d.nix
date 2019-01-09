@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "make-package";
-        version = "1.2.0";
-      };
+      identifier = { name = "make-package"; version = "1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Chris Done, Philipp Balzarek";
       maintainer = "p.balzarek@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Make a cabalized package";
       description = "Create a cabalized haskell project";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "make-package" = {
@@ -42,8 +33,8 @@
             (hsPkgs.time)
             (hsPkgs.lens)
             (hsPkgs.lens-datetime)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

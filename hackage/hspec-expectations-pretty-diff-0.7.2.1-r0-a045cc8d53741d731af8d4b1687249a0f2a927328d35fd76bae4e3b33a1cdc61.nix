@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hspec-expectations-pretty-diff";
         version = "0.7.2.1";
-      };
+        };
       license = "MIT";
       copyright = "(c) 2011-2015 Simon Hengel";
       maintainer = "greg@unrelenting.technology";
@@ -22,7 +16,7 @@
       synopsis = "Catchy combinators for HUnit";
       description = "Catchy combinators for HUnit: <https://github.com/myfreeweb/hspec-expectations-pretty-diff#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +28,8 @@
           (hsPkgs.hscolour)
           (hsPkgs.Diff)
           (hsPkgs.ansi-terminal)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +39,8 @@
             (hsPkgs.aeson)
             (hsPkgs.text)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monopati";
-        version = "0.1.1";
-      };
+      identifier = { name = "monopati"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018 Murat Kasimov";
       maintainer = "Murat Kasimov <iokasimov.m@gmail.com>";
@@ -22,14 +13,8 @@
       synopsis = "Well-typed paths";
       description = "Despite the fact that there are a plenty of various well-typed \"path\" libraries in Haskell, I decided to write new one that I would like to use.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.free)
-          (hsPkgs.split)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.free) (hsPkgs.split) ]; };
+      };
+    }

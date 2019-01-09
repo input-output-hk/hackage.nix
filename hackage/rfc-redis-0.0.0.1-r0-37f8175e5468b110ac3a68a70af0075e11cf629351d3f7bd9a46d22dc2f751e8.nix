@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { production = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rfc-redis";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "rfc-redis"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "smokejumperit+rfc@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The Redis extensions from the Robert Fischer Commons.";
       description = "Various capabilities supporting @Redis@/@Hedis@ development, including some simplification of the interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.rfc-env)
           (hsPkgs.rfc-prelude)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

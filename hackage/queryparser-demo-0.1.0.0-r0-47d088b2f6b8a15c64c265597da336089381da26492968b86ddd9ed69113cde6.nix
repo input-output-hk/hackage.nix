@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "queryparser-demo";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "queryparser-demo"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "heli@uber.com";
@@ -22,7 +13,7 @@
       synopsis = "Demo package containing queryparser examples";
       description = "Library containing sample queryparser calls, for user exploration and\nplaygrounding.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

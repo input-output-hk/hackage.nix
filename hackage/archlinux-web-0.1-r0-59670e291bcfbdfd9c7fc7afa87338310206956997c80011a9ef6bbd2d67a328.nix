@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "archlinux-web";
-        version = "0.1";
-      };
+      identifier = { name = "archlinux-web"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Don Stewart <dons@galois.com>";
@@ -22,7 +13,7 @@
       synopsis = "Website maintenance for Arch Linux packages";
       description = "Website maintenance for Arch Linux packages\n\nTo get info about a package:\n\n> info \"xmonad\"\n\nTo find packages matching a string:\n\n> search \"xmonad\"\n\nTo find packages owned by a maintainer:\n\n> maintainer \"arch-haskell\"\n\nGenerate an html page of interesting facts about\npackages in AUR and Hackage.\n\n> report [\"xmonad\"]\n\nSee also the cabal2arch tool <http://hackage.haskell.org/package/cabal2arch>\nfor conversion between Hackage and AUR.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.old-time)
           (hsPkgs.csv)
           (hsPkgs.archlinux)
-        ];
-      };
+          ];
+        };
       exes = {
         "arch-report" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.old-time)
             (hsPkgs.csv)
             (hsPkgs.archlinux)
-          ];
-        };
+            ];
+          };
         "distro-map" = {
           depends = [
             (hsPkgs.base)
@@ -86,8 +77,8 @@
             (hsPkgs.old-time)
             (hsPkgs.csv)
             (hsPkgs.archlinux)
-          ];
-        };
+            ];
+          };
         "get-arch-url" = {
           depends = [
             (hsPkgs.base)
@@ -102,8 +93,8 @@
             (hsPkgs.directory)
             (hsPkgs.csv)
             (hsPkgs.archlinux)
-          ];
-        };
+            ];
+          };
         "arch-haskell-packages" = {
           depends = [
             (hsPkgs.base)
@@ -118,11 +109,9 @@
             (hsPkgs.directory)
             (hsPkgs.csv)
             (hsPkgs.archlinux)
-          ];
-        };
-        "update-aur-log" = {
-          depends = [ (hsPkgs.base) ];
+            ];
+          };
+        "update-aur-log" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

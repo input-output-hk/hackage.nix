@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "DescriptiveKeys";
-        version = "0.0.4";
-      };
+      identifier = { name = "DescriptiveKeys"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A library for specifying xmonad key bindings with functionality.";
       description = "A library for specifying xmonad key bindings with search and help functions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.xmonad)
           (hsPkgs.xmonad-contrib)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

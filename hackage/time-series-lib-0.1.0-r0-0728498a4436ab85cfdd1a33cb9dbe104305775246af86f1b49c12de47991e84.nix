@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "time-series-lib";
-        version = "0.1.0";
-      };
+      identifier = { name = "time-series-lib"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "klangner@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "Library for Time Series processing";
       description = "This library contains:\n\n* Nothing yet";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "unit-tests" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

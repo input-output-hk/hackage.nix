@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "ucam-webauth";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ucam-webauth"; version = "0.1.0.0"; };
       license = "(BSD-3-Clause OR Apache-2.0)";
       copyright = "2018 David Baynard";
       maintainer = "David Baynard <ucamwebauth@baynard.me>";
@@ -22,7 +13,7 @@
       synopsis = "The Ucam-Webauth protocol, used by Raven";
       description = "An implementation of the Ucam-Webauth protocol, as used by the University of Cambridge’s\nRaven authentication service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.time)
           (hsPkgs.ucam-webauth-types)
           (hsPkgs.x509)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -73,11 +64,9 @@
             (hsPkgs.time-qq)
             (hsPkgs.ucam-webauth-types)
             (hsPkgs.x509)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

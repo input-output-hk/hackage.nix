@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "multifile";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "multifile"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "hawk.alan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "create many files from one";
       description = "saves the contents of files from a spefically defined xml document";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "multifile" = {
@@ -32,8 +23,8 @@
             (hsPkgs.directory)
             (hsPkgs.pretty)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

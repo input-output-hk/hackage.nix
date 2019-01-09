@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "nbt";
-        version = "0.2";
-      };
+      identifier = { name = "nbt"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "acfoltzer@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A parser/serializer for Minecraft's Named Binary Tag (NBT) data format.";
       description = "This package includes a data type for the NBT file format, notably used to represent saved data in Minecraft.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.data-binary-ieee754)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "validation";
-        version = "0.4.3";
-      };
+      identifier = { name = "validation"; version = "0.4.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 NICTA Limited";
       maintainer = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ> <dibblego>, Nick Partridge <nkpart>";
@@ -22,7 +13,7 @@
       synopsis = "A data-type like Either but with an accumulating Applicative";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\nA data-type like Either but with an accumulating Applicative";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bifunctors)
           (hsPkgs.lens)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

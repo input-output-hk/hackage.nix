@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "unix-memory";
-        version = "0.1.0";
-      };
+      identifier = { name = "unix-memory"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -22,14 +13,9 @@
       synopsis = "Unix memory syscalls";
       description = "unix memory syscalls (mmap, munmap, madvise, msync, mlock)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.unix) ]; };
       tests = {
         "test-memorymap" = {
           depends = [
@@ -42,8 +28,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.unix)
             (hsPkgs.unix-memory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

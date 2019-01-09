@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "waldo";
-        version = "0";
-      };
+      identifier = { name = "waldo"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "davean 2012-2017";
       maintainer = "oss@xkcd.com";
@@ -22,7 +13,7 @@
       synopsis = "A generator of comics based on some ascertainable data about the requester.";
       description = "This package was writen to power <https://xkcd.com/ xkcd>'s 2012 April Fools comic <https://xkcd.com/1037 Umwelt>. It uses several datasets and a script to generate a customized story specific to the user viewing it.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,8 +48,8 @@
           (hsPkgs.SHA)
           (hsPkgs.Glob)
           (hsPkgs.browscap)
-        ];
-      };
+          ];
+        };
       exes = {
         "waldo-example" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.http-types)
             (hsPkgs.warp)
             (hsPkgs.safe)
-          ];
-        };
+            ];
+          };
         "bench" = {
           depends = [
             (hsPkgs.base)
@@ -85,8 +76,8 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.zlib-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

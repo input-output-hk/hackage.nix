@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      base4 = true;
-      network_2_2_3 = true;
-      tests = false;
-    };
+    flags = { base4 = true; network_2_2_3 = true; tests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-server";
-        version = "6.4.5";
-      };
+      identifier = { name = "happstack-server"; version = "6.4.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Happstack team <happs@googlegroups.com>";
@@ -26,7 +13,7 @@
       synopsis = "Web related tools and services.";
       description = "Happstack Server provides an HTTP server and a rich set of functions for routing requests, handling query parameters, generating responses, working with cookies, serving files, and more. For in-depth documentation see the Happstack Crash Course <http://happstack.com/docs/crashcourse/index.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -56,23 +43,23 @@
           (hsPkgs.utf8-string)
           (hsPkgs.xhtml)
           (hsPkgs.zlib)
-        ] ++ (if flags.network_2_2_3
+          ] ++ (if flags.network_2_2_3
           then [ (hsPkgs.network) ]
           else [
             (hsPkgs.network)
             (hsPkgs.network-bytestring)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optionals (flags.base4) [
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optionals (flags.base4) [
           (hsPkgs.base)
           (hsPkgs.syb)
-        ]) ++ pkgs.lib.optional (flags.tests) (hsPkgs.HUnit);
-      };
+          ]) ++ (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+        };
       exes = {
         "happstack-server-tests" = {
-          depends = pkgs.lib.optionals (flags.tests) [
+          depends = (pkgs.lib).optionals (flags.tests) [
             (hsPkgs.HUnit)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

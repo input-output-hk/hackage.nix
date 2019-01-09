@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "codex";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "codex"; version = "0.2.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "alois.cochard@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A ctags file generator for cabal project dependencies.";
       description = "This tool download and cache the source code of packages in your local hackage,\nit can then use this cache to generate `tags` files aggregating the sources of all the dependencies of your cabal projects.\n\nYou basically do `codex update` in your cabal project directory and you'll get a `codex.tags` file\nthat you can use in your favorite text editor.\n\nUsage overview can be found in the <http://github.com/aloiscochard/codex#codex README>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.transformers)
           (hsPkgs.zlib)
           (hsPkgs.mono-traversable)
-        ];
-      };
+          ];
+        };
       exes = {
         "codex" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.transformers)
             (hsPkgs.yaml)
             (hsPkgs.codex)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

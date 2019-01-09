@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "york-lava";
-        version = "0.2";
-      };
+      identifier = { name = "york-lava"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Matthew Naylor <mfn@cs.york.ac.uk>";
@@ -22,14 +13,10 @@
       synopsis = "A library for digital circuit description.";
       description = "York Lava is library for describing digital circuits. Descriptions\ncan be simulated in Hugs or GHC, and converted to VHDL compatible with\nXST, the Xilinx Synthesis Tool.  It is similar to Chalmers\nLava, but omits some features and offers a few new ones.\nSee the top-level module \"Lava\" for pointers to futher information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-          (hsPkgs.containers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.containers) ];
+        };
       };
-    };
-  }
+    }

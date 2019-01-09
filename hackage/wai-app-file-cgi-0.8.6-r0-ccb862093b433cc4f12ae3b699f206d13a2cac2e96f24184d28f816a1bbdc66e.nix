@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { rev-proxy = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-app-file-cgi";
-        version = "0.8.6";
-      };
+      identifier = { name = "wai-app-file-cgi"; version = "0.8.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "File/CGI/Rev Proxy App of WAI";
       description = "This WAI application library handles static files,\nexecutes CGI scripts, and serves as a reverse proxy.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,15 +44,10 @@
           (hsPkgs.wai)
           (hsPkgs.wai-logger)
           (hsPkgs.word8)
-        ] ++ pkgs.lib.optional (flags.rev-proxy) (hsPkgs.http-conduit);
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          ] ++ (pkgs.lib).optional (flags.rev-proxy) (hsPkgs.http-conduit);
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -76,8 +62,8 @@
             (hsPkgs.wai-app-file-cgi)
             (hsPkgs.warp)
             (hsPkgs.HTTP)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

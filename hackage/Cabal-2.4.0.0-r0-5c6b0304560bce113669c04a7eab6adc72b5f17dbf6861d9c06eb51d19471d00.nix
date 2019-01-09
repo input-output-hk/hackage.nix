@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bundled-binary-generic = false;
-    };
+    flags = { bundled-binary-generic = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Cabal";
-        version = "2.4.0.0";
-      };
+      identifier = { name = "Cabal"; version = "2.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2003-2018, Cabal Development Team (see AUTHORS file)";
       maintainer = "cabal-devel@haskell.org";
@@ -24,7 +13,7 @@
       synopsis = "A framework for packaging Haskell software";
       description = "The Haskell Common Architecture for Building Applications and\nLibraries: a framework defining a common interface for authors to more\neasily build their Haskell applications in a portable way.\n\nThe Haskell Cabal is part of a larger infrastructure for distributing,\norganizing, and cataloging Haskell libraries and tools.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -42,12 +31,10 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.parsec)
-        ] ++ [
-          (hsPkgs.binary)
-        ]) ++ (if system.isWindows
+          ] ++ [ (hsPkgs.binary) ]) ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -67,8 +54,8 @@
             (hsPkgs.pretty)
             (hsPkgs.QuickCheck)
             (hsPkgs.Cabal)
-          ];
-        };
+            ];
+          };
         "parser-tests" = {
           depends = [
             (hsPkgs.base)
@@ -81,8 +68,8 @@
             (hsPkgs.tasty-golden)
             (hsPkgs.Diff)
             (hsPkgs.Cabal)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") (hsPkgs.tree-diff);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8") (hsPkgs.tree-diff);
+          };
         "check-tests" = {
           depends = [
             (hsPkgs.base)
@@ -92,8 +79,8 @@
             (hsPkgs.tasty-golden)
             (hsPkgs.Diff)
             (hsPkgs.Cabal)
-          ];
-        };
+            ];
+          };
         "custom-setup-tests" = {
           depends = [
             (hsPkgs.Cabal)
@@ -101,8 +88,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
-        };
+            ];
+          };
         "hackage-tests" = {
           depends = [
             (hsPkgs.base)
@@ -116,8 +103,8 @@
             (hsPkgs.base-orphans)
             (hsPkgs.optparse-applicative)
             (hsPkgs.tar)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") (hsPkgs.tree-diff);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8") (hsPkgs.tree-diff);
+          };
         };
       };
-    };
-  }
+    }

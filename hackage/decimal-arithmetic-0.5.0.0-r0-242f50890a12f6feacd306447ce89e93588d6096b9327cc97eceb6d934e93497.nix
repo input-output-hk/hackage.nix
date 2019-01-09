@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "decimal-arithmetic";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "decimal-arithmetic"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2016–2017 Robert Leslie";
       maintainer = "Rob Leslie <rob@mars.org>";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of the General Decimal Arithmetic\nSpecification";
       description = "This package provides an implementation of the General\nDecimal Arithmetic Specification by Mike Cowlishaw.\n\nFor details, see <http://speleotrove.com/decimal/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.binary-bits)
           (hsPkgs.deepseq)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,16 +32,16 @@
             (hsPkgs.decimal-arithmetic)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.decimal-arithmetic)
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

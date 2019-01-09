@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "di-handle";
-        version = "1.0";
-      };
+      identifier = { name = "di-handle"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "Renzo Carbonara 2017-2018";
       maintainer = "renλren.zone";
@@ -22,7 +13,7 @@
       synopsis = "IO support for file handles in di-core";
       description = "IO support for file handles in di-core";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.exceptions)
           (hsPkgs.di-core)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

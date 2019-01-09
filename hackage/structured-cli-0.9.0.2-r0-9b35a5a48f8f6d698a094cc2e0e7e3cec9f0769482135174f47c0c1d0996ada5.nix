@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "structured-cli";
-        version = "0.9.0.2";
-      };
+      identifier = { name = "structured-cli"; version = "0.9.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Erick Gonzalez";
       maintainer = "erick@codemonkeylabs.de";
@@ -22,7 +13,7 @@
       synopsis = "Application library for building interactive console CLIs";
       description = "This module provides the tools to build a complete \"structured\" CLI application, similar to those found in systems like Cisco IOS or console configuration utilities etc. It aims to be easy for implementors to use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.mtl)
           (hsPkgs.split)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "some-cli" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.mtl)
             (hsPkgs.split)
             (hsPkgs.structured-cli)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexample = false;
-    };
+    flags = { buildexample = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pretty-simple";
-        version = "1.1.0.1";
-      };
+      identifier = { name = "pretty-simple"; version = "1.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "pretty printer for data types with a 'Show' instance.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,15 +27,12 @@
           (hsPkgs.semigroups)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
-      exes = {
-        "pretty-simple-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pretty-simple)
           ];
         };
+      exes = {
+        "pretty-simple-example" = {
+          depends = [ (hsPkgs.base) (hsPkgs.pretty-simple) ];
+          };
         "pretty-simple-json-example" = {
           depends = [
             (hsPkgs.base)
@@ -54,26 +40,18 @@
             (hsPkgs.bytestring)
             (hsPkgs.pretty-simple)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "pretty-simple-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         };
-      };
       benchmarks = {
         "pretty-simple-bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.pretty-simple)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.pretty-simple) ];
+          };
         };
       };
-    };
-  }
+    }

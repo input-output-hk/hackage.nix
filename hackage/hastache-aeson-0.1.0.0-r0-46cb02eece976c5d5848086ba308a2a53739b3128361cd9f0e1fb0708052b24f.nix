@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hastache-aeson";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hastache-aeson"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Vladimir Kirillov";
       maintainer = "Vladimir Kirillov <proger@hackndev.com>";
@@ -22,7 +13,7 @@
       synopsis = "render hastache templates using aeson values";
       description = "The Module lets you render Hastache templates from aeson values. See the GitHub page for examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

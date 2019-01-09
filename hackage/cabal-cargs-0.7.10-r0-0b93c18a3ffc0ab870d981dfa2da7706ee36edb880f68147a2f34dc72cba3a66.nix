@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "cabal-cargs";
-        version = "0.7.10";
-      };
+      identifier = { name = "cabal-cargs"; version = "0.7.10"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel.trstenjak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A command line program for extracting compiler arguments from a cabal file.";
       description = "For further details please consult the <https://github.com/dan-t/cabal-cargs README>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,16 +30,11 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.cabal-lenses)
           (hsPkgs.Cabal)
-        ];
-      };
-      exes = {
-        "cabal-cargs" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cabal-cargs)
           ];
         };
-      };
+      exes = {
+        "cabal-cargs" = { depends = [ (hsPkgs.base) (hsPkgs.cabal-cargs) ]; };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -57,8 +43,8 @@
             (hsPkgs.tasty-golden)
             (hsPkgs.filepath)
             (hsPkgs.cabal-cargs)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "acid-state";
-        version = "0.1";
-      };
+      identifier = { name = "acid-state"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Lemmih <lemmih@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Add ACID guarantees to any serializable Haskell data structure.";
       description = "Use regular Haskell data structures as your database and get stronger ACID guarantees than most RDBMS offer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.monads-fd)
           (hsPkgs.array)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

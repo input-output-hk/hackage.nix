@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "netwire-vinylglfw-examples";
-        version = "1.0.0";
-      };
+      identifier = { name = "netwire-vinylglfw-examples"; version = "1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "runKleisli@openmailbox.org";
@@ -22,7 +13,7 @@
       synopsis = "Netwire/GLFW/VinylGL input handling demo";
       description = "Port of netwire-input-glfw example to VinylGL & GLSL 1.50. Uses Netwire 5 and Vinyl >= 0.4. NetVinylGLFW is a previous combination of Netwire, VinylGL, & GLFW, but its Netwire and Vinyl versions are outdated as of 2016. The combination with STM that it suggests is embraced by netwire-input-glfw.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "netwire-vinylglfw-style0" = {
@@ -45,8 +36,8 @@
             (hsPkgs.containers)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "netwire-vinylglfw-style1" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +58,8 @@
             (hsPkgs.containers)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "netwire-vinylglfw-style2" = {
           depends = [
             (hsPkgs.base)
@@ -89,8 +80,8 @@
             (hsPkgs.containers)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

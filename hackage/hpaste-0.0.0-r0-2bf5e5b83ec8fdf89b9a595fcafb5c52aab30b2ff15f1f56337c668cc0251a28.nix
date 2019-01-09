@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hpaste";
-        version = "0.0.0";
-      };
+      identifier = { name = "hpaste"; version = "0.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "2010-2013 by Chris Done";
       maintainer = "Chris Done <chrisdone@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell paste web site.";
       description = "Haskell paste web site.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hpaste" = {
@@ -61,8 +52,8 @@
             (hsPkgs.cgi)
             (hsPkgs.process)
             (hsPkgs.postgresql-simple)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

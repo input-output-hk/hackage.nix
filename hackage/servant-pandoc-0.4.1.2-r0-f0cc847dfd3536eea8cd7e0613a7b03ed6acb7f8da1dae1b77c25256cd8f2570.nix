@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-pandoc";
-        version = "0.4.1.2";
-      };
+      identifier = { name = "servant-pandoc"; version = "0.4.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "matthewtpickering@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Use Pandoc to render servant API documentation";
       description = "See <https://github.com/mpickering/servant-pandoc/blob/master/README.md README>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.text)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

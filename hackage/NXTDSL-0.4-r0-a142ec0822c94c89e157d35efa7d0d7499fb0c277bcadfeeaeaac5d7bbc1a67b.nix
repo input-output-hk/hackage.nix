@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "NXTDSL";
-        version = "0.4";
-      };
+      identifier = { name = "NXTDSL"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013 Alexander Thiemann";
       maintainer = "Alexander Thiemann <mail@agrafix.net>";
@@ -22,7 +13,7 @@
       synopsis = "Generate NXC Code from DSL";
       description = "Typesafe code generation for the LEGO-NXT";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.attoparsec)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       exes = { "legoDSL" = {}; };
-    };
-  }
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cubical";
-        version = "0.1.1";
-      };
+      identifier = { name = "cubical"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "mortberg@chalmers.se";
@@ -22,7 +13,7 @@
       synopsis = "Implementation of Univalence in Cubical Sets";
       description = "Cubical implements an experimental simple type checker\nfor type theory with univalence with an evaluator for closed terms.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "cubical" = {
@@ -34,12 +25,12 @@
             (hsPkgs.directory)
             (hsPkgs.array)
             (hsPkgs.BNFC)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.alex)
-            (hsPkgs.buildPackages.happy)
-          ];
+            ((hsPkgs.buildPackages).alex)
+            ((hsPkgs.buildPackages).happy)
+            ];
+          };
         };
       };
-    };
-  }
+    }

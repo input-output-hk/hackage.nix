@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "salve";
-        version = "1.0.3";
-      };
+      identifier = { name = "salve"; version = "1.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,18 +13,11 @@
       synopsis = "Semantic version numbers and constraints.";
       description = "Salve provides semantic version (SemVer) numbers and constraints (ranges).";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

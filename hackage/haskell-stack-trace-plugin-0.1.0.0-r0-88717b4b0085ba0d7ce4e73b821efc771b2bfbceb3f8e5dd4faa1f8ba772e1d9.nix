@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "haskell-stack-trace-plugin";
         version = "0.1.0.0";
-      };
+        };
       license = "MIT";
       copyright = "2018 Shinya Yamaguchi";
       maintainer = "ingronze@gmail.com";
@@ -22,21 +16,13 @@
       synopsis = "haskell-stack-trace-plugin";
       description = "This plugin allow implicitly add HasCallStack class to every top-level function for all module. Hence, we can to get completely continuous call stack.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc) ]; };
       exes = {
         "example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell-stack-trace-plugin)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.haskell-stack-trace-plugin) ];
+          };
         };
       };
-    };
-  }
+    }

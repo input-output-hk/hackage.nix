@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nested-routes";
-        version = "8.0.2";
-      };
+      identifier = { name = "nested-routes"; version = "8.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Declarative, compositional Wai responses";
       description = "This library attempts to make it easier to write nice Wai response handlers by giving us a Sinatra/ <https://hackage.haskell.org/package/scotty Scotty>-like syntax for declaring HTTP-verb oriented routes, in addition to file-extension handling and rose-tree like composition. Not only do we have literal route specification, like <https://hackage.haskell.org/package/scotty Scotty> & <https://hackage.haskell.org/package/spock Spock>, but we can also embed <https://hackage.haskell.org/package/attoparsec Attoparsec> parsers and <https://hackage.haskell.org/package/regex-compat Regular Expressions> /directly/ in our routes, with our handlers reflecting their results.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.wai-middleware-content-type)
           (hsPkgs.wai-middleware-verbs)
           (hsPkgs.wai-transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -84,8 +75,8 @@
             (hsPkgs.wai-middleware-content-type)
             (hsPkgs.wai-middleware-verbs)
             (hsPkgs.wai-transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "celtchar";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "celtchar"; version = "0.1.3.0"; };
       license = "MIT";
       copyright = "2016 - 2017 Thomas Letan";
       maintainer = "contact@thomasletan.fr";
@@ -22,7 +13,7 @@
       synopsis = "A tool to build a novel";
       description = "celtchar is a tool to build a novel. It is part\nof the Ogma project and mostly relies on the\nogmarkup language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.pandoc)
           (hsPkgs.shakespeare)
           (hsPkgs.megaparsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "celtchar" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.celtchar)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "celtchar-test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.raw-strings-qq)
             (hsPkgs.hspec)
             (hsPkgs.celtchar)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

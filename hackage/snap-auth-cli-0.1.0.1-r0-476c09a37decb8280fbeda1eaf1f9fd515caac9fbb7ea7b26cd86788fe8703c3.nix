@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "snap-auth-cli";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "snap-auth-cli"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dima@dzhus.org";
@@ -22,7 +13,7 @@
       synopsis = "Command-line tool to manage Snap AuthManager database";
       description = "This utility provides command-line interface to user\ndatabase of standard authentication system for\nthe Snap web framework. You can create, read and\nupdate users, set passwords, roles and meta\ninformation. Currently only JsonFile backend is\nsupported. Type @snap-auth-cli -?@ to get usage\ninformation, or see\n<https://github.com/dzhus/snap-auth-cli/blob/master/README.org>\nfor details.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "snap-auth-cli" = {
@@ -37,8 +28,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

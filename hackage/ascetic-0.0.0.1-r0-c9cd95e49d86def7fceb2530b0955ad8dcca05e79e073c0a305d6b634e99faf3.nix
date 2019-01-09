@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "ascetic";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "ascetic"; version = "0.0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Andrei Lapets <lapets@bu.edu>";
@@ -22,13 +13,8 @@
       synopsis = "Generic markup builder.";
       description = "Module for assembling/emitting files in any XML-like language.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.MissingH)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.MissingH) ]; };
+      };
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      embed-data-files = false;
-    };
+    flags = { embed-data-files = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "profiteur";
-        version = "0.4.5.0";
-      };
+      identifier = { name = "profiteur"; version = "0.4.5.0"; };
       license = "BSD-3-Clause";
       copyright = "2014 Jasper Van der Jeugt";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -24,7 +13,7 @@
       synopsis = "Treemap visualiser for GHC prof files";
       description = "Treemap visualiser for GHC prof files";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "profiteur" = {
@@ -40,11 +29,11 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optionals (flags.embed-data-files) [
+            ] ++ (pkgs.lib).optionals (flags.embed-data-files) [
             (hsPkgs.file-embed)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

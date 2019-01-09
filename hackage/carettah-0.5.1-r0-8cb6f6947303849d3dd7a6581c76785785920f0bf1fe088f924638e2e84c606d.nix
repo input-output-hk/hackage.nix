@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "carettah";
-        version = "0.5.1";
-      };
+      identifier = { name = "carettah"; version = "0.5.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Kiwamu Okabe <kiwamu@debian.or.jp>";
@@ -22,7 +13,7 @@
       synopsis = "A presentation tool written with Haskell.";
       description = "A presentation tool written with Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "_carettah_main_" = {
@@ -40,15 +31,11 @@
             (hsPkgs.hcwiid)
             (hsPkgs.highlighting-kate)
             (hsPkgs.gtk2hs-buildtools)
-          ];
-        };
+            ];
+          };
         "carettah" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.filepath) (hsPkgs.process) ];
+          };
         };
       };
-    };
-  }
+    }

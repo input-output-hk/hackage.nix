@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-session";
-        version = "0.10.0.0";
-      };
+      identifier = { name = "simple-session"; version = "0.10.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "amit@amitlevy.com";
@@ -22,7 +13,7 @@
       synopsis = "Cookie-based session management for the Simple web framework";
       description = "Adds cookie-based session management to simple 'Controller's. To add to an\napplication, declare the Controller setting\\'s type an instance of\n'HasSession', and wrap routes with 'withSession'. For example:\n\n> data AppSettings = ...\n>\n> instance HasSession AppSettings where\n>   ...\n\n> controllerApp settings \$ withSessions \$ do\n>   routeName \\\"posts\\\" \$ ...\n\nThen, in your controllers you can seemlessly get and set keys from the\nsession:\n\n> get \"/profile\" \$ do\n>   muserId <- sessionLookup \"current_user_id\"\n>   case muserIf of\n>     Nothing -> respond \$ redirectTo \"/login\"\n>     Just userId -> [handle request]";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.simple)
           (hsPkgs.transformers)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

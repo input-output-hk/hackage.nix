@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kalman";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "kalman"; version = "1.0.0.1"; };
       license = "MIT";
       copyright = "Dominic Steinitz, Jacob West";
       maintainer = "dominic@steinitz.org";
@@ -22,7 +13,7 @@
       synopsis = "Kalman and particle filters and smoothers";
       description = "Linear, extended and unscented Kalman filters are provided, along\nwith their corresponding smoothers. Furthermore, a particle filter\nand smoother is provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.random-fu)
           (hsPkgs.random-fu-multivariate)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "kalman-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.Chart)
             (hsPkgs.Chart-cairo)
             (hsPkgs.Chart-diagrams)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

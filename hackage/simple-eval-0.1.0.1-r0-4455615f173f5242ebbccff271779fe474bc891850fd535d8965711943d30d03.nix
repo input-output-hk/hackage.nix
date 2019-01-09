@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-eval";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "simple-eval"; version = "0.1.0.1"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "415fox@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Evaluate a Text to an Integer: \"1 + 1\" -> 2";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,12 @@
           (hsPkgs.text)
           (hsPkgs.parsec)
           (hsPkgs.transformers)
-        ];
-      };
-      exes = {
-        "Eval" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.simple-eval)
-            (hsPkgs.text)
           ];
         };
+      exes = {
+        "Eval" = {
+          depends = [ (hsPkgs.base) (hsPkgs.simple-eval) (hsPkgs.text) ];
+          };
+        };
       };
-    };
-  }
+    }

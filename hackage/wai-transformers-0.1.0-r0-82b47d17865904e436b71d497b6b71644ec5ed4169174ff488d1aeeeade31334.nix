@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-transformers";
-        version = "0.1.0";
-      };
+      identifier = { name = "wai-transformers"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/wai-transformers#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.wai)
           (hsPkgs.wai-websockets)
           (hsPkgs.websockets)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

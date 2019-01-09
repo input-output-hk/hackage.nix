@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       build-gibberish = false;
@@ -16,13 +10,10 @@
       debug = false;
       test = false;
       incabal = true;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "penny";
-        version = "0.32.0.4";
-      };
+      identifier = { name = "penny"; version = "0.32.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2012-2014 Omari Norman.";
       maintainer = "omari@smileystation.com";
@@ -32,7 +23,7 @@
       synopsis = "Extensible double-entry accounting system";
       description = "Penny is a double-entry accounting system.  You keep your records in a\nplain-text file, and Penny gives you useful reports in your UNIX shell.\n\nFor more information, please see\n\n<http://www.github.com/massysett/penny>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,11 +47,11 @@
           (hsPkgs.either)
           (hsPkgs.pretty-show)
           (hsPkgs.semigroups)
-        ];
-      };
+          ];
+        };
       exes = {
         "penny-gibberish" = {
-          depends = pkgs.lib.optionals (flags.build-gibberish) [
+          depends = (pkgs.lib).optionals (flags.build-gibberish) [
             (hsPkgs.penny)
             (hsPkgs.base)
             (hsPkgs.multiarg)
@@ -71,39 +62,14 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
+        "penny" = { depends = [ (hsPkgs.penny) (hsPkgs.base) ]; };
+        "penny-selloff" = { depends = [ (hsPkgs.penny) (hsPkgs.base) ]; };
+        "penny-diff" = { depends = [ (hsPkgs.penny) (hsPkgs.base) ]; };
+        "penny-reprint" = { depends = [ (hsPkgs.penny) (hsPkgs.base) ]; };
+        "penny-reconcile" = { depends = [ (hsPkgs.penny) (hsPkgs.base) ]; };
         };
-        "penny" = {
-          depends = [
-            (hsPkgs.penny)
-            (hsPkgs.base)
-          ];
-        };
-        "penny-selloff" = {
-          depends = [
-            (hsPkgs.penny)
-            (hsPkgs.base)
-          ];
-        };
-        "penny-diff" = {
-          depends = [
-            (hsPkgs.penny)
-            (hsPkgs.base)
-          ];
-        };
-        "penny-reprint" = {
-          depends = [
-            (hsPkgs.penny)
-            (hsPkgs.base)
-          ];
-        };
-        "penny-reconcile" = {
-          depends = [
-            (hsPkgs.penny)
-            (hsPkgs.base)
-          ];
-        };
-      };
       tests = {
         "penny-test" = {
           depends = [
@@ -118,8 +84,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

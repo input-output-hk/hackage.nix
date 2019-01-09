@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "smtp-mail";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "smtp-mail"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jhickner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple email sending via SMTP";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.Crypto)
           (hsPkgs.base64-string)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

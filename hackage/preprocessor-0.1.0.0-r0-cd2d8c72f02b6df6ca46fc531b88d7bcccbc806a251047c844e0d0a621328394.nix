@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "preprocessor";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "preprocessor"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 Carlo Nucera";
       maintainer = "meditans@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Remove cpp annotations to get the source ready for static analysis.";
       description = "Remove cpp annotations using the configuration with which you build the package, to get the source ready for static analysis with a parsing library like haskell-src-exts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.ghc-paths)
           (hsPkgs.microlens)
           (hsPkgs.process)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs.template-haskell);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs.template-haskell);
+        };
       tests = {
         "preprocessor-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.preprocessor)
             (hsPkgs.process)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

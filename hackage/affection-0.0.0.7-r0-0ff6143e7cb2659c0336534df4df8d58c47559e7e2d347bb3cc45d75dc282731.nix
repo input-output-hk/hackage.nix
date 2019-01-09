@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       verbose = false;
@@ -12,13 +6,10 @@
       warn = false;
       error = false;
       examples = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "affection";
-        version = "0.0.0.7";
-      };
+      identifier = { name = "affection"; version = "0.0.0.7"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "nek0@chelnok.de";
@@ -28,7 +19,7 @@
       synopsis = "A simple Game Engine using SDL";
       description = "This package contains Affection, a simple game engine\nwritten in Haskell using SDL.\nThis Engine is still work in progress and even minor\nversion bumps may contain breaking api changes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,17 +37,17 @@
           (hsPkgs.OpenGL)
           (hsPkgs.stm)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       exes = {
         "example00" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.affection)
             (hsPkgs.sdl2)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

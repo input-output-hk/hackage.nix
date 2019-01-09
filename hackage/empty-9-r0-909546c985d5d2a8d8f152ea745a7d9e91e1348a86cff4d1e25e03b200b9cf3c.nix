@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "empty";
-        version = "9";
-      };
+      identifier = { name = "empty"; version = "9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,8 +13,6 @@
       synopsis = "Ceci n'est pas une package";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

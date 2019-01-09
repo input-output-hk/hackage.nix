@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "houseman";
-        version = "0.1.0";
-      };
+      identifier = { name = "houseman"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Daisuke Fujimura <me@fujmuradaisuke.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell implementation of Foreman";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.streaming-commons)
           (hsPkgs.mtl)
           (hsPkgs.io-streams)
-        ];
-      };
+          ];
+        };
       exes = {
         "houseman" = {
           depends = [
@@ -60,9 +51,9 @@
             (hsPkgs.mtl)
             (hsPkgs.io-streams)
             (hsPkgs.houseman)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.mockery)
             (hsPkgs.interpolate)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

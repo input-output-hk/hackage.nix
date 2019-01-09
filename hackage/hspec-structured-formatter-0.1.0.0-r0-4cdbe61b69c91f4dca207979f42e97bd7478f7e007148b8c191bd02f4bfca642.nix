@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hspec-structured-formatter";
         version = "0.1.0.0";
-      };
+        };
       license = "MIT";
       copyright = "";
       maintainer = "flbulgarelli@yahoo.com.ar";
@@ -22,13 +16,8 @@
       synopsis = "";
       description = "Structured formatted for HSpec";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hspec)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.hspec) ]; };
+      };
+    }

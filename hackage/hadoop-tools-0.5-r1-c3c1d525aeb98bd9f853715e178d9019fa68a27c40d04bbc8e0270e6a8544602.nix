@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hadoop-tools";
-        version = "0.5";
-      };
+      identifier = { name = "hadoop-tools"; version = "0.5"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Jacob Stanley <jacob@stanley.io>";
@@ -22,7 +13,7 @@
       synopsis = "Fast command line tools for working with Hadoop.";
       description = "hh - Blazing fast interaction with HDFS\n\nIf built against hadoop-rpc-1.x.x.x then these tools support v9 of the\nHadoop RPC protocol (CDH 5.x and above).\n\nInstall using --constraint=hadoop-rpc==0.1.1.1 if you need v7 support.\n\n> hh cat     - Print the contents of a file to stdout\n> hh cd      - Change working directory\n> hh chmod   - Change permissions\n> hh du      - Show the amount of space used by file or directory\n> hh find    - Recursively search a directory tree\n> hh get     - Get a file\n> hh ls      - List the contents of a directory\n> hh mkdir   - Create a directory in the specified location\n> hh pwd     - Print working directory\n> hh rm      - Delete a file or directory\n> hh mv      - Rename a file or directory\n> hh version - Show version information";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hh" = {
@@ -45,9 +36,9 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

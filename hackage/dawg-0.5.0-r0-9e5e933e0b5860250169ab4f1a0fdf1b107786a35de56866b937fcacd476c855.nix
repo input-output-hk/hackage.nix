@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dawg";
-        version = "0.5.0";
-      };
+      identifier = { name = "dawg"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Directed acyclic word graphs";
       description = "The library implements /directed acyclic word graphs/ (DAWGs), which can\nbe also interpreted as /minimal acyclic finite-state automata/.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.vector)
           (hsPkgs.vector-binary)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

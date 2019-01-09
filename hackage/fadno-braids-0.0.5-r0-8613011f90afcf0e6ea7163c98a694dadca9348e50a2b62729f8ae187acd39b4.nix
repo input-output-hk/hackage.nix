@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fadno-braids";
-        version = "0.0.5";
-      };
+      identifier = { name = "fadno-braids"; version = "0.0.5"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "spopejoy@panix.com";
@@ -22,7 +13,7 @@
       synopsis = "Braid representations in Haskell";
       description = "Braids represented as Haskell types with support for generation and transformations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.lens)
           (hsPkgs.random)
           (hsPkgs.transformers-compat)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-helpers";
-        version = "0.52";
-      };
+      identifier = { name = "happstack-helpers"; version = "0.52"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008 Thomas Hartman";
       maintainer = "Creighton Hogg <wchogg at gmail>";
@@ -22,7 +13,7 @@
       synopsis = "Convenience functions for Happstack.";
       description = "Functions I found I was using repeatedly when programming Happstack based web-apps.\nI'll deprecate whatever bits of this make their way into the Happstack core on hackage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,12 +42,9 @@
           (hsPkgs.HTTP)
           (hsPkgs.utf8-string)
           (hsPkgs.text)
-        ] ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-          ]
+          ] ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { with-http = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dhall";
-        version = "1.17.0";
-      };
+      identifier = { name = "dhall"; version = "1.17.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Gabriel Gonzalez";
       maintainer = "Gabriel439@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A configuration language guaranteed to terminate";
       description = "Dhall is an explicitly typed configuration language that is not Turing\ncomplete.  Despite being Turing incomplete, Dhall is a real programming\nlanguage with a type-checker and evaluator.\n\nUse this library to parse, type-check, evaluate, and pretty-print the Dhall\nconfiguration language.  This package also includes an executable which\ntype-checks a Dhall file and reduces the file to a fully evaluated normal\nform.\n\nRead \"Dhall.Tutorial\" to learn how to use this library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -57,22 +48,15 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optionals (flags.with-http) [
+          ] ++ (pkgs.lib).optionals (flags.with-http) [
           (hsPkgs.http-client)
           (hsPkgs.http-client-tls)
-        ]) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
+          ]) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
-        ];
-      };
-      exes = {
-        "dhall" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.dhall)
           ];
         };
-      };
+      exes = { "dhall" = { depends = [ (hsPkgs.base) (hsPkgs.dhall) ]; }; };
       tests = {
         "tasty" = {
           depends = [
@@ -92,8 +76,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "doctest" = {
           depends = [
             (hsPkgs.base)
@@ -101,9 +85,9 @@
             (hsPkgs.filepath)
             (hsPkgs.mockery)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "dhall-parser" = {
           depends = [
@@ -115,16 +99,16 @@
             (hsPkgs.directory)
             (hsPkgs.serialise)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "deep-nested-large-record" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
             (hsPkgs.dhall)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "git-checklist";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "git-checklist"; version = "1.0.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "dougal@dougalstanton.net";
@@ -22,7 +13,7 @@
       synopsis = "Maintain per-branch checklists in Git";
       description = "Manage lists of TODO items for private branches\nfrom the command line. No configuration required\nand fast to learn, with human-editable storage\nformat and comprehensive help information.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "git-checklist" = {
@@ -34,8 +25,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.pretty)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

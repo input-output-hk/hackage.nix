@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "instrument-chord";
-        version = "0.1.0.8";
-      };
+      identifier = { name = "instrument-chord"; version = "0.1.0.8"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "w@xy30.com";
@@ -22,7 +13,7 @@
       synopsis = "Render Instrument Chords";
       description = "Library to generate musical instrument manipluations";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.music-diatonic)
           (hsPkgs.containers)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "smallcheck-series";
-        version = "0.1";
-      };
+      identifier = { name = "smallcheck-series"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "j@dannynavarro.net";
@@ -22,7 +13,7 @@
       synopsis = "Extra series for smallcheck";
       description = "Utilities for creating @SmallCheck@ @Series@ and orphan @Serial@\ninstances for frequently used types coming with GHC core libraries.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,12 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.smallcheck)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Glob)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Glob) (hsPkgs.doctest) ];
+          };
+        };
       };
-    };
-  }
+    }

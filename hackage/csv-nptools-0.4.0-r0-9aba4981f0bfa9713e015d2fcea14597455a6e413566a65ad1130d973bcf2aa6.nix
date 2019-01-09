@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "csv-nptools";
-        version = "0.4.0";
-      };
+      identifier = { name = "csv-nptools"; version = "0.4.0"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Nicolas Pouillard";
       maintainer = "Nicolas Pouillard <nicolas.pouillard@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A collection of CSV tools";
       description = "A collection of CSV tools";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "csv2html" = {
@@ -31,8 +22,8 @@
             (hsPkgs.html)
             (hsPkgs.tabular)
             (hsPkgs.csv)
-          ];
-        };
+            ];
+          };
         "csv2json" = {
           depends = [
             (hsPkgs.base)
@@ -41,38 +32,13 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.aeson)
-          ];
-        };
-        "csv-add-id" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.txt-sushi)
-          ];
-        };
-        "csv-reformat" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.txt-sushi)
-          ];
-        };
-        "csv-tr" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.txt-sushi)
-          ];
-        };
-        "csv-transpose" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.txt-sushi)
-          ];
-        };
-        "csv-pad" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.txt-sushi)
-          ];
+            ];
+          };
+        "csv-add-id" = { depends = [ (hsPkgs.base) (hsPkgs.txt-sushi) ]; };
+        "csv-reformat" = { depends = [ (hsPkgs.base) (hsPkgs.txt-sushi) ]; };
+        "csv-tr" = { depends = [ (hsPkgs.base) (hsPkgs.txt-sushi) ]; };
+        "csv-transpose" = { depends = [ (hsPkgs.base) (hsPkgs.txt-sushi) ]; };
+        "csv-pad" = { depends = [ (hsPkgs.base) (hsPkgs.txt-sushi) ]; };
         };
       };
-    };
-  }
+    }

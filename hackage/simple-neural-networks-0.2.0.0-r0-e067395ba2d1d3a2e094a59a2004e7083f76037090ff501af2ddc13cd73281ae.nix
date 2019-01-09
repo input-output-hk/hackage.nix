@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-neural-networks";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "simple-neural-networks"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mail@eax.me";
@@ -22,7 +13,7 @@
       synopsis = "Simple parallel neural networks implementation";
       description = "Simple parallel neural networks implementation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.deepseq)
           (hsPkgs.parallel)
-        ];
-      };
+          ];
+        };
       exes = {
         "nn-xor-logistic-example" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.containers)
             (hsPkgs.deepseq)
             (hsPkgs.parallel)
-          ];
-        };
+            ];
+          };
         "nn-xor-tanh-example" = {
           depends = [
             (hsPkgs.base)
@@ -53,8 +44,8 @@
             (hsPkgs.containers)
             (hsPkgs.deepseq)
             (hsPkgs.parallel)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

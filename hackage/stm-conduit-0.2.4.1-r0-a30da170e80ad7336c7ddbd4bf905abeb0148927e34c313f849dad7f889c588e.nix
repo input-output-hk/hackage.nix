@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "stm-conduit";
-        version = "0.2.4.1";
-      };
+      identifier = { name = "stm-conduit"; version = "0.2.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cgaebel@csclub.uwaterloo.ca";
@@ -22,7 +13,7 @@
       synopsis = "Introduces conduits to channels, and promotes using\nconduits concurrently.";
       description = "Provides two simple conduit wrappers around STM\nchannels - a source and a sink.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.stm)
           (hsPkgs.stm-chans)
           (hsPkgs.conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "stm-conduit-tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.stm-conduit)
             (hsPkgs.conduit)
             (hsPkgs.stm-chans)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

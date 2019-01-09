@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fastedit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fastedit"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "mwotton@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "find nearest neighbours by edit-distance";
       description = "Use faroo's deletion algorithm to generate possible\nautocorrections efficiently";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.safe)
           (hsPkgs.bytestring)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.file-embed)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

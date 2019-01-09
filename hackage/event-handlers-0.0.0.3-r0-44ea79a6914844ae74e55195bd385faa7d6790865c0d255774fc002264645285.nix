@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "event-handlers";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "event-handlers"; version = "0.0.0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <james.cook@usma.edu>";
@@ -22,13 +13,8 @@
       synopsis = "Event handlers";
       description = "Simple event handler set management.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

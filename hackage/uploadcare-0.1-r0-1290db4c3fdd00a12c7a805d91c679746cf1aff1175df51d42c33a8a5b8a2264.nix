@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "uploadcare";
-        version = "0.1";
-      };
+      identifier = { name = "uploadcare"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Dimitry Solovyov <dimituri@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell client for Uploadcare.";
       description = "Haskell client for the Uploadcare API.\nUploadcare handles file uploads and storage for you,\nwhile you focus on other important things.\n<http://uploadcare.com/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.http-types)
           (hsPkgs.old-locale)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

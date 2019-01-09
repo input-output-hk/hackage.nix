@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "co-log-sys";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "co-log-sys"; version = "0.1.1.0"; };
       license = "MPL-2.0";
       copyright = "2018 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -22,7 +13,7 @@
       synopsis = "Syslog implementation on top of 'co-log-core'";
       description = "Please see the README on GitHub at <https://github.com/serokell/co-log-sys#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.network)
           (hsPkgs.universum)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "co-log-sys-test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.network)
             (hsPkgs.universum)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

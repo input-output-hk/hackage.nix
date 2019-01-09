@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "line-size";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "line-size"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "hawk.alan@gmail.com";
@@ -22,12 +13,8 @@
       synopsis = "Display the number of bytes of each line";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      exes = {
-        "line-size" = {
-          depends = [ (hsPkgs.base) ];
-        };
       };
-    };
-  }
+    components = {
+      exes = { "line-size" = { depends = [ (hsPkgs.base) ]; }; };
+      };
+    }

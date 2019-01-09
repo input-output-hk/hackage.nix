@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "kan-extensions";
-        version = "2.0.0.2";
-      };
+      identifier = { name = "kan-extensions"; version = "2.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Kan extensions, the Yoneda lemma, and (co)density (co)monads";
       description = "Kan extensions, the Yoneda lemma, and (co)density (co)monads";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.free)
           (hsPkgs.adjunctions)
           (hsPkgs.representable-functors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

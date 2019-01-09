@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "https-everywhere-rules";
-        version = "0.0.1";
-      };
+      identifier = { name = "https-everywhere-rules"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "vi@zalora.com";
@@ -22,7 +13,7 @@
       synopsis = "High-level access to HTTPS Everywhere rulesets.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.text)
           (hsPkgs.text-icu)
           (hsPkgs.https-everywhere-rules-raw)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.text)
             (hsPkgs.text-icu)
             (hsPkgs.https-everywhere-rules-raw)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

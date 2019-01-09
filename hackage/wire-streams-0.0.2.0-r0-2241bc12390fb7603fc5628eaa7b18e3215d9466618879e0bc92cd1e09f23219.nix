@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wire-streams";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "wire-streams"; version = "0.0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Soostone Inc, Petter Bergman, Winterland";
       maintainer = "winterland1989@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Use cereal or binary with io-streams.";
       description = "Use cereal or binary with io-streams.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.cereal)
           (hsPkgs.binary)
           (hsPkgs.io-streams)
-        ];
-      };
+          ];
+        };
       tests = {
         "encode-decode-cereal" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.Cabal)
             (hsPkgs.cabal-test-quickcheck)
-          ];
-        };
+            ];
+          };
         "encode-decode-binary" = {
           depends = [
             (hsPkgs.base)
@@ -56,9 +47,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.Cabal)
             (hsPkgs.cabal-test-quickcheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

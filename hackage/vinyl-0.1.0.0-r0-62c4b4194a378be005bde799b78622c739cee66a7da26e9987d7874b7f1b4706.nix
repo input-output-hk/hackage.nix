@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "vinyl";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "vinyl"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "jonsterling@me.com";
@@ -22,14 +13,10 @@
       synopsis = "Extensible Records";
       description = "Extensible records for Haskell with lenses using modern GHC features.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.lens)
-          (hsPkgs.ghc-prim)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.lens) (hsPkgs.ghc-prim) ];
+        };
       };
-    };
-  }
+    }

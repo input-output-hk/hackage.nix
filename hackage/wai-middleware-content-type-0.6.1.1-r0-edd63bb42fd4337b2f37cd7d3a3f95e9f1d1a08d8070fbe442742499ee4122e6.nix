@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "wai-middleware-content-type";
         version = "0.6.1.1";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +16,7 @@
       synopsis = "Route to different middlewares based on the incoming Accept header.";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/wai-middleware-content-type#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +47,8 @@
           (hsPkgs.wai)
           (hsPkgs.wai-logger)
           (hsPkgs.wai-transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "wai-middleware-content-type-test" = {
           depends = [
@@ -91,8 +85,8 @@
             (hsPkgs.wai-middleware-content-type)
             (hsPkgs.wai-transformers)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

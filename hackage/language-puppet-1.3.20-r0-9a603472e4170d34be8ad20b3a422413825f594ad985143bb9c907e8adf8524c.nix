@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-puppet";
-        version = "1.3.20";
-      };
+      identifier = { name = "language-puppet"; version = "1.3.20"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools to parse and evaluate the Puppet DSL.";
       description = "This is a set of tools that is supposed to fill all your Puppet needs : syntax checks, catalog compilation, PuppetDB queries, simulation of complex interactions between nodes, Puppet master replacement, and more !";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -71,8 +62,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "puppetresources" = {
           depends = [
@@ -95,8 +86,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "yera" = {
           depends = [
             (hsPkgs.base)
@@ -106,8 +97,8 @@
             (hsPkgs.strict-base-types)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "pdbquery" = {
           depends = [
             (hsPkgs.base)
@@ -124,9 +115,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -148,8 +139,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.pcre-utils)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

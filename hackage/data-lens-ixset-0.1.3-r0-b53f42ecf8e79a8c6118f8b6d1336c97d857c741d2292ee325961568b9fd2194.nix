@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "data-lens-ixset";
-        version = "0.1.3";
-      };
+      identifier = { name = "data-lens-ixset"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dag.odenhall@gmail.com";
@@ -22,21 +13,13 @@
       synopsis = "A Lens for IxSet";
       description = "Integrates Data.IxSet with Data.Lens.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-lens)
-          (hsPkgs.ixset)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.data-lens) (hsPkgs.ixset) ];
+        };
       tests = {
-        "test-data-lens-ixset" = {
-          depends = [
-            (hsPkgs.QuickCheck)
-          ];
+        "test-data-lens-ixset" = { depends = [ (hsPkgs.QuickCheck) ]; };
         };
       };
-    };
-  }
+    }

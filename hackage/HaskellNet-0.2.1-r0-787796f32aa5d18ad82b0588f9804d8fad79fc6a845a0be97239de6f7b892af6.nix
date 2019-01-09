@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HaskellNet";
-        version = "0.2.1";
-      };
+      identifier = { name = "HaskellNet"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Robert Wills <wrwills@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "network related libraries such as POP3, SMTP, IMAP";
       description = "Originally written for Google SOC, provides network related libraries such as POP3, SMTP, IMAP.\nAll I have done is get the project to compile using cabal and check that these libraries basically\nwork.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.HaXml)
           (hsPkgs.old-locale)
           (hsPkgs.old-time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

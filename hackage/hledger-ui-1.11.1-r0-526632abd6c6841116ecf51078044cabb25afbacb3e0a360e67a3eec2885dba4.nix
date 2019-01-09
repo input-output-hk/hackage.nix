@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { threaded = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hledger-ui";
-        version = "1.11.1";
-      };
+      identifier = { name = "hledger-ui"; version = "1.11.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "Curses-style user interface for the hledger accounting tool";
       description = "This is hledger's curses-style interface.\nIt is simpler and more convenient for browsing data than the command-line interface,\nbut lighter and faster than hledger-web.\n\nhledger is a cross-platform program for tracking money, time, or\nany other commodity, using double-entry accounting and a simple,\neditable file format. It is inspired by and largely compatible\nwith ledger(1).  hledger provides command-line, curses and web\ninterfaces, and aims to be a reliable, practical tool for daily\nuse.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hledger-ui" = {
@@ -51,11 +42,11 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optionals (!system.isWindows) [
+            ] ++ (pkgs.lib).optionals (!system.isWindows) [
             (hsPkgs.brick)
             (hsPkgs.vty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

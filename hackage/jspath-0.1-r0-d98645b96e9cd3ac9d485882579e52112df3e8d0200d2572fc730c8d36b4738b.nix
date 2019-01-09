@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "jspath";
-        version = "0.1";
-      };
+      identifier = { name = "jspath"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Keegan McAllister <mcallister.keegan@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extract substructures from JSON by following a path.";
       description = "Use this library to extract substructures from JSON structures by following a\npath.  Path components can select elements by key or index, map over arrays,\nor invoke user-specified functions.  Works with JSONb types.\n\nSuggestions and patches are welcome.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.utf8-string)
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-trie)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

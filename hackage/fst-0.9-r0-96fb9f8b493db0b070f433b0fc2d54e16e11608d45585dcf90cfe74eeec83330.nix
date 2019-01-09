@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "fst";
-        version = "0.9";
-      };
+      identifier = { name = "fst"; version = "0.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Markus Forsberg <markus@cs.chalmers.se>";
@@ -22,15 +13,11 @@
       synopsis = "Finite state transducers";
       description = "Fst is an application for construction and running of\nfinite state transducers. The application was written\npurely in Haskell, and is intended to be a tool for the\nHaskell programmer, especially for ones that develop language applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-          (hsPkgs.array)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.array) ];
+        };
       exes = { "fst" = {}; };
-    };
-  }
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hmeap";
-        version = "0.9";
-      };
+      identifier = { name = "hmeap"; version = "0.9"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape and others, 2007-2011";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Meapsoft Parser";
       description = "Parser for the anaylsis files produced by the\nMeapsoft feature extractor.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bytestring-lexing)
           (hsPkgs.delimited-text)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "hmeap-browse" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.delimited-text)
             (hsPkgs.hmeap)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "hmeap-parser" = {
           depends = [
             (hsPkgs.array)
@@ -55,8 +46,8 @@
             (hsPkgs.delimited-text)
             (hsPkgs.hmeap)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "hmeap-play" = {
           depends = [
             (hsPkgs.array)
@@ -68,8 +59,8 @@
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "hmeap-plot" = {
           depends = [
             (hsPkgs.array)
@@ -81,8 +72,8 @@
             (hsPkgs.hmatrix)
             (hsPkgs.hmeap)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "hmeap-stat" = {
           depends = [
             (hsPkgs.array)
@@ -93,8 +84,8 @@
             (hsPkgs.hmatrix)
             (hsPkgs.hmeap)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "bindings-common";
-        version = "1.3.4";
-      };
+      identifier = { name = "bindings-common"; version = "1.3.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "none";
@@ -22,10 +13,6 @@
       synopsis = "This package is obsolete. Look for bindings-DSL instead.";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

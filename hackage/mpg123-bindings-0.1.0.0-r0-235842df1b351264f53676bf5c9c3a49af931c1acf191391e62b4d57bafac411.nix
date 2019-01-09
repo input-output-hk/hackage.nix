@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mpg123-bindings";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mpg123-bindings"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016-2017 Miroslav Puda";
       maintainer = "pakanek@gmail.com";
@@ -22,14 +13,12 @@
       synopsis = "Mpg132 bindings";
       description = "Raw bindings to libmpg123.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."mpg123") ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

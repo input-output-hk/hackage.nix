@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      ghc7 = true;
-      network-uri = true;
-    };
+    flags = { ghc7 = true; network-uri = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-auth-oauth2";
-        version = "0.0.8";
-      };
+      identifier = { name = "yesod-auth-oauth2"; version = "0.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tom Streller";
@@ -25,7 +13,7 @@
       synopsis = "Library to authenticate with OAuth 2.0 for Yesod web applications.";
       description = "OAuth 2.0 authentication";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -42,11 +30,9 @@
           (hsPkgs.hoauth2)
           (hsPkgs.lifted-base)
           (hsPkgs.uuid)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
-          else [ (hsPkgs.network) ])) ++ [
-          (hsPkgs.base)
-        ];
+          else [ (hsPkgs.network) ])) ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

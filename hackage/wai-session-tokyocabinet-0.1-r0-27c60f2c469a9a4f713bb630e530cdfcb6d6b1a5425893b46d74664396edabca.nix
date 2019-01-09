@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-session-tokyocabinet";
-        version = "0.1";
-      };
+      identifier = { name = "wai-session-tokyocabinet"; version = "0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "© 2012 Stephen Paul Weber";
       maintainer = "Stephen Paul Weber <singpolyma@singpolyma.net>";
@@ -22,7 +13,7 @@
       synopsis = "Session store based on Tokyo Cabinet";
       description = "Provides a session store for use with wai-session.\n\nSee example/Main.hs in git for example usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.tokyocabinet-haskell)
           (hsPkgs.errors)
           (hsPkgs.wai-session)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

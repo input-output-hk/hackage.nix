@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm = true;
-      cuda = true;
-      builddraft = false;
-    };
+    flags = { llvm = true; cuda = true; builddraft = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "patch-image";
-        version = "0.2";
-      };
+      identifier = { name = "patch-image"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -26,11 +13,11 @@
       synopsis = "Compose a big image from overlapping parts";
       description = "Compose a collage from overlapping image parts.\nIn contrast to Hugin,\nthis is not intended for creating panoramas from multiple photographies,\nbut instead is specialised to creating highly accurate reconstructions\nof flat but big image sources, like record covers, posters or newspapers.\nIt solves the problem that your scanner may be too small\nto capture a certain image as a whole.\n\nRestrictions:\n\n* Only supports JPEG format.\n\n* Images must be approximately correctly oriented.\n\n* May have problems with unstructured areas in the image.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "patch-image-llvm" = {
-          depends = pkgs.lib.optionals (flags.llvm) [
+          depends = (pkgs.lib).optionals (flags.llvm) [
             (hsPkgs.knead)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
@@ -48,10 +35,10 @@
             (hsPkgs.filepath)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "patch-image-cuda" = {
-          depends = pkgs.lib.optionals (flags.cuda) [
+          depends = (pkgs.lib).optionals (flags.cuda) [
             (hsPkgs.accelerate-fourier)
             (hsPkgs.accelerate-arithmetic)
             (hsPkgs.accelerate-utility)
@@ -67,16 +54,16 @@
             (hsPkgs.filepath)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "patch-image-draft" = {
-          depends = pkgs.lib.optionals (flags.builddraft) [
+          depends = (pkgs.lib).optionals (flags.builddraft) [
             (hsPkgs.JuicyPixels)
             (hsPkgs.GeomAlgLib)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

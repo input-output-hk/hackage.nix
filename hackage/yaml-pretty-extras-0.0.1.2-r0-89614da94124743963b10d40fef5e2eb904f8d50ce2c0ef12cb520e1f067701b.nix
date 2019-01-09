@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yaml-pretty-extras";
-        version = "0.0.1.2";
-      };
+      identifier = { name = "yaml-pretty-extras"; version = "0.0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "2018 Daniel Firth";
       maintainer = "locallycompact@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Extra functionality for pretty printing Yaml documents.";
       description = "Extra functionality for pretty printing Yaml documents. Allows precise field ordering.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.rio)
           (hsPkgs.text)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "yaml-pretty-extras-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.text)
             (hsPkgs.yaml)
             (hsPkgs.yaml-pretty-extras)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

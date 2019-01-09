@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "exchangerates";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "exchangerates"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell client for https://exchangeratesapi.io/";
       description = "Please see the README on Github at <https://github.com/NorfairKing/exchangerates#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.validity-containers)
           (hsPkgs.validity-time)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "exchangerates-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.validity-containers)
             (hsPkgs.validity-time)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

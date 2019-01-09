@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mysql-haskell-nem";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mysql-haskell-nem"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 José Lorenzo Rodríguez";
       maintainer = "jose.zap@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Adds a interface like mysql-simple to mysql-haskell.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.time)
           (hsPkgs.scientific)
           (hsPkgs.io-streams)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

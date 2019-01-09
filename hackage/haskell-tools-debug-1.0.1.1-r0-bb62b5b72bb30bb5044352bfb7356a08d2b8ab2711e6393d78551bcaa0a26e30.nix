@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-tools-debug";
-        version = "1.0.1.1";
-      };
+      identifier = { name = "haskell-tools-debug"; version = "1.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nboldi@elte.hu";
@@ -22,7 +13,7 @@
       synopsis = "Debugging Tools for Haskell-tools";
       description = "Debugging Tools for Haskell-tools";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,15 +33,12 @@
           (hsPkgs.classyplate)
           (hsPkgs.criterion)
           (hsPkgs.mtl)
-        ];
-      };
-      exes = {
-        "ht-debug" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell-tools-debug)
           ];
         };
+      exes = {
+        "ht-debug" = {
+          depends = [ (hsPkgs.base) (hsPkgs.haskell-tools-debug) ];
+          };
+        };
       };
-    };
-  }
+    }

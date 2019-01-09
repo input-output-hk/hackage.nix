@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ats-pkg";
-        version = "2.0.0.2";
-      };
+      identifier = { name = "ats-pkg"; version = "2.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Package manager for ATS";
       description = "A collection of scripts to make building ATS projects easy.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,15 +38,8 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.temporary)
           (hsPkgs.ansi-wl-pprint)
-        ];
-      };
-      exes = {
-        "atspkg" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ats-pkg)
           ];
         };
+      exes = { "atspkg" = { depends = [ (hsPkgs.base) (hsPkgs.ats-pkg) ]; }; };
       };
-    };
-  }
+    }

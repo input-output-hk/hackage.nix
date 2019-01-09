@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sophia";
-        version = "0.1";
-      };
+      identifier = { name = "sophia"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Eyal Lotem <eyal.lotem+hackage@gmail.com>";
@@ -22,15 +13,15 @@
       synopsis = "Bindings to Sophia library";
       description = "Bindings to <http://sphia.org/ sophia>, an open source, modern, fast\nkey/value store.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-sophia)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "main" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.directory)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

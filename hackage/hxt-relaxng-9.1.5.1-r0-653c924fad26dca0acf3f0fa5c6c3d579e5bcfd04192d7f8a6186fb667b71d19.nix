@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-uri = false;
-    };
+    flags = { network-uri = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hxt-relaxng";
-        version = "9.1.5.1";
-      };
+      identifier = { name = "hxt-relaxng"; version = "9.1.5.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2005-2011 Uwe Schmidt";
       maintainer = "Uwe Schmidt <uwe@fh-wedel.de>";
@@ -24,7 +13,7 @@
       synopsis = "The HXT RelaxNG validator";
       description = "The HXT RelaxNG validator";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,9 +23,9 @@
           (hsPkgs.hxt)
           (hsPkgs.hxt-charproperties)
           (hsPkgs.hxt-regex-xmlschema)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

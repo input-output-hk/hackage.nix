@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mpvguihs";
-        version = "0.1.1";
-      };
+      identifier = { name = "mpvguihs"; version = "0.1.1"; };
       license = "GPL-3.0-only";
       copyright = "(C) 2013 Sebastián E. Peyrott";
       maintainer = "pseus7+mpvguihs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A minimalist mpv GUI written in I/O heavy Haskell.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mpvguihs" = {
@@ -35,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

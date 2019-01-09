@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasql";
-        version = "0.19.17.1";
-      };
+      identifier = { name = "hasql"; version = "0.19.17.1"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "An efficient PostgreSQL driver and a flexible mapping API";
       description = "This package is the root of the \\\"hasql\\\" ecosystem.\n\nThe API is completely disinfected from exceptions. All error-reporting is explicit and is presented using the 'Either' type.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.placeholders)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -67,15 +58,10 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.data-default-class)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
+        "threads-test" = { depends = [ (hsPkgs.hasql) (hsPkgs.rebase) ]; };
         };
-        "threads-test" = {
-          depends = [
-            (hsPkgs.hasql)
-            (hsPkgs.rebase)
-          ];
-        };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -98,8 +84,8 @@
             (hsPkgs.transformers)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

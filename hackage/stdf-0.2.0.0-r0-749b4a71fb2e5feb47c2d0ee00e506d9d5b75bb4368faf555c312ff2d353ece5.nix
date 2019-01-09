@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stdf";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "stdf"; version = "0.2.0.0"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "415fox@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parse Structured Test Data Format (STDF)";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.zlib)
           (hsPkgs.data-binary-ieee754)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "StdfToJson" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.aeson)
             (hsPkgs.split)
             (hsPkgs.stdf)
-          ];
-        };
+            ];
+          };
         "WaferMap" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.aeson)
             (hsPkgs.split)
             (hsPkgs.stdf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

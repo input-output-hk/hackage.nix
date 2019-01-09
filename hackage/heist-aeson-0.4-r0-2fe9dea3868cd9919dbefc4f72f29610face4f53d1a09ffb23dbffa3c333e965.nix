@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "heist-aeson";
-        version = "0.4";
-      };
+      identifier = { name = "heist-aeson"; version = "0.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "David Himmelstrup <lemmih@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Use JSON directly from Heist templates.";
       description = "Examples of how to use this library can be found in the \"tests\" directory.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.containers)
           (hsPkgs.blaze-builder)
           (hsPkgs.heist)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

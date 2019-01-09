@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "egison-quote";
-        version = "0.1.1";
-      };
+      identifier = { name = "egison-quote"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "kuwahara111011@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A quasi quotes for using Egison expression in Haskell code";
       description = "A quasi quotes for using Egison expression in Haskell code.\nEgison is a purely functional language featured strong pattern matching faculty.\nThis package enable us to use (restricted) Egison expression in Haskell source code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.egison)
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

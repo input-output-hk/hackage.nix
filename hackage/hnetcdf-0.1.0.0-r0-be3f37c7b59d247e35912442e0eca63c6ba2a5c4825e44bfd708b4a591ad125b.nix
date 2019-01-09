@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hnetcdf";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hnetcdf"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (2013) Ian Ross";
       maintainer = "ian@skybluetrades.net";
@@ -22,7 +13,7 @@
       synopsis = "Haskell NetCDF library";
       description = "Bindings to the Unidata NetCDF library, along with a higher-level\nHaskell interface that attempts to provide container polymorphic\ndata access (initially just Storable vectors and Repa arrays).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,12 +25,10 @@
           (hsPkgs.errors)
           (hsPkgs.vector)
           (hsPkgs.repa)
-        ];
+          ];
         libs = [ (pkgs."netcdf") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "test-raw-metadata" = {
           depends = [
@@ -53,9 +42,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
           libs = [ (pkgs."netcdf") ];
-        };
+          };
         "test-raw-get-put" = {
           depends = [
             (hsPkgs.hnetcdf)
@@ -69,9 +58,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
           libs = [ (pkgs."netcdf") ];
-        };
+          };
         "test-raw-attributes" = {
           depends = [
             (hsPkgs.hnetcdf)
@@ -85,9 +74,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
           libs = [ (pkgs."netcdf") ];
-        };
+          };
         "test-get" = {
           depends = [
             (hsPkgs.hnetcdf)
@@ -102,9 +91,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
           libs = [ (pkgs."netcdf") ];
+          };
         };
       };
-    };
-  }
+    }

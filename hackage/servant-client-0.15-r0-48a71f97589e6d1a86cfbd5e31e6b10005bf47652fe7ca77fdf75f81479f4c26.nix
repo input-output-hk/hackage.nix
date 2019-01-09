@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-client";
-        version = "0.15";
-      };
+      identifier = { name = "servant-client"; version = "0.15"; };
       license = "BSD-3-Clause";
       copyright = "2014-2016 Zalora South East Asia Pte Ltd, 2016-2018 Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Automatic derivation of querying functions for servant";
       description = "This library lets you derive automatically Haskell functions that\nlet you query each endpoint of a <http://hackage.haskell.org/package/servant servant> webservice.\n\nSee <http://haskell-servant.readthedocs.org/en/stable/tutorial/Client.html the client section of the tutorial>.\n\n<https://github.com/haskell-servant/servant/blob/master/servant-client/CHANGELOG.md CHANGELOG>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.transformers-base)
           (hsPkgs.transformers-compat)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -77,11 +68,9 @@
             (hsPkgs.servant)
             (hsPkgs.servant-server)
             (hsPkgs.tdigest)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
-        };
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         "readme" = {
           depends = [
             (hsPkgs.base)
@@ -90,11 +79,9 @@
             (hsPkgs.text)
             (hsPkgs.servant-client)
             (hsPkgs.markdown-unlit)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          };
         };
       };
-    };
-  }
+    }

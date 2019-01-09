@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "avers-server";
-        version = "0.0.4";
-      };
+      identifier = { name = "avers-server"; version = "0.0.4"; };
       license = "MIT";
       copyright = "2016 Tomas Carnecky";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Server implementation of the Avers API";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.wai)
           (hsPkgs.wai-websockets)
           (hsPkgs.websockets)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

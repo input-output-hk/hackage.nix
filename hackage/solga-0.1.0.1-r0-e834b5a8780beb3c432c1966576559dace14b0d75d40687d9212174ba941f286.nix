@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "solga";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "solga"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "Copyright (C) 2016 Patrick Chilton";
       maintainer = "chpatrick@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple typesafe web routing";
       description = "A library for easily specifying web APIs and implementing them in a type-safe way.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.http-types)
           (hsPkgs.resourcet)
           (hsPkgs.safe-exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "solga-tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.vector)
             (hsPkgs.scientific)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

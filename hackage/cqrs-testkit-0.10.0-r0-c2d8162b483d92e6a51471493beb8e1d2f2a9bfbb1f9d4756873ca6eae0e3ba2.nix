@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cqrs-testkit";
-        version = "0.10.0";
-      };
+      identifier = { name = "cqrs-testkit"; version = "0.10.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Bardur Arantsson <bardur@scientician.net>";
@@ -22,7 +13,7 @@
       synopsis = "Command-Query Responsibility Segregation Test Support";
       description = "Test Support for CQRS integration components.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.uuid-types)
           (hsPkgs.hspec)
           (hsPkgs.HUnit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

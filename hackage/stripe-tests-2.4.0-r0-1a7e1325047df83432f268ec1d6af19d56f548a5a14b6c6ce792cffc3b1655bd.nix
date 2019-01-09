@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stripe-tests";
-        version = "2.4.0";
-      };
+      identifier = { name = "stripe-tests"; version = "2.4.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2016 David M. Johnson, Jeremy Shaw";
       maintainer = "djohnson.m@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tests for Stripe API bindings for Haskell";
       description = "\n<<https://stripe.com/img/navigation/logo@2x.png>>\n\n[100+ Hspec Tests]\nThis cabal package contains all the Stripe Hspec tests in an HTTP backend agnostic format.\nTo run these tests you will need to install a package such as `stripe-http-streams`.\nThis allows each backend to run the full testsuite.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

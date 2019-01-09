@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blaze-colonnade";
-        version = "1.2.2";
-      };
+      identifier = { name = "blaze-colonnade"; version = "1.2.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Helper functions for using blaze-html with colonnade";
       description = "Blaze HTML and colonnade";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,12 @@
           (hsPkgs.blaze-markup)
           (hsPkgs.blaze-html)
           (hsPkgs.text)
-        ];
-      };
-      tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.colonnade)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.colonnade) (hsPkgs.doctest) ];
+          };
+        };
       };
-    };
-  }
+    }

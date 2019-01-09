@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-make-assets";
-        version = "0.1";
-      };
+      identifier = { name = "wai-make-assets"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "SoenkeHahn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Compiling and serving assets";
       description = "Small wai library and command line tool for compiling and serving assets (e.g. through ghcjs, elm, sass)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.shake)
           (hsPkgs.http-types)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-make-assets" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.http-types)
             (hsPkgs.directory)
             (hsPkgs.getopt-generics)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.mockery)
             (hsPkgs.lens)
             (hsPkgs.silently)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

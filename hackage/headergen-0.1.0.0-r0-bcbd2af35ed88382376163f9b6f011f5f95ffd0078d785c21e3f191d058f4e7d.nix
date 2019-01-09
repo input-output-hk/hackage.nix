@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "headergen";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "headergen"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 Nils bash0r Jonsson";
       maintainer = "aka.bash0r@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Creates a header for a haskell source file.";
       description = "The headergen package provides a small utility for\ncreating documentation headers for source files.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "headergen" = {
@@ -35,8 +26,8 @@
             (hsPkgs.time)
             (hsPkgs.bytestring)
             (hsPkgs.haskeline)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

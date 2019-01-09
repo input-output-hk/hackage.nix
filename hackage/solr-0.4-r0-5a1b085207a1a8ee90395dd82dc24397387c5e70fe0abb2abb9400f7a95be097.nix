@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "solr";
-        version = "0.4";
-      };
+      identifier = { name = "solr"; version = "0.4"; };
       license = "MIT";
       copyright = "(c) 2016, Sannsyn AS";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A minimal Solr client library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

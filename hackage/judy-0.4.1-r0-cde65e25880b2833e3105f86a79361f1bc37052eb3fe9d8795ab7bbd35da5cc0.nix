@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { unsafe = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "judy";
-        version = "0.4.1";
-      };
+      identifier = { name = "judy"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008, Don Stewart <dons@galois.com>";
       maintainer = "Mark Wotton <mwotton@gmail.com>";
@@ -22,16 +13,12 @@
       synopsis = "Fast, scalable, mutable dynamic arrays, maps and hashes";
       description = "Fast, scalable, mutable dynamic arrays, maps and hashes";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) (hsPkgs.bytestring) ];
         libs = [ (pkgs."Judy") ];
-      };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.hspec)
             (hsPkgs.judy)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

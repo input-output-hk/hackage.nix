@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "linear-accelerate";
-        version = "0.4";
-      };
+      identifier = { name = "linear-accelerate"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Lifting linear vector spaces into Accelerate";
       description = "Lifting linear vector spaces into Accelerate";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,15 +22,10 @@
           (hsPkgs.distributive)
           (hsPkgs.lens)
           (hsPkgs.linear)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       };
-    };
-  }
+    }

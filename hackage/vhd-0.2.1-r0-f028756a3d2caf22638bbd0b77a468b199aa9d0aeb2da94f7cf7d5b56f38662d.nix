@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { executable = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "vhd";
-        version = "0.2.1";
-      };
+      identifier = { name = "vhd"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Citrix Systems Inc.";
       maintainer = "vincent.hanquez@citrix.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides functions to inspect and manipulate virtual hard disk (VHD) files.";
       description = "Provides functions to inspect and manipulate virtual hard disk (VHD) files, according to the VHD specification (version 1.0).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,11 +30,11 @@
           (hsPkgs.storable-endian)
           (hsPkgs.cipher-aes)
           (hsPkgs.cryptohash)
-        ];
-      };
+          ];
+        };
       exes = {
         "vhd" = {
-          depends = pkgs.lib.optionals (flags.executable) [
+          depends = (pkgs.lib).optionals (flags.executable) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.byteable)
@@ -58,9 +49,9 @@
             (hsPkgs.vhd)
             (hsPkgs.cipher-aes)
             (hsPkgs.cryptohash)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-vhd" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.random)
             (hsPkgs.vhd)
             (hsPkgs.cryptohash)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

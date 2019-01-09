@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-metrics";
-        version = "0.3.2";
-      };
+      identifier = { name = "network-metrics"; version = "0.3.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Brendan Hay <brendan.g.hay@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Send metrics to Ganglia, Graphite, and statsd.";
       description = "\nSend metrics directly from Haskell to various monitoring and metrics services.\n\nSupported services are Ganglia, Graphite, and statsd.\n\nPlease see <http://github.com/brendanhay/network-metrics/blob/master/README.md>\nfor further information and usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.data-default)
           (hsPkgs.random)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

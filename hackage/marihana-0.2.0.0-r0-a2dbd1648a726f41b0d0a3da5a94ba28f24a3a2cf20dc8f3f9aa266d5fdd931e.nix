@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "marihana";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "marihana"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2018 Akeno Suzukaze";
       maintainer = "nanisanumber+contact@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Minimal tool to make your blog in Haskell";
       description = "Please see the README on Github at <https://github.com/suzukeno/marihana#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.filepath) ];
+        };
       exes = {
         "marihana" = {
           depends = [
@@ -38,9 +25,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.marihana)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "marihana-test" = {
           depends = [
@@ -48,8 +35,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.marihana)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

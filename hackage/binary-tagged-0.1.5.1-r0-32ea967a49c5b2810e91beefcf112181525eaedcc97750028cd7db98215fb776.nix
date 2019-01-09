@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-tagged";
-        version = "0.1.5.1";
-      };
+      identifier = { name = "binary-tagged"; version = "0.1.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Tagged binary serialisation.";
       description = "Check <https://github.com/phadej/binary-tagged#readme README on Github>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -42,8 +33,8 @@
           (hsPkgs.tagged)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.nats);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats);
+        };
       tests = {
         "binary-tagged-test" = {
           depends = ([
@@ -69,9 +60,9 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.nats);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats);
+          };
         };
-      };
       benchmarks = {
         "binary-tagged-bench" = {
           depends = [
@@ -97,8 +88,8 @@
             (hsPkgs.binary-orphans)
             (hsPkgs.deepseq)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

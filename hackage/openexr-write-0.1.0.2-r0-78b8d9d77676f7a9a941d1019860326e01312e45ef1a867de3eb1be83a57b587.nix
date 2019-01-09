@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "openexr-write";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "openexr-write"; version = "0.1.0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "2018 Pavol Klacansky";
       maintainer = "pavol@klacansky.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for writing images in OpenEXR HDR file format.";
       description = "OpenEXR allows to store pixels as floating point numbers and thus can capture high dynamic range.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.vector)
           (hsPkgs.vector-split)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.hspec)
             (hsPkgs.openexr-write)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

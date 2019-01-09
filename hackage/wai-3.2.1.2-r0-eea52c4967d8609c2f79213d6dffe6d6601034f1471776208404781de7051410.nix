@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai";
-        version = "3.2.1.2";
-      };
+      identifier = { name = "wai"; version = "3.2.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Web Application Interface.";
       description = "Provides a common protocol for communication between web applications and web servers.\n\nAPI docs and the README are available at <http://www.stackage.org/package/wai>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vault)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,11 +33,9 @@
             (hsPkgs.wai)
             (hsPkgs.hspec)
             (hsPkgs.bytestring)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

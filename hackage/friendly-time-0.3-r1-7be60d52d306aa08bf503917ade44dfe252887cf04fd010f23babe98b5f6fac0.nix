@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "friendly-time";
-        version = "0.3";
-      };
+      identifier = { name = "friendly-time"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@pbrisbin.com";
@@ -22,15 +13,11 @@
       synopsis = "Print time information in friendly ways";
       description = "Print time information in friendly ways";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-          (hsPkgs.old-locale)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.time) (hsPkgs.old-locale) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.base)
             (hsPkgs.time)
             (hsPkgs.old-locale)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

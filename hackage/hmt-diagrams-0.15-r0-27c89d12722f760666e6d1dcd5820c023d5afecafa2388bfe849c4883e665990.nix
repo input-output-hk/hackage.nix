@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hmt-diagrams";
-        version = "0.15";
-      };
+      identifier = { name = "hmt-diagrams"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2006-2014";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Music Theory Diagrams";
       description = "Haskell Music Theory Diagrams";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.filepath)
           (hsPkgs.process)
           (hsPkgs.xml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

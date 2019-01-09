@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sjsp";
-        version = "0.1.0";
-      };
+      identifier = { name = "sjsp"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "itchyny <https://github.com/itchyny>";
@@ -22,7 +13,7 @@
       synopsis = "Simple JavaScript Profiler";
       description = "This is a JavaScript profiler, injecting profiling\ncodes into your JavaScript files.\nSee https://github.com/itchyny/sjsp for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sjsp" = {
@@ -35,12 +26,12 @@
             (hsPkgs.filepath)
             (hsPkgs.blaze-builder)
             (hsPkgs.unordered-containers)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
-          ];
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
         };
       };
-    };
-  }
+    }

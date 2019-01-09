@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "structured-mongoDB";
-        version = "0.1";
-      };
+      identifier = { name = "structured-mongoDB"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Amit Levy <alevy at stanford dot edu>, Deian Stefan  <deian at cs dot stanford dot edu>";
@@ -22,7 +13,7 @@
       synopsis = "Structured MongoDB interface";
       description = "This module exports a structured type-safe interface to MongoDB.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.bson)
           (hsPkgs.compact-string-fix)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

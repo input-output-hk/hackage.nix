@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hspec-slow";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hspec-slow"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Bob Long";
       maintainer = "robertjflong@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Find slow test cases";
       description = "Records and prints out slow Hspec tests";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
           (hsPkgs.hspec)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec-slow-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hspec)
             (hsPkgs.stm)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

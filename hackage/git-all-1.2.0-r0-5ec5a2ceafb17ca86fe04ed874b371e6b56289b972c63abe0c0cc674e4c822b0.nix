@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "git-all";
-        version = "1.2.0";
-      };
+      identifier = { name = "git-all"; version = "1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@newartisans.com>";
@@ -22,7 +13,7 @@
       synopsis = "Determine which Git repositories need actions to be taken";
       description = "A utility for determining which Git repositories need actions to be\ntaken within them.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "git-all" = {
@@ -38,8 +29,8 @@
             (hsPkgs.parallel-io)
             (hsPkgs.unix)
             (hsPkgs.system-fileio)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-map-multikey";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "data-map-multikey"; version = "0.0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "jhickner@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Data.Map with multiple, unique keys";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "chart-unit";
-        version = "0.6.1.0";
-      };
+      identifier = { name = "chart-unit"; version = "0.6.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Native haskell charts.";
       description = "<<https://tonyday567.github.io/other/mainExample.svg>>\n\nchart-unit is a native haskell charting library designed:\n\n- as a chart DSL and algebra\n\n- towards a minimalist look and feel\n\n- to provide a set of default values that are robust across different data and physical chart scales\n\n- around provision of a small but core set of chart types.\n\nSee <https://tonyday567.github.io/chart-unit/index.html chart-unit> for a chart gallery.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.svg-builder)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "chart-unit-gallery" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.protolude)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "chart-unit-main-example" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +66,8 @@
             (hsPkgs.lens)
             (hsPkgs.numhask)
             (hsPkgs.numhask-range)
-          ];
-        };
+            ];
+          };
         "chart-unit-source-examples" = {
           depends = [
             (hsPkgs.base)
@@ -88,9 +79,9 @@
             (hsPkgs.numhask-range)
             (hsPkgs.protolude)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -101,8 +92,8 @@
             (hsPkgs.numhask-range)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

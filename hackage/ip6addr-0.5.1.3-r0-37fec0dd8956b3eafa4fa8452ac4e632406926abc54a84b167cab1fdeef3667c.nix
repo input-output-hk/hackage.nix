@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ip6addr";
-        version = "0.5.1.3";
-      };
+      identifier = { name = "ip6addr"; version = "0.5.1.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011-2016 - Michel Boucey";
       maintainer = "michel.boucey@cybervisible.fr";
@@ -22,7 +13,7 @@
       synopsis = "Commandline tool to generate IPv6 address text representations";
       description = "Commandline tool to generate IPv6 address text representations";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ip6addr" = {
@@ -31,8 +22,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.IPv6Addr)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

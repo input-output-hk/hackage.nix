@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-tools-daemon";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "haskell-tools-daemon"; version = "0.7.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nboldi@elte.hu";
@@ -22,7 +13,7 @@
       synopsis = "Background process for Haskell-tools refactor that editors can connect to.";
       description = "Background process for Haskell-tools refactor that editors can connect to.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,16 +35,13 @@
           (hsPkgs.haskell-tools-ast)
           (hsPkgs.haskell-tools-prettyprint)
           (hsPkgs.haskell-tools-refactor)
-        ];
-      };
-      exes = {
-        "ht-daemon" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell-tools-daemon)
           ];
         };
-      };
+      exes = {
+        "ht-daemon" = {
+          depends = [ (hsPkgs.base) (hsPkgs.haskell-tools-daemon) ];
+          };
+        };
       tests = {
         "haskell-tools-daemon-tests" = {
           depends = [
@@ -69,8 +57,8 @@
             (hsPkgs.network)
             (hsPkgs.aeson)
             (hsPkgs.haskell-tools-daemon)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

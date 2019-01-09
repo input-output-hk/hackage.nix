@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "H";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "H"; version = "0.7.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013-2015 Amgen, Inc.\nCopyright (c) 2015 Tweag I/O Limited.";
       maintainer = "Alexander Vershilov <alexander.vershilov@tweag.io>";
@@ -22,7 +13,7 @@
       synopsis = "The Haskell/R mixed programming environment.";
       description = "This package is part of the HaskellR project.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "H" = {
@@ -36,9 +27,9 @@
             (hsPkgs.process)
             (hsPkgs.temporary-rc)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.text)
             (hsPkgs.vector)
             (hsPkgs.singletons)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

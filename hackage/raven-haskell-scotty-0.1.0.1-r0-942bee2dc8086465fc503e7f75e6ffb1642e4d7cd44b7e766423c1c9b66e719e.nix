@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "raven-haskell-scotty";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "raven-haskell-scotty"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "aenor.realm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sentry http interface for Scotty web server.";
       description = "Utilities to log errors in Scotty actions using raven-haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

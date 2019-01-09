@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HaXml";
-        version = "1.19";
-      };
+      identifier = { name = "HaXml"; version = "1.19"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "";
@@ -22,65 +13,33 @@
       synopsis = "Utilities for manipulating XML documents";
       description = "Haskell utilities for parsing, filtering, transforming and\ngenerating XML documents.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-          (hsPkgs.polyparse)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.polyparse) ];
+        };
       exes = {
         "Canonicalise" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-            (hsPkgs.polyparse)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.polyparse) ];
+          };
         "CanonicaliseLazy" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-            (hsPkgs.polyparse)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.polyparse) ];
+          };
         "Xtract" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-            (hsPkgs.polyparse)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.polyparse) ];
+          };
         "XtractLazy" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-            (hsPkgs.polyparse)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.polyparse) ];
+          };
         "Validate" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-            (hsPkgs.polyparse)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.polyparse) ];
+          };
         "MkOneOf" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-            (hsPkgs.polyparse)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.polyparse) ];
+          };
         "DtdToHaskell" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-            (hsPkgs.polyparse)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.polyparse) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "jmonkey";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "jmonkey"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 peus";
       maintainer = "opyapeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/opyapeus/jmonkey#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.casing)
           (hsPkgs.free)
           (hsPkgs.jmacro)
-        ];
-      };
+          ];
+        };
       exes = {
         "jmonkey-example-exe" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "jmonkey-test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.free)
             (hsPkgs.jmacro)
             (hsPkgs.jmonkey)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

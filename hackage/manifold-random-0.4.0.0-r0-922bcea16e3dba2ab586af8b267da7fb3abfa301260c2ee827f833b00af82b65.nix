@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "manifold-random";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "manifold-random"; version = "0.4.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "(@) sagemueller \$ geo.uni-koeln.de";
@@ -22,7 +13,7 @@
       synopsis = "Sampling random points on general manifolds.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.vector-space)
           (hsPkgs.linearmap-category)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

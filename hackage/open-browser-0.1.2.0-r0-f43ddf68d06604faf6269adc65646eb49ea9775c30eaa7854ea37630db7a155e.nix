@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "open-browser";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "open-browser"; version = "0.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "rightfold@gmail.com";
@@ -22,21 +13,11 @@
       synopsis = "Open a web browser from Haskell.";
       description = "Open a web browser from Haskell.\nCurrently only Linux and OS X are supported.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.process)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
       exes = {
-        "example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.open-browser)
-          ];
+        "example" = { depends = [ (hsPkgs.base) (hsPkgs.open-browser) ]; };
         };
       };
-    };
-  }
+    }

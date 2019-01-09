@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hScraper";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hScraper"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nishant.gupta291995@google.com, agarwal.ayush9@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell library to scrape and crawl web-pages";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.HTTP)
           (hsPkgs.http-conduit)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

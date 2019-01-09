@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16.0";
-      identifier = {
-        name = "lame-tester";
-        version = "1.1";
-      };
+      identifier = { name = "lame-tester"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jason.bertsche@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A strange and unnecessary selective test-running library";
       description = "A strange and unnecessary selective test-running library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.semigroups)
           (hsPkgs.validation)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.lame-tester)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

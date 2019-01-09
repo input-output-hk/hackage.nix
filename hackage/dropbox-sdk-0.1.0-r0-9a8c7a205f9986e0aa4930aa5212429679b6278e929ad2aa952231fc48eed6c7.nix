@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dropbox-sdk";
-        version = "0.1.0";
-      };
+      identifier = { name = "dropbox-sdk"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Kannan Goundan <kannan@cakoose.com>";
@@ -22,7 +13,7 @@
       synopsis = "A library to access the Dropbox HTTP API.";
       description = "The Dropbox HTTP API provides ways for applications to access\nusers' Dropbox accounts programmatically.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.tls)
           (hsPkgs.tls-extra)
           (hsPkgs.certificate)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

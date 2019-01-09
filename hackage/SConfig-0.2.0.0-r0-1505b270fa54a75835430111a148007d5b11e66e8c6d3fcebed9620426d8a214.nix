@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SConfig";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "SConfig"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "fgaz@users.noreply.github.com";
@@ -22,13 +13,8 @@
       synopsis = "A simple config library";
       description = "A simple config library.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

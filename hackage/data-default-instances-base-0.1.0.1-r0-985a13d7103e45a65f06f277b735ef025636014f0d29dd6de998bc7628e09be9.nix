@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "data-default-instances-base";
         version = "0.1.0.1";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<l.mai@web.de>";
@@ -22,13 +16,8 @@
       synopsis = "Default instances for types in base";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-default-class)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.data-default-class) ]; };
+      };
+    }

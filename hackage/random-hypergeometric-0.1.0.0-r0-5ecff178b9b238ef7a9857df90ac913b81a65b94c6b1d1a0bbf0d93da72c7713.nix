@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "random-hypergeometric";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "random-hypergeometric"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2015 Sam Rijs\n2005 Robert Kern\n1998 Ivan Frohne";
       maintainer = "srijs@airpost.net";
@@ -22,15 +13,11 @@
       synopsis = "Random variate generation from hypergeometric distributions";
       description = "The Hypergeometric distribution.  This is the discrete probability\ndistribution that measures the probability of /k/ successes in /l/\ntrials, without replacement, from a finite population.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random-fu)
-          (hsPkgs.math-functions)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.random-fu) (hsPkgs.math-functions) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.vector)
             (hsPkgs.QuickCheck)
             (hsPkgs.cabal-test-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

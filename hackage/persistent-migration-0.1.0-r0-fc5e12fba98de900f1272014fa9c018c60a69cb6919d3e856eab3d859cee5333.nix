@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "persistent-migration";
-        version = "0.1.0";
-      };
+      identifier = { name = "persistent-migration"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Brandon Chinn <brandonchinn178@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Manual migrations for the persistent library";
       description = "Manual migrations for the persistent library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "persistent-migration-integration" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "persistent-migration-test" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -75,8 +66,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

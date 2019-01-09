@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jvm-batching";
-        version = "0.1";
-      };
+      identifier = { name = "jvm-batching"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 LeapYear Technologies";
       maintainer = "facundo.dominguez@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Provides batched marshalling of values between Java and Haskell.";
       description = "Please see README.md.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.singletons)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.jvm-batching)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "micro-benchmarks" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.jvm-batching)
             (hsPkgs.split)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

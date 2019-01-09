@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "aws-sns";
-        version = "0.1";
-      };
+      identifier = { name = "aws-sns"; version = "0.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 AlephCloud, Inc.";
       maintainer = "Lars Kuhtz <lars@alephcloud.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for AWS SNS Version 2013-03-31";
       description = "Bindings for AWS SNS\n\n/API Version: 2013-03-31/\n\n<http://docs.aws.amazon.com/sns/2010-03-31/APIReference/Welcome.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "SNS-tests" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

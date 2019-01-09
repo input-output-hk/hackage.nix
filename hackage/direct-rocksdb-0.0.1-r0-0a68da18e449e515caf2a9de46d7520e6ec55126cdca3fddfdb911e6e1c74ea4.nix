@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "direct-rocksdb";
-        version = "0.0.1";
-      };
+      identifier = { name = "direct-rocksdb"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Shao Cheng";
       maintainer = "Shao Cheng <astrohavoc@gmail.com>";
@@ -22,24 +13,21 @@
       synopsis = "Bindings to RocksDB.";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [
           (pkgs."stdc++")
-        ] ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
-      };
+          ] ++ (pkgs.lib).optional (system.isWindows) (pkgs."rpcrt4");
+        };
       tests = {
         "direct-rocksdb-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.direct-rocksdb)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.direct-rocksdb) ];
           libs = [
             (pkgs."stdc++")
-          ] ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
+            ] ++ (pkgs.lib).optional (system.isWindows) (pkgs."rpcrt4");
+          };
         };
       };
-    };
-  }
+    }

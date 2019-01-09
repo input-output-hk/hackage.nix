@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "astar";
-        version = "0.2";
-      };
+      identifier = { name = "astar"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cgibbard@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "General A* search algorithm.";
       description = "This is a data-structure independent implementation of A* search.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.PSQueue)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.PSQueue) ];
+        };
       };
-    };
-  }
+    }

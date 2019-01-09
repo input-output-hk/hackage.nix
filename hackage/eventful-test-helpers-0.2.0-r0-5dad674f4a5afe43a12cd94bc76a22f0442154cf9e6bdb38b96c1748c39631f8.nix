@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eventful-test-helpers";
-        version = "0.2.0";
-      };
+      identifier = { name = "eventful-test-helpers"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Reaver";
@@ -22,7 +13,7 @@
       synopsis = "Common module used for eventful tests";
       description = "Common module used for eventful tests";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.hspec)
           (hsPkgs.monad-logger)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

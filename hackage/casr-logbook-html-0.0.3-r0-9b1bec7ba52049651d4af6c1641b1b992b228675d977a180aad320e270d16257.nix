@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "casr-logbook-html";
-        version = "0.0.3";
-      };
+      identifier = { name = "casr-logbook-html"; version = "0.0.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (C) 2016 Tony Morris";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "CASR 61.345 Pilot Personal Logbook HTML output";
       description = "<<https://i.imgur.com/p6LT40r.png>>\n\nCASR 61.345 Pilot Personal Logbook HTML output\n\n<<https://i.imgur.com/Lfhcmtg.png>>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.digit)
           (hsPkgs.time)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "breve";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "breve"; version = "0.0.2.0"; };
       license = "MIT";
       copyright = "(C) Michele Guerini Rocco 2015";
       maintainer = "micheleguerinirocco@me.com";
@@ -22,7 +13,7 @@
       synopsis = "a url shortener";
       description = "A web application that provides a simple interface to shortening\nlong urls creating smaller and easy to remember links.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "breve" = {
@@ -40,8 +31,8 @@
             (hsPkgs.cryptohash)
             (hsPkgs.binary)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

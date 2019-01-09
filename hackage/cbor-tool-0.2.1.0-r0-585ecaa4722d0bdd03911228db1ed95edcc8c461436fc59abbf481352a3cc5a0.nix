@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cbor-tool";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "cbor-tool"; version = "0.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2017 Duncan Coutts,\n2015-2017 Well-Typed LLP,\n2015 IRIS Connect Ltd";
       maintainer = "duncan@community.haskell.org, ben@smart-cactus.org";
@@ -22,7 +13,7 @@
       synopsis = "A tool for manipulating CBOR.";
       description = "A tool for dumping and converting CBOR-encoded data.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cbor-tool" = {
@@ -38,8 +29,8 @@
             (hsPkgs.vector)
             (hsPkgs.cborg)
             (hsPkgs.cborg-json)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

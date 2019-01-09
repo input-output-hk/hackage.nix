@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "plot-light";
-        version = "0.3.3";
-      };
+      identifier = { name = "plot-light"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "2017-2018 Marco Zocca";
       maintainer = "zocca marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "A lightweight plotting library, exporting to SVG";
       description = "This library provides drawing and plotting datastructures and functions; it is aimed in particular at scientific visualization, but it also exposes its plotting primitives and a small but general purpose 2D geometry library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.data-default-class)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.plot-light)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

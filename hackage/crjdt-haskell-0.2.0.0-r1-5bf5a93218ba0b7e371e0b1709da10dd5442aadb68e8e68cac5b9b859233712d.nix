@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "crjdt-haskell";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "crjdt-haskell"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Amar Potghan";
       maintainer = "amarpotghan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Conflict-Free Replicated JSON Datatype for Haskell";
       description = "A Conflict-Free Replicated JSON Datatype for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,11 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.free)
-        ];
-      };
-      exes = {
-        "examples" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.crjdt-haskell)
           ];
         };
-      };
+      exes = {
+        "examples" = { depends = [ (hsPkgs.base) (hsPkgs.crjdt-haskell) ]; };
+        };
       tests = {
         "crjdt-haskell-test" = {
           depends = [
@@ -50,8 +36,8 @@
             (hsPkgs.containers)
             (hsPkgs.mtl)
             (hsPkgs.hedgehog)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

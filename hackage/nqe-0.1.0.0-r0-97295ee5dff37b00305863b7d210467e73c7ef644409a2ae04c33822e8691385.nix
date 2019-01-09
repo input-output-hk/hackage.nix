@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nqe";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "nqe"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "xenog@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Concurrency library in the style of Erlang/OTP";
       description = "Follow the example of Erlang developing a minimalistic actor library with a\ndistinct Haskell flavour. It does not implement Erlang/OTP-style processes\nexactly, but it is merely inspired by their philosophy.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
         "nqe-test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.stm)
             (hsPkgs.stm-conduit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

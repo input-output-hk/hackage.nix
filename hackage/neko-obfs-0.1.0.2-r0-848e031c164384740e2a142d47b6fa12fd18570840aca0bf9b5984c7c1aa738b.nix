@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "neko-obfs";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "neko-obfs"; version = "0.1.0.2"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "nfjinjing@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "a TCP tunnel with packet length obfuscation";
       description = "Just another tool that helps accessing the internet";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "neko-obfs" = {
@@ -43,8 +34,8 @@
             (hsPkgs.random)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

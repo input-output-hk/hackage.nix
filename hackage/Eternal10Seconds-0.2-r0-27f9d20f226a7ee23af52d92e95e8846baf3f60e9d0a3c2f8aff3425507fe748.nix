@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Eternal10Seconds";
-        version = "0.2";
-      };
+      identifier = { name = "Eternal10Seconds"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "kryozahiro@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A 2-D shooting game";
       description = "A 2-D shooting game";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Eternal10Seconds" = {
@@ -31,8 +22,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.SDL)
             (hsPkgs.SDL-mixer)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

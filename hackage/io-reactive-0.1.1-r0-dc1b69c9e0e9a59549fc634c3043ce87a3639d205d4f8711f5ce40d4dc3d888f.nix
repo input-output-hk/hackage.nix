@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "io-reactive";
-        version = "0.1.1";
-      };
+      identifier = { name = "io-reactive"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Andy Gill <andygill@ku.edu>";
@@ -22,15 +13,9 @@
       synopsis = "An API for generating TIMBER style reactive objects.";
       description = "An API for generating reactive objects, as used in the TIMBER programming language.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
+      "library" = { depends = [ (hsPkgs.base) ]; };
+      exes = { "io-reactive-test" = { depends = [ (hsPkgs.base) ]; }; };
       };
-      exes = {
-        "io-reactive-test" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
-    };
-  }
+    }

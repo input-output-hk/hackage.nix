@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xhb-ewmh";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "xhb-ewmh"; version = "0.1.0.1"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "Jochen Keil <jochen.keil+xhb-ewmh@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "EWMH utilities for XHB";
       description = "EWMH utilities for XHB";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.transformers)
           (hsPkgs.xhb)
           (hsPkgs.xhb-atom-cache)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

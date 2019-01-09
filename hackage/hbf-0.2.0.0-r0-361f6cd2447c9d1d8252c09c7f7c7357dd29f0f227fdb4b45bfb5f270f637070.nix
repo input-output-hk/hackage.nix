@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dump = false;
-      profile = false;
-    };
+    flags = { dump = false; profile = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hbf";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hbf"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Sebastian Galkin, 2018";
       maintainer = "paraseba@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "An optimizing Brainfuck compiler and evaluator";
       description = "hbf is a compiler and executor of Brainfuck programs. It provides two executables: @hbfc@ the Brainfuck compiler, and @hbf@ the virtual machine that executes compiled Brainfuck programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "hbf" = {
           depends = [
@@ -57,8 +45,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "hbfc" = {
           depends = [
             (hsPkgs.base)
@@ -73,9 +61,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctest" = {
           depends = [
@@ -92,8 +80,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "test" = {
           depends = [
             (hsPkgs.HUnit)
@@ -118,9 +106,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "evalbench" = {
           depends = [
@@ -137,8 +125,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

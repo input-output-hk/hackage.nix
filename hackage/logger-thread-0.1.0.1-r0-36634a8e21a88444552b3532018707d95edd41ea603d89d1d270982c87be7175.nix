@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "logger-thread";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "logger-thread"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Joe9";
       maintainer = "joe9mail@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Run FastLogger in a thread and direct all queued messages to it.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.stm)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "logger-thread-exe" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.logger-thread)
             (hsPkgs.protolude)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

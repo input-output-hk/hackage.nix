@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-transport-composed";
-        version = "0.2.1";
-      };
+      identifier = { name = "network-transport-composed"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Well-Typed LLP";
       maintainer = "Facundo Dominguez <facundo.dominguez@tweag.io>";
@@ -22,14 +13,14 @@
       synopsis = "Compose network transports";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.network-transport)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

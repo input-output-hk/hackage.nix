@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rdioh";
-        version = "0.2.1";
-      };
+      identifier = { name = "rdioh"; version = "0.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Aditya Bhargava <adit at adit.io>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell wrapper for Rdio's API.";
       description = "This library implements methods for Rdio's API.\nIt supports 2-legged and 3-legged OAuth. See Rdio's API for reference: http:\\/\\/developer.rdio.com\\/docs\\/read\\/rest\\/Methods";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.aeson)
           (hsPkgs.containers)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "rdioh" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.aeson)
             (hsPkgs.containers)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "rdioh-spec" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +58,8 @@
             (hsPkgs.aeson)
             (hsPkgs.containers)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

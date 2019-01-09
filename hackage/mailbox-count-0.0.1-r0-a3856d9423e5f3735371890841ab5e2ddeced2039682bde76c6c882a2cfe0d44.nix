@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mailbox-count";
-        version = "0.0.1";
-      };
+      identifier = { name = "mailbox-count"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Michael Orlitzky <michael@orlitzky.com>";
@@ -22,7 +13,7 @@
       synopsis = "Count mailboxes in a SQL database.";
       description = "Count mailboxes in a SQL database.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mailbox-count" = {
@@ -39,9 +30,9 @@
             (hsPkgs.MissingH)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "testsuite" = {
           depends = [
@@ -57,15 +48,11 @@
             (hsPkgs.MissingH)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.filemanip)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.filemanip) ];
+          };
         };
       };
-    };
-  }
+    }

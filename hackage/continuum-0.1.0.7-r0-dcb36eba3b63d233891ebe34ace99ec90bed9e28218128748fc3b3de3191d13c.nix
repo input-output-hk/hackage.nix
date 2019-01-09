@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      binaries = false;
-      profiling = false;
-    };
+    flags = { binaries = false; profiling = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "continuum";
-        version = "0.1.0.7";
-      };
+      identifier = { name = "continuum"; version = "0.1.0.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "alexp@coffeenco.de";
@@ -25,7 +13,7 @@
       synopsis = "";
       description = "Continuum Database Client";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +24,8 @@
           (hsPkgs.nanomsg-haskell)
           (hsPkgs.time)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "continuum-client" = {
           depends = [
@@ -48,8 +36,8 @@
             (hsPkgs.nanomsg-haskell)
             (hsPkgs.time)
             (hsPkgs.mtl)
-          ];
-        };
+            ];
+          };
         "continuum-server" = {
           depends = [
             (hsPkgs.base)
@@ -69,11 +57,9 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
             (hsPkgs.nanomsg-haskell)
-          ];
-          libs = [
-            (pkgs."hyperleveldb")
-          ];
+            ];
+          libs = [ (pkgs."hyperleveldb") ];
+          };
         };
       };
-    };
-  }
+    }

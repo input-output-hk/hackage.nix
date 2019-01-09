@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cil";
-        version = "0.0.0";
-      };
+      identifier = { name = "cil"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tom Hawkins <tomahawkins@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "An interface to CIL and ACSL through Frama-C.";
       description = "TODO";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.polyparse)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.polyparse) ]; };
+      };
+    }

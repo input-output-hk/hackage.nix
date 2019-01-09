@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "route-planning";
-        version = "0.0.3";
-      };
+      identifier = { name = "route-planning"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Tony Morris";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A library and utilities for creating a route";
       description = "A library and utilities for creating a route";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.xsd)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

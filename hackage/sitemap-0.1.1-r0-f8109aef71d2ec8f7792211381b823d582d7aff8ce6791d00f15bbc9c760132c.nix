@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sitemap";
-        version = "0.1.1";
-      };
+      identifier = { name = "sitemap"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2015 Alp Mestanogullari";
       maintainer = "alpmestan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sitemap parser";
       description = "Sitemap parser. See the \"Web.Sitemap\" module for an example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.taggy)
           (hsPkgs.taggy-lens)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

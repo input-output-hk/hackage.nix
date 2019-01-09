@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "MissingK";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "MissingK"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.es";
@@ -22,14 +13,10 @@
       synopsis = "Useful types and definitions missing from other libraries";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.glib)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.glib) ];
+        };
       };
-    };
-  }
+    }

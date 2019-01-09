@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "exhaustive";
-        version = "1.1.3";
-      };
+      identifier = { name = "exhaustive"; version = "1.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "Compile time checks that a computation considers producing data through all possible constructors";
       description = "For a brief tutorial to @exhaustive@, check out the documentation for \"Control.Exhaustive\", which contains a small example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.generics-sop)
           (hsPkgs.transformers)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

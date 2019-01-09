@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "potoki-hasql";
-        version = "1.3";
-      };
+      identifier = { name = "potoki-hasql"; version = "1.3"; };
       license = "MIT";
       copyright = "(c) 2018, Metrix.AI";
       maintainer = "Metrix.AI Ninjas <ninjas@metrix.ai>";
@@ -22,7 +13,7 @@
       synopsis = "Integration of \"potoki\" and \"hasql\".";
       description = "Utilities, which integrate Hasql and Potoki.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.vector)
           (hsPkgs.profunctors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

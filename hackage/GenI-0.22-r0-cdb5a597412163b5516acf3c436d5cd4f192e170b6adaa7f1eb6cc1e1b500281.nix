@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "GenI";
-        version = "0.22";
-      };
+      identifier = { name = "GenI"; version = "0.22"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "geni-users@loria.fr";
@@ -22,7 +13,7 @@
       synopsis = "A natural language generator (specifically, an FB-LTAG surface realiser)";
       description = "A natural language generator (specifically, an FB-LTAG surface realiser)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.time)
           (hsPkgs.utf8-string)
           (hsPkgs.yaml-light)
-        ];
-      };
+          ];
+        };
       exes = {
         "geni" = {
           depends = [
@@ -65,9 +56,9 @@
             (hsPkgs.process)
             (hsPkgs.split)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "geni-test" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.test-framework-smallcheck)
             (hsPkgs.test-framework)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

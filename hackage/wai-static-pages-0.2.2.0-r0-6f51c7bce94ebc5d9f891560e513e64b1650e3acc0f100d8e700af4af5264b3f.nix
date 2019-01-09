@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-static-pages";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "wai-static-pages"; version = "0.2.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "greg@gregweber.info";
@@ -22,7 +13,7 @@
       synopsis = "generate static html pages from a WAI application";
       description = "helpers for generating static html pages in a WAI application.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

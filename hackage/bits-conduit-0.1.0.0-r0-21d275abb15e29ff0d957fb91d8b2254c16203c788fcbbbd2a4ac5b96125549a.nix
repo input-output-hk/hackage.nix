@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "bits-conduit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "bits-conduit"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bitstream support for Conduit";
       description = "Bitstream support for Conduit";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
           (hsPkgs.conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "bits-conduit-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.bits-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

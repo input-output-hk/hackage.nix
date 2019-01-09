@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm-fast = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wordchoice";
-        version = "0.1.2.4";
-      };
+      identifier = { name = "wordchoice"; version = "0.1.2.4"; };
       license = "BSD-3-Clause";
       copyright = "2017 Vanessa McHale";
       maintainer = "vanessa.mchale@reconfigure.io";
@@ -22,7 +13,7 @@
       synopsis = "Get word counts and distributions";
       description = "A command line tool to compute the word distribution from various types of document, converting to text with pandoc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,24 +33,14 @@
           (hsPkgs.Chart-diagrams)
           (hsPkgs.lens)
           (hsPkgs.transformers)
-        ];
-      };
-      exes = {
-        "wrd" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wordchoice)
           ];
         };
-      };
+      exes = { "wrd" = { depends = [ (hsPkgs.base) (hsPkgs.wordchoice) ]; }; };
       tests = {
         "wordchoice-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wordchoice)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.wordchoice) ];
+          };
         };
-      };
       benchmarks = {
         "wordchoice-bench" = {
           depends = [
@@ -68,8 +49,8 @@
             (hsPkgs.text)
             (hsPkgs.wordchoice)
             (hsPkgs.pandoc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

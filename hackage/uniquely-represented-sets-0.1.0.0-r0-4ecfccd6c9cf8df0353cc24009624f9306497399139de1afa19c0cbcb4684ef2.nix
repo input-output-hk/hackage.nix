@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "uniquely-represented-sets";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "uniquely-represented-sets"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Donnacha Oisín Kidney";
       maintainer = "mail@doisinkidney.com";
@@ -22,15 +13,11 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/oisdk/uniquely-represented-sets#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.deepseq) ];
+        };
       tests = {
         "uniquely-represented-sets-test" = {
           depends = [
@@ -40,9 +27,9 @@
             (hsPkgs.containers)
             (hsPkgs.doctest)
             (hsPkgs.uniquely-represented-sets)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -50,8 +37,8 @@
             (hsPkgs.criterion)
             (hsPkgs.random)
             (hsPkgs.uniquely-represented-sets)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

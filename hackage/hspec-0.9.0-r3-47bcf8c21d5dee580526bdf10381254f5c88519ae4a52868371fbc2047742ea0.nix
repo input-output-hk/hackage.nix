@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspec";
-        version = "0.9.0";
-      };
+      identifier = { name = "hspec"; version = "0.9.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Trystan Spangler";
       maintainer = "trystan.s@comcast.net";
@@ -22,7 +13,7 @@
       synopsis = "Behavior Driven Development for Haskell";
       description = "Behavior Driven Development for Haskell\n\nHspec is roughly based on the Ruby library RSpec. However, Hspec is just a framework for running HUnit and QuickCheck tests. Compared to other options, it provides a much nicer syntax that makes tests very easy to read.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.silently)
           (hsPkgs.ansi-terminal)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "http-conduit";
-        version = "2.2.3";
-      };
+      identifier = { name = "http-conduit"; version = "2.2.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP client package with conduit interface and HTTPS support.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/http-conduit>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.mtl)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.aeson)
             (hsPkgs.temporary)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

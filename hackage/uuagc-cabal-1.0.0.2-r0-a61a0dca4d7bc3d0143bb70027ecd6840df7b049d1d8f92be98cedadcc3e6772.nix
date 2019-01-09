@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "uuagc-cabal";
-        version = "1.0.0.2";
-      };
+      identifier = { name = "uuagc-cabal"; version = "1.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Universiteit Utrecht";
       maintainer = "Arie Middelkoop <ariem@cs.uu.nl>";
@@ -22,7 +13,7 @@
       synopsis = "Cabal plugin for the Universiteit Utrecht Attribute Grammar System";
       description = "Cabal plugin for UUAGC";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.uulib)
           (hsPkgs.filepath)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

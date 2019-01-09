@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hommage";
-        version = "0.0.6";
-      };
+      identifier = { name = "hommage"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Offline Music Manipulation And Generation EDSL";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.random)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

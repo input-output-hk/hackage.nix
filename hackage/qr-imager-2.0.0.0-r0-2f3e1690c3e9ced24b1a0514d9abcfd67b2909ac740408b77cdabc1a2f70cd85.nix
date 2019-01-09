@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "qr-imager";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "qr-imager"; version = "2.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016-2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library to generate images.";
       description = "Library for generating images containing QR codes, from bytestrings and objects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,19 +29,13 @@
           (hsPkgs.haskell-qrencode)
           (hsPkgs.process)
           (hsPkgs.split)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.libqrencode)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.libqrencode) ];
+        };
       tests = {
         "test-lib" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.qr-imager)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.qr-imager) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

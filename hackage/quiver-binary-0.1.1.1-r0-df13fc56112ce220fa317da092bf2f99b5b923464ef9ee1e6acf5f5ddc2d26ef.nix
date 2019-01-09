@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "quiver-binary";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "quiver-binary"; version = "0.1.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Binary serialisation support for Quivers";
       description = "Handling for the binary library within Quivers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.quiver)
           (hsPkgs.quiver-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

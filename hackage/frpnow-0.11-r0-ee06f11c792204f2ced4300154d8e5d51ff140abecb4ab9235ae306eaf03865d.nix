@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "frpnow";
-        version = "0.11";
-      };
+      identifier = { name = "frpnow"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "atzeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Principled practical FRP";
       description = "FRP with first-class behaviors and interalized IO, without space leaks";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

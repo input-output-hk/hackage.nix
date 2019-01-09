@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      tools = false;
-      network-uri = true;
-    };
+    flags = { tools = false; network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "uri-encode";
-        version = "1.5.0.5";
-      };
+      identifier = { name = "uri-encode"; version = "1.5.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -25,7 +13,7 @@
       synopsis = "Unicode aware uri-encoding.";
       description = "Unicode aware uri-encoding.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,31 +21,31 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.utf8-string)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       exes = {
         "uri-encode" = {
-          depends = pkgs.lib.optionals (flags.tools) ([
+          depends = (pkgs.lib).optionals (flags.tools) ([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.utf8-string)
-          ] ++ (if flags.network-uri
+            ] ++ (if flags.network-uri
             then [ (hsPkgs.network-uri) ]
             else [ (hsPkgs.network) ]));
-        };
+          };
         "uri-decode" = {
-          depends = pkgs.lib.optionals (flags.tools) ([
+          depends = (pkgs.lib).optionals (flags.tools) ([
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.utf8-string)
-          ] ++ (if flags.network-uri
+            ] ++ (if flags.network-uri
             then [ (hsPkgs.network-uri) ]
             else [ (hsPkgs.network) ]));
+          };
         };
       };
-    };
-  }
+    }

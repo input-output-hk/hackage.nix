@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "doctest";
-        version = "0.14.0";
-      };
+      identifier = { name = "doctest"; version = "0.14.0"; };
       license = "MIT";
       copyright = "(c) 2009-2017 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "Test interactive Haskell examples";
       description = "The doctest program checks examples in source code comments.  It is modeled\nafter doctest for Python (<http://docs.python.org/library/doctest.html>).\n\nDocumentation is at <https://github.com/sol/doctest#readme>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.process)
           (hsPkgs.syb)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "doctest" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.process)
             (hsPkgs.syb)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctests" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.process)
             (hsPkgs.syb)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.HUnit)
@@ -95,8 +86,8 @@
             (hsPkgs.syb)
             (hsPkgs.transformers)
             (hsPkgs.with-location)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

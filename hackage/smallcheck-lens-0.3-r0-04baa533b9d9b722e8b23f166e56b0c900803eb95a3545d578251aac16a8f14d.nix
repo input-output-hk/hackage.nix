@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "smallcheck-lens";
-        version = "0.3";
-      };
+      identifier = { name = "smallcheck-lens"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "j@dannynavarro.net";
@@ -22,7 +13,7 @@
       synopsis = "SmallCheck properties for lens";
       description = "@SmallCheck@ properties for @Lens@es, @Setter@s, @Traversal@s, @Iso@s and @Prism@s.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.lens)
           (hsPkgs.smallcheck)
           (hsPkgs.smallcheck-series)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.tagged);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs.tagged);
+        };
       };
-    };
-  }
+    }

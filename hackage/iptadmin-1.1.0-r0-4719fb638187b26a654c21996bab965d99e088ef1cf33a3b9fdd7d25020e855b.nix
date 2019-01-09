@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "iptadmin";
-        version = "1.1.0";
-      };
+      identifier = { name = "iptadmin"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2011 Evgeny Tarasov";
       maintainer = "etarasov.ekb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "web-interface for iptables";
       description = "web-interface for iptables with PAM authorization";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "iptadmin" = {
@@ -50,8 +41,8 @@
             (hsPkgs.network)
             (hsPkgs.hsyslog)
             (hsPkgs.hdaemonize)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

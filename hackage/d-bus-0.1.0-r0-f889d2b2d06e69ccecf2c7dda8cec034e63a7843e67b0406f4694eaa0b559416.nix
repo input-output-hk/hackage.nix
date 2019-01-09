@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "d-bus";
-        version = "0.1.0";
-      };
+      identifier = { name = "d-bus"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2013 Philipp Balzarek";
       maintainer = "p.balzarek@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Permissively licensed D-Bus client library";
       description = "This library uses modern extensions to the Haskell type system\n(including GADTs, DataKinds and TypeFamilies) and the\nsingletons library to embedd the D-Bus type system. D-Bus\nsignatures can thus be inferred.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.xml-types)
           (hsPkgs.hslogger)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "unittests" = {
           depends = [
@@ -67,15 +58,11 @@
             (hsPkgs.bytestring)
             (hsPkgs.binary)
             (hsPkgs.mtl)
-          ];
-        };
+            ];
+          };
         "integrationtest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.d-bus)
-            (hsPkgs.text)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.d-bus) (hsPkgs.text) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "clone-all";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "clone-all"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "noonsilk@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Clone all github repositories from a given user";
       description = "Clone all github repositories from a given user";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "clone-all" = {
@@ -38,8 +29,8 @@
             (hsPkgs.github)
             (hsPkgs.directory)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

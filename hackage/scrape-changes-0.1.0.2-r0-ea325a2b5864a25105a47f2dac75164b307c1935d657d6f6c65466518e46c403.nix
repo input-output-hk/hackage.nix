@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "scrape-changes";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "scrape-changes"; version = "0.1.0.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "matthias.mh.herrmann@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Scrape websites for changes";
       description = "This library scrapes websites and invokes callbacks when there are changes, similar to a RSS reader.\nSending an email by invoking sendmail is a built-in callback mechanism. Of course, users can provide\ntheir own callback function in addition.\n\nLook at \"Network.ScrapeChanges\" for a full working example on how to use \"scrape-changes\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.hslogger)
           (hsPkgs.strict)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "scrapechanges-tests" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.scrape-changes)
             (hsPkgs.text)
             (hsPkgs.shakespeare)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

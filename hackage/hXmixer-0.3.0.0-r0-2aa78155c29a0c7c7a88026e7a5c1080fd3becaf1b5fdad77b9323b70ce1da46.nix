@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hXmixer";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "hXmixer"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "colin@colinrmitchell.endoftheinternet.org";
@@ -22,7 +13,7 @@
       synopsis = "A Gtk mixer GUI application for FreeBSD";
       description = "A Gtk mixer GUI application for FreeBSD";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hxmixer" = {
@@ -33,8 +24,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

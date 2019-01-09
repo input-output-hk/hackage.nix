@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pushbullet";
-        version = "0.0.0";
-      };
+      identifier = { name = "pushbullet"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kevin Cotrone <kevincotrone@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Simple push support for pushbullet";
       description = "Pushbullet support for sending simple push notifications through pushbullet";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,15 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.bytestring)
           (hsPkgs.unordered-containers)
-        ];
-      };
-      tests = {
-        "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
           ];
         };
+      tests = { "spec" = { depends = [ (hsPkgs.base) (hsPkgs.hspec) ]; }; };
       };
-    };
-  }
+    }

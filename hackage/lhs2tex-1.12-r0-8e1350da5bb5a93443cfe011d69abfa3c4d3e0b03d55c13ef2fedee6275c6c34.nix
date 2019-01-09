@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.1.6";
-      identifier = {
-        name = "lhs2tex";
-        version = "1.12";
-      };
+      identifier = { name = "lhs2tex"; version = "1.12"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Andres Loeh <lhs2tex@andres-loeh.de>";
@@ -22,15 +13,10 @@
       synopsis = "Preprocessor for typesetting Haskell sources with LaTeX";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
-        "lhs2TeX" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.regex-compat)
-          ];
+        "lhs2TeX" = { depends = [ (hsPkgs.base) (hsPkgs.regex-compat) ]; };
         };
       };
-    };
-  }
+    }

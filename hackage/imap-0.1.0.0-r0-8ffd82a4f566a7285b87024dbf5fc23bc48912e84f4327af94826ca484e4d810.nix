@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "imap";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "imap"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michal@monad.cat";
@@ -22,7 +13,7 @@
       synopsis = "An efficient IMAP client library";
       description = "A fairly low-level, efficient, easy to use, streaming IMAP library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.data-default)
           (hsPkgs.stm-delay)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "imap-test" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

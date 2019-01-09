@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kansas-comet";
-        version = "0.2";
-      };
+      identifier = { name = "kansas-comet"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 The University of Kansas";
       maintainer = "Andrew Gill <andygill@ku.edu>";
@@ -22,7 +13,7 @@
       synopsis = "A JavaScript push mechanism based on the comet idiom";
       description = "A transport-level remote JavaScript RESTful push mechanism.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.transformers)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

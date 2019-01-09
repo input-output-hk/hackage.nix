@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "simple-conduit";
-        version = "0.2.0";
-      };
+      identifier = { name = "simple-conduit"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple streaming library based on composing monadic folds.";
       description = "@simple-conduit@ follows a similar UI to the more capable @conduit@ library, but reduces the scope of what it can solve donw to what can be expressed by chaining monadic folds that allow for early termination.  This allows for more predictable resource management behavior, at the cost of not allowing scenarios that @conduit@ is better designed.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.transformers-base)
           (hsPkgs.vector)
           (hsPkgs.void)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "bench" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.conduit-combinators)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

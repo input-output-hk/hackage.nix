@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "plot-light-examples";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "plot-light-examples"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Marco Zocca";
       maintainer = "zocca.marco gmail";
@@ -22,14 +13,9 @@
       synopsis = "Example binaries for plot-light";
       description = "Example binaries for plot-light";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.attoparsec) ]; };
       exes = {
         "scatter" = {
           depends = [
@@ -41,8 +27,8 @@
             (hsPkgs.colour)
             (hsPkgs.blaze-svg)
             (hsPkgs.scientific)
-          ];
-        };
+            ];
+          };
         "histogram" = {
           depends = [
             (hsPkgs.base)
@@ -53,8 +39,8 @@
             (hsPkgs.colour)
             (hsPkgs.blaze-svg)
             (hsPkgs.scientific)
-          ];
-        };
+            ];
+          };
         "timeseries" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +53,8 @@
             (hsPkgs.colour)
             (hsPkgs.blaze-svg)
             (hsPkgs.scientific)
-          ];
-        };
+            ];
+          };
         "heatmap" = {
           depends = [
             (hsPkgs.base)
@@ -80,8 +66,8 @@
             (hsPkgs.colour)
             (hsPkgs.blaze-svg)
             (hsPkgs.scientific)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

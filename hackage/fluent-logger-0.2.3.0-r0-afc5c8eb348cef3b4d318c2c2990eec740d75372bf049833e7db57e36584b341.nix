@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fluent-logger";
-        version = "0.2.3.0";
-      };
+      identifier = { name = "fluent-logger"; version = "0.2.3.0"; };
       license = "Apache-2.0";
       copyright = "Copyright (c) 2012, Noriyuki OHKAWA";
       maintainer = "Noriyuki OHKAWA <n.ohkawa@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A structured logger for Fluentd (Haskell)";
       description = "A structured logger for Fluentd (Haskell) <http://fluentd.org/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.random)
           (hsPkgs.vector)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "fluent-logger-spec" = {
           depends = [
@@ -59,17 +50,13 @@
             (hsPkgs.cereal-conduit)
             (hsPkgs.exceptions)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "fluent-logger-benchmark" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.fluent-logger)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.fluent-logger) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hamlet";
-        version = "0.0.2";
-      };
+      identifier = { name = "hamlet"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haml-like template files that are compile-time checked";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,17 +21,17 @@
           (hsPkgs.web-encodings)
           (hsPkgs.text)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

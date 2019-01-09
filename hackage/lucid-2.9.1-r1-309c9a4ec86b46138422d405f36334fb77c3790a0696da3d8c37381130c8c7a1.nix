@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lucid";
-        version = "2.9.1";
-      };
+      identifier = { name = "lucid"; version = "2.9.1"; };
       license = "BSD-3-Clause";
       copyright = "2014 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Clear to write, read and edit DSL for HTML";
       description = "Clear to write, read and edit DSL for HTML. See the 'Lucid' module\nfor description and documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.bifunctors)
             (hsPkgs.text)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.text)
             (hsPkgs.bytestring)
             (hsPkgs.lucid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

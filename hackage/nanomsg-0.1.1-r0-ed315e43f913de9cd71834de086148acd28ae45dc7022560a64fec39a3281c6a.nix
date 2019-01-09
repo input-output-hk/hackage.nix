@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "nanomsg";
-        version = "0.1.1";
-      };
+      identifier = { name = "nanomsg"; version = "0.1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Lemmih <lemmih@gmail.com>";
@@ -22,14 +13,11 @@
       synopsis = "nanomsg - scalability protocols library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = [ (pkgs."nanomsg") ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "test-sandbox-compose";
-        version = "0.1.2";
-      };
+      identifier = { name = "test-sandbox-compose"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lightweight development enviroments using test-sandbox";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.unix)
           (hsPkgs.shelly)
           (hsPkgs.http-conduit)
-        ];
-      };
+          ];
+        };
       exes = {
         "test-sandbox-compose" = {
           depends = [
@@ -75,9 +66,9 @@
             (hsPkgs.unix)
             (hsPkgs.shelly)
             (hsPkgs.http-conduit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -91,8 +82,8 @@
             (hsPkgs.cabal-test-bin)
             (hsPkgs.test-sandbox)
             (hsPkgs.hspec-test-sandbox)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

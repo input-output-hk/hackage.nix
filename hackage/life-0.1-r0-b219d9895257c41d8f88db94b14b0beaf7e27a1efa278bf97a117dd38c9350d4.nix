@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "life";
-        version = "0.1";
-      };
+      identifier = { name = "life"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Chuck Adams";
       maintainer = "Chuck Adams <cja987@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Conway's Life cellular automaton";
       description = "Conway's life as an OpenGL example. Special thanks to\nWill Donnelly for his pure-functional Brians Brain code\nthat got this started (cabal unpack brians-brain).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "life" = {
@@ -32,8 +23,8 @@
             (hsPkgs.GLUT)
             (hsPkgs.random)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

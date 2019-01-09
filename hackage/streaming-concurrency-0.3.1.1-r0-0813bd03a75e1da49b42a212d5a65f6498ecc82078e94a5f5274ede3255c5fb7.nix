@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "streaming-concurrency";
-        version = "0.3.1.1";
-      };
+      identifier = { name = "streaming-concurrency"; version = "0.3.1.1"; };
       license = "MIT";
       copyright = "Ivan Lazar Miljenovic";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Concurrency support for the streaming ecosystem";
       description = "There are two primary higher-level use-cases for this library:\n\n1. Merge multiple @Stream@s together.\n\n2. A conceptual @Stream@-based equivalent to @parMap@ (albeit\nutilising concurrency rather than true parallelism).\n\nHowever, low-level functions are also exposed so you can construct\nyour own methods of concurrently using @Stream@s (and there are also\nnon-@Stream@-specific functions if you wish to use it with other data\ntypes).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.streaming)
           (hsPkgs.streaming-with)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "merging" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.streaming)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "mapping" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.monad-control)
             (hsPkgs.streaming)
             (hsPkgs.testbench)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

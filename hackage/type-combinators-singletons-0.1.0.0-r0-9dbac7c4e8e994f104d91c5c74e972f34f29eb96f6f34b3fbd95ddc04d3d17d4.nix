@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "type-combinators-singletons";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "(c) Justin Le 2017";
       maintainer = "justin@jle.im";
@@ -22,14 +16,14 @@
       synopsis = "Interop between /type-combinators/ and /singletons/.";
       description = "Conversions between datatypes in /type-combinators/ and\nsingletons from /singletons/.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.type-combinators)
           (hsPkgs.singletons)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

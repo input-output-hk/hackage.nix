@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "snap-configuration-utilities";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Anchor Engineering <engineering@anchor.com.au>";
@@ -22,7 +16,7 @@
       synopsis = "Methods to manipulate Configurator objects for Snap & Snaplets";
       description = "Methods to manipulate Configurator objects for Snap & Snaplets";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +24,7 @@
           (hsPkgs.configurator)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

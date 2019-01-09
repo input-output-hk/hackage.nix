@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      servant-spec = false;
-    };
+    flags = { servant-spec = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ocaml-export";
-        version = "0.9.0.0";
-      };
+      identifier = { name = "ocaml-export"; version = "0.9.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Plow Technologies";
       maintainer = "james.haver@plowtech.net";
@@ -24,7 +13,7 @@
       synopsis = "Convert Haskell types in OCaml types";
       description = "Use GHC.Generics and Typeable to convert Haskell types to OCaml types. Convert aeson serialization to ocaml.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +38,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -75,8 +64,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

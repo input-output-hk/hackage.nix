@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "intel-aes";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "intel-aes"; version = "0.2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011 Intel Corporation";
       maintainer = "Ryan Newton <rrnewton@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hardware accelerated AES encryption and Random Number Generation.";
       description = "AES encryption with optional hardware acceleration.  Plus,\nstatistically sound, splittable random number generation based on AES.\nThis package is nothing more than a wrapper around the Intel-provided\nAESNI sample library which also includes a portable software\nimplementation of AES by Brian Gladman.  It contains C,\nassembly, and Haskell sources.  And it includes prebuilt dynamic\nlibraries to make the build process less fragile.\n(Rebuilding requires the @yasm@ assembler.)  But prebuilt shared\nlibraries are not included for all platforms yet.  (Volunteers\nneeded!)\nFinally, note that this package is currently triggering some haddock\nproblems. A manually built copy of the documentation can be found\nat:\n<http://cs.indiana.edu/~rrnewton/intel-aes-doc/>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.largeword)
           (hsPkgs.rdtsc)
           (hsPkgs.unix)
-        ];
+          ];
         libs = [ (pkgs."intel_aes") ];
+        };
       };
-    };
-  }
+    }

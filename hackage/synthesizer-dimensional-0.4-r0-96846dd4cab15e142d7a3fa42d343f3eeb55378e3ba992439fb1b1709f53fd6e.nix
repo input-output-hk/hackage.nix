@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      optimizeadvanced = true;
-      buildexamples = false;
-    };
+    flags = { optimizeadvanced = true; buildexamples = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "synthesizer-dimensional";
-        version = "0.4";
-      };
+      identifier = { name = "synthesizer-dimensional"; version = "0.4"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -25,7 +13,7 @@
       synopsis = "Audio signal processing with static physical dimensions";
       description = "High-level functions that use physical units and\nabstract from the sample rate in statically type safe way.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,12 +32,8 @@
           (hsPkgs.random)
           (hsPkgs.old-time)
           (hsPkgs.process)
-        ];
+          ];
+        };
+      exes = { "rain" = {}; "demonstration" = {}; "traumzauberbaum" = {}; };
       };
-      exes = {
-        "rain" = {};
-        "demonstration" = {};
-        "traumzauberbaum" = {};
-      };
-    };
-  }
+    }

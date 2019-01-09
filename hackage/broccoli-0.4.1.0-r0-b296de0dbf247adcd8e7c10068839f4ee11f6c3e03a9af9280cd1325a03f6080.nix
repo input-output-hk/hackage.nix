@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "broccoli";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "broccoli"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "evanrinehart@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Small library for interactive functional programs.";
       description = "Small library for interactive functional programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.time)
           (hsPkgs.containers)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

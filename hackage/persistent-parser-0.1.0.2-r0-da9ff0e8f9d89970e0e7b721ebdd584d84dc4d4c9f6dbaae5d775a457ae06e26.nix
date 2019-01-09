@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "persistent-parser";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "persistent-parser"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mchaver@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Parse persistent model files";
       description = "Parse persistent model files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.attoparsec) (hsPkgs.text) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.hspec)
             (hsPkgs.persistent-parser)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

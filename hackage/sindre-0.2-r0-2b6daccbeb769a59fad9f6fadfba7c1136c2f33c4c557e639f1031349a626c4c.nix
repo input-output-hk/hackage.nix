@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sindre";
-        version = "0.2";
-      };
+      identifier = { name = "sindre"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "athas@sigkill.dk";
@@ -22,7 +13,7 @@
       synopsis = "A programming language for simple GUIs";
       description = "Sindre is a language inspired by Awk, meant for creating very simple\ngraphical user interfaces.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,11 +35,9 @@
           (hsPkgs.attoparsec-text)
           (hsPkgs.permute)
           (hsPkgs.utf8-string)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.xft)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.xft) ];
+        };
       exes = {
         "sindre" = {
           depends = [
@@ -70,11 +59,9 @@
             (hsPkgs.attoparsec-text)
             (hsPkgs.permute)
             (hsPkgs.utf8-string)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.xft)
-          ];
+            ];
+          pkgconfig = [ (pkgconfPkgs.xft) ];
+          };
         };
       };
-    };
-  }
+    }

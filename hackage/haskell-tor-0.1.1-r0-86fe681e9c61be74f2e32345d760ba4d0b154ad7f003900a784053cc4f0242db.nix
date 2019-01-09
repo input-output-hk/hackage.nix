@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network = true;
-      hans = true;
-    };
+    flags = { network = true; hans = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-tor";
-        version = "0.1.1";
-      };
+      identifier = { name = "haskell-tor"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "awick@galois.com";
@@ -25,7 +13,7 @@
       synopsis = "A Haskell Tor Node";
       description = "An implementation of the Tor anonymity system in Haskell.\nThe core functionality is exported both as an application\nand as a high-level library exported by the 'Tor' module.\nPlease see that module for common usage scenarios, and\ndip only into the other files for advanced / unplanned\ncases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -51,8 +39,8 @@
           (hsPkgs.tls)
           (hsPkgs.x509)
           (hsPkgs.x509-store)
-        ] ++ pkgs.lib.optional (flags.network && !system.isHalvm) (hsPkgs.network)) ++ pkgs.lib.optional (flags.hans) (hsPkgs.hans);
-      };
+          ] ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs.network)) ++ (pkgs.lib).optional (flags.hans) (hsPkgs.hans);
+        };
       exes = {
         "haskell-tor" = {
           depends = (([
@@ -68,12 +56,12 @@
             (hsPkgs.time)
             (hsPkgs.tls)
             (hsPkgs.x509)
-          ] ++ pkgs.lib.optional (flags.hans) (hsPkgs.hans)) ++ pkgs.lib.optional (flags.network && !system.isHalvm) (hsPkgs.network)) ++ pkgs.lib.optionals (system.isHalvm) [
+            ] ++ (pkgs.lib).optional (flags.hans) (hsPkgs.hans)) ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs.network)) ++ (pkgs.lib).optionals (system.isHalvm) [
             (hsPkgs.HALVMCore)
             (hsPkgs.XenDevice)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-tor" = {
           depends = [
@@ -93,8 +81,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.time)
             (hsPkgs.x509)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

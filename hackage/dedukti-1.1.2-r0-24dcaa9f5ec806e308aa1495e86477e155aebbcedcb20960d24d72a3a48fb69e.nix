@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "dedukti";
-        version = "1.1.2";
-      };
+      identifier = { name = "dedukti"; version = "1.1.2"; };
       license = "LicenseRef-GPL";
       copyright = "© 2009 CNRS - École Polytechnique - INRIA";
       maintainer = "Mathieu Boespflug <mboes@lix.polytechnique.fr>";
@@ -22,14 +13,9 @@
       synopsis = "A type-checker for the λΠ-modulo calculus.";
       description = "Dedukti is a proof checker for the λΠ-modulo calculus, a\ndependently typed λ-calculus with the addition of typed rewrite\nrules, capable of expressing proofs in Deduction Modulo [1].\n\n[1] G. Dowek, Th. Hardin, C. Kirchner, Theorem proving modulo,\n/Journal of Automated Reasoning/, 31, 2003, pp. 33-72.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.time)
-          (hsPkgs.unix)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.time) (hsPkgs.unix) ]; };
       exes = {
         "dedukti" = {
           depends = [
@@ -47,16 +33,16 @@
             (hsPkgs.Stream)
             (hsPkgs.hmk)
             (hsPkgs.stringtable-atom)
-          ];
-        };
+            ];
+          };
         "dedukti-tests" = {
-          depends = pkgs.lib.optionals (!(!flags.test)) [
+          depends = (pkgs.lib).optionals (!(!flags.test)) [
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pureMD5";
-        version = "2.1.0.2";
-      };
+      identifier = { name = "pureMD5"; version = "2.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas DuBuisson";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell-only implementation of the MD5 digest (hash) algorithm.";
       description = "A Haskell-only implementation of the MD5 digest (hash) algorithm.  This now supports\nthe crypto-api class interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,18 +23,18 @@
           (hsPkgs.cereal)
           (hsPkgs.crypto-api)
           (hsPkgs.tagged)
-        ];
-      };
+          ];
+        };
       exes = {
         "md5Test" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.crypto-api)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

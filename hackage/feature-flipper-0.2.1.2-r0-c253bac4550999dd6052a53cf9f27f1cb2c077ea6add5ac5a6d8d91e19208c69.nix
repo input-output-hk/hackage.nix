@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "feature-flipper";
-        version = "0.2.1.2";
-      };
+      identifier = { name = "feature-flipper"; version = "0.2.1.2"; };
       license = "MIT";
       copyright = "2017 Todd Mohney";
       maintainer = "toddmohney@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A minimally obtrusive feature flag library";
       description = "A minimally obtrusive feature flag library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.digest)
           (hsPkgs.mtl)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "feature-flipper-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.text)
             (hsPkgs.feature-flipper)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

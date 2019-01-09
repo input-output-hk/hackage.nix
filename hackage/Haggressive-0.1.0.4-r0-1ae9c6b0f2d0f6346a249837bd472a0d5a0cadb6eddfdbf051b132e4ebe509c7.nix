@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Haggressive";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "Haggressive"; version = "0.1.0.4"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "volker.strobel87@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Aggression analysis for Tweets on Twitter";
       description = "Aggression analysis for Tweets on Twitter";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.directory)
           (hsPkgs.tokenize)
           (hsPkgs.PSQueue)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.vector)
             (hsPkgs.Cabal)
             (hsPkgs.tuple)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

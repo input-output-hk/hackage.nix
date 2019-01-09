@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      support_bytestring = true;
-      support_deepseq = true;
-    };
+    flags = { support_bytestring = true; support_deepseq = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "memory";
-        version = "0.8";
-      };
+      identifier = { name = "memory"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -25,14 +13,14 @@
       synopsis = "memory and related abstraction stuff";
       description = "Chunk of memory, polymorphic byte array management and manipulation\n\n* A polymorphic byte array abstraction and function similar to strict ByteString.\n\n* Different type of byte array abstraction.\n\n* Raw memory IO operations (memory set, memory copy, ..)\n\n* Aliasing with endianness support.\n\n* Encoding : Base16, Base32, Base64.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
-        ] ++ pkgs.lib.optional (flags.support_bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (flags.support_deepseq) (hsPkgs.deepseq);
-      };
+          ] ++ (pkgs.lib).optional (flags.support_bytestring) (hsPkgs.bytestring)) ++ (pkgs.lib).optional (flags.support_deepseq) (hsPkgs.deepseq);
+        };
       tests = {
         "test-memory" = {
           depends = [
@@ -41,8 +29,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.memory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

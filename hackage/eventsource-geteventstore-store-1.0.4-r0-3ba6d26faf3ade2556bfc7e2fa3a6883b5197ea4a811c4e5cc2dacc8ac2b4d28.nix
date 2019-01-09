@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "eventsource-geteventstore-store";
         version = "1.0.4";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yo.eight@gmail.comm";
@@ -22,7 +16,7 @@
       synopsis = "GetEventStore store implementation.";
       description = "GetEventStore store implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +26,8 @@
           (hsPkgs.eventsource-api)
           (hsPkgs.aeson)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "geteventstore-store-test-suite" = {
           depends = [
@@ -45,8 +39,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.protolude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

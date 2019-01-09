@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi-misc-modes";
-        version = "0.18.0";
-      };
+      identifier = { name = "yi-misc-modes"; version = "0.18.0"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Yi developers <yi-devel@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "Yi editor miscellaneous modes";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,10 +27,8 @@
           (hsPkgs.yi-core)
           (hsPkgs.yi-language)
           (hsPkgs.yi-rope)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       };
-    };
-  }
+    }

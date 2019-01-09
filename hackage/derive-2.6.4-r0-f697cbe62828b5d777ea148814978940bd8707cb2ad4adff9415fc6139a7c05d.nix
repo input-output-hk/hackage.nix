@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "derive";
-        version = "2.6.4";
-      };
+      identifier = { name = "derive"; version = "2.6.4"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2006-2017";
       maintainer = "None";
@@ -22,7 +13,7 @@
       synopsis = "A program and library to derive instances for data types";
       description = "Data.Derive is a library and a tool for deriving instances for Haskell programs.\nIt is designed to work with custom derivations, SYB and Template Haskell mechanisms.\nThe tool requires GHC, but the generated code is portable to all compilers.\nWe see this tool as a competitor to DrIFT.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,15 +29,8 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.transformers)
           (hsPkgs.uniplate)
-        ];
-      };
-      exes = {
-        "derive" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.derive)
           ];
         };
+      exes = { "derive" = { depends = [ (hsPkgs.base) (hsPkgs.derive) ]; }; };
       };
-    };
-  }
+    }

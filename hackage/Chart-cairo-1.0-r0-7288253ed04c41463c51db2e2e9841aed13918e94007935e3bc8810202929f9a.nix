@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Chart-cairo";
-        version = "1.0";
-      };
+      identifier = { name = "Chart-cairo"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "Tim Docker, 2006-2010";
       maintainer = "Tim Docker <tim@dockerz.net>";
@@ -22,7 +13,7 @@
       synopsis = "Cairo backend for Charts.";
       description = "Cairo backend for Charts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.data-default-class)
           (hsPkgs.operational)
           (hsPkgs.Chart)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

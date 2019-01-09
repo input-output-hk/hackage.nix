@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { build-tests = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "module-management";
-        version = "0.10";
-      };
+      identifier = { name = "module-management"; version = "0.10"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Clean up module imports, split and merge modules";
       description = "Clean up module imports, split and merge modules.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.syb)
           (hsPkgs.system-fileio)
           (hsPkgs.temporary)
-        ];
-      };
+          ];
+        };
       exes = {
         "hmm" = {
           depends = [
@@ -64,10 +55,10 @@
             (hsPkgs.set-extra)
             (hsPkgs.syb)
             (hsPkgs.temporary)
-          ];
-        };
+            ];
+          };
         "tests" = {
-          depends = pkgs.lib.optionals (flags.build-tests) [
+          depends = (pkgs.lib).optionals (flags.build-tests) [
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -91,8 +82,8 @@
             (hsPkgs.syb)
             (hsPkgs.system-fileio)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

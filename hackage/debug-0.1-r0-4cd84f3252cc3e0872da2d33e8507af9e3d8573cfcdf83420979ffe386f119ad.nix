@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "debug";
-        version = "0.1";
-      };
+      identifier = { name = "debug"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2017-2018";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Simple trace-based debugger";
       description = "An easy to use debugger for viewing function calls and intermediate variables.\nTo use, annotate the function under test, run the code, and view the generated web page.\nFull usage instructions are at \"Debug\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.prettyprinter)
           (hsPkgs.prettyprinter-compat-ansi-wl-pprint)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "debug-pp" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "debug-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.filepath)
             (hsPkgs.text)
             (hsPkgs.debug)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

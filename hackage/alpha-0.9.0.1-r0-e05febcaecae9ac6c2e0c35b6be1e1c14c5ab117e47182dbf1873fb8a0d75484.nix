@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "alpha";
-        version = "0.9.0.1";
-      };
+      identifier = { name = "alpha"; version = "0.9.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "marc.coiffier@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A compiler for the Alpha language";
       description = "Alpha is a programming language that aims at being very simple and\nlow-level, so as to be efficient, while at the same time\nbeing able to climb in abstraction through introspection\nin the Lisp Way.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "alpha" = {
@@ -39,8 +30,8 @@
             (hsPkgs.filepath)
             (hsPkgs.cereal)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

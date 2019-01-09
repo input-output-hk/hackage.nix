@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "digestive-functors-snap";
-        version = "0.0.2.1";
-      };
+      identifier = { name = "digestive-functors-snap"; version = "0.0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jaspervdj@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Snap backend for the digestive-functors library";
       description = "This is a snap backend for the digestive-functors library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.snap-core)
           (hsPkgs.bytestring)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

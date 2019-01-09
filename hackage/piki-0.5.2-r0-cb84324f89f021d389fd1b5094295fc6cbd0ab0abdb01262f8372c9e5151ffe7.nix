@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "piki";
-        version = "0.5.2";
-      };
+      identifier = { name = "piki"; version = "0.5.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Yet another text-to-html converter";
       description = "\"piki\" is a script to convert a simple text file\nto an HTML file.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "piki" = {
@@ -31,8 +22,8 @@
             (hsPkgs.parsec)
             (hsPkgs.text)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

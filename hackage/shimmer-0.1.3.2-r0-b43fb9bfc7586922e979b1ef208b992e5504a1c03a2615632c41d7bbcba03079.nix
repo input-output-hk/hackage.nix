@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "shimmer";
-        version = "0.1.3.2";
-      };
+      identifier = { name = "shimmer"; version = "0.1.3.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "The Reflective Lambda Machine";
       description = "The Reflective Lambda Machine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.filepath)
           (hsPkgs.haskeline)
-        ];
-      };
+          ];
+        };
       exes = {
         "shimmer" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
             (hsPkgs.haskeline)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

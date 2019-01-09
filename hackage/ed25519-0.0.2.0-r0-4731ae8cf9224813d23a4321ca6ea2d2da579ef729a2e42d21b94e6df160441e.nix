@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-properties = true;
-      test-hlint = true;
-    };
+    flags = { test-properties = true; test-hlint = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ed25519";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "ed25519"; version = "0.0.2.0"; };
       license = "MIT";
       copyright = "Copyright (c) Austin Seipp 2013";
       maintainer = "Austin Seipp <aseipp@pobox.com>";
@@ -25,30 +13,25 @@
       synopsis = "ed25519 cryptographic signatures";
       description = "This package provides a simple, portable implementation of the\ned25519 public-key signature system. It also includes support for\ndetached signatures.\n\nThe underlying implementation uses the @ref10@ implementation of\ned25519 from SUPERCOP, and should be relatively fast.\n\nFor more information (including how to get a copy of the software)\nvisit <http://ed25519.cr.yp.to>.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
       tests = {
         "properties" = {
-          depends = pkgs.lib.optionals (!(!flags.test-properties)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-properties)) [
             (hsPkgs.base)
             (hsPkgs.ed25519)
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench1" = {
           depends = [
@@ -57,8 +40,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.ed25519)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

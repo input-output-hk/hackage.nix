@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       builddemo = false;
       buildrasterdemo = false;
       buildvplaydemo = false;
       buildtranscodedemo = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ffmpeg-light";
-        version = "0.12.1.0";
-      };
+      identifier = { name = "ffmpeg-light"; version = "0.12.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2018 Anthony Cowley";
       maintainer = "acowley@gmail.com";
@@ -27,7 +18,7 @@
       synopsis = "Minimal bindings to the FFmpeg library.";
       description = "Stream frames from an encoded video, or stream frames to\na video output file. To read the first frame from\nan @h264@-encoded file into a JuicyPixels\n@Maybe DynamicImage@,\n\n> import Codec.FFmpeg\n> import Codec.Picture\n> import Control.Applicative\n>\n> go :: IO (Maybe DynamicImage)\n> go = do (getFrame, cleanup) <- imageReader \"myVideo.mov\"\n>         (fmap ImageRGB8 <\$> getFrame) <* cleanup\n\nTested with FFmpeg 3.1 - 3.4.2";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,18 +30,16 @@
           (hsPkgs.mtl)
           (hsPkgs.JuicyPixels)
           (hsPkgs.bytestring)
-        ];
+          ];
         pkgconfig = [
           (pkgconfPkgs.libavutil)
           (pkgconfPkgs.libavformat)
           (pkgconfPkgs.libavcodec)
           (pkgconfPkgs.libswscale)
           (pkgconfPkgs.libavdevice)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       exes = {
         "demo" = {
           depends = [
@@ -59,11 +48,11 @@
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.JuicyPixels)
-          ] ++ pkgs.lib.optionals (flags.builddemo) [
+            ] ++ (pkgs.lib).optionals (flags.builddemo) [
             (hsPkgs.ffmpeg-light)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "raster" = {
           depends = [
             (hsPkgs.base)
@@ -71,11 +60,11 @@
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.JuicyPixels)
-          ] ++ pkgs.lib.optionals (flags.buildrasterdemo) [
+            ] ++ (pkgs.lib).optionals (flags.buildrasterdemo) [
             (hsPkgs.ffmpeg-light)
             (hsPkgs.Rasterific)
-          ];
-        };
+            ];
+          };
         "vplay" = {
           depends = [
             (hsPkgs.base)
@@ -84,17 +73,17 @@
             (hsPkgs.text)
             (hsPkgs.monad-loops)
             (hsPkgs.bytestring)
-          ] ++ pkgs.lib.optionals (flags.buildvplaydemo) [
+            ] ++ (pkgs.lib).optionals (flags.buildvplaydemo) [
             (hsPkgs.ffmpeg-light)
             (hsPkgs.sdl2)
-          ];
-        };
+            ];
+          };
         "transcode" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.JuicyPixels)
-          ] ++ pkgs.lib.optional (flags.buildtranscodedemo) (hsPkgs.ffmpeg-light);
+            ] ++ (pkgs.lib).optional (flags.buildtranscodedemo) (hsPkgs.ffmpeg-light);
+          };
         };
       };
-    };
-  }
+    }

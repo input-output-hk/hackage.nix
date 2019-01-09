@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      interrupt = true;
-      server = true;
-      cclazy = true;
-    };
+    flags = { interrupt = true; server = true; cclazy = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gf";
-        version = "3.2.9";
-      };
+      identifier = { name = "gf"; version = "3.2.9"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "";
@@ -26,7 +13,7 @@
       synopsis = "Grammatical Framework";
       description = "GF, Grammatical Framework, is a programming language for multilingual grammar applications";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +25,8 @@
           (hsPkgs.random)
           (hsPkgs.pretty)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "gf" = {
           depends = ([
@@ -56,19 +43,19 @@
             (hsPkgs.pretty)
             (hsPkgs.mtl)
             (hsPkgs.haskeline)
-          ] ++ pkgs.lib.optionals (flags.server) [
+            ] ++ (pkgs.lib).optionals (flags.server) [
             (hsPkgs.httpd-shed)
             (hsPkgs.network)
             (hsPkgs.silently)
             (hsPkgs.utf8-string)
-          ]) ++ (if system.isWindows
+            ]) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
-          ];
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
         };
       };
-    };
-  }
+    }

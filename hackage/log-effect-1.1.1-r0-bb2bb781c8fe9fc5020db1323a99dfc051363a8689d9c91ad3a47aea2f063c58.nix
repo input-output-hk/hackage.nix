@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "log-effect";
-        version = "1.1.1";
-      };
+      identifier = { name = "log-effect"; version = "1.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Lana Black <lanablack@amok.cc>";
@@ -22,7 +13,7 @@
       synopsis = "An extensible log effect using extensible-effects";
       description = "Introduce two logging effects to your extensible effects arsenal";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.text)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

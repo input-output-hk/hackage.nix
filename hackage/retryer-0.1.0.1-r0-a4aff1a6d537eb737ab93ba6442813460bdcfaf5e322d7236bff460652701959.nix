@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "retryer";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "retryer"; version = "0.1.0.1"; };
       license = "MPL-2.0";
       copyright = "";
       maintainer = "dgonyeo@csh.rit.edu";
@@ -22,7 +13,7 @@
       synopsis = "Retry failed commands";
       description = "Takes a command and keeps rerunning it until it returns\nsuccessfully. Has flags to limit number of retries and\nsleep between retires.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "retryer" = {
@@ -30,8 +21,8 @@
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

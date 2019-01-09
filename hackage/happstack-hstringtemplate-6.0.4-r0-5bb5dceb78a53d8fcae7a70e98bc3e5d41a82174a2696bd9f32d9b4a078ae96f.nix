@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-hstringtemplate";
-        version = "6.0.4";
-      };
+      identifier = { name = "happstack-hstringtemplate"; version = "6.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Happstack team <happs@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "Support for using HStringTemplate in Happstack";
       description = "Happstack is a web application framework. HStringTemplate is a templating solution.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.hslogger)
           (hsPkgs.HStringTemplate)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

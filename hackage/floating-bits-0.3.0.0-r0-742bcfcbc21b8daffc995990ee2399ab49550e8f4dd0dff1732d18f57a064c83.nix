@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "floating-bits";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "floating-bits"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Anselm Jonas Scholl";
       maintainer = "anselm.scholl@tu-harburg.de";
@@ -22,27 +13,16 @@
       synopsis = "Conversions between floating and integral values.";
       description = "A small library to cast floating point values to integral values and back preserving the bit-pattern.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-      };
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.floating-bits)
-          ];
+        "test" = { depends = [ (hsPkgs.base) (hsPkgs.floating-bits) ]; };
         };
-      };
       benchmarks = {
         "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.floating-bits)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.floating-bits) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

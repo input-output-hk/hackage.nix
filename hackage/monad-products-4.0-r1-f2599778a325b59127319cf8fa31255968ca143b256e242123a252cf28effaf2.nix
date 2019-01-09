@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "monad-products";
-        version = "4.0";
-      };
+      identifier = { name = "monad-products"; version = "4.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Haskell 98 monad products";
       description = "Haskell 98 monad products";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.semigroupoids)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.semigroupoids) ]; };
+      };
+    }

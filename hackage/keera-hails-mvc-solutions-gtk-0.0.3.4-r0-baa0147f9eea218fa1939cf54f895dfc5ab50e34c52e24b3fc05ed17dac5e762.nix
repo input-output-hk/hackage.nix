@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "keera-hails-mvc-solutions-gtk";
         version = "0.0.3.4";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.es";
@@ -22,7 +16,7 @@
       synopsis = "Haskell on Gtk rails - Common solutions to recurrent problems in Gtk applications";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +34,7 @@
           (hsPkgs.keera-hails-mvc-model-protectedmodel)
           (hsPkgs.keera-hails-reactivevalues)
           (hsPkgs.MissingK)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

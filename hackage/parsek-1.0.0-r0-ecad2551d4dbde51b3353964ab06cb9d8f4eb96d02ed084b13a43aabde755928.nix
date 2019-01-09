@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "parsek";
-        version = "1.0.0";
-      };
+      identifier = { name = "parsek"; version = "1.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jeanphilippe.bernardy@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Parallel Parsing Processes";
       description = "Koen Claessen's PPP, Modified.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

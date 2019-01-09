@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gemstone";
-        version = "0.1";
-      };
+      identifier = { name = "gemstone"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "cds@corbinsimpson.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple library for SDL+GL games.";
       description = "Gemstone helps you build games.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.linear)
           (hsPkgs.stb-image)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

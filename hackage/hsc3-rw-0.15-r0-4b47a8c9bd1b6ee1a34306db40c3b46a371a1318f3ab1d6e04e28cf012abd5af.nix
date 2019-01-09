@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3-rw";
-        version = "0.15";
-      };
+      identifier = { name = "hsc3-rw"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape and others, 2013-2014";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "hsc3 re-writing";
       description = "hsc3 re-writing";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.syb)
           (hsPkgs.transformers)
           (hsPkgs.haskell-src-exts)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

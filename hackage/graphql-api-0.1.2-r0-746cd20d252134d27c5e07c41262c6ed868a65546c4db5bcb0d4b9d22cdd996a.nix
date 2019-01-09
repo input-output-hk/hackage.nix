@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "graphql-api";
-        version = "0.1.2";
-      };
+      identifier = { name = "graphql-api"; version = "0.1.2"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Jonathan M. Lange <jml@mumak.net>";
@@ -22,7 +13,7 @@
       synopsis = "Sketch of GraphQL stuff";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.scientific)
           (hsPkgs.QuickCheck)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "graphql-api-doctests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.transformers)
             (hsPkgs.attoparsec)
             (hsPkgs.doctest)
-          ];
-        };
+            ];
+          };
         "graphql-api-tests" = {
           depends = [
             (hsPkgs.base)
@@ -65,9 +56,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -78,8 +69,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.criterion)
             (hsPkgs.graphql-api)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

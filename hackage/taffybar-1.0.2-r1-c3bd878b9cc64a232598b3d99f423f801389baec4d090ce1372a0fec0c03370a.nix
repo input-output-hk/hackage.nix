@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "taffybar";
-        version = "1.0.2";
-      };
+      identifier = { name = "taffybar"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tristan@nochair.net";
@@ -22,7 +13,7 @@
       synopsis = "A desktop bar similar to xmobar, but with more GUI";
       description = "Taffybar is a gtk+3 (through gtk2hs) based desktop information bar, intended\nprimarily for use with XMonad, though it can also function alongside other EWMH\ncompliant window managers. It is similar in spirit to xmobar, but it differs in\nthat it gives up some simplicity for a reasonable helping of eye candy.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -72,24 +63,14 @@
           (hsPkgs.xml-helpers)
           (hsPkgs.xmonad)
           (hsPkgs.xmonad-contrib)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.gtk+-3.0)
-        ];
-      };
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+        };
       exes = {
         "taffybar" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.taffybar)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.gtk+-3.0)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.taffybar) ];
+          pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+          };
         };
       };
-    };
-  }
+    }

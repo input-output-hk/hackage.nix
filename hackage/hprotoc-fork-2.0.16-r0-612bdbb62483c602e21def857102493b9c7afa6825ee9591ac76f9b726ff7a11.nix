@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hprotoc-fork";
-        version = "2.0.16";
-      };
+      identifier = { name = "hprotoc-fork"; version = "2.0.16"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2012 Christopher Edward Kuklewicz";
       maintainer = "Stefan Wehr <wehr@cp-med.com>";
@@ -22,7 +13,7 @@
       synopsis = "Parse Google Protocol Buffer specifications";
       description = "Parse language defined at <http://code.google.com/apis/protocolbuffers/docs/proto.html> and general haskell code to implement messages. This is a fork of the hprotoc library at http://hackage.haskell.org/package/hprotoc";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,11 +29,9 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.utf8-string)
-        ] ++ [ (hsPkgs.base) ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       exes = {
         "hprotoc" = {
           depends = [
@@ -58,11 +47,9 @@
             (hsPkgs.mtl)
             (hsPkgs.parsec)
             (hsPkgs.utf8-string)
-          ] ++ [ (hsPkgs.base) ];
-          build-tools = [
-            (hsPkgs.buildPackages.alex)
-          ];
+            ] ++ [ (hsPkgs.base) ];
+          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          };
         };
       };
-    };
-  }
+    }

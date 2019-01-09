@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      buildexamples = false;
-    };
+    flags = { splitbase = true; buildexamples = false; };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "synthesizer-midi";
-        version = "0.6.1.1";
-      };
+      identifier = { name = "synthesizer-midi"; version = "0.6.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -25,7 +13,7 @@
       synopsis = "Render audio signals from MIDI files or realtime messages";
       description = "This package allows to read MIDI events\nand to convert them to audio and control signals.\nIncluded is a basic synthesizer that renders MIDI to WAV\n(or other audio signal formats supported by SoX).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,11 +34,11 @@
           (hsPkgs.transformers)
           (hsPkgs.semigroups)
           (hsPkgs.utility-ht)
-        ] ++ [ (hsPkgs.base) ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        };
       exes = {
         "render-midi" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.synthesizer-midi)
             (hsPkgs.synthesizer-core)
             (hsPkgs.sox)
@@ -61,9 +49,9 @@
             (hsPkgs.non-negative)
             (hsPkgs.transformers)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -75,8 +63,8 @@
             (hsPkgs.event-list)
             (hsPkgs.transformers)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod";
-        version = "1.1.4.1";
-      };
+      identifier = { name = "yesod"; version = "1.1.4.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "A RESTful web framework with strong compile-time guarantees of correctness. It also affords space efficient code, highly concurrent loads, and portability to many deployment backends (via the wai package), from CGI to stand-alone serving.\n\nYesod also focuses on developer productivity. Yesod integrates well with tools for all your basic web development (wai, persistent, and shakespeare/hamlet)\n\nThe Yesod documentation site <http://www.yesodweb.com/> has much more information, including on the supporting packages mentioned above.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,27 +34,12 @@
           (hsPkgs.warp)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
-        ];
-      };
+          ];
+        };
       exes = {
-        "yesod-ghc-wrapper" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
-        };
-        "yesod-ld-wrapper" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
-        };
-        "yesod-ar-wrapper" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
-        };
+        "yesod-ghc-wrapper" = { depends = [ (hsPkgs.base) (hsPkgs.Cabal) ]; };
+        "yesod-ld-wrapper" = { depends = [ (hsPkgs.base) (hsPkgs.Cabal) ]; };
+        "yesod-ar-wrapper" = { depends = [ (hsPkgs.base) (hsPkgs.Cabal) ]; };
         "yesod" = {
           depends = [
             (hsPkgs.base)
@@ -105,8 +81,8 @@
             (hsPkgs.network)
             (hsPkgs.http-conduit)
             (hsPkgs.project-template)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

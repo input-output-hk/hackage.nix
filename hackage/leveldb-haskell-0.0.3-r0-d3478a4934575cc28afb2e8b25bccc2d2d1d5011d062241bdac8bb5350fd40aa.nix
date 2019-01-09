@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "leveldb-haskell";
-        version = "0.0.3";
-      };
+      identifier = { name = "leveldb-haskell"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 The leveldb-haskell Authors";
       maintainer = "kim.altintop@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Haskell bindings to LevelDB";
       description = "From <http://leveldb.googlecode.com>:\n\nLevelDB is a fast key-value storage library written at Google that provides\nan ordered mapping from string keys to string values.\n\n\nThis library provides a Haskell language binding to LeveldDB. It is in very\nearly stage and has seen very limited testing.\n\nNote: the LevelDB source code is bundled with this package and built as\npart of the installation. To enable compression, the snappy library needs to\nbe installed on the target system.";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.filepath)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.filepath) ];
         libs = [ (pkgs."stdc++") ];
+        };
       };
-    };
-  }
+    }

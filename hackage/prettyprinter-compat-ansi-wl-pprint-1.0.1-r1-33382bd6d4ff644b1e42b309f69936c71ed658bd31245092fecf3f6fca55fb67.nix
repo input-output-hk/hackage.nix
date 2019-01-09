@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "prettyprinter-compat-ansi-wl-pprint";
         version = "1.0.1";
-      };
+        };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky at google>";
@@ -22,7 +16,7 @@
       synopsis = "Drop-in compatibility package to migrate from »ansi-wl-pprint« to »prettyprinter«.";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.prettyprinter)
           (hsPkgs.prettyprinter-ansi-terminal)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

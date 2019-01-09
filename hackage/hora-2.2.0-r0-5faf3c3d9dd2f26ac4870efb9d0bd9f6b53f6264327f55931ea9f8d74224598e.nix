@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hora";
-        version = "2.2.0";
-      };
+      identifier = { name = "hora"; version = "2.2.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Imants Cekusins";
@@ -22,7 +13,7 @@
       synopsis = "date time";
       description = "convenient type, timestamp, timezone, format";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.time)
           (hsPkgs.timezone-series)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.timezone-olson)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

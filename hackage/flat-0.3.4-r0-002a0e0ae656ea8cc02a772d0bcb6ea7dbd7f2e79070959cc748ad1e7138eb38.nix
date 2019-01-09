@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "flat";
-        version = "0.3.4";
-      };
+      identifier = { name = "flat"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016-2018 Pasqualino `Titto` Assini";
       maintainer = "tittoassini@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Principled and efficient bit-oriented binary serialization.";
       description = "Principled and efficient bit-oriented binary serialization, check the <http://github.com/Quid2/flat online tutorial>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.pretty)
           (hsPkgs.containers)
           (hsPkgs.mono-traversable)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.array)
             (hsPkgs.flat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      threaded = true;
-      network-uri = true;
-    };
+    flags = { threaded = true; network-uri = true; };
     package = {
       specVersion = "1.10.2";
-      identifier = {
-        name = "leksah-server";
-        version = "0.16.2.0";
-      };
+      identifier = { name = "leksah-server"; version = "0.16.2.0"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2011 Juergen Nicklisch-Franken, Hamish Mackenzie";
       maintainer = "maintainer@leksah.org";
@@ -25,7 +13,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -55,46 +43,39 @@
           (hsPkgs.process)
           (hsPkgs.base-compat)
           (hsPkgs.aeson)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if compiler.isGhc && compiler.version.ge "8.2"
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if compiler.isGhc && (compiler.version).ge "8.2"
           then [
             (hsPkgs.haddock-api)
             (hsPkgs.haddock-library)
             (hsPkgs.ghc-boot)
-          ]
-          else if compiler.isGhc && compiler.version.ge "8.0"
+            ]
+          else if compiler.isGhc && (compiler.version).ge "8.0"
             then [
               (hsPkgs.haddock-api)
               (hsPkgs.haddock-library)
               (hsPkgs.ghc-boot)
-            ]
-            else if compiler.isGhc && compiler.version.ge "7.10"
+              ]
+            else if compiler.isGhc && (compiler.version).ge "7.10"
               then [
                 (hsPkgs.haddock-api)
                 (hsPkgs.haddock-library)
                 (hsPkgs.bin-package-db)
-              ]
-              else if compiler.isGhc && compiler.version.ge "7.8"
+                ]
+              else if compiler.isGhc && (compiler.version).ge "7.8"
                 then [ (hsPkgs.haddock-api) ]
-                else [
-                  (hsPkgs.haddock)
-                ])) ++ (if system.isWindows
+                else [ (hsPkgs.haddock) ])) ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
-          else [
-            (hsPkgs.unix)
-          ])) ++ (if flags.network-uri
-          then [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]
+          else [ (hsPkgs.unix) ])) ++ (if flags.network-uri
+          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
           else [
             (hsPkgs.network)
-          ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs.ghc);
-        libs = pkgs.lib.optionals (system.isWindows) [
+            ])) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.ghc);
+        libs = (pkgs.lib).optionals (system.isWindows) [
           (pkgs."kernel32")
           (pkgs."pango-1.0")
           (pkgs."glib-2.0")
-        ];
-      };
+          ];
+        };
       exes = {
         "leksah-server" = {
           depends = ((([
@@ -124,46 +105,39 @@
             (hsPkgs.process)
             (hsPkgs.leksah-server)
             (hsPkgs.base-compat)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if compiler.isGhc && compiler.version.ge "8.2"
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if compiler.isGhc && (compiler.version).ge "8.2"
             then [
               (hsPkgs.haddock-api)
               (hsPkgs.haddock-library)
               (hsPkgs.ghc-boot)
-            ]
-            else if compiler.isGhc && compiler.version.ge "8.0"
+              ]
+            else if compiler.isGhc && (compiler.version).ge "8.0"
               then [
                 (hsPkgs.haddock-api)
                 (hsPkgs.haddock-library)
                 (hsPkgs.ghc-boot)
-              ]
-              else if compiler.isGhc && compiler.version.ge "7.10"
+                ]
+              else if compiler.isGhc && (compiler.version).ge "7.10"
                 then [
                   (hsPkgs.haddock-api)
                   (hsPkgs.haddock-library)
                   (hsPkgs.bin-package-db)
-                ]
-                else if compiler.isGhc && compiler.version.ge "7.8"
+                  ]
+                else if compiler.isGhc && (compiler.version).ge "7.8"
                   then [ (hsPkgs.haddock-api) ]
-                  else [
-                    (hsPkgs.haddock)
-                  ])) ++ (if system.isWindows
+                  else [ (hsPkgs.haddock) ])) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
-            else [
-              (hsPkgs.unix)
-            ])) ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
+            else [ (hsPkgs.unix) ])) ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
             else [
               (hsPkgs.network)
-            ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs.ghc);
-          libs = pkgs.lib.optionals (system.isWindows) [
+              ])) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.ghc);
+          libs = (pkgs.lib).optionals (system.isWindows) [
             (pkgs."kernel32")
             (pkgs."pango-1.0")
             (pkgs."glib-2.0")
-          ];
-        };
+            ];
+          };
         "leksahecho" = {
           depends = [
             (hsPkgs.base)
@@ -178,12 +152,10 @@
             (hsPkgs.text)
             (hsPkgs.process)
             (hsPkgs.leksah-server)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
+        "leksahtrue" = { depends = [ (hsPkgs.base) ]; };
         };
-        "leksahtrue" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
       tests = {
         "test-tool" = {
           depends = [
@@ -199,8 +171,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs.doctest);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.doctest);
+          };
         };
       };
-    };
-  }
+    }

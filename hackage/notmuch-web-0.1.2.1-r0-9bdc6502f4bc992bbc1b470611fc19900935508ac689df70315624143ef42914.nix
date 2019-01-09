@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      library-only = false;
-      no-icu = false;
-    };
+    flags = { dev = false; library-only = false; no-icu = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "notmuch-web";
-        version = "0.1.2.1";
-      };
+      identifier = { name = "notmuch-web"; version = "0.1.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "John Lenz <lenz@math.uic.edu>";
@@ -26,7 +13,7 @@
       synopsis = "A web interface to the notmuch email indexer";
       description = "An email client for the notmuch email indexer (<http://notmuchmail.org>),\nbuilt using Yesod.  This project implements a web server and uses bootstrap\nand jquery for the UI.  The client is fully functional, with searching, viewing,\nand composing email messages.  See\n<https://bitbucket.org/wuzzeb/notmuch-web/src/tip/ChangeLog> for recent changes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.no-icu
@@ -75,7 +62,7 @@
             (hsPkgs.yesod)
             (hsPkgs.yesod-auth)
             (hsPkgs.yesod-static)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.aeson)
@@ -122,8 +109,8 @@
             (hsPkgs.yesod)
             (hsPkgs.yesod-auth)
             (hsPkgs.yesod-static)
-          ];
-      };
+            ];
+        };
       exes = {
         "notmuch-web" = {
           depends = [
@@ -132,9 +119,9 @@
             (hsPkgs.pwstore-fast)
             (hsPkgs.text)
             (hsPkgs.yesod)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -147,8 +134,8 @@
             (hsPkgs.yesod)
             (hsPkgs.yesod-test)
             (hsPkgs.yesod-core)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

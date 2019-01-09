@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blubber";
-        version = "0.0.1";
-      };
+      identifier = { name = "blubber"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "(c) plaimi 2015";
       maintainer = "blubber@plaimi.net";
@@ -22,7 +13,7 @@
       synopsis = "The blubber client; connects to the blubber\nserver.";
       description = "The blubber client. blubber is an arcade game in\nwhich the player tries to build the biggest blub\nby blubberping the other blubs before they\nblubber the player's blub.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "blubber" = {
@@ -35,8 +26,8 @@
             (hsPkgs.gloss)
             (hsPkgs.network)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

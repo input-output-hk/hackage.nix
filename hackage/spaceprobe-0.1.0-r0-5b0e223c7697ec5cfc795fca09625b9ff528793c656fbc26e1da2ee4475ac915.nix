@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "spaceprobe";
-        version = "0.1.0";
-      };
+      identifier = { name = "spaceprobe"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sean Burton <burton.seanr@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Optimization over arbitrary search spaces";
       description = "A parameter optimization library, designed for optimizing over\narbitrary search spaces. It is particularly well suited for discontinuous\nand/or high-dimensional search spaces.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.clock)
           (hsPkgs.erf)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -44,17 +35,13 @@
             (hsPkgs.erf)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.spaceprobe)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.spaceprobe) ];
+          };
         };
       };
-    };
-  }
+    }

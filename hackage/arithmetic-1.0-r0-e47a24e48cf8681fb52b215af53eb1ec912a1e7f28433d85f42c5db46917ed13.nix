@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "arithmetic";
-        version = "1.0";
-      };
+      identifier = { name = "arithmetic"; version = "1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Leslie-Hurd <joe@gilith.com>";
@@ -22,7 +13,7 @@
       synopsis = "Natural number arithmetic";
       description = "This package implements a library of natural number arithmetic functions,\nincluding Montgomery multiplication.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.opentheory)
           (hsPkgs.opentheory-bits)
           (hsPkgs.opentheory-divides)
-        ];
-      };
+          ];
+        };
       exes = {
         "arithmetic" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.opentheory)
             (hsPkgs.opentheory-bits)
             (hsPkgs.opentheory-divides)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "arithmetic-test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.opentheory)
             (hsPkgs.opentheory-bits)
             (hsPkgs.opentheory-divides)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

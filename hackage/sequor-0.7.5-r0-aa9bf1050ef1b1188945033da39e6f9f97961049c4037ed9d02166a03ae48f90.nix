@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "sequor";
-        version = "0.7.5";
-      };
+      identifier = { name = "sequor"; version = "0.7.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "grzegorz.chrupala@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A sequence labeler based on Collins's sequence perceptron.";
       description = "A sequence labeler based on Collins's sequence perceptron.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.split)
           (hsPkgs.nlp-scores)
-        ];
-      };
+          ];
+        };
       exes = {
         "sequor" = {
           depends = [
@@ -53,15 +44,11 @@
             (hsPkgs.text)
             (hsPkgs.split)
             (hsPkgs.nlp-scores)
-          ];
-        };
+            ];
+          };
         "augment" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.text)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.text) ];
+          };
         };
       };
-    };
-  }
+    }

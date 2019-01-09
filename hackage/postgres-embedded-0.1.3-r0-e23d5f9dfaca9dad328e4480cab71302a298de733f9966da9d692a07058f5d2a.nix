@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgres-embedded";
-        version = "0.1.3";
-      };
+      identifier = { name = "postgres-embedded"; version = "0.1.3"; };
       license = "MIT";
       copyright = "2017 Ilya Murzinov";
       maintainer = "murz42@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Library for easily running embedded PostgreSQL server for tests";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,16 @@
           (hsPkgs.filepath)
           (hsPkgs.shell-conduit)
           (hsPkgs.network)
-        ];
-      };
+          ];
+        };
       tests = {
         "postgres-embedded-test" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.postgres-embedded)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

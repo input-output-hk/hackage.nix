@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "traypoweroff";
-        version = "0.9.0";
-      };
+      identifier = { name = "traypoweroff"; version = "0.9.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "zhen.sydow@gmail.com";
@@ -22,16 +13,12 @@
       synopsis = "Tray Icon application to PowerOff / Reboot computer";
       description = "PowerOff Tray Icon";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "traypoweroff" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.gtk)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.gtk) (hsPkgs.process) ];
+          };
         };
       };
-    };
-  }
+    }

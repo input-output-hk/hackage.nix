@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "obj";
-        version = "0.1";
-      };
+      identifier = { name = "obj"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas Davie (tom.davie@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Reads and writes obj models.";
       description = "Reads and writes obj models.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.Codec-Image-DevIL)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

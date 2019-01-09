@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      explicittext = true;
-    };
+    flags = { explicittext = true; };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hydrogen-prelude";
-        version = "0.19";
-      };
+      identifier = { name = "hydrogen-prelude"; version = "0.19"; };
       license = "MIT";
       copyright = "";
       maintainer = "julian@scravy.de";
@@ -24,7 +13,7 @@
       synopsis = "Hydrogen Prelude";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +35,7 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.uuid)
-        ] ++ pkgs.lib.optional (flags.explicittext) (hsPkgs.text);
+          ] ++ (pkgs.lib).optional (flags.explicittext) (hsPkgs.text);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rematch-text";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "rematch-text"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "tcrayford@googlemail.com";
@@ -22,15 +13,11 @@
       synopsis = "`rematch` matchers for Data.Text";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.rematch)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.rematch) (hsPkgs.text) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.text)
             (hsPkgs.rematch)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

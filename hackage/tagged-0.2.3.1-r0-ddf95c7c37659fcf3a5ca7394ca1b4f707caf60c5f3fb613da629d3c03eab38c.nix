@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      derivedatatypeable = true;
-    };
+    flags = { derivedatatypeable = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tagged";
-        version = "0.2.3.1";
-      };
+      identifier = { name = "tagged"; version = "0.2.3.1"; };
       license = "BSD-3-Clause";
       copyright = "2009-2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -24,14 +13,10 @@
       synopsis = "Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments";
       description = "Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-default)
-          (hsPkgs.semigroups)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.data-default) (hsPkgs.semigroups) ];
+        };
       };
-    };
-  }
+    }

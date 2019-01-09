@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { production = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rfc-psql";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "rfc-psql"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "smokejumperit+rfc@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The PostgreSQL extensions from the Robert Fischer Commons.";
       description = "Provides best-of-breed support for PostgreSQL, currently based on @postgresql-typed@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.rfc-env)
           (hsPkgs.rfc-prelude)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

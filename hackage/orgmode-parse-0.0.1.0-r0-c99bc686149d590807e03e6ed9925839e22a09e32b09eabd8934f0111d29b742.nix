@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "orgmode-parse";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "orgmode-parse"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Parnell Springmeyer <parnell@digitalmentat.com>";
@@ -22,7 +13,7 @@
       synopsis = "A parser and writer for org-mode flavored documents.";
       description = "`orgmode-parse` is a parsing and writing library for the org-mode flavor\nof document markup.\n\nThis library parses the human-readable and textual representation\ninto an AST that can be used for output to another format (HTML?\nMarkdown?), binary serialized for storage, etc...";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.free)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

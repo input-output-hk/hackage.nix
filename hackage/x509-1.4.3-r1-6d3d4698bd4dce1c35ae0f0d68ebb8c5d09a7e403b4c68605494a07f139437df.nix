@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "x509";
-        version = "1.4.3";
-      };
+      identifier = { name = "x509"; version = "1.4.3"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "X509 reader and writer";
       description = "X509 reader and writer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.filepath)
           (hsPkgs.process)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-x509" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.x509)
             (hsPkgs.time)
             (hsPkgs.crypto-pubkey-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pia-forward";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "pia-forward"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "Copyright 2015 Echo Nolan";
       maintainer = "echo@echonolan.net";
@@ -22,7 +13,7 @@
       synopsis = "Set up port forwarding with the Private Internet Access\nVPN service.";
       description = "Sets up and maintains a forwarded port.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pia-forward" = {
@@ -42,8 +33,8 @@
             (hsPkgs.text-format)
             (hsPkgs.time)
             (hsPkgs.xdg-basedir)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

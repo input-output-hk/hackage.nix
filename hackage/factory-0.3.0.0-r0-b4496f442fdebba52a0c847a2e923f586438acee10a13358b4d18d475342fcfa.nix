@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm = false;
-      threaded = true;
-    };
+    flags = { llvm = false; threaded = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "factory";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "factory"; version = "0.3.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "(C) 2011-2015 Dr. Alistair Ward";
       maintainer = "mailto:factory@functionalley.eu";
@@ -25,7 +13,7 @@
       synopsis = "Rational arithmetic in an irrational world.";
       description = "A library of number-theory functions, for; factorials, square-roots, Pi and primes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +26,8 @@
           (hsPkgs.primes)
           (hsPkgs.random)
           (hsPkgs.toolshed)
-        ];
-      };
+          ];
+        };
       exes = {
         "factory" = {
           depends = [
@@ -52,9 +40,9 @@
             (hsPkgs.factory)
             (hsPkgs.random)
             (hsPkgs.toolshed)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -68,8 +56,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
             (hsPkgs.toolshed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

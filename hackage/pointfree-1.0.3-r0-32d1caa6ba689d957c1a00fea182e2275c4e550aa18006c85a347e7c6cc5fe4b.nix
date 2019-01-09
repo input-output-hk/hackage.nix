@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "pointfree";
-        version = "1.0.3";
-      };
+      identifier = { name = "pointfree"; version = "1.0.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Pointfree refactoring tool";
       description = "Stand-alone command-line version of the point-less plugin for lambdabot.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pointfree" = {
@@ -32,8 +23,8 @@
             (hsPkgs.mtl)
             (hsPkgs.containers)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

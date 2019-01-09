@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mbox";
-        version = "0.1";
-      };
+      identifier = { name = "mbox"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "gershomb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Read and write standard mailbox files.";
       description = "Read and write standard mailbox (mboxrd) files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.safe)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

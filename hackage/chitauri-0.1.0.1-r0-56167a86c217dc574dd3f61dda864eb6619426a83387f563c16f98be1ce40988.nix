@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chitauri";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "chitauri"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Marcus Buffett";
       maintainer = "marcusbuffett@me.com";
@@ -22,7 +13,7 @@
       synopsis = "Helper for the Major System";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "chitauri" = {
@@ -35,16 +26,11 @@
             (hsPkgs.parsec)
             (hsPkgs.generic-trie)
             (hsPkgs.either-unwrap)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "chitauri-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.chitauri)
-          ];
+        "chitauri-test" = { depends = [ (hsPkgs.base) (hsPkgs.chitauri) ]; };
         };
       };
-    };
-  }
+    }

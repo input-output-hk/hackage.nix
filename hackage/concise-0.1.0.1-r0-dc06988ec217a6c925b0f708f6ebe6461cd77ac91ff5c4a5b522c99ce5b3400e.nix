@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "concise";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "concise"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016  Fraser Tweedale";
       maintainer = "frase@frase.id.au";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for Control.Lens.Cons";
       description = "concise provides a handful of functions to extend what you can\ndo with Control.Lens.Cons.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.lens)
           (hsPkgs.text)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

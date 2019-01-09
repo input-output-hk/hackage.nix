@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "stackage-to-hackage";
-        version = "1.0.2";
-      };
+      identifier = { name = "stackage-to-hackage"; version = "1.0.2"; };
       license = "GPL-3.0-or-later";
       copyright = "2018 Tseen She";
       maintainer = "Tseen She";
@@ -22,7 +13,7 @@
       synopsis = "Convert stack.yaml to cabal.project + cabal.project.freeze";
       description = "This is a small tool to create a cabal.project and cabal.project.freeze file\nfor an existing Haskell application that has its build plan defined for\nthe stack build tool.\nThe following convenience script invokes stackage-to-hackage and hpack\ntogether [stack2cabal](https://gitlab.com/tseenshe/stackage-to-hackage/blob/master/stack2cabal).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "stackage-to-hackage" = {
@@ -41,8 +32,8 @@
             (hsPkgs.network-uri)
             (hsPkgs.semigroupoids)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

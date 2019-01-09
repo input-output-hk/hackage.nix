@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hdbi-sqlite";
-        version = "1.3.0";
-      };
+      identifier = { name = "hdbi-sqlite"; version = "1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Aleksey Uymanov <s9gf4ult@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "SQlite driver for HDBI";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hdbi-tests)
             (hsPkgs.test-framework)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

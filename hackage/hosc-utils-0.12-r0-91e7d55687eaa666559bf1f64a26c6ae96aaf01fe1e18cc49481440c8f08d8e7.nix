@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hosc-utils";
-        version = "0.12";
-      };
+      identifier = { name = "hosc-utils"; version = "0.12"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Stefan Kersten and others, 2006-2012";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Open Sound Control Utilities";
       description = "hosc-utils";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hosc-utils-benchmark" = {
@@ -32,9 +23,9 @@
             (hsPkgs.hosc)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hosc-utils-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

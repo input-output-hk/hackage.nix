@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       developer = false;
@@ -13,13 +7,10 @@
       with-fix42 = true;
       with-fix43 = false;
       with-fix44 = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fixhs";
-        version = "0.1.2";
-      };
+      identifier = { name = "fixhs"; version = "0.1.2"; };
       license = "LGPL-2.1-only";
       copyright = "";
       maintainer = "Arvin Moezzi";
@@ -29,7 +20,7 @@
       synopsis = "FIX (co)parser";
       description = "Financial Information eXchange (FIX) protocol (co)parser";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.parallel)
           (hsPkgs.text)
           (hsPkgs.dlist)
-        ];
-      };
+          ];
+        };
       exes = {
         "fix-generator" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.text)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

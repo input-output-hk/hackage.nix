@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-client-tls";
-        version = "0.3.4";
-      };
+      identifier = { name = "http-client-tls"; version = "0.3.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "http-client backend using the connection package and tls library";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <https://www.stackage.org/package/http-client-tls>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.network-uri)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.criterion)
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

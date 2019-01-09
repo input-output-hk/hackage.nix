@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bytestring";
-        version = "0.9.0.1";
-      };
+      identifier = { name = "bytestring"; version = "0.9.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Don Stewart 2005-2007,\n(c) Duncan Coutts 2006-2007,\n(c) David Roundy 2003-2005.";
       maintainer = "dons@cse.unsw.edu.au, duncan@haskell.org";
@@ -22,15 +13,12 @@
       synopsis = "Fast, packed, strict and lazy byte arrays with a list interface";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.split-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.array)
-          ]
+          then [ (hsPkgs.base) (hsPkgs.array) ]
           else [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

@@ -1,23 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dynamic = true;
-      vty = true;
-      gtk = true;
-      cocoa = false;
-    };
+    flags = { dynamic = true; vty = true; gtk = true; cocoa = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "yi";
-        version = "0.3";
-      };
+      identifier = { name = "yi"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -27,7 +13,7 @@
       synopsis = "The Haskell-Scriptable Editor";
       description = "Yi is a text editor written and extensible in Haskell. The goal of Yi is\nto provide a flexible, powerful, and correct editor core which is dynamically\nscriptable in Haskell.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "yi" = {
@@ -48,15 +34,13 @@
             (hsPkgs.regex-base)
             (hsPkgs.regex-compat)
             (hsPkgs.regex-posix)
-          ] ++ pkgs.lib.optional (flags.dynamic) (hsPkgs.ghc)) ++ pkgs.lib.optional (flags.vty) (hsPkgs.vty)) ++ pkgs.lib.optional (flags.gtk) (hsPkgs.gtk)) ++ pkgs.lib.optionals (flags.cocoa) [
+            ] ++ (pkgs.lib).optional (flags.dynamic) (hsPkgs.ghc)) ++ (pkgs.lib).optional (flags.vty) (hsPkgs.vty)) ++ (pkgs.lib).optional (flags.gtk) (hsPkgs.gtk)) ++ (pkgs.lib).optionals (flags.cocoa) [
             (hsPkgs.HOC)
             (hsPkgs.HOC-AppKit)
             (hsPkgs.HOC-Foundation)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.alex)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          };
         };
       };
-    };
-  }
+    }

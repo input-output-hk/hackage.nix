@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shake-pack";
-        version = "0.1.0";
-      };
+      identifier = { name = "shake-pack"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "luke@hoersten.org";
@@ -22,7 +13,7 @@
       synopsis = "Shake File Pack Actions";
       description = "Shake rule for tar-ing and compressing files with bzip2.\nUses bz2 C library on the system.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bzlib)
           (hsPkgs.shake)
           (hsPkgs.tar)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

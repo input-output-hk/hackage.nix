@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "ldapply";
-        version = "0.2.0";
-      };
+      identifier = { name = "ldapply"; version = "0.2.0"; };
       license = "MIT";
       copyright = "2017, Zalora South East Asia Pte. Ltd";
       maintainer = "Igor Pashev <pashev.igor@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "LDIF idempotent apply tool";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ldapply" = {
@@ -34,8 +25,8 @@
             (hsPkgs.LDAP)
             (hsPkgs.ldif)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

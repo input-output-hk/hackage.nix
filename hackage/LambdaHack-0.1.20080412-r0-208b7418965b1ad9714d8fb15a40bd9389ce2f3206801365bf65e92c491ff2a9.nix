@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      curses = false;
-      gtk = true;
-    };
+    flags = { curses = false; gtk = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "LambdaHack";
-        version = "0.1.20080412";
-      };
+      identifier = { name = "LambdaHack"; version = "0.1.20080412"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Andres Loeh <mail@andres-loeh.de>";
@@ -25,7 +13,7 @@
       synopsis = "a small roguelike game";
       description = "a small roguelike game";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "LambdaHack" = {
@@ -38,13 +26,11 @@
             (hsPkgs.bytestring)
             (hsPkgs.directory)
             (hsPkgs.mtl)
-          ] ++ (if flags.curses
+            ] ++ (if flags.curses
             then [ (hsPkgs.hscurses) ]
-            else if flags.gtk
-              then [ (hsPkgs.gtk) ]
-              else [ (hsPkgs.vty) ]);
-          libs = pkgs.lib.optional (flags.curses) (pkgs."curses");
+            else if flags.gtk then [ (hsPkgs.gtk) ] else [ (hsPkgs.vty) ]);
+          libs = (pkgs.lib).optional (flags.curses) (pkgs."curses");
+          };
         };
       };
-    };
-  }
+    }

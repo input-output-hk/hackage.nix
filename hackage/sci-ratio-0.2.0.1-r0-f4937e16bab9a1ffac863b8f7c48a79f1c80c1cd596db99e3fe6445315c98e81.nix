@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sci-ratio";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "sci-ratio"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "(c) 2014 Phil Ruffwind";
       maintainer = "rf@rufflewind.com";
@@ -22,21 +13,9 @@
       synopsis = "Rational numbers in scientific notation.";
       description = "Parsing and pretty-printing of exact rational numbers with arbitrarily large\nexponents.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hashable)
-        ];
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.hashable) ]; };
+      tests = { "main" = { depends = [ (hsPkgs.base) (hsPkgs.sci-ratio) ]; }; };
       };
-      tests = {
-        "main" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.sci-ratio)
-          ];
-        };
-      };
-    };
-  }
+    }

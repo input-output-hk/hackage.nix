@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "testrunner";
-        version = "0.9";
-      };
+      identifier = { name = "testrunner"; version = "0.9"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Reinier Lamers <tux_rocker@reinier.de>";
@@ -22,7 +13,7 @@
       synopsis = "Easy unit test driver framework";
       description = "testrunner is a framework to run unit tests. It has the\nfollowing distinguishing features:\n* It can run unit tests in parallel.\n* It can run QuickCheck and HUnit tests as well as simple\nboolean expressions.\n* It comes with a ready-made main function for your unit test\nexecutable.\n* This main function recognizes command-line arguments to select\ntests by name and replay QuickCheck tests.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.base)
           (hsPkgs.regex-compat)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

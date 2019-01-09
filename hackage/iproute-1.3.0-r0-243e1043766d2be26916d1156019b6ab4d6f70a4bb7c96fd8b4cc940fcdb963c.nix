@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "iproute";
-        version = "1.3.0";
-      };
+      identifier = { name = "iproute"; version = "1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "IP Routing Table";
       description = "IP Routing Table is a tree of IP ranges\nto search one of them on the longest\nmatch base. It is a kind of TRIE with one\nway branching removed. Both IPv4 and IPv6\nare supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,15 +22,10 @@
           (hsPkgs.byteorder)
           (hsPkgs.containers)
           (hsPkgs.network)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1" && (compiler.isGhc && compiler.version.lt "7.6.1")) (hsPkgs.ghc-prim);
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2.1" && (compiler.isGhc && (compiler.version).lt "7.6.1")) (hsPkgs.ghc-prim);
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -50,8 +36,8 @@
             (hsPkgs.containers)
             (hsPkgs.network)
             (hsPkgs.safe)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

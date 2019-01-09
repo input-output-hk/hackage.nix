@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspear";
-        version = "0.12";
-      };
+      identifier = { name = "hspear"; version = "0.12"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2012";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Spear Parser";
       description = "Parser for the analysis files produced by the\nSpear frequency partial tracker.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.split)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

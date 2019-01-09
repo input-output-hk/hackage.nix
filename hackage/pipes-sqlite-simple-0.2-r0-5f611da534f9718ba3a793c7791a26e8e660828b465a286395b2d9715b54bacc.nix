@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-sqlite-simple";
-        version = "0.2";
-      };
+      identifier = { name = "pipes-sqlite-simple"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nkpart@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Functions that smash Pipes and sqlite-simple together";
       description = "Functions that smash Pipes and sqlite-simple together";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.pipes)
           (hsPkgs.sqlite-simple)
           (hsPkgs.pipes-safe)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

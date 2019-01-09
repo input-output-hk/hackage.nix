@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "WebCont";
-        version = "0.0.0";
-      };
+      identifier = { name = "WebCont"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "amsay@amsay.net";
@@ -22,7 +13,7 @@
       synopsis = "Continuation based web programming for Happstack";
       description = "WebCont allows continuation based web programming to be integrated with Happstack, allowing\nstep based interfaces along with traditional handlers. It is based on <http://gist.github.com/260052>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.xhtml)
           (hsPkgs.applicative-extras)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

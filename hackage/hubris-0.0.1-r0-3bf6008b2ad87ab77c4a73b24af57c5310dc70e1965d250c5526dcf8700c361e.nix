@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hubris";
-        version = "0.0.1";
-      };
+      identifier = { name = "hubris"; version = "0.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Mark Wotton <mwotton@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Support library for Hubris, the Ruby <=> Haskell bridge";
       description = "Support library for Hubris, the Ruby <=> Haskell bridge";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,9 +29,9 @@
           (hsPkgs.ghc-paths)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.hint)
-        ];
+          ];
         libs = [ (pkgs."ruby") ];
-      };
+        };
       exes = {
         "Hubrify" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.haskell-src-meta)
             (hsPkgs.hint)
-          ];
+            ];
           libs = [ (pkgs."ruby") ];
+          };
         };
       };
-    };
-  }
+    }

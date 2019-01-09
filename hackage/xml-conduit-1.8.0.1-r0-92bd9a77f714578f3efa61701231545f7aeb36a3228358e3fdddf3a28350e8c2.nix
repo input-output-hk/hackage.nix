@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xml-conduit";
-        version = "1.8.0.1";
-      };
+      identifier = { name = "xml-conduit"; version = "1.8.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Pure-Haskell utilities for dealing with XML with the conduit package.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/xml-conduit>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.blaze-markup)
           (hsPkgs.blaze-html)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -57,14 +48,9 @@
             (hsPkgs.conduit)
             (hsPkgs.blaze-markup)
             (hsPkgs.resourcet)
-          ];
-        };
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

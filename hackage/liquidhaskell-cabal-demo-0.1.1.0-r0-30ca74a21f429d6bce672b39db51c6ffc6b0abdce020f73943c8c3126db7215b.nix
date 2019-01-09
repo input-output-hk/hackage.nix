@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      liquidhaskell = false;
-    };
+    flags = { liquidhaskell = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "liquidhaskell-cabal-demo";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "liquidhaskell-cabal-demo"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Michael Smith";
       maintainer = "Michael Smith <michael@spinda.net>";
@@ -24,21 +13,11 @@
       synopsis = "Demo of Liquid Haskell integration for Cabal and stack";
       description = "Please see the\n<https://github.com/spinda/liquidhaskell-cabal-demo/blob/0.1.1.0/README.md README>\non GitHub for more information.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.liquidhaskell-cabal)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.liquidhaskell-cabal) ]; };
       exes = {
-        "ffi" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.liquidhaskell-cabal)
-          ];
+        "ffi" = { depends = [ (hsPkgs.base) (hsPkgs.liquidhaskell-cabal) ]; };
         };
       };
-    };
-  }
+    }

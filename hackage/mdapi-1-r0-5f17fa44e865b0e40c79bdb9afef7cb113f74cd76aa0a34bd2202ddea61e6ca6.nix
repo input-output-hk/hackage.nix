@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mdapi";
-        version = "1";
-      };
+      identifier = { name = "mdapi"; version = "1"; };
       license = "BSD-2-Clause";
       copyright = "(c) 2015 Red Hat, Inc.";
       maintainer = "relrod@redhat.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell interface to Fedora's mdapi";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.wreq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

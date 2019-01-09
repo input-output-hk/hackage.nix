@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "multi-cabal";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "multi-cabal"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "aka.bash0r@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A tool supporting multi cabal project builds.";
       description = "A tool supporting multi cabal project builds.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.aeson)
           (hsPkgs.filepath)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "multi-cabal" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.strict)
             (hsPkgs.AAI)
             (hsPkgs.multi-cabal)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "multi-cabal-tests" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.multi-cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

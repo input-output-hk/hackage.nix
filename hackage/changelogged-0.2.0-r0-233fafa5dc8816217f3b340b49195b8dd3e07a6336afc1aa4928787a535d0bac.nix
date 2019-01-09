@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "changelogged";
-        version = "0.2.0";
-      };
+      identifier = { name = "changelogged"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017-2018, GetShop.TV";
       maintainer = "Vitalii Guzeev <vitaliy@getshoptv.com>";
@@ -22,7 +13,7 @@
       synopsis = "Changelog manager for Git projects.";
       description = "Please see the README on Github at <https://github.com/GetShopTV/changelogged#readme>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "changelogged" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.changelogged)
             (hsPkgs.turtle)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctests" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.doctest)
             (hsPkgs.turtle)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

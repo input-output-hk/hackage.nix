@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-tools-cli";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "haskell-tools-cli"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nboldi@elte.hu";
@@ -22,7 +13,7 @@
       synopsis = "Command-line frontend for Haskell-tools Refact";
       description = "Command-line frontend for Haskell-tools Refact. Not meant as a final product, only for demonstration purposes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,16 +28,13 @@
           (hsPkgs.haskell-tools-ast)
           (hsPkgs.haskell-tools-prettyprint)
           (hsPkgs.haskell-tools-refactor)
-        ];
-      };
-      exes = {
-        "ht-refact" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell-tools-cli)
           ];
         };
-      };
+      exes = {
+        "ht-refact" = {
+          depends = [ (hsPkgs.base) (hsPkgs.haskell-tools-cli) ];
+          };
+        };
       tests = {
         "haskell-tools-cli-tests" = {
           depends = [
@@ -55,8 +43,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.haskell-tools-cli)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

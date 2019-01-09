@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "libxml-enumerator";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "libxml-enumerator"; version = "0.4.0.1"; };
       license = "MIT";
       copyright = "Copyright (c) John Millikin 2010";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Enumerator-based API for libXML's SAX interface";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.transformers)
           (hsPkgs.libxml-sax)
           (hsPkgs.xml-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

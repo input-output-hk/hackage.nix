@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "surjective";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "surjective"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "gelisam+github@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An output coverage checker";
       description = "Check that your parsers cover all the cases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.lens)
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

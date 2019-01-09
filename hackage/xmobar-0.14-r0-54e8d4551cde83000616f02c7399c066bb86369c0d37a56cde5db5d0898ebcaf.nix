@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       small_base = true;
@@ -16,13 +10,10 @@
       all_extensions = false;
       with_alsa = false;
       with_datezone = false;
-    };
+      };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "xmobar";
-        version = "0.14";
-      };
+      identifier = { name = "xmobar"; version = "0.14"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jose A. Ortega Ruiz <jao@gnu.org>";
@@ -32,7 +23,7 @@
       synopsis = "A Minimalistic Text Based Status Bar";
       description = "Xmobar is a minimalistic text based status bar.\n\nInspired by the Ion3 status bar, it supports similar\nfeatures, like dynamic color management, output templates,\nand extensibility through plugins.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "xmobar" = {
@@ -44,7 +35,7 @@
             (hsPkgs.filepath)
             (hsPkgs.stm)
             (hsPkgs.time)
-          ] ++ (if flags.small_base
+            ] ++ (if flags.small_base
             then [
               (hsPkgs.base)
               (hsPkgs.containers)
@@ -53,21 +44,21 @@
               (hsPkgs.old-locale)
               (hsPkgs.bytestring)
               (hsPkgs.directory)
-            ]
+              ]
             else [
               (hsPkgs.base)
-            ])) ++ pkgs.lib.optionals (flags.with_xft || flags.all_extensions) [
+              ])) ++ (pkgs.lib).optionals (flags.with_xft || flags.all_extensions) [
             (hsPkgs.utf8-string)
             (hsPkgs.X11-xft)
-          ]) ++ pkgs.lib.optional (flags.with_utf8 || flags.all_extensions) (hsPkgs.utf8-string)) ++ pkgs.lib.optional (flags.with_inotify || flags.all_extensions) (hsPkgs.hinotify)) ++ pkgs.lib.optional (flags.with_mpd || flags.all_extensions) (hsPkgs.libmpd)) ++ pkgs.lib.optionals (flags.with_alsa || flags.all_extensions) [
+            ]) ++ (pkgs.lib).optional (flags.with_utf8 || flags.all_extensions) (hsPkgs.utf8-string)) ++ (pkgs.lib).optional (flags.with_inotify || flags.all_extensions) (hsPkgs.hinotify)) ++ (pkgs.lib).optional (flags.with_mpd || flags.all_extensions) (hsPkgs.libmpd)) ++ (pkgs.lib).optionals (flags.with_alsa || flags.all_extensions) [
             (hsPkgs.alsa-mixer)
             (hsPkgs.alsa-core)
-          ]) ++ pkgs.lib.optionals (flags.with_datezone || flags.all_extensions) [
+            ]) ++ (pkgs.lib).optionals (flags.with_datezone || flags.all_extensions) [
             (hsPkgs.timezone-olson)
             (hsPkgs.timezone-series)
-          ];
-          libs = pkgs.lib.optional true (pkgs."Xrandr") ++ pkgs.lib.optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw");
+            ];
+          libs = (pkgs.lib).optional true (pkgs."Xrandr") ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw");
+          };
         };
       };
-    };
-  }
+    }

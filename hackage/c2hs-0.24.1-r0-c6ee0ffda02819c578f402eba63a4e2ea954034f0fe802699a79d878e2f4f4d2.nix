@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      base3 = true;
-      regression = false;
-    };
+    flags = { base3 = true; regression = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "c2hs";
-        version = "0.24.1";
-      };
+      identifier = { name = "c2hs"; version = "0.24.1"; };
       license = "GPL-2.0-only";
       copyright = "Copyright (c) 1999-2007 Manuel M T Chakravarty\n2005-2013 Duncan Coutts\n2008      Benedikt Huber";
       maintainer = "chak@cse.unsw.edu.au, duncan@community.haskell.org, ian@skybluetrades.net";
@@ -25,7 +13,7 @@
       synopsis = "C->Haskell FFI tool that gives some cross-language type safety";
       description = "C->Haskell assists in the development of Haskell bindings to C\nlibraries. It extracts interface information from C header\nfiles and generates Haskell code with foreign imports and\nmarshaling. Unlike writing foreign imports by hand (or using\nhsc2hs), this ensures that C functions are imported with the\ncorrect Haskell types.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "c2hs" = {
@@ -34,7 +22,7 @@
             (hsPkgs.language-c)
             (hsPkgs.filepath)
             (hsPkgs.dlist)
-          ] ++ (if flags.base3
+            ] ++ (if flags.base3
             then [
               (hsPkgs.base)
               (hsPkgs.process)
@@ -42,19 +30,19 @@
               (hsPkgs.array)
               (hsPkgs.containers)
               (hsPkgs.pretty)
-            ]
+              ]
             else [ (hsPkgs.base) ]);
-        };
+          };
         "regression-suite" = {
-          depends = pkgs.lib.optionals (flags.regression) [
+          depends = (pkgs.lib).optionals (flags.regression) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.shelly)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-bugs" = {
           depends = [
@@ -66,11 +54,9 @@
             (hsPkgs.shelly)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.c2hs)
-          ];
-        };
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+          };
         "test-system" = {
           depends = [
             (hsPkgs.base)
@@ -80,11 +66,9 @@
             (hsPkgs.shelly)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.c2hs)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+          };
         };
       };
-    };
-  }
+    }

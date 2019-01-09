@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "formura";
-        version = "1.0";
-      };
+      identifier = { name = "formura"; version = "1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "muranushi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Formura is a simple language to describe stencil computation.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.text)
           (hsPkgs.trifecta)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "formura-parser" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.formura)
             (hsPkgs.trifecta)
-          ];
-        };
+            ];
+          };
         "formura-eval" = {
           depends = [
             (hsPkgs.base)
@@ -57,8 +48,8 @@
             (hsPkgs.lens)
             (hsPkgs.formura)
             (hsPkgs.trifecta)
-          ];
-        };
+            ];
+          };
         "formura-gen" = {
           depends = [
             (hsPkgs.base)
@@ -68,8 +59,8 @@
             (hsPkgs.formura)
             (hsPkgs.text)
             (hsPkgs.trifecta)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

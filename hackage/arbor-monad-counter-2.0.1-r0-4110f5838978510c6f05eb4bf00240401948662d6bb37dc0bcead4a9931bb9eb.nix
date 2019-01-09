@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arbor-monad-counter";
-        version = "2.0.1";
-      };
+      identifier = { name = "arbor-monad-counter"; version = "2.0.1"; };
       license = "MIT";
       copyright = "Arbor Networks";
       maintainer = "mayhem@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/arbor/arbor-monad-counter#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.stm)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "arbor-monad-counter-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hedgehog)
             (hsPkgs.hw-hspec-hedgehog)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

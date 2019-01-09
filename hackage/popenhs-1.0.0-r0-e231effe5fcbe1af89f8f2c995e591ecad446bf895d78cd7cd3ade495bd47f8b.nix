@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "popenhs";
-        version = "1.0.0";
-      };
+      identifier = { name = "popenhs"; version = "1.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Jens-Ulrik Petersen <juhp@01.246.ne.jp>";
@@ -22,7 +13,7 @@
       synopsis = "popenhs is a popen-like library for Haskell.";
       description = "It provides a convenient way of sending string input to\na subprocess and reading output from it lazily. It requires\nthe Posix module and has been tested under ghc5 so far.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.directory)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

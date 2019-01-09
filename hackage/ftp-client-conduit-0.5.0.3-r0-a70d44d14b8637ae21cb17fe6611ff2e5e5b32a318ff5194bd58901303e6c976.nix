@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ftp-client-conduit";
-        version = "0.5.0.3";
-      };
+      identifier = { name = "ftp-client-conduit"; version = "0.5.0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "mrobinson7627@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Transfer file with FTP and FTPS with Conduit";
       description = "ftp-client is a library for communicating with an FTP server. It works over both a clear channel or TLS. ftp-client-conduit uses conduit to stream files and data in constant space.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,15 +24,12 @@
           (hsPkgs.resourcet)
           (hsPkgs.connection)
           (hsPkgs.exceptions)
-        ];
-      };
-      tests = {
-        "ftp-conduit-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ftp-client-conduit)
           ];
         };
+      tests = {
+        "ftp-conduit-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.ftp-client-conduit) ];
+          };
+        };
       };
-    };
-  }
+    }

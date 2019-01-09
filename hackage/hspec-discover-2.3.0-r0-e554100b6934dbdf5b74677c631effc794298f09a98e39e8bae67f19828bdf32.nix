@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hspec-discover";
-        version = "2.3.0";
-      };
+      identifier = { name = "hspec-discover"; version = "2.3.0"; };
       license = "MIT";
       copyright = "(c) 2012-2015 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,15 +13,11 @@
       synopsis = "Automatically discover and run Hspec tests";
       description = "Automatically discover and run Hspec tests\n\n<http://hspec.github.io/hspec-discover.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.filepath)
-          (hsPkgs.directory)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.filepath) (hsPkgs.directory) ];
+        };
       exes = {
         "hspec-discover" = {
           depends = [
@@ -38,9 +25,9 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.hspec-discover)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -49,8 +36,8 @@
             (hsPkgs.directory)
             (hsPkgs.hspec-discover)
             (hsPkgs.hspec-meta)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

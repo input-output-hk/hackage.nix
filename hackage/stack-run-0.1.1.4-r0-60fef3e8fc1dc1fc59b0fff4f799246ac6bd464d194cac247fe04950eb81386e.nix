@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack-run";
-        version = "0.1.1.4";
-      };
+      identifier = { name = "stack-run"; version = "0.1.1.4"; };
       license = "MIT";
       copyright = "Copyright (c) 2016 Pedro Tacla Yamada";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An equivalent to cabal run for stack.";
       description = "Finds the project root, compiles your code and runs the\nfirst or set default executable. It's a shorthand for\n@stack build && stack run executable@, much like\n@cabal run@.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "stack-run" = {
@@ -40,8 +31,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.time)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.vty);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.vty);
+          };
         };
       };
-    };
-  }
+    }

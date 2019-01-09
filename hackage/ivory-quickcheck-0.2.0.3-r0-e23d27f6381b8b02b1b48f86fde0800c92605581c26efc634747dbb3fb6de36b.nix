@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ivory-quickcheck";
-        version = "0.2.0.3";
-      };
+      identifier = { name = "ivory-quickcheck"; version = "0.2.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2013 Galois, Inc.";
       maintainer = "leepike@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "QuickCheck driver for Ivory.";
       description = "Warning!  This module is experimental and its implementation may change dramatically.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.ivory)
           (hsPkgs.ivory-backend-c)
           (hsPkgs.ivory-eval)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.ivory-backend-c)
             (hsPkgs.ivory-quickcheck)
             (hsPkgs.ivory-stdlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

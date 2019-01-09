@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "gi-gtk-declarative-app-simple";
         version = "0.2.0";
-      };
+        };
       license = "MPL-2.0";
       copyright = "Oskar Wickström";
       maintainer = "oskar.wickstrom@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Declarative GTK+ programming in Haskell in the style of Pux.";
       description = "Experimental application architecture in the style of\nPureScript Pux, built on top of gi-gtk-declarative. Learn\nmore in the README below.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +33,7 @@
           (hsPkgs.pipes)
           (hsPkgs.pipes-concurrency)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

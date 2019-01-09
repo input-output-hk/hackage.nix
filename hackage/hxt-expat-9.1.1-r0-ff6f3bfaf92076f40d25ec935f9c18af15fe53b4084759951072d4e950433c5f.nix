@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hxt-expat";
-        version = "9.1.1";
-      };
+      identifier = { name = "hxt-expat"; version = "9.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010 Uwe Schmidt";
       maintainer = "Uwe Schmidt <uwe@fh-wedel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Expat parser for HXT";
       description = "The Expat interface for the HXT.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.hexpat)
           (hsPkgs.hxt)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-journal";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "monad-journal"; version = "0.2.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "dimitri.sabadie@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "On-the-fly logging typeclass and monad transformer";
       description = "This package provides a typeclass for logging situations\nwhen you want to deal with the logs on-the-fly.\nIt also exports a monad transformer that enables such a\nkind of logging in any monad.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

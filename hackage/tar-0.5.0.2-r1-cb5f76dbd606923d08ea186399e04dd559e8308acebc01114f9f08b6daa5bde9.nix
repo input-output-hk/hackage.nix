@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      old-time = false;
-      old-bytestring = false;
-    };
+    flags = { old-time = false; old-bytestring = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "tar";
-        version = "0.5.0.2";
-      };
+      identifier = { name = "tar"; version = "0.5.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2007 Bjorn Bringert <bjorn@bringert.net>\n2008-2016 Duncan Coutts <duncan@community.haskell.org>";
       maintainer = "Duncan Coutts <duncan@community.haskell.org>";
@@ -25,7 +13,7 @@
       synopsis = "Reading, writing and manipulating \".tar\" archive files.";
       description = "This library is for working with \\\"@.tar@\\\" archive files. It\ncan read and write a range of common variations of archive\nformat including V7, POSIX USTAR and GNU formats.\n\nIt provides support for packing and unpacking portable\narchives. This makes it suitable for distribution but not\nbackup because details like file ownership and exact\npermissions are not preserved.\n\nIt also provides features for random access to archive\ncontent using an index.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -35,21 +23,15 @@
           (hsPkgs.array)
           (hsPkgs.containers)
           (hsPkgs.deepseq)
-        ] ++ (if flags.old-time
-          then [
-            (hsPkgs.directory)
-            (hsPkgs.old-time)
-          ]
+          ] ++ (if flags.old-time
+          then [ (hsPkgs.directory) (hsPkgs.old-time) ]
           else [
             (hsPkgs.directory)
             (hsPkgs.time)
-          ])) ++ (if flags.old-bytestring
-          then [
-            (hsPkgs.bytestring-builder)
-            (hsPkgs.bytestring)
-          ]
+            ])) ++ (if flags.old-bytestring
+          then [ (hsPkgs.bytestring-builder) (hsPkgs.bytestring) ]
           else [ (hsPkgs.bytestring) ]);
-      };
+        };
       tests = {
         "properties" = {
           depends = ([
@@ -62,22 +44,16 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ] ++ (if flags.old-time
-            then [
-              (hsPkgs.directory)
-              (hsPkgs.old-time)
-            ]
+            ] ++ (if flags.old-time
+            then [ (hsPkgs.directory) (hsPkgs.old-time) ]
             else [
               (hsPkgs.directory)
               (hsPkgs.time)
-            ])) ++ (if flags.old-bytestring
-            then [
-              (hsPkgs.bytestring-builder)
-              (hsPkgs.bytestring)
-            ]
+              ])) ++ (if flags.old-bytestring
+            then [ (hsPkgs.bytestring-builder) (hsPkgs.bytestring) ]
             else [ (hsPkgs.bytestring) ]);
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -91,8 +67,8 @@
             (hsPkgs.old-time)
             (hsPkgs.time)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "canon";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "canon"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "frederick dot schneider2011 at gmail dot com";
@@ -22,7 +13,7 @@
       synopsis = "Massive Number Arithmetic";
       description = "This library allows one to manipulate numbers of practically unlimited size by keeping them in factored \"canonical\" form.\nFor manipulating sums and differences, there is additional code to factor expressions of special forms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.polynomial)
           (hsPkgs.array)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

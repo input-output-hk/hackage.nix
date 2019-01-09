@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "temporal-csound";
-        version = "0.2.0";
-      };
+      identifier = { name = "temporal-csound"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anton.kholomiov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "brings together temporal-music-notation and csound-expression packages";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.temporal-music-notation)
           (hsPkgs.csound-expression)
           (hsPkgs.temporal-media)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "gd";
-        version = "3000.3.0";
-      };
+      identifier = { name = "gd"; version = "3000.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert";
       maintainer = "bjorn@bringert.net";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell binding to a subset of the GD graphics library";
       description = "This is a binding to a (currently very small) subset of\nthe GD graphics library.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
@@ -36,7 +27,7 @@
           (pkgs."freetype")
           (pkgs."pthread")
           (pkgs."expat")
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

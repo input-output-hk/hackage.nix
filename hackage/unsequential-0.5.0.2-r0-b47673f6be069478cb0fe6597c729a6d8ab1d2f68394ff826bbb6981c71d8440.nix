@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unsequential";
-        version = "0.5.0.2";
-      };
+      identifier = { name = "unsequential"; version = "0.5.0.2"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,15 +13,15 @@
       synopsis = "An extension removing the sequentiality from monads";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.dlist)
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "attoparsec-integration-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)
             (hsPkgs.rebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

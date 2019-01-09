@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "alarmclock";
-        version = "0.6.0.2";
-      };
+      identifier = { name = "alarmclock"; version = "0.6.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2014-2018 David Turner";
       maintainer = "dave.c.turner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wake up and perform an action at a certain time.";
       description = "Please see the README on Bitbucket at <https://bitbucket.org/davecturner/alarmclock#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.unbounded-delays)
-        ];
-      };
+          ];
+        };
       tests = {
         "alarmclock-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.stm)
             (hsPkgs.time)
             (hsPkgs.unbounded-delays)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

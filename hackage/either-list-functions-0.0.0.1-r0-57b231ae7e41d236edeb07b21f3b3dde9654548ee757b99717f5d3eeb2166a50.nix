@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "either-list-functions";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "either-list-functions"; version = "0.0.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,19 +13,17 @@
       synopsis = "Functions involving lists of Either";
       description = "Functions involving lists of Either";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.either-list-functions)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

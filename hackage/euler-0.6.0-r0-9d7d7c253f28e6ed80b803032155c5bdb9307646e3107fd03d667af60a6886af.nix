@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "euler";
-        version = "0.6.0";
-      };
+      identifier = { name = "euler"; version = "0.6.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "luis@decomputed.com";
@@ -22,51 +13,24 @@
       synopsis = "Mathematics utilities for Haskell";
       description = "Mathematics utilities and functions for Haskell, currently aimed at solving problems in Project Euler.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-      };
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
-        "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.euler)
-            (hsPkgs.hspec)
-          ];
-        };
-        "hpc" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.xml)
-          ];
-        };
+        "spec" = { depends = [ (hsPkgs.base) (hsPkgs.euler) (hsPkgs.hspec) ]; };
+        "hpc" = { depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.xml) ]; };
         "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.happy)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.hlint) ];
+          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          };
         "haddock" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.regex-posix)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.regex-posix) ];
+          };
         };
-      };
       benchmarks = {
         "criterion" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.euler)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.euler) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

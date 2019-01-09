@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      pre-bytestring-0-10-4 = true;
-    };
+    flags = { pre-bytestring-0-10-4 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cassava";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "cassava"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Johan Tibell\n(c) 2012 Bryan O'Sullivan\n(c) 2011 MailRank, Inc.";
       maintainer = "hvr@gnu.org";
@@ -24,7 +13,7 @@
       synopsis = "A CSV parsing and encoding library";
       description = "A CSV parsing and encoding library optimized for ease of use and high\nperformance.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -39,19 +28,16 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.Only)
-        ] ++ (if flags.pre-bytestring-0-10-4
-          then [
-            (hsPkgs.bytestring)
-            (hsPkgs.bytestring-builder)
-          ]
+          ] ++ (if flags.pre-bytestring-0-10-4
+          then [ (hsPkgs.bytestring) (hsPkgs.bytestring-builder) ]
           else [
             (hsPkgs.bytestring)
             (hsPkgs.text-short)
-          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
           (hsPkgs.fail)
           (hsPkgs.semigroups)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -68,11 +54,11 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
             (hsPkgs.fail)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

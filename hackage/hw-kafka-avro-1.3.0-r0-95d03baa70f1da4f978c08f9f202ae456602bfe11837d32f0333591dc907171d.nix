@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-kafka-avro";
-        version = "1.3.0";
-      };
+      identifier = { name = "hw-kafka-avro"; version = "1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Alexey Raga";
       maintainer = "alexey.raga@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Avro support for Kafka infrastructure";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "kafka-avro-example" = {
           depends = [
@@ -69,9 +60,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "kafka-avro-test" = {
           depends = [
@@ -96,8 +87,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

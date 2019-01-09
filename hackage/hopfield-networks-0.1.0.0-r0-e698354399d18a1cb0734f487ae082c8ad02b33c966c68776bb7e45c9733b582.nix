@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hopfield-networks";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hopfield-networks"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew+cabal@tullo.ch";
@@ -22,7 +13,7 @@
       synopsis = "Hopfield Networks for unsupervised learning in Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.matrix)
           (hsPkgs.MonadRandom)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       exes = {
         "hopfield_demonstration" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.matrix)
             (hsPkgs.MonadRandom)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hopfield_test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.MonadRandom)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "mps";
-        version = "2010.5.29";
-      };
+      identifier = { name = "mps"; version = "2010.5.29"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "simply oo";
       description = "DSL that allows one to write Haskell from left to right";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.filepath)
           (hsPkgs.template-haskell)
           (hsPkgs.monoid-owns)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

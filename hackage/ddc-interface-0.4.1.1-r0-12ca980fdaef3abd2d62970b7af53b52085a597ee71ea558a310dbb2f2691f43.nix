@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddc-interface";
-        version = "0.4.1.1";
-      };
+      identifier = { name = "ddc-interface"; version = "0.4.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Disciplined Disciple Compiler user interface support.";
       description = "Disciplined Disciple Compiler user interface support.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.ddc-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

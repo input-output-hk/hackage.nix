@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-auth-cookie";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "servant-auth-cookie"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Al Zohali <zohl@fmap.me>";
@@ -22,7 +13,7 @@
       synopsis = "Authentication via encrypted cookies";
       description = "Authentication via encrypted client-side cookies,\ninspired by client-session library by Michael Snoyman and based on\nideas of the paper \"A Secure Cookie Protocol\" by Alex Liu et al.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.text)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

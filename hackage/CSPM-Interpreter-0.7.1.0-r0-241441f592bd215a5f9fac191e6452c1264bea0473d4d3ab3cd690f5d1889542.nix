@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "CSPM-Interpreter";
-        version = "0.7.1.0";
-      };
+      identifier = { name = "CSPM-Interpreter"; version = "0.7.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Marc Fontaine <Marc.Fontaine@gmx.de>";
@@ -22,7 +13,7 @@
       synopsis = "An interpreter for CSPM";
       description = "This package contains an interpreter for CSPM\nand instance declarations that implement the interface defined in\nthe package CSPM-CoreLanguage.\nThe operational semantics of core-CSP is defined in the CSPM-FiringRules package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.mtl)
           (hsPkgs.array)
           (hsPkgs.syb)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

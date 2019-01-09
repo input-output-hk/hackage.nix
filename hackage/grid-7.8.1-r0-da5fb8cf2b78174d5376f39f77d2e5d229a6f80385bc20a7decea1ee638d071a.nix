@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "grid";
-        version = "7.8.1";
-      };
+      identifier = { name = "grid"; version = "7.8.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Amy de Buitl&eacute;ir 2010-2015";
       maintainer = "amy@nualeargais.ie";
@@ -22,15 +13,11 @@
       synopsis = "Tools for working with regular grids (graphs, lattices).";
       description = "Provides tools for working with regular arrangements\nof tiles, such as might be used in a board game or some\nother type of grid map. Currently supports triangular,\nsquare, and hexagonal tiles, with various 2D and\ntoroidal layouts.\nThe userguide is available at\n<https://github.com/mhwombat/grid/wiki>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.cereal)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.cereal) (hsPkgs.containers) ];
+        };
       tests = {
         "grid-tests" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.grid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

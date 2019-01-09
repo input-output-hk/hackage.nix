@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "language-lua";
-        version = "0.6.3";
-      };
+      identifier = { name = "language-lua"; version = "0.6.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "omeragacan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lua parser and pretty-printer";
       description = "Lua 5.2 lexer, parser and pretty-printer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.language-lua)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

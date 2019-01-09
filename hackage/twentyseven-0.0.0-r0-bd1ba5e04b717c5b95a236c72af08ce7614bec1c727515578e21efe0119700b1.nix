@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "twentyseven";
-        version = "0.0.0";
-      };
+      identifier = { name = "twentyseven"; version = "0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "li-yao.xia@ens.fr";
@@ -22,7 +13,7 @@
       synopsis = "Rubik's cube solver";
       description = "Solve 3×3×3 Rubik's cubes in the fewest possible moves. Or, if you can't\nwait, get /close enough/ with the two-phase solver.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.newtype)
           (hsPkgs.ref-fd)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "twentyseven" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.twentyseven)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-twentyseven" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.split)
             (hsPkgs.vector)
             (hsPkgs.twentyseven)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

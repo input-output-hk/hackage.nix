@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Mapping";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "Mapping"; version = "0.1.0.1"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "zaomir@outlook.com";
@@ -22,10 +13,6 @@
       synopsis = "Mapping";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

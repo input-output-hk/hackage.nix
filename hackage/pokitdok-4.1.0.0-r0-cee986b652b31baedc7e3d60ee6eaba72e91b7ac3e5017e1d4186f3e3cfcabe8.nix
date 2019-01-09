@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pokitdok";
-        version = "4.1.0.0";
-      };
+      identifier = { name = "pokitdok"; version = "4.1.0.0"; };
       license = "MIT";
       copyright = "Copyright © 2014 PokitDok Inc.";
       maintainer = "gage.swenson@pokitdok.com";
@@ -22,7 +13,7 @@
       synopsis = "PokitDok Platform API Client for Haskell";
       description = "PokitDok's platform gives you access to X12 and Data APIs for health insurance claims, eligibility, providers, procedure pricing and more. This API client allows for seemless integration of API calls in an Haskell module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.strict)
           (hsPkgs.directory)
           (hsPkgs.hex)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

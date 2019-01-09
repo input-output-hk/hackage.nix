@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "helm";
-        version = "0.5.0";
-      };
+      identifier = { name = "helm"; version = "0.5.0"; };
       license = "MIT";
       copyright = "(c) 2013, Zack Corr";
       maintainer = "Zack Corr <zack@z0w0.me>";
@@ -22,7 +13,7 @@
       synopsis = "A functionally reactive game engine.";
       description = "A functionally reactive game engine, with headgear to protect you\nfrom the headache of game development provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.SDL)
           (hsPkgs.random)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "helm-tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.elerea)
             (hsPkgs.SDL)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

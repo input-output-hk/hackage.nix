@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-generic";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "servant-generic"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "2017 Patrick Chilton";
       maintainer = "chpatrick@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Specify Servant APIs with records.";
       description = "Specify Servant APIs with records instead of @:\\<|\\>@ trees. See the <https://github.com/chpatrick/servant-generic/blob/master/README.md#tldr README> for more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.servant)
-          (hsPkgs.servant-server)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.servant) (hsPkgs.servant-server) ];
+        };
       tests = {
         "example-basic" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.text)
             (hsPkgs.warp)
             (hsPkgs.network-uri)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

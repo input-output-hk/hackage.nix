@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { web = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "packdeps";
-        version = "0.0.3";
-      };
+      identifier = { name = "packdeps"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,10 +13,10 @@
       synopsis = "Check your cabal packages for lagging dependencies.";
       description = "This provides a library and command line tool for checking if the upper bounds in your package's dependency list excludes the newest package available. The code was originally available only as a web interface at <http://packdeps.haskellers.com/>, but is now available for standalone use as well.\n\nThe command line tool has an incredibly simple interface: simply pass it a list of cabal files, and it will tell you what dependencies- if any- are restricted.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = pkgs.lib.optionals (!flags.web) [
+        depends = (pkgs.lib).optionals (!flags.web) [
           (hsPkgs.base)
           (hsPkgs.tar)
           (hsPkgs.split)
@@ -36,18 +27,18 @@
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       exes = {
         "packdeps" = {};
         "packdeps-yesod" = {};
         "save-newest" = {
-          depends = pkgs.lib.optionals (flags.web) [
+          depends = (pkgs.lib).optionals (flags.web) [
             (hsPkgs.yesod-newsfeed)
             (hsPkgs.yesod)
             (hsPkgs.hamlet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "tftp";
-        version = "0.1";
-      };
+      identifier = { name = "tftp"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Sven Heyll";
       maintainer = "sven.heyll@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for building tftp servers";
       description = "A library for building tftp servers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.hslogger)
           (hsPkgs.directory)
           (hsPkgs.network)
-        ];
-      };
+          ];
+        };
       exes = {
         "tftp_upload" = {
           depends = [
@@ -49,17 +40,13 @@
             (hsPkgs.bytestring)
             (hsPkgs.network)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "message-decoding" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tftp)
-            (hsPkgs.QuickCheck)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.tftp) (hsPkgs.QuickCheck) ];
+          };
         "protocol" = {
           depends = [
             (hsPkgs.base)
@@ -67,16 +54,16 @@
             (hsPkgs.hslogger)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "udp-io" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.tftp)
             (hsPkgs.hslogger)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

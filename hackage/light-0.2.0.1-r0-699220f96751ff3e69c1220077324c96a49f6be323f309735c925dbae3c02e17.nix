@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "light";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "light"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Suzumiya";
       maintainer = "suzumiyasmith@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "a simple physics engine";
       description = "A simple physics engine(dynamics only) with collision dection";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.lens)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "light-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.lens)
             (hsPkgs.containers)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

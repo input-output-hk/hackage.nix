@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ansi-terminal-game";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ansi-terminal-game"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "© 2017-2018 Francesco Ariis";
       maintainer = "fa-ml@ariis.it";
@@ -22,7 +13,7 @@
       synopsis = "sdl-like functions for terminal applications, based on\nansi-terminal";
       description = "Library which aims to replicate standard 2d game\nfunctions (blit, ticks, timers, etc.) in a terminal\nsetting.\nAims to be cross compatible (based on \"ansi-terminal\",\nno unix-only dependencies), practical.\nThis is a proof of concept release, used to implement\n@http://www.ariis.it/static/articles/animascii/page.html@\n. See example folder for some minimal programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,16 +28,16 @@
           (hsPkgs.clock)
           (hsPkgs.linebreak)
           (hsPkgs.split)
-        ];
-      };
-      exes = {
-        "alone-in-a-room" = {
-          depends = pkgs.lib.optionals (flags.example) [
-            (hsPkgs.base)
-            (hsPkgs.ansi-terminal-game)
           ];
         };
-      };
+      exes = {
+        "alone-in-a-room" = {
+          depends = (pkgs.lib).optionals (flags.example) [
+            (hsPkgs.base)
+            (hsPkgs.ansi-terminal-game)
+            ];
+          };
+        };
       tests = {
         "test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.array)
             (hsPkgs.linebreak)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

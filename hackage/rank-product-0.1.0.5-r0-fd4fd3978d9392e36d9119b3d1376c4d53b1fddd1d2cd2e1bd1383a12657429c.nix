@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rank-product";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "rank-product"; version = "0.1.0.5"; };
       license = "GPL-3.0-only";
       copyright = "Copyright: (c) 2017 Gregory W. Schwartz";
       maintainer = "gsch@mail.med.upenn.edu";
@@ -22,13 +13,8 @@
       synopsis = "Find the rank product of a data set.";
       description = "Find the rank product of a data set and get the p-value from a permutation test.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random-fu)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.random-fu) ]; };
+      };
+    }

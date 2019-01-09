@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "metar-http";
-        version = "0.0.1";
-      };
+      identifier = { name = "metar-http"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018, Tony Morris";
       maintainer = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@sıɹɹoɯʇ>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP for METAR";
       description = "A trivial HTTP program for getting METAR";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,16 +29,11 @@
           (hsPkgs.utf8-string)
           (hsPkgs.warp)
           (hsPkgs.wai)
-        ];
-      };
-      exes = {
-        "metar-http" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.metar-http)
           ];
         };
-      };
+      exes = {
+        "metar-http" = { depends = [ (hsPkgs.base) (hsPkgs.metar-http) ]; };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -59,8 +45,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

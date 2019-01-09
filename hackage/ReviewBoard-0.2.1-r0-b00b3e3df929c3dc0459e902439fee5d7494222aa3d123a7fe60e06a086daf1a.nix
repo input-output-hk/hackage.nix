@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "ReviewBoard";
-        version = "0.2.1";
-      };
+      identifier = { name = "ReviewBoard"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<adam.smyczek@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings to ReviewBoard";
       description = "Haskell bindings to ReviewBoard (<http://code.google.com/p/reviewboard/>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.network)
           (hsPkgs.HTTP)
           (hsPkgs.json)
-        ];
-      };
+          ];
+        };
       exes = {
         "mkrr" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.network)
             (hsPkgs.HTTP)
             (hsPkgs.json)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

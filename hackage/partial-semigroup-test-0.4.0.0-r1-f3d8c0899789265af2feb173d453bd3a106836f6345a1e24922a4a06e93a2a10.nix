@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enable-hedgehog = true;
-    };
+    flags = { enable-hedgehog = true; };
     package = {
       specVersion = "1.21";
-      identifier = {
-        name = "partial-semigroup-test";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "partial-semigroup-test"; version = "0.4.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -24,10 +13,10 @@
       synopsis = "Testing utilities for the partial-semigroup package";
       description = "Testing utilities for the @partial-semigroup@ package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = pkgs.lib.optional (flags.enable-hedgehog) (hsPkgs.partial-semigroup-hedgehog);
+        depends = (pkgs.lib).optional (flags.enable-hedgehog) (hsPkgs.partial-semigroup-hedgehog);
+        };
       };
-    };
-  }
+    }

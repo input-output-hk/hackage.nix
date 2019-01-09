@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tx";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tx"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2013 Michael Schröder";
       maintainer = "mc.schroeder@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Persistent transactions on top of STM.";
       description = "Persistent transactions on top of STM.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.safecopy)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

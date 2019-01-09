@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "radian";
-        version = "0.0.3";
-      };
+      identifier = { name = "radian"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 NICTA Limited";
       maintainer = "Tony Morris";
@@ -22,14 +13,9 @@
       synopsis = "A floating-point wrapper for measurements that use radians.";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\nA floating-point wrapper for measurements that use radians.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.lens)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.lens) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

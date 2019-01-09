@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "lhae";
-        version = "0.0.2";
-      };
+      identifier = { name = "lhae"; version = "0.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Alexander Bau";
@@ -22,7 +13,7 @@
       synopsis = "Simple spreadsheet program";
       description = "lhae is a spreadsheet program. It features a simple formula language and some basic statistical methods.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "lhae" = {
@@ -40,8 +31,8 @@
             (hsPkgs.hgettext)
             (hsPkgs.utf8-string)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

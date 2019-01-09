@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Condor";
-        version = "0.2";
-      };
+      identifier = { name = "Condor"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "klangner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Information retrieval library";
       description = "Library for indexing and searching text documents";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.binary)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "condor" = {
           depends = [
@@ -41,9 +32,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.containers)
             (hsPkgs.binary)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

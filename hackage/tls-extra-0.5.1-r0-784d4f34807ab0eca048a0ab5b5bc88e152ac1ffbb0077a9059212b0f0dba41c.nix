@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test = false;
-      fastaes = true;
-    };
+    flags = { test = false; fastaes = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tls-extra";
-        version = "0.5.1";
-      };
+      identifier = { name = "tls-extra"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -25,7 +13,7 @@
       synopsis = "TLS extra default values and helpers";
       description = "a set of extra definitions, default values and helpers for tls.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,18 +30,18 @@
           (hsPkgs.pem)
           (hsPkgs.text)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (system.isLinux && flags.fastaes && (system.isI386 || system.isX86_64)) (hsPkgs.cipher-aes);
-      };
+          ] ++ (pkgs.lib).optional (system.isLinux && flags.fastaes && (system.isI386 || system.isX86_64)) (hsPkgs.cipher-aes);
+        };
       exes = {
         "Tests" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
             (hsPkgs.cprng-aes)
-          ] ++ pkgs.lib.optional (system.isLinux && flags.fastaes) (hsPkgs.cipher-aes);
+            ] ++ (pkgs.lib).optional (system.isLinux && flags.fastaes) (hsPkgs.cipher-aes);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "disjoint-set";
-        version = "0.2";
-      };
+      identifier = { name = "disjoint-set"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<maxwellsayles@gmail.com>, <myles.maxfield@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Persistent disjoint-sets, a.k.a union-find.";
       description = "This is a persistent data structure for disjoint sets.\n\nThe algorithm is described in \"Introduction to\nAlgorithms\" by Cormen, et al. The implementation here\nuses both union by rank and path compression. We\nincur an O(logn) overhead because of the use of\npersistent maps.\n\nData.IntDisjointSet is as strict as possible.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.containers)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "process-listlike";
-        version = "0.10";
-      };
+      identifier = { name = "process-listlike"; version = "0.10"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Lazar <lazar6@illinois.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Process extras";
       description = "Extra functionality for the Process library\n<http://hackage.haskell.org/package/process>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       exes = {
         "process-listlike-tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.ListLike)
             (hsPkgs.regex-posix)
-          ];
-        };
+            ];
+          };
         "process-listlike-interactive-tests" = {
           depends = [
             (hsPkgs.base)
@@ -64,8 +55,8 @@
             (hsPkgs.text)
             (hsPkgs.utf8-string)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

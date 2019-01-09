@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "antagonist";
-        version = "0.1.0.29";
-      };
+      identifier = { name = "antagonist"; version = "0.1.0.29"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "marvin.cohrs@gmx.net";
@@ -22,7 +13,7 @@
       synopsis = "A web interface to Antisplice dungeons.";
       description = "A web interface to Antisplice dungeons, implemented as a yesod subsite.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.time)
           (hsPkgs.yesod-auth)
           (hsPkgs.time-locale-compat)
-        ];
-      };
+          ];
+        };
       exes = {
         "ironforge-yesod" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.time)
             (hsPkgs.yesod-auth)
             (hsPkgs.time-locale-compat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

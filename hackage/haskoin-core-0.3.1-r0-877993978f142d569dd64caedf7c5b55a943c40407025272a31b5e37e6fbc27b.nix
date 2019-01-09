@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "haskoin-core";
-        version = "0.3.1";
-      };
+      identifier = { name = "haskoin-core"; version = "0.3.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "plaprade+hackage@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Implementation of the core Bitcoin protocol features.";
       description = "Haskoin is a package implementing the core functionalities of the Bitcoin\nprotocol specifications. The following features are provided:\n\n* Hashing functions (sha-256, ripemd-160)\n* Base58 encoding\n* BIP32 extended key derivation and parsing (m/1'/2/3)\n* BIP39 mnemonic keys\n* ECDSA cryptographic primitives (using the C library libsecp256k1)\n* Script parsing and evaluation\n* Building and signing of standard transactions (regular, multisig, p2sh)\n* Parsing and manipulation of all Bitcoin protocol types\n* Bloom filters and partial merkle tree library (used in SPV wallets)\n* Comprehensive test suite\n\nA wallet implementation is available in haskoin-wallet which uses both this\npackage and the node implementation in haskoin-node.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.secp256k1)
           (hsPkgs.largeword)
           (hsPkgs.entropy)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-haskoin-core" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.safe)
             (hsPkgs.vector)
             (hsPkgs.scientific)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

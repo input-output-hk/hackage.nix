@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "opentheory-fibonacci";
-        version = "1.69";
-      };
+      identifier = { name = "opentheory-fibonacci"; version = "1.69"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Leslie-Hurd <joe@gilith.com>";
@@ -22,7 +13,7 @@
       synopsis = "Fibonacci numbers";
       description = "Fibonacci numbers - this package was automatically generated from the\nOpenTheory package natural-fibonacci-1.69";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.opentheory-primitive)
           (hsPkgs.opentheory)
           (hsPkgs.opentheory-stream)
-        ];
-      };
+          ];
+        };
       tests = {
         "opentheory-fibonacci-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.opentheory-primitive)
             (hsPkgs.opentheory)
             (hsPkgs.opentheory-stream)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "yesod-colonnade";
-        version = "1.3.0.1";
-      };
+      identifier = { name = "yesod-colonnade"; version = "1.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Helper functions for using yesod with colonnade";
       description = "Yesod and colonnade";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.blaze-markup)
           (hsPkgs.blaze-html)
           (hsPkgs.yesod-elements)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

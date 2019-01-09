@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "basic-prelude";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "basic-prelude"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "An enhanced core prelude, meant for building up more complete preludes on top of.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.system-filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

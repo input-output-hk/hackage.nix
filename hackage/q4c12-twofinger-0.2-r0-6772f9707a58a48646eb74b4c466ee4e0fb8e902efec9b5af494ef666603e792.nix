@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "q4c12-twofinger";
-        version = "0.2";
-      };
+      identifier = { name = "q4c12-twofinger"; version = "0.2"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "quasicomputational <quasicomputational@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Efficient alternating finger trees";
       description = "This package provides efficient alternating sequences based on finger trees. These can represent sequences made up of two types of element, @e@ and @a@  where two of the same type of element cannot follow each other directly.\n\nFour different flavours are provided, isomorphic to @([(a, e)], a)@, @([(e, a)], e)@, @[(a, e)]@, and @[(e, a)]@.\n\nCons-like operations are /O(1)/ amortised, and append operations are /O(log(min(n, m)))/ amortised.\n\nFor more details, please see the Haddock documentation of \"Q4C12.TwoFinger\".";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.deepseq)
           (hsPkgs.semigroupoids)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") (hsPkgs.bifunctors);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2") (hsPkgs.bifunctors);
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.doctest)
             (hsPkgs.lens)
             (hsPkgs.q4c12-twofinger)
-          ];
-        };
+            ];
+          };
         "properties" = {
           depends = [
             (hsPkgs.base)
@@ -49,8 +40,8 @@
             (hsPkgs.q4c12-twofinger)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "remark";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "remark"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Oleks";
       maintainer = "oleks@oleks.info";
@@ -22,23 +13,14 @@
       synopsis = "A DSL for marking student work";
       description = "Please see README.org";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.GenericPretty)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.GenericPretty) ]; };
       exes = {
         "remark" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.remark)
-            (hsPkgs.GenericPretty)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.remark) (hsPkgs.GenericPretty) ];
+          };
         };
-      };
       tests = {
         "remark-test" = {
           depends = [
@@ -48,8 +30,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-golden)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

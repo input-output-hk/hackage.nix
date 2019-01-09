@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "webcrank-wai";
-        version = "0.2";
-      };
+      identifier = { name = "webcrank-wai"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Richard Wallace";
       maintainer = "Richard Wallace <rwallace@thewallacepack.net>";
@@ -22,7 +13,7 @@
       synopsis = "Build a WAI Application from Webcrank Resources";
       description = "Build a WAI Application from Webcrank Resources.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.wai-lens)
           (hsPkgs.webcrank)
           (hsPkgs.webcrank-dispatch)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

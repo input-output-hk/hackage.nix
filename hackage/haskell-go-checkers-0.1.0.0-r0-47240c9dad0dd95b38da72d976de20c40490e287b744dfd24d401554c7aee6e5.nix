@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-go-checkers";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haskell-go-checkers"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "prateek@prateekkumar.in";
@@ -22,16 +13,12 @@
       synopsis = "Go and Checkers game in Haskell";
       description = "This is an implementation fo Go and Checkers game in haskell using GLOSS for GUI.\nFor more rules of Go visit https://www.britgo.org/intro/intro2.html.\nFor more rules of Checkers visit https://www.thespruce.com/play-checkers-using-standard-rules-409287.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haskell-go-checkers" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.gloss)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.gloss) ];
+          };
         };
       };
-    };
-  }
+    }

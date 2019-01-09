@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "geo-resolver";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "geo-resolver"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2015 Jan Greve, Markenwerk GmbH";
       maintainer = "jg@markenwerk.net";
@@ -22,7 +13,7 @@
       synopsis = "Performs geo location lookups and parses the results";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.http-types)
           (hsPkgs.blaze-builder)
-        ];
-      };
+          ];
+        };
       tests = {
         "GeoResolver-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.base64-bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

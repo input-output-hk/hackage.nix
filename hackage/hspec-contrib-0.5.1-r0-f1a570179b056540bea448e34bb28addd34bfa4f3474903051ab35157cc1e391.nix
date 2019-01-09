@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hspec-contrib";
-        version = "0.5.1";
-      };
+      identifier = { name = "hspec-contrib"; version = "0.5.1"; };
       license = "MIT";
       copyright = "(c) 2011-2018 Simon Hengel,\n(c) 2014 Junji Hashimoto";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,15 +13,11 @@
       synopsis = "Contributed functionality for Hspec";
       description = "Contributed functionality for Hspec";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hspec-core)
-          (hsPkgs.HUnit)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.hspec-core) (hsPkgs.HUnit) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.hspec-contrib)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

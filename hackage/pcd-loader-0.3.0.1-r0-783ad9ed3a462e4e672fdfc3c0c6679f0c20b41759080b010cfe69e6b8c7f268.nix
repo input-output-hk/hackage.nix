@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pcd-loader";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "pcd-loader"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Anthony Cowley 2012";
       maintainer = "acowley@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "PCD file loader.";
       description = "Parser for PCD (point cloud data) formats.  See\n<http://pointclouds.org/documentation/tutorials/pcd_file_format.php>\nfor more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,16 +27,11 @@
           (hsPkgs.deepseq)
           (hsPkgs.lens)
           (hsPkgs.linear)
-        ];
-      };
-      exes = {
-        "pcd2bin" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pcd-loader)
           ];
         };
-      };
+      exes = {
+        "pcd2bin" = { depends = [ (hsPkgs.base) (hsPkgs.pcd-loader) ]; };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -59,8 +45,8 @@
             (hsPkgs.directory)
             (hsPkgs.string-qq)
             (hsPkgs.pcd-loader)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

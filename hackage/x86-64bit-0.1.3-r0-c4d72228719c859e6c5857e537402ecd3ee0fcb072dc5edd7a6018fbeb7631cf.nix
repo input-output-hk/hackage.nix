@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "x86-64bit";
-        version = "0.1.3";
-      };
+      identifier = { name = "x86-64bit"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "divipp@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Runtime code generation for x86 64 bit machine code";
       description = "The primary goal of x86-64bit is to provide a lightweight assembler for machine generated 64 bit x86 assembly instructions. See README.md for further details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.monads-tf)
           (hsPkgs.vector)
           (hsPkgs.QuickCheck)
-        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
-      };
+          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+        };
       tests = {
         "test-x86-64bit" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.monads-tf)
             (hsPkgs.vector)
             (hsPkgs.QuickCheck)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+          };
         };
       };
-    };
-  }
+    }

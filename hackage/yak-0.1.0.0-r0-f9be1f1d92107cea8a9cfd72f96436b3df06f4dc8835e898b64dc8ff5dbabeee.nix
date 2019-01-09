@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yak";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "yak"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Paul Ogris";
       maintainer = "paul@tsahyt.com";
@@ -22,7 +13,7 @@
       synopsis = "A strongly typed IRC library";
       description = "See README.rst";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.template-haskell)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "yak-tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.yak)
             (hsPkgs.hspec)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

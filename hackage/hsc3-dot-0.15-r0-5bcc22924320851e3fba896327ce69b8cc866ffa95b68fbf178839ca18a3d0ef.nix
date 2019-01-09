@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3-dot";
-        version = "0.15";
-      };
+      identifier = { name = "hsc3-dot"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2006-2014";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "haskell supercollider graph drawing";
       description = "dot format graph generator for SuperCollider\nunit generator graphs constructed using hsc3.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.filepath)
           (hsPkgs.hsc3)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prove-everywhere-server";
-        version = "0.1";
-      };
+      identifier = { name = "prove-everywhere-server"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "amutake.s@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The server for ProveEverywhere";
       description = "This is the server for ProveEverywhere project.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "prove-everywhere-server" = {
@@ -42,8 +33,8 @@
             (hsPkgs.safe)
             (hsPkgs.time)
             (hsPkgs.case-insensitive)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

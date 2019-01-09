@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-binary";
-        version = "0.1.0";
-      };
+      identifier = { name = "postgresql-binary"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Encoders and decoders for the PostgreSQL's binary format";
       description = "An API for dealing with PostgreSQL's binary data format.\n\nIt can be used to implement high level APIs for Postgres.\nE.g., <http://hackage.haskell.org/package/hasql-postgres \"hasql-postgres\">\nis based on this library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.mtl-prelude)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "decoding" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "encoding" = {
           depends = [
             (hsPkgs.postgresql-binary)
@@ -84,8 +75,8 @@
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "panda";
-        version = "2009.1.20";
-      };
+      identifier = { name = "panda"; version = "2009.1.20"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple static blog engine";
       description = "A simple static blog engine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.gravatar)
           (hsPkgs.data-default)
           (hsPkgs.hcheat)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

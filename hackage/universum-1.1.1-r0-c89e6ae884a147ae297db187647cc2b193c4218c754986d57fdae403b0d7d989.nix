@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "universum";
-        version = "1.1.1";
-      };
+      identifier = { name = "universum"; version = "1.1.1"; };
       license = "MIT";
       copyright = "2016 Stephen Diehl, 2016-2018 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -22,7 +13,7 @@
       synopsis = "Custom prelude used in Serokell";
       description = "See README.md file for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "universum-test" = {
           depends = [
@@ -57,16 +48,12 @@
             (hsPkgs.hedgehog)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hedgehog)
-          ];
-        };
+            ];
+          };
         "universum-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         };
-      };
       benchmarks = {
         "universum-benchmark" = {
           depends = [
@@ -75,8 +62,8 @@
             (hsPkgs.containers)
             (hsPkgs.gauge)
             (hsPkgs.unordered-containers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "7.10.3") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "7.10.3") (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

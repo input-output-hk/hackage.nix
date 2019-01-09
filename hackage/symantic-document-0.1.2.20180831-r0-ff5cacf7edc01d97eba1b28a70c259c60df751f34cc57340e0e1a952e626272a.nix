@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "symantic-document";
-        version = "0.1.2.20180831";
-      };
+      identifier = { name = "symantic-document"; version = "0.1.2.20180831"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Julien Moutinho <julm+symantic@autogeree.net>";
@@ -22,7 +13,7 @@
       synopsis = "Document symantics.";
       description = "Symantics for generating documents.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "symantic-document-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

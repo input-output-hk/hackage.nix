@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hxournal";
-        version = "0.5";
-      };
+      identifier = { name = "hxournal"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A pen notetaking program written in haskell";
       description = "notetaking program written in haskell and gtk2hs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,16 +35,12 @@
           (hsPkgs.double-conversion)
           (hsPkgs.fclabels)
           (hsPkgs.cmdargs)
-        ];
-      };
-      exes = {
-        "hxournal" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.hxournal)
           ];
         };
+      exes = {
+        "hxournal" = {
+          depends = [ (hsPkgs.base) (hsPkgs.cmdargs) (hsPkgs.hxournal) ];
+          };
+        };
       };
-    };
-  }
+    }

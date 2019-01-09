@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "testloop";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "testloop"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "romanandreg@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Quick feedback loop for test suites";
       description = "TestLoop provides an automated execution and code reloading of\nyour project's test-suites whenever a haskell source file is\nmodified.\nTo get started check out http://github.com/roman/testloop";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.mtl)
           (hsPkgs.system-filepath)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

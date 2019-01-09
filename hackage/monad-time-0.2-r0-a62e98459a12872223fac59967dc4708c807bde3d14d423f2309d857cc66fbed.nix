@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-time";
-        version = "0.2";
-      };
+      identifier = { name = "monad-time"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "andrzej@scrive.com";
@@ -22,15 +13,9 @@
       synopsis = "Type class for monads which carry the notion of the current time.";
       description = "'MonadTime' type class for monads which carry the notion of the current time.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.time)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.time) ]; };
       tests = {
         "monad-time-test" = {
           depends = [
@@ -38,8 +23,8 @@
             (hsPkgs.mtl)
             (hsPkgs.monad-time)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

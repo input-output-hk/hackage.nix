@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "random-variates";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "random-variates"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2015, Keynan James Pratt";
       maintainer = "Keynan James Pratt <keynan.pratt@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "\"Uniform RNG => Non-Uniform RNGs\"";
       description = "\"Collection of transforms uniform random number generators (RNGs) into any of a dozen common RNGs. Each presenting several common interfaces\"";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.lens)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

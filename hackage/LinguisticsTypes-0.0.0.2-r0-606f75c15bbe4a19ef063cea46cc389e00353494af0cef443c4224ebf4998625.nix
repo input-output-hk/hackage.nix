@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "LinguisticsTypes";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "LinguisticsTypes"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2015";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -22,7 +13,7 @@
       synopsis = "Collection of types for natural language";
       description = "Types used for natural language applications. Includes an\ninternalized text type, @BTI@ which represents internalized\n@Text@ values with @Int@s.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.text)
           (hsPkgs.text-binary)
           (hsPkgs.vector-th-unbox)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fdo-trash";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "fdo-trash"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Emil Karlson";
       maintainer = "Emil Karlson <jekarlson@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utilities related to freedesktop Trash standard.";
       description = "Contains utilities to unrm from trash, purge old files from trash and move files to trash.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.filepath)
           (hsPkgs.url)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "fdo-trash" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.url)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "extemp";
-        version = "0.0.1";
-      };
+      identifier = { name = "extemp"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "amsay@amsay.net";
@@ -22,7 +13,7 @@
       synopsis = "automated printing for extemp speakers";
       description = "Extemp speakers conventionally must repetitively print from the same news services week after week, afterwords sorting the results by news area in a time consuming, labor intensive process. This package builds a web app automates the process.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "extemp" = {
@@ -48,8 +39,8 @@
             (hsPkgs.mtl)
             (hsPkgs.monad-parallel)
             (hsPkgs.happstack-auth)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

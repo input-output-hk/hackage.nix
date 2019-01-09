@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "skemmtun";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "skemmtun"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Jocelyn.Meyron@grenoble-inp.org";
@@ -22,7 +13,7 @@
       synopsis = "A MyAnimeList.net client.";
       description = "Contains most of the typical commands for listing/updating\nyour anime/manga list on MyAnimeList.net.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mal" = {
@@ -37,8 +28,8 @@
             (hsPkgs.time)
             (hsPkgs.wreq)
             (hsPkgs.xml-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hblock";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "hblock"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mr.hugo.gomes@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A mutable vector that provides indexation on the datatype fields it stores";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

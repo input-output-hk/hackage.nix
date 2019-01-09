@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "familiar-reflection";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "familiar-reflection"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 M Farkas-Dyck";
       maintainer = "strake888@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Reifies arbitrary terms into types that can be reflected back into terms";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

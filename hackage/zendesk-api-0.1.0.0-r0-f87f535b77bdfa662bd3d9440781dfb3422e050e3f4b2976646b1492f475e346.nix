@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zendesk-api";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "zendesk-api"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "denisovenator@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Zendesk API for Haskell programming language.";
       description = "This is a library for accessing zendesk api using haskell bindings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.x509)
           (hsPkgs.x509-store)
           (hsPkgs.x509-validation)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

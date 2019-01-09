@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mbtiles";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "mbtiles"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Joe Canero";
       maintainer = "jmc41493@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell MBTiles client.";
       description = "Read and manipulate MBTiles files and associated metadata.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,16 +27,12 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
-      tests = {
-        "mbtiles-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.mbtiles)
-            (hsPkgs.HUnit)
           ];
         };
+      tests = {
+        "mbtiles-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.mbtiles) (hsPkgs.HUnit) ];
+          };
+        };
       };
-    };
-  }
+    }

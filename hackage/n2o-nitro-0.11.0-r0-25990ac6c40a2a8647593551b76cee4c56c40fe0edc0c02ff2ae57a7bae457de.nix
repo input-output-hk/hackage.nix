@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "n2o-nitro";
-        version = "0.11.0";
-      };
+      identifier = { name = "n2o-nitro"; version = "0.11.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Marat Khafizov, 2018";
       maintainer = "xafizoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Nitro Elements, Events and Actions";
       description = "Nitro DSL";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.fmt)
           (hsPkgs.containers)
           (hsPkgs.base64-bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

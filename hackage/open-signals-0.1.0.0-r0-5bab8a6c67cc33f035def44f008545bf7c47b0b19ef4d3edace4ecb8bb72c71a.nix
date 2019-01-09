@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "open-signals";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "open-signals"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 Luka Horvat";
       maintainer = "luka.horvat9@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A mechanism similar to checked exceptions that integrates with MTL and\ntransformer stacks";
       description = "Please see Control.Monad.Signal.Class module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,12 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
           (hsPkgs.either)
-        ];
-      };
-      tests = {
-        "open-signals-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.open-signals)
           ];
         };
+      tests = {
+        "open-signals-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.open-signals) ];
+          };
+        };
       };
-    };
-  }
+    }

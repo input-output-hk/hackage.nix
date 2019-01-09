@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-pig";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "language-pig"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "elise@jabberwocky.eu";
@@ -22,7 +13,7 @@
       synopsis = "Pig parser in haskell.";
       description = "Parser and pretty printer for the Apache Pig scripting language (http://pig.apache.org/). The current version is implemented using Parsec parser combinators.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.parsec)
           (hsPkgs.containers)
           (hsPkgs.pretty-tree)
-        ];
-      };
+          ];
+        };
       tests = {
         "Tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

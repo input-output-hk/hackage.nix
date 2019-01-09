@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "scalable-server";
-        version = "0.1.2";
-      };
+      identifier = { name = "scalable-server"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jamie@bu.mp";
@@ -22,7 +13,7 @@
       synopsis = "Library for writing fast/scalable TCP-based services";
       description = "Library for writing fast/scalable TCP-based services";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.network)
           (hsPkgs.mtl)
           (hsPkgs.blaze-builder)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

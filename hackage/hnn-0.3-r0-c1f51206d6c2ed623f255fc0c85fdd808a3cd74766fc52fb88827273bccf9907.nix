@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hnn";
-        version = "0.3";
-      };
+      identifier = { name = "hnn"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "2009-2016 Alp Mestanogullari, Gatlin Johnson";
       maintainer = "Alp Mestanogullari <alpmestan@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A reasonably fast and simple neural network library";
       description = "\nA neural network library implemented purely in Haskell, relying on the\nhmatrix library.\n\nThis library provides a straight and simple feed-forward neural networks implementation which\nis way better than the one in hnn-0.1, in all aspects.\n\nYou can find a mini-tutorial in @AI.HNN.FF.Network@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.binary)
           (hsPkgs.zlib)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

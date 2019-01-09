@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "snaplet-auth-acid";
-        version = "0.1.0";
-      };
+      identifier = { name = "snaplet-auth-acid"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "djohnson.m@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides an Acid-State backend for the Auth Snaplet";
       description = "Provides an Acid-State backend for the Auth Snaplet";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

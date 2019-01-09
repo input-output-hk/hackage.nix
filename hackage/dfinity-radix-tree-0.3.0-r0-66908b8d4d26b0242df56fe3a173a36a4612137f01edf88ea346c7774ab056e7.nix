@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dfinity-radix-tree";
-        version = "0.3.0";
-      };
+      identifier = { name = "dfinity-radix-tree"; version = "0.3.0"; };
       license = "GPL-3.0-only";
       copyright = "2018 DFINITY Stiftung";
       maintainer = "DFINITY USA Research <team@dfinity.org>";
@@ -22,7 +13,7 @@
       synopsis = "A generic data integrity layer.";
       description = "This library allows you to construct a Merkle tree on top of any underlying\nkey–value database. It works by organizing your key–value pairs into a binary\nradix tree, which is well suited for storing large dictionaries of fairly\nrandom keys, and is optimized for storing keys of the same length.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.semigroups)
           (hsPkgs.serialise)
-        ];
-      };
+          ];
+        };
       exes = {
         "dfinity-radix-tree-unit-tests" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "dfinity-radix-tree-benchmarks" = {
           depends = [
             (hsPkgs.base)
@@ -73,8 +64,8 @@
             (hsPkgs.dfinity-radix-tree)
             (hsPkgs.leveldb-haskell)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

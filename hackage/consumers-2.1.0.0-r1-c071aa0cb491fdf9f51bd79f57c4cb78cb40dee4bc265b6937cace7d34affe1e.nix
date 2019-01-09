@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "consumers";
-        version = "2.1.0.0";
-      };
+      identifier = { name = "consumers"; version = "2.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Scrive AB";
       maintainer = "Andrzej Rybczak <andrzej@rybczak.net>,\nJonathan Jouty <jonathan@scrive.com>";
@@ -22,7 +13,7 @@
       synopsis = "Concurrent PostgreSQL data consumers";
       description = "Library for setting up concurrent consumers of data\nstored inside PostgreSQL database in a simple,\ndeclarative manner.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "consumers-example" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.text)
             (hsPkgs.text-show)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "consumers-test" = {
           depends = [
             (hsPkgs.base)
@@ -74,8 +65,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

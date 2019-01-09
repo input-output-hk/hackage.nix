@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "libravatar";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "libravatar"; version = "0.3.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "♡ Copying is an act of love. Please copy, reuse and share.";
       maintainer = "fr33domlover@riseup.net";
@@ -22,7 +13,7 @@
       synopsis = "Use Libravatar, the decentralized avatar delivery service";
       description = "This package is a Haskell library for\n<http://libravatar.org Libravatar>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.SHA)
           (hsPkgs.url)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

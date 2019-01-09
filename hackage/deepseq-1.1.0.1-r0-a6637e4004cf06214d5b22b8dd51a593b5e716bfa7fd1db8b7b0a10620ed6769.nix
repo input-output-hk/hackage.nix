@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "deepseq";
-        version = "1.1.0.1";
-      };
+      identifier = { name = "deepseq"; version = "1.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "libraries@haskell.org";
@@ -22,14 +13,10 @@
       synopsis = "Fully evaluate data structures";
       description = "This package provides a \\\"deep\\\" version of seq, for fully evluating\ndata structures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.array)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.array) ];
+        };
       };
-    };
-  }
+    }

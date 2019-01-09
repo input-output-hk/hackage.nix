@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "io-streams-http";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "io-streams-http"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Vertigo Media Inc. 2014-2015 (c)";
       maintainer = "djohnson.m@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "http-client for io-streams";
       description = "Thin io-streams wrapper for http-client";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.io-streams)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

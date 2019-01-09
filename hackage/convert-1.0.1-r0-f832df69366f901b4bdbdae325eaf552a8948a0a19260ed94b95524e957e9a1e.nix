@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dump-splices = false;
-    };
+    flags = { dump-splices = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "convert";
-        version = "1.0.1";
-      };
+      identifier = { name = "convert"; version = "1.0.1"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) 2015 Wojciech Danilo";
       maintainer = "Wojciech Danilo <wojciech.danilo@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Safe and unsafe data conversion utilities with strong type-level operation. checking.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +28,7 @@
           (hsPkgs.either)
           (hsPkgs.template-haskell)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

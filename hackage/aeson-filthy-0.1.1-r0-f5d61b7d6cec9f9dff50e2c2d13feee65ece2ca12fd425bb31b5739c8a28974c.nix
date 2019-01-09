@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-filthy";
-        version = "0.1.1";
-      };
+      identifier = { name = "aeson-filthy"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "alec@deviant-logic.net";
@@ -22,7 +13,7 @@
       synopsis = "Several newtypes and combinators for dealing with less-than-cleanly JSON input.";
       description = "A little library of newtypes to help with parsing indiscriminately encoded JSON.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,15 +22,10 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       };
-    };
-  }
+    }

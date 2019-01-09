@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "confsolve";
-        version = "0.3.2";
-      };
+      identifier = { name = "confsolve"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel.trstenjak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A command line tool for resolving conflicts of file synchronizers.";
       description = "A command line tool for resolving conflicts of file synchronizers.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "confsolve" = {
@@ -37,8 +28,8 @@
             (hsPkgs.system-filepath)
             (hsPkgs.system-fileio)
             (hsPkgs.cmdargs)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "marmalade-upload";
-        version = "0.10";
-      };
+      identifier = { name = "marmalade-upload"; version = "0.10"; };
       license = "MIT";
       copyright = "(C) 2014 Sebastian Wiesner";
       maintainer = "swiesner@lunaryorn.com";
@@ -24,7 +13,7 @@
       synopsis = "Upload packages to Marmalade";
       description = "Upload Emacs packages to the <http://marmalade-repo.org/ Marmalade> ELPA\narchive.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +28,8 @@
           (hsPkgs.network)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "marmalade-upload" = {
           depends = [
@@ -55,8 +44,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "build" = {
           depends = [
             (hsPkgs.Cabal)
@@ -69,9 +58,9 @@
             (hsPkgs.split)
             (hsPkgs.text)
             (hsPkgs.zip-archive)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "marmalade" = {
           depends = [
@@ -83,8 +72,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

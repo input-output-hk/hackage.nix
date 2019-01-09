@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "slick";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "slick"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Chris Penner";
       maintainer = "example@example.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/ChrisPenner/slick#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.shake)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "slick-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.slick)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

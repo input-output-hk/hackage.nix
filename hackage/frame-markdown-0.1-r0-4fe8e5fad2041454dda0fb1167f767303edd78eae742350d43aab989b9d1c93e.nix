@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "frame-markdown";
-        version = "0.1";
-      };
+      identifier = { name = "frame-markdown"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Adam Dunkley";
       maintainer = "\"Adam Dunkley\" <acd07u@cs.nott.ac.uk>";
@@ -22,14 +13,10 @@
       synopsis = "A markdown to Frame GUI writer for Pandoc";
       description = "A markdown to Frame GUI writer for Pandoc";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.frame)
-          (hsPkgs.pandoc)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.frame) (hsPkgs.pandoc) ];
+        };
       };
-    };
-  }
+    }

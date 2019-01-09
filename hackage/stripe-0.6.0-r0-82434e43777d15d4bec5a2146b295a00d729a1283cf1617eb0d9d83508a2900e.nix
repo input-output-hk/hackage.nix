@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "stripe";
-        version = "0.6.0";
-      };
+      identifier = { name = "stripe"; version = "0.6.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Spearhead Development, L.L.C.";
       maintainer = "Michael Schade <m@mschade.me>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell implementation of the Stripe API.";
       description = "This is an implementation of the Stripe API as it is\ndocumented at https:\\/\\/stripe.com\\/docs\\/api";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

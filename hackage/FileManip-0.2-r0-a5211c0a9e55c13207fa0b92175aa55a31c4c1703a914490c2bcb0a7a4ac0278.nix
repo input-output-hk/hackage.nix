@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "FileManip";
-        version = "0.2";
-      };
+      identifier = { name = "FileManip"; version = "0.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Bryan O'Sullivan";
@@ -22,7 +13,7 @@
       synopsis = "Expressive file and directory manipulation for Haskell.";
       description = "A Haskell library for working with files and directories.\nIncludes code for pattern matching, finding files,\nmodifying file contents, and more.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.filepath)
           (hsPkgs.mtl)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

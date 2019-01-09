@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "AlgoRhythm";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "AlgoRhythm"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Orestis Melkonian <melkon.or@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Algorithmic music composition";
       description = "A library consisting of several mini-DSLs for representing, manipulating and\nautomatically generating music.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,16 +33,11 @@
           (hsPkgs.transformers)
           (hsPkgs.random)
           (hsPkgs.kmeans)
-        ];
-      };
-      exes = {
-        "music-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.AlgoRhythm)
           ];
         };
-      };
+      exes = {
+        "music-exe" = { depends = [ (hsPkgs.base) (hsPkgs.AlgoRhythm) ]; };
+        };
       tests = {
         "music-test" = {
           depends = [
@@ -70,8 +56,8 @@
             (hsPkgs.Euterpea)
             (hsPkgs.random)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

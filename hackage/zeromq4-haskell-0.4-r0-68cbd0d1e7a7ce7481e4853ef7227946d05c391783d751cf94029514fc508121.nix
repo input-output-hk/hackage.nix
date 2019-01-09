@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "zeromq4-haskell";
-        version = "0.4";
-      };
+      identifier = { name = "zeromq4-haskell"; version = "0.4"; };
       license = "MIT";
       copyright = "(c) 2010 - 2014 zeromq-haskell authors";
       maintainer = "Toralf Wittner <tw@dtex.org>";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to ZeroMQ 4.x";
       description = "The 0MQ lightweight messaging kernel is a library which extends\nthe standard socket interfaces with features traditionally provided\nby specialised messaging middleware products.\n\n0MQ sockets provide an abstraction of asynchronous message queues,\nmultiple messaging patterns, message filtering (subscriptions),\nseamless access to multiple transport protocols and more.\n\nThis library provides the Haskell language binding to 0MQ >= 4.x";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,10 +24,10 @@
           (hsPkgs.exceptions)
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
-        ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."zmq") ++ pkgs.lib.optional (system.isFreebsd) (pkgs."pthread");
-        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libzmq);
-      };
+          ];
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."zmq") ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."pthread");
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.libzmq);
+        };
       tests = {
         "zeromq-haskell-tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

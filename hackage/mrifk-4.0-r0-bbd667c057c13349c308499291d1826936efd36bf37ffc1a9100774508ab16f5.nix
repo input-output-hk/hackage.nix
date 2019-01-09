@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mrifk";
-        version = "4.0";
-      };
+      identifier = { name = "mrifk"; version = "4.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "ennisbaradine@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Decompiles Glulx files";
       description = "Update of the mrifk decompiler to modern Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mrifk" = {
@@ -31,8 +22,8 @@
             (hsPkgs.mtl)
             (hsPkgs.array)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

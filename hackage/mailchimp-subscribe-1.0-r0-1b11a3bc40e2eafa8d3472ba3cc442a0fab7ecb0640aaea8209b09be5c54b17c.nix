@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "mailchimp-subscribe";
-        version = "1.0";
-      };
+      identifier = { name = "mailchimp-subscribe"; version = "1.0"; };
       license = "MIT";
       copyright = "Copyright © 2014 Miëtek Bak";
       maintainer = "Miëtek Bak <hello@mietek.io>";
@@ -22,7 +13,7 @@
       synopsis = "MailChimp subscription request handler";
       description = "<http://mailchimp.com/ MailChimp> subscription request handler, built with <https://github.com/scotty-web/scotty/ Scotty>.  Intended to support custom signup forms.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mailchimp-subscribe" = {
@@ -37,8 +28,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

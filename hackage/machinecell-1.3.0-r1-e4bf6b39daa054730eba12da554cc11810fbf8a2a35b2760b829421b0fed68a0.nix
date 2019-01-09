@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "machinecell";
-        version = "1.3.0";
-      };
+      identifier = { name = "machinecell"; version = "1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 Hidenori Azuma";
       maintainer = "Hidenori Azuma <as.capabl@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Arrow based stream transducers";
       description = "Stream processing library similar to pipes, couduit, or machines.\n\nArrow combinatins are supported and can be used with the arrow notation.\nAFRP-like utilities are also available.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.profunctors)
           (hsPkgs.arrows)
           (hsPkgs.semigroups)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
             (hsPkgs.machinecell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

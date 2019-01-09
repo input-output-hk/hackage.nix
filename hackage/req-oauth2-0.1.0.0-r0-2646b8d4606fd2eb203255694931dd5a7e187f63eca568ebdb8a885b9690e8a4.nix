@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "req-oauth2";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "req-oauth2"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Richard Cook";
       maintainer = "rcook@rcook.org";
@@ -22,7 +13,7 @@
       synopsis = "Provides OAuth2 authentication for use with Req";
       description = "This package adds OAuth2 authentication to Req.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,20 +30,11 @@
           (hsPkgs.req-url-extra)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
-      exes = {
-        "req-oauth2-app" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
-      tests = {
-        "req-oauth2-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
           ];
         };
+      exes = { "req-oauth2-app" = { depends = [ (hsPkgs.base) ]; }; };
+      tests = {
+        "req-oauth2-test" = { depends = [ (hsPkgs.base) (hsPkgs.hspec) ]; };
+        };
       };
-    };
-  }
+    }

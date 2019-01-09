@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fwgl-javascript";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "fwgl-javascript"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ziocroc@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "FWGL GHCJS backend";
       description = "FWGL GHCJS backend";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.ghcjs-base)
           (hsPkgs.vect)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

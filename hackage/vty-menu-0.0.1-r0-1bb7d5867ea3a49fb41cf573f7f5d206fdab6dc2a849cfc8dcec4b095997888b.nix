@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "vty-menu";
-        version = "0.0.1";
-      };
+      identifier = { name = "vty-menu"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Timothy Hobbs <timothyhobbs@seznam.cz>";
@@ -22,13 +13,6 @@
       synopsis = "A lib for displaying a menu and getting a selection using VTY";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vty)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.vty) ]; }; };
+    }

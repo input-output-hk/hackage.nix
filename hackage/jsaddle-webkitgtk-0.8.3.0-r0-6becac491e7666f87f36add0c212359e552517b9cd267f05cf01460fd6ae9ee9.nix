@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsaddle-webkitgtk";
-        version = "0.8.3.0";
-      };
+      identifier = { name = "jsaddle-webkitgtk"; version = "0.8.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Interface for JavaScript that works with GHCJS and GHC";
       description = "This package provides an EDSL for calling JavaScript that\ncan be used both from GHCJS and GHC.  When using GHC\nthe application is run using Warp and WebSockets to\ndrive a small JavaScipt helper.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.jsaddle)
           (hsPkgs.text)
           (hsPkgs.webkitgtk3-javascriptcore)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

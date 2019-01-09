@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "language-ocaml";
-        version = "0.2.0";
-      };
+      identifier = { name = "language-ocaml"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "valentin.robert.42@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Language tools for manipulating OCaml programs in Haskell";
       description = "Language tools for manipulating OCaml programs in Haskell.\nCurently includes a Alex/Happy parser, and a pretty-printer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,15 +34,13 @@
           (hsPkgs.tasty)
           (hsPkgs.tasty-golden)
           (hsPkgs.tasty-hunit)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.zlib)
-        ];
+          ];
+        pkgconfig = [ (pkgconfPkgs.zlib) ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       tests = {
         "Test" = {
           depends = [
@@ -67,8 +56,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

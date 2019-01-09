@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-websockets";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "pipes-websockets"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Parnell Springmeyer <parnell@ixmat.us>";
       maintainer = "parnell@ixmat.us";
@@ -22,11 +13,9 @@
       synopsis = "Library for using websockets ontop of pipes-network.";
       description = "A pipes helper library on-top of pipes-network for receiving and responding to websocket connections.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -36,8 +25,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

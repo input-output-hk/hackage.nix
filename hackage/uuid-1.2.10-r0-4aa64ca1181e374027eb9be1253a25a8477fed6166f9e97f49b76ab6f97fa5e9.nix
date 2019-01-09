@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "uuid";
-        version = "1.2.10";
-      };
+      identifier = { name = "uuid"; version = "1.2.10"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2012 Antoine Latter";
       maintainer = "aslatter@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "For creating, comparing, parsing and printing Universally Unique Identifiers";
       description = "This library is useful for creating, comparing, parsing and\nprinting Universally Unique Identifiers.\nSee <http://en.wikipedia.org/wiki/UUID> for the general idea.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.maccatcher)
           (hsPkgs.random)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "benchmark" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.mersenne-random-pure64)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "testuuid" = {
           depends = [
             (hsPkgs.base)
@@ -56,8 +47,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

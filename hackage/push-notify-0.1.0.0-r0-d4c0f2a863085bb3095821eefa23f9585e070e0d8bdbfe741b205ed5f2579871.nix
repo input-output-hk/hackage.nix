@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "push-notify";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "push-notify"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Marcos Pividori <marcos.pividori@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A server-side library for sending push notifications.";
       description = "This library offers a simple abstraction for sending notifications through APNS, GCM and MPNS.\n\nFor more information and test examples: <http://gsoc2013cwithmobiledevices.blogspot.com.ar/>\n\nGitHub repository: <https://github.com/MarcosPividori/GSoC-Communicating-with-mobile-devices>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,7 +45,7 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.xml-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

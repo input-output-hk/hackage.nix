@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "conduit-extra";
-        version = "0.1.2";
-      };
+      identifier = { name = "conduit-extra"; version = "0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Experimental helper functions for conduit.";
       description = "This package is meant as a testing ground for new concepts in conduit. The idea is to have a much lower barrier to entry for this library relative to conduit itself. This way, conduit itself will continue to have a best-practices, minimal, stable API, while people are free to try crazy new features.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.void)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.text)
             (hsPkgs.resourcet)
             (hsPkgs.void)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

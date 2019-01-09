@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HStringTemplateHelpers";
-        version = "0.0.7";
-      };
+      identifier = { name = "HStringTemplateHelpers"; version = "0.0.7"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2006-2008 Thomas Hartman";
       maintainer = "Thomas Hartman <thomashartman1 at gmail>";
@@ -22,7 +13,7 @@
       synopsis = "Convenience functions and instances for HStringTemplate";
       description = "Convenience functions and instances for HStringTemplate. I will deprecate this package if its contents are integrated into HStringTemplate.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.safe)
           (hsPkgs.strict)
           (hsPkgs.FileManip)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

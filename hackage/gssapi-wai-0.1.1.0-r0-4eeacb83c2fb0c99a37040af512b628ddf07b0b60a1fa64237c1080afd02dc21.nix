@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gssapi-wai";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "gssapi-wai"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Ondrej Palkovsky";
       maintainer = "palkovsky.ondrej@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "WAI Middleware for SPNEGO authentiaction";
       description = "Basic WAI Middleware allows both SPNEGO and failback to Kerberos\nusername/password authentication.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.case-insensitive)
           (hsPkgs.http-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

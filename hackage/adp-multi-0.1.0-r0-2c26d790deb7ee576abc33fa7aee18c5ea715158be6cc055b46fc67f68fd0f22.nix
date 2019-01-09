@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "adp-multi";
-        version = "0.1.0";
-      };
+      identifier = { name = "adp-multi"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Maik Riechert, 2012";
       maintainer = "Maik Riechert";
@@ -22,7 +13,7 @@
       synopsis = "ADP for multiple context-free languages";
       description = "adp-multi is an implementation of Algebraic Dynamic Programming\nfor multiple context-free languages.\nIt is a library based on the original Haskell implementation\nand can be considered an unoptimized prototype.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,19 +23,17 @@
           (hsPkgs.htrace)
           (hsPkgs.mtl)
           (hsPkgs.monadiccp)
-        ];
-      };
-      exes = {
-        "adp-multi-benchmarks" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
           ];
         };
-        "adp-test" = {
-          depends = [ (hsPkgs.base) ];
+      exes = {
+        "adp-multi-benchmarks" = {
+          depends = (pkgs.lib).optionals (flags.buildtests) [
+            (hsPkgs.base)
+            (hsPkgs.criterion)
+            ];
+          };
+        "adp-test" = { depends = [ (hsPkgs.base) ]; };
         };
-      };
       tests = {
         "MainTestSuite" = {
           depends = [
@@ -55,8 +44,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.random-shuffle)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

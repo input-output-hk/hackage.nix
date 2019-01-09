@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "crf-chain2-generic";
-        version = "0.3.0";
-      };
+      identifier = { name = "crf-chain2-generic"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011 Jakub Waszczuk, 2012 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Second-order, generic, constrained, linear conditional random fields";
       description = "The library provides implementation of the second-order, linear\nconditional random fields (CRFs) with position-wise constraints\nimposed over label values.  It also provides a generic framework for\ndefining custom feature data types and feature generation\nfunctions (see \"Data.CRF.Chain2.Generic\") together with\nsome concrete model examples (e.g. \"Data.CRF.Chain2.Pair\").";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.data-lens)
           (hsPkgs.comonad-transformers)
           (hsPkgs.sgd)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

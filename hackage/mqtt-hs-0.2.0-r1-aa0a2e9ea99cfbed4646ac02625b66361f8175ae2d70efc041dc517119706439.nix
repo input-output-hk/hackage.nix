@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mqtt-hs";
-        version = "0.2.0";
-      };
+      identifier = { name = "mqtt-hs"; version = "0.2.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2014 Lukas Braun";
       maintainer = "Lukas Braun <koomi+mqtt@hackerspace-bamberg.de>";
@@ -22,7 +13,7 @@
       synopsis = "A MQTT client library.";
       description = "A library to communicate with MQTT brokers.\nSee the @Network.MQTT@ module for documentation and a small example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.network)
           (hsPkgs.singletons)
           (hsPkgs.monad-loops)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

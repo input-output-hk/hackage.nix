@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsdev";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "hsdev"; version = "0.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voidex@live.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell development library and tool with support of autocompletion, symbol info, go to declaration, find references etc.";
       description = "Haskell development library and tool with support of autocompletion, symbol info, go to declaration, find references, hayoo search etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,10 +47,10 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.text)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       exes = {
         "hsdev" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "hsinspect" = {
           depends = [
             (hsPkgs.base)
@@ -96,8 +87,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "hsclearimports" = {
           depends = [
             (hsPkgs.base)
@@ -111,8 +102,8 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "hscabal" = {
           depends = [
             (hsPkgs.base)
@@ -124,8 +115,8 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "hshayoo" = {
           depends = [
             (hsPkgs.base)
@@ -137,13 +128,9 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
+      tests = { "test" = { depends = [ (hsPkgs.base) ]; }; };
       };
-      tests = {
-        "test" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
-    };
-  }
+    }

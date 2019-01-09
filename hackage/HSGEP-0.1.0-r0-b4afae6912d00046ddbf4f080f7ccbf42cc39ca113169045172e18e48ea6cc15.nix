@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HSGEP";
-        version = "0.1.0";
-      };
+      identifier = { name = "HSGEP"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2010 Matthew Sottile";
       maintainer = "Matthew Sottile <mjsottile@computer.org>";
@@ -22,7 +13,7 @@
       synopsis = "Gene Expression Programming evolutionary algorithm in Haskell";
       description = "Gene Expression Programming evolutionary algorithm implemented\nin Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,10 +24,8 @@
           (hsPkgs.network)
           (hsPkgs.haskell98)
           (hsPkgs.mersenne-random-pure64)
-        ];
+          ];
+        };
+      exes = { "HSGEP_Regression" = {}; };
       };
-      exes = {
-        "HSGEP_Regression" = {};
-      };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "concurrent-dns-cache";
-        version = "0.0.0";
-      };
+      identifier = { name = "concurrent-dns-cache"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Concurrent DNS cache";
       description = "Concurrent DNS cache";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.network)
           (hsPkgs.stm)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "main" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.network)
             (hsPkgs.stm)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.dns)
             (hsPkgs.concurrent-dns-cache)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

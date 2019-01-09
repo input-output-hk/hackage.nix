@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Ebnf2ps";
-        version = "1.0.12";
-      };
+      identifier = { name = "Ebnf2ps"; version = "1.0.12"; };
       license = "BSD-3-Clause";
       copyright = "1993-2014";
       maintainer = "Franklin Chen <franklinchen@franklinchen.com>";
@@ -22,7 +13,7 @@
       synopsis = "Peter's Syntax Diagram Drawing Tool";
       description = "Ebnf2ps generates nice looking syntax diagrams in EPS\nand FIG format from EBNF specifications and from yacc,\nbison, and Happy input grammars. The diagrams can be\nimmediatedly included in TeX/LaTeX documents and in\ntexts created with other popular document preparation\nsystems.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ebnf2ps" = {
@@ -33,11 +24,9 @@
             (hsPkgs.directory)
             (hsPkgs.unix)
             (hsPkgs.array)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.happy)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ascii-table";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "ascii-table"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Sentenai, Inc.";
       maintainer = "mitchellwrosen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "ASCII table";
       description = "Draw an ASCII table";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.wl-pprint-extras)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hworker";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hworker"; version = "0.1.0.1"; };
       license = "ISC";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -22,7 +13,7 @@
       synopsis = "A reliable at-least-once job queue built on top of redis.";
       description = "See README.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.time)
           (hsPkgs.attoparsec)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "hworker-test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-contrib)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

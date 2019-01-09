@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-secure-cookies";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "wai-secure-cookies"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "© حبيب الامين‪ 2017";
       maintainer = "ha.alamin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "WAI middleware to automatically encrypt and sign cookies";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.random)
           (hsPkgs.split)
           (hsPkgs.http-types)
-        ];
-      };
+          ];
+        };
       exes = {
         "waicookie-genkey" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.cryptonite)
             (hsPkgs.bytestring)
             (hsPkgs.memory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

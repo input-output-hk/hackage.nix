@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      buildtests = false;
-    };
+    flags = { splitbase = true; buildtests = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "iteratee";
-        version = "0.2.1";
-      };
+      identifier = { name = "iteratee"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John W. Lato, jwlato@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Iteratee-based I/O";
       description = "The IterateeGM monad provides strict, safe, and functional\nI/O.  In addition to pure Iteratee processors, file IO and\ncombinator functions are provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -35,14 +23,11 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.transformers)
           (hsPkgs.ListLike)
-        ] ++ (if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.base)
-          ]
+          ] ++ (if flags.splitbase
+          then [ (hsPkgs.base) (hsPkgs.base) ]
           else [
             (hsPkgs.base)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "AlanDeniseEricLauren";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "AlanDeniseEricLauren"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Echo Nolan";
       maintainer = "echo@echonolan.net";
@@ -22,7 +13,7 @@
       synopsis = "Find the minimal subset/submap satisfying some property.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.random)
           (hsPkgs.random-shuffle)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.random)
             (hsPkgs.transformers)
             (hsPkgs.MonadRandom)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

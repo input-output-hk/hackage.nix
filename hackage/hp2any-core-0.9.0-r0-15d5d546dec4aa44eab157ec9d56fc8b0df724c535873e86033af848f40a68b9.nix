@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hp2any-core";
-        version = "0.9.0";
-      };
+      identifier = { name = "hp2any-core"; version = "0.9.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009, Patai Gergely";
       maintainer = "Patai Gergely (patai@iit.bme.hu)";
@@ -22,7 +13,7 @@
       synopsis = "Heap profiling helper library";
       description = "This is the core library of the hp2any suite. It makes heap profiles\navailable during runtime through a simple interface, optionally\nmanaging all the data in the background. It can also process\narchived profiler output and present it in a structured form.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.network)
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-trie)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

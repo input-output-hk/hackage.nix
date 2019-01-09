@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pubnub";
-        version = "1.1.1";
-      };
+      identifier = { name = "pubnub"; version = "1.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "t@crashfast.com";
@@ -22,7 +13,7 @@
       synopsis = "PubNub Haskell SDK";
       description = "The PubNub Network makes Real-time easy with a Simple Communications API. Two Functions: Send and Receive (Publish and Subscribe). We provide a web-service API for businesses to build scalable Data Push communication apps on Mobile, Tablet and Web. Bidirectional JSON.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.crypto-cipher-types)
           (hsPkgs.base64-bytestring)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "hello_world" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.pubnub)
             (hsPkgs.aeson)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "chat" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +60,8 @@
             (hsPkgs.async)
             (hsPkgs.pubnub)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test-pubnub-haskell" = {
           depends = [
             (hsPkgs.base)
@@ -83,9 +74,9 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Tests" = {
           depends = [
@@ -99,8 +90,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

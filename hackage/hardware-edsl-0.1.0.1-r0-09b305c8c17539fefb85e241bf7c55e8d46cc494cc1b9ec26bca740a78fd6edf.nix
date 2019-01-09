@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hardware-edsl";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hardware-edsl"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mararon@chalmers.se";
@@ -22,7 +13,7 @@
       synopsis = "Deep embedding of hardware descriptions with code generation.";
       description = "Deep embedding of hardware descriptions with code generation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.syntactic)
           (hsPkgs.operational-alacarte)
           (hsPkgs.language-vhdl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

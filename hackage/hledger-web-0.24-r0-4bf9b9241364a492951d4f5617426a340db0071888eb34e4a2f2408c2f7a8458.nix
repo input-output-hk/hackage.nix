@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      threaded = true;
-      dev = false;
-      library-only = false;
-    };
+    flags = { threaded = true; dev = false; library-only = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hledger-web";
-        version = "0.24";
-      };
+      identifier = { name = "hledger-web"; version = "0.24"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -26,7 +13,7 @@
       synopsis = "A web interface for the hledger accounting tool.";
       description = "hledger is a library and set of user tools for working\nwith financial data (or anything that can be tracked in a\ndouble-entry accounting ledger.) It is a haskell port and\nfriendly fork of John Wiegley's Ledger. hledger provides\ncommand-line, curses and web interfaces, and aims to be a\nreliable, practical tool for daily use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -65,8 +52,8 @@
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-static)
           (hsPkgs.json)
-        ];
-      };
+          ];
+        };
       exes = {
         "hledger-web" = {
           depends = [
@@ -106,9 +93,9 @@
             (hsPkgs.yesod-core)
             (hsPkgs.yesod-static)
             (hsPkgs.json)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -117,8 +104,8 @@
             (hsPkgs.hspec)
             (hsPkgs.yesod)
             (hsPkgs.yesod-test)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

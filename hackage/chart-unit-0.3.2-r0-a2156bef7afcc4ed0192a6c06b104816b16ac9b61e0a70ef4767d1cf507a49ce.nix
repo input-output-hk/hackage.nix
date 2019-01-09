@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chart-unit";
-        version = "0.3.2";
-      };
+      identifier = { name = "chart-unit"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A set of native haskell charts.";
       description = "See https://tonyday567.github.io/chart-unit/index.html for some description.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.numhask)
           (hsPkgs.numhask-range)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "chart-unit-examples" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.ad)
             (hsPkgs.reflection)
             (hsPkgs.tdigest)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.numhask)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bamboo";
-        version = "2009.5.18.2";
-      };
+      identifier = { name = "bamboo"; version = "2009.5.18.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple blog middleware on hack";
       description = "A simple blog middleware on hack";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,7 +45,7 @@
           (hsPkgs.hack)
           (hsPkgs.hack-contrib)
           (hsPkgs.tokyocabinet-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

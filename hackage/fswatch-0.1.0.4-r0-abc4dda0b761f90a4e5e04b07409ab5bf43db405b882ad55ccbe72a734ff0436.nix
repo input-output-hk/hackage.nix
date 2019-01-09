@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fswatch";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "fswatch"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "-";
@@ -22,7 +13,7 @@
       synopsis = "File System watching tool with cli and slave functionalities.";
       description = "File System watching tool with cli and slave lib (with os process) functionalities.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.fsnotify)
           (hsPkgs.optparse-applicative)
           (hsPkgs.process)
-        ];
-      };
+          ];
+        };
       exes = {
         "hfswatch" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.process)
             (hsPkgs.fswatch)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

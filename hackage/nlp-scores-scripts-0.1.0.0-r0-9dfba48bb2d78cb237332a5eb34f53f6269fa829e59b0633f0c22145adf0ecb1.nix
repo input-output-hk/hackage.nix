@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "nlp-scores-scripts";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "nlp-scores-scripts"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "pitekus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "NLP scoring command-line programs";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ap" = {
@@ -32,16 +23,16 @@
             (hsPkgs.text)
             (hsPkgs.split)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "mean" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.nlp-scores)
             (hsPkgs.text)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

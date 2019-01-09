@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "type-fun";
-        version = "0.1.1";
-      };
+      identifier = { name = "type-fun"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,18 +13,11 @@
       synopsis = "Collection of widely reimplemented type families";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
-        "example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.type-fun)
-          ];
+        "example" = { depends = [ (hsPkgs.base) (hsPkgs.type-fun) ]; };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-websockets";
-        version = "3.0.1.2";
-      };
+      identifier = { name = "wai-websockets"; version = "3.0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Provide a bridge between WAI and the websockets package.";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-websockets>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +25,11 @@
           (hsPkgs.transformers)
           (hsPkgs.websockets)
           (hsPkgs.http-types)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-websockets-example" = {
-          depends = pkgs.lib.optionals (flags.example) [
+          depends = (pkgs.lib).optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.wai-websockets)
             (hsPkgs.websockets)
@@ -52,8 +43,8 @@
             (hsPkgs.text)
             (hsPkgs.file-embed)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

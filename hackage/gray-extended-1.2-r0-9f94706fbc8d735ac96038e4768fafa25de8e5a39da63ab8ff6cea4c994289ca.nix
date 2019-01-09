@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gray-extended";
-        version = "1.2";
-      };
+      identifier = { name = "gray-extended"; version = "1.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Amy de Buitléir 2010-2012";
       maintainer = "amy@nualeargais.ie";
@@ -22,14 +13,11 @@
       synopsis = "Gray encoding schemes";
       description = "Gray codes satisfy the property that two successive values\ndiffer in only one digit. Usually the term \\\"Gray code\\\"\nrefers to the Binary Reflected Gray code (BRGC),  but\nnon-binary Gray codes have also been discovered.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base-unicode-symbols)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.base-unicode-symbols) ];
+        };
       tests = {
         "gray-extended-tests" = {
           depends = [
@@ -39,8 +27,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.base-unicode-symbols)
             (hsPkgs.gray-extended)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

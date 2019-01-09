@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "streaming-sort";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "streaming-sort"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "Ivan Lazar Miljenovic";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sorting streams";
       description = "Sort streaming values, using files for a cached merge-sort of long @Stream@s.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.streaming-bytestring)
           (hsPkgs.streaming-with)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "sorting-tests" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

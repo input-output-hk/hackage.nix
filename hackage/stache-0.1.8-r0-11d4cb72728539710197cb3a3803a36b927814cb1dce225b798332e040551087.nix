@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stache";
-        version = "0.1.8";
-      };
+      identifier = { name = "stache"; version = "0.1.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov@openmailbox.org>";
@@ -22,7 +13,7 @@
       synopsis = "Mustache templates for Haskell";
       description = "Mustache templates for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.megaparsec)
             (hsPkgs.stache)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "mustache-spec" = {
           depends = [
             (hsPkgs.aeson)
@@ -67,9 +58,9 @@
             (hsPkgs.stache)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -80,8 +71,8 @@
             (hsPkgs.megaparsec)
             (hsPkgs.stache)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

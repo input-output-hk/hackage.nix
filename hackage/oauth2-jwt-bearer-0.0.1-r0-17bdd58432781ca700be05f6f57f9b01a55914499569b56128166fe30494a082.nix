@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "oauth2-jwt-bearer";
-        version = "0.0.1";
-      };
+      identifier = { name = "oauth2-jwt-bearer"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018, HotelKilo";
       maintainer = "mth@smith.st";
@@ -22,7 +13,7 @@
       synopsis = "OAuth2 jwt-bearer client flow as per rfc7523";
       description = "This is an implementation of the jwt-bearer authorization grant flow\nthat is specified by the OAuth2 JWT profile in\n<https://tools.ietf.org/html/rfc7523 rfc7523>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.transformers-bifunctors)
           (hsPkgs.unordered-containers)
           (hsPkgs.jose)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.warp)
             (hsPkgs.x509)
             (hsPkgs.x509-store)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

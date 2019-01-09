@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "keter";
-        version = "0.3.6.1";
-      };
+      identifier = { name = "keter"; version = "0.3.6.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Web application deployment manager, focusing on Haskell web frameworks";
       description = "Handles deployment of web apps, providing a reverse proxy to achieve zero downtime deployments. For more information, please see the README on Github: <https://github.com/snoyberg/keter#readme>\n\nRelease history:\n\n[0.3.5] You can now create Keter bundles without any applications. These can contain static hosts and redirects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -62,15 +53,8 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.array)
           (hsPkgs.mtl)
-        ];
-      };
-      exes = {
-        "keter" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.keter)
           ];
         };
+      exes = { "keter" = { depends = [ (hsPkgs.base) (hsPkgs.keter) ]; }; };
       };
-    };
-  }
+    }

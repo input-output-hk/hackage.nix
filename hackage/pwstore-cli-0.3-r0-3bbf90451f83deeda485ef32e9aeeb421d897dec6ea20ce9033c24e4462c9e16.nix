@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { fast = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pwstore-cli";
-        version = "0.3";
-      };
+      identifier = { name = "pwstore-cli"; version = "0.3"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "robert@rycee.net";
@@ -22,7 +13,7 @@
       synopsis = "Command line interface for the pwstore library";
       description = "This program provides a command line interface for Peter Scott's\npwstore library.  Specifically, it is possible to generate,\nvalidate, and strengthen passwords hashed in the pwstore format.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pwstore" = {
@@ -31,13 +22,11 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.cmdargs)
-          ] ++ (if flags.fast
+            ] ++ (if flags.fast
             then [ (hsPkgs.pwstore-fast) ]
-            else [
-              (hsPkgs.pwstore-purehaskell)
-            ]);
+            else [ (hsPkgs.pwstore-purehaskell) ]);
+          };
         };
-      };
       tests = {
         "test-pwstore-cli" = {
           depends = [
@@ -48,8 +37,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.pwstore-fast)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

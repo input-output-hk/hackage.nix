@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "data-cycle";
-        version = "0.1.2";
-      };
+      identifier = { name = "data-cycle"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tob.brandt@gmail.com";
@@ -22,14 +13,14 @@
       synopsis = "a cyclic doubly linked list";
       description = "This package implements a cyclic doubly linked list and\ndefines various instances for it.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.collections-api)
           (hsPkgs.collections-base-instances)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

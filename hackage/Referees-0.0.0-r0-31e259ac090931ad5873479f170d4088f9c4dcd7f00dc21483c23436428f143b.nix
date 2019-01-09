@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      documentation = false;
-    };
+    flags = { debug = false; documentation = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Referees";
-        version = "0.0.0";
-      };
+      identifier = { name = "Referees"; version = "0.0.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) Pablo Couto 2014";
       maintainer = "Pablo Couto <pablo@infty.in>";
@@ -25,7 +13,7 @@
       synopsis = "A utility for computing distributions of material to review among reviewers.";
       description = "A utility for computing distributions of material to review among reviewers.\n@Referees@ takes into consideration the areas of expertise of the referees,\nthe number of items that they accept for review, the languages they\nunderstand, and the minimum and maximum number of copies we may want to\ndistribute per each item to review.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +25,8 @@
           (hsPkgs.cassava)
           (hsPkgs.MissingH)
           (hsPkgs.glpk-hs)
-        ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs.hscolour);
-      };
+          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs.hscolour);
+        };
       exes = {
         "referees" = {
           depends = [
@@ -48,8 +36,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.directory)
             (hsPkgs.Referees)
-          ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs.hscolour);
+            ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs.hscolour);
+          };
         };
       };
-    };
-  }
+    }

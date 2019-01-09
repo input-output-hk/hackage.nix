@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.0";
-      identifier = {
-        name = "vcard";
-        version = "0.1.2";
-      };
+      identifier = { name = "vcard"; version = "0.1.2"; };
       license = "LicenseRef-LGPL";
       copyright = "(c) 2008. Mathieu Boespflug <mboes@tweag.net>";
       maintainer = "Mathieu Boespflug <mboes@tweag.net>";
@@ -22,7 +13,7 @@
       synopsis = "A library for parsing/printing vCards from/to various formats.";
       description = "A library for parsing\\/printing vCards from\\/to various formats.\nCurrently only vCard 3.0 defined in RFC 2426 is supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.mime-directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

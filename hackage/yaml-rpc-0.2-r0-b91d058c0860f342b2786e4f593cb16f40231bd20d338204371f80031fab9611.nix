@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "yaml-rpc";
-        version = "0.2";
-      };
+      identifier = { name = "yaml-rpc"; version = "0.2"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "portnov84@rambler.ru";
@@ -22,7 +13,7 @@
       synopsis = "Simple library for network (TCP/IP) YAML RPC";
       description = "This library aimed to organize remote procedure call (RPC)\nover TCP/IP network, using YAML as data serialization format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.convertible-text)
           (hsPkgs.containers)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

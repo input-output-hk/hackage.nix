@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "scgi";
-        version = "0.3.2";
-      };
+      identifier = { name = "scgi"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Eric Sessoms 2007, (c) Stephen Blackheath 2008";
       maintainer = "http://blacksapphire.com/antispam/";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell library for writing SCGI programs.";
       description = "This library lets you write SCGI programs. This package reuses the\ncgi package API, making it very easy to port CGI programs to SCGI.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.network)
           (hsPkgs.network-bytestring)
           (hsPkgs.extensible-exceptions)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

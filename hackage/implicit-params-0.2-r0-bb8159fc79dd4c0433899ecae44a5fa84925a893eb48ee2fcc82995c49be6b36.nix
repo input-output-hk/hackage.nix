@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "implicit-params";
-        version = "0.2";
-      };
+      identifier = { name = "implicit-params"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "shane@duairc.com";
@@ -22,13 +13,8 @@
       synopsis = "Named and unnamed implicit parameters with defaults.";
       description = "Named and unnamed implicit parameters with defaults using type classes and\nconstraint hacks. For examples, see \"Data.Implicit\".";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-default-class)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.data-default-class) ]; };
+      };
+    }

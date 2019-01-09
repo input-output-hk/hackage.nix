@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "choice";
-        version = "0.2.1";
-      };
+      identifier = { name = "choice"; version = "0.2.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "m@tweag.io";
@@ -22,10 +13,6 @@
       synopsis = "A solution to boolean blindness.";
       description = "Please see README.md.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

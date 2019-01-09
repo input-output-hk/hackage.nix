@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "toml-parser";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "toml-parser"; version = "0.1.0.0"; };
       license = "ISC";
       copyright = "2017 Eric Mertens";
       maintainer = "emertens@gmail.com";
@@ -22,19 +13,14 @@
       synopsis = "Parser for the TOML configuration language";
       description = "Parser for the TOML configuration language. TOML is specified\nby <https://github.com/toml-lang/toml>. This language is\ndesigned to be easy to understand and unambiguous.\n\nThis implementation uses Alex and Happy to generate an\nefficient lexer and parser. It aims to have minimal library\ndependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.text)
-          (hsPkgs.time)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.text) (hsPkgs.time) ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       };
-    };
-  }
+    }

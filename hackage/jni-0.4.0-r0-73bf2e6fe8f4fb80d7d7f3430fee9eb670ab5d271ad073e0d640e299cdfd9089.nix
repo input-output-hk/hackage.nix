@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jni";
-        version = "0.4.0";
-      };
+      identifier = { name = "jni"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 EURL Tweag.";
       maintainer = "m@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Complete JNI raw bindings.";
       description = "Please see README.md.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +25,9 @@
           (hsPkgs.deepseq)
           (hsPkgs.singletons)
           (hsPkgs.thread-local-storage)
-        ] ++ [ (hsPkgs.inline-c) ];
+          ] ++ [ (hsPkgs.inline-c) ];
         libs = [ (pkgs."jvm") ];
-        build-tools = [
-          (hsPkgs.buildPackages.cpphs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        };
       };
-    };
-  }
+    }

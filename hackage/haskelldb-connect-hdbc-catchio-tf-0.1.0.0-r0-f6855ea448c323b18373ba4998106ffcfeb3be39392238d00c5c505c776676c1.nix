@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "haskelldb-connect-hdbc-catchio-tf";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kei Hibino <ex8k.hibino@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Bracketed HaskellDB HDBC session using MonadCatchIO-transformers";
       description = "This package includes bracketed HDBC session function\nusing MonadCatchIO-transformers for HaskellDB.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +26,7 @@
           (hsPkgs.haskelldb-connect-hdbc)
           (hsPkgs.transformers)
           (hsPkgs.MonadCatchIO-transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

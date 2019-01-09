@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "tiger";
-        version = "1.1.1";
-      };
+      identifier = { name = "tiger"; version = "1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Universiteit Utrecht";
       maintainer = "Doaitse Swierstra";
@@ -22,7 +13,7 @@
       synopsis = "Tiger Compiler of Universiteit Utrecht";
       description = "Tiger compiler";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "tiger" = {
@@ -34,8 +25,8 @@
             (hsPkgs.containers)
             (hsPkgs.uuagc)
             (hsPkgs.uuagc-cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

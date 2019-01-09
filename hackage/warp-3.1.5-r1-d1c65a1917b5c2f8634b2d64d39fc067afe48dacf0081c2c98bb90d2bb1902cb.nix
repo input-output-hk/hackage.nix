@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       network-bytestring = false;
       allow-sendfilefd = true;
       warp-debug = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "warp";
-        version = "3.1.5";
-      };
+      identifier = { name = "warp"; version = "3.1.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -26,7 +17,7 @@
       synopsis = "A fast, light-weight web server for WAI applications.";
       description = "HTTP\\/1.0, HTTP\\/1.1 and HTTP\\/2 are supported.\nFor HTTP\\/2,  Warp supports direct and ALPN (in TLS)\nbut not upgrade.\nAPI docs and the README are available at\n<http://www.stackage.org/package/warp>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -51,30 +42,14 @@
           (hsPkgs.stm)
           (hsPkgs.word8)
           (hsPkgs.hashable)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
-          else [
-            (hsPkgs.network)
-          ])) ++ (if system.isWindows
-          then [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]
-          else [
-            (hsPkgs.unix)
-            (hsPkgs.http-date)
-          ]);
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
+          else [ (hsPkgs.network) ])) ++ (if system.isWindows
+          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
+          else [ (hsPkgs.unix) (hsPkgs.http-date) ]);
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -110,12 +85,12 @@
             (hsPkgs.http2)
             (hsPkgs.word8)
             (hsPkgs.hashable)
-          ] ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) [
+            ] ++ (pkgs.lib).optionals ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) [
             (hsPkgs.unix)
             (hsPkgs.http-date)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "parser" = {
           depends = [
@@ -125,8 +100,8 @@
             (hsPkgs.http-types)
             (hsPkgs.network)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-bitmex-client";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "haskell-bitmex-client"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dan.lucsanszky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Complete BitMEX Client";
       description = "A complete BitMEX client library including the WebSocket API and a wrapper around the auto-generated REST API (haskell-bitmex-rest).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.vector)
           (hsPkgs.websockets)
           (hsPkgs.wuss)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.websockets)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

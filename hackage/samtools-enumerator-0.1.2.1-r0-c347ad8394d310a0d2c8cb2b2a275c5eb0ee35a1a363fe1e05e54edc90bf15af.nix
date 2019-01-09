@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "samtools-enumerator";
-        version = "0.1.2.1";
-      };
+      identifier = { name = "samtools-enumerator"; version = "0.1.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "nick@ingolia.org";
@@ -22,7 +13,7 @@
       synopsis = "Enumerator interface to SamTools library";
       description = "Enumerator interface to SamTools library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.transformers)
           (hsPkgs.enumerator)
           (hsPkgs.samtools)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

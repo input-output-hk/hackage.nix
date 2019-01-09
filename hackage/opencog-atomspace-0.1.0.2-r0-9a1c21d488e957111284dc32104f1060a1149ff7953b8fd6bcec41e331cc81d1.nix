@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "opencog-atomspace";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "opencog-atomspace"; version = "0.1.0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "-";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Bindings for the AtomSpace.";
       description = "This library defines Haskell Bindings for the AtomSpace.\n\nFor more information on Haskell Bindings:\n<http://wiki.opencog.org/w/Haskell>\n\nGitHub repository:\n<https://github.com/opencog/atomspace/tree/master/opencog/haskell>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,10 +24,8 @@
           (hsPkgs.mtl)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
-        libs = [
-          (pkgs."atomspace-cwrapper")
-        ];
+          ];
+        libs = [ (pkgs."atomspace-cwrapper") ];
+        };
       };
-    };
-  }
+    }

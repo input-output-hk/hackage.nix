@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Tables";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "Tables"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nathanpisarski@gmail.com";
@@ -22,15 +13,8 @@
       synopsis = "A client for Quill databases";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      exes = {
-        "Tables" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cookbook)
-          ];
-        };
       };
-    };
-  }
+    components = {
+      exes = { "Tables" = { depends = [ (hsPkgs.base) (hsPkgs.cookbook) ]; }; };
+      };
+    }

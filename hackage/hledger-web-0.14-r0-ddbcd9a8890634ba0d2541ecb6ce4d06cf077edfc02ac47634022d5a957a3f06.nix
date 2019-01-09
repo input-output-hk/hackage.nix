@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { production = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hledger-web";
-        version = "0.14";
-      };
+      identifier = { name = "hledger-web"; version = "0.14"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "A web interface for the hledger accounting tool.";
       description = "hledger is a haskell port and friendly fork of John Wiegley's ledger accounting tool.\nThis package provides a web interface as an alternative to the hledger command line interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hledger-web" = {
@@ -42,8 +33,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.wai-extra)
             (hsPkgs.file-embed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

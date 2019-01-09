@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "ghci-ng";
-        version = "10.0.0";
-      };
+      identifier = { name = "ghci-ng"; version = "10.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2005 The University of Glasgow, 2008 Claus Reinke, 2012 Kazu Yamamoto, 2014 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,11 +13,11 @@
       synopsis = "Next generation GHCi";
       description = "GHCi plus extra goodies. See README for feature list: https://github.com/chrisdone/ghci-ng#features";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ghci-ng" = {
-          depends = (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.ghc) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
+          depends = ((pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs.ghc) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.8") [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.bytestring)
@@ -40,10 +31,10 @@
             (hsPkgs.syb)
             (hsPkgs.containers)
             (hsPkgs.time)
-          ]) ++ (if system.isWindows
+            ]) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
+          };
         };
       };
-    };
-  }
+    }

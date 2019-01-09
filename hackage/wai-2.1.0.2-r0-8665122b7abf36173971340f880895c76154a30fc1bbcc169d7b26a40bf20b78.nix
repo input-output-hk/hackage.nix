@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wai";
-        version = "2.1.0.2";
-      };
+      identifier = { name = "wai"; version = "2.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Web Application Interface.";
       description = "Provides a common protocol for communication between web applications and web servers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vault)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "GtkTV";
-        version = "0.2.0";
-      };
+      identifier = { name = "GtkTV"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2011 by Conal Elliott";
       maintainer = "conal@conal.net";
@@ -22,7 +13,7 @@
       synopsis = "Gtk-based GUIs for Tangible Values";
       description = "GtkTV is a very small library that extends the TV (tangible value)\nframework with graphical user interfaces, using gtk2hs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.TypeCompose)
           (hsPkgs.TV)
           (hsPkgs.vector-space)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

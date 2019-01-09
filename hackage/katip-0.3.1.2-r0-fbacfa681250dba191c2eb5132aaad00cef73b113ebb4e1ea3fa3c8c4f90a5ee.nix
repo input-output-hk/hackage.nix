@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "katip";
-        version = "0.3.1.2";
-      };
+      identifier = { name = "katip"; version = "0.3.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Soostone Inc, 2015-2016";
       maintainer = "michael.xavier@soostone.com";
@@ -22,7 +13,7 @@
       synopsis = "A structured logging framework.";
       description = "Katip is a structured logging framework. See README.md for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.microlens)
           (hsPkgs.microlens-th)
           (hsPkgs.semigroups)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -72,9 +63,9 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.unordered-containers)
             (hsPkgs.microlens)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -89,8 +80,8 @@
             (hsPkgs.transformers)
             (hsPkgs.deepseq)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

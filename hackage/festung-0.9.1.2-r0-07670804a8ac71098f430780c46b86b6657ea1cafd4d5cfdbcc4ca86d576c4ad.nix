@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "festung";
-        version = "0.9.1.2";
-      };
+      identifier = { name = "festung"; version = "0.9.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "developer@figo.io";
@@ -22,7 +13,7 @@
       synopsis = "Remote multi-db SQLCipher server";
       description = "festung is a server that provides an HTTP API to execute queries\nagainst encrypted SQLite databases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.wai)
           (hsPkgs.yesod)
           (hsPkgs.yesod-core)
-        ];
-      };
+          ];
+        };
       exes = {
         "festung" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.base)
             (hsPkgs.festung)
             (hsPkgs.yesod)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -82,8 +73,8 @@
             (hsPkgs.wai-extra)
             (hsPkgs.yesod)
             (hsPkgs.yesod-test)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

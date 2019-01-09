@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-auth-ldap-mediocre";
-        version = "0.1.1";
-      };
+      identifier = { name = "yesod-auth-ldap-mediocre"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "amartin@layer3com.com";
@@ -22,7 +13,7 @@
       synopsis = "Very simlple LDAP auth for yesod";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.LDAP)
           (hsPkgs.aeson)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

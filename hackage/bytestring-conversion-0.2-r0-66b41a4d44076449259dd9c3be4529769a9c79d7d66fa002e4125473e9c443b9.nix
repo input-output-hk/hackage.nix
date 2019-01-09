@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bytestring-conversion";
-        version = "0.2";
-      };
+      identifier = { name = "bytestring-conversion"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2014 Toralf Wittner";
       maintainer = "Toralf Wittner <tw@dtex.org>";
@@ -22,7 +13,7 @@
       synopsis = "Type-classes to convert values to and from ByteString.";
       description = "Defines the type-classes 'ToByteString' and 'FromByteString'\nto convert values to and from ByteString.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.double-conversion)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "bytestring-conversion-tests" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bytestring-conversion-bench" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.criterion)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

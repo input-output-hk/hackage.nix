@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "directory-layout";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "directory-layout"; version = "0.7.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "matvey.aksenov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Directory layout DSL";
       description = "Making, fitting, printing directory layouts";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +57,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unix)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

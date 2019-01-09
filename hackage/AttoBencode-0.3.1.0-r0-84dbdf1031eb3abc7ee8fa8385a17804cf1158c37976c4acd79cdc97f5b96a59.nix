@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "AttoBencode";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "AttoBencode"; version = "0.3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Florian Hartwig <florian.j.hartwig@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Fast Bencode encoding and parsing library";
       description = "A library for encoding and decoding the Bencode data serialisation format\nused by BitTorrent. The focus of this library are good performance (good\nenough to be used in a BitTorrent client) and ease of\nuse.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.blaze-textual)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

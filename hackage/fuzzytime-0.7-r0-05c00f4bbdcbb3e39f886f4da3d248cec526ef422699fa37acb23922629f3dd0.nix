@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fuzzytime";
-        version = "0.7";
-      };
+      identifier = { name = "fuzzytime"; version = "0.7"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "kamil.stachowski@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A clock and timer that tell the time in a more human way";
       description = "A clock and timer that tell the time in a more human way";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "fuzzytime" = {
@@ -32,8 +23,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.old-time)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

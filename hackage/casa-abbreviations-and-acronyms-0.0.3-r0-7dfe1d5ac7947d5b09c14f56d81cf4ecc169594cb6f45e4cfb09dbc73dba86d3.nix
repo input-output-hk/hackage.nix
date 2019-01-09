@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "casa-abbreviations-and-acronyms";
         version = "0.0.3";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2018 Commonwealth Scientific and Industrial Research Organisation (CSIRO)";
       maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
@@ -22,7 +16,7 @@
       synopsis = "CASA Abbreviations and Acronyms";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nCASA Abbreviations and Acronym\n\nhttps://www.casa.gov.au/about-us/standard-page/aviation-abbreviations-and-acronyms";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +28,8 @@
           (hsPkgs.wreq)
           (hsPkgs.bytestring)
           (hsPkgs.these)
-        ];
-      };
+          ];
+        };
       exes = {
         "casa-abbreviations-and-acronyms" = {
           depends = [
@@ -44,8 +38,8 @@
             (hsPkgs.fuzzy)
             (hsPkgs.optparse-applicative)
             (hsPkgs.casa-abbreviations-and-acronyms)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

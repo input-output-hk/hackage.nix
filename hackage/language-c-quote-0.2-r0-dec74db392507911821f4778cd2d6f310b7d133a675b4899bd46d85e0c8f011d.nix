@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-c-quote";
-        version = "0.2";
-      };
+      identifier = { name = "language-c-quote"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006-2010 Harvard University";
       maintainer = "mainland@eecs.harvard.edu";
@@ -22,7 +13,7 @@
       synopsis = "C/CUDA quasiquoting library.";
       description = "C/CUDA quasiquoting library.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -38,16 +29,12 @@
           (hsPkgs.syb)
           (hsPkgs.symbol)
           (hsPkgs.template-haskell)
-        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "6.10" && compiler.version.lt "6.12")) (hsPkgs.haskell-src-meta)) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "6.12" && compiler.version.lt "6.13")) (hsPkgs.haskell-src-meta);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "6.10" && (compiler.version).lt "6.12")) (hsPkgs.haskell-src-meta)) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13")) (hsPkgs.haskell-src-meta);
+        };
       exes = {
         "unit-test" = {
-          depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.language-c-quote)
-          ];
+          depends = [ (hsPkgs.HUnit) (hsPkgs.base) (hsPkgs.language-c-quote) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      split-base = true;
-      applicative-in-base = true;
-    };
+    flags = { split-base = true; applicative-in-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "attoparsec";
-        version = "0.8.0.0";
-      };
+      identifier = { name = "attoparsec"; version = "0.8.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
@@ -25,16 +13,14 @@
       synopsis = "Fast combinator parsing for bytestrings";
       description = "A fast parser combinator library, aimed particularly at dealing\nefficiently with network protocols and complicated text/binary\nfile formats.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (if flags.split-base
           then [ (hsPkgs.base) ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-          ]) ++ [ (hsPkgs.base) ];
+          else [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.containers) ]) ++ [
+          (hsPkgs.base)
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stable-tree";
-        version = "0.4.1";
-      };
+      identifier = { name = "stable-tree"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tsuraan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Trees whose branches are resistant to change";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,17 +26,13 @@
           (hsPkgs.cryptohash)
           (hsPkgs.mtl)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "demo" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.stable-tree)
           ];
         };
-      };
+      exes = {
+        "demo" = {
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.stable-tree) ];
+          };
+        };
       tests = {
         "test-all" = {
           depends = [
@@ -56,8 +43,8 @@
             (hsPkgs.stable-tree)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

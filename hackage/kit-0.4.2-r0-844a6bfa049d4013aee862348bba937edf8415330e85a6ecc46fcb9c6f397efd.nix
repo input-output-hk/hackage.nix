@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "kit";
-        version = "0.4.2";
-      };
+      identifier = { name = "kit"; version = "0.4.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nkpart@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A dependency manager for XCode (Objective-C) projects";
       description = "A dependency manager for XCode (Objective-C) projects";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "kit" = {
@@ -41,8 +32,8 @@
             (hsPkgs.MissingH)
             (hsPkgs.HTTP)
             (hsPkgs.Glob)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

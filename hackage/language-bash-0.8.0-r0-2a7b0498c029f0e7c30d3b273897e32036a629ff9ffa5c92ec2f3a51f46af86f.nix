@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-bash";
-        version = "0.8.0";
-      };
+      identifier = { name = "language-bash"; version = "0.8.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013-2018 Kyle Raftogianis";
       maintainer = "Kyle Raftogianis <knrafto@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Parsing and pretty-printing Bash shell scripts";
       description = "A library for parsing, pretty-printing, and manipulating\nBash shell scripts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.parsec)
           (hsPkgs.pretty)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-expected-failure)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

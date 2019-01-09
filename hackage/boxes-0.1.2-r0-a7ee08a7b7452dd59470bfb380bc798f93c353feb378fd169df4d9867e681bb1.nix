@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "boxes";
-        version = "0.1.2";
-      };
+      identifier = { name = "boxes"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Eelis van der Weegen <boxes@contacts.eelis.net>";
@@ -22,13 +13,8 @@
       synopsis = "2D text pretty-printing library";
       description = "A pretty-printing library for laying out text in\ntwo dimensions, using a simple box model.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.split)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.split) ]; };
+      };
+    }

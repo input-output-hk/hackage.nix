@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "time-warp";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "time-warp"; version = "0.1.1.2"; };
       license = "GPL-3.0-only";
       copyright = "2016 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -22,7 +13,7 @@
       synopsis = "Distributed systems execution emulation";
       description = "This package allows to write scenarios over distributed\nsystems, which can be launched as either real program or\nfast emulation without need to wait for delays and with\nnetwork nastiness manually controlled.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.time-units)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       exes = {
         "token-ring" = {
           depends = [
@@ -81,9 +72,9 @@
             (hsPkgs.time-warp)
             (hsPkgs.transformers)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "time-warp-test" = {
           depends = [
@@ -105,8 +96,8 @@
             (hsPkgs.time-warp)
             (hsPkgs.transformers)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

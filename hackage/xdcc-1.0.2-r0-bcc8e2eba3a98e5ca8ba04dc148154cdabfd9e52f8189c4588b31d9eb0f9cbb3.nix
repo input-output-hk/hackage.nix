@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xdcc";
-        version = "1.0.2";
-      };
+      identifier = { name = "xdcc"; version = "1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "git@jangerlinger.de";
@@ -22,7 +13,7 @@
       synopsis = "A wget-like utility for retrieving files from XDCC bots on\nIRC";
       description = "XDCC (eXtended DCC) is a protocol used by IRC bots to make\nfiles available for transfer. This utility can be used to\nretrieve such files.\n\nSee <https://de.wikipedia.org/wiki/XDCC> for\nmore details.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "xdcc" = {
@@ -44,8 +35,8 @@
             (hsPkgs.simpleirc)
             (hsPkgs.transformers)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

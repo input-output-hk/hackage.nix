@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hunit-rematch";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hunit-rematch"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tcrayford@googlemail.com";
@@ -22,11 +13,9 @@
       synopsis = "HUnit support for rematch";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.rematch)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

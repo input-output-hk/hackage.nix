@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "kibro";
-        version = "0.1";
-      };
+      identifier = { name = "kibro"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Done <chrisdone@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Web development framework.";
       description = "Web development framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.cgi)
           (hsPkgs.HDBC-sqlite3)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       exes = {
         "kibro" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.validate)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

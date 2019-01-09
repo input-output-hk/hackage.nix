@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "memcached";
-        version = "0.2";
-      };
+      identifier = { name = "memcached"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Janrain <hackage@janrain.com>";
@@ -22,7 +13,7 @@
       synopsis = "haskell bindings for memcached";
       description = "haskell bindings for memcached";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.network)
           (hsPkgs.bytestring)
           (hsPkgs.utf8-light)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

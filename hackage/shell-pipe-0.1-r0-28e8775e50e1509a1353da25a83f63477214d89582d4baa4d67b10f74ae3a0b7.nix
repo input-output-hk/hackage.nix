@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "shell-pipe";
-        version = "0.1";
-      };
+      identifier = { name = "shell-pipe"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,21 +13,13 @@
       synopsis = "Pipe streams through external shell commands";
       description = "Beginning with GHC-6.4 System.Process is available, which is the better choice. Original name was shell-haskell.";
       buildType = "Custom";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-      };
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
-        "Example1" = {
-          depends = [ (hsPkgs.base) ];
-        };
-        "Example2" = {
-          depends = [ (hsPkgs.base) ];
-        };
-        "Bug1" = {
-          depends = [ (hsPkgs.base) ];
+        "Example1" = { depends = [ (hsPkgs.base) ]; };
+        "Example2" = { depends = [ (hsPkgs.base) ]; };
+        "Bug1" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

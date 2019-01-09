@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-transloadit";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "yesod-transloadit"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "robertjflong@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Transloadit support for Yesod";
       description = "Drop in Transloadit capabilites for Yesod web apps";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.lens)
           (hsPkgs.shakespeare)
           (hsPkgs.lens-aeson)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

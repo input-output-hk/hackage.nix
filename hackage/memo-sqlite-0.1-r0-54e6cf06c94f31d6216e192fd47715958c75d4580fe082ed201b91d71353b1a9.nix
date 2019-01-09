@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "memo-sqlite";
-        version = "0.1";
-      };
+      identifier = { name = "memo-sqlite"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "claudiusmaximus@goto10.org";
@@ -22,13 +13,8 @@
       synopsis = "memoize functions using SQLite3 database";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.direct-sqlite)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.direct-sqlite) ]; };
+      };
+    }

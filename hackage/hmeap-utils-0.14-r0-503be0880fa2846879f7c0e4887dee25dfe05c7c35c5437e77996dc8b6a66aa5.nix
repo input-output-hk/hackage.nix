@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hmeap-utils";
-        version = "0.14";
-      };
+      identifier = { name = "hmeap-utils"; version = "0.14"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape and others, 2007-2013";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Meapsoft Parser Utilities";
       description = "Utilities related to the hmeap parser.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hmeap-browse" = {
@@ -34,8 +25,8 @@
             (hsPkgs.delimited-text)
             (hsPkgs.hmeap)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "hmeap-parser" = {
           depends = [
             (hsPkgs.array)
@@ -45,8 +36,8 @@
             (hsPkgs.delimited-text)
             (hsPkgs.hmeap)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "hmeap-play" = {
           depends = [
             (hsPkgs.array)
@@ -58,8 +49,8 @@
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "hmeap-plot" = {
           depends = [
             (hsPkgs.array)
@@ -71,8 +62,8 @@
             (hsPkgs.hmatrix)
             (hsPkgs.hmeap)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "hmeap-stat" = {
           depends = [
             (hsPkgs.array)
@@ -83,8 +74,8 @@
             (hsPkgs.hmatrix)
             (hsPkgs.hmeap)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

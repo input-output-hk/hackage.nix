@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "music-score";
-        version = "1.3";
-      };
+      identifier = { name = "music-score"; version = "1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hans Hoglund";
@@ -22,7 +13,7 @@
       synopsis = "Musical score and part representation.";
       description = "Musical score and part representation.\nThis library is part of the Music Suite, see <http://musicsuite.github.com>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.music-pitch-literal)
           (hsPkgs.music-dynamics-literal)
           (hsPkgs.reenact)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

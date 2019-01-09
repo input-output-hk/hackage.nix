@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "authenticate";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "authenticate"; version = "1.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Authentication methods for Haskell web applications.";
       description = "Focus is on third-party authentication methods, such as OpenID and BrowserID.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.conduit)
           (hsPkgs.blaze-builder-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

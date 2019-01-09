@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hbeanstalk";
-        version = "0.1";
-      };
+      identifier = { name = "hbeanstalk"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2010, Greg Heartsfield";
       maintainer = "Greg Heartsfield <scsibug@imap.cc>";
@@ -22,7 +13,7 @@
       synopsis = "Client for the beanstalkd workqueue service.";
       description = "This is the hbeanstalk library.  It provides a client\ninterface to a beanstalkd server, allowing Haskell to be\na producer and/or a consumer of work items.  Let Haskell\ndo your heavy lifting!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.HsSyck)
           (hsPkgs.parsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

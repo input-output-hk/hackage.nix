@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ght";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "ght"; version = "0.4.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Conrad Parker <conrad@metadecks.org>";
@@ -22,7 +13,7 @@
       synopsis = "Trivial routines for inspecting git repositories";
       description = "This is a bunch of trivial routines for inspecting git repositories.\nIt is in no way useful beyond that.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.iteratee-compress)
           (hsPkgs.mmap)
           (hsPkgs.storable-endian)
-        ] ++ [ (hsPkgs.base) ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        };
       exes = {
         "ght" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.ui-command)
             (hsPkgs.unix)
             (hsPkgs.zlib)
-          ] ++ [ (hsPkgs.base) ];
+            ] ++ [ (hsPkgs.base) ];
+          };
         };
       };
-    };
-  }
+    }

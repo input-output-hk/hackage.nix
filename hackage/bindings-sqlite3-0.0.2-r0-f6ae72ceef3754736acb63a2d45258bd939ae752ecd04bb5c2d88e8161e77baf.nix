@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "bindings-sqlite3";
-        version = "0.0.2";
-      };
+      identifier = { name = "bindings-sqlite3"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Maurício C. Antunes";
@@ -22,16 +13,11 @@
       synopsis = "Check bindings-common package for directions.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-common)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.sqlite3)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-common) ];
+        pkgconfig = [ (pkgconfPkgs.sqlite3) ];
+        };
       };
-    };
-  }
+    }

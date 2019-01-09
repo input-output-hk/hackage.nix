@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Ninjas";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "Ninjas"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Eric Mertens 2013";
       maintainer = "emertens@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Ninja game";
       description = "A multiplayer game where you blend in as an NPC while trying to visit all of the ancient pillars. Press 'A' to attack, 'S' to drop smoke, 'N' for new game, 'ESC' to quit, click with your mouse to move.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Ninjas" = {
@@ -36,8 +27,8 @@
             (hsPkgs.network)
             (hsPkgs.networked-game)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

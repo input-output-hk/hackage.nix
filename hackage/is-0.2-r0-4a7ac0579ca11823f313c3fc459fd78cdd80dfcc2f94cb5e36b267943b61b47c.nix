@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "is";
-        version = "0.2";
-      };
+      identifier = { name = "is"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "project-is@lopezjuan.com";
@@ -22,22 +13,13 @@
       synopsis = "Pattern predicates using TH";
       description = "Generate predicates of type (t → Bool) from patterns or constructors of type t.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.template-haskell)
-            (hsPkgs.is)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.is) ];
+          };
         };
       };
-    };
-  }
+    }

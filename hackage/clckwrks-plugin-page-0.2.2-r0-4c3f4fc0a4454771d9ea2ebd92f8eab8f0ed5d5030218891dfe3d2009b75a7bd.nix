@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "clckwrks-plugin-page";
-        version = "0.2.2";
-      };
+      identifier = { name = "clckwrks-plugin-page"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "2012, 2013 Jeremy Shaw, SeeReason Partners LLC";
       maintainer = "jeremy@n-heptane.com";
@@ -22,7 +13,7 @@
       synopsis = "support for CMS/Blogging in clckwrks";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,7 +47,7 @@
           (hsPkgs.web-routes)
           (hsPkgs.web-routes-happstack)
           (hsPkgs.web-routes-th)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

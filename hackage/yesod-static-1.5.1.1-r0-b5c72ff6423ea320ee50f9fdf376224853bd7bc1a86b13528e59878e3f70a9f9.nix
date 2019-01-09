@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-static";
-        version = "1.5.1.1";
-      };
+      identifier = { name = "yesod-static"; version = "1.5.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>, Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Static file serving subsite for Yesod Web Framework.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-static>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -59,8 +50,8 @@
           (hsPkgs.css-text)
           (hsPkgs.hashable)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -97,8 +88,8 @@
             (hsPkgs.process)
             (hsPkgs.conduit-extra)
             (hsPkgs.exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

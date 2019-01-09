@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "difference-monoid";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "difference-monoid"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Donnacha Oisín Kidney";
       maintainer = "mail@doisinkidney.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "A Difference Monoid, to add subtraction to arbitrary monoids. Please see the README on Github at <https://github.com/oisdk/difference-monoid#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.distributive)
           (hsPkgs.groups)
           (hsPkgs.semigroupoids)
-        ];
-      };
+          ];
+        };
       tests = {
         "difference-monoid-doctests" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.doctest)
             (hsPkgs.groups)
             (hsPkgs.semigroupoids)
-          ];
-        };
+            ];
+          };
         "difference-monoid-test" = {
           depends = [
             (hsPkgs.adjunctions)
@@ -63,8 +54,8 @@
             (hsPkgs.hedgehog)
             (hsPkgs.hedgehog-checkers)
             (hsPkgs.semigroupoids)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

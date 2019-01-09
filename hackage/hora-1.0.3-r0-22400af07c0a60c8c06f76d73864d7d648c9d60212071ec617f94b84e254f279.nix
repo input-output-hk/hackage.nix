@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hora";
-        version = "1.0.3";
-      };
+      identifier = { name = "hora"; version = "1.0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Imants Cekusins";
@@ -22,7 +13,7 @@
       synopsis = "date time";
       description = "date time functions to pico precision";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.time)
           (hsPkgs.regex-do)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.time)
             (hsPkgs.regex-do)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

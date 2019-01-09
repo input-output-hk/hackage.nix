@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pkcs10";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "pkcs10"; version = "0.2.0.0"; };
       license = "Apache-2.0";
       copyright = "Timothy Klim <hackage@timothyklim.com>";
       maintainer = "Timothy Klim <hackage@timothyklim.com>";
@@ -22,7 +13,7 @@
       synopsis = "PKCS#10 library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.asn1-types)
           (hsPkgs.asn1-encoding)
           (hsPkgs.asn1-parse)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.asn1-types)
             (hsPkgs.asn1-encoding)
             (hsPkgs.asn1-parse)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

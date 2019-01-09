@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "messagepack";
-        version = "0.4.0";
-      };
+      identifier = { name = "messagepack"; version = "0.4.0"; };
       license = "MIT";
       copyright = "(c) 2014 Rodrigo Setti";
       maintainer = "rodrigosetti@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Serialize instance for Message Pack Object";
       description = "Serialize instance for Message Pack Object";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "messagepack-tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
             (hsPkgs.messagepack)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

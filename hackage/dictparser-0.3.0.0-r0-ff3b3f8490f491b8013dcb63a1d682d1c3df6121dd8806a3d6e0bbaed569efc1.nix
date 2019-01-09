@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dictparser";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "dictparser"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Mark Wotton, 2013";
       maintainer = "mwotton@gmail.com";
@@ -22,24 +13,16 @@
       synopsis = "Parsec parsers for the DICT format produced by dictfmt -t";
       description = "Parsec parsers for DICT";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.split)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.split) ];
+        };
       exes = {
         "dictparser" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.dictparser)
-            (hsPkgs.parsec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.dictparser) (hsPkgs.parsec) ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -47,8 +30,8 @@
             (hsPkgs.dictparser)
             (hsPkgs.hspec)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

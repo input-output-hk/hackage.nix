@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "computational-algebra";
-        version = "0.0.3.0";
-      };
+      identifier = { name = "computational-algebra"; version = "0.0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) Hiromi ISHII 2013";
       maintainer = "konn.jinro_at_gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Well-kinded computational algebra library, currently supporting Groebner basis.";
       description = "Dependently-typed computational algebra libray for Groebner basis.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.containers)
           (hsPkgs.parsec)
           (hsPkgs.peggy)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6.1") (hsPkgs.monomorphic);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6.1") (hsPkgs.monomorphic);
+        };
       };
-    };
-  }
+    }

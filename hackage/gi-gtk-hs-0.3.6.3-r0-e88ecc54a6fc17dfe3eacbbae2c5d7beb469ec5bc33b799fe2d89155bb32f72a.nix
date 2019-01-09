@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gi-gtk-hs";
-        version = "0.3.6.3";
-      };
+      identifier = { name = "gi-gtk-hs"; version = "0.3.6.3"; };
       license = "LGPL-2.1-only";
       copyright = "";
       maintainer = "mail@jonasplatte.de";
@@ -22,7 +13,7 @@
       synopsis = "A wrapper for gi-gtk, adding a few more idiomatic API parts on top";
       description = "A wrapper for gi-gtk, adding a few more idiomatic API parts on top";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.gi-gdk)
           (hsPkgs.gi-gtk)
           (hsPkgs.gi-gdkpixbuf)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

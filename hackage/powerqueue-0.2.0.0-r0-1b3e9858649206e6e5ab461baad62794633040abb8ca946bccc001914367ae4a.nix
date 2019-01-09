@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "powerqueue";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "powerqueue"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Alexander Thiemann <mail@athiemann.net>";
       maintainer = "mail@athiemann.net";
@@ -22,7 +13,7 @@
       synopsis = "A flexible job queue with exchangeable backends";
       description = "A flexible job queue with exchangeable backends\n\nCurrent Queue (Persistence) Backends:\n\n* <https://hackage.haskell.org/package/powerqueue-levelmem LevelDB>\n* <https://hackage.haskell.org/package/powerqueue-sqs AWS SQS>\n\nCurrent Worker Backends:\n\n* <https://hackage.haskell.org/package/powerqueue-distributed TCP-Network Distributed>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.contravariant)
           (hsPkgs.async)
           (hsPkgs.timespan)
-        ];
-      };
+          ];
+        };
       tests = {
         "powerqueue-test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.hspec)
             (hsPkgs.stm)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

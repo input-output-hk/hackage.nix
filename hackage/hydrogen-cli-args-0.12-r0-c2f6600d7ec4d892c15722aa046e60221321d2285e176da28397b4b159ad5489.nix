@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hydrogen-cli-args";
-        version = "0.12";
-      };
+      identifier = { name = "hydrogen-cli-args"; version = "0.12"; };
       license = "MIT";
       copyright = "";
       maintainer = "julian@scravy.de";
@@ -22,7 +13,7 @@
       synopsis = "Hydrogen Command Line Arguments Parser";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.hydrogen-multimap)
           (hsPkgs.hydrogen-prelude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

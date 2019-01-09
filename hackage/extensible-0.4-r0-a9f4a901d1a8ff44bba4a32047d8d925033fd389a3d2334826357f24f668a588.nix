@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "extensible";
-        version = "0.4";
-      };
+      identifier = { name = "extensible"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017 Fumiaki Kinoshita";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extensible, efficient, optics-friendly data types and effects";
       description = "Poly-kinded extensible records, variants, effects, tangles";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,16 +30,11 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
           (hsPkgs.monad-skeleton)
-        ];
-      };
-      tests = {
-        "effects" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.extensible)
           ];
         };
-      };
+      tests = {
+        "effects" = { depends = [ (hsPkgs.base) (hsPkgs.extensible) ]; };
+        };
       benchmarks = {
         "records" = {
           depends = [
@@ -56,8 +42,8 @@
             (hsPkgs.lens)
             (hsPkgs.criterion)
             (hsPkgs.extensible)
-          ];
-        };
+            ];
+          };
         "eff-comparison" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +53,8 @@
             (hsPkgs.effin)
             (hsPkgs.freer)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

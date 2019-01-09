@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "scrz";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "scrz"; version = "0.0.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Process management and supervision daemon";
       description = "@scrz@ is a daemon that runs and monitors other processes.\nIt is similar to djb's `daemontools`, the Ruby project `god`\nor Haskell's `Angel`.\nIt's goals are to keep a set of services running, and to\nfacilitate the easy configuration and restart of those\nservices.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "scrz" = {
@@ -51,8 +42,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

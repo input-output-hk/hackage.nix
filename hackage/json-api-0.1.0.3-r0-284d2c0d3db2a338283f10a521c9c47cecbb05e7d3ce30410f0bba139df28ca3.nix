@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-api";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "json-api"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "2016 Todd Mohney";
       maintainer = "Todd Mohney <toddmohney@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for generating JSON-API payloads";
       description = "Provides utilities for deriving JSON payloads conformant to the json-api\nspecification";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.url)
-        ];
-      };
+          ];
+        };
       tests = {
         "json-api-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.lens-aeson)
             (hsPkgs.text)
             (hsPkgs.url)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

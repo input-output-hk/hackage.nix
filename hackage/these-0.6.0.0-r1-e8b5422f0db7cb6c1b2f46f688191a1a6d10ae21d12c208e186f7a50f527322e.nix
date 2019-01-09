@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "these";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "these"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cam@uptoisomorphism.net";
@@ -22,7 +13,7 @@
       synopsis = "An either-or-both data type, with corresponding hybrid error/writer monad transformer.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.profunctors)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.5") (hsPkgs.ghc-prim);
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.bifunctors)
             (hsPkgs.these)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

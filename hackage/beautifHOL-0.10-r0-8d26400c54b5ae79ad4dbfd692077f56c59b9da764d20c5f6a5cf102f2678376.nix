@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "beautifHOL";
-        version = "0.10";
-      };
+      identifier = { name = "beautifHOL"; version = "0.10"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Lee Pike <leepike@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A pretty-printer for higher-order logic";
       description = "This is a pretty-printer for higher-order logic (HOL).  It reads in a formula\nand outputs it to standard out.  A paper describes its design and motivation\nat the project website.  The approach expands upon Leslie Lamport's paper, \\\"How\nto Write a Long Formula,\\\" available at\n<http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html#lamport-howtowrite>.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "beautifHOL" = {
@@ -31,8 +22,8 @@
             (hsPkgs.mtl)
             (hsPkgs.array)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "toodles";
-        version = "1.0.1";
-      };
+      identifier = { name = "toodles"; version = "1.0.1"; };
       license = "MIT";
       copyright = "2018 Avi Press";
       maintainer = "mail@avi.press";
@@ -22,7 +13,7 @@
       synopsis = "Manage the TODO entries in your code";
       description = "Toodles scrapes your entire repository for TODO entries and organizes them so you can manage your project directly from the code. View, filter, sort, and edit your TODO\\'s with an easy to use web application. When you make changes via toodles, the edits will be applied directly the TODO entries in your code. When you\\'re done, commit and push your changes to share them with your team!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.wai)
           (hsPkgs.warp)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "toodles" = {
           depends = [
@@ -67,9 +58,9 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "toodles-test" = {
           depends = [
@@ -92,8 +83,8 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      templatehaskell = true;
-    };
+    flags = { dev = false; templatehaskell = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "avro";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "avro"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tommd@galois.com";
@@ -25,7 +13,7 @@
       synopsis = "Avro serialization support for Haskell";
       description = "Avro serialization and deserialization support for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +36,8 @@
           (hsPkgs.pure-zlib)
           (hsPkgs.semigroups)
           (hsPkgs.tagged)
-        ] ++ pkgs.lib.optional (flags.templatehaskell) (hsPkgs.template-haskell);
-      };
+          ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs.template-haskell);
+        };
       tests = {
         "test" = {
           depends = [
@@ -75,8 +63,8 @@
             (hsPkgs.tagged)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ] ++ pkgs.lib.optional (flags.templatehaskell) (hsPkgs.template-haskell);
+            ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs.template-haskell);
+          };
         };
       };
-    };
-  }
+    }

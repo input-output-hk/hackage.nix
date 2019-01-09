@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "matsuri";
-        version = "0.0.2";
-      };
+      identifier = { name = "matsuri"; version = "0.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "newanon@yandex.ru";
@@ -22,7 +13,7 @@
       synopsis = "ncurses XMPP client";
       description = "ncurses XMPP client. Read README file before use.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "matsuri" = {
@@ -39,8 +30,8 @@
             (hsPkgs.XMPP)
             (hsPkgs.time)
             (hsPkgs.old-locale)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       debug = false;
       testproject = false;
       staticlinking = false;
       optimize = true;
-    };
+      };
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "Eq";
-        version = "1.1";
-      };
+      identifier = { name = "Eq"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Vincent Berthoux <vincent.berthoux@gmail.com>";
@@ -27,7 +18,7 @@
       synopsis = "Render math formula in ASCII, and perform some simplifications";
       description = "Haskell formula manipulation program";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "eq" = {
@@ -39,8 +30,8 @@
             (hsPkgs.mtl)
             (hsPkgs.containers)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

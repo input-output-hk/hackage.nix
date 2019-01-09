@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-kort";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "language-kort"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "♡ Copying is an act of love. Please copy, reuse and share.";
       maintainer = "fr33domlover@riseup.net";
@@ -22,7 +13,7 @@
       synopsis = "Parser and serializer for the Kort information language.";
       description = "This package provides a library containing all the\nnecessary tools for working with Kort files, allowing\nprograms to load and save semantic data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text-position)
           (hsPkgs.vocabulary-kadma)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.smaoin)
             (hsPkgs.text)
             (hsPkgs.vocabulary-kadma)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

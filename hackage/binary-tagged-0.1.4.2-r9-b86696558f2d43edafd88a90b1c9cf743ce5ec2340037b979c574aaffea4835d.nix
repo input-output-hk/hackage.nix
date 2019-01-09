@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-tagged";
-        version = "0.1.4.2";
-      };
+      identifier = { name = "binary-tagged"; version = "0.1.4.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Tagged binary serialisation.";
       description = "Check <https://github.com/phadej/binary-tagged#readme README on Github>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "binary-tagged-test" = {
           depends = [
@@ -73,9 +64,9 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "binary-tagged-bench" = {
           depends = [
@@ -101,8 +92,8 @@
             (hsPkgs.binary-orphans)
             (hsPkgs.deepseq)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

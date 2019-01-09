@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "bioinformatics-toolkit";
-        version = "0.5.0";
-      };
+      identifier = { name = "bioinformatics-toolkit"; version = "0.5.0"; };
       license = "MIT";
       copyright = "(c) 2014-2018 Kai Zhang";
       maintainer = "kai@kzhang.org";
@@ -22,7 +13,7 @@
       synopsis = "A collection of bioinformatics tools";
       description = "A collection of bioinformatics tools";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.word8)
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -75,9 +66,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.mtl)
             (hsPkgs.matrices)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -90,8 +81,8 @@
             (hsPkgs.data-default-class)
             (hsPkgs.conduit)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "hmk";
-        version = "0.9.7.4";
-      };
+      identifier = { name = "hmk"; version = "0.9.7.4"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2008-2009. Mathieu Boespflug <mboes - at - tweag.net>";
       maintainer = "Mathieu Boespflug <mboes - at - tweag.net>";
@@ -22,14 +13,9 @@
       synopsis = "A make alternative based on Plan9's mk.";
       description = "Clone of Plan9's mk command, said to have \\\"improved on make by\nremoving all the vowels from the name\\\". Most features of mk\nare implemented, including basic meta-rules support and\nconcurrent execution of jobs.\n\nThe library exports a generic dependency graph traversal that\ncan be used independently of the rest.\n\nThe documentation is embedded in the literate Haskell source.\n\n/Note:/ the library portion is released to the /public domain/.\nThose source files that are not part of the library\nare released under GPLv3 or later.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
       exes = {
         "hmk" = {
           depends = [
@@ -43,8 +29,8 @@
             (hsPkgs.mtl)
             (hsPkgs.parsec)
             (hsPkgs.pcre-light)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

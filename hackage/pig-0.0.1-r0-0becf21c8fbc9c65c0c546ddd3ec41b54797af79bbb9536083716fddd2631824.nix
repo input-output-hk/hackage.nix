@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pig";
-        version = "0.0.1";
-      };
+      identifier = { name = "pig"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "andrew.pennebaker@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "dice game";
       description = "A dice game simulator";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.random)
           (hsPkgs.random-shuffle)
-        ];
-      };
+          ];
+        };
       exes = {
         "pig" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.containers)
             (hsPkgs.random)
             (hsPkgs.random-shuffle)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

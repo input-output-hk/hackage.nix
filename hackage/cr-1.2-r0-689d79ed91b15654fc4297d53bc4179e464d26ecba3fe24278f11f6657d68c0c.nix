@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cr";
-        version = "1.2";
-      };
+      identifier = { name = "cr"; version = "1.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "scvalex@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Code review tool";
       description = "See the @README.md@ file and the homepage for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cr" = {
@@ -35,8 +26,8 @@
             (hsPkgs.process)
             (hsPkgs.transformers)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

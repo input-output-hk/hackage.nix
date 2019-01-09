@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Chart-diagrams";
-        version = "1.5.1";
-      };
+      identifier = { name = "Chart-diagrams"; version = "1.5.1"; };
       license = "BSD-3-Clause";
       copyright = "Jan Bracker, 2006-2014";
       maintainer = "Jan Bracker <jan.bracker@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Diagrams backend for Charts.";
       description = "Diagrams backend for Charts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.lens)
           (hsPkgs.Chart)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

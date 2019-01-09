@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hdr-histogram";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hdr-histogram"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2015 Josh Bohde";
       maintainer = "Josh Bohde <josh@joshbohde.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell implementation of High Dynamic Range (HDR) Histograms";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.tagged)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "hdr-histogram-test" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.tagged)
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "hdr-histogram-bench" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.criterion)
             (hsPkgs.primitive)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

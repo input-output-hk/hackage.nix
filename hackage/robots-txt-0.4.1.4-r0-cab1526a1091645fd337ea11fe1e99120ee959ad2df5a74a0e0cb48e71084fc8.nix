@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "robots-txt";
-        version = "0.4.1.4";
-      };
+      identifier = { name = "robots-txt"; version = "0.4.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mwotton@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parser for robots.txt";
       description = "This is an attoparsec parser for robots.txt files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.transformers)
             (hsPkgs.attoparsec)
             (hsPkgs.heredoc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

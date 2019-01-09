@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "synchronous-channels";
-        version = "0.2";
-      };
+      identifier = { name = "synchronous-channels"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tov@ccs.neu.edu";
@@ -22,10 +13,6 @@
       synopsis = "Synchronous communication channels";
       description = "Synchronous communication channels.  These are similar to\n'Control.Concurrent.Chan.Chan',\nbut a writer blocks until it can synchronize with a reader.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

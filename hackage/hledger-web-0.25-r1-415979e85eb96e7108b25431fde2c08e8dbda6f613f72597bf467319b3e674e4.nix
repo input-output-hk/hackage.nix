@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       threaded = true;
       dev = false;
       library-only = false;
       old-locale = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hledger-web";
-        version = "0.25";
-      };
+      identifier = { name = "hledger-web"; version = "0.25"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -27,7 +18,7 @@
       synopsis = "A web interface for the hledger accounting tool.";
       description = "hledger is a library and set of user tools for working\nwith financial data (or anything that can be tracked in a\ndouble-entry accounting ledger.) It is a haskell port and\nfriendly fork of John Wiegley's Ledger. hledger provides\ncommand-line, curses and web interfaces, and aims to be a\nreliable, practical tool for daily use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -66,13 +57,10 @@
           (hsPkgs.yesod-form)
           (hsPkgs.yesod-static)
           (hsPkgs.json)
-        ] ++ (if flags.old-locale
-          then [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]
+          ] ++ (if flags.old-locale
+          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
           else [ (hsPkgs.time) ]);
-      };
+        };
       exes = {
         "hledger-web" = {
           depends = [
@@ -112,14 +100,11 @@
             (hsPkgs.yesod-form)
             (hsPkgs.yesod-static)
             (hsPkgs.json)
-          ] ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -129,8 +114,8 @@
             (hsPkgs.hspec)
             (hsPkgs.yesod)
             (hsPkgs.yesod-test)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

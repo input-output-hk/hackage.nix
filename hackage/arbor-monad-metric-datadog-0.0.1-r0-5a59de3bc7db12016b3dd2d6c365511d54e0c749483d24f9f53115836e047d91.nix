@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arbor-monad-metric-datadog";
-        version = "0.0.1";
-      };
+      identifier = { name = "arbor-monad-metric-datadog"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Arbor Networks";
       maintainer = "mayhem@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/arbor/arbor-monad-metric-datadog#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.stm)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "arbor-monad-metric-datadog-test" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.stm)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

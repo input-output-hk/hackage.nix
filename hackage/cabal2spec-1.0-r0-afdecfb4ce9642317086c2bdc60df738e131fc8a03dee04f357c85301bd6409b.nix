@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "cabal2spec";
-        version = "1.0";
-      };
+      identifier = { name = "cabal2spec"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "konrad@tylerc.org";
@@ -22,7 +13,7 @@
       synopsis = "Generates RPM Spec files from cabal files";
       description = "This package provides specfile templates and a script cabal2spec for easy\npackaging of Haskell Cabal packages (hackages) for ghc following\nthe Fedora Haskell Packaging Guidelines and associated RPM macros.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal2spec" = {
@@ -40,8 +31,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.zlib)
             (hsPkgs.tar)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

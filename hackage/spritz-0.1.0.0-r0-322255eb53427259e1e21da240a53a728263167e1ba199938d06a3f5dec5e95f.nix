@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "spritz";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "spritz"; version = "0.1.0.0"; };
       license = "BSD-2-Clause";
       copyright = "(C) 2014 Ricky Elrod";
       maintainer = "ricky@elrod.me";
@@ -22,15 +13,10 @@
       synopsis = "An implementation of the Spritz RC4-like stream cipher in Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.lens)
-          (hsPkgs.mtl)
-          (hsPkgs.vector)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.lens) (hsPkgs.mtl) (hsPkgs.vector) ];
+        };
       };
-    };
-  }
+    }

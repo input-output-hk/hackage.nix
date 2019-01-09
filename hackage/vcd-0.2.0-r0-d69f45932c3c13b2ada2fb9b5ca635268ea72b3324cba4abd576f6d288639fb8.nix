@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "vcd";
-        version = "0.2.0";
-      };
+      identifier = { name = "vcd"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tom Hawkins <tomahawkins@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Reading and writing VCD files.";
       description = "Defined by the Verilog standard, VCD (value change dump) is a file format for\ncapturing digital and analog waveforms, typically from HDL simulation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.polyparse)
-          (hsPkgs.improve)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.polyparse) (hsPkgs.improve) ];
+        };
       };
-    };
-  }
+    }

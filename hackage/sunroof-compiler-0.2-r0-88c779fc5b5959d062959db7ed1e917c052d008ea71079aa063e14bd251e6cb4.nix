@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sunroof-compiler";
-        version = "0.2";
-      };
+      identifier = { name = "sunroof-compiler"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 The University of Kansas";
       maintainer = "Jan Bracker <jbra@informatik.uni-kiel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Monadic Javascript Compiler";
       description = "Monadic Javascript Compiler.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
           (hsPkgs.tagged)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

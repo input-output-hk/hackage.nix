@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-dependency-licenses";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "cabal-dependency-licenses"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014 Jasper Van der Jeugt";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -22,7 +13,7 @@
       synopsis = "Compose a list of a project's transitive dependencies with their licenses";
       description = "Compose a list of a project's transitive dependencies with their licenses";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal-dependency-licenses" = {
@@ -32,8 +23,8 @@
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

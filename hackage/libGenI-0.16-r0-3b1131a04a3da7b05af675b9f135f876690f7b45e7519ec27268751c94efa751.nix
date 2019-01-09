@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "libGenI";
-        version = "0.16";
-      };
+      identifier = { name = "libGenI"; version = "0.16"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "eric.kow@loria.fr";
@@ -22,7 +13,7 @@
       synopsis = "GenI, an FB-LTAG surface realiser";
       description = "GenI, a natural language generator (specifically, an FB-LTAG surface realiser)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.parsec)
           (hsPkgs.QuickCheck)
           (hsPkgs.HUnit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

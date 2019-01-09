@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "quickcheck-state-machine";
-        version = "0.1.0";
-      };
+      identifier = { name = "quickcheck-state-machine"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2017, ATS Advanced Telematic Systems GmbH";
       maintainer = "Stevan Andjelkovic <stevan@advancedtelematic.com>";
@@ -22,7 +13,7 @@
       synopsis = "Test monadic programs using state machine based models";
       description = "See README at <https://github.com/advancedtelematic/quickcheck-state-machine#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,12 +25,10 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.random)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
-        "quickcheck-state-machine-test" = {
-          depends = [ (hsPkgs.base) ];
+        "quickcheck-state-machine-test" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

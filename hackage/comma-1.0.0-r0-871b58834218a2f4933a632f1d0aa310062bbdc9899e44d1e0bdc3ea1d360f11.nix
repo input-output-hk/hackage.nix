@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "comma";
-        version = "1.0.0";
-      };
+      identifier = { name = "comma"; version = "1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2017 Daniel Lovasko";
       maintainer = "Daniel Lovasko <daniel.lovasko@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "CSV Parser & Producer";
       description = "Comma is a simple CSV format parser and producer that\nclosely follows the RFC4810 document.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.attoparsec) (hsPkgs.text) ];
+        };
       tests = {
         "comma-test" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.comma)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

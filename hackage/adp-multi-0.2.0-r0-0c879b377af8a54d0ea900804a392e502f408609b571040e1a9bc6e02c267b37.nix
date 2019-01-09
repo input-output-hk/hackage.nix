@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildtests = false;
-      buildbenchmark = false;
-      debug = false;
-    };
+    flags = { buildtests = false; buildbenchmark = false; debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "adp-multi";
-        version = "0.2.0";
-      };
+      identifier = { name = "adp-multi"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Maik Riechert, 2012";
       maintainer = "Maik Riechert";
@@ -26,7 +13,7 @@
       synopsis = "ADP for multiple context-free languages";
       description = "adp-multi is an implementation of Algebraic Dynamic Programming\nfor multiple context-free languages.\nIt is a library based on the original Haskell implementation\nand can be considered an unoptimized prototype.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +21,11 @@
           (hsPkgs.array)
           (hsPkgs.containers)
           (hsPkgs.htrace)
-        ];
-      };
+          ];
+        };
       exes = {
         "adp-multi-benchmarks" = {
-          depends = pkgs.lib.optionals (!(!flags.buildbenchmark)) [
+          depends = (pkgs.lib).optionals (!(!flags.buildbenchmark)) [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -53,10 +40,10 @@
             (hsPkgs.Nussinov78)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
-          ];
-        };
+            ];
+          };
         "adp-test" = {
-          depends = pkgs.lib.optionals (!(!flags.buildtests)) [
+          depends = (pkgs.lib).optionals (!(!flags.buildtests)) [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
@@ -68,9 +55,9 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.mtl)
             (hsPkgs.random-shuffle)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "MainTestSuite" = {
           depends = [
@@ -85,8 +72,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.random-shuffle)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

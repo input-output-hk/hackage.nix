@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "intro";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "intro"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2016 Daniel Mendler";
       maintainer = "Daniel Mendler <mail@daniel-mendler.de>";
@@ -22,7 +13,7 @@
       synopsis = "\"Fixed Prelude\" - Mostly total and safe, provides Text and Monad transformers";
       description = "Modern Prelude which provides safe alternatives for most of the partial functions. Text is preferred over String. Container types and Monad transformers are provided. Most important - this Prelude avoids fanciness. This means it just reexports from base and commonly used libraries and doesn\\'t invent its own stuff. Everything is in one file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.writer-cps-mtl)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+        };
       tests = {
         "compat" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.writer-cps-mtl)
             (hsPkgs.intro)
             (hsPkgs.lens)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

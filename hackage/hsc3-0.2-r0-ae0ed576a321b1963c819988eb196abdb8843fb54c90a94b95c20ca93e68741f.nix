@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hsc3";
-        version = "0.2";
-      };
+      identifier = { name = "hsc3"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2006-2008";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell SuperCollider";
       description = "Haskell client for the SuperCollider synthesis server";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.hosc)
           (hsPkgs.network)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

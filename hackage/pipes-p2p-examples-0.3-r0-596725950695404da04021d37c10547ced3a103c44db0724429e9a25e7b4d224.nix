@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-p2p-examples";
-        version = "0.3";
-      };
+      identifier = { name = "pipes-p2p-examples"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "j@dannynavarro.net";
@@ -22,7 +13,7 @@
       synopsis = "Examples using pipes-p2p";
       description = "For now this package includes a dummy P2P network where nodes just exchange\ntheir network addresses. This can be used as boilerplate code for other P2P\nnetworks. Future releases may contain more examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "address-exchanger" = {
@@ -38,8 +29,8 @@
             (hsPkgs.pipes)
             (hsPkgs.pipes-network)
             (hsPkgs.pipes-p2p)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

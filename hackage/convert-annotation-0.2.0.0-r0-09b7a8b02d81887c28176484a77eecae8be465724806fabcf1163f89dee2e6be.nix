@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "convert-annotation";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "convert-annotation"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright: (c) 2016 Gregory W. Schwartz";
       maintainer = "youremail@example.com";
@@ -22,7 +13,7 @@
       synopsis = "Insert synopsis here";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.wreq)
           (hsPkgs.HTTP)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       exes = {
         "convert-annotation" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.pipes-bytestring)
             (hsPkgs.pipes-csv)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-simple-opts";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "postgresql-simple-opts"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Jonathan Fischoff";
       maintainer = "jonathangfischoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An optparse-applicative parser for postgresql-simple's connection options";
       description = "This package exports a optparse-applicative parser and type for postgresql-simple's ConnectInfo and connection string.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.either)
           (hsPkgs.optparse-generic)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "postgresql-simple-opts-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.postgresql-simple)
             (hsPkgs.optparse-applicative)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

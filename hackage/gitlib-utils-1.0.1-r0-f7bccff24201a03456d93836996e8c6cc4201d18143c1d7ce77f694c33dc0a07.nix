@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitlib-utils";
-        version = "1.0.1";
-      };
+      identifier = { name = "gitlib-utils"; version = "1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Generic utility functions for working with Git repositories";
       description = "@gitlib@ is a high-level, lazy and conduit-aware set of abstractions for\nprogramming with Git types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

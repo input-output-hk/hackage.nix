@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sha-streams";
-        version = "0.1.0";
-      };
+      identifier = { name = "sha-streams"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thu@hypered.io";
@@ -22,7 +13,7 @@
       synopsis = "SHA hashes for io-streams.";
       description = "SHA hashes for io-streams.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.io-streams)
           (hsPkgs.SHA)
-        ];
-      };
+          ];
+        };
       exes = {
         "sha-streams" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.io-streams)
             (hsPkgs.SHA)
             (hsPkgs.sha-streams)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

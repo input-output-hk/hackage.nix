@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "config-manager";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "config-manager"; version = "0.3.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "joris@guyonvarch.me";
@@ -22,7 +13,7 @@
       synopsis = "Configuration management";
       description = "A configuration management library which supports:\n\n* name-value bindings,\n\n* required or optional imports,\n\n* comments.\n\nFor details of the configuration file format, see\n<http://hackage.haskell.org/packages/archive/config-manager/latest/doc/html/Data-ConfigManager.html>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.parsec)
           (hsPkgs.filepath)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-config-manager" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.directory)
             (hsPkgs.unordered-containers)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

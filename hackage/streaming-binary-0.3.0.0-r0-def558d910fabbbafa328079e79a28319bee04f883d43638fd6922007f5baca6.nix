@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "streaming-binary";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "streaming-binary"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Mathieu Boespflug";
       maintainer = "m@tweag.io";
@@ -22,7 +13,7 @@
       synopsis = "Streaming interface to binary.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.streaming)
           (hsPkgs.streaming-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.streaming)
             (hsPkgs.streaming-binary)
             (hsPkgs.streaming-bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

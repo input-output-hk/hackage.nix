@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "function-combine";
-        version = "0.0.1";
-      };
+      identifier = { name = "function-combine"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Iain Alexander <ia@stryx.demon.co.uk>";
@@ -22,13 +13,8 @@
       synopsis = "Combining functions";
       description = "MPTC/FD generalisations of (.) and flip";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-type)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.data-type) ]; };
+      };
+    }

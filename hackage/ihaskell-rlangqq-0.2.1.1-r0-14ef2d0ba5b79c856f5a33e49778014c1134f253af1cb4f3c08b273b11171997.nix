@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ihaskell-rlangqq";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "ihaskell-rlangqq"; version = "0.2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Adam Vogt <vogt.adam@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "a rDisp quasiquote to show plots from Rlang-QQ in IHaskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.stm)
           (hsPkgs.xformat)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

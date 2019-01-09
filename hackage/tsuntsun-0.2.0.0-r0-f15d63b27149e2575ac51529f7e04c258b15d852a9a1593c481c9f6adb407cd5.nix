@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tsuntsun";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "tsuntsun"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014-2017 Mateusz Kowalczyk";
       maintainer = "fuuzetsu@fuuzetsu.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Interacts with tesseract to ease reading of RAW Japanese manga.";
       description = "Interacts with tesseract to ease reading of RAW Japanese manga.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tsuntsun" = {
@@ -40,8 +31,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.typed-process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

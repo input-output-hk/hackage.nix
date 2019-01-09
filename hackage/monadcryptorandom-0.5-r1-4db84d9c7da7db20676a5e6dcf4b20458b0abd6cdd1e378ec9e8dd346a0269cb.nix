@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "monadcryptorandom";
-        version = "0.5";
-      };
+      identifier = { name = "monadcryptorandom"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "Thomas DuBuisson <thomas.dubuisson@gmail.com>";
       maintainer = "Thomas DuBuisson <thomas.dubuisson@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A monad for using CryptoRandomGen";
       description = "A monad for using CryptoRandomGen";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.crypto-api)
           (hsPkgs.transformers)
           (hsPkgs.tagged)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "free-game";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "free-game"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012 Fumiaki Kinoshita";
       maintainer = "fumiexcel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Create graphical applications for free.";
       description = "closs-platform GUI library based on free monads.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.OpenGL)
           (hsPkgs.GLFW-b)
           (hsPkgs.StateVar)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

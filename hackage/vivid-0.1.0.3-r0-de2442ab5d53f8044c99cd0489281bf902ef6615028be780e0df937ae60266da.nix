@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "vivid";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "vivid"; version = "0.1.0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Tom Murphy";
@@ -22,7 +13,7 @@
       synopsis = "Sound synthesis with SuperCollider";
       description = "Sound synthesis with SuperCollider. Start with Vivid.SynthDef";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.network)
           (hsPkgs.split)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "hans";
-        version = "3.0.1";
-      };
+      identifier = { name = "hans"; version = "3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "halvm-devel@community.galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Network Stack";
       description = "HaNS is a lightweight, pure Haskell network stack that can be used for Haskell\nnetworking in the context of the HaLVM, or with a Linux tap device.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -41,20 +32,20 @@
           (hsPkgs.monadLib)
           (hsPkgs.cryptonite)
           (hsPkgs.memory)
-        ] ++ pkgs.lib.optionals (system.isHalvm) [
+          ] ++ (pkgs.lib).optionals (system.isHalvm) [
           (hsPkgs.XenDevice)
           (hsPkgs.HALVMCore)
-        ]) ++ pkgs.lib.optional (system.isOsx || system.isLinux) (hsPkgs.unix);
-      };
+          ]) ++ (pkgs.lib).optional (system.isOsx || system.isLinux) (hsPkgs.unix);
+        };
       exes = {
         "echo-server" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.hans)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hans-tests" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.cereal)
             (hsPkgs.hans)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

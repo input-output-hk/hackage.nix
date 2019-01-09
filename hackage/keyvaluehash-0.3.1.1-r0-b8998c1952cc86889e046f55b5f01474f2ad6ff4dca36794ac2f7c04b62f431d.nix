@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "keyvaluehash";
-        version = "0.3.1.1";
-      };
+      identifier = { name = "keyvaluehash"; version = "0.3.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Eyal Lotem";
       maintainer = "eyal.lotem@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pure Haskell key/value store implementation";
       description = "A simple bytestring key/value store implemented\nin terms of hash table over a file.\nIt cannot yet grow/shrink the hash table as\nneeded, nor does it free old unused (key,value)\npair storage.\nMostly useful for applications that need not\nworry about the size of their persistent store.\nReduces dependency hell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.mmap)
           (hsPkgs.array)
           (hsPkgs.storable-record)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "permute";
-        version = "1.0";
-      };
+      identifier = { name = "permute"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "athas@sigkill.dk";
@@ -22,13 +13,6 @@
       synopsis = "Generalised permutation parser combinator";
       description = "General permutation parser combinators that will work with any\nparser combinator library.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.mtl)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.mtl) (hsPkgs.base) ]; }; };
+    }

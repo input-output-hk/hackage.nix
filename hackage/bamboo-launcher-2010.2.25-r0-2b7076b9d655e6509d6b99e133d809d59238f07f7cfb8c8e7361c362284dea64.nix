@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bamboo-launcher";
-        version = "2010.2.25";
-      };
+      identifier = { name = "bamboo-launcher"; version = "2010.2.25"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "bamboo-launcher";
       description = "A standalone bamboo launcher to simplify deployment.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "bamboo" = {
@@ -38,8 +29,8 @@
             (hsPkgs.bamboo-theme-blueprint)
             (hsPkgs.data-default)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

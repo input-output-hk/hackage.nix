@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glazier";
-        version = "0.6.2.1";
-      };
+      identifier = { name = "glazier"; version = "0.6.2.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "Composable widgets framework";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.transformers)
           (hsPkgs.profunctors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

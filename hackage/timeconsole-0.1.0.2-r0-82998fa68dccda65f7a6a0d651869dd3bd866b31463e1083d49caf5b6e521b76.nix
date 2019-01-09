@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "timeconsole";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "timeconsole"; version = "0.1.0.2"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "hawk.alan@gmail.com";
@@ -22,16 +13,12 @@
       synopsis = "time each line of terminal output";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "timeconsole" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.time)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.time) ];
+          };
         };
       };
-    };
-  }
+    }

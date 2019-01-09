@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snaplet-lss";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "snaplet-lss"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -22,7 +13,7 @@
       synopsis = "Lexical Style Sheets - Snap Web Framework adaptor.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-snaplet-lss" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.hspec-snap)
             (hsPkgs.hspec2)
             (hsPkgs.snaplet-lss)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

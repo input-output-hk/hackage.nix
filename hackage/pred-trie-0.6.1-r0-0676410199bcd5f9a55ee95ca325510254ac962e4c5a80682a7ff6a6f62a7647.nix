@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "pred-trie";
-        version = "0.6.1";
-      };
+      identifier = { name = "pred-trie"; version = "0.6.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "Predicative tries";
       description = "Please see the README on Github at <https://github.com/athanclark/pred-trie#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.strict)
           (hsPkgs.tries)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "pred-trie-test" = {
           depends = [
@@ -64,9 +55,9 @@
             (hsPkgs.text)
             (hsPkgs.tries)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "pred-trie-bench" = {
           depends = [
@@ -88,8 +79,8 @@
             (hsPkgs.text)
             (hsPkgs.tries)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

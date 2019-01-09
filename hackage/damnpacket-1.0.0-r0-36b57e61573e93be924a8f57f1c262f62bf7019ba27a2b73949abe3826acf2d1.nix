@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "damnpacket";
-        version = "1.0.0";
-      };
+      identifier = { name = "damnpacket"; version = "1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@jude.bio";
@@ -22,7 +13,7 @@
       synopsis = "Parsing dAmn messages";
       description = "This module provides a datatype and convenience functions for parsing, manipulating, and rendering deviantART Message Network messages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.html-entities)
           (hsPkgs.template-haskell)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "parse" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

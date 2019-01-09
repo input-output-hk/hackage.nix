@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "distributed-fork-aws-lambda";
         version = "0.0.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Utku Demir";
       maintainer = "me@utdemir.com";
@@ -22,7 +16,7 @@
       synopsis = "AWS Lambda backend for distributed-fork.";
       description = "<https://aws.amazon.com/lambda AWS Lambda> backend for <http://hackage.haskell.org/package/distributed-fork distributed-fork>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +45,8 @@
           (hsPkgs.typed-process)
           (hsPkgs.unordered-containers)
           (hsPkgs.zip-archive)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -62,8 +56,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

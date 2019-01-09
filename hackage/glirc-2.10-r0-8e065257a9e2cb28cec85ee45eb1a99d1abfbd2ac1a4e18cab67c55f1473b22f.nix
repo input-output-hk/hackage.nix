@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.23";
-      identifier = {
-        name = "glirc";
-        version = "2.10";
-      };
+      identifier = { name = "glirc"; version = "2.10"; };
       license = "ISC";
       copyright = "2016 Eric Mertens";
       maintainer = "emertens@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Console IRC client";
       description = "Console IRC client";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "glirc2" = {
@@ -58,11 +49,9 @@
             (hsPkgs.x509)
             (hsPkgs.x509-store)
             (hsPkgs.x509-system)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hsc2hs)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.1";
-      identifier = {
-        name = "twilight-stm";
-        version = "1.0";
-      };
+      identifier = { name = "twilight-stm"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "Annette Bieniusa";
       maintainer = "Annette Bieniusa";
@@ -22,7 +13,7 @@
       synopsis = "Twilight STM library";
       description = "STM with safe irrevocable I/O and inconsistency repair";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.liboleg)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

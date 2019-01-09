@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "papa-semigroupoids-implement";
         version = "0.2.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Tony Morris";
@@ -22,14 +16,9 @@
       synopsis = "useful `bifunctors` functions reimplemented";
       description = "useful `bifunctors` functions reimplemented";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.semigroupoids)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.semigroupoids) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -39,8 +28,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

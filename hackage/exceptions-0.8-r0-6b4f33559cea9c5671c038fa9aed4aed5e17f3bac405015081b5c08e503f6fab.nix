@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "exceptions";
-        version = "0.8";
-      };
+      identifier = { name = "exceptions"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013-2014 Edward A. Kmett\nCopyright (C) 2012 Google Inc.";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extensible optionally-pure exceptions";
       description = "Extensible optionally-pure exceptions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "exceptions-tests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

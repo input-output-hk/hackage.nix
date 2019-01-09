@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "alsa-gui";
-        version = "0.1";
-      };
+      identifier = { name = "alsa-gui"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <alsa@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Some simple interactive programs for sending MIDI control messages via ALSA";
       description = "Some simple interactive programs for sending MIDI control messages via ALSA.\nThe GUI uses wxHaskell.\nCurrently we provide these programs:\n\n* Send @All Notes Off@ and @All Sounds Off@ events.\n\n* Show several sliders, that trigger sending MIDI controller messages.\n\n* Show a list widget, that triggers MIDI program changes.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "alsa-midi-mode" = {
@@ -34,8 +25,8 @@
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-midi-program" = {
           depends = [
             (hsPkgs.wx)
@@ -43,8 +34,8 @@
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "alsa-midi-controller" = {
           depends = [
             (hsPkgs.wx)
@@ -52,8 +43,8 @@
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-core)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

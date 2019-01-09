@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "functor-utils";
-        version = "1.17.1";
-      };
+      identifier = { name = "functor-utils"; version = "1.17.1"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) 2018 Luna Team";
       maintainer = "Wojciech Danilo <wojciech.danilo@luna-lang.org>";
@@ -22,14 +13,10 @@
       synopsis = "Collection of functor utilities, providing handy operators, like generalization of (.).";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.lens)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) (hsPkgs.lens) ];
+        };
       };
-    };
-  }
+    }

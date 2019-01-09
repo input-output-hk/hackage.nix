@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "haskoin-protocol";
-        version = "0.0.1";
-      };
+      identifier = { name = "haskoin-protocol"; version = "0.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "plaprade+hackage@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Implementation of the Bitcoin network protocol messages";
       description = "This package provides all of the basic types used for the Bitcoin\nnetworking protocol together with Data.Binary instances for efficiently\nserializing and de-serializing them.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.haskoin-util)
           (hsPkgs.haskoin-crypto)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-haskoin-protocol" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

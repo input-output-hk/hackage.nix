@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cryptonite-openssl";
-        version = "0.2";
-      };
+      identifier = { name = "cryptonite-openssl"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -22,21 +13,14 @@
       synopsis = "Crypto stuff using OpenSSL cryptographic library";
       description = "cryptography";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.memory)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.memory) ];
         libs = if system.isWindows || system.isWindows
-          then [
-            (pkgs."eay32")
-            (pkgs."ssl32")
-          ]
+          then [ (pkgs."eay32") (pkgs."ssl32") ]
           else [ (pkgs."crypto") ];
-      };
+        };
       tests = {
         "test-cryptonite-openssl" = {
           depends = [
@@ -47,8 +31,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-kat)
             (hsPkgs.cryptonite)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

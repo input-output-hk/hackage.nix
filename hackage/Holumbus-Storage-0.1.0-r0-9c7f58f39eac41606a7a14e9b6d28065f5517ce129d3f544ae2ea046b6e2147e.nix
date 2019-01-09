@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Holumbus-Storage";
-        version = "0.1.0";
-      };
+      identifier = { name = "Holumbus-Storage"; version = "0.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010 Stefan Schmidt, Uwe Schmidt, Sebastian Reese";
       maintainer = "Stefan Schmidt <sts@holumbus.org>";
@@ -22,7 +13,7 @@
       synopsis = "a distributed storage system";
       description = "This package contains a library for building distributed storage systems.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,11 +30,8 @@
           (hsPkgs.unix)
           (hsPkgs.Holumbus-Distribution)
           (hsPkgs.random)
-        ];
+          ];
+        };
+      exes = { "StorageControllerDaemon" = {}; "StorageNodeDaemon" = {}; };
       };
-      exes = {
-        "StorageControllerDaemon" = {};
-        "StorageNodeDaemon" = {};
-      };
-    };
-  }
+    }

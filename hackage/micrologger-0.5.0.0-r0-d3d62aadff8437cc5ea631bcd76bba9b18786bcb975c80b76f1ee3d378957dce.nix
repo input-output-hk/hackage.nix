@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "micrologger";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "micrologger"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 - 2017 Savanni D'Gerinel";
       maintainer = "savanni@luminescent-dreams.com";
@@ -22,7 +13,7 @@
       synopsis = "A super simple logging module.";
       description = "A super simple logging module that primarily outputs json-formatted messages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text-format)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "micrologger-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.aeson)
             (hsPkgs.hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

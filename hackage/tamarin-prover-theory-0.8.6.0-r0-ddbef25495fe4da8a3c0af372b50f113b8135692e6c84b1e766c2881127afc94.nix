@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "tamarin-prover-theory";
-        version = "0.8.6.0";
-      };
+      identifier = { name = "tamarin-prover-theory"; version = "0.8.6.0"; };
       license = "LicenseRef-GPL";
       copyright = "Benedikt Schmidt, Simon Meier, ETH Zurich, 2010-2012";
       maintainer = "Benedikt Schmidt <benedikt.schmidt@inf.ethz.ch>";
@@ -22,7 +13,7 @@
       synopsis = "Term manipulation library for the tamarin prover.";
       description = "This is an internal library of the Tamarin prover for\nsecurity protocol verification\n(<hackage.haskell.org/package/tamarin-prover>).\n\nThis library provides the types to represent security\nprotocol, and it implements the constraint solver.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.HUnit)
           (hsPkgs.tamarin-prover-utils)
           (hsPkgs.tamarin-prover-term)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

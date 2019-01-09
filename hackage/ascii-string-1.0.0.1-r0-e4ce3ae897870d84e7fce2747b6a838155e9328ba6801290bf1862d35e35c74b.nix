@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ascii-string";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "ascii-string"; version = "1.0.0.1"; };
       license = "MIT";
       copyright = "(c) 2018, Metrix.AI";
       maintainer = "Metrix.AI Tech Team <tech@metrix.ai>";
@@ -22,7 +13,7 @@
       synopsis = "Compact representation of ASCII strings";
       description = "ASCII strings stored using just 7 bits per character.\nCompared to ByteString, this saves you a whole byte per 8 characters.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.hashable)
           (hsPkgs.primitive)
           (hsPkgs.primitive-extras)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

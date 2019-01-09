@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-gi-overloading";
-        version = "0.0";
-      };
+      identifier = { name = "haskell-gi-overloading"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "Iñaki García Etxebarria";
       maintainer = "garetxe@gmail.com";
@@ -22,8 +13,6 @@
       synopsis = "Overloading support for haskell-gi";
       description = "Control overloading support in haskell-gi generated bindings";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

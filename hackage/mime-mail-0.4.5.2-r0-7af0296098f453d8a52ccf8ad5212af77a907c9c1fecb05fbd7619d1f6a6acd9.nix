@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mime-mail";
-        version = "0.4.5.2";
-      };
+      identifier = { name = "mime-mail"; version = "0.4.5.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Compose MIME email messages.";
       description = "This package provides some high-level datatypes for declaring MIME email messages, functions for automatically composing these into bytestrings, and the ability to send bytestrings via the sendmail executable. You can also use any other library you wish to send via different methods, eg directly to SMTP.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

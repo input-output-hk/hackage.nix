@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "shell-monad";
-        version = "0.3.0";
-      };
+      identifier = { name = "shell-monad"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2014 Joey Hess";
       maintainer = "Joey Hess <id@joeyh.name>";
@@ -22,7 +13,7 @@
       synopsis = "shell monad";
       description = "This is a shell monad, for generating shell scripts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-python";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "json-python"; version = "0.3.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "russell.s.stewart@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Call python inline from haskell";
       description = "WARNING: Project in alpha. Call python from haskell with ease.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,10 +23,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.pureMD5)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.python)
-        ];
+          ];
+        pkgconfig = [ (pkgconfPkgs.python) ];
+        };
       };
-    };
-  }
+    }

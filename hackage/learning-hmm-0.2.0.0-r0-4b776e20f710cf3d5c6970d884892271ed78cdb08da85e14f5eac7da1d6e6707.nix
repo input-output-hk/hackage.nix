@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "learning-hmm";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "learning-hmm"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 Mitsuhiro Nakamura";
       maintainer = "Mitsuhiro Nakamura <m.nacamura@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Yet another library for hidden Markov models";
       description = "This library provides functions for the maximum likelihood\nestimation of discrete hidden Markov models. At present,\nonly Baum-Welch and Viterbi algorithms are implemented.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,15 +23,10 @@
           (hsPkgs.random-fu)
           (hsPkgs.random-source)
           (hsPkgs.vector)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       };
-    };
-  }
+    }

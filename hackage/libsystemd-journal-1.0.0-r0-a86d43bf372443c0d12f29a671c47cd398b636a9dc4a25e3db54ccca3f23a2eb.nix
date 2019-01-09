@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "libsystemd-journal";
-        version = "1.0.0";
-      };
+      identifier = { name = "libsystemd-journal"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Oliver Charles (c) 2014";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings to libsystemd-journal";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,10 +25,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
           (hsPkgs.hsyslog)
-        ];
-        libs = [
-          (pkgs."systemd-journal")
-        ];
+          ];
+        libs = [ (pkgs."systemd-journal") ];
+        };
       };
-    };
-  }
+    }

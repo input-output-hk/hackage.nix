@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-curator";
-        version = "0.13.2";
-      };
+      identifier = { name = "stackage-curator"; version = "0.13.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools for curating Stackage bundles";
       description = "Please see <http://www.stackage.org/package/stackage-curator> for a description and documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -80,8 +71,8 @@
           (hsPkgs.binary)
           (hsPkgs.binary-tagged)
           (hsPkgs.syb)
-        ];
-      };
+          ];
+        };
       exes = {
         "stackage-curator" = {
           depends = [
@@ -94,9 +85,9 @@
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -112,8 +103,8 @@
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

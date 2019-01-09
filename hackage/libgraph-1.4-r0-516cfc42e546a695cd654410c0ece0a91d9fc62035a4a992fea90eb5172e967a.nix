@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "libgraph";
-        version = "1.4";
-      };
+      identifier = { name = "libgraph"; version = "1.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Maarten Faddegon";
       maintainer = "libgraph@maartenfaddegon.nl";
@@ -22,7 +13,7 @@
       synopsis = "Store and manipulate data in a graph.";
       description = "A graph type, analysis of graphs and manipulation of graphs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

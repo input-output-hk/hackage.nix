@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "semdoc";
-        version = "0.1.1";
-      };
+      identifier = { name = "semdoc"; version = "0.1.1"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "iphydf@users.noreply.github.com";
@@ -22,7 +13,7 @@
       synopsis = "Evaluate code snippets in Literate Haskell.";
       description = "Evaluate code snippets in Literate Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +28,8 @@
           (hsPkgs.pandoc)
           (hsPkgs.pandoc-types)
           (hsPkgs.regex-tdfa)
-        ];
-      };
-      exes = {
-        "semdoc" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.semdoc)
           ];
         };
+      exes = { "semdoc" = { depends = [ (hsPkgs.base) (hsPkgs.semdoc) ]; }; };
       };
-    };
-  }
+    }

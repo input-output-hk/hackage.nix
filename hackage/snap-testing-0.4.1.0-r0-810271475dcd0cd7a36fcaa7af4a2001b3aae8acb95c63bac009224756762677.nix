@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "snap-testing";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "snap-testing"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -22,7 +13,7 @@
       synopsis = "A library for BDD-style testing with the Snap Web Framework";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.io-streams)
           (hsPkgs.async)
           (hsPkgs.digestive-functors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

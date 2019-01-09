@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "pregame";
-        version = "0.1.4.2";
-      };
+      identifier = { name = "pregame"; version = "0.1.4.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "https://github.com/jxv";
@@ -22,7 +13,7 @@
       synopsis = "Prelude counterpart";
       description = "Excessive Prelude styled imports.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.tuple)
           (hsPkgs.vector)
           (hsPkgs.cmdtheline)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "ipython-kernel";
-        version = "0.6.1.0";
-      };
+      identifier = { name = "ipython-kernel"; version = "0.6.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.gibiansky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for creating kernels for IPython frontends";
       description = "ipython-kernel is a library for communicating with frontends for the interactive IPython framework. It is used extensively in IHaskell, the interactive Haskell environment.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.uuid)
           (hsPkgs.zeromq4-haskell)
           (hsPkgs.SHA)
-        ];
-      };
+          ];
+        };
       exes = {
         "simple-calc-example" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.parsec)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

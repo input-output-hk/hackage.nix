@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       examples = false;
       aeson-070 = true;
       retry-050 = true;
       network-uri = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "influxdb";
-        version = "0.6.0";
-      };
+      identifier = { name = "influxdb"; version = "0.6.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 Mitsutoshi Aoe";
       maintainer = "Mitsutoshi Aoe <maoe@foldr.in>";
@@ -27,7 +18,7 @@
       synopsis = "Haskell client library for InfluxDB";
       description = "Haskell client library for InfluxDB";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -44,17 +35,14 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ] ++ (if flags.aeson-070
-          then [
-            (hsPkgs.aeson)
-            (hsPkgs.scientific)
-          ]
+          ] ++ (if flags.aeson-070
+          then [ (hsPkgs.aeson) (hsPkgs.scientific) ]
           else [ (hsPkgs.aeson) ])) ++ [
           (hsPkgs.retry)
-        ]) ++ (if flags.network-uri
+          ]) ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       exes = {
         "influx-random-points" = {
           depends = [
@@ -66,9 +54,9 @@
             (hsPkgs.mwc-random)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-suite" = {
           depends = [
@@ -83,8 +71,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

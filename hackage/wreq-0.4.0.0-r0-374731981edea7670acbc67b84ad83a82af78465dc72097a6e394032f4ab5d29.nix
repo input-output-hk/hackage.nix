@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       doctest = true;
       aws = false;
       httpbin = false;
       developer = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wreq";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "wreq"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014 Bryan O'Sullivan";
       maintainer = "bos@serpentine.com";
@@ -27,7 +18,7 @@
       synopsis = "An easy-to-use HTTP client library.";
       description = "\nA web client library that is designed for ease of use.\n\nTutorial: <http://www.serpentine.com/wreq/tutorial.html>\n\nFeatures include:\n\n* Simple but powerful `lens`-based API\n\n* A solid test suite, and built on reliable libraries like\nhttp-client and lens\n\n* Session handling includes connection keep-alive and pooling, and\ncookie persistence\n\n* Automatic response body decompression\n\n* Powerful multipart form and file upload handling\n\n* Support for JSON requests and responses, including navigation of\nschema-less responses\n\n* Basic and OAuth2 bearer authentication\n\n* Early TLS support via the tls package";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,11 +46,11 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "httpbin" = {
-          depends = pkgs.lib.optionals (!(!flags.httpbin)) [
+          depends = (pkgs.lib).optionals (!(!flags.httpbin)) [
             (hsPkgs.aeson)
             (hsPkgs.aeson-pretty)
             (hsPkgs.base)
@@ -74,9 +65,9 @@
             (hsPkgs.transformers)
             (hsPkgs.unix-compat)
             (hsPkgs.uuid)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -108,16 +99,16 @@
             (hsPkgs.uuid)
             (hsPkgs.vector)
             (hsPkgs.wreq)
-          ] ++ pkgs.lib.optional (flags.aws) (hsPkgs.base);
-        };
+            ] ++ (pkgs.lib).optional (flags.aws) (hsPkgs.base);
+          };
         "doctest" = {
-          depends = pkgs.lib.optionals (!(!flags.doctest)) [
+          depends = (pkgs.lib).optionals (!(!flags.doctest)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

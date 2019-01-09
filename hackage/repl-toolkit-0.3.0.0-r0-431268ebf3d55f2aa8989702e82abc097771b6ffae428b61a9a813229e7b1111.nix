@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "repl-toolkit";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "repl-toolkit"; version = "0.3.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "janos.tapolczai@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Toolkit for quickly whipping up command-line interfaces.";
       description = "A simple toolkit for quickly whipping up REPLs, input validation and sets of commands included.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.monad-loops)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "warp-tls";
-        version = "3.0.1.4";
-      };
+      identifier = { name = "warp-tls"; version = "3.0.1.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "HTTP over SSL/TLS support for Warp via the TLS package";
       description = "API docs and the README are available at <http://www.stackage.org/package/warp-tls>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.network)
           (hsPkgs.cprng-aes)
           (hsPkgs.streaming-commons)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

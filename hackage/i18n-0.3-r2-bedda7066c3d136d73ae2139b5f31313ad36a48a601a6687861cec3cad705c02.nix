@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "i18n";
-        version = "0.3";
-      };
+      identifier = { name = "i18n"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Eugene Grigoriev";
       maintainer = "Philip Cunningham <philip@irisconnect.co.uk>";
@@ -22,7 +13,7 @@
       synopsis = "Internationalization for Haskell";
       description = "Internationalization for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.parsec)
           (hsPkgs.mtl)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

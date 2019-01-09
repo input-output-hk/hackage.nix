@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mustache-haskell";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "mustache-haskell"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "dhchoi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Straight implementation of mustache templates";
       description = "Straight implementation of mustache templates";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.scientific)
           (hsPkgs.directory)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "mus" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.scientific)
             (hsPkgs.directory)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

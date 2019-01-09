@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Lattices";
-        version = "0.0.3";
-      };
+      identifier = { name = "Lattices"; version = "0.0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Bart Coppens <kde@bartcoppens.be>";
@@ -22,15 +13,11 @@
       synopsis = "A library for lattices";
       description = "A library for lattices, in particular for computing an LLL reduced basis for a lattice and finding a close lattice vector";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.HaskellForMaths)
-          (hsPkgs.array)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.HaskellForMaths) (hsPkgs.array) ];
+        };
       tests = {
         "test-all" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

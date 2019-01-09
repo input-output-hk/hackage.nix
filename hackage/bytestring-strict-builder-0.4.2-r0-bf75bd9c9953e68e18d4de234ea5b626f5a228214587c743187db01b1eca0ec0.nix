@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bytestring-strict-builder";
-        version = "0.4.2";
-      };
+      identifier = { name = "bytestring-strict-builder"; version = "0.4.2"; };
       license = "MIT";
       copyright = "(c) 2017, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "An efficient strict bytestring builder";
       description = "According to\n<https://github.com/nikita-volkov/bytestring-builders-benchmark the competition benchmarks>,\nthis library provides the fastest builder of strict bytestrings.\n\nPractical benchmarks have proven it to be highly performant aswell.\nThe encoders from the \\\"postgresql-binary\\\" library have shown\na stable performance improvement by factors of up to 10 after the migration\nfrom the standard builder to \\\"bytestring-strict-builder\\\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -42,17 +33,17 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
             (hsPkgs.bytestring-strict-builder)
             (hsPkgs.criterion)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

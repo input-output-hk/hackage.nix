@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wolf";
-        version = "0.2.2";
-      };
+      identifier = { name = "wolf"; version = "0.2.2"; };
       license = "MIT";
       copyright = "Copyright (C) 2015 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Simple Workflow Service Wrapper.";
       description = "Wolf is a wrapper around Amazon Simple Workflow Service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "wolf-register" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.text)
             (hsPkgs.wolf)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-execute" = {
           depends = [
             (hsPkgs.base)
@@ -79,8 +70,8 @@
             (hsPkgs.text)
             (hsPkgs.wolf)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-decide" = {
           depends = [
             (hsPkgs.base)
@@ -90,8 +81,8 @@
             (hsPkgs.text)
             (hsPkgs.wolf)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-act" = {
           depends = [
             (hsPkgs.aeson)
@@ -106,9 +97,9 @@
             (hsPkgs.transformers)
             (hsPkgs.wolf)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -117,8 +108,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.wolf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

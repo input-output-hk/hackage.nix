@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fluid-idl-scotty";
-        version = "0.0.0";
-      };
+      identifier = { name = "fluid-idl-scotty"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Joe Vargas";
@@ -22,7 +13,7 @@
       synopsis = "Scotty server add-on for Fluid";
       description = "Scotty server add-on for Fluid";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.mtl)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      runtimegecode = false;
-      debug = false;
-    };
+    flags = { runtimegecode = false; debug = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "monadiccp";
-        version = "0.7.1";
-      };
+      identifier = { name = "monadiccp"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tom.schrijvers@ugent.be";
@@ -25,7 +13,7 @@
       synopsis = "Constraint Programming";
       description = "Monadic Constraint Programming framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +25,15 @@
           (hsPkgs.random)
           (hsPkgs.pretty)
           (hsPkgs.Monatron)
-        ];
-        libs = pkgs.lib.optionals (flags.runtimegecode) [
+          ];
+        libs = (pkgs.lib).optionals (flags.runtimegecode) [
           (pkgs."gecodesupport")
           (pkgs."gecodeset")
           (pkgs."gecodeint")
           (pkgs."gecodekernel")
           (pkgs."gecodesearch")
-        ];
-        frameworks = pkgs.lib.optional (flags.runtimegecode) (pkgs."gecode");
+          ];
+        frameworks = (pkgs.lib).optional (flags.runtimegecode) (pkgs."gecode");
+        };
       };
-    };
-  }
+    }

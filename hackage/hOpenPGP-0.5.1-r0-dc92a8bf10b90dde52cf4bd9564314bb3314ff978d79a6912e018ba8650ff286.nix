@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hOpenPGP";
-        version = "0.5.1";
-      };
+      identifier = { name = "hOpenPGP"; version = "0.5.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2012, Clint Adams";
       maintainer = "Clint Adams <clint@debian.org>";
@@ -22,7 +13,7 @@
       synopsis = "native Haskell implementation of OpenPGP (RFC4880)";
       description = "native Haskell implementation of OpenPGP (RFC4880)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.split)
           (hsPkgs.time)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.exception-transformers)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

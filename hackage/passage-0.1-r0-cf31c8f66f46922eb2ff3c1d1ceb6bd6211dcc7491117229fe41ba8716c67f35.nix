@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "passage";
-        version = "0.1";
-      };
+      identifier = { name = "passage"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2011 Galois, Inc. and Battelle Memorial Institute";
       maintainer = "Chad Scherrer";
@@ -22,7 +13,7 @@
       synopsis = "Parallel code generation for hierarchical Bayesian modeling.";
       description = "Passage is a PArallel SAmpler GEnerator. The user specifies a hierarchical\nBayesian model and data using the Passage EDSL, and Passage generates code\nto sample the posterior distribution in parallel.\n\nCurrently Passage targets C with OpenMP threads.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.GraphSCC)
           (hsPkgs.mwc-random)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

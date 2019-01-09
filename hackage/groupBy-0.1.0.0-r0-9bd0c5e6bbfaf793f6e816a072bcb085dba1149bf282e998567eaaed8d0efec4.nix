@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "groupBy";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "groupBy"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Donnacha Oisín Kidney";
       maintainer = "mail@doisinkidney.com";
@@ -22,11 +13,9 @@
       synopsis = "Replacement definition of Data.List.GroupBy";
       description = "Please see the README on Github at <https://github.com/oisdk/groupBy#readme>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "groupBy-test" = {
           depends = [
@@ -34,9 +23,9 @@
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.groupBy)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -47,8 +36,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.random)
             (hsPkgs.utility-ht)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

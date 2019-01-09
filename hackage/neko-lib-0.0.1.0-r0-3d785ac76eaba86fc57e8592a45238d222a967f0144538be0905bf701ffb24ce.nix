@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "neko-lib";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "neko-lib"; version = "0.0.1.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "penzin-dev@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Neko VM code generation and disassembly library";
       description = "Neko Virtual Machine (http://nekovm.org) is a light-weight and portable byte code interpreter; neko-lib is a library for reading and writing NekoVM bytecode implemented entirely in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.optparse-applicative)
           (hsPkgs.tagged)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-lib" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

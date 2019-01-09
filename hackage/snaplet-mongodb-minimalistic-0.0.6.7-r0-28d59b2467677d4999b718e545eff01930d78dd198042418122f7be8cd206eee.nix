@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "snaplet-mongodb-minimalistic";
         version = "0.0.6.7";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "the.palmik+maintainer@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Minimalistic MongoDB Snaplet.";
       description = "Minimalistic MongoDB Snaplet.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +27,7 @@
           (hsPkgs.snap-core)
           (hsPkgs.text)
           (hsPkgs.mongoDB)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

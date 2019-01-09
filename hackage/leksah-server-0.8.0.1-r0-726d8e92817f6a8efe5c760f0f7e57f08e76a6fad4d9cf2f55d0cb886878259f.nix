@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "leksah-server";
-        version = "0.8.0.1";
-      };
+      identifier = { name = "leksah-server"; version = "0.8.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2009 Juergen Nicklisch-Franken, Hamish Mackenzie";
       maintainer = "maintainer@leksah.org";
@@ -22,7 +13,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -44,13 +35,11 @@
           (hsPkgs.deepseq)
           (hsPkgs.hslogger)
           (hsPkgs.network)
-        ] ++ [
-          (hsPkgs.haddock-leksah)
-        ]) ++ (if system.isWindows
+          ] ++ [ (hsPkgs.haddock-leksah) ]) ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
-      };
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
+        };
       exes = {
         "leksah-server" = {
           depends = ([
@@ -70,14 +59,12 @@
             (hsPkgs.process)
             (hsPkgs.deepseq)
             (hsPkgs.network)
-          ] ++ [
-            (hsPkgs.haddock-leksah)
-          ]) ++ (if system.isWindows
+            ] ++ [ (hsPkgs.haddock-leksah) ]) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
-        };
+          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
+          };
         "leksahecho" = {};
+        };
       };
-    };
-  }
+    }

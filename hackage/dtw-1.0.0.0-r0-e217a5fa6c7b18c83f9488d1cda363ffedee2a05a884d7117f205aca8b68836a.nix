@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dtw";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "dtw"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "fho@f12n.de";
@@ -22,7 +13,7 @@
       synopsis = "(Fast) Dynamic Time Warping";
       description = "This package implements dynamic time warping as described\nhere <http://en.wikipedia.org/w/index.php?title=Dynamic_time_warping>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.vector-space)
           (hsPkgs.containers)
           (hsPkgs.MemoTrie)
-        ];
-      };
+          ];
+        };
       tests = {
         "maintest" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
             (hsPkgs.MemoTrie)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

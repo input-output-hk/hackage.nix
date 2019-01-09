@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "config-schema";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "config-schema"; version = "0.3.0.0"; };
       license = "ISC";
       copyright = "Eric Mertens 2017";
       maintainer = "emertens@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Schema definitions for the config-value package";
       description = "This package makes it possible to defined schemas for use when\nloading configuration files using the config-value format.\nThese schemas can be used to be process a configuration file into\na Haskell value, or to automatically generate documentation for\nthe file format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.config-value)
             (hsPkgs.config-schema)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

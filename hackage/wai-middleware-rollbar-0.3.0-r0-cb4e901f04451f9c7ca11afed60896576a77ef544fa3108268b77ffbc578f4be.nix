@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-rollbar";
-        version = "0.3.0";
-      };
+      identifier = { name = "wai-middleware-rollbar"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Hardy Jones";
       maintainer = "jones3.hardy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Middleware that communicates to Rollbar.";
       description = "Middleware that communicates to Rollbar.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       tests = {
         "doc-test" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.wai-middleware-rollbar)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

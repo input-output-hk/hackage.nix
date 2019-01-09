@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test-api = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "liblastfm";
-        version = "0.6.1";
-      };
+      identifier = { name = "liblastfm"; version = "0.6.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Lastfm API interface";
       description = "Provides interface to Lastfm REST API, supports XML and JSON formats.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.transformers)
           (hsPkgs.text)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "api" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.xml-html-conduit-lens)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.aeson)
@@ -79,8 +70,8 @@
             (hsPkgs.transformers)
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-html-conduit-lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

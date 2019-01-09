@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "numhask";
-        version = "0.1.4.0";
-      };
+      identifier = { name = "numhask"; version = "0.1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A numeric prelude";
       description = "A numeric prelude, providing a clean structure for numbers and operations that combine them.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.tasty)
           (hsPkgs.tasty-quickcheck)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.numhask)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "blaze-html";
-        version = "0.1";
-      };
+      identifier = { name = "blaze-html"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jaspervdj@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A blazingly fast HTML generation library.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.bytestring) ];
+        };
       };
-    };
-  }
+    }

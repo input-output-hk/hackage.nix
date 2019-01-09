@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glazier-react-widget";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "glazier-react-widget"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "Generic widget library using glazier-react";
       description = "Generic widget library using glazier-react";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -40,7 +31,7 @@
           (hsPkgs.pipes-concurrency)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs.ghcjs-base-stub);
+          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base)) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.ghcjs-base-stub);
+        };
       };
-    };
-  }
+    }

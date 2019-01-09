@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "incremental-parser";
-        version = "0.2.3.1";
-      };
+      identifier = { name = "incremental-parser"; version = "0.2.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2011-2013 Mario Blazevic";
       maintainer = "blamario@yahoo.com";
@@ -22,14 +13,9 @@
       synopsis = "Generic parser library capable of providing partial results from partial input.";
       description = "This package defines yet another parser library. This one is implemented using the concept of Brzozowski derivatives,\ntweaked and optimized to work with any monoidal input type. Lists, ByteString, and Text are supported out of the box,\nas well as any other data type for which the monoid-subclasses package defines instances.\nIf the parser result is also a monoid, the parser can provide it incrementally, before the complete input is parsed.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.monoid-subclasses)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.monoid-subclasses) ]; };
       tests = {
         "Main" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.checkers)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

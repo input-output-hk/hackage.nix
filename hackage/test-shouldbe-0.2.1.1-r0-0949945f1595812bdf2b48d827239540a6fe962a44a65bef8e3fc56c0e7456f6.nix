@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "test-shouldbe";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "test-shouldbe"; version = "0.2.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "";
@@ -22,14 +13,9 @@
       synopsis = "Catchy combinators for HUnit";
       description = "Catchy combinators for HUnit";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.HUnit)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.HUnit) ]; };
       tests = {
         "spec" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.silently)
             (hsPkgs.hspec)
             (hsPkgs.hspec-discover)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

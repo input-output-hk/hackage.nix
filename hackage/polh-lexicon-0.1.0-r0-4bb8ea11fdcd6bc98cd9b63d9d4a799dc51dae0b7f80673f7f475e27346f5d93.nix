@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "polh-lexicon";
-        version = "0.1.0";
-      };
+      identifier = { name = "polh-lexicon"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Interface to a historical dictionary of Polish";
       description = "Interface to a historical dictionary of Polish.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,11 +27,8 @@
           (hsPkgs.polysoup)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
+      exes = { "polh-binarize" = {}; "polh-show" = {}; };
       };
-      exes = {
-        "polh-binarize" = {};
-        "polh-show" = {};
-      };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-auth-server";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "servant-auth-server"; version = "0.3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Julian K. Arni";
       maintainer = "jkarni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "servant-server/servant-auth compatibility";
       description = "This package provides the required instances for using the @Auth@ combinator\nin your 'servant' server.\n\nBoth cookie- and token- (REST API) based authentication is provided.\n\nFor a quick overview of the usage, see the <http://github.com/plow-technologies/servant-auth#readme README>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       exes = {
         "readme" = {
           depends = [
@@ -64,12 +55,10 @@
             (hsPkgs.warp)
             (hsPkgs.transformers)
             (hsPkgs.markdown-unlit)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -91,11 +80,9 @@
             (hsPkgs.lens-aeson)
             (hsPkgs.warp)
             (hsPkgs.wreq)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

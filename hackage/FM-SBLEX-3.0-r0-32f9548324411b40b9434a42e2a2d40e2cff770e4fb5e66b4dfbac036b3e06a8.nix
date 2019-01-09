@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "FM-SBLEX";
-        version = "3.0";
-      };
+      identifier = { name = "FM-SBLEX"; version = "3.0"; };
       license = "LicenseRef-GPL";
       copyright = "Lars Borin, Markus Forsberg, Aarne Ranta, Free software under GNU General Public License (GPL).";
       maintainer = "Lars Borin <lars.borin@gu.se>, Markus Forsberg <markus.forsberg@gu.se>, Aarne Ranta <aarne@chalmers.se>";
@@ -22,7 +13,7 @@
       synopsis = "A set of computational morphology tools for Swedish diachronic lexicons.";
       description = "A set of computational morphology tools for Swedish diachronic lexicons. Retrieve up-to-date dictionaries from the homepage.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "saldo" = {
@@ -31,24 +22,24 @@
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
-          ];
-        };
+            ];
+          };
         "dalin" = {
           depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
-          ];
-        };
+            ];
+          };
         "fsv" = {
           depends = [
             (hsPkgs.haskell98)
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

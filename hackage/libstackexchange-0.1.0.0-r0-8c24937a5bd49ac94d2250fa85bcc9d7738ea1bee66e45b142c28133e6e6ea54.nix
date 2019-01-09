@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enable-examples = false;
-      enable-doctests = false;
-    };
+    flags = { enable-examples = false; enable-doctests = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "libstackexchange";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "libstackexchange"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "matvey.aksenov@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "StackExchange API interface";
       description = "Provides interface for StackExchange v2.1 API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +26,8 @@
           (hsPkgs.aeson)
           (hsPkgs.http-conduit)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       tests = {
         "aeson-lens" = {
           depends = [
@@ -51,8 +39,8 @@
             (hsPkgs.lens)
             (hsPkgs.HUnit)
             (hsPkgs.libstackexchange)
-          ];
-        };
+            ];
+          };
         "request" = {
           depends = [
             (hsPkgs.base)
@@ -60,16 +48,16 @@
             (hsPkgs.text)
             (hsPkgs.QuickCheck)
             (hsPkgs.libstackexchange)
-          ];
-        };
+            ];
+          };
         "api" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.http-conduit)
             (hsPkgs.libstackexchange)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

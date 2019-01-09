@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "detour-via-sci";
-        version = "1.0.0";
-      };
+      identifier = { name = "detour-via-sci"; version = "1.0.0"; };
       license = "MPL-2.0";
       copyright = "© 2017-2018 Phil de Joux, © 2017-2018 Block Scope Limited";
       maintainer = "phil.dejoux@blockscope.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON and CSV encoding for rationals as decimal point numbers.";
       description = "Lossy JSON and CSV encoding and decoding for newtype rationals via scientific with fixed decimal places.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.scientific)
           (hsPkgs.siggy-chardust)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.scientific)
             (hsPkgs.siggy-chardust)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "hlint" = {
           depends = [
             (hsPkgs.aeson)
@@ -58,8 +49,8 @@
             (hsPkgs.scientific)
             (hsPkgs.siggy-chardust)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

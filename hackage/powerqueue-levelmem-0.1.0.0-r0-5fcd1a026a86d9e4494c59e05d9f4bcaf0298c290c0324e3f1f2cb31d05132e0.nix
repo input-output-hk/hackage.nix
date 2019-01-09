@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "powerqueue-levelmem";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "powerqueue-levelmem"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Alexander Thiemann <mail@athiemann.net>";
       maintainer = "mail@athiemann.net";
@@ -22,7 +13,7 @@
       synopsis = "A high performance in memory and LevelDB backend for powerqueue";
       description = "A high performance in memory and LevelDB backend for powerqueue";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.dlist)
           (hsPkgs.list-t)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "powerqueue-levelmem-test" = {
           depends = [
@@ -51,14 +42,10 @@
             (hsPkgs.async)
             (hsPkgs.temporary)
             (hsPkgs.cereal)
-          ];
-          libs = [
-            (pkgs."stdc++")
-            (pkgs."leveldb")
-            (pkgs."snappy")
-          ];
+            ];
+          libs = [ (pkgs."stdc++") (pkgs."leveldb") (pkgs."snappy") ];
+          };
         };
-      };
       benchmarks = {
         "powerqueue-levelmem-bench" = {
           depends = [
@@ -68,13 +55,9 @@
             (hsPkgs.criterion)
             (hsPkgs.temporary)
             (hsPkgs.cereal)
-          ];
-          libs = [
-            (pkgs."stdc++")
-            (pkgs."leveldb")
-            (pkgs."snappy")
-          ];
+            ];
+          libs = [ (pkgs."stdc++") (pkgs."leveldb") (pkgs."snappy") ];
+          };
         };
       };
-    };
-  }
+    }

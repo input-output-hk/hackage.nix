@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "smallstring";
-        version = "0.3.3";
-      };
+      identifier = { name = "smallstring"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "aslatter@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Unicode text type, optimized for low memory overhead";
       description = "A Unicode text type, optimized for low memory overhead.\nNo string manipulation functions are offered.\n\nEquality and ordinal comparison aim to be competitive with\nthe Text type.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.hashable)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

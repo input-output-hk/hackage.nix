@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mixpanel-client";
-        version = "0.1.1";
-      };
+      identifier = { name = "mixpanel-client"; version = "0.1.1"; };
       license = "Apache-2.0";
       copyright = "2018 Domen Kožar";
       maintainer = "domen@enlambda.com";
@@ -22,7 +13,7 @@
       synopsis = "Mixpanel client";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.string-conv)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "mixpanel-test" = {
           depends = [
@@ -55,11 +46,9 @@
             (hsPkgs.string-conv)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
-        };
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         "readme" = {
           depends = [
             (hsPkgs.aeson)
@@ -74,11 +63,9 @@
             (hsPkgs.string-conv)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          };
         };
       };
-    };
-  }
+    }

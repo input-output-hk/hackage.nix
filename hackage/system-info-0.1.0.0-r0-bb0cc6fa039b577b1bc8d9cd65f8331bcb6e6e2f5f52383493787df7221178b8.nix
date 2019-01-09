@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "system-info";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "system-info"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 ChaosGroup";
       maintainer = "daniel.taskoff@chaosgroup.com";
@@ -22,18 +13,13 @@
       synopsis = "Get information about CPUs, memory, etc.";
       description = "An OS independent Haskell library for getting information about CPUs, memory, etc.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "system-info-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.system-info)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.system-info) ];
+          };
         };
       };
-    };
-  }
+    }

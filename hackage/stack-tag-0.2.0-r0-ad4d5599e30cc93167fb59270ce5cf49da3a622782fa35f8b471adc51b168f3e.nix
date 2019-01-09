@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack-tag";
-        version = "0.2.0";
-      };
+      identifier = { name = "stack-tag"; version = "0.2.0"; };
       license = "MIT";
       copyright = "2018 Reichert Brothers";
       maintainer = "christopher@reichertbrothers.com";
@@ -22,7 +13,7 @@
       synopsis = "Create etags for Haskell projects based on Stack snapshots";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mtl)
           (hsPkgs.process)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "stack-tag" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.process)
             (hsPkgs.stack-tag)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

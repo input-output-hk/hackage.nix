@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-pointer-hasql";
-        version = "0.1.1";
-      };
+      identifier = { name = "json-pointer-hasql"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2016, Sannsyn AS";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "JSON Pointer extensions for Hasql";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.json-pointer)
           (hsPkgs.text)
           (hsPkgs.base-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.either)
             (hsPkgs.transformers)
             (hsPkgs.rebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

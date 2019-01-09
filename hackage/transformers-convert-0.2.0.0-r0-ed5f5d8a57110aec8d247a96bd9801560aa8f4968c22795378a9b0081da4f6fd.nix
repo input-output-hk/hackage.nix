@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "transformers-convert";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "transformers-convert"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jmacristovao@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sensible conversions between some of the monad transformers";
       description = "Sensible conversions between MaybeT and EitherT monad transformers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.transformers)
           (hsPkgs.either)
           (hsPkgs.data-easy)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.unix)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

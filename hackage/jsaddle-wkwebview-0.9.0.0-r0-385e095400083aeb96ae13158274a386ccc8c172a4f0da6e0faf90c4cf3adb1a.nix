@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      include-app-delegate = true;
-    };
+    flags = { include-app-delegate = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsaddle-wkwebview";
-        version = "0.9.0.0";
-      };
+      identifier = { name = "jsaddle-wkwebview"; version = "0.9.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Interface for JavaScript that works with GHCJS and GHC";
       description = "This package provides an EDSL for calling JavaScript that\ncan be used both from GHCJS and GHC.  When using GHC\nthe application is run using Warp and WebSockets to\ndrive a small JavaScipt helper.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,16 +23,13 @@
           (hsPkgs.jsaddle)
           (hsPkgs.data-default)
           (hsPkgs.containers)
-        ];
+          ];
         frameworks = [
           (pkgs."Foundation")
           (pkgs."WebKit")
-        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isIos
-          then [
-            (pkgs."UIKit")
-            (pkgs."UserNotifications")
-          ]
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if system.isIos
+          then [ (pkgs."UIKit") (pkgs."UserNotifications") ]
           else [ (pkgs."Cocoa") ]);
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-examples = false;
-    };
+    flags = { build-examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scotty-rest";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "scotty-rest"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015, Erlend Hamberg";
       maintainer = "erlend@hamberg.no";
@@ -24,7 +13,7 @@
       synopsis = "Webmachine-style REST library for scotty";
       description = "Webmachine-like REST library for Scotty.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +32,8 @@
           (hsPkgs.transformers)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
-        ];
-      };
+          ];
+        };
       exes = {
         "database-example" = {
           depends = [
@@ -56,16 +45,16 @@
             (hsPkgs.scotty)
             (hsPkgs.text)
             (hsPkgs.wai-extra)
-          ];
-        };
+            ];
+          };
         "hello-world-example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.scotty-rest)
             (hsPkgs.scotty)
             (hsPkgs.wai-extra)
-          ];
-        };
+            ];
+          };
         "parameters-example" = {
           depends = [
             (hsPkgs.base)
@@ -73,8 +62,8 @@
             (hsPkgs.scotty)
             (hsPkgs.text)
             (hsPkgs.wai-extra)
-          ];
-        };
+            ];
+          };
         "mutable-state-example" = {
           depends = [
             (hsPkgs.base)
@@ -82,9 +71,9 @@
             (hsPkgs.scotty)
             (hsPkgs.text)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -99,8 +88,8 @@
             (hsPkgs.string-conversions)
             (hsPkgs.text)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

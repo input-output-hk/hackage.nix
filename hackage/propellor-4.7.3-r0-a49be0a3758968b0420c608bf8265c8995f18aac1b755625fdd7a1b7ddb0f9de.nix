@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "propellor";
-        version = "4.7.3";
-      };
+      identifier = { name = "propellor"; version = "4.7.3"; };
       license = "BSD-2-Clause";
       copyright = "2014 Joey Hess";
       maintainer = "Joey Hess <id@joeyh.name>";
@@ -22,7 +13,7 @@
       synopsis = "property-based host configuration management in haskell";
       description = "Propellor ensures that the system it's run in satisfies a list of\nproperties, taking action as necessary when a property is not yet met.\n\nIt is configured using haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.stm)
           (hsPkgs.text)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       exes = {
         "propellor" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.stm)
             (hsPkgs.text)
             (hsPkgs.hashable)
-          ];
-        };
+            ];
+          };
         "propellor-config" = {
           depends = [
             (hsPkgs.base)
@@ -101,8 +92,8 @@
             (hsPkgs.stm)
             (hsPkgs.text)
             (hsPkgs.hashable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

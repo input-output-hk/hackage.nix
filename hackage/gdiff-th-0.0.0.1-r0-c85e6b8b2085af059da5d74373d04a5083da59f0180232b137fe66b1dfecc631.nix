@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gdiff-th";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "gdiff-th"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jonathangfischoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate gdiff GADTs and Instances.";
       description = "Generate gdiff GADTs and Instances. Very Alpha. Does not yet support GADTs among other this I'm sure.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.universe-th)
           (hsPkgs.type-sub-th)
           (hsPkgs.gdiff)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.type-sub-th)
             (hsPkgs.gdiff)
             (hsPkgs.tuple)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

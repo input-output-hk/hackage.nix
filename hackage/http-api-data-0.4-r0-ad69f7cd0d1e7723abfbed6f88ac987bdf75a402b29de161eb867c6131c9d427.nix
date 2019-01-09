@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      use-text-show = false;
-    };
+    flags = { use-text-show = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-api-data";
-        version = "0.4";
-      };
+      identifier = { name = "http-api-data"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Nickolay Kudasov <nickolay.kudasov@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Converting to/from HTTP API data like URL pieces, headers and query parameters.";
       description = "This package defines typeclasses used for converting Haskell data types to and from HTTP API data.\n\nPlease see README.md";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -43,11 +32,11 @@
           (hsPkgs.time-locale-compat)
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid-types)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.10")) [
           (hsPkgs.nats)
           (hsPkgs.void)
-        ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ pkgs.lib.optional (flags.use-text-show) (hsPkgs.text-show);
-      };
+          ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optional (flags.use-text-show) (hsPkgs.text-show);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -65,19 +54,17 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
-        };
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

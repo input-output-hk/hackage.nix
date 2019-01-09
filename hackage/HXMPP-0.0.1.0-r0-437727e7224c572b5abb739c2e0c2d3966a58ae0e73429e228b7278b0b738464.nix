@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HXMPP";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "HXMPP"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2011, Jon Kristensen";
       maintainer = "jon.kristensen@pontarius.org";
@@ -22,7 +13,7 @@
       synopsis = "A (prototyped) easy to use XMPP library";
       description = "A work in progress of an implementation of RFC 3920: XMPP\nCore.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.binary)
           (hsPkgs.random)
           (hsPkgs.xml-enumerator)
-        ];
-      };
+          ];
+        };
       exes = {
         "hxmpp-0.0.1.0-test" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.binary)
             (hsPkgs.random)
             (hsPkgs.xml-enumerator)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "myTestlll";
-        version = "1.0.0";
-      };
+      identifier = { name = "myTestlll"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008-2014";
       maintainer = "Mark Santolucito <mark.santolucito@yale.edu>,";
@@ -22,7 +13,7 @@
       synopsis = "testign upload";
       description = "Can you really not delete a library?";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,12 +35,12 @@
           (hsPkgs.pure-fft)
           (hsPkgs.stm)
           (hsPkgs.arrows)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
           (hsPkgs.base)
           (hsPkgs.syb)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-euterpea" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.Cabal)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { hint = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "snap";
-        version = "0.6.0.2";
-      };
+      identifier = { name = "snap"; version = "0.6.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "snap@snapframework.com";
@@ -22,7 +13,7 @@
       synopsis = "Snap: A Haskell Web Framework: project starter executable and glue code library";
       description = "Snap Framework project starter executable and glue code library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -61,12 +52,12 @@
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
           (hsPkgs.xmlhtml)
-        ] ++ (if compiler.isGhc && compiler.version.ge "7.0" && (compiler.isGhc && compiler.version.lt "7.4")
+          ] ++ (if compiler.isGhc && (compiler.version).ge "7.0" && (compiler.isGhc && (compiler.version).lt "7.4")
           then [ (hsPkgs.aeson-native) ]
           else [
             (hsPkgs.aeson)
-          ])) ++ pkgs.lib.optional (flags.hint) (hsPkgs.hint)) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+            ])) ++ (pkgs.lib).optional (flags.hint) (hsPkgs.hint)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "snap" = {
           depends = [
@@ -80,8 +71,8 @@
             (hsPkgs.snap-server)
             (hsPkgs.template-haskell)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

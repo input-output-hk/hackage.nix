@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "BoundedChan";
-        version = "1.0.3.0";
-      };
+      identifier = { name = "BoundedChan"; version = "1.0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Adam Wick <awick@galois.com>";
@@ -22,13 +13,8 @@
       synopsis = "Implementation of bounded channels.";
       description = "This library introduces BoundedChan. BoundedChans differ from\nChans in that they are guaranteed to contain no more than a\ncertain number of elements.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.array) ]; };
+      };
+    }

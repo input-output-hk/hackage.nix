@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      examples = false;
-      http-client-05 = true;
-    };
+    flags = { examples = false; http-client-05 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "influxdb";
-        version = "1.0.0";
-      };
+      identifier = { name = "influxdb"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014-2017 Mitsutoshi Aoe";
       maintainer = "Mitsutoshi Aoe <maoe@foldr.in>";
@@ -25,7 +13,7 @@
       synopsis = "Haskell client library for InfluxDB";
       description = "Haskell client library for InfluxDB";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,13 +33,10 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ (if flags.http-client-05
+          ] ++ (if flags.http-client-05
           then [ (hsPkgs.http-client) ]
-          else [
-            (hsPkgs.data-default-class)
-            (hsPkgs.http-client)
-          ]);
-      };
+          else [ (hsPkgs.data-default-class) (hsPkgs.http-client) ]);
+        };
       exes = {
         "influx-random-points" = {
           depends = [
@@ -68,8 +53,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "influx-write-udp" = {
           depends = [
             (hsPkgs.base)
@@ -78,9 +63,9 @@
             (hsPkgs.lens)
             (hsPkgs.network)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-suite" = {
           depends = [
@@ -95,8 +80,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

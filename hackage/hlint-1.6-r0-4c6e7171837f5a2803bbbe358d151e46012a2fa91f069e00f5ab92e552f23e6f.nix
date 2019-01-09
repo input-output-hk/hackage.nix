@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hlint";
-        version = "1.6";
-      };
+      identifier = { name = "hlint"; version = "1.6"; };
       license = "LicenseRef-GPL";
       copyright = "Neil Mitchell 2006-2009";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Source code suggestions";
       description = "HLint gives suggestions on how to improve your source code.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hlint" = {
@@ -37,8 +28,8 @@
             (hsPkgs.haskell-src-exts)
             (hsPkgs.uniplate)
             (hsPkgs.parallel)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

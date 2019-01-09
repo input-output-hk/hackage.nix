@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "usb-id-database";
-        version = "0.2";
-      };
+      identifier = { name = "usb-id-database"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Roel van Dijk";
       maintainer = "vandijk.roel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A database of USB identifiers";
       description = "Functions to find the names associated with numerical vendor and\nproduct identifiers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.encoding)
           (hsPkgs.parsimony)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

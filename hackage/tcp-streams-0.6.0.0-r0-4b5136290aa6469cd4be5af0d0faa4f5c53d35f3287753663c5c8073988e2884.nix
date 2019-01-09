@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tcp-streams";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "tcp-streams"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Winterland 2016";
       maintainer = "winterland1989@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "One stop solution for tcp client and server with tls support.";
       description = "One stop solution for tcp client and server with tls support.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.x509-system)
           (hsPkgs.x509-store)
           (hsPkgs.pem)
-        ];
-      };
+          ];
+        };
       tests = {
         "testsuite" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

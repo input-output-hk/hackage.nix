@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shannon-fano";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "shannon-fano"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "armandoifsantos@gmail.com";
@@ -22,23 +13,15 @@
       synopsis = "Shannon-fano compression algorithm implementation in Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.split)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.split) ];
+        };
       tests = {
         "tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.shannon-fano)
-            (hsPkgs.QuickCheck)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.shannon-fano) (hsPkgs.QuickCheck) ];
+          };
         };
       };
-    };
-  }
+    }

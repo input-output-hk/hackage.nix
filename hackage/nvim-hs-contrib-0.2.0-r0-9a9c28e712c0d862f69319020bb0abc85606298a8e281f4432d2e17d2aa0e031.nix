@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nvim-hs-contrib";
-        version = "0.2.0";
-      };
+      identifier = { name = "nvim-hs-contrib"; version = "0.2.0"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) Sebastian Witte";
       maintainer = "woozletoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell plugin backend for neovim";
       description = "Library for nvim-hs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.time)
           (hsPkgs.utf8-string)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-discover)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

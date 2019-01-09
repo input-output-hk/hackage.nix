@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hamusic";
-        version = "0.1.1";
-      };
+      identifier = { name = "hamusic"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008 Samuel Silva";
       maintainer = "Samuel Silva <silva.samuel@alumni.uminho.pt>";
@@ -22,7 +13,7 @@
       synopsis = "Library to handle abstract music";
       description = "This library consists on abstract music manipulation. It also\nsupports interfaces with MusicXML.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,14 +25,12 @@
           (hsPkgs.musicxml)
           (hsPkgs.haskore)
           (hsPkgs.non-negative)
-        ];
-      };
-      exes = {
-        "HaMusic" = {
-          depends = [ (hsPkgs.filepath) ];
+          ];
         };
+      exes = {
+        "HaMusic" = { depends = [ (hsPkgs.filepath) ]; };
         "MusicTranslate" = {};
         "MusicCount" = {};
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "gelatin";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "gelatin"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "schell@takt.com";
@@ -22,7 +13,7 @@
       synopsis = "A graphics description language.";
       description = "An EDSL for describing pictures and scenes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.linear)
             (hsPkgs.vector)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

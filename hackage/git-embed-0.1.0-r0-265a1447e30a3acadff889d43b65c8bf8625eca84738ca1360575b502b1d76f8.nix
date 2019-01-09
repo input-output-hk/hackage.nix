@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "git-embed";
-        version = "0.1.0";
-      };
+      identifier = { name = "git-embed"; version = "0.1.0"; };
       license = "BSD-2-Clause";
       copyright = "2014 Emanuel Borsboom";
       maintainer = "Emanuel Borsboom <emanuel@borsboom.io>";
@@ -22,7 +13,7 @@
       synopsis = "Use TH to embed Git repo information.";
       description = "Use Template Haskell to embed Git revision, branch, and\ntag information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

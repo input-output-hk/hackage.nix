@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xhb-atom-cache";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "xhb-atom-cache"; version = "0.1.0.2"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "Jochen Keil <jochen.keil+xhb-atom-cache@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Atom cache for XHB";
       description = "Atom cache for XHB";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.xhb)
           (hsPkgs.hashable)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

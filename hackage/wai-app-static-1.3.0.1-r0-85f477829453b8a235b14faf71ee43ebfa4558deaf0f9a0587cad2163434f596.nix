@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { print = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-app-static";
-        version = "1.3.0.1";
-      };
+      identifier = { name = "wai-app-static"; version = "1.3.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "WAI application for static serving";
       description = "Also provides some helper functions and datatypes for use outside of WAI.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.crypto-conduit)
           (hsPkgs.cereal)
           (hsPkgs.mime-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.mime-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

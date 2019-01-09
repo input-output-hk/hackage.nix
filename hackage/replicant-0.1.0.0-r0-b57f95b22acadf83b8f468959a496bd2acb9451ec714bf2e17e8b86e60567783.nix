@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "replicant";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "replicant"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 James Dabbs";
       maintainer = "jamesdabbs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.websockets)
           (hsPkgs.wreq)
           (hsPkgs.wuss)
-        ];
-      };
+          ];
+        };
       exes = {
         "replicant" = {
           depends = [
@@ -63,16 +54,11 @@
             (hsPkgs.bytestring)
             (hsPkgs.hedis-namespace)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "replicant-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.replicant)
-          ];
+        "replicant-test" = { depends = [ (hsPkgs.base) (hsPkgs.replicant) ]; };
         };
       };
-    };
-  }
+    }

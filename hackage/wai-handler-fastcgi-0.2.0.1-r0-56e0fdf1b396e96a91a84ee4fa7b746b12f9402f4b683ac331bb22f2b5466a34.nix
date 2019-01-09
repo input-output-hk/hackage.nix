@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "wai-handler-fastcgi";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "wai-handler-fastcgi"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Wai handler to fastcgi";
       description = "";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
           (hsPkgs.bytestring)
-        ];
+          ];
         libs = [ (pkgs."fcgi") ];
+        };
       };
-    };
-  }
+    }

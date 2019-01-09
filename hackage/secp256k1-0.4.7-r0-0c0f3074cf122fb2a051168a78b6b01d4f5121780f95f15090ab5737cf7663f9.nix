@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "secp256k1";
-        version = "0.4.7";
-      };
+      identifier = { name = "secp256k1"; version = "0.4.7"; };
       license = "LicenseRef-PublicDomain";
       copyright = "(c) 2017 Jean-Pierre Rupp";
       maintainer = "xenog@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for secp256k1 library from Bitcoin Core";
       description = "Please see README.md";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.mtl)
           (hsPkgs.QuickCheck)
           (hsPkgs.string-conversions)
-        ];
-      };
+          ];
+        };
       tests = {
         "secp256k1-test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

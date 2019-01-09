@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "alphachar";
-        version = "0.0.1";
-      };
+      identifier = { name = "alphachar"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Tony Morris";
@@ -22,15 +13,11 @@
       synopsis = "A character between a-z";
       description = "A character between a-z";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.lens)
-          (hsPkgs.parsers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.lens) (hsPkgs.parsers) ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

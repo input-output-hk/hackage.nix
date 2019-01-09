@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Bookshelf";
-        version = "0.3.1";
-      };
+      identifier = { name = "Bookshelf"; version = "0.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2009-2013 Emil Axelsson";
       maintainer = "Emil Axelsson <emax@chalmers.se>";
@@ -22,7 +13,7 @@
       synopsis = "A simple document organizer with some wiki functionality";
       description = "A simple document organizer with some wiki functionality";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "bookshelf" = {
@@ -34,16 +25,11 @@
             (hsPkgs.pandoc)
             (hsPkgs.pandoc-types)
             (hsPkgs.parseargs)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "documentation" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
+        "documentation" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
         };
       };
-    };
-  }
+    }

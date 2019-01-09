@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "logging-effect-extra";
-        version = "1.0.0";
-      };
+      identifier = { name = "logging-effect-extra"; version = "1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Jason Shipman";
@@ -22,7 +13,7 @@
       synopsis = "Supplemental packages for `logging-effect`.";
       description = "Supplemental packages for `logging-effect`.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,12 @@
           (hsPkgs.logging-effect)
           (hsPkgs.logging-effect-extra-file)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
-      exes = {
-        "log-extra" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.logging-effect-extra)
           ];
         };
+      exes = {
+        "log-extra" = {
+          depends = [ (hsPkgs.base) (hsPkgs.logging-effect-extra) ];
+          };
+        };
       };
-    };
-  }
+    }

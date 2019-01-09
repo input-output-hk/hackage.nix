@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "asn1-codec";
-        version = "0.2.0";
-      };
+      identifier = { name = "asn1-codec"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Encode and decode ASN.1";
       description = "Add a better description later";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.hashable)
           (hsPkgs.cryptonite)
           (hsPkgs.memory)
-        ];
-      };
+          ];
+        };
       tests = {
         "asn1-records-test" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.directory)
             (hsPkgs.base16-bytestring)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

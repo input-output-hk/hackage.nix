@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      library-only = false;
-    };
+    flags = { library-only = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hstox";
-        version = "0.0.2";
-      };
+      identifier = { name = "hstox"; version = "0.0.2"; };
       license = "GPL-3.0-only";
       copyright = "© 2016-2018 iphy";
       maintainer = "iphy";
@@ -24,7 +13,7 @@
       synopsis = "A Tox protocol implementation in Haskell";
       description = "A Tox protocol implementation in Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,31 +41,18 @@
           (hsPkgs.tagged)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (!flags.library-only) (hsPkgs.hspec);
-      };
+          ] ++ (pkgs.lib).optional (!flags.library-only) (hsPkgs.hspec);
+        };
       exes = {
-        "tox-refsut" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hstox)
-          ];
-        };
+        "tox-refsut" = { depends = [ (hsPkgs.base) (hsPkgs.hstox) ]; };
         "tox-spectest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hstox)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hstox) (hsPkgs.process) ];
+          };
         };
-      };
       tests = {
         "testsuite" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.async)
-            (hsPkgs.hstox)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.async) (hsPkgs.hstox) ];
+          };
         };
       };
-    };
-  }
+    }

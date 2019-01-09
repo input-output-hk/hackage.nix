@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "inline-c-cpp";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "inline-c-cpp"; version = "0.2.1.0"; };
       license = "MIT";
       copyright = "(c) 2015-2016 FP Complete Corporation, (c) 2017 Francesco Mazzoli";
       maintainer = "francesco@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Lets you embed C++ code into Haskell.";
       description = "Utilities to inline C++ code into Haskell using inline-c.  See\ntests for example on how to build.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.inline-c)
           (hsPkgs.template-haskell)
           (hsPkgs.safe-exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +31,9 @@
             (hsPkgs.inline-c-cpp)
             (hsPkgs.safe-exceptions)
             (hsPkgs.hspec)
-          ];
+            ];
           libs = [ (pkgs."stdc++") ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hackport";
-        version = "0.4.5";
-      };
+      identifier = { name = "hackport"; version = "0.4.5"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Gentoo Haskell team <haskell@gentoo.org>";
@@ -22,7 +13,7 @@
       synopsis = "Hackage and Portage integration tool";
       description = "A command line tool to manage an overlay of Gentoo ebuilds\nthat are generated from a hackage repo of Cabal packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hackport" = {
@@ -46,7 +37,7 @@
             (hsPkgs.extensible-exceptions)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ] ++ (if flags.split-base
+            ] ++ (if flags.split-base
             then [
               (hsPkgs.base)
               (hsPkgs.directory)
@@ -54,9 +45,9 @@
               (hsPkgs.process)
               (hsPkgs.old-time)
               (hsPkgs.bytestring)
-            ]
+              ]
             else [ (hsPkgs.base) ]);
-        };
+          };
         "hackport-guess-ghc-version" = {
           depends = [
             (hsPkgs.base)
@@ -72,7 +63,7 @@
             (hsPkgs.tar)
             (hsPkgs.array)
             (hsPkgs.extensible-exceptions)
-          ] ++ (if flags.split-base
+            ] ++ (if flags.split-base
             then [
               (hsPkgs.base)
               (hsPkgs.directory)
@@ -80,10 +71,10 @@
               (hsPkgs.process)
               (hsPkgs.old-time)
               (hsPkgs.bytestring)
-            ]
+              ]
             else [ (hsPkgs.base) ]);
+          };
         };
-      };
       tests = {
         "test-resolve-category" = {
           depends = [
@@ -101,8 +92,8 @@
             (hsPkgs.time)
             (hsPkgs.unix)
             (hsPkgs.xml)
-          ];
-        };
+            ];
+          };
         "test-print-deps" = {
           depends = [
             (hsPkgs.base)
@@ -119,8 +110,8 @@
             (hsPkgs.time)
             (hsPkgs.unix)
             (hsPkgs.xml)
-          ];
-        };
+            ];
+          };
         "test-normalize-deps" = {
           depends = [
             (hsPkgs.base)
@@ -137,8 +128,8 @@
             (hsPkgs.time)
             (hsPkgs.unix)
             (hsPkgs.xml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

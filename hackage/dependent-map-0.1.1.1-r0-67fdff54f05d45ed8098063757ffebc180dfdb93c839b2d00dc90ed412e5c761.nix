@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dependent-map";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "dependent-map"; version = "0.1.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,14 +13,14 @@
       synopsis = "Dependent finite maps (partial dependent products)";
       description = "Dependent finite maps (partial dependent products)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.dependent-sum)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs.dependent-sum);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs.dependent-sum);
+        };
       };
-    };
-  }
+    }

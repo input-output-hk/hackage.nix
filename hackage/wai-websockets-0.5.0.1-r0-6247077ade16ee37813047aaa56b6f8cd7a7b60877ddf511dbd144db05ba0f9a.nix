@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-websockets";
-        version = "0.5.0.1";
-      };
+      identifier = { name = "wai-websockets"; version = "0.5.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Provide a bridge betweeen WAI and the websockets package.";
       description = "This is primarily intended for use with Warp and its settingsIntercept.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.network)
           (hsPkgs.websockets)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-websockets-example" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.network)
             (hsPkgs.text)
             (hsPkgs.file-embed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "record-gl";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "record-gl"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Original work copyright (C) 2013 Anthony Cowley, modifications copyright (C) 2015 Sebastián Méndez";
       maintainer = "sebas.chinoir@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for working with OpenGL's GLSL shading language and Nikita Volkov's \"Record\"s.";
       description = "Using Nikita Volkov's \"Record\" records\nto carry GLSL uniform parameters and vertex data enables\nlibrary code to reflect over the types of the data to\nfacilitate interaction between Haskell and GLSL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.tagged)
           (hsPkgs.template-haskell)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.record-gl)
             (hsPkgs.OpenGL)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

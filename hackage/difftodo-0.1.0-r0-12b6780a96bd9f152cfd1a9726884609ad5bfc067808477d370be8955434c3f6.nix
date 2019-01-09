@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "difftodo";
-        version = "0.1.0";
-      };
+      identifier = { name = "difftodo"; version = "0.1.0"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Jonathan M. Lange <jml@mumak.net>";
@@ -22,7 +13,7 @@
       synopsis = "Generate todo lists from source code";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.text)
           (hsPkgs.diff-parse)
           (hsPkgs.highlighting-kate)
-        ];
-      };
+          ];
+        };
       exes = {
         "all-todos" = {
           depends = [
@@ -41,9 +32,9 @@
             (hsPkgs.text)
             (hsPkgs.difftodo)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "fixme-tests" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.difftodo)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

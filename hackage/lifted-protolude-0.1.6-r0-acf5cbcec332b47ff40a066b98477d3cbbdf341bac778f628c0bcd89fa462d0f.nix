@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lifted-protolude";
-        version = "0.1.6";
-      };
+      identifier = { name = "lifted-protolude"; version = "0.1.6"; };
       license = "MIT";
       copyright = "2016 Stephen Diehl, Matt Parsons";
       maintainer = "parsonsmatt@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A sensible set of defaults for writing lifted custom Preludes.";
       description = "A sensible set of defaults for writing custom Preludes, using 'lifted-base', 'exceptions', and 'lifted-async'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.exceptions)
           (hsPkgs.lifted-base)
           (hsPkgs.lifted-async)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

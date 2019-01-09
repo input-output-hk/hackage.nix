@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { hint = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi-core";
-        version = "0.18.0";
-      };
+      identifier = { name = "yi-core"; version = "0.18.0"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Yi developers <yi-devel@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "Yi editor core library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -57,10 +48,10 @@
           (hsPkgs.yi-language)
           (hsPkgs.yi-rope)
           (hsPkgs.exceptions)
-        ] ++ pkgs.lib.optional (flags.hint) (hsPkgs.hint)) ++ (if system.isWindows
+          ] ++ (pkgs.lib).optional (flags.hint) (hsPkgs.hint)) ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -74,9 +65,9 @@
             (hsPkgs.yi-core)
             (hsPkgs.text)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "all" = {
           depends = [
@@ -85,8 +76,8 @@
             (hsPkgs.yi-rope)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-authenticate";
-        version = "2.2.0";
-      };
+      identifier = { name = "happstack-authenticate"; version = "2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2011-2015 SeeReason Partners, LLC";
       maintainer = "jeremy@seereason.com";
@@ -22,7 +13,7 @@
       synopsis = "Happstack Authentication Library";
       description = "A themeable authentication library with support for username+password and OpenId.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -63,7 +54,7 @@
           (hsPkgs.web-routes-happstack)
           (hsPkgs.web-routes-th)
           (hsPkgs.web-routes-hsp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      boogaloo = true;
-      tests = false;
-    };
+    flags = { boogaloo = true; tests = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-boogie";
-        version = "0.1.1";
-      };
+      identifier = { name = "language-boogie"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nadia.polikarpova@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Interpreter and language infrastructure for Boogie.";
       description = "Boogaloo is an interpreter and run-time assertion checker for the Boogie intermediate verification language.\nThe package also provides a language infrastructure library, including a Boogie AST, parser, type checker, and pretty-printer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +26,8 @@
           (hsPkgs.pretty)
           (hsPkgs.parsec)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "boogaloo" = {
           depends = [
@@ -53,8 +41,8 @@
             (hsPkgs.mtl)
             (hsPkgs.pretty)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "boogaloo-tests" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +54,8 @@
             (hsPkgs.mtl)
             (hsPkgs.pretty)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

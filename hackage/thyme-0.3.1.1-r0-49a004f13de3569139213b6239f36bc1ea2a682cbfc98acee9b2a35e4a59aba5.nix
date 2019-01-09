@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       bug-for-bug = true;
       hlint = false;
       show-internal = false;
       werror = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "thyme";
-        version = "0.3.1.1";
-      };
+      identifier = { name = "thyme"; version = "0.3.1.1"; };
       license = "BSD-3-Clause";
       copyright = "© 2013 Liyang HU";
       maintainer = "thyme@liyang.hu";
@@ -27,7 +18,7 @@
       synopsis = "A faster time library";
       description = "Thyme is a rewrite of the fine @time@ library, with a particular focus\non performance for applications that make heavy use of timestamps.\n\nSee \"Data.Thyme\" for a full description.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.vector-space)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6.1") (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6.1") (hsPkgs.ghc-prim);
+        };
       tests = {
         "sanity" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.thyme)
             (hsPkgs.time)
             (hsPkgs.vector-space)
-          ];
-        };
+            ];
+          };
         "rewrite" = {
           depends = [
             (hsPkgs.Cabal)
@@ -75,15 +66,15 @@
             (hsPkgs.system-posix-redirect)
             (hsPkgs.text)
             (hsPkgs.thyme)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (flags.hlint) [
+          depends = (pkgs.lib).optionals (flags.hlint) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -97,8 +88,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.vector-space)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

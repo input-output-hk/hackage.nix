@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "billeksah-pane";
-        version = "1.0.0";
-      };
+      identifier = { name = "billeksah-pane"; version = "1.0.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Juergen \"jutaro\" Nicklisch-Franken";
       maintainer = "maintainer@leksah.org";
@@ -22,7 +13,7 @@
       synopsis = "Leksah library";
       description = "General library used by leksah";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.glib)
           (hsPkgs.time)
           (hsPkgs.billeksah-services)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

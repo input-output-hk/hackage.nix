@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sscgi";
-        version = "0.2.0";
-      };
+      identifier = { name = "sscgi"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jekor@jekor.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple SCGI Library";
       description = "This is a simple implementation of the SCGI protocol without support for the Network.CGI interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

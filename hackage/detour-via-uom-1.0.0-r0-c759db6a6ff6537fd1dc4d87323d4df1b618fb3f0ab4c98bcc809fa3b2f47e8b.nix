@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "detour-via-uom";
-        version = "1.0.0";
-      };
+      identifier = { name = "detour-via-uom"; version = "1.0.0"; };
       license = "MPL-2.0";
       copyright = "© 2017-2018 Phil de Joux, © 2017-2018 Block Scope Limited";
       maintainer = "phil.dejoux@blockscope.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON and CSV encoding for quantities.";
       description = "Lossy JSON and CSV encoding and decoding for newtype quantities via scientific with fixed decimal places and with units.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.newtype)
           (hsPkgs.scientific)
           (hsPkgs.uom-plugin)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.newtype)
             (hsPkgs.scientific)
             (hsPkgs.uom-plugin)
-          ];
-        };
+            ];
+          };
         "hlint" = {
           depends = [
             (hsPkgs.aeson)
@@ -58,8 +49,8 @@
             (hsPkgs.newtype)
             (hsPkgs.scientific)
             (hsPkgs.uom-plugin)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

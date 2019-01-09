@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      devel = false;
-      include = false;
-    };
+    flags = { devel = false; include = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "liquidhaskell";
-        version = "0.8.0.0";
-      };
+      identifier = { name = "liquidhaskell"; version = "0.8.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2010-17 Ranjit Jhala & Niki Vazou, University of California, San Diego.";
       maintainer = "Ranjit Jhala <jhala@cs.ucsd.edu>";
@@ -25,7 +13,7 @@
       synopsis = "Liquid Types for Haskell";
       description = "Liquid Types for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -71,8 +59,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.QuickCheck)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       exes = {
         "liquid" = {
           depends = [
@@ -87,16 +75,12 @@
             (hsPkgs.liquid-fixpoint)
             (hsPkgs.located-base)
             (hsPkgs.liquidhaskell)
-          ];
-        };
+            ];
+          };
         "target" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hint)
-            (hsPkgs.liquidhaskell)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hint) (hsPkgs.liquidhaskell) ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -116,8 +100,8 @@
             (hsPkgs.transformers)
             (hsPkgs.syb)
             (hsPkgs.liquid-fixpoint)
-          ];
-        };
+            ];
+          };
         "liquidhaskell-parser" = {
           depends = [
             (hsPkgs.base)
@@ -131,7 +115,7 @@
             (hsPkgs.transformers)
             (hsPkgs.syb)
             (hsPkgs.liquid-fixpoint)
-          ] ++ (if flags.devel
+            ] ++ (if flags.devel
             then [
               (hsPkgs.aeson)
               (hsPkgs.binary)
@@ -150,11 +134,9 @@
               (hsPkgs.syb)
               (hsPkgs.time)
               (hsPkgs.unordered-containers)
-            ]
-            else [
-              (hsPkgs.liquidhaskell)
-            ]);
+              ]
+            else [ (hsPkgs.liquidhaskell) ]);
+          };
         };
       };
-    };
-  }
+    }

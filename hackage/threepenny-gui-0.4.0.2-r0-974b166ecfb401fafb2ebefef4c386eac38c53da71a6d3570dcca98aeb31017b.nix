@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-      rebug = false;
-    };
+    flags = { buildexamples = false; rebug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "threepenny-gui";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "threepenny-gui"; version = "0.4.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Heinrich Apfelmus <apfelmus at quantentunnel dot de>";
@@ -25,7 +13,7 @@
       synopsis = "GUI framework that uses the web browser as a display.";
       description = "Threepenny-GUI is a GUI framework that uses the web browser as a display.\n\nIt's cheap and easy to install because everyone has a web browser installed.\n\nInternally, the library implements a small web server\nthat serves a HTML/JavaScript page with the GUI elements.\nYou can freely manipulate the HTML DOM and handle browser events\nfrom your Haskell code.\n\nStability forecast: This is an experimental release! Send us your feedback!\nSignificant API changes are likely in future versions.\n\nNOTE: This library contains examples, but they are not built by default.\nTo build and install the example, use the @buildExamples@ flag like this\n\n@cabal install threepenny-gui -fbuildExamples@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,76 +41,76 @@
           (hsPkgs.websockets)
           (hsPkgs.websockets-snap)
           (hsPkgs.vault)
-        ];
-      };
+          ];
+        };
       exes = {
         "threepenny-examples-bartab" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "threepenny-examples-buttons" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "threepenny-examples-chat" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.transformers)
             (hsPkgs.filepath)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "threepenny-examples-crud" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.threepenny-gui)
-          ];
-        };
+            ];
+          };
         "threepenny-examples-currencyconverter" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.safe)
-          ];
-        };
+            ];
+          };
         "threepenny-examples-dragndropexample" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "threepenny-examples-drummachine" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "threepenny-examples-missing-dollars" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.threepenny-gui)
             (hsPkgs.safe)
-          ];
-        };
+            ];
+          };
         "threepenny-examples-use-words" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.threepenny-gui)
             (hsPkgs.filepath)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

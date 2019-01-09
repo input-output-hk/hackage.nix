@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-db";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "servant-db"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 (c) Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Servant types for defining API with relational DBs";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.servant)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.servant) ]; };
+      };
+    }

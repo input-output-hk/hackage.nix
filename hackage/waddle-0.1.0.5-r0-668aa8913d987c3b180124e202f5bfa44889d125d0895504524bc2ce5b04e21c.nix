@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "waddle";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "waddle"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Martin Grabmueller";
       maintainer = "martin@grabmueller.de";
@@ -22,7 +13,7 @@
       synopsis = "DOOM WAD file utilities.";
       description = "Library for reading WAD files as used by the DOOM engine into Haskell types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.JuicyPixels)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "export-to-js" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.JuicyPixels)
             (hsPkgs.directory)
             (hsPkgs.waddle)
-          ];
-        };
+            ];
+          };
         "export-to-png" = {
           depends = [
             (hsPkgs.base)
@@ -58,8 +49,8 @@
             (hsPkgs.JuicyPixels)
             (hsPkgs.directory)
             (hsPkgs.waddle)
-          ];
-        };
+            ];
+          };
         "wad-info" = {
           depends = [
             (hsPkgs.base)
@@ -70,8 +61,8 @@
             (hsPkgs.JuicyPixels)
             (hsPkgs.directory)
             (hsPkgs.waddle)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

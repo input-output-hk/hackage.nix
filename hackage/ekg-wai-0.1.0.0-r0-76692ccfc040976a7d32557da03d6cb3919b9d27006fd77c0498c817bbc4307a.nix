@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ekg-wai";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ekg-wai"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tvh@tvholtz.de";
@@ -22,7 +13,7 @@
       synopsis = "Remote monitoring of processes";
       description = "This library lets you remotely monitor a running process over HTTP.\nIt provides a simple way to integrate a monitoring server into any\napplication.\nThis is a port of the ekg library to depend on wai instead of snap.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.wai)
           (hsPkgs.wai-app-static)
           (hsPkgs.warp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

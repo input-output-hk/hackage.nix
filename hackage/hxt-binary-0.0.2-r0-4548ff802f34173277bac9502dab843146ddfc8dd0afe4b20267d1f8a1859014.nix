@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hxt-binary";
-        version = "0.0.2";
-      };
+      identifier = { name = "hxt-binary"; version = "0.0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010 Uwe Schmidt";
       maintainer = "Uwe Schmidt <uwe@fh-wedel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Serialisation and deserialisation of HXT XmlTrees.";
       description = "Extension for storing and loading already parsed XML documents in an internal format.\nSerialisation and Deserialisation is done with the binary package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.bzlib)
           (hsPkgs.deepseq)
           (hsPkgs.hxt)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hcg-minus-cairo";
-        version = "0.16";
-      };
+      identifier = { name = "hcg-minus-cairo"; version = "0.16"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "haskell cg (minus) (cairo rendering)";
       description = "cg (minus) library (cairo rendering)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.hcg-minus)
           (hsPkgs.filepath)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

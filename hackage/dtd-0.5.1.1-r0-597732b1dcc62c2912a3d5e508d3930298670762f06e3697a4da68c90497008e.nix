@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dtd";
-        version = "0.5.1.1";
-      };
+      identifier = { name = "dtd"; version = "0.5.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michaels@suite-sol.com";
@@ -22,7 +13,7 @@
       synopsis = "Parse and render DTD files";
       description = "Parse and render DTD files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.conduit)
           (hsPkgs.attoparsec-conduit)
           (hsPkgs.lifted-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

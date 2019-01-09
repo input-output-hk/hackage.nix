@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "loch-th";
-        version = "0.2.1";
-      };
+      identifier = { name = "loch-th"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tomi@nomi.cz";
@@ -22,14 +13,10 @@
       synopsis = "Support for precise error locations in source files (Template Haskell version)";
       description = "This module provides a Template Haskell based mechanism to\ntag failures with the location of the failure call. The\nlocation message includes the file name, line and column\nnumbers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.pretty)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.pretty) ];
+        };
       };
-    };
-  }
+    }

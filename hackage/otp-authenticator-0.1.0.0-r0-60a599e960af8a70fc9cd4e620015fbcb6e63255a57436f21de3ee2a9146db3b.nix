@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "otp-authenticator";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "otp-authenticator"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Justin Le 2017";
       maintainer = "justin@jle.im";
@@ -22,7 +13,7 @@
       synopsis = "OTP Authenticator (a la google) command line client";
       description = "Simple tool for keeping track of your one-time pad\ntwo-factor authentication keys; basically a command-line\nversion of the canonical [Google Authenticator\nApp][gauth].\n\n[gauth]: https://github.com/google/google-authenticator\n\nThe library uses GnuPG (through *h-gpgme*) to safely\nencrypt your secret keys. The first time you use it, it\nasks for a fingerprint to use for encryption. Currently\n*GnuPG 1.x* has some issues with *h-gpgme* when asking\nfor keys, so *GPG 2.x* is recommended.  Keys are stored,\nencrypted, at `~/.otp-auth.vault` by default.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.uri-encode)
           (hsPkgs.witherable)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "otp-auth" = {
           depends = [
@@ -64,16 +55,13 @@
             (hsPkgs.otp-authenticator)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "otp-authenticator-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.otp-authenticator)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.otp-authenticator) ];
+          };
         };
       };
-    };
-  }
+    }

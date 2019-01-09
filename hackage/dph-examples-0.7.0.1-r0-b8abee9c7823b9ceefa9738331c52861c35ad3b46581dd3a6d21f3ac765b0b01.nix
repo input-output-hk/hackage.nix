@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "dph-examples";
-        version = "0.7.0.1";
-      };
+      identifier = { name = "dph-examples"; version = "0.7.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Data Parallel Haskell example programs.";
       description = "Data Parallel Haskell example programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dph-smoke-bool" = {
@@ -36,8 +27,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-smoke-concat" = {
           depends = [
             (hsPkgs.base)
@@ -49,8 +40,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-smoke-sumsq" = {
           depends = [
             (hsPkgs.base)
@@ -62,8 +53,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-smoke-evens" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +66,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-smoke-indices" = {
           depends = [
             (hsPkgs.base)
@@ -88,8 +79,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-smoke-rank" = {
           depends = [
             (hsPkgs.base)
@@ -101,8 +92,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-smoke-reverse" = {
           depends = [
             (hsPkgs.base)
@@ -114,8 +105,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-imaginary-words" = {
           depends = [
             (hsPkgs.base)
@@ -127,8 +118,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-spectral-dotp" = {
           depends = [
             (hsPkgs.base)
@@ -140,8 +131,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-spectral-smvm" = {
           depends = [
             (hsPkgs.base)
@@ -153,8 +144,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-spectral-quickhull" = {
           depends = [
             (hsPkgs.base)
@@ -166,8 +157,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-spectral-quickhull-vector" = {
           depends = [
             (hsPkgs.base)
@@ -179,8 +170,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-spectral-quicksort" = {
           depends = [
             (hsPkgs.base)
@@ -192,8 +183,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "dph-real-nbody" = {
           depends = [
             (hsPkgs.base)
@@ -205,8 +196,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-lifted-vseg)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

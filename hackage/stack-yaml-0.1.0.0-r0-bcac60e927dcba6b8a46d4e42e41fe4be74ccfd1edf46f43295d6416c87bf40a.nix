@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack-yaml";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "stack-yaml"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "J Mitchell (jacob.mitchell@iohk.io)";
       maintainer = "phlummox2@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parse a stack.yaml file";
       description = "stack-yaml parses a \"stack.yaml\" file, as used by stack,\nand returns a simple data structure containing\nits configuration data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.filepath)
           (hsPkgs.text)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "hup-doctest" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.stack-yaml)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

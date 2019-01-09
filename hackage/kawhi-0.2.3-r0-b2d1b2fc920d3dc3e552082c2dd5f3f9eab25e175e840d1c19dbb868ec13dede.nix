@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kawhi";
-        version = "0.2.3";
-      };
+      identifier = { name = "kawhi"; version = "0.2.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "aaron@hamsterdam.co";
@@ -22,7 +13,7 @@
       synopsis = "stats.NBA.com library";
       description = "Functions and types for interacting with stats.NBA.com";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.safe)
           (hsPkgs.scientific)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

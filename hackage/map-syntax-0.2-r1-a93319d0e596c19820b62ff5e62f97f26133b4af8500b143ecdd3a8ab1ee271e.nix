@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "map-syntax";
-        version = "0.2";
-      };
+      identifier = { name = "map-syntax"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Doug Beardsley";
@@ -22,15 +13,11 @@
       synopsis = "Syntax sugar for defining maps";
       description = "Haskell's canonical list of tuples syntax for defining maps is not very\nconvenient and also has ambiguous semantics.  This package leverages do\nnotation to create a lighter syntax that makes semantics explicit and also\nallows the option of fail-fast handling of duplicate keys.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.mtl)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.mtl) ];
+        };
       tests = {
         "testsuite" = {
           depends = [
@@ -44,8 +31,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

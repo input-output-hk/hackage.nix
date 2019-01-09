@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "quickcheck-script";
-        version = "0.1";
-      };
+      identifier = { name = "quickcheck-script"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2000-2003, Koen Claessen, John Hughes";
       maintainer = "shelarcy <shelarcy@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Automated test tool for QuickCheck.";
       description = "A program to invoke quickCheck for all properties in a module (this version invokes ghci, but is easily modified to other interpreters instead).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "quickCheck" = {
@@ -32,12 +23,9 @@
               (hsPkgs.directory)
               (hsPkgs.process)
               (hsPkgs.QuickCheck)
-            ]
-            else [
-              (hsPkgs.base)
-              (hsPkgs.QuickCheck)
-            ];
+              ]
+            else [ (hsPkgs.base) (hsPkgs.QuickCheck) ];
+          };
         };
       };
-    };
-  }
+    }

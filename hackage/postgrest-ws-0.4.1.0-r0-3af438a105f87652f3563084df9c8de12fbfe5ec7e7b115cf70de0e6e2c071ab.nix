@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgrest-ws";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "postgrest-ws"; version = "0.4.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Diogo Biazus";
       maintainer = "diogo@biazus.me";
@@ -22,7 +13,7 @@
       synopsis = "PostgREST extension to map LISTEN/NOTIFY messages to Websockets";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.stringsearch)
           (hsPkgs.time)
           (hsPkgs.contravariant)
-        ];
-      };
+          ];
+        };
       exes = {
         "postgrest-ws" = {
           depends = [
@@ -79,9 +70,9 @@
             (hsPkgs.auto-update)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "postgrest-ws-test" = {
           depends = [
@@ -99,8 +90,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.wai-extra)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

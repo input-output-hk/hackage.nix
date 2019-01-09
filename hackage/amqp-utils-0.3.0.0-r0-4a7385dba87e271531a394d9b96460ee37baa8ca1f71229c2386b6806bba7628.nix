@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "amqp-utils";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "amqp-utils"; version = "0.3.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "fd@taz.de";
@@ -22,7 +13,7 @@
       synopsis = "Generic Haskell AMQP Consumer";
       description = "AMQP consumer which can\n- create a temporary queue and attach it to an exchange, or\n- attach to an existing queue;\n- display header and body info;\n- save message bodies to files;\n- call a callback script";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "konsum" = {
@@ -38,8 +29,8 @@
             (hsPkgs.x509-system)
             (hsPkgs.tls)
             (hsPkgs.amqp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

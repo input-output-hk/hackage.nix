@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "tabloid";
-        version = "0.47";
-      };
+      identifier = { name = "tabloid"; version = "0.47"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sven.heyll@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "View the output of shell commands in a table";
       description = "GUI for shell commands and log analysis";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tabloid" = {
@@ -36,8 +27,8 @@
             (hsPkgs.containers)
             (hsPkgs.hint)
             (hsPkgs.parallel)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

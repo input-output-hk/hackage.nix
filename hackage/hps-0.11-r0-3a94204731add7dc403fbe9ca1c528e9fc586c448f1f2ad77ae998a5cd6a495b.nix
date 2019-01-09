@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hps";
-        version = "0.11";
-      };
+      identifier = { name = "hps"; version = "0.11"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2006-2011";
       maintainer = "rd@slavepianos.org";
@@ -22,11 +13,9 @@
       synopsis = "Haskell Postscript";
       description = "Haskell library partially implementing the\npostscript drawing model.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "hps-fractals" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

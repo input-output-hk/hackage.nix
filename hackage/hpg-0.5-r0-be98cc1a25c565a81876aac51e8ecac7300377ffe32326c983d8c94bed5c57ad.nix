@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      warn-as-error = false;
-    };
+    flags = { warn-as-error = false; };
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "hpg";
-        version = "0.5";
-      };
+      identifier = { name = "hpg"; version = "0.5"; };
       license = "ISC";
       copyright = "";
       maintainer = "fritjof@alokat.org";
@@ -24,15 +13,15 @@
       synopsis = "password generator";
       description = "the haskell password generator.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hpg" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.random)
-          ] ++ pkgs.lib.optional (system.isOpenbsd) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (system.isOpenbsd) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

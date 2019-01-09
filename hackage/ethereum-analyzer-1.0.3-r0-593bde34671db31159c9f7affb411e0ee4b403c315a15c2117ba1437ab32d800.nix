@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ethereum-analyzer";
-        version = "1.0.3";
-      };
+      identifier = { name = "ethereum-analyzer"; version = "1.0.3"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "k_@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "A Ethereum contract analyzer.";
       description = "A Ethereum contract analyzer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.hexstring)
           (hsPkgs.hoopl)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.hoopl)
             (hsPkgs.hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

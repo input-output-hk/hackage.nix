@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "test-fixture";
-        version = "0.5.1.0";
-      };
+      identifier = { name = "test-fixture"; version = "0.5.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 CJ Affiliate by Conversant";
       maintainer = "jvargas@cj.com";
@@ -22,7 +13,7 @@
       synopsis = "Test monadic side-effects";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
           (hsPkgs.th-orphans)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.transformers);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.transformers);
+        };
       tests = {
         "test-fixture-test-suite" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.mtl)
             (hsPkgs.template-haskell)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

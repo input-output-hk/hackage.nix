@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "applicative-extras";
-        version = "0.1.7";
-      };
+      identifier = { name = "applicative-extras"; version = "0.1.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Eidhof <ce+hackage@tupil.com>";
@@ -22,14 +13,10 @@
       synopsis = "Instances for Applicative";
       description = "Some instances for applicative functors and type-level\ncomposition. Forkable on github.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

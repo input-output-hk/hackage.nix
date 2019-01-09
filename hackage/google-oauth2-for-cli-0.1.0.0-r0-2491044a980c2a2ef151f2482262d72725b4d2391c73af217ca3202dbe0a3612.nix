@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "google-oauth2-for-cli";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "google-oauth2-for-cli"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 ishiy";
       maintainer = "y.ishihara.1993@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Get Google OAuth2 token for CLI tools";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,16 +27,16 @@
           (hsPkgs.time)
           (hsPkgs.wai)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.google-oauth2-for-cli)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

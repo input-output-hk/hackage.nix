@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      timeout-protection = true;
-      network-bytestring = true;
-    };
+    flags = { timeout-protection = true; network-bytestring = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "warp";
-        version = "0.3.2.2";
-      };
+      identifier = { name = "warp"; version = "0.3.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -25,7 +13,7 @@
       synopsis = "A fast, light-weight web server for WAI applications.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,12 +25,9 @@
           (hsPkgs.enumerator)
           (hsPkgs.blaze-builder)
           (hsPkgs.sendfile)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

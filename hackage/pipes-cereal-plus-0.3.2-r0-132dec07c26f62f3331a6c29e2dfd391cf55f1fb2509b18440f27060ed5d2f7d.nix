@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-cereal-plus";
-        version = "0.3.2";
-      };
+      identifier = { name = "pipes-cereal-plus"; version = "0.3.2"; };
       license = "MIT";
       copyright = "(c) 2013, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A streaming serialization library on top of \"pipes\" and \"cereal-plus\"";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.errors)
           (hsPkgs.mtl)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

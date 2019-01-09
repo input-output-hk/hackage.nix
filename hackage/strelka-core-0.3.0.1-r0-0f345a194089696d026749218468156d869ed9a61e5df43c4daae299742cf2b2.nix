@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "strelka-core";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "strelka-core"; version = "0.3.0.1"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Core components of \"strelka\"";
       description = "This library is only intended for the internal usage\nby the \\\"strelka\\\" ecosystem.\nIt exposes the components,\nwhich may be needed by both the \\\"strelka\\\" library and\nthe server drivers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

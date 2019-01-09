@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sizes";
-        version = "2.3.1";
-      };
+      identifier = { name = "sizes"; version = "2.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@newartisans.com>";
@@ -22,7 +13,7 @@
       synopsis = "Recursively show space (size and i-nodes) used in subdirectories";
       description = "Recursively show space (size and i-nodes) used in subdirectories";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sizes" = {
@@ -39,8 +30,8 @@
             (hsPkgs.dlist)
             (hsPkgs.text)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

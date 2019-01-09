@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "nlp-scores";
-        version = "0.3.0";
-      };
+      identifier = { name = "nlp-scores"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "gchrupala@lsv.uni-saarland.de";
@@ -22,13 +13,8 @@
       synopsis = "Scoring functions commonly used for evaluation in NLP and IR";
       description = "Scoring functions commonly used for evaluation in NLP and IR";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

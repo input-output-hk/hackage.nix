@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-misc";
-        version = "0.2.4.0";
-      };
+      identifier = { name = "pipes-misc"; version = "0.2.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "Miscellaneous utilities for pipes, required by glazier-tutorial";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "pipes-misc-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.stm)
             (hsPkgs.transformers)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

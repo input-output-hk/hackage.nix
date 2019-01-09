@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "timeparsers";
-        version = "0.3";
-      };
+      identifier = { name = "timeparsers"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Nathan Ferris Hunter, 2011";
       maintainer = "Nathan Ferris Hunter <nathan.f.hunter@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Attoparsec parsers for various Date/Time formats.";
       description = "Parsers for various Date/Time formats, implemented in AttoParsec.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.mtl)
           (hsPkgs.convertible)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

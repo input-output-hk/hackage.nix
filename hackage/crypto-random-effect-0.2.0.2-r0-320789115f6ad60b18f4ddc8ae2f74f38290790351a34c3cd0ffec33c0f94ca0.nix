@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "crypto-random-effect";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "crypto-random-effect"; version = "0.2.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "tob@butter.sh";
@@ -22,7 +13,7 @@
       synopsis = "A random effect using crypto-random";
       description = "Any help (especially documentation) is welcome";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.crypto-random)
           (hsPkgs.extensible-effects)
           (hsPkgs.securemem)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

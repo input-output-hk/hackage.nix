@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-ecmascript-analysis";
-        version = "0.9";
-      };
+      identifier = { name = "language-ecmascript-analysis"; version = "0.9"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007-2012 Brown University, (c) 2008-2010 Claudiu Saftoiu,\n(c) 2012-2015 Stevens Institute of Technology";
       maintainer = "Andrey Chudnov <oss@chudnov.com>";
@@ -22,7 +13,7 @@
       synopsis = "JavaScript static analysis library";
       description = "JavaScript static analysis library. Includes label set and lexical environment analyses. The package versions follow Semantic Versioning model (semver.org).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.uniplate)
           (hsPkgs.parsec)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

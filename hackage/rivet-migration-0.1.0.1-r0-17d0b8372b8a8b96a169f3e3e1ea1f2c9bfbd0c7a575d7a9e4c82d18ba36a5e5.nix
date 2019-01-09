@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rivet-migration";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "rivet-migration"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -22,14 +13,10 @@
       synopsis = "Postgresql migration support for project management tool.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.postgresql-simple)
-          (hsPkgs.text)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.postgresql-simple) (hsPkgs.text) ];
+        };
       };
-    };
-  }
+    }

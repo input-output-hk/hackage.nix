@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cautious-gen";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "cautious-gen"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Nick Van den Broeck";
       maintainer = "nick.van.den.broeck666@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "";
       description = "GenValid instances for Cautious and CautiousT";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.cautious)
-          (hsPkgs.genvalidity)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.cautious) (hsPkgs.genvalidity) ];
+        };
       tests = {
         "cautious-test" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.genvalidity-hspec)
             (hsPkgs.genvalidity-hspec-aeson)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

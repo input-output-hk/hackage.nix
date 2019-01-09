@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "highlight";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "highlight"; version = "1.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Command line tool for highlighting parts of files matching a regex.";
       description = "Please see <https://github.com/cdepillabout/highlight#readme README.md>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,32 +39,18 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       exes = {
-        "highlight" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.highlight)
-          ];
+        "highlight" = { depends = [ (hsPkgs.base) (hsPkgs.highlight) ]; };
+        "hrep" = { depends = [ (hsPkgs.base) (hsPkgs.highlight) ]; };
         };
-        "hrep" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.highlight)
-          ];
-        };
-      };
       tests = {
         "highlight-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.QuickCheck)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.QuickCheck) ];
+          };
         "highlight-test" = {
           depends = [
             (hsPkgs.base)
@@ -88,19 +65,15 @@
             (hsPkgs.tasty-golden)
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
+          };
         };
-      };
       benchmarks = {
         "highlight-bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.highlight)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.highlight) ];
+          };
         };
       };
-    };
-  }
+    }

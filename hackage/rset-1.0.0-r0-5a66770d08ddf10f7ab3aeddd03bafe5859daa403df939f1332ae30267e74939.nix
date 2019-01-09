@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rset";
-        version = "1.0.0";
-      };
+      identifier = { name = "rset"; version = "1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2017 Daniel Lovasko";
       maintainer = "Daniel Lovasko <daniel.lovasko@gmail.com>";
@@ -22,14 +13,9 @@
       synopsis = "Range set";
       description = "Data structure that stores a set of ranges. It provides an\nAPI similar to the Data.Set module. Types stored in the\ndata structure have to be instances of Eq, Ord and Enum\ntypeclasses.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.safe)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.safe) ]; };
       tests = {
         "rset-test" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.rset)
             (hsPkgs.safe)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

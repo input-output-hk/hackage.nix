@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tls = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mighttpd2";
-        version = "3.4.0";
-      };
+      identifier = { name = "mighttpd2"; version = "3.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "High performance web server on WAI/warp";
       description = "High performance web server to handle static\nfiles and CGI on WAI/warp.\nReverse proxy functionality is also provided\nto connect web applications behind.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.wai)
           (hsPkgs.wai-app-file-cgi)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "mighty" = {
           depends = ([
@@ -74,11 +65,11 @@
             (hsPkgs.wai-logger)
             (hsPkgs.warp)
             (hsPkgs.wai-http2-extra)
-          ] ++ pkgs.lib.optional (flags.tls) (hsPkgs.async)) ++ pkgs.lib.optionals (flags.tls) [
+            ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs.async)) ++ (pkgs.lib).optionals (flags.tls) [
             (hsPkgs.tls)
             (hsPkgs.warp-tls)
-          ];
-        };
+            ];
+          };
         "mighty-mkindex" = {
           depends = [
             (hsPkgs.base)
@@ -86,16 +77,12 @@
             (hsPkgs.old-locale)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "mightyctl" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.unix)
-            (hsPkgs.mighttpd2)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.unix) (hsPkgs.mighttpd2) ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -103,11 +90,11 @@
             (hsPkgs.hspec)
             (hsPkgs.mighttpd2)
             (hsPkgs.http-client)
-          ] ++ pkgs.lib.optionals (flags.tls) [
+            ] ++ (pkgs.lib).optionals (flags.tls) [
             (hsPkgs.tls)
             (hsPkgs.warp-tls)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

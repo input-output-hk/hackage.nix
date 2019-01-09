@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gll";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "gll"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ltvanbinsbergen@acm.org";
@@ -22,14 +13,10 @@
       synopsis = "GLL parser with simple combinator interface";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.array)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.array) ];
+        };
       };
-    };
-  }
+    }

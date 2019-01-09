@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "NameGenerator";
-        version = "0.0.0";
-      };
+      identifier = { name = "NameGenerator"; version = "0.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "pommicket@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A name generator written in Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-          (hsPkgs.containers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.random) (hsPkgs.containers) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hsc3-process";
-        version = "0.5.1";
-      };
+      identifier = { name = "hsc3-process"; version = "0.5.1"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Stefan Kersten 2008-2010";
       maintainer = "Stefan Kersten";
@@ -22,7 +13,7 @@
       synopsis = "Create and control scsynth processes";
       description = "Create and control scsynth processes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.mtl)
           (hsPkgs.process)
           (hsPkgs.regex-compat)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

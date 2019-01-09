@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "GoogleCodeJam";
-        version = "0.0.2";
-      };
+      identifier = { name = "GoogleCodeJam"; version = "0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Johannes Gerer <oss@johannesgerer.com>";
@@ -22,7 +13,7 @@
       synopsis = "A monad for flexible parsing of Google Code Jam input files with automatic parallelization.";
       description = "For more (including usage examples and solutions to GCJ problems) see <https://github.com/johannesgerer/GoogleCodeJam Readme> on Github.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.parallel)
           (hsPkgs.containers)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

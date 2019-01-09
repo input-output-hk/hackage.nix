@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "digitalocean-kzs";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "digitalocean-kzs"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "r.nakamura1989@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "digitalocean api for haskell";
       description = "DigitalOcean api for haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,22 +25,13 @@
           (hsPkgs.HTTP)
           (hsPkgs.http-conduit)
           (hsPkgs.http-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.digitalocean-kzs)
-          ];
-        };
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.digitalocean-kzs) ];
+          };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hyperpublic";
-        version = "0.1.1";
-      };
+      identifier = { name = "hyperpublic"; version = "0.1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "mkscrg@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A thin wrapper for the Hyperpublic API";
       description = "A thin wrapper for the Hyperpublic API, which uses @http-enumerator@ to fetch\nresults and @aeson@ to return them as JSON.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.http-enumerator)
           (hsPkgs.http-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

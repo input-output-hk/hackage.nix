@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "regex-tdfa-text";
-        version = "1.0.0.2";
-      };
+      identifier = { name = "regex-tdfa-text"; version = "1.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "shelarcy <shelarcy@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Text interface for regex-tdfa";
       description = "This provides text interface for regex-tdfa.\n\nThis should be part of regex-tdfa package. But my patches are not accepted yet.\nSo, I made a separate package. If you are interested in my patches, see\n<http://hub.darcs.net/shelarcy/regex-base> and <http://hub.darcs.net/shelarcy/regex-tdfa>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.text)
           (hsPkgs.regex-base)
           (hsPkgs.regex-tdfa)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

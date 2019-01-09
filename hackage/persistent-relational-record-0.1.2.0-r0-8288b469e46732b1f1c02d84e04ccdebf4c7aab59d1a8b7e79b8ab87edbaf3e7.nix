@@ -1,20 +1,12 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-examples = false;
-    };
+    flags = { test-examples = false; };
     package = {
       specVersion = "1.10";
       identifier = {
         name = "persistent-relational-record";
         version = "0.1.2.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2015 Takahiro Himura";
       maintainer = "taka@himura.jp";
@@ -24,7 +16,7 @@
       synopsis = "relational-record on persisten backends.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +30,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.template-haskell)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "unittest" = {
           depends = [
@@ -53,16 +45,11 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.persistent-relational-record)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         "examples" = {
-          depends = pkgs.lib.optionals (!(!flags.test-examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-examples)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.conduit)
@@ -78,8 +65,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers-base)
             (hsPkgs.persistent-relational-record)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

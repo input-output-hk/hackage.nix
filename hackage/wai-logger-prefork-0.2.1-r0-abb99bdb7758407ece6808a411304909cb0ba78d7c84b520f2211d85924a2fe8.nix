@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wai-logger-prefork";
-        version = "0.2.1";
-      };
+      identifier = { name = "wai-logger-prefork"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "A logging system for preforked WAI apps";
       description = "A logging system for preforked WAI apps";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.unix)
           (hsPkgs.wai)
           (hsPkgs.wai-logger)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

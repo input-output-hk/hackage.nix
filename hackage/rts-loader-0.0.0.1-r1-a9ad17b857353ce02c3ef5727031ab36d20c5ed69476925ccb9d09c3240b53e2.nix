@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24.0.0";
-      identifier = {
-        name = "rts-loader";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "rts-loader"; version = "0.0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2016  Daniel Gröber";
       maintainer = "dxld@darkboxed.org";
@@ -22,7 +13,7 @@
       synopsis = "Dynamically load Haskell libraries";
       description = "Load and execute functions from Haskell dynamic libraries without being\nrestricted to a single RTS/GHC version.\n\nSee README.md below for more information.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       exes = {
         "rts-loader" = {};
         "rts-loader-example" = {
@@ -42,8 +33,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.process)
             (hsPkgs.rts-loader)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

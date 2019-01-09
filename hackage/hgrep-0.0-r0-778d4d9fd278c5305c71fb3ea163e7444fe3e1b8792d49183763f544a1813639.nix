@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hgrep";
-        version = "0.0";
-      };
+      identifier = { name = "hgrep"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tim@utf8.me";
@@ -22,7 +13,7 @@
       synopsis = "Search Haskell source code from the command line";
       description = "Search Haskell source code from the command line.\n\nPowered by <https://hackage.haskell.org/package/ghc-exactprint ghc-exactprint>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           (hsPkgs.transformers-bifunctors)
-        ];
-      };
+          ];
+        };
       exes = {
         "hgrep" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.hgrep)
             (hsPkgs.ansi-terminal)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

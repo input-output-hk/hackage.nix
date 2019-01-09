@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "muon";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "muon"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 Kaashif Hymabaccus";
       maintainer = "kaashifhymabaccus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Static blog generator";
       description = "Static blog generator";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "muon" = {
@@ -35,8 +26,8 @@
             (hsPkgs.process)
             (hsPkgs.blaze-html)
             (hsPkgs.markdown)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

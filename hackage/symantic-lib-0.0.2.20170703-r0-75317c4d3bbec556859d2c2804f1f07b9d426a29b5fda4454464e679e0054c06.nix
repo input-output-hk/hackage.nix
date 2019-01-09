@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "symantic-lib";
-        version = "0.0.2.20170703";
-      };
+      identifier = { name = "symantic-lib"; version = "0.0.2.20170703"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Julien Moutinho <julm+symantic@autogeree.net>";
@@ -22,7 +13,7 @@
       synopsis = "Symantics for common types.";
       description = "Symantics for common types,\nusing <https://hackage.haskell.org/package/symantic symantic>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.symantic-grammar)
           (hsPkgs.transformers)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "symantic-test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "ebnf" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +57,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

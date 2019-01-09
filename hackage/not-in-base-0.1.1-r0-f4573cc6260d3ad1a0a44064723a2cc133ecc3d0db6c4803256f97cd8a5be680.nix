@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "not-in-base";
-        version = "0.1.1";
-      };
+      identifier = { name = "not-in-base"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Oscar Finnsson";
@@ -22,10 +13,6 @@
       synopsis = "Useful utility functions that only depend on base.";
       description = "Useful utility functions that only depend on base.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

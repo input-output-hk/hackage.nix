@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Geodetic";
-        version = "0.3";
-      };
+      identifier = { name = "Geodetic"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "2009 Tony Morris";
       maintainer = "code@tmorris.net";
@@ -22,10 +13,6 @@
       synopsis = "Geodetic calculations";
       description = "Geodetic calculations including Vincenty and Great Circle";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

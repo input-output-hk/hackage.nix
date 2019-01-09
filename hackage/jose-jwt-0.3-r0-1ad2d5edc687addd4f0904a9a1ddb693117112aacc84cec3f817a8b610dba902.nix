@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "jose-jwt";
-        version = "0.3";
-      };
+      identifier = { name = "jose-jwt"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Luke Taylor <tekul.hs@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "JSON Object Signing and Encryption Library";
       description = "\nIntended to provide support for the JOSE suite of IETF (draft)\nstandards and the closely related JWT (JSON web token) spec\n(<http://tools.ietf.org/html/draft-ietf-oauth-json-web-token-25/>).\n\nBoth signed and encrypted JWTs are supported, as well as simple\nJWK format keys.\n\nThe library is currently intended to support work on an OpenID\nConnect implementation and the APIs should not be considered\ncomplete, stable or secure for all use cases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.base64-bytestring)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -68,15 +59,10 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
-      };
       benchmarks = {
         "bench-jwt" = {
           depends = [
@@ -86,8 +72,8 @@
             (hsPkgs.criterion)
             (hsPkgs.crypto-pubkey)
             (hsPkgs.crypto-random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

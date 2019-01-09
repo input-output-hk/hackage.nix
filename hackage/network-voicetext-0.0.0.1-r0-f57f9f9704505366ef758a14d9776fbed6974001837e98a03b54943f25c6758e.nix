@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-voicetext";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "network-voicetext"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "zaneli <shun.otani@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "VoiceText Web API wrapper";
       description = "VoiceText Web API Haskell wrapper library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.exceptions)
           (hsPkgs.utf8-string)
           (hsPkgs.resourcet)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

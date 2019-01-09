@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "diskhash";
-        version = "0.0.2.1";
-      };
+      identifier = { name = "diskhash"; version = "0.0.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Luis Pedro Coelho";
@@ -22,14 +13,9 @@
       synopsis = "Disk-based hash table";
       description = "Disk-based hash table";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
       tests = {
         "diskhashtest" = {
           depends = [
@@ -43,8 +29,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

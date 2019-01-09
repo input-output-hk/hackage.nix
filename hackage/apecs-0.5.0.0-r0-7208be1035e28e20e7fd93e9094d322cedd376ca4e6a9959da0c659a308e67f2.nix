@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apecs";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "apecs"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jonascarpay@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Fast ECS framework for game programming";
       description = "Entity-Component-System frameworks provide a game programming paradigm that tackles many of the shortcomings of a more OO-oriented approach.\napecs is a type-driven ECS, that leverages strong typing for an expressive DSL that turns into fast game code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.stm)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "apecs-test" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.linear)
             (hsPkgs.containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "apecs-bench" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.apecs)
             (hsPkgs.criterion)
             (hsPkgs.linear)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hs-scrape";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hs-scrape"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "codygman.consulting@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple and easy web scraping and automation in Haskell.";
       description = "Shpider/mechanize inspired web automation with a focus on convenience for web scraping.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.retry)
           (hsPkgs.data-default)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.hs-scrape)
             (hsPkgs.xml-conduit)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fixie";
-        version = "1.0.0";
-      };
+      identifier = { name = "fixie"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 CJ Affiliate by Conversant, 2016 Joe Vargas";
       maintainer = "joevargas92@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Opininated testing framework for mtl style (spies, stubs, and mocks)";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.th-orphans)
-        ];
-      };
+          ];
+        };
       tests = {
         "fixie-test-suite" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.mtl)
             (hsPkgs.template-haskell)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

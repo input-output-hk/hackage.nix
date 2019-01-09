@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "informative";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "informative"; version = "0.1.0.1"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "m@doomanddarkness.eu";
@@ -22,7 +13,7 @@
       synopsis = "A yesod subsite serving a wiki.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.yesod-auth)
           (hsPkgs.http-conduit)
           (hsPkgs.yesod-core)
-        ];
-      };
+          ];
+        };
       exes = {
         "informative-test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.yesod-auth)
             (hsPkgs.http-conduit)
             (hsPkgs.yesod-core)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

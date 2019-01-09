@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bdd";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "bdd"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "irek@humane.software";
@@ -22,7 +13,7 @@
       synopsis = "Behavior-Driven Development DSL";
       description = "A domain-specific language for testing programs using Behavior-Driven Development (BDD) process.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.HUnit)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "system-tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.process)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

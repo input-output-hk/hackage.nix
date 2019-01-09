@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      library-only = false;
-    };
+    flags = { dev = false; library-only = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "espial";
-        version = "0.0.5.1";
-      };
+      identifier = { name = "espial"; version = "0.0.5.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2018 Jon Schoning";
       maintainer = "jonschoning@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Espial is an open-source, web-based bookmarking server.";
       description = "\nEspial is an open-source, web-based bookmarking server.\n- Yesod + PureScript + sqlite3\n- multi-user (w/ privacy scopes)\n- tags, stars, editing, deleting";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -80,8 +68,8 @@
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-form)
           (hsPkgs.yesod-static)
-        ];
-      };
+          ];
+        };
       exes = {
         "espial" = {
           depends = [
@@ -137,8 +125,8 @@
             (hsPkgs.yesod-core)
             (hsPkgs.yesod-form)
             (hsPkgs.yesod-static)
-          ];
-        };
+            ];
+          };
         "migration" = {
           depends = [
             (hsPkgs.aeson)
@@ -194,9 +182,9 @@
             (hsPkgs.yesod-core)
             (hsPkgs.yesod-form)
             (hsPkgs.yesod-static)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -254,8 +242,8 @@
             (hsPkgs.yesod-form)
             (hsPkgs.yesod-static)
             (hsPkgs.yesod-test)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

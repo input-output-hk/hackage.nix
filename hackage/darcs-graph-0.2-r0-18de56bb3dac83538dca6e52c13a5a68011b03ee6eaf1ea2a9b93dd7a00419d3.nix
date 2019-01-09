@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "darcs-graph";
-        version = "0.2";
-      };
+      identifier = { name = "darcs-graph"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "dons@cse.unsw.edu.au";
@@ -22,12 +13,8 @@
       synopsis = "Generate pretty graphs of darcs repository activity";
       description = "Generate pretty graphs of darcs repository activity";
       buildType = "Custom";
-    };
-    components = {
-      exes = {
-        "darcs-graph" = {
-          depends = [ (hsPkgs.base) ];
-        };
       };
-    };
-  }
+    components = {
+      exes = { "darcs-graph" = { depends = [ (hsPkgs.base) ]; }; };
+      };
+    }

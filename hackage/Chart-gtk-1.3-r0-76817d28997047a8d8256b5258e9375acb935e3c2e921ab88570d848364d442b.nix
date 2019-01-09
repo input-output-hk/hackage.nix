@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Chart-gtk";
-        version = "1.3";
-      };
+      identifier = { name = "Chart-gtk"; version = "1.3"; };
       license = "BSD-3-Clause";
       copyright = "Tim Docker, 2006-2010";
       maintainer = "Tim Docker <tim@dockerz.net>";
@@ -22,7 +13,7 @@
       synopsis = "Utility functions for using the chart library with GTK";
       description = "Utility functions for using the chart library with GTK";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.gtk)
           (hsPkgs.Chart)
           (hsPkgs.Chart-cairo)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

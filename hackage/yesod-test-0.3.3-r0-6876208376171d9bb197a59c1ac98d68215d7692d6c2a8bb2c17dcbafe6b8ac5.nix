@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-test";
-        version = "0.3.3";
-      };
+      identifier = { name = "yesod-test"; version = "0.3.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Nubis <nubis@woobiz.com.ar>, Michael Snoyman";
@@ -22,7 +13,7 @@
       synopsis = "integration testing for WAI/Yesod Applications";
       description = "Behaviour Oriented integration Testing for Yesod Applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.time)
           (hsPkgs.blaze-builder)
           (hsPkgs.cookie)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.html-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

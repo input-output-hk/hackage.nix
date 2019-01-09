@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "diagrams-cairo";
-        version = "0.1.2";
-      };
+      identifier = { name = "diagrams-cairo"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "byorgey@cis.upenn.edu";
@@ -22,7 +13,7 @@
       synopsis = "Cairo backend for diagrams drawing EDSL";
       description = "This package provides a modular backend for rendering\ndiagrams created with the diagrams EDSL using the\nCairo library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.cairo)
           (hsPkgs.cmdargs)
           (hsPkgs.split)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

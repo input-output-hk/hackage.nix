@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-shell";
-        version = "0.1.0";
-      };
+      identifier = { name = "pipes-shell"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2013 Lars Schulna";
       maintainer = "kartoffelbrei.mit.muskatnuss@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Create proper Pipes from System.Process";
       description = "This package provide functions to build proper Pipes from Unix shell commands like /tr/, /ls/ or /echo/ in a concise way.\n\nBuild with /cabal configure --enable-tests/ to build the little hspec test.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.async)
           (hsPkgs.stm-chans)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.async)
             (hsPkgs.stm-chans)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

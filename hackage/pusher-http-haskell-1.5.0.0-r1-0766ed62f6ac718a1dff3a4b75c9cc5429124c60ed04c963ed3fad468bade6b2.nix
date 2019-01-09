@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "pusher-http-haskell";
-        version = "1.5.0.0";
-      };
+      identifier = { name = "pusher-http-haskell"; version = "1.5.0.0"; };
       license = "MIT";
       copyright = "(c) Will Sewell, 2016";
       maintainer = "me@willsewell.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell client library for the Pusher HTTP API";
       description = "Functions that correspond to endpoints of the Pusher HTTP\nAPI. Messages can be triggered, and information about the\nchannel can be queried. Additionally there are functions\nfor authenticating users of private and presence channels.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.HTTP)
           (hsPkgs.memory)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.memory)
             (hsPkgs.vector)
             (hsPkgs.scientific)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

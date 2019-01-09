@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "semiring-num";
-        version = "1.6.0.0";
-      };
+      identifier = { name = "semiring-num"; version = "1.6.0.0"; };
       license = "MIT";
       copyright = "2016 Donnacha Oisín Kidney";
       maintainer = "mail@doisinkidney.com";
@@ -22,7 +13,7 @@
       synopsis = "Basic semiring class and instances";
       description = "Adds a basic semiring class";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.vector)
           (hsPkgs.hashable)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "semiring-test" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.log-domain)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.random)
             (hsPkgs.containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

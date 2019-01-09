@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-nix";
-        version = "0.1";
-      };
+      identifier = { name = "servant-nix"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant Nix content-type";
       description = "Servant Nix bindings.\n\nProvides @MineRender@ and @MimeUnrender@ instances.\nSo you can accept and return Nix expressions, with the help\nof the hnix library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.http-media)
           (hsPkgs.hnix)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.servant-client)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

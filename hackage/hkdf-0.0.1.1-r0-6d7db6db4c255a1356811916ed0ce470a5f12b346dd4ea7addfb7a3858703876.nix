@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hkdf";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "hkdf"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Jiri Marsicek <jiri.marsicek@gmail.com>";
       maintainer = "Jiri Marsicek <jiri.marsicek@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Implementation of HKDF (RFC 5869)";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.byteable)
           (hsPkgs.bytestring)
           (hsPkgs.cryptohash)
-        ];
-      };
+          ];
+        };
       tests = {
         "hkdf-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.cryptohash)
             (hsPkgs.hkdf)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

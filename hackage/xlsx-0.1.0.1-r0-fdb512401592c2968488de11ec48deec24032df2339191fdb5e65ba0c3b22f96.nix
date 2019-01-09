@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xlsx";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "xlsx"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "qrilka@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple and incomplete Excel file parser/writer";
       description = "This library can help you to get some data read and written in Office\nOpen XML xlsx format. Small subset of xlsx format is supported.\n\nFor examples look into \"Codec.Xlsx\".\n\nFormat is covered by ECMA-376 standard:\n<http://www.ecma-international.org/publications/standards/Ecma-376.htm>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.old-locale)
           (hsPkgs.filepath)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       exes = {
         "test" = {
           depends = [
@@ -67,9 +58,9 @@
             (hsPkgs.old-locale)
             (hsPkgs.filepath)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "data-test" = {
           depends = [
@@ -83,8 +74,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

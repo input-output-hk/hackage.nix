@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-install";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "stackage-install"; version = "0.1.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Secure download of packages for cabal-install";
       description = "For more information, see <https://www.stackage.org/package/stackage-install>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,15 +32,12 @@
           (hsPkgs.aeson)
           (hsPkgs.cryptohash)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "stackage-install" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.stackage-install)
           ];
         };
+      exes = {
+        "stackage-install" = {
+          depends = [ (hsPkgs.base) (hsPkgs.stackage-install) ];
+          };
+        };
       };
-    };
-  }
+    }

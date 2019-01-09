@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hset";
-        version = "2.2.0";
-      };
+      identifier = { name = "hset"; version = "2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Primitive list with elements of unique types.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.tagged)
           (hsPkgs.type-fun)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.base)
             (hsPkgs.hset)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

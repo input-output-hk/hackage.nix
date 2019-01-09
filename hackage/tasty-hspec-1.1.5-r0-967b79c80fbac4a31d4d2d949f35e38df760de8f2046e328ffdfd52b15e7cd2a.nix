@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "tasty-hspec";
-        version = "1.1.5";
-      };
+      identifier = { name = "tasty-hspec"; version = "1.1.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mitchellwrosen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Hspec support for the Tasty test framework.";
       description = "This package provides a Tasty provider for Hspec test\nsuites.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.tasty)
           (hsPkgs.tasty-smallcheck)
           (hsPkgs.tasty-quickcheck)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.tagged);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs.tagged);
+        };
       };
-    };
-  }
+    }

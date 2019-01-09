@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskyapi";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "haskyapi"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "2017 okue";
       maintainer = "example@example.com";
@@ -22,7 +13,7 @@
       synopsis = "HTTP server";
       description = "Please see the README on Github at <https://github.com/okue/haskyapi#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskyapi" = {
           depends = [
@@ -70,9 +61,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -96,8 +87,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "prettyFunctionComposing";
-        version = "1.0.1";
-      };
+      identifier = { name = "prettyFunctionComposing"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nick.rudnick@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "prettier function composition by (°)";
       description = "Yes, I am afraid it is completely trivial and syntactic.\nHowever, the use of '.' is quite overloaded, so that e.g.\ncharacter search becomes a problem. Pretty looking &\ngenerally available at the keyboard, '°' solves this.\nPossibly the most simple Hackage package ever. :-P";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

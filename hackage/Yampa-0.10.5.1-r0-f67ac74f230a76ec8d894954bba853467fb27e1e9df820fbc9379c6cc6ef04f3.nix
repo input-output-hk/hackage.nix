@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       test-hlint = false;
       test-doc-coverage = false;
       test-regression = true;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Yampa";
-        version = "0.10.5.1";
-      };
+      identifier = { name = "Yampa"; version = "0.10.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ivan Perez (ivan.perez@keera.co.uk)";
@@ -26,37 +17,33 @@
       synopsis = "Library for programming hybrid systems.";
       description = "Domain-specific language embedded in Haskell for programming\nhybrid (mixed discrete-time and continuous-time) systems. Yampa is based on\nthe concepts of Functional Reactive Programming (FRP) and is structured using\narrow combinators.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-          (hsPkgs.deepseq)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.random) (hsPkgs.deepseq) ];
+        };
       tests = {
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "haddock-coverage" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doc-coverage)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.regex-posix)
-          ];
-        };
+            ];
+          };
         "regression" = {
-          depends = pkgs.lib.optionals (!(!flags.test-regression)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-regression)) [
             (hsPkgs.base)
             (hsPkgs.Yampa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "flick-duration";
-        version = "1.0.0";
-      };
+      identifier = { name = "flick-duration"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) Christopher Lord (Pliosoft), All Rights Reserved";
       maintainer = "christopher@pliosoft.com";
@@ -22,14 +13,9 @@
       synopsis = "work with durations of time using the Flick as the smallest unit";
       description = "Please see the README on GitHub at <https://github.com/pliosoft/flick-duration#readme>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.clock)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.clock) ]; };
       tests = {
         "flick-duration-test" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.clock)
             (hsPkgs.flick-duration)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

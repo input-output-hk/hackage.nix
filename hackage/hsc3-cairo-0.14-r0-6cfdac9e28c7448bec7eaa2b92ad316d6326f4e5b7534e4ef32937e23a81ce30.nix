@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3-cairo";
-        version = "0.14";
-      };
+      identifier = { name = "hsc3-cairo"; version = "0.14"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2012-2013";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "haskell supercollider cairo drawing";
       description = "haskell supercollider cairo drawing";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.hosc)
           (hsPkgs.hsc3)
           (hsPkgs.split)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

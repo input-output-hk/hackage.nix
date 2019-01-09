@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { binary = false; };
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "relational-record-examples";
         version = "0.5.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Shohei Murayama <shohei.murayama@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Examples of Haskell Relationa Record";
       description = "Provides examples of Haskell Relational Record";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +29,8 @@
           (hsPkgs.relational-query-HDBC)
           (hsPkgs.template-haskell)
           (hsPkgs.relational-schemas)
-        ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
+        };
       exes = {
         "examples" = {
           depends = [
@@ -46,8 +40,8 @@
             (hsPkgs.relational-record-examples)
             (hsPkgs.template-haskell)
             (hsPkgs.time)
-          ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
+          };
         "specialized-examples" = {
           depends = [
             (hsPkgs.base)
@@ -56,8 +50,8 @@
             (hsPkgs.relational-record-examples)
             (hsPkgs.template-haskell)
             (hsPkgs.time)
-          ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.ghc-prim);
+          };
         };
       };
-    };
-  }
+    }

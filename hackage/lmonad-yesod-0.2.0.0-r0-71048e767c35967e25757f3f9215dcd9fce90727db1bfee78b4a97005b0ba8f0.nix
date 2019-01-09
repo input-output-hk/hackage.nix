@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lmonad-yesod";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "lmonad-yesod"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "dev@jamesparker.me";
@@ -22,7 +13,7 @@
       synopsis = "LMonad for Yesod integrates LMonad's IFC with Yesod web applications.";
       description = "LMonad for Yesod integrates LMonad's IFC with Yesod web applications. You can define custom security policies by modifying the database model file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.transformers)
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-persistent)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

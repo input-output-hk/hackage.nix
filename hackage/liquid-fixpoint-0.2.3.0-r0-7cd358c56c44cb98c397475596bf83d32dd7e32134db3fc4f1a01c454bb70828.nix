@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      z3mem = false;
-      build-external = false;
-    };
+    flags = { z3mem = false; build-external = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "liquid-fixpoint";
-        version = "0.2.3.0";
-      };
+      identifier = { name = "liquid-fixpoint"; version = "0.2.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2010-15 Ranjit Jhala, University of California, San Diego.";
       maintainer = "jhala@cs.ucsd.edu";
@@ -25,7 +13,7 @@
       synopsis = "Predicate Abstraction-based Horn-Clause/Implication Constraint Solver";
       description = "This package is a Haskell wrapper to the SMTLIB-based\nHorn-Clause/Logical Implication constraint solver used\nfor Liquid Types.\n\nThe solver itself is written in Ocaml.\n\nThe package includes:\n\n1. Types for Expressions, Predicates, Constraints, Solutions\n\n2. Code for serializing the above\n\n3. Code for parsing the results from the fixpoint.native binary\n\n4. The Ocaml fixpoint code and pre-compiled binaries\n\n5. (Deprecated) Z3 binaries if you want to link against the API.\n\nRequirements\n\nIn addition to the .cabal dependencies you require\n\n- A Z3 (<http://z3.codeplex.com>) or CVC4 (<http://cvc4.cs.nyu.edu>) binary.\nIf on Windows, please make sure to place the binary and any associated DLLs\nin your \"cabal/bin\" folder, right next to the fixpoint.native.exe binary.\n\n- An ocaml compiler (if installing with -fbuild-external).";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +42,8 @@
           (hsPkgs.hashable)
           (hsPkgs.unordered-containers)
           (hsPkgs.text-format)
-        ];
-      };
+          ];
+        };
       exes = {
         "fixpoint.native" = {
           depends = [
@@ -80,8 +68,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.text-format)
             (hsPkgs.liquid-fixpoint)
-          ];
-        };
+            ];
+          };
         "fixpoint" = {
           depends = [
             (hsPkgs.base)
@@ -105,9 +93,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.text-format)
             (hsPkgs.liquid-fixpoint)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -118,8 +106,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-rerun)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

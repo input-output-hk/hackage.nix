@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dtrace = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dph-base";
-        version = "0.6.0.1";
-      };
+      identifier = { name = "dph-base"; version = "0.6.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@cse.unsw.edu.au>";
@@ -22,7 +13,7 @@
       synopsis = "Data Parallel Haskell common config and debugging functions.";
       description = "Common configuration, debugging and utilities.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.random)
           (hsPkgs.vector)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

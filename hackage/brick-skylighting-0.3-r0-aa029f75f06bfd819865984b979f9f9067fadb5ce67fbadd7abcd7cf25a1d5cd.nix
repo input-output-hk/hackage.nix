@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demos = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "brick-skylighting";
-        version = "0.3";
-      };
+      identifier = { name = "brick-skylighting"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Jonathan Daugherty 2018";
       maintainer = "cygnus@foobox.com";
@@ -22,7 +13,7 @@
       synopsis = "Show syntax-highlighted text in your Brick UI";
       description = "This package provides a module to use Skylighting to perform\nsyntax highlighting and display the results in Brick-based\ninterfaces.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.skylighting-core)
           (hsPkgs.text)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "brick-skylighting-demo" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.vty)
             (hsPkgs.skylighting-core)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

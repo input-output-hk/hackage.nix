@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { sample = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "prefork";
-        version = "0.0.9";
-      };
+      identifier = { name = "prefork"; version = "0.0.9"; };
       license = "MIT";
       copyright = "(c) 2013 GREE, Inc.";
       maintainer = "kiyoshi.ikehara@gree.net";
@@ -22,7 +13,7 @@
       synopsis = "A library for building a prefork-style server quickly";
       description = "Prefork is a library for building a prefork-style server quickly.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.system-filepath)
           (hsPkgs.data-default)
           (hsPkgs.process)
-        ];
-      };
+          ];
+        };
       exes = {
         "prefork-sample-simple" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.network)
             (hsPkgs.unix)
             (hsPkgs.prefork)
-          ];
-        };
+            ];
+          };
         "prefork-sample-various-workers" = {
           depends = [
             (hsPkgs.base)
@@ -55,8 +46,8 @@
             (hsPkgs.network)
             (hsPkgs.unix)
             (hsPkgs.prefork)
-          ];
-        };
+            ];
+          };
         "prefork-sample-warp" = {
           depends = [
             (hsPkgs.base)
@@ -72,9 +63,9 @@
             (hsPkgs.prefork)
             (hsPkgs.cmdargs)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-prefork" = {
           depends = [
@@ -88,8 +79,8 @@
             (hsPkgs.cab)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "test-prefork-server" = {
           depends = [
             (hsPkgs.base)
@@ -99,8 +90,8 @@
             (hsPkgs.stm)
             (hsPkgs.unix)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

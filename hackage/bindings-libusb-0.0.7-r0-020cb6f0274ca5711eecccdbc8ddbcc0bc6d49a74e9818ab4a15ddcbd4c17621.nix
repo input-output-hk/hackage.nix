@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "bindings-libusb";
-        version = "0.0.7";
-      };
+      identifier = { name = "bindings-libusb"; version = "0.0.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Maurício C. Antunes <mauricio.antunes@gmail.com>";
@@ -22,14 +13,14 @@
       synopsis = "Check bindings-common package for directions.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-posix)
           (hsPkgs.bindings-common)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

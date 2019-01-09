@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "keera-posture";
-        version = "0.1.4";
-      };
+      identifier = { name = "keera-posture"; version = "0.1.4"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "support@keera.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Get notifications when your sitting posture is inappropriate.";
       description = "A program that notifies when you sit in a straining position.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "keera-posture" = {
@@ -63,7 +54,7 @@
               (hsPkgs.keera-hails-mvc-controller)
               (hsPkgs.keera-hails-mvc-solutions-config)
               (hsPkgs.keera-hails-reactivevalues)
-            ]
+              ]
             else [
               (hsPkgs.base)
               (hsPkgs.containers)
@@ -99,9 +90,9 @@
               (hsPkgs.keera-hails-mvc-controller)
               (hsPkgs.keera-hails-mvc-solutions-config)
               (hsPkgs.keera-hails-reactivevalues)
-            ];
-          libs = pkgs.lib.optional (system.isWindows) (pkgs."SDL_mixer");
+              ];
+          libs = (pkgs.lib).optional (system.isWindows) (pkgs."SDL_mixer");
+          };
         };
       };
-    };
-  }
+    }

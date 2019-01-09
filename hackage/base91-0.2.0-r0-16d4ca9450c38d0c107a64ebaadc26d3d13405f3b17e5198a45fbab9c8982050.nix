@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bytestring = true;
-      text = true;
-    };
+    flags = { bytestring = true; text = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "base91";
-        version = "0.2.0";
-      };
+      identifier = { name = "base91"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ajg";
@@ -25,13 +13,13 @@
       synopsis = "A Base91 Encoder & Decoder";
       description = "An implementation of Base91 encoding & decoding of arbitrary bytes (octets)\nto/from characters (all in the ASCII printable range; it includes support for\nplain Strings, as well as optional support for ByteString and/or Text; see\nthe Flags section for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
-        ] ++ pkgs.lib.optional (flags.bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (flags.text) (hsPkgs.text);
-      };
+          ] ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs.bytestring)) ++ (pkgs.lib).optional (flags.text) (hsPkgs.text);
+        };
       exes = {
         "base91" = {
           depends = [
@@ -39,9 +27,9 @@
             (hsPkgs.base91)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +38,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

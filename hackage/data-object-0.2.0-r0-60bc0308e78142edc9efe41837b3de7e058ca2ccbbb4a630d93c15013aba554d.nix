@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildtests = false;
-      nolib = false;
-    };
+    flags = { buildtests = false; nolib = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "data-object";
-        version = "0.2.0";
-      };
+      identifier = { name = "data-object"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -25,7 +13,7 @@
       synopsis = "Represent hierachichal structures, called objects in JSON.";
       description = "These objects show up in different places, eg JSON, Yaml.\nBy providing a representation in a separate repository,\nother libraries can share a single representation of\nthese structures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,18 +27,18 @@
           (hsPkgs.attempt)
           (hsPkgs.convertible-text)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

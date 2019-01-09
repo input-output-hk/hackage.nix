@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "filestore";
-        version = "0.2";
-      };
+      identifier = { name = "filestore"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jgm@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "Interface for versioning file stores.";
       description = "The filestore library provides an abstract interface for a versioning\nfile store, and modules that instantiate this interface.  Currently\nonly Git & Darcs modules are provided, but other VCSs or databases could be\nadded.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.xml)
           (hsPkgs.split)
           (hsPkgs.Diff)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

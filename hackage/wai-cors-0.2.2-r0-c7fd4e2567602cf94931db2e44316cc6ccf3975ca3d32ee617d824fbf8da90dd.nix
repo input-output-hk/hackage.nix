@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      transformers-3 = false;
-      wai-1 = false;
-    };
+    flags = { transformers-3 = false; wai-1 = false; };
     package = {
       specVersion = "1.14.0";
-      identifier = {
-        name = "wai-cors";
-        version = "0.2.2";
-      };
+      identifier = { name = "wai-cors"; version = "0.2.2"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 AlephCloud Systems, Inc.";
       maintainer = "Lars Kuhtz <lars@alephcloud.com>";
@@ -25,7 +13,7 @@
       synopsis = "CORS for WAI";
       description = "This package provides an implemenation of\nCross-Origin resource sharing (CORS) for\n<http://hackage.haskell.org/package/wai Wai>\nthat aims to be compliant with <http://www.w3.org/TR/cors>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -37,23 +25,15 @@
           (hsPkgs.charset)
           (hsPkgs.http-types)
           (hsPkgs.parsers)
-        ] ++ (if flags.wai-1
-          then [
-            (hsPkgs.wai)
-            (hsPkgs.resourcet)
-          ]
-          else [
-            (hsPkgs.wai)
-          ])) ++ (if flags.transformers-3
+          ] ++ (if flags.wai-1
+          then [ (hsPkgs.wai) (hsPkgs.resourcet) ]
+          else [ (hsPkgs.wai) ])) ++ (if flags.transformers-3
           then [
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
-          ]
-          else [
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-          ]);
+            ]
+          else [ (hsPkgs.mtl) (hsPkgs.transformers) ]);
+        };
       };
-    };
-  }
+    }

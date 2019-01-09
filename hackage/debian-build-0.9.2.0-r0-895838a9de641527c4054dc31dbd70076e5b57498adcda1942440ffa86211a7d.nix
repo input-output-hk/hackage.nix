@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "debian-build";
-        version = "0.9.2.0";
-      };
+      identifier = { name = "debian-build"; version = "0.9.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014-2016 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Debian package build sequence tools";
       description = "This package provides build sequence functions\nfor debian package, and includes on-the-fly\nbuild command 'odebuild'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.transformers)
           (hsPkgs.split)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       exes = {
         "odebuild" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.filepath)
             (hsPkgs.transformers)
             (hsPkgs.debian-build)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

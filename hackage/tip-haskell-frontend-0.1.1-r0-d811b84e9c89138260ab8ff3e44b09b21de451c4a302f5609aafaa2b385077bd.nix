@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tip-haskell-frontend";
-        version = "0.1.1";
-      };
+      identifier = { name = "tip-haskell-frontend"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "danr@chalmers.se";
@@ -22,7 +13,7 @@
       synopsis = "Convert from Haskell to Tip";
       description = "Convert from Haskell to Tip";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.geniplate-mirror)
           (hsPkgs.tip-lib)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       exes = {
         "tip-ghc" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.tip-lib)
             (hsPkgs.pretty-show)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

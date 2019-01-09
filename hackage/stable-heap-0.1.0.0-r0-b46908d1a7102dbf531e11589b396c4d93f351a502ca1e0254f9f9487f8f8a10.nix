@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stable-heap";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "stable-heap"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Copyright (C) 2015 Jake McArthur";
       maintainer = "Jake.McArthur@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "Purely functional stable heaps (fair priority queues)";
       description = "This library provides a purely functional implementation of\nstable heaps (fair priority queues). The data structure is a\ncousin of the pairing heap which maintains a sequential\nordering of the keys. Insertion can be to either end of the\nheap, as though it is a deque, and it can be split on the\nleft-most occurrence of the minimum key.\n\nThe current state of the package is fairly barebones. It will\nbe fleshed out later.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       benchmarks = {
         "bench" = {
           depends = [
@@ -38,8 +27,8 @@
             (hsPkgs.pqueue)
             (hsPkgs.stable-heap)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

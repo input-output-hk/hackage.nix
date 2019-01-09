@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "convert-annotation";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "convert-annotation"; version = "0.4.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright: (c) 2016 Gregory W. Schwartz";
       maintainer = "gsch@mail.med.upenn.edu";
@@ -22,7 +13,7 @@
       synopsis = "Convert the annotation of a gene to another in a delimited file using a variety of different databases.";
       description = "Please see README.org";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.HTTP)
           (hsPkgs.safe)
           (hsPkgs.inline-r)
-        ];
-      };
+          ];
+        };
       exes = {
         "convert-annotation" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.pipes-csv)
             (hsPkgs.lens)
             (hsPkgs.inline-r)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hurriyet";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hurriyet"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yiğit Özkavcı <yigitozkavci8@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for Hurriyet API";
       description = "hurriyet-haskell is the client library for communicating with Hurriyet API (developers.hurriyet.com.tr)\n\nTo get started, see @Hurriyet@ module below.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.http-client-tls)
           (hsPkgs.text)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.hspec)
             (hsPkgs.here)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

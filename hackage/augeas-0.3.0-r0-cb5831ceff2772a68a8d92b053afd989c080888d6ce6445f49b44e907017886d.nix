@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "augeas";
-        version = "0.3.0";
-      };
+      identifier = { name = "augeas"; version = "0.3.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jude@pwan.org";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell FFI wrapper for the Augeas API";
       description = "A Haskell FFI wrapper for the Augeas API";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,13 +21,13 @@
           (hsPkgs.directory)
           (hsPkgs.unix)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "test-haskell-augeas" = {
           depends = [ (hsPkgs.HUnit) ];
           libs = [ (pkgs."augeas") ];
+          };
         };
       };
-    };
-  }
+    }

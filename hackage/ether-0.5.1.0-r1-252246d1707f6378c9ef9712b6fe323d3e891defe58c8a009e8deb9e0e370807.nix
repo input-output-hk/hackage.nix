@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      disable-tup-instances = false;
-    };
+    flags = { disable-tup-instances = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ether";
-        version = "0.5.1.0";
-      };
+      identifier = { name = "ether"; version = "0.5.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Vladislav Zavialov <vlad.z.4096@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Monad transformers and classes";
       description = "Ether is a Haskell library that extends @mtl@ and @transformers@ with\ntagged monad transformers and classes in a compatible way.\nIntroduction <https://int-index.github.io/ether/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +29,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.tagged)
           (hsPkgs.reflection)
-        ];
-      };
+          ];
+        };
       tests = {
         "regression" = {
           depends = [
@@ -54,9 +43,9 @@
             (hsPkgs.ghc-prim)
             (hsPkgs.lens)
             (hsPkgs.ether)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -67,8 +56,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.lens)
             (hsPkgs.ether)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "metar";
-        version = "0.0.2";
-      };
+      identifier = { name = "metar"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018, Tony Morris";
       maintainer = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@sıɹɹoɯʇ>";
@@ -22,7 +13,7 @@
       synopsis = "Australian METAR";
       description = "Obtain Australian METAR from Bureau of Meteorology (BOM).\n\nIf that fails, get the METAR from NOAA.\n\n<<https://i.imgur.com/VGTogB8.gif>>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,16 +27,9 @@
           (hsPkgs.tagsoup-selection)
           (hsPkgs.transformers)
           (hsPkgs.deriving-compat)
-        ];
-      };
-      exes = {
-        "metar" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.metar)
           ];
         };
-      };
+      exes = { "metar" = { depends = [ (hsPkgs.base) (hsPkgs.metar) ]; }; };
       tests = {
         "tests" = {
           depends = [
@@ -57,8 +41,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

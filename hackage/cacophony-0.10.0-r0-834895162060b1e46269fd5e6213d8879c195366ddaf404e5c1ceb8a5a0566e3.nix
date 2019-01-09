@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-tools = false;
-    };
+    flags = { build-tools = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cacophony";
-        version = "0.10.0";
-      };
+      identifier = { name = "cacophony"; version = "0.10.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "John Galt <jgalt@centromere.net>";
@@ -24,7 +13,7 @@
       synopsis = "A library implementing the Noise protocol.";
       description = "This library implements the <https://noiseprotocol.org Noise> protocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,11 +28,11 @@
           (hsPkgs.mtl)
           (hsPkgs.safe-exceptions)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "noise-repl" = {
-          depends = pkgs.lib.optionals (flags.build-tools) [
+          depends = (pkgs.lib).optionals (flags.build-tools) [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
@@ -53,16 +42,11 @@
             (hsPkgs.haskeline)
             (hsPkgs.network)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
-        };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         "vectors" = {
           depends = [
             (hsPkgs.aeson)
@@ -73,9 +57,9 @@
             (hsPkgs.cacophony)
             (hsPkgs.directory)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -86,8 +70,8 @@
             (hsPkgs.cacophony)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

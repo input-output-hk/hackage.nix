@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sprinkles";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "sprinkles"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tobias Dammers";
       maintainer = "tdammers@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON API to HTML website wrapper";
       description = "Please see README.md. More text to please stack. More text to please stack. More text to please stack. More text to please stack. More text to please stack. More text to please stack. More text to please stack. More text to please stack. More text to please stack. More text to please stack.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -93,8 +84,8 @@
           (hsPkgs.warp)
           (hsPkgs.yaml)
           (hsPkgs.yeshql-hdbc)
-        ];
-      };
+          ];
+        };
       exes = {
         "sprinkles" = {
           depends = [
@@ -105,9 +96,9 @@
             (hsPkgs.safe)
             (hsPkgs.text)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "sprinkles-test" = {
           depends = [
@@ -124,8 +115,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.temporary)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

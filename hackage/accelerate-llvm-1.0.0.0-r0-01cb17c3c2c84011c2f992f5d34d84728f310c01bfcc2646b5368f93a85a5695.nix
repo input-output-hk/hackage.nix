@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       debug = true;
@@ -12,13 +6,10 @@
       unsafe-checks = true;
       internal-checks = true;
       chase-lev = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "accelerate-llvm";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "accelerate-llvm"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>";
@@ -28,7 +19,7 @@
       synopsis = "Accelerate backend generating LLVM";
       description = "This library implements direct LLVM IR generation for the /Accelerate/\nlanguage. For further information, refer to the main /Accelerate/ package:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.mwc-random)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (flags.chase-lev) (hsPkgs.chaselev-deque);
+          ] ++ (pkgs.lib).optional (flags.chase-lev) (hsPkgs.chaselev-deque);
+        };
       };
-    };
-  }
+    }

@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      developer = false;
-      native = true;
-      integer-simple = false;
-    };
+    flags = { developer = false; native = true; integer-simple = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "blaze-textual";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "blaze-textual"; version = "0.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2011 MailRank, Inc.";
       maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
@@ -26,7 +13,7 @@
       synopsis = "Fast rendering of common datatypes";
       description = "A library for efficiently rendering Haskell datatypes to\nbytestrings.\n\n/Note/: if you use GHCi or Template Haskell, please see the\n@README@ file for important details about building this package,\nand other packages that depend on it:\n<https://github.com/bos/blaze-textual#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -38,10 +25,10 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (!flags.native) (hsPkgs.double-conversion)) ++ (if flags.integer-simple
+          ] ++ (pkgs.lib).optional (!flags.native) (hsPkgs.double-conversion)) ++ (if flags.integer-simple
           then [ (hsPkgs.integer-simple) ]
           else [ (hsPkgs.integer-gmp) ]);
-      };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +40,8 @@
             (hsPkgs.double-conversion)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

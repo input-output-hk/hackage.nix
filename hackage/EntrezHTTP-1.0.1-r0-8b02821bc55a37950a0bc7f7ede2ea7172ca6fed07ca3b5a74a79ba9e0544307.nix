@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "EntrezHTTP";
-        version = "1.0.1";
-      };
+      identifier = { name = "EntrezHTTP"; version = "1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "egg@tbi.univie.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "Libary to interface with the NCBI Entrez REST service.";
       description = "EntrezHTTP provides functions to query the NCBI entrez REST interface.\n\nThere are multiple different databases and tools, so called eutils,\nprovided by the service.\n\nFor more information on Entrez refer to: <http://www.ncbi.nlm.nih.gov/gquery/>.\n\nInformation on the webservice can be found at: <http://www.ncbi.nlm.nih.gov/books/NBK25497/>.\n\nIf you plan to include the library in a tool, register it as explained <http://www.ncbi.nlm.nih.gov/books/NBK25497/#chapter2.Usage_Guidelines_and_Requiremen here>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.mtl)
           (hsPkgs.biocore)
           (hsPkgs.Taxonomy)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

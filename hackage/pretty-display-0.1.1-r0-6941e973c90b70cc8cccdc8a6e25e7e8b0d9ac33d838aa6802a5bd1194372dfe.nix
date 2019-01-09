@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pretty-display";
-        version = "0.1.1";
-      };
+      identifier = { name = "pretty-display"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014-2016 Justin Sermeno";
       maintainer = "Justin Sermeno";
@@ -22,15 +13,11 @@
       synopsis = "Typeclass for human-readable display";
       description = "Provides a typeclass and tools for working interactively within ghci.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.pretty-show)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.pretty-show) ];
+        };
       exes = {
         "pretty-display-example" = {
           depends = [
@@ -38,16 +25,13 @@
             (hsPkgs.pretty-display)
             (hsPkgs.pretty-show)
             (hsPkgs.ansi-wl-pprint)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "pretty-display-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pretty-display)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.pretty-display) ];
+          };
         };
       };
-    };
-  }
+    }

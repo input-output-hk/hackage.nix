@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "tagstream-conduit";
-        version = "0.5.5";
-      };
+      identifier = { name = "tagstream-conduit"; version = "0.5.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yi.codeplayer@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "streamlined html tag parser";
       description = "Tag-stream is a library for parsing HTML//XML to a token stream.\nIt can parse unstructured and malformed HTML from the web.\nIt also provides an Enumeratee which can parse streamline html, which means it consumes constant memory.\nYou can start from the `tests/Tests.hs` module to see what it can do.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.attoparsec-conduit)
           (hsPkgs.xml-conduit)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.hspec)
             (hsPkgs.tagstream-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

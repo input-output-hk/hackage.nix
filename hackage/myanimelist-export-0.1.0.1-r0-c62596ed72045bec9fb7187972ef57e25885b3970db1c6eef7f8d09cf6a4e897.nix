@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "myanimelist-export";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "myanimelist-export"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "2017 Matthew Harm Bekkema";
       maintainer = "mbekkema97@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Export from MyAnimeList";
       description = "Export anime or manga lists from MyAnimeList in XML format.  Uses the web\ninterface, because the malappinfo API exports in a slightly different format\nwhich causes problems on importing.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.network-uri)
           (hsPkgs.tagstream-conduit)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "myanimelist-export" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.directory)
             (hsPkgs.http-client-tls)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

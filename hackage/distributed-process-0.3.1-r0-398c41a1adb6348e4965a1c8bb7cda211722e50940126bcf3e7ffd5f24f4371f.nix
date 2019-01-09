@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { th = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distributed-process";
-        version = "0.3.1";
-      };
+      identifier = { name = "distributed-process"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "Well-Typed LLP";
       maintainer = "edsko@well-typed.com, dcoutts@well-typed.com";
@@ -22,7 +13,7 @@
       synopsis = "Cloud Haskell: Erlang-style concurrency in Haskell";
       description = "This is an implementation of Cloud Haskell, as described in\n/Towards Haskell in the Cloud/ by Jeff Epstein, Andrew Black,\nand Simon Peyton Jones\n(<http://research.microsoft.com/en-us/um/people/simonpj/papers/parallel/>),\nalthough some of the details are different. The precise message\npassing semantics are based on /A unified semantics for future Erlang/\nby\tHans Svensson, Lars-Åke Fredlund and Clara Benac Earle.\nYou will probably also want to install a Cloud Haskell backend such\nas distributed-process-simplelocalnet.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.distributed-static)
           (hsPkgs.rank1dynamic)
           (hsPkgs.syb)
-        ] ++ pkgs.lib.optional (flags.th) (hsPkgs.template-haskell);
-      };
+          ] ++ (pkgs.lib).optional (flags.th) (hsPkgs.template-haskell);
+        };
       tests = {
         "TestCH" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.network-transport)
             (hsPkgs.network-transport-tcp)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "TestClosure" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +57,8 @@
             (hsPkgs.network-transport)
             (hsPkgs.network-transport-tcp)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

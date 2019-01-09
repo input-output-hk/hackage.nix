@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "bitspeak";
-        version = "0.0.2";
-      };
+      identifier = { name = "bitspeak"; version = "0.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Maurício C. Antunes <mauricio.antunes@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Writing helper for those with Stephen Hawking like impairment.";
       description = "This is a proof-of-concept application for exercising writing\nusing binary choices, i.e., selecting from two sets of\nconsecutive letters. This is tiresome, but for those suffering\nfrom motor neuron diseases (specially one like amyotrophic\nlateral sclerosis, where cognitive functions remain intact) even\nthis small program can already be used to comunicate with the\nhelp of an assistant.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "bitspeak" = {
@@ -31,13 +22,13 @@
             (hsPkgs.bindings-DSL)
             (hsPkgs.bindings-glib)
             (hsPkgs.bindings-gobject)
-          ];
+            ];
           pkgconfig = [
             (pkgconfPkgs.gdk-2.0)
             (pkgconfPkgs.gtk+-2.0)
             (pkgconfPkgs.pango)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

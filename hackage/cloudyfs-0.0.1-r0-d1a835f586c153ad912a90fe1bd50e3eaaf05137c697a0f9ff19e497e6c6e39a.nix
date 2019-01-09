@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cloudyfs";
-        version = "0.0.1";
-      };
+      identifier = { name = "cloudyfs"; version = "0.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Brendan Hickey <brendan@bhickey.net>";
@@ -22,7 +13,7 @@
       synopsis = "A cloud in the file system.";
       description = "A cloud in the file system.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cloudyfs" = {
@@ -40,8 +31,8 @@
             (hsPkgs.timerep)
             (hsPkgs.convertible)
             (hsPkgs.datetime)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

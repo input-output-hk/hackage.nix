@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.0";
-      identifier = {
-        name = "tagsoup-parsec";
-        version = "0.0.3";
-      };
+      identifier = { name = "tagsoup-parsec"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "spoon@killersmurf.com";
@@ -22,14 +13,10 @@
       synopsis = "Tokenizes Tag, so [ Tag ] can be used as parser input.";
       description = "Tokenizes Tag, so [ Tag ] can be used as parser input.  Provides\nbasic combinators.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.tagsoup)
-          (hsPkgs.parsec)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.tagsoup) (hsPkgs.parsec) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "seqloc-datafiles";
-        version = "0.4.2";
-      };
+      identifier = { name = "seqloc-datafiles"; version = "0.4.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "nick@ingolia.org";
@@ -22,7 +13,7 @@
       synopsis = "Read and write BED and GTF format genome annotations";
       description = "Read and write BED and GTF format genome annotations";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.conduit)
           (hsPkgs.conduit-extra)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       exes = {
         "gtf-to-bed" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.resourcet)
-          ];
-        };
+            ];
+          };
         "bed-to-gtf" = {
           depends = [
             (hsPkgs.base)
@@ -78,8 +69,8 @@
             (hsPkgs.lifted-base)
             (hsPkgs.transformers-base)
             (hsPkgs.resourcet)
-          ];
-        };
+            ];
+          };
         "gtf-introns" = {
           depends = [
             (hsPkgs.base)
@@ -96,8 +87,8 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.resourcet)
-          ];
-        };
+            ];
+          };
         "bed-subregion" = {
           depends = [
             (hsPkgs.base)
@@ -119,8 +110,8 @@
             (hsPkgs.lifted-base)
             (hsPkgs.transformers-base)
             (hsPkgs.resourcet)
-          ];
-        };
+            ];
+          };
         "genome-to-trx" = {
           depends = [
             (hsPkgs.base)
@@ -136,9 +127,9 @@
             (hsPkgs.vector)
             (hsPkgs.filepath)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-gtf" = {
           depends = [
@@ -152,8 +143,8 @@
             (hsPkgs.biocore)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "test-bed" = {
           depends = [
             (hsPkgs.base)
@@ -170,8 +161,8 @@
             (hsPkgs.transformers-base)
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
-          ];
-        };
+            ];
+          };
         "test-subregions" = {
           depends = [
             (hsPkgs.base)
@@ -192,8 +183,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

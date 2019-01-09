@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hoovie";
-        version = "0.1";
-      };
+      identifier = { name = "hoovie"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "peter@vdbrand.nl";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Media Server";
       description = "Haskell Media Server";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hoovie" = {
@@ -52,8 +43,8 @@
             (hsPkgs.transformers)
             (hsPkgs.old-time)
             (hsPkgs.regex-compat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

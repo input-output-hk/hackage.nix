@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "casing";
-        version = "0.1.4.0";
-      };
+      identifier = { name = "casing"; version = "0.1.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tdammers@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Convert between various source code casing conventions";
       description = "Converts between camelCase, PascalCase, kebab-case, and three\nflavors of snake_case.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.split)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.split) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.casing)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

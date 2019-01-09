@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsaddle-warp";
-        version = "0.6.0.1";
-      };
+      identifier = { name = "jsaddle-warp"; version = "0.6.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -22,12 +13,12 @@
       synopsis = "Interface for JavaScript that works with GHCJS and GHC";
       description = "This package provides an EDSL for calling JavaScript that\ncan be used both from GHCJS and GHC.  When using GHC\nthe application is run using Warp and WebSockets to\ndrive a small JavaScipt helper.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs.aeson)
           (hsPkgs.containers)
           (hsPkgs.http-types)
@@ -40,13 +31,13 @@
           (hsPkgs.wai-websockets)
           (hsPkgs.warp)
           (hsPkgs.websockets)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-tool" = {
           depends = [
             (hsPkgs.base)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
             (hsPkgs.doctest)
@@ -57,8 +48,8 @@
             (hsPkgs.ref-tf)
             (hsPkgs.primitive)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

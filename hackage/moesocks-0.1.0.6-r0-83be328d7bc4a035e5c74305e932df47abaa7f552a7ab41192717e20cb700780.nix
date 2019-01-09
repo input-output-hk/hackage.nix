@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "moesocks";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "moesocks"; version = "0.1.0.6"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) 2015 Jinjing Wang";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "moe for all";
       description = "A socks5 proxy using the client / server architecture.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "moesocks" = {
@@ -45,8 +36,8 @@
             (hsPkgs.cryptohash)
             (hsPkgs.safe)
             (hsPkgs.hslogger)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dot-linker";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dot-linker"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Pedro Rodriguez Tavarez";
       maintainer = "pedro@pjrt.co";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.system-filepath)
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "dot-linker" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.turtle)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "dot-linker-spec" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.turtle)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

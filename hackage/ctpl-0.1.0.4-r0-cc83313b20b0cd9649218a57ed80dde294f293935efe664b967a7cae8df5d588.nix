@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ctpl";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "ctpl"; version = "0.1.0.4"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "m@doomanddarkness.eu";
@@ -22,7 +13,7 @@
       synopsis = "A programming language for text modification.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.chatty-text)
           (hsPkgs.chatty-utils)
           (hsPkgs.array)
-        ];
-      };
+          ];
+        };
       exes = {
         "ctpl0debug" = {
           depends = [
@@ -39,16 +30,16 @@
             (hsPkgs.chatty-text)
             (hsPkgs.chatty-utils)
             (hsPkgs.array)
-          ];
-        };
+            ];
+          };
         "ctplc" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.chatty-text)
             (hsPkgs.chatty-utils)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

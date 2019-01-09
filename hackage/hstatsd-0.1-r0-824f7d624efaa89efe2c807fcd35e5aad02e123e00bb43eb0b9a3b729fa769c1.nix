@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hstatsd";
-        version = "0.1";
-      };
+      identifier = { name = "hstatsd"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,7 +13,7 @@
       synopsis = "Quick and dirty statsd interface";
       description = "Quick and dirty statsd interface";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.network)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

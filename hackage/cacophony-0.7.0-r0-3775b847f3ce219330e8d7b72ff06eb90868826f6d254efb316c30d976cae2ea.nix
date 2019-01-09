@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       hlint = true;
       vectors = true;
       build-examples = false;
       llvm = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cacophony";
-        version = "0.7.0";
-      };
+      identifier = { name = "cacophony"; version = "0.7.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "jgalt@centromere.net";
@@ -27,7 +18,7 @@
       synopsis = "A library implementing the Noise protocol.";
       description = "This library implements the <https://github.com/trevp/noise/blob/master/noise.md Noise>\nprotocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,11 +32,11 @@
           (hsPkgs.monad-coroutine)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "echo-server" = {
-          depends = pkgs.lib.optionals (flags.build-examples) [
+          depends = (pkgs.lib).optionals (flags.build-examples) [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
             (hsPkgs.auto-update)
@@ -61,10 +52,10 @@
             (hsPkgs.network-simple)
             (hsPkgs.unix)
             (hsPkgs.unix-time)
-          ];
-        };
+            ];
+          };
         "echo-client" = {
-          depends = pkgs.lib.optionals (flags.build-examples) [
+          depends = (pkgs.lib).optionals (flags.build-examples) [
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.base16-bytestring)
@@ -76,18 +67,18 @@
             (hsPkgs.network)
             (hsPkgs.network-simple)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "vectors" = {
-          depends = pkgs.lib.optionals (!(!flags.vectors)) [
+          depends = (pkgs.lib).optionals (!(!flags.vectors)) [
             (hsPkgs.aeson)
             (hsPkgs.async)
             (hsPkgs.base)
@@ -99,9 +90,9 @@
             (hsPkgs.lens)
             (hsPkgs.mtl)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -113,8 +104,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

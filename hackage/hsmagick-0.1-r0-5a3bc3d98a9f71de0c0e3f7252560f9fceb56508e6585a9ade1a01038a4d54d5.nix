@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hsmagick";
-        version = "0.1";
-      };
+      identifier = { name = "hsmagick"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Tim Chevalier, 2008";
       maintainer = "chevalier@alum.wellesley.edu";
@@ -22,7 +13,7 @@
       synopsis = "FFI bindings for the GraphicsMagick library";
       description = "FFI bindings for the GraphicsMagick library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.filepath)
           (hsPkgs.pretty)
           (hsPkgs.process)
-        ];
+          ];
         libs = [
           (pkgs."tiff")
           (pkgs."jasper")
@@ -42,7 +33,7 @@
           (pkgs."z")
           (pkgs."m")
           (pkgs."pthread")
-        ];
+          ];
         pkgconfig = [
           (pkgconfPkgs.GraphicsMagick)
           (pkgconfPkgs.lcms)
@@ -51,7 +42,7 @@
           (pkgconfPkgs.ice)
           (pkgconfPkgs.x11)
           (pkgconfPkgs.libxml-2.0)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

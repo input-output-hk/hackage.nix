@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chatwork";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "chatwork"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "2017 MATSUBARA Nobutada";
       maintainer = "MATSUBARA Nobutada";
@@ -22,7 +13,7 @@
       synopsis = "The ChatWork API in Haskell";
       description = "See README at <https://github.com/matsubara0507/chatwork#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.req)
           (hsPkgs.retry)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "sample-exe" = {
           depends = [
@@ -58,9 +49,9 @@
             (hsPkgs.retry)
             (hsPkgs.text)
             (hsPkgs.chatwork)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -80,8 +71,8 @@
             (hsPkgs.servant-server)
             (hsPkgs.warp)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

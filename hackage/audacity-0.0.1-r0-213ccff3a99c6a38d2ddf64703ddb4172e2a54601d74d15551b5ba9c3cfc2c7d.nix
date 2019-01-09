@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "audacity";
-        version = "0.0.1";
-      };
+      identifier = { name = "audacity"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@henning-thielemann.de";
@@ -24,7 +13,7 @@
       synopsis = "Interchange with the Audacity sound signal editor";
       description = "This package provides functions\nfor interchange with the Audacity sound signal editor.\nCurrently we support import and export of label tracks.\n\nIt provides two examples:\n\n* @sox-concat@:\nConcatenate a sequence of sound files with matching\nsampling rates and numbers of channels using SoX\nand generate an Audacity label track file\nthat shows the origins of the parts.\n\n* @audacity-concat@:\nCreate an Audacity project file\ncontaining a virtual concatenation of the input sound files\nand a label track showing the origins of the sound files.\n\n* @audacity-combine@:\nPut several audio and label files into tracks of a new Audacity project.\nOpening one or even multiple such projects is much easier\nthan loading individual tracks into Audacity.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,11 +30,11 @@
           (hsPkgs.transformers)
           (hsPkgs.deepseq)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       exes = {
         "sox-concat" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)
@@ -55,10 +44,10 @@
             (hsPkgs.non-empty)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "audacity-concat" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)
@@ -68,10 +57,10 @@
             (hsPkgs.non-empty)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "audacity-combine" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)
@@ -81,8 +70,8 @@
             (hsPkgs.non-empty)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

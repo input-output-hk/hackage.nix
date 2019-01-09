@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "infinite-search";
-        version = "0.11";
-      };
+      identifier = { name = "infinite-search"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Luke Palmer <lrpalmer@gmail.com>";
@@ -22,10 +13,6 @@
       synopsis = "Exhaustively searchable infinite sets.";
       description = "An implementation of Martin Escardo's exhaustively searchable sets.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "colorful-monoids";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "colorful-monoids"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2017 Daniel Mendler";
       maintainer = "Daniel Mendler <mail@daniel-mendler.de>";
@@ -22,18 +13,11 @@
       synopsis = "Styled console text output using ANSI escape sequences.";
       description = "Styled console text output using ANSI escape sequences.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
-        "example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.colorful-monoids)
-          ];
+        "example" = { depends = [ (hsPkgs.base) (hsPkgs.colorful-monoids) ]; };
         };
       };
-    };
-  }
+    }

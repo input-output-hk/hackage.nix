@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "werewolf";
-        version = "0.5.4.0";
-      };
+      identifier = { name = "werewolf"; version = "0.5.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "public@hjwylde.com";
@@ -22,7 +13,7 @@
       synopsis = "A game engine for playing werewolf within a chat client";
       description = "A game engine for playing werewolf within a chat client.\nThis engine is based off of the party game Mafia, also known as Werewolf.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.text)
           (hsPkgs.tostring)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "werewolf" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.werewolf)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "werewolf-test" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.werewolf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "type-equality-check";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "type-equality-check"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "© 2004       Oleg Kiselyov\n(Fleet Numerical Meteorology and Oceanography Center);\n© 2004       Ralf Lämmel\n(Centrum Wiskunde & Informatica, Vrije Universiteit Amsterdam);\n© 2004       Keean Schupke\n(Imperial College London);\n© 2008, 2009 Brandenburgische Technische Universität Cottbus;\n© 2011       Wolfgang Jeltsch";
       maintainer = "wolfgang@cs.ioc.ee";
@@ -22,13 +13,8 @@
       synopsis = "Type equality check";
       description = "This packages provides a type equality check whose implementation is basically the\none from the HList library.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.type-level)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.type-level) ]; };
+      };
+    }

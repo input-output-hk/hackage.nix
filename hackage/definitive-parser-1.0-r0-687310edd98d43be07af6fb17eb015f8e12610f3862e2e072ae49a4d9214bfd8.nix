@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "definitive-parser";
-        version = "1.0";
-      };
+      identifier = { name = "definitive-parser"; version = "1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "marc.coiffier@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A parser combinator library for the Definitive framework";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.primitive)
           (hsPkgs.cpu)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

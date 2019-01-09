@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "urlpath";
-        version = "3.0.0";
-      };
+      identifier = { name = "urlpath"; version = "3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Painfully simple URL deployment.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.path-extra)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.path-extra) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Configurable";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "Configurable"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Joseph Abrahamson, 2012";
       maintainer = "Joseph Abrahamson <me@jspha.com>";
@@ -22,10 +13,6 @@
       synopsis = "Declare types as Configurable then specialize them all in one place";
       description = "Declare types as Configurable then specialize them all in one place";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

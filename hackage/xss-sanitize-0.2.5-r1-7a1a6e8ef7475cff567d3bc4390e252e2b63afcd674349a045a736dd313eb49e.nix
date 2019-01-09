@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "xss-sanitize";
-        version = "0.2.5";
-      };
+      identifier = { name = "xss-sanitize"; version = "0.2.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "sanitize untrusted HTML to prevent XSS attacks";
       description = "run untrusted HTML through Text.HTML.SanitizeXSS.sanitizeXSS to prevent XSS attacks. see README.md <http://github.com/gregwebs/haskell-xss-sanitize> for more details";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.tagsoup)
           (hsPkgs.utf8-string)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

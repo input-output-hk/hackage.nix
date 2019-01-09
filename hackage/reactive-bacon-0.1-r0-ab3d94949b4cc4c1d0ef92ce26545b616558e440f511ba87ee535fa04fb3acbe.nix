@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reactive-bacon";
-        version = "0.1";
-      };
+      identifier = { name = "reactive-bacon"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "juha.paananen@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "FRP (functional reactive programming) framework";
       description = "FRP (functional reactive programming) framework inspired by RX, reactive-banana and Iteratee";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.stm)
-          (hsPkgs.old-time)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.stm) (hsPkgs.old-time) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.old-time)
             (hsPkgs.HUnit)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

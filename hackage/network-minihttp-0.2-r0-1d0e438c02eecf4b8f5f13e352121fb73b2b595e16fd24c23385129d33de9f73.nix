@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "network-minihttp";
-        version = "0.2";
-      };
+      identifier = { name = "network-minihttp"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "A ByteString based library for writing HTTP(S) servers and clients.";
       description = "A ByteString based HTTP(S) library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.network-connection)
           (hsPkgs.network-dns)
           (hsPkgs.tagsoup)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

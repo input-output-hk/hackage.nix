@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "SecureHash-SHA3";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "SecureHash-SHA3"; version = "0.1.0.1"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "carter at wellposed dot com";
@@ -22,13 +13,8 @@
       synopsis = "simple static linked SHA3 using private symbols and the ref impl";
       description = "a self contained and linker friendly one stop shop for SHA3 kit based on the keccak reference impls";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
+      };
+    }

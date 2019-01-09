@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "aws-lambda-runtime";
-        version = "0";
-      };
+      identifier = { name = "aws-lambda-runtime"; version = "0"; };
       license = "Apache-2.0";
       copyright = "(c) 2018 Futurice, 2018 Oleg Grenrus";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell on AWS Lambda Runtime API";
       description = "Make \"native\" Haskell AWS Lambda (using Runtime API).\n\n* \"AWS.Lambda.RuntimeAPI\" is for writing lambdas\n\n* \"AWS.Lambda.RuntimeAPI.Package\" is for packaging them.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.parsec)
           (hsPkgs.process)
           (hsPkgs.zip-archive)
-        ];
-      };
+          ];
+        };
       exes = {
         "example-lambda" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.text)
             (hsPkgs.lens)
             (hsPkgs.lens-aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

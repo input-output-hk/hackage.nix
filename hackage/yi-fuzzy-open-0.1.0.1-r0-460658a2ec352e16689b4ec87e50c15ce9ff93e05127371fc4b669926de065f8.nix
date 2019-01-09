@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yi-fuzzy-open";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "yi-fuzzy-open"; version = "0.1.0.1"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Fuzzy open plugin for Yi.";
       description = "This plugin tries to do what ctrl-p does for vim and helm does for emacs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.yi)
           (hsPkgs.yi-language)
           (hsPkgs.yi-rope)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

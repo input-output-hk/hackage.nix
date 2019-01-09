@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "xmms2-client-glib";
-        version = "0.0.7.0";
-      };
+      identifier = { name = "xmms2-client-glib"; version = "0.0.7.0"; };
       license = "LGPL-3.0-only";
       copyright = "(C) 2009-2010 Oleg Belozeorov";
       maintainer = "Oleg Belozeorov <upwawet@gmail.com>";
@@ -22,17 +13,11 @@
       synopsis = "An XMMS2 client library — GLib integration.";
       description = "This package provides an interface to the X-platform Music Multiplexing\nSystem 2 (http://xmms2.xmms.se) client GLib integration API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-          (hsPkgs.xmms2-client)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.xmms2-client) ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

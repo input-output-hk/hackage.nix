@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ghc-mod";
-        version = "1.10.9";
-      };
+      identifier = { name = "ghc-mod"; version = "1.10.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Happy Haskell programming on Emacs/Vim";
       description = "This packages includes Elisp files\nand a Haskell command, \"ghc-mod\".\n\"ghc*.el\" enable completion of\nHaskell symbols on Emacs.\nFlymake is also integrated.\n\"ghc-mod\" is a backend of \"ghc*.el\".\nIt lists up all installed modules\nor extracts names of functions, classes,\nand data declarations.\nTo use \"ghc-mod\" on Vim,\nsee <https://github.com/eagletmt/ghcmod-vim>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ghc-mod" = {
@@ -41,8 +32,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.syb)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

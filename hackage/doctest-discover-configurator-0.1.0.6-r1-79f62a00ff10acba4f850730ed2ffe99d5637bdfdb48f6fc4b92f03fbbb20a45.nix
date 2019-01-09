@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "doctest-discover-configurator";
         version = "0.1.0.6";
-      };
+        };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "ricky@elrod.me";
@@ -22,7 +16,7 @@
       synopsis = "Easy way to run doctests via cabal (no aeson dependency, uses configurator instead)";
       description = "doctest-discover provides an easy way to run doctests via cabal (uses configurator instead of aeson)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +26,8 @@
           (hsPkgs.directory)
           (hsPkgs.doctest)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       exes = {
         "doctest-discover" = {
           depends = [
@@ -43,17 +37,17 @@
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.doctest-discover-configurator)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-base = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dixi";
-        version = "0.5.1.1";
-      };
+      identifier = { name = "dixi"; version = "0.5.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Liam O'Connor, 2015";
       maintainer = "liamoc@cse.unsw.edu.au";
@@ -22,7 +13,7 @@
       synopsis = "A wiki implemented with a firm theoretical foundation.";
       description = "This project is a simple wiki developed based on a\nfirm theoretical foundation.\n\nDocuments are not stored directly, but as a composition\ntree of patches to an initial empty document. As our\npatches support operational transform, edits can be\nmade to any version of each document and they are\ntransformed to be applied to the latest version.\n\nThis also makes it easy to use the group structure of\npatches to be able to revert changes (or the composition\nof several changes) from deep in a document's history and\npreserve every other change.\n\nRight now the wiki doesn't support many bells and whistles,\nsuch as administrator control, configurability, or user accounts,\nbut they're coming.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dixi" = {
@@ -57,13 +48,10 @@
             (hsPkgs.network-uri)
             (hsPkgs.timezone-olson)
             (hsPkgs.timezone-series)
-          ] ++ (if flags.old-base
-            then [
-              (hsPkgs.base)
-              (hsPkgs.base-orphans)
-            ]
+            ] ++ (if flags.old-base
+            then [ (hsPkgs.base) (hsPkgs.base-orphans) ]
             else [ (hsPkgs.base) ]);
+          };
         };
       };
-    };
-  }
+    }

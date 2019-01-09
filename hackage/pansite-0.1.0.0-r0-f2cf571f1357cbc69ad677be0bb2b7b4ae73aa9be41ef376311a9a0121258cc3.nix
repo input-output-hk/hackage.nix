@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pansite";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pansite"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Richard Cook";
       maintainer = "rcook@rcook.org";
@@ -22,7 +13,7 @@
       synopsis = "Pansite: a simple web site management tool";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "pansite-app" = {
           depends = [
@@ -62,24 +53,16 @@
             (hsPkgs.wai)
             (hsPkgs.wai-logger)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "pansite-doctest" = {
-          depends = [
-            (hsPkgs.Glob)
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
+          depends = [ (hsPkgs.Glob) (hsPkgs.base) (hsPkgs.doctest) ];
+          };
         "pansite-spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.pansite)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.pansite) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "trasa";
-        version = "0.3";
-      };
+      identifier = { name = "trasa"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "2017 Kyle McKean";
       maintainer = "mckean.kylej@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Type Safe Web Routing";
       description = "This library is a solution for http-based routing and dispatch. Its\ngoals are similar to the goals of `servant`, however, `trasa` relies\non very different mechanisms to accomplish those goals. All typeclasses\nin this library are optional. All of the real work is accomplished with GADTs,\nuniversal quantification, and plain old haskell data types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.http-types)
           (hsPkgs.http-media)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.text)
             (hsPkgs.vinyl)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

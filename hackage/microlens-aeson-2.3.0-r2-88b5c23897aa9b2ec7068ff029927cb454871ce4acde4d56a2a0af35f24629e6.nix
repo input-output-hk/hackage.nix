@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "microlens-aeson";
-        version = "2.3.0";
-      };
+      identifier = { name = "microlens-aeson"; version = "2.3.0"; };
       license = "MIT";
       copyright = "Copyright (C) 2012 Paul Wilson, (C) 2013 Edward A. Kmett, (C) 2015 Colin Woodbury";
       maintainer = "Colin Woodbury <colingw@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Law-abiding lenses for Aeson, using microlens.";
       description = "Law-abiding lenses for Aeson, using microlens.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "microlens-aeson-test" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "microlens-aeson-bench" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

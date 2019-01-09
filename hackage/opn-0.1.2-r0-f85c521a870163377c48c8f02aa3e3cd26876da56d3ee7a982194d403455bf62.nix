@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "opn";
-        version = "0.1.2";
-      };
+      identifier = { name = "opn"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anders.claesson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Open files or URLs using associated programs.";
       description = "The `opn` command lets you open files and URLs with\nassociated programs. It's intended to \\\"just work\\\" and to\nbe trivial to configure. See the README at\n<https://github.com/akc/opn> for further info.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "opn" = {
@@ -36,8 +27,8 @@
             (hsPkgs.network-uri)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

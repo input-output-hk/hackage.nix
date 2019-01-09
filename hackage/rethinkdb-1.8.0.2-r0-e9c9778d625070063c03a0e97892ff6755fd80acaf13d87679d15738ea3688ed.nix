@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rethinkdb";
-        version = "1.8.0.2";
-      };
+      identifier = { name = "rethinkdb"; version = "1.8.0.2"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Etienne Laurin <etienne@atnnn.com>";
@@ -22,7 +13,7 @@
       synopsis = "RethinkDB driver for Haskell";
       description = "RethinkDB is a distributed document store with a powerful query language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.protocol-buffers-descriptor)
           (hsPkgs.time)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

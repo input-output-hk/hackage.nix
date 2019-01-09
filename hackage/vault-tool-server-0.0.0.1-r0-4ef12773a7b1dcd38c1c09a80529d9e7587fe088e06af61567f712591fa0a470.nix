@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vault-tool-server";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "vault-tool-server"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "mutantlemon@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utility library for spawning a HashiCorp Vault process";
       description = "Utility library for spawning a HashiCorp Vault process";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.process)
           (hsPkgs.temporary)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.aeson)
             (hsPkgs.tasty-hunit)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

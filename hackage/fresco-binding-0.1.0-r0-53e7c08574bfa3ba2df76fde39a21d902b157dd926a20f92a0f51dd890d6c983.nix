@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "fresco-binding";
-        version = "0.1.0";
-      };
+      identifier = { name = "fresco-binding"; version = "0.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "althainz@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Fresco binding for Haskell";
       description = "Fresco is a framwork for multi-language programming. This is the Haskell binding.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,9 +23,9 @@
           (hsPkgs.text)
           (hsPkgs.messagepack)
           (hsPkgs.cereal)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "free-game";
-        version = "0.9.4.3";
-      };
+      identifier = { name = "free-game"; version = "0.9.4.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2013 Fumiaki Kinoshita";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Cross-platform GUI library based on free monads";
       description = "free-game is a library that abstracts graphical applications with simple interfaces. Twitter: #hs_free_game";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.reflection)
           (hsPkgs.colors)
           (hsPkgs.control-bool)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

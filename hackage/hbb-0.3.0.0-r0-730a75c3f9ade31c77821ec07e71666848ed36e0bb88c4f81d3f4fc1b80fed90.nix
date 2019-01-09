@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hbb";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "hbb"; version = "0.3.0.0"; };
       license = "LGPL-2.1-only";
       copyright = "";
       maintainer = "contact@wolf-kissendorf.de";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Busy Bee, a backend for text editors.";
       description = "This project forms the executable hbb which can be used\nas backend for text editors to provide them with a rich\nHaskell editing experience.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hbb" = {
@@ -33,8 +24,8 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.directory)
             (hsPkgs.ghc-mod)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

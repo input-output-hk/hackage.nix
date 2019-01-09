@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "language-javascript";
-        version = "0.4.10";
-      };
+      identifier = { name = "language-javascript"; version = "0.4.10"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010,2011,2012 Alan Zimmerman";
       maintainer = "alan.zimm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parser for JavaScript";
       description = "Parses Javascript into an Abstract Syntax Tree (AST).  Initially intended as frontend to hjsmin.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,21 +22,21 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.utf8-light)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.happy)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).happy)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

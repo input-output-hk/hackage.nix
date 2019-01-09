@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "alpino-tools";
-        version = "0.2.0";
-      };
+      identifier = { name = "alpino-tools"; version = "0.2.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright 2010-2012 Daniël de Kok";
       maintainer = "Daniël de Kok <me@danieldk.eu>";
@@ -22,7 +13,7 @@
       synopsis = "Alpino data manipulation tools";
       description = "Tools for manipulating data for the Alpino parser for Dutch.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,16 +29,12 @@
           (hsPkgs.resourcet)
           (hsPkgs.rosezipper)
           (hsPkgs.mtl)
-        ];
-      };
-      exes = {
-        "at_model_rescore_data" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.alpino-tools)
-            (hsPkgs.conduit)
           ];
         };
+      exes = {
+        "at_model_rescore_data" = {
+          depends = [ (hsPkgs.base) (hsPkgs.alpino-tools) (hsPkgs.conduit) ];
+          };
         "at_model_filter_data" = {
           depends = [
             (hsPkgs.base)
@@ -55,15 +42,11 @@
             (hsPkgs.conduit)
             (hsPkgs.containers)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "at_model_oracle" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.alpino-tools)
-            (hsPkgs.conduit)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.alpino-tools) (hsPkgs.conduit) ];
+          };
         "at_model_random_sample" = {
           depends = [
             (hsPkgs.base)
@@ -72,15 +55,11 @@
             (hsPkgs.resourcet)
             (hsPkgs.mtl)
             (hsPkgs.MonadRandom)
-          ];
-        };
+            ];
+          };
         "at_model_statistics_data" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.alpino-tools)
-            (hsPkgs.conduit)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.alpino-tools) (hsPkgs.conduit) ];
+          };
         };
       };
-    };
-  }
+    }

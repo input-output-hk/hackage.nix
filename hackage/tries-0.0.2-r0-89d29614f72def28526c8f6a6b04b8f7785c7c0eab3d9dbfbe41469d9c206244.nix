@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tries";
-        version = "0.0.2";
-      };
+      identifier = { name = "tries"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Various trie implementations in Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.quickcheck-instances)
           (hsPkgs.mtl)
           (hsPkgs.criterion)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -61,9 +52,9 @@
             (hsPkgs.keys)
             (hsPkgs.sets)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -82,8 +73,8 @@
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

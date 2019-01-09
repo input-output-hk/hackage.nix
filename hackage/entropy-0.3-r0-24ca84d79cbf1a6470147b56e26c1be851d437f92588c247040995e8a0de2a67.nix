@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { halvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "entropy";
-        version = "0.3";
-      };
+      identifier = { name = "entropy"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Thomas DuBuisson <thomas.dubuisson@gmail.com>";
       maintainer = "Thomas DuBuisson <thomas.dubuisson@gmail.com>";
@@ -22,14 +13,14 @@
       synopsis = "A platform independent entropy source";
       description = "A platform independent method to obtain cryptographically strong entropy\n(urandom on Linux, CryptAPI on Windows, patches welcome).\nUsers looking for cryptographically strong (number-theoretically\nsound) PRNGs should see the 'DRBG' package too!";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
-        ] ++ pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (!flags.halvm) (hsPkgs.unix));
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."advapi32");
+          ] ++ (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!flags.halvm) (hsPkgs.unix));
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."advapi32");
+        };
       };
-    };
-  }
+    }

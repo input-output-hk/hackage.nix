@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { optimize = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hask";
-        version = "0";
-      };
+      identifier = { name = "hask"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2014, Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Categories";
       description = "Kind-polymorphic category theory in Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.transformers)
           (hsPkgs.tagged)
           (hsPkgs.void)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

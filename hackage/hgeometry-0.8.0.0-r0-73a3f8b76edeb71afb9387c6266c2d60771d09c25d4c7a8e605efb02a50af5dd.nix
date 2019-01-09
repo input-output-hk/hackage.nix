@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      examples = false;
-      with-quickcheck = true;
-      interactive = false;
-    };
+    flags = { examples = false; with-quickcheck = true; interactive = false; };
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "hgeometry";
-        version = "0.8.0.0";
-      };
+      identifier = { name = "hgeometry"; version = "0.8.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "frank@fstaals.net";
@@ -26,7 +13,7 @@
       synopsis = "Geometric Algorithms, Data structures, and Data types.";
       description = "HGeometry provides some basic geometry types, and geometric algorithms and\ndata structures for them. The main two focusses are: (1) Strong type safety,\nand (2) implementations of geometric algorithms and data structures with good\nasymptotic running time guarantees. Note that HGeometry is still highly experimental, don't be surprised to find bugs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -58,14 +45,14 @@
           (hsPkgs.mtl)
           (hsPkgs.random)
           (hsPkgs.template-haskell)
-        ] ++ pkgs.lib.optionals (flags.with-quickcheck) [
+          ] ++ (pkgs.lib).optionals (flags.with-quickcheck) [
           (hsPkgs.QuickCheck)
           (hsPkgs.quickcheck-instances)
-        ];
-      };
+          ];
+        };
       exes = {
         "hgeometry-viewer" = {
-          depends = pkgs.lib.optionals (flags.interactive) [
+          depends = (pkgs.lib).optionals (flags.interactive) [
             (hsPkgs.base)
             (hsPkgs.hgeometry)
             (hsPkgs.lens)
@@ -92,10 +79,10 @@
             (hsPkgs.linear)
             (hsPkgs.haskell-gi-base)
             (hsPkgs.reactive-banana)
-          ];
-        };
+            ];
+          };
         "hgeometry-examples" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.hgeometry)
             (hsPkgs.lens)
@@ -110,16 +97,11 @@
             (hsPkgs.time)
             (hsPkgs.random)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "hspec" = {
           depends = [
             (hsPkgs.base)
@@ -142,11 +124,9 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.yaml)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
-        };
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         "bapc_examples" = {
           depends = [
             (hsPkgs.base)
@@ -157,9 +137,9 @@
             (hsPkgs.data-clist)
             (hsPkgs.linear)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -176,8 +156,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.containers)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

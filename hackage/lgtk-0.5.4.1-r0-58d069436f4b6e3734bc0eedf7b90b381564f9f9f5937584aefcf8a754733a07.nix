@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lgtk";
-        version = "0.5.4.1";
-      };
+      identifier = { name = "lgtk"; version = "0.5.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "divipp@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "lens-based API for Gtk";
       description = "The main interface module of LGtk is \"LGtk\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.SVGFonts)
           (hsPkgs.groups)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

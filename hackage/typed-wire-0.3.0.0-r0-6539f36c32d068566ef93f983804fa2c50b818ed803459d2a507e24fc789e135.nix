@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "typed-wire";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "typed-wire"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 - 2016 Alexander Thiemann <mail@athiemann.net>";
       maintainer = "Alexander Thiemann <mail@athiemann.net>";
@@ -22,7 +13,7 @@
       synopsis = "Language idependent type-safe communication";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.http-types)
-        ];
-      };
+          ];
+        };
       exes = {
         "twirec" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.filepath)
             (hsPkgs.gitrev)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "typed-wire-tests" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

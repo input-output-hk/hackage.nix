@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "gtk2hs-rpn";
-        version = "0.1";
-      };
+      identifier = { name = "gtk2hs-rpn"; version = "0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Maurício CA <mauricio.antunes@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Adds a module to gtk2hs allowing layouts to be defined using\nreverse polish notation.";
       description = "Adds a module \"Graphics.UI.Gtk.Layout.Rpn\" to @gtk2hs@. This\nmodule defines a type @RPN@ for operators, which is an\ninstance of 'Data.Monoid.Monoid' class.  You can combine those\noperators using reverse polish notation, as made popular by,\nsay, HP calculators. There are operators for layout elements,\nlike expanders, panes, boxes and notebooks, and for a few\nother widgets, like buttons and labels. You can also insert\nany existing @gtk2hs@ widget in the stack.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.cairo)
           (hsPkgs.mtl)
           (hsPkgs.glib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

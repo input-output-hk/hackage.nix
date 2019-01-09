@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-proxy";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "http-proxy"; version = "0.1.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "erikd@mega-nerd.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for writing HTTP and HTTPS proxies";
       description = "http-proxy is a library for writing HTTP and HTTPS proxies.\n\nUse of the Conduit library provides file streaming via the proxy in both\ndirections. Memory usage of the proxy scales linearly with the number of\nsimultaneous connections and is independent of the size of the files being\nuploaded or downloaded.\n\nThe Settings data type provided by the library allows the caller to supply\na functions for exception reporting and request re-writing.  Eventually, this\ncapability will be expanded to allow optional logging, disk caching etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.wai-conduit)
           (hsPkgs.warp)
           (hsPkgs.warp-tls)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.wai-conduit)
             (hsPkgs.warp)
             (hsPkgs.warp-tls)
-          ];
-        };
+            ];
+          };
         "test-io" = {
           depends = [
             (hsPkgs.base)
@@ -105,8 +96,8 @@
             (hsPkgs.wai-conduit)
             (hsPkgs.warp)
             (hsPkgs.warp-tls)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

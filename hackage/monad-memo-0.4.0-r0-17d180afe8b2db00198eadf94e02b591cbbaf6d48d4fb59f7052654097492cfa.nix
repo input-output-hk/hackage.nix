@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monad-memo";
-        version = "0.4.0";
-      };
+      identifier = { name = "monad-memo"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "eduard.sergeev@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Memoization monad transformer";
       description = "Memoization monad transformer supporting most of the standard monad transformers and a range of memoization cache types: from default pure maps to extremely fast mutable vectors";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.array)
           (hsPkgs.vector)
           (hsPkgs.primitive)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "all" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.vector)
             (hsPkgs.primitive)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

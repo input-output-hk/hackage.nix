@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glue-common";
-        version = "0.4.1";
-      };
+      identifier = { name = "glue-common"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "github@futurenotfound.com";
@@ -22,7 +13,7 @@
       synopsis = "Make better services.";
       description = "Common types and base functions used in the glue family of libraries.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "glue-common-tests" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.ekg-core)
             (hsPkgs.text)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

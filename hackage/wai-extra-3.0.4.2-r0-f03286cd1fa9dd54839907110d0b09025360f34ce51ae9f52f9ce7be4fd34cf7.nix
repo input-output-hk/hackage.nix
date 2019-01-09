@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-extra";
-        version = "3.0.4.2";
-      };
+      identifier = { name = "wai-extra"; version = "3.0.4.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides some basic WAI handlers and middleware.";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-extra>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,8 +43,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.streaming-commons)
           (hsPkgs.unix-compat)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.bytestring)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

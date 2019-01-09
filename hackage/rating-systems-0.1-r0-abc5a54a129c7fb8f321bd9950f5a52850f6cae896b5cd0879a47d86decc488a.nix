@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "rating-systems";
-        version = "0.1";
-      };
+      identifier = { name = "rating-systems"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mightybyte@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Implementations of several rating systems: Elo, Glicko, etc";
       description = "This package contains implementations of several rating systems for\nestimating the skill of players of multi-player games..";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

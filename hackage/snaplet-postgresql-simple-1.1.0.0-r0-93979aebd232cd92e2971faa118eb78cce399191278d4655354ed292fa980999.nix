@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snaplet-postgresql-simple";
-        version = "1.1.0.0";
-      };
+      identifier = { name = "snaplet-postgresql-simple"; version = "1.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mightybyte@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "postgresql-simple snaplet for the Snap Framework";
       description = "This snaplet contains support for using the Postgresql\ndatabase with a Snap Framework application via the\npostgresql-simple package.  It also includes an\nauthentication backend.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "Example" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.xmlhtml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

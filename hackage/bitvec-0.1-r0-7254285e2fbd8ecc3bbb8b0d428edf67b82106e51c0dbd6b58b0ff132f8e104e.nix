@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "bitvec";
-        version = "0.1";
-      };
+      identifier = { name = "bitvec"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,15 +13,11 @@
       synopsis = "Unboxed vectors of bits / dense IntSets";
       description = "Unboxed vectors of bits / dense IntSets";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.primitive)
-          (hsPkgs.vector)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.primitive) (hsPkgs.vector) ];
+        };
       tests = {
         "bitvec-tests" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-test-bin";
-        version = "0.1.0";
-      };
+      identifier = { name = "cabal-test-bin"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A program for finding temporary build file during cabal-test.";
       description = "cabal-test-bin finds exe-file for \"cabal install --enable-tests --run-tests\" or \"cabal test\".\nWhen a project uses cabal-sandbox,\ncabal-test-bin checks both <project root>/dist/dist-sandbox-<hash>/build/<exe-file>/<exe-file>\nand <project root>/dist/build/<exe-file>/<exe-file>.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal-test-bin" = {
@@ -31,8 +22,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

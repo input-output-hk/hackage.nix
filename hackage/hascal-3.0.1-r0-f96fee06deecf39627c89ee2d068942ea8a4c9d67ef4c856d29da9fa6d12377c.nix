@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hascal";
-        version = "3.0.1";
-      };
+      identifier = { name = "hascal"; version = "3.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Mekeor Melire (2017)";
       maintainer = "Mekeor Melire";
@@ -22,23 +13,15 @@
       synopsis = "tiny calculator library and command-line program";
       description = "a library and a command-line program for calculating numeral\nexpressions with infix operators and constants but without\nparantheses.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-default)
-          (hsPkgs.split)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.data-default) (hsPkgs.split) ];
+        };
       exes = {
         "hascal" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.data-default)
-            (hsPkgs.split)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.data-default) (hsPkgs.split) ];
+          };
         };
       };
-    };
-  }
+    }

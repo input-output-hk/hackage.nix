@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "uri-enumerator-file";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "uri-enumerator-file"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michaels@suite-sol.com";
@@ -22,7 +13,7 @@
       synopsis = "uri-enumerator backend for the file scheme (deprecated)";
       description = "uri-enumerator backend for the file scheme";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.lifted-base)
           (hsPkgs.uri-enumerator)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

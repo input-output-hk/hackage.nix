@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "ASN1";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "ASN1"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Dominic Steinitz 2003 - 2007";
       maintainer = "dominic.steinitz@blueyonder.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "ASN.1 support for Haskell";
       description = "Enough ASN.1 suppport for X.509\nidentity and attribute certificates, PKCS8, PKCS1v15.\nOnly the Basic Encoding Rules (BER) are supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,14 +21,14 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.HUnit)
           (hsPkgs.NewBinary)
-        ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
           then [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.old-time)
             (hsPkgs.pretty)
-          ]
+            ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

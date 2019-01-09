@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "lentil";
-        version = "1.0.3.2";
-      };
+      identifier = { name = "lentil"; version = "1.0.3.2"; };
       license = "GPL-3.0-only";
       copyright = "© 2015-2016 Francesco Ariis";
       maintainer = "Francesco Ariis <fa-ml@ariis.it>";
@@ -22,7 +13,7 @@
       synopsis = "frugal issue tracker";
       description = "minumum effort, cohesive issue tracker based on\nubiquitous @TODO@s and @FIXME@s conventions.\nCheck homepage for manual, tutorial, examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "lentil" = {
@@ -41,9 +32,9 @@
             (hsPkgs.terminal-progress-bar)
             (hsPkgs.text)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.text)
             (hsPkgs.semigroups)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-samples = false;
-    };
+    flags = { build-samples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lens-regex";
-        version = "0.1.0";
-      };
+      identifier = { name = "lens-regex"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Takahiro HIMURA";
       maintainer = "Takahiro HIMURA <taka@himura.jp>";
@@ -24,7 +13,7 @@
       synopsis = "Lens powered regular expression";
       description = "Lens powered regular expression";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,18 +22,18 @@
           (hsPkgs.lens)
           (hsPkgs.regex-base)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "sample" = {
-          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.lens)
             (hsPkgs.lens-regex)
             (hsPkgs.regex-posix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctests" = {
           depends = [
@@ -53,8 +42,8 @@
             (hsPkgs.doctest)
             (hsPkgs.filepath)
             (hsPkgs.regex-posix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

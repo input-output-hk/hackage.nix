@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { perf = false; };
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "distributed-process-platform";
         version = "0.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Tim Watson 2012 - 2013";
       maintainer = "watson.timothy@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "The Cloud Haskell Application Platform";
       description = "Modelled after Erlang's OTP, this framework provides similar\nfacilities for Cloud Haskell, grouping essential practices\ninto a set of modules and standards designed to help you build\nconcurrent, distributed applications with relative ease.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,16 +33,16 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.5") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.5") [
           (hsPkgs.template-haskell)
           (hsPkgs.derive)
           (hsPkgs.uniplate)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       exes = {
         "leaks" = {
-          depends = pkgs.lib.optionals (flags.perf) [
+          depends = (pkgs.lib).optionals (flags.perf) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.directory)
@@ -61,9 +55,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.binary)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "TimerTests" = {
           depends = [
@@ -84,8 +78,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.rematch)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "PrimitivesTests" = {
           depends = [
             (hsPkgs.base)
@@ -105,8 +99,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.rematch)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "AsyncTests" = {
           depends = [
             (hsPkgs.base)
@@ -125,8 +119,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.rematch)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "ManagedProcessTests" = {
           depends = [
             (hsPkgs.base)
@@ -148,8 +142,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "PrioritisedProcessTests" = {
           depends = [
             (hsPkgs.base)
@@ -171,8 +165,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "SupervisorTests" = {
           depends = [
             (hsPkgs.base)
@@ -200,8 +194,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "RegistryTests" = {
           depends = [
             (hsPkgs.base)
@@ -229,8 +223,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "TaskQueueTests" = {
           depends = [
             (hsPkgs.base)
@@ -260,8 +254,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "LoggerTests" = {
           depends = [
             (hsPkgs.base)
@@ -289,8 +283,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "ExchangeTests" = {
           depends = [
             (hsPkgs.base)
@@ -320,8 +314,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "MailboxTests" = {
           depends = [
             (hsPkgs.base)
@@ -351,8 +345,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "InternalQueueTests" = {
           depends = [
             (hsPkgs.base)
@@ -367,8 +361,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pipes-zlib";
-        version = "0.3.0";
-      };
+      identifier = { name = "pipes-zlib"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Paolo Capriotti 2012,\nRenzo Carbonara 2013";
       maintainer = "renzocarbonaraλgmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Zlib compression and decompression for Pipes streams";
       description = "Zlib compression and decompression for Pipes streams";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.zlib)
           (hsPkgs.zlib-bindings)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-core";
-        version = "1.4.7.1";
-      };
+      identifier = { name = "yesod-core"; version = "1.4.7.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-core>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -72,8 +63,8 @@
           (hsPkgs.primitive)
           (hsPkgs.word8)
           (hsPkgs.auto-update)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-routes" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.random)
             (hsPkgs.path-pieces)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -116,9 +107,9 @@
             (hsPkgs.wai-extra)
             (hsPkgs.mwc-random)
             (hsPkgs.cookie)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "widgets" = {
           depends = [
@@ -129,8 +120,8 @@
             (hsPkgs.transformers)
             (hsPkgs.yesod-core)
             (hsPkgs.blaze-html)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tagged-timers";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tagged-timers"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "jhala@cs.ucsd.edu";
@@ -22,7 +13,7 @@
       synopsis = "Simple wrappers for timing IO actions (single-threaded)";
       description = "Library for tagging IO actions and getting logs of total\ntime spent per tag.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.transformers)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

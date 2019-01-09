@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-static-angular";
-        version = "0.1.2";
-      };
+      identifier = { name = "yesod-static-angular"; version = "0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "John Lenz <lenz@math.uic.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Yesod generators for embedding AngularJs code into yesod-static at compile time";
       description = "yesod-static supports generators which run at compile time which create static\nresources to embed directly into the executable.  This package leverages this to\nprovide automatic management of <http://angularjs.org/ AngularJS> code.  During\ndevelopment individual files served and reloaded on every request.  When compiling\nfor production, the files are minimized, compressed, and then embedded into the\nexecutable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text)
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-static)
-        ];
-      };
+          ];
+        };
       exes = {
         "example-production" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.yesod)
             (hsPkgs.yesod-static)
             (hsPkgs.yesod-static-angular)
-          ];
-        };
+            ];
+          };
         "example-dev" = {
           depends = [
             (hsPkgs.base)
@@ -66,9 +57,9 @@
             (hsPkgs.yesod)
             (hsPkgs.yesod-static)
             (hsPkgs.yesod-static-angular)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -84,8 +75,8 @@
             (hsPkgs.yesod-test)
             (hsPkgs.yesod-static)
             (hsPkgs.yesod-static-angular)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

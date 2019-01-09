@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "multiaddr";
-        version = "0.3.0";
-      };
+      identifier = { name = "multiaddr"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Micxjo Funkcio";
       maintainer = "Micxjo Funkcio <micxjo@fastmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A network address format";
       description = "Multiaddr is a self-describing network address format\nsupporting a variety of protocols, with both string\nand binary representations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
           (hsPkgs.base58-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "multiaddr-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

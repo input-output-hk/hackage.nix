@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitlib-cross";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "gitlib-cross"; version = "2.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@fpcomplete.com";
@@ -22,11 +13,9 @@
       synopsis = "Run tests between repositories";
       description = "Test runner which runs tests between repositories.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "smoke" = {
           depends = [
@@ -38,8 +27,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.hspec)
             (hsPkgs.hspec-expectations)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

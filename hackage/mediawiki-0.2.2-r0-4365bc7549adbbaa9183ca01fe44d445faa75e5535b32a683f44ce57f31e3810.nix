@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { new-base = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "mediawiki";
-        version = "0.2.2";
-      };
+      identifier = { name = "mediawiki"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sigbjorn Finne <sof@forkIO.com>";
@@ -22,7 +13,7 @@
       synopsis = "Interfacing with the MediaWiki API";
       description = "A complete Haskell binding to the MediaWiki API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,18 +23,11 @@
           (hsPkgs.network)
           (hsPkgs.mime)
           (hsPkgs.utf8-string)
-        ];
-      };
-      exes = {
-        "main" = {
-          depends = [ (hsPkgs.base) ];
-        };
-        "listCat" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pretty)
           ];
         };
+      exes = {
+        "main" = { depends = [ (hsPkgs.base) ]; };
+        "listCat" = { depends = [ (hsPkgs.base) (hsPkgs.pretty) ]; };
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      officialcsfmlforwindows = false;
-    };
+    flags = { officialcsfmlforwindows = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "SFML";
-        version = "2.3.2.3";
-      };
+      identifier = { name = "SFML"; version = "2.3.2.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "jeannekamikaze@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "SFML bindings";
       description = "Low level bindings for SFML 2.3.2.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
@@ -35,7 +24,7 @@
             (pkgs."csfml-graphics")
             (pkgs."csfml-network")
             (pkgs."csfml-audio")
-          ]
+            ]
           else [
             (pkgs."csfml-window")
             (pkgs."csfml-system")
@@ -47,10 +36,8 @@
             (pkgs."sfml-graphics")
             (pkgs."sfml-network")
             (pkgs."sfml-audio")
-          ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+            ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

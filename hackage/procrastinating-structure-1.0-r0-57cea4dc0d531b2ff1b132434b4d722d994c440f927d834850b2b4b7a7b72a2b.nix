@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "procrastinating-structure";
-        version = "1.0";
-      };
+      identifier = { name = "procrastinating-structure"; version = "1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Jake.McArthur@gmail.com";
@@ -22,13 +13,10 @@
       synopsis = "Pure structures that can be incrementally created\nin impure code";
       description = "This package provides a type class for\nincrementally creating pure structures in impure\ncode. Also included is a queue with a pure front\nand an impure back.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.procrastinating-variable)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.procrastinating-variable) ];
+        };
       };
-    };
-  }
+    }

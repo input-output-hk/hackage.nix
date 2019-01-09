@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prim-spoon";
-        version = "0.1.0";
-      };
+      identifier = { name = "prim-spoon"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Michael Klein, portions also licensed to: 2009 Matt Morrow & Dan Peebles, 2013 Liyang HU";
       maintainer = "Michael Klein <lambdamichael@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "Catch errors thrown from pure computations using primops.";
       description = "Takes an error-throwing expression and puts it back in the Maybe it belongs in, but with primops.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.spoon)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) (hsPkgs.spoon) ];
+        };
       tests = {
         "prim-spoon-test" = {
           depends = [
@@ -39,9 +26,9 @@
             (hsPkgs.spoon)
             (hsPkgs.prim-spoon)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "prim-spoon-bench" = {
           depends = [
@@ -50,8 +37,8 @@
             (hsPkgs.ghc-prim)
             (hsPkgs.prim-spoon)
             (hsPkgs.spoon)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

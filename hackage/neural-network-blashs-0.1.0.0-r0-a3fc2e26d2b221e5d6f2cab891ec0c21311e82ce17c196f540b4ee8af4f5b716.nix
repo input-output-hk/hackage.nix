@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      vec128 = false;
-      vec256 = false;
-      vec512 = false;
-    };
+    flags = { vec128 = false; vec256 = false; vec512 = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "neural-network-blashs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "neural-network-blashs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jiasenwu@hotmail.com";
@@ -26,7 +13,7 @@
       synopsis = "Yet Another High Performance and Extendable Neural Network in Haskell";
       description = "Provides execution backend of neural network on top of blas-hs.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +25,8 @@
           (hsPkgs.constraints)
           (hsPkgs.ghc-prim)
           (hsPkgs.neural-network-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "s1" = {
           depends = [
@@ -50,8 +37,8 @@
             (hsPkgs.vector)
             (hsPkgs.blas-hs)
             (hsPkgs.neural-network-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

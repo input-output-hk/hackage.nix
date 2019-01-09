@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ide-backend-server";
-        version = "0.10.0";
-      };
+      identifier = { name = "ide-backend-server"; version = "0.10.0"; };
       license = "MIT";
       copyright = "(c) 2015 FP Complete";
       maintainer = "Duncan Coutts <duncan@well-typed.com>";
@@ -22,7 +13,7 @@
       synopsis = "An IDE backend server";
       description = "Server executable used internally by the ide-backend library.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "ide-backend-server" = {
@@ -49,20 +40,20 @@
             (hsPkgs.zlib)
             (hsPkgs.file-embed)
             (hsPkgs.ide-backend-common)
-          ] ++ pkgs.lib.optionals (compiler.isGhc && false) [
+            ] ++ (pkgs.lib).optionals (compiler.isGhc && false) [
             (hsPkgs.old-time)
             (hsPkgs.haddock)
             (hsPkgs.Cabal)
-          ]) ++ pkgs.lib.optionals (compiler.isGhc && false) [
+            ]) ++ (pkgs.lib).optionals (compiler.isGhc && false) [
             (hsPkgs.time)
             (hsPkgs.haddock-api)
             (hsPkgs.Cabal)
-          ]) ++ pkgs.lib.optionals (compiler.isGhc && false || compiler.isGhc && false) [
+            ]) ++ (pkgs.lib).optionals (compiler.isGhc && false || compiler.isGhc && false) [
             (hsPkgs.time)
             (hsPkgs.haddock-api)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

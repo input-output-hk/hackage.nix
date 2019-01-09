@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "messagepack-rpc";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "messagepack-rpc"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "(c) 2014 Rodrigo Setti";
       maintainer = "rodrigosetti@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Message Pack RPC over TCP";
       description = "Message Pack RPC over TCP";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.containers)
           (hsPkgs.messagepack)
           (hsPkgs.network-simple)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

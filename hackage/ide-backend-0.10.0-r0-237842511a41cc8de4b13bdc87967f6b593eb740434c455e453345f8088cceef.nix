@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ide-backend";
-        version = "0.10.0";
-      };
+      identifier = { name = "ide-backend"; version = "0.10.0"; };
       license = "MIT";
       copyright = "(c) 2015 FP Complete";
       maintainer = "Duncan Coutts <duncan@well-typed.com>";
@@ -22,7 +13,7 @@
       synopsis = "An IDE backend library";
       description = "See README.md for more details";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.Cabal-ide-backend)
           (hsPkgs.ghc-prim)
           (hsPkgs.pretty-show)
-        ];
-      };
+          ];
+        };
       exes = {
         "ide-backend-exe-cabal" = {
           depends = [
@@ -89,9 +80,9 @@
             (hsPkgs.Cabal-ide-backend)
             (hsPkgs.ghc-prim)
             (hsPkgs.pretty-show)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "TestSuite" = {
           depends = [
@@ -117,8 +108,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.parallel)
             (hsPkgs.monads-tf)
-          ];
-        };
+            ];
+          };
         "rpc-server" = {
           depends = [
             (hsPkgs.base)
@@ -141,8 +132,8 @@
             (hsPkgs.ide-backend)
             (hsPkgs.ide-backend-common)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

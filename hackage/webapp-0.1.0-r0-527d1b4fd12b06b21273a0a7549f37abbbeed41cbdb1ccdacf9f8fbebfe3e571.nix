@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "webapp";
-        version = "0.1.0";
-      };
+      identifier = { name = "webapp"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2015 Nathaniel Symer";
       maintainer = "Nathaniel Symer <nate@symer.io>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell web scaffolding using Scotty, WAI, and Warp";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -59,13 +50,13 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.optparse-applicative)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-          (hsPkgs.buildPackages.happy)
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
+          ((hsPkgs.buildPackages).hsc2hs)
+          ((hsPkgs.buildPackages).happy)
+          ((hsPkgs.buildPackages).alex)
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.http-types)
             (hsPkgs.optparse-applicative)
             (hsPkgs.webapp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

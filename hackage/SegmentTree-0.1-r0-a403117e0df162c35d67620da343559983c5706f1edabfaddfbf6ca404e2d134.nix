@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "SegmentTree";
-        version = "0.1";
-      };
+      identifier = { name = "SegmentTree"; version = "0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "scvalex@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Data structure for O(log n) mconcats on list intervals";
       description = "The 'SegmentTree' data structure allows for logarithmic\ntime accumulations on preprocessed lists of 'Monoid's.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

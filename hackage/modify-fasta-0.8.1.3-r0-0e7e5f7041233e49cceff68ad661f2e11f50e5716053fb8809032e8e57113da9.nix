@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "modify-fasta";
-        version = "0.8.1.3";
-      };
+      identifier = { name = "modify-fasta"; version = "0.8.1.3"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "gregory.schwartz@drexel.edu";
@@ -22,7 +13,7 @@
       synopsis = "Modify fasta (and CLIP) files in several optional ways";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.regex-tdfa)
           (hsPkgs.regex-tdfa-text)
           (hsPkgs.fasta)
-        ];
-      };
+          ];
+        };
       exes = {
         "modify-fasta" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.pipes)
             (hsPkgs.pipes-text)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

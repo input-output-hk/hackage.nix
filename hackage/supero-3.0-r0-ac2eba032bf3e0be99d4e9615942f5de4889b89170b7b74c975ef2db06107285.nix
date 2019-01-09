@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "supero";
-        version = "3.0";
-      };
+      identifier = { name = "supero"; version = "3.0"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2006-2010";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Supercompiler";
       description = "A demo supercompiler - not really ready for public use yet.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "supero" = {
@@ -37,8 +28,8 @@
             (hsPkgs.haskell-src-exts)
             (hsPkgs.cpphs)
             (hsPkgs.uniplate)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

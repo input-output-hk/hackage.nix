@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shapes-demo";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "shapes-demo"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Kynan Rilee";
       maintainer = "kynan.rilee@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "demos for the 'shapes' package";
       description = "Please see the README on Github at <https://github.com/ublubu/shapes#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "shapes-demo" = {
@@ -42,8 +33,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distribution";
-        version = "1.0.1.0";
-      };
+      identifier = { name = "distribution"; version = "1.0.1.0"; };
       license = "Apache-2.0";
       copyright = "Copyright 2014 Romain Edelmann";
       maintainer = "romain.edelmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Finite discrete probability distributions.";
       description = "Package for manipulating finite discrete probability distributions. Supports transformations, measurements, efficient sampling and plotting.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.MonadRandom)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

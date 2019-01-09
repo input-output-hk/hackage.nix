@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { sample = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "memcache-haskell";
-        version = "0.0.10.1";
-      };
+      identifier = { name = "memcache-haskell"; version = "0.0.10.1"; };
       license = "MIT";
       copyright = "(c) 2015 GREE, Inc.";
       maintainer = "Kiyoshi Ikehara";
@@ -22,7 +13,7 @@
       synopsis = "Memcache procotol library";
       description = "A memcache protocol library for client and server applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.transformers)
           (hsPkgs.split)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       exes = {
         "memcache-sample-client" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.hashtables)
             (hsPkgs.conduit-extra)
             (hsPkgs.memcache-haskell)
-          ];
-        };
+            ];
+          };
         "memcache-sample-retrieval" = {
           depends = [
             (hsPkgs.base)
@@ -62,9 +53,9 @@
             (hsPkgs.hashtables)
             (hsPkgs.conduit-extra)
             (hsPkgs.memcache-haskell)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-memcache" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.memcache-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

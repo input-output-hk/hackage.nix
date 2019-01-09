@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "natural";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "natural"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2018 Commonwealth Scientific and Industrial Research Organisation (CSIRO)";
       maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
@@ -22,14 +13,9 @@
       synopsis = "Natural number";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nNatural number";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.lens)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.lens) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -44,8 +30,8 @@
             (hsPkgs.tasty-hedgehog)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

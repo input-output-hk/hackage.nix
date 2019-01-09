@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pgdl";
-        version = "6.6";
-      };
+      identifier = { name = "pgdl"; version = "6.6"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "sifmelcara";
@@ -22,7 +13,7 @@
       synopsis = "pgdownloader";
       description = "a terminal user interface program that downloads a video from html and plays immediately.(Calling vlc)\n\nOnly for Linux and MACOSX.\n\nIt parses a remote html file which has link tag & filename tag in the same line.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pgdl" = {
@@ -42,8 +33,8 @@
             (hsPkgs.configurator)
             (hsPkgs.filepath)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

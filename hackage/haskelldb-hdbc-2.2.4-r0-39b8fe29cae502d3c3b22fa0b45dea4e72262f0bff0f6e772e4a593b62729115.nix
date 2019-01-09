@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haskelldb-hdbc";
-        version = "2.2.4";
-      };
+      identifier = { name = "haskelldb-hdbc"; version = "2.2.4"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "haskelldb-users@lists.sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "HaskellDB support for HDBC.";
       description = "HaskellDB requires this driver to work with any of HDBC's drivers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.old-time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

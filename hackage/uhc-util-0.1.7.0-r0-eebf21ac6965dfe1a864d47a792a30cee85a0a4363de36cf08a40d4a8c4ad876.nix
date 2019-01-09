@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "uhc-util";
-        version = "0.1.7.0";
-      };
+      identifier = { name = "uhc-util"; version = "0.1.7.0"; };
       license = "BSD-3-Clause";
       copyright = "Atze Dijkstra & Utrecht University, Department of Information and Computing Sciences, Software Technology group";
       maintainer = "atzedijkstra@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "UHC utilities";
       description = "General purpose utilities for UHC and related tools";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.chr-parse)
           (hsPkgs.chr-data)
           (hsPkgs.chr-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

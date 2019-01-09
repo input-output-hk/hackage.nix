@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test = false;
-      blaze_html_0_5 = true;
-    };
+    flags = { test = false; blaze_html_0_5 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-core";
-        version = "1.0.1.3";
-      };
+      identifier = { name = "yesod-core"; version = "1.0.1.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -25,7 +13,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "Yesod is a framework designed to foster creation of RESTful web application that have strong compile-time guarantees of correctness. It also affords space efficient code and portability to many deployment backends, from CGI to stand-alone serving.\n\nThe Yesod documentation site <http://www.yesodweb.com/> has much more information, tutorials and information on some of the supporting packages, like Hamlet and Persistent.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -65,13 +53,10 @@
           (hsPkgs.conduit)
           (hsPkgs.resourcet)
           (hsPkgs.lifted-base)
-        ] ++ pkgs.lib.optional (flags.test) (hsPkgs.wai-test)) ++ (if flags.blaze_html_0_5
-          then [
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-          ]
+          ] ++ (pkgs.lib).optional (flags.test) (hsPkgs.wai-test)) ++ (if flags.blaze_html_0_5
+          then [ (hsPkgs.blaze-html) (hsPkgs.blaze-markup) ]
           else [ (hsPkgs.blaze-html) ]);
-      };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -89,8 +74,8 @@
             (hsPkgs.random)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

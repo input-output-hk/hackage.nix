@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "hzk";
-        version = "0.0.2";
-      };
+      identifier = { name = "hzk"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "DiegoSouza";
@@ -22,17 +13,12 @@
       synopsis = "Haskell client library for Apache Zookeeper";
       description = "A haskell binding to Apache Zookeeper C library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
-        libs = [
-          (pkgs."zookeeper_mt")
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
+        libs = [ (pkgs."zookeeper_mt") ];
+        };
       tests = {
         "test-zookeeper" = {
           depends = [
@@ -40,11 +26,9 @@
             (hsPkgs.tasty)
             (hsPkgs.bytestring)
             (hsPkgs.tasty-hunit)
-          ];
-          libs = [
-            (pkgs."zookeeper_mt")
-          ];
+            ];
+          libs = [ (pkgs."zookeeper_mt") ];
+          };
         };
       };
-    };
-  }
+    }

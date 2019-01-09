@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "superconstraints";
-        version = "0.0.2";
-      };
+      identifier = { name = "superconstraints"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Ryan Trinkle";
       maintainer = "Ryan Trinkle <ryan.trinkle@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Access an instance's constraints";
       description = "Constraint manipulation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.containers)
           (hsPkgs.type-eq)
           (hsPkgs.tagged)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-bytestring = false;
-    };
+    flags = { network-bytestring = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-conduit";
-        version = "1.0.1";
-      };
+      identifier = { name = "network-conduit"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -24,7 +13,7 @@
       synopsis = "Stream socket data using conduits.";
       description = "Stream socket data using conduits.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,21 +23,14 @@
           (hsPkgs.conduit)
           (hsPkgs.lifted-base)
           (hsPkgs.monad-control)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.conduit)
-            (hsPkgs.base)
-            (hsPkgs.network-conduit)
-          ];
+          depends = [ (hsPkgs.conduit) (hsPkgs.base) (hsPkgs.network-conduit) ];
+          };
         };
       };
-    };
-  }
+    }

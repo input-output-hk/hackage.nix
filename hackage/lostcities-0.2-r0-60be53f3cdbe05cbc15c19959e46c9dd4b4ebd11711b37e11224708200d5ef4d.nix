@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "lostcities";
-        version = "0.2";
-      };
+      identifier = { name = "lostcities"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2009 Pedro Vasconcelos";
       maintainer = "pbv@ncc.up.pt";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of an adictive two-player card game";
       description = "Based on the card game designed by Reiner Knizia.\nIn this implementation you play against the computer.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "lostcities" = {
@@ -34,8 +25,8 @@
             (hsPkgs.mtl)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

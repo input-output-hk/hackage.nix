@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "relational-record-examples";
         version = "0.2.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Shohei Murayama <shohei.murayama@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Examples of Haskell Relationa Record";
       description = "Provides examples of Haskell Relational Record";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "examples" = {
@@ -37,8 +31,8 @@
             (hsPkgs.relational-query-HDBC)
             (hsPkgs.template-haskell)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

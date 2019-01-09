@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shelduck";
-        version = "0.1.4.0";
-      };
+      identifier = { name = "shelduck"; version = "0.1.4.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "robertjflong@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Test webhooks locally";
       description = "Opinionated tool for QAing webhooks on remote services using ngrok";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.shelly)
           (hsPkgs.uuid)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "shelduck" = {
           depends = [
@@ -64,9 +55,9 @@
             (hsPkgs.shelly)
             (hsPkgs.uuid)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -80,8 +71,8 @@
             (hsPkgs.transformers)
             (hsPkgs.stm)
             (hsPkgs.wreq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pdf-slave";
-        version = "1.2.2.0";
-      };
+      identifier = { name = "pdf-slave"; version = "1.2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tool to generate PDF from haskintex templates and YAML input";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.system-filepath)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "pdf-slave" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.system-filepath)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

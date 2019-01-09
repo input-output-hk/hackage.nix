@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "th-kinds";
-        version = "0.2";
-      };
+      identifier = { name = "th-kinds"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Louis Wasserman <wasserman.louis@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Automated kind inference in Template Haskell.";
       description = "Given the name of a Haskell type, typeclass, type family, or any of the above, determine its kind.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

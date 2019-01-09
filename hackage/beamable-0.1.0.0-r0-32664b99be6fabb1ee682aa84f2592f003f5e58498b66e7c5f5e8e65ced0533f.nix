@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "beamable";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "beamable"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "manpacket@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generic serializer/deserializer with compact representation";
       description = "Yet another binary serialization library.  Beamable\nprovides efficient and fast serialization, often requiring less\nspace than alternative serializers.\nIncremental de-serialization is supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.integer-gmp)
           (hsPkgs.murmur-hash)
-        ];
-      };
+          ];
+        };
       tests = {
         "beamable-tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.ghc-prim)
             (hsPkgs.integer-gmp)
             (hsPkgs.murmur-hash)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

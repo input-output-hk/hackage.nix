@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "reverse-apply";
-        version = "2.0";
-      };
+      identifier = { name = "reverse-apply"; version = "2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hans Hoglund";
@@ -22,10 +13,6 @@
       synopsis = "Standard version of the reverse apply operator.";
       description = "Provides a standard version of the reverse apply operator.\nIts definition is simply @(&) = flip (\$)@.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

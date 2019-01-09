@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Level0";
-        version = "1.0";
-      };
+      identifier = { name = "Level0"; version = "1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "eleventynine@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Snake II clone written using SDL.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Level0" = {
@@ -32,8 +23,8 @@
             (hsPkgs.SDL-ttf)
             (hsPkgs.random)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

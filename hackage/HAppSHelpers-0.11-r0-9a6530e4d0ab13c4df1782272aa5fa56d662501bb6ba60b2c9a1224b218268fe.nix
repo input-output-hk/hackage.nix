@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HAppSHelpers";
-        version = "0.11";
-      };
+      identifier = { name = "HAppSHelpers"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomashartman1@gmail.com";
@@ -22,8 +13,6 @@
       synopsis = "OBSOLETE. Please use happstack-helpers";
       description = "OBSOLETE. Please use happstack-helpers";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

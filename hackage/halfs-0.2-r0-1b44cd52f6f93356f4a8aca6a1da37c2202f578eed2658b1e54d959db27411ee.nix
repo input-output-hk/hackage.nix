@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "halfs";
-        version = "0.2";
-      };
+      identifier = { name = "halfs"; version = "0.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2005 Galois Connections, Inc.";
       maintainer = "Iaaac Jones <ijones@syntaxpolice.org>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell File System";
       description = "Halfs is a filesystem implemented in the functional programming\nlanguage Haskell. Halfs can be mounted and used like any other Linux\nfilesystem, or used as a library.  Halfs is a fork (and a port) of the\nfilesystem developed by Galois Connections. See also http://haskell.org/pipermail/haskell-cafe/2006-April/015361.html\n\nYou can get it from here: http://darcs.haskell.org/halfs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.directory)
           (hsPkgs.process)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       exes = {
         "moduleTest" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "newfs-halfs" = {
           depends = [
             (hsPkgs.HUnit)
@@ -68,8 +59,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "fsck-halfs" = {
           depends = [
             (hsPkgs.HUnit)
@@ -83,8 +74,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cases";
-        version = "0.1.0";
-      };
+      identifier = { name = "cases"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A converter for spinal, snake and camel case";
       description = "A parser-based converter library for spinal, snake and camel case.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.loch-th)
           (hsPkgs.placeholders)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "api-tests" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.loch-th)
             (hsPkgs.placeholders)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.loch-th)
             (hsPkgs.placeholders)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wigner-symbols";
-        version = "1.0.0";
-      };
+      identifier = { name = "wigner-symbols"; version = "1.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 Phil Ruffwind";
       maintainer = "rf@rufflewind.com";
@@ -22,11 +13,9 @@
       synopsis = "CG coefficients and Wigner symbols.";
       description = "Clebsch-Gordan coefficients and Wigner 3-j, 6-j, and 9-j\nsymbols.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "test" = {
           depends = [
@@ -34,9 +23,9 @@
             (hsPkgs.wigner-symbols)
             (hsPkgs.bytestring)
             (hsPkgs.cryptonite)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -46,8 +35,8 @@
             (hsPkgs.random)
             (hsPkgs.primitive)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

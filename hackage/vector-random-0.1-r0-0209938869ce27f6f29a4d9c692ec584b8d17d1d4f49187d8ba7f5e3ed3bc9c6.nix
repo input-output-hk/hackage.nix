@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "vector-random";
-        version = "0.1";
-      };
+      identifier = { name = "vector-random"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dons@galois.com";
@@ -22,14 +13,10 @@
       synopsis = "Generate vectors filled with high quality pseudorandom numbers";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mersenne-random)
-          (hsPkgs.vector)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mersenne-random) (hsPkgs.vector) ];
+        };
       };
-    };
-  }
+    }

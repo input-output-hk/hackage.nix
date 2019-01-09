@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "bencodex";
-        version = "1.0.0";
-      };
+      identifier = { name = "bencodex"; version = "1.0.0"; };
       license = "GPL-3.0-or-later";
       copyright = "© 2018 Hong Minhee";
       maintainer = "Hong Minhee <hong.minhee@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bencodex reader/writer for Haskell";
       description = "Please see the README on GitHub at <https://github.com/dahlia/bencodex-haskell#readme>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.hashable)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "hlint" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hlint)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.HsYAML)
@@ -59,8 +50,8 @@
             (hsPkgs.hspec-discover)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

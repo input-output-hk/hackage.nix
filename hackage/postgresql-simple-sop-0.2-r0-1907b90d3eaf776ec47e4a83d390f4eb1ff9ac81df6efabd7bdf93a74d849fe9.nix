@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "postgresql-simple-sop";
-        version = "0.2";
-      };
+      identifier = { name = "postgresql-simple-sop"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "tomn@openbrain.org";
@@ -22,14 +13,14 @@
       synopsis = "Generic functions for postgresql-simple";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.postgresql-simple)
           (hsPkgs.generics-sop)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

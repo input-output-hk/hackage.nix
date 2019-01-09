@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "system-test";
-        version = "0.1.2";
-      };
+      identifier = { name = "system-test"; version = "0.1.2"; };
       license = "MIT";
       copyright = "(c) 2016 Christopher Wells";
       maintainer = "cwellsny@nycap.rr.com";
@@ -22,7 +13,7 @@
       synopsis = "Runs system tests of applications.";
       description = "System Test is a Haskell application which allows you to\nspecify and run system tests of applications. Tests are\ndefined in JSON files, whereby each test has a name,\ncommand, and expected output.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,24 +23,15 @@
           (hsPkgs.aeson)
           (hsPkgs.text)
           (hsPkgs.ansi-terminal)
-        ];
-      };
-      exes = {
-        "system-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.system-test)
           ];
         };
-      };
+      exes = {
+        "system-test" = { depends = [ (hsPkgs.base) (hsPkgs.system-test) ]; };
+        };
       tests = {
         "unit-tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.system-test)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.system-test) ];
+          };
         };
       };
-    };
-  }
+    }

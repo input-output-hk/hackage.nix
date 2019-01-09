@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "liblastfm";
-        version = "0.0.2.1";
-      };
+      identifier = { name = "liblastfm"; version = "0.0.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Wrapper to Lastfm API";
       description = "Wrapper to Lastfm API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.urlencoded)
           (hsPkgs.xml)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

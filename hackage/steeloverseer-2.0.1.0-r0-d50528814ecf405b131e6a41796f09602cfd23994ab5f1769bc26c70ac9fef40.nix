@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "steeloverseer";
-        version = "2.0.1.0";
-      };
+      identifier = { name = "steeloverseer"; version = "2.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "efsubenovex@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A file watcher and development tool.";
       description = "A command line tool that responds to filesystem events. Allows the user to automatically execute commands after files are added or updated. Watches files using regular expressions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.ansi-terminal)
           (hsPkgs.containers)
           (hsPkgs.process)
-        ];
-      };
+          ];
+        };
       exes = {
         "sos" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
-          ] ++ pkgs.lib.optional (system.isOsx) (hsPkgs.hfsevents);
+            ] ++ (pkgs.lib).optional (system.isOsx) (hsPkgs.hfsevents);
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -83,8 +74,8 @@
             (hsPkgs.yaml)
             (hsPkgs.steeloverseer)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

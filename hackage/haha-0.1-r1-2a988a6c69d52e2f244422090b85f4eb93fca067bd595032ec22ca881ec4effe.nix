@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "haha";
-        version = "0.1";
-      };
+      identifier = { name = "haha"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sfvisser@cs.uu.nl";
@@ -22,23 +13,15 @@
       synopsis = "A simple library for creating animated ascii art on ANSI terminals.";
       description = "A simple library for creating animated ascii art on ANSI terminals.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.time)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.time) ];
+        };
       exes = {
         "rotating-lambda" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.time)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.time) ];
+          };
         };
       };
-    };
-  }
+    }

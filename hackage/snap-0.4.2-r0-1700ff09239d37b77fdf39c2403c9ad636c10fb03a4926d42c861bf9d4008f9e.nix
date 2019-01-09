@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snap";
-        version = "0.4.2";
-      };
+      identifier = { name = "snap"; version = "0.4.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "snap@snapframework.com";
@@ -22,7 +13,7 @@
       synopsis = "Snap: A Haskell Web Framework: project starter executable and glue code library";
       description = "Snap Framework project starter executable and glue code library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.hint)
           (hsPkgs.template-haskell)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "snap" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.time)
             (hsPkgs.unix-compat)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

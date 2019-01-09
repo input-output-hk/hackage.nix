@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hascar";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hascar"; version = "0.1.0.1"; };
       license = "GPL-2.0-only";
       copyright = "2016, Virtual Forge GmbH";
       maintainer = "Hans-Christian Esperer <hc@hcesperer.org>";
@@ -22,7 +13,7 @@
       synopsis = "Decompress SAPCAR archives";
       description = "Decompress SAPCAR archives";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.pretty-show)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "hascar" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.pretty-show)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
-      };
       tests = {
         "hascar-test" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.hascar)
             (hsPkgs.hex)
             (hsPkgs.path)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

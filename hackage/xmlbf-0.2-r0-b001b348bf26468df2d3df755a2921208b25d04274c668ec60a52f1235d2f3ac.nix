@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xmlbf";
-        version = "0.2";
-      };
+      identifier = { name = "xmlbf"; version = "0.2"; };
       license = "Apache-2.0";
       copyright = "Copyright 2017 Renzo Carbonara";
       maintainer = "ren§ren*zone";
@@ -22,7 +13,7 @@
       synopsis = "XML back and forth! Parser, renderer, ToXml, FromXml, fixpoints.";
       description = "XML back and forth! Parser, renderer, ToXml, FromXml, fixpoints.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

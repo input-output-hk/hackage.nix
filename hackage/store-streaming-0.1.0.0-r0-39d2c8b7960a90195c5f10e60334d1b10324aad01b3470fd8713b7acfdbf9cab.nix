@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "store-streaming";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "store-streaming"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 FP Complete";
       maintainer = "Michael Sloan <sloan@fpcomplete.com>";
@@ -22,7 +13,7 @@
       synopsis = "Streaming interfaces for `store`";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.streaming-commons)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "store-test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.void)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

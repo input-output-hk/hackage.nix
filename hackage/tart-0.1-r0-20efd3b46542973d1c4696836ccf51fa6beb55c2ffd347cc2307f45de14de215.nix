@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tart";
-        version = "0.1";
-      };
+      identifier = { name = "tart"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Jonathan Daugherty";
       maintainer = "cygnus@foobox.com";
@@ -22,7 +13,7 @@
       synopsis = "Terminal Art";
       description = "A program to make ASCII art";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       exes = {
         "tart" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.containers)
             (hsPkgs.tart)
             (hsPkgs.text-zipper)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

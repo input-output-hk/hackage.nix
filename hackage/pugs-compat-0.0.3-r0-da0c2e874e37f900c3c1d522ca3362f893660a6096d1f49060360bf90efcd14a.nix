@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.1";
-      identifier = {
-        name = "pugs-compat";
-        version = "0.0.3";
-      };
+      identifier = { name = "pugs-compat"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "audreyt@audreyt.org";
@@ -22,7 +13,7 @@
       synopsis = "Portable Haskell/POSIX layer for Pugs";
       description = "Portable Haskell/POSIX layer for Pugs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.stm)
           (hsPkgs.utf8-string)
           (hsPkgs.stringtable-atom)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

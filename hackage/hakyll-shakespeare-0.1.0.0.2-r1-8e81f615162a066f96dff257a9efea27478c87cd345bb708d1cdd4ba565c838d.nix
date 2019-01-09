@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hakyll-shakespeare";
-        version = "0.1.0.0.2";
-      };
+      identifier = { name = "hakyll-shakespeare"; version = "0.1.0.0.2"; };
       license = "MIT";
       copyright = "2016 Eliza Calls.";
       maintainer = "Eliza <me@eliza.link>";
@@ -22,7 +13,7 @@
       synopsis = "Hakyll Hamlet compiler";
       description = "hakyll-shakespeare is for using Hamlet with Hakyll.\nThis library used Text.Hamlet.Runtime.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.blaze-html)
           (hsPkgs.shakespeare)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

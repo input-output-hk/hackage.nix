@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HaTeX-meta";
-        version = "1.2.1";
-      };
+      identifier = { name = "HaTeX-meta"; version = "1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "This package is deprecated. From version 3, HaTeX does not need this anymore.";
       description = "Please, note that this package is /deprecated/.\n\nThis packages belongs to the HaTeX project.\nIt builds the @.Monad@ modules.\n\n/Please, note that this version only works with GHC 7.4./";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "metahatex" = {
@@ -37,8 +28,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

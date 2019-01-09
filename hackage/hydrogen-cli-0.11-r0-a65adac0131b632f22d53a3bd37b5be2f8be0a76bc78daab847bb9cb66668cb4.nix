@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hydrogen-cli";
-        version = "0.11";
-      };
+      identifier = { name = "hydrogen-cli"; version = "0.11"; };
       license = "MIT";
       copyright = "";
       maintainer = "julian@scravy.de";
@@ -22,7 +13,7 @@
       synopsis = "Hydrogen Data";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "h" = {
@@ -32,8 +23,8 @@
             (hsPkgs.hydrogen-parsing)
             (hsPkgs.hydrogen-prelude)
             (hsPkgs.hydrogen-syntax)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

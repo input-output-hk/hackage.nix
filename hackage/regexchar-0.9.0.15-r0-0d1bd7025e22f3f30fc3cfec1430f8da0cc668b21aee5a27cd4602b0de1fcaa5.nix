@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm = false;
-      threaded = true;
-    };
+    flags = { llvm = false; threaded = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "regexchar";
-        version = "0.9.0.15";
-      };
+      identifier = { name = "regexchar"; version = "0.9.0.15"; };
       license = "LicenseRef-GPL";
       copyright = "(C) 2010-2015 Dr. Alistair Ward";
       maintainer = "mailto:regexchar@functionalley.eu";
@@ -25,7 +13,7 @@
       synopsis = "A POSIX, extended regex-engine.";
       description = "Provides a POSIX, extended regex-engine, specialised from the underlying /polymorphic/ package /regexdot/, to merely process the traditional character-lists.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +25,8 @@
           (hsPkgs.regex-base)
           (hsPkgs.regexdot)
           (hsPkgs.toolshed)
-        ];
-      };
+          ];
+        };
       exes = {
         "grecce" = {
           depends = [
@@ -51,9 +39,9 @@
             (hsPkgs.regex-posix)
             (hsPkgs.regexdot)
             (hsPkgs.toolshed)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -62,8 +50,8 @@
             (hsPkgs.regexchar)
             (hsPkgs.regexdot)
             (hsPkgs.toolshed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

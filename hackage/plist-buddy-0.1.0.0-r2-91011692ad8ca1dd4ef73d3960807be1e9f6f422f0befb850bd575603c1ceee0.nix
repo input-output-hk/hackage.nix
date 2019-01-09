@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "plist-buddy";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "plist-buddy"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Andy Gill";
       maintainer = "andygill@ku.edu";
@@ -22,7 +13,7 @@
       synopsis = "Remote monad for editing plists";
       description = "Remote monad wrapper around the plistbuddy shell command for editing plists";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.xml)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-plist-buddy" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

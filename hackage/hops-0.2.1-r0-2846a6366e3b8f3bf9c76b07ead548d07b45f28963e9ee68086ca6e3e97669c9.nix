@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "hops";
-        version = "0.2.1";
-      };
+      identifier = { name = "hops"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anders.claesson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Handy Operations on Power Series";
       description = "HOPS is a DSL for power series and integer sequences.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "hops" = {
@@ -46,9 +37,9 @@
             (hsPkgs.transformers)
             (hsPkgs.vector)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Props" = {
           depends = [
@@ -61,14 +52,9 @@
             (hsPkgs.text)
             (hsPkgs.vector)
             (hsPkgs.QuickCheck)
-          ];
-        };
-        "CLI-Props" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
+            ];
+          };
+        "CLI-Props" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
         };
       };
-    };
-  }
+    }

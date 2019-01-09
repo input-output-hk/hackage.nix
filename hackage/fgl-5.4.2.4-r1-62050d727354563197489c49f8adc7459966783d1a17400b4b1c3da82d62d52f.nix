@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "fgl";
-        version = "5.4.2.4";
-      };
+      identifier = { name = "fgl"; version = "5.4.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ivan.Miljenovic@gmail.com, tomberek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Martin Erwig's Functional Graph Library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

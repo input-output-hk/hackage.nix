@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "diff-parse";
-        version = "0.2.0";
-      };
+      identifier = { name = "diff-parse"; version = "0.2.0"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "Gabe Mulley <gabe@edx.org>";
@@ -22,15 +13,11 @@
       synopsis = "A parser for diff file formats";
       description = "Parse output produced by git diff.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.attoparsec)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.attoparsec) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.text)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

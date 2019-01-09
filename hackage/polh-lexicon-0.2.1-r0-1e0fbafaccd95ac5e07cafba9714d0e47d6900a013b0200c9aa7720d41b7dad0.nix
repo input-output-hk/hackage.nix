@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "polh-lexicon";
-        version = "0.2.1";
-      };
+      identifier = { name = "polh-lexicon"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for manipulating the historical dictionary of Polish";
       description = "The library provides a binary representation of the historical\ndictionary of Polish and language markup format (LMF) parsing\nutilities which allow to translate the original LMF representation\nof the dictionary to the binary form.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,11 +28,8 @@
           (hsPkgs.dawg)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
+      exes = { "polh-binarize" = {}; "polh-show" = {}; };
       };
-      exes = {
-        "polh-binarize" = {};
-        "polh-show" = {};
-      };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hprotoc";
-        version = "2.0.0";
-      };
+      identifier = { name = "hprotoc"; version = "2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2011 Christopher Edward Kuklewicz";
       maintainer = "Chris Kuklewicz <protobuf@personal.mightyreason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Parse Google Protocol Buffer specifications";
       description = "Parse language defined at \"http://code.google.com/apis/protocolbuffers/docs/proto.html\" and general haskell code to implement messages.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hprotoc" = {
@@ -39,11 +30,9 @@
             (hsPkgs.mtl)
             (hsPkgs.parsec)
             (hsPkgs.utf8-string)
-          ] ++ [ (hsPkgs.base) ];
-          build-tools = [
-            (hsPkgs.buildPackages.alex)
-          ];
+            ] ++ [ (hsPkgs.base) ];
+          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { executable = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "udbus-model";
-        version = "0.2.1";
-      };
+      identifier = { name = "udbus-model"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Model API for udbus introspection and definitions";
       description = "Model API for udbus introspection and definitions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,17 +21,17 @@
           (hsPkgs.bytestring)
           (hsPkgs.xml)
           (hsPkgs.udbus)
-        ];
-      };
+          ];
+        };
       exes = {
         "dbus-model-parse" = {
-          depends = pkgs.lib.optionals (flags.executable) [
+          depends = (pkgs.lib).optionals (flags.executable) [
             (hsPkgs.base)
             (hsPkgs.groom)
             (hsPkgs.udbus)
             (hsPkgs.udbus-model)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

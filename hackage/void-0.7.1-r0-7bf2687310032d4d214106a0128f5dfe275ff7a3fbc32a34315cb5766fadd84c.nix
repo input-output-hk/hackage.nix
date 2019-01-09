@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { safe = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "void";
-        version = "0.7.1";
-      };
+      identifier = { name = "void"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2015 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell 98 logically uninhabited data type";
       description = "A Haskell 98 logically uninhabited data type, used to indicate that a given term should not exist.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
           (hsPkgs.semigroups)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs.ghc-prim);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs.ghc-prim);
+        };
       };
-    };
-  }
+    }

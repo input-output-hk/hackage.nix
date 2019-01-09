@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glue-ekg";
-        version = "0.4.1";
-      };
+      identifier = { name = "glue-ekg"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "github@futurenotfound.com";
@@ -22,7 +13,7 @@
       synopsis = "Make better services.";
       description = "Glue library that makes use of ekg for providing stats around services.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.hashable)
           (hsPkgs.ekg-core)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "glue-ekg-tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.ekg-core)
             (hsPkgs.text)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

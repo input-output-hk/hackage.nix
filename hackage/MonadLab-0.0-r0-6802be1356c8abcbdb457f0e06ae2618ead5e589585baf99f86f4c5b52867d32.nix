@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "MonadLab";
-        version = "0.0";
-      };
+      identifier = { name = "MonadLab"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Adam Procter <amp269@mizzou.edu>";
@@ -22,23 +13,15 @@
       synopsis = "Automatically generate layered monads";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.template-haskell)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.template-haskell) ];
+        };
       exes = {
         "mlab" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.process) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "attoparsec-varword";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "attoparsec-varword"; version = "0.1.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "2018 Concert Audio Technologies Ltd";
       maintainer = "paul@concertdaw.co.uk";
@@ -22,14 +13,9 @@
       synopsis = "Variable-length integer decoding for Attoparsec";
       description = "A collection of 'Data.Attoparsec.Parser's that decode integer types from\ncompact, variable-length representations.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.attoparsec) ]; };
       tests = {
         "attoparsec-varword-test" = {
           depends = [
@@ -40,8 +26,8 @@
             (hsPkgs.bytestring-builder-varword)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

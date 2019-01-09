@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "filesystem-trees";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "filesystem-trees"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "acurtis@spsu.edu";
@@ -22,7 +13,7 @@
       synopsis = "Recursively manipulate and traverse filesystems as lazy rose trees.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.mtl)
           (hsPkgs.cond)
           (hsPkgs.deepseq)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

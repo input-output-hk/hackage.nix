@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "gtk-mac-integration";
-        version = "0.3.4.0";
-      };
+      identifier = { name = "gtk-mac-integration"; version = "0.3.4.0"; };
       license = "LGPL-2.1-only";
       copyright = "(c) 2001-2010 The Gtk2Hs Team";
       maintainer = "gtk2hs-users@sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for the Gtk/OS X integration library.";
       description = "gtk-mac-integration helps integrate Gtk applications with the native Mac\ndesktop and make it feel more like a Mac application.\nhttp://sourceforge.net/apps/trac/gtk-osx/wiki/Integrate";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,10 +23,8 @@
           (hsPkgs.mtl)
           (hsPkgs.glib)
           (hsPkgs.gtk)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.gtk-mac-integration-gtk2)
-        ];
+          ];
+        pkgconfig = [ (pkgconfPkgs.gtk-mac-integration-gtk2) ];
+        };
       };
-    };
-  }
+    }

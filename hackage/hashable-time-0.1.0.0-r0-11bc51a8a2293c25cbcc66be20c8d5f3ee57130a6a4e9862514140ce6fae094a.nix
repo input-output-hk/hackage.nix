@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hashable-time";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hashable-time"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ankarakulov@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Hashable instances for Data.Time types and Fixed";
       description = "Default Hashable and derived Generic instances for most of Data.Time types (and Fixed). Only DiffTime and NominalDiffTime are Hashable, but not Generic (due to private constructors).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hashable)
-          (hsPkgs.time)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.hashable) (hsPkgs.time) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "composition-extra";
-        version = "1.0.0";
-      };
+      identifier = { name = "composition-extra"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "athan.clark@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Combinators for unorthodox structure composition";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-          (hsPkgs.contravariant)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.base) (hsPkgs.contravariant) ];
+        };
       };
-    };
-  }
+    }

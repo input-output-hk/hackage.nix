@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "giak";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "giak"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 Nicolas Mattia";
       maintainer = "nicolas@nmattia.com";
@@ -22,7 +13,7 @@
       synopsis = "Fuzzy finder for cabal executables";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "giak" = {
@@ -44,8 +35,8 @@
             (hsPkgs.text)
             (hsPkgs.unix)
             (hsPkgs.wybor)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

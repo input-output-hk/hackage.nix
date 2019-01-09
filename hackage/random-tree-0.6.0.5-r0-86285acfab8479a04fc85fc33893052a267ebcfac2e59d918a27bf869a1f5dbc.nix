@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "random-tree";
-        version = "0.6.0.5";
-      };
+      identifier = { name = "random-tree"; version = "0.6.0.5"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "gs394@drexel.edu";
@@ -22,7 +13,7 @@
       synopsis = "Create random trees";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.transformers)
           (hsPkgs.random-shuffle)
           (hsPkgs.tree-fun)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

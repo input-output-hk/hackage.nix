@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      debugoutput = false;
-    };
+    flags = { debug = false; debugoutput = false; };
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "MutationOrder";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "MutationOrder"; version = "0.0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "Maria Beatriz Walter Costa, Christian Hoener zu Siederdissen, 2017";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -25,7 +13,7 @@
       synopsis = "Most likely order of mutation events in RNA";
       description = "Determine the most likely order in which single nucleotide\nmutations happened between two RNA sequences.\n\nDeveloped to analyse the @HAR 1@ region, but agnostic to the\nactual sequences and can be used to analyze any RNA sequence\nthat fits the algorithmic constraints.\n\nAs long as the two input RNAs are small enough enough (couple\nhundred nucleotides) and the number of mutations is small\nenough (around 20-26, since the algorithm is exponential in\nthis number) the algorithm should work for similar problems\nwithout changes.\n\nWe currently only consider point mutations, not in-dels.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -65,8 +53,8 @@
           (hsPkgs.PrimitiveArray-Pretty)
           (hsPkgs.ShortestPathProblems)
           (hsPkgs.ViennaRNA-bindings)
-        ];
-      };
+          ];
+        };
       exes = {
         "MutationOrder" = {
           depends = [
@@ -78,9 +66,9 @@
             (hsPkgs.file-embed)
             (hsPkgs.filepath)
             (hsPkgs.MutationOrder)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "properties" = {
           depends = [
@@ -91,8 +79,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.vector)
             (hsPkgs.MutationOrder)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

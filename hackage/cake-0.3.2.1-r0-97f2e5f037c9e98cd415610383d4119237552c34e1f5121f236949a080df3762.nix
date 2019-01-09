@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "cake";
-        version = "0.3.2.1";
-      };
+      identifier = { name = "cake"; version = "0.3.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jeanphilippe.bernardy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A build-system library and driver";
       description = "Soon to appear.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.pureMD5)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       exes = {
         "cake" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.array)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

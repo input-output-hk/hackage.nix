@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "concraft-pl";
-        version = "0.7.1";
-      };
+      identifier = { name = "concraft-pl"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013 Jakub Waszczuk";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Morphological tagger for Polish";
       description = "A morphological tagger for Polish based on the concraft library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,12 +32,8 @@
           (hsPkgs.network)
           (hsPkgs.lazy-io)
           (hsPkgs.split)
-        ];
-      };
-      exes = {
-        "concraft-pl" = {
-          depends = [ (hsPkgs.cmdargs) ];
+          ];
         };
+      exes = { "concraft-pl" = { depends = [ (hsPkgs.cmdargs) ]; }; };
       };
-    };
-  }
+    }

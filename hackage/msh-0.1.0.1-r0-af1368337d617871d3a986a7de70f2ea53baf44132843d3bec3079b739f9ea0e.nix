@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "msh";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "msh"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael.gale@cl.cam.ac.uk";
@@ -22,7 +13,7 @@
       synopsis = "Object-Oriented Programming in Haskell";
       description = "Library for object-oriented programming in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

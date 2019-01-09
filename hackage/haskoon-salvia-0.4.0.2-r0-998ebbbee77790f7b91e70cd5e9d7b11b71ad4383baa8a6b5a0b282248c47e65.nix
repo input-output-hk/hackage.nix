@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskoon-salvia";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "haskoon-salvia"; version = "0.4.0.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "David Leuschner <leuschner@factisresearch.com>, Dirk Spoeri <spoeri@factisresearch.com>, Stefan Wehr <wehr@factisresearch.com>";
@@ -22,7 +13,7 @@
       synopsis = "Integrating HttpSpec with Haskoon";
       description = "Allows to send and receive Http requests using the\nHttpSpec specifications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.cgi)
           (hsPkgs.mtl)
           (hsPkgs.monads-fd)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

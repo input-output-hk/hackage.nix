@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "github-backup";
-        version = "1.20160522";
-      };
+      identifier = { name = "github-backup"; version = "1.20160522"; };
       license = "GPL-3.0-only";
       copyright = "2012 Joey Hess";
       maintainer = "Joey Hess <joey@kitenet.net>";
@@ -22,7 +13,7 @@
       synopsis = "backs up everything github knows about a repository, to the repository";
       description = "github-backup is a simple tool you run in a git repository you cloned from\nGithub. It backs up everything Github knows about the repository, including\nother forks, issues, comments, milestones, pull requests, and watchers.\nAlso includes gitriddance, which can be used to close all open issues and\npull requests.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "github-backup" = {
@@ -48,21 +39,12 @@
             (hsPkgs.github)
             (hsPkgs.base)
             (hsPkgs.base)
-          ] ++ (if !system.isWindows
+            ] ++ (if !system.isWindows
             then [ (hsPkgs.unix) ]
-            else [
-              (hsPkgs.Win32)
-              (hsPkgs.setenv)
-            ])) ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
-            else [
-              (hsPkgs.network)
-              (hsPkgs.network)
-            ]);
-        };
+            else [ (hsPkgs.Win32) (hsPkgs.setenv) ])) ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
+            else [ (hsPkgs.network) (hsPkgs.network) ]);
+          };
         "gitriddance" = {
           depends = ([
             (hsPkgs.github)
@@ -83,21 +65,12 @@
             (hsPkgs.directory)
             (hsPkgs.mtl)
             (hsPkgs.utf8-string)
-          ] ++ (if !system.isWindows
+            ] ++ (if !system.isWindows
             then [ (hsPkgs.unix) ]
-            else [
-              (hsPkgs.Win32)
-              (hsPkgs.setenv)
-            ])) ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
-            else [
-              (hsPkgs.network)
-              (hsPkgs.network)
-            ]);
+            else [ (hsPkgs.Win32) (hsPkgs.setenv) ])) ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
+            else [ (hsPkgs.network) (hsPkgs.network) ]);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      blaze_html_0_5 = false;
-    };
+    flags = { blaze_html_0_5 = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-form";
-        version = "1.0.0.3";
-      };
+      identifier = { name = "yesod-form"; version = "1.0.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -24,7 +13,7 @@
       synopsis = "Form handling support for Yesod Web Framework";
       description = "Form handling support for Yesod Web Framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,12 +36,9 @@
           (hsPkgs.text)
           (hsPkgs.wai)
           (hsPkgs.containers)
-        ] ++ (if flags.blaze_html_0_5
-          then [
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-          ]
+          ] ++ (if flags.blaze_html_0_5
+          then [ (hsPkgs.blaze-html) (hsPkgs.blaze-markup) ]
           else [ (hsPkgs.blaze-html) ]);
+        };
       };
-    };
-  }
+    }

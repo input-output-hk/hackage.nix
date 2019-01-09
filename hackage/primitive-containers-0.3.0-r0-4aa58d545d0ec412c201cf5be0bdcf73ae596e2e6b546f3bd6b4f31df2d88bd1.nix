@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "primitive-containers";
-        version = "0.3.0";
-      };
+      identifier = { name = "primitive-containers"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "containers backed by arrays";
       description = "Containers backed by flat arrays. Updates require rebuilding the\nentire structure, but lookups are cache coherent.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "gauge" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.gauge)
             (hsPkgs.random)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

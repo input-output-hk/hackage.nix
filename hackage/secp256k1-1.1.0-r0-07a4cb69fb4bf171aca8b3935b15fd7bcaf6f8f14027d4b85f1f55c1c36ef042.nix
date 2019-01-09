@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "secp256k1";
-        version = "1.1.0";
-      };
+      identifier = { name = "secp256k1"; version = "1.1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "(c) 2017 Jean-Pierre Rupp";
       maintainer = "xenog@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for secp256k1 library from Bitcoin Core";
       description = "Sign and verify signatures using the very fast C secp256k1 library from Pieter Wuille. Has Haskell types and abstractions for keys and signatures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,9 +28,9 @@
           (hsPkgs.hspec)
           (hsPkgs.mtl)
           (hsPkgs.string-conversions)
-        ];
+          ];
         libs = [ (pkgs."secp256k1") ];
-      };
+        };
       tests = {
         "spec" = {
           depends = [
@@ -55,11 +46,9 @@
             (hsPkgs.mtl)
             (hsPkgs.secp256k1)
             (hsPkgs.string-conversions)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

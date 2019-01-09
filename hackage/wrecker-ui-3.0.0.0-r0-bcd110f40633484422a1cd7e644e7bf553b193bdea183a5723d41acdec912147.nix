@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wrecker-ui";
-        version = "3.0.0.0";
-      };
+      identifier = { name = "wrecker-ui"; version = "3.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "lorenzo@seatgeek.com";
@@ -22,7 +13,7 @@
       synopsis = "A web interface for Wrecker, the HTTP Performance Benchmarker";
       description = "'wrecker-ui' is a web based interface to visualize performance tests built using the wrecker library and schedule test runs.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "wrecker-ui" = {
@@ -63,8 +54,8 @@
             (hsPkgs.binary)
             (hsPkgs.mtl)
             (hsPkgs.HostAndPort)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

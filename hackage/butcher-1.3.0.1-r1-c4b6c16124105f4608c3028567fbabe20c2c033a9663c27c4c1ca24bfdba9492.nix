@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "butcher";
-        version = "1.3.0.1";
-      };
+      identifier = { name = "butcher"; version = "1.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016-2018 Lennart Spitzner";
       maintainer = "Lennart Spitzner <hexagoxel@hexagoxel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Chops a command or program invocation into digestable pieces.";
       description = "See the <https://github.com/lspitzner/butcher/blob/master/README.md README> (it is properly formatted on github).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.void)
           (hsPkgs.bifunctors)
           (hsPkgs.deque)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.extra)
             (hsPkgs.deque)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

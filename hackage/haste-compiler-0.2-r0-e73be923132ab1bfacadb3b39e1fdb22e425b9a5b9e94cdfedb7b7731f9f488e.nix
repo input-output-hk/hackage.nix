@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haste-compiler";
-        version = "0.2";
-      };
+      identifier = { name = "haste-compiler"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anton@ekblad.cc";
@@ -22,7 +13,7 @@
       synopsis = "Haskell To ECMAScript compiler";
       description = "This package provides a featureful compiler from Haskell to\nJavascript. It generates small, fast code, makes use of\nstandard Haskell libraries, integrates with Cabal, supports\nmost GHC extensions and works on Windows, Linux and OSX.\nBug reports are highly appreciated.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haste-boot" = {
@@ -41,8 +32,8 @@
             (hsPkgs.transformers)
             (hsPkgs.network)
             (hsPkgs.HTTP)
-          ];
-        };
+            ];
+          };
         "hastec" = {
           depends = [
             (hsPkgs.base)
@@ -60,32 +51,32 @@
             (hsPkgs.process)
             (hsPkgs.random)
             (hsPkgs.system-fileio)
-          ];
-        };
+            ];
+          };
         "haste-inst" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "haste-pkg" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "haste-install-his" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.process)
-          ];
-        };
+            ];
+          };
         "haste-copy-pkg" = {
           depends = [
             (hsPkgs.base)
@@ -95,8 +86,8 @@
             (hsPkgs.temporary)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

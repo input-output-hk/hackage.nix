@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { brick017 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "OnRmt";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "OnRmt"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Kevin Quick, 2013-2017";
       maintainer = "<quick@sparq.org>";
@@ -22,7 +13,7 @@
       synopsis = "Text UI library for performing parallel remote SSH operations";
       description = "This library provides the ability to coordinate the remote ssh\nexecution of commands on target nodes and display the results in a\nconsole interface.  The console interface can either be a cmdline\n(CLI) or a text interface (TUI), based on brick and vty; support is\nprovided for extension to other UI components as well.\n\nAlmost all of the functionality is provided in the library itself;\nit just needs an executable that will invoke it with the set of\nremote nodes.  See the 'GetRemotes.hs' file for an example: remotes\ncan be of any type that is an instance of @WorkEntry@ with an\nassociated @WorkGroup@ grouping.\n\nThere is an onrmttest executable built that showcases the\nfunctionality using ssh operations to localhost, and a\ncorresponding onrmttestline executable that provides a simple CLI.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.control-monad-loop)
           (hsPkgs.mtl)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       exes = {
         "onrmtssh" = {
           depends = [
@@ -78,8 +69,8 @@
             (hsPkgs.mtl)
             (hsPkgs.data-default)
             (hsPkgs.ssh-known-hosts)
-          ];
-        };
+            ];
+          };
         "onrmtsample" = {
           depends = [
             (hsPkgs.base)
@@ -104,8 +95,8 @@
             (hsPkgs.control-monad-loop)
             (hsPkgs.mtl)
             (hsPkgs.data-default)
-          ];
-        };
+            ];
+          };
         "onrmtsamplecli" = {
           depends = [
             (hsPkgs.base)
@@ -130,9 +121,9 @@
             (hsPkgs.control-monad-loop)
             (hsPkgs.mtl)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test_ops" = {
           depends = [
@@ -154,8 +145,8 @@
             (hsPkgs.async)
             (hsPkgs.vector)
             (hsPkgs.text-zipper)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "silently";
-        version = "1.2.0.2";
-      };
+      identifier = { name = "silently"; version = "1.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Trystan Spangler 2011";
       maintainer = "trystan.s@comcast.net";
@@ -22,15 +13,11 @@
       synopsis = "Prevent or capture writing to stdout and other handles.";
       description = "Prevent or capture writing to stdout and other handles.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.deepseq)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.deepseq) ];
+        };
       tests = {
         "spec-specific" = {
           depends = [
@@ -39,15 +26,11 @@
             (hsPkgs.HUnit)
             (hsPkgs.directory)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "spec-generic" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.deepseq)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.deepseq) ];
+          };
         };
       };
-    };
-  }
+    }

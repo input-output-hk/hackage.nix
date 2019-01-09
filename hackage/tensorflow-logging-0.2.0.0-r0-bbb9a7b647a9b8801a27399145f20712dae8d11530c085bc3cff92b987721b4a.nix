@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "tensorflow-logging";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "tensorflow-logging"; version = "0.2.0.0"; };
       license = "LicenseRef-Apache";
       copyright = "Google Inc.";
       maintainer = "tensorflow-haskell@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "TensorBoard related functionality.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "LoggingTest" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dataflow";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "dataflow"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "oskar.wickstrom@live.com";
@@ -22,13 +13,6 @@
       synopsis = "Generate Graphviz documents from a Haskell representation.";
       description = "Outputs .dot files that can be processed by the dot\ncommand. Currently it only supports the DFD format.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

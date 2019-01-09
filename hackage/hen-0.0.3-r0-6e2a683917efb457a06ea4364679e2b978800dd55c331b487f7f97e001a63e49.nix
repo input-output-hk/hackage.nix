@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "hen";
-        version = "0.0.3";
-      };
+      identifier = { name = "hen"; version = "0.0.3"; };
       license = "MIT";
       copyright = "Selectel";
       maintainer = "Fedor Gogolev <knsd@knsd.net>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings to Xen hypervisor interface";
       description = "Haskell bindings to Xen hypervisor interface";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,9 +25,9 @@
           (hsPkgs.monad-control)
           (hsPkgs.uuid)
           (hsPkgs.bitset)
-        ];
+          ];
         libs = [ (pkgs."xenctrl") ];
-      };
+        };
       tests = {
         "hen-tests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sgd";
-        version = "0.2.2";
-      };
+      identifier = { name = "sgd"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Stochastic gradient descent";
       description = "Implementation of a Stochastic Gradient Descent optimization method.\nSee examples directory in the source package for examples of usage.\n\nIt is a preliminary implementation of the SGD method and API may change\nin future versions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.logfloat)
           (hsPkgs.monad-par)
           (hsPkgs.deepseq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

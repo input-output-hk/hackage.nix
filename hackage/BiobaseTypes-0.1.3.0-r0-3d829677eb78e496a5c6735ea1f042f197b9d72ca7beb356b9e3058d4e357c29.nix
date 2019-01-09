@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "BiobaseTypes";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "BiobaseTypes"; version = "0.1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2015 - 2017";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -22,7 +13,7 @@
       synopsis = "Collection of types for bioinformatics";
       description = "Types used in a number of bioinformatics libraries.\n\n* linear indices\n\n* energies\n\n* numerics\n\n* biostring wrappers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.vector-th-unbox)
           (hsPkgs.bimaps)
           (hsPkgs.PrimitiveArray)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
             (hsPkgs.BiobaseTypes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

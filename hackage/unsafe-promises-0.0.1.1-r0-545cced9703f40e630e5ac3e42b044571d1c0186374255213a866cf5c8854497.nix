@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "unsafe-promises";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "unsafe-promises"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "acurtis@spsu.edu";
@@ -22,13 +13,8 @@
       synopsis = "Create pure futures using lazy IO.";
       description = "An experimental library for creating promises that can be\nevaluated in pure code.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.threads)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.threads) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "NaturalLanguageAlphabets";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "NaturalLanguageAlphabets"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2014-2015";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -22,7 +13,7 @@
       synopsis = "Simple scoring schemes for word alignments";
       description = "Provides a simple scoring scheme for word alignments.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.vector-th-unbox)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -66,9 +57,9 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "BenchmarkNLA" = {
           depends = [
@@ -83,8 +74,8 @@
             (hsPkgs.random)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

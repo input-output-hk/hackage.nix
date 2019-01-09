@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hexpat-lens";
-        version = "0.0.1";
-      };
+      identifier = { name = "hexpat-lens"; version = "0.0.1"; };
       license = "MIT";
       copyright = "(c) 2013, Joseph Abrahamson";
       maintainer = "me@jspha.com";
@@ -22,7 +13,7 @@
       synopsis = "Lenses for Hexpat.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.hexpat)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

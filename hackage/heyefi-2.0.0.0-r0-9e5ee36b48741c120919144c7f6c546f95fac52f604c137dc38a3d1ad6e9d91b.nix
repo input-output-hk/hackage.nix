@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "heyefi";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "heyefi"; version = "2.0.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "ryan@ryantm.com";
@@ -22,7 +13,7 @@
       synopsis = "A server for Eye-Fi SD cards.";
       description = "This server listens for Eye-Fi cards that want to upload files to a computer and stores them in an upload directory. It is meant to be run as a system daemon.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "heyefi" = {
@@ -54,9 +45,9 @@
             (hsPkgs.exceptions)
             (hsPkgs.random)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -91,8 +82,8 @@
             (hsPkgs.hspec-wai)
             (hsPkgs.wai-extra)
             (hsPkgs.silently)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

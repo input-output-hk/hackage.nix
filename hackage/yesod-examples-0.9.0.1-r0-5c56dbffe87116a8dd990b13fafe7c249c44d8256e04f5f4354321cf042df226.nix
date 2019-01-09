@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-examples";
-        version = "0.9.0.1";
-      };
+      identifier = { name = "yesod-examples"; version = "0.9.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,36 +13,26 @@
       synopsis = "Example programs using the Yesod Web Framework. (deprecated)";
       description = "These are the same examples and tutorials found on the documentation site.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "yesod-blog" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.yesod)
-          ];
-        };
+        "yesod-blog" = { depends = [ (hsPkgs.base) (hsPkgs.yesod) ]; };
         "yesod-ajax" = {
           depends = [
             (hsPkgs.yesod-static)
             (hsPkgs.blaze-html)
             (hsPkgs.yesod)
-          ];
-        };
-        "yesod-file-echo" = {
-          depends = [
-            (hsPkgs.text)
-            (hsPkgs.yesod)
-          ];
-        };
+            ];
+          };
+        "yesod-file-echo" = { depends = [ (hsPkgs.text) (hsPkgs.yesod) ]; };
         "yesod-pretty-yaml" = {
           depends = [
             (hsPkgs.data-object-yaml)
             (hsPkgs.data-object)
             (hsPkgs.bytestring)
             (hsPkgs.yesod)
-          ];
-        };
+            ];
+          };
         "yesod-i18n" = {};
         "yesod-session" = {};
         "yesod-form" = {};
@@ -60,18 +41,13 @@
             (hsPkgs.transformers)
             (hsPkgs.persistent-sqlite)
             (hsPkgs.persistent-template)
-          ];
+            ];
           libs = [ (pkgs."sqlite3") ];
-        };
+          };
         "yesod-hamlet-synopsis" = {
-          depends = [
-            (hsPkgs.hamlet)
-            (hsPkgs.yesod-core)
-          ];
-        };
-        "yesod-chat" = {
-          depends = [ (hsPkgs.stm) ];
+          depends = [ (hsPkgs.hamlet) (hsPkgs.yesod-core) ];
+          };
+        "yesod-chat" = { depends = [ (hsPkgs.stm) ]; };
         };
       };
-    };
-  }
+    }

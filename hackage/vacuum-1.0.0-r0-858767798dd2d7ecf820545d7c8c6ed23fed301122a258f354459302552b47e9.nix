@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "vacuum";
-        version = "1.0.0";
-      };
+      identifier = { name = "vacuum"; version = "1.0.0"; };
       license = "LicenseRef-LGPL";
       copyright = "(c) Matt Morrow 2009";
       maintainer = "Matt Morrow <morrow@moonpatio.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extract graph representations of ghc heap values.";
       description = "<http://moonpatio.com/vacuum/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.array)
           (hsPkgs.containers)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

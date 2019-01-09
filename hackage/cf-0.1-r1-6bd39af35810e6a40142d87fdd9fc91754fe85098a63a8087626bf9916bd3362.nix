@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cf";
-        version = "0.1";
-      };
+      identifier = { name = "cf"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "mitchell.v.riley@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Exact real arithmetic using continued fractions";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack2-contrib-extra";
-        version = "2014.12.20";
-      };
+      identifier = { name = "hack2-contrib-extra"; version = "2014.12.20"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hack2 contrib extra";
       description = "Extra middlewares and utilities for Hack2";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.air-extra)
           (hsPkgs.hack2)
           (hsPkgs.hack2-contrib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

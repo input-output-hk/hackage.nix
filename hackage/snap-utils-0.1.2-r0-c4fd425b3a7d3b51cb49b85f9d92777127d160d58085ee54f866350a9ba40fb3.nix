@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snap-utils";
-        version = "0.1.2";
-      };
+      identifier = { name = "snap-utils"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Luke Hoersten <luke@hoersten.org>";
@@ -22,7 +13,7 @@
       synopsis = "Snap Framework utilities.";
       description = "Snap.Utils provides helper modules for making web apps\nwith Snap Framework. The underlying design goal is to rely on more\ntraditional HTTP-based methods of stateless control flow instead of\nrelying on cookies and server state continuations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.heist)
           (hsPkgs.http-types)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

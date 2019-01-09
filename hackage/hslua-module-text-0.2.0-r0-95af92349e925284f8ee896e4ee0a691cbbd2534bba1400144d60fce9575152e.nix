@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hslua-module-text";
-        version = "0.2.0";
-      };
+      identifier = { name = "hslua-module-text"; version = "0.2.0"; };
       license = "MIT";
       copyright = "© 2017–2018 Albert Krewinkel";
       maintainer = "albert+hslua@zeitkraut.de";
@@ -22,7 +13,7 @@
       synopsis = "Lua module for text";
       description = "UTF-8 aware subset of Lua's `string` module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.hslua)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-hslua" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

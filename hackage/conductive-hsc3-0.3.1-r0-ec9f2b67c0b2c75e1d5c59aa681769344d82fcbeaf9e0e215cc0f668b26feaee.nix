@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "conductive-hsc3";
-        version = "0.3.1";
-      };
+      identifier = { name = "conductive-hsc3"; version = "0.3.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "renick@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "a library with examples of using Conductive with hsc3";
       description = "This library contains examples of using Conductive with hsc3.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.hosc)
           (hsPkgs.hsc3)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "git-fmt";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "git-fmt"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "public@hjwylde.com";
@@ -22,7 +13,7 @@
       synopsis = "Custom git command for formatting code.";
       description = "git-fmt adds a custom command to Git that automatically formats code.\nThe idea was taken from gofmt, just with a bit of expansion to more languages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.process)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "git-fmt" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.monad-logger)
             (hsPkgs.optparse-applicative)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "git-fmt-test-json" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.parsec)
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hcc";
-        version = "0.0.0";
-      };
+      identifier = { name = "hcc"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tom Hawkins <tomahawkins@gmail.com>";
@@ -22,16 +13,12 @@
       synopsis = "A toy C compiler.";
       description = "A toy C compiler.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hcc" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.language-c)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.language-c) ];
+          };
         };
       };
-    };
-  }
+    }

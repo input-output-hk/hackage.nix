@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      buildtests = false;
-    };
+    flags = { splitbase = true; buildtests = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskore-supercollider";
-        version = "0.0.2";
-      };
+      identifier = { name = "haskore-supercollider"; version = "0.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "";
@@ -25,7 +13,7 @@
       synopsis = "Haskore back-end for SuperCollider";
       description = "This package lets you play Haskore music via Supercollider\nusing the packages @hosc@ and @hsc3@.\nThe functions manage NodeIds and SuperCollider buffers for you.\nWe support realtime replay and rendering to disk.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,23 +28,13 @@
           (hsPkgs.data-accessor)
           (hsPkgs.unix)
           (hsPkgs.mtl)
-        ] ++ (if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.random)
-            (hsPkgs.array)
-            (hsPkgs.process)
-          ]
+          ] ++ (if flags.splitbase
+          then [ (hsPkgs.base) (hsPkgs.random) (hsPkgs.array) (hsPkgs.process) ]
           else [ (hsPkgs.base) ]);
-      };
+        };
       exes = {
         "song-air" = {};
-        "test" = {
-          depends = [
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
-          ];
+        "test" = { depends = [ (hsPkgs.QuickCheck) (hsPkgs.HUnit) ]; };
         };
       };
-    };
-  }
+    }

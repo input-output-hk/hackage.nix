@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xml-conduit-writer";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "xml-conduit-writer"; version = "0.1.1.2"; };
       license = "MIT";
       copyright = "Alexander Bondarenko 2013";
       maintainer = "aenor.realm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Warm and fuzzy creation of XML documents.";
       description = "“It can scarcely be denied that the supreme goal of\nall theory is to make the irreducible basic elements\nas simple and as few as possible without having to\nsurrender the adequate representation of a single\ndatum of experience.” ­— Albert Einstein\n\nCheck out more examples in test/Main.hs and\nlook at the results with --enable-tests.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,16 +25,12 @@
           (hsPkgs.dlist)
           (hsPkgs.containers)
           (hsPkgs.data-default)
-        ];
-      };
-      tests = {
-        "tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.xml-conduit-writer)
-            (hsPkgs.text)
           ];
         };
+      tests = {
+        "tests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.xml-conduit-writer) (hsPkgs.text) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "spir-v";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "spir-v"; version = "0.0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "spir.of.the.moment@monoid.al";
@@ -22,10 +13,6 @@
       synopsis = "Some utilities for reading and writing SPIR-V files";
       description = "This package exposes information scraped from the SPIR-V spec found\n<https://www.khronos.org/registry/spir-v/specs/1.0/SPIRV.html here>.\nThis is a very early version, it's not quite ready to be used.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "interpolate";
-        version = "0.2.0";
-      };
+      identifier = { name = "interpolate"; version = "0.2.0"; };
       license = "MIT";
       copyright = "(c) 2013-2015 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,15 +13,15 @@
       synopsis = "String interpolation done right";
       description = "String interpolation done right";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.template-haskell)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

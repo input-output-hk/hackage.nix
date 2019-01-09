@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gpx-conduit";
-        version = "0.1";
-      };
+      identifier = { name = "gpx-conduit"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Thomas M. DuBuisson (2012)";
       maintainer = "Thomas.DuBuisson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Read GPX files using conduits";
       description = "Read GPX files into simple Point types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.filepath)
           (hsPkgs.monad-control)
           (hsPkgs.void)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

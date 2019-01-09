@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent-zookeeper";
-        version = "0.0.3";
-      };
+      identifier = { name = "persistent-zookeeper"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Junji Hashimoto <junji.hashimoto@gree.net>";
@@ -22,7 +13,7 @@
       synopsis = "Backend for persistent library using Zookeeper.";
       description = "Based on the Zookeeper package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.stm)
           (hsPkgs.conduit)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "basic" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.stm)
             (hsPkgs.conduit)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

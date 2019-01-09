@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Frank";
-        version = "0.3";
-      };
+      identifier = { name = "Frank"; version = "0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "conor@strictlypositive.org";
@@ -22,7 +13,7 @@
       synopsis = "An experimental programming language with typed algebraic effects";
       description = "An experimental programming language with typed algebraic effects";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "frank" = {
@@ -32,8 +23,8 @@
             (hsPkgs.newtype)
             (hsPkgs.mtl)
             (hsPkgs.she)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

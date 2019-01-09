@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "uri-templater";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "uri-templater"; version = "0.3.1.0"; };
       license = "MIT";
       copyright = "Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "Parsing & Quasiquoting for RFC 6570 URI Templates";
       description = "Parsing & Quasiquoting for RFC 6570 URI Templates";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.uuid-types)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-uri-templates" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.HUnit)
             (hsPkgs.ansi-wl-pprint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

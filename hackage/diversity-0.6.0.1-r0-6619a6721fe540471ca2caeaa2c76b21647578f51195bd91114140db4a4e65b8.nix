@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "diversity";
-        version = "0.6.0.1";
-      };
+      identifier = { name = "diversity"; version = "0.6.0.1"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "gregory.schwartz@drexel.edu";
@@ -22,7 +13,7 @@
       synopsis = "Return the diversity at each position for all sequences in a fasta file";
       description = "Find the diversity of a collection of entities, mainly for use with fasta sequences. Produces a binary which works on fasta files to find the diversity of any order and rarefaction curves for a sliding window across all positions in the sequences. To analyze just a collection of entities, just use the whole sequences and list flag.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.scientific)
           (hsPkgs.random-shuffle)
           (hsPkgs.MonadRandom)
-        ];
-      };
+          ];
+        };
       exes = {
         "diversity" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.fasta)
             (hsPkgs.pipes)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0.1";
-      identifier = {
-        name = "cqrs-example";
-        version = "0.4.0";
-      };
+      identifier = { name = "cqrs-example"; version = "0.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "spam@scientician.net";
@@ -22,7 +13,7 @@
       synopsis = "Example for cqrs package";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cqrs-example" = {
@@ -33,8 +24,8 @@
             (hsPkgs.data-default)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

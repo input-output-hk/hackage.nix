@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "music-preludes";
-        version = "1.7.1";
-      };
+      identifier = { name = "music-preludes"; version = "1.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hans Hoglund";
@@ -22,7 +13,7 @@
       synopsis = "Some useful preludes for the Music Suite.";
       description = "Some useful preludes for the Music Suite.\n\nThis library is part of the Music Suite, see <http://music-suite.github.io>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,46 +41,18 @@
           (hsPkgs.music-pitch-literal)
           (hsPkgs.music-dynamics-literal)
           (hsPkgs.async)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
-        "music2ly" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.music-preludes)
-          ];
-        };
-        "music2pdf" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.music-preludes)
-          ];
-        };
-        "music2png" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.music-preludes)
-          ];
-        };
-        "music2svg" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.music-preludes)
-          ];
-        };
+        "music2ly" = { depends = [ (hsPkgs.base) (hsPkgs.music-preludes) ]; };
+        "music2pdf" = { depends = [ (hsPkgs.base) (hsPkgs.music-preludes) ]; };
+        "music2png" = { depends = [ (hsPkgs.base) (hsPkgs.music-preludes) ]; };
+        "music2svg" = { depends = [ (hsPkgs.base) (hsPkgs.music-preludes) ]; };
         "music2musicxml" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.music-preludes)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.music-preludes) ];
+          };
+        "music2midi" = { depends = [ (hsPkgs.base) (hsPkgs.music-preludes) ]; };
         };
-        "music2midi" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.music-preludes)
-          ];
-        };
-      };
       tests = {
         "regression" = {
           depends = [
@@ -97,8 +60,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

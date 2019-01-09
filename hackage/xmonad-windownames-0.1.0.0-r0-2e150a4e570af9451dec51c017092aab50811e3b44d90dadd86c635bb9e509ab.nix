@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xmonad-windownames";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "xmonad-windownames"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "plindbe2@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library to automatically put named windows into the DynamicLog.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.xmonad)
           (hsPkgs.xmonad-contrib)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "compdata-dags";
-        version = "0.2";
-      };
+      identifier = { name = "compdata-dags"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "paba@di.ku.dk";
@@ -22,7 +13,7 @@
       synopsis = "Compositional Data Types on DAGs";
       description = "This library implements recursion schemes on directed acyclic\ngraphs. The recursion schemes are explained in detail in the paper\n/Generalising Tree Traversals to DAGs/\n(<http://dx.doi.org/10.1145/2678015.2682539>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mtl)
           (hsPkgs.containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       pango = false;
@@ -13,13 +7,10 @@
       eventlog = false;
       testing = true;
       hint = true;
-    };
+      };
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "yi";
-        version = "0.12.3";
-      };
+      identifier = { name = "yi"; version = "0.12.3"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -29,7 +20,7 @@
       synopsis = "The Haskell-Scriptable Editor";
       description = "Yi is a text editor written in Haskell and extensible in Haskell. The goal of the Yi project is\nto provide a flexible, powerful, and correct editor for haskell hacking.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((((([
@@ -68,26 +59,16 @@
           (hsPkgs.oo-prototypes)
           (hsPkgs.yi-rope)
           (hsPkgs.exceptions)
-        ] ++ pkgs.lib.optional (flags.hint) (hsPkgs.hint)) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32)) ++ pkgs.lib.optionals (flags.testing) [
+          ] ++ (pkgs.lib).optional (flags.hint) (hsPkgs.hint)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32)) ++ (pkgs.lib).optionals (flags.testing) [
           (hsPkgs.QuickCheck)
           (hsPkgs.random)
-        ]) ++ pkgs.lib.optionals (flags.pango) [
+          ]) ++ (pkgs.lib).optionals (flags.pango) [
           (hsPkgs.gtk)
           (hsPkgs.glib)
           (hsPkgs.pango)
-        ]) ++ pkgs.lib.optionals (flags.vty) [
-          (hsPkgs.vty)
-          (hsPkgs.stm)
-        ];
-      };
-      exes = {
-        "yi" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.yi)
-          ];
+          ]) ++ (pkgs.lib).optionals (flags.vty) [ (hsPkgs.vty) (hsPkgs.stm) ];
         };
-      };
+      exes = { "yi" = { depends = [ (hsPkgs.base) (hsPkgs.yi) ]; }; };
       tests = {
         "test-suite" = {
           depends = [
@@ -105,8 +86,8 @@
             (hsPkgs.yi-language)
             (hsPkgs.yi-rope)
             (hsPkgs.yi)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

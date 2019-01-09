@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { usepython = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mathflow";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mathflow"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Junji Hashimoto";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Dependently typed tensorflow modeler";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.singletons)
           (hsPkgs.process)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "mathflow-test" = {
           depends = [
@@ -44,14 +35,9 @@
             (hsPkgs.shakespeare)
             (hsPkgs.text)
             (hsPkgs.template-haskell)
-          ];
-        };
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

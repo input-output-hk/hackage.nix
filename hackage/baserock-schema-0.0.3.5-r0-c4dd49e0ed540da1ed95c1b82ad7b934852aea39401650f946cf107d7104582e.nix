@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "baserock-schema";
-        version = "0.0.3.5";
-      };
+      identifier = { name = "baserock-schema"; version = "0.0.3.5"; };
       license = "BSD-3-Clause";
       copyright = "2018 Daniel Firth";
       maintainer = "locallycompact@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Baserock Definitions Schema";
       description = "Baserock Definitions Schema - Parsers, Printers, Encoders, Decoders, ASTs, Graphs and Traversals";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.microlens-platform)
           (hsPkgs.rio)
           (hsPkgs.yaml-pretty-extras)
-        ];
-      };
+          ];
+        };
       exes = {
         "baserock" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.microlens-platform)
             (hsPkgs.rio)
             (hsPkgs.yaml-pretty-extras)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "earthquake-test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.microlens-platform)
             (hsPkgs.rio)
             (hsPkgs.yaml-pretty-extras)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

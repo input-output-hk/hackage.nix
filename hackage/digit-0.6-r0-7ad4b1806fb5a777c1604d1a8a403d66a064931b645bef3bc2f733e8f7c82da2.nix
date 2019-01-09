@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "digit";
-        version = "0.6";
-      };
+      identifier = { name = "digit"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2010-2016 NICTA Limited\nCopyright (c) 2017, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
@@ -22,7 +13,7 @@
       synopsis = "A data-type representing digits 0-9 and other combinations";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\n@Digit@ is a data-type that represents the digits 0-9 and other combinations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.papa)
           (hsPkgs.semigroupoids)
           (hsPkgs.scientific)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.tasty-hedgehog)
             (hsPkgs.tasty-hunit)
             (hsPkgs.digit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-properties = true;
-      transformers2 = false;
-    };
+    flags = { test-properties = true; transformers2 = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "tables";
-        version = "0.4";
-      };
+      identifier = { name = "tables"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "In-memory storage with multiple keys using lenses and traversals";
       description = "In-memory storage with multiple keys using lenses and traversals\n\nFor a quick tour, see <https://github.com/ekmett/tables#examples>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +31,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -56,8 +44,8 @@
             (hsPkgs.lens)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

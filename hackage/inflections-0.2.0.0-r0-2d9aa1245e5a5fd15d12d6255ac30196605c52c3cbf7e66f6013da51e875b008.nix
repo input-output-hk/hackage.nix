@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "inflections";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "inflections"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2014 Justin Leitgeb";
       maintainer = "justin@stackbuilders.com";
@@ -22,15 +13,11 @@
       synopsis = "Inflections library for Haskell";
       description = "Inflections provides methods for singularization, pluralization,\ndasherizing, etc. The library is based on Rails' inflections library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.containers) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +30,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.parsec)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

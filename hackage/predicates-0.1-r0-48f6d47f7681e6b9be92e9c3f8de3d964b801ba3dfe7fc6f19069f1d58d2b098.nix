@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "predicates";
-        version = "0.1";
-      };
+      identifier = { name = "predicates"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "George Pollard <porges@porg.es>";
@@ -22,10 +13,6 @@
       synopsis = "A couple of convenience functions for forming predicates.";
       description = "A couple of convenience functions for forming predicates (currently 'is', 'isn't', and 'equals'). Also my first library as a test ;)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

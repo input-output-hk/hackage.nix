@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hackernews";
-        version = "1.1.2.0";
-      };
+      identifier = { name = "hackernews"; version = "1.1.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "djohnson.m@gmail.com";
@@ -22,14 +13,14 @@
       synopsis = "API for Hacker News";
       description = "API for news.ycombinator.com";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.servant)
           (hsPkgs.QuickCheck)
           (hsPkgs.quickcheck-instances)
-        ] ++ (if compiler.isGhcjs && true
+          ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
@@ -37,7 +28,7 @@
             (hsPkgs.ghcjs-base)
             (hsPkgs.string-conversions)
             (hsPkgs.text)
-          ]
+            ]
           else [
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -46,25 +37,21 @@
             (hsPkgs.string-conversions)
             (hsPkgs.http-types)
             (hsPkgs.text)
-          ]);
-      };
+            ]);
+        };
       exes = {
         "example" = {
           depends = if compiler.isGhcjs && true
-            then [
-              (hsPkgs.base)
-              (hsPkgs.hackernews)
-              (hsPkgs.ghcjs-base)
-            ]
+            then [ (hsPkgs.base) (hsPkgs.hackernews) (hsPkgs.ghcjs-base) ]
             else [
               (hsPkgs.base)
               (hsPkgs.hackernews)
               (hsPkgs.http-client-tls)
               (hsPkgs.http-client)
-            ];
-        };
+              ];
+          };
         "ghcjs-tests" = {
-          depends = pkgs.lib.optionals (compiler.isGhcjs && true) [
+          depends = (pkgs.lib).optionals (compiler.isGhcjs && true) [
             (hsPkgs.base)
             (hsPkgs.hackernews)
             (hsPkgs.ghcjs-base)
@@ -73,9 +60,9 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.aeson)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "ghc-tests" = {
           depends = [
@@ -87,8 +74,8 @@
             (hsPkgs.http-client)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "multiset";
-        version = "0.3.2";
-      };
+      identifier = { name = "multiset"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "twanvl@gmail.com";
@@ -22,22 +13,13 @@
       synopsis = "The Data.MultiSet container type";
       description = "A variation of Data.Set.\nMultisets, sometimes also called bags, can contain multiple copies of the same key.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.containers)
-          (hsPkgs.base)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.containers) (hsPkgs.base) ]; };
       tests = {
         "doctests" = {
-          depends = [
-            (hsPkgs.Glob)
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          depends = [ (hsPkgs.Glob) (hsPkgs.base) (hsPkgs.doctest) ];
+          };
         };
       };
-    };
-  }
+    }

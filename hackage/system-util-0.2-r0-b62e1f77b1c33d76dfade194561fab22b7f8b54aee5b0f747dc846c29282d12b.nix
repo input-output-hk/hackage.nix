@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "system-util";
-        version = "0.2";
-      };
+      identifier = { name = "system-util"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jmacristovao@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Various system utils lifted to EitherT";
       description = "Various system functions lifted to EitherT.\nProvides higher level functions to those in system-lifted.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.system-lifted)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.easy-data)
             (hsPkgs.system-lifted)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

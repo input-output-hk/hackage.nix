@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "reify";
-        version = "0.1";
-      };
+      identifier = { name = "reify"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "None";
@@ -22,21 +13,9 @@
       synopsis = "Serialize data";
       description = "This is a library for reifying Haskell data structures in GHC.\nHaskell values are mapped into representations that we call\ngraphs (for want of a better name). The representations are\nencoded in the Haskell type Graph, which is just an ordinary\nalgebraic data type. This will not reify functions.\n\nBitrotten.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc)
-        ];
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc) ]; };
+      exes = { "reify" = { depends = [ (hsPkgs.base) (hsPkgs.ghc) ]; }; };
       };
-      exes = {
-        "reify" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ghc)
-          ];
-        };
-      };
-    };
-  }
+    }

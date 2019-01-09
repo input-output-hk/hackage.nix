@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "launchpad-control";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "launchpad-control"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Balazs Komuves";
       maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
@@ -22,7 +13,7 @@
       synopsis = "High and low-level interface to the Novation Launchpad midi controller.";
       description = "High and low-level interface to the Novation Launchpad midi controller.\nAllows to make \"Launchpad apps\" easily, or to access the controller\nin a more low-level way. Some example apps are included.\nPresently only Mac OSX and Windows is supported (because we rely on hmidi).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,15 +22,12 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
           (hsPkgs.hmidi)
-        ] ++ [ (hsPkgs.base) ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        };
       exes = {
         "launchpad-control-examples" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.launchpad-control)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.launchpad-control) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clac";
-        version = "0.2.0";
-      };
+      identifier = { name = "clac"; version = "0.2.0"; };
       license = "GPL-3.0-only";
       copyright = "Alexander Berntsen 2015";
       maintainer = "alexander@plaimi.net";
@@ -22,16 +13,12 @@
       synopsis = "Simple CLI RPN calculator";
       description = "Simple CLI RPN calculator.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "clac" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.plailude)
-            (hsPkgs.safe)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.plailude) (hsPkgs.safe) ];
+          };
         };
       };
-    };
-  }
+    }

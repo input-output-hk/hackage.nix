@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "microstache";
-        version = "1.0.1.1";
-      };
+      identifier = { name = "microstache"; version = "1.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus<oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Mustache templates for Haskell";
       description = "Mustache templates for Haskell.\n\nBased on @stache@ library, which uses @megaparsec@.\nThis library uses @parsec@, thus the name: @microstache@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -38,8 +29,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") (hsPkgs.ghc-prim)) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs.ghc-prim)) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.parsec)
             (hsPkgs.microstache)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        };
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         "mustache-spec" = {
           depends = [
             (hsPkgs.hspec)
@@ -62,8 +53,8 @@
             (hsPkgs.parsec)
             (hsPkgs.microstache)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

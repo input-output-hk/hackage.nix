@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "foldl-incremental";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "foldl-incremental"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "Copyright (c) Tony Day 2014";
       maintainer = "tonyday567@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "incremental folds";
       description = "This library provides incremental statistical folds based upon the\nfoldl libray.  An incremental statistical fold can be thought of as\nexponentially-weighting statistics designed to be efficient computations over\na Foldable.\nIt supplies \"incrementalize\" which turns any unary function into a\n\"Fold\".  As a reference, \\\"incrementalize id\\\" is an exponentially-weighted moving average.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.foldl)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.foldl) ]; };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +27,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.foldl-incremental)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -52,8 +38,8 @@
             (hsPkgs.hastache)
             (hsPkgs.criterion)
             (hsPkgs.foldl-incremental)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

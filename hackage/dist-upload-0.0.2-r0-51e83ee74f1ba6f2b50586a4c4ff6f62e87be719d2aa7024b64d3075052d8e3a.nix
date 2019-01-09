@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dist-upload";
-        version = "0.0.2";
-      };
+      identifier = { name = "dist-upload"; version = "0.0.2"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2010 Andy Stewart";
       maintainer = "Andy Stewart <lazycat.manatee@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Generate/Upload cabal package to Hackage.";
       description = "Generate/Upload cabal package to Hackage.\n\nBest put your hackage username/password in file `HOME/.cabal/config`, then \"dist-upload\" can upload package fully automatic. :)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       exes = { "dist-upload" = {}; };
-    };
-  }
+      };
+    }

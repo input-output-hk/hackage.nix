@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "persistable-types-HDBC-pg";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "persistable-types-HDBC-pg"; version = "0.0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2015-2018 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "HDBC and Relational-Record instances of PostgreSQL extended types";
       description = "This package contains HDBC Convertible instances and\nRelational-Record persistable instances of PostgreSQL extended types\nSupported extended types: inet, cidr";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.persistable-record)
           (hsPkgs.relational-query)
           (hsPkgs.relational-query-HDBC)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.relational-query-HDBC)
             (hsPkgs.text-postgresql)
             (hsPkgs.persistable-types-HDBC-pg)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

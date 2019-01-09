@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "wai-middleware-static-embedded";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Adam Sandberg Eriksson";
       maintainer = "adam@sandbergericsson.se";
@@ -22,7 +16,7 @@
       synopsis = "Serve embedded static files as a Wai middleware";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +29,7 @@
           (hsPkgs.wai-extra)
           (hsPkgs.http-types)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

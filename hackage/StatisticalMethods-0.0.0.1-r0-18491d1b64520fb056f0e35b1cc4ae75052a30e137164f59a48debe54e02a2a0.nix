@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4.0";
-      identifier = {
-        name = "StatisticalMethods";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "StatisticalMethods"; version = "0.0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2011";
       maintainer = "choener@tbi.univie.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "Collection of useful statistical methods.";
       description = "High-level statistical methods.\n\n* Confusion matrix\n\n* Confusion matrix dependent statistics (sensitivity, specificity, F-measure, mcc)\n\n* EM algorithm for two-component Gaussian mixture.\n\n* GMM (Gaussian Mixture Models) with >=1 Gaussians fitted to the data.\n\n\n\nNote that some methods are for testing only (two-component\nGaussian mixture EM).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.vector)
           (hsPkgs.statistics)
           (hsPkgs.tuple)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

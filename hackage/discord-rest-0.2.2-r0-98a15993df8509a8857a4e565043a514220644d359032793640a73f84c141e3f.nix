@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "discord-rest";
-        version = "0.2.2";
-      };
+      identifier = { name = "discord-rest"; version = "0.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "jkoike2013@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An API wrapper for Discord in Haskell";
       description = "Provides an api wrapper and framework for writing\nbots against the Discord <https://discordapp.com/> API.\nIf for some reason hackage/stackage is failing to build\ndocumentation, a backup set is hosted at <https://jano017.github.io/Discord.hs/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.url)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

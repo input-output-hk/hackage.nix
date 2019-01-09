@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tempered";
-        version = "0.2.0";
-      };
+      identifier = { name = "tempered"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A dead-simple shell interpolation templating utility";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.parsec)
           (hsPkgs.process)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "tempered" = {
           depends = [
@@ -45,16 +36,11 @@
             (hsPkgs.tempered)
             (hsPkgs.containers)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "tempered-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tempered)
-          ];
+        "tempered-test" = { depends = [ (hsPkgs.base) (hsPkgs.tempered) ]; };
         };
       };
-    };
-  }
+    }

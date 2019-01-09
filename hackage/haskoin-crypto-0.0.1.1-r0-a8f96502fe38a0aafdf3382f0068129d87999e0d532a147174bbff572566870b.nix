@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "haskoin-crypto";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "haskoin-crypto"; version = "0.0.1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "plaprade+hackage@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Implementation of Bitcoin cryptographic primitives.";
       description = "This package provides the elliptic curve cryptography required for creating\nand validating bitcoin transactions. It also provides SHA-256 and RIPEMD-160\nhashing functions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.cryptohash)
           (hsPkgs.haskoin-util)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-haskoin-crypto" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

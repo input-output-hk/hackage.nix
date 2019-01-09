@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "names";
-        version = "0.2";
-      };
+      identifier = { name = "names"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
@@ -22,13 +13,8 @@
       synopsis = "Types that symbolise Names.";
       description = "Types that symbolise Names.\n\nv0.2: Show Instances added";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
+      };
+    }

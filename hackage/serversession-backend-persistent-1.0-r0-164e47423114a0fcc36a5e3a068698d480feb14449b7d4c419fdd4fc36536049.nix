@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "serversession-backend-persistent";
         version = "1.0";
-      };
+        };
       license = "MIT";
       copyright = "";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Storage backend for serversession using persistent and an RDBMS.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession-backend-persistent>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +33,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.serversession)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -64,8 +58,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.serversession)
             (hsPkgs.serversession-backend-persistent)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

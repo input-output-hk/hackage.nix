@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hidapi";
-        version = "0.1";
-      };
+      identifier = { name = "hidapi"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Patrick Chilton <chpatrick@gmail.com>";
@@ -22,16 +13,11 @@
       synopsis = "Haskell bindings to HIDAPI";
       description = "Haskell bindings to the HIDAPI library (<http://www.signal11.us/oss/hidapi/>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
-        libs = [
-          (pkgs."hidapi-hidraw")
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
+        libs = [ (pkgs."hidapi-hidraw") ];
+        };
       };
-    };
-  }
+    }

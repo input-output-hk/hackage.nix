@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hpack-dhall";
-        version = "0.1.0";
-      };
+      identifier = { name = "hpack-dhall"; version = "0.1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Dhall support for Hpack";
       description = "This package allows you to use the Dhall configuration language to specify\nHaskell packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hpack-dhall" = {
@@ -35,9 +26,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.trifecta)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.trifecta)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

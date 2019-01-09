@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "flower";
-        version = "0.2";
-      };
+      identifier = { name = "flower"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Ketil Malde <ketil@malde.org>";
@@ -22,7 +13,7 @@
       synopsis = "Analyze 454 flowgrams  (.SFF files)";
       description = "flower - The FLOWgram ExtracteR\n\nReads files in SFF-format and produces various output, including sequences\nwith quality, or flowgram data in tabular format.\n\nThe Darcs repository is at <http://malde.org/~ketil/biohaskell/flower>.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "flower" = {
@@ -32,8 +23,8 @@
             (hsPkgs.array)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

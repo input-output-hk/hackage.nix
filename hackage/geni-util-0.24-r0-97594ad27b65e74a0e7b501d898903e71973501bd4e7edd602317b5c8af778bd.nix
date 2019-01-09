@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "geni-util";
-        version = "0.24";
-      };
+      identifier = { name = "geni-util"; version = "0.24"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "eric.kow@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Companion tools for use with the GenI surface realiser";
       description = "Tools included:\n\n* client - sends all test cases from a GenI suite to geniserver, and saves\nresults in the same format as batch mode GenI\n\n* report - generates an HTML summary of a GenI batch operation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.text)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
-        ];
-      };
+          ];
+        };
       exes = {
         "geni-util" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.GenI)
             (hsPkgs.json)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

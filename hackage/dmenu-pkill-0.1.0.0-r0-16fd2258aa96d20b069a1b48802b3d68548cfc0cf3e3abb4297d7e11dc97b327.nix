@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dmenu-pkill";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dmenu-pkill"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Hannes Saffrich";
       maintainer = "Hannes Saffrich <m0rphism@zankapfel.org>";
@@ -22,7 +13,7 @@
       synopsis = "dmenu script for killing applications. Sortable by process id or CPU/MEM usage.";
       description = "See README.md file.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "dmenu-pkill" = {
@@ -35,8 +26,8 @@
             (hsPkgs.process)
             (hsPkgs.directory)
             (hsPkgs.dmenu)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

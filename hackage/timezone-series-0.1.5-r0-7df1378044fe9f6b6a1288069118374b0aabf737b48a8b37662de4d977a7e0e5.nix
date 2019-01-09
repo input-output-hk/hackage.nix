@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "timezone-series";
-        version = "0.1.5";
-      };
+      identifier = { name = "timezone-series"; version = "0.1.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2010-2015 Yitzchak Gale. All rights reserved.";
       maintainer = "yitz@sefer.org";
@@ -22,13 +13,8 @@
       synopsis = "Enhanced timezone handling for Data.Time";
       description = "This package endows Data.Time, from the time\npackage, with several data types and functions\nfor enhanced processing of timezones. For one way\nto create timezone series, see the timezone-olson\n(http://hackage.haskell.org/package/timezone-olson)\nand timezone-olson-th\n(http://hackage.haskell.org/package/timezone-olson-th)\npackages.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
+      };
+    }

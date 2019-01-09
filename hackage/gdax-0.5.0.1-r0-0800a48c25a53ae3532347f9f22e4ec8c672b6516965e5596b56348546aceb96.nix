@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gdax";
-        version = "0.5.0.1";
-      };
+      identifier = { name = "gdax"; version = "0.5.0.1"; };
       license = "MIT";
       copyright = "2017 Andrew Rademacher";
       maintainer = "Andrew Rademacher <andrewrademacher@icloud.com>";
@@ -22,7 +13,7 @@
       synopsis = "API Wrapping for Coinbase's GDAX exchange.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.websockets)
           (hsPkgs.wreq)
           (hsPkgs.wuss)
-        ];
-      };
+          ];
+        };
       exes = {
         "sandbox" = {
           depends = [
@@ -61,9 +52,9 @@
             (hsPkgs.text)
             (hsPkgs.websockets)
             (hsPkgs.wuss)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-gdax" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.vector)
             (hsPkgs.websockets)
             (hsPkgs.wuss)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

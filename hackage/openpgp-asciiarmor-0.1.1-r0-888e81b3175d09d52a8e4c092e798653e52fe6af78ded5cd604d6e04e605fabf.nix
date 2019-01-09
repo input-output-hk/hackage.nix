@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "openpgp-asciiarmor";
-        version = "0.1.1";
-      };
+      identifier = { name = "openpgp-asciiarmor"; version = "0.1.1"; };
       license = "ISC";
       copyright = "2012-2018 Clint Adams";
       maintainer = "Clint Adams <clint@debian.org>";
@@ -22,7 +13,7 @@
       synopsis = "OpenPGP (RFC4880) ASCII Armor codec";
       description = "OpenPGP (RFC4880) ASCII Armor codec";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.base64-bytestring)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

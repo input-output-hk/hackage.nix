@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SSTG";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "SSTG"; version = "0.1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Anton Xue";
       maintainer = "anton.xue@yale.edu";
@@ -22,7 +13,7 @@
       synopsis = "STG Symbolic Execution";
       description = "Prototype of STG-based Symbolic Execution for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,25 +21,17 @@
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "SSTG-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.SSTG)
-            (hsPkgs.containers)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.SSTG) (hsPkgs.containers) ];
+          };
         };
-      };
       tests = {
         "SSTG-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.SSTG)
-            (hsPkgs.containers)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.SSTG) (hsPkgs.containers) ];
+          };
         };
       };
-    };
-  }
+    }

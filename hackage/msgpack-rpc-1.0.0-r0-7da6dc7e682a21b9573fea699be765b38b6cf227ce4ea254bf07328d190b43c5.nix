@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "msgpack-rpc";
-        version = "1.0.0";
-      };
+      identifier = { name = "msgpack-rpc"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2015, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A MessagePack-RPC Implementation";
       description = "A MessagePack-RPC Implementation <http://msgpack.org/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.binary)
           (hsPkgs.msgpack)
-        ];
-      };
+          ];
+        };
       tests = {
         "msgpack-rpc-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.msgpack-rpc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hharp";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hharp"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tho.feron@gmail.com";
@@ -22,11 +13,8 @@
       synopsis = "Binding to libharp";
       description = "Binding to the library libharp managing configurations for Harp.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-        libs = [ (pkgs."harp") ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; libs = [ (pkgs."harp") ]; };
+      };
+    }

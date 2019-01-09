@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "timeprint";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "timeprint"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "iareloser@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Prints timestamps after each line evaluated";
       description = "Prints timestamps after each line evaluated in 'ghci'.\n\nUse by adding `-interactive-print=Text.Show.TimePrint.timePrint` to the 'ghci' command, or add this to your '.ghci' file:\n\n`import qualified Text.Show.TimePrint\n:set -interactive-print=Text.Show.TimePrint.timePrint`";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
+      };
+    }

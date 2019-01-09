@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "medium-sdk-haskell";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "medium-sdk-haskell"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "©2015 Timmy Tofu";
       maintainer = "timmytofu@users.noreply.github.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell SDK for communicating with the Medium API";
       description = "Haskell SDK for communicating with the Medium API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.servant-server)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

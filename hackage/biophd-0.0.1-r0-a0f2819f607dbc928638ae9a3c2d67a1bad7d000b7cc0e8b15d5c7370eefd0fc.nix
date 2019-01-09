@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "biophd";
-        version = "0.0.1";
-      };
+      identifier = { name = "biophd"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "dfornika@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for reading phd sequence files";
       description = "Library for reading phd sequence files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.parsec)
           (hsPkgs.text)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

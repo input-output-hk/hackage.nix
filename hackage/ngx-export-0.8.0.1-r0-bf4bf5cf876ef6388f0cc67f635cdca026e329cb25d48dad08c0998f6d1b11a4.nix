@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ngx-export";
-        version = "0.8.0.1";
-      };
+      identifier = { name = "ngx-export"; version = "0.8.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016-2017 Alexey Radkov";
       maintainer = "Alexey Radkov <alexey.radkov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Helper module for Nginx haskell module";
       description = "Helper module for\n<http://github.com/lyokha/nginx-haskell-module Nginx haskell module>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.binary)
           (hsPkgs.async)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

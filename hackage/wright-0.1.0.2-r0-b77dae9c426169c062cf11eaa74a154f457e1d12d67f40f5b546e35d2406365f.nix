@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wright";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "wright"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@vikramverma.com";
@@ -22,15 +13,15 @@
       synopsis = "Colour space transformations and metrics.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bed-and-breakfast)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "wright-tests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.filepath)
             (hsPkgs.lens)
             (hsPkgs.wright)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

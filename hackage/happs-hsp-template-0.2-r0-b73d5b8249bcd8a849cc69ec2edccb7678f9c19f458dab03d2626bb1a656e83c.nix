@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "happs-hsp-template";
-        version = "0.2";
-      };
+      identifier = { name = "happs-hsp-template"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Himmelstrup (lemmih@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for using HSP templates in HAppS applications.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.RJson)
           (hsPkgs.HAppS-Server)
           (hsPkgs.hsp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

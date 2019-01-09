@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "state-bag";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "state-bag"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Robin KAY";
       maintainer = "komadori@gekkou.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Monad transformers for holding bags of state.";
       description = "A state monad transformer which can hold multiple different state values\nrepresented in a type-level list.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.primitive)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "Test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.state-bag)
             (hsPkgs.transformers)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "billeksah-forms";
-        version = "1.0.0";
-      };
+      identifier = { name = "billeksah-forms"; version = "1.0.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Juergen \"jutaro\" Nicklisch-Franken";
       maintainer = "maintainer@leksah.org";
@@ -22,7 +13,7 @@
       synopsis = "Leksah library";
       description = "Form library used by leksah to edit preferences, cabal infos, etc";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.pretty)
           (hsPkgs.billeksah-services)
           (hsPkgs.billeksah-pane)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

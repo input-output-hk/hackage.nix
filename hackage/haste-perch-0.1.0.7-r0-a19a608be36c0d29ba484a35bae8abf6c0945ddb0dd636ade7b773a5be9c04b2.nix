@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { haste-inst = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haste-perch";
-        version = "0.1.0.7";
-      };
+      identifier = { name = "haste-perch"; version = "0.1.0.7"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "agocorona@gmail.com";
@@ -22,20 +13,12 @@
       synopsis = "Create, navigate and modify the DOM tree with composable syntax, with the haste compiler";
       description = "see the description at the homepage.\nThis version add support for the Client Monad (Module Haste.App.Perch)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.haste-inst
-          then [
-            (hsPkgs.base)
-            (hsPkgs.transformers)
-            (hsPkgs.haste-lib)
-          ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.transformers)
-            (hsPkgs.haste-compiler)
-          ];
+          then [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.haste-lib) ]
+          else [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.haste-compiler) ];
+        };
       };
-    };
-  }
+    }

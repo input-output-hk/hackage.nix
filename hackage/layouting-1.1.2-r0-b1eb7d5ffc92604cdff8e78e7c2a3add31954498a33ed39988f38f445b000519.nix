@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "layouting";
-        version = "1.1.2";
-      };
+      identifier = { name = "layouting"; version = "1.1.2"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) 2018 Luna Team";
       maintainer = "Wojciech Danilo <wojciech.danilo@luna-lang.org>";
@@ -22,7 +13,7 @@
       synopsis = "General layouting library. Currently supports layouting 2D areas and can be used as a backend for text pretty printing or automatic windows layouting managers.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.prologue)
           (hsPkgs.terminal-text)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fluffy-parser";
-        version = "0.1.0.50";
-      };
+      identifier = { name = "fluffy-parser"; version = "0.1.0.50"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2017 Johann Lee";
       maintainer = "qinka@live.com";
@@ -22,7 +13,7 @@
       synopsis = "The parser for fluffy to parsec the question bank in .docx type";
       description = "The parser for fluffy to parsec the question bank in .docx type";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.postgresql-simple)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

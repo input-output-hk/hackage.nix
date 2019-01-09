@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "composite-swagger";
-        version = "0.5.5.0";
-      };
+      identifier = { name = "composite-swagger"; version = "0.5.5.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Confer Health, Inc.";
       maintainer = "oss@confer.health";
@@ -22,7 +13,7 @@
       synopsis = "Swagger for Vinyl/Frames records";
       description = "Integration between Swagger and Vinyl/Frames records allowing easily derivable/explicit Swagger definitions for records.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vinyl)
-        ];
-      };
+          ];
+        };
       tests = {
         "composite-swagger-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.vinyl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

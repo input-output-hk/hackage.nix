@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-flat";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "aeson-flat"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Sean Hess";
       maintainer = "seanhess@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools for creating flat JSON serializations";
       description = "Tools for creating flat JSON serializations";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,15 +22,12 @@
           (hsPkgs.text)
           (hsPkgs.vector)
           (hsPkgs.unordered-containers)
-        ];
-      };
-      tests = {
-        "aeson-flat-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson-flat)
           ];
         };
+      tests = {
+        "aeson-flat-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.aeson-flat) ];
+          };
+        };
       };
-    };
-  }
+    }

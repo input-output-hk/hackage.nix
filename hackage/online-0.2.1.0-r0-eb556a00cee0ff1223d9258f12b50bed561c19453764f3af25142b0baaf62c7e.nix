@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "online";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "online"; version = "0.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "online statistics";
       description = "transformation of statistics to online algorithms";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.tdigest)
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
-        ];
-      };
+          ];
+        };
       exes = {
         "online-bench" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.protolude)
             (hsPkgs.scientific)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.online)
             (hsPkgs.protolude)
             (hsPkgs.tasty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

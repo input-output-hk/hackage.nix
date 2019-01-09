@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       opt-native = false;
@@ -14,13 +8,10 @@
       avx2 = false;
       linux-getrandom = false;
       liquidhaskell = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "raaz";
-        version = "0.2.0";
-      };
+      identifier = { name = "raaz"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ppk@cse.iitk.ac.in";
@@ -30,7 +21,7 @@
       synopsis = "The raaz cryptographic library.";
       description = "Raaz is a cryptographic library for Haskell. The library\nis designed with a special emphasis on using the type system of\nHaskell to eliminate a large set of vulnerabilities like buffer\noverflows, timing attacks etc. It also strives to achieve this\nsafety with no compromise on performance.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,22 +29,22 @@
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.transformers);
-        libs = pkgs.lib.optionals (system.isWindows) [
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.transformers);
+        libs = (pkgs.lib).optionals (system.isWindows) [
           (pkgs."Advapi32")
           (pkgs."Kernel32")
-        ];
-        build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs);
-      };
+          ];
+        build-tools = (pkgs.lib).optional (system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+        };
       exes = {
         "raaz" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.optparse-applicative)
             (hsPkgs.raaz)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.transformers);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.transformers);
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -66,18 +57,18 @@
             (hsPkgs.transformers)
             (hsPkgs.raaz)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "liquidspec" = {
           depends = [
             (hsPkgs.base)
-          ] ++ pkgs.lib.optionals (flags.liquidhaskell) [
+            ] ++ (pkgs.lib).optionals (flags.liquidhaskell) [
             (hsPkgs.liquidhaskell)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "blaze-vs-write" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.raaz)
-          ];
-        };
+            ];
+          };
         "bench-ciphers" = {
           depends = [
             (hsPkgs.base)
@@ -95,8 +86,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.raaz)
-          ];
-        };
+            ];
+          };
         "primitives" = {
           depends = [
             (hsPkgs.base)
@@ -105,8 +96,8 @@
             (hsPkgs.criterion)
             (hsPkgs.pretty)
             (hsPkgs.raaz)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

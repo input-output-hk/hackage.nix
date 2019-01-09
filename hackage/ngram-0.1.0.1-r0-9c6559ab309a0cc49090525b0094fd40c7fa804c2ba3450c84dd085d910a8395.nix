@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ngram";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "ngram"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Tom Lippincott";
       maintainer = "tom@cs.jhu.edu";
@@ -22,7 +13,7 @@
       synopsis = "Ngram models for compressing and classifying text.";
       description = "A library and collection of commands for training, evaluating, and applying n-gram-based sequence models.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.cereal-text)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "ngramClassifier" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.text)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

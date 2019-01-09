@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cabal-graphdeps";
-        version = "0.1.3";
-      };
+      identifier = { name = "cabal-graphdeps"; version = "0.1.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "John Millikin <john@john-millikin.com>";
@@ -22,7 +13,7 @@
       synopsis = "Generate graphs of install-time Cabal dependencies";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal-graphdeps" = {
@@ -35,8 +26,8 @@
             (hsPkgs.process)
             (hsPkgs.split)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

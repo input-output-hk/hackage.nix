@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "herringbone-wai";
-        version = "0.1.0";
-      };
+      identifier = { name = "herringbone-wai"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "harry@garrood.me";
@@ -22,7 +13,7 @@
       synopsis = "Wai adapter for the Herringbone web asset preprocessor.";
       description = "Wai adapter for the Herringbone web asset preprocessor.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.system-fileio)
           (hsPkgs.bytestring)
           (hsPkgs.http-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

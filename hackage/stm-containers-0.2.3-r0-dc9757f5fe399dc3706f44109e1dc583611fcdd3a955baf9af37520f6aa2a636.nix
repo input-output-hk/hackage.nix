@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stm-containers";
-        version = "0.2.3";
-      };
+      identifier = { name = "stm-containers"; version = "0.2.3"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Containers for STM";
       description = "This library is based on an STM-specialized implementation of a\nHash Array Mapped Trie.\nIt provides efficient implementations of @Map@, @Set@\nand other data structures,\nwhich are slightly slower than their counterparts from \\\"unordered-containers\\\",\nbut scale very well on concurrent access patterns.\n\nFor details on performance of the library see\n<http://nikita-volkov.github.io/stm-containers/ this blog post>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.placeholders)
           (hsPkgs.primitive)
           (hsPkgs.base-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "word-array-tests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.primitive)
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
-          ];
-        };
+            ];
+          };
         "api-tests" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -71,9 +62,9 @@
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "insertion-bench" = {
           depends = [
@@ -92,8 +83,8 @@
             (hsPkgs.placeholders)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "concurrent-insertion-bench" = {
           depends = [
             (hsPkgs.criterion)
@@ -111,8 +102,8 @@
             (hsPkgs.async)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "concurrent-transactions-bench" = {
           depends = [
             (hsPkgs.criterion)
@@ -133,8 +124,8 @@
             (hsPkgs.mtl-prelude)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

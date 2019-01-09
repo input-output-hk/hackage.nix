@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dynobud";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "dynobud"; version = "1.0.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "(c) Greg Horn 2013-2015";
       maintainer = "gregmainland@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "your dynamic optimization buddy";
       description = "See readme at <http://www.github.com/ghorn/dynobud http://www.github.com/ghorn/dynobud>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,8 +48,8 @@
           (hsPkgs.distributive)
           (hsPkgs.text)
           (hsPkgs.process)
-        ];
-      };
+          ];
+        };
       exes = {
         "multiple_shooting" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.lens)
             (hsPkgs.colour)
             (hsPkgs.data-default-class)
-          ];
-        };
+            ];
+          };
         "plotSofa" = {
           depends = [
             (hsPkgs.dynobud)
@@ -85,8 +76,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.zeromq4-haskell)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "sofaTime" = {
           depends = [
             (hsPkgs.dynobud)
@@ -97,22 +88,14 @@
             (hsPkgs.cereal)
             (hsPkgs.linear)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "homotopy" = {
-          depends = [
-            (hsPkgs.dynobud)
-            (hsPkgs.vector)
-            (hsPkgs.base)
-          ];
-        };
+          depends = [ (hsPkgs.dynobud) (hsPkgs.vector) (hsPkgs.base) ];
+          };
         "vec" = {
-          depends = [
-            (hsPkgs.dynobud)
-            (hsPkgs.vector)
-            (hsPkgs.base)
-          ];
-        };
+          depends = [ (hsPkgs.dynobud) (hsPkgs.vector) (hsPkgs.base) ];
+          };
         "ocpMonad" = {
           depends = [
             (hsPkgs.dynobud)
@@ -121,8 +104,8 @@
             (hsPkgs.zeromq4-haskell)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "rocket" = {
           depends = [
             (hsPkgs.dynobud)
@@ -131,36 +114,20 @@
             (hsPkgs.zeromq4-haskell)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "staticExample" = {
-          depends = [
-            (hsPkgs.dynobud)
-            (hsPkgs.vector)
-            (hsPkgs.base)
-          ];
-        };
+          depends = [ (hsPkgs.dynobud) (hsPkgs.vector) (hsPkgs.base) ];
+          };
         "basic" = {
-          depends = [
-            (hsPkgs.dynobud)
-            (hsPkgs.vector)
-            (hsPkgs.base)
-          ];
-        };
+          depends = [ (hsPkgs.dynobud) (hsPkgs.vector) (hsPkgs.base) ];
+          };
         "basicJ" = {
-          depends = [
-            (hsPkgs.dynobud)
-            (hsPkgs.vector)
-            (hsPkgs.base)
-          ];
-        };
+          depends = [ (hsPkgs.dynobud) (hsPkgs.vector) (hsPkgs.base) ];
+          };
         "daeColl" = {
-          depends = [
-            (hsPkgs.dynobud)
-            (hsPkgs.base)
-            (hsPkgs.vector)
-          ];
-        };
+          depends = [ (hsPkgs.dynobud) (hsPkgs.base) (hsPkgs.vector) ];
+          };
         "glider" = {
           depends = [
             (hsPkgs.dynobud)
@@ -171,8 +138,8 @@
             (hsPkgs.cereal)
             (hsPkgs.vector)
             (hsPkgs.zeromq4-haskell)
-          ];
-        };
+            ];
+          };
         "sailboat" = {
           depends = [
             (hsPkgs.dynobud)
@@ -184,8 +151,8 @@
             (hsPkgs.vector)
             (hsPkgs.semigroups)
             (hsPkgs.zeromq4-haskell)
-          ];
-        };
+            ];
+          };
         "dynoplot" = {
           depends = [
             (hsPkgs.dynobud)
@@ -196,9 +163,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.zeromq4-haskell)
             (hsPkgs.cmdargs)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -213,8 +180,8 @@
             (hsPkgs.casadi-bindings)
             (hsPkgs.hmatrix)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

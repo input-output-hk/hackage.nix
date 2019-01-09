@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "rsagl-frp";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "rsagl-frp"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Christopher Lane Hinson <lane@downstairspeople.org>";
@@ -22,7 +13,7 @@
       synopsis = "The RogueStar Animation and Graphics Library: Functional Reactive Programming";
       description = "RSAGL, the RogueStar Animation and Graphics Library,\nwas specifically designed for a computer game called\nroguestar, but effort has been made to make it accessable\nto other projects that might benefit from it.\n\nThis package implements the RSAGL functional reactive\nprogramming architecture.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

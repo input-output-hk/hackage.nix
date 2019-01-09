@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "numeric-ode";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "numeric-ode"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Alexander V Vershilov, Dominic Steinitz";
       maintainer = "dominic@steinitz.org";
@@ -22,7 +13,7 @@
       synopsis = "Ode solvers";
       description = "Some ode solvers, e.g., Störmer-Verlet";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.tdigest)
           (hsPkgs.numhask)
           (hsPkgs.foldl)
-        ];
-      };
+          ];
+        };
       exes = {
         "Kepler" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.JuicyPixels)
             (hsPkgs.plots)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

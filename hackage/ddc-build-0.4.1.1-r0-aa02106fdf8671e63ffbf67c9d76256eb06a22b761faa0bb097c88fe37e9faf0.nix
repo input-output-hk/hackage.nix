@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddc-build";
-        version = "0.4.1.1";
-      };
+      identifier = { name = "ddc-build"; version = "0.4.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Disciplined Disciple Compiler build framework.";
       description = "Disciplined Disciple Compiler build framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.ddc-core-flow)
           (hsPkgs.ddc-core-tetra)
           (hsPkgs.ddc-source-tetra)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

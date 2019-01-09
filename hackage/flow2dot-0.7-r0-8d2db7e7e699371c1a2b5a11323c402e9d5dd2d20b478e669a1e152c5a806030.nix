@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "flow2dot";
-        version = "0.7";
-      };
+      identifier = { name = "flow2dot"; version = "0.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Dmitry Astapov <dastapov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Library and binary to generate sequence/flow diagrams from plain text source";
       description = "Generates sequence diagrams from textual descriptions with help of Graphviz graph drawing tool.\nCheck out <http://adept.linux.kiev.ua:8080/repos/flow2dot/sample.flow> (source)\nand <http://adept.linux.kiev.ua:8080/repos/flow2dot/sample.png> (output).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.parsec)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = { "flow2dot" = {}; };
-    };
-  }
+      };
+    }

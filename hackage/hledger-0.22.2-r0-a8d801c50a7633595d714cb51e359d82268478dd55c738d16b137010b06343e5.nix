@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { threaded = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hledger";
-        version = "0.22.2";
-      };
+      identifier = { name = "hledger"; version = "0.22.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "The main command-line interface for the hledger accounting tool.";
       description = "hledger is a library and set of user tools for working\nwith financial data (or anything that can be tracked in a\ndouble-entry accounting ledger.) It is a haskell port and\nfriendly fork of John Wiegley's Ledger. hledger provides\ncommand-line, curses and web interfaces, and aims to be a\nreliable, practical tool for daily use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.tabular)
           (hsPkgs.time)
           (hsPkgs.utf8-string)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs.pretty-show);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs.pretty-show);
+        };
       exes = {
         "hledger" = {
           depends = [
@@ -73,9 +64,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.utf8-string)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs.pretty-show);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs.pretty-show);
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -104,8 +95,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs.pretty-show);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs.pretty-show);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "mono-traversable-instances";
         version = "0.1.0.0";
-      };
+        };
       license = "MIT";
       copyright = "";
       maintainer = "michael@fpcomplete.com";
@@ -22,7 +16,7 @@
       synopsis = "Extra typeclass instances for mono-traversable";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +30,7 @@
           (hsPkgs.transformers)
           (hsPkgs.semigroups)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

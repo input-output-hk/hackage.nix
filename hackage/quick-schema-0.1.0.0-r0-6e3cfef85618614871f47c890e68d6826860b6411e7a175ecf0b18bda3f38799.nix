@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "quick-schema";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "quick-schema"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 Ben Weitzman";
       maintainer = "benweitzman@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Slimmed down json schema language and validator";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.vector)
           (hsPkgs.hashable)
           (hsPkgs.scientific)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.text)
             (hsPkgs.scientific)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

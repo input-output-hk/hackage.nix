@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "true-name";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "true-name"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "© 2014−2015 Liyang HU";
       maintainer = "true-name@liyang.hu";
@@ -22,14 +13,9 @@
       synopsis = "Template Haskell hack to violate another module's abstractions";
       description = "<http://tvtropes.org/pmwiki/pmwiki.php/Main/IKnowYourTrueName Knowing a true name gives one power over its owner>.\n\nA Template Haskell hack to get unexported @Name@s―be they data\nconstructors, record fields or class methods―a slightly less unsafe way\nto violate another module's abstractions than @unsafeCoerce@.\n\nA few <https://github.com/liyang/true-name/blob/master/sanity.hs quick examples>.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
       tests = {
         "sanity" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.time)
             (hsPkgs.template-haskell)
             (hsPkgs.true-name)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

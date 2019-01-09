@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-sql-parser";
-        version = "0.2.0";
-      };
+      identifier = { name = "simple-sql-parser"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright Jake Wheat 2013";
       maintainer = "jakewheatmail@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A parser for SQL queries";
       description = "A parser for SQL queries. Please see the homepage for more information <http://jakewheat.github.io/simple-sql-parser/>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.mtl)
           (hsPkgs.pretty)
           (hsPkgs.haskell-src-exts)
-        ];
-      };
+          ];
+        };
       tests = {
         "Tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

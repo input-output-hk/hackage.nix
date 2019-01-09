@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      server-test = false;
-    };
+    flags = { server-test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "net-spider";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "net-spider"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Toshio Ito <debug.ito@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "A graph database middleware to maintain a time-varying graph.";
       description = "A graph database middleware to maintain a time-varying graph. See the [project README](https://github.com/debug-ito/net-spider) for detail.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +28,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -48,10 +37,10 @@
             (hsPkgs.net-spider)
             (hsPkgs.vector)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "server-test-suite" = {
-          depends = pkgs.lib.optionals (flags.server-test) [
+          depends = (pkgs.lib).optionals (flags.server-test) [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.net-spider)
@@ -66,8 +55,8 @@
             (hsPkgs.time)
             (hsPkgs.safe-exceptions)
             (hsPkgs.hspec-need-env)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HGraphStorage";
-        version = "0.0.1";
-      };
+      identifier = { name = "HGraphStorage"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "JP Moresmau 2014-2015";
       maintainer = "JP Moresmau <jp@moresmau.fr>";
@@ -22,7 +13,7 @@
       synopsis = "Graph database stored on disk";
       description = "A graph database storing its data on disk.\nThere is currently no transaction or even concurrent access support, this is not made for production.\nWe try to store the data on disk efficiently, i.e. not rely on having the data in memory.\nThere is a test suite and a benchmark, which would be the best way to get a feel for how the library works.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.monad-logger)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       tests = {
         "hgraphstorage-test" = {
           depends = [
@@ -64,9 +55,9 @@
             (hsPkgs.monad-control)
             (hsPkgs.monad-logger)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "HGraphStorage-bench" = {
           depends = [
@@ -88,8 +79,8 @@
             (hsPkgs.text-binary)
             (hsPkgs.data-default)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "derangement";
-        version = "0.1.0";
-      };
+      identifier = { name = "derangement"; version = "0.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Dennis Griffith <dgriffi3@uiuc.edu>";
@@ -22,13 +13,6 @@
       synopsis = "Find derangements of lists";
       description = "Find a derangement, a permutation with no fixed points, on a list";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.fgl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.fgl) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "CSPM-ToProlog";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "CSPM-ToProlog"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Marc Fontaine <fontaine@cs.uni-duesseldorf.de>";
@@ -22,7 +13,7 @@
       synopsis = "some modules specific for the ProB tool";
       description = "This package constains a translation from a CSPM AST to the representation\nused by the ProB tool.\nThis code is only interesting for ProB developers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.pretty)
           (hsPkgs.base)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

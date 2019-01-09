@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { developer = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "picoparsec";
-        version = "0.1";
-      };
+      identifier = { name = "picoparsec"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mario Blažević <blamario@yahoo.com>";
@@ -22,7 +13,7 @@
       synopsis = "Fast combinator parsing for bytestrings and text";
       description = "A fast and flexible parser combinator library, accepting any input type that is an instance of an appropriate\nmonoid subclass.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +25,11 @@
           (hsPkgs.monoid-subclasses)
           (hsPkgs.text)
           (hsPkgs.scientific)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.4") [
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

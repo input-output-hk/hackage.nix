@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "config-ini";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "config-ini"; version = "0.2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "©2017 Getty Ritter";
       maintainer = "Getty Ritter <config-ini@infinitenegativeutility.com>";
@@ -22,7 +13,7 @@
       synopsis = "A library for simple INI-based configuration files.";
       description = "The @config-ini@ library is a set of small monadic languages\nfor writing simple configuration languages with convenient,\nhuman-readable error messages.\n\n> parseConfig :: IniParser (Text, Int, Bool)\n> parseConfig = section \"NETWORK\" \$ do\n>   user <- field        \"user\"\n>   port <- fieldOf      \"port\" number\n>   enc  <- fieldFlagDef \"encryption\" True\n>   return (user, port, enc)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.transformers)
           (hsPkgs.megaparsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-ini-compat" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test-prewritten" = {
           depends = [
             (hsPkgs.base)
@@ -54,15 +45,11 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "test-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.microlens)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.microlens) ];
+          };
         };
       };
-    };
-  }
+    }

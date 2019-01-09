@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "oden-go-packages";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "oden-go-packages"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Oskar Wickström";
       maintainer = "Oskar Wickström <oskar.wickstrom@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Provides Go package metadata.";
       description = "Provides a Haskell interface to the Go package importer, enabling querying\nGo packages for definitions and their types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

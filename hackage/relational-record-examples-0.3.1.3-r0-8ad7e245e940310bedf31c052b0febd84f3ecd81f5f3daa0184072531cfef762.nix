@@ -1,21 +1,12 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      ghc74-generic = false;
-      binary = false;
-    };
+    flags = { ghc74-generic = false; binary = false; };
     package = {
       specVersion = "1.10";
       identifier = {
         name = "relational-record-examples";
         version = "0.3.1.3";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Shohei Murayama <shohei.murayama@gmail.com>";
@@ -25,7 +16,7 @@
       synopsis = "Examples of Haskell Relationa Record";
       description = "Provides examples of Haskell Relational Record";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.relational-query-HDBC)
           (hsPkgs.template-haskell)
           (hsPkgs.relational-schemas)
-        ] ++ pkgs.lib.optional (flags.ghc74-generic) (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (flags.ghc74-generic) (hsPkgs.ghc-prim);
+        };
       exes = {
         "examples" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.relational-record-examples)
             (hsPkgs.template-haskell)
             (hsPkgs.time)
-          ] ++ pkgs.lib.optional (flags.ghc74-generic) (hsPkgs.ghc-prim);
+            ] ++ (pkgs.lib).optional (flags.ghc74-generic) (hsPkgs.ghc-prim);
+          };
         };
       };
-    };
-  }
+    }

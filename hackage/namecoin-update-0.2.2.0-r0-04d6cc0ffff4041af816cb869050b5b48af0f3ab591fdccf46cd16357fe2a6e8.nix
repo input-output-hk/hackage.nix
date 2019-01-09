@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "namecoin-update";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "namecoin-update"; version = "0.2.2.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) Michele Guerini Rocco";
       maintainer = "micheleguerinirocco@me.com";
@@ -22,7 +13,7 @@
       synopsis = "Tool to keep namecoin names updated and well";
       description = "A small program that updates the names in a namecoin wallet\nto prevent expiration. It uses the JSON-RPC API provided by\nnamecoind to scan and update the values of the name when needed.\nThe tool is intended to be run regularly, for example from cron.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,12 @@
           (hsPkgs.aeson)
           (hsPkgs.text)
           (hsPkgs.attoparsec)
-        ];
-      };
-      exes = {
-        "namecoin-update" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.namecoin-update)
           ];
         };
+      exes = {
+        "namecoin-update" = {
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.namecoin-update) ];
+          };
+        };
       };
-    };
-  }
+    }

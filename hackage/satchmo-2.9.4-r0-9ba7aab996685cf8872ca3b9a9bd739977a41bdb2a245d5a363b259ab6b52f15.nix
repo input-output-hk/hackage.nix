@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "satchmo";
-        version = "2.9.4";
-      };
+      identifier = { name = "satchmo"; version = "2.9.4"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Johannes Waldmann";
@@ -22,7 +13,7 @@
       synopsis = "SAT encoding monad";
       description = "Encoding for boolean and integral constraints into CNF-SAT.\nThe encoder is provided as a State monad\n(hence the \"mo\" in \"satchmo\").";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,16 +25,12 @@
           (hsPkgs.bytestring)
           (hsPkgs.directory)
           (hsPkgs.minisat)
-        ];
-      };
-      tests = {
-        "Ramsey" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.satchmo)
           ];
         };
+      tests = {
+        "Ramsey" = {
+          depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.satchmo) ];
+          };
+        };
       };
-    };
-  }
+    }

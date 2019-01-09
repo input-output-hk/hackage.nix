@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "proton-haskell";
-        version = "0.5";
-      };
+      identifier = { name = "proton-haskell"; version = "0.5"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "jasonrbriggs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple XML templating library";
       description = "Template library which uses three attributes (eid, aid, rid) in xml tags in order to add dynamic content to an xml/xhtml document.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

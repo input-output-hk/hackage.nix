@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "entangle";
-        version = "0.1.1";
-      };
+      identifier = { name = "entangle"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "leonardo.taglialegne@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An application (and library) to convert quipper circuits into Qpmc models.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.matrix)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "entangle" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.entangle)
             (hsPkgs.quipper-core)
             (hsPkgs.matrix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

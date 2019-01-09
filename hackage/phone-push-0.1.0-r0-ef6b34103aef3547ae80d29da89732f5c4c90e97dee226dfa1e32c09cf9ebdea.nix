@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "phone-push";
-        version = "0.1.0";
-      };
+      identifier = { name = "phone-push"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 David Fendrich";
       maintainer = "David Fendrich <david@aitellu.com>";
@@ -22,7 +13,7 @@
       synopsis = "Push notifications for Android and iOS";
       description = "Push notifications for Android and iOS\n\nFunctions for sending push notifications to popular mobile platforms.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.base16-bytestring)
           (hsPkgs.convertible)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "cpuperf";
-        version = "0.1";
-      };
+      identifier = { name = "cpuperf"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<dons@cse.unsw.edu.au>";
@@ -22,15 +13,8 @@
       synopsis = "Modify the cpu frequency on OpenBSD systems";
       description = "cpuperf toggle the cpu frequency on OpenBSD systems between 0 and 100%.";
       buildType = "Custom";
-    };
-    components = {
-      exes = {
-        "cpuperf" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-          ];
-        };
       };
-    };
-  }
+    components = {
+      exes = { "cpuperf" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+      };
+    }

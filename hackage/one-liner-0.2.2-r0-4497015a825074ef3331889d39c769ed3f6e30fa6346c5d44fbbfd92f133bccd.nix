@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "one-liner";
-        version = "0.2.2";
-      };
+      identifier = { name = "one-liner"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sjoerd@w3future.com";
@@ -22,14 +13,10 @@
       synopsis = "Constraint-based generics";
       description = "Write short and concise generic instances of type classes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-          (hsPkgs.ghc-prim)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.ghc-prim) ];
+        };
       };
-    };
-  }
+    }

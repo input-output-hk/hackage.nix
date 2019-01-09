@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rollbar";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "rollbar"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "Daggerboard Inc. makers of docmunch.com";
       maintainer = "Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "error tracking through rollbar.com";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.basic-prelude)
           (hsPkgs.monad-control)
           (hsPkgs.http-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

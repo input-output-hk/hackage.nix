@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-arbitrary";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "network-arbitrary"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "(c) 2018 Alex Brandt";
       maintainer = "alunduil@alunduil.com";
@@ -22,7 +13,7 @@
       synopsis = "Arbitrary Instances for Network Types";
       description = "Arbitrary instances for Network types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.http-types)
           (hsPkgs.network-uri)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "network-arbitrary-tests" = {
           depends = [
@@ -46,11 +37,9 @@
             (hsPkgs.network-uri)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-invariant)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-anonymous-tor";
-        version = "0.9.0";
-      };
+      identifier = { name = "network-anonymous-tor"; version = "0.9.0"; };
       license = "MIT";
       copyright = "(c) 2014 Leon Mergen";
       maintainer = "leon@solatis.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell API for Tor anonymous networking";
       description = "This library providess an API that wraps around the Tor control port\nto create ad-hoc hidden services";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.base32string)
           (hsPkgs.text)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.hspec-attoparsec)
             (hsPkgs.hspec-expectations)
             (hsPkgs.network-anonymous-tor)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

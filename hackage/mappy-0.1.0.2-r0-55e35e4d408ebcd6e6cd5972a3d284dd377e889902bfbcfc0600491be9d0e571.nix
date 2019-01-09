@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mappy";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "mappy"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2015 Michael Gilliland";
       maintainer = "mjg.py3@gmail.com";
@@ -22,24 +13,16 @@
       synopsis = "A functional programming language focused around maps.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.containers) ];
+        };
       exes = {
         "mappy" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.mappy)
-            (hsPkgs.parsec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.mappy) (hsPkgs.parsec) ];
+          };
         };
-      };
       tests = {
         "mappy-test" = {
           depends = [
@@ -49,8 +32,8 @@
             (hsPkgs.mappy)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

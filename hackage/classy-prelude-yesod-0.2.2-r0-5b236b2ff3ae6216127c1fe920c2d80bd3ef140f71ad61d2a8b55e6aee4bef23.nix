@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "classy-prelude-yesod";
-        version = "0.2.2";
-      };
+      identifier = { name = "classy-prelude-yesod"; version = "0.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Provide a classy prelude including common Yesod functionality.";
       description = "This is an extension of classy-prelude-conduit, adding in commonly used functions and data types from Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.http-types)
           (hsPkgs.http-conduit)
           (hsPkgs.persistent)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

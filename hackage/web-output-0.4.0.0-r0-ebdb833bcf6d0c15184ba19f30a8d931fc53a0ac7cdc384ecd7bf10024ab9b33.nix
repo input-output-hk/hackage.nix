@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "web-output";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "web-output"; version = "0.4.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "f.occhipinti@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library to present content to an user via their browser";
       description = "Library to present content to an user via their browser";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

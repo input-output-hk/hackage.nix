@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "megaparsec";
-        version = "4.1.1";
-      };
+      identifier = { name = "megaparsec"; version = "4.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov@opmbx.org>";
@@ -22,7 +13,7 @@
       synopsis = "Monadic parser combinators";
       description = "This is industrial-strength monadic parser combinator library. Megaparsec is\na fork of Parsec library originally written by Daan Leijen.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "old-tests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
-        };
+            ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -52,9 +43,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.criterion)
             (hsPkgs.text)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

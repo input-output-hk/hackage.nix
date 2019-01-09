@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "d-bus";
-        version = "0.1.7";
-      };
+      identifier = { name = "d-bus"; version = "0.1.7"; };
       license = "BSD-3-Clause";
       copyright = "2013-2017 Philipp Balzarek";
       maintainer = "p.balzarek@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Permissively licensed D-Bus client library";
       description = "This library uses modern extensions to the Haskell type system\n(including GADTs, DataKinds and TypeFamilies) and the\nsingletons library to embedd the D-Bus type system. D-Bus\nsignatures can thus be inferred.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,24 +41,16 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-picklers)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       exes = {
         "dbus-introspect" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.d-bus)
-            (hsPkgs.text)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.d-bus) (hsPkgs.text) ];
+          };
         "liferea-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.d-bus)
-            (hsPkgs.text)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.d-bus) (hsPkgs.text) ];
+          };
         };
-      };
       tests = {
         "unittests" = {
           depends = [
@@ -84,8 +67,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.text)
             (hsPkgs.xml-hamlet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

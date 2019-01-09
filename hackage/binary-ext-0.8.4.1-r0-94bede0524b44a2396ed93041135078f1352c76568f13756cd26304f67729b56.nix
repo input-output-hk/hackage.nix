@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "binary-ext";
-        version = "0.8.4.1";
-      };
+      identifier = { name = "binary-ext"; version = "0.8.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Lennart Kolmodin, Don Stewart <dons00@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Binary serialisation for Haskell values using lazy ByteStrings";
       description = "Efficient, pure binary serialisation using lazy ByteStrings.\nHaskell values may be encoded to and from binary formats,\nwritten to disk as binary, or sent over the network.\nThe format used can be automatically generated, or\nyou can choose to implement a custom format if needed.\nSerialisation speeds of over 1 G\\/sec have been observed,\nso this library should be suitable for high performance\nscenarios.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.binary)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs.ghc-prim);
+        };
       tests = {
         "qc" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.array)
             (hsPkgs.containers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") (hsPkgs.ghc-prim);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs.ghc-prim);
+          };
         "read-write-file" = {
           depends = [
             (hsPkgs.base)
@@ -58,8 +49,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.array)
             (hsPkgs.containers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") (hsPkgs.ghc-prim);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs.ghc-prim);
+          };
         };
       };
-    };
-  }
+    }

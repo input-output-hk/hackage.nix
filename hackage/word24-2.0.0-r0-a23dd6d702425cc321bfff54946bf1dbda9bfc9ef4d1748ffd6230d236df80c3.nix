@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "word24";
-        version = "2.0.0";
-      };
+      identifier = { name = "word24"; version = "2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Winterland, John W. Lato";
@@ -22,14 +13,9 @@
       synopsis = "24-bit word and int types for GHC";
       description = "24-bit Word and Int data types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.deepseq)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.deepseq) ]; };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +25,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench24" = {
           depends = [
@@ -49,8 +35,8 @@
             (hsPkgs.word24)
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

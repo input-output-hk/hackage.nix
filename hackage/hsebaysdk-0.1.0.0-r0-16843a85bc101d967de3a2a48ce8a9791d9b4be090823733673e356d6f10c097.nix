@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsebaysdk";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hsebaysdk"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Christopher Reichert";
       maintainer = "creichert07@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell eBay SDK";
       description = "eBay API wrapper in Haskell.\nSee the git repository for example usages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.http-conduit)
           (hsPkgs.http-types)
           (hsPkgs.resourcet)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

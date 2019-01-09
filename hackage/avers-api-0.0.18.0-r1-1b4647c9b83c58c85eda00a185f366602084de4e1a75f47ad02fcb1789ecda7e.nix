@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "avers-api";
-        version = "0.0.18.0";
-      };
+      identifier = { name = "avers-api"; version = "0.0.18.0"; };
       license = "MIT";
       copyright = "2016 Tomas Carnecky";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Types describing the core and extended Avers APIs";
       description = "Types describing the core and extended Avers APIs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

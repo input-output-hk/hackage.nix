@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "doublify-toolkit";
-        version = "0.0.1";
-      };
+      identifier = { name = "doublify-toolkit"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Doublify Technologies";
       maintainer = "apis+opensource@doublify.io";
@@ -22,10 +13,6 @@
       synopsis = "Doublify API toolkit for Haskell";
       description = "Doublify API toolkit";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

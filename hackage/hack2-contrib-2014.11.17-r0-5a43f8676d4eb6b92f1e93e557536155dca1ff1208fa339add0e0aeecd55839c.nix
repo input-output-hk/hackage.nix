@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack2-contrib";
-        version = "2014.11.17";
-      };
+      identifier = { name = "hack2-contrib"; version = "2014.11.17"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hack2 contrib";
       description = "Common middlewares and utilities for Hack2";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,9 +28,9 @@
           (hsPkgs.air)
           (hsPkgs.hack2)
           (hsPkgs.text)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

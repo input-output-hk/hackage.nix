@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "hasktorch-codegen";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "hasktorch-codegen"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sam Stites <fnz@fgvgrf.vb>, Austin Huang <nhfgvau@nyhz.zvg.rqh> - cipher:ROT13";
@@ -22,7 +13,7 @@
       synopsis = "Code generation tools for Hasktorch";
       description = "Codegen will generate FFI code which layes the foundation for the Hasktorch library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.pretty-show)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "ht-codegen" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.hasktorch-codegen)
             (hsPkgs.pretty-show)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.megaparsec)
             (hsPkgs.pretty-show)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

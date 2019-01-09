@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-replace";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "text-replace"; version = "0.0.0.3"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,14 +13,9 @@
       synopsis = "Simple text replacements from a list of search/replace pairs";
       description = "A library and a command-line application for simple string\nreplacements in text files. The search for strings to replace is\nperformed left-to-right, preferring longer matches to shorter\nones.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
       exes = {
         "text-replace" = {
           depends = [
@@ -37,9 +23,9 @@
             (hsPkgs.base)
             (hsPkgs.parsec)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "properties" = {
           depends = [
@@ -48,8 +34,8 @@
             (hsPkgs.hedgehog)
             (hsPkgs.neat-interpolation)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

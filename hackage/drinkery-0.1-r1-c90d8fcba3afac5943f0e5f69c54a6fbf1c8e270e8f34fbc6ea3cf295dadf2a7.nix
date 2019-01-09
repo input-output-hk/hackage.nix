@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "drinkery";
-        version = "0.1";
-      };
+      identifier = { name = "drinkery"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017 Fumiaki Kinoshita";
       maintainer = "fumiexcel@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Boozy streaming library";
       description = "<https://www.schoolofhaskell.com/user/fumieval/drinkery-the-boozy-streaming-library drinkery the boozy streaming library>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-          (hsPkgs.mtl)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.mtl) ];
+        };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -43,8 +30,8 @@
             (hsPkgs.conduit-combinators)
             (hsPkgs.list-t)
             (hsPkgs.ListT)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

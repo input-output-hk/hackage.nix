@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "median-stream";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "median-stream"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Joe Canero";
       maintainer = "jmc41493@gmail.com";
@@ -22,22 +13,17 @@
       synopsis = "Constant-time queries for the median of a stream of numeric\ndata.";
       description = "Uses the two-heap approach to support O(lg n) insertions\nand O(1) queries for the median.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.heap)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.heap) ]; };
       tests = {
         "median-stream-test" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.median-stream)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

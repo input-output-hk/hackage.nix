@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "murmur";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "murmur"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Author Tokiwo Ousaka";
       maintainer = "its.out.of.tune.this.my.music@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple CUI Twitter Client.";
       description = "This package privides simple CUI Twitter client. and very easy API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.transformers)
           (hsPkgs.data-default)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       exes = {
         "mur" = {
           depends = [
@@ -50,16 +41,11 @@
             (hsPkgs.optparse-declarative)
             (hsPkgs.transformers)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "murmur-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.murmur)
-          ];
+        "murmur-test" = { depends = [ (hsPkgs.base) (hsPkgs.murmur) ]; };
         };
       };
-    };
-  }
+    }

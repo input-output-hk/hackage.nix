@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "tbox";
-        version = "0.0.0";
-      };
+      identifier = { name = "tbox"; version = "0.0.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Peter Robinson <thaldyron@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Transactional variables with IO hooks";
       description = "(to be expanded...)\n\nThis package provides transactional variables with IO hooks.\nSee module 'Control.Concurrent.TFile' for a concrete instance.\n\nFeedback appreciated!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.cautious-file)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

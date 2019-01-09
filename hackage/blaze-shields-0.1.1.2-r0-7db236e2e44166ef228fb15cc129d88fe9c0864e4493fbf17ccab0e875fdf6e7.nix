@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "blaze-shields";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "blaze-shields"; version = "0.1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "qinka@live.com";
@@ -22,7 +13,7 @@
       synopsis = "create svg by Haskell";
       description = "a Haskell version of shields ,which is on github.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-svg)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

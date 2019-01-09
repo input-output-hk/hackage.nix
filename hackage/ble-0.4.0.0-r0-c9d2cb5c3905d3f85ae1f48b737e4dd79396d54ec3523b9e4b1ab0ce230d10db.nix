@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bluez543 = false;
-      hasbluez = true;
-      hasdbus = false;
-    };
+    flags = { bluez543 = false; hasbluez = true; hasdbus = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ble";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "ble"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Julian K. Arni";
       maintainer = "jkarni@turingjump.com";
@@ -26,7 +13,7 @@
       synopsis = "Bluetooth Low Energy (BLE) peripherals";
       description = "This package provides a Haskell API for writing Bluetooth Low Energy peripherals.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +30,8 @@
           (hsPkgs.microlens-ghc)
           (hsPkgs.cereal)
           (hsPkgs.data-default-class)
-        ];
-      };
+          ];
+        };
       exes = {
         "auth" = {
           depends = [
@@ -62,8 +49,8 @@
             (hsPkgs.cereal)
             (hsPkgs.data-default-class)
             (hsPkgs.ble)
-          ];
-        };
+            ];
+          };
         "hrs" = {
           depends = [
             (hsPkgs.base)
@@ -81,8 +68,8 @@
             (hsPkgs.data-default-class)
             (hsPkgs.ble)
             (hsPkgs.hslogger)
-          ];
-        };
+            ];
+          };
         "hrs-client" = {
           depends = [
             (hsPkgs.base)
@@ -99,8 +86,8 @@
             (hsPkgs.cereal)
             (hsPkgs.data-default-class)
             (hsPkgs.ble)
-          ];
-        };
+            ];
+          };
         "readme" = {
           depends = [
             (hsPkgs.base)
@@ -119,9 +106,9 @@
             (hsPkgs.ble)
             (hsPkgs.stm)
             (hsPkgs.markdown-unlit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -144,8 +131,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.process)
             (hsPkgs.hslogger)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

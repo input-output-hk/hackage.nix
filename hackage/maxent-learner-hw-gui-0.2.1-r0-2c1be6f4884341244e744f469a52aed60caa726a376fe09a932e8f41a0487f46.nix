@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "maxent-learner-hw-gui";
-        version = "0.2.1";
-      };
+      identifier = { name = "maxent-learner-hw-gui"; version = "0.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "2016-2017 George Steel and Peter Jurgec";
       maintainer = "george.steel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "GUI for maxent-learner-hw";
       description = "This is a GUI frontent for maxent-learner-hw using GTK.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "phono-learner-hw-gui" = {
@@ -49,8 +40,8 @@
             (hsPkgs.cairo)
             (hsPkgs.Chart)
             (hsPkgs.Chart-cairo)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

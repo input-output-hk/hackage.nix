@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xml-query-xml-types";
-        version = "0.4.1";
-      };
+      identifier = { name = "xml-query-xml-types"; version = "0.4.1"; };
       license = "MIT";
       copyright = "(c) 2015, Sannsyn AS";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "An interpreter of \"xml-query\" queries for the \"xml-types\" documents";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.success)
           (hsPkgs.transformers)
           (hsPkgs.base-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.data-default-class)
             (hsPkgs.base-prelude)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

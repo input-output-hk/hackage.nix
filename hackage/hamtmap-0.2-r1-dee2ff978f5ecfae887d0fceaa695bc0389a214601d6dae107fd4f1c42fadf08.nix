@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hamtmap";
-        version = "0.2";
-      };
+      identifier = { name = "hamtmap"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kevin Wu Won <exclipy@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "A purely functional and persistent hash map";
       description = "A port of Clojure's efficient persistent and hash\nmap data structure to Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.deepseq)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.deepseq) ];
+        };
       };
-    };
-  }
+    }

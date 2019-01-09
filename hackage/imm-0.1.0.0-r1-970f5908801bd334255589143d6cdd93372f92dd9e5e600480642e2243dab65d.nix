@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "imm";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "imm"; version = "0.1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral att mailoo dott org";
@@ -22,7 +13,7 @@
       synopsis = "RSS-to-maildir tool";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,15 +33,8 @@
           (hsPkgs.cmdargs)
           (hsPkgs.network)
           (hsPkgs.utf8-string)
-        ];
-      };
-      exes = {
-        "imm" = {
-          depends = [
-            (hsPkgs.imm)
-            (hsPkgs.base)
           ];
         };
+      exes = { "imm" = { depends = [ (hsPkgs.imm) (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

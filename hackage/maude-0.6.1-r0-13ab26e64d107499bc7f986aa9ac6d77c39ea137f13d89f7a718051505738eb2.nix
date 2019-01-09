@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "maude";
-        version = "0.6.1";
-      };
+      identifier = { name = "maude"; version = "0.6.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Lazar <lazar6@illinois.edu>";
@@ -22,7 +13,7 @@
       synopsis = "An interface to the Maude rewriting system.";
       description = "This package provides a simple interface for doing Maude\nrewrites from within Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.temporary)
           (hsPkgs.text)
           (hsPkgs.xml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

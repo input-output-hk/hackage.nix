@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "criterion-plus";
-        version = "0.1.3";
-      };
+      identifier = { name = "criterion-plus"; version = "0.1.3"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Enhancement of the \"criterion\" benchmarking library";
       description = "A dome library over \\\"criterion\\\",\nwhich enhances it with the following features:\n\n* Support for partial measuring, e.g., exclusion of the setup/teardown phases.\n\n* Generation of multiple unrelated comparison reports.\n\n* A flexible monadic API,\nwhich allows you to benchmark monad transformers and\ncontrol which parts you actually want measured.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.loch-th)
           (hsPkgs.placeholders)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "internal-tests" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.loch-th)
             (hsPkgs.placeholders)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

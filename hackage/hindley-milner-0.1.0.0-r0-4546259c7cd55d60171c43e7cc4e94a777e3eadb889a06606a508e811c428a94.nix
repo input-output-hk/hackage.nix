@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hindley-milner";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hindley-milner"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael.gale@cl.cam.ac.uk";
@@ -22,7 +13,7 @@
       synopsis = "Template for Hindley-Milner based languages";
       description = "This package contains an implemention of Hindley-Milner and Algorithm W as\na starting point for derived languages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.data-fix)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.hindley-milner)
             (hsPkgs.hspec)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

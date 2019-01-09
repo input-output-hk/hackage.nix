@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wai-app-file-cgi";
-        version = "0.3.2";
-      };
+      identifier = { name = "wai-app-file-cgi"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "File/CGI App of WAI";
       description = "This WAI application handles static files and\nexecutes CGI scripts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.static-hash)
           (hsPkgs.wai-logger)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

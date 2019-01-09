@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SciFlow";
-        version = "0.4.1";
-      };
+      identifier = { name = "SciFlow"; version = "0.4.1"; };
       license = "MIT";
       copyright = "(c) 2016 Kai Zhang";
       maintainer = "kai@kzhang.org";
@@ -22,7 +13,7 @@
       synopsis = "Scientific workflow management system";
       description = "SciFlow is to help programmers design complex workflows\nwith ease.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.transformers)
           (hsPkgs.containers)
           (hsPkgs.yaml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-swagger";
-        version = "1.1.2.1";
-      };
+      identifier = { name = "servant-swagger"; version = "1.1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2016, Servant contributors";
       maintainer = "nickolay.kudasov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate Swagger specification for your servant API.";
       description = "Please see README.md";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.hspec)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.servant)
             (hsPkgs.QuickCheck)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -64,8 +55,8 @@
             (hsPkgs.swagger2)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

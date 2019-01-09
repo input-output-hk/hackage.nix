@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "pattern-arrows";
-        version = "0.0.1";
-      };
+      identifier = { name = "pattern-arrows"; version = "0.0.1"; };
       license = "MIT";
       copyright = "(c) Phil Freeman 2013";
       maintainer = "Phil Freeman <paf31@cantab.net>";
@@ -22,13 +13,6 @@
       synopsis = "Arrows for Pretty Printing";
       description = "A library for generating concise pretty printers based on precedence rules.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

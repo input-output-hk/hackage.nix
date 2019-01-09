@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "trasa-client";
-        version = "0.2";
-      };
+      identifier = { name = "trasa-client"; version = "0.2"; };
       license = "MIT";
       copyright = "@2017 Kyle McKean";
       maintainer = "mckean.kylej@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Type safe http requests";
       description = "Http client integration for trasa";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.http-media)
           (hsPkgs.http-client)
           (hsPkgs.trasa)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.text)
             (hsPkgs.ip)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

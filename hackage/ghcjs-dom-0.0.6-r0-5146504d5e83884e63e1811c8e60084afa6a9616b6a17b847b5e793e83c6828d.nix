@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       ghcjs = true;
@@ -12,13 +6,10 @@
       webkit = false;
       jsc = false;
       gtk3 = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghcjs-dom";
-        version = "0.0.6";
-      };
+      identifier = { name = "ghcjs-dom"; version = "0.0.6"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -28,24 +19,18 @@
       synopsis = "DOM library that supports both GHCJS and WebKitGTK";
       description = "Documentent Object Model (DOM) functions that work with\nGHCJS, but can also be used with GHC and WebKitGTK.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
           (hsPkgs.mtl)
-        ] ++ pkgs.lib.optional (flags.ghcjs && flags.jsffi) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optionals (!flags.ghcjs || flags.webkit) ([
+          ] ++ (pkgs.lib).optional (flags.ghcjs && flags.jsffi) (hsPkgs.ghcjs-base)) ++ (pkgs.lib).optionals (!flags.ghcjs || flags.webkit) ([
           (hsPkgs.glib)
           (hsPkgs.transformers)
-        ] ++ (if flags.gtk3
-          then [
-            (hsPkgs.gtk3)
-            (hsPkgs.webkitgtk3)
-          ]
-          else [
-            (hsPkgs.gtk)
-            (hsPkgs.webkit)
-          ]));
+          ] ++ (if flags.gtk3
+          then [ (hsPkgs.gtk3) (hsPkgs.webkitgtk3) ]
+          else [ (hsPkgs.gtk) (hsPkgs.webkit) ]));
+        };
       };
-    };
-  }
+    }

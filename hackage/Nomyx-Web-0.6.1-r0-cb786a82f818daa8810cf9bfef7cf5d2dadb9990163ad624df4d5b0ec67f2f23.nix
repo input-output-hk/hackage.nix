@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Nomyx-Web";
-        version = "0.6.1";
-      };
+      identifier = { name = "Nomyx-Web"; version = "0.6.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "corentin.dupont@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Web gui for Nomyx";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,7 +43,7 @@
           (hsPkgs.web-routes-happstack)
           (hsPkgs.web-routes-regular)
           (hsPkgs.web-routes-th)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

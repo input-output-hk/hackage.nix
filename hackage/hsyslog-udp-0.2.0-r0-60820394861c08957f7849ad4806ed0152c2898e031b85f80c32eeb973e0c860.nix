@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsyslog-udp";
-        version = "0.2.0";
-      };
+      identifier = { name = "hsyslog-udp"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jon@childr.es";
@@ -22,7 +13,7 @@
       synopsis = "Log to syslog over a network via UDP";
       description = "Supports <https://tools.ietf.org/html/rfc5424 RFC 5424>,\n<https://tools.ietf.org/html/rfc3164 RFC 3164>, or any\narbitrary protocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "specs" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hsyslog-udp)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

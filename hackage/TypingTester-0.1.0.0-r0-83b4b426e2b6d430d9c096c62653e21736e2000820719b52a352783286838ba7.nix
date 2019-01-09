@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "TypingTester";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "TypingTester"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "hawk.alan@gmailcom";
@@ -22,15 +13,10 @@
       synopsis = "Command Line Typing speed tester";
       description = "Prompts the user to type anything they wish. Notifies them of how long it took.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "typingtester" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.time)
-          ];
+        "typingtester" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
         };
       };
-    };
-  }
+    }

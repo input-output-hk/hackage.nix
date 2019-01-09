@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gcodehs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "gcodehs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Richard Marko";
       maintainer = "rmarko@base48.cz";
@@ -22,7 +13,7 @@
       synopsis = "GCode processor";
       description = "GCode parser, pretty-printer and processing utils";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.formatting)
-        ];
-      };
+          ];
+        };
       exes = {
         "gcodehs" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.pipes-safe)
             (hsPkgs.pipes-parse)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "freekick2";
-        version = "0.1.1";
-      };
+      identifier = { name = "freekick2"; version = "0.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "Antti Salonen 2010";
       maintainer = "Antti Salonen<ajsalonen at gmail dot com>";
@@ -22,7 +13,7 @@
       synopsis = "A soccer game";
       description = "A soccer game.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "freekick2" = {
@@ -43,8 +34,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "swos2gen" = {
           depends = [
             (hsPkgs.base)
@@ -55,8 +46,8 @@
             (hsPkgs.filepath)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "createteam" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +58,8 @@
             (hsPkgs.filepath)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

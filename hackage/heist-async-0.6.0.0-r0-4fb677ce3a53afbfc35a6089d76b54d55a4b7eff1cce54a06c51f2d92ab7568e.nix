@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "heist-async";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "heist-async"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@riseup.net";
@@ -22,7 +13,7 @@
       synopsis = "Adding support for asynchronous updates (\"AJAX\") with heist";
       description = "This package provides six splices and some accompanying javascript to allow declarative ajax programming that involves no javascript programming.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.heist)
           (hsPkgs.text)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

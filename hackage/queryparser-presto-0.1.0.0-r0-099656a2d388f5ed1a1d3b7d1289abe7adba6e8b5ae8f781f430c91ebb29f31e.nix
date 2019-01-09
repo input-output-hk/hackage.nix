@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "queryparser-presto";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "queryparser-presto"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "heli@uber.com";
@@ -24,7 +13,7 @@
       synopsis = "Parsing for Presto SQL queries";
       description = "A library for parsing Presto SQL queries into analyzable ASTs.\n\nThis library is to be used with the queryparser library, which\nprovides the common type definitions and analyses across the\ndifferent SQL dialects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +34,7 @@
           (hsPkgs.regex-tdfa)
           (hsPkgs.fixed-list)
           (hsPkgs.predicate-class)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

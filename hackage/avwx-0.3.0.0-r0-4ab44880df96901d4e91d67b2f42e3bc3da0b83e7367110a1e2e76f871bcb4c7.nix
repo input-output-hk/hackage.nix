@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "avwx";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "avwx"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "2016, Hans-Christian Esperer";
       maintainer = "Hans-Christian Esperer <hc@hcesperer.org>";
@@ -22,7 +13,7 @@
       synopsis = "Parse aviation weather reports";
       description = "Parse aviation weather reports, currently METARs and TAFs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.parsers)
           (hsPkgs.HTTP)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "metar" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.pretty-show)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "avwx-test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.lens)
             (hsPkgs.pretty-show)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

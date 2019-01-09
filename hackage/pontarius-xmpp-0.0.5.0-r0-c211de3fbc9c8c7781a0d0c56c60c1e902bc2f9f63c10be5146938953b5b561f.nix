@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pontarius-xmpp";
-        version = "0.0.5.0";
-      };
+      identifier = { name = "pontarius-xmpp"; version = "0.0.5.0"; };
       license = "LGPL-3.0-only";
       copyright = "Copyright Â© 2011, Jon Kristensen";
       maintainer = "jon.kristensen@pontarius.org";
@@ -22,7 +13,7 @@
       synopsis = "A (prototyped) secure and easy to use XMPP library";
       description = "A work in progress of an implementation of RFC 6120: XMPP:\nCore.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.tls)
           (hsPkgs.containers)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

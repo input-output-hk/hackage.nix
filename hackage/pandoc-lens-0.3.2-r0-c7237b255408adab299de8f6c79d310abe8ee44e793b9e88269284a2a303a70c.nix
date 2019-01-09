@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pandoc-lens";
-        version = "0.3.2";
-      };
+      identifier = { name = "pandoc-lens"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Ben Gamari";
       maintainer = "bgamari.foss@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lenses for Pandoc documents";
       description = "Lenses for Pandoc documents";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.pandoc-types)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

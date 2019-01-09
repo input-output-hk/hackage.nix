@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "DPM";
-        version = "0.2.0";
-      };
+      identifier = { name = "DPM"; version = "0.2.0"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2009-2010 Stefan Wehr";
       maintainer = "Stefan Wehr <mail@stefanwehr.de>";
@@ -22,7 +13,7 @@
       synopsis = "Darcs Patch Manager";
       description = "The Darcs Patch Manager (/DPM/ for short) is a tool that simplifies working\nwith the revision control system darcs (<http://darcs.net>). It is most\neffective when used in an environment where developers do not push their\npatches directly to the main repository but where patches undergo a\nreviewing process before they are actually applied. See the documentation\nof the module \"DPM.Tutorial\" for a short tutorial.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
@@ -47,8 +38,8 @@
             (hsPkgs.unix)
             (hsPkgs.HTF)
             (hsPkgs.HSH)
-          ];
-        };
+            ];
+          };
         "dpm" = {
           depends = [
             (hsPkgs.darcs)
@@ -70,8 +61,8 @@
             (hsPkgs.unix)
             (hsPkgs.HTF)
             (hsPkgs.HSH)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

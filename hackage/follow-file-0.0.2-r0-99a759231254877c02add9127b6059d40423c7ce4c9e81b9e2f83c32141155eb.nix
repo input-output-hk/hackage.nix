@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "follow-file";
-        version = "0.0.2";
-      };
+      identifier = { name = "follow-file"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Be notified when a file gets appended, solely with what was added.";
       description = "See module for docs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.text)
           (hsPkgs.unix)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "follow-file" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-combinators)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dropsolve";
-        version = "0.1";
-      };
+      identifier = { name = "dropsolve"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel.trstenjak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A command line tool for resolving dropbox conflicts.";
       description = "A command line tool for resolving dropbox conflicts.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dropsolve" = {
@@ -34,8 +25,8 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

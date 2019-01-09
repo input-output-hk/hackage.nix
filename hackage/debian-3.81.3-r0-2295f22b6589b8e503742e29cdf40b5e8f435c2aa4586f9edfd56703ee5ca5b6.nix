@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { listlike = true; };
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "debian";
-        version = "3.81.3";
-      };
+      identifier = { name = "debian"; version = "3.81.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering some basic data types defined by\nthe Debian policy manual - version numbers, control file syntax, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,14 +39,10 @@
           (hsPkgs.Unixutils)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ] ++ (if flags.listlike
-          then [
-            (hsPkgs.process-listlike)
-          ]
-          else [
-            (hsPkgs.process-extras)
-          ]);
-      };
+          ] ++ (if flags.listlike
+          then [ (hsPkgs.process-listlike) ]
+          else [ (hsPkgs.process-extras) ]);
+        };
       exes = {
         "fakechanges" = {
           depends = [
@@ -63,8 +50,8 @@
             (hsPkgs.debian)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "debian-report" = {
           depends = [
             (hsPkgs.base)
@@ -72,15 +59,11 @@
             (hsPkgs.HaXml)
             (hsPkgs.unix)
             (hsPkgs.pretty)
-          ];
-        };
+            ];
+          };
         "apt-get-build-depends" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.debian)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.debian) (hsPkgs.process) ];
+          };
         };
       };
-    };
-  }
+    }

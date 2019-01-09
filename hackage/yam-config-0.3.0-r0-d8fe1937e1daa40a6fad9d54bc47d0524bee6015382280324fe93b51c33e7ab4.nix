@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yam-config";
-        version = "0.3.0";
-      };
+      identifier = { name = "yam-config"; version = "0.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Daniel YU <leptonyu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Yam Configuation";
       description = "Configuation Loader Module for yam";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

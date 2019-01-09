@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "tensorflow-records";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tensorflow-records"; version = "0.1.0.0"; };
       license = "LicenseRef-Apache";
       copyright = "Google Inc.";
       maintainer = "tensorflow-haskell@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Encoder and decoder for the TensorFlow \\\"TFRecords\\\" format.";
       description = "Encoder and decoder for the TensorFlow \\\"TFRecords\\\" format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
           (hsPkgs.snappy-framing)
-        ];
-      };
+          ];
+        };
       tests = {
         "RecordsTest" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tensorflow-records)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

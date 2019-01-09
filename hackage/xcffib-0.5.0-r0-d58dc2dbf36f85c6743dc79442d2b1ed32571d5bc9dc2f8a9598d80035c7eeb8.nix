@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xcffib";
-        version = "0.5.0";
-      };
+      identifier = { name = "xcffib"; version = "0.5.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Tycho Andersen <tycho@tycho.ws>";
@@ -22,7 +13,7 @@
       synopsis = "A cffi-based python binding for X";
       description = "A cffi-based python binding for X, comparable to xpyb";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
           (hsPkgs.either)
-        ];
-      };
+          ];
+        };
       exes = {
         "xcffibgen" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.semigroups)
             (hsPkgs.either)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "PyHelpersTests" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
-        };
+            ];
+          };
         "GeneratorTests.hs" = {
           depends = [
             (hsPkgs.base)
@@ -81,8 +72,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

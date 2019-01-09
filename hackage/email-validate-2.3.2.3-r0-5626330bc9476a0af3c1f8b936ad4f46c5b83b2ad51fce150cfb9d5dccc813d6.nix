@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "email-validate";
-        version = "2.3.2.3";
-      };
+      identifier = { name = "email-validate"; version = "2.3.2.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "George Pollard <porges@porg.es>";
@@ -22,7 +13,7 @@
       synopsis = "Email address validation";
       description = "Validating an email address string against RFC 5322";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "Main" = {
           depends = [
@@ -40,14 +31,9 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
-          ];
-        };
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

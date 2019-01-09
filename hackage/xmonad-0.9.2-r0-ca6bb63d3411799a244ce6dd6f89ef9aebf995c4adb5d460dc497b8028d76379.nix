@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      small_base = true;
-      testing = false;
-    };
+    flags = { small_base = true; testing = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "xmonad";
-        version = "0.9.2";
-      };
+      identifier = { name = "xmonad"; version = "0.9.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "xmonad@haskell.org";
@@ -25,14 +13,14 @@
       synopsis = "A tiling window manager";
       description = "xmonad is a tiling window manager for X. Windows are arranged\nautomatically to tile the screen without gaps or overlap, maximising\nscreen use. All features of the window manager are accessible from\nthe keyboard: a mouse is strictly optional. xmonad is written and\nextensible in Haskell. Custom layout algorithms, and other\nextensions, may be written by the user in config files. Layouts are\napplied dynamically, and different layouts may be used on each\nworkspace. Xinerama is fully supported, allowing windows to be tiled\non several screens.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.X11)
           (hsPkgs.mtl)
           (hsPkgs.unix)
-        ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
           then [
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -40,12 +28,12 @@
             (hsPkgs.process)
             (hsPkgs.filepath)
             (hsPkgs.extensible-exceptions)
-          ]
+            ]
           else [ (hsPkgs.base) ]);
-      };
+        };
       exes = {
         "xmonad" = {
-          depends = pkgs.lib.optional (flags.testing) (hsPkgs.QuickCheck) ++ pkgs.lib.optionals (flags.testing && flags.small_base) [
+          depends = (pkgs.lib).optional (flags.testing) (hsPkgs.QuickCheck) ++ (pkgs.lib).optionals (flags.testing && flags.small_base) [
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.directory)
@@ -56,8 +44,8 @@
             (hsPkgs.containers)
             (hsPkgs.random)
             (hsPkgs.extensible-exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

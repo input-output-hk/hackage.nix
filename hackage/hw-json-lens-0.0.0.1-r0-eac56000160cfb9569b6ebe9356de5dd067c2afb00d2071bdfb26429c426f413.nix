@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "hw-json-lens";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "hw-json-lens"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "2016 Alexey Raga";
       maintainer = "alexey.raga@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lens for hw-json";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.word8)
-        ];
-      };
+          ];
+        };
       tests = {
         "hw-json-lens-test" = {
           depends = [
@@ -78,9 +69,9 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -99,8 +90,8 @@
             (hsPkgs.scientific)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

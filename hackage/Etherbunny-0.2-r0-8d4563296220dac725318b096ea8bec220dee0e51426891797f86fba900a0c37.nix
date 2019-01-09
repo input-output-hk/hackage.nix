@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Etherbunny";
-        version = "0.2";
-      };
+      identifier = { name = "Etherbunny"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "nickburlett@mac.com";
@@ -22,7 +13,7 @@
       synopsis = "A network analysis toolkit for haskell";
       description = "A network analysis toolkit for haskell, based on the Network.Pcap library. Currently not very useful, but getting there.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.haskell98)
           (hsPkgs.pcap)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       exes = {
         "etherbunny" = {
           depends = [
@@ -41,9 +32,9 @@
             (hsPkgs.haskell98)
             (hsPkgs.pcap)
             (hsPkgs.binary)
-          ];
+            ];
           libs = [ (pkgs."pcap") ];
+          };
         };
       };
-    };
-  }
+    }

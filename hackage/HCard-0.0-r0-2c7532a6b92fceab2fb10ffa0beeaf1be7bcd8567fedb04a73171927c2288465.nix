@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HCard";
-        version = "0.0";
-      };
+      identifier = { name = "HCard"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jfredett@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for implementing a Deck of Cards";
       description = "HCard provides a standard interface to a deck of cards -- providing shuffling, permutation irrelevant equality of hands, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.random)
           (hsPkgs.QuickCheck)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

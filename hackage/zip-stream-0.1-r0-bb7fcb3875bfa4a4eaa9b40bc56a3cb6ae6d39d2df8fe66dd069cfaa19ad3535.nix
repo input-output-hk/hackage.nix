@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zip-stream";
-        version = "0.1";
-      };
+      identifier = { name = "zip-stream"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017";
       maintainer = "dylan@dylex.net";
@@ -22,7 +13,7 @@
       synopsis = "ZIP archive streaming using conduits";
       description = "Process (extract and create) zip files as streams (e.g., over the network), accessing contained files without having to write the zip file to disk (unlike zip-conduit).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers-base)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "unzip-stream" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.filepath)
             (hsPkgs.time)
             (hsPkgs.zip-stream)
-          ];
-        };
+            ];
+          };
         "zip-stream" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +57,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.time)
             (hsPkgs.zip-stream)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

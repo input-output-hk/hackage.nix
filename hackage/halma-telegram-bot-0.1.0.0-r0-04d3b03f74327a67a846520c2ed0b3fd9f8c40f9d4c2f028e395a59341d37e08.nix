@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "halma-telegram-bot";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "halma-telegram-bot"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016-2017 Tim Baumann";
       maintainer = "tim@timbaumann.info";
@@ -22,7 +13,7 @@
       synopsis = "Telegram bot for playing Halma";
       description = "Play Halma (aka Chinese Checkers) in Telegram against your friends or an AI";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "halma-telegram-bot" = {
@@ -51,8 +42,8 @@
             (hsPkgs.filepath)
             (hsPkgs.bytestring)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reserve";
-        version = "0.1.1";
-      };
+      identifier = { name = "reserve"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2014 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "Reserve reloads web applications";
       description = "Universal and robust reloading for Haskell web applications";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "reserve" = {
@@ -36,9 +27,9 @@
             (hsPkgs.http-types)
             (hsPkgs.http-kit)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.http-conduit)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

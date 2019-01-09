@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pkcs7";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "pkcs7"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "coder@kyleisom.net";
@@ -22,14 +13,9 @@
       synopsis = "PKCS #7 padding in Haskell";
       description = "Implements PKCS #7 padding.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
       tests = {
         "test-pkcs7" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

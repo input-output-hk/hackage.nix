@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bitcoin-block";
-        version = "0.12.0";
-      };
+      identifier = { name = "bitcoin-block"; version = "0.12.0"; };
       license = "MIT";
       copyright = "(c) 2015 Leon Mergen";
       maintainer = "leon@solatis.com";
@@ -22,7 +13,7 @@
       synopsis = "Utility functions for manipulating bitcoin blocks";
       description = "This library provides functionality for parsing, inspecting,\nhashing and serialization of bitcoin blocks.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.largeword)
           (hsPkgs.bitcoin-tx)
           (hsPkgs.bitcoin-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.bitcoin-tx)
             (hsPkgs.bitcoin-types)
             (hsPkgs.bitcoin-block)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

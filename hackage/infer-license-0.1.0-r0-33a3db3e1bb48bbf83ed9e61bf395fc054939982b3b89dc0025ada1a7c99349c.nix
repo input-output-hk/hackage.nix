@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "infer-license";
-        version = "0.1.0";
-      };
+      identifier = { name = "infer-license"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2018 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,15 +13,11 @@
       synopsis = "Infer software license from a given license file";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.text-metrics)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.text-metrics) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.infer-license)
             (hsPkgs.text)
             (hsPkgs.text-metrics)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

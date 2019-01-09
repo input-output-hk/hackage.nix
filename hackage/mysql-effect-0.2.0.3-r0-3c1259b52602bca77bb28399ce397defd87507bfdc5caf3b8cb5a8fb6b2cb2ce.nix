@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mysql-effect";
-        version = "0.2.0.3";
-      };
+      identifier = { name = "mysql-effect"; version = "0.2.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "tob@butter.sh";
@@ -22,7 +13,7 @@
       synopsis = "An extensible mysql effect using extensible-effects and mysql-simple";
       description = "Any help (especially documentation) is very welcome,";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.extensible-effects)
           (hsPkgs.mysql-simple)
           (hsPkgs.mysql)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

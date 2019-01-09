@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "HUnit-Plus";
-        version = "0.3.1";
-      };
+      identifier = { name = "HUnit-Plus"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 Eric McCorkle.  All rights reserved.";
       maintainer = "Eric McCorkle <emc2@metricspace.net>";
@@ -22,7 +13,7 @@
       synopsis = "A test framework building on HUnit.";
       description = "HUnit-Plus is a testing framework for Haskell that builds on the\nHUnit test framework.  HUnit-Plus provides functions and operators\nfor creating assertions and tests similar to those provided by the\nHUnit framework.  Unlike HUnit, HUnit-Plus uses the same data\nstructures as cabal's \"Distribution.TestSuite\" framework, allowing\nfull compatibility with cabal's testing facilities.\n\nHUnit-Plus also provides expanded reporting capabilities, including\nthe ability to generate JUnit-style XML reports, along with a very\nflexible mechanism for selecting which tests to be executed.\nLastly, HUnit-Plus provides a wrapper which generates standalone\ntest-execution programs from a set of test suites.\n\nThis is release candidate 2 for 1.0 (1.0-RC2)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.hostname)
           (hsPkgs.bytestring)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "RunTests" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.parsec)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

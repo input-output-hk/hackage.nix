@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghcjs-ajax";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ghcjs-ajax"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 Alexander Thiemann <mail@athiemann.net>";
       maintainer = "mail@athiemann.net";
@@ -22,14 +13,14 @@
       synopsis = "Crossbrowser AJAX Bindings for GHCJS";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.text)
           (hsPkgs.http-types)
-        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+        };
       };
-    };
-  }
+    }

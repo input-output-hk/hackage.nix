@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Useful";
-        version = "0.0.5";
-      };
+      identifier = { name = "Useful"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "contact@theorangeduck.com";
@@ -22,14 +13,10 @@
       synopsis = "Some useful functions and shorthands.";
       description = "A library of some useful functions and some other short-hand or alias functions which I commonly use to make coding quicker and easier. This also includes a lightweight implementation of a dictionary using Data.Map.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-          (hsPkgs.containers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.random) (hsPkgs.containers) ];
+        };
       };
-    };
-  }
+    }

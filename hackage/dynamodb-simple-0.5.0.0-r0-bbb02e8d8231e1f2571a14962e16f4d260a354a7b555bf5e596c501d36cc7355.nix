@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dynamodb-simple";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "dynamodb-simple"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Ondrej Palkovsky";
       maintainer = "palkovsky.ondrej@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Typesafe library for working with DynamoDB database";
       description = "Framework for accessing DynamoDB database. The majority of AWS API\nis available to the user in a convenient, simple and typesafe manner.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.scientific)
           (hsPkgs.tagged)
           (hsPkgs.uuid-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

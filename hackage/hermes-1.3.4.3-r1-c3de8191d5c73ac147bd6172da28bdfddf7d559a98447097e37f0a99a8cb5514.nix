@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       hpc = false;
@@ -13,13 +7,10 @@
       bench = false;
       prof = false;
       threadscope = false;
-    };
+      };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hermes";
-        version = "1.3.4.3";
-      };
+      identifier = { name = "hermes"; version = "1.3.4.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "-";
@@ -29,7 +20,7 @@
       synopsis = "";
       description = "-";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -91,8 +82,8 @@
           (hsPkgs.text-format)
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "hermes" = {
           depends = [
@@ -107,8 +98,8 @@
             (hsPkgs.unix)
             (hsPkgs.text)
             (hsPkgs.hermes)
-          ];
-        };
+            ];
+          };
         "hermes-docs" = {
           depends = [
             (hsPkgs.base)
@@ -120,8 +111,8 @@
             (hsPkgs.string-conv)
             (hsPkgs.hermes)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "hermes-server" = {
           depends = [
             (hsPkgs.base)
@@ -166,8 +157,8 @@
             (hsPkgs.text-format)
             (hsPkgs.hermes)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "hermes-progress" = {
           depends = [
             (hsPkgs.base)
@@ -179,8 +170,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.data-default)
             (hsPkgs.io-streams)
-          ];
-        };
+            ];
+          };
         "hermes-tests" = {
           depends = [
             (hsPkgs.async)
@@ -220,8 +211,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.hermes)
-          ];
-        };
+            ];
+          };
         "hermes-bench" = {
           depends = [
             (hsPkgs.base)
@@ -232,8 +223,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.criterion)
             (hsPkgs.hermes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       splitbase = true;
       splitsynthesizer = true;
       buildexamples = false;
-    };
+      };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "synthesizer-alsa";
-        version = "0.0.2.1";
-      };
+      identifier = { name = "synthesizer-alsa"; version = "0.0.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -26,7 +17,7 @@
       synopsis = "Control synthesizer effects via ALSA/MIDI";
       description = "This package allows to read MIDI events\nand to convert them to control signals\nthat can be used for audio effects.\nAs demonstration there is a keyboard controlled music synthesizer.\nHowever, latency increases over time such that the synthesizer becomes unusable.\nI currently do not know how to solve this problem.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -38,22 +29,12 @@
           (hsPkgs.event-list)
           (hsPkgs.transformers)
           (hsPkgs.utility-ht)
-        ] ++ (if flags.splitsynthesizer
-          then [
-            (hsPkgs.synthesizer-core)
-          ]
-          else [
-            (hsPkgs.synthesizer)
-          ])) ++ (if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.random)
-            (hsPkgs.old-time)
-          ]
+          ] ++ (if flags.splitsynthesizer
+          then [ (hsPkgs.synthesizer-core) ]
+          else [ (hsPkgs.synthesizer) ])) ++ (if flags.splitbase
+          then [ (hsPkgs.base) (hsPkgs.random) (hsPkgs.old-time) ]
           else [ (hsPkgs.base) ]);
+        };
+      exes = { "realtimesynth" = {}; };
       };
-      exes = {
-        "realtimesynth" = {};
-      };
-    };
-  }
+    }

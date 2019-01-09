@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "jose";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "jose"; version = "0.6.0.0"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) 2013, 2014, 2015, 2016, 2017  Fraser Tweedale";
       maintainer = "frase@frase.id.au";
@@ -22,7 +13,7 @@
       synopsis = "Javascript Object Signing and Encryption and JSON Web Token library";
       description = "\nAn implementation of the Javascript Object Signing and Encryption\n(JOSE) and JSON Web Token (JWT; RFC 7519) formats.\n\nThe JSON Web Signature (JWS; RFC 7515) implementation is complete.\n\nEdDSA signatures (RFC 8037) are supported (Ed25519 only).\n\nJWK Thumbprint (RFC 7638) is supported (requires /aeson/ >= 0.10).\n\nJSON Web Encryption (JWE; RFC 7516) is not yet implemented.\n\nThe __ECDSA implementation is vulnerable to timing attacks__ and\nshould only be used for verification.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -48,8 +39,8 @@
           (hsPkgs.quickcheck-instances)
           (hsPkgs.x509)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.bifunctors)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.bifunctors)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.semigroups);
+        };
       exes = {
         "example" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.lens)
             (hsPkgs.mtl)
             (hsPkgs.jose)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = ([
@@ -92,8 +83,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.bifunctors)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.bifunctors)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

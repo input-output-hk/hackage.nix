@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glue-example";
-        version = "0.5";
-      };
+      identifier = { name = "glue-example"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "github@futurenotfound.com";
@@ -22,7 +13,7 @@
       synopsis = "Make better services and clients.";
       description = "Examples of the use of glue library functionality.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "glue-example" = {
@@ -42,8 +33,8 @@
             (hsPkgs.text)
             (hsPkgs.monad-loops)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

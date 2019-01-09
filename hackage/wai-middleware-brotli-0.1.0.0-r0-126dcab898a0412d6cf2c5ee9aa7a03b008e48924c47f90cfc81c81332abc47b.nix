@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-brotli";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wai-middleware-brotli"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "WAI middleware for brotli compression";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.filepath)
           (hsPkgs.binary)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-middleware-brotli-server" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.wai-middleware-brotli)
             (hsPkgs.wai)
             (hsPkgs.wai-app-static)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "wai-middleware-brotli-test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
             (hsPkgs.wai-middleware-brotli)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

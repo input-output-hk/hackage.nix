@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hoogle-index";
-        version = "0.1";
-      };
+      identifier = { name = "hoogle-index"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Ben Gamari";
       maintainer = "ben@smart-cactus.org";
@@ -22,7 +13,7 @@
       synopsis = "Easily generate Hoogle indices for installed packages";
       description = "Easily generate Hoogle indices for installed packages";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hoogle-index" = {
@@ -35,8 +26,8 @@
             (hsPkgs.errors)
             (hsPkgs.bytestring)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

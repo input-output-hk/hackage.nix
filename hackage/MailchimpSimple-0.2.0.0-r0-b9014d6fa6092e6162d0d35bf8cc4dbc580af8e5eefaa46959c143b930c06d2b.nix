@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "MailchimpSimple";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "MailchimpSimple"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dan9131@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell library to interact with Mailchimp JSON API Version 3.0";
       description = "This package contains the basic functions supported by Mailchimp JSON API. For HTTP Authentication, it uses Basic HTTP Authentication.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.cryptohash)
           (hsPkgs.time)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "runmany";
-        version = "0.1.1";
-      };
+      identifier = { name = "runmany"; version = "0.1.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2017 John Wiegley. All Rights Reserved.";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Run multiple commands, interleaving output and errors";
       description = "Run multiple commands, interleaving output and errors";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "runmany" = {
@@ -33,8 +24,8 @@
             (hsPkgs.async)
             (hsPkgs.bytestring)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

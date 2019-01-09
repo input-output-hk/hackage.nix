@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "olwrapper";
-        version = "0.3.7.8";
-      };
+      identifier = { name = "olwrapper"; version = "0.3.7.8"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "tomnobleman@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "An OpenLayers JavaScript Wrapper and Webframework with snaplet-fay";
       description = "test";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +24,8 @@
           (hsPkgs.snap)
           (hsPkgs.snaplet-fay)
           (hsPkgs.snap-loader-static)
-        ];
-      };
+          ];
+        };
       exes = {
         "olwrapper" = {
           depends = [
@@ -53,8 +42,8 @@
             (hsPkgs.snap-server)
             (hsPkgs.snaplet-fay)
             (hsPkgs.snap-loader-static)
-          ] ++ pkgs.lib.optional (flags.development) (hsPkgs.snap-loader-dynamic);
+            ] ++ (pkgs.lib).optional (flags.development) (hsPkgs.snap-loader-dynamic);
+          };
         };
       };
-    };
-  }
+    }

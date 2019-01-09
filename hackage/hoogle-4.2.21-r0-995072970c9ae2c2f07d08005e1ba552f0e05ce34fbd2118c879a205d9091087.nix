@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hoogle";
-        version = "4.2.21";
-      };
+      identifier = { name = "hoogle"; version = "4.2.21"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2004-2013";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell API Search";
       description = "Hoogle is a Haskell API search engine, which allows you to\nsearch many standard Haskell libraries by either function name,\nor by approximate type signature.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.http-types)
           (hsPkgs.wai)
           (hsPkgs.haskell-src-exts)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "hoogle" = {
           depends = [
@@ -79,9 +70,9 @@
             (hsPkgs.warp)
             (hsPkgs.Cabal)
             (hsPkgs.haskell-src-exts)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
-      };
       tests = {
         "hoogle-test" = {
           depends = [
@@ -93,8 +84,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.hspec)
             (hsPkgs.hspec-expectations)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

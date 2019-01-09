@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       ghcapi = false;
@@ -13,13 +7,10 @@
       pango = true;
       cocoa = true;
       testing = true;
-    };
+      };
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "yi";
-        version = "0.4.3";
-      };
+      identifier = { name = "yi"; version = "0.4.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -29,11 +20,9 @@
       synopsis = "The Haskell-Scriptable Editor";
       description = "Yi is a text editor written in Haskell and extensible in Haskell. The goal of the Yi project is\nto provide a flexible, powerful, and correct editor for haskell hacking.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = pkgs.lib.optional (flags.vty) (hsPkgs.vty);
       };
+    components = {
+      "library" = { depends = (pkgs.lib).optional (flags.vty) (hsPkgs.vty); };
       exes = {
         "yi" = {
           depends = (((((([
@@ -55,18 +44,16 @@
             (hsPkgs.regex-base)
             (hsPkgs.regex-tdfa)
             (hsPkgs.parsec)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (flags.vty) (hsPkgs.vty)) ++ pkgs.lib.optional (flags.gtk) (hsPkgs.gtk)) ++ pkgs.lib.optional (flags.pango) (hsPkgs.gtk)) ++ pkgs.lib.optionals (flags.cocoa) [
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (flags.vty) (hsPkgs.vty)) ++ (pkgs.lib).optional (flags.gtk) (hsPkgs.gtk)) ++ (pkgs.lib).optional (flags.pango) (hsPkgs.gtk)) ++ (pkgs.lib).optionals (flags.cocoa) [
             (hsPkgs.HOC)
             (hsPkgs.HOC-AppKit)
             (hsPkgs.HOC-Foundation)
-          ]) ++ pkgs.lib.optionals (flags.ghcapi) [
+            ]) ++ (pkgs.lib).optionals (flags.ghcapi) [
             (hsPkgs.ghc)
             (hsPkgs.haskell98)
-          ]) ++ pkgs.lib.optional (flags.testing) (hsPkgs.QuickCheck);
-          build-tools = [
-            (hsPkgs.buildPackages.alex)
-          ];
+            ]) ++ (pkgs.lib).optional (flags.testing) (hsPkgs.QuickCheck);
+          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          };
         };
       };
-    };
-  }
+    }

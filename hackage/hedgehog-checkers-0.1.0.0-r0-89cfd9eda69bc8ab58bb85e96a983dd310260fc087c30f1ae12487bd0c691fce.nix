@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hedgehog-checkers";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hedgehog-checkers"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017, Chris Allen";
       maintainer = "cma@bitemyapp.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "hedgehog-checkers wraps up the expected properties associated with various standard type classes as Hedgehog properties.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.semigroups)
           (hsPkgs.semigroupoids)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.hedgehog)
             (hsPkgs.hedgehog-checkers)
             (hsPkgs.either)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

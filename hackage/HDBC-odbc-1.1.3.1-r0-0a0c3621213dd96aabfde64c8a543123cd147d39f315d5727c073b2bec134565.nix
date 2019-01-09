@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HDBC-odbc";
-        version = "1.1.3.1";
-      };
+      identifier = { name = "HDBC-odbc"; version = "1.1.3.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2005-2007 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,15 +13,10 @@
       synopsis = "ODBC driver for HDBC";
       description = "This package provides an ODBC database backend for HDBC.\nIt is cross-platform and supports unixODBC on Unix/Linux/POSIX platforms\nand Microsoft ODBC on Windows.  It is also the preferred way to access\nMySQL databases from Haskell.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.HDBC)
-          (hsPkgs.parsec)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.HDBC) (hsPkgs.parsec) ];
+        };
       };
-    };
-  }
+    }

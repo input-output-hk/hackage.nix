@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enableassertions = false;
-    };
+    flags = { enableassertions = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "vector";
-        version = "0.3";
-      };
+      identifier = { name = "vector"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Roman Leshchinskiy 2008";
       maintainer = "Roman Leshchinskiy <rl@cse.unsw.edu.au>";
@@ -24,7 +13,7 @@
       synopsis = "Efficient Arrays";
       description = "\nAn efficient but highly experimental implementation of Int-indexed\narrays with a powerful loop fusion framework.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +21,7 @@
           (hsPkgs.array)
           (hsPkgs.ghc-prim)
           (hsPkgs.ghc)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

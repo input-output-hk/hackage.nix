@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yarr-image-io";
-        version = "1.3.2.1";
-      };
+      identifier = { name = "yarr-image-io"; version = "1.3.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Dominic Steinitz <dominic@steinitz.org>";
@@ -22,14 +13,11 @@
       synopsis = "Image IO for Yarr library";
       description = "@repa-devil@ package, adapted to @yarr@ library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.yarr)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.yarr) ];
         libs = [ (pkgs."IL") ];
+        };
       };
-    };
-  }
+    }

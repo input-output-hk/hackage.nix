@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "stylish-haskell";
-        version = "0.9.1.1";
-      };
+      identifier = { name = "stylish-haskell"; version = "0.9.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2012 Jasper Van der Jeugt";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell code prettifier";
       description = "A Haskell code prettifier. For more information, see:\n\n<https://github.com/jaspervdj/stylish-haskell/blob/master/README.markdown>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.syb)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "stylish-haskell" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.mtl)
             (hsPkgs.syb)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "stylish-haskell-tests" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.mtl)
             (hsPkgs.syb)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

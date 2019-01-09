@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bv";
-        version = "0.2.2";
-      };
+      identifier = { name = "bv"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "2012-2013 Iago Abal, HASLab & University of Minho";
       maintainer = "Iago Abal <iago.abal@gmail.com>";
@@ -22,20 +13,18 @@
       synopsis = "Bit-vector arithmetic library";
       description = "Bit-vectors implemented as a wrapper over integers.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "bv-tester" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

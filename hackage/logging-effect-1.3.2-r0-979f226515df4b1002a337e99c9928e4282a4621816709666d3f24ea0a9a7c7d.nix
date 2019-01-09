@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "logging-effect";
-        version = "1.3.2";
-      };
+      identifier = { name = "logging-effect"; version = "1.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "A mtl-style monad transformer for general purpose & compositional logging";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.transformers-base)
           (hsPkgs.semigroups)
           (hsPkgs.unliftio-core)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "benchmark-logging-effect" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.prettyprinter)
             (hsPkgs.lifted-async)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

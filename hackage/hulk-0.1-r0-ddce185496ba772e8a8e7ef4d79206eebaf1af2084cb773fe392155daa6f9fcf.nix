@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hulk";
-        version = "0.1";
-      };
+      identifier = { name = "hulk"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2010 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "IRC daemon.";
       description = "An IRC daemon with mandatory authentication.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hulk" = {
@@ -39,8 +30,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.Crypto)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "hulk-generate-pass" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +45,8 @@
             (hsPkgs.split)
             (hsPkgs.utf8-string)
             (hsPkgs.Crypto)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

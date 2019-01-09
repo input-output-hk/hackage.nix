@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-cli";
-        version = "0.0.0.4";
-      };
+      identifier = { name = "stackage-cli"; version = "0.0.0.4"; };
       license = "MIT";
       copyright = "2015 FP Complete Corporation";
       maintainer = "danburton@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "A CLI library for stackage commands";
       description = "A CLI library for stackage commands";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,23 +31,15 @@
           (hsPkgs.exceptions)
           (hsPkgs.optparse-simple)
           (hsPkgs.either)
-        ];
-      };
+          ];
+        };
       exes = {
         "stackage" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.stackage-cli)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.stackage-cli) ];
+          };
         "stk" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.stackage-cli)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.stackage-cli) ];
+          };
         "stackage-init" = {
           depends = [
             (hsPkgs.base)
@@ -68,8 +51,8 @@
             (hsPkgs.http-client-tls)
             (hsPkgs.http-types)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "stackage-purge" = {
           depends = [
             (hsPkgs.base)
@@ -80,8 +63,8 @@
             (hsPkgs.process)
             (hsPkgs.parsec)
             (hsPkgs.exceptions)
-          ];
-        };
+            ];
+          };
         "stackage-upgrade" = {
           depends = [
             (hsPkgs.base)
@@ -89,8 +72,8 @@
             (hsPkgs.stackage-cli)
             (hsPkgs.system-fileio)
             (hsPkgs.optparse-applicative)
-          ];
-        };
+            ];
+          };
         "stackage-sandbox" = {
           depends = [
             (hsPkgs.base)
@@ -101,8 +84,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

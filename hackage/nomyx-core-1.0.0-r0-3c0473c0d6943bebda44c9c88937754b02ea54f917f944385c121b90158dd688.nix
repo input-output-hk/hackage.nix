@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "nomyx-core";
-        version = "1.0.0";
-      };
+      identifier = { name = "nomyx-core"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "corentin.dupont@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Nomic game in haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -66,16 +57,12 @@
           (hsPkgs.hint-server)
           (hsPkgs.HaskellNet)
           (hsPkgs.HaskellNet-SSL)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.nomyx-core)
-            (hsPkgs.Cabal)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.nomyx-core) (hsPkgs.Cabal) ];
+          };
         };
       };
-    };
-  }
+    }

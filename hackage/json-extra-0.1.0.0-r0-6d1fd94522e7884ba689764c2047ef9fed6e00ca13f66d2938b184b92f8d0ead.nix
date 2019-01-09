@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-extra";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "json-extra"; version = "0.1.0.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "tdammers@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utility functions to extend Aeson";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

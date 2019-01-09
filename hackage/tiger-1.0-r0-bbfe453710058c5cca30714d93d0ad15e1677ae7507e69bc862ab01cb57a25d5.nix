@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "tiger";
-        version = "1.0";
-      };
+      identifier = { name = "tiger"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "Universiteit Utrecht";
       maintainer = "Doaitse Swierstra";
@@ -22,7 +13,7 @@
       synopsis = "Tiger Compiler of Universiteit Utrecht";
       description = "Tiger compiler";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tiger" = {
@@ -31,8 +22,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.array)
             (hsPkgs.uulib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

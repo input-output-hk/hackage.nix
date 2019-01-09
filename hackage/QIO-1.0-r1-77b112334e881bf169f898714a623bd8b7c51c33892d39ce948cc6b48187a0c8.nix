@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "QIO";
-        version = "1.0";
-      };
+      identifier = { name = "QIO"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "The Quantum IO Monad is a library for defining quantum computations in Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.mtl)
           (hsPkgs.random)
           (hsPkgs.old-time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

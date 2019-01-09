@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "speculate";
-        version = "0.2.7";
-      };
+      identifier = { name = "speculate"; version = "0.2.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Rudy Matela <rudy@matela.com.br>";
@@ -22,7 +13,7 @@
       synopsis = "discovery of properties about Haskell functions";
       description = "Speculate automatically discovers laws about Haskell functions.\nGive Speculate a bunch of Haskell functions and it will discover laws like:\n\n* equations, such as @ id x == x @;\n\n* inequalities, such as @ 0 <= x * x @;\n\n* conditional equations, such as @ x \\<= 0  ==\\>  x + abs x == 0 @.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.leancheck)
           (hsPkgs.cmdargs)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "expr" = {
           depends = [
@@ -39,9 +30,9 @@
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "plus-abs" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.leancheck)
             (hsPkgs.cmdargs)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "http-pony-transformer-http";
         version = "0.1.0.3";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nfjinjing@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Transform raw TCP stream to a basic HTTP type";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +26,7 @@
           (hsPkgs.transformers)
           (hsPkgs.attoparsec)
           (hsPkgs.pipes-attoparsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

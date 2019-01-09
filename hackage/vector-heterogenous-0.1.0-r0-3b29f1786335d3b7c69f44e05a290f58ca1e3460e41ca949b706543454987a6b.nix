@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "vector-heterogenous";
-        version = "0.1.0";
-      };
+      identifier = { name = "vector-heterogenous"; version = "0.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "mike@izbicki.me";
@@ -22,13 +13,8 @@
       synopsis = "A type-safe library for vectors whose elements can be of any type, or any type satisfying some constraints";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };
+      };
+    }

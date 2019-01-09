@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      jenkins-build = false;
-    };
+    flags = { jenkins-build = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fpco-api";
-        version = "1.0.4";
-      };
+      identifier = { name = "fpco-api"; version = "1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2013 FP Complete";
       maintainer = "dev@fpcomplete.com";
@@ -24,7 +13,7 @@
       synopsis = "Simple interface to the FP Complete IDE API.";
       description = "A server and library for communicating with the FP Complete IDE API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -61,8 +50,8 @@
           (hsPkgs.persistent)
           (hsPkgs.persistent-template)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       exes = {
         "fpco-api" = {
           depends = [
@@ -79,8 +68,8 @@
             (hsPkgs.ConfigFile)
             (hsPkgs.data-default)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

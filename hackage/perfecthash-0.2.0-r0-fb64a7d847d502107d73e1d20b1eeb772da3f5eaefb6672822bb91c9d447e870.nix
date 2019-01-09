@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "perfecthash";
-        version = "0.2.0";
-      };
+      identifier = { name = "perfecthash"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Wotton <mwotton@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A perfect hashing library for mapping bytestrings to values.";
       description = "A perfect hashing library for mapping bytestrings to values.\nInsertion is not supported (by design): Only fromList\nand lookup operations are supported.\nCI at https://travis-ci.org/mwotton/PerfectHash";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.array)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "cmph-test" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.perfecthash)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-foo" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.perfecthash)
             (hsPkgs.unordered-containers)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

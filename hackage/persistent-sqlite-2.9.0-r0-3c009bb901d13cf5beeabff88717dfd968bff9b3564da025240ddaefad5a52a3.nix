@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       systemlib = false;
@@ -14,13 +8,10 @@
       uri-filenames = true;
       have-usleep = true;
       json1 = true;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent-sqlite";
-        version = "2.9.0";
-      };
+      identifier = { name = "persistent-sqlite"; version = "2.9.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -30,7 +21,7 @@
       synopsis = "Backend for the persistent library using sqlite3.";
       description = "This package includes a thin sqlite3 wrapper based on the direct-sqlite package, as well as the entire C library, so there are no system dependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,19 +41,19 @@
           (hsPkgs.old-locale)
           (hsPkgs.resource-pool)
           (hsPkgs.unordered-containers)
-        ];
-        libs = pkgs.lib.optionals (flags.systemlib) (pkgs.lib.optional (!flags.use-pkgconfig) (pkgs."sqlite3")) ++ pkgs.lib.optional (!system.isWindows) (pkgs."pthread");
-        pkgconfig = pkgs.lib.optionals (flags.systemlib) (pkgs.lib.optional (flags.use-pkgconfig) (pkgconfPkgs.sqlite3));
-      };
+          ];
+        libs = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (!flags.use-pkgconfig) (pkgs."sqlite3")) ++ (pkgs.lib).optional (!system.isWindows) (pkgs."pthread");
+        pkgconfig = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (flags.use-pkgconfig) (pkgconfPkgs.sqlite3));
+        };
       exes = {
         "sanity" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.persistent-sqlite)
             (hsPkgs.monad-logger)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

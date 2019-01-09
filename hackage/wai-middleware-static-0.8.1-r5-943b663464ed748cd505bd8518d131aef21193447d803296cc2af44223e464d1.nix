@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-static";
-        version = "0.8.1";
-      };
+      identifier = { name = "wai-middleware-static"; version = "0.8.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012-2014 Andrew Farmer";
       maintainer = "Andrew Farmer <afarmer@ittc.ku.edu>";
@@ -22,7 +13,7 @@
       synopsis = "WAI middleware that serves requests to static files.";
       description = "WAI middleware that intercepts requests to static files and serves them\nif they exist.\n\n[WAI] <http://hackage.haskell.org/package/wai>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,16 +33,16 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       tests = {
         "hpc-coveralls-stub" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hpc-coveralls)
             (hsPkgs.wai-middleware-static)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

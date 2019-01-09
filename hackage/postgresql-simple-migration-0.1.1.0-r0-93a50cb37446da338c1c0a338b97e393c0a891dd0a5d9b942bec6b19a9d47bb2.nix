@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "postgresql-simple-migration";
         version = "0.1.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2014, Andreas Meingast";
       maintainer = "Andreas Meingast <ameingast@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "PostgreSQL Schema Migrations";
       description = "A PostgreSQL-simple schema migration utility";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +27,8 @@
           (hsPkgs.directory)
           (hsPkgs.postgresql-simple)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "migrate" = {
           depends = [
@@ -45,9 +39,9 @@
             (hsPkgs.directory)
             (hsPkgs.postgresql-simple)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -56,8 +50,8 @@
             (hsPkgs.postgresql-simple)
             (hsPkgs.hspec)
             (hsPkgs.postgresql-simple-migration)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

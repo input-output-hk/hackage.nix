@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { executable = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "language-dot";
-        version = "0.0.6";
-      };
+      identifier = { name = "language-dot"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Galois, Inc.";
       maintainer = "Brian Lewis <brian@lorf.org>";
@@ -22,7 +13,7 @@
       synopsis = "A library for the analysis and creation of Graphviz DOT files";
       description = "A library for the analysis and creation of Graphviz DOT files.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.pretty)
-        ];
-      };
+          ];
+        };
       exes = { "ppdot" = {}; };
-    };
-  }
+      };
+    }

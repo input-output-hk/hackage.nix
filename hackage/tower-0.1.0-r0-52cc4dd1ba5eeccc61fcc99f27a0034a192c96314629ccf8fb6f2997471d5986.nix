@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "tower";
-        version = "0.1.0";
-      };
+      identifier = { name = "tower"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A numeric tower";
       description = "A heirarchy of classes for numbers and algebras that combine them: a numeric tower.\n\nPerformance testing, notes and examples can be found in <https://github.com/tonyday567/tower-dev tower-dev>.\n\nThe tower looks something like:\n\n<<https://tonyday567.github.io/other/field-tower.svg>>\n\nTo use the library:\n\n> import Tower.Prelude\n> print \$ 1 + 1";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.protolude)
           (hsPkgs.vector)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tower)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "basen-bytestring";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "basen-bytestring"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 William Fisher";
       maintainer = "williamsykesfisher@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "";
       description = "Base-N ByteStrings for base{16,32,58,64}";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
       tests = {
         "basen-bytestring-test" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.basen-bytestring)
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

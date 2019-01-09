@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lzma";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "lzma"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015, Herbert Valerio Riedel";
       maintainer = "hvr@gnu.org";
@@ -22,15 +13,12 @@
       synopsis = "LZMA/XZ compression and decompression";
       description = "This package provides a pure interface for compressing and\ndecompressing streams of data represented as lazy @ByteString@s. A\nmonadic incremental interface is provided as well. This package\nrelies on the @liblzma@ C library.\n\nThe following packages are based on this package and provide\nAPI support for popular streaming frameworks:\n\n* </package/lzma-streams lzma-streams> (for </package/io-streams io-streams>)\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = [ (pkgs."lzma") ];
-      };
+        };
       tests = {
         "lzma-tests" = {
           depends = [
@@ -42,8 +30,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

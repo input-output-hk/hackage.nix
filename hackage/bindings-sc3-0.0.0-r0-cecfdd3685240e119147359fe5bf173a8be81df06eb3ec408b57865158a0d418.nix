@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bindings-sc3";
-        version = "0.0.0";
-      };
+      identifier = { name = "bindings-sc3"; version = "0.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Stefan Kersten 2010";
       maintainer = "Stefan Kersten <sk@k-hornz.de>";
@@ -22,14 +13,11 @@
       synopsis = "Bindings to the SuperCollider synthesis engine library.";
       description = "This library provides low level bindings to the SuperCollider synthesis engine library (@libscsynth@). If you are looking for a higher level Haskell interface, please use the hsc3-process package (<http://hackage.haskell.org/package/hsc3-process>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-DSL)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
         libs = [ (pkgs."scsynth") ];
+        };
       };
-    };
-  }
+    }

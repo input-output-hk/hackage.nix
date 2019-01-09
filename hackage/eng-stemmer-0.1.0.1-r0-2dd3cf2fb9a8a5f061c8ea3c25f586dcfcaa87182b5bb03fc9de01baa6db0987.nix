@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eng-stemmer";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "eng-stemmer"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chris@foldl.io";
@@ -22,7 +13,7 @@
       synopsis = "An English language stemmer (Porter2)";
       description = "This i";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.text)
           (hsPkgs.mtl)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "eng-stemmer-example" = {
           depends = [
@@ -39,9 +30,9 @@
             (hsPkgs.eng-stemmer)
             (hsPkgs.text)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "eng-stemmer-test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.doctest)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

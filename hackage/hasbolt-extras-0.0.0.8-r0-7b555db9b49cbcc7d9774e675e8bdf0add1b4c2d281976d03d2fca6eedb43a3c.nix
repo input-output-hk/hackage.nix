@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasbolt-extras";
-        version = "0.0.0.8";
-      };
+      identifier = { name = "hasbolt-extras"; version = "0.0.0.8"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018, BIOCAD";
       maintainer = "neterebskiy@biocad.ru";
@@ -22,7 +13,7 @@
       synopsis = "Extras for hasbolt library";
       description = "Extras for hasbolt library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.th-lift-instances)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

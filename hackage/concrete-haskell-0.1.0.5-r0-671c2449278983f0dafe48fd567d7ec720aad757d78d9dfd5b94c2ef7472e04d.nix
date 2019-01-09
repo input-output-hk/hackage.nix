@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "concrete-haskell";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "concrete-haskell"; version = "0.1.0.5"; };
       license = "LicenseRef-GPL";
       copyright = "2016";
       maintainer = "tom@cs.jhu.edu";
@@ -22,7 +13,7 @@
       synopsis = "Library for the Concrete data format.";
       description = "Library for the Concrete data format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.filepath)
           (hsPkgs.process)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "ingest_json" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.vector)
             (hsPkgs.mtl)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "inspect_communications" = {
           depends = [
             (hsPkgs.base)
@@ -77,8 +68,8 @@
             (hsPkgs.vector)
             (hsPkgs.mtl)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "maid";
-        version = "2009.7.24.1";
-      };
+      identifier = { name = "maid"; version = "2009.7.24.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple static web server";
       description = "Serve files from the current path";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "maid" = {
@@ -34,8 +25,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.hack-contrib)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

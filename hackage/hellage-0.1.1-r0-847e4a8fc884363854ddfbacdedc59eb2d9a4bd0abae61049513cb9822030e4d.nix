@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "hellage";
-        version = "0.1.1";
-      };
+      identifier = { name = "hellage"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voker57@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Distributed hackage mirror";
       description = "Distributed hackage mirror, based on Hellnet.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hellage" = {
@@ -37,8 +28,8 @@
             (hsPkgs.safe)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "hellage-genmeta" = {
           depends = [
             (hsPkgs.hellnet)
@@ -56,8 +47,8 @@
             (hsPkgs.zlib)
             (hsPkgs.directory)
             (hsPkgs.safe)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

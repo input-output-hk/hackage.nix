@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "filecache";
-        version = "0.2.4";
-      };
+      identifier = { name = "filecache"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Linux-only cache system associating values to files.";
       description = "A Linux-only cache system, that works by associating computation results with file names. When the files are modified, the cache entries are discarded.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mtl)
           (hsPkgs.lens)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
         "simpletest" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.temporary)
             (hsPkgs.directory)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

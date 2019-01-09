@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "TBit";
-        version = "0.4.2.3";
-      };
+      identifier = { name = "TBit"; version = "0.4.2.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "danielsmw@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for condensed matter physics tight binding calculations.";
       description = "TBit provides tools for parameterizing and computing condensed matter physics quantities based on tight-binding models. It provides utitilies for computing Chern numbers and Berry curvatures of electronic band structure, generating gnuplot-readable dispersion plots, and calculating assorted quantities such as orbital magnetization and Nernst conductivity.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.fgl)
           (hsPkgs.list-extras)
           (hsPkgs.free)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

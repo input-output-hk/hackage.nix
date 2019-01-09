@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "setop";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "setop"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2017 Médéric Hurier";
       maintainer = "Médéric Hurier <fmind@users.noreply.github.com>";
@@ -22,15 +13,11 @@
       synopsis = "Perform set operations on files.";
       description = "Find more information on the project homepage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.protolude)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.protolude) (hsPkgs.containers) ];
+        };
       exes = {
         "setop" = {
           depends = [
@@ -39,9 +26,9 @@
             (hsPkgs.protolude)
             (hsPkgs.optparse-applicative)
             (hsPkgs.setop)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hspec" = {
           depends = [
@@ -50,20 +37,10 @@
             (hsPkgs.containers)
             (hsPkgs.hspec)
             (hsPkgs.setop)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
-        };
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

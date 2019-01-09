@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "logic-classes";
-        version = "1.4.4";
-      };
+      identifier = { name = "logic-classes"; version = "1.4.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "SeeReason Partners <partners@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Framework for propositional and first order logic, theorem proving";
       description = "Package to support Propositional and First Order Logic.  It includes classes\nrepresenting the different types of formulas and terms, some instances of\nthose classes for types used in other logic libraries, and implementations of\nseveral logic algorithms, including conversion to normal form and a simple\nresolution-based theorem prover for any instance of FirstOrderFormula.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.set-extra)
           (hsPkgs.syb)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "tests" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.set-extra)
             (hsPkgs.syb)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

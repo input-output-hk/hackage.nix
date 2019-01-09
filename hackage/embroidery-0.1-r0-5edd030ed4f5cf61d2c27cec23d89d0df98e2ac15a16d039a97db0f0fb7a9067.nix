@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "embroidery";
-        version = "0.1";
-      };
+      identifier = { name = "embroidery"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "ludflu@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "support for embroidery formats in haskell";
       description = "This package allows you to read and view PES embroidery files used in commercial machine embroidery. Writing new files is currently not supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,12 +24,8 @@
           (hsPkgs.dlist)
           (hsPkgs.HCodecs)
           (hsPkgs.bytestring)
-        ];
-      };
-      exes = {
-        "example" = {
-          depends = [ (hsPkgs.base) ];
+          ];
         };
+      exes = { "example" = { depends = [ (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

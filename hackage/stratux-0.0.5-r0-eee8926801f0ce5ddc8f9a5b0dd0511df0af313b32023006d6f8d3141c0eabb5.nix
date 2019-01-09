@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stratux";
-        version = "0.0.5";
-      };
+      identifier = { name = "stratux"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016 Tony Morris";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A library for stratux";
       description = "A library for stratux <http://stratux.me/>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.stratux-types)
           (hsPkgs.stratux-http)
           (hsPkgs.stratux-websockets)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

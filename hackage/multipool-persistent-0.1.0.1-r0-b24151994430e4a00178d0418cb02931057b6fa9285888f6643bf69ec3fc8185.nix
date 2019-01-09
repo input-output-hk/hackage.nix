@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "multipool-persistent";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "multipool-persistent"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "Read and write from appropriate persistent sql instances in replicated environments.";
       description = "Please see the README on GitHub at <https://github.com/iand675/multipool#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.persistent)
           (hsPkgs.unliftio-core)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "multipool-persistent-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.persistent)
             (hsPkgs.unliftio-core)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

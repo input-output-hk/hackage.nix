@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fwgl";
-        version = "0.1.2.1";
-      };
+      identifier = { name = "fwgl"; version = "0.1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ziocroc@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "FRP 2D/3D game engine";
       description = "FRP 2D/3D game engine (work in progress, GHC 7.10).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

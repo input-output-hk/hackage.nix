@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-plus";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "text-plus"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 factis research GmbH";
       maintainer = "kieran.meinhardt@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utils for text";
       description = "Utils for text";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.strict-data)
           (hsPkgs.text)
           (hsPkgs.util-plus)
-        ];
-      };
+          ];
+        };
       tests = {
         "text-plus-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.doctest)
             (hsPkgs.text)
             (hsPkgs.text-plus)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

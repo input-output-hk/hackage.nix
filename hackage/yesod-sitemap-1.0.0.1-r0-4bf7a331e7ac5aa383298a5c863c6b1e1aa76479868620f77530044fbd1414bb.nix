@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-sitemap";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "yesod-sitemap"; version = "1.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Generate XML sitemaps.";
       description = "Generate XML sitemaps.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.time)
           (hsPkgs.xml-conduit)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

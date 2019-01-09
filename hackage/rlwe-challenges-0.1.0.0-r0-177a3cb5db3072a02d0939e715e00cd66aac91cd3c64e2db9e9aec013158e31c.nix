@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rlwe-challenges";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "rlwe-challenges"; version = "0.1.0.0"; };
       license = "GPL-2.0-only";
       copyright = "Eric Crockett, Chris Peikert";
       maintainer = "Eric Crockett <ecrockett0@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Ring-LWE/LWR challenges using Lol.";
       description = "Contains a library for reading serialized challenges\n(generated with <https://hackage.haskell.org/package/hprotoc hprotoc>)\nand an executable used to generate, suppress, and verify RLWE and RLWR\nchallenges using <https://hackage.haskell.org/package/lol Λ ∘ λ>  (Lol).\nYou can find more information about the challenges\n<https://web.eecs.umich.edu/~cpeikert/rlwe-challenges here>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.reflection)
           (hsPkgs.tagged)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "rlwe-challenges" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.rlwe-challenges)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "hsparql";
-        version = "0.2.4";
-      };
+      identifier = { name = "hsparql"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Rob Stewart <robstewart57@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A SPARQL query generator and DSL, and a client to query a SPARQL server.";
       description = "hsparql includes a DSL to easily create queries, as well as methods to\nsubmit those queries to a SPARQL server, returning the results as simple\nHaskell data structures. Supports SELECT, CONSTRUCT, ASK and UPDATE queries.\nExample queries are included in the tests:\n<https://github.com/robstewart57/hsparql/blob/master/tests/DBPedia.hs>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.MissingH)
           (hsPkgs.network)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-hsparql" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

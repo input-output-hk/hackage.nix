@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sstable";
-        version = "1.0";
-      };
+      identifier = { name = "sstable"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 marius a. eriksen";
       maintainer = "marius a. eriksen";
@@ -22,7 +13,7 @@
       synopsis = "SSTables in Haskell";
       description = "\nThis library implements SSTables as described in the Bigtable\npaper: <http://labs.google.com/papers/bigtable.html>\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,19 +25,17 @@
           (hsPkgs.array)
           (hsPkgs.iteratee)
           (hsPkgs.directory)
-        ];
-      };
-      exes = {
-        "sstable" = {
-          depends = [ (hsPkgs.cmdargs) ];
+          ];
         };
+      exes = {
+        "sstable" = { depends = [ (hsPkgs.cmdargs) ]; };
         "testSSTable" = {
-          depends = pkgs.lib.optionals (flags.tests) [
+          depends = (pkgs.lib).optionals (flags.tests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

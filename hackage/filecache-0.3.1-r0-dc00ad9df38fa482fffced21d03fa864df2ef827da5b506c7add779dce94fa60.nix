@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "filecache";
-        version = "0.3.1";
-      };
+      identifier = { name = "filecache"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "Simon Marechal";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A cache system associating values to files.";
       description = "A cache system, that works by associating computation results with file names. When the files are modified, the cache entries are discarded.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.filepath)
           (hsPkgs.time)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
         "simpletest" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.stm)
             (hsPkgs.hspec)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

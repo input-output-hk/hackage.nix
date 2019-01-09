@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.21";
-      identifier = {
-        name = "haskus-utils";
-        version = "1.3";
-      };
+      identifier = { name = "haskus-utils"; version = "1.3"; };
       license = "BSD-3-Clause";
       copyright = "Sylvain Henry 2018";
       maintainer = "sylvain@haskus.fr";
@@ -22,7 +13,7 @@
       synopsis = "Haskus utility modules";
       description = "Haskus utility modules.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.file-embed)
           (hsPkgs.extra)
           (hsPkgs.recursion-schemes)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.haskus-utils)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

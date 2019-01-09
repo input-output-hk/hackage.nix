@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "linux-file-extents";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "linux-file-extents"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Marios Titas <rednebΑΤgmxDΟΤcom>";
@@ -22,16 +13,11 @@
       synopsis = "Retrieve file fragmentation information under Linux";
       description = "This package provides a simple wrapper around the Linux FIEMAP ioctl.\nIt can be used to retrieve a complete list of all the extents of any given\nfile, i.e. the area of the disk where the file is actually stored. This is\nsimilar to the @filefrag@ command line tool provided by the @e2fsprogs@\npackage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.unix) ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

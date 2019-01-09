@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "classy-prelude-conduit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "classy-prelude-conduit"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "conduit instances for classy-prelude";
       description = "conduit instances for classy-prelude";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.conduit)
           (hsPkgs.xml-conduit)
           (hsPkgs.classy-prelude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

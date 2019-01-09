@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "IntGraph";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "IntGraph"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Sam Barr";
       maintainer = "sbarr@oberlin.edu";
@@ -22,22 +13,13 @@
       synopsis = "Dynamically sized graph library";
       description = "Graph implemented as an IntMap to Sets of Ints. Functions for Directed and Undirected graphs are provided.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
       tests = {
         "IntGraph-test" = {
-          depends = [
-            (hsPkgs.IntGraph)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-          ];
+          depends = [ (hsPkgs.IntGraph) (hsPkgs.base) (hsPkgs.containers) ];
+          };
         };
       };
-    };
-  }
+    }

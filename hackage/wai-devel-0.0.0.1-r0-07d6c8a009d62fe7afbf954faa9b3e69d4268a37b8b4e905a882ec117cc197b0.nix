@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-devel";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "wai-devel"; version = "0.0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "njagi@urbanslug.com";
@@ -22,7 +13,7 @@
       synopsis = "A web server for the development of WAI compliant web applications.";
       description = "A development server for WAI applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.warp)
           (hsPkgs.file-embed)
           (hsPkgs.websockets)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-devel" = {
           depends = [
@@ -91,9 +82,9 @@
             (hsPkgs.warp)
             (hsPkgs.file-embed)
             (hsPkgs.websockets)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -101,8 +92,8 @@
             (hsPkgs.hspec)
             (hsPkgs.stm)
             (hsPkgs.wai-devel)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

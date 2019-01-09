@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "atndapi";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "atndapi"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Yutaka Nishimura";
       maintainer = "ytk.nishimura@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An interface of ATND API";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.http-types)
           (hsPkgs.resourcet)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "atndapi-test" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.time)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

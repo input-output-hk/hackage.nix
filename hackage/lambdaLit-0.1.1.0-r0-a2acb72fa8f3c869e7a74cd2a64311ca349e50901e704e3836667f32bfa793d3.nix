@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambdaLit";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "lambdaLit"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "raphaelsimeon@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "...";
       description = "An repl using the lambdaBase package";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "lambdaLit" = {
@@ -33,8 +24,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.haskeline)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

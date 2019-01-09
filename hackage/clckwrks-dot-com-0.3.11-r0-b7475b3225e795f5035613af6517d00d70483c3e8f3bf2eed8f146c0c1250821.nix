@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { backups = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "clckwrks-dot-com";
-        version = "0.3.11";
-      };
+      identifier = { name = "clckwrks-dot-com"; version = "0.3.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jeremy Shaw <jeremy@n-heptane.com>";
@@ -22,7 +13,7 @@
       synopsis = "clckwrks.com";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "clckwrks-dot-com-server" = {
@@ -39,17 +30,17 @@
             (hsPkgs.network)
             (hsPkgs.text)
             (hsPkgs.web-plugins)
-          ];
-        };
+            ];
+          };
         "clckwrks-dot-com-backups" = {
-          depends = pkgs.lib.optionals (flags.backups) [
+          depends = (pkgs.lib).optionals (flags.backups) [
             (hsPkgs.archive)
             (hsPkgs.base)
             (hsPkgs.Extra)
             (hsPkgs.network-uri)
             (hsPkgs.cabal-debian)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

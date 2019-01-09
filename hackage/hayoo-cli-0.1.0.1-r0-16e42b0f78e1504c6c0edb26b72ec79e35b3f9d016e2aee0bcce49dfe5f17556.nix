@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hayoo-cli";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hayoo-cli"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "gonzih@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Hayoo CLI";
       description = "Simple console client for hayoo.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hayoo" = {
@@ -35,8 +26,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.url)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

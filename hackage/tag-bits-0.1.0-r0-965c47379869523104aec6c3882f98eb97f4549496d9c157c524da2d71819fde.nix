@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tag-bits";
-        version = "0.1.0";
-      };
+      identifier = { name = "tag-bits"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Provides access to the dynamic pointer tagging bits used by GHC.";
       description = "Provides access to the dynamic pointer tagging bits used by GHC.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) ]; };
+      };
+    }

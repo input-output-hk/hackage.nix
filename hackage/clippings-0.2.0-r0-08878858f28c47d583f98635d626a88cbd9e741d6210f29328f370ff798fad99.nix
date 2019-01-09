@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clippings";
-        version = "0.2.0";
-      };
+      identifier = { name = "clippings"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Vikram Verma <me@vikramverma.com>";
@@ -22,7 +13,7 @@
       synopsis = "A parser/generator for Kindle-format clipping files (`My Clippings.txt`),";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.strptime)
           (hsPkgs.data-default)
           (hsPkgs.functor-infix)
-        ];
-      };
+          ];
+        };
       exes = {
         "clippings2tsv" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.safecopy)
             (hsPkgs.functor-infix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "clippings-tests" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.old-locale)
             (hsPkgs.assertions)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

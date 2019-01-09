@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-sign4";
-        version = "1.1.0.0";
-      };
+      identifier = { name = "aws-sign4"; version = "1.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) Iris Connect Ltd";
       maintainer = "chris.dornan@irisconnect.com";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Web Services (AWS) Signature v4 HTTP request signer";
       description = "Functions to sign AWS requests with the AWS Signature-V4 protocol (required for the Elastic Transcoder service)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.old-locale)
           (hsPkgs.safe)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "ets-sign4" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.safe)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

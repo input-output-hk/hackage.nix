@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clash-multisignal";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "clash-multisignal"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Luka Rahne";
       maintainer = "luka.rahne@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Clash/Fpga library for working with multiple elements arriving at same clock as stream.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.deepseq)
           (hsPkgs.ghc-typelits-knownnat)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

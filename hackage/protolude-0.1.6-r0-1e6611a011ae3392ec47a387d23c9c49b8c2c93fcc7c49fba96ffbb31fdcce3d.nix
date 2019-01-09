@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "protolude";
-        version = "0.1.6";
-      };
+      identifier = { name = "protolude"; version = "0.1.6"; };
       license = "MIT";
       copyright = "2016 Stephen Diehl";
       maintainer = "stephen.m.diehl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A sensible set of defaults for writing custom Preludes.";
       description = "A sensible set of defaults for writing custom Preludes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.stm)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

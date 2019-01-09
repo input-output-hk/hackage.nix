@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "foscam-directory";
-        version = "0.0.6";
-      };
+      identifier = { name = "foscam-directory"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Tony Morris";
       maintainer = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ> <dibblego>";
@@ -22,7 +13,7 @@
       synopsis = "Foscam File format";
       description = "Directory of Foscam File format";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.lens)
           (hsPkgs.pretty)
           (hsPkgs.foscam-filename)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cql";
-        version = "3.0.4";
-      };
+      identifier = { name = "cql"; version = "3.0.4"; };
       license = "MPL-2.0";
       copyright = "(C) 2014-2015 Toralf Wittner, Roman S. Borschel";
       maintainer = "Toralf Wittner <tw@dtex.org>";
@@ -22,7 +13,7 @@
       synopsis = "Cassandra CQL binary protocol.";
       description = "Implementation of Cassandra's CQL Binary Protocol\n<https://github.com/apache/cassandra/blob/trunk/doc/native_protocol_v2.spec Version 2>\nand\n<https://github.com/apache/cassandra/blob/trunk/doc/native_protocol_v3.spec Version 3>.\n\nIt provides encoding and decoding functionality as well as representations\nof the various protocol related types.\n\nThus it can serve as a building block for writing Cassandra drivers, such\nas <http://hackage.haskell.org/package/cql-io cql-io>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "cql-tests" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.uuid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

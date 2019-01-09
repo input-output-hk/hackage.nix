@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "linden";
-        version = "0";
-      };
+      identifier = { name = "linden"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "davean 2016-2017";
       maintainer = "oss@xkcd.com";
@@ -22,7 +13,7 @@
       synopsis = "Zen gardening, based on l-systems";
       description = "A system for defining and running interactive l-systems over the web.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.hashable)
           (hsPkgs.hedis)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "linden-example" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.uuid)
             (hsPkgs.hashable)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

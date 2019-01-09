@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "LambdaCalculator";
-        version = "0.0.2";
-      };
+      identifier = { name = "LambdaCalculator"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Tim Sheard";
       maintainer = "Thomas DuBuisson <thomas.dubuisson@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A basic lambda calculator with beta reduction and a REPL";
       description = "A basic lambda calculator with beta reduction and a REPL";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "LambdaCalculator" = {
@@ -34,8 +25,8 @@
             (hsPkgs.haskeline)
             (hsPkgs.pretty)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

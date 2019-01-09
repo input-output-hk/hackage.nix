@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "strive";
-        version = "0.6.0";
-      };
+      identifier = { name = "strive"; version = "0.6.0"; };
       license = "MIT";
       copyright = "2014 Taylor Fausak <taylor@fausak.me>";
       maintainer = "taylor@fausak.me";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell client for the Strava V3 API.";
       description = "A Haskell client for the <http://strava.github.io/api/ Strava V3 API>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ] ++ [ (hsPkgs.text) ];
-      };
+          ] ++ [ (hsPkgs.text) ];
+        };
       tests = {
         "readme" = {
           depends = [
@@ -50,14 +41,9 @@
             (hsPkgs.data-default)
             (hsPkgs.markdown-unlit)
             (hsPkgs.time)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "sbv";
-        version = "5.6";
-      };
+      identifier = { name = "sbv"; version = "5.6"; };
       license = "BSD-3-Clause";
       copyright = "Levent Erkok, 2010-2015";
       maintainer = "Levent Erkok (erkokl@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "SMT Based Verification: Symbolic Haskell theorem prover using SMT solving.";
       description = "Express properties about Haskell programs and automatically prove them using SMT\n(Satisfiability Modulo Theories) solvers.\n\nFor details, please see: <http://leventerkok.github.com/sbv/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,11 +34,11 @@
           (hsPkgs.syb)
           (hsPkgs.data-binary-ieee754)
           (hsPkgs.crackNum)
-        ];
-      };
+          ];
+        };
       exes = {
         "SBVUnitTests" = {
-          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
+          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.10.1") [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.directory)
@@ -56,12 +47,12 @@
             (hsPkgs.syb)
             (hsPkgs.sbv)
             (hsPkgs.data-binary-ieee754)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "SBVBasicTests" = {
-          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
+          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.10.1") [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.directory)
@@ -69,8 +60,8 @@
             (hsPkgs.syb)
             (hsPkgs.sbv)
             (hsPkgs.data-binary-ieee754)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

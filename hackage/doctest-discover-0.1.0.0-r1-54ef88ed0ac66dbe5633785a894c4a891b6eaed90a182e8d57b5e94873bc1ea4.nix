@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "doctest-discover";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "doctest-discover"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "karun012@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Easy way to run doctests via cabal";
       description = "This version is for dev purposes only. A new version will be uploaded soon";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "doctest-discover" = {
@@ -32,16 +23,11 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

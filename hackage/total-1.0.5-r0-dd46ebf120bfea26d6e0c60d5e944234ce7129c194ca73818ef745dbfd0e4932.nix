@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "total";
-        version = "1.0.5";
-      };
+      identifier = { name = "total"; version = "1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "2015 Gabriel Gonzalez";
       maintainer = "Gabriel439@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Exhaustive pattern matching using lenses, traversals, and prisms";
       description = "Use this library if you wish to hide your data type's internal\nrepresentation while still providing a way to exhaustively pattern match on\nyour type using exposed lenses, traversals, or prisms.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.void)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.void) ]; };
+      };
+    }

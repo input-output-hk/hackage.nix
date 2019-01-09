@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "i18n";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "i18n"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2016 Eugene Grigoriev";
       maintainer = "Philip Cunningham <hello@filib.io>";
@@ -22,7 +13,7 @@
       synopsis = "Internationalization for Haskell";
       description = "Internationalisation for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "i18n-test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

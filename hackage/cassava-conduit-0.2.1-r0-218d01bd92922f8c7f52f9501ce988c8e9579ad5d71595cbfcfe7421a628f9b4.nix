@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "cassava-conduit";
-        version = "0.2.1";
-      };
+      identifier = { name = "cassava-conduit"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014-2015 Dom De Re";
       maintainer = "Dom De Re";
@@ -22,7 +13,7 @@
       synopsis = "Conduit interface for cassava package";
       description = "Conduit interface for cassava package\n\nPRs welcome.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,25 +26,25 @@
           (hsPkgs.conduit)
           (hsPkgs.conduit-extra)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "quickcheck" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.cassava-conduit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.cassava-conduit)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

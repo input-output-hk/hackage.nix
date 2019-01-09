@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hs-ffmpeg";
-        version = "0.2.3";
-      };
+      identifier = { name = "hs-ffmpeg"; version = "0.2.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Vasyl Pasternak";
       maintainer = "vasylpasternak@gmail.com";
@@ -22,13 +13,10 @@
       synopsis = "Bindings to FFMPEG library";
       description = "Bindings to FFMPEG library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.haskell98) ];
         libs = [
           (pkgs."avformat")
           (pkgs."avcodec")
@@ -44,7 +32,7 @@
           (pkgs."faac")
           (pkgs."z")
           (pkgs."dc1394_control")
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

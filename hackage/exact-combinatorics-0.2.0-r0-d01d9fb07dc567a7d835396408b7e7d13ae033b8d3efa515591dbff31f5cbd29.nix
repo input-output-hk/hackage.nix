@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "exact-combinatorics";
-        version = "0.2.0";
-      };
+      identifier = { name = "exact-combinatorics"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011--2012 wren ng thornton";
       maintainer = "wren@community.haskell.org";
@@ -22,10 +13,6 @@
       synopsis = "Efficient exact computation of combinatoric functions.";
       description = "Efficient exact computation of combinatoric functions.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

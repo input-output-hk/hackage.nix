@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      library-only = false;
-    };
+    flags = { dev = false; library-only = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "battleships";
-        version = "1.0.0";
-      };
+      identifier = { name = "battleships"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thorand@cs.uni-bonn.de";
@@ -25,7 +13,7 @@
       synopsis = "A web-based implementation of battleships including an AI opponent.";
       description = "This package provides a web-based implementation of the popular\nbattleships game, developed over the course of a practical functional\nprogramming class at the University of Bonn (<http://www.iai.uni-bonn.de/~jv/teaching/afp13/>).\nAlongside with the classical gameplay against an AI opponent, a game mode\nis provided in which players may move their undamaged ships.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -63,23 +51,21 @@
           (hsPkgs.shakespeare-js)
           (hsPkgs.yaml)
           (hsPkgs.filepath)
-        ] ++ pkgs.lib.optionals (flags.library-only) [
+          ] ++ (pkgs.lib).optionals (flags.library-only) [
           (hsPkgs.warp)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "main.fcgi" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.battleships)
             (hsPkgs.yesod)
-          ] ++ (if flags.dev
+            ] ++ (if flags.dev
             then [ (hsPkgs.warp) ]
-            else [
-              (hsPkgs.wai-handler-fastcgi)
-            ]);
-        };
+            else [ (hsPkgs.wai-handler-fastcgi) ]);
+          };
         "img-gen" = {
           depends = [
             (hsPkgs.base)
@@ -90,8 +76,8 @@
             (hsPkgs.diagrams-svg)
             (hsPkgs.diagrams-lib)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "aibenchmark" = {
           depends = [
             (hsPkgs.base)
@@ -100,16 +86,16 @@
             (hsPkgs.transformers)
             (hsPkgs.containers)
             (hsPkgs.MonadRandom)
-          ];
-        };
+            ];
+          };
         "key-gen" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.bytestring)
             (hsPkgs.crypto-random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

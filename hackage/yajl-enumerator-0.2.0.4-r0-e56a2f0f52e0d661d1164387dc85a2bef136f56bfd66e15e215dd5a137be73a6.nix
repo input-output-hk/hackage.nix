@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yajl-enumerator";
-        version = "0.2.0.4";
-      };
+      identifier = { name = "yajl-enumerator"; version = "0.2.0.4"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (c) John Millikin 2010";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Enumerator-based interface to YAJL, an event-based JSON implementation";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.enumerator)
           (hsPkgs.transformers)
           (hsPkgs.yajl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

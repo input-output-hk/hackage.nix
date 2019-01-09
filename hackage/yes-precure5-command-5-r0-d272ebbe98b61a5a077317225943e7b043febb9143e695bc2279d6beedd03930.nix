@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yes-precure5-command";
-        version = "5";
-      };
+      identifier = { name = "yes-precure5-command"; version = "5"; };
       license = "MIT";
       copyright = "";
       maintainer = "YAMAMOTO Yuji <whosekiteneverfly@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extended yes command to reproduce phrases in Yes! Precure 5";
       description = "Provides extended yes command to reproduce phrases in Yes! Precure 5.\n\nSee <https://github.com/igrep/yes-precure5-command/blob/master/README.mkd> for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.random)
           (hsPkgs.parsec)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "yes" = {
           depends = [
@@ -42,17 +33,17 @@
             (hsPkgs.mtl)
             (hsPkgs.parsec)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.yes-precure5-command)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

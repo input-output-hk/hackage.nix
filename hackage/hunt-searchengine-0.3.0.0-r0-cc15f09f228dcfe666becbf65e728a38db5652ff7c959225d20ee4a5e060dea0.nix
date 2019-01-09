@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-strict = false;
-    };
+    flags = { test-strict = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hunt-searchengine";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "hunt-searchengine"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "Chris Reumann, Ulf Sauer, Uwe Schmidt";
       maintainer = "Chris Reumann, Ulf Sauer, Uwe Schmidt";
@@ -24,7 +13,7 @@
       synopsis = "A search and indexing engine.";
       description = "The Hunt-Searchengine library provides a toolkit to\ncreate fast and flexible searchengines.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +40,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "Hunt-Tests" = {
           depends = [
@@ -75,10 +64,10 @@
             (hsPkgs.data-default)
             (hsPkgs.data-r-tree)
             (hsPkgs.monad-parallel)
-          ];
-        };
+            ];
+          };
         "Hunt-Strictness" = {
-          depends = pkgs.lib.optionals (!(!flags.test-strict)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-strict)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.deepseq)
@@ -98,8 +87,8 @@
             (hsPkgs.old-locale)
             (hsPkgs.monad-parallel)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aws";
-        version = "0.1";
-      };
+      identifier = { name = "aws"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2010 Aristid Breitkreuz";
       maintainer = "aristidb@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Web Services (AWS) for Haskell";
       description = "Bindings for Amazon Web Services (AWS), with the aim of supporting all AWS services.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,7 +42,7 @@
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
           (hsPkgs.xml-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

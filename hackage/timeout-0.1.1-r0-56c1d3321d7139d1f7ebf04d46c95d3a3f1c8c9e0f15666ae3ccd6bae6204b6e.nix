@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "timeout";
-        version = "0.1.1";
-      };
+      identifier = { name = "timeout"; version = "0.1.1"; };
       license = "MIT";
       copyright = "2014 Fedor Gogolev\n2013 Selectel";
       maintainer = "knsd@knsd.net";
@@ -22,7 +13,7 @@
       synopsis = "Generalized sleep and timeout functions";
       description = "Generalized sleep and timeout functions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.time)
           (hsPkgs.mtl)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "timeout-tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

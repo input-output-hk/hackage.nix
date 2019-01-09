@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "graph-serialize";
-        version = "0.1";
-      };
+      identifier = { name = "graph-serialize"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas Schilling <nominolo@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Serialization of data structures with references.";
       description = "Serialization of data structures with references.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.blaze-builder)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghc-imported-from";
-        version = "0.2.0.6";
-      };
+      identifier = { name = "ghc-imported-from"; version = "0.2.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "carlo@carlo-hamalainen.net";
@@ -22,7 +13,7 @@
       synopsis = "Find the Haddock documentation for a symbol.";
       description = "Given a Haskell module and symbol, determine the URL to the Haddock documentation\nfor that symbol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,15 +32,12 @@
           (hsPkgs.transformers)
           (hsPkgs.parsec)
           (hsPkgs.optparse-applicative)
-        ] ++ [ (hsPkgs.Cabal) ];
-      };
+          ] ++ [ (hsPkgs.Cabal) ];
+        };
       exes = {
         "fake-ghc-for-ghc-imported-from" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.process) ];
+          };
         "ghc-imported-from" = {
           depends = [
             (hsPkgs.base)
@@ -69,9 +57,9 @@
             (hsPkgs.parsec)
             (hsPkgs.optparse-applicative)
             (hsPkgs.hspec)
-          ] ++ [ (hsPkgs.Cabal) ];
+            ] ++ [ (hsPkgs.Cabal) ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -91,8 +79,8 @@
             (hsPkgs.parsec)
             (hsPkgs.optparse-applicative)
             (hsPkgs.hspec)
-          ] ++ [ (hsPkgs.Cabal) ];
+            ] ++ [ (hsPkgs.Cabal) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "memis";
-        version = "0.1.1";
-      };
+      identifier = { name = "memis"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Johannes Gerer <oss@johannesgerer.com>";
@@ -22,7 +13,7 @@
       synopsis = "Memis Efficient Manual Image Sorting";
       description = "Memis allows to efficiently rename and sort image files into directories, via an intelligent web-interface.\n\nSee <https://github.com/johannesgerer/memis Readme> on Github.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "memis" = {
@@ -54,8 +45,8 @@
             (hsPkgs.wai-extra)
             (hsPkgs.wai-middleware-static)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "intro";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "intro"; version = "0.0.1.0"; };
       license = "MIT";
       copyright = "2016 Daniel Mendler";
       maintainer = "Daniel Mendler <mail@daniel-mendler.de>";
@@ -22,7 +13,7 @@
       synopsis = "Total, Texty, Transformer-Prelude";
       description = "Total, Text, Transformer-Prelude";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.writer-cps-mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

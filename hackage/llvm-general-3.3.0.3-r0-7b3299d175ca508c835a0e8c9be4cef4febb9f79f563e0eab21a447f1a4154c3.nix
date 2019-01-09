@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      shared-llvm = false;
-      debug = false;
-    };
+    flags = { shared-llvm = false; debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "llvm-general";
-        version = "3.3.0.3";
-      };
+      identifier = { name = "llvm-general"; version = "3.3.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Benjamin S. Scarlet 2013";
       maintainer = "Benjamin S. Scarlet <fgthb0@greynode.net>";
@@ -25,7 +13,7 @@
       synopsis = "General purpose LLVM bindings";
       description = "llvm-general is a set of Haskell bindings for LLVM <http://llvm.org/>. Unlike other current Haskell bindings,\nit uses an ADT to represent LLVM IR (<http://llvm.org/docs/LangRef.html>), and so offers two advantages: it\nhandles almost all of the stateful complexities of using the LLVM API to build IR; and it supports moving IR not\nonly from Haskell into LLVM C++ objects, but the other direction - from LLVM C++ into Haskell.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,9 +27,9 @@
           (hsPkgs.parsec)
           (hsPkgs.array)
           (hsPkgs.setenv)
-        ];
+          ];
         libs = [ (pkgs."stdc++") ];
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -53,8 +41,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.llvm-general)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

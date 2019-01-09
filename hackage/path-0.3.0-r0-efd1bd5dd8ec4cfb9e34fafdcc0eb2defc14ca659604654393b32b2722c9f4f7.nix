@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "path";
-        version = "0.3.0";
-      };
+      identifier = { name = "path"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 FP Complete";
       maintainer = "chrisdone@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Path";
       description = "Path";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.filepath)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.hspec)
             (hsPkgs.mtl)
             (hsPkgs.path)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

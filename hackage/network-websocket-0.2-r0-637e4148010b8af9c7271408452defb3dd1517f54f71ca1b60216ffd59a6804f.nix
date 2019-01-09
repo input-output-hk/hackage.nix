@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "network-websocket";
-        version = "0.2";
-      };
+      identifier = { name = "network-websocket"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Michael Melanson, 2010";
       maintainer = "Michael Melanson <michael@michaelmelanson.net>";
@@ -24,7 +13,7 @@
       synopsis = "WebSocket library";
       description = "A library for creating Websocket servers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,10 +21,8 @@
           (hsPkgs.haskell98)
           (hsPkgs.network)
           (hsPkgs.webserver)
-        ];
+          ];
+        };
+      exes = { "websocket-echo" = {}; };
       };
-      exes = {
-        "websocket-echo" = {};
-      };
-    };
-  }
+    }

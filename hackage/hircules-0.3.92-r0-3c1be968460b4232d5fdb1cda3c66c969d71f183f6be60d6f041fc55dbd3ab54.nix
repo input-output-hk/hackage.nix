@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hircules";
-        version = "0.3.92";
-      };
+      identifier = { name = "hircules"; version = "0.3.92"; };
       license = "LicenseRef-GPL";
       copyright = "2003 Andrew J. Bromage\n2003, 2004, 2006 Jens-Ulrik Petersen <petersen@haskell.org>\n2008, 2009 Jens Petersen <juhp@haskell.org>";
       maintainer = "Jens Petersen <juhp@haskell.org>";
@@ -22,7 +13,7 @@
       synopsis = "IRC client";
       description = "Hircules is an IRC (Internet Relay Chat) client with a gtk GUI.\nSee the old project page http://haskell.org/hircules for more info.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hircules" = {
@@ -36,8 +27,8 @@
             (hsPkgs.directory)
             (hsPkgs.network)
             (hsPkgs.old-time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

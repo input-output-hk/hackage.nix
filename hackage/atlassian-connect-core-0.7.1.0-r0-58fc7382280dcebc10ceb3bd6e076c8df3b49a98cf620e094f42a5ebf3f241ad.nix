@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "atlassian-connect-core";
-        version = "0.7.1.0";
-      };
+      identifier = { name = "atlassian-connect-core"; version = "0.7.1.0"; };
       license = "Apache-2.0";
       copyright = "(c) 2014 Robert Massaioli, Avi Knoll, Eero Kaukonen";
       maintainer = "rmassaioli@atlassian.com";
@@ -22,7 +13,7 @@
       synopsis = "Atlassian Connect snaplet for the Snap Framework and helper code.";
       description = "This library allows you to quickly get an Atlassian Connect application running\non top of the Snap Framework. It provides best practices and helper functions to get you moving\nquickly. Please read the rest of the documentation for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,13 +42,8 @@
           (hsPkgs.http-types)
           (hsPkgs.network-api-support)
           (hsPkgs.cryptohash)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.zlib)
-        ];
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        pkgconfig = [ (pkgconfPkgs.zlib) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "non-empty-text";
-        version = "0.1.1";
-      };
+      identifier = { name = "non-empty-text"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Antoine Catton <devel@antoine.catton.fr>";
@@ -22,14 +13,9 @@
       synopsis = "Non empty Data.Text type";
       description = "Typesafe thin wrapper around Data.Text to make impossible to be empty (to\nalways hold at least on character)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.text) ]; };
       tests = {
         "doctest" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -46,8 +32,8 @@
             (hsPkgs.hspec)
             (hsPkgs.non-empty-text)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

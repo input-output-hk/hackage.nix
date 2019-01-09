@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-doctests = true;
-      lib-werror = false;
-    };
+    flags = { test-doctests = true; lib-werror = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hash";
-        version = "0.1.2";
-      };
+      identifier = { name = "hash"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Hashing tools";
       description = "Hashing tools";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,17 +25,17 @@
           (hsPkgs.hashable)
           (hsPkgs.lens)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

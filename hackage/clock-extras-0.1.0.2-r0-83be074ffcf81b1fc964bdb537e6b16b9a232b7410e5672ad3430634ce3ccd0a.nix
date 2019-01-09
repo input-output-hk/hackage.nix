@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clock-extras";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "clock-extras"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "skedge.me";
       maintainer = "jonathangfischoff@gmail.com";
@@ -22,22 +13,13 @@
       synopsis = "A couple functions that probably should be in the 'clock' package";
       description = "A couple functions that probably should be in the 'clock' package, such as 'elapsedTime' and 'diffSeconds'.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.clock)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.clock) ]; };
       tests = {
         "clock-extras-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.clock-extras)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.clock-extras) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsemail";
-        version = "2";
-      };
+      identifier = { name = "hsemail"; version = "2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Peter Simons <simons@cryp.to>";
@@ -22,7 +13,7 @@
       synopsis = "Parsec parsers for the RFC2822 Internet Message format";
       description = "Parsec parsers for the Internet Message format defined in RFC 2821 and 2822.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.old-time)
           (hsPkgs.parsec)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest-hsemail" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.parsec)
             (hsPkgs.mtl)
             (hsPkgs.doctest)
-          ];
-        };
+            ];
+          };
         "test-hsemail" = {
           depends = [
             (hsPkgs.base)
@@ -50,8 +41,8 @@
             (hsPkgs.mtl)
             (hsPkgs.hspec)
             (hsPkgs.hsemail)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

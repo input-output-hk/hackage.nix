@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-streaming";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "servant-streaming"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Julian K. Arni";
       maintainer = "jkarni@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Servant combinators for the 'streaming' package";
       description = "This package defines the 'StreamBody' and 'StreamResponse' combinators for use with the <https://hackage.haskell.org/package/streaming streaming> package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.http-types)
-          (hsPkgs.servant)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.http-types) (hsPkgs.servant) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.http-types)
             (hsPkgs.servant)
             (hsPkgs.servant-streaming)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

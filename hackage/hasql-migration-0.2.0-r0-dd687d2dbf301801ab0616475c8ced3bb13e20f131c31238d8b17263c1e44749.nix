@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasql-migration";
-        version = "0.2.0";
-      };
+      identifier = { name = "hasql-migration"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Timo von Holtz, Andreas Meingast, Sumit Raja";
       maintainer = "Timo von Holtz <tvh@tvholtz.de>";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL Schema Migrations";
       description = "A PostgreSQL-simple schema migration utility";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.memory)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "hasql-migration-test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.hasql-transaction)
             (hsPkgs.hspec)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

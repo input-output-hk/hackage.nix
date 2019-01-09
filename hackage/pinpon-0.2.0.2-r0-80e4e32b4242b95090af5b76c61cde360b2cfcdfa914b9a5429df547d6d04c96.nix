@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       pinpon-executable = true;
@@ -12,13 +6,10 @@
       pinpon-ring-executable = true;
       test-doctests = true;
       test-hlint = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pinpon";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "pinpon"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018, Quixoftic, LLC";
       maintainer = "Drew Hess <dhess-src@quixoftic.com>";
@@ -28,7 +19,7 @@
       synopsis = "A gateway for various cloud notification services";
       description = "@pinpon@ is a gateway for various cloud notification services, such\nas the Amazon AWS SNS service.\n\nThink of @pinpon@ as a hub for dispatching notifications originating\nfrom multiple notification sources. Clients of the @pinpon@ service\ncreate topics and send notifications via the REST-ish @pinpon@\nservice, and the @pinpon@ server takes care of the per-service\ndetails and communicating with the upstream cloud services.\n\nAdvantages of this approach, compared to programming directly to the\nindividual notification services' interfaces, are:\n\n* A common API for all supported notification services.\n\n* The secret credentials required to communicate with each cloud\nnotification service can be kept in a central location (namely,\nthe @pinpon@ server), rather than being distributed to each\nnotification source host, therefore reducing the attack surface.\n\n* Hosts which send notifications via the @pinpon@ gateway can be\nfirewalled from the public Internet. This is especially useful in\nIoT applications.\n\nCurrently-supported notification services:\n\n* Amazon AWS SNS";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -62,11 +53,11 @@
           (hsPkgs.transformers-base)
           (hsPkgs.wai)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "pinpon" = {
-          depends = pkgs.lib.optionals (!(!flags.pinpon-executable)) [
+          depends = (pkgs.lib).optionals (!(!flags.pinpon-executable)) [
             (hsPkgs.amazonka)
             (hsPkgs.amazonka-sns)
             (hsPkgs.base)
@@ -82,10 +73,10 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "pinpon-gpio" = {
-          depends = pkgs.lib.optionals (!(!flags.pinpon-gpio-executable)) [
+          depends = (pkgs.lib).optionals (!(!flags.pinpon-gpio-executable)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)
@@ -105,10 +96,10 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "pinpon-ring" = {
-          depends = pkgs.lib.optionals (!(!flags.pinpon-ring-executable)) [
+          depends = (pkgs.lib).optionals (!(!flags.pinpon-ring-executable)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)
@@ -125,24 +116,24 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctest" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.protolude)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
             (hsPkgs.protolude)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -155,12 +146,12 @@
             (hsPkgs.protolude)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.servant-swagger)
-          ] ++ pkgs.lib.optionals (!(!flags.test-hlint)) [
+            ] ++ (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
             (hsPkgs.protolude)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

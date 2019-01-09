@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      example = false;
-      testclient = false;
-    };
+    flags = { example = false; testclient = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambdacube-gl";
-        version = "0.5.1.2";
-      };
+      identifier = { name = "lambdacube-gl"; version = "0.5.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "csaba.hruska@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "OpenGL 3.3 Core Profile backend for LambdaCube 3D";
       description = "OpenGL 3.3 Core Profile backend for LambdaCube 3D";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +26,8 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.OpenGLRaw)
           (hsPkgs.lambdacube-ir)
-        ];
-      };
+          ];
+        };
       exes = {
         "lambdacube-gl-hello" = {
           depends = [
@@ -52,8 +40,8 @@
             (hsPkgs.GLFW-b)
             (hsPkgs.lambdacube-gl)
             (hsPkgs.lambdacube-ir)
-          ];
-        };
+            ];
+          };
         "lambdacube-gl-hello-obj" = {
           depends = [
             (hsPkgs.base)
@@ -68,8 +56,8 @@
             (hsPkgs.wavefront)
             (hsPkgs.lambdacube-gl)
             (hsPkgs.lambdacube-ir)
-          ];
-        };
+            ];
+          };
         "lambdacube-gl-test-client" = {
           depends = [
             (hsPkgs.base)
@@ -88,8 +76,8 @@
             (hsPkgs.GLFW-b)
             (hsPkgs.lambdacube-gl)
             (hsPkgs.lambdacube-ir)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

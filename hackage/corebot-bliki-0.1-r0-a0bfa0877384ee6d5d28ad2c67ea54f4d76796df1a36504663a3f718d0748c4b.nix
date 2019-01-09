@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "corebot-bliki";
-        version = "0.1";
-      };
+      identifier = { name = "corebot-bliki"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "A bliki written using yesod. Uses pandoc to process files stored in git.";
       description = "Also provides a sample use of the library that uses \$HOME/bliki for data and serves\nto port 8080.\nSee http://www.corebotllc.com for public site built using this library.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "corebot-bliki" = {
@@ -42,8 +33,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.time)
             (hsPkgs.yesod)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

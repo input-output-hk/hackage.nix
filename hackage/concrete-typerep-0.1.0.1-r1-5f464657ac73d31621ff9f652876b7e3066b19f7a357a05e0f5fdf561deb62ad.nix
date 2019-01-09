@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      new-typerep = false;
-    };
+    flags = { new-typerep = false; };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "concrete-typerep";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "concrete-typerep"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "reiner.pope@gmail.com";
@@ -24,19 +13,13 @@
       synopsis = "Binary and Hashable instances for TypeRep";
       description = "Binary and Hashable instances for TypeRep";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.binary)
-          (hsPkgs.hashable)
-        ] ++ (if flags.new-typerep
-          then [
-            (hsPkgs.base)
-            (hsPkgs.ghc)
-          ]
+        depends = [ (hsPkgs.binary) (hsPkgs.hashable) ] ++ (if flags.new-typerep
+          then [ (hsPkgs.base) (hsPkgs.ghc) ]
           else [ (hsPkgs.base) ]);
-      };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,8 +30,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

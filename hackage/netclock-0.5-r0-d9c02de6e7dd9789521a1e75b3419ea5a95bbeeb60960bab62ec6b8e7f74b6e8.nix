@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "netclock";
-        version = "0.5";
-      };
+      identifier = { name = "netclock"; version = "0.5"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "netclock@mail.slab.org";
@@ -22,14 +13,10 @@
       synopsis = "Netclock protocol";
       description = "Implementation of the Netclock protocol for sharing clocks in music performance";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-          (hsPkgs.hosc)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.network) (hsPkgs.hosc) ];
+        };
       };
-    };
-  }
+    }

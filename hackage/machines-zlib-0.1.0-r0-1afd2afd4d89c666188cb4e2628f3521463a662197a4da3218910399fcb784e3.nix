@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "machines-zlib";
-        version = "0.1.0";
-      };
+      identifier = { name = "machines-zlib"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 LShift";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Decompression support for machines";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.basic-prelude)
           (hsPkgs.machines)
           (hsPkgs.streaming-commons)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      benchmark = false;
-      aesni = false;
-    };
+    flags = { benchmark = false; aesni = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cryptocipher";
-        version = "0.3.2";
-      };
+      identifier = { name = "cryptocipher"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -25,7 +13,7 @@
       synopsis = "Symmetrical Block, Stream and PubKey Ciphers";
       description = "Symmetrical Block, Stream and PubKey Ciphers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,20 +27,20 @@
           (hsPkgs.crypto-pubkey-types)
           (hsPkgs.tagged)
           (hsPkgs.cereal)
-        ];
-      };
+          ];
+        };
       exes = {
         "Benchmarks" = {
-          depends = pkgs.lib.optionals (flags.benchmark) [
+          depends = (pkgs.lib).optionals (flags.benchmark) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.crypto-api)
             (hsPkgs.cryptocipher)
             (hsPkgs.criterion)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-cryptocipher" = {
           depends = [
@@ -66,8 +54,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

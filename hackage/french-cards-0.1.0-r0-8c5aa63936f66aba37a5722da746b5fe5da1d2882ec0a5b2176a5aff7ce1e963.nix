@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "french-cards";
-        version = "0.1.0";
-      };
+      identifier = { name = "french-cards"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Taras Serduke";
       maintainer = "taras.serduke@gmail.com";
@@ -22,26 +13,16 @@
       synopsis = "French Playing Cards";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "card" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.french-cards)
-            (hsPkgs.HUnit)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.french-cards) (hsPkgs.HUnit) ];
+          };
         "misc" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.french-cards)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.french-cards) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

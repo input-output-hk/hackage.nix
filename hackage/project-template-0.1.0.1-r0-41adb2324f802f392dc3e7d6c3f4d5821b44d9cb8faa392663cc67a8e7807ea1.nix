@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "project-template";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "project-template"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Specify Haskell project templates and generate files";
       description = "See initial blog post for explanation: <http://www.yesodweb.com/blog/2012/09/project-templates>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
           (hsPkgs.conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.hspec)
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "extensible-effects-concurrent";
-        version = "0.8";
-      };
+      identifier = { name = "extensible-effects-concurrent"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright Sven Heyll";
       maintainer = "sven.heyll@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Message passing concurrency as extensible-effect";
       description = "Please see the README on GitHub at <https://github.com/sheyll/extensible-effects-concurrent#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,24 +36,24 @@
           (hsPkgs.extensible-effects)
           (hsPkgs.stm)
           (hsPkgs.tagged)
-        ];
-      };
+          ];
+        };
       exes = {
         "extensible-effects-concurrent-example-1" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.extensible-effects-concurrent)
             (hsPkgs.extensible-effects)
-          ];
-        };
+            ];
+          };
         "extensible-effects-concurrent-example-2" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.extensible-effects-concurrent)
             (hsPkgs.extensible-effects)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "extensible-effects-concurrent-test" = {
           depends = [
@@ -78,8 +69,8 @@
             (hsPkgs.lens)
             (hsPkgs.HUnit)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

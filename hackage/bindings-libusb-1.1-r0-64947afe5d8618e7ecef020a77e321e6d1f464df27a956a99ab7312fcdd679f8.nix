@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "bindings-libusb";
-        version = "1.1";
-      };
+      identifier = { name = "bindings-libusb"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Maurício C. Antunes <mauricio.antunes@gmail.com>";
@@ -22,15 +13,15 @@
       synopsis = "Low level bindings to libusb.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bindings-common)
           (hsPkgs.bindings-posix)
-        ];
+          ];
         libs = [ (pkgs."usb-1.0") ];
+        };
       };
-    };
-  }
+    }

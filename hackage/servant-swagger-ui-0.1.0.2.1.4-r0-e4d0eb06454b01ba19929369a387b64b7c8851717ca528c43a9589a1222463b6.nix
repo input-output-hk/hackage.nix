@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-swagger-ui";
-        version = "0.1.0.2.1.4";
-      };
+      identifier = { name = "servant-swagger-ui"; version = "0.1.0.2.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Servant swagger ui";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.wai-app-static)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.lens)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

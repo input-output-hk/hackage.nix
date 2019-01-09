@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "uulib";
-        version = "0.9.23";
-      };
+      identifier = { name = "uulib"; version = "0.9.23"; };
       license = "BSD-3-Clause";
       copyright = "Universiteit Utrecht";
       maintainer = "UU Computer Science";
@@ -22,13 +13,8 @@
       synopsis = "Haskell Utrecht Tools Library";
       description = "Fast Parser Combinators and Pretty Printing Combinators";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) ]; };
+      };
+    }

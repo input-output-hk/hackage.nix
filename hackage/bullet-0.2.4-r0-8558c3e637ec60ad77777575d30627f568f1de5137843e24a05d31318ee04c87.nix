@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bullet";
-        version = "0.2.4";
-      };
+      identifier = { name = "bullet"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "csaba (dot) hruska (at) gmail (dot) com";
@@ -22,13 +13,10 @@
       synopsis = "A wrapper for the Bullet physics engine.";
       description = "A wrapper for the Bullet physics engine.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vect)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.vect) ];
         libs = if system.isLinux
           then [ (pkgs."stdc++") ]
           else [
@@ -37,11 +25,9 @@
             (pkgs."BulletCollision")
             (pkgs."LinearMath")
             (pkgs."stdc++")
-          ];
-        pkgconfig = pkgs.lib.optional (system.isLinux) (pkgconfPkgs.bullet);
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+            ];
+        pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs.bullet);
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

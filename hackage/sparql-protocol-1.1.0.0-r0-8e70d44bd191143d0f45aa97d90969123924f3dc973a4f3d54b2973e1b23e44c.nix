@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sparql-protocol";
-        version = "1.1.0.0";
-      };
+      identifier = { name = "sparql-protocol"; version = "1.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2017 Ariel David Moya Sequeira";
       maintainer = "ardamose123@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An SPARQL 1.1 Protocol client library.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,15 +26,12 @@
           (hsPkgs.text)
           (hsPkgs.exceptions)
           (hsPkgs.http-client)
-        ];
-      };
-      tests = {
-        "sparql-protocol-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.sparql-protocol)
           ];
         };
+      tests = {
+        "sparql-protocol-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.sparql-protocol) ];
+          };
+        };
       };
-    };
-  }
+    }

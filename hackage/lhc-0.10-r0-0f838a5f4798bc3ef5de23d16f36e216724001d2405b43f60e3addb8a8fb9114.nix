@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       hpc = false;
@@ -12,13 +6,10 @@
       lhc-regress = false;
       lhc-pkg = true;
       with-libs = false;
-    };
+      };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "lhc";
-        version = "0.10";
-      };
+      identifier = { name = "lhc"; version = "0.10"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "lhc@projects.haskell.org";
@@ -28,7 +19,7 @@
       synopsis = "LHC Haskell Compiler";
       description = "lhc is a haskell compiler which aims to produce the most efficient programs possible via whole\nprogram analysis and other optimizations.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "lhc" = {
@@ -50,8 +41,8 @@
             (hsPkgs.pretty)
             (hsPkgs.time)
             (hsPkgs.parallel)
-          ];
-        };
+            ];
+          };
         "lhc-regress" = {
           depends = [
             (hsPkgs.base)
@@ -62,8 +53,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck)
-          ];
-        };
+            ];
+          };
         "lhc-pkg" = {
           depends = [
             (hsPkgs.base)
@@ -73,8 +64,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.filepath)
             (hsPkgs.Cabal)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

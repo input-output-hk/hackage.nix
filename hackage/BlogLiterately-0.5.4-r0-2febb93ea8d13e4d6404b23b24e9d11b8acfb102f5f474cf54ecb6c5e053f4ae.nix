@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "BlogLiterately";
-        version = "0.5.4";
-      };
+      identifier = { name = "BlogLiterately"; version = "0.5.4"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Robert Greayer 2008-2010, Brent Yorgey 2012";
       maintainer = "Brent Yorgey <byorgey@cis.upenn.edu>";
@@ -22,7 +13,7 @@
       synopsis = "A tool for posting Haskelly articles to blogs";
       description = "Write blog posts in Markdown format, then use BlogLiterately\nto do syntax highlighting, format ghci sessions, and upload\nto any blog supporting the metaWeblog API (such as Wordpress).\n\nTo get started, use the provided executable\n@BlogLiterately@; see\n<http://byorgey.wordpress.com/blogliterately/> for\ncomplete documentation.\n\nTo make further customization possible, the internals\nof the executable are made available as a library.  In\nparticular, it is easy to create your own executable\nwhich adds extra custom transformations; see\n\"Text.BlogLiterately.Run\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.haxr)
           (hsPkgs.pandoc)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       exes = {
         "BlogLiterately" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.BlogLiterately)
             (hsPkgs.cmdargs)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gitignore";
-        version = "1.0.0";
-      };
+      identifier = { name = "gitignore"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2013 Ricky Elrod";
       maintainer = "ricky@elrod.me";
@@ -22,7 +13,7 @@
       synopsis = "Apply GitHub .gitignore templates to already existing repositories.";
       description = "Apply GitHub .gitignore templates to already existing repositories.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "gitignore" = {
@@ -35,8 +26,8 @@
             (hsPkgs.network)
             (hsPkgs.safe)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

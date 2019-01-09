@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { libxml2 = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xeno";
-        version = "0.3.5.1";
-      };
+      identifier = { name = "xeno"; version = "0.3.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Marco Zocca (ocramz fripost org)";
@@ -22,7 +13,7 @@
       synopsis = "A fast event-based XML parser in pure Haskell";
       description = "A fast, low-memory use, event-based XML parser in pure Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mutable-containers)
           (hsPkgs.mtl)
           (hsPkgs.hspec)
-        ];
-      };
+          ];
+        };
       tests = {
         "xeno-test" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.hspec)
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "xeno-speed-bench" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.ghc-prim)
             (hsPkgs.xml)
             (hsPkgs.hexpat)
-          ] ++ pkgs.lib.optional (flags.libxml2) (hsPkgs.libxml);
-        };
+            ] ++ (pkgs.lib).optional (flags.libxml2) (hsPkgs.libxml);
+          };
         "xeno-memory-bench" = {
           depends = [
             (hsPkgs.base)
@@ -70,8 +61,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
             (hsPkgs.hexml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

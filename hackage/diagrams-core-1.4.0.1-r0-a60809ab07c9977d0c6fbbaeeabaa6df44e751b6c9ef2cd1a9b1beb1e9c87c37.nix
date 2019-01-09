@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "diagrams-core";
-        version = "1.4.0.1";
-      };
+      identifier = { name = "diagrams-core"; version = "1.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diagrams-discuss@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Core libraries for diagrams EDSL";
       description = "The core modules underlying diagrams,\nan embedded domain-specific language\nfor compositional, declarative drawing.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.distributive)
           (hsPkgs.profunctors)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

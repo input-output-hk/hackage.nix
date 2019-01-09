@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unordered-intmap";
-        version = "0.1.1";
-      };
+      identifier = { name = "unordered-intmap"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Dmitry Ivanov";
       maintainer = "ethercrow@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "A specialization of `HashMap Int v`";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.deepseq)
-          (hsPkgs.primitive)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.deepseq) (hsPkgs.primitive) ];
+        };
       tests = {
         "props" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.unordered-intmap)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

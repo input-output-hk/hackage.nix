@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pointedalternative";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pointedalternative"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016-2016 Gurkenglas";
       maintainer = "gurkenglas@hotmail.de";
@@ -22,7 +13,7 @@
       synopsis = "Alternative done right";
       description = "These combinators give an alternative approach to the Control.Monad.Loops library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.mtl)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

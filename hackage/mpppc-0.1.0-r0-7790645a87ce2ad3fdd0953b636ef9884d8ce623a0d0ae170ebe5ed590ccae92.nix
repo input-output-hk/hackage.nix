@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mpppc";
-        version = "0.1.0";
-      };
+      identifier = { name = "mpppc"; version = "0.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "darinmorrison@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Multi-dimensional parametric pretty-printer with color";
       description = "Multi-dimensional parametric pretty-printer with color";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.split)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

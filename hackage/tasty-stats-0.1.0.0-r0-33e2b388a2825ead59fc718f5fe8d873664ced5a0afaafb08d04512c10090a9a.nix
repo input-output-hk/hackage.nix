@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty-stats";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tasty-stats"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Daniel Mendler";
       maintainer = "Daniel Mendler <mail@daniel-mendler.de>";
@@ -22,7 +13,7 @@
       synopsis = "Collecting statistics of the Tasty testsuite";
       description = "Collecting statistics of the Tasty testsuite";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

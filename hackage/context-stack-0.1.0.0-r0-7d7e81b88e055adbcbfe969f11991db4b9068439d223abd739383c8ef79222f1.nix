@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "context-stack";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "context-stack"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ithinkican@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An abstraction of a stack and stack-based monadic context.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.mtl)
           (hsPkgs.data-default)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

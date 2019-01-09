@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gstorable";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "gstorable"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012, Hideyuki Tanaka, 2018, Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "Generic implementation of Storable";
       description = "Forked version of the @generic-storable@ package with updated bounds and improved ergonomics.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "generic-storable-test" = {
           depends = [
@@ -35,8 +24,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.generic-storable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

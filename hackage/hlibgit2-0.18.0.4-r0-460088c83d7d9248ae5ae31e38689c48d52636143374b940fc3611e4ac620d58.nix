@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hlibgit2";
-        version = "0.18.0.4";
-      };
+      identifier = { name = "hlibgit2"; version = "0.18.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@fpcomplete.com";
@@ -22,27 +13,19 @@
       synopsis = "Low-level bindings to libgit2";
       description = "Bindings to libgit2 v0.18.0.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-DSL)
-          (hsPkgs.zlib)
-        ];
-        libs = pkgs.lib.optionals (!system.isWindows) [
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) (hsPkgs.zlib) ];
+        libs = (pkgs.lib).optionals (!system.isWindows) [
           (pkgs."ssl")
           (pkgs."crypto")
-        ];
-      };
-      tests = {
-        "smoke" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlibgit2)
-            (hsPkgs.process)
           ];
         };
+      tests = {
+        "smoke" = {
+          depends = [ (hsPkgs.base) (hsPkgs.hlibgit2) (hsPkgs.process) ];
+          };
+        };
       };
-    };
-  }
+    }

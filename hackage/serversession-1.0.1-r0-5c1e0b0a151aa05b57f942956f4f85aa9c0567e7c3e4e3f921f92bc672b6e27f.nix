@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "serversession";
-        version = "1.0.1";
-      };
+      identifier = { name = "serversession"; version = "1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Secure, modular server-side sessions.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.serversession)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "countable-inflections";
-        version = "0.2.0";
-      };
+      identifier = { name = "countable-inflections"; version = "0.2.0"; };
       license = "MIT";
       copyright = "2016 Brady Ouren";
       maintainer = "Brady Ouren <brady@andand.co>";
@@ -22,7 +13,7 @@
       synopsis = "Countable Text Inflections";
       description = "Provides methods for singularizing and pluralizing text.\nThe library is based on Rails' inflections.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.regex-pcre-builtin)
           (hsPkgs.pcre-utils)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

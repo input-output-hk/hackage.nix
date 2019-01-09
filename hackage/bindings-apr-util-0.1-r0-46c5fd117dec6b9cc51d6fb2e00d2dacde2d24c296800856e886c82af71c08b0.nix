@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bindings-apr-util";
-        version = "0.1";
-      };
+      identifier = { name = "bindings-apr-util"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "PHO <pho at cielonegro dot org>";
@@ -22,17 +13,11 @@
       synopsis = "Low level bindings to Apache Portable Runtime Utility (APR Utility)";
       description = "Bindings to APR Utility: <http://apr.apache.org/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-DSL)
-          (hsPkgs.bindings-apr)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.apr-util-1)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) (hsPkgs.bindings-apr) ];
+        pkgconfig = [ (pkgconfPkgs.apr-util-1) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mandrill";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "mandrill"; version = "0.2.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for interfacing with the Mandrill JSON API";
       description = "Pure Haskell client for the Mandrill JSON API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.time)
           (hsPkgs.email-validate)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       tests = {
         "mandrill-tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.raw-strings-qq)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

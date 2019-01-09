@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blaze-json";
-        version = "0.2.0";
-      };
+      identifier = { name = "blaze-json"; version = "0.2.0"; };
       license = "MIT";
       copyright = "(c) 2015 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "tiny library for encoding json";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.data-default-class)
           (hsPkgs.bytestring-builder)
-        ];
-      };
+          ];
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -47,14 +38,9 @@
             (hsPkgs.scientific)
             (hsPkgs.vector)
             (hsPkgs.unordered-containers)
-          ];
-        };
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

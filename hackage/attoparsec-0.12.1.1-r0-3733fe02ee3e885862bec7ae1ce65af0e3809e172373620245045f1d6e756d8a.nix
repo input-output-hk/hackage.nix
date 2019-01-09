@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { developer = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "attoparsec";
-        version = "0.12.1.1";
-      };
+      identifier = { name = "attoparsec"; version = "0.12.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
@@ -22,7 +13,7 @@
       synopsis = "Fast combinator parsing for bytestrings and text";
       description = "A fast parser combinator library, aimed particularly at dealing\nefficiently with network protocols and complicated text/binary\nfile formats.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.scientific)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4") (hsPkgs.bytestring);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.4") (hsPkgs.bytestring);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

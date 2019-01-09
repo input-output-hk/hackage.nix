@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fedora-packages";
-        version = "0.0.3";
-      };
+      identifier = { name = "fedora-packages"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Ricky Elrod";
       maintainer = "ricky@elrod.me";
@@ -22,7 +13,7 @@
       synopsis = "Haskell interface to the Fedora Packages webapp API.";
       description = "Provides access to the (<https://apps.fedoraproject.org/packages/ Fedora Packages>) API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.io-streams)
           (hsPkgs.lens)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "hunit" = {
           depends = [
@@ -50,14 +41,9 @@
             (hsPkgs.lens)
             (hsPkgs.text)
             (hsPkgs.hspec)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

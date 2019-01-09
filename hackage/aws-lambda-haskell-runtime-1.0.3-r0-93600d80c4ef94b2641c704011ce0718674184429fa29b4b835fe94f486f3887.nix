@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "aws-lambda-haskell-runtime";
-        version = "1.0.3";
-      };
+      identifier = { name = "aws-lambda-haskell-runtime"; version = "1.0.3"; };
       license = "Apache-2.0";
       copyright = "2018 The Agile Monkeys SL";
       maintainer = "hackers@theagilemonkeys.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell runtime for AWS Lambda";
       description = "Please see the README on GitHub at <https://github.com/githubuser/aws-lambda-haskell-runtime#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       exes = {
         "bootstrap" = {
           depends = [
@@ -66,9 +57,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.wreq)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "aws-lambda-haskell-runtime-test" = {
           depends = [
@@ -92,8 +83,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.wreq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "pusher-http-haskell";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pusher-http-haskell"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) Will Sewell, 2015";
       maintainer = "me@willsewell.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell client library for the Pusher HTTP API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "api-example" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "auth-example" = {
           depends = [
             (hsPkgs.aeson)
@@ -67,9 +58,9 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -85,8 +76,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

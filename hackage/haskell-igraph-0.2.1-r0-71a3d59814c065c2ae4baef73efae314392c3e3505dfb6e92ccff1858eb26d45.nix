@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { graphics = false; };
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "haskell-igraph";
-        version = "0.2.1";
-      };
+      identifier = { name = "haskell-igraph"; version = "0.2.1"; };
       license = "MIT";
       copyright = "(c) 2016 Kai Zhang";
       maintainer = "kai@kzhang.org";
@@ -22,7 +13,7 @@
       synopsis = "Imcomplete igraph bindings";
       description = "This is an attempt to create a complete bindings for the\nigraph<\"http://igraph.org/c/\"> library. Related work:\nhttps://hackage.haskell.org/package/igraph.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +28,13 @@
           (hsPkgs.hxt)
           (hsPkgs.split)
           (hsPkgs.data-default-class)
-        ] ++ pkgs.lib.optionals (flags.graphics) [
+          ] ++ (pkgs.lib).optionals (flags.graphics) [
           (hsPkgs.diagrams-lib)
           (hsPkgs.diagrams-cairo)
-        ];
+          ];
         libs = [ (pkgs."igraph") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -55,8 +44,8 @@
             (hsPkgs.tasty-golden)
             (hsPkgs.tasty-hunit)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

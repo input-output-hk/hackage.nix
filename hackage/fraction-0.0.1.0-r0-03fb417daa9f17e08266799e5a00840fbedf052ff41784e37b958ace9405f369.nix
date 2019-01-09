@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "fraction";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "fraction"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2009 Wolfgang Jeltsch";
       maintainer = "jeltsch@informatik.tu-cottbus.de";
@@ -22,13 +13,8 @@
       synopsis = "Fractions";
       description = "This package provides a data type whose values represent fractions.\n\nA fraction can be seen as a real number from the closed interval [0,1]. It can also\nbe seen as a percentage.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.algebra)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.algebra) (hsPkgs.base) ]; };
+      };
+    }

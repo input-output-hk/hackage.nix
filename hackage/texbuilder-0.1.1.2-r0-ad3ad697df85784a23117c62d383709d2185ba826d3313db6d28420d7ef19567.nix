@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "texbuilder";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "texbuilder"; version = "0.1.1.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Dominik Xaver Hörl";
@@ -22,7 +13,7 @@
       synopsis = "View your latex output while editing";
       description = "This program allows you to view your latex document in your pdf viewer while\nediting it in your favorite editor. When you save your document, this program\nwill recompile it, overwrite the output pdf file and send a signal to your\npdf reader to reload the file. This effectively allows for a\n\"continous preview\"-like experience.\nThis will run on Linux only at the moment.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "texbuilder" = {
@@ -42,8 +33,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

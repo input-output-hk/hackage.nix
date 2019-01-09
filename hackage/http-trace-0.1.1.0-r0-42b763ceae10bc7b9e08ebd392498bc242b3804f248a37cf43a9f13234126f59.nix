@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-trace";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "http-trace"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2016 Sergey Bushnyak";
       maintainer = "sergey.bushnyak@sigrlami.eu";
@@ -22,7 +13,7 @@
       synopsis = "Tracking http redirects";
       description = "Tracking http redirects for supplied url";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,15 +25,10 @@
           (hsPkgs.safe)
           (hsPkgs.transformers)
           (hsPkgs.MissingH)
-        ];
-      };
-      exes = {
-        "http-trace" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.http-trace)
           ];
         };
+      exes = {
+        "http-trace" = { depends = [ (hsPkgs.base) (hsPkgs.http-trace) ]; };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "alarmclock";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "alarmclock"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) David Turner 2014-2018";
       maintainer = "dave.c.turner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wake up and perform an action at a certain time.";
       description = "Wake up and perform an action at a certain time.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.time)
           (hsPkgs.clock)
           (hsPkgs.unbounded-delays)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

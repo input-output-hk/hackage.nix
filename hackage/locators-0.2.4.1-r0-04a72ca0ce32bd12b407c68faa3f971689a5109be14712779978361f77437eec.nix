@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "locators";
-        version = "0.2.4.1";
-      };
+      identifier = { name = "locators"; version = "0.2.4.1"; };
       license = "BSD-3-Clause";
       copyright = "© 2013-2014 Operational Dynamics Consulting, Pty Ltd and Others";
       maintainer = "Andrew Cowie <andrew@operationaldynamics.com>";
@@ -22,7 +13,7 @@
       synopsis = "Human exchangable identifiers and locators";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.cryptohash)
           (hsPkgs.cereal)
-        ];
-      };
+          ];
+        };
       tests = {
         "check" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.containers)
             (hsPkgs.cryptohash)
             (hsPkgs.cereal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

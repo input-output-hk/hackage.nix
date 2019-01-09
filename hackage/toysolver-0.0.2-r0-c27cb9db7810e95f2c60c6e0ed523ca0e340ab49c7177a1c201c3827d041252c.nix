@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { forcechar8 = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "toysolver";
-        version = "0.0.2";
-      };
+      identifier = { name = "toysolver"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "masahiro.sakai@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Assorted decision procedures";
       description = "Toy-level implementation of some decision procedures";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "toysolver" = {
@@ -37,8 +28,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.stm)
             (hsPkgs.parse-dimacs)
-          ];
-        };
+            ];
+          };
         "toysat" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +45,8 @@
             (hsPkgs.OptDir)
             (hsPkgs.time)
             (hsPkgs.old-locale)
-          ] ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
-        };
+            ] ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
+          };
         "lp2yices" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.containers)
             (hsPkgs.parsec)
             (hsPkgs.OptDir)
-          ];
-        };
+            ];
+          };
         "cnf2lp" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +66,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.parse-dimacs)
             (hsPkgs.OptDir)
-          ];
-        };
+            ];
+          };
         "maxsat2lp" = {
           depends = [
             (hsPkgs.base)
@@ -85,8 +76,8 @@
             (hsPkgs.array)
             (hsPkgs.parsec)
             (hsPkgs.OptDir)
-          ];
-        };
+            ];
+          };
         "pb2lp" = {
           depends = [
             (hsPkgs.base)
@@ -95,9 +86,9 @@
             (hsPkgs.array)
             (hsPkgs.parsec)
             (hsPkgs.OptDir)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "TestSAT" = {
           depends = [
@@ -111,8 +102,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.OptDir)
-          ];
-        };
+            ];
+          };
         "TestSimplex2" = {
           depends = [
             (hsPkgs.base)
@@ -124,8 +115,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.OptDir)
-          ];
-        };
+            ];
+          };
         "TestMIPSolver2" = {
           depends = [
             (hsPkgs.base)
@@ -138,8 +129,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.OptDir)
             (hsPkgs.stm)
-          ];
-        };
+            ];
+          };
         "TestPolynomial" = {
           depends = [
             (hsPkgs.base)
@@ -151,8 +142,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestInterval" = {
           depends = [
             (hsPkgs.base)
@@ -163,8 +154,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestAReal" = {
           depends = [
             (hsPkgs.base)
@@ -177,8 +168,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestLPFile" = {
           depends = [
             (hsPkgs.base)
@@ -192,8 +183,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestPBFile" = {
           depends = [
             (hsPkgs.base)
@@ -206,9 +197,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "BenchmarkSATLIB" = {
           depends = [
@@ -219,8 +210,8 @@
             (hsPkgs.queue)
             (hsPkgs.parse-dimacs)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aeson-schema";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "aeson-schema"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Tim Baumann <tim@timbaumann.info>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell JSON schema validator and parser generator";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.syb)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.hint)
             (hsPkgs.temporary)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

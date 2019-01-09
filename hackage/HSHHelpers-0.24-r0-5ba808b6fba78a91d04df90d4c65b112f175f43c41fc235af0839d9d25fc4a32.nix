@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HSHHelpers";
-        version = "0.24";
-      };
+      identifier = { name = "HSHHelpers"; version = "0.24"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2008 Thomas Hartman";
       maintainer = "Thomas Hartman <thomashartman1 at gmail>";
@@ -22,7 +13,7 @@
       synopsis = "Convenience functions that use HSH, instances for HSH.";
       description = "Functions I found I was using repeatedly when doing shell programming with HSH.\nRather than duplicate code, released on hackage.\nA lot of this is cruft. For instance, you are probably better off having a look at System.Posix.Files and\nSystem.Posix.Users, which I overlooked when writing, before making too much use of hsh helpers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.filepath)
           (hsPkgs.mtl)
           (hsPkgs.DebugTraceHelpers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

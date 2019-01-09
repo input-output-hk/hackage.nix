@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "symengine";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "symengine"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "2016 Siddharth Bhat";
       maintainer = "siddu.druid@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "SymEngine symbolic mathematics engine for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "symengine-test" = {
           depends = [
@@ -35,14 +24,14 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
           libs = [
             (pkgs."symengine")
             (pkgs."stdc++")
             (pkgs."gmpxx")
             (pkgs."gmp")
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

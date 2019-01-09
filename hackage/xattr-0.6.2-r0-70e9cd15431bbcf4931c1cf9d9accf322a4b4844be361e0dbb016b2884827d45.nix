@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xattr";
-        version = "0.6.2";
-      };
+      identifier = { name = "xattr"; version = "0.6.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 by Evan Klitzke, (c) 2012 by Deian Stefan, (c) 2012 by Amit Levy";
       maintainer = "Deian Stefan <deian@cs.stanford.edu>";
@@ -22,16 +13,12 @@
       synopsis = "Haskell extended file attributes interface";
       description = "Relatively low-level interface to work with extended attributes\non Unix systems. This is a fairly straightforward port of the\nAPI exposed by SGI's libattr.";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.unix)
-        ];
-        libs = pkgs.lib.optional (!system.isOsx) (pkgs."attr");
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.unix) ];
+        libs = (pkgs.lib).optional (!system.isOsx) (pkgs."attr");
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +32,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

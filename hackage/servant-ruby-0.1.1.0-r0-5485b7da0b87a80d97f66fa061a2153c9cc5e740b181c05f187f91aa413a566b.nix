@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-ruby";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "servant-ruby"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Hardy Jones";
       maintainer = "jones3.hardy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate a Ruby client from a Servant API with Net::HTTP.";
       description = "Generate a Ruby client from a Servant API with Net::HTTP.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,12 @@
           (hsPkgs.lens)
           (hsPkgs.servant-foreign)
           (hsPkgs.text)
-        ];
-      };
-      tests = {
-        "doc-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doc-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Cabal) (hsPkgs.doctest) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "xml-catalog";
-        version = "0.0.0";
-      };
+      identifier = { name = "xml-catalog"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michaels@suite-sol.com";
@@ -22,7 +13,7 @@
       synopsis = "Parse XML catalog files";
       description = "Parse XML catalog files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.enumerator)
           (hsPkgs.uri-enumerator)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

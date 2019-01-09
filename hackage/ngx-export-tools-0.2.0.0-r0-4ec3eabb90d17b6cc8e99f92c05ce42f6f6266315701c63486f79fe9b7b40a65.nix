@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ngx-export-tools";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "ngx-export-tools"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Alexey Radkov";
       maintainer = "Alexey Radkov <alexey.radkov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extra tools for Nginx haskell module";
       description = "Extra tools for\n<http://github.com/lyokha/nginx-haskell-module Nginx haskell module>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.ngx-export)
           (hsPkgs.aeson)
           (hsPkgs.safe)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "wxdirect";
-        version = "0.12.1.4";
-      };
+      identifier = { name = "wxdirect"; version = "0.12.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "wxhaskell-devel@lists.sourceforge.net";
@@ -22,21 +13,16 @@
       synopsis = "helper tool for building wxHaskell";
       description = "wxHaskell is a portable and native GUI library for Haskell. It is built on\ntop of wxWidgets, a comprehensive C++ library that is portable across all\nmajor GUI platforms, including GTK, Windows, X11, and MacOS X. This version\nworks with wxWidgets 2.8 only.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "wxdirect" = {
-          depends = [
-            (hsPkgs.parsec)
-            (hsPkgs.time)
-          ] ++ [
+          depends = [ (hsPkgs.parsec) (hsPkgs.time) ] ++ [
             (hsPkgs.base)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

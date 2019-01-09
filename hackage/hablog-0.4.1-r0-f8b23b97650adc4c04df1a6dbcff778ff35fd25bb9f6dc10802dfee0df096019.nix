@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hablog";
-        version = "0.4.1";
-      };
+      identifier = { name = "hablog"; version = "0.4.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "soupiral@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A blog system";
       description = "blog system with tags";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,15 +33,8 @@
           (hsPkgs.filepath)
           (hsPkgs.mime-types)
           (hsPkgs.containers)
-        ];
-      };
-      exes = {
-        "hablog" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hablog)
           ];
         };
+      exes = { "hablog" = { depends = [ (hsPkgs.base) (hsPkgs.hablog) ]; }; };
       };
-    };
-  }
+    }

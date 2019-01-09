@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ec2-unikernel";
-        version = "0.9.1";
-      };
+      identifier = { name = "ec2-unikernel"; version = "0.9.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2016 Galois, Inc.";
       maintainer = "Adam Wick <awick@galois.com>";
@@ -22,7 +13,7 @@
       synopsis = "A handy tool for uploading unikernels to Amazon's EC2.";
       description = "This tool uploads unikernels built with the HaLVM, Mirage,\nor other tools to Amazon's cloud. The unikernel will then\nappear as an AMI, which can be run and shared as needed.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ec2-unikernel" = {
@@ -42,8 +33,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

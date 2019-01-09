@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "derulo";
-        version = "0.0.2";
-      };
+      identifier = { name = "derulo"; version = "0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,31 +13,18 @@
       synopsis = "Parse and render JSON simply.";
       description = "Derulo parses and renders JSON simply.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.directory) ]; };
       exes = {
         "derulo" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.derulo)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.derulo) ];
+          };
         };
-      };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.doctest)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.doctest) ];
+          };
         };
       };
-    };
-  }
+    }

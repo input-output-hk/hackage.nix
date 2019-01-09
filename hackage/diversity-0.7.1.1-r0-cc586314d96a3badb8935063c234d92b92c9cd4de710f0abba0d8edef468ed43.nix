@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "diversity";
-        version = "0.7.1.1";
-      };
+      identifier = { name = "diversity"; version = "0.7.1.1"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "gregory.schwartz@drexel.edu";
@@ -22,7 +13,7 @@
       synopsis = "Return the diversity at each position by default for all sequences in a fasta file";
       description = "Find the diversity of a collection of entities, mainly for use with fasta sequences.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.random-shuffle)
           (hsPkgs.MonadRandom)
           (hsPkgs.data-ordlist)
-        ];
-      };
+          ];
+        };
       exes = {
         "diversity" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.fasta)
             (hsPkgs.pipes)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

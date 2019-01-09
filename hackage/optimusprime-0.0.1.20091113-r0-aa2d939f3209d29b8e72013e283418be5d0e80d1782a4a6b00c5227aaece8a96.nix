@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "optimusprime";
-        version = "0.0.1.20091113";
-      };
+      identifier = { name = "optimusprime"; version = "0.0.1.20091113"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jason Reich <jason@cs.york.ac.uk>";
@@ -22,7 +13,7 @@
       synopsis = "A supercompiler for f-lite";
       description = "A supercompiler for f-lite";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "optimusprime" = {
@@ -38,8 +29,8 @@
             (hsPkgs.graphviz)
             (hsPkgs.haskell98)
             (hsPkgs.cmdargs)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

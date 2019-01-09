@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "Glob";
-        version = "0.7.7";
-      };
+      identifier = { name = "Glob"; version = "0.7.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Matti Niemenmaa <matti.niemenmaa+glob@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Globbing library";
       description = "A library for globbing: matching patterns against file paths.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -32,8 +23,8 @@
           (hsPkgs.dlist)
           (hsPkgs.filepath)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+        };
       tests = {
         "glob-tests" = {
           depends = ([
@@ -48,8 +39,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+          };
         };
       };
-    };
-  }
+    }

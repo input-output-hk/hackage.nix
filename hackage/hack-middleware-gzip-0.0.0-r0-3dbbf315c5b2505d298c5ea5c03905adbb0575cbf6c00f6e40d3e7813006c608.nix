@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack-middleware-gzip";
-        version = "0.0.0";
-      };
+      identifier = { name = "hack-middleware-gzip"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,15 +13,10 @@
       synopsis = "Automatic gzip compression of responses.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.split)
-          (hsPkgs.zlib)
-          (hsPkgs.hack)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.split) (hsPkgs.zlib) (hsPkgs.hack) ];
+        };
       };
-    };
-  }
+    }

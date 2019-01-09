@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-form";
-        version = "0.3.1";
-      };
+      identifier = { name = "yesod-form"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Form handling support for Yesod Web Framework";
       description = "Form handling support for Yesod Web Framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.text)
           (hsPkgs.wai)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

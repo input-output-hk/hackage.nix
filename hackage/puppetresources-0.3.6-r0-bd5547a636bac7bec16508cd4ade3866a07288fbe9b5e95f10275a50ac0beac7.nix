@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "puppetresources";
-        version = "0.3.6";
-      };
+      identifier = { name = "puppetresources"; version = "0.3.6"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A program that displays the puppet resources associated to a node given .pp files.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "puppetresources" = {
@@ -34,8 +25,8 @@
             (hsPkgs.hslogger)
             (hsPkgs.Diff)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

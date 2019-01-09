@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HPath";
-        version = "0.0.1";
-      };
+      identifier = { name = "HPath"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "HPath@solidsnack.be";
@@ -22,7 +13,7 @@
       synopsis = "Extract Haskell declarations by name.";
       description = "Extract the source code for Haskell declarations by name, for use in\ndocumentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       exes = {
         "hpath" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

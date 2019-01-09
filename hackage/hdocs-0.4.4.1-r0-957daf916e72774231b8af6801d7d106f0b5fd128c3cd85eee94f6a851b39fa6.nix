@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hdocs";
-        version = "0.4.4.1";
-      };
+      identifier = { name = "hdocs"; version = "0.4.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voidex@live.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell docs tool";
       description = "Tool and library to get docs for installed packages and source files.\nCan return result in JSON format.\nCan dump docs for all installed modules\n\n@Usage:\nhdocs <module> - get docs for module/file\nhdocs <module> <name> - get docs for name in module/file\nhdocs dump [r] - dump all installed docs, if [r], find docs for reexported declarations\nflags\n-g GHC_OPT  --ghc=GHC_OPT  option to pass to GHC\n@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.process)
           (hsPkgs.text)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "hdocs" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.mtl)
             (hsPkgs.network)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.hdocs)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

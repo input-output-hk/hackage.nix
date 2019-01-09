@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskelldb-hdbc";
-        version = "0.13";
-      };
+      identifier = { name = "haskelldb-hdbc"; version = "0.13"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "haskelldb-users@lists.sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "HaskellDB support for HDBC. You will also need one\nor more back-end specific packages.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,13 +21,9 @@
           (hsPkgs.haskelldb)
           (hsPkgs.HDBC)
           (hsPkgs.convertible)
-        ] ++ (if flags.split-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.old-time)
-          ]
+          ] ++ (if flags.split-base
+          then [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.old-time) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      instance-num = true;
-      bug-for-bug = true;
-      show-internal = false;
-    };
+    flags = { instance-num = true; bug-for-bug = true; show-internal = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "thyme";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "thyme"; version = "0.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2013 Liyang HU";
       maintainer = "thyme@liyang.hu";
@@ -26,7 +13,7 @@
       synopsis = "A faster time library";
       description = "A faster time library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +27,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.attoparsec)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "sanity" = {
           depends = [
@@ -56,8 +43,8 @@
             (hsPkgs.criterion)
             (hsPkgs.thyme)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

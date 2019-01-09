@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "show-prettyprint";
-        version = "0.2";
-      };
+      identifier = { name = "show-prettyprint"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "David Luposchainsky, 2016";
       maintainer = "David Luposchainsky <dluposchainsky (λ) google>";
@@ -22,7 +13,7 @@
       synopsis = "Robust prettyprinter for output of auto-generated Show\ninstances";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,10 @@
           (hsPkgs.trifecta)
           (hsPkgs.prettyprinter)
           (hsPkgs.ansi-wl-pprint)
-        ];
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       };
-    };
-  }
+    }

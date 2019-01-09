@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskeem";
-        version = "0.6.10";
-      };
+      identifier = { name = "haskeem"; version = "0.6.10"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Uwe Hollerbach <uh@alumni.caltech.edu>";
@@ -22,7 +13,7 @@
       synopsis = "A small scheme interpreter";
       description = "This is a moderately complete small scheme interpreter.\nIt implements most of R6RS, with the exception of call/cc\nand a macro system. It is also not necessarily fully\ntail-recursive; so it's not industrial-strength. For\nplaying with or learning scheme, it should be pretty good.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haskeem" = {
@@ -38,8 +29,8 @@
             (hsPkgs.unix)
             (hsPkgs.directory)
             (hsPkgs.haskeline)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

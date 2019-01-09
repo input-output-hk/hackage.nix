@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mighttpd2";
-        version = "2.2.1";
-      };
+      identifier = { name = "mighttpd2"; version = "2.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "A classical web server on WAI/warp";
       description = "A classical web server on WAI/warp.\nStatic files and CGI can be handled.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mighty" = {
@@ -42,11 +33,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.haskell98)
-          ];
-        };
-        "mkindex" = {
-          depends = [ (hsPkgs.base) ];
+            ];
+          };
+        "mkindex" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

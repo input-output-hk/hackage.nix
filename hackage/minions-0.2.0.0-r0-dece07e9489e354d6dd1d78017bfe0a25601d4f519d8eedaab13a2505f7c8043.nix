@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "minions";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "minions"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jhickner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A fast parallel ssh tool";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "minions" = {
@@ -32,8 +23,8 @@
             (hsPkgs.process)
             (hsPkgs.time)
             (hsPkgs.MissingH)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

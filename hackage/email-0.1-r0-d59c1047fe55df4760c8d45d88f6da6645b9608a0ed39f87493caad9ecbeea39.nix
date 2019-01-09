@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "email";
-        version = "0.1";
-      };
+      identifier = { name = "email"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Johannes Weiss <weiss@tux4u.de>";
@@ -22,7 +13,7 @@
       synopsis = "Sending eMail in Haskell made easy";
       description = "A simple and small library for sending eMail.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.time)
           (hsPkgs.parsec)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "casa-abbreviations-and-acronyms";
         version = "0.0.1";
-      };
+        };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (C) 2016 Tony Morris";
       maintainer = "Tony Morris";
@@ -22,11 +16,9 @@
       synopsis = "CASA Abbreviations and Acronyms";
       description = "CASA Abbreviations and Acronyms\n\n<https://www.casa.gov.au/standard-page/aviation-abbreviations-and-acronyms>";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -36,8 +28,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

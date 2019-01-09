@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nagios-plugin-ekg";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "nagios-plugin-ekg"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2015 Sharif Olorin and Anchor Systems";
       maintainer = "sio@tesser.org";
@@ -22,7 +13,7 @@
       synopsis = "Monitor ekg metrics via Nagios";
       description = "A generic Nagios plugin which retrieves metrics\nfrom an application which uses\n<http://hackage.haskell.org/package/ekg ekg>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "check_ekg" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.nagios-check)
             (hsPkgs.text)
             (hsPkgs.nagios-plugin-ekg)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "sample-data" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.nagios-plugin-ekg)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

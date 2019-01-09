@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Grow";
-        version = "1.0";
-      };
+      identifier = { name = "Grow"; version = "1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "marc.coiffier@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A declarative make-like interpreter.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.definitive-parser)
           (hsPkgs.vector)
           (hsPkgs.primitive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

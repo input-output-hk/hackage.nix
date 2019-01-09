@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "validity";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "validity"; version = "0.3.0.2"; };
       license = "MIT";
       copyright = "Copyright: (c) 2016 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Validity typeclass";
       description = "Note: There are companion instance packages for this library:\n\n* <https://hackage.haskell.org/package/validity-text validity-text>\n\n* <https://hackage.haskell.org/package/validity-containers validity-containers>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

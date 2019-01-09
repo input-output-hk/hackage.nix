@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "transient";
-        version = "0.3";
-      };
+      identifier = { name = "transient"; version = "0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "agocorona@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Making composable programs with multithreading, events and distributed computing";
       description = "see <http://github.com/agocorona/transient>\nIn this release, distributed primitives have been moved to the transient-universe package\nWeb primitives have been moved to the package ghcjs-hplay";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.transformers)
           (hsPkgs.stm)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-transient" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.network)
             (hsPkgs.transformers)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

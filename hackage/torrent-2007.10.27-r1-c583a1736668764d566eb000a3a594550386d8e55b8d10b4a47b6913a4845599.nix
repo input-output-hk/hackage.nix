@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "torrent";
-        version = "2007.10.27";
-      };
+      identifier = { name = "torrent"; version = "2007.10.27"; };
       license = "BSD-3-Clause";
       copyright = "2005-2007, Lemmih";
       maintainer = "Lemmih (lemmih@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "BitTorrent file parser.";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bencode)
           (hsPkgs.filepath)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

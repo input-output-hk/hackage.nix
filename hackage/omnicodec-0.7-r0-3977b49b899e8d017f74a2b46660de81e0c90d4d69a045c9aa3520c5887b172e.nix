@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "omnicodec";
-        version = "0.7";
-      };
+      identifier = { name = "omnicodec"; version = "0.7"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Magnus Therning, 2012";
       maintainer = "magnus@therning.org";
@@ -22,7 +13,7 @@
       synopsis = "data encoding and decoding command line utilities";
       description = "Two simple command line tools built on sandi\n(http://hackage.haskell.org/package/sandi).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "odec" = {
@@ -33,8 +24,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.sandi)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "oenc" = {
           depends = [
             (hsPkgs.base)
@@ -43,8 +34,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.sandi)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

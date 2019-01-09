@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "conduit-concurrent-map";
-        version = "0.1.0";
-      };
+      identifier = { name = "conduit-concurrent-map"; version = "0.1.0"; };
       license = "MIT";
       copyright = "2017 Niklas Hambüchen <mail@nh2.me>";
       maintainer = "Niklas Hambüchen <mail@nh2.me>";
@@ -22,7 +13,7 @@
       synopsis = "Concurrent, order-preserving mapping Conduit";
       description = "Provides a @Conduit@ that maps a function concurrently over incoming elements, maintaining input order.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.unliftio)
           (hsPkgs.unliftio-core)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.say)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

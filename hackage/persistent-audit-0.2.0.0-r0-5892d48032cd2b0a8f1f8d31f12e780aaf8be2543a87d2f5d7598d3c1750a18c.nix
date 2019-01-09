@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "persistent-audit";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "persistent-audit"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mchaver@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parses a Persist Model file and produces Audit Models";
       description = "Simplify database audits";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "persistent-audit" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.persistent-audit)
             (hsPkgs.persistent-parser)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

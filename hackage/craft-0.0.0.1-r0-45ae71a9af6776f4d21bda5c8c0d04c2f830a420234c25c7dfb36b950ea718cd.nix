@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "craft";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "craft"; version = "0.0.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "joehillen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A UNIX configuration management library in Haskell";
       description = "A UNIX configuration management EDSL/library in Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -70,8 +61,8 @@
           (hsPkgs.versions)
           (hsPkgs.wreq)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "craft-test" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.hspec-megaparsec)
             (hsPkgs.megaparsec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

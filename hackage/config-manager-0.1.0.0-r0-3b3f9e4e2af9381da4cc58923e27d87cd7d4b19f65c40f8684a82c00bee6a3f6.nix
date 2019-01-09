@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "config-manager";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "config-manager"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "joris@guyonvarch.me";
@@ -22,7 +13,7 @@
       synopsis = "Configuration management";
       description = "A configuration management library which supports:\n\n* name-value bindings,\n\n* required or optional imports,\n\n* comments.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.parsec)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-config-manager" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.temporary)
             (hsPkgs.directory)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

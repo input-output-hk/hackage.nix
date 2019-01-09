@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xml-lens";
-        version = "0.1.6.3";
-      };
+      identifier = { name = "xml-lens"; version = "0.1.6.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Fumiaki Kinoshita";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Lenses, traversals, and prisms for xml-conduit";
       description = "Lens-based DOM selector";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.xml-conduit)
           (hsPkgs.case-insensitive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "mono-foldable";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "mono-foldable"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jwlato@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Folds for monomorphic containers";
       description = "Like Data.Foldable, but works with ByteStrings too";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

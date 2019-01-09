@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "happs-tutorial";
-        version = "0.0";
-      };
+      identifier = { name = "happs-tutorial"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomashartman1 at gmail dot com";
@@ -22,7 +13,7 @@
       synopsis = "A HAppS Tutorial that is is own demo";
       description = "A nice way to learn how to build web sites with HAppS";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "happs-tutorial" = {
@@ -35,8 +26,8 @@
             (hsPkgs.HAppS-Data)
             (hsPkgs.HAppS-State)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

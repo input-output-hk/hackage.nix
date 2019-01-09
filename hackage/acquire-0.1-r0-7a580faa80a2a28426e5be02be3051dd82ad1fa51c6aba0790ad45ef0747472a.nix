@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "acquire";
-        version = "0.1";
-      };
+      identifier = { name = "acquire"; version = "0.1"; };
       license = "MIT";
       copyright = "(c) 2013 Gabriel Gonzalez, 2018 Metrix.AI";
       maintainer = "Metrix.AI Ninjas <ninjas@metrix.ai>";
@@ -22,10 +13,6 @@
       synopsis = "Abstraction over management of resources";
       description = "An implementation of the abstraction suggested in\n<http://www.haskellforall.com/2013/06/the-resource-applicative.html a blog-post by Gabriel Gonzalez>.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

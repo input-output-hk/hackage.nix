@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "shplit";
-        version = "0.1";
-      };
+      identifier = { name = "shplit"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "conor@strictlypositive.org";
@@ -22,15 +13,8 @@
       synopsis = "A Haskell pattern splitter with emacs attachments";
       description = "Shplit is a transducer which attempts to split one function line into several\nby replacing a variable with constructor patterns, deduced from the type\nannotation on the function.";
       buildType = "Simple";
-    };
-    components = {
-      exes = {
-        "shplit" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-          ];
-        };
       };
-    };
-  }
+    components = {
+      exes = { "shplit" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+      };
+    }

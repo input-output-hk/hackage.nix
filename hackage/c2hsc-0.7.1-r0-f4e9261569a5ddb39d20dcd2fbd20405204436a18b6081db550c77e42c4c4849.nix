@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "c2hsc";
-        version = "0.7.1";
-      };
+      identifier = { name = "c2hsc"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@newartisans.com>";
@@ -22,7 +13,7 @@
       synopsis = "Convert C API header files to .hsc and .hsc.helper.c files";
       description = "Convert C API header files to .hsc and .hsc.helper.c files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.temporary)
           (hsPkgs.data-default)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "c2hsc" = {
           depends = [
@@ -60,9 +51,9 @@
             (hsPkgs.temporary)
             (hsPkgs.data-default)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.monad-logger)
             (hsPkgs.logging)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

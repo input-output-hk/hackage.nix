@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "hfmt";
-        version = "0.1.0";
-      };
+      identifier = { name = "hfmt"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Daniel Stiner <daniel.stiner@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell source code formatter";
       description = "Inspired by gofmt. Built using hlint, hindent, and stylish-haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "hfmt" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.pipes)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "self-formatting-test" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
-        };
+            ];
+          };
         "pure-test" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +66,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

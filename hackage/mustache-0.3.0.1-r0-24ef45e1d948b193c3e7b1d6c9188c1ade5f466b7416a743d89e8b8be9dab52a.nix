@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mustache";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "mustache"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dev@justus.science";
@@ -22,7 +13,7 @@
       synopsis = "A mustache template parser library.";
       description = "Allows parsing and rendering template files with mustache markup. See the\nmustache <http://mustache.github.io/mustache.5.html language reference>.\nImplements the mustache spec version 1.1.3\nThis library requires GHC >= 7.10 because it uses the new overlapping instances\nto provide eficcient and versatile conversion of custom data types into mustache\nValues.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.ja-base-extra)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskell-mustache" = {
           depends = [
@@ -58,9 +49,9 @@
             (hsPkgs.text)
             (hsPkgs.filepath)
             (hsPkgs.base-unicode-symbols)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.temporary)
             (hsPkgs.directory)
             (hsPkgs.base-unicode-symbols)
-          ];
-        };
+            ];
+          };
         "language-specifications" = {
           depends = [
             (hsPkgs.base)
@@ -92,8 +83,8 @@
             (hsPkgs.temporary)
             (hsPkgs.directory)
             (hsPkgs.base-unicode-symbols)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

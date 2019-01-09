@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prim-array";
-        version = "0.2.2";
-      };
+      identifier = { name = "prim-array"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Primitive byte array with type variable";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.primitive)
           (hsPkgs.ghc-prim)
           (hsPkgs.semigroups)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

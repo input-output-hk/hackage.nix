@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { time15 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "api-tools";
-        version = "0.8.0.1";
-      };
+      identifier = { name = "api-tools"; version = "0.8.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Iris Connect 2013-2014";
       maintainer = "Chris Dornan <chrisd@irisconnect.co.uk> and Adam Gundry <adam@well-typed.com>";
@@ -22,7 +13,7 @@
       synopsis = "DSL for generating API boilerplate and docs";
       description = "api-tools provides a compact DSL for describing an API.\nIt uses Template Haskell to generate the\ncorresponding data types and assorted tools for\nworking with it, including Aeson and QuickCheck\ninstances for converting between JSON and the\ngenerated types and writing unit tests.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,17 +42,14 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ (if flags.time15
+          ] ++ (if flags.time15
           then [ (hsPkgs.time) ]
-          else [
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-          ]);
+          else [ (hsPkgs.old-locale) (hsPkgs.time) ]);
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       exes = {
         "migration-tool" = {
           depends = [
@@ -84,8 +72,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "perf-test" = {
           depends = [
             (hsPkgs.api-tools)
@@ -111,9 +99,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-api-tools" = {
           depends = [
@@ -143,8 +131,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

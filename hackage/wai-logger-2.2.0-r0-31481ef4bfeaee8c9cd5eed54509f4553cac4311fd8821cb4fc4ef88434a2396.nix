@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-logger";
-        version = "2.2.0";
-      };
+      identifier = { name = "wai-logger"; version = "2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "A logging system for WAI";
       description = "A logging system for WAI";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,23 +27,12 @@
           (hsPkgs.http-types)
           (hsPkgs.network)
           (hsPkgs.wai)
-        ] ++ (if system.isWindows
-          then [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]
-          else [
-            (hsPkgs.unix)
-            (hsPkgs.unix-time)
-          ]);
-      };
+          ] ++ (if system.isWindows
+          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
+          else [ (hsPkgs.unix) (hsPkgs.unix-time) ]);
+        };
       tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

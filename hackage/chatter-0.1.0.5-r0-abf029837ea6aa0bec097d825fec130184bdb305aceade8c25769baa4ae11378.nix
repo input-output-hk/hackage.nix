@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chatter";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "chatter"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "creswick@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library of simple NLP algorithms.";
       description = "chatter is a collection of simple Natural Language\nProcessing algorithms.\n\nChatter supports:\n\n* Part of speech tagging with Averaged\nPerceptrons. Based on the Python implementation\nby Matthew Honnibal:\n(<http://honnibal.wordpress.com/2013/09/11/a-good-part-of-speechpos-tagger-in-about-200-lines-of-python/>) See 'NLP.POS' for the details of part-of-speech tagging with chatter.\n\n* Document similarity; A cosine-based similarity measure, and TF-IDF calculations,\nare available in the 'NLP.Similarity.VectorSim' module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.deepseq)
           (hsPkgs.tokenize)
-        ];
-      };
+          ];
+        };
       exes = {
         "tag" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
-          ];
-        };
+            ];
+          };
         "train" = {
           depends = [
             (hsPkgs.chatter)
@@ -65,8 +56,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "eval" = {
           depends = [
             (hsPkgs.chatter)
@@ -76,9 +67,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -95,9 +86,9 @@
             (hsPkgs.cereal)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -109,8 +100,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.split)
             (hsPkgs.tokenize)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

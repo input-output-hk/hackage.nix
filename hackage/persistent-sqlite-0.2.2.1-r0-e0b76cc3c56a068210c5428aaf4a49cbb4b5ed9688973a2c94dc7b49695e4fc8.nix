@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { systemlib = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "persistent-sqlite";
-        version = "0.2.2.1";
-      };
+      identifier = { name = "persistent-sqlite"; version = "0.2.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Backend for the persistent library using sqlite3.";
       description = "This package includes a thin sqlite3 wrapper based on the direct-sqlite package, as well as the entire C library, so there are no system dependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.persistent)
           (hsPkgs.containers)
-        ];
-        libs = pkgs.lib.optional (flags.systemlib) (pkgs."sqlite3");
+          ];
+        libs = (pkgs.lib).optional (flags.systemlib) (pkgs."sqlite3");
+        };
       };
-    };
-  }
+    }

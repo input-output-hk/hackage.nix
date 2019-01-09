@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gore-and-ash-demo";
-        version = "1.2.0.0";
-      };
+      identifier = { name = "gore-and-ash-demo"; version = "1.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Demonstration game for Gore&Ash game engine";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "gore-and-ash-demo-client" = {
@@ -52,8 +43,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "gore-and-ash-demo-server" = {
           depends = [
             (hsPkgs.base)
@@ -77,8 +68,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

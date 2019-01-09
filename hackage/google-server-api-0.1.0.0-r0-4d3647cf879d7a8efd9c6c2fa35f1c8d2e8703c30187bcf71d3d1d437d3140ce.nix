@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "google-server-api";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "google-server-api"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Kadzuya Okamoto";
       maintainer = "arow.okamoto+github@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Google APIs for server to server applications";
       description = "This library provides a way to use Google API for server to server applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,7 +43,7 @@
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

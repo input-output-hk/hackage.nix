@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "websockets";
-        version = "0.12.5.2";
-      };
+      identifier = { name = "websockets"; version = "0.12.5.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2011 Siniša Biđin\n(c) 2011-2018 Jasper Van der Jeugt\n(c) 2011 Steffen Schuldenzucker\n(c) 2011 Alex Lang";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -22,7 +13,7 @@
       synopsis = "A sensible and clean way to write WebSocket-capable servers in Haskell.";
       description = "This library allows you to write WebSocket-capable servers.\n\nAn example server:\n<https://github.com/jaspervdj/websockets/blob/master/example/server.lhs>\n\nAn example client:\n<https://github.com/jaspervdj/websockets/blob/master/example/client.hs>\n\nSee also:\n\n* The specification of the WebSocket protocol:\n<http://www.whatwg.org/specs/web-socket-protocol/>\n\n* The JavaScript API for dealing with WebSockets:\n<http://www.w3.org/TR/websockets/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.streaming-commons)
           (hsPkgs.text)
           (hsPkgs.entropy)
-        ];
-      };
+          ];
+        };
       exes = {
         "websockets-example" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.SHA)
             (hsPkgs.text)
             (hsPkgs.entropy)
-          ];
-        };
+            ];
+          };
         "websockets-autobahn" = {
           depends = [
             (hsPkgs.websockets)
@@ -77,9 +68,9 @@
             (hsPkgs.SHA)
             (hsPkgs.text)
             (hsPkgs.entropy)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "websockets-tests" = {
           depends = [
@@ -102,9 +93,9 @@
             (hsPkgs.streaming-commons)
             (hsPkgs.text)
             (hsPkgs.entropy)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-mask" = {
           depends = [
@@ -122,8 +113,8 @@
             (hsPkgs.SHA)
             (hsPkgs.text)
             (hsPkgs.entropy)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

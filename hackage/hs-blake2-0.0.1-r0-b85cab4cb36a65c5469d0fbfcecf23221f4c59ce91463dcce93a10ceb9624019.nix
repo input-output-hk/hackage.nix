@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hs-blake2";
-        version = "0.0.1";
-      };
+      identifier = { name = "hs-blake2"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tsuraan@gmail.com";
@@ -22,15 +13,12 @@
       synopsis = "A cryptohash-inspired library for blake2";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = [ (pkgs."b2") ];
-      };
+        };
       tests = {
         "test-all" = {
           depends = [
@@ -41,10 +29,10 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
           libs = [ (pkgs."b2") ];
+          };
         };
-      };
       benchmarks = {
         "benchmark-all" = {
           depends = [
@@ -53,9 +41,9 @@
             (hsPkgs.cryptohash)
             (hsPkgs.criterion)
             (hsPkgs.hs-blake2)
-          ];
+            ];
           libs = [ (pkgs."b2") ];
+          };
         };
       };
-    };
-  }
+    }

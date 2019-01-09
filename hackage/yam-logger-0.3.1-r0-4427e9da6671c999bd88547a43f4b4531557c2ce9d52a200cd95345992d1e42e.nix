@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yam-logger";
-        version = "0.3.1";
-      };
+      identifier = { name = "yam-logger"; version = "0.3.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Daniel YU <leptonyu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Yam Logger";
       description = "logger module for yam";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.string-conversions)
           (hsPkgs.text)
           (hsPkgs.wai-logger)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

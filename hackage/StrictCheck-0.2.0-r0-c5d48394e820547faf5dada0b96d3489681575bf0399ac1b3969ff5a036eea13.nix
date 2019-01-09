@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "StrictCheck";
-        version = "0.2.0";
-      };
+      identifier = { name = "StrictCheck"; version = "0.2.0"; };
       license = "MIT";
       copyright = "(c) 2018 Kenneth Foner, Hengchu Zhang, and Leo Lampropoulos";
       maintainer = "kwf@very.science";
@@ -22,7 +13,7 @@
       synopsis = "Keep Your Laziness In Check";
       description = "StrictCheck is a property-based random testing framework for\nobserving, specifying, and testing the strictness behaviors of Haskell\nfunctions. Strictness behavior is traditionally considered a non-functional\nproperty; StrictCheck allows it to be tested as if it were one, by reifying\ndemands on data structures so they can be manipulated and examined within\nHaskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.generics-sop)
           (hsPkgs.bifunctors)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-strictcheck" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.StrictCheck)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

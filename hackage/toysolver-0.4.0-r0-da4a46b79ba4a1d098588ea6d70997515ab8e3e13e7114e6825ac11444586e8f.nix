@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       forcechar8 = false;
@@ -16,13 +10,10 @@
       time15 = true;
       transformers051 = true;
       usehaskeline = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "toysolver";
-        version = "0.4.0";
-      };
+      identifier = { name = "toysolver"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "masahiro.sakai@gmail.com";
@@ -32,7 +23,7 @@
       synopsis = "Assorted decision procedures for SAT, Max-SAT, PB, MIP, etc";
       description = "Toy-level implementation of some decision procedures";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -73,13 +64,13 @@
           (hsPkgs.finite-field)
           (hsPkgs.sign)
           (hsPkgs.pseudo-boolean)
-        ] ++ [
+          ] ++ [
           (hsPkgs.temporary)
           (hsPkgs.exceptions)
-        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") (hsPkgs.MemoTrie)) ++ [
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.7") (hsPkgs.MemoTrie)) ++ [
           (hsPkgs.transformers)
-        ]) ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
-      };
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
+        };
       exes = {
         "toysolver" = {
           depends = [
@@ -92,8 +83,8 @@
             (hsPkgs.parse-dimacs)
             (hsPkgs.pseudo-boolean)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "toysat" = {
           depends = ([
             (hsPkgs.base)
@@ -111,13 +102,13 @@
             (hsPkgs.vector-space)
             (hsPkgs.pseudo-boolean)
             (hsPkgs.toysolver)
-          ] ++ (if flags.time15
+            ] ++ (if flags.time15
             then [ (hsPkgs.time) ]
             else [
               (hsPkgs.time)
               (hsPkgs.old-locale)
-            ])) ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
-        };
+              ])) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
+          };
         "toysmt" = {
           depends = ([
             (hsPkgs.base)
@@ -128,16 +119,16 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
             (hsPkgs.toysolver)
-          ] ++ pkgs.lib.optional (flags.usehaskeline) (hsPkgs.haskeline)) ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
-        };
+            ] ++ (pkgs.lib).optional (flags.usehaskeline) (hsPkgs.haskeline)) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
+          };
         "toyfmf" = {
-          depends = pkgs.lib.optionals (flags.buildtoyfmf) ([
+          depends = (pkgs.lib).optionals (flags.buildtoyfmf) ([
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
             (hsPkgs.logic-TPTP)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9" && flags.transformers051) (hsPkgs.logic-TPTP));
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.9" && flags.transformers051) (hsPkgs.logic-TPTP));
+          };
         "lpconvert" = {
           depends = [
             (hsPkgs.base)
@@ -146,8 +137,8 @@
             (hsPkgs.parse-dimacs)
             (hsPkgs.pseudo-boolean)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "pbconvert" = {
           depends = [
             (hsPkgs.base)
@@ -156,43 +147,26 @@
             (hsPkgs.parse-dimacs)
             (hsPkgs.pseudo-boolean)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "sudoku" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.toysolver)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.toysolver) ];
+          };
         "nonogram" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "nqueens" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.toysolver)
-          ];
-        };
-        "knapsack" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.toysolver)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.toysolver) ];
+          };
+        "knapsack" = { depends = [ (hsPkgs.base) (hsPkgs.toysolver) ]; };
         "htc" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.toysolver)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.toysolver) ];
+          };
         "svm2lp" = {
           depends = [
             (hsPkgs.base)
@@ -200,32 +174,28 @@
             (hsPkgs.data-default-class)
             (hsPkgs.split)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "pigeonhole" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.pseudo-boolean)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "maxsatverify" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.toysolver)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.toysolver) ];
+          };
         "pbverify" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.pseudo-boolean)
             (hsPkgs.toysolver)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "TestPolynomial" = {
           depends = [
@@ -239,8 +209,8 @@
             (hsPkgs.data-interval)
             (hsPkgs.finite-field)
             (hsPkgs.prettyclass)
-          ];
-        };
+            ];
+          };
         "TestSuite" = {
           depends = [
             (hsPkgs.base)
@@ -263,9 +233,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "BenchmarkSATLIB" = {
           depends = [
@@ -275,23 +245,19 @@
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
             (hsPkgs.criterion)
-          ];
-        };
+            ];
+          };
         "BenchmarkKnapsack" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.toysolver)
-            (hsPkgs.criterion)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.toysolver) (hsPkgs.criterion) ];
+          };
         "BenchmarkSubsetSum" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.vector)
             (hsPkgs.toysolver)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

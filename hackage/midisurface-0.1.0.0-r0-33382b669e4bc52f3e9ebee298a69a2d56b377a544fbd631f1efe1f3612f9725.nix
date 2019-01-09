@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "midisurface";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "midisurface"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "paolo.veronelli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A control midi surface";
       description = "A simple GTK2 UI to send midi control values.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "midisurface" = {
@@ -34,8 +25,8 @@
             (hsPkgs.containers)
             (hsPkgs.gtk)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

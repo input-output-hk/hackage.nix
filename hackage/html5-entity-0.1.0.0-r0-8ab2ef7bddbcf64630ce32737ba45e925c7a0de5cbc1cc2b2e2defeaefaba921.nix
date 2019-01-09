@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "html5-entity";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "html5-entity"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Konstantin Zudov, 2015";
       maintainer = "konstantin@anche.no";
@@ -22,15 +13,11 @@
       synopsis = "A library for looking up and validating HTML5 entities.";
       description = "A library for looking up and validating HTML5 entities.\nThe <http://html.spec.whatwg.org/multipage/entities.json following>\ndocument is used as an authoritative source of the valid\nentity names and their corresponding codepoints.\nYou can think of this library as about bindings to the data\nfrom that file. For usage see the 'Text.Html5.Entity'\nmodule.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.containers) ];
+        };
       benchmarks = {
         "bench" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.containers)
             (hsPkgs.html5-entity)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

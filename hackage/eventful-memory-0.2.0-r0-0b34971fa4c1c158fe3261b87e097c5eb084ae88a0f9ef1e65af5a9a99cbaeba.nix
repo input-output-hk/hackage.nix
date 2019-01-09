@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eventful-memory";
-        version = "0.2.0";
-      };
+      identifier = { name = "eventful-memory"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Reaver";
@@ -22,7 +13,7 @@
       synopsis = "In-memory implementations for eventful";
       description = "In-memory implementations for eventful";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.mtl)
           (hsPkgs.safe)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.eventful-test-helpers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "rand-vars";
-        version = "0.1";
-      };
+      identifier = { name = "rand-vars"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Romain Edelmann";
@@ -22,7 +13,7 @@
       synopsis = "Random variable library, with Functor, Applicative and Monad instances.";
       description = "Random variable library, with Functor, Applicative and Monad instances.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.array)
           (hsPkgs.random)
           (hsPkgs.IntervalMap)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

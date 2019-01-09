@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "uni-posixutil";
-        version = "2.2.1.1";
-      };
+      identifier = { name = "uni-posixutil"; version = "2.2.1.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Christian.Maeder@dfki.de";
@@ -22,7 +13,7 @@
       synopsis = "Posix utilities for the uniform workbench";
       description = "posix utilities";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.process)
           (hsPkgs.uni-util)
           (hsPkgs.uni-events)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

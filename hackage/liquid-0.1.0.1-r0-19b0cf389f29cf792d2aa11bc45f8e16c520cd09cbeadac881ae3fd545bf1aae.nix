@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "liquid";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "liquid"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015-2016 Orphid, Inc.";
       maintainer = "James R. Thompson <jamesthompsonoxford@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Liquid template language library";
       description = "This package should be used by importing Text.Liquid.\nSundry nested packages can be used freely for other functionality. See the readme on Github for more details on usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.validation)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -61,9 +52,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.validation)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.criterion)
             (hsPkgs.liquid)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

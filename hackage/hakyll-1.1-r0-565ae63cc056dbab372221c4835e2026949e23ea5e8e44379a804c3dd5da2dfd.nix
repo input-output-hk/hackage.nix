@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hakyll";
-        version = "1.1";
-      };
+      identifier = { name = "hakyll"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jaspervdj@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple static site generator library.";
       description = "A simple static site generator library, mainly aimed at\ncreating blogs and brochure sites.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.old-locale)
           (hsPkgs.time)
           (hsPkgs.parallel)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haskellscrabble";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haskellscrabble"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "gordonhughmartin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A scrabble library capturing the core game logic of scrabble.";
       description = "A scrabble library which enforces legal transitions between moves. Intended to facilitate the development of a playable game.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.errors)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.random)
             (hsPkgs.semigroups)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

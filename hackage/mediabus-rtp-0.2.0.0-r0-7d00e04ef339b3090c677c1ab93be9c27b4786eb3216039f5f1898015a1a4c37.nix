@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mediabus-rtp";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "mediabus-rtp"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016,2017 Sven Heyll, Lindenbaum GmbH";
       maintainer = "sven.heyll@lindenbaum.eu";
@@ -22,7 +13,7 @@
       synopsis = "Receive and Send RTP Packets";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,8 +48,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "mediabus-demo-rtp-alaw-player" = {
           depends = [
@@ -82,9 +73,9 @@
             (hsPkgs.streaming-commons)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -116,8 +107,8 @@
             (hsPkgs.transformers)
             (hsPkgs.type-spec)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tempus-fugit";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "tempus-fugit"; version = "0.1.0.1"; };
       license = "AGPL-3.0-only";
       copyright = "2015 Joshua Simmons";
       maintainer = "joshua.simmons@emptypath.com";
@@ -22,26 +13,14 @@
       synopsis = "Programmers' time tracker";
       description = "Track time spent on projects.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-      };
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
-        "tempus" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tempus-fugit)
-          ];
+        "tempus" = { depends = [ (hsPkgs.base) (hsPkgs.tempus-fugit) ]; };
         };
-      };
       tests = {
-        "tempus-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tempus-fugit)
-          ];
+        "tempus-test" = { depends = [ (hsPkgs.base) (hsPkgs.tempus-fugit) ]; };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "biostockholm";
-        version = "0.2.2";
-      };
+      identifier = { name = "biostockholm"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "felipe.lessa@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parsing and rendering of Stockholm files (used by Pfam, Rfam and Infernal).";
       description = "Parsing and rendering of files in Stockholm 1.0 format.  Among\nthe users of the Stockholm format are Pfam, Rfam and Infernal.\nThese files hold information about families of proteins or\nnon-coding RNAs.  For more information, please see:\n\n* <http://sonnhammer.sbc.su.se/Stockholm.html>\n\n* <ftp://ftp.sanger.ac.uk/pub/databases/Pfam/current_release/relnotes.txt>\n\n* <http://en.wikipedia.org/wiki/Stockholm_format>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.blaze-builder)
           (hsPkgs.blaze-builder-conduit)
           (hsPkgs.biocore)
-        ];
-      };
+          ];
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.biostockholm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

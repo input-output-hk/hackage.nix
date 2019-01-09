@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "intero";
-        version = "0.1.8";
-      };
+      identifier = { name = "intero"; version = "0.1.8"; };
       license = "BSD-3-Clause";
       copyright = "2016 Chris Done,\n2012 Kazu Yamamoto,\n2008 Claus Reinke,\n2005 The University of Glasgow";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Complete interactive development program for Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "intero" = {
@@ -40,11 +31,11 @@
             (hsPkgs.syb)
             (hsPkgs.containers)
             (hsPkgs.time)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
+          };
         };
-      };
       tests = {
         "intero-test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.process)
             (hsPkgs.transformers)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hmatrix-svdlibc";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hmatrix-svdlibc"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bgamari.foss@gmail.com";
@@ -22,21 +13,11 @@
       synopsis = "SVDLIBC bindings for HMatrix";
       description = "Bindings for the sparse singular value decomposition\nprovided by SVDLIBC.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hmatrix)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.hmatrix) ]; };
       exes = {
-        "svdlibc-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hmatrix)
-          ];
+        "svdlibc-test" = { depends = [ (hsPkgs.base) (hsPkgs.hmatrix) ]; };
         };
       };
-    };
-  }
+    }

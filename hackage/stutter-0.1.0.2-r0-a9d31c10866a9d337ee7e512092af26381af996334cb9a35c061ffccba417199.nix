@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stutter";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "stutter"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "(c) 2018 Nicolas Mattia";
       maintainer = "nicolas@nmattia.com";
@@ -22,7 +13,7 @@
       synopsis = "(Stutter Text|String)-Utterer";
       description = "CLI regex-like string generator";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.mtl)
           (hsPkgs.resourcet)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "stutter" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.stutter)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "stutter-test" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-ant-xml)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

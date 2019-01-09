@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "minecraft-data";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "minecraft-data"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@n-heptane.com";
@@ -22,7 +13,7 @@
       synopsis = "a DSL for generating minecraft commands and levels";
       description = "a DSL for generating minecraft commands and levels";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.time)
           (hsPkgs.vector)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

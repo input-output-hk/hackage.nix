@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "adjunctions";
-        version = "3.2.1.1";
-      };
+      identifier = { name = "adjunctions"; version = "3.2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011-2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Adjunctions";
       description = "Adjunctions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.comonad-transformers)
           (hsPkgs.representable-functors)
           (hsPkgs.free)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

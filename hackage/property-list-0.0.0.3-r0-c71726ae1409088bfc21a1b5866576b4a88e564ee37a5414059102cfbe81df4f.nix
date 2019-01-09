@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "property-list";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "property-list"; version = "0.0.0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <james.cook@usma.edu>";
@@ -22,7 +13,7 @@
       synopsis = "XML property list parser";
       description = "Parser for Apple's XML property list 1.0 format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.time)
           (hsPkgs.template-haskell)
           (hsPkgs.th-fold)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

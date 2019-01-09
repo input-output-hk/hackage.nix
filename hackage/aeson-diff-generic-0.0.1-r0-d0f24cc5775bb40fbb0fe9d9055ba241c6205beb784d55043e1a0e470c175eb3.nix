@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aeson-diff-generic";
-        version = "0.0.1";
-      };
+      identifier = { name = "aeson-diff-generic"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Kristof Bastiaensen (2018)";
       maintainer = "Kristof Bastiaensen";
@@ -22,7 +13,7 @@
       synopsis = "Apply a json-patch to any haskell datatype.";
       description = "Apply a json-patch to any haskell datatype.  It extends the capabilities of the aeson-diff packages, and includes template haskell functions for automatically deriving the right instances.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.tagged)
           (hsPkgs.template-haskell)
           (hsPkgs.th-abstraction)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

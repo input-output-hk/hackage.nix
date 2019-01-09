@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pubnub";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pubnub"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "t@crashfast.com";
@@ -22,7 +13,7 @@
       synopsis = "PubNub Haskell SDK";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.crypto-api)
           (hsPkgs.crypto-cipher-types)
           (hsPkgs.base64-bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "hello_world" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.pubnub)
             (hsPkgs.aeson)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "chat" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +58,8 @@
             (hsPkgs.async)
             (hsPkgs.pubnub)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test-pubnub-haskell" = {
           depends = [
             (hsPkgs.base)
@@ -81,9 +72,9 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Tests" = {
           depends = [
@@ -97,8 +88,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

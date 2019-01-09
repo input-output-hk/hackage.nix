@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prettyprinter-ansi-terminal";
-        version = "1";
-      };
+      identifier = { name = "prettyprinter-ansi-terminal"; version = "1"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky at google>";
@@ -22,7 +13,7 @@
       synopsis = "ANSI terminal backend for the modern, extensible and well-documented prettyprinter.";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,10 @@
           (hsPkgs.ansi-terminal)
           (hsPkgs.text)
           (hsPkgs.prettyprinter)
-        ];
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dbm";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "dbm"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Ricky Elrod";
       maintainer = "ricky@elrod.me";
@@ -22,7 +13,7 @@
       synopsis = "A *simple* database migration tool.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dbm" = {
@@ -34,8 +25,8 @@
             (hsPkgs.sqlite-simple)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "secp256k1";
-        version = "0.1.10";
-      };
+      identifier = { name = "secp256k1"; version = "0.1.10"; };
       license = "MIT";
       copyright = "(c) 2013 Pieter Wuille";
       maintainer = "root@haskoin.com";
@@ -22,7 +13,7 @@
       synopsis = "secp256k1 bindings for Haskell";
       description = "Please see README.md";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.entropy)
           (hsPkgs.string-conversions)
           (hsPkgs.base16-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "secp256k1-test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.mtl)
             (hsPkgs.entropy)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hstats";
-        version = "0.3";
-      };
+      identifier = { name = "hstats"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008, Marshall Beddoe";
       maintainer = "mbeddoe@<nospam>gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Statistical Computing in Haskell";
       description = "A library of commonly used statistical functions";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+      };
+    }

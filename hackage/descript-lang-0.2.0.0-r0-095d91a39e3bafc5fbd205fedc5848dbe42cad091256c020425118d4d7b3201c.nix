@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "descript-lang";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "descript-lang"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2018 Jakob Hain";
       maintainer = "jakobeha2@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library, interpreter, and CLI for Descript programming language.";
       description = "Please see the README at <https://bitbucket.org/jakobeha/descript-lang/src/master/README.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.stm)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "descript-cli" = {
           depends = [
@@ -70,9 +61,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.yi-rope)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "descript-lang-test" = {
           depends = [
@@ -94,8 +85,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

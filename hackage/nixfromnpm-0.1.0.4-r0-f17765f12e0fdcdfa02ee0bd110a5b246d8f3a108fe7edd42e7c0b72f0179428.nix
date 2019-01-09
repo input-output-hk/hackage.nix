@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nixfromnpm";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "nixfromnpm"; version = "0.1.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "anelson@narrativescience.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate nix expressions from npm packages.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "nixfromnpm" = {
@@ -46,9 +37,9 @@
             (hsPkgs.directory)
             (hsPkgs.simple-nix)
             (hsPkgs.docopt)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.network-uri)
             (hsPkgs.directory)
             (hsPkgs.simple-nix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

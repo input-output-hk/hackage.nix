@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "grpc-etcd-client";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "grpc-etcd-client"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Lucas DiCioccio";
       maintainer = "lucas@dicioccio.fr";
@@ -22,7 +13,7 @@
       synopsis = "gRPC client for etcd";
       description = "Please see the README on GitHub at <https://github.com/lucasdicioccio/etcd-grpc#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.network)
           (hsPkgs.proto-lens)
           (hsPkgs.proto-lens-protoc)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

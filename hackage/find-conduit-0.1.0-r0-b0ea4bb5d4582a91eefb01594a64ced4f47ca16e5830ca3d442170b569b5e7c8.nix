@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "find-conduit";
-        version = "0.1.0";
-      };
+      identifier = { name = "find-conduit"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "A file-finding conduit that allows user control over traversals.";
       description = "A file-finding conduit that allows user control over traversals.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.regex-posix)
           (hsPkgs.profunctors)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.mtl)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

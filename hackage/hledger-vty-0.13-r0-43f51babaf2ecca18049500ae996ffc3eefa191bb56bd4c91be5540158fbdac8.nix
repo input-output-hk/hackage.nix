@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hledger-vty";
-        version = "0.13";
-      };
+      identifier = { name = "hledger-vty"; version = "0.13"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "A hledger add-on command providing a full-window console interface.";
       description = "A hledger add-on command providing a full-window console interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hledger-vty" = {
@@ -32,8 +23,8 @@
             (hsPkgs.base)
             (hsPkgs.safe)
             (hsPkgs.vty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

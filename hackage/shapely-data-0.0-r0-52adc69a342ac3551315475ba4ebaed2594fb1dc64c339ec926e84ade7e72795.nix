@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "shapely-data";
-        version = "0.0";
-      };
+      identifier = { name = "shapely-data"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "brandon.m.simmons@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Template haskell conversion of types to a \"structural form\" built from primitive sum, product, and unit types.";
       description = "This is an experimental package providing template haskell\ncode to convert to and from normal algebraic data types and a\nrepresentation using only haskell's primitive product, sum\nand unit types: (,), Either, and ().\n\nThis is something like light-weight Structural Typing.\n\nPlease send any comments along.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
+      };
+    }

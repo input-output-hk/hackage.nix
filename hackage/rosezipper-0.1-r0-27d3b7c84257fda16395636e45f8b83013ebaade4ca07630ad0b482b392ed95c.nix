@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "rosezipper";
-        version = "0.1";
-      };
+      identifier = { name = "rosezipper"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Eric Kow <E.Y.Kow@brighton.ac.uk>";
@@ -22,15 +13,12 @@
       synopsis = "Generic zipper implementation for Data.Tree";
       description = "Generic zipper implementation for Data.Tree";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-          ]
+          then [ (hsPkgs.base) (hsPkgs.containers) ]
           else [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

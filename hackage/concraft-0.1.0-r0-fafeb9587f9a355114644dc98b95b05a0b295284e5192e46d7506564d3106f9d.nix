@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "concraft";
-        version = "0.1.0";
-      };
+      identifier = { name = "concraft"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011 Jakub Waszczuk, 2012 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Morphosyntactic tagging tool based on constrained CRFs";
       description = "A morphosyntactic tagging tool based on constrained conditional\nrandom fields.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,12 +26,8 @@
           (hsPkgs.crf-chain1-constrained)
           (hsPkgs.monad-ox)
           (hsPkgs.sgd)
-        ];
-      };
-      exes = {
-        "concraft-guess" = {
-          depends = [ (hsPkgs.cmdargs) ];
+          ];
         };
+      exes = { "concraft-guess" = { depends = [ (hsPkgs.cmdargs) ]; }; };
       };
-    };
-  }
+    }

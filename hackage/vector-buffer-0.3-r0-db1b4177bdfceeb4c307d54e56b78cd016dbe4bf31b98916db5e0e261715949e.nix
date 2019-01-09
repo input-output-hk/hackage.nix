@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "vector-buffer";
-        version = "0.3";
-      };
+      identifier = { name = "vector-buffer"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell.vivian.mcphail@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "A buffer compatible with Data.Vector.Storable";
       description = "A buffer type that can easily be converted to a Data.Vector.Storable vector\nfrom the vector package and compatible with hmatrix.\n\nElements are pushed into the buffer.  When the buffer is converted to a read-only\nvector, the last-pushed element occurs at the end.\n\nMonadic map functions also operate so that the last-pushed element is treated last.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };
+      };
+    }

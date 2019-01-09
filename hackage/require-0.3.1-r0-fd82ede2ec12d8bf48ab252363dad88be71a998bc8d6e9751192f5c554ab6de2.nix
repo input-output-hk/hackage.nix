@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "require";
-        version = "0.3.1";
-      };
+      identifier = { name = "require"; version = "0.3.1"; };
       license = "Apache-2.0";
       copyright = "2018 Theam";
       maintainer = "hackers@theam.io";
@@ -22,7 +13,7 @@
       synopsis = "Scrap your qualified import clutter";
       description = "See <https://theam.github.io/require>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.optparse-generic)
           (hsPkgs.text)
           (hsPkgs.universum)
-        ];
-      };
+          ];
+        };
       exes = {
         "autorequirepp" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.require)
             (hsPkgs.text)
             (hsPkgs.universum)
-          ];
-        };
+            ];
+          };
         "requirepp" = {
           depends = [
             (hsPkgs.base)
@@ -61,9 +52,9 @@
             (hsPkgs.require)
             (hsPkgs.text)
             (hsPkgs.universum)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "require-test-suite" = {
           depends = [
@@ -78,9 +69,9 @@
             (hsPkgs.tasty-hspec)
             (hsPkgs.text)
             (hsPkgs.universum)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "require-benchmarks" = {
           depends = [
@@ -94,8 +85,8 @@
             (hsPkgs.require)
             (hsPkgs.text)
             (hsPkgs.universum)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

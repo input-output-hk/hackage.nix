@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "trawl";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "trawl"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2015 Ben James";
       maintainer = "bmjames@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A tool for finding haddocks";
       description = "trawl is a human-friendly wrapper around ghc-pkg, for locating local documentation for Haskell packages and modules.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "trawl" = {
@@ -35,8 +26,8 @@
             (hsPkgs.process)
             (hsPkgs.optparse-applicative)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

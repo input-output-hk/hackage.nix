@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-orphans";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "binary-orphans"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Orphan instances for binary";
       description = "`binary-orphans` defines orphan instances for types in some popular packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.vector)
           (hsPkgs.text-binary)
           (hsPkgs.vector-binary-instances)
-        ];
-      };
+          ];
+        };
       tests = {
         "binary-orphans-test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

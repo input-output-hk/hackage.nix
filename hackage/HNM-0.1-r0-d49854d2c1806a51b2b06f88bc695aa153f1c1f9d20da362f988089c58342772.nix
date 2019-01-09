@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HNM";
-        version = "0.1";
-      };
+      identifier = { name = "HNM"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Cetin Sert";
       maintainer = "Cetin Sert <cetin@sertcom.de>";
@@ -22,7 +13,7 @@
       synopsis = "Happy Network Manager";
       description = "A quick and dirty applet to help you connect\nto wireless networks.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.process)
           (hsPkgs.containers)
           (hsPkgs.haskell98)
-        ];
-      };
+          ];
+        };
       exes = {
         "HNM" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.process)
             (hsPkgs.containers)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Unixutils-shadow";
-        version = "1.0.0";
-      };
+      identifier = { name = "Unixutils-shadow"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@n-heptane.com";
@@ -22,13 +13,8 @@
       synopsis = "A simple interface to shadow passwords (aka, shadow.h)";
       description = "Provides the ability to read a user entry from the shadow password database";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.unix) ]; };
+      };
+    }

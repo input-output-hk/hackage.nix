@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hbro";
-        version = "0.1.1";
-      };
+      identifier = { name = "hbro"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral at mailoo dot org";
@@ -22,7 +13,7 @@
       synopsis = "A suckless minimal KISSy browser";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hbro" = {
@@ -36,8 +27,8 @@
             (hsPkgs.dyre)
             (hsPkgs.process)
             (hsPkgs.url)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

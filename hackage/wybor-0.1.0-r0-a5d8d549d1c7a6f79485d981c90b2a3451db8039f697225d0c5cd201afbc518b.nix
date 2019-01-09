@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wybor";
-        version = "0.1.0";
-      };
+      identifier = { name = "wybor"; version = "0.1.0"; };
       license = "BSD-2-Clause";
       copyright = "Matvey Aksenov 2014";
       maintainer = "matvey.aksenov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Console line fuzzy search";
       description = "Console line fuzzy search as a library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.terminal-size)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "rpf";
-        version = "0.2.4";
-      };
+      identifier = { name = "rpf"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "Receiver Policy Framework";
       description = "Receiver Policy Framework (RPF) is a Milter\nprogram to change actions of e-mail receiver\nside according to results of the anti-spam\ntechnologies.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "rpf" = {
@@ -39,8 +30,8 @@
             (hsPkgs.iproute)
             (hsPkgs.dns)
             (hsPkgs.domain-auth)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       debug = false;
       fastc = false;
       misc-executables = false;
       monitoring = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "second-transfer";
-        version = "0.10.0.1";
-      };
+      identifier = { name = "second-transfer"; version = "0.10.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2015, Alcides Viamontes Esquivel";
       maintainer = "alcidesv@zunzun.se";
@@ -27,7 +18,7 @@
       synopsis = "Second Transfer HTTP/2 web server";
       description = "Second Transfer HTTP/2 web server";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -58,15 +49,13 @@
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
           (hsPkgs.mmorph)
-        ] ++ pkgs.lib.optionals (flags.monitoring) [
+          ] ++ (pkgs.lib).optionals (flags.monitoring) [
           (hsPkgs.hedis)
           (hsPkgs.unix)
-        ];
-        libs = (pkgs.lib.optional (system.isOsx) (pkgs."second_transfer__enable_tls") ++ pkgs.lib.optional (system.isLinux) (pkgs."stdc++")) ++ pkgs.lib.optionals (flags.fastc) (pkgs.lib.optional (system.isLinux) (pkgs."botan-1.11"));
-        build-tools = [
-          (hsPkgs.buildPackages.cpphs)
-        ];
-      };
+          ];
+        libs = ((pkgs.lib).optional (system.isOsx) (pkgs."second_transfer__enable_tls") ++ (pkgs.lib).optional (system.isLinux) (pkgs."stdc++")) ++ (pkgs.lib).optionals (flags.fastc) ((pkgs.lib).optional (system.isLinux) (pkgs."botan-1.11"));
+        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        };
       tests = {
         "hunit-tests" = {
           depends = [
@@ -86,11 +75,9 @@
             (hsPkgs.transformers)
             (hsPkgs.second-transfer)
             (hsPkgs.stm)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.cpphs)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+          };
         };
       };
-    };
-  }
+    }

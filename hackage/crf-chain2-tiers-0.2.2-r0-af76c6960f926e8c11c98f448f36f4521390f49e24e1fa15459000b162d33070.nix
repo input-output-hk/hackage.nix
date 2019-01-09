@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "crf-chain2-tiers";
-        version = "0.2.2";
-      };
+      identifier = { name = "crf-chain2-tiers"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Second-order, tiered, constrained, linear conditional random fields";
       description = "The library provides implementation of the second-order, linear\nconditional random fields (CRFs) with position-wise constraints\nimposed over label values.  Each label consists of a vector of\nsmaller, atomic labels, and over each tier (layer) a separate\nset of model features is defined.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.parallel)
           (hsPkgs.sgd)
           (hsPkgs.vector-th-unbox)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unliftio";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "unliftio"; version = "0.2.1.0"; };
       license = "MIT";
       copyright = "2017 FP Complete";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "The MonadUnliftIO typeclass for unlifting monads to IO (batteries included)";
       description = "Please see the README.md file for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.stm)
           (hsPkgs.transformers)
           (hsPkgs.unliftio-core)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

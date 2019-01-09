@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "aura";
-        version = "2.0.0";
-      };
+      identifier = { name = "aura"; version = "2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "colin@fosskers.ca";
@@ -22,7 +13,7 @@
       synopsis = "A secure package manager for Arch Linux and the AUR, written in Haskell.";
       description = "aura is a package manager for Arch Linux written in Haskell. It connects to both the official Arch repostitories and to the AUR, allowing easy control of all packages on an Arch system. It allows /all/ pacman operations and provides /new/ custom ones for dealing with AUR packages. This differs from some other AUR package managers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -65,8 +56,8 @@
           (hsPkgs.typed-process)
           (hsPkgs.versions)
           (hsPkgs.witherable)
-        ];
-      };
+          ];
+        };
       exes = {
         "aura" = {
           depends = [
@@ -91,9 +82,9 @@
             (hsPkgs.transformers)
             (hsPkgs.typed-process)
             (hsPkgs.versions)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "aura-test" = {
           depends = [
@@ -119,8 +110,8 @@
             (hsPkgs.transformers)
             (hsPkgs.typed-process)
             (hsPkgs.versions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

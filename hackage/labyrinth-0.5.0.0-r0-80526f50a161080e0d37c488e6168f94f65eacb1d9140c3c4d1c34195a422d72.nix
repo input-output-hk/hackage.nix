@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "labyrinth";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "labyrinth"; version = "0.5.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "koterpillar@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A complicated turn-based game";
       description = "Players take turns in a labyrinth, competing with each\nother to pick a treasure and carry it out. They only know\neveryone's moves and responses, but do not see the map and\nmust deduce it themselves.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.transformers)
           (hsPkgs.MonadRandom)
           (hsPkgs.monad-loops)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.HTF)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

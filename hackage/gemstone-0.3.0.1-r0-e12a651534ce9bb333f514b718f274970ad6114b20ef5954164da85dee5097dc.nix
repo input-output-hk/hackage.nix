@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gemstone";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "gemstone"; version = "0.3.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "cds@corbinsimpson.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple library of helpers for SDL+GL games.";
       description = "Gemstone helps you build games.\n\nThe main goal of Gemstone is to build a library of datatypes, combinators,\nand utilities for building general games. Gemstone differentiates itself\nfrom other game libraries by being lens-based.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.random)
           (hsPkgs.stb-image)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

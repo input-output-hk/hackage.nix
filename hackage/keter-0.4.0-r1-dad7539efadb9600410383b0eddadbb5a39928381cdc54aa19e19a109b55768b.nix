@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "keter";
-        version = "0.4.0";
-      };
+      identifier = { name = "keter"; version = "0.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Web application deployment manager, focusing on Haskell web frameworks";
       description = "Handles deployment of web apps, providing a reverse proxy to achieve zero downtime deployments. For more information, please see the README on Github: <https://github.com/snoyberg/keter#readme>\n\nRelease history:\n\n[0.4.0] Switch to fsnotify to get cross-platform support. No longer using raw proxies, but instead WAI proxies.\n\n[0.3.7] Sending a HUP signal reloads the list of deployed apps. This is useful for circumstances where inotify does not work correctly, such as on file systems which do not support it.\n\n[0.3.5] You can now create Keter bundles without any applications. These can contain static hosts and redirects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -64,15 +55,8 @@
           (hsPkgs.mtl)
           (hsPkgs.warp)
           (hsPkgs.warp-tls)
-        ];
-      };
-      exes = {
-        "keter" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.keter)
           ];
         };
+      exes = { "keter" = { depends = [ (hsPkgs.base) (hsPkgs.keter) ]; }; };
       };
-    };
-  }
+    }

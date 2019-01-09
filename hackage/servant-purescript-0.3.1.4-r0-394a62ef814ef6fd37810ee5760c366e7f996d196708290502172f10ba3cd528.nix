@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-purescript";
-        version = "0.3.1.4";
-      };
+      identifier = { name = "servant-purescript"; version = "0.3.1.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Robert Klotzner";
       maintainer = "robert Dot klotzner A T gmx Dot at";
@@ -22,7 +13,7 @@
       synopsis = "Generate PureScript accessor functions for you servant API";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.servant-server)
           (hsPkgs.servant-subscriber)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "servant-purescript-test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.servant-purescript)
             (hsPkgs.servant-subscriber)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dead-simple-json";
-        version = "0.1.2";
-      };
+      identifier = { name = "dead-simple-json"; version = "0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
@@ -22,7 +13,7 @@
       synopsis = "Dead simple JSON parser, with some Template Haskell sugar.";
       description = "This is dead simple JSON, consisting of a simple parser built with Parsec\nand some Template Haskell syntactic sugar (which you may or may not use,\nit works without).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.vector)
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

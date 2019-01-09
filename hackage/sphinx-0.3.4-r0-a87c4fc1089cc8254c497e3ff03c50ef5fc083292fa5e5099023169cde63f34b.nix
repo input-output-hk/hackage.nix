@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "sphinx";
-        version = "0.3.4";
-      };
+      identifier = { name = "sphinx"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Tupil";
       maintainer = "Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings to the Sphinx full-text searching deamon.";
       description = "Haskell bindings to the Sphinx full-text searching deamon. Compatible with sphinx version 1.1";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.network)
           (hsPkgs.haskell98)
           (hsPkgs.xml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

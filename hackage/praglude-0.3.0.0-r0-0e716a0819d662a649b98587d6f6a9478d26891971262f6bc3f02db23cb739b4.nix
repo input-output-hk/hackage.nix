@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "praglude";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "praglude"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tobias Dammers";
       maintainer = "tdammers@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A pragmatic Prelude";
       description = "An opinionated alternative Prelude, focused on practicality.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

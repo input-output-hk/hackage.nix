@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "slidemews";
-        version = "0.3";
-      };
+      identifier = { name = "slidemews"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "m@j4.pe";
@@ -22,7 +13,7 @@
       synopsis = "ws convert markdown to reveal-js";
       description = "Simple WebService to convert markdown to reveal-js | https://github.com/j4/slidemews";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "slidemews" = {
@@ -36,8 +27,8 @@
             (hsPkgs.aeson)
             (hsPkgs.pandoc)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

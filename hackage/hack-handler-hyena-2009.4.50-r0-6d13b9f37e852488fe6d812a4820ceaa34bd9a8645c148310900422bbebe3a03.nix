@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack-handler-hyena";
-        version = "2009.4.50";
-      };
+      identifier = { name = "hack-handler-hyena"; version = "2009.4.50"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hyena Kibro handler";
       description = "Hyena Kibro handler";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.hack)
           (hsPkgs.hack-contrib)
           (hsPkgs.hyena)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

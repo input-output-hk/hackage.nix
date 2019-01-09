@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "feature-flipper-postgres";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "feature-flipper-postgres"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Todd Mohney";
       maintainer = "toddmohney@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A minimally obtrusive feature flag library";
       description = "A minimally obtrusive feature flag library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.persistent-template)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "feature-flipper-postgres-test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.persistent-postgresql)
             (hsPkgs.feature-flipper)
             (hsPkgs.feature-flipper-postgres)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

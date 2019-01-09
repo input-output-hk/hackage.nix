@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "manatee-browser";
-        version = "0.0.2";
-      };
+      identifier = { name = "manatee-browser"; version = "0.0.2"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2009 ~ 2010 Andy Stewart";
       maintainer = "Andy Stewart <lazycat.manatee@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Browser extension for Manatee.";
       description = "manatee-browser is WebKit browser extension for Manatee (Haskell/Gtk+ Integrated Live Environment)";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,10 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.mtl)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
+      exes = { "manatee-browser" = {}; };
       };
-      exes = {
-        "manatee-browser" = {};
-      };
-    };
-  }
+    }

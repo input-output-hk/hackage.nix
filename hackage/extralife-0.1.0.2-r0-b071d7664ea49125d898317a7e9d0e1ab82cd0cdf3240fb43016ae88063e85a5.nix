@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "extralife";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "extralife"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Tina Wuest";
       maintainer = "tina@wuest.me";
@@ -22,7 +13,7 @@
       synopsis = "API Client for ExtraLife team and user data";
       description = "Provides types and helper functions for fetching data from ExtraLife about donation drives (participants, teams, donations)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.time)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-postgresql";
-        version = "0.0.3.1";
-      };
+      identifier = { name = "text-postgresql"; version = "0.0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2015-2018 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parser and Printer of PostgreSQL extended types";
       description = "This package involves parser and printer for\ntext expressions of PostgreSQL extended types.\n- inet type, cidr type";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
           (hsPkgs.dlist)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-prop" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-simple)
             (hsPkgs.text-postgresql)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

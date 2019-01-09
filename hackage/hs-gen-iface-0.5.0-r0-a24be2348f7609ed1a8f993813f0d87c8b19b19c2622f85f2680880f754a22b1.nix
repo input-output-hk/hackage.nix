@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hs-gen-iface";
-        version = "0.5.0";
-      };
+      identifier = { name = "hs-gen-iface"; version = "0.5.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Roman Cheplyaka <roma@ro-che.info>";
@@ -22,7 +13,7 @@
       synopsis = "Utility to generate haskell-names interface files";
       description = "Compiler which generates module interfaces for haskell-names";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hs-gen-iface" = {
@@ -37,8 +28,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.hse-cpp)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "ideas";
-        version = "1.3.1";
-      };
+      identifier = { name = "ideas"; version = "1.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2015";
       maintainer = "bastiaan.heeren@ou.nl";
@@ -22,7 +13,7 @@
       synopsis = "Feedback services for intelligent tutoring systems";
       description = "ideas provides feedback services to intelligent tutoring systems such as\nthe digital mathematical environment of the Freudenthal Institute, MathDox,\nand Activemath.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.old-time)
           (hsPkgs.old-locale)
           (hsPkgs.xhtml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

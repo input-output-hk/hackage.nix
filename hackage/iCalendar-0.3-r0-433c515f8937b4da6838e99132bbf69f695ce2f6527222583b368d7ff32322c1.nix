@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "iCalendar";
-        version = "0.3";
-      };
+      identifier = { name = "iCalendar"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Tingtun";
       maintainer = "cra+code@cra.no";
@@ -22,7 +13,7 @@
       synopsis = "iCalendar data types, parser, and printer.";
       description = "Data definitions, parsing and printing of the iCalendar\nformat (RFC5545).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.mtl)
           (hsPkgs.old-locale)
           (hsPkgs.base64-bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

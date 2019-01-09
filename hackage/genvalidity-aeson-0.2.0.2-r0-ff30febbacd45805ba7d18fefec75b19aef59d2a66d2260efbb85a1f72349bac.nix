@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "genvalidity-aeson";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "genvalidity-aeson"; version = "0.2.0.2"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017-2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com,\nnick.van.den.broeck666@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "GenValidity support for aeson";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.genvalidity-vector)
           (hsPkgs.validity)
           (hsPkgs.validity-aeson)
-        ];
-      };
+          ];
+        };
       tests = {
         "genvalidity-aeson-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.genvalidity-aeson)
             (hsPkgs.genvalidity-hspec)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

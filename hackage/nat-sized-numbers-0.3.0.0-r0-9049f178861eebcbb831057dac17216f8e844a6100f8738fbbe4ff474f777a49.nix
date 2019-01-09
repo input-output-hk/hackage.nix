@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nat-sized-numbers";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "nat-sized-numbers"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "2016 Donnacha Oisín Kidney";
       maintainer = "mail@doisinkidney.com";
@@ -22,14 +13,9 @@
       synopsis = "Variable-sized numbers from type-level nats.";
       description = "Variable-sized numbers from type-level nats.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.deepseq)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.deepseq) ]; };
       tests = {
         "nat-sized-numbers-test" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.hedgehog)
             (hsPkgs.QuickCheck)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

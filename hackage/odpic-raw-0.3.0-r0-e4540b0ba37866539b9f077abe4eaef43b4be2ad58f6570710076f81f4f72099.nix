@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "odpic-raw";
-        version = "0.3.0";
-      };
+      identifier = { name = "odpic-raw"; version = "0.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Daniel YU <leptonyu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Oracle Database Bindings";
       description = "A low-level client library for the Oracle database, implemented as bindings to the C ODPI API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,12 +23,10 @@
           (hsPkgs.conduit)
           (hsPkgs.resourcet)
           (hsPkgs.time)
-        ];
+          ];
         libs = [ (pkgs."odpic") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "odpic-raw-test" = {
           depends = [
@@ -49,8 +38,8 @@
             (hsPkgs.odpic-raw)
             (hsPkgs.resourcet)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

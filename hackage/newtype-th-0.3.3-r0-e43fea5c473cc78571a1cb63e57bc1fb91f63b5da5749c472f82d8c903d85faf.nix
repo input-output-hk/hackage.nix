@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "newtype-th";
-        version = "0.3.3";
-      };
+      identifier = { name = "newtype-th"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "Michael Sloan 2011";
       maintainer = "Michael Sloan <mgsloan at gmail>";
@@ -22,7 +13,7 @@
       synopsis = "A template haskell deriver to create Control.Newtype instances.";
       description = "Provides a template haskell based mechanism for\nderiving instances of djahandarie's Control.Newtype class.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.newtype)
           (hsPkgs.syb)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

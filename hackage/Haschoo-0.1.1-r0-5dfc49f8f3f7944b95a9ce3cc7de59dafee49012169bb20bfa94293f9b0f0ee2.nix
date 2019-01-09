@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Haschoo";
-        version = "0.1.1";
-      };
+      identifier = { name = "Haschoo"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Matti Niemenmaa <matti.niemenmaa+haschoo@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Minimalist R5RS Scheme interpreter";
       description = "Haschoo is a minimalist R5RS interpreter written in Haskell for a university\ncourse.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haschoo" = {
@@ -34,8 +25,8 @@
             (hsPkgs.numbers)
             (hsPkgs.monad-loops)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

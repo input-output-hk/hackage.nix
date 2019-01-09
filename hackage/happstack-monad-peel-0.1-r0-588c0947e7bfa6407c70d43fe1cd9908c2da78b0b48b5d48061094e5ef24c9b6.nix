@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-monad-peel";
-        version = "0.1";
-      };
+      identifier = { name = "happstack-monad-peel"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mail@nils.cc";
@@ -22,7 +13,7 @@
       synopsis = "monad-peel instances for Happstack types";
       description = "monad-peel instances for Happstack types";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.transformers)
           (hsPkgs.monad-peel)
           (hsPkgs.happstack-server)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

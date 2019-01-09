@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { with-th = true; };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "pontarius-xmpp";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "pontarius-xmpp"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Dmitry Astapov, Pierre Kovalev, Mahdi Abdinejadi, Jon Kristensen,\nIETF Trust, Philipp Balzarek";
       maintainer = "info@jonkri.com";
@@ -22,7 +13,7 @@
       synopsis = "An XMPP client library";
       description = "Pontarius XMPP is a work in progress implementation of RFC 6120\n(\"XMPP CORE\"), RFC 6121 (\"XMPP IM\"), and RFC 6122 (\"XMPP ADDR\").\nWhile in alpha, Pontarius XMPP works quite well and fulfills most\nrequirements of the RFCs.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -58,10 +49,10 @@
           (hsPkgs.xml-types)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-picklers)
-        ] ++ [
+          ] ++ [
           (hsPkgs.bytestring)
-        ]) ++ pkgs.lib.optional (flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) (hsPkgs.template-haskell);
-      };
+          ]) ++ (pkgs.lib).optional (flags.with-th && (compiler.isGhc && (compiler.version).ge "7.6.1")) (hsPkgs.template-haskell);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -94,8 +85,8 @@
             (hsPkgs.transformers)
             (hsPkgs.xml-picklers)
             (hsPkgs.xml-types)
-          ];
-        };
+            ];
+          };
         "doctest" = {
           depends = [
             (hsPkgs.base)
@@ -105,17 +96,17 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.derive)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.pontarius-xmpp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

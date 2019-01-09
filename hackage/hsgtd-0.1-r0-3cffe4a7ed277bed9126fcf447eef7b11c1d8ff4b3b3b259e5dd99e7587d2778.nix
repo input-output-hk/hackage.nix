@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hsgtd";
-        version = "0.1";
-      };
+      identifier = { name = "hsgtd"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "michael.lesniak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Console-based gettings-things-done application";
       description = "Console-based application for using the Gettings-Things-\nDone- approach for task management using projects and\ncontexts.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hsgtd" = {
@@ -33,8 +24,8 @@
             (hsPkgs.mtl)
             (hsPkgs.containers)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

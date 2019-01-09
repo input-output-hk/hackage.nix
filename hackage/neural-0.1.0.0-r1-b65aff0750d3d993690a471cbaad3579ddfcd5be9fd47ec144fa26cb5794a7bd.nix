@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "neural";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "neural"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2016 Dr. Lars Bruenjes";
       maintainer = "brunjlar@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Neural Networks in native Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.transformers)
           (hsPkgs.typelits-witnesses)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "iris" = {
           depends = [
@@ -54,16 +45,12 @@
             (hsPkgs.attoparsec)
             (hsPkgs.neural)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "sqrt" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.MonadRandom)
-            (hsPkgs.neural)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.MonadRandom) (hsPkgs.neural) ];
+          };
         };
-      };
       tests = {
         "neural-test" = {
           depends = [
@@ -71,15 +58,11 @@
             (hsPkgs.hspec)
             (hsPkgs.MonadRandom)
             (hsPkgs.neural)
-          ];
-        };
+            ];
+          };
         "neural-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.neural)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.neural) ];
+          };
         };
       };
-    };
-  }
+    }

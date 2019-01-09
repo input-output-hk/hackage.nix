@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tagged-transformer";
-        version = "0.2";
-      };
+      identifier = { name = "tagged-transformer"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments";
       description = "Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.contravariant)
           (hsPkgs.functor-apply)
           (hsPkgs.comonad-transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambdatwit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "lambdatwit"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "aaron.ash@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lambdabot running as a twitter bot. Similar to the @fsibot f# bot.";
       description = "A twitter bot using mueval to evaluate haskell tweets.\nFurther info: <https://github.com/AshyIsMe/lambdatwit/blob/master/README.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "lambdatwit" = {
@@ -53,8 +44,8 @@
             (hsPkgs.twitter-conduit)
             (hsPkgs.twitter-types)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "oauth_pin" = {
           depends = [
             (hsPkgs.base)
@@ -70,8 +61,8 @@
             (hsPkgs.http-conduit)
             (hsPkgs.authenticate-oauth)
             (hsPkgs.twitter-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "macbeth-lib";
-        version = "0.0.12";
-      };
+      identifier = { name = "macbeth-lib"; version = "0.0.12"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "tilmann@macbeth-ficsclient.com";
@@ -22,7 +13,7 @@
       synopsis = "Macbeth - A beautiful and minimalistic FICS client";
       description = "A FICS client written with OSX in mind.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.FindBin)
           (hsPkgs.yaml)
           (hsPkgs.either-unwrap)
-        ];
-      };
+          ];
+        };
       exes = {
         "Macbeth" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.wxcore)
             (hsPkgs.macbeth-lib)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "macbeth-lib-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.hspec)
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

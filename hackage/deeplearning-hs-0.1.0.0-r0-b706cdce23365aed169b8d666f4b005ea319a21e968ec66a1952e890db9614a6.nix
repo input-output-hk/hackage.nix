@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "deeplearning-hs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "deeplearning-hs"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Andrew Tulloch <andrew+cabal@tullo.ch>";
@@ -22,7 +13,7 @@
       synopsis = "Deep Learning in Haskell";
       description = "Implements type-safe deep neural networks";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.repa)
           (hsPkgs.repa-algorithms)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "deeplearning_demonstration" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.repa)
             (hsPkgs.repa-algorithms)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "deeplearning_test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

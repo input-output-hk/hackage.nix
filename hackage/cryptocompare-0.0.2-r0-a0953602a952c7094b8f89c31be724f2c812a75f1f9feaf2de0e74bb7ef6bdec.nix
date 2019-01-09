@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cryptocompare";
-        version = "0.0.2";
-      };
+      identifier = { name = "cryptocompare"; version = "0.0.2"; };
       license = "MIT";
       copyright = "2017 Avi Press";
       maintainer = "avipress@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell wrapper for the cryptocompare API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.containers)
           (hsPkgs.transformers)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       exes = {
         "cryptocompare-exe" = {
           depends = [
@@ -58,16 +49,13 @@
             (hsPkgs.containers)
             (hsPkgs.transformers)
             (hsPkgs.exceptions)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "cryptocompare-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cryptocompare)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.cryptocompare) ];
+          };
         };
       };
-    };
-  }
+    }

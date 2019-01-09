@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { sound = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "topkata";
-        version = "0.1";
-      };
+      identifier = { name = "topkata"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Christoph Bauer <ich@christoph-bauer.net>";
@@ -22,7 +13,7 @@
       synopsis = "OpenGL Arcade Game";
       description = "Guide a jumping ball through a labyrinth.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "topkata" = {
@@ -33,11 +24,11 @@
             (hsPkgs.OpenGL)
             (hsPkgs.array)
             (hsPkgs.random)
-          ] ++ pkgs.lib.optionals (flags.sound) [
+            ] ++ (pkgs.lib).optionals (flags.sound) [
             (hsPkgs.OpenAL)
             (hsPkgs.ALUT)
-          ];
-        };
+            ];
+          };
         "pdflaby" = {
           depends = [
             (hsPkgs.base)
@@ -45,8 +36,8 @@
             (hsPkgs.array)
             (hsPkgs.random)
             (hsPkgs.cairo)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

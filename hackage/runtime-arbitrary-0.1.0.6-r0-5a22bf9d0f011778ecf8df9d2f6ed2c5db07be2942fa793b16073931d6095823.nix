@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "runtime-arbitrary";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "runtime-arbitrary"; version = "0.1.0.6"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "chriswarbo@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Runtime generation of Arbitrary values";
       description = "Runtime generation of Arbitrary values";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.ifcxt)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hxt-cache";
-        version = "0.0.5";
-      };
+      identifier = { name = "hxt-cache"; version = "0.0.5"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2009 Uwe Schmidt";
       maintainer = "Uwe Schmidt <uwe@fh-wedel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Cache for HXT XML Documents and other binary data";
       description = "Extension for caching XML documents and other binary data in cache directory\nof the local filesystem. The module exports a version of readDocument with the\nadditional cache functionality.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.old-time)
           (hsPkgs.unix)
           (hsPkgs.SHA)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "egison-tutorial";
-        version = "3.0.0";
-      };
+      identifier = { name = "egison-tutorial"; version = "3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "egisatoshi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Tutorial Program for The Programming Language Egison";
       description = "A tutorial program for the programming language Egison.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "egison-tutorial" = {
@@ -43,8 +34,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.strict-io)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

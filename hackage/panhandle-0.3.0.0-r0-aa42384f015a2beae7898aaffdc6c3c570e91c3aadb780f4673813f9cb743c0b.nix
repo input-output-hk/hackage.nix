@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "panhandle";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "panhandle"; version = "0.3.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "chriswarbo@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pandoc filter to unwrap nested blocks";
       description = "Pandoc filter to splice together nested documents";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,11 @@
           (hsPkgs.pandoc)
           (hsPkgs.pandoc-types)
           (hsPkgs.syb)
-        ];
-      };
-      exes = {
-        "panhandle" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.panhandle)
           ];
         };
-      };
+      exes = {
+        "panhandle" = { depends = [ (hsPkgs.base) (hsPkgs.panhandle) ]; };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -56,8 +42,8 @@
             (hsPkgs.derive)
             (hsPkgs.syb)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

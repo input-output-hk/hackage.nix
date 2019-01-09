@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "purescript";
-        version = "0.1.2";
-      };
+      identifier = { name = "purescript"; version = "0.1.2"; };
       license = "MIT";
       copyright = "(c) Phil Freeman 2013";
       maintainer = "Phil Freeman <paf31@cantab.net>";
@@ -22,7 +13,7 @@
       synopsis = "PureScript Programming Language Compiler";
       description = "A small compile-to-JS language with extensible records and type-safe blocks";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.transformers)
           (hsPkgs.parsec)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "psc" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.parsec)
             (hsPkgs.utf8-string)
             (hsPkgs.syb)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.parsec)
             (hsPkgs.utf8-string)
             (hsPkgs.purescript)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

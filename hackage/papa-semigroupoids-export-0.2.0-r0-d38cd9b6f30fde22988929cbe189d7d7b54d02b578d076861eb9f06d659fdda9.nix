@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "papa-semigroupoids-export";
-        version = "0.2.0";
-      };
+      identifier = { name = "papa-semigroupoids-export"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Tony Morris";
@@ -22,14 +13,9 @@
       synopsis = "export useful functions from `semigroupoids`.";
       description = "export useful functions from `semigroupoids`.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.semigroupoids)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.semigroupoids) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

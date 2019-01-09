@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "MoeDict";
-        version = "0.0.3";
-      };
+      identifier = { name = "MoeDict"; version = "0.0.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "audreyt@audreyt.org";
@@ -22,7 +13,7 @@
       synopsis = "Utilities working with MoeDict.tw JSON dataset";
       description = "Utilities working with MoeDict.tw JSON dataset";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

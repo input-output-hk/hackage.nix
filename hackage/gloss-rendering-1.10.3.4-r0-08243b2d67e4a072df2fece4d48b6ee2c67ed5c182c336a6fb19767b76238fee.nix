@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gloss-rendering";
-        version = "1.10.3.4";
-      };
+      identifier = { name = "gloss-rendering"; version = "1.10.3.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "elise@jabberwocky.eu benl@ouroborus.net";
@@ -22,7 +13,7 @@
       synopsis = "Gloss picture data types and rendering functions.";
       description = "Gloss picture data types and rendering functions. These functions\ndon't do any window management. If you want gloss to setup your window as\nwell then use the plain @gloss@ package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.OpenGL)
           (hsPkgs.GLUT)
           (hsPkgs.bmp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

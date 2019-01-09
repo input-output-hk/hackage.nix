@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http2-client";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "http2-client"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Lucas DiCioccio";
       maintainer = "lucas@dicioccio.fr";
@@ -22,7 +13,7 @@
       synopsis = "A native HTTP2 client library.";
       description = "Please read the README.md at the homepage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.network)
           (hsPkgs.time)
           (hsPkgs.tls)
-        ];
-      };
+          ];
+        };
       exes = {
         "http2-client-exe" = {
           depends = [
@@ -49,16 +40,13 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.time)
             (hsPkgs.tls)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "http2-client-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.http2-client)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.http2-client) ];
+          };
         };
       };
-    };
-  }
+    }

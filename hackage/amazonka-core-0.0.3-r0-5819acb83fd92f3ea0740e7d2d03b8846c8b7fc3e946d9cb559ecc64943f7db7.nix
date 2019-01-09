@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "amazonka-core";
-        version = "0.0.3";
-      };
+      identifier = { name = "amazonka-core"; version = "0.0.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2013-2014 Brendan Hay";
       maintainer = "Brendan Hay <brendan.g.hay@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Core functionality, serialisation primitives, and data types for the Amazonka Amazon Web Services SDKs.";
       description = "Core functionality, serialisation primitives, and data types for\nAmazonka related Amazon Web Services SDKs.\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

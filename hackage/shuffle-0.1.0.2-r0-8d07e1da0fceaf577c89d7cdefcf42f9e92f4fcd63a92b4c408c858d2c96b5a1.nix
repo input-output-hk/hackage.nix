@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "shuffle";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "shuffle"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Utrecht University, Department of Information and Computing Sciences, Software Technology group";
       maintainer = "uhc-developers@lists.science.uu.nl";
@@ -22,7 +13,7 @@
       synopsis = "Shuffle tool for UHC";
       description = "Shuffle tool used by UHC (Utrecht Haskell Compiler)";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,15 +29,8 @@
           (hsPkgs.uhc-util)
           (hsPkgs.Cabal)
           (hsPkgs.filepath)
-        ];
-      };
-      exes = {
-        "shuffle" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.shuffle)
           ];
         };
+      exes = { "shuffle" = { depends = [ (hsPkgs.base) (hsPkgs.shuffle) ]; }; };
       };
-    };
-  }
+    }

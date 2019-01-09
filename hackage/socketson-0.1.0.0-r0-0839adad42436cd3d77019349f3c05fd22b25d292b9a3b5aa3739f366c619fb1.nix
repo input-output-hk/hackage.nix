@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "socketson";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "socketson"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "pfiff@hax-f.net";
@@ -22,7 +13,7 @@
       synopsis = "A small websocket backend provider.";
       description = "socketson is technically a small websocket server with a predefined protocol with the intention to be run a backend.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "socketson-sample" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.aeson)
             (hsPkgs.socketson)
             (hsPkgs.either)
-          ];
-        };
+            ];
+          };
         "socketson-sample-client" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +57,8 @@
             (hsPkgs.websockets)
             (hsPkgs.bytestring)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

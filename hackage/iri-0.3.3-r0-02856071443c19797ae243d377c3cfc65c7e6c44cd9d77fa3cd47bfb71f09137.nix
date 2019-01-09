@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "iri";
-        version = "0.3.3";
-      };
+      identifier = { name = "iri"; version = "0.3.3"; };
       license = "MIT";
       copyright = "(c) 2017, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "RFC-based International Resource Identifier library";
       description = "This library provides a universal data model for representation of both URI (URL) and IRI.\nIt comes packed with parsing, rendering and serialisation functionality.\nIt is implemented in conformance with the RFC-3986 and RFC-3987 specifications and\nis intended as a standard tool for all tasks related to resource identifiers.\n\nThe data is represented in Unicode,\nand the API automates all the encoding fuss.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.bug)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

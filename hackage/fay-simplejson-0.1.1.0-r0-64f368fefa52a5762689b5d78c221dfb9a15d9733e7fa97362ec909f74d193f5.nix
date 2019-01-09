@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fay-simplejson";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "fay-simplejson"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Li Meng Jun";
       maintainer = "lmjubuntu@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "SimpleJSON library for Fay.";
       description = "SimpleJSON library for Fay.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.fay-base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.fay-base) ]; }; };
+    }

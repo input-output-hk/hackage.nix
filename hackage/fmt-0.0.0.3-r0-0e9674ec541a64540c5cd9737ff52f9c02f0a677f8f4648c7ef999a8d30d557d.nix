@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fmt";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "fmt"; version = "0.0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yom@artyom.me";
@@ -22,7 +13,7 @@
       synopsis = "Nice formatting library";
       description = "Nice formatting library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.microlens)
           (hsPkgs.text)
           (hsPkgs.text-format)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.neat-interpolation)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

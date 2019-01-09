@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "feed-crawl";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "feed-crawl"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "dhchoi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utility for fetching feeds with redirect info and HTML link detection";
       description = "Utility for fetching feeds with redirect info and HTML link detection";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.http-types)
           (hsPkgs.hxt)
           (hsPkgs.network-uri)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "winerror";
-        version = "1.0.1";
-      };
+      identifier = { name = "winerror"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2008 Felix Martini";
       maintainer = "fmartini@gmail.com";
@@ -22,10 +13,10 @@
       synopsis = "Error handling for foreign calls to the Windows API.";
       description = "A small library useful for error handling when making\nforeign calls to the Windows API. Error codes set by\nWindows are converted to Haskell exceptions and can be\nthrown and caught with the usual exception handling\nfunctions in Control.Exception.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = pkgs.lib.optional (system.isWindows) (hsPkgs.base);
+        depends = (pkgs.lib).optional (system.isWindows) (hsPkgs.base);
+        };
       };
-    };
-  }
+    }

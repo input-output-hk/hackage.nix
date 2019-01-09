@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "elm-export";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "elm-export"; version = "0.6.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2015-2017 Kris Jenkins";
       maintainer = "kris.jenkins@clearercode.com";
@@ -22,7 +13,7 @@
       synopsis = "A library to generate Elm types from Haskell source.";
       description = "Generate Elm source code automatically from Haskell types. Using GHC.Generics, we can automatically derive Elm type declarations, and Aeson-compatible JSON decoders & encoders.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       tests = {
         "elm-export-test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

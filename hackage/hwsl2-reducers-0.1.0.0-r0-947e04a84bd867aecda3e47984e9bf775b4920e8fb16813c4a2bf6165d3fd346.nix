@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hwsl2-reducers";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hwsl2-reducers"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "srijs@airpost.net";
@@ -22,7 +13,7 @@
       synopsis = "Semigroup and Reducer instances for Data.Hash.SL2";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.hwsl2)
           (hsPkgs.semigroups)
           (hsPkgs.reducers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

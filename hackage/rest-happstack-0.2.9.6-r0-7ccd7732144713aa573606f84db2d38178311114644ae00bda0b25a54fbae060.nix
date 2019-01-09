@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rest-happstack";
-        version = "0.2.9.6";
-      };
+      identifier = { name = "rest-happstack"; version = "0.2.9.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Rest driver for Happstack.";
       description = "Rest driver for Happstack.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
           (hsPkgs.rest-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

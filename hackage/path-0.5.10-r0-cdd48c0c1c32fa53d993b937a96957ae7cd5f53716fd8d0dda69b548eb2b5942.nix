@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "path";
-        version = "0.5.10";
-      };
+      identifier = { name = "path"; version = "0.5.10"; };
       license = "BSD-3-Clause";
       copyright = "2015–2016 FP Complete";
       maintainer = "Chris Done <chrisdone@fpcomplete.com>";
@@ -22,7 +13,7 @@
       synopsis = "Support for well-typed paths";
       description = "Support for well-typed paths.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.deepseq)
           (hsPkgs.aeson)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.mtl)
             (hsPkgs.path)
             (hsPkgs.validity)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

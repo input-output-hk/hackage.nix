@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pong-server";
-        version = "0.0.3.0";
-      };
+      identifier = { name = "pong-server"; version = "0.0.3.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "2017 Robert Fischer";
       maintainer = "smokejumperit+pong-server@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple embedded pingable server that runs in the background.";
       description = "Please see README.md on GitHub";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.http-types)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "pong-server-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

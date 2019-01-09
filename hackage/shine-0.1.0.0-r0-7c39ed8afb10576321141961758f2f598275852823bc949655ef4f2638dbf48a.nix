@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "shine";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "shine"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2016 Francesco Gazzetta";
       maintainer = "Francesco Gazzetta <francygazz@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Declarative graphics for the browser using GHCJS";
       description = "Shine wraps javascript's drawing functions in a declarative API.\nHeavily inspired by Gloss.\n\nRead the README for an overview of the library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,16 +24,12 @@
           (hsPkgs.time)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
-      tests = {
-        "test-shine" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ghcjs-dom)
-            (hsPkgs.shine)
           ];
         };
+      tests = {
+        "test-shine" = {
+          depends = [ (hsPkgs.base) (hsPkgs.ghcjs-dom) (hsPkgs.shine) ];
+          };
+        };
       };
-    };
-  }
+    }

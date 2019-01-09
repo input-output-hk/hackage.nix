@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage2nix";
-        version = "0.7.1";
-      };
+      identifier = { name = "stackage2nix"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bushevdv@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Convert Stack files into Nix build instructions.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,16 +41,11 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
-        ];
-      };
-      exes = {
-        "stackage2nix" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.stackage2nix)
           ];
         };
-      };
+      exes = {
+        "stackage2nix" = { depends = [ (hsPkgs.base) (hsPkgs.stackage2nix) ]; };
+        };
       tests = {
         "spec" = {
           depends = [
@@ -73,8 +59,8 @@
             (hsPkgs.stackage2nix)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

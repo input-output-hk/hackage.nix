@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tsne";
-        version = "1.2.0";
-      };
+      identifier = { name = "tsne"; version = "1.2.0"; };
       license = "LicenseRef-LGPL";
       copyright = "2017 Rob Agar";
       maintainer = "robagar@fastmail.net";
@@ -22,7 +13,7 @@
       synopsis = "t-SNE";
       description = "Pure Haskell implementation of the t-SNE dimension reduction algorithm.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.normaldistribution)
           (hsPkgs.pipes)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskell_tsne_example" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.data-default)
             (hsPkgs.pipes)
             (hsPkgs.tsne)
-          ];
-        };
+            ];
+          };
         "haskell_tsne_timing" = {
           depends = [
             (hsPkgs.base)
@@ -49,9 +40,9 @@
             (hsPkgs.pipes)
             (hsPkgs.time)
             (hsPkgs.tsne)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tSNE-test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.hspec)
             (hsPkgs.data-default)
             (hsPkgs.tsne)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

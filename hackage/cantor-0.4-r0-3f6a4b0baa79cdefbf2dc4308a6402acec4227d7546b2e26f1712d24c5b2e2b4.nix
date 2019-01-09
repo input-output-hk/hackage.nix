@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cantor";
-        version = "0.4";
-      };
+      identifier = { name = "cantor"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "klangner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Application for analysis of java source code";
       description = "Cantor is application for analyzing software projects.\nThe goal of this application is to help developer understand source code of unknown project.\n\nCurrently implemented:\n\n* Find language the application is written in\n\n* Line Of Code metric.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cantor" = {
@@ -36,9 +27,9 @@
             (hsPkgs.containers)
             (hsPkgs.bytestring)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.containers)
             (hsPkgs.bytestring)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

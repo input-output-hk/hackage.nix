@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hset";
-        version = "1.0.1";
-      };
+      identifier = { name = "hset"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s9gf4ult@gmail.com";
@@ -22,23 +13,13 @@
       synopsis = "Primitive heterogenous read-only set";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hset)
-            (hsPkgs.mtl)
-          ];
+          depends = [ (hsPkgs.HUnit) (hsPkgs.base) (hsPkgs.hset) (hsPkgs.mtl) ];
+          };
         };
       };
-    };
-  }
+    }

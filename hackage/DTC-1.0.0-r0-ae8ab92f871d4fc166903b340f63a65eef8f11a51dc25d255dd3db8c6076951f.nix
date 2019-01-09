@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "DTC";
-        version = "1.0.0";
-      };
+      identifier = { name = "DTC"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Daniel Diaz <danieldiaz@asofilak.es>";
@@ -22,13 +13,8 @@
       synopsis = "Data To Class.";
       description = "Transform data declarations to class definitions.\n\nThe way is explained in /Data Declarations to Class Definitions/.\nYou can find these notes in the homepage of the package.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell-src)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.haskell-src) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "holey-format";
-        version = "2.1.0";
-      };
+      identifier = { name = "holey-format"; version = "2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,8 +13,6 @@
       synopsis = "None";
       description = "None";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

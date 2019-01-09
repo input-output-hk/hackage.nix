@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hslogger-template";
-        version = "0.1";
-      };
+      identifier = { name = "hslogger-template"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Brian Lewis <brian@lorf.org>, Ian Taylor <ian@lorf.org>";
@@ -22,7 +13,7 @@
       synopsis = "Automatic generation of hslogger functions";
       description = "A function for generating hslogger functions automatically using Template\nHaskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.hslogger)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

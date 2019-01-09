@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "swagger-test";
-        version = "0.2.7";
-      };
+      identifier = { name = "swagger-test"; version = "0.2.7"; };
       license = "BSD-3-Clause";
       copyright = "2017 Rodrigo Setti. All rights reserved";
       maintainer = "rodrigosetti@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Testing of Swagger APIs";
       description = "This package provides a library and executable tool\nthat supports testing APIs specified with Swagger. It\nallows one to generate arbitrary Swagger requests for any\ngiven specification.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "swagger-test" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.swagger-test)
             (hsPkgs.swagger2)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

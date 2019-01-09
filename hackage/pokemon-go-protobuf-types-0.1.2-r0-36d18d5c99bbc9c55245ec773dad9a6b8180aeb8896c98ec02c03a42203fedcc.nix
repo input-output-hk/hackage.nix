@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pokemon-go-protobuf-types";
-        version = "0.1.2";
-      };
+      identifier = { name = "pokemon-go-protobuf-types"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Ricky Elrod";
       maintainer = "ricky@elrod.me";
@@ -22,7 +13,7 @@
       synopsis = "Haskell types for the Pokemon Go protobuf protocol.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

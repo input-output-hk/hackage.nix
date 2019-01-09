@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "webify";
-        version = "0.1.5.0";
-      };
+      identifier = { name = "webify"; version = "0.1.5.0"; };
       license = "MIT";
       copyright = "(c) 2013 Anantha Kumaran";
       maintainer = "ananthakumaran@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "webfont generator";
       description = "A command line tool to convert ttf file to woff, eot & svg files";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "webify" = {
@@ -39,8 +30,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.vector)
             (hsPkgs.hopfli)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

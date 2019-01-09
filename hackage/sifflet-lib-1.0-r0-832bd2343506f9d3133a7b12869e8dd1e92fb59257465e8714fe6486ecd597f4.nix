@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sifflet-lib";
-        version = "1.0";
-      };
+      identifier = { name = "sifflet-lib"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2009-2010 Gregory D. Weber";
       maintainer = "\"gdweber\" ++ drop 3 \"abc@\" ++ \"iue.edu\"";
@@ -22,7 +13,7 @@
       synopsis = "Library of modules shared by sifflet and its\ntests and its exporters.";
       description = "Supporting modules for the Sifflet visual, functional programming\nlanguage (Hackage 'sifflet' package).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,11 +31,8 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.process)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-        libs = [
-          (pkgs."gdk-x11-2.0")
-          (pkgs."gtk-x11-2.0")
-        ];
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        libs = [ (pkgs."gdk-x11-2.0") (pkgs."gtk-x11-2.0") ];
+        };
       };
-    };
-  }
+    }

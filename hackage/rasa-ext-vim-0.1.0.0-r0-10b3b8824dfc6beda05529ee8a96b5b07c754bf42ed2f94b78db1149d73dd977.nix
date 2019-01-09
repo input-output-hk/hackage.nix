@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rasa-ext-vim";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "rasa-ext-vim"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Rasa Ext for vim bindings";
       description = "Rasa Ext for vim bindings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.data-default)
           (hsPkgs.lens)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

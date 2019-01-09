@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hexmino";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "hexmino"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "pasqu4le@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A small game based on domino-like hexagonal tiles";
       description = "Hexmino is a small game where you have to put domino-like hexagonal tiles into a grid in as little time as possible";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hexmino" = {
@@ -35,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.grid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

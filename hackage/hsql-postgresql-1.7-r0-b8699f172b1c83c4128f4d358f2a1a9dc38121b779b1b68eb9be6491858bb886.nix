@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hsql-postgresql";
-        version = "1.7";
-      };
+      identifier = { name = "hsql-postgresql"; version = "1.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,14 +13,11 @@
       synopsis = "";
       description = "PostgreSQL driver for HSQL.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hsql)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.hsql) ];
         libs = [ (pkgs."pq") ];
+        };
       };
-    };
-  }
+    }

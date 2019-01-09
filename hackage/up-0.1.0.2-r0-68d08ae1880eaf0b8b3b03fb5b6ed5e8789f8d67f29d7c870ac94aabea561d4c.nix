@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "up";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "up"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomasedingcode@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generates pathnames to up directories";
       description = "A command line tool to generate pathnames to facilitate moving upward in a file system.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "up" = {
@@ -34,8 +25,8 @@
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

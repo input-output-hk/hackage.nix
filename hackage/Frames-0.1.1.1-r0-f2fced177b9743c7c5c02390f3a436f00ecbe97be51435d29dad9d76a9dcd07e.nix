@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demos = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Frames";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "Frames"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014-2015 Anthony Cowley";
       maintainer = "acowley@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Data frames For working with tabular data files";
       description = "User-friendly, type safe, runtime efficient tooling for\nworking with tabular data deserialized from\ncomma-separated values (CSV) files. The type of\neach row of data is inferred from data, which can\nthen be streamed from disk, or worked with in\nmemory.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,19 +27,19 @@
           (hsPkgs.readable)
           (hsPkgs.pipes)
           (hsPkgs.vinyl)
-        ];
-      };
+          ];
+        };
       exes = {
         "getdata" = {
-          depends = pkgs.lib.optionals (flags.demos) [
+          depends = (pkgs.lib).optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.http-client)
             (hsPkgs.zip-archive)
-          ];
-        };
+            ];
+          };
         "plot" = {
-          depends = pkgs.lib.optionals (flags.demos) [
+          depends = (pkgs.lib).optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.lens-family-core)
@@ -63,10 +54,10 @@
             (hsPkgs.readable)
             (hsPkgs.containers)
             (hsPkgs.statistics)
-          ];
-        };
+            ];
+          };
         "plot2" = {
-          depends = pkgs.lib.optionals (flags.demos) [
+          depends = (pkgs.lib).optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.lens-family-core)
@@ -81,10 +72,10 @@
             (hsPkgs.readable)
             (hsPkgs.containers)
             (hsPkgs.statistics)
-          ];
-        };
+            ];
+          };
         "demo" = {
-          depends = pkgs.lib.optionals (flags.demos) [
+          depends = (pkgs.lib).optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.list-t)
             (hsPkgs.lens-family-core)
@@ -96,10 +87,10 @@
             (hsPkgs.ghc-prim)
             (hsPkgs.readable)
             (hsPkgs.pipes)
-          ];
-        };
+            ];
+          };
         "tutorial" = {
-          depends = pkgs.lib.optionals (flags.demos) [
+          depends = (pkgs.lib).optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.lens-family-core)
@@ -109,25 +100,25 @@
             (hsPkgs.readable)
             (hsPkgs.foldl)
             (hsPkgs.pipes)
-          ];
-        };
+            ];
+          };
         "benchdemo" = {
-          depends = pkgs.lib.optionals (flags.demos) [
+          depends = (pkgs.lib).optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.lens-family-core)
             (hsPkgs.foldl)
             (hsPkgs.pipes)
-          ];
-        };
+            ];
+          };
         "missing" = {
-          depends = pkgs.lib.optionals (flags.demos) [
+          depends = (pkgs.lib).optionals (flags.demos) [
             (hsPkgs.base)
             (hsPkgs.Frames)
             (hsPkgs.vinyl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "insurance" = {
           depends = [
@@ -137,8 +128,8 @@
             (hsPkgs.lens-family-core)
             (hsPkgs.transformers)
             (hsPkgs.pipes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

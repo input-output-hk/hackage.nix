@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "superevent";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "superevent"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Alexander Thiemann <mail@athiemann.net>";
       maintainer = "mail@athiemann.net";
@@ -22,7 +13,7 @@
       synopsis = "A simple opinionated event store implementation";
       description = "A simple opinionated event store implementation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "superevent-test" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.transformers)
             (hsPkgs.uuid)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

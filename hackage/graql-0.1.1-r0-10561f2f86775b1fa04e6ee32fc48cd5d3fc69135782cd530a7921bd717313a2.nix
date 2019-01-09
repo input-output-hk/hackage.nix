@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "graql";
-        version = "0.1.1";
-      };
+      identifier = { name = "graql"; version = "0.1.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "felix@grakn.ai";
@@ -22,7 +13,7 @@
       synopsis = "Execute Graql queries on a Grakn graph";
       description = "A library for building and executing Graql queries on a\nGrakn knowledge graph.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.scientific)
           (hsPkgs.text)
           (hsPkgs.regex-posix)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.markdown-unlit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

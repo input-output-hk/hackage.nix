@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskoin-node";
-        version = "0.5.2";
-      };
+      identifier = { name = "haskoin-node"; version = "0.5.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "xenog@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskoin Node P2P library for Bitcoin and Bitcoin Cash";
       description = "Bitcoin and Bitcoin Cash peer-to-peer protocol library featuring headers-first synchronisation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.time)
           (hsPkgs.unique)
           (hsPkgs.unliftio)
-        ];
-      };
+          ];
+        };
       tests = {
         "haskoin-node-test" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.random)
             (hsPkgs.rocksdb-haskell)
             (hsPkgs.unliftio)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

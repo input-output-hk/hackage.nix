@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hannahci";
-        version = "0.1.4.1";
-      };
+      identifier = { name = "hannahci"; version = "0.1.4.1"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "elzairthesorcerer@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple Continuous Integration/Deployment System";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "hannahci" = {
@@ -43,8 +34,8 @@
             (hsPkgs.wai-middleware-static)
             (hsPkgs.unix-time)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

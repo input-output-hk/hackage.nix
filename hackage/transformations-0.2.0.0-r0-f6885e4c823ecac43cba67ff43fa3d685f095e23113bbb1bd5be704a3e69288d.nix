@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "transformations";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "transformations"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "generics@haskell.org";
@@ -22,7 +13,7 @@
       synopsis = "Generic representation of tree transformations";
       description = "This library is based on ideas described in the paper:\n\n*  Jeroen Bransen and Jose Pedro Magalhaes.\n/Generic Representations of Tree Transformations/.\n<http://dreixel.net/research/pdf/grtt_jfp_draft.pdf>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.multirec)
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "Benchmark" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.containers)
             (hsPkgs.criterion)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

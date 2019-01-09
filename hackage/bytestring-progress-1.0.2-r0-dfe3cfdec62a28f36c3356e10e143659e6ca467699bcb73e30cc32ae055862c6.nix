@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bytestring-progress";
-        version = "1.0.2";
-      };
+      identifier = { name = "bytestring-progress"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Adam Wick <awick@uhsure.com>";
@@ -22,14 +13,10 @@
       synopsis = "A library for tracking the consumption of a lazy ByteString";
       description = "In some cases, it is useful to know how fast a ByteString is being\nconsumed. Typically, this could be to report some measure of progress\nto a waiting user, but it could also be to perform some form of testing\non input / consumption code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.time) (hsPkgs.bytestring) ];
+        };
       };
-    };
-  }
+    }

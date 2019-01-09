@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "structural-traversal";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "structural-traversal"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nboldi@elte.com";
@@ -22,15 +13,11 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.mtl)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.mtl) ];
+        };
       tests = {
         "smart-traversal-test" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.structural-traversal)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

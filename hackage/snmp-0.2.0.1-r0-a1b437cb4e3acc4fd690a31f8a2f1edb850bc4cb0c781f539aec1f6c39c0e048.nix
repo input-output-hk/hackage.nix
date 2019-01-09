@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snmp";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "snmp"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexey Smirnov <chemistmail@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "API for write snmp client.";
       description = "API for write snmp client.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.securemem)
           (hsPkgs.random)
           (hsPkgs.cipher-aes)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

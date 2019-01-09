@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "second-transfer";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "second-transfer"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2015, Alcides Viamontes Esquivel";
       maintainer = "alcidesv@zunzun.se";
@@ -22,7 +13,7 @@
       synopsis = "Second Transfer HTTP/2 web server";
       description = "Second Transfer HTTP/2 web server";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,20 +32,13 @@
           (hsPkgs.http2)
           (hsPkgs.hslogger)
           (hsPkgs.hashable)
-        ];
-        libs = [
-          (pkgs."ssl")
-          (pkgs."crypto")
-        ];
-      };
+          ];
+        libs = [ (pkgs."ssl") (pkgs."crypto") ];
+        };
       tests = {
         "compiling-ok" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.second-transfer)
-            (hsPkgs.conduit)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.second-transfer) (hsPkgs.conduit) ];
+          };
         };
       };
-    };
-  }
+    }

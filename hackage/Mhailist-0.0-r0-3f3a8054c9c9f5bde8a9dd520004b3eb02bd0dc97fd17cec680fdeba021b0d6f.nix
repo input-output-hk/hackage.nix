@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test = false;
-      warnings = false;
-    };
+    flags = { test = false; warnings = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Mhailist";
-        version = "0.0";
-      };
+      identifier = { name = "Mhailist"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cjs@cynic.net, lars@larsko.org";
@@ -25,7 +13,7 @@
       synopsis = "Haskell mailing list manager";
       description = "A mailing list manager written in pure Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mhailist" = {
@@ -40,10 +28,10 @@
             (hsPkgs.old-locale)
             (hsPkgs.time)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "Test" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)
@@ -55,8 +43,8 @@
             (hsPkgs.time)
             (hsPkgs.binary)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

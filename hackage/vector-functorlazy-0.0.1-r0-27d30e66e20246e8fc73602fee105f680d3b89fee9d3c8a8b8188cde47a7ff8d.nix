@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "vector-functorlazy";
-        version = "0.0.1";
-      };
+      identifier = { name = "vector-functorlazy"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mike@izbicki.me";
@@ -22,7 +13,7 @@
       synopsis = "vectors that perform the fmap operation in constant time";
       description = "Functor-lazy vectors perform the fmap operation in constant time, whereas other vectors require linear time.  All vector operations are supported except for slicing.  See <http://github.com/mikeizbicki/vector-funxtorlazy> for details on how this module works under the hood.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.vector)
           (hsPkgs.vector-th-unbox)
           (hsPkgs.primitive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

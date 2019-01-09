@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-schema";
-        version = "0.1.8";
-      };
+      identifier = { name = "postgresql-schema"; version = "0.1.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Mark Fine";
       maintainer = "mark.fine@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL Schema Management";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.postgresql-simple)
           (hsPkgs.shelly)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "schema-add" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.time-locale-compat)
-          ];
-        };
+            ];
+          };
         "schema-apply" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +45,8 @@
             (hsPkgs.postgresql-schema)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

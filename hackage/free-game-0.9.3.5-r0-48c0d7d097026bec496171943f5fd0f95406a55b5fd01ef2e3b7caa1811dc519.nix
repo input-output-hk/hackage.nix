@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "free-game";
-        version = "0.9.3.5";
-      };
+      identifier = { name = "free-game"; version = "0.9.3.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2013 Fumiaki Kinoshita";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Create graphical applications for free";
       description = "Cross-platform GUI library based on free monads";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.data-default)
           (hsPkgs.colors)
           (hsPkgs.control-bool)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

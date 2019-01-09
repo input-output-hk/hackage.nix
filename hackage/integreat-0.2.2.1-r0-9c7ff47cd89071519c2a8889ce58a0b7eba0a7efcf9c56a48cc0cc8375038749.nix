@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "integreat";
-        version = "0.2.2.1";
-      };
+      identifier = { name = "integreat"; version = "0.2.2.1"; };
       license = "GPL-3.0-only";
       copyright = "Copyright: (c) 2017 Gregory W. Schwartz";
       maintainer = "gsch@mail.med.upenn.edu";
@@ -22,7 +13,7 @@
       synopsis = "Integrate different assays.";
       description = "Integrate difference data sources and optionally perform differential integration.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.text-show)
           (hsPkgs.vector)
           (hsPkgs.vector-th-unbox)
-        ];
-      };
+          ];
+        };
       exes = {
         "integreat" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

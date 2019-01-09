@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "language-java-classfile";
-        version = "0.1";
-      };
+      identifier = { name = "language-java-classfile"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Dr. ERDI Gergo <gergo@erdi.hu>";
@@ -22,7 +13,7 @@
       synopsis = "Parser for Java .class files";
       description = "Parses compiled Java .class files into the syntax tree\nof the language-java package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.data-binary-ieee754)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

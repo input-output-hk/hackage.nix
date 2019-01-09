@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "glome-hs";
-        version = "0.5";
-      };
+      identifier = { name = "glome-hs"; version = "0.5"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright 2008 Jim Snow";
       maintainer = "Jim Snow <jsnow@cs.pdx.edu>";
@@ -22,7 +13,7 @@
       synopsis = "ray tracer";
       description = "Ray Tracer capable of rendering a variety of primitives,\nwith support for CSG (difference and intersection of solids),\nBIH-based acceleration structure, and ability to load NFF\nformat files.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "glome" = {
@@ -36,8 +27,8 @@
             (hsPkgs.random)
             (hsPkgs.array)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

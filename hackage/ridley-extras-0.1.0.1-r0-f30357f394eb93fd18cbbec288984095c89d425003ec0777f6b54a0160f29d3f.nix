@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ridley-extras";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "ridley-extras"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Alfredo Di Napoli & IRIS Connect Engineering Team";
       maintainer = "alfredo@irisconnect.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Handy metrics that don't belong to ridley.";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,15 +26,12 @@
           (hsPkgs.mtl)
           (hsPkgs.transformers)
           (hsPkgs.ridley)
-        ];
-      };
-      tests = {
-        "ridley-extras-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ridley-extras)
           ];
         };
+      tests = {
+        "ridley-extras-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.ridley-extras) ];
+          };
+        };
       };
-    };
-  }
+    }

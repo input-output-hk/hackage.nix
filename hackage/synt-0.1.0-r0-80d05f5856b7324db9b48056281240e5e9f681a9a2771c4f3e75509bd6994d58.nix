@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "synt";
-        version = "0.1.0";
-      };
+      identifier = { name = "synt"; version = "0.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Brent Lintner <brent.lintner@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Similar code analysis.";
       description = "Calculate percentage of similarity between two pieces of code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.split)
           (hsPkgs.regexpr)
           (hsPkgs.argparser)
-        ];
-      };
+          ];
+        };
       exes = {
         "synt" = {
           depends = [
@@ -41,9 +32,9 @@
             (hsPkgs.split)
             (hsPkgs.regexpr)
             (hsPkgs.argparser)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.argparser)
             (hsPkgs.hspec)
             (hsPkgs.hpc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

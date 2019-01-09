@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simple-money";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "simple-money"; version = "0.2.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "nbrk@linklevel.net";
@@ -22,13 +13,8 @@
       synopsis = "Simple library to handle and interexchange money";
       description = "A simple library for handling and interexchange\nmoney using user-provided exchange rates\ndictionaries. The library also exports some basic\narithmetics on money.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-github-webhook";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "servant-github-webhook"; version = "0.3.1.0"; };
       license = "MIT";
       copyright = "Jacob Thomas Errington 2016";
       maintainer = "servant-github-webhook@mail.jerrington.me";
@@ -22,7 +13,7 @@
       synopsis = "Servant combinators to facilitate writing GitHub webhooks.";
       description = "This package provides servant combinators that make writing safe GitHub\nwebhooks very simple.\n\nIt features automatic verification of the digital signatures provided by\nGitHub in the webhook HTTP requests as well as route dispatching based on\nrepository event type.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,13 +29,10 @@
           (hsPkgs.string-conversions)
           (hsPkgs.text)
           (hsPkgs.wai)
-        ] ++ (if flags.old-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.transformers)
-          ]
+          ] ++ (if flags.old-base
+          then [ (hsPkgs.base) (hsPkgs.transformers) ]
           else [ (hsPkgs.base) ]);
-      };
+        };
       tests = {
         "multikey" = {
           depends = [
@@ -55,8 +43,8 @@
             (hsPkgs.servant-github-webhook)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ] ++ pkgs.lib.optional (flags.old-base) (hsPkgs.transformers);
-        };
+            ] ++ (pkgs.lib).optional (flags.old-base) (hsPkgs.transformers);
+          };
         "singlekey" = {
           depends = [
             (hsPkgs.aeson)
@@ -66,8 +54,8 @@
             (hsPkgs.servant-github-webhook)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ] ++ pkgs.lib.optional (flags.old-base) (hsPkgs.transformers);
+            ] ++ (pkgs.lib).optional (flags.old-base) (hsPkgs.transformers);
+          };
         };
       };
-    };
-  }
+    }

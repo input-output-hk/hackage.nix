@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.6";
-      identifier = {
-        name = "opentheory-parser";
-        version = "1.105";
-      };
+      identifier = { name = "opentheory-parser"; version = "1.105"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Hurd <joe@gilith.com>";
@@ -22,7 +13,7 @@
       synopsis = "Simple stream parsers";
       description = "Simple stream parsers\nAutomatically generated from the opentheory package haskell-parser-1.105";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.opentheory-primitive)
           (hsPkgs.opentheory)
-        ];
-      };
+          ];
+        };
       exes = {
         "opentheory-parser-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.opentheory-primitive)
             (hsPkgs.opentheory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

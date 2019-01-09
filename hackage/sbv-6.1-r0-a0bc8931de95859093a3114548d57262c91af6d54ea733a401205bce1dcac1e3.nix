@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "sbv";
-        version = "6.1";
-      };
+      identifier = { name = "sbv"; version = "6.1"; };
       license = "BSD-3-Clause";
       copyright = "Levent Erkok, 2010-2017";
       maintainer = "Levent Erkok (erkokl@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "SMT Based Verification: Symbolic Haskell theorem prover using SMT solving.";
       description = "Express properties about Haskell programs and automatically prove them using SMT\n(Satisfiability Modulo Theories) solvers.\n\nFor details, please see: <http://leventerkok.github.com/sbv/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.random)
           (hsPkgs.syb)
           (hsPkgs.data-binary-ieee754)
-        ];
-      };
+          ];
+        };
       exes = {
         "SBVUnitTests" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.syb)
             (hsPkgs.sbv)
             (hsPkgs.data-binary-ieee754)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "SBVBasicTests" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.syb)
             (hsPkgs.sbv)
             (hsPkgs.data-binary-ieee754)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

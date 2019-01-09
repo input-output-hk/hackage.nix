@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xml-to-json";
-        version = "1.0.1";
-      };
+      identifier = { name = "xml-to-json"; version = "1.0.1"; };
       license = "MIT";
       copyright = "Copyright Noam Lewis, 2014";
       maintainer = "jones.noamle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library and command line tool for converting XML files to json";
       description = "This library converts XMLs to json format, gaining readability while losing information such as comments, attribute ordering, and such.\nThe package also includes an executable to directly invoke the library on files (or urls on non-windows platforms).\nThe main purpose is to convert legacy XML-based data into a format that can be imported into JSON databases such as CouchDB and MongoDB.\n\nSee <https://github.com/sinelaw/xml-to-json#readme> for details and usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,18 +30,13 @@
           (hsPkgs.containers)
           (hsPkgs.regex-posix)
           (hsPkgs.tagsoup)
-        ] ++ pkgs.lib.optionals (!system.isWindows) [
+          ] ++ (pkgs.lib).optionals (!system.isWindows) [
           (hsPkgs.hxt-curl)
           (hsPkgs.curl)
-        ];
-      };
-      exes = {
-        "xml-to-json" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.xml-to-json)
           ];
         };
+      exes = {
+        "xml-to-json" = { depends = [ (hsPkgs.base) (hsPkgs.xml-to-json) ]; };
         "xml-to-json-fast" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +49,8 @@
             (hsPkgs.vector)
             (hsPkgs.containers)
             (hsPkgs.xml-to-json)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

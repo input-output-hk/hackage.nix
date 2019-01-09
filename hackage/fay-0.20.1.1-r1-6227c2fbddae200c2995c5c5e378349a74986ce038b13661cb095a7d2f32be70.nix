@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fay";
-        version = "0.20.1.1";
-      };
+      identifier = { name = "fay"; version = "0.20.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2012 Chris Done, Adam Bergmark";
       maintainer = "adam@bergmark.nl";
@@ -22,7 +13,7 @@
       synopsis = "A compiler for Fay, a Haskell subset that compiles to JavaScript.";
       description = "Fay is a proper subset of Haskell which is type-checked\nwith GHC, and compiled to JavaScript. It is lazy, pure, has a Fay monad,\nan FFI, tail-recursion optimization (experimental), and support for cabal packages.\n\n/Documentation/\n\nSee <http://fay-lang.org/>\n\n/Examples/\n\nSee the examples directory and <https://github.com/faylang/fay/wiki#fay-in-the-wild>\n";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,8 +43,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "fay" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.fay)
             (hsPkgs.optparse-applicative)
             (hsPkgs.split)
-          ];
-        };
+            ];
+          };
         "fay-tests" = {
           depends = [
             (hsPkgs.base)
@@ -79,8 +70,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.text)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { parsec = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hnix";
-        version = "0.3.3";
-      };
+      identifier = { name = "hnix"; version = "0.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell implementation of the Nix language";
       description = "Haskell implementation of the Nix language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,10 +28,10 @@
           (hsPkgs.data-fix)
           (hsPkgs.deepseq)
           (hsPkgs.semigroups)
-        ] ++ (if flags.parsec
+          ] ++ (if flags.parsec
           then [ (hsPkgs.parsec) ]
           else [ (hsPkgs.trifecta) ]);
-      };
+        };
       exes = {
         "hnix" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.data-fix)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hnix-tests" = {
           depends = [
@@ -64,9 +55,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-th)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "hnix-benchmarks" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.text)
             (hsPkgs.hnix)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

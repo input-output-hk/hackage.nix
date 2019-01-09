@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-dynamodb-conduit";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "aws-dynamodb-conduit"; version = "0.1.0.6"; };
       license = "MIT";
       copyright = "";
       maintainer = "srijs@airpost.net";
@@ -22,7 +13,7 @@
       synopsis = "Conduit-based interface for AWS DynamoDB";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.aeson)
           (hsPkgs.json-togo)
           (hsPkgs.attoparsec-trans)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

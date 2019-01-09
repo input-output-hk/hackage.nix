@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack-frontend-happstack";
-        version = "2009.6.1";
-      };
+      identifier = { name = "hack-frontend-happstack"; version = "2009.6.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "hack-frontend-happstack";
       description = "Allows programs written against happstack-server to run with any hack handler.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.hack-frontend-monadcgi)
           (hsPkgs.happstack-server)
           (hsPkgs.hack)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

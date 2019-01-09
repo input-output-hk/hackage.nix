@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mqtt";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mqtt"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "info@lars-petersen.net";
@@ -22,7 +13,7 @@
       synopsis = "An MQTT protocol implementation.";
       description = "This project aims to supply a rock-solid MQTT implementation suitable for\nproduction use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.x509-validation)
           (hsPkgs.websockets)
           (hsPkgs.hslogger)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.containers)
             (hsPkgs.uuid)
-          ];
-        };
+            ];
+          };
         "priority-semaphore" = {
           depends = [
             (hsPkgs.async)
@@ -74,23 +65,20 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.mqtt)
-          ];
-        };
+            ];
+          };
         "retained-store-strictness-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.mqtt)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.mqtt) ];
+          };
         "routing-tree-size-test" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.mqtt)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "topic-matching" = {
           depends = [
@@ -100,8 +88,8 @@
             (hsPkgs.criterion)
             (hsPkgs.mqtt)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "binary" = {
           depends = [
             (hsPkgs.base)
@@ -110,8 +98,8 @@
             (hsPkgs.criterion)
             (hsPkgs.mqtt)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

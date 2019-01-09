@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      template_haskell = true;
-    };
+    flags = { template_haskell = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-logger";
-        version = "0.3.28.5";
-      };
+      identifier = { name = "monad-logger"; version = "0.3.28.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -24,7 +13,7 @@
       synopsis = "A class of monads which can log messages.";
       description = "See README and Haddocks at <https://www.stackage.org/package/monad-logger>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +35,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.transformers-compat)
           (hsPkgs.unliftio-core)
-        ] ++ pkgs.lib.optional (flags.template_haskell) (hsPkgs.template-haskell);
+          ] ++ (pkgs.lib).optional (flags.template_haskell) (hsPkgs.template-haskell);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi-solarized";
-        version = "0.1.1";
-      };
+      identifier = { name = "yi-solarized"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,13 +13,6 @@
       synopsis = "Solarized colour theme for the Yi text editor";
       description = "Solarized colour theme for Yi. Check source for yi.hs usage.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.yi)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.yi) ]; }; };
+    }

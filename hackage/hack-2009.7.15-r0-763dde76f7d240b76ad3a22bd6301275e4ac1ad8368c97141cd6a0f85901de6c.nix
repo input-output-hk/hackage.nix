@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack";
-        version = "2009.7.15";
-      };
+      identifier = { name = "hack"; version = "2009.7.15"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Wang, Jinjing <e .nfjinjing@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "a Haskell Webserver Interface";
       description = "Hack: a Haskell Webserver Interface";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-default)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.data-default) (hsPkgs.bytestring) ];
+        };
       };
-    };
-  }
+    }

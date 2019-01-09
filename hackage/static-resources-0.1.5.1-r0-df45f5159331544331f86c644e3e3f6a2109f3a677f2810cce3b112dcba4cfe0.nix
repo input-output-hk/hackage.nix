@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "static-resources";
-        version = "0.1.5.1";
-      };
+      identifier = { name = "static-resources"; version = "0.1.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mariusz@scrive.com";
@@ -22,7 +13,7 @@
       synopsis = "JavaScript and Css files concat for http optimization. Now with LESS suppor.";
       description = "You need to add static resources to your web page. For production you want to decrease number of files.\nFor development you need them separated. Support for distinct sets of JS, CSS and LESS files for different views.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.process)
           (hsPkgs.filepath)
           (hsPkgs.old-time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-static-resources" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.static-resources)
             (hsPkgs.old-time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

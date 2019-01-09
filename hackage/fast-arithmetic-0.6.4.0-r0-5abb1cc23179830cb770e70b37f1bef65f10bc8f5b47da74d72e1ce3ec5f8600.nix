@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      no-integer-gmp = false;
-      development = false;
-    };
+    flags = { no-integer-gmp = false; development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "fast-arithmetic";
-        version = "0.6.4.0";
-      };
+      identifier = { name = "fast-arithmetic"; version = "0.6.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -25,14 +13,14 @@
       synopsis = "Fast functions on integers.";
       description = "Fast functions for number theory and combinatorics with a high level of safety guaranteed by [ATS](http://www.ats-lang.org/).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.composition-prelude)
-        ] ++ pkgs.lib.optional (!flags.no-integer-gmp) (hsPkgs.gmpint);
-      };
+          ] ++ (pkgs.lib).optional (!flags.no-integer-gmp) (hsPkgs.gmpint);
+        };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
@@ -42,9 +30,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.arithmoi)
             (hsPkgs.combinat)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
@@ -53,8 +41,8 @@
             (hsPkgs.criterion)
             (hsPkgs.arithmoi)
             (hsPkgs.combinat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

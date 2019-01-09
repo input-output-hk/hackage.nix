@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "proto-lens-combinators";
-        version = "0.1.0.9";
-      };
+      identifier = { name = "proto-lens-combinators"; version = "0.1.0.9"; };
       license = "BSD-3-Clause";
       copyright = "Google Inc.";
       maintainer = "zearen+protolens@google.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities functions to proto-lens.";
       description = "Useful things for working with protos.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.lens-family)
           (hsPkgs.proto-lens-protoc)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "combinators_test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.proto-lens-protoc)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "safecopy";
-        version = "0.8.5";
-      };
+      identifier = { name = "safecopy"; version = "0.8.5"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Lemmih <lemmih@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Binary serialization with version control.";
       description = "An extension to Data.Serialize with built-in version control.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "instances" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

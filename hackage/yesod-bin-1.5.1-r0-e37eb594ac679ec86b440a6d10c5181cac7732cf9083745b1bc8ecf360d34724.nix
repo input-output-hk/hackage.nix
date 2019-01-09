@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-bin";
-        version = "1.5.1";
-      };
+      identifier = { name = "yesod-bin"; version = "1.5.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "The yesod helper executable.";
       description = "See README.md for more information";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yesod" = {
@@ -75,8 +66,8 @@
             (hsPkgs.async)
             (hsPkgs.deepseq)
             (hsPkgs.typed-process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

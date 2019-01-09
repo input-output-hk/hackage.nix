@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "stunclient";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "stunclient"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Philipp Balzarek";
       maintainer = "p.balzarek@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "RFC 5389: Session Traversal Utilities for NAT (STUN) client";
       description = "RFC 5389: Session Traversal Utilities for NAT (STUN) client";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.cryptohash-cryptoapi)
           (hsPkgs.cryptohash)
           (hsPkgs.crypto-api)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-serialize" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

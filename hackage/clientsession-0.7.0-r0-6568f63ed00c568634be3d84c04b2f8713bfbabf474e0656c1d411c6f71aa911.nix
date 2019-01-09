@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "clientsession";
-        version = "0.7.0";
-      };
+      identifier = { name = "clientsession"; version = "0.7.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Store session data in a cookie.";
       description = "Achieves security through AES encryption and MD5 hashing.\nUses base64 encoding to avoid any issues with characters.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,12 @@
           (hsPkgs.crypto-api)
           (hsPkgs.cryptocipher)
           (hsPkgs.base64-bytestring)
-        ];
-      };
-      tests = {
-        "runtests" = {
-          depends = [
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
           ];
         };
+      tests = {
+        "runtests" = {
+          depends = [ (hsPkgs.hspec) (hsPkgs.QuickCheck) (hsPkgs.HUnit) ];
+          };
+        };
       };
-    };
-  }
+    }

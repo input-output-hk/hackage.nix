@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "warped";
-        version = "0.0.3";
-      };
+      identifier = { name = "warped"; version = "0.0.3"; };
       license = "MIT";
       copyright = "Copyright (C) 2018 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Warp and Wai Library.";
       description = "Library support around WAI and warp server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,15 +30,10 @@
           (hsPkgs.wai-conduit)
           (hsPkgs.wai-cors)
           (hsPkgs.warp)
-        ];
-      };
-      exes = {
-        "shake-wolf" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.shakers)
           ];
         };
+      exes = {
+        "shake-wolf" = { depends = [ (hsPkgs.base) (hsPkgs.shakers) ]; };
+        };
       };
-    };
-  }
+    }

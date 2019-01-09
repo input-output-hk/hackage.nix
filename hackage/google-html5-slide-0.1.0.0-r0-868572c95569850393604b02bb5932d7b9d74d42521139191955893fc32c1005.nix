@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "google-html5-slide";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "google-html5-slide"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Google HTML5 Slide generator";
       description = "Google HTML5 Slide <https://code.google.com/p/html5slides/> generator\nfor Pandoc documents";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "google-html5-slide" = {
@@ -37,8 +28,8 @@
             (hsPkgs.hamlet)
             (hsPkgs.shakespeare-css)
             (hsPkgs.cmdargs)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

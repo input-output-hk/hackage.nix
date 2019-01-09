@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hsc3-server";
-        version = "0.0.0";
-      };
+      identifier = { name = "hsc3-server"; version = "0.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Stefan Kersten 2008-2011";
       maintainer = "Stefan Kersten";
@@ -22,7 +13,7 @@
       synopsis = "SuperCollider server resource management and synchronization.";
       description = "This library provides abstractions for managing SuperCollider server resources like node, buffer and bus ids and synchronization primitives.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.mtl)
           (hsPkgs.strict-concurrency)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

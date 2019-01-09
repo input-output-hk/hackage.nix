@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "oso2pdf";
-        version = "0.1.0";
-      };
+      identifier = { name = "oso2pdf"; version = "0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "spwhitton@spwhitton.name";
@@ -22,15 +13,12 @@
       synopsis = "Better conversion of Oxford Scholarship Online material to PDF";
       description = "Please see README.md when I write it";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pandoc-oso2tex" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pandoc-types)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.pandoc-types) ];
+          };
         "oso2pdf" = {
           depends = [
             (hsPkgs.base)
@@ -41,8 +29,8 @@
             (hsPkgs.temporary)
             (hsPkgs.filepath)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

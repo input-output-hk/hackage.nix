@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "canonical-filepath";
-        version = "1.0.0.3";
-      };
+      identifier = { name = "canonical-filepath"; version = "1.0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas Schilling <nominolo@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Abstract data type for canonical file paths.";
       description = "Abstract data type for canonical file paths.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

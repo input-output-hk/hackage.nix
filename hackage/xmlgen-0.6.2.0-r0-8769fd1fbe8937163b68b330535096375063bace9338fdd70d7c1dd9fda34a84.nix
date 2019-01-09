@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xmlgen";
-        version = "0.6.2.0";
-      };
+      identifier = { name = "xmlgen"; version = "0.6.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Stefan Wehr <wehr@factisresearch.com>";
@@ -22,7 +13,7 @@
       synopsis = "Fast XML generation library";
       description = "Library for high-performance XML generation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "xmlgen-tests" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.process)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
-      };
       benchmarks = {
         "xmlgen-bench" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.criterion)
             (hsPkgs.bytestring)
             (hsPkgs.xmlgen)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

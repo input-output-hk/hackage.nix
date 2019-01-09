@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ajhc";
-        version = "0.8.0.9";
-      };
+      identifier = { name = "ajhc"; version = "0.8.0.9"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Metasepi team <metasepi@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell compiler that produce binary through C language";
       description = "Ajhc is a fork of jhc.\nThe jhc is a haskell compiler which aims to produce the most efficient\nprograms possible via whole program analysis and other optimizations.\n\nThe jhc is very minimalist in that it does not have a precompiled run time\nsystem, but rather generates what is needed as part of the compilation\nprocess. However, back ends do have specific run-time representations of\ndata, which can be affected by things like the choice of garbage collector.\n\nPerhaps you can get internal overview with following compile flow image:\n\n\n<<https://raw.github.com/ajhc/ajhc/arafura/docs/jhc_compile_flow.png>>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,10 +39,10 @@
           (hsPkgs.temporary)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       exes = {
         "ajhc" = {
           depends = [
@@ -77,10 +68,10 @@
             (hsPkgs.utf8-string)
             (hsPkgs.zlib)
             (hsPkgs.ajhc)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
-        };
+          };
         "jahm" = {
           depends = [
             (hsPkgs.base)
@@ -92,8 +83,8 @@
             (hsPkgs.process)
             (hsPkgs.directory)
             (hsPkgs.ajhc)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

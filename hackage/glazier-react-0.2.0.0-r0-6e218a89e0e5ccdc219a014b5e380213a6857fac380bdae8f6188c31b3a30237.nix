@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glazier-react";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "glazier-react"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "ReactJS binding using Glazier and Pipes.Fluid";
       description = "ReactJS binding using Glazier and Pipes.Fluid, which is\nmore functional and composable than Elm/Flux.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -44,7 +35,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs.ghcjs-base-stub);
+          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base)) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.ghcjs-base-stub);
+        };
       };
-    };
-  }
+    }

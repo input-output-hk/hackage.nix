@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "SDL-mixer";
-        version = "0.5.2";
-      };
+      identifier = { name = "SDL-mixer"; version = "0.5.2"; };
       license = "BSD-3-Clause";
       copyright = "2004-2008, Lemmih";
       maintainer = "Lemmih (lemmih@gmail.com)";
@@ -22,13 +13,6 @@
       synopsis = "Binding to libSDL_mixer";
       description = "";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.SDL)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.SDL) ]; }; };
+    }

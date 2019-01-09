@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "atlassian-connect-descriptor";
         version = "0.3.0.0";
-      };
+        };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "rmassaioli@atlassian.com";
@@ -22,7 +16,7 @@
       synopsis = "Code that helps you create a valid Atlassian Connect Descriptor.";
       description = "Allows you to generate an Atlassian Connect Descriptor in a typesafe manner and easily convert it\nit into JSON using the fantastic Aeson library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,11 +26,8 @@
           (hsPkgs.time-units)
           (hsPkgs.cases)
           (hsPkgs.unordered-containers)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-      };
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        };
       tests = {
         "test-descriptor" = {
           depends = [
@@ -51,11 +42,8 @@
             (hsPkgs.cases)
             (hsPkgs.unordered-containers)
             (hsPkgs.bytestring)
-          ] ++ [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ];
+            ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+          };
         };
       };
-    };
-  }
+    }

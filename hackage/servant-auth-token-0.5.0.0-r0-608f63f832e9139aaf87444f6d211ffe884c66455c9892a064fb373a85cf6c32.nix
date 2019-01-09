@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-auth-token";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "servant-auth-token"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016-2017 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant based API and server for token based authorisation";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.transformers)
           (hsPkgs.uuid)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

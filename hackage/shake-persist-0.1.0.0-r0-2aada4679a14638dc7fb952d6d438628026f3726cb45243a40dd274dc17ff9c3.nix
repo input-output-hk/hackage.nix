@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shake-persist";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "shake-persist"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2016 Dmitry Bogatov";
       maintainer = "Dmitry Bogatov <KAction@gnu.org>";
@@ -22,7 +13,7 @@
       synopsis = "Shake build system on-disk caching";
       description = "Please see Development.Shake.Persist and example in source.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,12 @@
           (hsPkgs.binary)
           (hsPkgs.shake)
           (hsPkgs.template-haskell)
-        ];
-      };
-      exes = {
-        "ex.shake-persist" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.shake-persist)
-            (hsPkgs.shake)
           ];
         };
+      exes = {
+        "ex.shake-persist" = {
+          depends = [ (hsPkgs.base) (hsPkgs.shake-persist) (hsPkgs.shake) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sexp-grammar";
-        version = "2.0.1";
-      };
+      identifier = { name = "sexp-grammar"; version = "2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Eugene Smolanka <esmolanka@gmail.com>, Sergey Vinokurov <serg.foo@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Invertible grammar combinators for S-expressions";
       description = "Serialisation to and deserialisation from S-expressions derived from\na single grammar definition.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,12 +29,12 @@
           (hsPkgs.semigroups)
           (hsPkgs.text)
           (hsPkgs.utf8-string)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       tests = {
         "sexp-grammar-test" = {
           depends = [
@@ -60,9 +51,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "sexp-grammar-bench" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.sexp-grammar)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

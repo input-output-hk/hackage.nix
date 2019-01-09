@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "tasty-silver";
-        version = "3.0.2.0";
-      };
+      identifier = { name = "tasty-silver"; version = "3.0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Philipp Hausmann";
@@ -22,7 +13,7 @@
       synopsis = "Golden tests support for tasty. Fork of tasty-golden.";
       description = "This package provides support for «golden testing».\nA golden test is an IO action that writes its result to a file.\nTo pass the test, this output file should be identical to the corresponding\n«golden» file, which contains the correct result for the test.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.tasty)
           (hsPkgs.temporary-rc)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.temporary-rc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

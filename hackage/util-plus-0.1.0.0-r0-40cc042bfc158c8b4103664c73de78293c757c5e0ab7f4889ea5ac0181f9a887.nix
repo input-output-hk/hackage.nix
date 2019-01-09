@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "util-plus";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "util-plus"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 factis research GmbH";
       maintainer = "mail@athiemann.net";
@@ -22,7 +13,7 @@
       synopsis = "A collection of commonly used utils";
       description = "A collection of commonly used util functions for basic libaries";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.hashable)
           (hsPkgs.containers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "util-plus-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.containers)
             (hsPkgs.util-plus)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

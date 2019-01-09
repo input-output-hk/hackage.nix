@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "fast-combinatorics";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fast-combinatorics"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,14 +13,9 @@
       synopsis = "Fast combinatorics.";
       description = "Fast combinatorics code with a high level of safety guaranteed by writing it in ATS.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.composition-prelude)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.composition-prelude) ]; };
       tests = {
         "fast-combinatorics-test" = {
           depends = [
@@ -39,9 +23,9 @@
             (hsPkgs.fast-combinatorics)
             (hsPkgs.hspec)
             (hsPkgs.combinatorics)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "fast-combinatorics-bench" = {
           depends = [
@@ -49,8 +33,8 @@
             (hsPkgs.fast-combinatorics)
             (hsPkgs.criterion)
             (hsPkgs.combinatorics)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "records-th";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "records-th"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "amsay@amsay.net";
@@ -22,7 +13,7 @@
       synopsis = "Template Haskell declarations for the records package";
       description = "Records-TH generates a variety of declarations for use with the records package,\nincluding datatypes, Name, FromJSON, ToJSON and Default instances, and a default field type.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.type-functions)
           (hsPkgs.unordered-containers)
           (hsPkgs.data-default)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

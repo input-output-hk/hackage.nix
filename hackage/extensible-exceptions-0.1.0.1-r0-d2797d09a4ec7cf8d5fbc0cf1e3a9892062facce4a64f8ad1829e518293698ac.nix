@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "extensible-exceptions";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "extensible-exceptions"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "libraries@haskell.org";
@@ -22,10 +13,6 @@
       synopsis = "Extensible exceptions";
       description = "Extensible exceptions for old implementations (e.g. GHC < 6.10).\nThis package is being lazily implemented, i.e. not all the new\nexception types or all the exception functions are necessarily\nimplemented yet.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

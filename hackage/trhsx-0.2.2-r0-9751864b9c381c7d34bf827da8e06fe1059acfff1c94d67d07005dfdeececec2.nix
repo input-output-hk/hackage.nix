@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "trhsx";
-        version = "0.2.2";
-      };
+      identifier = { name = "trhsx"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Niklas Broberg <nibro@cs.chalmers.se>";
@@ -22,8 +13,6 @@
       synopsis = "Deprecated";
       description = "This tool is now part of the hsx package, and should be considered deprecated as a stand-alone package.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

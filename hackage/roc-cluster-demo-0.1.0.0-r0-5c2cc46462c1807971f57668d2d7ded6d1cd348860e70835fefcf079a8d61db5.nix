@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "roc-cluster-demo";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "roc-cluster-demo"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Gloss interactive demo for roc-cluster package";
       description = "Demo for displaying operation of ROC online clustering.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "roc-cluster-demo" = {
@@ -32,8 +23,8 @@
             (hsPkgs.gloss)
             (hsPkgs.optparse-applicative)
             (hsPkgs.roc-cluster)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

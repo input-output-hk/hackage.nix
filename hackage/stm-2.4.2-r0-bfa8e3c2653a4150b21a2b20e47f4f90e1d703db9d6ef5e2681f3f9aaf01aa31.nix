@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "stm";
-        version = "2.4.2";
-      };
+      identifier = { name = "stm"; version = "2.4.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "libraries@haskell.org";
@@ -22,15 +13,12 @@
       synopsis = "Software Transactional Memory";
       description = "A modular composable concurrency abstraction.\n\nChanges in version 2.4.2\n\n* Added \"Control.Concurrent.STM.TSem\" (transactional semaphore)\n\nChanges in version 2.4.1\n\n* Added Applicative/Alternative instances of STM for GHC <7.0\n\nChanges in version 2.4\n\n* Added \"Control.Concurrent.STM.TQueue\" (a faster @TChan@)\n\n* Added \"Control.Concurrent.STM.TBQueue\" (a bounded channel based on @TQueue@)\n\n* @TChan@ has an @Eq@ instances\n\n* Added @newBroadcastTChan@ and @newBroadcastTChanIO@\n\n* Some performance improvements for @TChan@\n\n* Added @cloneTChan@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = ([
+        depends = ([ (hsPkgs.base) (hsPkgs.array) ] ++ [
           (hsPkgs.base)
-          (hsPkgs.array)
-        ] ++ [
-          (hsPkgs.base)
-        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.base);
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs.base);
+        };
       };
-    };
-  }
+    }

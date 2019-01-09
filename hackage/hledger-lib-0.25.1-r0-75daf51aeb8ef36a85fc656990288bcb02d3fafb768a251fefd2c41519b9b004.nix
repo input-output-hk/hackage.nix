@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      double = false;
-      old-locale = false;
-    };
+    flags = { double = false; old-locale = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hledger-lib";
-        version = "0.25.1";
-      };
+      identifier = { name = "hledger-lib"; version = "0.25.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -25,7 +13,7 @@
       synopsis = "Core data types, parsers and utilities for the hledger accounting tool.";
       description = "hledger is a library and set of user tools for working\nwith financial data (or anything that can be tracked in a\ndouble-entry accounting ledger.) It is a haskell port and\nfriendly fork of John Wiegley's Ledger. hledger provides\ncommand-line, curses and web interfaces, and aims to be a\nreliable, practical tool for daily use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -51,13 +39,10 @@
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
           (hsPkgs.HUnit)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs.pretty-show)) ++ (if flags.old-locale
-          then [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs.pretty-show)) ++ (if flags.old-locale
+          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
           else [ (hsPkgs.time) ]);
-      };
+        };
       tests = {
         "tests" = {
           depends = ([
@@ -84,13 +69,10 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs.pretty-show)) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs.pretty-show)) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
+          };
         };
       };
-    };
-  }
+    }

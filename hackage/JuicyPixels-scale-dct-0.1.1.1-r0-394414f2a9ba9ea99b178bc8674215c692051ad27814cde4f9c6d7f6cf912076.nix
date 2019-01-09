@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "JuicyPixels-scale-dct";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "JuicyPixels-scale-dct"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Scale JuicyPixels images with DCT";
       description = "Scale JuicyPixels Images with DCT\n\nThere is also a @friday@ version: <http://hackage.haskell.org/package/friday-scale-dct friday-scale-dct>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.fft)
           (hsPkgs.carray)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.JuicyPixels)
             (hsPkgs.JuicyPixels-scale-dct)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

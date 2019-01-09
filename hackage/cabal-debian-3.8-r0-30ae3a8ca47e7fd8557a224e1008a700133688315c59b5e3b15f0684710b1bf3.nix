@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cabal-debian";
-        version = "3.8";
-      };
+      identifier = { name = "cabal-debian"; version = "3.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Create a debianization for a cabal package";
       description = "Tool for creating debianizations of Haskell packages based on the .cabal\nfile.  If apt-file is installed it will use it to discover what is the\ndebian package name of a C library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.text)
           (hsPkgs.unix)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "cabal-debian" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.cabal-debian)
             (hsPkgs.containers)
             (hsPkgs.data-lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wilton-ffi";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "wilton-ffi"; version = "0.3.0.2"; };
       license = "MIT";
       copyright = "2018 alex at staticlibs.net";
       maintainer = "alex at staticlibs.net";
@@ -22,7 +13,7 @@
       synopsis = "Haskell modules support for Wilton JavaScript runtime";
       description = "Please see the README on GitHub at <https://github.com/wilton-iot/wilton-ffi#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4.0";
-      identifier = {
-        name = "BiobaseMAF";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "BiobaseMAF"; version = "0.5.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2011";
       maintainer = "choener@tbi.univie.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "Multiple Alignment Format";
       description = "MAF files store multiple (multiple) alignments, i.e. complete\nn-way alignments between different genomes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.iteratee)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

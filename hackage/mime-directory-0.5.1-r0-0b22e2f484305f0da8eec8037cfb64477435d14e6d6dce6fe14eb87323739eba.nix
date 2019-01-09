@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "mime-directory";
-        version = "0.5.1";
-      };
+      identifier = { name = "mime-directory"; version = "0.5.1"; };
       license = "LicenseRef-LGPL";
       copyright = "(c) 2008. Mathieu Boespflug <mboes - at - tweag.net>";
       maintainer = "Mathieu Boespflug <mboes - at - tweag.net>";
@@ -22,7 +13,7 @@
       synopsis = "A library for parsing/printing the text/directory mime type.";
       description = "A library for parsing\\/printing the text\\/directory mime type.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.time)
           (hsPkgs.containers)
           (hsPkgs.base64-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

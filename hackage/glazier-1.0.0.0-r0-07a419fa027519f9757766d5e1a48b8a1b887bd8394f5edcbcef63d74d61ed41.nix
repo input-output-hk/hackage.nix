@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glazier";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "glazier"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "Extensible effects using ContT, State and variants.";
       description = "Interpreting commmands with extensible effects using Cont/Concur monad, State, and variants.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unliftio)
           (hsPkgs.unliftio-core)
-        ];
-      };
+          ];
+        };
       tests = {
         "glazier-test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.unliftio-core)
             (hsPkgs.stm)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

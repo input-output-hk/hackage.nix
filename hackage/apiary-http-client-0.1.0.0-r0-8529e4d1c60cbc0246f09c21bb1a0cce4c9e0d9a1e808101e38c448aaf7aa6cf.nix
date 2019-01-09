@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apiary-http-client";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "apiary-http-client"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "winterland1989@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A http client for Apiary.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.data-default-class)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eventful-postgresql";
-        version = "0.1.3";
-      };
+      identifier = { name = "eventful-postgresql"; version = "0.1.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Reaver";
@@ -22,7 +13,7 @@
       synopsis = "Postgres implementations for eventful";
       description = "Postgres implementations for eventful";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mtl)
           (hsPkgs.persistent)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.eventful-test-helpers)
             (hsPkgs.persistent-postgresql)
-          ];
-        };
+            ];
+          };
         "style" = {
           depends = [
             (hsPkgs.base)
@@ -64,8 +55,8 @@
             (hsPkgs.persistent)
             (hsPkgs.text)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

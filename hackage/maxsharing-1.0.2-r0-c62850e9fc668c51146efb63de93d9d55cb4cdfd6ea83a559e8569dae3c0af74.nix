@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "maxsharing";
-        version = "1.0.2";
-      };
+      identifier = { name = "maxsharing"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013, Jan Rochel";
       maintainer = "jan@rochel.info";
@@ -22,7 +13,7 @@
       synopsis = "Maximal sharing of terms in the lambda calculus with letrec";
       description = "Parses a lambda-letrec term; transforms it into a first-order\nterm graph representation; minimises the graph; reads back a\nlambda-letrec term which has the same unfolding as the original\nterm, but exhibits maximal sharing.\nIf executable \"dot\" from graphviz is available, the graphs are\ndisplayed (tested for Linux).\nThe approach is described in a technical report:\nhttp://arxiv.org/abs/1401.1460";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "maxsharing" = {
@@ -39,8 +30,8 @@
             (hsPkgs.HaLeX)
             (hsPkgs.boxes)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

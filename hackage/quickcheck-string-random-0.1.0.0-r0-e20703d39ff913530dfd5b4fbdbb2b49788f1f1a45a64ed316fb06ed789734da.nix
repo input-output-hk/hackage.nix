@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "quickcheck-string-random";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "quickcheck-string-random"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016- hiratara";
       maintainer = "hiratara@cpan.org";
@@ -22,7 +13,7 @@
       synopsis = "Helper to build generators with Text.StringRandom";
       description = "Define a generator of Text that matches regular\nexpressions. This package is useful for creating Arbitrary\ninstances of Text type restricted by newtype.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.string-random)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "quickcheck-string-random-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

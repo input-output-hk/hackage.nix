@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "faker";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "faker"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Alexey Gaziev <alex.gaziev@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Pure Haskell library for generating fake data";
       description = "No description yet\n\n> 0.0.0.1\n>  - Init version";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.gimlh)
           (hsPkgs.random)
           (hsPkgs.split)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

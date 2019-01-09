@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-ste";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "monad-ste"; version = "0.1.0.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "carter at wellposed dot com";
@@ -22,7 +13,7 @@
       synopsis = "ST monad with efficient explicit errors";
       description = "STE is a sibling to the ST monad that provides more efficient\nabortive errors than a standard EitherT or ExceptT monad stack.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.primitive)
           (hsPkgs.exceptions)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.monad-ste)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

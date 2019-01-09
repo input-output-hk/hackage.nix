@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "antiope-sns";
-        version = "6.1.3";
-      };
+      identifier = { name = "antiope-sns"; version = "6.1.3"; };
       license = "MIT";
       copyright = "Arbor Networks";
       maintainer = "mayhem@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/arbor/antiope#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.lens)
           (hsPkgs.text)
           (hsPkgs.unliftio-core)
-        ];
-      };
+          ];
+        };
       tests = {
         "antiope-sns-test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.lens)
             (hsPkgs.text)
             (hsPkgs.unliftio-core)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

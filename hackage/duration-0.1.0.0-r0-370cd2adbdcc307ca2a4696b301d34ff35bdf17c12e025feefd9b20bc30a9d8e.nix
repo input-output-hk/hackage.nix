@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "duration";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "duration"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Ryota Kameoka";
       maintainer = "kameoka.ryota@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A tiny compile-time time utility library inspired by zeit/ms";
       description = "A tiny compile-time time utility library inspired by zeit/ms";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.parsec)
             (hsPkgs.template-haskell)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -51,8 +42,8 @@
             (hsPkgs.parsec)
             (hsPkgs.template-haskell)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

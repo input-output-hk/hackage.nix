@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-bytestring = false;
-    };
+    flags = { network-bytestring = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "warp";
-        version = "1.2.1";
-      };
+      identifier = { name = "warp"; version = "1.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -24,7 +13,7 @@
       synopsis = "A fast, light-weight web server for WAI applications.";
       description = "The premier WAI handler. For more information, see <http://steve.vinoski.net/blog/2011/05/01/warp-a-haskell-web-server/>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,13 +31,10 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.unix-compat)
           (hsPkgs.ghc-prim)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -62,8 +48,8 @@
             (hsPkgs.http-types)
             (hsPkgs.transformers)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

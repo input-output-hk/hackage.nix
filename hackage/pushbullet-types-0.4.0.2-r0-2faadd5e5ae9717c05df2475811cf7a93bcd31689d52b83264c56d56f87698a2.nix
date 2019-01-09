@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pushbullet-types";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "pushbullet-types"; version = "0.4.0.2"; };
       license = "MIT";
       copyright = "Jacob Thomas Errington 2017-2018";
       maintainer = "pushbullet-hs@mail.jerrington.me";
@@ -22,7 +13,7 @@
       synopsis = "Datatypes used by the Pushbullet APIs";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

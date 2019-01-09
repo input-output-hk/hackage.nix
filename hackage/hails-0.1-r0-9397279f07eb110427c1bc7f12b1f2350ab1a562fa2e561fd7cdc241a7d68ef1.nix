@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hails";
-        version = "0.1";
-      };
+      identifier = { name = "hails"; version = "0.1"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Amit Levy <levya at cs.stanford dot edu>, Deian Stefan  <deian at cs dot stanford dot edu>";
@@ -22,7 +13,7 @@
       synopsis = "IFC enforcing web platform framework";
       description = "Hails is a framework for building multi-app web platforms.\nThis module exports a library for building Hails platforms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,7 +45,7 @@
           (hsPkgs.pureMD5)
           (hsPkgs.SimpleAES)
           (hsPkgs.RSA)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

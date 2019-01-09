@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "twfy-api-client";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "twfy-api-client"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Nigel Rantor";
       maintainer = "wiggly@wiggly.org";
@@ -22,7 +13,7 @@
       synopsis = "They Work For You API Client Library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.http-client)
           (hsPkgs.http-client-tls)
           (hsPkgs.http-media)
-        ];
-      };
+          ];
+        };
       exes = {
         "twfy-api-client" = {
           depends = [
@@ -61,16 +52,13 @@
             (hsPkgs.servant-client)
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "twfy-api-client-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.twfy-api-client)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.twfy-api-client) ];
+          };
         };
       };
-    };
-  }
+    }

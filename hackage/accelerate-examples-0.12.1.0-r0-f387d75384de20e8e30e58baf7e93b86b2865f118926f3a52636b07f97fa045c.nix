@@ -1,23 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      gui = true;
-      cuda = true;
-      opencl = true;
-      io = true;
-    };
+    flags = { gui = true; cuda = true; opencl = true; io = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "accelerate-examples";
-        version = "0.12.1.0";
-      };
+      identifier = { name = "accelerate-examples"; version = "0.12.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>";
@@ -27,7 +13,7 @@
       synopsis = "Examples using the Accelerate library";
       description = "This package defines a number of example programs for verification and\nperformance testing of the Accelerate language and associated backend\nimplementations. By default the package attempts to build with all available\nbackends, but this might not be desirable or even possible depending on your\navailable hardware. To disable a specific component, install with the extra\ncabal flag(s):\n\n. > cabal install accelerate-examples -f-opt\n\nWhere the available options are:\n\n* cuda: A parallel CUDA backend for NVIDIA GPUs\n\n* opencl: A parallel OpenCL backend\n\n* io: Extra tests for reading and writing arrays in various formats\n";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "accelerate-quickcheck" = {
@@ -37,11 +23,11 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.random)
-          ] ++ pkgs.lib.optionals (flags.cuda) [
+            ] ++ (pkgs.lib).optionals (flags.cuda) [
             (hsPkgs.accelerate-cuda)
             (hsPkgs.cuda)
-          ]) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl);
-        };
+            ]) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs.accelerate-opencl);
+          };
         "accelerate-examples" = {
           depends = (([
             (hsPkgs.accelerate)
@@ -62,9 +48,9 @@
             (hsPkgs.pretty)
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
-          ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (flags.io) (hsPkgs.accelerate-io);
+            ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs.accelerate-opencl)) ++ (pkgs.lib).optional (flags.io) (hsPkgs.accelerate-io);
           libs = [ (pkgs."stdc++") ];
-        };
+          };
         "accelerate-crystal" = {
           depends = ([
             (hsPkgs.accelerate)
@@ -72,8 +58,8 @@
             (hsPkgs.criterion)
             (hsPkgs.fclabels)
             (hsPkgs.gloss)
-          ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl);
-        };
+            ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs.accelerate-opencl);
+          };
         "accelerate-mandelbrot" = {
           depends = ([
             (hsPkgs.accelerate)
@@ -81,8 +67,8 @@
             (hsPkgs.criterion)
             (hsPkgs.fclabels)
             (hsPkgs.gloss)
-          ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ pkgs.lib.optional (flags.opencl) (hsPkgs.accelerate-opencl);
-        };
+            ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ (pkgs.lib).optional (flags.opencl) (hsPkgs.accelerate-opencl);
+          };
         "accelerate-fluid" = {
           depends = [
             (hsPkgs.accelerate)
@@ -92,8 +78,8 @@
             (hsPkgs.criterion)
             (hsPkgs.fclabels)
             (hsPkgs.gloss)
-          ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda);
+            ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs.accelerate-cuda);
+          };
         };
       };
-    };
-  }
+    }

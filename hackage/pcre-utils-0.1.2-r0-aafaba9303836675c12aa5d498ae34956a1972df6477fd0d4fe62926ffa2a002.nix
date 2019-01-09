@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pcre-utils";
-        version = "0.1.2";
-      };
+      identifier = { name = "pcre-utils"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Perl-like substitute and split for PCRE regexps.";
       description = "This package introduces split and replace like functions using PCRE regexps.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.mtl)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-split" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)
             (hsPkgs.regex-pcre-builtin)
-          ];
-        };
+            ];
+          };
         "test-subs" = {
           depends = [
             (hsPkgs.base)
@@ -51,8 +42,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)
             (hsPkgs.regex-pcre-builtin)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

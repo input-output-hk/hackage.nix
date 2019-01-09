@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsubconvert";
-        version = "0.0.1";
-      };
+      identifier = { name = "hsubconvert"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@newartisans.com>";
@@ -22,7 +13,7 @@
       synopsis = "One-time, faithful conversion of Subversion repositories to Git";
       description = "One-time, faithful conversion of Subversion repositories to Git.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hsubconvert" = {
@@ -43,8 +34,8 @@
             (hsPkgs.transformers)
             (hsPkgs.lzma-conduit)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

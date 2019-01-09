@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-lens";
-        version = "0.1.1";
-      };
+      identifier = { name = "text-lens"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,16 +13,11 @@
       synopsis = "Lenses for operating over text";
       description = "Lenses for operating over text";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.lens)
-          (hsPkgs.extra)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.lens) (hsPkgs.extra) ];
+        };
       tests = {
         "text-lens-test" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.text-lens)
             (hsPkgs.hspec)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

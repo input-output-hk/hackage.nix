@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hledger";
-        version = "0.1";
-      };
+      identifier = { name = "hledger"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "A ledger-compatible text-based accounting tool.";
       description = "This is a minimal haskell clone of John Wiegley's ledger\n<http://newartisans.com/software/ledger.html>.  hledger does basic\nregister & balance reporting from a plain text ledger file, and\ndemonstrates a functional implementation of ledger.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hledger" = {
@@ -37,8 +28,8 @@
             (hsPkgs.time)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

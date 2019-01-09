@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wai-frontend-monadcgi";
-        version = "3.0.0.3";
-      };
+      identifier = { name = "wai-frontend-monadcgi"; version = "3.0.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Run CGI apps on WAI.";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-frontend-monadcgi>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.transformers)
           (hsPkgs.case-insensitive)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

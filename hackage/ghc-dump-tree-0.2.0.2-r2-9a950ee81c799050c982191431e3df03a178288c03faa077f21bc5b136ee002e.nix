@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghc-dump-tree";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "ghc-dump-tree"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2015 Well-Typed LLP";
       maintainer = "edsko@well-typed.com";
@@ -22,7 +13,7 @@
       synopsis = "Dump GHC's parsed, renamed, and type checked ASTs";
       description = "Useful for GHC devs or people who want to do something with\nGHC's AST but don't want to hook into the GHC API itself.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.process)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "ghc-dump-tree" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.ghc-dump-tree)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

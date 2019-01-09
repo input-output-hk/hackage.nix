@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      force-alignment = false;
-    };
+    flags = { force-alignment = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "store-core";
-        version = "0.4.4";
-      };
+      identifier = { name = "store-core"; version = "0.4.4"; };
       license = "MIT";
       copyright = "2016 FP Complete";
       maintainer = "Michael Sloan <sloan@fpcomplete.com>";
@@ -24,7 +13,7 @@
       synopsis = "Fast and lightweight binary serialization";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +23,7 @@
           (hsPkgs.primitive)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.fail);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.fail);
+        };
       };
-    };
-  }
+    }

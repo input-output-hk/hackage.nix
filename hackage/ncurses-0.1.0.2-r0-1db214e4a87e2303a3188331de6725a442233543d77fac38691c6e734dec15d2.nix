@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ncurses";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "ncurses"; version = "0.1.0.2"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (c) John Millikin 2010";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Modernised bindings to GNU ncurses";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,14 +21,9 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-        libs = [
-          (pkgs."panel")
-          (pkgs."ncursesw")
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+          ];
+        libs = [ (pkgs."panel") (pkgs."ncursesw") ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

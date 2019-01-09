@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cheapskate";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "cheapskate"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2012-2013 John MacFarlane";
       maintainer = "jgm@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "Experimental markdown processor.";
       description = "This is an experimental Markdown processor in pure\nHaskell.  It aims to process Markdown efficiently and in\nthe most forgiving possible way.  It is designed to deal\nwith any input, including garbage, with linear\nperformance.  Output is sanitized by default for\nprotection against XSS attacks.\n\nSeveral markdown extensions are implemented, including\nfenced code blocks, significant list start numbers, and\nautolinked URLs.  See README.markdown for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.data-default)
           (hsPkgs.syb)
           (hsPkgs.uniplate)
-        ];
-      };
+          ];
+        };
       exes = {
         "cheapskate" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.blaze-html)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

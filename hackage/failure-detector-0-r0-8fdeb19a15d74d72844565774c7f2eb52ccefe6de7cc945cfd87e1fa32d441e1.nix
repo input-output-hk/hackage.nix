@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "failure-detector";
-        version = "0";
-      };
+      identifier = { name = "failure-detector"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016 davean";
       maintainer = "davean@xkcd.com";
@@ -22,7 +13,7 @@
       synopsis = "Failure Detectors implimented in Haskell.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.time)
           (hsPkgs.containers)
           (hsPkgs.statistics)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

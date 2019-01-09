@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eventful-core";
-        version = "0.1.0";
-      };
+      identifier = { name = "eventful-core"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "David Reaver";
@@ -22,7 +13,7 @@
       synopsis = "Core module for eventful";
       description = "Core module for eventful";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.uuid)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "style" = {
           depends = [
             (hsPkgs.base)
@@ -65,8 +56,8 @@
             (hsPkgs.transformers)
             (hsPkgs.uuid)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

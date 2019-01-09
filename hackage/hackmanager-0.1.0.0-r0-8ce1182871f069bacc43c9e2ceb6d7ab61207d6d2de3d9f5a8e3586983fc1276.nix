@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hackmanager";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hackmanager"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Alexander Thiemann";
       maintainer = "Alexander Thiemann <mail@athiemann.net>";
@@ -22,7 +13,7 @@
       synopsis = "Generate useful files for Haskell projects";
       description = "Simplify managing Haskell projects by generating files like README.md, .travis.yml, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.http-client-tls)
           (hsPkgs.http-types)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "hackmanager" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.hackmanager)
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

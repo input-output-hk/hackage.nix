@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "crypto-cipher-benchmarks";
-        version = "0.0.3";
-      };
+      identifier = { name = "crypto-cipher-benchmarks"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -22,7 +13,7 @@
       synopsis = "Generic cryptography cipher benchmarks";
       description = "Generic cryptography cipher benchmarks";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.crypto-cipher-types)
           (hsPkgs.mtl)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

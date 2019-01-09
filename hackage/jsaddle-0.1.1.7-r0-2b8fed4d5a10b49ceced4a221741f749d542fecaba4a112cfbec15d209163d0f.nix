@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       ghcjs = true;
@@ -12,13 +6,10 @@
       jsffi = true;
       webkit = false;
       jmacro = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsaddle";
-        version = "0.1.1.7";
-      };
+      identifier = { name = "jsaddle"; version = "0.1.1.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -28,7 +19,7 @@
       synopsis = "High level interface for webkit-javascriptcore";
       description = "This package provides an EDSL for calling JavaScript code using\nthe JavaScriptCore engine and low level Haskell bindings\nin the webkit-javascriptcore library <https://github.com/ghcjs/webkit-javascriptcore>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -37,16 +28,13 @@
           (hsPkgs.lens)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (flags.ghcjs) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optional (flags.ghcjs && flags.jsffi) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optionals (!flags.ghcjs || flags.webkit) (if flags.gtk3
-          then [
-            (hsPkgs.webkitgtk3)
-            (hsPkgs.webkitgtk3-javascriptcore)
-          ]
+          ] ++ (pkgs.lib).optional (flags.ghcjs) (hsPkgs.ghcjs-base)) ++ (pkgs.lib).optional (flags.ghcjs && flags.jsffi) (hsPkgs.ghcjs-base)) ++ (pkgs.lib).optionals (!flags.ghcjs || flags.webkit) (if flags.gtk3
+          then [ (hsPkgs.webkitgtk3) (hsPkgs.webkitgtk3-javascriptcore) ]
           else [
             (hsPkgs.webkit)
             (hsPkgs.webkit-javascriptcore)
-          ])) ++ pkgs.lib.optional (flags.jmacro) (hsPkgs.jmacro);
-      };
+            ])) ++ (pkgs.lib).optional (flags.jmacro) (hsPkgs.jmacro);
+        };
       tests = {
         "test-tool" = {
           depends = (([
@@ -57,20 +45,20 @@
             (hsPkgs.transformers)
             (hsPkgs.hslogger)
             (hsPkgs.jsaddle)
-          ] ++ pkgs.lib.optional (flags.ghcjs && flags.jsffi) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optionals (!flags.ghcjs || flags.webkit) ([
+            ] ++ (pkgs.lib).optional (flags.ghcjs && flags.jsffi) (hsPkgs.ghcjs-base)) ++ (pkgs.lib).optionals (!flags.ghcjs || flags.webkit) ([
             (hsPkgs.glib)
-          ] ++ (if flags.gtk3
+            ] ++ (if flags.gtk3
             then [
               (hsPkgs.gtk3)
               (hsPkgs.webkitgtk3)
               (hsPkgs.webkitgtk3-javascriptcore)
-            ]
+              ]
             else [
               (hsPkgs.gtk)
               (hsPkgs.webkit)
               (hsPkgs.webkit-javascriptcore)
-            ]))) ++ pkgs.lib.optional (flags.jmacro) (hsPkgs.jmacro);
+              ]))) ++ (pkgs.lib).optional (flags.jmacro) (hsPkgs.jmacro);
+          };
         };
       };
-    };
-  }
+    }

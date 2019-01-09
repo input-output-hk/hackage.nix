@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "thread-hierarchy";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "thread-hierarchy"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017 Naoto Shimazaki";
       maintainer = "Naoto.Shimazaki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple Haskel thread management in hierarchical manner";
       description = "Threads created by newChild guarantee automatic cleanup\non its exit regardless normal exit or cancellation by\nasynchronous exception.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.lifted-base)
           (hsPkgs.monad-control)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "thread-hierarchy-test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.containers)
             (hsPkgs.hspec)
             (hsPkgs.thread-hierarchy)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

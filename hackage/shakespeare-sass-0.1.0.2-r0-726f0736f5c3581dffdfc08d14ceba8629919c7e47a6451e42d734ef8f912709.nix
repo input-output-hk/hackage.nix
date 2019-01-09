@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shakespeare-sass";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "shakespeare-sass"; version = "0.1.0.2"; };
       license = "MPL-2.0";
       copyright = "";
       maintainer = "brcha@gna.org";
@@ -22,7 +13,7 @@
       synopsis = "SASS support for Shakespeare and Yesod";
       description = "SASS support for Shakespeare and Yesod";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.shakespeare)
           (hsPkgs.hsass)
           (hsPkgs.hlibsass)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

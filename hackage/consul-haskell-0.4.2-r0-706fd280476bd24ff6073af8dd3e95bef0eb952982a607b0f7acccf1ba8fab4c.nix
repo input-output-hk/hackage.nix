@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "consul-haskell";
-        version = "0.4.2";
-      };
+      identifier = { name = "consul-haskell"; version = "0.4.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sseverance@alphaheavy.com";
@@ -22,7 +13,7 @@
       synopsis = "A consul client for Haskell";
       description = "A consul client for Haskell\n\nRequires consul 0.5 or later.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "consul-haskell-test" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.transformers)
             (hsPkgs.uuid)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

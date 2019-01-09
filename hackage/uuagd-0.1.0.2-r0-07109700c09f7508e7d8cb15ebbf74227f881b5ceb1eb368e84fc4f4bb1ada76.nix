@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "uuagd";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "uuagd"; version = "0.1.0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Matthijs Steen <matthijssteen1990@gmail.com>";
@@ -22,21 +13,9 @@
       synopsis = "A debugger for the UUAG system.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.blaze-html)
-        ];
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.blaze-html) ]; };
+      exes = { "uuagd" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; }; };
       };
-      exes = {
-        "uuagd" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
-        };
-      };
-    };
-  }
+    }

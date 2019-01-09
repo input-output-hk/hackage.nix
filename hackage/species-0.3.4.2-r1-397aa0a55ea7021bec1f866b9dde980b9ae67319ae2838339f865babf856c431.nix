@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "species";
-        version = "0.3.4.2";
-      };
+      identifier = { name = "species"; version = "0.3.4.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Brent Yorgey <byorgey@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Computational combinatorial species";
       description = "A DSL for describing and computing with combinatorial species,\ne.g. counting labeled or unlabeled structures, or generating\na list of all labeled structures for a species.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.containers)
           (hsPkgs.multiset-comb)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

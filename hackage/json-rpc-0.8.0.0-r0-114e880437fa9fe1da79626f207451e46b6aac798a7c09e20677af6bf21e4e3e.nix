@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-rpc";
-        version = "0.8.0.0";
-      };
+      identifier = { name = "json-rpc"; version = "0.8.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "xenog@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Fully-featured JSON-RPC 2.0 library";
       description = "Library compatible with JSON-RPC 2.0 and 1.0";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.unliftio)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "concurrent-client" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.unliftio)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "concurrent-server" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -82,8 +73,8 @@
             (hsPkgs.unliftio)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "time-client" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -101,8 +92,8 @@
             (hsPkgs.unliftio)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "time-server" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -120,9 +111,9 @@
             (hsPkgs.unliftio)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-json-rpc" = {
           depends = [
@@ -142,8 +133,8 @@
             (hsPkgs.unliftio)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

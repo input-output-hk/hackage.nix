@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "geni-gui";
-        version = "0.25.1";
-      };
+      identifier = { name = "geni-gui"; version = "0.25.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "geni-users@loria.fr";
@@ -22,7 +13,7 @@
       synopsis = "GenI graphical user interface";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,16 +34,12 @@
           (hsPkgs.wxcore)
           (hsPkgs.text)
           (hsPkgs.graphviz)
-        ];
-      };
-      exes = {
-        "geni-gui" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.GenI)
-            (hsPkgs.geni-gui)
           ];
         };
+      exes = {
+        "geni-gui" = {
+          depends = [ (hsPkgs.base) (hsPkgs.GenI) (hsPkgs.geni-gui) ];
+          };
+        };
       };
-    };
-  }
+    }

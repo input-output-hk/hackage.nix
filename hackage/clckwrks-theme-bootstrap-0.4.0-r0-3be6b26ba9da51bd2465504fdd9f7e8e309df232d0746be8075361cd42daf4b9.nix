@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "clckwrks-theme-bootstrap";
-        version = "0.4.0";
-      };
+      identifier = { name = "clckwrks-theme-bootstrap"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@n-heptane.com";
@@ -22,7 +13,7 @@
       synopsis = "simple bootstrap based template for clckwrks";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.web-plugins)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

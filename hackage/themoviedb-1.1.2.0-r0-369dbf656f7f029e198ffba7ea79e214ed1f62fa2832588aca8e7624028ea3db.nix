@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { maintainer = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "themoviedb";
-        version = "1.1.2.0";
-      };
+      identifier = { name = "themoviedb"; version = "1.1.2.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2012-2015 Peter Jones";
       maintainer = "Peter Jones <pjones@devalot.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell API bindings for http://themoviedb.org";
       description = "This library provides functions for retrieving metadata\nfrom the <http://TheMovieDB.org> API.  Documentation\ncan be found in the \"Network.API.TheMovieDB\" module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.time)
           (hsPkgs.time-locale-compat)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "tmdb" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.time)
             (hsPkgs.time-locale-compat)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.text)
             (hsPkgs.themoviedb)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,23 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      util = true;
-      yaml = true;
-      regex = true;
-    };
+    flags = { dev = false; util = true; yaml = true; regex = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ert";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "ert"; version = "0.0.2.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "kayo@illumium.org";
@@ -27,7 +13,7 @@
       synopsis = "Easy Runtime Templates";
       description = "EJS-like template engine for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +25,8 @@
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-expr)
-        ] ++ pkgs.lib.optional (flags.regex) (hsPkgs.regex-compat);
-      };
+          ] ++ (pkgs.lib).optional (flags.regex) (hsPkgs.regex-compat);
+        };
       exes = {
         "ert" = {
           depends = [
@@ -49,8 +35,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.aeson)
             (hsPkgs.attoparsec)
-          ] ++ pkgs.lib.optional (flags.yaml) (hsPkgs.yaml);
+            ] ++ (pkgs.lib).optional (flags.yaml) (hsPkgs.yaml);
+          };
         };
       };
-    };
-  }
+    }

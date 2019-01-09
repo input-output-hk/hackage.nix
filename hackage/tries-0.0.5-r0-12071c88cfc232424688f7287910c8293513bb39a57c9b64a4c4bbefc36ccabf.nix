@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tries";
-        version = "0.0.5";
-      };
+      identifier = { name = "tries"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "Various trie implementations in Haskell";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/tries#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.sets)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tries-test" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tries)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "tries-bench-lookup" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.sets)
             (hsPkgs.tries)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

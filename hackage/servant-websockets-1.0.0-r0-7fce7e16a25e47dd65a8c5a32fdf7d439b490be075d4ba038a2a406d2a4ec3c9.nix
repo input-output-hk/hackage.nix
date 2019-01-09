@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-websockets";
-        version = "1.0.0";
-      };
+      identifier = { name = "servant-websockets"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Lorenz Moesenlechner";
       maintainer = "moesenle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Small library providing WebSocket endpoints for servant.";
       description = "Small library providing WebSocket endpoints for servant.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.wai-websockets)
           (hsPkgs.warp)
           (hsPkgs.websockets)
-        ];
-      };
+          ];
+        };
       exes = {
         "websocket-echo" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.servant-websockets)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "websocket-stream" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.websockets)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

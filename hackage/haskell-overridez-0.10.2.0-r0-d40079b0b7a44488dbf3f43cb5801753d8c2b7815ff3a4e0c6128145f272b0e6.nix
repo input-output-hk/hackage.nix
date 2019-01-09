@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "haskell-overridez";
-        version = "0.10.2.0";
-      };
+      identifier = { name = "haskell-overridez"; version = "0.10.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tim.emiola@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Manage nix overrides for haskell packages";
       description = "A tool to simplify the use of nix overrides during haskell development";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haskell-overridez" = {
@@ -43,8 +34,8 @@
             (hsPkgs.text)
             (hsPkgs.turtle)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "proto-lens-protobuf-types";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "proto-lens-protobuf-types"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Google Inc.";
       maintainer = "proto-lens@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Basic protocol buffer message types.";
       description = "This package provides bindings standard protocol message types, for use with the proto-lens library.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.proto-lens)
           (hsPkgs.proto-lens-protoc)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

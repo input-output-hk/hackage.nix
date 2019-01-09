@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "js-jquery";
-        version = "1.12.3";
-      };
+      identifier = { name = "js-jquery"; version = "1.12.3"; };
       license = "MIT";
       copyright = "Neil Mitchell 2014-2016";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,18 +13,11 @@
       synopsis = "Obtain minified jQuery code";
       description = "This package bundles the minified <http://jquery.com/ jQuery> code into a Haskell package,\nso it can be depended upon by Cabal packages. The first three components of\nthe version number match the upstream jQuery version. The package is designed\nto meet the redistribution requirements of downstream users (e.g. Debian).";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
-        "js-jquery-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HTTP)
-          ];
+        "js-jquery-test" = { depends = [ (hsPkgs.base) (hsPkgs.HTTP) ]; };
         };
       };
-    };
-  }
+    }

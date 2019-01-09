@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hampp";
-        version = "0.2";
-      };
+      identifier = { name = "hampp"; version = "0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Haskell macro preprocessor";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hampp" = {
@@ -33,8 +24,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.preprocessor-tools)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      deepseq = true;
-      transformers = true;
-    };
+    flags = { deepseq = true; transformers = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tagged";
-        version = "0.8.6";
-      };
+      identifier = { name = "tagged"; version = "0.8.6"; };
       license = "BSD-3-Clause";
       copyright = "2009-2015 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -25,18 +13,16 @@
       synopsis = "Haskell 98 phantom types to avoid unsafely passing dummy arguments";
       description = "Haskell 98 phantom types to avoid unsafely passing dummy arguments.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
           (hsPkgs.base)
-        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.5")) (hsPkgs.ghc-prim)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") (hsPkgs.template-haskell)) ++ pkgs.lib.optional (flags.deepseq) (hsPkgs.deepseq)) ++ pkgs.lib.optionals (flags.transformers) ([
+          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.2" && (compiler.version).lt "7.5")) (hsPkgs.ghc-prim)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs.template-haskell)) ++ (pkgs.lib).optional (flags.deepseq) (hsPkgs.deepseq)) ++ (pkgs.lib).optionals (flags.transformers) ([
           (hsPkgs.transformers)
-        ] ++ (if compiler.isGhc && compiler.version.ge "7.10" || compiler.isGhcjs && true
+          ] ++ (if compiler.isGhc && (compiler.version).ge "7.10" || compiler.isGhcjs && true
           then [ (hsPkgs.transformers) ]
-          else [
-            (hsPkgs.transformers-compat)
-          ]));
+          else [ (hsPkgs.transformers-compat) ]));
+        };
       };
-    };
-  }
+    }

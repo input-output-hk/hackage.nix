@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "svm-light-utils";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "svm-light-utils"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Ben Gamari <bgamari@gmail.com>";
       maintainer = "bgamari@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parsers and formatters for the SVMlight input file format";
       description = "Parsers and formatters for the SVMlight input file format";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "FileManipCompat";
-        version = "0.12";
-      };
+      identifier = { name = "FileManipCompat"; version = "0.12"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas Hartman <thomashartman1@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Port of Find function of FileManip lib for use on windows systems";
       description = "A Haskell library for working with files and directories.\nIncludes code for pattern matching, finding files,\nmodifying file contents, and more.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.mtl)
           (hsPkgs.unix-compat)
           (hsPkgs.extensible-exceptions)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

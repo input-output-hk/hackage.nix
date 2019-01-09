@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distributed-process-systest";
-        version = "0.1.1";
-      };
+      identifier = { name = "distributed-process-systest"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Tim Watson";
       maintainer = "watson.timothy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Cloud Haskell Test Support";
       description = "Testing Frameworks and Capabilities for programs built on Cloud Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.test-framework)
           (hsPkgs.test-framework-hunit)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

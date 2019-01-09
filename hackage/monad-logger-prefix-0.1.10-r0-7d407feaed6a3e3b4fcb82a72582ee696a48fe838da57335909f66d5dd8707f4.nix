@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-logger-prefix";
-        version = "0.1.10";
-      };
+      identifier = { name = "monad-logger-prefix"; version = "0.1.10"; };
       license = "LicenseRef-Apache";
       copyright = "2016-2018 Seller Labs, 2018 Matthew Parsons";
       maintainer = "Matthew Parsons";
@@ -22,7 +13,7 @@
       synopsis = "Add prefixes to your monad-logger output";
       description = "Add prefixes to your monad-logger output";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.transformers-base)
           (hsPkgs.text)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.Glob)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "monad-logger-prefix-benchmarks" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.monad-logger)
             (hsPkgs.monad-logger-prefix)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddc-tools";
-        version = "0.4.1.3";
-      };
+      identifier = { name = "ddc-tools"; version = "0.4.1.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,15 +13,10 @@
       synopsis = "Disciplined Disciple Compiler command line tools.";
       description = "Disciplined Disciple Compiler command line tools.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
-        "ddc-check" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ddc-core)
-          ];
-        };
+        "ddc-check" = { depends = [ (hsPkgs.base) (hsPkgs.ddc-core) ]; };
         "ddc" = {
           depends = [
             (hsPkgs.base)
@@ -52,8 +38,8 @@
             (hsPkgs.ddc-build)
             (hsPkgs.ddc-driver)
             (hsPkgs.ddc-interface)
-          ];
-        };
+            ];
+          };
         "ddci-core" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +61,8 @@
             (hsPkgs.ddc-build)
             (hsPkgs.ddc-driver)
             (hsPkgs.ddc-interface)
-          ];
-        };
+            ];
+          };
         "ddci-tetra" = {
           depends = [
             (hsPkgs.base)
@@ -99,8 +85,8 @@
             (hsPkgs.ddc-build)
             (hsPkgs.ddc-driver)
             (hsPkgs.ddc-interface)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

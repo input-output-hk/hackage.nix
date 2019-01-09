@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-auth-ldap-native";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "yesod-auth-ldap-native"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Maciej Kazulak";
       maintainer = "kazulakm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Yesod LDAP authentication plugin";
       description = "This package provides an LDAP authentication plugin for Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,15 +27,12 @@
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
           (hsPkgs.either)
-        ];
-      };
-      tests = {
-        "yesod-auth-ldap-native-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.yesod-auth-ldap-native)
           ];
         };
+      tests = {
+        "yesod-auth-ldap-native-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.yesod-auth-ldap-native) ];
+          };
+        };
       };
-    };
-  }
+    }

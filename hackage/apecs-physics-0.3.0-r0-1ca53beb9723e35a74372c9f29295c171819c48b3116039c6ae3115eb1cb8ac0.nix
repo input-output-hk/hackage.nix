@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { release = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apecs-physics";
-        version = "0.3.0";
-      };
+      identifier = { name = "apecs-physics"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "MIT";
       maintainer = "jonascarpay@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "2D physics for apecs";
       description = "2D physics for apecs. Uses Chipmunk physics library under the hood.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.linear)
           (hsPkgs.template-haskell)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

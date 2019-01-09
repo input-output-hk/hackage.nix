@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "byteunits";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "byteunits"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nobody";
@@ -22,14 +13,9 @@
       synopsis = "Human friendly conversion between byte units (KB, MB, GB...)";
       description = "Human friendly conversion between byte units (KB, MB, GB...)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.safe)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.safe) ]; };
       tests = {
         "testing-example" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.byteunits)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

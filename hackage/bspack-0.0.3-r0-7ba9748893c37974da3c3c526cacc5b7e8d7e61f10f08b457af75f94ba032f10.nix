@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bspack";
-        version = "0.0.3";
-      };
+      identifier = { name = "bspack"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2014 Nicolas DI PRIMA";
       maintainer = "nicolas@di-prima.fr";
@@ -22,15 +13,11 @@
       synopsis = "A simple and fast bytestring packer";
       description = "A simple and fast bytestring packer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.ghc-prim)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.ghc-prim) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -41,9 +28,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.bspack)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-bspack" = {
           depends = [
@@ -52,8 +39,8 @@
             (hsPkgs.criterion)
             (hsPkgs.bspack)
             (hsPkgs.blaze-builder)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

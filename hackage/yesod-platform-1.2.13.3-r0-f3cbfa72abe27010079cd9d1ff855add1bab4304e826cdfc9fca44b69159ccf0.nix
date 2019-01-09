@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-platform";
-        version = "1.2.13.3";
-      };
+      identifier = { name = "yesod-platform"; version = "1.2.13.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Meta package for Yesod (deprecated)";
       description = "This is no longer the recommended approach for installing Yesod. Please see <http://www.yesodweb.com/page/quickstart> for more information on how to use Stackage Server <http://www.stackage.org/> instead>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -158,7 +149,7 @@
           (hsPkgs.yesod-routes)
           (hsPkgs.yesod-static)
           (hsPkgs.yesod-test)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

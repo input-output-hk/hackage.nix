@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lua-bc";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "lua-bc"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "2015 Galois, Inc.";
       maintainer = "emertens@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Lua bytecode parser";
       description = "Lua bytecode parser";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.vector)
           (hsPkgs.containers)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

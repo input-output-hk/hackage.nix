@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "mmark-cli";
-        version = "0.0.3.0";
-      };
+      identifier = { name = "mmark-cli"; version = "0.0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Command line interface to MMark markdown processor";
       description = "Command line interface to MMark markdown processor.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mmark" = {
@@ -40,8 +31,8 @@
             (hsPkgs.stache)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

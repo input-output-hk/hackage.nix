@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "monoids";
-        version = "0.1.25";
-      };
+      identifier = { name = "monoids"; version = "0.1.25"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Monoids, specialized containers and a general map/reduce framework";
       description = "Monoids, specialized containers and a general map/reduce framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.array)
           (hsPkgs.reflection)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

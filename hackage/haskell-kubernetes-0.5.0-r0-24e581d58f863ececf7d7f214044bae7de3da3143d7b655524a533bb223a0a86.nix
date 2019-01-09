@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-kubernetes";
-        version = "0.5.0";
-      };
+      identifier = { name = "haskell-kubernetes"; version = "0.5.0"; };
       license = "MIT";
       copyright = "2016 - SoundCloud Ltd.";
       maintainer = "Aaron Levin <aaron.levin@soundcloud.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings to the Kubernetes API (via swagger-codegen)";
       description = "This project contains haskell bindings to the v1 Kubernetes api generated via <https://github.com/swagger-api/swagger-codegen swagger-codegen>. The client and (mock) server generated use the <https://github.com/haskell-servant/servant servant> project, thanks to the work of <(https://github.com/algas Masahiro Yamauchi>!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

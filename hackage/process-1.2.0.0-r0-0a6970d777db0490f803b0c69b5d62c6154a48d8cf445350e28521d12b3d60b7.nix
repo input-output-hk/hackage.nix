@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "process";
-        version = "1.2.0.0";
-      };
+      identifier = { name = "process"; version = "1.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "libraries@haskell.org";
@@ -22,7 +13,7 @@
       synopsis = "Process libraries";
       description = "This package contains libraries for dealing with system processes.";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,10 +21,10 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.deepseq)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
+        };
       };
-    };
-  }
+    }

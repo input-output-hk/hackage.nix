@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "monad-supply";
-        version = "0.1";
-      };
+      identifier = { name = "monad-supply"; version = "0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Geoff Hulette <ghulette@gmail.com>";
@@ -22,13 +13,6 @@
       synopsis = "Stateful supply monad.";
       description = "Support for computations which consume values from a (possibly infinite) supply.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "teams";
-        version = "0.0.1";
-      };
+      identifier = { name = "teams"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "aditya DOT mahajan AT yale DOT edu";
@@ -22,7 +13,7 @@
       synopsis = "Graphical modeling tools for sequential teams";
       description = "Graphical modeling tools for sequential teams";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.fgl)
           (hsPkgs.containers)
           (hsPkgs.graphviz)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

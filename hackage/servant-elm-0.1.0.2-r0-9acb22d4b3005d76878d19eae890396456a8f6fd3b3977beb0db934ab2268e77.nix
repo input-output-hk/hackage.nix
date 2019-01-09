@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-elm";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "servant-elm"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 Matt Bray";
       maintainer = "mattjbray@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Automatically derive Elm functions to query servant webservices.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.servant-foreign)
           (hsPkgs.text)
           (hsPkgs.elm-export)
-        ];
-      };
+          ];
+        };
       tests = {
         "servant-elm-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.hspec)
             (hsPkgs.servant)
             (hsPkgs.servant-elm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

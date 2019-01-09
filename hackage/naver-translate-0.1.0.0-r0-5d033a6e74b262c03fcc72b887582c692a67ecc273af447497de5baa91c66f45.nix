@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "naver-translate";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "naver-translate"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2015 Hong Minhee";
       maintainer = "hongminhee@member.fsf.org";
@@ -22,7 +13,7 @@
       synopsis = "Interface to Naver Translate";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.wreq)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

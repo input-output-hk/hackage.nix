@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ihs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ihs"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "2017 Daniel Mendler";
       maintainer = "Daniel Mendler <mail@daniel-mendler.de>";
@@ -22,15 +13,8 @@
       synopsis = "Interpolated Haskell";
       description = "This abomination allows you to quickly generate text files in a style similar to ERB from Ruby or PHP. But you stay typesafe!";
       buildType = "Simple";
-    };
-    components = {
-      exes = {
-        "ihs" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
-        };
       };
-    };
-  }
+    components = {
+      exes = { "ihs" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; }; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "higher-leveldb";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "higher-leveldb"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@jeremyhuffman.com";
@@ -22,7 +13,7 @@
       synopsis = "A rich monadic API for working with leveldb databases.";
       description = "A rich monadic API for working with leveldb databases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.data-default)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.lifted-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

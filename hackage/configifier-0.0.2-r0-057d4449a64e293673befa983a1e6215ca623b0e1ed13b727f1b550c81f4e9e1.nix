@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { profiling = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "configifier";
-        version = "0.0.2";
-      };
+      identifier = { name = "configifier"; version = "0.0.2"; };
       license = "AGPL-3.0-only";
       copyright = "zerobuzz.net";
       maintainer = "Matthias Fischmann <mf@zerobuzz.net>";
@@ -22,7 +13,7 @@
       synopsis = "parser for config files, shell variables, command line args.";
       description = "WARNING NOT READY FOR USE YET.  JUST PUTTING IT OUT THERE TO HAVE A DISCUSSION.\n\nRead runtime configuration from files, command line, and shell\nenvironment in a uniform, canonical, and flexible way.  Inspired\nby, among others, Configurator, cmdargs, optparse-applicative.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "configifier-example" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.string-conversions)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.string-conversions)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

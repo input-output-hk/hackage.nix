@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bamboo-plugin-highlight";
-        version = "2009.6.9";
-      };
+      identifier = { name = "bamboo-plugin-highlight"; version = "2009.6.9"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "bamboo-plugin-highlight";
       description = "A standard hack middleware that highlights source code automaticaly";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.xhtml)
           (hsPkgs.hxt)
           (hsPkgs.mps)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hgrev";
-        version = "0.1.1";
-      };
+      identifier = { name = "hgrev"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "luke@hoersten.org";
@@ -22,7 +13,7 @@
       synopsis = "Template Haskell splices for including the current Mercurial revision info in code.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.filepath)
           (hsPkgs.process)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

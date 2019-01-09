@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-test-quickcheck";
-        version = "0.1.8.1";
-      };
+      identifier = { name = "cabal-test-quickcheck"; version = "0.1.8.1"; };
       license = "MIT";
       copyright = "(c) 2013-2017 Timothy Jones";
       maintainer = "Timothy Jones <tim@zmthy.net>";
@@ -22,14 +13,10 @@
       synopsis = "QuickCheck for Cabal";
       description = "Support for QuickCheck with the 'detailed' Cabal testing interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.Cabal)
-          (hsPkgs.QuickCheck)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.Cabal) (hsPkgs.QuickCheck) ];
+        };
       };
-    };
-  }
+    }

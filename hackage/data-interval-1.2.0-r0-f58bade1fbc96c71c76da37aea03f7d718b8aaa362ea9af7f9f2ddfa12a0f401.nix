@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-interval";
-        version = "1.2.0";
-      };
+      identifier = { name = "data-interval"; version = "1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "masahiro.sakai@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Interval arithmetic for both open and closed intervals";
       description = "Interval datatype and interval arithmetic for Haskell.\nUnlike the intervals package (<http://hackage.haskell.org/package/intervals>),\nthis package provides both open and closed intervals and is intended to be used\nwith exact number types such as Rational and Integer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
           (hsPkgs.extended-reals)
-        ];
-      };
+          ];
+        };
       tests = {
         "TestInterval" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestIntegerInterval" = {
           depends = [
             (hsPkgs.base)
@@ -58,8 +49,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

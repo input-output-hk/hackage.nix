@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "QuasiText";
-        version = "0.1.2.6";
-      };
+      identifier = { name = "QuasiText"; version = "0.1.2.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "eleventynine@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A QuasiQuoter for Text.";
       description = "A QuasiQuoter for interpolating values into Text strings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.attoparsec)
           (hsPkgs.text)
           (hsPkgs.th-lift-instances)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

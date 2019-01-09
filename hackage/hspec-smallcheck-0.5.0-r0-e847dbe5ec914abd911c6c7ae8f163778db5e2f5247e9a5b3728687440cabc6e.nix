@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hspec-smallcheck";
-        version = "0.5.0";
-      };
+      identifier = { name = "hspec-smallcheck"; version = "0.5.0"; };
       license = "MIT";
       copyright = "(c) 2013-2018 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "SmallCheck support for the Hspec testing framework";
       description = "SmallCheck support for the Hspec testing framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.call-stack)
           (hsPkgs.hspec-core)
           (hsPkgs.smallcheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.hspec-core)
             (hsPkgs.hspec-smallcheck)
             (hsPkgs.smallcheck)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.HUnit)
@@ -54,8 +45,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-core)
             (hsPkgs.smallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

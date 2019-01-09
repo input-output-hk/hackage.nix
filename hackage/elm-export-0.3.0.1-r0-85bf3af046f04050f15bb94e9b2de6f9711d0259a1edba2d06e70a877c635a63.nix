@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "elm-export";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "elm-export"; version = "0.3.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2015-2016 Kris Jenkins";
       maintainer = "kris.jenkins@clearercode.com";
@@ -22,7 +13,7 @@
       synopsis = "A library to generate Elm types from Haskell source.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "elm-export-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

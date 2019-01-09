@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lens-toml-parser";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "lens-toml-parser"; version = "0.1.0.3"; };
       license = "ISC";
       copyright = "Copyright (c) 2017-2018, Henry Till";
       maintainer = "henrytill@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lenses for toml-parser";
       description = "This library provides lenses for toml-parser.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.time)
           (hsPkgs.profunctors)
           (hsPkgs.toml-parser)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,14 +34,9 @@
             (hsPkgs.toml-parser)
             (hsPkgs.lens-family)
             (hsPkgs.lens-toml-parser)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

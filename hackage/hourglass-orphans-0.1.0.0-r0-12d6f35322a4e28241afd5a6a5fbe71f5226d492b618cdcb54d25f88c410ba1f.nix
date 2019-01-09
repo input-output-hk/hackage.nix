@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hourglass-orphans";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hourglass-orphans"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Sibi";
       maintainer = "sibi@psibi.in";
@@ -22,15 +13,11 @@
       synopsis = "Orphan Aeson instances to hourglass";
       description = "Orphan Aeson instances to hourglass";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hourglass)
-          (hsPkgs.aeson)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.hourglass) (hsPkgs.aeson) ];
+        };
       tests = {
         "hourglass-orphans-test" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.hspec-expectations)
             (hsPkgs.hourglass)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

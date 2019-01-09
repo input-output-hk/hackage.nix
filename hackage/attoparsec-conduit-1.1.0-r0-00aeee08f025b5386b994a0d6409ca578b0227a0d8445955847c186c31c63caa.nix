@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "attoparsec-conduit";
-        version = "1.1.0";
-      };
+      identifier = { name = "attoparsec-conduit"; version = "1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,13 +13,8 @@
       synopsis = "Consume attoparsec parsers via conduit. (deprecated)";
       description = "Consume attoparsec parsers via conduit.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.conduit)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.conduit) ]; };
+      };
+    }

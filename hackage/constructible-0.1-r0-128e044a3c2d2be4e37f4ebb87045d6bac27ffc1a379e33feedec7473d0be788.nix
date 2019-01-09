@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "constructible";
-        version = "0.1";
-      };
+      identifier = { name = "constructible"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "© 2013 Anders Kaseorg";
       maintainer = "Anders Kaseorg <andersk@mit.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Exact computation with constructible real numbers";
       description = "The constructible reals are the subset of the real numbers that can\nbe represented exactly using field operations (addition,\nsubtraction, multiplication, division) and positive square roots.\nThey support exact computations, equality comparisons, and ordering.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.base)
           (hsPkgs.binary-search)
           (hsPkgs.complex-generic)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

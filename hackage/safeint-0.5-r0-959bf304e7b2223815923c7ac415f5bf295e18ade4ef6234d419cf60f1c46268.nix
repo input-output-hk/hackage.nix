@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "safeint";
-        version = "0.5";
-      };
+      identifier = { name = "safeint"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 Well-Typed LLP";
       maintainer = "Andres Loeh <andres@well-typed.com>";
@@ -22,14 +13,9 @@
       synopsis = "overflow-checked Int type";
       description = "Defines a variant of Haskell's Int type that is overflow-checked. If\nan overflow or arithmetic error occurs, a run-time exception is thrown.\n\nCurrently still in an experimental stage. Everything can change.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) ]; };
       tests = {
         "TestSafeInt" = {
           depends = [
@@ -40,8 +26,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.safeint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "c-mosquitto";
-        version = "0.1.4.0";
-      };
+      identifier = { name = "c-mosquitto"; version = "0.1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2017(c) Marcin Tolysz";
       maintainer = "tolysz@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simpe mosquito MQTT binding able to work with the Amazons IoT";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,25 +22,18 @@
           (hsPkgs.primitive)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
-        ];
+          ];
         libs = [ (pkgs."mosquitto") ];
-      };
+        };
       exes = {
         "c-mosquitto" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.c-mosquitto)
-            (hsPkgs.options)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.c-mosquitto) (hsPkgs.options) ];
+          };
         };
-      };
       tests = {
         "c-mosquitto-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.c-mosquitto)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.c-mosquitto) ];
+          };
         };
       };
-    };
-  }
+    }

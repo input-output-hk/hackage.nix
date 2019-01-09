@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "deptrack-devops";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "deptrack-devops"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "2017 Lucas DiCioccio";
       maintainer = "lucas@dicioccio.fr";
@@ -22,7 +13,7 @@
       synopsis = "DepTrack applied to DevOps.";
       description = "Describe your infrastructure with a directed-acyclic graph. Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.safe)
           (hsPkgs.stm)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

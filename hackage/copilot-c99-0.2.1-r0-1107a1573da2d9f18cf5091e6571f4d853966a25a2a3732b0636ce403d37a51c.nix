@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "copilot-c99";
-        version = "0.2.1";
-      };
+      identifier = { name = "copilot-c99"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "leepike@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "A compiler for Copilot targeting C99.";
       description = "This is a back-end from Copilot to the Atom DSL. Please see README.mk for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.random)
           (hsPkgs.text)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       exes = {
         "copilot-c99-qc" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.random)
             (hsPkgs.text)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rei";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "rei"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "Process lists easily";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "rei" = {
@@ -34,8 +25,8 @@
             (hsPkgs.directory)
             (hsPkgs.containers)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

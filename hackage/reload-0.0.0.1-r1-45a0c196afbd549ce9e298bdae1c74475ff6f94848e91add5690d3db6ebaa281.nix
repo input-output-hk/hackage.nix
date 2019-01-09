@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reload";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "reload"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 JP Moresmau";
       maintainer = "jpmoresmau@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A web based Haskell IDE";
       description = "Provides a web based Haskell IDE, on top of Ghcid";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,16 +41,11 @@
           (hsPkgs.process)
           (hsPkgs.async)
           (hsPkgs.data-default)
-        ];
-      };
-      exes = {
-        "reload-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.reload)
           ];
         };
-      };
+      exes = {
+        "reload-exe" = { depends = [ (hsPkgs.base) (hsPkgs.reload) ]; };
+        };
       tests = {
         "reload-test" = {
           depends = [
@@ -90,8 +76,8 @@
             (hsPkgs.process)
             (hsPkgs.async)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

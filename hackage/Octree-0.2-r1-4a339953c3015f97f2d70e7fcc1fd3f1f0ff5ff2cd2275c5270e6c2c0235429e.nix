@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Octree";
-        version = "0.2";
-      };
+      identifier = { name = "Octree"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright by Michal J. Gajda '2012";
       maintainer = "mjgajda@googlemail.com";
@@ -22,14 +13,10 @@
       synopsis = "Simple unbalanced Octree for storing data about 3D points";
       description = "Octree data structure is relatively shallow data structure for space partitioning.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.AC-Vector)
-          (hsPkgs.QuickCheck)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.AC-Vector) (hsPkgs.QuickCheck) ];
+        };
       };
-    };
-  }
+    }

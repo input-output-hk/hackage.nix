@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "htvm";
-        version = "0.1.1";
-      };
+      identifier = { name = "htvm"; version = "0.1.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "grrwlf@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "TVM bindings.";
       description = "This library provides interface to TVM Runtime, and experimental\nEDSL for building models with TVM.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,16 +33,10 @@
           (hsPkgs.bytestring)
           (hsPkgs.directory)
           (hsPkgs.temporary)
-        ];
-        libs = [
-          (pkgs."tvm_runtime")
-          (pkgs."dl")
-          (pkgs."pthread")
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+          ];
+        libs = [ (pkgs."tvm_runtime") (pkgs."dl") (pkgs."pthread") ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -67,13 +52,9 @@
             (hsPkgs.directory)
             (hsPkgs.temporary)
             (hsPkgs.text)
-          ];
-          libs = [
-            (pkgs."tvm_runtime")
-            (pkgs."dl")
-            (pkgs."pthread")
-          ];
+            ];
+          libs = [ (pkgs."tvm_runtime") (pkgs."dl") (pkgs."pthread") ];
+          };
         };
       };
-    };
-  }
+    }

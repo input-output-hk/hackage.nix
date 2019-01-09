@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "qudb";
-        version = "0.0.0";
-      };
+      identifier = { name = "qudb"; version = "0.0.0"; };
       license = "LGPL-3.0-only";
       copyright = "";
       maintainer = "Jan Stępień";
@@ -22,7 +13,7 @@
       synopsis = "Quite Useless DB";
       description = "QUDB is a simple relational database meant to be a Haskell equivalent of\nthe SQLite executable. It currently supports a minimal subset of SQL. See the\n`test` directory for examples of accepted queries.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "qudb" = {
@@ -33,12 +24,12 @@
             (hsPkgs.snappy)
             (hsPkgs.deepseq)
             (hsPkgs.directory)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.happy)
-            (hsPkgs.buildPackages.alex)
-          ];
+            ((hsPkgs.buildPackages).happy)
+            ((hsPkgs.buildPackages).alex)
+            ];
+          };
         };
       };
-    };
-  }
+    }

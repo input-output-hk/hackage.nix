@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sfml-audio";
-        version = "0.2.1816.0";
-      };
+      identifier = { name = "sfml-audio"; version = "0.2.1816.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "shahn@joyridelabs.de";
@@ -22,7 +13,7 @@
       synopsis = "minimal bindings to the audio module of sfml";
       description = "Provides a very minimal interface to the audio module of sfml.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
@@ -30,8 +21,8 @@
           (pkgs."stdc++")
           (pkgs."sndfile")
           (pkgs."pthread")
-        ] ++ pkgs.lib.optional (system.isLinux) (pkgs."openal")) ++ pkgs.lib.optional (system.isWindows) (pkgs."openal32");
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."OpenAL");
+          ] ++ (pkgs.lib).optional (system.isLinux) (pkgs."openal")) ++ (pkgs.lib).optional (system.isWindows) (pkgs."openal32");
+        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenAL");
+        };
       };
-    };
-  }
+    }

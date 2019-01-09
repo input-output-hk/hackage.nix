@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "librato";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "librato"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to the Librato API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.attoparsec)
           (hsPkgs.uri-templater)
           (hsPkgs.either)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

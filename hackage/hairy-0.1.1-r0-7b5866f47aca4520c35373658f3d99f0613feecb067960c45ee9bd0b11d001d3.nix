@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hairy";
-        version = "0.1.1";
-      };
+      identifier = { name = "hairy"; version = "0.1.1"; };
       license = "MIT";
       copyright = "2014 Taylor Fausak <taylor@fausak.me>";
       maintainer = "Taylor Fausak <taylor@fausak.me>";
@@ -22,7 +13,7 @@
       synopsis = "A RESTful CRUD web app.";
       description = "A RESTful CRUD web app.\n\nCheck out <https://github.com/tfausak/hairy#readme the readme> for\ndocumentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,16 +33,9 @@
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
-        ];
-      };
-      exes = {
-        "hairy" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hairy)
           ];
         };
-      };
+      exes = { "hairy" = { depends = [ (hsPkgs.base) (hsPkgs.hairy) ]; }; };
       tests = {
         "hspec" = {
           depends = [
@@ -65,9 +49,9 @@
             (hsPkgs.time)
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -81,8 +65,8 @@
             (hsPkgs.time)
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

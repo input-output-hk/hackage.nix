@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cless";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "cless"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 Hideyuki Tanaka";
       maintainer = "tanaka.hideyuki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Colorized LESS";
       description = "Print file contents with syntax highlighting";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cless" = {
@@ -34,8 +25,8 @@
             (hsPkgs.terminfo)
             (hsPkgs.optparse-applicative)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

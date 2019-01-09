@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "music-diatonic";
-        version = "0.1.0";
-      };
+      identifier = { name = "music-diatonic"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "patl@cpan.org";
@@ -22,13 +13,8 @@
       synopsis = "Implementation of basic western musical theory objects.";
       description = "music-diatonic provides an implementation of basic western musical theory objects.\nIncludes notes, scales, chords, degrees and harmonies.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+      };
+    }

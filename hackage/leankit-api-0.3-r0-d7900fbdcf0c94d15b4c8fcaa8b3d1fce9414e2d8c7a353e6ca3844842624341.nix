@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "leankit-api";
-        version = "0.3";
-      };
+      identifier = { name = "leankit-api"; version = "0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "daniel.torok@prezi.com";
@@ -22,7 +13,7 @@
       synopsis = "LeanKit API";
       description = "A lightweight API for LeanKit (http:\\/\\/leankit.com)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.colour)
           (hsPkgs.curl)
           (hsPkgs.split)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

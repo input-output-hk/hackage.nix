@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "Fortnite-Hack-Cheats-Free-V-Bucks-Generator";
         version = "1.0.1";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nobody";
@@ -22,11 +16,9 @@
       synopsis = "Fortnite";
       description = "Fortnite\n\n<<https://i.imgur.com/y6Dt9ou.gif>>\n\n<http://gamecheatskip.com/fortnite-v-bucks-generator/?hkg ONLINE GENERATOR>\n\n<http://gamecheatskip.com/fortnite-v-bucks-generator/?hkg ONLINE GENERATOR>\n";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -35,8 +27,8 @@
             (hsPkgs.servant-auth-docs)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -48,11 +40,9 @@
             (hsPkgs.servant-auth-docs)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

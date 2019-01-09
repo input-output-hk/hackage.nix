@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ABList";
-        version = "0.0.2";
-      };
+      identifier = { name = "ABList"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Dylan Just, Travis Cardwell";
       maintainer = "Dylan Just";
@@ -22,15 +13,11 @@
       synopsis = "An alternating list of two types";
       description = "An alternating list of two types";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.linear)
-          (hsPkgs.newtype)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.linear) (hsPkgs.newtype) ];
+        };
       tests = {
         "the-tests" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

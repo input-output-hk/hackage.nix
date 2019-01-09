@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "haskell-cnc";
-        version = "0.1";
-      };
+      identifier = { name = "haskell-cnc"; version = "0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2009-2010 Intel Corporation";
       maintainer = "Ryan Newton <rrnewton@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Library for parallel programming in the Intel Concurrent Collections paradigm.";
       description = "Intel (Concurrent Collections) CnC is a data-flow like\ndeterministic parallel programming model, similar to\nstream-processing but in which nodes in the computation graph share data in tables.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,16 +27,12 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.HUnit)
           (hsPkgs.QuickCheck)
-        ];
-      };
-      exes = {
-        "runAllTests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.process)
           ];
         };
+      exes = {
+        "runAllTests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.process) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http2-client-grpc";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "http2-client-grpc"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Lucas DiCioccio";
       maintainer = "lucas@dicioccio.fr";
@@ -22,7 +13,7 @@
       synopsis = "Implement gRPC-over-HTTP2 clients.";
       description = "Uses http2-client and proto-lens to generate client code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,15 +31,12 @@
           (hsPkgs.text)
           (hsPkgs.tls)
           (hsPkgs.zlib)
-        ];
-      };
-      tests = {
-        "http2-client-grpc-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.http2-client-grpc)
           ];
         };
+      tests = {
+        "http2-client-grpc-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.http2-client-grpc) ];
+          };
+        };
       };
-    };
-  }
+    }

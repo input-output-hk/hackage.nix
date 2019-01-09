@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { perf = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distributed-process-extras";
-        version = "0.1.1";
-      };
+      identifier = { name = "distributed-process-extras"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Tim Watson 2012 - 2013";
       maintainer = "watson.timothy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Cloud Haskell Extras";
       description = "Supporting library, providing common types and utilities used by the\nvarious components that make up the distributed-process-platform package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,13 +30,13 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.5") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.5") [
           (hsPkgs.template-haskell)
           (hsPkgs.derive)
           (hsPkgs.uniplate)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "InternalQueueTests" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "PrimitivesTests" = {
           depends = [
             (hsPkgs.base)
@@ -83,8 +74,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.rematch)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "TimerTests" = {
           depends = [
             (hsPkgs.base)
@@ -102,8 +93,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "LoggerTests" = {
           depends = [
             (hsPkgs.base)
@@ -132,8 +123,8 @@
             (hsPkgs.transformers)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

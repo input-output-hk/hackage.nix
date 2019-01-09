@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hdevtools";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "hdevtools"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "See AUTHORS file";
       maintainer = "mutantlemon@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Persistent GHC powered background server for FAST haskell development tools";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hdevtools" = {
@@ -37,8 +28,8 @@
             (hsPkgs.network)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "table";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "table"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "dhchoi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple tool to generate tables from DSV input";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "table" = {
@@ -32,8 +23,8 @@
             (hsPkgs.split)
             (hsPkgs.process)
             (hsPkgs.csv)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

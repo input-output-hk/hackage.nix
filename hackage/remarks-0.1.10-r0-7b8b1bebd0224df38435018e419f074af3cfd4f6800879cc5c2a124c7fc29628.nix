@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "remarks";
-        version = "0.1.10";
-      };
+      identifier = { name = "remarks"; version = "0.1.10"; };
       license = "BSD-3-Clause";
       copyright = "2017 DIKU";
       maintainer = "oleks@oleks.info";
@@ -22,7 +13,7 @@
       synopsis = "A DSL for marking student work";
       description = "A DSL for marking student work; see README.md for further details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.GenericPretty)
           (hsPkgs.pretty)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "remarks" = {
           depends = [
@@ -40,9 +31,9 @@
             (hsPkgs.GenericPretty)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "remarks-test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-golden)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

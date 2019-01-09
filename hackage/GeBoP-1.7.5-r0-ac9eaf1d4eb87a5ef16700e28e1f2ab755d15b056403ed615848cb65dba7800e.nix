@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "GeBoP";
-        version = "1.7.5";
-      };
+      identifier = { name = "GeBoP"; version = "1.7.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "wxHaskell developer mailing list <wxhaskell-devel@lists.sourceforge.net>";
@@ -22,7 +13,7 @@
       synopsis = "Several games";
       description = "The games: Ataxx, Bamp, Halma, Hez, Kram, Nim, Reversi, TicTacToe and Zenix";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "gebop" = {
@@ -33,8 +24,8 @@
             (hsPkgs.random)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

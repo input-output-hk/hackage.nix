@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-togo";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "json-togo"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "srijs@airpost.net";
@@ -22,7 +13,7 @@
       synopsis = "Effectful parsing of JSON documents";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.attoparsec-trans)
           (hsPkgs.vector)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

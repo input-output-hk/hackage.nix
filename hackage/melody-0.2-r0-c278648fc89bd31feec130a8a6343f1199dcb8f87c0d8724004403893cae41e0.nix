@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "melody";
-        version = "0.2";
-      };
+      identifier = { name = "melody"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "danny.gratzer@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A functional scripting language";
       description = "A scripting language meant to replace\nshell modeled after Joy.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,16 +24,9 @@
           (hsPkgs.parsec)
           (hsPkgs.either)
           (hsPkgs.ParsecTools)
-        ];
-      };
-      exes = {
-        "imelody" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.melody)
           ];
         };
-      };
+      exes = { "imelody" = { depends = [ (hsPkgs.base) (hsPkgs.melody) ]; }; };
       tests = {
         "test-melody" = {
           depends = [
@@ -53,8 +37,8 @@
             (hsPkgs.mtl)
             (hsPkgs.HUnit)
             (hsPkgs.melody)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

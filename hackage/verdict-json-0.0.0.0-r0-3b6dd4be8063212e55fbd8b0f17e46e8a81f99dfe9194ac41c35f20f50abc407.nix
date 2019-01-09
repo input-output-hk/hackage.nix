@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "verdict-json";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "verdict-json"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Julian K. Arni";
       maintainer = "jkarni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON instances and JSON Schema for verdict";
       description = "DO NOT USE! Unstable, not thoroughly tested.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "Example" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.verdict-json)
             (hsPkgs.containers)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.verdict)
             (hsPkgs.verdict-json)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

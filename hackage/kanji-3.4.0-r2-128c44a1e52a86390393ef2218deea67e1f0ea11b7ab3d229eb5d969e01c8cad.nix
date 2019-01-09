@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kanji";
-        version = "3.4.0";
-      };
+      identifier = { name = "kanji"; version = "3.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2011 - 2018 Colin Woodbury";
       maintainer = "colingw@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Perform 漢字検定 (Japan Kanji Aptitude Test) level analysis on Japanese Kanji";
       description = "Perform 漢字検定 (Japan Kanji Aptitude Test) level analysis on Japanese Kanji.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.hashable)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "kanji" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "kanji-test" = {
           depends = [
@@ -61,9 +52,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "kanji-bench" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.criterion)
             (hsPkgs.kanji)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

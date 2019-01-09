@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "loshadka";
-        version = "0.1";
-      };
+      identifier = { name = "loshadka"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "somu@so.mu";
@@ -22,7 +13,7 @@
       synopsis = "Minecraft 1.7 server proxy that answers to queries when the server is offline";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "loshadka" = {
@@ -37,8 +28,8 @@
             (hsPkgs.process)
             (hsPkgs.cryptohash)
             (hsPkgs.hex)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

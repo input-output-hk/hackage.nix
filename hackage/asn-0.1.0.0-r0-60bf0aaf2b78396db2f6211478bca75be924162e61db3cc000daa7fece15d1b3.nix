@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "asn";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "asn"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2018 Layer 3 Communications, Andrew Martin";
       maintainer = "chessai <chessai1996@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "asn type and encoding/decoding";
       description = "asn type and encoding/decoding api";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.primitive)
           (hsPkgs.scientific)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

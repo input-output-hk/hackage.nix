@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "diagrams-gtk";
-        version = "0.6";
-      };
+      identifier = { name = "diagrams-gtk"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "John Lato";
       maintainer = "diagrams-discuss@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Backend for rendering diagrams directly to GTK windows";
       description = "An optional add-on to the diagrams-cairo package\nwhich allows rendering diagrams directly to GTK windows.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.diagrams-lib)
           (hsPkgs.diagrams-cairo)
           (hsPkgs.gtk)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

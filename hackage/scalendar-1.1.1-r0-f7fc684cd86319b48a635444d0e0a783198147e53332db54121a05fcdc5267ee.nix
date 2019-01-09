@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scalendar";
-        version = "1.1.1";
-      };
+      identifier = { name = "scalendar"; version = "1.1.1"; };
       license = "MIT";
       copyright = "2017 Stack Builders Inc.";
       maintainer = "Stack Builders <hackage@stackbuilders.com>";
@@ -22,7 +13,7 @@
       synopsis = "This is a library for handling calendars and resource availability\nbased on the \"top-nodes algorithm\" and set operations.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.time)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "scalendar-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.time)
             (hsPkgs.containers)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

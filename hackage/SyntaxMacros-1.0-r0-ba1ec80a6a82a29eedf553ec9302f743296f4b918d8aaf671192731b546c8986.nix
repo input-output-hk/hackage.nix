@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "SyntaxMacros";
-        version = "1.0";
-      };
+      identifier = { name = "SyntaxMacros"; version = "1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Universiteit Utrecht";
       maintainer = "Marcos Viera <mviera@fing.edu.uy>";
@@ -22,7 +13,7 @@
       synopsis = "Syntax Macros in the form of an EDSL";
       description = "Library of first-class Syntax Macros";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.uulib)
           (hsPkgs.containers)
           (hsPkgs.HList)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

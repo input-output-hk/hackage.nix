@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ruler-core";
-        version = "1.0";
-      };
+      identifier = { name = "ruler-core"; version = "1.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Arie Middelkoop";
       maintainer = "Arie Middelkoop <ariem@cs.uu.nl>";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Ruler-core Attribute Grammar";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "ruler-core" = {
@@ -38,8 +29,8 @@
             (hsPkgs.mtl)
             (hsPkgs.fgl)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      author-test = false;
-    };
+    flags = { author-test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "boring-window-switcher";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "boring-window-switcher"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Toshio Ito <debug.ito@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "A boring window switcher.";
       description = "A boring window switcher. See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,24 +21,21 @@
           (hsPkgs.X11)
           (hsPkgs.transformers)
           (hsPkgs.gtk)
-        ];
-      };
-      exes = {
-        "boring-window-switcher" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.boring-window-switcher)
           ];
         };
-      };
+      exes = {
+        "boring-window-switcher" = {
+          depends = [ (hsPkgs.base) (hsPkgs.boring-window-switcher) ];
+          };
+        };
       tests = {
         "author-spec" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.boring-window-switcher)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ekg-bosun";
-        version = "1.0.0";
-      };
+      identifier = { name = "ekg-bosun"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "Send ekg metrics to a Bosun instance";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.vector)
           (hsPkgs.wreq)
           (hsPkgs.old-locale)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

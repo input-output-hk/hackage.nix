@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-locale = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tttool";
-        version = "0.1";
-      };
+      identifier = { name = "tttool"; version = "0.1"; };
       license = "MIT";
       copyright = "2013-2014 Joachim Breitner";
       maintainer = "mail@joachim-breitner.de";
@@ -22,7 +13,7 @@
       synopsis = "Working with files for the Tiptoi® pen";
       description = "The Ravensburger Tiptoi® pen is programmed via special\nfiles. Their file format has been reverse engineered; this\nis a tool to analyse and create such files.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tttool" = {
@@ -40,13 +31,10 @@
             (hsPkgs.text)
             (hsPkgs.parsec)
             (hsPkgs.yaml)
-          ] ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
+            ] ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
+          };
         };
       };
-    };
-  }
+    }

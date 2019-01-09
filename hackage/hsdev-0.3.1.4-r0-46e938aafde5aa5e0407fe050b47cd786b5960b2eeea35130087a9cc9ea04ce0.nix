@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { docs = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsdev";
-        version = "0.3.1.4";
-      };
+      identifier = { name = "hsdev"; version = "0.3.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voidex@live.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell development library";
       description = "Haskell development library and tool with support of autocompletion, symbol info, go to declaration, find references, hayoo search etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (((([
@@ -75,25 +66,25 @@
           (hsPkgs.uniplate)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [
             (hsPkgs.unix)
-          ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.4" && (compiler.isGhc && compiler.version.lt "8.5")) [
+            ])) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.4" && (compiler.isGhc && (compiler.version).lt "8.5")) [
           (hsPkgs.ghc)
           (hsPkgs.Cabal)
-        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.2" && (compiler.isGhc && compiler.version.lt "8.3")) [
+          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.2" && (compiler.isGhc && (compiler.version).lt "8.3")) [
           (hsPkgs.ghc)
           (hsPkgs.Cabal)
-        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0" && (compiler.isGhc && compiler.version.lt "8.2")) [
+          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.0" && (compiler.isGhc && (compiler.version).lt "8.2")) [
           (hsPkgs.ghc)
           (hsPkgs.Cabal)
-        ]) ++ pkgs.lib.optionals (flags.docs) [
+          ]) ++ (pkgs.lib).optionals (flags.docs) [
           (hsPkgs.hdocs)
           (hsPkgs.haddock-api)
           (hsPkgs.haddock-library)
-        ];
-      };
+          ];
+        };
       exes = {
         "hsdev" = {
           depends = [
@@ -115,9 +106,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -136,8 +127,8 @@
             (hsPkgs.lens)
             (hsPkgs.mtl)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

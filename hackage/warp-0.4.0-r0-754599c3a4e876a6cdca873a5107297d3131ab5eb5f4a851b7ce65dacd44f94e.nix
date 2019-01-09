@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      timeout-protection = true;
-      network-bytestring = true;
-    };
+    flags = { timeout-protection = true; network-bytestring = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "warp";
-        version = "0.4.0";
-      };
+      identifier = { name = "warp"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -25,7 +13,7 @@
       synopsis = "A fast, light-weight web server for WAI applications.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,12 +27,9 @@
           (hsPkgs.sendfile)
           (hsPkgs.http-types)
           (hsPkgs.case-insensitive)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

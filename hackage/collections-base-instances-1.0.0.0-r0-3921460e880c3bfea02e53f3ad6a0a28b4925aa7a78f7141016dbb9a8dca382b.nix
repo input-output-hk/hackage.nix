@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "collections-base-instances";
         version = "1.0.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeanphilippe.bernardy (google mail)";
@@ -22,7 +16,7 @@
       synopsis = "Useful standard collections types and related functions.";
       description = "This package provides a common API, through a consistent set of classes, to the various standard container types.\nlist, array, set, map, bytestring, etc. are supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.collections-api)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "graflog";
-        version = "4.0.0";
-      };
+      identifier = { name = "graflog"; version = "4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Michael A. Arnold";
       maintainer = "marnold@cj.com";
@@ -22,7 +13,7 @@
       synopsis = "Monadic correlated log events";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "graflog-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.text)
             (hsPkgs.aeson)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

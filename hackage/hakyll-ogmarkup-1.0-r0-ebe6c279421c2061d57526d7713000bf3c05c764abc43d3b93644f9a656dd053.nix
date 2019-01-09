@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hakyll-ogmarkup";
-        version = "1.0";
-      };
+      identifier = { name = "hakyll-ogmarkup"; version = "1.0"; };
       license = "MIT";
       copyright = "2016 Thomas Letan";
       maintainer = "contact@thomasletan.fr";
@@ -22,14 +13,10 @@
       synopsis = "Integrate ogmarkup document with Hakyll";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hakyll)
-          (hsPkgs.ogmarkup)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.hakyll) (hsPkgs.ogmarkup) ];
+        };
       };
-    };
-  }
+    }

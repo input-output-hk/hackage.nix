@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "progress";
-        version = "1.0";
-      };
+      identifier = { name = "progress"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 marius a. eriksen";
       maintainer = "marius a. eriksen";
@@ -22,13 +13,8 @@
       synopsis = "Simple progress tracking & projection library";
       description = "Given a some \"units of work\" and points in time,\nwe (linearly) project the time until completion\nand also keep track of progress made thus far.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
+      };
+    }

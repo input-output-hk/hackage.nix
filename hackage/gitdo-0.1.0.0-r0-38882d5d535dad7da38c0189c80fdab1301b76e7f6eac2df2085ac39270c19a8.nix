@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitdo";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "gitdo"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "matthew@quickbeam.me.uk";
@@ -22,7 +13,7 @@
       synopsis = "Create Github issues out of TODO comments in code";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "gitdo" = {
@@ -40,8 +31,8 @@
             (hsPkgs.text)
             (hsPkgs.turtle)
             (hsPkgs.wreq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

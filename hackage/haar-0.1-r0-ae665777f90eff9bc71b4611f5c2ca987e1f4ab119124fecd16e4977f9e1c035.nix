@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haar";
-        version = "0.1";
-      };
+      identifier = { name = "haar"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Amy de Buitléir 2010-2012";
       maintainer = "amy@nualeargais.ie";
@@ -22,14 +13,9 @@
       synopsis = "Haar wavelet transforms";
       description = "A Haar wavelet transform represents a sequence using\nsquare waves as basis vectors.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.split)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.split) ]; };
       tests = {
         "haar-tests" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.haar)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

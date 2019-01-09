@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monoid-subclasses";
-        version = "0.4.3.1";
-      };
+      identifier = { name = "monoid-subclasses"; version = "0.4.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013-2016 Mario Blazevic";
       maintainer = "Mario Blazevic <blamario@yahoo.com>";
@@ -22,7 +13,7 @@
       synopsis = "Subclasses of Monoid";
       description = "A hierarchy of subclasses of 'Monoid' together with their instances for all data structures from base, containers, and\ntext packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.primes)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "Main" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.monoid-subclasses)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

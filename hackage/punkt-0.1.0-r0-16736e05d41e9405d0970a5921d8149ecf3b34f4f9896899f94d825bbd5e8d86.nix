@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "punkt";
-        version = "0.1.0";
-      };
+      identifier = { name = "punkt"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "bryant@nfkb";
@@ -22,7 +13,7 @@
       synopsis = "Multilingual unsupervised sentence tokenization with Punkt.";
       description = "Multilingual unsupervised sentence tokenization with Punkt.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.regex-tdfa)
           (hsPkgs.regex-tdfa-text)
-        ];
-      };
+          ];
+        };
       tests = {
         "punkt-tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

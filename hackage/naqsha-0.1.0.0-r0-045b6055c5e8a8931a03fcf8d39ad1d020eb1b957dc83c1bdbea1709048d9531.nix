@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "naqsha";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "naqsha"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ppk@cse.iitk.ac.in";
@@ -22,7 +13,7 @@
       synopsis = "A library for working with geospatial data types.";
       description = "Naqsha is a library to work with geospatial data types like latitudes and longitudes. It provides\nsome basic operations like distance calculations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.data-default)
           (hsPkgs.groups)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.groups)
             (hsPkgs.hspec)
             (hsPkgs.naqsha)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

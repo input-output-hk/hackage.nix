@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "storable-endian";
-        version = "0.2.6";
-      };
+      identifier = { name = "storable-endian"; version = "0.2.6"; };
       license = "BSD-3-Clause";
       copyright = "Eugene Kirpichov, 2010";
       maintainer = "Eugene Kirpichov <ekirpichov@gmail.com>";
@@ -22,13 +13,10 @@
       synopsis = "Storable instances with endianness";
       description = "Storable instances with endianness";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.byteorder)
-        ] ++ [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) (hsPkgs.byteorder) ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

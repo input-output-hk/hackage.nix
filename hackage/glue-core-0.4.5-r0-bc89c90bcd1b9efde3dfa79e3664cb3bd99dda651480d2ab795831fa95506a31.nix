@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glue-core";
-        version = "0.4.5";
-      };
+      identifier = { name = "glue-core"; version = "0.4.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "github@futurenotfound.com";
@@ -22,7 +13,7 @@
       synopsis = "Make better services and clients.";
       description = "Combinator library to enhance the general functionality of services and clients.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "glue-core-tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.ekg-core)
             (hsPkgs.text)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

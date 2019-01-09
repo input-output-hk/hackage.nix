@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "test-framework-doctest";
-        version = "0.2";
-      };
+      identifier = { name = "test-framework-doctest"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sakariij@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Test.Framework wrapper for DocTest";
       description = "Test.Framework wrapper for DocTest";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.test-framework)
           (hsPkgs.test-framework-hunit)
           (hsPkgs.haddock)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.doctest)
             (hsPkgs.haddock)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

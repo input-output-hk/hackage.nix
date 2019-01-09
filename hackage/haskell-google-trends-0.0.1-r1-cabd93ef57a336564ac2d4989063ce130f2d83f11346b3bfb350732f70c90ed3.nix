@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-google-trends";
-        version = "0.0.1";
-      };
+      identifier = { name = "haskell-google-trends"; version = "0.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "contact@grzegorzgolda.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple library for accessing Google Trends";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.regex-base)
           (hsPkgs.regex-posix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

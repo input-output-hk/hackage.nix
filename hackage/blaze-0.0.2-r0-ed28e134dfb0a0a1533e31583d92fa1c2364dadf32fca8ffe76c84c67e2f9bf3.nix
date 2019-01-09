@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "blaze";
-        version = "0.0.2";
-      };
+      identifier = { name = "blaze"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,8 +13,6 @@
       synopsis = "None";
       description = "None";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

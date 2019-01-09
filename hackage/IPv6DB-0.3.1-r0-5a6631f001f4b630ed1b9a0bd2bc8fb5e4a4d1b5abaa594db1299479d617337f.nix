@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "IPv6DB";
-        version = "0.3.1";
-      };
+      identifier = { name = "IPv6DB"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017-2018 - Michel Boucey";
       maintainer = "michel.boucey@cybervisible.fr";
@@ -22,7 +13,7 @@
       synopsis = "A RESTful microService for IPv6-related data";
       description = "IPv6DB is a RESTful microservice using Redis as backend\nto store lists of IPv6 addresses and attach to each of\nthem any valuable data in a schema-free valid JSON value.\nEach resource can be permanent or TTLed.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "ipv6db" = {
           depends = [
@@ -58,9 +49,9 @@
             (hsPkgs.wai)
             (hsPkgs.wai-logger)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.vector)
             (hsPkgs.http-client)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "datadog";
-        version = "0.2.3.0";
-      };
+      identifier = { name = "datadog"; version = "0.2.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ian Duncan <ian@iankduncan.com>, Kostiantyn Rybnikov <k-bx@k-bx.com>";
@@ -22,7 +13,7 @@
       synopsis = "Datadog client for Haskell. Supports both the HTTP API and StatsD.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.unliftio)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "datadog-api-test" = {
           depends = [
@@ -78,8 +69,8 @@
             (hsPkgs.unliftio)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

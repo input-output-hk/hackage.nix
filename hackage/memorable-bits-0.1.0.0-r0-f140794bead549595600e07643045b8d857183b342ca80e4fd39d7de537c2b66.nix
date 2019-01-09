@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       data-dword-inst = true;
       network-ip-inst = true;
       cryptonite-inst = true;
       exes = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "memorable-bits";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "memorable-bits"; version = "0.1.0.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "lukec@themk.net";
@@ -27,7 +18,7 @@
       synopsis = "Generate human memorable strings from binary data.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -40,14 +31,14 @@
           (hsPkgs.split)
           (hsPkgs.random)
           (hsPkgs.mtl)
-        ] ++ pkgs.lib.optionals (flags.network-ip-inst) [
+          ] ++ (pkgs.lib).optionals (flags.network-ip-inst) [
           (hsPkgs.network-ip)
           (hsPkgs.data-dword)
-        ]) ++ pkgs.lib.optional (flags.data-dword-inst) (hsPkgs.data-dword)) ++ pkgs.lib.optionals (flags.cryptonite-inst) [
+          ]) ++ (pkgs.lib).optional (flags.data-dword-inst) (hsPkgs.data-dword)) ++ (pkgs.lib).optionals (flags.cryptonite-inst) [
           (hsPkgs.cryptonite)
           (hsPkgs.memory)
-        ];
-      };
+          ];
+        };
       exes = {
         "membits" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.cryptonite)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-memorable-bits" = {
           depends = [
@@ -70,9 +61,9 @@
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.doctest)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-memorable-bits" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.memorable-bits)
             (hsPkgs.random)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitlib-libgit2";
-        version = "3.1.0.5";
-      };
+      identifier = { name = "gitlib-libgit2"; version = "3.1.0.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Libgit2 backend for gitlib";
       description = "Libgit2 (<http://libgit2.github.com>) backend for @gitlib@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +45,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.missing-foreign);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.missing-foreign);
+        };
       tests = {
         "smoke" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.monad-logger)
             (hsPkgs.exceptions)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reflex-transformers";
-        version = "0.2";
-      };
+      identifier = { name = "reflex-transformers"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Oliver Batchelor";
       maintainer = "saulzar@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Collections and switchable Monad transformers for Reflex";
       description = "This library provides a set of Monad transformers (and instances for common transformers) on top of\nwidget switching primitives for reflex. For example ReaderT and WriterT which operate in the presence\nof widget switching, allowing you to pass inputs and outputs up and down the UI tree.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.lens)
           (hsPkgs.semigroups)
           (hsPkgs.stateWriter)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Hermes";
-        version = "0.0.3";
-      };
+      identifier = { name = "Hermes"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2010, University of Tromsø";
       maintainer = "Svein Ove Aas <svein.ove@aas.no>";
@@ -22,7 +13,7 @@
       synopsis = "Message-based middleware layer";
       description = "A middleware providing best-effort unicast, remote procedure calls,\nprobabilistic (and slow!) broadcast and automatic membership\nmanagement, meant for small to medium networks";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.unamb)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

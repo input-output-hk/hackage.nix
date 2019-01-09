@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { gsl = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hmatrix-tests";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "hmatrix-tests"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alberto Ruiz <aruiz@um.es>";
@@ -22,7 +13,7 @@
       synopsis = "Tests for hmatrix";
       description = "Tests for hmatrix";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.random)
           (hsPkgs.hmatrix)
           (hsPkgs.binary)
-        ] ++ pkgs.lib.optional (flags.gsl) (hsPkgs.hmatrix-gsl);
-      };
+          ] ++ (pkgs.lib).optional (flags.gsl) (hsPkgs.hmatrix-gsl);
+        };
       tests = {
         "hmatrix-base-testsuite" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "hmatrix-gsl-testsuite" = {
           depends = [
             (hsPkgs.base)
@@ -52,9 +43,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "hmatrix-base-benchmark" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

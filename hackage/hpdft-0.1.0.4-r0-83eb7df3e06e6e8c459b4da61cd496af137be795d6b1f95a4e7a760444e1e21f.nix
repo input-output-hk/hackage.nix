@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hpdft";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "hpdft"; version = "0.1.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "k16.shikano@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A tool for looking through PDF file using Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.containers)
           (hsPkgs.file-embed)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

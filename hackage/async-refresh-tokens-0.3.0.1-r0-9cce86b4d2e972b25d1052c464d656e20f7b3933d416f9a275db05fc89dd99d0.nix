@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "async-refresh-tokens";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "async-refresh-tokens"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Moritz Schulte";
       maintainer = "mtesseract@silverratio.net";
@@ -22,7 +13,7 @@
       synopsis = "Package implementing core logic for refreshing of expiring access tokens";
       description = "This package can be used for renewal of expiring access tokens according to user-provided actions. Tokens will be stored in a transactional variable (TVar).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.safe-exceptions)
           (hsPkgs.bytestring)
           (hsPkgs.formatting)
-        ];
-      };
+          ];
+        };
       tests = {
         "async-refresh-tokens-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

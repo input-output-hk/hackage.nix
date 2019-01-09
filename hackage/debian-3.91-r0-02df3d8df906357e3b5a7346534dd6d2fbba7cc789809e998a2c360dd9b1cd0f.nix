@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-uri = true;
-      pretty-new = true;
-    };
+    flags = { network-uri = true; pretty-new = true; };
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "debian";
-        version = "3.91";
-      };
+      identifier = { name = "debian"; version = "3.91"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -25,7 +13,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering some basic data types defined by\nthe Debian policy manual - version numbers, control file syntax, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -55,20 +43,12 @@
           (hsPkgs.Unixutils)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-uri)
-          ]
-          else [
-            (hsPkgs.network)
-          ])) ++ (if flags.pretty-new
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network) (hsPkgs.network-uri) ]
+          else [ (hsPkgs.network) ])) ++ (if flags.pretty-new
           then [ (hsPkgs.pretty) ]
-          else [
-            (hsPkgs.pretty)
-            (hsPkgs.prettyclass)
-          ]);
-      };
+          else [ (hsPkgs.pretty) (hsPkgs.prettyclass) ]);
+        };
       exes = {
         "fakechanges" = {
           depends = [
@@ -76,8 +56,8 @@
             (hsPkgs.debian)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "debian-report" = {
           depends = [
             (hsPkgs.base)
@@ -85,16 +65,12 @@
             (hsPkgs.HaXml)
             (hsPkgs.unix)
             (hsPkgs.pretty)
-          ];
-        };
+            ];
+          };
         "apt-get-build-depends" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.debian)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.debian) (hsPkgs.process) ];
+          };
         };
-      };
       tests = {
         "debian-tests" = {
           depends = [
@@ -104,13 +80,10 @@
             (hsPkgs.parsec)
             (hsPkgs.regex-tdfa)
             (hsPkgs.text)
-          ] ++ (if flags.pretty-new
+            ] ++ (if flags.pretty-new
             then [ (hsPkgs.pretty) ]
-            else [
-              (hsPkgs.pretty)
-              (hsPkgs.prettyclass)
-            ]);
+            else [ (hsPkgs.pretty) (hsPkgs.prettyclass) ]);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "hsbencher-codespeed";
-        version = "0.1";
-      };
+      identifier = { name = "hsbencher-codespeed"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "rrnewton@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Backend for uploading benchmark data to CodeSpeed";
       description = "The CodeSpeed project provides a performance dashboard and\nis described at 'https://github.com/tobami/codespeed'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.network)
           (hsPkgs.data-default)
           (hsPkgs.hsbencher)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

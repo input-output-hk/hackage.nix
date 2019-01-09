@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "jupyter";
-        version = "0.9.0";
-      };
+      identifier = { name = "jupyter"; version = "0.9.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.gibiansky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for creating and using Jupyter kernels.";
       description = "An implementation of the Jupyter messaging protocol, used to implement Jupyter kernels in Haskell or communicate with existing Jupyter kernels via the messaging protocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,39 +36,27 @@
           (hsPkgs.monad-control)
           (hsPkgs.async)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       exes = {
         "kernel-basic" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.jupyter)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.jupyter) ];
+          };
         "kernel-calculator" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.jupyter)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.jupyter) ];
+          };
         "kernel-stdin" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.jupyter)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.jupyter) ];
+          };
         "client-kernel-info" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.transformers)
             (hsPkgs.jupyter)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-jupyter" = {
           depends = [
@@ -98,8 +77,8 @@
             (hsPkgs.async)
             (hsPkgs.unordered-containers)
             (hsPkgs.jupyter)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

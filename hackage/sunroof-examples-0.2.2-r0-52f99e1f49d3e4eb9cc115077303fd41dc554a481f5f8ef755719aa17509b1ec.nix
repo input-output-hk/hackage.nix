@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sunroof-examples";
-        version = "0.2.2";
-      };
+      identifier = { name = "sunroof-examples"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 The University of Kansas";
       maintainer = "Jan Bracker <jbra@informatik.uni-kiel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Tests for Sunroof";
       description = "Example applications of the sunroof-compiler and sunroof-server package.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sunroof-browser-info" = {
@@ -33,8 +24,8 @@
             (hsPkgs.Boolean)
             (hsPkgs.semigroups)
             (hsPkgs.data-default)
-          ];
-        };
+            ];
+          };
         "sunroof-canvas" = {
           depends = [
             (hsPkgs.base)
@@ -42,8 +33,8 @@
             (hsPkgs.sunroof-server)
             (hsPkgs.Boolean)
             (hsPkgs.data-default)
-          ];
-        };
+            ];
+          };
         "sunroof-clock" = {
           depends = [
             (hsPkgs.base)
@@ -51,8 +42,8 @@
             (hsPkgs.Boolean)
             (hsPkgs.data-default)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "sunroof-fib" = {
           depends = [
             (hsPkgs.base)
@@ -61,8 +52,8 @@
             (hsPkgs.Boolean)
             (hsPkgs.semigroups)
             (hsPkgs.data-default)
-          ];
-        };
+            ];
+          };
         "sunroof-unit" = {
           depends = [
             (hsPkgs.sunroof-compiler)
@@ -76,16 +67,16 @@
             (hsPkgs.containers)
             (hsPkgs.stm)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "sunroof-inplace-shaker" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.directory)
             (hsPkgs.shake)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

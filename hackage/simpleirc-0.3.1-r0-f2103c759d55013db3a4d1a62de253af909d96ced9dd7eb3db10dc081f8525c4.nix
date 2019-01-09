@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "simpleirc";
-        version = "0.3.1";
-      };
+      identifier = { name = "simpleirc"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 Dominik Picheta";
       maintainer = "Dominik Picheta <dominikpicheta@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Simple IRC Library";
       description = "Simple IRC Library. This IRC Library aims to be simple and lightweight.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.containers)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.knob)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

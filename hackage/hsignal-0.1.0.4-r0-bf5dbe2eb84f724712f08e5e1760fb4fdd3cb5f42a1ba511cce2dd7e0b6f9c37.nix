@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsignal";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "hsignal"; version = "0.1.0.4"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "haskell.vivian.mcphail <at> gmail <dot> com";
@@ -22,7 +13,7 @@
       synopsis = "Signal processing";
       description = "Purely functional interface to signal processing based on hmatrix\nprovides data types for manipulating EEG data,\nincluding reading from BDF";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,9 +25,9 @@
           (hsPkgs.hmatrix)
           (hsPkgs.hstatistics)
           (hsPkgs.array)
-        ];
-        libs = pkgs.lib.optional (system.isOsx) (pkgs."gsl");
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
+          ];
+        libs = (pkgs.lib).optional (system.isOsx) (pkgs."gsl");
+        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate");
+        };
       };
-    };
-  }
+    }

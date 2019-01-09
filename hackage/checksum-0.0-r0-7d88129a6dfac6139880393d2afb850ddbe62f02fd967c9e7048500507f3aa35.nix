@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "checksum";
-        version = "0.0";
-      };
+      identifier = { name = "checksum"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@henning-thielemann.de";
@@ -22,14 +13,14 @@
       synopsis = "Compute and verify checksums of ISBN, IBAN, etc.";
       description = "Compute and verify checksums of various identifiers,\nsuch as IBAN, ISBN, EAN, Germany's Citizen Card.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.explicit-exception)
           (hsPkgs.utility-ht)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

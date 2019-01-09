@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nix-diff";
-        version = "1.0.3";
-      };
+      identifier = { name = "nix-diff"; version = "1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2017 Gabriel Gonzalez";
       maintainer = "Gabriel439@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Explain why two Nix derivations differ";
       description = "This package provides a @nix-diff@ executable which\nexplains why two Nix derivations (i.e. @*.drv@ files)\ndiffer";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "nix-diff" = {
@@ -38,8 +29,8 @@
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

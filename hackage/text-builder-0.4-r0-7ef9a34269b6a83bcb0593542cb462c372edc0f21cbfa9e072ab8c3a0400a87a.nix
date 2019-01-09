@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-builder";
-        version = "0.4";
-      };
+      identifier = { name = "text-builder"; version = "0.4"; };
       license = "MIT";
       copyright = "(c) 2017, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "An efficient strict text builder";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.text)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,24 +34,24 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "text-benchmark" = {
           depends = [
             (hsPkgs.text-builder)
             (hsPkgs.criterion)
             (hsPkgs.rerebase)
-          ];
-        };
+            ];
+          };
         "char-benchmark" = {
           depends = [
             (hsPkgs.text-builder)
             (hsPkgs.criterion)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "openssl-createkey";
-        version = "0.1";
-      };
+      identifier = { name = "openssl-createkey"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Taru Karttunen <taruti@taruti.net>";
       maintainer = "taruti@taruti.net";
@@ -22,7 +13,7 @@
       synopsis = "Create OpenSSL keypairs.";
       description = "Create OpenSSL keypairs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.directory)
           (hsPkgs.HsOpenSSL)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

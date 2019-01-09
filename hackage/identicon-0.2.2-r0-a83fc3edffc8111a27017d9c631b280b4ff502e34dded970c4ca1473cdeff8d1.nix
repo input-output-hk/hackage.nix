@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "identicon";
-        version = "0.2.2";
-      };
+      identifier = { name = "identicon"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,15 +13,15 @@
       synopsis = "Flexible generation of identicons";
       description = "Flexible generation of identicons.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.JuicyPixels)
           (hsPkgs.bytestring)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +31,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
             (hsPkgs.identicon)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.identicon)
             (hsPkgs.random)
             (hsPkgs.tf-random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

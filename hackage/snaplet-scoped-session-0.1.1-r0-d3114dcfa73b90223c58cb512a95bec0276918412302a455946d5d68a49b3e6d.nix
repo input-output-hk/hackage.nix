@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snaplet-scoped-session";
-        version = "0.1.1";
-      };
+      identifier = { name = "snaplet-scoped-session"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Justus Adam";
       maintainer = "dev@justus.science";
@@ -22,7 +13,7 @@
       synopsis = "Modularised session state for Snaplets, in a Snaplet";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.configurator)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

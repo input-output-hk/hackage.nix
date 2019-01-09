@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hdf";
-        version = "0.7";
-      };
+      identifier = { name = "hdf"; version = "0.7"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2006-2009";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell data flow library for audio processing";
       description = "Haskell data flow library for audio processing";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.filepath)
           (hsPkgs.hosc)
           (hsPkgs.process)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

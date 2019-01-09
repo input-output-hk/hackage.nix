@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      examples = false;
-      profile = false;
-    };
+    flags = { examples = false; profile = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "computational-algebra";
-        version = "0.5.1.0";
-      };
+      identifier = { name = "computational-algebra"; version = "0.5.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) Hiromi ISHII 2013";
       maintainer = "konn.jinro_at_gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Well-kinded computational algebra library, currently supporting Groebner basis.";
       description = "Dependently-typed computational algebra library for Groebner basis.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -72,16 +60,16 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
-        ];
-      };
+          ];
+        };
       exes = {
         "groebner-prof" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
             (hsPkgs.deepseq)
-          ];
-        };
+            ];
+          };
         "solve" = {
           depends = [
             (hsPkgs.MonadRandom)
@@ -98,15 +86,15 @@
             (hsPkgs.semigroups)
             (hsPkgs.sized)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "algebraic" = {
           depends = [
             (hsPkgs.algebraic-prelude)
             (hsPkgs.base)
             (hsPkgs.computational-algebra)
-          ];
-        };
+            ];
+          };
         "ipsolve" = {
           depends = [
             (hsPkgs.MonadRandom)
@@ -127,8 +115,8 @@
             (hsPkgs.sized)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "hensel-prof" = {
           depends = [
             (hsPkgs.MonadRandom)
@@ -147,8 +135,8 @@
             (hsPkgs.sized)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "sandpit-poly" = {
           depends = [
             (hsPkgs.algebra)
@@ -158,8 +146,8 @@
             (hsPkgs.semigroups)
             (hsPkgs.sized)
             (hsPkgs.type-natural)
-          ];
-        };
+            ];
+          };
         "quotient" = {
           depends = [
             (hsPkgs.algebra)
@@ -170,9 +158,9 @@
             (hsPkgs.semigroups)
             (hsPkgs.sized)
             (hsPkgs.type-natural)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-multi-table" = {
           depends = [
@@ -197,8 +185,8 @@
             (hsPkgs.transformers)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "singular-test" = {
           depends = [
             (hsPkgs.HUnit)
@@ -226,8 +214,8 @@
             (hsPkgs.text)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "monomial-order-test" = {
           depends = [
             (hsPkgs.HUnit)
@@ -246,8 +234,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "linear-test" = {
           depends = [
             (hsPkgs.HUnit)
@@ -273,8 +261,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "matrix-test" = {
           depends = [
             (hsPkgs.HUnit)
@@ -300,8 +288,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "specs" = {
           depends = [
             (hsPkgs.HUnit)
@@ -331,8 +319,8 @@
             (hsPkgs.text)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "new-div-test" = {
           depends = [
             (hsPkgs.HUnit)
@@ -357,9 +345,9 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "unipol-bench" = {
           depends = [
@@ -377,8 +365,8 @@
             (hsPkgs.sized)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "normal-bench" = {
           depends = [
             (hsPkgs.algebra)
@@ -395,8 +383,8 @@
             (hsPkgs.sized)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "elimination-bench" = {
           depends = [
             (hsPkgs.algebra)
@@ -413,8 +401,8 @@
             (hsPkgs.sized)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "quotient-bench-randomized" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -440,8 +428,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.vector)
             (hsPkgs.constraints)
-          ];
-        };
+            ];
+          };
         "monomial-order-bench" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -467,8 +455,8 @@
             (hsPkgs.transformers)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "linear-bench" = {
           depends = [
             (hsPkgs.HUnit)
@@ -497,8 +485,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "division-bench" = {
           depends = [
             (hsPkgs.HUnit)
@@ -527,8 +515,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "sugar-paper-bench" = {
           depends = [
             (hsPkgs.HUnit)
@@ -558,8 +546,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "solve-bench" = {
           depends = [
             (hsPkgs.HUnit)
@@ -589,8 +577,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "coercion-bench" = {
           depends = [
             (hsPkgs.HUnit)
@@ -620,8 +608,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "unipol-mult-bench" = {
           depends = [
             (hsPkgs.HUnit)
@@ -650,8 +638,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "unipol-div-bench" = {
           depends = [
             (hsPkgs.HUnit)
@@ -680,8 +668,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.vector)
             (hsPkgs.constraints)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

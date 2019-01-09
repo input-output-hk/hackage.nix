@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haskell-plot";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haskell-plot"; version = "0.1.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Kai Zhang <kai@kzhang.org>";
@@ -22,7 +13,7 @@
       synopsis = "A library for generating 2D plots painlessly.";
       description = "Greatly simplify the API of Chart (<http://hackage.haskell.org/package/Chart>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.Chart)
           (hsPkgs.Chart-cairo)
           (hsPkgs.Chart-gtk)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

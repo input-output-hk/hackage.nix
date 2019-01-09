@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "word-wrap";
-        version = "0.4";
-      };
+      identifier = { name = "word-wrap"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "2017 Jonathan Daugherty";
       maintainer = "cygnus@foobox.com";
@@ -22,23 +13,14 @@
       synopsis = "A library for word-wrapping";
       description = "A library for wrapping long lines of text.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.text) ]; };
       tests = {
         "word-wrap-tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.word-wrap)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.word-wrap) (hsPkgs.hspec) ];
+          };
         };
-      };
       benchmarks = {
         "word-wrap-benchmarks" = {
           depends = [
@@ -46,8 +28,8 @@
             (hsPkgs.word-wrap)
             (hsPkgs.criterion)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

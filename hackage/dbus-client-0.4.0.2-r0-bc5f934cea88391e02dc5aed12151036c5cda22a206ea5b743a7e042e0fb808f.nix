@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dbus-client";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "dbus-client"; version = "0.4.0.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Monadic and object-oriented interfaces to DBus";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.monads-tf)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

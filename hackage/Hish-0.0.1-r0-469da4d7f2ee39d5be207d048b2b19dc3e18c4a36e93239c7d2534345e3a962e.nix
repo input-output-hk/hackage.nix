@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "Hish";
-        version = "0.0.1";
-      };
+      identifier = { name = "Hish"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jaiyalas@gmail.com";
@@ -22,23 +13,15 @@
       synopsis = "";
       description = "Prompt program for Fish shell written in Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.MissingH)
-          (hsPkgs.process)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.MissingH) (hsPkgs.process) ];
+        };
       exes = {
         "hish" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.MissingH)
-            (hsPkgs.process)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.MissingH) (hsPkgs.process) ];
+          };
         };
       };
-    };
-  }
+    }

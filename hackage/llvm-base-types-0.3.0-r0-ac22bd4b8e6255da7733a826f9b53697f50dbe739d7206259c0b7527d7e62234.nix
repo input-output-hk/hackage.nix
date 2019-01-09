@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "llvm-base-types";
-        version = "0.3.0";
-      };
+      identifier = { name = "llvm-base-types"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "travitch@cs.wisc.edu";
@@ -22,7 +13,7 @@
       synopsis = "The base types for a mostly pure Haskell LLVM analysis library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,10 +31,8 @@
           (hsPkgs.pretty)
           (hsPkgs.unordered-containers)
           (hsPkgs.containers)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-pnotify";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "yesod-pnotify"; version = "0.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cutsea110@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Yet another getMessage/setMessage using pnotify jquery plugins";
       description = "Yet another getMessage/setMessage using pnotify jquery plugins";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.shakespeare-js)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

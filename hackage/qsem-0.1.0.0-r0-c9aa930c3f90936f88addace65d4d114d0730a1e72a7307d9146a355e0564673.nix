@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "qsem";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "qsem"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) The University of Glasgow 2001\n(c) chessai 2018";
       maintainer = "chessai1996@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "quantity semaphores";
       description = "simple and general quantity semaphores";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) ]; };
+      };
+    }

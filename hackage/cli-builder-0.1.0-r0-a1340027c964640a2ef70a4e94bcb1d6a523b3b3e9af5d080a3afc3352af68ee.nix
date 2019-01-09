@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-doctest = true;
-    };
+    flags = { test-doctest = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cli-builder";
-        version = "0.1.0";
-      };
+      identifier = { name = "cli-builder"; version = "0.1.0"; };
       license = "MIT";
       copyright = "2016 uecmma";
       maintainer = "developer@mma.club.uec.ac.jp";
@@ -24,7 +13,7 @@
       synopsis = "Simple project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +22,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.optparse-applicative)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec-test" = {
           depends = [
@@ -42,15 +31,15 @@
             (hsPkgs.cli-builder)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "doc-test" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctest)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctest)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filemanip)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "composable-associations-aeson";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2017 Samuel Protas";
       maintainer = "sam.protas@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Aeson ToJSON/FromJSON implementation for the types of composable-associations";
       description = "This library provides the orphan instances implementation JSON serialization for the types in\ncomposiable-associations, as well as any other Aeson-specific implementation details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.aeson)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,16 +37,16 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.composable-associations-aeson)
             (hsPkgs.doctest)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

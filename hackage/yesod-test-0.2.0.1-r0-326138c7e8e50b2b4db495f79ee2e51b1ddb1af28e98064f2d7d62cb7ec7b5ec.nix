@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      ghc7 = true;
-      blaze_html_0_5 = false;
-    };
+    flags = { ghc7 = true; blaze_html_0_5 = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-test";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "yesod-test"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Nubis <nubis@woobiz.com.ar>, Michael Snoyman";
@@ -25,7 +13,7 @@
       synopsis = "integration testing for WAI/Yesod Applications";
       description = "Behaviour Oriented integration Testing for Yesod Applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -49,15 +37,10 @@
           (hsPkgs.xml-types)
           (hsPkgs.containers)
           (hsPkgs.xml2html)
-        ] ++ [
-          (hsPkgs.base)
-        ]) ++ (if flags.blaze_html_0_5
-          then [
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-          ]
+          ] ++ [ (hsPkgs.base) ]) ++ (if flags.blaze_html_0_5
+          then [ (hsPkgs.blaze-html) (hsPkgs.blaze-markup) ]
           else [ (hsPkgs.blaze-html) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -67,8 +50,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.xml-conduit)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "afis";
-        version = "0.1.2";
-      };
+      identifier = { name = "afis"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -22,7 +13,7 @@
       synopsis = "Anti-forensic Information Splitter";
       description = "Anti-forensic Information Splitter as defined for LUKS";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.crypto-random)
           (hsPkgs.packer)
           (hsPkgs.byteable)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-afis" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.cryptohash)
             (hsPkgs.bytestring)
             (hsPkgs.byteable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

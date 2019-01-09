@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "regex-pderiv";
-        version = "0.0.9";
-      };
+      identifier = { name = "regex-pderiv"; version = "0.0.9"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2010, Kenny Zhuo Ming Lu and Martin Sulzmann";
       maintainer = "luzhuomi@gmail.com, martin.sulzmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "Regex algorithm implementation using partial derivatives";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.bitset)
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

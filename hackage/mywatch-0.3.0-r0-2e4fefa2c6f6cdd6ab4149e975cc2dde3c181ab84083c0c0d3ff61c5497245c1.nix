@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "mywatch";
-        version = "0.3.0";
-      };
+      identifier = { name = "mywatch"; version = "0.3.0"; };
       license = "MIT";
       copyright = "2016-2017, Zalora South East Asia Pte. Ltd";
       maintainer = "Igor Pashev <pashev.igor@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Web application to view and kill MySQL queries";
       description = "View and kill queries on multiple MySQL servers.\nDesigned to work behind Sproxy.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mywatch" = {
@@ -51,8 +42,8 @@
             (hsPkgs.wai-extra)
             (hsPkgs.wai-middleware-static)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

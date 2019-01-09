@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "wai-middleware-delegate";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wai-middleware-delegate"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tim.emiola@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "WAI middleware that delegates handling of requests.";
       description = "WAI middleware to intercept requests that match a predicate and\nrespond to them using other WAI Applications or proxied hosts. [WAI]\n<http://hackage.haskell.org/package/wai>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.text)
           (hsPkgs.wai)
           (hsPkgs.wai-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "integration-test" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.wai-middleware-delegate)
             (hsPkgs.warp)
             (hsPkgs.warp-tls)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

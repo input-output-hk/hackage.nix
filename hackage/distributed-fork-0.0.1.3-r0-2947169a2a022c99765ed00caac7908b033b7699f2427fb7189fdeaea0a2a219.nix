@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "distributed-fork";
-        version = "0.0.1.3";
-      };
+      identifier = { name = "distributed-fork"; version = "0.0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "Utku Demir";
       maintainer = "Utku Demir <me@utdemir.com>";
@@ -22,7 +13,7 @@
       synopsis = "Like 'forkIO', but uses remote machines instead of local threads.";
       description = "This library provides a way to offload a computation to another machine.\n\nIt uses pluggable 'Backend''s to spawn remote executors. It currently only supports AWS Lambda using <http://hackage.haskell.org/package/distributed-fork-aws-lambda distributed-fork-aws-lambda> library.\n\nSee <https://github.com/utdemir/distributed-fork README> for the rationale behind the library and \"Control.Distributed.Fork\" module for the usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.terminal-size)
           (hsPkgs.transformers)
           (hsPkgs.typed-process)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

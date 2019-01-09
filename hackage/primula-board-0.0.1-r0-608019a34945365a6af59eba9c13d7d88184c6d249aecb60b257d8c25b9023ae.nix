@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "primula-board";
-        version = "0.0.1";
-      };
+      identifier = { name = "primula-board"; version = "0.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "newanon@yandex.ru";
@@ -22,7 +13,7 @@
       synopsis = "ImageBoard on Happstack and HSP";
       description = "Simple ImageBoard like wakaba on Happstack and HSP.\nMessages on board sended via jabber-bot\n(primula-bot package). Settings stored in\n~/.primularc file.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "primula-board" = {
@@ -44,8 +35,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.MissingH)
             (hsPkgs.happstack-state)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

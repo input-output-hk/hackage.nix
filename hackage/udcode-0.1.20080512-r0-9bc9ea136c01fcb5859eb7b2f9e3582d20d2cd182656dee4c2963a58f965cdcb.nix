@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "udcode";
-        version = "0.1.20080512";
-      };
+      identifier = { name = "udcode"; version = "0.1.20080512"; };
       license = "BSD-3-Clause";
       copyright = "Mark Jason Dominus, Walt \"BMeph\" Rorie-Baety";
       maintainer = "black.meph@gmail.com";
@@ -22,8 +13,6 @@
       synopsis = "Uniquely-decodeable codes";
       description = "A Haskell-based write-up of Mark Jason Dominus' perl UDCode package.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

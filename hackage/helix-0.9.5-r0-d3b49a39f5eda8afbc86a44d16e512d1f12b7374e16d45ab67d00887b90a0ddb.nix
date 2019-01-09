@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "helix";
-        version = "0.9.5";
-      };
+      identifier = { name = "helix"; version = "0.9.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "ajnsit@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Web development micro framework for haskell with typesafe URLs";
       description = "A web development micro framework for haskell that provides easy to use typesafe URLs. See README for more information. Also see examples/ directory for usage examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.cookie)
           (hsPkgs.data-default-class)
           (hsPkgs.vault)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.hspec-wai-json)
             (hsPkgs.text)
             (hsPkgs.helix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

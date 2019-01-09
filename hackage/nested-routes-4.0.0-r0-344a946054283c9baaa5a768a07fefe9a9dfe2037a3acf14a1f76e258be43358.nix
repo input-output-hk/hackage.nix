@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      example = false;
-      example-stm = false;
-    };
+    flags = { example = false; example-stm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nested-routes";
-        version = "4.0.0";
-      };
+      identifier = { name = "nested-routes"; version = "4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Declarative, compositional Wai responses";
       description = "A method to writing Wai responses\n\nThis library attempts to make it easier to write nice Wai response handlers\nby giving us a Sinatra/\n<https://hackage.haskell.org/package/scotty Scotty>-like syntax for declaring HTTP-verb oriented\nroutes, in addition to file-extension handling and rose-tree like composition.\nNot only do we have literal route specification, like\n<https://hackage.haskell.org/package/scotty Scotty> &\n<https://hackage.haskell.org/package/spock Spock>, but we\ncan also embed\n<https://hackage.haskell.org/package/attoparsec Attoparsec>\nparsers and <https://hackage.haskell.org/package/regex-compat Regular Expressions>\n/directly/ in our routes, with our handlers\nreflecting their results. You can find more information in the\n<https://www.fpcomplete.com/user/AthanClark/nested-routes demo>.\nand the examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -58,8 +46,8 @@
           (hsPkgs.poly-arity)
           (hsPkgs.sets)
           (hsPkgs.errors)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -92,8 +80,8 @@
             (hsPkgs.poly-arity)
             (hsPkgs.sets)
             (hsPkgs.errors)
-          ];
-        };
+            ];
+          };
         "example-stm" = {
           depends = [
             (hsPkgs.base)
@@ -138,9 +126,9 @@
             (hsPkgs.data-default)
             (hsPkgs.blaze-builder)
             (hsPkgs.base64-bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -172,8 +160,8 @@
             (hsPkgs.http-types)
             (hsPkgs.sets)
             (hsPkgs.errors)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "protolude-lifted";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "protolude-lifted"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Piotr Bogdan";
       maintainer = "ppbogdan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Protolude with lifted-base and lifted-async.";
       description = "Protolude with lifted-base and lifted-async.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.protolude)
           (hsPkgs.lifted-base)
           (hsPkgs.lifted-async)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-exceptions";
-        version = "0.1.1";
-      };
+      identifier = { name = "servant-exceptions"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Sebastian Nagel";
       maintainer = "sebastian.nagel@ncoding.at";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Extensible exceptions for servant APIs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.servant-server)
           (hsPkgs.text)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.servant-exceptions)
             (hsPkgs.text)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

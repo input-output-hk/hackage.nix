@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hackage-mirror";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hackage-mirror"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "FPComplete";
       maintainer = "tim@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple mirroring utility for Hackage";
       description = "Package allows you to mirror all of hackage to your own s3 bucket.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.thyme)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "hackage-mirror" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.hackage-mirror)
             (hsPkgs.monad-logger)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

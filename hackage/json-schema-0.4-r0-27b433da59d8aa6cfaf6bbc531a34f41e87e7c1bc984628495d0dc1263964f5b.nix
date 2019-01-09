@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "json-schema";
-        version = "0.4";
-      };
+      identifier = { name = "json-schema"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Types and type classes for defining JSON schemas.";
       description = "Types and type classes for defining JSON schemas.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.generic-deriving)
           (hsPkgs.tagged)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

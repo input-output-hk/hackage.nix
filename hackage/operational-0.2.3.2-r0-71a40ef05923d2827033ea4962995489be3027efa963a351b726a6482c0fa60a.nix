@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = true;
-    };
+    flags = { buildexamples = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "operational";
-        version = "0.2.3.2";
-      };
+      identifier = { name = "operational"; version = "0.2.3.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Heinrich Apfelmus 2010-2013";
       maintainer = "Heinrich Apfelmus <apfelmus quantentunnel de>";
@@ -24,18 +13,13 @@
       synopsis = "Implementation of difficult monads made easy\nwith operational semantics.";
       description = "This library makes it easy to implement monads with tricky control flow.\n\nThis is useful for: writing web applications in a sequential style, programming games with a uniform interface for human and AI players and easy replay capababilities, implementing fast parser monads, designing monadic DSLs, etc.\n\nSee the project homepage <http://haskell.org/haskellwiki/Operational> for a more detailed introduction and features.\n\nRelated packages: MonadPrompt <http://hackage.haskell.org/package/MonadPrompt>.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; };
       exes = {
         "operational-TicTacToe" = {
-          depends = pkgs.lib.optional (flags.buildexamples) (hsPkgs.random);
+          depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs.random);
+          };
         };
       };
-    };
-  }
+    }

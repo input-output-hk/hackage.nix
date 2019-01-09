@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "text-json-qq";
-        version = "0.1.1";
-      };
+      identifier = { name = "text-json-qq"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "oscar.finnsson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Json Quasiquatation for Haskell.";
       description = "@text-json-qq@ provides json quasiquatation for Haskell.\n\nThis package expose the function @jsonQQ@ that compile time converts json code into a @Text.JSON.JSValue@.\n@jsonQQ@ got the signature\n\n> jsonQQ :: QuasiQuoter.\n\nConsult documentation in the module @Text.JSON.QQ@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.json)
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

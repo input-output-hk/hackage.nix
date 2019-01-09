@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "geniserver";
-        version = "0.24.1.1";
-      };
+      identifier = { name = "geniserver"; version = "0.24.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "geni-users@loria.fr";
@@ -22,7 +13,7 @@
       synopsis = "Simple HTTP server for GenI results";
       description = "Simple HTTP server for GenI results";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.text)
           (hsPkgs.GenI)
-        ];
-      };
+          ];
+        };
       exes = {
         "geniserver" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.snap-core)
             (hsPkgs.snap-server)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

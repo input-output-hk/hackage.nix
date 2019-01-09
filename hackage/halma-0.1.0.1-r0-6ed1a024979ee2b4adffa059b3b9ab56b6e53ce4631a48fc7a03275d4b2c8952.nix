@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "halma";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "halma"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2014-2015 Tim Baumann";
       maintainer = "tim@timbaumann.info";
@@ -22,7 +13,7 @@
       synopsis = "Library implementing Halma rules";
       description = "Rules and `diagrams`-based renderer for the board game Halma on a hexagonal grid.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.diagrams-lib)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       exes = {
         "halma" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.async)
             (hsPkgs.data-default)
             (hsPkgs.timeit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

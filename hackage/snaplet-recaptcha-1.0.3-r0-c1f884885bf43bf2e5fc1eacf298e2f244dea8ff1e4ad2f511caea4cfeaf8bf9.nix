@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snaplet-recaptcha";
-        version = "1.0.3";
-      };
+      identifier = { name = "snaplet-recaptcha"; version = "1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mike Ledger <eleventynine@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A ReCAPTCHA verification snaplet with Heist integration and connection sharing.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.configurator)
           (hsPkgs.text)
           (hsPkgs.http-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

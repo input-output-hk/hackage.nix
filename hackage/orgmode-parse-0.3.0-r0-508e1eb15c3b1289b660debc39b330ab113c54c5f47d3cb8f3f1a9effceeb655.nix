@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "orgmode-parse";
-        version = "0.3.0";
-      };
+      identifier = { name = "orgmode-parse"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Parnell Springmeyer <parnell@digitalmentat.com>";
@@ -22,7 +13,7 @@
       synopsis = "A collection of Attoparsec combinators for parsing org-mode\nflavored documents.";
       description = "<<https://travis-ci.org/ixmatus/orgmode-parse.svg?branch=master>>\n\n`orgmode-parse` is a parsing library for the org-mode flavor of\ndocument markup.\n\nThe provided Attoparsec combinators parse the human-readable and\ntextual representation into a simple AST.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.text)
           (hsPkgs.thyme)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.neat-interpolation)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

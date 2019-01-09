@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sparrow";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "sparrow"; version = "0.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Local Cooking Inc.";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "Unified streaming dependency management for web apps";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/sparrow#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -62,8 +53,8 @@
           (hsPkgs.websockets)
           (hsPkgs.websockets-simple)
           (hsPkgs.wuss)
-        ];
-      };
+          ];
+        };
       tests = {
         "sparrow-test" = {
           depends = [
@@ -104,8 +95,8 @@
             (hsPkgs.websockets)
             (hsPkgs.websockets-simple)
             (hsPkgs.wuss)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

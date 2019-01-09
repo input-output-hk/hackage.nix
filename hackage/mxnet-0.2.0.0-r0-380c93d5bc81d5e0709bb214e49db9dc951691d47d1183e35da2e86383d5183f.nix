@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mxnet";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "mxnet"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2016-2017 Tao He";
       maintainer = "sighingnow@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "MXNet interface in Haskell.";
       description = "MXNet interface in Haskell via CFFI.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,12 +23,10 @@
           (hsPkgs.template-haskell)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
         libs = [ (pkgs."mxnet") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "mxnet-test" = {
           depends = [
@@ -46,8 +35,8 @@
             (hsPkgs.vector)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

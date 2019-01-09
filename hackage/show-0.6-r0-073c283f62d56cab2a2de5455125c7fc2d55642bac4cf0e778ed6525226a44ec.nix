@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "show";
-        version = "0.6";
-      };
+      identifier = { name = "show"; version = "0.6"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Lambdabot developers";
@@ -22,15 +13,12 @@
       synopsis = "'Show' instances for Lambdabot";
       description = "Show instances for functions and IO procedures";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-          ]
+          then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

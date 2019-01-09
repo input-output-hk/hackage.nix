@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "clippard";
-        version = "0.1.1";
-      };
+      identifier = { name = "clippard"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "i@raynes.me";
@@ -22,13 +13,13 @@
       synopsis = "A simple Haskell library for copying text to the clipboard in a cross-platform way.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.process)
-        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Clipboard);
+          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Clipboard);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "term-rewriting";
-        version = "0.1.2.2";
-      };
+      identifier = { name = "term-rewriting"; version = "0.1.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "haskell-rewriting@informatik.uibk.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "Term Rewriting Library";
       description = "Yet Another Term Rewriting Library.\n\nThis library provides basic data types and functionality for first order\nterm rewriting.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.mtl)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.containers)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

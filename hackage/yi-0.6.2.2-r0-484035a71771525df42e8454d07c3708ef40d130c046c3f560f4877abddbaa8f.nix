@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       ghcinterpreter = false;
@@ -15,13 +9,10 @@
       cocoa = true;
       gnome = true;
       testing = true;
-    };
+      };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yi";
-        version = "0.6.2.2";
-      };
+      identifier = { name = "yi"; version = "0.6.2.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -31,7 +22,7 @@
       synopsis = "The Haskell-Scriptable Editor";
       description = "Yi is a text editor written in Haskell and extensible in Haskell. The goal of the Yi project is\nto provide a flexible, powerful, and correct editor for haskell hacking.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
@@ -70,28 +61,26 @@
             (hsPkgs.utf8-string)
             (hsPkgs.uniplate)
             (hsPkgs.unix-compat)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (flags.vty && !system.isWindows) (hsPkgs.vty)) ++ pkgs.lib.optionals (flags.pango) ([
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (flags.vty && !system.isWindows) (hsPkgs.vty)) ++ (pkgs.lib).optionals (flags.pango) ([
             (hsPkgs.gtk)
             (hsPkgs.glib)
-          ] ++ pkgs.lib.optional (flags.gnome) (hsPkgs.gconf))) ++ pkgs.lib.optionals (flags.cocoa) [
+            ] ++ (pkgs.lib).optional (flags.gnome) (hsPkgs.gconf))) ++ (pkgs.lib).optionals (flags.cocoa) [
             (hsPkgs.HOC)
             (hsPkgs.HOC-AppKit)
             (hsPkgs.HOC-Foundation)
-          ]) ++ pkgs.lib.optional (flags.ghcinterpreter) (hsPkgs.hint)) ++ pkgs.lib.optionals (flags.scion) [
+            ]) ++ (pkgs.lib).optional (flags.ghcinterpreter) (hsPkgs.hint)) ++ (pkgs.lib).optionals (flags.scion) [
             (hsPkgs.ghc)
             (hsPkgs.ghc-syb)
             (hsPkgs.scion)
-          ]) ++ pkgs.lib.optionals (flags.ghcapi) [
+            ]) ++ (pkgs.lib).optionals (flags.ghcapi) [
             (hsPkgs.ghc)
             (hsPkgs.old-time)
-          ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.cautious-file)) ++ pkgs.lib.optionals (flags.testing) [
+            ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.cautious-file)) ++ (pkgs.lib).optionals (flags.testing) [
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.alex)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          };
         };
       };
-    };
-  }
+    }

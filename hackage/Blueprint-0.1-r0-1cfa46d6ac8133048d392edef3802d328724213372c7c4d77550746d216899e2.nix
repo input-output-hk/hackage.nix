@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Blueprint";
-        version = "0.1";
-      };
+      identifier = { name = "Blueprint"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Gregory Crosswhite";
       maintainer = "gcross@phys.washington.edu";
@@ -22,8 +13,6 @@
       synopsis = "Preview of a new build system.";
       description = "Preview of a new build system.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

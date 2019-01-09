@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hjsonpointer";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "hjsonpointer"; version = "0.3.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@housejeffries.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON Pointer library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,17 +23,13 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
-      exes = {
-        "example" = {
-          depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.hjsonpointer)
           ];
         };
-      };
+      exes = {
+        "example" = {
+          depends = [ (hsPkgs.aeson) (hsPkgs.base) (hsPkgs.hjsonpointer) ];
+          };
+        };
       tests = {
         "unit" = {
           depends = [
@@ -57,8 +44,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

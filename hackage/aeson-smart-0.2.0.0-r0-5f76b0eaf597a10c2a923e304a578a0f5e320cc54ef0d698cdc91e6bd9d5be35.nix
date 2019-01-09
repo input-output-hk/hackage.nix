@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aeson-smart";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "aeson-smart"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "amsay@amsay.net";
@@ -22,7 +13,7 @@
       synopsis = "Smart derivation of Aeson instances";
       description = "Aeson-smart generates ToJSON and FromJSON instances that ignore extra fields\nand fill in missing fields with default values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

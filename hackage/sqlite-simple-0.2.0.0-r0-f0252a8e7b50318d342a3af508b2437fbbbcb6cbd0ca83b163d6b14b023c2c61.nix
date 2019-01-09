@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sqlite-simple";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "sqlite-simple"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 MailRank, Inc.,\n(c) 2011-2012 Leon P Smith,\n(c) 2012 Janne Hellsten";
       maintainer = "Janne Hellsten <jjhellst@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Mid-Level SQLite client library";
       description = "Mid-level SQLite client library, based on postgresql-simple.\n\nSee <http://github.com/nurpax/sqlite-simple> for usage examples &\nmore information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.time)
           (hsPkgs.old-locale)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.direct-sqlite)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

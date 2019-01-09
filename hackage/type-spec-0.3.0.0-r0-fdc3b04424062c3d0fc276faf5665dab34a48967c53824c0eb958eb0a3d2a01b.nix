@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "type-spec";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "type-spec"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Sven Heyll";
       maintainer = "sven.heyll@gmail.com";
@@ -22,21 +13,11 @@
       synopsis = "Type Level Specification by Example";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.pretty)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.pretty) ]; };
       tests = {
-        "examples" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.type-spec)
-          ];
+        "examples" = { depends = [ (hsPkgs.base) (hsPkgs.type-spec) ]; };
         };
       };
-    };
-  }
+    }

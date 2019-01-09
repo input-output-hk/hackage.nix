@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tofromxml";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tofromxml"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Robert Reitmeier";
       maintainer = "Robert Reitmeier <concat [\"public\",\" a t \",\"thinking-machines\",\"dot\",\".net\"]>";
@@ -22,7 +13,7 @@
       synopsis = "Reading/writing Haskell data from/to XML";
       description = "A library for reading/writing Haskell data from/to XML. Only prerequisite is that the data type derives Generic.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.hexpat)
           (hsPkgs.containers)
           (hsPkgs.array)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hexpat-pickle)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

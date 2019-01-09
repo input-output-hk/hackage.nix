@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "PBKDF2";
-        version = "0.3";
-      };
+      identifier = { name = "PBKDF2"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008 Thomas Hartman";
       maintainer = "Thomas Hartman <thomashartman1 at gmail>";
@@ -22,7 +13,7 @@
       synopsis = "Make password-based security schemes more secure.";
       description = "Implementation of Password-Based Key Derivation Function, aka pbkdf2, from RSA labs.\nI'll deprecate this if it gets folded into an already-existing crypto package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.Crypto)
           (hsPkgs.haskell98)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

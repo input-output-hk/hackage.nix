@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "scion-browser";
-        version = "0.4.1";
-      };
+      identifier = { name = "scion-browser"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "JP Moresmau (jpmoresmau@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Command-line interface for browsing and searching packages documentation";
       description = "Scion Browser aims to be a command-line interface for getting information about installed Haskell packages, that could be later used by development environments. It also provides integration with Hoogle. By now, it has been integrated in EclipseFP.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -53,14 +44,14 @@
           (hsPkgs.monad-logger)
           (hsPkgs.ghc-pkg-lib)
           (hsPkgs.http-conduit)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ [
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ [
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.bytestring)
           (hsPkgs.ghc)
-        ];
-      };
+          ];
+        };
       exes = {
         "scion-browser" = {
           depends = ([
@@ -94,14 +85,14 @@
             (hsPkgs.vector)
             (hsPkgs.ghc-pkg-lib)
             (hsPkgs.http-conduit)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ [
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ [
             (hsPkgs.containers)
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.bytestring)
             (hsPkgs.ghc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

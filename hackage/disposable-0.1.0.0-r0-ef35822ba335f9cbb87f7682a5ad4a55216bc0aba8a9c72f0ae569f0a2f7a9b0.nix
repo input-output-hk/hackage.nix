@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "disposable";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "disposable"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,13 +13,13 @@
       synopsis = "Allows storing different resource-releasing actions together.";
       description = "SomeDisposable aloows storing different resource releasing actions togther in a container.\nThis library is useful for queueing up GHCJS.Foreign.Callback together to be released\nafter a new rendering frame.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.dlist)
-        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Chart";
-        version = "1.3";
-      };
+      identifier = { name = "Chart"; version = "1.3"; };
       license = "BSD-3-Clause";
       copyright = "Tim Docker, 2006-2010";
       maintainer = "Tim Docker <tim@dockerz.net>";
@@ -22,7 +13,7 @@
       synopsis = "A library for generating 2D Charts and Plots";
       description = "A library for generating 2D Charts and Plots, with backends provided by\nCairo (<http://hackage.haskell.org/package/Chart-cairo>)\nand\nDiagrams (<http://hackage.haskell.org/package/Chart-diagrams>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.data-default-class)
           (hsPkgs.mtl)
           (hsPkgs.operational)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

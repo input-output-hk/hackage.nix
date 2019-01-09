@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glabrous";
-        version = "0.2.3";
-      };
+      identifier = { name = "glabrous"; version = "0.2.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 - Michel Boucey";
       maintainer = "michel.boucey@cybervisible.fr";
@@ -22,7 +13,7 @@
       synopsis = "A template DSL library";
       description = "A minimalistic, Mustache-like syntax, truly logic-less,\npure Text template DSL library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.either)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

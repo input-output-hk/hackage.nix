@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chan";
-        version = "0.0.0";
-      };
+      identifier = { name = "chan"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Athan Clark";
       maintainer = "athan.clark@gmail.com";
@@ -22,22 +13,13 @@
       synopsis = "Some extra kit for Chans";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.async)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.async) ]; };
       tests = {
         "chan-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.chan)
-            (hsPkgs.async)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.chan) (hsPkgs.async) ];
+          };
         };
       };
-    };
-  }
+    }

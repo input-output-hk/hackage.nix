@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unscramble";
-        version = "0.3";
-      };
+      identifier = { name = "unscramble"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "barebonesgraphics@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Solve Boggle-like word games";
       description = "Solve Boggle-like word games";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "unscramble" = {
@@ -32,8 +23,8 @@
             (hsPkgs.lens)
             (hsPkgs.mtl)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

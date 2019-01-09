@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sendgrid-v3";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "sendgrid-v3"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "buesing.marcel@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sendgrid v3 API library";
       description = "SendGrid v3 Mail API client";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.text)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

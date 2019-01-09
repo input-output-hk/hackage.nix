@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-vector";
-        version = "0.5.3";
-      };
+      identifier = { name = "pipes-vector"; version = "0.5.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Gamari <bgamari.foss@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Various proxies for streaming data into vectors";
       description = "Proxies for streaming data into vectors.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.pipes)
           (hsPkgs.vector)
           (hsPkgs.monad-primitive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

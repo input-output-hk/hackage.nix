@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "leveldb-haskell";
-        version = "0.6.4";
-      };
+      identifier = { name = "leveldb-haskell"; version = "0.6.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012-2014 The leveldb-haskell Authors";
       maintainer = "kim.altintop@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings to LevelDB";
       description = "From <http://code.google.com/p/snappy>:\n\nLevelDB is a fast key-value storage library written at Google that provides\nan ordered mapping from string keys to string values.\n\n\nThis library provides a Haskell language binding to LeveldDB. It is in very\nearly stage and has seen very limited testing.\n\nNote: as of v1.3, LevelDB can be built as a shared library. Thus, as of\nv0.1.0 of this library, LevelDB is no longer bundled and must be installed\non the target system (version 1.7 or greater is required).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,9 +24,9 @@
           (hsPkgs.filepath)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
+          ];
         libs = [ (pkgs."leveldb") ];
-      };
+        };
       exes = {
         "leveldb-example-comparator" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.transformers)
             (hsPkgs.data-default)
             (hsPkgs.leveldb-haskell)
-          ];
-        };
+            ];
+          };
         "leveldb-example-features" = {
           depends = [
             (hsPkgs.base)
@@ -53,16 +44,16 @@
             (hsPkgs.resourcet)
             (hsPkgs.data-default)
             (hsPkgs.leveldb-haskell)
-          ];
-        };
+            ];
+          };
         "leveldb-example-filterpolicy" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.data-default)
             (hsPkgs.leveldb-haskell)
-          ];
-        };
+            ];
+          };
         "leveldb-example-iterforkio" = {
           depends = [
             (hsPkgs.base)
@@ -70,9 +61,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.data-default)
             (hsPkgs.leveldb-haskell)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "leveldb-properties" = {
           depends = [
@@ -88,8 +79,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.temporary)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ats-storable";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "ats-storable"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,22 +13,13 @@
       synopsis = "Marshal ATS types into Haskell";
       description = "Facilities for sharing types between ATS and Haskell";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.composition-prelude)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.composition-prelude) ]; };
       tests = {
         "ats-generic-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ats-storable)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.ats-storable) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

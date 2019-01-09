@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Spock";
-        version = "0.6.2.3";
-      };
+      identifier = { name = "Spock"; version = "0.6.2.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 - 2014 Alexander Thiemann";
       maintainer = "mail@agrafix.net";
@@ -22,7 +13,7 @@
       synopsis = "Another Haskell web framework for rapid development";
       description = "This toolbox provides everything you need to get a quick start into web hacking with haskell: routing, middleware, json, blaze, sessions, cookies, database helper, csrf-protection, global state";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -59,8 +50,8 @@
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
           (hsPkgs.xsd)
-        ];
-      };
+          ];
+        };
       tests = {
         "spocktests" = {
           depends = [
@@ -98,8 +89,8 @@
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
             (hsPkgs.xsd)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

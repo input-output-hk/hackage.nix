@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-streams";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "binary-streams"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jon.petter.bergman@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "data serialization/deserialization io-streams library";
       description = "Allow binary serialization/deserialization using io-streams";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.io-streams)
-        ];
-      };
+          ];
+        };
       tests = {
         "encode-decode" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.binary-streams)
             (hsPkgs.QuickCheck)
             (hsPkgs.cabal-test-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "streaming-with";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "streaming-with"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "Ivan Lazar Miljenovic";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "with/bracket-style idioms for use with streaming";
       description = "This package provides the foundations for a continuation-based\napproach for dealing with resources in the streaming ecosystem.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.streaming-bytestring)
           (hsPkgs.temporary)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

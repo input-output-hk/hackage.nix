@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "linux-blkid";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "linux-blkid"; version = "0.2.0.0"; };
       license = "LGPL-2.1-only";
       copyright = "© 2013 Nicola Squartini";
       maintainer = "Nicola Squartini <tensor5@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Linux libblkid";
       description = "Bindings to the Linux libblkid library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,10 +21,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.blkid)
-        ];
+          ];
+        pkgconfig = [ (pkgconfPkgs.blkid) ];
+        };
       };
-    };
-  }
+    }

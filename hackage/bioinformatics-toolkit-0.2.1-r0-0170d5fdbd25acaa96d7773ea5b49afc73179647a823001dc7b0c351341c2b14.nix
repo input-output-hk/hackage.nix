@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "bioinformatics-toolkit";
-        version = "0.2.1";
-      };
+      identifier = { name = "bioinformatics-toolkit"; version = "0.2.1"; };
       license = "MIT";
       copyright = "(c) 2014 Kai Zhang";
       maintainer = "kai@kzhang.org";
@@ -22,7 +13,7 @@
       synopsis = "A collection of bioinformatics tools";
       description = "A collection of bioinformatics tools";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,8 +46,8 @@
           (hsPkgs.vector-algorithms)
           (hsPkgs.word8)
           (hsPkgs.IntervalMap)
-        ];
-      };
+          ];
+        };
       exes = {
         "mkindex" = {
           depends = [
@@ -64,15 +55,15 @@
             (hsPkgs.bioinformatics-toolkit)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "viewSeq" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.bioinformatics-toolkit)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "mergeMotifs" = {
           depends = [
             (hsPkgs.base)
@@ -82,9 +73,9 @@
             (hsPkgs.data-default-class)
             (hsPkgs.split)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -101,9 +92,9 @@
             (hsPkgs.conduit-combinators)
             (hsPkgs.unordered-containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -116,8 +107,8 @@
             (hsPkgs.data-default-class)
             (hsPkgs.conduit)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

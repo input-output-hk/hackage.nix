@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "postgresql-orm";
-        version = "0.3.1";
-      };
+      identifier = { name = "postgresql-orm"; version = "0.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "amit@amitlevy.com";
@@ -22,7 +13,7 @@
       synopsis = "An ORM (Object Relational Mapping) and migrations DSL for PostgreSQL.";
       description = "An ORM (Object Relational Mapping) and migrations DSL for PostgreSQL. See\n\"Database.PostgreSQL.ORM\" for documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "pg_migrate" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.postgresql-simple)
             (hsPkgs.process)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

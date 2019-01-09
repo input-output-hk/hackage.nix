@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cmdargs-browser";
-        version = "0.1.3";
-      };
+      identifier = { name = "cmdargs-browser"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2011-2013";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Helper to enter cmdargs command lines using a web browser";
       description = "Used in conjunction with a cmdargs enabled program to enter flags using a web browser,\nvia the cmdargs helper programs mechanism.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cmdargs-browser" = {
@@ -38,8 +29,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-handler-launch)
             (hsPkgs.cmdargs)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

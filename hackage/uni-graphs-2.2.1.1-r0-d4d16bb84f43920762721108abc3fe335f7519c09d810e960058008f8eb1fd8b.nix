@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "uni-graphs";
-        version = "2.2.1.1";
-      };
+      identifier = { name = "uni-graphs"; version = "2.2.1.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "chr.maeder@web.de";
@@ -22,7 +13,7 @@
       synopsis = "Graphs";
       description = "Graphs toolkit";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.uni-events)
           (hsPkgs.uni-reactor)
           (hsPkgs.uni-htk)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hoauth2";
-        version = "1.7.0";
-      };
+      identifier = { name = "hoauth2"; version = "1.7.0"; };
       license = "BSD-3-Clause";
       copyright = "Haisheng Wu";
       maintainer = "Haisheng Wu <freizl@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell OAuth2 authentication client";
       description = "Haskell OAuth2 authentication client. Tested with the following services:\n\n* Google: <https://developers.google.com/accounts/docs/OAuth2WebServer>\n\n* Github: <http://developer.github.com/v3/oauth/>\n\n* Facebook: <http://developers.facebook.com/docs/facebook-login/>\n\n* Fitbit: <http://dev.fitbit.com/docs/oauth2/>\n\n* StackExchange: <https://api.stackexchange.com/docs/authentication>\n\n* DropBox: <https://www.dropbox.com/developers/reference/oauth-guide>\n\n* Weibo: <http://open.weibo.com/wiki/Oauth2>\n\n* Douban: <http://developers.douban.com/wiki/?title=oauth2>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.uri-bytestring-aeson)
           (hsPkgs.microlens)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       exes = {
         "demo-server" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.parsec)
             (hsPkgs.hashable)
             (hsPkgs.hoauth2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "IPv6Addr";
-        version = "0.6.0.2";
-      };
+      identifier = { name = "IPv6Addr"; version = "0.6.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2011-2015 - Michel Boucey";
       maintainer = "michel.boucey@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library to deal with IPv6 address text representations.";
       description = "Library to deal with IPv6 address text representations, canonization and manipulations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.random)
           (hsPkgs.attoparsec)
           (hsPkgs.network-info)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

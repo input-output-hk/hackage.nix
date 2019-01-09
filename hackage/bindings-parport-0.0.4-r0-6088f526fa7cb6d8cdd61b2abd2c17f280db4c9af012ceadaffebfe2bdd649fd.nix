@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "bindings-parport";
-        version = "0.0.4";
-      };
+      identifier = { name = "bindings-parport"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sivaramreddy@hotmail.com";
@@ -22,16 +13,11 @@
       synopsis = "parport bindings";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-DSL)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

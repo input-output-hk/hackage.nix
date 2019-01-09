@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "SCalendar";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "SCalendar"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "sebastian0092@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "XXXX";
       description = "XXXX";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.time)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

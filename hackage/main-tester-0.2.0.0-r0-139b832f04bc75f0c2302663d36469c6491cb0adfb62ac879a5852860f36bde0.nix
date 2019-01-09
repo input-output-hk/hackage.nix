@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { doctest = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "main-tester";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "main-tester"; version = "0.2.0.0"; };
       license = "Apache-2.0";
       copyright = "2018 Yuji Yamamoto";
       maintainer = "whosekiteneverfly@gmail.com";
@@ -22,22 +13,15 @@
       synopsis = "Capture stdout/stderr/exit code, and replace stdin of your main function.";
       description = "See README.md for detail.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.directory)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.directory) ];
+        };
       tests = {
         "main-tester-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) ];
+          };
         "main-tester-test" = {
           depends = [
             (hsPkgs.base)
@@ -47,8 +31,8 @@
             (hsPkgs.hspec-core)
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

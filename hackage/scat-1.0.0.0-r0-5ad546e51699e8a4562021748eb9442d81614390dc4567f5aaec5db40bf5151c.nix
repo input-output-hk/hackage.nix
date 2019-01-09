@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "scat";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "scat"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "romain.edelmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generates unique passwords for various websites from a single password.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "scat" = {
@@ -34,8 +25,8 @@
             (hsPkgs.mtl)
             (hsPkgs.vector)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

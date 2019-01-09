@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-stream";
-        version = "0.1.0";
-      };
+      identifier = { name = "network-stream"; version = "0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Jared Hance <jaredhance@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "ByteString and Text streams for networking";
       description = "Provides bytestring and text streams which support both\nretry's and invalidation for sending information before all information\nis known. Includes support for enumerating over the chunks of bytes\nor chunks of text sent.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.network)
           (hsPkgs.stm)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

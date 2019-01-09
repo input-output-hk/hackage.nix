@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pontarius-mediaserver";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "pontarius-mediaserver"; version = "0.0.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright © Jon Kristensen, 2010-2011";
       maintainer = "jon.kristensen@pontarius.org";
@@ -22,7 +13,7 @@
       synopsis = "Extended Personal Media Network (XPMN) media server";
       description = "Pontarius Media Server will be a free and privacy-aware\nExtended Personal Media Network (XPMN) media server.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pontarius-mediaserver-test" = {
@@ -33,8 +24,8 @@
             (hsPkgs.xml-types)
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-sqlite3)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

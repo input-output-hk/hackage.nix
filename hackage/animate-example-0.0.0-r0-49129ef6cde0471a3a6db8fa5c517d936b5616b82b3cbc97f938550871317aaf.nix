@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "animate-example";
-        version = "0.0.0";
-      };
+      identifier = { name = "animate-example"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Joe Vargas";
@@ -22,7 +13,7 @@
       synopsis = "Animation for sprites";
       description = "Prototypical sprite animation with type-safety.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "animate-example" = {
@@ -36,8 +27,8 @@
             (hsPkgs.sdl2-image)
             (hsPkgs.bytestring)
             (hsPkgs.StateVar)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

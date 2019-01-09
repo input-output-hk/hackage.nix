@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-json";
-        version = "1.1.2.2";
-      };
+      identifier = { name = "yesod-json"; version = "1.1.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Generate content for Yesod using the aeson package.";
       description = "Generate content for Yesod using the aeson package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.wai-extra)
           (hsPkgs.bytestring)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.yesod-core)
             (hsPkgs.text)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "CirruParser";
-        version = "0.0.1";
-      };
+      identifier = { name = "CirruParser"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "jiyiyiyiony@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Cirru Parser in Haskell";
       description = "Cirru Parser in Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.text)
           (hsPkgs.vector)
           (hsPkgs.aeson)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

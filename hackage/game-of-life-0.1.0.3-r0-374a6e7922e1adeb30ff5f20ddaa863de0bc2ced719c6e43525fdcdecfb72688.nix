@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "game-of-life";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "game-of-life"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "marcusbuffett@me.com";
@@ -22,7 +13,7 @@
       synopsis = "Conway's Game of Life";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "game-of-life" = {
@@ -32,8 +23,8 @@
             (hsPkgs.hscurses)
             (hsPkgs.array)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

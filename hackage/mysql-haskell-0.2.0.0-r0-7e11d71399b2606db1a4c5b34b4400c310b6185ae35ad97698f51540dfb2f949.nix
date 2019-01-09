@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mysql-haskell";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "mysql-haskell"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Winterland";
       maintainer = "winterland1989@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "pure haskell MySQL driver";
       description = "pure haskell MySQL driver";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.blaze-textual)
           (hsPkgs.word24)
           (hsPkgs.tls)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.text)
             (hsPkgs.io-streams)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

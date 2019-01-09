@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rethinkdb-model";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "rethinkdb-model"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Sean Hess <seanhess@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Useful tools for modeling data with rethinkdb";
       description = "Useful tools for modeling data with rethinkdb";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
           (hsPkgs.aeson)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

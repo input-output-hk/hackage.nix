@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blunt";
-        version = "1.0.2";
-      };
+      identifier = { name = "blunt"; version = "1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak <taylor@fausak.me>";
@@ -22,7 +13,7 @@
       synopsis = "Convert between pointfree and pointful expressions.";
       description = "Blunt is a web front end to the pointfree and pointful libraries. While you\ncan install and run it locally, there's no real reason to prefer it over\nthe @pointfree@ and @pointful@ executables. Instead, use the hosted\nversion at <https://blunt.herokuapp.com blunt.herokuapp.com>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,15 +34,8 @@
           (hsPkgs.warp)
           (hsPkgs.websockets)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
-      exes = {
-        "blunt" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.blunt)
           ];
         };
+      exes = { "blunt" = { depends = [ (hsPkgs.base) (hsPkgs.blunt) ]; }; };
       };
-    };
-  }
+    }

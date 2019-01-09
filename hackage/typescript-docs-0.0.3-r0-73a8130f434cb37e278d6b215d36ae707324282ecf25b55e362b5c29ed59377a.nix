@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "typescript-docs";
-        version = "0.0.3";
-      };
+      identifier = { name = "typescript-docs"; version = "0.0.3"; };
       license = "MIT";
       copyright = "(c) DICOM Grid Inc. 2013";
       maintainer = "Phillip Freeman <paf31@cantab.net>";
@@ -22,7 +13,7 @@
       synopsis = "A documentation generator for TypeScript Definition files";
       description = "A documentation generator for TypeScript Definition files";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "typescript-docs" = {
@@ -38,8 +29,8 @@
             (hsPkgs.parsec)
             (hsPkgs.base)
             (hsPkgs.language-typescript)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

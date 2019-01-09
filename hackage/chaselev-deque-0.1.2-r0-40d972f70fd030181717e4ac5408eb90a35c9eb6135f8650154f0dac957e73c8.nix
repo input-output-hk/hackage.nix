@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "chaselev-deque";
-        version = "0.1.2";
-      };
+      identifier = { name = "chaselev-deque"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "rrnewton@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Chase & Lev work-stealing lock-free double-ended queues (deques).";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.vector)
           (hsPkgs.atomic-primops)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-chaselev-deque" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.atomic-primops)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

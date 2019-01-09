@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "loup";
-        version = "0.0.1";
-      };
+      identifier = { name = "loup"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Copyright (C) 2017 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Simple Workflow Service Wrapper for Work Pools.";
       description = "Loup is a wrapper around Amazon Simple Workflow Service for Work Pools.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,29 +28,16 @@
           (hsPkgs.turtle)
           (hsPkgs.uuid)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "loup-actor" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.loup)
-            (hsPkgs.optparse-generic)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.loup) (hsPkgs.optparse-generic) ];
+          };
         "loup-decider" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.loup)
-            (hsPkgs.optparse-generic)
-          ];
-        };
-        "shake-loup" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.shakers)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.loup) (hsPkgs.optparse-generic) ];
+          };
+        "shake-loup" = { depends = [ (hsPkgs.base) (hsPkgs.shakers) ]; };
         };
       };
-    };
-  }
+    }

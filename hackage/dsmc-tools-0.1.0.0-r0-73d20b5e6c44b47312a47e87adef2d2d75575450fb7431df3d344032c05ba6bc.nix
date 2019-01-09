@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "dsmc-tools";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dsmc-tools"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dima@dzhus.org";
@@ -22,7 +13,7 @@
       synopsis = "DSMC toolkit for rarefied gas dynamics";
       description = "CLI tools for dsmc library";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dsmc-caster" = {
@@ -33,8 +24,8 @@
             (hsPkgs.gloss)
             (hsPkgs.gloss-raster)
             (hsPkgs.strict)
-          ];
-        };
+            ];
+          };
         "dsmc-runner" = {
           depends = [
             (hsPkgs.base)
@@ -47,8 +38,8 @@
             (hsPkgs.mtl)
             (hsPkgs.repa)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

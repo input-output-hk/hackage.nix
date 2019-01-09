@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hjsonschema";
-        version = "1.8.0";
-      };
+      identifier = { name = "hjsonschema"; version = "1.8.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@housejeffries.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON Schema library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "local" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.vector)
             (hsPkgs.directory)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "remote" = {
           depends = [
             (hsPkgs.base)
@@ -88,8 +79,8 @@
             (hsPkgs.hspec)
             (hsPkgs.wai-app-static)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

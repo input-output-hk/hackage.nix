@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "DBlimited";
-        version = "0.1";
-      };
+      identifier = { name = "DBlimited"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jpmayer@seas.upenn.edu";
@@ -22,16 +13,12 @@
       synopsis = "A command-line SQL interface for flat files (tdf,csv,etc.)";
       description = "DBlimited requires a schema file defining the psuedo-tables. Each table is actually a flat file with a name, absolute path, delimiter character, and column definition.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "DBlimited" = {
-          depends = [
-            (hsPkgs.containers)
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-          ];
+          depends = [ (hsPkgs.containers) (hsPkgs.base) (hsPkgs.parsec) ];
+          };
         };
       };
-    };
-  }
+    }

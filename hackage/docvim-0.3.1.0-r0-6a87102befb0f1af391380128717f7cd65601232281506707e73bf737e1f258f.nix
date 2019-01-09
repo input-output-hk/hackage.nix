@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "docvim";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "docvim"; version = "0.3.1.0"; };
       license = "MIT";
       copyright = "2015-present Greg Hurrell";
       maintainer = "greg@hurrell.net";
@@ -22,7 +13,7 @@
       synopsis = "Documentation generator for Vim plug-ins";
       description = "Produces Vim help and HTML (via Markdown) documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,23 +28,11 @@
           (hsPkgs.parsec)
           (hsPkgs.pretty-show)
           (hsPkgs.split)
-        ];
-      };
-      exes = {
-        "docvim" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.docvim)
           ];
         };
-      };
+      exes = { "docvim" = { depends = [ (hsPkgs.base) (hsPkgs.docvim) ]; }; };
       tests = {
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
-        };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         "tasty" = {
           depends = [
             (hsPkgs.base)
@@ -74,8 +53,8 @@
             (hsPkgs.tasty-golden)
             (hsPkgs.tasty-hunit)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

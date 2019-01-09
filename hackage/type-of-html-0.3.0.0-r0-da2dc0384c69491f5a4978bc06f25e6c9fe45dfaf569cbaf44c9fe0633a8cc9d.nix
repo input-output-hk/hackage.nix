@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "type-of-html";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "type-of-html"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017, Florian Knupfer";
       maintainer = "fknupfer@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "High performance type driven html generation.";
       description = "This library makes most invalid html documents compile time errors and uses advanced type level features to realise compile time computations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.bytestring) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +26,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -51,8 +38,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.blaze-html)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xournal-parser";
-        version = "0.4";
-      };
+      identifier = { name = "xournal-parser"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Xournal file parser";
       description = "Text parser for xournal xml file";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.xml-types)
           (hsPkgs.text)
           (hsPkgs.fclabels)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

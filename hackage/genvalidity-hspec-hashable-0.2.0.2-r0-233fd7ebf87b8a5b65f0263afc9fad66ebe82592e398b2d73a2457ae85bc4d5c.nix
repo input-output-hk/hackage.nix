@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "genvalidity-hspec-hashable";
         version = "0.2.0.2";
-      };
+        };
       license = "MIT";
       copyright = "2017-2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com,\nnick.van.den.broeck666@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Standard spec's for Hashable instances";
       description = "Standard spec's for Hashable instances";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +28,8 @@
           (hsPkgs.hashable)
           (hsPkgs.hspec)
           (hsPkgs.validity)
-        ];
-      };
+          ];
+        };
       tests = {
         "genvalidity-hspec-hashable-doctests" = {
           depends = [
@@ -44,8 +38,8 @@
             (hsPkgs.doctest)
             (hsPkgs.genvalidity-hspec-hashable)
             (hsPkgs.hashable)
-          ];
-        };
+            ];
+          };
         "genvalidity-hspec-hashable-test" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -56,8 +50,8 @@
             (hsPkgs.hashable)
             (hsPkgs.hspec)
             (hsPkgs.hspec-core)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bdcs-api";
-        version = "0.1.0";
-      };
+      identifier = { name = "bdcs-api"; version = "0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "bcl@redhat.com";
@@ -22,7 +13,7 @@
       synopsis = "BDCS API Server";
       description = "This module provides an API server and library component that works with the BDCS\nproject.  It provides a web interface for clients to create, edit, and delete\nblueprints; to list the contents of the content store; to request composes from\nexisting blueprints; and to fetch the results of composes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -70,20 +61,18 @@
           (hsPkgs.wai)
           (hsPkgs.wai-cors)
           (hsPkgs.warp)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.libgit2-glib-1.0)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.libgit2-glib-1.0) ];
+        };
       exes = {
         "bdcs-api-server" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.bdcs-api)
             (hsPkgs.safe-exceptions)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -108,8 +97,8 @@
             (hsPkgs.time)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

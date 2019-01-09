@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "wai-middleware-travisci";
-        version = "0.1.0";
-      };
+      identifier = { name = "wai-middleware-travisci"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Mitchell Rosen";
       maintainer = "Mitchell Rosen <mitchellwrosen@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "WAI middleware for authenticating webhook payloads from Travis CI";
       description = "This package provides a simple WAI middleware for authenticating webhook\npayloads from @travis-ci.com@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.text)
           (hsPkgs.vault)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

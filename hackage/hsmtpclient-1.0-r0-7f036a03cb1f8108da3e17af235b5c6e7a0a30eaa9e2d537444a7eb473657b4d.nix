@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hsmtpclient";
-        version = "1.0";
-      };
+      identifier = { name = "hsmtpclient"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Massimo Zaniboni <massimo.zaniboni@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Simple SMTP Client";
       description = "A very simple SMTP Client library for sending emails.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.old-time)
           (hsPkgs.directory)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

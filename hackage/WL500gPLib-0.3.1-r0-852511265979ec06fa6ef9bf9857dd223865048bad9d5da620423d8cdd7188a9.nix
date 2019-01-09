@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "WL500gPLib";
-        version = "0.3.1";
-      };
+      identifier = { name = "WL500gPLib"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,20 +13,11 @@
       synopsis = "A simple library to access to the WL 500gP router\nfrom the Haskell code";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.curl)
-          (hsPkgs.tagsoup)
-          (hsPkgs.mtl)
-        ];
-      };
-      exes = {
-        "test" = {
-          depends = [ (hsPkgs.base) ];
+        depends = [ (hsPkgs.base) (hsPkgs.curl) (hsPkgs.tagsoup) (hsPkgs.mtl) ];
         };
+      exes = { "test" = { depends = [ (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

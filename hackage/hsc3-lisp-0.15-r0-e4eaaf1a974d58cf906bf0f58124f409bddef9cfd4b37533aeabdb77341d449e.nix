@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3-lisp";
-        version = "0.15";
-      };
+      identifier = { name = "hsc3-lisp"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2014";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "LISP SUPERCOLLIDER";
       description = "LISP SUPERCOLLIDER";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hsc3-lisp" = {
@@ -39,8 +30,8 @@
             (hsPkgs.mtl)
             (hsPkgs.safe)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "visual-graphrewrite";
-        version = "0.3";
-      };
+      identifier = { name = "visual-graphrewrite"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "zsol@elte.hu";
@@ -22,7 +13,7 @@
       synopsis = "Visualize the graph-rewrite steps of a Haskell program";
       description = "Visualize the graph-rewrite steps of a Haskell program. Currently it only shows the right-hand-sides of rewrite rules (function alternatives).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.gtk)
           (hsPkgs.svgcairo)
           (hsPkgs.cairo)
-        ];
-      };
+          ];
+        };
       exes = {
         "visual-graphrewrite" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.gtk)
             (hsPkgs.svgcairo)
             (hsPkgs.cairo)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cassava";
-        version = "0.4.2.3";
-      };
+      identifier = { name = "cassava"; version = "0.4.2.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Johan Tibell\n(c) 2012 Bryan O'Sullivan\n(c) 2011 MailRank, Inc.";
       maintainer = "johan.tibell@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A CSV parsing and encoding library";
       description = "A CSV parsing and encoding library optimized for ease of use and high\nperformance.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim));
-      };
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.2.1") ((pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim));
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim));
+            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.2.1") ((pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim));
+          };
         };
       };
-    };
-  }
+    }

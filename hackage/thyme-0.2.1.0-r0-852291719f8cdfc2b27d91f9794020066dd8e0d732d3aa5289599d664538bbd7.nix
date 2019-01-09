@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       bug-for-bug = true;
@@ -12,13 +6,10 @@
       show-internal = false;
       werror = false;
       utf8-string = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "thyme";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "thyme"; version = "0.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2013 Liyang HU";
       maintainer = "thyme@liyang.hu";
@@ -28,7 +19,7 @@
       synopsis = "A faster time library";
       description = "A faster time library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,13 +33,10 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.vector-space)
-        ] ++ (if flags.utf8-string
-          then [
-            (hsPkgs.bytestring)
-            (hsPkgs.utf8-string)
-          ]
+          ] ++ (if flags.utf8-string
+          then [ (hsPkgs.bytestring) (hsPkgs.utf8-string) ]
           else [ (hsPkgs.bytestring) ]);
-      };
+        };
       tests = {
         "sanity" = {
           depends = [
@@ -64,8 +52,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.vector-space)
-          ] ++ pkgs.lib.optional (flags.utf8-string) (hsPkgs.utf8-string);
+            ] ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs.utf8-string);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haskell-ftp";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "haskell-ftp"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yi.codeplayer@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell ftp server with configurable backend.";
       description = "See home page (https://github.com/yihuang/haskell-ftp)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.conduit)
           (hsPkgs.network-conduit)
           (hsPkgs.process-conduit)
-        ];
-      };
+          ];
+        };
       exes = {
         "simple-ftp-server" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.conduit)
             (hsPkgs.network-conduit)
             (hsPkgs.process-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "debian";
-        version = "3.14";
-      };
+      identifier = { name = "debian"; version = "3.14"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "david@seereason.com";
@@ -22,7 +13,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering almost every aspect of the Debian\npackaging system, including low level data types such as version numbers\nand dependency relations, on up to the types necessary for computing and\ninstalling build dependencies, building source and binary packages,\nand inserting them into a repository.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.zlib)
           (hsPkgs.HaXml)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       exes = {
         "fakechanges" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.zlib)
             (hsPkgs.HaXml)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "debian-report" = {
           depends = [
             (hsPkgs.base)
@@ -98,8 +89,8 @@
             (hsPkgs.zlib)
             (hsPkgs.HaXml)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "debian-versions" = {
           depends = [
             (hsPkgs.base)
@@ -123,8 +114,8 @@
             (hsPkgs.zlib)
             (hsPkgs.HaXml)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "cabal-debian" = {
           depends = [
             (hsPkgs.base)
@@ -149,8 +140,8 @@
             (hsPkgs.HaXml)
             (hsPkgs.filepath)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

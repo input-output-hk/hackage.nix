@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "warp-tls";
-        version = "2.0.3.1";
-      };
+      identifier = { name = "warp-tls"; version = "2.0.3.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "HTTP over SSL/TLS support for Warp via the TLS package";
       description = "HTTP over SSL/TLS support for Warp via the TLS package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.tls)
           (hsPkgs.network)
           (hsPkgs.cprng-aes)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

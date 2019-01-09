@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sendgrid-haskell";
-        version = "1.0";
-      };
+      identifier = { name = "sendgrid-haskell"; version = "1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "owain@owainlewis.com";
@@ -22,7 +13,7 @@
       synopsis = "Sengrid API";
       description = "A Haskell SendGrid API client";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.transformers)
           (hsPkgs.exceptions)
           (hsPkgs.monad-control)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

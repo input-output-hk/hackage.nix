@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monadiccp";
-        version = "0.7.7";
-      };
+      identifier = { name = "monadiccp"; version = "0.7.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "maik.riechert@arcor.de";
@@ -22,7 +13,7 @@
       synopsis = "Constraint Programming";
       description = "Monadic Constraint Programming framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,15 +25,10 @@
           (hsPkgs.pretty)
           (hsPkgs.parsec)
           (hsPkgs.semigroups)
-        ];
-      };
-      tests = {
-        "olympic" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.monadiccp)
           ];
         };
+      tests = {
+        "olympic" = { depends = [ (hsPkgs.base) (hsPkgs.monadiccp) ]; };
+        };
       };
-    };
-  }
+    }

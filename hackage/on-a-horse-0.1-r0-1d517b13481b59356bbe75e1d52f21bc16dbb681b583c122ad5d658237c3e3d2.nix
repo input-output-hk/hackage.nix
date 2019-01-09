@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "on-a-horse";
-        version = "0.1";
-      };
+      identifier = { name = "on-a-horse"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jason@on-a-horse.org";
@@ -22,7 +13,7 @@
       synopsis = "\"Haskell on a Horse\" - A combinatorial web framework";
       description = "Please read the introduction at http://haskell.on-a-horse.org";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.mtl)
           (hsPkgs.random)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

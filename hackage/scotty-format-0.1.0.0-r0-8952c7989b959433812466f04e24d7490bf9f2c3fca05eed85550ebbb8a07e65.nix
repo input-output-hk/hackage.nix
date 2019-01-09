@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scotty-format";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "scotty-format"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "2016 Giovanni Cappellotto";
       maintainer = "potomak84@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Response format helper for the Scotty web framework.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.http-types)
           (hsPkgs.scotty)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "scotty-format-example" = {
           depends = [
@@ -42,16 +33,13 @@
             (hsPkgs.scotty)
             (hsPkgs.scotty-format)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "scotty-format-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.scotty-format)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.scotty-format) ];
+          };
         };
       };
-    };
-  }
+    }

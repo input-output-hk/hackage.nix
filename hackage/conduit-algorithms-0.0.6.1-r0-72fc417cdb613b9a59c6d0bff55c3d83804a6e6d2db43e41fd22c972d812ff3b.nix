@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conduit-algorithms";
-        version = "0.0.6.1";
-      };
+      identifier = { name = "conduit-algorithms"; version = "0.0.6.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Luis Pedro Coelho";
@@ -22,7 +13,7 @@
       synopsis = "Conduit-based algorithms";
       description = "Algorithms on Conduits, including higher level asynchronous\nprocessing and some other utilities.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.stm)
           (hsPkgs.stm-conduit)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "catest" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

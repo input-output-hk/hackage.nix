@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "twhs";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "twhs"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "shinichiro.su@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "CLI twitter client.";
       description = "See <https://github.com/suzuki-shin/twhs/blob/master/README.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.containers)
           (hsPkgs.network)
           (hsPkgs.ansi-terminal)
-        ];
-      };
+          ];
+        };
       exes = {
         "twhs" = {
           depends = [
@@ -67,9 +58,9 @@
             (hsPkgs.containers)
             (hsPkgs.network)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.twhs)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

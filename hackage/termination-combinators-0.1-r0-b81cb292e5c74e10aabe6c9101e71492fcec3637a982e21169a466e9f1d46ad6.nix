@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "termination-combinators";
-        version = "0.1";
-      };
+      identifier = { name = "termination-combinators"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Max Bolingbroke <batterseapower@hotmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Termination combinators for forcing non-terminating algorithms to terminate";
       description = "For more information see the paper at http://www.cl.cam.ac.uk/~mb566/papers/termination-combinators-hs11.pdf";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.contravariant)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.contravariant) ];
+        };
       };
-    };
-  }
+    }

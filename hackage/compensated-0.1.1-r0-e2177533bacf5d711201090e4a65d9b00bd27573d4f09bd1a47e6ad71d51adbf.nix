@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-doctests = true;
-      lib-werror = false;
-    };
+    flags = { test-doctests = true; lib-werror = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "compensated";
-        version = "0.1.1";
-      };
+      identifier = { name = "compensated"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Compensated floating-point arithmetic";
       description = "This package provides compensated floating point arithmetic.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,11 +32,11 @@
           (hsPkgs.semigroups)
           (hsPkgs.safecopy)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -56,8 +44,8 @@
             (hsPkgs.generic-deriving)
             (hsPkgs.semigroups)
             (hsPkgs.simple-reflect)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

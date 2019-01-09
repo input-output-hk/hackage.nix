@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "stringprep";
-        version = "0.1";
-      };
+      identifier = { name = "stringprep"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "George Pollard <porges@porg.es>";
@@ -22,7 +13,7 @@
       synopsis = "Implements the \"StringPrep\" algorithm";
       description = "Implements the \"StringPrep\" algorithm";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.stream-fusion)
           (hsPkgs.text-icu)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

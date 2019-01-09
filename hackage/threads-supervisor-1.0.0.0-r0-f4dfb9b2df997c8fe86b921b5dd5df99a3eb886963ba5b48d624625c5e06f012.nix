@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "threads-supervisor";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "threads-supervisor"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "Alfredo Di Napoli";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple, IO-based library for Erlang-style thread supervision";
       description = "Simple, IO-based library for Erlang-style thread supervision";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.stm)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "threads-supervisor-tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.time)
             (hsPkgs.stm)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

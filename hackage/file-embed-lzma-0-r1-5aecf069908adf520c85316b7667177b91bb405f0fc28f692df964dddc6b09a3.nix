@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "file-embed-lzma";
-        version = "0";
-      };
+      identifier = { name = "file-embed-lzma"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2018 Futurice, 2018 Oleg Grenrus";
       maintainer = "Oleg.Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Use Template Haskell to embed (LZMA compressed) data.";
       description = "The @file-embed@ package let's embed file and dir contents.\n\nThis package is similar, but also compresses the embedded contents with LZMA.\nThat makes resulting object files smaller, at the cost of start up decompression.\n\nThere's also an 'embedRecursiveDir' function.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,16 +27,16 @@
           (hsPkgs.text)
           (hsPkgs.lzma)
           (hsPkgs.th-lift-instances)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.file-embed-lzma)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

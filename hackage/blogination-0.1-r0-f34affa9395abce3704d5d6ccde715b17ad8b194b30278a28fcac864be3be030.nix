@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "blogination";
-        version = "0.1";
-      };
+      identifier = { name = "blogination"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Very simple static blog software";
       description = "Blogination reads files written in markdown and outputs xhtml. Supports syntax highlighting. Philosophy is simplicity. Can be used as a library, in a web application for example. Intended use is a simple commandline program to run after changes are made. Ideally use darcs or git with it.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.higherorder)
           (hsPkgs.mtl)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "blogination" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.ConfigFile)
             (hsPkgs.haskell98)
             (hsPkgs.old-time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

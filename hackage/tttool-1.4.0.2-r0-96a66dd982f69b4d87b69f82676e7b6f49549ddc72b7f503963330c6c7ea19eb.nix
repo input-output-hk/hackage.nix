@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      old-locale = false;
-      bytestring_has_builder = true;
-    };
+    flags = { old-locale = false; bytestring_has_builder = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tttool";
-        version = "1.4.0.2";
-      };
+      identifier = { name = "tttool"; version = "1.4.0.2"; };
       license = "MIT";
       copyright = "2013-2015 Joachim Breitner";
       maintainer = "mail@joachim-breitner.de";
@@ -25,7 +13,7 @@
       synopsis = "Working with files for the Tiptoi® pen";
       description = "The Ravensburger Tiptoi® pen is programmed via special\nfiles. Their file format has been reverse engineered; this\nis a tool to analyse and create such files.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tttool" = {
@@ -47,20 +35,12 @@
             (hsPkgs.random)
             (hsPkgs.vector)
             (hsPkgs.yaml)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") (hsPkgs.ghc-prim)) ++ (if flags.old-locale
-            then [
-              (hsPkgs.time)
-              (hsPkgs.old-locale)
-            ]
-            else [
-              (hsPkgs.time)
-            ])) ++ (if flags.bytestring_has_builder
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.5") (hsPkgs.ghc-prim)) ++ (if flags.old-locale
+            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
+            else [ (hsPkgs.time) ])) ++ (if flags.bytestring_has_builder
             then [ (hsPkgs.bytestring) ]
-            else [
-              (hsPkgs.bytestring)
-              (hsPkgs.bytestring-builder)
-            ]);
+            else [ (hsPkgs.bytestring) (hsPkgs.bytestring-builder) ]);
+          };
         };
       };
-    };
-  }
+    }

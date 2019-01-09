@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yam-transaction-odbc";
-        version = "0.1.7";
-      };
+      identifier = { name = "yam-transaction-odbc"; version = "0.1.7"; };
       license = "BSD-3-Clause";
       copyright = "(c) Daniel YU";
       maintainer = "Daniel YU <leptonyu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Transaction ODBC Plugin";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.yam-app)
           (hsPkgs.containers)
           (hsPkgs.persistent-odbc)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      visual-tests = false;
-    };
+    flags = { visual-tests = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "prednote";
-        version = "0.32.0.6";
-      };
+      identifier = { name = "prednote"; version = "0.32.0.6"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2013-2015 Omari Norman";
       maintainer = "omari@smileystation.com";
@@ -24,7 +13,7 @@
       synopsis = "Evaluate and display trees of predicates";
       description = "Build and evaluate trees of predicates. For example, you might build\na predicate of the type Int -> Bool. You do this by assembling\nseveral predicates into a tree. You can then verbosely evaluate\nthis tree, showing why a particular result is reached.\n\nprednote also provides modules to test several subjects against a\ngiven predicate, and to parse infix or RPN expressions into a tree of\npredicates.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,11 +25,11 @@
           (hsPkgs.contravariant)
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "prednote-visual-tests" = {
-          depends = pkgs.lib.optionals (flags.visual-tests) [
+          depends = (pkgs.lib).optionals (flags.visual-tests) [
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
@@ -53,9 +42,9 @@
             (hsPkgs.contravariant)
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "prednote-tests" = {
           depends = [
@@ -71,8 +60,8 @@
             (hsPkgs.contravariant)
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

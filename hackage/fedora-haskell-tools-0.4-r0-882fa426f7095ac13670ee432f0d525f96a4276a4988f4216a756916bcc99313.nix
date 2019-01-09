@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "fedora-haskell-tools";
-        version = "0.4";
-      };
+      identifier = { name = "fedora-haskell-tools"; version = "0.4"; };
       license = "GPL-3.0-only";
       copyright = "2014-2017 Jens Petersen <petersen@fedoraproject.org>";
       maintainer = "Jens Petersen <petersen@fedoraproject.org>";
@@ -22,7 +13,7 @@
       synopsis = "Building and managing tools for Fedora Haskell";
       description = "Tools for building and managing Fedora Haskell packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "fhbuild" = {
@@ -32,14 +23,9 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.unix)
-          ];
-        };
-        "fhbz" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.time)
-          ];
-        };
+            ];
+          };
+        "fhbz" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
         "fhpkg" = {
           depends = [
             (hsPkgs.base)
@@ -47,8 +33,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

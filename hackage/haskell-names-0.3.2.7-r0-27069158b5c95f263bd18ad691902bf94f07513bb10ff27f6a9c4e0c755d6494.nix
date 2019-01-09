@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-names";
-        version = "0.3.2.7";
-      };
+      identifier = { name = "haskell-names"; version = "0.3.2.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Roman Cheplyaka <roma@ro-che.info>";
@@ -22,7 +13,7 @@
       synopsis = "Name resolution library for Haskell";
       description = "For a high-level overview of this package,\nsee <http://documentup.com/haskell-suite/haskell-names>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.traverse-with-class)
           (hsPkgs.type-eq)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.haskell-names)
             (hsPkgs.tagged)
             (hsPkgs.traverse-with-class)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

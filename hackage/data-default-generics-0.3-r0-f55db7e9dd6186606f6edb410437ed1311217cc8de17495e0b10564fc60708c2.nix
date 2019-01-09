@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-default-generics";
-        version = "0.3";
-      };
+      identifier = { name = "data-default-generics"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<jmacristovao@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A class for types with a default value";
       description = "A class for types with a default value.\nFeatures generics support to add defaults to records.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.containers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.vector)
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

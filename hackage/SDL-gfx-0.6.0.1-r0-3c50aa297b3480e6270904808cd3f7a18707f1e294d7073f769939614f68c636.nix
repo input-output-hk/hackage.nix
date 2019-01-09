@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "SDL-gfx";
-        version = "0.6.0.1";
-      };
+      identifier = { name = "SDL-gfx"; version = "0.6.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2004-2005, 2010, Lemmih";
       maintainer = "Francesco Ariis <fa-ml@ariis.it>";
@@ -22,13 +13,6 @@
       synopsis = "Binding to libSDL_gfx";
       description = "";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.SDL)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.SDL) ]; }; };
+    }

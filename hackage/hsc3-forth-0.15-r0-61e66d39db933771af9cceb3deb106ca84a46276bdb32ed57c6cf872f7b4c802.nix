@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3-forth";
-        version = "0.15";
-      };
+      identifier = { name = "hsc3-forth"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2014";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "FORTH SUPERCOLLIDER";
       description = "FORTH SUPERCOLLIDER";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hsc3-forth" = {
@@ -38,8 +29,8 @@
             (hsPkgs.hsc3-dot)
             (hsPkgs.mtl)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "standalone-haddock";
-        version = "1.1.4";
-      };
+      identifier = { name = "standalone-haddock"; version = "1.1.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "roma@ro-che.info";
@@ -22,7 +13,7 @@
       synopsis = "Generate standalone haddock documentation for a set of packages";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "standalone-haddock" = {
@@ -33,8 +24,8 @@
             (hsPkgs.directory)
             (hsPkgs.containers)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

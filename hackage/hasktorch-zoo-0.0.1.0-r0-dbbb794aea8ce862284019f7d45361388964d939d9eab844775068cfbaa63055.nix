@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      cuda = false;
-      gd = false;
-    };
+    flags = { cuda = false; gd = false; };
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "hasktorch-zoo";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "hasktorch-zoo"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sam Stites <fnz@fgvgrf.vb>, Austin Huang <nhfgvau@nyhz.zvg.rqh> - cipher:ROT13";
@@ -25,7 +13,7 @@
       synopsis = "Neural architectures in hasktorch";
       description = "Neural architectures, data loading packages, initializations, and common tensor abstractions in hasktorch.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,9 +35,7 @@
           (hsPkgs.safe-exceptions)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ] ++ (if flags.gd
-          then [ (hsPkgs.gd) ]
-          else [ (hsPkgs.JuicyPixels) ]);
+          ] ++ (if flags.gd then [ (hsPkgs.gd) ] else [ (hsPkgs.JuicyPixels) ]);
+        };
       };
-    };
-  }
+    }

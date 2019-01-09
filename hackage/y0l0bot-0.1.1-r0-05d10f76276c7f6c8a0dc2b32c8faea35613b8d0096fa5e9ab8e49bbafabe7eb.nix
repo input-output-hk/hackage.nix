@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "y0l0bot";
-        version = "0.1.1";
-      };
+      identifier = { name = "y0l0bot"; version = "0.1.1"; };
       license = "AGPL-3.0-only";
       copyright = "Alexander Berntsen 2014";
       maintainer = "alexander@plaimi.net";
@@ -22,7 +13,7 @@
       synopsis = "#plaimi's all-encompassing bot";
       description = "IRC bot used in #plaimi on irc.freenode.net.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yolobot" = {
@@ -38,8 +29,8 @@
             (hsPkgs.split)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

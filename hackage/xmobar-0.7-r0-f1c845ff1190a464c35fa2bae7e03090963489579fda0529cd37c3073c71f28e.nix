@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "xmobar";
-        version = "0.7";
-      };
+      identifier = { name = "xmobar"; version = "0.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "andrea.rossato@unibz.it";
@@ -22,7 +13,7 @@
       synopsis = "A Minimalistic Text Based Status Bar";
       description = "Xmobar is a minimalistic text based status bar.\n\nInspired by the Ion3 status bar, it supports similar features,\nlike dynamic color management, output templates, and extensibility\nthrough plugins.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "xmobar" = {
@@ -33,8 +24,8 @@
             (hsPkgs.unix)
             (hsPkgs.parsec)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HAppS-Data";
-        version = "0.9.3";
-      };
+      identifier = { name = "HAppS-Data"; version = "0.9.3"; };
       license = "BSD-3-Clause";
       copyright = "2007 HAppS LLC";
       maintainer = "AlexJacobson@HAppS.org";
@@ -22,7 +13,7 @@
       synopsis = "HAppS data manipulation libraries";
       description = "This package provides libraries for:\n\n* Deriving instances for your datatypes.\n\n* Producing default values of Haskell datatypes.\n\n* Normalizing values of Haskell datatypes.\n\n* Marshalling Haskell values to and from XML.\n\n* Marshalling Haskell values to and from HTML forms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,12 +26,9 @@
           (hsPkgs.pretty)
           (hsPkgs.binary)
           (hsPkgs.containers)
-        ] ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-          ]
+          ] ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

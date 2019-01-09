@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kafka-device-spacenav";
-        version = "0.2.1.2";
-      };
+      identifier = { name = "kafka-device-spacenav"; version = "0.2.1.2"; };
       license = "MIT";
       copyright = "(c) 2016-17 Brian W Bush";
       maintainer = "Brian W Bush <consult@brianwbush.info>";
@@ -22,7 +13,7 @@
       synopsis = "Linux SpaceNavigator events via a Kafka message broker";
       description = "This package contains functions for passing Linux device events from a SpaceNavigator \\<<http://www.3dconnexion.com/products/spacemouse/spacenavigator.html>\\> to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
           (hsPkgs.kafka-device)
-        ];
-      };
+          ];
+        };
       exes = {
         "kafka-device-spacenav" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.cereal)
             (hsPkgs.kafka-device)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

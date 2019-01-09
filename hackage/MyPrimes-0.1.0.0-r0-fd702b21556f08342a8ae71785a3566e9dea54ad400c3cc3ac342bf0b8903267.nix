@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "MyPrimes";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "MyPrimes"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "contact@afonsomatos.com";
@@ -22,30 +13,16 @@
       synopsis = "Generate all primes";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.containers)
-          (hsPkgs.base)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.containers) (hsPkgs.base) ]; };
       exes = {
         "PrimesList" = {
-          depends = [
-            (hsPkgs.containers)
-            (hsPkgs.MyPrimes)
-            (hsPkgs.base)
-          ];
+          depends = [ (hsPkgs.containers) (hsPkgs.MyPrimes) (hsPkgs.base) ];
+          };
         };
-      };
       benchmarks = {
-        "bench-foo" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.time)
-          ];
+        "bench-foo" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
         };
       };
-    };
-  }
+    }

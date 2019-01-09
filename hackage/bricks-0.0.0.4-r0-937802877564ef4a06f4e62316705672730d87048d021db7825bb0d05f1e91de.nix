@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bricks";
-        version = "0.0.0.4";
-      };
+      identifier = { name = "bricks"; version = "0.0.0.4"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bricks is a lazy functional language based on Nix.";
       description = "Bricks is a lazy functional language based on Nix.\nThis package provides parsing, rendering, and\nevaluation for the Bricks language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.parsec)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.parsec)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "evaluation" = {
           depends = [
             (hsPkgs.base)
@@ -70,8 +61,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

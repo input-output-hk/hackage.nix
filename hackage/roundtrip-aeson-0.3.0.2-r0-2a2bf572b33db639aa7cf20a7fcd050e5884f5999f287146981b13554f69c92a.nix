@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "roundtrip-aeson";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "roundtrip-aeson"; version = "0.3.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2014-2015 Anchor Systems and others.";
       maintainer = "Christian Marie";
@@ -22,7 +13,7 @@
       synopsis = "Un-/parse JSON with roundtrip invertible syntax definitions.";
       description = "Verily, Un-/parse JSON with roundtrip invertible syntax definitions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "demo" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.roundtrip-aeson)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

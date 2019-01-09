@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "toolshed";
-        version = "0.16.0.0";
-      };
+      identifier = { name = "toolshed"; version = "0.16.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "(C) 2010-2015 Dr. Alistair Ward";
       maintainer = "mailto <colon> toolshed <at> functionalley <dot> eu";
@@ -22,7 +13,7 @@
       synopsis = "Ill-defined library.";
       description = "Ill-defined unrelated utilities used by other packages from <http://functionalley.eu>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.filepath)
           (hsPkgs.QuickCheck)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       tests = {
         "quickCheck" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
             (hsPkgs.toolshed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

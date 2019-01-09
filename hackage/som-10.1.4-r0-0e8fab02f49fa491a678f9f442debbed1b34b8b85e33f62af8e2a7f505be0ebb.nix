@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "som";
-        version = "10.1.4";
-      };
+      identifier = { name = "som"; version = "10.1.4"; };
       license = "BSD-3-Clause";
       copyright = "2012-2018 Amy de Buitléir";
       maintainer = "amy@nualeargais.ie";
@@ -22,7 +13,7 @@
       synopsis = "Self-Organising Maps";
       description = "Please see the README on GitHub at <https://github.com/mhwombat/som#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.deepseq)
           (hsPkgs.grid)
-        ];
-      };
+          ];
+        };
       tests = {
         "som-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.som)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

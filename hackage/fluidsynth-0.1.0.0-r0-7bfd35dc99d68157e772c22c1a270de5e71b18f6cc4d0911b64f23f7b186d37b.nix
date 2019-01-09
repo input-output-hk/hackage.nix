@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fluidsynth";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fluidsynth"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "cds@corbinsimpson.com";
@@ -22,14 +13,11 @@
       synopsis = "Haskell bindings to FluidSynth";
       description = "Simple Haskell bindings to FluidSynth.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-DSL)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
         libs = [ (pkgs."fluidsynth") ];
+        };
       };
-    };
-  }
+    }

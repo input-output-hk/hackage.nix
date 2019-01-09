@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lxd-client";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "lxd-client"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2017 Henri Verroken";
       maintainer = "henriverroken@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "LXD client written in Haskell.";
       description = "Implementation of the LXD client protocol in Haskell.\n\nThis module implements the LXD client protocol in Haskell using servant and\nwebsockets. It allows you to manage LXD containers and other resources\ndirectly from Haskell.\n\nMore information and a tutorial is in \"Network.LXD.Client.Commands\".\n\nAccompanying blog post:\n<https://deliquus.com/posts/2017-10-02-using-servant-to-orchestrate-lxd-containers.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,16 +47,13 @@
           (hsPkgs.x509)
           (hsPkgs.x509-store)
           (hsPkgs.x509-validation)
-        ];
-      };
-      exes = {
-        "lxd-client-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.lxd-client)
           ];
         };
-      };
+      exes = {
+        "lxd-client-example" = {
+          depends = [ (hsPkgs.base) (hsPkgs.lxd-client) ];
+          };
+        };
       tests = {
         "lxd-client-integration" = {
           depends = [
@@ -78,8 +66,8 @@
             (hsPkgs.text)
             (hsPkgs.turtle)
             (hsPkgs.uuid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

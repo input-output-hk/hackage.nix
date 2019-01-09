@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hs-carbon-examples";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "hs-carbon-examples"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "cholmgreen@gmail.com";
@@ -22,23 +13,15 @@
       synopsis = "Example Monte Carlo simulations implemented with Carbon";
       description = "Example Monte Carlo simulations implemented with Carbon";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "PiExample" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hs-carbon)
-            (hsPkgs.tf-random)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.hs-carbon) (hsPkgs.tf-random) ];
+          };
         "IntegralExample" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hs-carbon)
-            (hsPkgs.tf-random)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.hs-carbon) (hsPkgs.tf-random) ];
+          };
         "TransportExample" = {
           depends = [
             (hsPkgs.base)
@@ -48,8 +31,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.monad-loops)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-hlint = false;
-      test-doc-coverage = false;
-    };
+    flags = { test-hlint = false; test-doc-coverage = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "keera-posture";
-        version = "0.2.4.3";
-      };
+      identifier = { name = "keera-posture"; version = "0.2.4.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2010-2017 Keera Studios";
       maintainer = "support@keera.co.uk";
@@ -25,7 +13,7 @@
       synopsis = "Get notifications when your sitting posture is inappropriate.";
       description = "A program that notifies when you sit in a straining position.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "keera-posture" = {
@@ -66,7 +54,7 @@
               (hsPkgs.keera-hails-mvc-controller)
               (hsPkgs.keera-hails-mvc-solutions-config)
               (hsPkgs.keera-hails-reactivevalues)
-            ]
+              ]
             else [
               (hsPkgs.base)
               (hsPkgs.containers)
@@ -102,26 +90,26 @@
               (hsPkgs.keera-hails-mvc-controller)
               (hsPkgs.keera-hails-mvc-solutions-config)
               (hsPkgs.keera-hails-reactivevalues)
-            ];
+              ];
           libs = [ (pkgs."SDL_mixer") ];
+          };
         };
-      };
       tests = {
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "haddock-coverage" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doc-coverage)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.regex-posix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

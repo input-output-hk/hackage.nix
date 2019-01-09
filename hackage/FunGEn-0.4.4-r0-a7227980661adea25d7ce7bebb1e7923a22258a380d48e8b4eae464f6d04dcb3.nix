@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "FunGEn";
-        version = "0.4.4";
-      };
+      identifier = { name = "FunGEn"; version = "0.4.4"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2002 Andre Furtado <awbf@cin.ufpe.br>";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "FUNctional Game ENgine";
       description = "A lightweight, cross-platform, OpenGL/GLUT-based game engine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.OpenGL)
           (hsPkgs.GLUT)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

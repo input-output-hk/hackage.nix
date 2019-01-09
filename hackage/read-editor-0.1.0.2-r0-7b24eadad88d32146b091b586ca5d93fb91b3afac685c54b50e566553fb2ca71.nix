@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "read-editor";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "read-editor"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "Copyright (c) 2015 Pedro Tacla Yamada";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,28 +13,24 @@
       synopsis = "Opens a temporary file on the system's EDITOR and returns the resulting edits";
       description = "See <https://github.com/yamadapc/haskell-read-editor> for more information";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.process)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.process) ];
+        };
       exes = {
         "example" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.read-editor)
-          ];
-        };
+            ];
+          };
         "example-with" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.read-editor)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

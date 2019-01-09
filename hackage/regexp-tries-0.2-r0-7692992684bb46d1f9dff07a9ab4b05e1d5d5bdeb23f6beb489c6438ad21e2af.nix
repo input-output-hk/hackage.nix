@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "regexp-tries";
-        version = "0.2";
-      };
+      identifier = { name = "regexp-tries"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Andreas Baldeau <andreas@baldeau.net>";
@@ -22,7 +13,7 @@
       synopsis = "Regular Expressions on Tries.";
       description = "Regular Expressions on Tries.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.derive-trie)
           (hsPkgs.template-haskell)
           (hsPkgs.weighted-regexp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HStringTemplate";
-        version = "0.8.3";
-      };
+      identifier = { name = "HStringTemplate"; version = "0.8.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s.clover@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "StringTemplate implementation in Haskell.";
       description = "A port of the Java library by Terrence Parr.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.mtl)
           (hsPkgs.old-locale)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

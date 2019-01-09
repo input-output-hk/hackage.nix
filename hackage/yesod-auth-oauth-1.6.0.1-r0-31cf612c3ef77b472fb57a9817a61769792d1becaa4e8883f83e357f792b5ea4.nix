@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "yesod-auth-oauth";
-        version = "1.6.0.1";
-      };
+      identifier = { name = "yesod-auth-oauth"; version = "1.6.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Litchard";
@@ -22,7 +13,7 @@
       synopsis = "OAuth Authentication for Yesod.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-auth-oauth>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.yesod-auth)
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-form)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

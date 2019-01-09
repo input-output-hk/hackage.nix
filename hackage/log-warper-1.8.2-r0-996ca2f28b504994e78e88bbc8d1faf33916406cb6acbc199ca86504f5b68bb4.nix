@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "log-warper";
-        version = "1.8.2";
-      };
+      identifier = { name = "log-warper"; version = "1.8.2"; };
       license = "MIT";
       copyright = "2016-2017 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -22,7 +13,7 @@
       synopsis = "Flexible, configurable, monadic and pretty logging";
       description = "This package implements nice and featureful wrapper around hslogger library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,25 +38,21 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "play-log" = {
-          depends = [
-            (hsPkgs.log-warper)
-            (hsPkgs.universum)
-            (hsPkgs.yaml)
-          ];
-        };
+          depends = [ (hsPkgs.log-warper) (hsPkgs.universum) (hsPkgs.yaml) ];
+          };
         "how-to" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.log-warper)
             (hsPkgs.markdown-unlit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "log-test" = {
           depends = [
@@ -81,8 +68,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.universum)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

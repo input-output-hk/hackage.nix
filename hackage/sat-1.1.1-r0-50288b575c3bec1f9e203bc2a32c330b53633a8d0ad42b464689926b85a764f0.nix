@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.1.3";
-      identifier = {
-        name = "sat";
-        version = "1.1.1";
-      };
+      identifier = { name = "sat"; version = "1.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "copyleft, share whatever you modify and any derivatives as well, including modules, additions and everything else.";
       maintainer = "andrii.z@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "CNF SATisfier";
       description = "CNF(Clausal Normal Form) SATisfiability Solver and Generator";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
-        "SATSolve" = {
-          depends = [ (hsPkgs.base) ];
-        };
-        "CNFGenerate" = {
-          depends = [ (hsPkgs.base) ];
+        "SATSolve" = { depends = [ (hsPkgs.base) ]; };
+        "CNFGenerate" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

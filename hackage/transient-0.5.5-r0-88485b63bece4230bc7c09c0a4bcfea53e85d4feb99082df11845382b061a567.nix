@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "transient";
-        version = "0.5.5";
-      };
+      identifier = { name = "transient"; version = "0.5.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "agocorona@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "composing programs with multithreading, events and distributed computing";
       description = "See <http://github.com/agocorona/transient>\nDistributed primitives are in the transient-universe package. Web primitives are in the axiom package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.mtl)
           (hsPkgs.stm)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

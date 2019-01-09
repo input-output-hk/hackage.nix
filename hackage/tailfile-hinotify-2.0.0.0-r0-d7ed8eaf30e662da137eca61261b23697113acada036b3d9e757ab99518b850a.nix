@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tailfile-hinotify";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "tailfile-hinotify"; version = "2.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "diaz.carrete@facebook.com";
@@ -22,7 +13,7 @@
       synopsis = "Tail files in Unix, using hinotify.";
       description = "Tail files in Unix, using hinotify.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.pipes)
           (hsPkgs.streaming-eversion)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hopenpgp-tools";
-        version = "0.10";
-      };
+      identifier = { name = "hopenpgp-tools"; version = "0.10"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2012-2014 Clint Adams";
       maintainer = "Clint Adams <clint@debian.org>";
@@ -22,7 +13,7 @@
       synopsis = "hOpenPGP-based command-line tools";
       description = "command-line tools for performing some OpenPGP-related operations";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hot" = {
@@ -43,8 +34,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "hokey" = {
           depends = [
             (hsPkgs.base)
@@ -71,8 +62,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "hkt" = {
           depends = [
             (hsPkgs.base)
@@ -96,8 +87,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

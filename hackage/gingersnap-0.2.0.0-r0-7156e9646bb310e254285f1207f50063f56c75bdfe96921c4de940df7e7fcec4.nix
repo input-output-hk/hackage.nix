@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gingersnap";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "gingersnap"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tom@tinybop.com";
@@ -22,7 +13,7 @@
       synopsis = "snap-core + aeson + postgresql-simple = delicious";
       description = "JSON API idioms for snap-core, preventing DB connection leaks.\nSee the README for a tutorial and example use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.snap-core)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

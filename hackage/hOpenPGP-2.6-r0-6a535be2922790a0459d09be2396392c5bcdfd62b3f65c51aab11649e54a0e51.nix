@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hOpenPGP";
-        version = "2.6";
-      };
+      identifier = { name = "hOpenPGP"; version = "2.6"; };
       license = "MIT";
       copyright = "2012-2018  Clint Adams";
       maintainer = "Clint Adams <clint@debian.org>";
@@ -22,7 +13,7 @@
       synopsis = "native Haskell implementation of OpenPGP (RFC4880)";
       description = "native Haskell implementation of OpenPGP (RFC4880), plus Camellia (RFC5581), plus ECC (RFC6637)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -64,13 +55,10 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.wl-pprint-extras)
           (hsPkgs.zlib)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
-          else [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]);
-      };
+          else [ (hsPkgs.network-uri) (hsPkgs.network) ]);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -116,12 +104,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.resourcet)
-          ] ++ [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ];
+            ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -163,11 +148,8 @@
             (hsPkgs.wl-pprint-extras)
             (hsPkgs.zlib)
             (hsPkgs.criterion)
-          ] ++ [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ];
+            ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+          };
         };
       };
-    };
-  }
+    }

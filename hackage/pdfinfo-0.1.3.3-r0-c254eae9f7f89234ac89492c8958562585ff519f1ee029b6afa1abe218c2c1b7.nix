@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "pdfinfo";
-        version = "0.1.3.3";
-      };
+      identifier = { name = "pdfinfo"; version = "0.1.3.3"; };
       license = "BSD-3-Clause";
       copyright = "2010 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wrapper around the pdfinfo command.";
       description = "Just a wrapper around the pdfinfo command. See man pdfinfo.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.time)
           (hsPkgs.process)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

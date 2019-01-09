@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HAppS-Server";
-        version = "0.9.3";
-      };
+      identifier = { name = "HAppS-Server"; version = "0.9.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "AlexJacobson@HAppS.org";
@@ -22,7 +13,7 @@
       synopsis = "Web related tools and services.";
       description = "Web framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -47,14 +38,11 @@
           (hsPkgs.old-locale)
           (hsPkgs.directory)
           (hsPkgs.process)
-        ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
-          then [
-            (hsPkgs.parsec)
-            (hsPkgs.syb)
-          ]
+          ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+          then [ (hsPkgs.parsec) (hsPkgs.syb) ]
           else [
             (hsPkgs.parsec)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (flags.base4) (hsPkgs.base);
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (flags.base4) (hsPkgs.base);
+        };
       };
-    };
-  }
+    }

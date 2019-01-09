@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty-hunit";
-        version = "0.10";
-      };
+      identifier = { name = "tasty-hunit"; version = "0.10"; };
       license = "MIT";
       copyright = "";
       maintainer = "Roman Cheplyaka <roma@ro-che.info>";
@@ -22,14 +13,10 @@
       synopsis = "HUnit support for the Tasty test framework.";
       description = "HUnit support for the Tasty test framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.tasty)
-          (hsPkgs.call-stack)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.tasty) (hsPkgs.call-stack) ];
+        };
       };
-    };
-  }
+    }

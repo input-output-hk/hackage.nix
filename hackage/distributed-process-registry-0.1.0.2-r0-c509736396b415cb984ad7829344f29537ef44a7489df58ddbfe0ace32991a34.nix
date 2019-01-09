@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { perf = false; };
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "distributed-process-registry";
         version = "0.1.0.2";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Tim Watson 2012 - 2015";
       maintainer = "watson.timothy@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Cloud Haskell Extended Process Registry";
       description = "This package provides an extended process registry.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,13 +36,13 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.5") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.5") [
           (hsPkgs.template-haskell)
           (hsPkgs.derive)
           (hsPkgs.uniplate)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "RegistryTests" = {
           depends = [
@@ -78,8 +72,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.transformers)
             (hsPkgs.rematch)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.5") (hsPkgs.ghc-prim);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.5") (hsPkgs.ghc-prim);
+          };
         };
       };
-    };
-  }
+    }

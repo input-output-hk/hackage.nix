@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "music-util";
-        version = "0.14";
-      };
+      identifier = { name = "music-util"; version = "0.14"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hans Hoglund <hans@hanshoglund.se>";
@@ -22,7 +13,7 @@
       synopsis = "Utility for developing the Music Suite.";
       description = "Utility program for installing and developing the music suite.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "music-util" = {
@@ -35,8 +26,8 @@
             (hsPkgs.split)
             (hsPkgs.fgl)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasbolt";
-        version = "0.1.3.1";
-      };
+      identifier = { name = "hasbolt"; version = "0.1.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018 Pavel Yakovlev";
       maintainer = "pavel@yakovlev.me";
@@ -22,7 +13,7 @@
       synopsis = "Haskell driver for Neo4j 3+ (BOLT protocol)";
       description = "Haskell driver for Neo4j 3+ (BOLT protocol).\n\nThe package covers:\n\n-Data serialization and deserialization\n\n-Nodes, relationships and paths support\n\n-Cypher queries and responses\n\n-Authentification\n\n-TLS/SSL connection\n\nThe code was tested with neo4j versions 3.0 — 3.4 and GrapheneDB service";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.network)
           (hsPkgs.connection)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "hasbolt-test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.text)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snappy-conduit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "snappy-conduit"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2015, Toru Tomita";
       maintainer = "toru.tomita@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Conduit bindings for Snappy (see snappy package)";
       description = "Conduit bindings for Snappy (see snappy package)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.snappy)
           (hsPkgs.conduit)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

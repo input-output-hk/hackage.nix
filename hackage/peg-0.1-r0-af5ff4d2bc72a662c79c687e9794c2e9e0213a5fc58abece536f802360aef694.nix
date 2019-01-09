@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "peg";
-        version = "0.1";
-      };
+      identifier = { name = "peg"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "dustin.deweese@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "a lazy non-deterministic concatenative programming language";
       description = "Peg is a lazy non-deterministic concatenative programming language inspired by Haskell, Joy, and Prolog.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "peg" = {
@@ -34,8 +25,8 @@
             (hsPkgs.filepath)
             (hsPkgs.haskeline)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

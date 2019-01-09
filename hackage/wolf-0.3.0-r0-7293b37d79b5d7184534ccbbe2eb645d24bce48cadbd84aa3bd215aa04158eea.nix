@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wolf";
-        version = "0.3.0";
-      };
+      identifier = { name = "wolf"; version = "0.3.0"; };
       license = "MIT";
       copyright = "Copyright (C) 2015 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Simple Workflow Service Wrapper.";
       description = "Wolf is a wrapper around Amazon Simple Workflow Service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -66,8 +57,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "wolf-register" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.text)
             (hsPkgs.wolf)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-execute" = {
           depends = [
             (hsPkgs.async)
@@ -91,8 +82,8 @@
             (hsPkgs.text)
             (hsPkgs.wolf)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-decide" = {
           depends = [
             (hsPkgs.async)
@@ -103,8 +94,8 @@
             (hsPkgs.text)
             (hsPkgs.wolf)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-act" = {
           depends = [
             (hsPkgs.aeson)
@@ -121,8 +112,8 @@
             (hsPkgs.wolf)
             (hsPkgs.yaml)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "wolf-act2" = {
           depends = [
             (hsPkgs.aeson)
@@ -139,31 +130,23 @@
             (hsPkgs.wolf)
             (hsPkgs.yaml)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "wolf-actor" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wolf)
-            (hsPkgs.optparse-generic)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.wolf) (hsPkgs.optparse-generic) ];
+          };
         "wolf-decider" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wolf)
-            (hsPkgs.optparse-generic)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.wolf) (hsPkgs.optparse-generic) ];
+          };
         "shake-wolf" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.basic-prelude)
             (hsPkgs.directory)
             (hsPkgs.shake)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -172,8 +155,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.wolf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "marmalade-upload";
-        version = "0.4";
-      };
+      identifier = { name = "marmalade-upload"; version = "0.4"; };
       license = "MIT";
       copyright = "(C) 2014 Sebastian Wiesner";
       maintainer = "lunaryorn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Upload packages to Marmalade";
       description = "Upload Emacs packages to the Marmalade ELPA archive";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "marmalade-upload" = {
@@ -41,12 +32,12 @@
             (hsPkgs.http-types)
             (hsPkgs.http-client)
             (hsPkgs.http-client-multipart)
-          ] ++ pkgs.lib.optional (!system.isOsx) (hsPkgs.udbus);
-          frameworks = pkgs.lib.optionals (system.isOsx) [
+            ] ++ (pkgs.lib).optional (!system.isOsx) (hsPkgs.udbus);
+          frameworks = (pkgs.lib).optionals (system.isOsx) [
             (pkgs."Security")
             (pkgs."CoreFoundation")
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

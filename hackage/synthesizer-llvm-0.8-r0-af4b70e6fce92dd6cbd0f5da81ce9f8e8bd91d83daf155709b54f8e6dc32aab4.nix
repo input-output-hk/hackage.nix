@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-      alsa = true;
-      jack = true;
-    };
+    flags = { buildexamples = false; alsa = true; jack = true; };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "synthesizer-llvm";
-        version = "0.8";
-      };
+      identifier = { name = "synthesizer-llvm"; version = "0.8"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -26,7 +13,7 @@
       synopsis = "Efficient signal processing using runtime compilation";
       description = "Efficient signal processing\nusing runtime compilation and vector instructions.\nIt uses LLVM library, thus it is not bound to a specific CPU.\nThere are some example executables that you can build\nwith Cabal flag @buildExamples@:\n\n* @synthi-llvm-render@:\nRender a MIDI file into an audio file\nusing some arbitrary instruments.\n\n* @synthi-llvm-alsa@:\nA realtime software synthesizer\nthat receives MIDI events via ALSA\nand in response plays tones via ALSA.\nIf you have no ALSA (or Linux at all),\nthen you can disable this example with @-f-alsa@.\n\n* @synthi-llvm-jack@:\nThe same realtime software synthesizer using JACK.\nIf you have no JACK,\nthen you can disable this example with @-f-jack@.\n\n* @synthi-llvm-example@:\nNot very useful as an executable.\nYou should better load the according module into GHCi\nand play around with it.\nThe module Synthesizer.LLVM.LAC2011\nshould be especially useful for an introduction.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,11 +39,11 @@
           (hsPkgs.transformers)
           (hsPkgs.utility-ht)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       exes = {
         "synthi-llvm-example" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
@@ -78,10 +65,10 @@
             (hsPkgs.utility-ht)
             (hsPkgs.pathtype)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "synthi-llvm-lndw" = {
-          depends = pkgs.lib.optionals (flags.buildexamples && flags.alsa) [
+          depends = (pkgs.lib).optionals (flags.buildexamples && flags.alsa) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
@@ -105,10 +92,10 @@
             (hsPkgs.synthesizer-alsa)
             (hsPkgs.alsa-pcm)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "synthi-llvm-alsa" = {
-          depends = pkgs.lib.optionals (flags.buildexamples && flags.alsa) [
+          depends = (pkgs.lib).optionals (flags.buildexamples && flags.alsa) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
@@ -132,10 +119,10 @@
             (hsPkgs.alsa-seq)
             (hsPkgs.alsa-pcm)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "synthi-llvm-jack" = {
-          depends = pkgs.lib.optionals (flags.buildexamples && flags.jack) [
+          depends = (pkgs.lib).optionals (flags.buildexamples && flags.jack) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.jack)
             (hsPkgs.llvm-extra)
@@ -158,10 +145,10 @@
             (hsPkgs.transformers)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "synthi-llvm-render" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.llvm-extra)
             (hsPkgs.llvm-tf)
@@ -183,10 +170,10 @@
             (hsPkgs.transformers)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "synthi-llvm-sample" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.gnuplot)
             (hsPkgs.synthesizer-llvm)
             (hsPkgs.synthesizer-core)
@@ -196,10 +183,10 @@
             (hsPkgs.pathtype)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "synthi-llvm-speech" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.gnuplot)
             (hsPkgs.pathtype)
             (hsPkgs.sox)
@@ -209,9 +196,9 @@
             (hsPkgs.storablevector)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "synthi-llvm-test" = {
           depends = [
@@ -226,8 +213,8 @@
             (hsPkgs.utility-ht)
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

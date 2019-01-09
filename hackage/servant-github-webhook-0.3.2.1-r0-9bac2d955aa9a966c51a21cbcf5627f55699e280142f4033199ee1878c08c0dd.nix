@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-github-webhook";
-        version = "0.3.2.1";
-      };
+      identifier = { name = "servant-github-webhook"; version = "0.3.2.1"; };
       license = "MIT";
       copyright = "Jacob Thomas Errington (c) 2016-2018";
       maintainer = "servant-github-webhook@mail.jerrington.me";
@@ -22,7 +13,7 @@
       synopsis = "Servant combinators to facilitate writing GitHub webhooks.";
       description = "This package provides servant combinators that make writing safe GitHub\nwebhooks very simple.\n\nIt features automatic verification of the digital signatures provided by\nGitHub in the webhook HTTP requests as well as route dispatching based on\nrepository event type.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.string-conversions)
           (hsPkgs.text)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       tests = {
         "multikey" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.servant-github-webhook)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "singlekey" = {
           depends = [
             (hsPkgs.aeson)
@@ -62,8 +53,8 @@
             (hsPkgs.servant-github-webhook)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

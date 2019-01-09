@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-slack-middleware";
-        version = "0.2.0";
-      };
+      identifier = { name = "wai-slack-middleware"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Sibi";
       maintainer = "sibi@psibi.in";
@@ -22,7 +13,7 @@
       synopsis = "A Slack middleware for WAI";
       description = "Logs the request information into Slack through webhook from\na WAI application.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,15 +22,12 @@
           (hsPkgs.wai)
           (hsPkgs.http-types)
           (hsPkgs.aeson)
-        ];
-      };
-      tests = {
-        "wai-slack-middleware-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wai-slack-middleware)
           ];
         };
+      tests = {
+        "wai-slack-middleware-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.wai-slack-middleware) ];
+          };
+        };
       };
-    };
-  }
+    }

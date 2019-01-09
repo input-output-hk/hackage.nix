@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "twill";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "twill"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "2012 Joseph Abrahamson, Reify Health LLC";
       maintainer = "Joseph Abrahamson <me@jspha.com>";
@@ -22,7 +13,7 @@
       synopsis = "Twilio API interaction";
       description = "A little Twilio library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.aeson)
           (hsPkgs.cryptohash)
           (hsPkgs.data-default)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

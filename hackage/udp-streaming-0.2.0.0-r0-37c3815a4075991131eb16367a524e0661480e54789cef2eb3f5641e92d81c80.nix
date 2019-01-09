@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "udp-streaming";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "udp-streaming"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "(c) 2018 Mihai Giurgeanu";
       maintainer = "mihai.giurgeanu@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming to and from UDP socket";
       description = "Simple fire-and-forget udp Streaming components modelled after udp-conduit";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.network)
           (hsPkgs.resourcet)
           (hsPkgs.streaming)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

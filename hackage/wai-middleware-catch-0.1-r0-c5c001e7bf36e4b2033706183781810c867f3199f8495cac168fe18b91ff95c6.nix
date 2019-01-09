@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-middleware-catch";
-        version = "0.1";
-      };
+      identifier = { name = "wai-middleware-catch"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "aka.spin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wai error catching middleware";
       description = "Error handling middleware for 'Wai'.\n/Note/: This package uses ideas fron not released package\n/enumerator-exception/\n(<https://github.com/snoyberg/enumerator-exception>)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.http-types)
           (hsPkgs.bytestring)
           (hsPkgs.warp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

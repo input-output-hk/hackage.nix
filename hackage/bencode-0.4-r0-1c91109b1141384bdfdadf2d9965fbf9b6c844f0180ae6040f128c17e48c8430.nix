@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "bencode";
-        version = "0.4";
-      };
+      identifier = { name = "bencode"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "2005-2009, Lemmih";
       maintainer = "Lemmih (lemmih@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Parser and printer for bencoded data.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

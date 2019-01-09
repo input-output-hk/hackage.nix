@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "universum";
-        version = "0.7.1.1";
-      };
+      identifier = { name = "universum"; version = "0.7.1.1"; };
       license = "MIT";
       copyright = "2016-2016 Stephen Diehl, 2016-2017 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -22,7 +13,7 @@
       synopsis = "Custom prelude used in Serokell";
       description = "Custom prelude used in Serokell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "universum-benchmark" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.semigroups)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

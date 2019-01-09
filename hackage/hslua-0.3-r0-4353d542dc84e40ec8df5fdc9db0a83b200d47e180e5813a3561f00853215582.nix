@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hslua";
-        version = "0.3";
-      };
+      identifier = { name = "hslua"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "2007-2010, Gracjan Polak";
       maintainer = "Gracjan Polak <gracjanpolak@gmail.com>";
@@ -22,10 +13,6 @@
       synopsis = "A Lua language interpreter embedding in Haskell";
       description = "The Scripting.Lua module is a wrapper of Lua language interpreter\nas described in www.lua.org.\n\nThe package is standalone: full Lua interpreter version 5.1.4\nis distributed in this package as well.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

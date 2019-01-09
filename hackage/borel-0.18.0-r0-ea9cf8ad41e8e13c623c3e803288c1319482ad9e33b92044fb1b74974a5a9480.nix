@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "borel";
-        version = "0.18.0";
-      };
+      identifier = { name = "borel"; version = "0.18.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2014-2015 Anchor Systems, Pty Ltd and Others";
       maintainer = "Anchor Engineering <engineering@anchor.com.au>";
@@ -22,7 +13,7 @@
       synopsis = "Metering System for OpenStack metrics provided by Vaultaire.";
       description = "Leverages Ceilometer, Chevalier and Marquise to meter OpenStack data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,11 +43,8 @@
           (hsPkgs.chevalier-common)
           (hsPkgs.marquise)
           (hsPkgs.vaultaire-common)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-      };
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -90,11 +78,8 @@
             (hsPkgs.chevalier-common)
             (hsPkgs.marquise)
             (hsPkgs.vaultaire-common)
-          ] ++ [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ];
+            ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+          };
         };
       };
-    };
-  }
+    }

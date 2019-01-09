@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "StateVar";
-        version = "1.1.0.2";
-      };
+      identifier = { name = "StateVar"; version = "1.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014-2015 Edward A. Kmett, 2009-2015 Sven Panne";
       maintainer = "Sven Panne <svenpanne@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "State variables";
       description = "This package contains state variables, which are references in the IO monad,\nlike IORefs or parts of the OpenGL state.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.stm)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.stm) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

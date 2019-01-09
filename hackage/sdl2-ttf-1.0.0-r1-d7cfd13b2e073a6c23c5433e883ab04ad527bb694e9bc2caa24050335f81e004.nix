@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sdl2-ttf";
-        version = "1.0.0";
-      };
+      identifier = { name = "sdl2-ttf"; version = "1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Rongcui Dong (karl_1702@188.com)";
@@ -22,19 +13,12 @@
       synopsis = "Binding to libSDL2-ttf";
       description = "Haskell bindings to the sdl2-ttf C++ library <http://www.libsdl.org/projects/SDL_ttf/>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.sdl2)
-          (hsPkgs.transformers)
-        ];
-        libs = [
-          (pkgs."SDL2")
-          (pkgs."SDL2_ttf")
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.sdl2) (hsPkgs.transformers) ];
+        libs = [ (pkgs."SDL2") (pkgs."SDL2_ttf") ];
+        };
       exes = {
         "font-test" = {
           depends = [
@@ -42,8 +26,8 @@
             (hsPkgs.sdl2)
             (hsPkgs.sdl2-ttf)
             (hsPkgs.linear)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

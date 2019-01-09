@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm-fast = false;
-      development = false;
-    };
+    flags = { llvm-fast = false; development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "brainheck";
-        version = "0.1.0.7";
-      };
+      identifier = { name = "brainheck"; version = "0.1.0.7"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016-2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Brainh*ck interpreter in haskell";
       description = "Brainh*ck interpreter written in haskell and taking advantage of many prominent libraries";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +25,8 @@
           (hsPkgs.lens)
           (hsPkgs.megaparsec)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "brainheck" = {
           depends = [
@@ -46,9 +34,9 @@
             (hsPkgs.brainheck)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "brainheck-bench" = {
           depends = [
@@ -56,8 +44,8 @@
             (hsPkgs.criterion)
             (hsPkgs.brainheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

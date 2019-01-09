@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "serialport";
-        version = "0.3.0";
-      };
+      identifier = { name = "serialport"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Joris Putcuyps";
       maintainer = "Joris.Putcuyps@gmail.com";
@@ -22,15 +13,12 @@
       synopsis = "Cross platform serial port library.";
       description = "This library provides a way to interface the serial port from haskell in a cross platform way.\n\nTested on the following platforms:\n\n* Linux (Arch)\n\n* Windows XP 32-bit";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-        ] ++ (if !system.isWindows
+        depends = [ (hsPkgs.base) (hsPkgs.base) ] ++ (if !system.isWindows
           then [ (hsPkgs.unix) ]
           else [ (hsPkgs.Win32) ]);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "quiver-cell";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "quiver-cell"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2015 Patryk Zadarnowski";
       maintainer = "Patryk Zadarnowski <pat@jantar.org>";
@@ -22,14 +13,10 @@
       synopsis = "Quiver combinators for cellular data processing";
       description = "This library provides combinators for Quiver-based streaming\nof cellular data, i.e., tabular data encoded as a stream of\noptionally-fragmented cell values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.data-cell)
-          (hsPkgs.quiver)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.data-cell) (hsPkgs.quiver) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "breve";
-        version = "0.4.2.0";
-      };
+      identifier = { name = "breve"; version = "0.4.2.0"; };
       license = "MIT";
       copyright = "(C) Michele Guerini Rocco 2015";
       maintainer = "micheleguerinirocco@me.com";
@@ -22,7 +13,7 @@
       synopsis = "a url shortener";
       description = "Breve is a web application that provides a simple interface to\nshortening long urls creating links smaller and easier to remember.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "breve" = {
@@ -49,8 +40,8 @@
             (hsPkgs.xdg-basedir)
             (hsPkgs.configurator)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

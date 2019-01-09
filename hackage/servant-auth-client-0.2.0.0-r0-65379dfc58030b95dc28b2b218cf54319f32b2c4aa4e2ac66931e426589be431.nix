@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-auth-client";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "servant-auth-client"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Julian K. Arni";
       maintainer = "jkarni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "servant-client/servant-auth compatibility";
       description = "This package provides instances that allow generating clients from\n<https://hackage.haskell.org/package/servant servant>\nAPIs that use\n<https://hackage.haskell.org/package/servant-auth servant-auth's> @Auth@ combinator.\n\nFor a quick overview of the usage, see the <http://github.com/plow-technologies/servant-auth#readme README>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.servant-client)
           (hsPkgs.servant-auth)
           (hsPkgs.servant)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.doctest)
             (hsPkgs.Glob)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -70,8 +61,8 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.jose)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

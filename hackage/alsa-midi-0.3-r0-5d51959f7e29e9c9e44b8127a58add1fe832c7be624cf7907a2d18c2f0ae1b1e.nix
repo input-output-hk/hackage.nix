@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "alsa-midi";
-        version = "0.3";
-      };
+      identifier = { name = "alsa-midi"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for the ALSA sequencer API (MIDI stuff)";
       description = "Bindings for the ALSA sequencer API (MIDI stuff)\nSince there is also\n<http://code.haskell.org/alsa/>\nwhich aims at a more complete interface to ALSA\nwe will no longer maintain this one.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,9 +21,9 @@
           (hsPkgs.midi)
           (hsPkgs.event-list)
           (hsPkgs.non-negative)
-        ];
+          ];
         libs = [ (pkgs."asound") ];
-      };
+        };
       exes = {
         "playnote" = {
           depends = [
@@ -40,27 +31,27 @@
             (hsPkgs.midi)
             (hsPkgs.event-list)
             (hsPkgs.non-negative)
-          ];
+            ];
           libs = [ (pkgs."asound") ];
-        };
+          };
         "playmidi" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.midi)
             (hsPkgs.event-list)
             (hsPkgs.non-negative)
-          ];
+            ];
           libs = [ (pkgs."asound") ];
-        };
+          };
         "mididump" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.midi)
             (hsPkgs.event-list)
             (hsPkgs.non-negative)
-          ];
+            ];
           libs = [ (pkgs."asound") ];
+          };
         };
       };
-    };
-  }
+    }

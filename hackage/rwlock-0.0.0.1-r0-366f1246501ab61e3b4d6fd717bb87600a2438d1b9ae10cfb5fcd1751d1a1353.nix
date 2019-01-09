@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "rwlock";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "rwlock"; version = "0.0.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "James Cook <james.cook@usma.edu>";
@@ -22,14 +13,10 @@
       synopsis = "Multiple-read / single-write locks";
       description = "A simple implementation of a multiple-reader / single-writer\nlock, using STM.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.monad-loops)
-          (hsPkgs.stm)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.monad-loops) (hsPkgs.stm) ];
+        };
       };
-    };
-  }
+    }

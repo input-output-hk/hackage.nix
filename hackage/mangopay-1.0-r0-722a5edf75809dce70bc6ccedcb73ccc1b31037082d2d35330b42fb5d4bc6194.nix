@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mangopay";
-        version = "1.0";
-      };
+      identifier = { name = "mangopay"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Prowdsponsor";
       maintainer = "Prowdsponsor <opensource@prowdsponsor.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to the MangoPay API";
       description = "This package provides Haskell bindings to the\n<http://www.mangopay.com/ MangoPay> payment provider.\n\nSee also the @yesod-mangopay@ package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.base64-bytestring)
           (hsPkgs.case-insensitive)
-        ];
-      };
+          ];
+        };
       exes = {
         "mangopay-passphrase" = {
           depends = [
@@ -73,9 +64,9 @@
             (hsPkgs.base16-bytestring)
             (hsPkgs.utf8-string)
             (hsPkgs.case-insensitive)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "mangopay-tests" = {
           depends = [
@@ -106,8 +97,8 @@
             (hsPkgs.wai)
             (hsPkgs.base64-bytestring)
             (hsPkgs.case-insensitive)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

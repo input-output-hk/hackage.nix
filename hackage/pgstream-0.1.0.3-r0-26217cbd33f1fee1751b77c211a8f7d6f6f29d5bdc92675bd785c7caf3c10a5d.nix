@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      optimized = true;
-      j = false;
-    };
+    flags = { optimized = true; j = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pgstream";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "pgstream"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2015 Elsen Inc.";
       maintainer = "info@elsen.co";
@@ -25,7 +13,7 @@
       synopsis = "Elsen Accelerated Computing Engine";
       description = "Elsen Accelerated Computing Engine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,7 +42,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

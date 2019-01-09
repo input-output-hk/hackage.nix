@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HSlippyMap";
-        version = "2.2";
-      };
+      identifier = { name = "HSlippyMap"; version = "2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "m@j4.pe";
@@ -22,10 +13,6 @@
       synopsis = "OpenStreetMap Slippy Map";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

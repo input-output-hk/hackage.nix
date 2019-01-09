@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "double-metaphone";
-        version = "0.0.2";
-      };
+      identifier = { name = "double-metaphone"; version = "0.0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Christian Marie <christian@ponies.io>";
@@ -22,13 +13,8 @@
       synopsis = "Haskell bindings to a C double-metaphone implementation.";
       description = "Compute two metaphones of a latin1 encoded bytestring, based on Perl's text-DoubleMetaphone";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
+      };
+    }

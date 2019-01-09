@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "TimePiece";
-        version = "0.0.1";
-      };
+      identifier = { name = "TimePiece"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Audrey Tang <audreyt@audreyt.org>";
@@ -22,7 +13,7 @@
       synopsis = "A simple tile-based digital clock screen saver";
       description = "A simple tile-based digital clock screen saver";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "TimePiece" = {
@@ -36,9 +27,9 @@
             (hsPkgs.random)
             (hsPkgs.old-locale)
             (hsPkgs.old-time)
-          ];
+            ];
           libs = [ (pkgs."SDLmain") ];
+          };
         };
       };
-    };
-  }
+    }

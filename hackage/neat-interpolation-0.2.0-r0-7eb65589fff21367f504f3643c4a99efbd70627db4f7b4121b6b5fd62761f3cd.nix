@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "neat-interpolation";
-        version = "0.2.0";
-      };
+      identifier = { name = "neat-interpolation"; version = "0.2.0"; };
       license = "MIT";
       copyright = "(c) 2013, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,23 +13,15 @@
       synopsis = "A quasiquoter for neat and simple multiline text interpolation";
       description = "NeatInterpolation provides a quasiquoter for producing strings\nwith a simple interpolation of input values.\nIt removes the excessive indentation from the input and\naccurately manages the indentation of all lines of interpolated variables.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.parsec)
-          (hsPkgs.template-haskell)
-          (hsPkgs.base)
-        ];
-      };
+        depends = [ (hsPkgs.parsec) (hsPkgs.template-haskell) (hsPkgs.base) ];
+        };
       exes = {
         "neat-interpolation-demo" = {
-          depends = [
-            (hsPkgs.parsec)
-            (hsPkgs.template-haskell)
-            (hsPkgs.base)
-          ];
+          depends = [ (hsPkgs.parsec) (hsPkgs.template-haskell) (hsPkgs.base) ];
+          };
         };
       };
-    };
-  }
+    }

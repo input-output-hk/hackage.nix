@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "assembler";
-        version = "0.0.1";
-      };
+      identifier = { name = "assembler"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 Jeff Douglas";
       maintainer = "Jeff Douglas <inbuninbu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Assembler";
       description = "An assembler framework written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.ghc-binary)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "has" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.containers)
             (hsPkgs.ghc-binary)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

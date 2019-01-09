@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mockery";
-        version = "0.0.0";
-      };
+      identifier = { name = "mockery"; version = "0.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,15 +13,11 @@
       synopsis = "Support functions for automated testing";
       description = "Support functions for automated testing";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.temporary)
-          (hsPkgs.directory)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.temporary) (hsPkgs.directory) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.mockery)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

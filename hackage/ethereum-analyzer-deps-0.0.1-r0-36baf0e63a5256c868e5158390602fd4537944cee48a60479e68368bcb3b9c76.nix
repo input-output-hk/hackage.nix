@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ethereum-analyzer-deps";
-        version = "0.0.1";
-      };
+      identifier = { name = "ethereum-analyzer-deps"; version = "0.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "k_@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "Stripped dependencies of ethereum-analyzer.";
       description = "Stripped dependencies of ethereum-analyzer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.nibblestring)
           (hsPkgs.split)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { executable = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "certificate";
-        version = "0.2.1";
-      };
+      identifier = { name = "certificate"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Certificates and Key Reader/Writer";
       description = "Certificates and Key reader/writer\n\nAt the moment only X509 certificate and unencrypted private key are supported,\nbut will include PGP certificate and pkcs8 private keys";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,16 @@
           (hsPkgs.mtl)
           (hsPkgs.asn1-data)
           (hsPkgs.base64-bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "certificate" = {
-          depends = pkgs.lib.optionals (flags.executable) [
+          depends = (pkgs.lib).optionals (flags.executable) [
             (hsPkgs.RSA)
             (hsPkgs.hexdump)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

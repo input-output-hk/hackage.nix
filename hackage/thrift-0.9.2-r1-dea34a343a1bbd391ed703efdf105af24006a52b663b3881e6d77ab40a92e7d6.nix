@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "thrift";
-        version = "0.9.2";
-      };
+      identifier = { name = "thrift"; version = "0.9.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "dev@thrift.apache.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for the Apache Thrift RPC system";
       description = "Haskell bindings for the Apache Thrift RPC system. Requires the use of the thrift code generator.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,12 +31,9 @@
           (hsPkgs.vector)
           (hsPkgs.QuickCheck)
           (hsPkgs.split)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

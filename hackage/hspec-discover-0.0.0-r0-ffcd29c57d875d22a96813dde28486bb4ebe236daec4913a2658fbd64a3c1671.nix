@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspec-discover";
-        version = "0.0.0";
-      };
+      identifier = { name = "hspec-discover"; version = "0.0.0"; };
       license = "MIT";
       copyright = "(c) 2012 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,18 +13,14 @@
       synopsis = "Automatically discover and run Hspec tests";
       description = "Documentation is here: <https://github.com/sol/hspec-discover#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
         "hspec-discover" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.filepath) (hsPkgs.directory) ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.directory)
             (hsPkgs.hspec)
             (hsPkgs.hspec-shouldbe)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

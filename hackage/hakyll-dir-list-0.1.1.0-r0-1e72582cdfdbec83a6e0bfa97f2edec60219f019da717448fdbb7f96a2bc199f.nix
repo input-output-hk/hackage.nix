@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hakyll-dir-list";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "hakyll-dir-list"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Robert Hennig <robert.hennig@freylax.de>";
@@ -22,7 +13,7 @@
       synopsis = "Allow Hakyll to create hierarchical menues from directories.";
       description = "Hakyll extension which supports the creation of hierarchical\nmenus from source  files in a directory structure.\nAdittionally single page web sites can created by using flattened\npage id's instead of urls.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.hakyll)
           (hsPkgs.filepath)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

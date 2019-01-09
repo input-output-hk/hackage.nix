@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ekg-cloudwatch";
-        version = "0.0.1.5";
-      };
+      identifier = { name = "ekg-cloudwatch"; version = "0.0.1.5"; };
       license = "BSD-3-Clause";
       copyright = "2016 Seller Labs";
       maintainer = "matt@sellerlabs.com";
@@ -22,7 +13,7 @@
       synopsis = "An ekg backend for Amazon Cloudwatch";
       description = "Push ekg metrics to Amazon Cloudwatch";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "ekg-cloudwatch-test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.base)
             (hsPkgs.ekg-cloudwatch)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

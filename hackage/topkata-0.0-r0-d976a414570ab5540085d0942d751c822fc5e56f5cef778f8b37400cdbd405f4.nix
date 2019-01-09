@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "topkata";
-        version = "0.0";
-      };
+      identifier = { name = "topkata"; version = "0.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Christoph Bauer <ich@christoph-bauer.net>";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "OpenGL Arcade Game";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "topkata" = {
@@ -35,8 +26,8 @@
             (hsPkgs.cairo)
             (hsPkgs.OpenAL)
             (hsPkgs.ALUT)
-          ];
-        };
+            ];
+          };
         "pdflaby" = {
           depends = [
             (hsPkgs.base)
@@ -47,8 +38,8 @@
             (hsPkgs.cairo)
             (hsPkgs.OpenAL)
             (hsPkgs.ALUT)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

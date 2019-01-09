@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "magma";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "magma"; version = "0.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cutsea110@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "magma is an algebraic structure consisting a set together with an binary operation.";
       description = "magma is an algebraic structure consisting a set together with an binary operation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.profunctors)
           (hsPkgs.semigroups)
           (hsPkgs.deepseq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

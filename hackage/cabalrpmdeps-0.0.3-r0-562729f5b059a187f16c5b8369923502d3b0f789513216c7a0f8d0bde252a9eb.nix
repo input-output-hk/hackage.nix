@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "cabalrpmdeps";
-        version = "0.0.3";
-      };
+      identifier = { name = "cabalrpmdeps"; version = "0.0.3"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2007 Olivier Thauvin";
       maintainer = "Olivier Thauvin <nanardon@nanardon.zarb.org>";
@@ -22,37 +13,21 @@
       synopsis = "Autogenerate rpm dependencies from cabal files";
       description = "Autogenerate rpm dependencies from cabal files";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.haskell98)
-          (hsPkgs.base)
-          (hsPkgs.Cabal)
-        ];
-      };
+        depends = [ (hsPkgs.haskell98) (hsPkgs.base) (hsPkgs.Cabal) ];
+        };
       exes = {
         "cabalrpmprov" = {
-          depends = [
-            (hsPkgs.haskell98)
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
-        };
+          depends = [ (hsPkgs.haskell98) (hsPkgs.base) (hsPkgs.Cabal) ];
+          };
         "cabalrpmreq" = {
-          depends = [
-            (hsPkgs.haskell98)
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
-        };
+          depends = [ (hsPkgs.haskell98) (hsPkgs.base) (hsPkgs.Cabal) ];
+          };
         "cabalrpmbr" = {
-          depends = [
-            (hsPkgs.haskell98)
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
+          depends = [ (hsPkgs.haskell98) (hsPkgs.base) (hsPkgs.Cabal) ];
+          };
         };
       };
-    };
-  }
+    }

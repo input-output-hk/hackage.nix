@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "org2anki";
-        version = "0.1.0";
-      };
+      identifier = { name = "org2anki"; version = "0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "mromang08+github@gmail.com";
@@ -22,16 +13,12 @@
       synopsis = "Basic org to anki exporter";
       description = "A basic parser of the markup-related subset of org-mode and an Anki one-side flashcards exporter.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "org2anki" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.regex-compat)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.regex-compat) ];
+          };
         };
       };
-    };
-  }
+    }

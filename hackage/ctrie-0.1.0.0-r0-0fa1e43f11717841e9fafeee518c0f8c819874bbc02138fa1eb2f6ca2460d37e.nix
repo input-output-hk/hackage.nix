@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ctrie";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ctrie"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(c) 2013 Michael Schröder";
       maintainer = "mcschroeder@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Non-blocking concurrent map";
       description = "A non-blocking concurrent map implementation based on\n/lock-free concurrent hash tries/ (aka /Ctries/).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hashable)
-          (hsPkgs.primitive)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.hashable) (hsPkgs.primitive) ];
+        };
       tests = {
         "map-properties" = {
           depends = [
@@ -41,9 +28,9 @@
             (hsPkgs.containers)
             (hsPkgs.hashable)
             (hsPkgs.ctrie)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "sequential" = {
           depends = [
@@ -56,8 +43,8 @@
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.ctrie)
-          ];
-        };
+            ];
+          };
         "concurrent" = {
           depends = [
             (hsPkgs.base)
@@ -71,8 +58,8 @@
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.ctrie)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

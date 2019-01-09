@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ua-parser";
-        version = "0.5";
-      };
+      identifier = { name = "ua-parser"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ozgun.ataman@soostone.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for parsing User-Agent strings, official Haskell port of ua-parser";
       description = "Please refer to the git/github README on the project for example usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.data-default)
           (hsPkgs.syb)
           (hsPkgs.file-embed)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.syb)
             (hsPkgs.filepath)
             (hsPkgs.file-embed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "unordered-containers-rematch";
         version = "0.1.0.0";
-      };
+        };
       license = "MIT";
       copyright = "";
       maintainer = "tcrayford@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Rematch support for unordered containers";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +24,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.rematch)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -41,8 +35,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.rematch)
             (hsPkgs.hashable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

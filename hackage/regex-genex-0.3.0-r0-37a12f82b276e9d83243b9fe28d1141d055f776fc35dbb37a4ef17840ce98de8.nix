@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "regex-genex";
-        version = "0.3.0";
-      };
+      identifier = { name = "regex-genex"; version = "0.3.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2011 Audrey Tang";
       maintainer = "Audrey Tang <audreyt@audreyt.org>";
@@ -22,7 +13,7 @@
       synopsis = "From a regex, generate all possible strings it can match";
       description = "From a regex, generate all possible strings it can match";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.regex-tdfa)
           (hsPkgs.control-monad-omega)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "genex" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.control-monad-omega)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

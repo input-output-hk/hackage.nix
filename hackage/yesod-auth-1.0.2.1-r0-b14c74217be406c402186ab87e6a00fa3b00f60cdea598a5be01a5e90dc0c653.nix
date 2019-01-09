@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      blaze_html_0_5 = true;
-    };
+    flags = { blaze_html_0_5 = true; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "yesod-auth";
-        version = "1.0.2.1";
-      };
+      identifier = { name = "yesod-auth"; version = "1.0.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -24,7 +13,7 @@
       synopsis = "Authentication for Yesod.";
       description = "Authentication for Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,12 +42,9 @@
           (hsPkgs.aeson)
           (hsPkgs.pwstore-fast)
           (hsPkgs.lifted-base)
-        ] ++ (if flags.blaze_html_0_5
-          then [
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-          ]
+          ] ++ (if flags.blaze_html_0_5
+          then [ (hsPkgs.blaze-html) (hsPkgs.blaze-markup) ]
           else [ (hsPkgs.blaze-html) ]);
+        };
       };
-    };
-  }
+    }

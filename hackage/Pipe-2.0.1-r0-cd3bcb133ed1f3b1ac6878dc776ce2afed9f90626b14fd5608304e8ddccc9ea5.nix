@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Pipe";
-        version = "2.0.1";
-      };
+      identifier = { name = "Pipe"; version = "2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Matti Niemenmaa <matti.niemenmaa+pipe@iki.fi>";
@@ -22,14 +13,10 @@
       synopsis = "Process piping library";
       description = "A library with operations for piping data through a pipeline of processes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.process)
-          (hsPkgs.filepath)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.filepath) ];
+        };
       };
-    };
-  }
+    }

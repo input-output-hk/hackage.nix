@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "sloane";
-        version = "4.0.0";
-      };
+      identifier = { name = "sloane"; version = "4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anders.claesson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A command line interface to Sloane's OEIS.";
       description = "A command line interface to Sloane's On-Line Encyclopedia of\nInteger Sequences with offline capabilities.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "sloane" = {
@@ -45,8 +36,8 @@
             (hsPkgs.terminal-size)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

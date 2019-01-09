@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pdf-slave-server";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "pdf-slave-server"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Web service for pdf-slave tool";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -62,8 +53,8 @@
           (hsPkgs.uuid)
           (hsPkgs.wreq)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "pdf-slave-server" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.pdf-slave-server)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

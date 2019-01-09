@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enable-pthreads = false;
-    };
+    flags = { enable-pthreads = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "abcBridge";
-        version = "0.10.0.0";
-      };
+      identifier = { name = "abcBridge"; version = "0.10.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2014 Galois Inc.";
       maintainer = "jhendrix@galois.com";
@@ -24,7 +13,7 @@
       synopsis = "Bindings for ABC, A System for Sequential\nSynthesis and Verification";
       description = "Bindings for ABC focused on creating And-Inverter\nGraphs (AIG) and then performing synthesis and\nequivalence checking.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,22 +21,15 @@
           (hsPkgs.aig)
           (hsPkgs.directory)
           (hsPkgs.vector)
-        ];
+          ];
         libs = [
           (pkgs."abc")
-        ] ++ pkgs.lib.optional (flags.enable-pthreads) (pkgs."pthread");
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
-      exes = {
-        "long-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.abcBridge)
-          ];
+          ] ++ (pkgs.lib).optional (flags.enable-pthreads) (pkgs."pthread");
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
-      };
+      exes = {
+        "long-test" = { depends = [ (hsPkgs.base) (hsPkgs.abcBridge) ]; };
+        };
       tests = {
         "abc-test" = {
           depends = [
@@ -61,8 +43,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

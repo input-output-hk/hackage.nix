@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "hdo";
-        version = "0.3";
-      };
+      identifier = { name = "hdo"; version = "0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Arnaud Bailly <arnaud.oqube@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Digital Ocean client in Haskell";
       description = "HDO is a client to <https://www.digitalocean.com/ Digital Ocean> API. It can either\nbe used as a library embedded in other tools or as a command-line client (@docean@).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.process)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "docean" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.data-default)
             (hsPkgs.random)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

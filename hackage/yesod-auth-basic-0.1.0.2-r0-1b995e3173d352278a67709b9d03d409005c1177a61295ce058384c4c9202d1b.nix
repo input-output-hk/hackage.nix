@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-auth-basic";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "yesod-auth-basic"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015, Christopher Reichert";
       maintainer = "creichert07@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Yesod Middleware for HTTP Basic Authentication";
       description = "An efficient Yesod middleware middleware for HTTP Basic\nAuthentication.\n\nUtilizes Yesod request-local caching mechanisms to store valid auth\ncredentials found in the Authorization header.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.yesod)
           (hsPkgs.wai)
           (hsPkgs.word8)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.iproute);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.iproute);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -45,14 +36,9 @@
             (hsPkgs.yesod-test)
             (hsPkgs.hspec)
             (hsPkgs.text)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

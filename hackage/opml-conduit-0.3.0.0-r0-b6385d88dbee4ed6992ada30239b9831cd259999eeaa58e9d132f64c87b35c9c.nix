@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "opml-conduit";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "opml-conduit"; version = "0.3.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral <koral@mailoo.org>";
@@ -22,7 +13,7 @@
       synopsis = "Streaming parser/renderer for the OPML 2.0 format.";
       description = "This library implements the OPML 2.0 standard (<http://dev.opml.org/spec2.html>) as a 'conduit' parser/renderer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-conduit-parse)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.xml-conduit-parse)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

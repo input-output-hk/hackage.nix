@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gravatar";
-        version = "0.7";
-      };
+      identifier = { name = "gravatar"; version = "0.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@pbrisbin.com";
@@ -22,7 +13,7 @@
       synopsis = "Look up gravatar image urls by email address";
       description = "Look up gravatar image urls by email address";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.pureMD5)
           (hsPkgs.HTTP)
           (hsPkgs.data-default)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

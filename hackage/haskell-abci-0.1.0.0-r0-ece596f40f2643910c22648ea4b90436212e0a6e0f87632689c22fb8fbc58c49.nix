@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-abci";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haskell-abci"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Christopher Goes";
       maintainer = "cwgoes@protonmail.ch";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Application BlockChain Interface (ABCI) Server Library";
       description = "Haskell library for writing Application BlockChain Interface (ABCI) servers. Licensed under BSD 3-clause (see LICENSE).";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.conduit-combinators)
           (hsPkgs.network-conduit)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskell-abci-counter" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.haskell-abci)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

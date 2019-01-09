@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-server";
-        version = "0.2.4";
-      };
+      identifier = { name = "servant-server"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "2014 Zalora South East Asia Pte Ltd";
       maintainer = "alpmestan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A family of combinators for defining webservices APIs and serving them";
       description = "A family of combinators for defining webservices APIs and serving them\n\nYou can learn about the basics in <http://haskell-servant.github.io/getting-started/ the getting started> guide.\n\n<https://github.com/haskell-servant/servant-server/blob/master/example/greet.hs Here>'s a runnable example, with comments, that defines a dummy API and\nimplements a webserver that serves this API, using this package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.wai)
           (hsPkgs.wai-app-static)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "greet" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.warp)
             (hsPkgs.wai)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -82,8 +73,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

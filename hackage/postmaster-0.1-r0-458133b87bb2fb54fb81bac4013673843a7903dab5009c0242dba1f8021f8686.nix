@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "postmaster";
-        version = "0.1";
-      };
+      identifier = { name = "postmaster"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Peter Simons <simons@cryp.to>";
@@ -22,7 +13,7 @@
       synopsis = "Postmaster ESMTP Server";
       description = "Postmaster implements an ESMTP server. Given a configuration,\nit starts up and listens for incoming SMTP connections, handles\nthem, and pipes the accepted e-mail messages into an arbitrary\nlocal mailer of your choice. A good local mailer is Procmail.\nBeyond that, you can configure and modify every little step\nof the SMTP transaction. All the real work is done through\ncall-back functions.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "postmaster" = {
@@ -41,12 +32,9 @@
             (hsPkgs.hsdns)
             (hsPkgs.hsemail)
             (hsPkgs.hopenssl)
-          ];
-          libs = [
-            (pkgs."adns")
-            (pkgs."crypto")
-          ];
+            ];
+          libs = [ (pkgs."adns") (pkgs."crypto") ];
+          };
         };
       };
-    };
-  }
+    }

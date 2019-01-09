@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-incremental-decoder";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "json-incremental-decoder"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Incremental JSON parser with early termination and a declarative DSL";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.base)
           (hsPkgs.base-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "parsing-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)
             (hsPkgs.rebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

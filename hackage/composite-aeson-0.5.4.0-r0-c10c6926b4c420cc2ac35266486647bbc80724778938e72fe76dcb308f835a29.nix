@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "composite-aeson";
-        version = "0.5.4.0";
-      };
+      identifier = { name = "composite-aeson"; version = "0.5.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Confer Health, Inc.";
       maintainer = "oss@confer.health";
@@ -22,7 +13,7 @@
       synopsis = "JSON for Vinyl/Frames records";
       description = "Integration between Aeson and Vinyl/Frames records allowing records to be easily converted to JSON using automatic derivation, explicit formats, or a mix of both.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.vinyl)
-        ];
-      };
+          ];
+        };
       tests = {
         "composite-aeson-test" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.vinyl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

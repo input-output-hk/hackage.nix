@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ponder";
-        version = "0.0.1";
-      };
+      identifier = { name = "ponder"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Copyright (c) matt";
       maintainer = "matt76k@gmail.com";
@@ -22,13 +13,6 @@
       synopsis = "PEG parser combinator";
       description = "Ponder is PEG parser combinator. This Library is experimental.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

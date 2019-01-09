@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fsnotify";
-        version = "0.0.4";
-      };
+      identifier = { name = "fsnotify"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Dittmer <mark.s.dittmer@gmail.com>, Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Cross platform library for file creation, modification,\nand deletion notification.";
       description = "Cross platform library for file creation, modification,\nand deletion notification. This library builds upon\nexisting libraries for platform-specific Window, Mac,\nand Linux filesystem event notification.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,11 +24,11 @@
           (hsPkgs.system-filepath)
           (hsPkgs.text)
           (hsPkgs.time)
-        ] ++ (if system.isLinux
+          ] ++ (if system.isLinux
           then [ (hsPkgs.hinotify) ]
           else if system.isWindows
             then [ (hsPkgs.Win32-notify) ]
-            else pkgs.lib.optional (system.isOsx) (hsPkgs.hfsevents));
+            else (pkgs.lib).optional (system.isOsx) (hsPkgs.hfsevents));
+        };
       };
-    };
-  }
+    }

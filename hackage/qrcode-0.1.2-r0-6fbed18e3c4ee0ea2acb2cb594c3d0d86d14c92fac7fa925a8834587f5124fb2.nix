@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { prof = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "qrcode";
-        version = "0.1.2";
-      };
+      identifier = { name = "qrcode"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chris@kizzx2.com";
@@ -22,7 +13,7 @@
       synopsis = "QR Code library in pure Haskell";
       description = "QR Code encoder (and future decoder) in pure Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.array)
           (hsPkgs.mtl)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

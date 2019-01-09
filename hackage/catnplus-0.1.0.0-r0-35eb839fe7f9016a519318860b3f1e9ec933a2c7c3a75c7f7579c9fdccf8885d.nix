@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "catnplus";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "catnplus"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Richard Cook";
       maintainer = "rcook@rcook.org";
@@ -22,7 +13,7 @@
       synopsis = "Simple tool to display text files with line numbers and paging";
       description = "Simple tool to display text files with line numbers and paging";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "catnplus" = {
@@ -36,8 +27,8 @@
             (hsPkgs.terminal-size)
             (hsPkgs.transformers)
             (hsPkgs.vcs-revision)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

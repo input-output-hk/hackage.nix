@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fuzzytime";
-        version = "0.7.7";
-      };
+      identifier = { name = "fuzzytime"; version = "0.7.7"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "kamil (a full stop) stachowski (an at sign) gmail (a full stop) com";
@@ -22,11 +13,9 @@
       synopsis = "A 'ten past six' style clock";
       description = "A clock and timer that tell the time in a more human way (the 'ten past six' style)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "fuzzytime" = {
           depends = [
@@ -35,8 +24,8 @@
             (hsPkgs.directory)
             (hsPkgs.old-time)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

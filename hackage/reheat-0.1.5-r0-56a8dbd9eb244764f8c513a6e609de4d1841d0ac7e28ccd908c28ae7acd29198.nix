@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "reheat";
-        version = "0.1.5";
-      };
+      identifier = { name = "reheat"; version = "0.1.5"; };
       license = "LicenseRef-GPL";
       copyright = "GPL";
       maintainer = "Ingolf Wagner <palipalo9@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "to make notes and reduce impact on idle time on writing other programms.";
       description = "a programm to make notes and reduce impact on idle time on writing other programms.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "reheat" = {
@@ -32,9 +23,9 @@
             (hsPkgs.text)
             (hsPkgs.vty)
             (hsPkgs.vty-ui)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-reheat" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.text)
             (hsPkgs.vty)
             (hsPkgs.vty-ui)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

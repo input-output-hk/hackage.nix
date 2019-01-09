@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "motor-diagrams";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "motor-diagrams"; version = "0.2.0.0"; };
       license = "MPL-2.0";
       copyright = "Oskar Wickström";
       maintainer = "oskar.wickstrom@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate state diagrams from Motor FSM typeclasses";
       description = "Generate state diagrams from Motor FSM typeclasses.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.text)
           (hsPkgs.motor)
           (hsPkgs.motor-reflection)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.motor)
             (hsPkgs.motor-reflection)
             (hsPkgs.motor-diagrams)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

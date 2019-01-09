@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hfractal";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "hfractal"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Holdsworth <chrisholdsworth@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "OpenGL fractal renderer";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hfractal" = {
@@ -32,8 +23,8 @@
             (hsPkgs.gd)
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

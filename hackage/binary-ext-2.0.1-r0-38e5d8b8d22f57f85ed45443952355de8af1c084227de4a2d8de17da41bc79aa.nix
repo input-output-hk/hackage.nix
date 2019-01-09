@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-ext";
-        version = "2.0.1";
-      };
+      identifier = { name = "binary-ext"; version = "2.0.1"; };
       license = "LicenseRef-Apache";
       copyright = "2017, 2018 Warlock <internalmike@gmail.com>";
       maintainer = "Warlock <internalmike@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "An alternate with strong-typed errors for `Data.Binary.Get` monad from `binary` package.";
       description = "An alternate with strong-typed errors for `Data.Binary.Get` monad from `binary` package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "binary-ext-test" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "spatial-rotations";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "spatial-rotations"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "(@) jsagemue \$ uni-koeln.de";
@@ -22,7 +13,7 @@
       synopsis = "Rotate about any suitable axis";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.manifolds-core)
           (hsPkgs.vector-space)
           (hsPkgs.linear)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.containers)
             (hsPkgs.vector-space)
             (hsPkgs.spatial-rotations)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

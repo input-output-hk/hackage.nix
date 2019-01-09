@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pandoc-crossref";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "pandoc-crossref"; version = "0.2.0.0"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "root@livid.pp.ru";
@@ -22,7 +13,7 @@
       synopsis = "Pandoc filter for cross-references";
       description = "pandoc-crossref is a pandoc filter for numbering figures, equations, tables and cross-references to them.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.roman-numerals)
           (hsPkgs.syb)
-        ];
-      };
+          ];
+        };
       exes = {
         "pandoc-crossref" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.data-default)
             (hsPkgs.bytestring)
             (hsPkgs.pandoc-crossref)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-pandoc-crossref" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.roman-numerals)
             (hsPkgs.syb)
             (hsPkgs.pandoc-crossref)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      use-text-show = false;
-    };
+    flags = { use-text-show = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-api-data";
-        version = "0.3.6";
-      };
+      identifier = { name = "http-api-data"; version = "0.3.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Nickolay Kudasov <nickolay.kudasov@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Converting to/from HTTP API data like URL pieces, headers and query parameters.";
       description = "Please see README.md";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +28,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uri-bytestring)
           (hsPkgs.uuid-types)
-        ] ++ pkgs.lib.optional (flags.use-text-show) (hsPkgs.text-show);
-      };
+          ] ++ (pkgs.lib).optional (flags.use-text-show) (hsPkgs.text-show);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -56,19 +45,17 @@
             (hsPkgs.time)
             (hsPkgs.bytestring)
             (hsPkgs.uuid)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hsc2hs)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          };
         };
       };
-    };
-  }
+    }

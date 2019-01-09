@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { unix = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "scroll";
-        version = "1.20180421";
-      };
+      identifier = { name = "scroll"; version = "1.20180421"; };
       license = "GPL-2.0-only";
       copyright = "2015 Joey Hess";
       maintainer = "Joey Hess <id@joeyh.name>";
@@ -22,7 +13,7 @@
       synopsis = "scroll(6), a roguelike game";
       description = "You're a bookworm that's stuck on a scroll. You have to\ndodge between words and use spells to make your way down the page as th\nscroll is read. Go too slow and you'll get wound up in the scroll and\ncrushed.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "scroll" = {
@@ -41,8 +32,8 @@
             (hsPkgs.case-insensitive)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (flags.unix) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (flags.unix) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

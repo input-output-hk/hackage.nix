@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-authentication = false;
-    };
+    flags = { test-authentication = false; };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "liblastfm";
-        version = "0.0.3.5";
-      };
+      identifier = { name = "liblastfm"; version = "0.0.3.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Wrapper to Lastfm API";
       description = "Simple but complete wrapper to Lastfm API. Can send some stuff and receive reponses from Lastfm. JSON/XML parsing is an exercise for the user.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +27,8 @@
           (hsPkgs.aeson)
           (hsPkgs.xml)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "json-no-authentication" = {
           depends = [
@@ -47,8 +36,8 @@
             (hsPkgs.aeson)
             (hsPkgs.HUnit)
             (hsPkgs.liblastfm)
-          ];
-        };
+            ];
+          };
         "json-authentication" = {
           depends = [
             (hsPkgs.base)
@@ -56,8 +45,8 @@
             (hsPkgs.aeson)
             (hsPkgs.HUnit)
             (hsPkgs.liblastfm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

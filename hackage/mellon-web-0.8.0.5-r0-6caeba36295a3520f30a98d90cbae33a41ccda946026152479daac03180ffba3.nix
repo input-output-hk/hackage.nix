@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       client-unlock-example = true;
@@ -12,13 +6,10 @@
       mock-example = true;
       test-doctests = true;
       test-hlint = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mellon-web";
-        version = "0.8.0.5";
-      };
+      identifier = { name = "mellon-web"; version = "0.8.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018, Quixoftic, LLC";
       maintainer = "Drew Hess <dhess-src@quixoftic.com>";
@@ -28,7 +19,7 @@
       synopsis = "A REST web service for Mellon controllers";
       description = "The @mellon-web@ package wraps a @mellon-core@ controller in a REST\nweb service, making it possible to control physical access devices\nfrom an HTTP client. The package includes both a WAI application\nserver, and native Haskell client bindings for the service.\n\nLike the @mellon-core@ controller interface, the @mellon-web@ REST API\nis quite simple. There are only 3 methods:\n\n* @GET /time@ returns the system time on the server. This is made\navailable for diagnostic purposes, primarily to ensure the server\nhas an accurate clock.\n\n* @GET /state@ returns the controller's current state (either @Locked@\nor @Unlocked date@ where @date@ is the UTC time at which the\ncontroller will automatically lock again).\n\n* @PUT /state@ sets the controller's current state. Use this method to\nlock and unlock the controller.\n\nFor detailed documentation, the server includes a self-documenting\nSwagger spec.\n\nNote that the @mellon-web@ server does not provide an authentication\nmechanism! You should proxy it behind a secure, authenticating HTTPS\nserver such as Nginx.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,14 +46,14 @@
           (hsPkgs.transformers)
           (hsPkgs.wai)
           (hsPkgs.warp)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
           (hsPkgs.fail)
           (hsPkgs.semigroups)
-        ];
-      };
+          ];
+        };
       exes = {
         "gpio-mellon-server" = {
-          depends = pkgs.lib.optionals (!(!flags.gpio-example)) [
+          depends = (pkgs.lib).optionals (!(!flags.gpio-example)) [
             (hsPkgs.base)
             (hsPkgs.exceptions)
             (hsPkgs.hpio)
@@ -76,10 +67,10 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "mellon-schedule-unlock" = {
-          depends = pkgs.lib.optionals (!(!flags.client-unlock-example)) [
+          depends = (pkgs.lib).optionals (!(!flags.client-unlock-example)) [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.exceptions)
@@ -95,33 +86,33 @@
             (hsPkgs.servant-client)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "mock-mellon-server" = {
-          depends = pkgs.lib.optionals (!(!flags.mock-example)) [
+          depends = (pkgs.lib).optionals (!(!flags.mock-example)) [
             (hsPkgs.base)
             (hsPkgs.mellon-core)
             (hsPkgs.mellon-web)
             (hsPkgs.protolude)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctest" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.protolude)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
             (hsPkgs.protolude)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -154,8 +145,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

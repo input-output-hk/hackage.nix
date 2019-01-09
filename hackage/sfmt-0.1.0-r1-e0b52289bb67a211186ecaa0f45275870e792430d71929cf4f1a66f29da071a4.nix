@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sfmt";
-        version = "0.1.0";
-      };
+      identifier = { name = "sfmt"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "SIMD-oriented Fast Mersenne Twister(SFMT) binding.";
       description = "this library has mwc-random<http://hackage.haskell.org/package/mwc-random> like api.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.primitive)
           (hsPkgs.bytestring)
           (hsPkgs.entropy)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

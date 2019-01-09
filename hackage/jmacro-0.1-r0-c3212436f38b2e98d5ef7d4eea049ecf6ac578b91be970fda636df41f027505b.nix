@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "jmacro";
-        version = "0.1";
-      };
+      identifier = { name = "jmacro"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "gershomb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "QuasiQuotation library for programmatic generation of Javascript code.";
       description = "Javascript syntax, functional syntax, hygeinic names, compile-time guarantees of syntactic correctness, limited typechecking.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.mtl)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

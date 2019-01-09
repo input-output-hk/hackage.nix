@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "intero";
-        version = "0.1.23";
-      };
+      identifier = { name = "intero"; version = "0.1.23"; };
       license = "BSD-3-Clause";
       copyright = "2016 FP Complete,\n2016 Chris Done,\n2012 Kazu Yamamoto,\n2008 Claus Reinke,\n2005 The University of Glasgow";
       maintainer = "chrisdone@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Complete interactive development program for Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "intero" = {
@@ -40,14 +31,14 @@
             (hsPkgs.syb)
             (hsPkgs.containers)
             (hsPkgs.time)
-          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0.1") [
+            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.0.1") [
             (hsPkgs.ghci)
             (hsPkgs.ghc-boot-th)
-          ]) ++ (if system.isWindows
+            ]) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
+          };
         };
-      };
       tests = {
         "intero-test" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.directory)
             (hsPkgs.regex-compat)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hls";
-        version = "0.11";
-      };
+      identifier = { name = "hls"; version = "0.11"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2006-2011";
       maintainer = "rd@slavepianos.org";
@@ -22,14 +13,10 @@
       synopsis = "Haskell Lindenmayer Systems";
       description = "Haskell library for generating Lindemayer systems";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.hps)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.hps) ];
+        };
       };
-    };
-  }
+    }

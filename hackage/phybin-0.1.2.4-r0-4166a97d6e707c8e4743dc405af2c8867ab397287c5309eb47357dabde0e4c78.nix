@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "phybin";
-        version = "0.1.2.4";
-      };
+      identifier = { name = "phybin"; version = "0.1.2.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2010 Ryan Newton";
       maintainer = "Ryan Newton <rrnewton@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utility for binning phylogenetic trees in Newick format.";
       description = "Classifies (bins) input Newick trees by topology, creating output files that\ncharacterize the size and contents of each bin (including\ngenerating GraphViz-based visual representations of the tree topologies).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "phybin" = {
@@ -42,8 +33,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

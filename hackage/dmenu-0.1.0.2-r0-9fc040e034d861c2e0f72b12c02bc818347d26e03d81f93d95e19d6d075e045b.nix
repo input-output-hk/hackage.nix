@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dmenu";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "dmenu"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Hannes Saffrich";
       maintainer = "Hannes Saffrich <m0rphism@zankapfel.org>";
@@ -22,7 +13,7 @@
       synopsis = "Complete bindings to the dmenu and dmenu2 command line tools.";
       description = "Provides fuzzy selection via a GUI menu.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.transformers)
           (hsPkgs.process)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

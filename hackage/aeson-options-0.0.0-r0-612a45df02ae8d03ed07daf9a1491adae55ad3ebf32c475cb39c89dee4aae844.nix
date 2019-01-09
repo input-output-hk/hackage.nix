@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "aeson-options";
-        version = "0.0.0";
-      };
+      identifier = { name = "aeson-options"; version = "0.0.0"; };
       license = "MIT";
       copyright = "2018 Serokell";
       maintainer = "Serokell <hi@serokell.io>";
@@ -22,13 +13,8 @@
       synopsis = "Options to derive FromJSON/ToJSON instances";
       description = "Options to derive FromJSON/ToJSON instances.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.aeson) ]; };
+      };
+    }

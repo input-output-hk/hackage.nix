@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      install-benchmarks = false;
-      distributed-process-tests = false;
-    };
+    flags = { install-benchmarks = false; distributed-process-tests = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-transport-zeromq";
-        version = "0.2.1";
-      };
+      identifier = { name = "network-transport-zeromq"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014-2015, EURL Tweag";
       maintainer = "Alexander Vershilov <alexander.vershilov@tweag.io>";
@@ -25,7 +13,7 @@
       synopsis = "ZeroMQ backend for network-transport";
       description = "Implementation of the\n<http://hackage.haskell.org/package/network-transport\nnetwork-transport> API over ZeroMQ. This provides access to the\nwealth of transports implemented in ZeroMQ, such as in-process,\ninter-process, TCP, TPIC and multicast. Furthermore, this makes it\npossible to encrypt and authenticate clients using ZeroMQ's security\nmechanisms, and increase throughput using ZeroMQ's intelligent\nmessage batching.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +31,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.random)
           (hsPkgs.data-accessor)
-        ];
-      };
+          ];
+        };
       exes = {
         "bench-dp-latency" = {
           depends = [
@@ -54,8 +42,8 @@
             (hsPkgs.binary)
             (hsPkgs.criterion)
             (hsPkgs.distributed-process)
-          ];
-        };
+            ];
+          };
         "bench-dp-throughput" = {
           depends = [
             (hsPkgs.base)
@@ -64,8 +52,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "bench-dp-channels" = {
           depends = [
             (hsPkgs.base)
@@ -74,9 +62,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-zeromq" = {
           depends = [
@@ -85,8 +73,8 @@
             (hsPkgs.network-transport-zeromq)
             (hsPkgs.zeromq4-haskell)
             (hsPkgs.network-transport-tests)
-          ];
-        };
+            ];
+          };
         "test-api" = {
           depends = [
             (hsPkgs.base)
@@ -95,8 +83,8 @@
             (hsPkgs.zeromq4-haskell)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "test-ch-core" = {
           depends = [
             (hsPkgs.base)
@@ -109,8 +97,8 @@
             (hsPkgs.stm)
             (hsPkgs.stm-chans)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "test-ch-closure" = {
           depends = [
             (hsPkgs.base)
@@ -123,8 +111,8 @@
             (hsPkgs.stm)
             (hsPkgs.stm-chans)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "test-ch-stat" = {
           depends = [
             (hsPkgs.base)
@@ -137,9 +125,9 @@
             (hsPkgs.stm)
             (hsPkgs.stm-chans)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-channels-local" = {
           depends = [
@@ -149,8 +137,8 @@
             (hsPkgs.binary)
             (hsPkgs.distributed-process)
             (hsPkgs.criterion)
-          ];
-        };
+            ];
+          };
         "bench-latency-local" = {
           depends = [
             (hsPkgs.base)
@@ -159,8 +147,8 @@
             (hsPkgs.binary)
             (hsPkgs.distributed-process)
             (hsPkgs.criterion)
-          ];
-        };
+            ];
+          };
         "bench-throughput-local" = {
           depends = [
             (hsPkgs.base)
@@ -169,8 +157,8 @@
             (hsPkgs.binary)
             (hsPkgs.distributed-process)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

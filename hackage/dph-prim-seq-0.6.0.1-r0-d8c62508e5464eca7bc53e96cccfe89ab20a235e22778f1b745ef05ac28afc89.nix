@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dph-prim-seq";
-        version = "0.6.0.1";
-      };
+      identifier = { name = "dph-prim-seq"; version = "0.6.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@cse.unsw.edu.au>";
@@ -22,7 +13,7 @@
       synopsis = "Data Parallel Haskell segmented arrays. (sequential implementation)";
       description = "Sequential array data type and stream fuctions, along with a\nsequential reference implementation of the segmented array\nAPI defined in @dph-prim-interface@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.dph-base)
           (hsPkgs.dph-prim-interface)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

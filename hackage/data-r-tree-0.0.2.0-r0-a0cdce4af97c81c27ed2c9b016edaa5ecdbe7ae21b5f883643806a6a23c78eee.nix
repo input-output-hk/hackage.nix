@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-r-tree";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "data-r-tree"; version = "0.0.2.0"; };
       license = "MIT";
       copyright = "Sebastian Philipp, Birte Wagner";
       maintainer = "sebastian@spawnhost.de";
@@ -22,15 +13,11 @@
       synopsis = "R-Tree is a spatial data structure similar to Quadtrees or B-Trees.";
       description = "R-Tree is a spatial data structure similar to Quadtrees or B-Trees.\nAn R-Tree is a balanced tree and optimized for lookups. This implemetation useses an R-Tree to privide\na map to arbitrary values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.deepseq)
-          (hsPkgs.binary)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.deepseq) (hsPkgs.binary) ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -43,8 +30,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.gnuplot)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

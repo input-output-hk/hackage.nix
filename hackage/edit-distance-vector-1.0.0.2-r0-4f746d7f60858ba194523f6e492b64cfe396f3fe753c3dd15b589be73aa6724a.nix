@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "edit-distance-vector";
-        version = "1.0.0.2";
-      };
+      identifier = { name = "edit-distance-vector"; version = "1.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Thomas Sutton and others.";
       maintainer = "me@thomas-sutton.id.au";
@@ -22,14 +13,9 @@
       synopsis = "Calculate edit distances and edit scripts between vectors.";
       description = "An implementation of the Wagner–Fischer dynamic programming algorithm to\nfind the optimal edit script and cost between two sequences.\n\nThe implementation in this package is specialised to sequences represented\nwith \"Data.Vector\" but is otherwise agnostic to:\n\n* The type of values in the vectors;\n\n* The type representing edit operations; and\n\n* The type representing the cost of operations.\n";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };
       tests = {
         "properties" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.edit-distance-vector)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

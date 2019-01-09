@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "airship";
-        version = "0.9.0";
-      };
+      identifier = { name = "airship"; version = "0.9.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Tim McGilchrist <timmcgil@gmail.com>, reid@helium.com";
@@ -22,7 +13,7 @@
       synopsis = "A Webmachine-inspired HTTP library";
       description = "A Webmachine-inspired HTTP library based off ideas from the original Erlang project <https://github.com/webmachine/webmachine>\n\nA number of examples can be found in <https://github.com/helium/airship/tree/master/example> illustrating how to build airship based services.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -58,8 +49,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.transformers)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

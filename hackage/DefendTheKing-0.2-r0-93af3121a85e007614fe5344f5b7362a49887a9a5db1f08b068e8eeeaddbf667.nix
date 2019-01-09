@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "DefendTheKing";
-        version = "0.2";
-      };
+      identifier = { name = "DefendTheKing"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2009, Yair Chuchem";
       maintainer = "Yair Chuchem (yairchu@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "A simple RTS game";
       description = "Defend the King from the Forces of Different:\n(work in progress)\nA simple fast-paced multiplayer RTS game\ninspired by Bughouse-Chess and Starcraft.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "defend" = {
@@ -42,16 +33,16 @@
             (hsPkgs.binary)
             (hsPkgs.MaybeT)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "defendFontEdit" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.peakachu)
             (hsPkgs.GLUT)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

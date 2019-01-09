@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bytestring-read";
-        version = "0.3.0";
-      };
+      identifier = { name = "bytestring-read"; version = "0.3.0"; };
       license = "MIT";
       copyright = "(c) 2015 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "fast ByteString to number converting library";
       description = "benchmark: <http://philopon.github.io/bytestring-read/bench.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.types-compat)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.types-compat) ];
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -39,15 +26,10 @@
             (hsPkgs.bytestring)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -59,8 +41,8 @@
             (hsPkgs.criterion)
             (hsPkgs.scientific)
             (hsPkgs.attoparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

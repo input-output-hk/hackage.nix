@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "timelike-clock";
-        version = "0.1.0";
-      };
+      identifier = { name = "timelike-clock"; version = "0.1.0"; };
       license = "LicenseRef-Apache";
       copyright = "Copyright 2016 Ertugrul Söylemez";
       maintainer = "Ertugrul Söylemez <esz@posteo.de>";
@@ -22,7 +13,7 @@
       synopsis = "Timelike interface for the clock library";
       description = "This library provides a\n<http://hackage.haskell.org/package/timelike timelike> interface to\nthe <http://hackage.haskell.org/package/clock clock library>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.clock)
           (hsPkgs.timelike)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

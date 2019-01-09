@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bookkeeper";
-        version = "0.2.3";
-      };
+      identifier = { name = "bookkeeper"; version = "0.2.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Julian K. Arni";
       maintainer = "jkarni@gmail.com";
@@ -22,15 +13,15 @@
       synopsis = "Anonymous records and overloaded labels";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.type-level-sets)
           (hsPkgs.data-default-class)
-        ];
-      };
+          ];
+        };
       exes = {
         "readme" = {
           depends = [
@@ -40,9 +31,9 @@
             (hsPkgs.base)
             (hsPkgs.bookkeeper)
             (hsPkgs.markdown-unlit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctest" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.doctest)
             (hsPkgs.Glob)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -62,9 +53,9 @@
             (hsPkgs.bookkeeper)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.data-default-class)
             (hsPkgs.bookkeeper)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

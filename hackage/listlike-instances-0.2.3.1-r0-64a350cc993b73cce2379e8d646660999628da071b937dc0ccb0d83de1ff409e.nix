@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "listlike-instances";
-        version = "0.2.3.1";
-      };
+      identifier = { name = "listlike-instances"; version = "0.2.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jwlato@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Extra instances of the ListLike class";
       description = "Provides ListLike instances for Vector and Text types";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.ListLike)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

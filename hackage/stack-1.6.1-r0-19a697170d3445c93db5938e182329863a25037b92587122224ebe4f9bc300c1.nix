@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       disable-git-info = false;
@@ -12,13 +6,10 @@
       integration-tests = false;
       static = false;
       supported-build = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack";
-        version = "1.6.1";
-      };
+      identifier = { name = "stack"; version = "1.6.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "manny@fpcomplete.com";
@@ -28,7 +19,7 @@
       synopsis = "The Haskell Tool Stack";
       description = "Please see the README.md for usage information, and the wiki on Github for more details.  Also, note that the API for the library is not currently stable, and may change significantly, even between minor releases. It is currently only intended for use by the executable.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -114,15 +105,11 @@
           (hsPkgs.yaml)
           (hsPkgs.zip-archive)
           (hsPkgs.zlib)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
-          else [
-            (hsPkgs.bindings-uname)
-            (hsPkgs.pid1)
-            (hsPkgs.unix)
-          ]);
-        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs);
-      };
+          else [ (hsPkgs.bindings-uname) (hsPkgs.pid1) (hsPkgs.unix) ]);
+        build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+        };
       exes = {
         "stack" = {
           depends = ([
@@ -209,19 +196,19 @@
             (hsPkgs.yaml)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.bindings-uname)
               (hsPkgs.pid1)
               (hsPkgs.unix)
-            ])) ++ pkgs.lib.optionals (!flags.disable-git-info) [
+              ])) ++ (pkgs.lib).optionals (!flags.disable-git-info) [
             (hsPkgs.gitrev)
             (hsPkgs.optparse-simple)
-          ];
-          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs);
+            ];
+          build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+          };
         };
-      };
       tests = {
         "stack-integration-test" = {
           depends = [
@@ -308,15 +295,11 @@
             (hsPkgs.yaml)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
-            else [
-              (hsPkgs.bindings-uname)
-              (hsPkgs.pid1)
-              (hsPkgs.unix)
-            ]);
-          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs);
-        };
+            else [ (hsPkgs.bindings-uname) (hsPkgs.pid1) (hsPkgs.unix) ]);
+          build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+          };
         "stack-test" = {
           depends = [
             (hsPkgs.Cabal)
@@ -405,15 +388,11 @@
             (hsPkgs.yaml)
             (hsPkgs.zip-archive)
             (hsPkgs.zlib)
-          ] ++ (if system.isWindows
+            ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
-            else [
-              (hsPkgs.bindings-uname)
-              (hsPkgs.pid1)
-              (hsPkgs.unix)
-            ]);
-          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs);
+            else [ (hsPkgs.bindings-uname) (hsPkgs.pid1) (hsPkgs.unix) ]);
+          build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+          };
         };
       };
-    };
-  }
+    }

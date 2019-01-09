@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "nemesis";
-        version = "2010.10.4";
-      };
+      identifier = { name = "nemesis"; version = "2010.10.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "a Rake like task management tool";
       description = "smart per project code snippets";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.data-default)
           (hsPkgs.Glob)
           (hsPkgs.mps)
-        ];
-      };
+          ];
+        };
       exes = {
         "nemesis" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.containers)
             (hsPkgs.data-default)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-diff";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "aeson-diff"; version = "0.1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Thomas Sutton and others.";
       maintainer = "me@thomas-sutton.id.au";
@@ -22,7 +13,7 @@
       synopsis = "Extract and apply patches to JSON documents.";
       description = "\nThis is a small library for working with changes to JSON documents. It\nincludes a library and two command-line executables in the style of the\ndiff(1) and patch(1) commands available on many systems.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "json-diff" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "json-patch" = {
           depends = [
             (hsPkgs.base)
@@ -56,9 +47,9 @@
             (hsPkgs.aeson-diff)
             (hsPkgs.bytestring)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "properties" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

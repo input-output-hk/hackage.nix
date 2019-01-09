@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "transaction";
-        version = "0.1.1.3";
-      };
+      identifier = { name = "transaction"; version = "0.1.1.3"; };
       license = "MIT";
       copyright = "2018 Kadzuya Okamoto";
       maintainer = "arow.okamoto+github@gmail.com";
@@ -22,14 +13,14 @@
       synopsis = "Monadic representation of transactions.";
       description = "Monadic representation of transactions. Alike `List`, but can be declared with `do` notations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.mono-traversable)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "transaction-test" = {
           depends = [
@@ -38,16 +29,16 @@
             (hsPkgs.mono-traversable)
             (hsPkgs.QuickCheck)
             (hsPkgs.transaction)
-          ];
-        };
+            ];
+          };
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.Glob)
             (hsPkgs.doctest)
             (hsPkgs.transaction)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

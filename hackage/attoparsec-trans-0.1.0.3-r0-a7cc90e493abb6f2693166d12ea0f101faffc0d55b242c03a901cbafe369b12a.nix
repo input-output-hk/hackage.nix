@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "attoparsec-trans";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "attoparsec-trans"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "srijs@airpost.net";
@@ -22,14 +13,10 @@
       synopsis = "Interleaved effects for attoparsec parsers";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-          (hsPkgs.attoparsec)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.attoparsec) ];
+        };
       };
-    };
-  }
+    }

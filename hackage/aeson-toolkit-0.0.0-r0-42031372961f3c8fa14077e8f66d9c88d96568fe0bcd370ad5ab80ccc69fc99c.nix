@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "aeson-toolkit";
-        version = "0.0.0";
-      };
+      identifier = { name = "aeson-toolkit"; version = "0.0.0"; };
       license = "MIT";
       copyright = "(c) 2013 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "A generalization of Aeson over Failure";
       description = "A generalization of Aeson over Failure";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,12 @@
           (hsPkgs.bytestring)
           (hsPkgs.failure)
           (hsPkgs.aeson)
-        ];
-      };
-      tests = {
-        "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson-toolkit)
-            (hsPkgs.hspec)
           ];
         };
+      tests = {
+        "spec" = {
+          depends = [ (hsPkgs.base) (hsPkgs.aeson-toolkit) (hsPkgs.hspec) ];
+          };
+        };
       };
-    };
-  }
+    }

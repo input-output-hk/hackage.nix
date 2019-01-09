@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-quick";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "aeson-quick"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014-2017 Scott Sadler";
       maintainer = "Scott Sadler <scott@scottsadler.de>";
@@ -22,7 +13,7 @@
       synopsis = "Quick JSON extractions with Aeson";
       description = "DSL on top of Aeson. This library is /experimental/.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "aeson-quick-test" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.attoparsec)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

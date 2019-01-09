@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cgi";
-        version = "3001.2.1.0";
-      };
+      identifier = { name = "cgi"; version = "3001.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert, John Chee, Andy Gill, Anders Kaseorg,\nIan Lynagh, Erik Meijer, Sven Panne, Jeremy Shaw";
       maintainer = "John Chee <cheecheeo@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A library for writing CGI programs";
       description = "This is a Haskell library for writing CGI programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,12 +27,9 @@
           (hsPkgs.old-locale)
           (hsPkgs.containers)
           (hsPkgs.multipart)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
-          ]
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

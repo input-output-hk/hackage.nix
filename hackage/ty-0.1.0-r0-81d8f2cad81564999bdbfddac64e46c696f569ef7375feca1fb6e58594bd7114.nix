@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ty";
-        version = "0.1.0";
-      };
+      identifier = { name = "ty"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2012 by Conal Elliott";
       maintainer = "conal@conal.net";
@@ -22,10 +13,6 @@
       synopsis = "Typed type representations and equality proofs";
       description = "Typed type representations and equality proofs\n\nProject wiki page: <http://haskell.org/haskellwiki/ty>\n\nCopyright 2009-2012 Conal Elliott; BSD3 license.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

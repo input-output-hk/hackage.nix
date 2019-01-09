@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "language-c-comments";
-        version = "0.3";
-      };
+      identifier = { name = "language-c-comments"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ghulette@gmail.com";
@@ -22,17 +13,11 @@
       synopsis = "Extracting comments from C code";
       description = "A library for extracting comments from C code.  It\nwill parse both single- and multi-line comments, and\ncorrectly handles split lines.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.language-c)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.language-c) ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       };
-    };
-  }
+    }

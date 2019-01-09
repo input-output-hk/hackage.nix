@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Flippi";
-        version = "0.0.4";
-      };
+      identifier = { name = "Flippi"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Philippa Cowderoy <flippa@flippac.org>";
@@ -22,7 +13,7 @@
       synopsis = "Wiki";
       description = "Flippi is a Wiki clone written in Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "flippi" = {
@@ -35,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.old-time)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

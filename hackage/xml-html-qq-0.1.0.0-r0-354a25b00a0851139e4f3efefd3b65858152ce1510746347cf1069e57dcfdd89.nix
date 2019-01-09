@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xml-html-qq";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "xml-html-qq"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Quasi-quoters for XML and HTML Documents";
       description = "Please see <https://github.com/cdepillabout/xml-html-qq#readme README.md>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,16 +30,12 @@
           (hsPkgs.th-lift)
           (hsPkgs.th-lift-instances)
           (hsPkgs.xml-conduit)
-        ];
-      };
-      tests = {
-        "xml-html-qq-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
           ];
         };
+      tests = {
+        "xml-html-qq-doctest" = {
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         "xml-html-qq-test" = {
           depends = [
             (hsPkgs.base)
@@ -57,8 +44,8 @@
             (hsPkgs.text)
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-html-qq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

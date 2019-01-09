@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      chart = false;
-      gtk = false;
-    };
+    flags = { chart = false; gtk = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "criterion";
-        version = "0.5.1.1";
-      };
+      identifier = { name = "criterion"; version = "0.5.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2009, 2010, 2011 Bryan O'Sullivan";
       maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
@@ -25,7 +13,7 @@
       synopsis = "Robust, reliable performance measurement and analysis";
       description = "This library provides a powerful but simple way to measure the\nperformance of Haskell code.  It provides both a framework for\nexecuting and analysing benchmarks and a set of driver functions\nthat makes it easy to build and run benchmarks, and to analyse their\nresults.\n\nThe fastest way to get started is to read the documentation and\nexamples in the Criterion.Main module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,10 +30,10 @@
           (hsPkgs.time)
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
-        ] ++ pkgs.lib.optionals (flags.chart) [
+          ] ++ (pkgs.lib).optionals (flags.chart) [
           (hsPkgs.Chart)
           (hsPkgs.data-accessor)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

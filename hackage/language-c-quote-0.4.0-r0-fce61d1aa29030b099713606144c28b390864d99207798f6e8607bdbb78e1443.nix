@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-c-quote";
-        version = "0.4.0";
-      };
+      identifier = { name = "language-c-quote"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006-2012 Harvard University";
       maintainer = "mainland@eecs.harvard.edu";
@@ -22,7 +13,7 @@
       synopsis = "C/CUDA/OpenCL quasiquoting library.";
       description = "This package provides a general parser for the C language, including most GCC\nextensions and some CUDA and OpenCL extensions.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -39,15 +30,15 @@
           (hsPkgs.srcloc)
           (hsPkgs.syb)
           (hsPkgs.symbol)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.0" && (compiler.isGhc && compiler.version.lt "7.2")) (hsPkgs.template-haskell)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4" && (compiler.isGhc && compiler.version.lt "7.6")) (hsPkgs.template-haskell);
-        build-tools = pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.0" && (compiler.isGhc && (compiler.version).lt "7.2")) (hsPkgs.template-haskell)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs.template-haskell);
+        build-tools = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.4") [
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.4") [
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.language-c-quote)
             (hsPkgs.srcloc)
             (hsPkgs.symbol)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

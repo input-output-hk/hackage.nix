@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base-4-9 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "generic-deriving";
-        version = "1.11.1";
-      };
+      identifier = { name = "generic-deriving"; version = "1.11.1"; };
       license = "BSD-3-Clause";
       copyright = "2011-2013 Universiteit Utrecht, University of Oxford";
       maintainer = "generics@haskell.org";
@@ -22,15 +13,15 @@
       synopsis = "Generic programming library for generalised deriving.";
       description = "This package provides functionality for generalising the deriving mechanism\nin Haskell to arbitrary classes. It was first described in the paper:\n\n*  /A generic deriving mechanism for Haskell/.\nJose Pedro Magalhaes, Atze Dijkstra, Johan Jeuring, and Andres Loeh.\nHaskell'10.\n\nThe current implementation integrates with the new GHC Generics. See\n<http://www.haskell.org/haskellwiki/GHC.Generics> for more information.\nTemplate Haskell code is provided for supporting older GHCs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.containers)
           (hsPkgs.ghc-prim)
           (hsPkgs.template-haskell)
-        ] ++ [ (hsPkgs.base) ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -38,8 +29,8 @@
             (hsPkgs.generic-deriving)
             (hsPkgs.hspec)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

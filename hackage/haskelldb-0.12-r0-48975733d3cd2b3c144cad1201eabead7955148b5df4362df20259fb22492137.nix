@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskelldb";
-        version = "0.12";
-      };
+      identifier = { name = "haskelldb"; version = "0.12"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "haskelldb-users@lists.sourceforge.net";
@@ -22,20 +13,18 @@
       synopsis = "SQL unwrapper for Haskell.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.mtl)
-        ] ++ (if flags.split-base
+        depends = [ (hsPkgs.mtl) ] ++ (if flags.split-base
           then [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.old-time)
             (hsPkgs.old-locale)
             (hsPkgs.directory)
-          ]
+            ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "swagger-petstore";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "swagger-petstore"; version = "0.0.1.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2015 Jon Schoning";
       maintainer = "jonschoning@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Auto-generated swagger-petstore API Client";
       description = "\nClient library for calling the swagger-petstore API based on http-client.\nhost: petstore.swagger.io\n\nbase path: http://petstore.swagger.io/v2\n\napiVersion: 0.0.1\n\nswagger version: 2.0\n\nOpenAPI-Specification: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.monad-logger)
           (hsPkgs.safe-exceptions)
           (hsPkgs.case-insensitive)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.aeson)
             (hsPkgs.semigroups)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

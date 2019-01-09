@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "stylized";
-        version = "0.1.2";
-      };
+      identifier = { name = "stylized"; version = "0.1.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "luca.pwns@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "";
       description = "Various ways to output stylized text on ANSI consoles.\nUses some of the MaxBolingbroke's System.Console.ANSI\nfunctionalities.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ansi-terminal)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ansi-terminal) ]; };
+      };
+    }

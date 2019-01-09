@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "repline";
-        version = "0.1.6.0";
-      };
+      identifier = { name = "repline"; version = "0.1.6.0"; };
       license = "MIT";
       copyright = "2014-2017 Stephen Diehl";
       maintainer = "stephen.m.diehl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskeline wrapper for GHCi-like REPL interfaces.";
       description = "Haskeline wrapper for GHCi-like REPL interfaces. Composable with normal mtl transformers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.mtl)
           (hsPkgs.process)
           (hsPkgs.haskeline)
-        ];
-      };
+          ];
+        };
       exes = {
         "Simple" = {
           depends = [
@@ -40,16 +31,16 @@
             (hsPkgs.repline)
             (hsPkgs.process)
             (hsPkgs.mtl)
-          ];
-        };
+            ];
+          };
         "Example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.repline)
             (hsPkgs.mtl)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

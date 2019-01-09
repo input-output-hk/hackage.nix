@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "superrecord";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "superrecord"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Alexander Thiemann <mail@athiemann.net>";
       maintainer = "mail@athiemann.net";
@@ -22,7 +13,7 @@
       synopsis = "Supercharged anonymous records";
       description = "Anonymous records with various useful utilities";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.deepseq)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "superrecord-test" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.superrecord)
             (hsPkgs.hspec)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "superrecord-bench" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.bookkeeper)
             (hsPkgs.deepseq)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

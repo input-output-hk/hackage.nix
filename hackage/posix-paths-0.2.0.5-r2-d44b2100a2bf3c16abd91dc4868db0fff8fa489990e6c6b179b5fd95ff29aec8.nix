@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "posix-paths";
-        version = "0.2.0.5";
-      };
+      identifier = { name = "posix-paths"; version = "0.2.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jwlato@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "POSIX filepath/directory functionality";
       description = "This package gives access to certain POSIX-based Filepath/Directory\nservices.\n\nThe package is not supported under Windows (except under Cygwin).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.unix)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.unix) ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -41,9 +28,9 @@
             (hsPkgs.doctest)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench.hs" = {
           depends = [
@@ -55,8 +42,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

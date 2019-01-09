@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "validity-unordered-containers";
         version = "0.2.0.2";
-      };
+        };
       license = "MIT";
       copyright = "Copyright: (c) 2017-2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com,\nnick.van.den.broeck666@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Validity instances for unordered-containers";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +24,7 @@
           (hsPkgs.hashable)
           (hsPkgs.unordered-containers)
           (hsPkgs.validity)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

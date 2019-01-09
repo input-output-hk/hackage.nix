@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lens-properties";
-        version = "4.7";
-      };
+      identifier = { name = "lens-properties"; version = "4.7"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2014 Edward A. Kmett, Copyright (C) 2014 Oliver Charles";
       maintainer = "Edward Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "QuickCheck properties for lens";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.lens)
           (hsPkgs.QuickCheck)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

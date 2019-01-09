@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Sysmon";
-        version = "0.1";
-      };
+      identifier = { name = "Sysmon"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "virukav@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sybase 15 sysmon reports processor";
       description = "A library for processing Sysbase 15 sysmon reports.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.MissingH)
           (hsPkgs.vector)
           (hsPkgs.statistics)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

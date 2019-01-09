@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "riemann";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "riemann"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "2013 Joseph Abrahamson, 2015 Trevis Elser";
       maintainer = "trevis@clickscape.com";
@@ -22,7 +13,7 @@
       synopsis = "A Riemann client for Haskell";
       description = "Very simple event sending to a Riemann server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.data-default)
           (hsPkgs.cereal)
-        ];
-      };
+          ];
+        };
       tests = {
         "property" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.riemann)
-          ];
-        };
+            ];
+          };
         "unit" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.riemann)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hxt-tagsoup";
-        version = "9.0.0";
-      };
+      identifier = { name = "hxt-tagsoup"; version = "9.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010 Uwe Schmidt";
       maintainer = "Uwe Schmidt <uwe@fh-wedel.de>";
@@ -22,7 +13,7 @@
       synopsis = "TagSoup parser for HXT";
       description = "The Tagsoup interface for the HXT lazy HTML parser.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.tagsoup)
           (hsPkgs.hxt-charproperties)
           (hsPkgs.hxt)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "quickselect";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "quickselect"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Donnacha Oisín Kidney";
       maintainer = "mail@doisinkidney.com";
@@ -22,14 +13,9 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/oisdk/quickselect#readme>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };
       tests = {
         "quickselect-doctests" = {
           depends = [
@@ -38,17 +24,17 @@
             (hsPkgs.doctest)
             (hsPkgs.quickselect)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "quickselect-test" = {
           depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.quickselect)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -57,8 +43,8 @@
             (hsPkgs.quickselect)
             (hsPkgs.random)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

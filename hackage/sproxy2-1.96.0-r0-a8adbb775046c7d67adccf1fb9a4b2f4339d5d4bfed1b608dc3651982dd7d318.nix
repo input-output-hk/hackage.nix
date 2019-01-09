@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "sproxy2";
-        version = "1.96.0";
-      };
+      identifier = { name = "sproxy2"; version = "1.96.0"; };
       license = "MIT";
       copyright = "2016-2017, Zalora South East Asia Pte. Ltd;\n2017, Igor Pashev <pashev.igor@gmail.com>";
       maintainer = "Igor Pashev <pashev.igor@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Secure HTTP proxy for authenticating users via OAuth2";
       description = "Sproxy is secure by default. No requests makes it to the backend\nserver if they haven't been explicitly whitelisted.  Sproxy is\nindependent. Any web application written in any language can\nuse it.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sproxy2" = {
@@ -58,8 +49,8 @@
             (hsPkgs.warp-tls)
             (hsPkgs.word8)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

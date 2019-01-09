@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snaplet-mongoDB";
-        version = "0.2";
-      };
+      identifier = { name = "snaplet-mongoDB"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ciemniewski.kamil@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Snap Framework MongoDB support as Snaplet";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.template-haskell)
           (hsPkgs.MonadCatchIO-transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

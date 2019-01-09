@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoodie";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hoodie"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "denis.volk@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A small, toy roguelike";
       description = "A small roguelike; perhaps 10% of a real one. In development";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hoodie" = {
@@ -36,8 +27,8 @@
             (hsPkgs.astar)
             (hsPkgs.ncurses)
             (hsPkgs.hfov)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

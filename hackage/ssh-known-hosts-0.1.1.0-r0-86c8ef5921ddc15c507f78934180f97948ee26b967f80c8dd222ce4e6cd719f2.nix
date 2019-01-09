@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      sample_progs = false;
-    };
+    flags = { sample_progs = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ssh-known-hosts";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "ssh-known-hosts"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Kevin Quick";
       maintainer = "quick@sparq.org";
@@ -24,23 +13,16 @@
       synopsis = "Read and interpret the SSH known-hosts file";
       description = "Utility to read the contents of the SSH known_hosts file and create\nlocal in-memory data structures for each of the remote entities\nlisted.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.iproute)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.iproute) (hsPkgs.text) ];
+        };
       exes = {
         "readknownhosts" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ssh-known-hosts)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.ssh-known-hosts) ];
+          };
         };
-      };
       tests = {
         "test_parsing" = {
           depends = [
@@ -54,8 +36,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.ssh-known-hosts)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

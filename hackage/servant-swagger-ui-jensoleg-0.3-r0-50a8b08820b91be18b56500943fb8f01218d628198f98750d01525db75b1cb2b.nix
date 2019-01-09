@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "servant-swagger-ui-jensoleg";
-        version = "0.3";
-      };
+      identifier = { name = "servant-swagger-ui-jensoleg"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Servant swagger ui: Jens-Ole Graulund theme";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)\n\nJsn-Ole Graulund theme https://github.com/jensoleg/swagger-org";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.servant-server)
           (hsPkgs.swagger2)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

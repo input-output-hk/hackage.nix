@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      foreign-api = false;
-    };
+    flags = { foreign-api = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "myo";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "myo"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Haskell binding to the Myo armband";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +27,7 @@
           (hsPkgs.text)
           (hsPkgs.scientific)
           (hsPkgs.unordered-containers)
-        ] ++ pkgs.lib.optionals (flags.foreign-api) [
+          ] ++ (pkgs.lib).optionals (flags.foreign-api) [
           (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
@@ -51,9 +40,9 @@
           (hsPkgs.scientific)
           (hsPkgs.unordered-containers)
           (hsPkgs.inline-c)
-        ];
-        libs = pkgs.lib.optional (flags.foreign-api) (pkgs."stdc++");
-      };
+          ];
+        libs = (pkgs.lib).optional (flags.foreign-api) (pkgs."stdc++");
+        };
       exes = {
         "myo-ws-example" = {
           depends = [
@@ -63,9 +52,9 @@
             (hsPkgs.string-conv)
             (hsPkgs.aeson)
             (hsPkgs.lens-family)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "myo-test" = {
           depends = [
@@ -73,8 +62,8 @@
             (hsPkgs.myo)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

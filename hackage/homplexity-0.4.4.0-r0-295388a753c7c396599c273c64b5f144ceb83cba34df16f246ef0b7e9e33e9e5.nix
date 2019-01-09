@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "homplexity";
-        version = "0.4.4.0";
-      };
+      identifier = { name = "homplexity"; version = "0.4.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright by Michal J. Gajda '2015-'2018";
       maintainer = "mjgajda@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell code quality tool";
       description = "Homplexity aims to measure code complexity,\nwarning about fragments that might have higher defect probability\ndue to bad coding style on-the-large:\n\n* too large functions\n\n* too deeply nested conditions\n\n* too few comments";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
           (hsPkgs.cpphs)
-        ];
-      };
+          ];
+        };
       exes = {
         "homplexity" = {
           depends = [
@@ -52,20 +43,18 @@
             (hsPkgs.template-haskell)
             (hsPkgs.cpphs)
             (hsPkgs.homplexity)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.happy)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          };
         };
-      };
       tests = {
         "Comments" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.uniplate)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

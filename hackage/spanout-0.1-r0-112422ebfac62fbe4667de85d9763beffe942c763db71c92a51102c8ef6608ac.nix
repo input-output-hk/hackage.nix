@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "spanout";
-        version = "0.1";
-      };
+      identifier = { name = "spanout"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Viktor Tanyi <tanyi.viktor@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A breakout clone written in netwire and gloss";
       description = "A breakout clone written in netwire and gloss.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "spanout" = {
@@ -35,8 +26,8 @@
             (hsPkgs.MonadRandom)
             (hsPkgs.netwire)
             (hsPkgs.gloss)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

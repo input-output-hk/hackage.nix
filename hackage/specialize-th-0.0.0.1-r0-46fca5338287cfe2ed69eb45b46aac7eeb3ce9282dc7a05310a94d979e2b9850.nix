@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "specialize-th";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "specialize-th"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jonathangfischoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Create specialized types from polymorphic ones using TH";
       description = "Very Alpha. Minimal Testing. Will test more this week.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.uniplate)
           (hsPkgs.type-sub-th)
           (hsPkgs.universe-th)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.uniplate)
             (hsPkgs.type-sub-th)
             (hsPkgs.universe-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

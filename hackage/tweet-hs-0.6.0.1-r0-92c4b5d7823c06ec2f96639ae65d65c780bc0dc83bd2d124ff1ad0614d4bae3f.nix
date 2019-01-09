@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm-fast = false;
-      library = false;
-    };
+    flags = { llvm-fast = false; library = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tweet-hs";
-        version = "0.6.0.1";
-      };
+      identifier = { name = "tweet-hs"; version = "0.6.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Vanessa McHale";
       maintainer = "tmchale@wisc.edu";
@@ -25,7 +13,7 @@
       synopsis = "Command-line tool for twitter";
       description = "a Command Line Interface Tweeter";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,16 +35,9 @@
           (hsPkgs.extra)
           (hsPkgs.composition)
           (hsPkgs.aeson)
-        ];
-      };
-      exes = {
-        "tweet" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tweet-hs)
           ];
         };
-      };
+      exes = { "tweet" = { depends = [ (hsPkgs.base) (hsPkgs.tweet-hs) ]; }; };
       tests = {
         "tweeths-test" = {
           depends = [
@@ -66,9 +47,9 @@
             (hsPkgs.hspec-megaparsec)
             (hsPkgs.megaparsec)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "tweeths-bench" = {
           depends = [
@@ -77,8 +58,8 @@
             (hsPkgs.tweet-hs)
             (hsPkgs.megaparsec)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

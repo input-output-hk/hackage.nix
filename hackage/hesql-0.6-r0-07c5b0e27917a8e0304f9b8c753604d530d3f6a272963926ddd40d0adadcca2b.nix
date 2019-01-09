@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hesql";
-        version = "0.6";
-      };
+      identifier = { name = "hesql"; version = "0.6"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Christoph Bauer <ich@christoph-bauer.net>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell's embedded SQL";
       description = "hesql rewrites SQL-function to Haskell/HDBC-functions";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hesql" = {
@@ -34,8 +25,8 @@
             (hsPkgs.filepath)
             (hsPkgs.parsec)
             (hsPkgs.hssqlppp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

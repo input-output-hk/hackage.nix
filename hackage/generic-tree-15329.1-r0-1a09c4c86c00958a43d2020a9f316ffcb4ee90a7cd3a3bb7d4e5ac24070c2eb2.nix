@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "generic-tree";
-        version = "15329.1";
-      };
+      identifier = { name = "generic-tree"; version = "15329.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "strake888@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Generic Tree data type";
       description = "Generic tree type";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http2";
-        version = "1.6.3";
-      };
+      identifier = { name = "http2"; version = "1.6.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP/2 library including frames, priority queues and HPACK";
       description = "HTTP/2 library including frames, priority queues and HPACK.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.containers)
           (hsPkgs.psqueues)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       exes = {
         "hpack-encode" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.word8)
-          ];
-        };
+            ];
+          };
         "hpack-debug" = {
           depends = [
             (hsPkgs.base)
@@ -68,8 +59,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.word8)
-          ];
-        };
+            ];
+          };
         "hpack-stat" = {
           depends = [
             (hsPkgs.base)
@@ -86,8 +77,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.word8)
-          ];
-        };
+            ];
+          };
         "frame-encode" = {
           depends = [
             (hsPkgs.base)
@@ -98,16 +89,11 @@
             (hsPkgs.http2)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -121,8 +107,8 @@
             (hsPkgs.psqueues)
             (hsPkgs.stm)
             (hsPkgs.word8)
-          ];
-        };
+            ];
+          };
         "hpack" = {
           depends = [
             (hsPkgs.base)
@@ -141,8 +127,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.word8)
-          ];
-        };
+            ];
+          };
         "frame" = {
           depends = [
             (hsPkgs.base)
@@ -157,9 +143,9 @@
             (hsPkgs.http2)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "priority" = {
           depends = [
@@ -173,8 +159,8 @@
             (hsPkgs.mwc-random)
             (hsPkgs.psqueues)
             (hsPkgs.stm)
-          ];
-        };
+            ];
+          };
         "header-compression" = {
           depends = [
             (hsPkgs.base)
@@ -185,8 +171,8 @@
             (hsPkgs.criterion)
             (hsPkgs.hashtables)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

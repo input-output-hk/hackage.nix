@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-zeppelin-client";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "servant-zeppelin-client"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Martin Allen, Ben Weitzman";
       maintainer = "martin[dot]allen26[at]gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Client library for servant-zeppelin combinators.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.servant-client)
           (hsPkgs.servant-zeppelin)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "servant-zeppelin-cient-test" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.string-conversions)
             (hsPkgs.warp)
             (hsPkgs.wai-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

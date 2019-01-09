@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apecs";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "apecs"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jonascarpay@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A fast ECS for game engine programming";
       description = "A fast ECS for game engine programming";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,12 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.vector)
-        ];
-      };
-      exes = {
-        "simple" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.apecs)
-            (hsPkgs.linear)
           ];
         };
+      exes = {
+        "simple" = {
+          depends = [ (hsPkgs.base) (hsPkgs.apecs) (hsPkgs.linear) ];
+          };
         "rts" = {
           depends = [
             (hsPkgs.base)
@@ -47,9 +34,9 @@
             (hsPkgs.sdl2)
             (hsPkgs.random)
             (hsPkgs.linear)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "apecs-bench" = {
           depends = [
@@ -57,8 +44,8 @@
             (hsPkgs.apecs)
             (hsPkgs.criterion)
             (hsPkgs.linear)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

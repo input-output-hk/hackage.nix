@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mushu";
-        version = "0.1.0";
-      };
+      identifier = { name = "mushu"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Elie Genard";
       maintainer = "elaye.github.io@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Mushu is a minimalist MPD client with a TUI and an incremental fuzzy finder for your music library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mushu" = {
@@ -58,9 +49,9 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "mushu-test" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

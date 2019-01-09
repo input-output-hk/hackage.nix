@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "formlets";
-        version = "0.8";
-      };
+      identifier = { name = "formlets"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Doug Beardsley <mightybyte@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Formlets implemented in Haskell";
       description = "A modular way to build forms based on applicative functors,\nbased on the work described in:\n\n* Ezra Cooper, Samuel Lindley, Philip Wadler and Jeremy Yallop\n\\\"An idiom's guide to formlets\\\"\nTechnical Report, EDI-INF-RR-1263.\n<http://groups.inf.ed.ac.uk/links/formlets/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,12 +23,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.blaze-html)
           (hsPkgs.transformers)
-        ] ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-          ]
+          ] ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

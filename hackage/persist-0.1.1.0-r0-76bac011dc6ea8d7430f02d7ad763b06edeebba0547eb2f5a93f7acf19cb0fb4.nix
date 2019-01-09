@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "persist";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "persist"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Daniel Mendler <mail@daniel-mendler.de>";
@@ -22,7 +13,7 @@
       synopsis = "Minimal serialization library with focus on performance";
       description = "A binary serialization library with focus on performance similar to store and cereal";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-persist" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.persist)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

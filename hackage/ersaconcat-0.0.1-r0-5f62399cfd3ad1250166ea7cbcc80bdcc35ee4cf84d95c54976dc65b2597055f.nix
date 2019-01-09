@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ersaconcat";
-        version = "0.0.1";
-      };
+      identifier = { name = "ersaconcat"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016 Tony Morris";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A script to concatenate AIP ERSA";
       description = "A script to concatenate AIP ERSA";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.process)
-        ];
-      };
+          ];
+        };
       exes = {
         "ersaconcat" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "http-conduit-browser";
-        version = "1.7.1.2";
-      };
+      identifier = { name = "http-conduit-browser"; version = "1.7.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "kudah <kudahkukarek@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Browser interface to the http-conduit package";
       description = "This package creates a monad representing things that browsers do,\nletting you elegantly describe a browsing session. This package wraps\nthe http-conduit package by Michael Snoyman.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.failure)
           (hsPkgs.monad-control)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.network)
             (hsPkgs.failure)
             (hsPkgs.monad-control)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

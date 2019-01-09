@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { developer = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "riak-protobuf-lens";
-        version = "0.23.0.0";
-      };
+      identifier = { name = "riak-protobuf-lens"; version = "0.23.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Tim McGilchrist <timmcgil@gmail.com>, Mitchell Rosen <mitchellwrosen@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Lenses for riak-protobuf";
       description = "A set of Haskell lenses for interacting with the protocol buffer\nAPI of the Riak decentralized data store.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.riak-protobuf)
-        ];
-      };
+          ];
+        };
       exes = {
         "generate" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.microlens-th)
             (hsPkgs.riak-protobuf)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

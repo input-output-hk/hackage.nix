@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.8.0.6";
-      identifier = {
-        name = "newt";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "newt"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "creswick@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A trivially simple app to create things from simple templates.";
       description = "Instantiates text things from templates.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,13 +24,13 @@
           (hsPkgs.regex-pcre)
           (hsPkgs.array)
           (hsPkgs.Unixutils)
-        ] ++ [
+          ] ++ [
           (hsPkgs.containers)
           (hsPkgs.directory)
           (hsPkgs.process)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       exes = {
         "newt" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.cmdargs)
-          ] ++ [ (hsPkgs.containers) ];
-        };
+            ] ++ [ (hsPkgs.containers) ];
+          };
         "test-newt" = {
           depends = [
             (hsPkgs.newt)
@@ -59,13 +50,13 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.QuickCheck)
             (hsPkgs.uuid)
-          ] ++ [
+            ] ++ [
             (hsPkgs.containers)
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

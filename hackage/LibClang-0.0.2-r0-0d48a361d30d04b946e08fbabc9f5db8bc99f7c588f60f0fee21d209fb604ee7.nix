@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "LibClang";
-        version = "0.0.2";
-      };
+      identifier = { name = "LibClang"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chetan Taralekar <chetant@gmail.com>";
@@ -22,17 +13,11 @@
       synopsis = "Haskell bindings for libclang (a C++ parsing library)";
       description = "LibClang package provides direct bindings to libclang.\nThis should be enough for parsing C/C++ code, walking the AST and querying nodes and completion queries.\nNOTE .. When configuring, please ensure llvm-config is in path\n.. or provide the location of libclang and llvm includes\n.. if not in the default locations using --configure-option=-I...\n.. You can also use --configure-option=--enable-llvm-shared=LLVMSHAREDLIB_PREFIX\n.. if you'd like to link to the shared library";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ffi)
-          (hsPkgs.greencard)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.greencard)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.ffi) (hsPkgs.greencard) ];
+        build-tools = [ ((hsPkgs.buildPackages).greencard) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cryptonite-conduit";
-        version = "0.2.1";
-      };
+      identifier = { name = "cryptonite-conduit"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -22,7 +13,7 @@
       synopsis = "cryptonite conduit";
       description = "Conduit bridge for cryptonite\n\nFor now only provide a conduit version for hash and hmac, but\nwith contribution, this could provide cipher conduits too,\nand probably other things.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.memory)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "cryptonite-conduit-test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

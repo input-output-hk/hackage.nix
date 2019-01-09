@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { fastpbkdf2 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rncryptor";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "rncryptor"; version = "0.3.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell implementation of the RNCryptor file format";
       description = "Pure Haskell implementation of the RNCrytor spec.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.io-streams)
           (hsPkgs.cryptonite)
           (hsPkgs.memory)
-        ] ++ pkgs.lib.optional (flags.fastpbkdf2) (hsPkgs.fastpbkdf2);
-      };
+          ] ++ (pkgs.lib).optional (flags.fastpbkdf2) (hsPkgs.fastpbkdf2);
+        };
       exes = {
         "rncryptor-decrypt" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.cryptonite)
             (hsPkgs.io-streams)
             (hsPkgs.rncryptor)
-          ];
-        };
+            ];
+          };
         "rncryptor-encrypt" = {
           depends = [
             (hsPkgs.base)
@@ -53,9 +44,9 @@
             (hsPkgs.io-streams)
             (hsPkgs.cryptonite)
             (hsPkgs.rncryptor)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "rncryptor-tests" = {
           depends = [
@@ -71,9 +62,9 @@
             (hsPkgs.cryptonite)
             (hsPkgs.text)
             (hsPkgs.bytestring-arbitrary)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "store-bench" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
             (hsPkgs.rncryptor)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

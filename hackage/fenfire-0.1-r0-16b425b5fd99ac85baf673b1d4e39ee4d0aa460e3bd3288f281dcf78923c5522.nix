@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "fenfire";
-        version = "0.1";
-      };
+      identifier = { name = "fenfire"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "fenfire-dev@nongnu.org";
@@ -22,7 +13,7 @@
       synopsis = "Graph-based notetaking system";
       description = "Fenfire is a graph-based notetaking system. (We're\nplanning to add a kitchen sink soon.) It is developed\non the channel #fenfire on the Freenode IRC network.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "fenfire" = {
@@ -35,9 +26,9 @@
             (hsPkgs.cairo)
             (hsPkgs.harp)
             (hsPkgs.template-haskell)
-          ];
+            ];
           libs = [ (pkgs."raptor") ];
-        };
+          };
         "functortest" = {
           depends = [
             (hsPkgs.base)
@@ -48,8 +39,8 @@
             (hsPkgs.cairo)
             (hsPkgs.harp)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "vobtest" = {
           depends = [
             (hsPkgs.base)
@@ -60,8 +51,8 @@
             (hsPkgs.cairo)
             (hsPkgs.harp)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "darcs2rdf" = {
           depends = [
             (hsPkgs.base)
@@ -72,8 +63,8 @@
             (hsPkgs.cairo)
             (hsPkgs.harp)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

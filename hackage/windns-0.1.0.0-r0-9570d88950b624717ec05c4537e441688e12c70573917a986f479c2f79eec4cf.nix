@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      allow-non-windows = false;
-    };
+    flags = { allow-non-windows = false; };
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "windns";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "windns"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "hvr@gnu.org";
@@ -24,18 +13,16 @@
       synopsis = "Domain Name Service (DNS) lookup via the <windns.h>/dnsapi.dll standard library";
       description = "This package implements an API for accessing\nthe [Domain Name Service (DNS)](https://tools.ietf.org/html/rfc1035)\nresolver service via the\nstandard [<windns.h>/dnsapi.dll](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682100\\(v=vs.85\\).aspx)\nsystem library on Win32 systems.\n\nThis package provides the high-level API-subset of the [resolv](https://hackage.haskell.org/package/resolv) package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
-        ] ++ pkgs.lib.optional (!(system.isWindows || flags.allow-non-windows)) (hsPkgs.base);
+          ] ++ (pkgs.lib).optional (!(system.isWindows || flags.allow-non-windows)) (hsPkgs.base);
         libs = [ (pkgs."dnsapi") ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

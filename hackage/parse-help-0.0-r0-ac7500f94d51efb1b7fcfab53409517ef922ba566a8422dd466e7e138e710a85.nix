@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "parse-help";
-        version = "0.0";
-      };
+      identifier = { name = "parse-help"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "generate command line arguments from a --help output";
       description = "see http://github.com/gregwebs/cmdargs-help";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,12 +25,8 @@
           (hsPkgs.text)
           (hsPkgs.file-location)
           (hsPkgs.template-haskell)
-        ];
-      };
-      tests = {
-        "test" = {
-          depends = [ (hsPkgs.cmdargs) ];
+          ];
         };
+      tests = { "test" = { depends = [ (hsPkgs.cmdargs) ]; }; };
       };
-    };
-  }
+    }

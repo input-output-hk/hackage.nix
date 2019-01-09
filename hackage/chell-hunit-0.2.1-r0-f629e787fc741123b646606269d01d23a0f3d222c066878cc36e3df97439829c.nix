@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "chell-hunit";
-        version = "0.2.1";
-      };
+      identifier = { name = "chell-hunit"; version = "0.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "John Millikin <john@john-millikin.com>";
@@ -22,14 +13,10 @@
       synopsis = "HUnit support for the Chell testing library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.chell)
-          (hsPkgs.HUnit)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.chell) (hsPkgs.HUnit) ];
+        };
       };
-    };
-  }
+    }

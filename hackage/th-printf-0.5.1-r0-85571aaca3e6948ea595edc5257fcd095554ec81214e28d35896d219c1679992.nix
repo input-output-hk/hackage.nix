@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "th-printf";
-        version = "0.5.1";
-      };
+      identifier = { name = "th-printf"; version = "0.5.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@jude.xy";
@@ -22,7 +13,7 @@
       synopsis = "Compile-time printf";
       description = "Quasiquoters for printf: string, bytestring, text.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.transformers)
           (hsPkgs.trifecta)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "format" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.th-printf)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "perf" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.criterion)
             (hsPkgs.text)
             (hsPkgs.th-printf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskore-vintage";
-        version = "0.1";
-      };
+      identifier = { name = "haskore-vintage"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diatchki@galois.com";
@@ -22,10 +13,6 @@
       synopsis = "The February 2000 version of Haskore.";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

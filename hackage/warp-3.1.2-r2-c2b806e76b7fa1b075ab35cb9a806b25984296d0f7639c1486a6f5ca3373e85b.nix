@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       network-bytestring = false;
       allow-sendfilefd = true;
       warp-debug = false;
       use-bytestring-builder = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "warp";
-        version = "3.1.2";
-      };
+      identifier = { name = "warp"; version = "3.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -27,7 +18,7 @@
       synopsis = "A fast, light-weight web server for WAI applications.";
       description = "HTTP\\/1.0, HTTP\\/1.1 and HTTP\\/2 are supported.\nFor HTTP\\/2,  Warp supports direct and ALPN (in TLS)\nbut not upgrade.\nAPI docs and the README are available at\n<http://www.stackage.org/package/warp>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -50,37 +41,18 @@
           (hsPkgs.vault)
           (hsPkgs.stm)
           (hsPkgs.word8)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
-          else [
-            (hsPkgs.network)
-          ])) ++ (if flags.use-bytestring-builder
-          then [
-            (hsPkgs.bytestring)
-            (hsPkgs.bytestring-builder)
-          ]
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
+          else [ (hsPkgs.network) ])) ++ (if flags.use-bytestring-builder
+          then [ (hsPkgs.bytestring) (hsPkgs.bytestring-builder) ]
           else [
             (hsPkgs.bytestring)
-          ])) ++ pkgs.lib.optional ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) (hsPkgs.hashable)) ++ (if system.isWindows
-          then [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]
-          else [
-            (hsPkgs.unix)
-            (hsPkgs.http-date)
-          ]);
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ])) ++ (pkgs.lib).optional ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) (hsPkgs.hashable)) ++ (if system.isWindows
+          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
+          else [ (hsPkgs.unix) (hsPkgs.http-date) ]);
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "spec" = {
           depends = ([
             (hsPkgs.base)
@@ -114,20 +86,17 @@
             (hsPkgs.containers)
             (hsPkgs.http2)
             (hsPkgs.word8)
-          ] ++ (if flags.use-bytestring-builder
-            then [
-              (hsPkgs.bytestring)
-              (hsPkgs.bytestring-builder)
-            ]
+            ] ++ (if flags.use-bytestring-builder
+            then [ (hsPkgs.bytestring) (hsPkgs.bytestring-builder) ]
             else [
               (hsPkgs.bytestring)
-            ])) ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) [
+              ])) ++ (pkgs.lib).optionals ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) [
             (hsPkgs.unix)
             (hsPkgs.hashable)
             (hsPkgs.http-date)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "parser" = {
           depends = [
@@ -137,8 +106,8 @@
             (hsPkgs.http-types)
             (hsPkgs.network)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

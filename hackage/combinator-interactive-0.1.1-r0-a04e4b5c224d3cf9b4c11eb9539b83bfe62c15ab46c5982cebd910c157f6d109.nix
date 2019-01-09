@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "combinator-interactive";
-        version = "0.1.1";
-      };
+      identifier = { name = "combinator-interactive"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013 Fumiaki Kinoshita";
       maintainer = "fumiexcel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "SKI Combinator interpreter";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.th-lift)
           (hsPkgs.void)
           (hsPkgs.trifecta)
-        ];
-      };
+          ];
+        };
       exes = {
         "lazyi" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.cereal)
             (hsPkgs.directory)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

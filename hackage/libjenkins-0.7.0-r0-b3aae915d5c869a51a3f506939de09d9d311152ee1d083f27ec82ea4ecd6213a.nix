@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "libjenkins";
-        version = "0.7.0";
-      };
+      identifier = { name = "libjenkins"; version = "0.7.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "matvey.aksenov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Jenkins API interface";
       description = "Jenkins API interface. It supports REST and Discovery APIs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.network-uri)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.async)
@@ -78,8 +69,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.xml-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "CoreErlang";
-        version = "0.0.2";
-      };
+      identifier = { name = "CoreErlang"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2008, David Castro Pérez, Henrique Ferreiro García";
       maintainer = "Alex Kropivny <alex.kropivny@gmail.com>";
@@ -22,19 +13,12 @@
       synopsis = "Manipulating Core Erlang source code";
       description = "Facilities for manipulating Core Erlang source code:\nan abstract syntax, parser and pretty-printer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.split-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.pretty)
-          ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-          ];
+          then [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.pretty) ]
+          else [ (hsPkgs.base) (hsPkgs.parsec) ];
+        };
       };
-    };
-  }
+    }

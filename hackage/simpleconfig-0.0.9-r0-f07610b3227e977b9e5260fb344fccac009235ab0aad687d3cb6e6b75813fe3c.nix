@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "simpleconfig";
-        version = "0.0.9";
-      };
+      identifier = { name = "simpleconfig"; version = "0.0.9"; };
       license = "BSD-3-Clause";
       copyright = "2017 Alexey Kotlyarov";
       maintainer = "a@koterpillar.com";
@@ -22,15 +13,11 @@
       synopsis = "Short description of your package";
       description = "Please see the README on Github at <https://github.com/koterpillar/simpleconfig#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.lens)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.lens) ];
+        };
       tests = {
         "simpleconfig-test" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.lens)
             (hsPkgs.simpleconfig)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

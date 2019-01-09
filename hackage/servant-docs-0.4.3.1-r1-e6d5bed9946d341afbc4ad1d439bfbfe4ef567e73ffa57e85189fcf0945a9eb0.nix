@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-docs";
-        version = "0.4.3.1";
-      };
+      identifier = { name = "servant-docs"; version = "0.4.3.1"; };
       license = "BSD-3-Clause";
       copyright = "2014-2015 Zalora South East Asia Pte Ltd";
       maintainer = "alpmestan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "generate API docs for your servant webservice";
       description = "Library for generating API docs from a servant API definition.\n\nRunnable example <https://github.com/haskell-servant/servant-docs/blob/master/example/greet.hs here>.\n\n<https://github.com/haskell-servant/servant/blob/master/servant-docs/CHANGELOG.md CHANGELOG>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.string-conversions)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "greet-docs" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.servant-docs)
             (hsPkgs.string-conversions)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.servant)
             (hsPkgs.servant-docs)
             (hsPkgs.string-conversions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

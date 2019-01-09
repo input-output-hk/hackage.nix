@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yql";
-        version = "0.0.0";
-      };
+      identifier = { name = "yql"; version = "0.0.0"; };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "fabian.bergmark@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A YQL engine to execute Open Data Tables";
       description = "A YQL engine that provides a Haskell backbone\nlibrary for the YQL specification, and a Javascript\nhost environment to execute Open Data Tables.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.uuid)
           (hsPkgs.vector)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "yql" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.exceptions)
             (hsPkgs.opendatatable)
             (hsPkgs.hxt)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

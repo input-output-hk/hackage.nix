@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "haskus-binary";
-        version = "1.1";
-      };
+      identifier = { name = "haskus-binary"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "Sylvain Henry 2017";
       maintainer = "sylvain@haskus.fr";
@@ -22,7 +13,7 @@
       synopsis = "Haskus binary format manipulation";
       description = "A set of types and tools to manipulate binary data, memory, etc. In\nparticular to interface Haskell data types with foreign data types (C\nstructs, unions, enums, etc.).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,17 +36,13 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-BitReverse" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskus-binary)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.haskus-binary) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

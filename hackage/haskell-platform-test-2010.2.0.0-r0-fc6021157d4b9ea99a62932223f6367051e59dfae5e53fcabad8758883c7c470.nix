@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskell-platform-test";
-        version = "2010.2.0.0";
-      };
+      identifier = { name = "haskell-platform-test"; version = "2010.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010, Don Stewart.";
       maintainer = "dons@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "A test system for the Haskell Platform environment";
       description = "A test system for the Haskell Platform environment\n\nRun:\n\n> cabal install haskell-platform-test\n\nAfter installing the Haskell Platform version corresponding to this\nrelease.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haskell-platform-test" = {
@@ -68,12 +59,12 @@
             (hsPkgs.zlib)
             (hsPkgs.HTTP)
             (hsPkgs.deepseq)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.alex)
-            (hsPkgs.buildPackages.happy)
-          ];
+            ((hsPkgs.buildPackages).alex)
+            ((hsPkgs.buildPackages).happy)
+            ];
+          };
         };
       };
-    };
-  }
+    }

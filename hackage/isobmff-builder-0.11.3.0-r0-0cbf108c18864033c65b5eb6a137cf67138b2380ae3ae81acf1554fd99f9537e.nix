@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      tracing = true;
-      fullbenchmarks = true;
-      complextests = true;
-    };
+    flags = { tracing = true; fullbenchmarks = true; complextests = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "isobmff-builder";
-        version = "0.11.3.0";
-      };
+      identifier = { name = "isobmff-builder"; version = "0.11.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Sven Heyll, Lindenbaum GmbH";
       maintainer = "sven.heyll@lindenbaum.eu";
@@ -26,7 +13,7 @@
       synopsis = "A (bytestring-) builder for the ISO-14496-12 base media file format";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +30,8 @@
           (hsPkgs.mtl)
           (hsPkgs.pretty-types)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -59,9 +46,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tagged)
             (hsPkgs.pretty-types)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bit-records" = {
           depends = [
@@ -72,8 +59,8 @@
             (hsPkgs.criterion)
             (hsPkgs.tagged)
             (hsPkgs.type-spec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

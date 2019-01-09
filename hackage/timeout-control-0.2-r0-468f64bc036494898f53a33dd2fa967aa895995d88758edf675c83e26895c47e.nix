@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "timeout-control";
-        version = "0.2";
-      };
+      identifier = { name = "timeout-control"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Nathan Howell <nhowell@alphaheavy.com>";
@@ -22,7 +13,7 @@
       synopsis = "Updatable timeouts as a Monad transformer";
       description = "Add updatable timeout functionality to a Monad transformer stack layered on IO";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.mtl)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

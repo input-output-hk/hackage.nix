@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "webwire";
-        version = "0.1.0";
-      };
+      identifier = { name = "webwire"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Ertugrul Söylemez";
       maintainer = "Ertugrul Söylemez <es@ertes.de>";
@@ -22,7 +13,7 @@
       synopsis = "Functional reactive web framework";
       description = "Web framework based on the design pattern of functional reactive\nprogramming (FRP) using the netwire library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.transformers)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "string-conversions";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "string-conversions"; version = "0.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "soenkehahn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simplifies dealing with different types for strings";
       description = "Provides a simple type class for converting values of different string types into values of other string types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.deepseq)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

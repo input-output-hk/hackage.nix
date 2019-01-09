@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { haste-inst = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hplayground";
-        version = "0.1.2.5";
-      };
+      identifier = { name = "hplayground"; version = "0.1.2.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "agocorona@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "monadic, reactive Formlets running in the Web browser";
       description = "client-side haskell framework that compiles to javascript with the haste compiler. See homepage";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.haste-inst
@@ -34,7 +25,7 @@
             (hsPkgs.monads-tf)
             (hsPkgs.haste-lib)
             (hsPkgs.haste-perch)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.transformers)
@@ -43,7 +34,7 @@
             (hsPkgs.monads-tf)
             (hsPkgs.haste-compiler)
             (hsPkgs.haste-perch)
-          ];
+            ];
+        };
       };
-    };
-  }
+    }

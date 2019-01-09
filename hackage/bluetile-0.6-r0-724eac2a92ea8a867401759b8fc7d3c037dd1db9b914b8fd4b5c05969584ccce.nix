@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bluetile";
-        version = "0.6";
-      };
+      identifier = { name = "bluetile"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jan.vornberger@informatik.uni-oldenburg.de";
@@ -22,7 +13,7 @@
       synopsis = "full-featured tiling for the GNOME desktop environment";
       description = "Bluetile is a tiling window manager for Linux, designed to integrate\nwith the GNOME desktop environment. It provides both a traditional,\nstacking layout mode as well as tiling layouts where windows are\narranged to use the entire screen without overlapping. Bluetile tries\nto make the tiling paradigm easily accessible to users coming from\ntraditional window managers by drawing on known conventions and\nproviding both mouse and keyboard access for all features.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "bluetile" = {
@@ -42,16 +33,16 @@
             (hsPkgs.X11-xft)
             (hsPkgs.xmonad)
             (hsPkgs.xmonad-contrib)
-          ];
-        };
+            ];
+          };
         "gnome-bluetile-session" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "bluetiledock" = {
           depends = [
             (hsPkgs.base)
@@ -60,18 +51,12 @@
             (hsPkgs.glade)
             (hsPkgs.gtk)
             (hsPkgs.X11)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.gtk+-2.0)
-          ];
-        };
+            ];
+          pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+          };
         "bluetilemockwin" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.base)
-            (hsPkgs.gtk)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.base) (hsPkgs.gtk) ];
+          };
         "bluetilegreet" = {
           depends = [
             (hsPkgs.base)
@@ -80,8 +65,8 @@
             (hsPkgs.filepath)
             (hsPkgs.glade)
             (hsPkgs.gtk)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

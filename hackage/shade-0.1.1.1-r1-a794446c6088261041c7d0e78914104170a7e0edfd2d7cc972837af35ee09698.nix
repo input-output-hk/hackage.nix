@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shade";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "shade"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Frederik Hanghøj Iversen";
       maintainer = "fhi.1990@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A control structure used to combine heterogenous types with delayed effects.";
       description = "Please see the README.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

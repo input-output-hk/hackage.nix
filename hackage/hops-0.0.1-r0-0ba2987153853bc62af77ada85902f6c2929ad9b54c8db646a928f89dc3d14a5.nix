@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "hops";
-        version = "0.0.1";
-      };
+      identifier = { name = "hops"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anders.claesson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Hackable Operations on Power Series";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "hops" = {
@@ -45,9 +36,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Properties" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.text)
             (hsPkgs.vector)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

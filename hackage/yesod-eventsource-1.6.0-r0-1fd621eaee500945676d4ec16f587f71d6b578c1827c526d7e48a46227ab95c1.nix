@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-eventsource";
-        version = "1.6.0";
-      };
+      identifier = { name = "yesod-eventsource"; version = "1.6.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Server-sent events support for Yesod apps.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-eventsource>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.wai-extra)
           (hsPkgs.blaze-builder)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

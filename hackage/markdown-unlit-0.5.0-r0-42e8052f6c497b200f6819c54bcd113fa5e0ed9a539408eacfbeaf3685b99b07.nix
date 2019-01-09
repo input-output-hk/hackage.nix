@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "markdown-unlit";
-        version = "0.5.0";
-      };
+      identifier = { name = "markdown-unlit"; version = "0.5.0"; };
       license = "MIT";
       copyright = "(c) 2012-2015 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,23 +13,18 @@
       synopsis = "Literate Haskell support for Markdown";
       description = "Documentation is here: <https://github.com/sol/markdown-unlit#readme>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.base-compat)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.base-compat) ]; };
       exes = {
         "markdown-unlit" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.markdown-unlit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -50,8 +36,8 @@
             (hsPkgs.silently)
             (hsPkgs.stringbuilder)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

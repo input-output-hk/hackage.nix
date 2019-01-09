@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "ght";
-        version = "0.2.0";
-      };
+      identifier = { name = "ght"; version = "0.2.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Conrad Parker <conrad@metadecks.org>";
@@ -22,7 +13,7 @@
       synopsis = "Trivial routines for inspecting git repositories";
       description = "This is a bunch of trivial routines for inspecting git\nrepositories. It is in no way useful beyond that.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.SHA)
           (hsPkgs.old-locale)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "ght" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.zlib)
             (hsPkgs.SHA)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

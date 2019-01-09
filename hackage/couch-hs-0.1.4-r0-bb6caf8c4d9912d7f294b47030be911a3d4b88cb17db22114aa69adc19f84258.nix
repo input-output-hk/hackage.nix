@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "couch-hs";
-        version = "0.1.4";
-      };
+      identifier = { name = "couch-hs"; version = "0.1.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Peter Sagerson <psagers.hs@ignorare.net>";
@@ -22,7 +13,7 @@
       synopsis = "A CouchDB view server for Haskell.";
       description = "A CouchDB view server for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.aeson)
           (hsPkgs.hint)
-        ];
-      };
+          ];
+        };
       exes = { "couch-hs" = {}; };
-    };
-  }
+      };
+    }

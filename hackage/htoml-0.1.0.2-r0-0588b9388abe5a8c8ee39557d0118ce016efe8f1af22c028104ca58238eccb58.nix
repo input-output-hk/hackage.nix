@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "htoml";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "htoml"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013-2014 Cies Breijs";
       maintainer = "Cies Breijs <cies % kde ! nl>";
@@ -22,7 +13,7 @@
       synopsis = "Parser for TOML files";
       description = "TOML is an obvious and minimal format for config files.\n\nThis package provides a TOML parser,\nbuild with the Parsec library, and providing a JSON\ninterface using the Aeson library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       exes = {
         "tests" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-hunit)
             (hsPkgs.htoml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Tests" = {
           depends = [
@@ -75,9 +66,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -92,8 +83,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.htoml)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

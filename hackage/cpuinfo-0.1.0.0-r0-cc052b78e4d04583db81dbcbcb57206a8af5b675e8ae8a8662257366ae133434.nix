@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cpuinfo";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "cpuinfo"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Travis Whitaker 2016";
       maintainer = "pi.boy.travis@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Library for Checking CPU Information";
       description = "Haskell Library for Checking CPU Information";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

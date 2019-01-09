@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "octohat";
-        version = "0.1";
-      };
+      identifier = { name = "octohat"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "hackage@stackbuilders.com";
@@ -22,7 +13,7 @@
       synopsis = "A tested, minimal wrapper around GitHub's API. Very incomplete at the moment";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.wreq)
           (hsPkgs.xmlhtml)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.dotenv)
             (hsPkgs.transformers)
             (hsPkgs.octohat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pandoc-unlit";
-        version = "0.1.0";
-      };
+      identifier = { name = "pandoc-unlit"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2012 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,15 +13,10 @@
       synopsis = "Literate Haskell support for GitHub's Markdown flavor";
       description = "Documentation is here: <https://github.com/sol/pandoc-unlit#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "pandoc-unlit" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pandoc)
-          ];
+        "pandoc-unlit" = { depends = [ (hsPkgs.base) (hsPkgs.pandoc) ]; };
         };
       };
-    };
-  }
+    }

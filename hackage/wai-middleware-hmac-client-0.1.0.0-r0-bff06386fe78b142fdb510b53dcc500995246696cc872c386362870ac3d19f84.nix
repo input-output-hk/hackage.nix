@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "wai-middleware-hmac-client";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "(c) 2015, Christopher Reichert";
       maintainer = "creichert07@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Wai HMAC Authentication Middleware Client";
       description = "\nReady to use client module for wai-middleware-hmac. This module is\nbuilt on http-client but is in the Wai namespace since the protocol\nis somewhat specific. Although this implementation does follow the\nRFC as closely as possible as well as Amazon AWS's implementation.\nHoweber, since nothing is formally specified these modules are\nspecifically built for each other Because of this, we also try to\nmaintain a slim dependency profile.  Because of the compatibility\nwith http-client you can still build into a streaming module if\nneeded";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +33,7 @@
           (hsPkgs.time)
           (hsPkgs.old-locale)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

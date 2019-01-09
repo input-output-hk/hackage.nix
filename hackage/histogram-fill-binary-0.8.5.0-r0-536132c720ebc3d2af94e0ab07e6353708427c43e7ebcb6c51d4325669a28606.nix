@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "histogram-fill-binary";
-        version = "0.8.5.0";
-      };
+      identifier = { name = "histogram-fill-binary"; version = "0.8.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexey Khudyakov <alexey.skladnoy@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Binary instances for histogram-fill package";
       description = "Binary instances for histogram-fill package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.binary)
           (hsPkgs.vector)
           (hsPkgs.histogram-fill)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

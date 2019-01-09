@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "AlgorithmW";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "AlgorithmW"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "martin@grabmueller.de";
@@ -22,7 +13,7 @@
       synopsis = "Example implementation of Algorithm W for Hindley-Milner\ntype inference.";
       description = "Complete implementation of the classic\nalgorithm W for Hindley-Milner polymorphic\ntype inference in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "AlgorithmW" = {
@@ -31,8 +22,8 @@
             (hsPkgs.containers)
             (hsPkgs.mtl)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

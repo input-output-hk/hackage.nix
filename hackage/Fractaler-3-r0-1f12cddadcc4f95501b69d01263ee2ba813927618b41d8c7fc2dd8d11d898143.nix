@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "Fractaler";
-        version = "3";
-      };
+      identifier = { name = "Fractaler"; version = "3"; };
       license = "MIT";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Fractal renderer";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Fractaler" = {
@@ -34,8 +25,8 @@
             (hsPkgs.OpenGLRaw)
             (hsPkgs.GLFW-b)
             (hsPkgs.FTGL)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

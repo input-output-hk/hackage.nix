@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "cloudi";
-        version = "1.7.0";
-      };
+      identifier = { name = "cloudi"; version = "1.7.0"; };
       license = "BSD-4-Clause";
       copyright = "2017 Michael Truog";
       maintainer = "mjtruog@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell CloudI API";
       description = "Haskell CloudI API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.time)
           (hsPkgs.unix)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

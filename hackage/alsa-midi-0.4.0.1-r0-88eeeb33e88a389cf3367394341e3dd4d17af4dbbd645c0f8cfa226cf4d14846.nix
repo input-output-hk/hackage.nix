@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "alsa-midi";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "alsa-midi"; version = "0.4.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,31 +13,22 @@
       synopsis = "Bindings for the ALSA sequencer API (MIDI stuff)";
       description = "Bindings for the ALSA sequencer API (MIDI stuff)\n\nThere are now the packages @alsa-pcm@ and @alsa-seq@\nthat aim at a more complete interface to ALSA.\nThus we will no longer maintain this package.\n\nSee \"Sound.ALSA.Sequencer.Play\" for how to play Haskore songs in realtime via ALSA.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.midi)
           (hsPkgs.event-list)
           (hsPkgs.non-negative)
-        ] ++ (if flags.splitbase
-          then [
-            (hsPkgs.array)
-            (hsPkgs.base)
-          ]
+          ] ++ (if flags.splitbase
+          then [ (hsPkgs.array) (hsPkgs.base) ]
           else [ (hsPkgs.base) ]);
         libs = [ (pkgs."asound") ];
-      };
+        };
       exes = {
-        "playnote" = {
-          libs = [ (pkgs."asound") ];
-        };
-        "playmidi" = {
-          libs = [ (pkgs."asound") ];
-        };
-        "mididump" = {
-          libs = [ (pkgs."asound") ];
+        "playnote" = { libs = [ (pkgs."asound") ]; };
+        "playmidi" = { libs = [ (pkgs."asound") ]; };
+        "mididump" = { libs = [ (pkgs."asound") ]; };
         };
       };
-    };
-  }
+    }

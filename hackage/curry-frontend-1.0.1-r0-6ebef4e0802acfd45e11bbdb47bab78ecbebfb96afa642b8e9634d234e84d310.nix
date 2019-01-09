@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "curry-frontend";
-        version = "1.0.1";
-      };
+      identifier = { name = "curry-frontend"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "fte@informatik.uni-kiel.de";
@@ -22,7 +13,7 @@
       synopsis = "Compile the functional logic language Curry to several\nintermediate formats";
       description = "The Curry front end consists of the executable program\n\"curry-frontend\".\nIt is used by various backends to compile Curry programs to\nan intermediate representation.\nThe code is a stripped-down version of an early version of\nthe Muenster Curry Compiler\n(<http://danae.uni-muenster.de/curry/>)\nwhich has been extended to produce different intermediate\nrepresentations.\nFor further information, please check\n<http://curry-language.org>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,10 +28,10 @@
           (hsPkgs.process)
           (hsPkgs.set-extra)
           (hsPkgs.transformers)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       exes = {
         "curry-frontend" = {
           depends = [
@@ -56,11 +47,11 @@
             (hsPkgs.process)
             (hsPkgs.set-extra)
             (hsPkgs.transformers)
-          ] ++ (if flags.network-uri
+            ] ++ (if flags.network-uri
             then [ (hsPkgs.network-uri) ]
             else [ (hsPkgs.network) ]);
+          };
         };
-      };
       tests = {
         "test-frontend" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.curry-base)
             (hsPkgs.curry-frontend)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

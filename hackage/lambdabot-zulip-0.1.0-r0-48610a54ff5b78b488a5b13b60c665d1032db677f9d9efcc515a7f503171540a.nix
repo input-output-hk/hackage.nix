@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lambdabot-zulip";
-        version = "0.1.0";
-      };
+      identifier = { name = "lambdabot-zulip"; version = "0.1.0"; };
       license = "MIT";
       copyright = "2017 Niklas Hambüchen <mail@nh2.me>";
       maintainer = "Niklas Hambüchen <mail@nh2.me>";
@@ -22,7 +13,7 @@
       synopsis = "Lambdabot for Zulip Chat";
       description = "Integrates lambdabot with Zulip Chat.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,16 +26,13 @@
           (hsPkgs.say)
           (hsPkgs.text)
           (hsPkgs.yaml)
-        ];
-      };
-      exes = {
-        "lamdabot-zulip-server" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.lambdabot-zulip)
           ];
         };
-      };
+      exes = {
+        "lamdabot-zulip-server" = {
+          depends = [ (hsPkgs.base) (hsPkgs.lambdabot-zulip) ];
+          };
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +41,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

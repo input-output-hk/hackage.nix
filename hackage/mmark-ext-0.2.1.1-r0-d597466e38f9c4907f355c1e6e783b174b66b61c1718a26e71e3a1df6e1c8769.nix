@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "mmark-ext";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "mmark-ext"; version = "0.2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Commonly useful extensions for the MMark markdown processor";
       description = "Commonly useful extensions for the MMark markdown processor. Click on\n\"Text.MMark.Extension.Common\" to get started.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -34,8 +25,8 @@
           (hsPkgs.modern-uri)
           (hsPkgs.skylighting)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.4") (hsPkgs.ghc-syntax-highlighter)) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.4") (hsPkgs.ghc-syntax-highlighter)) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,11 +37,9 @@
             (hsPkgs.mmark-ext)
             (hsPkgs.skylighting)
             (hsPkgs.text)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

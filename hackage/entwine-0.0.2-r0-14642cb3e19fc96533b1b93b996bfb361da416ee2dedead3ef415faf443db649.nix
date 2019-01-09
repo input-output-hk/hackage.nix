@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "entwine";
-        version = "0.0.2";
-      };
+      identifier = { name = "entwine"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Ambiata.";
       maintainer = "Tim McGilchrist <timmcgil@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "entwine - Concurrency tools";
       description = "entwine - Concurrency tools";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.transformers-either)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.transformers-either)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
-        };
+            ];
+          };
         "test-io" = {
           depends = [
             (hsPkgs.base)
@@ -69,9 +60,9 @@
             (hsPkgs.transformers-either)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -88,8 +79,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.transformers-either)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

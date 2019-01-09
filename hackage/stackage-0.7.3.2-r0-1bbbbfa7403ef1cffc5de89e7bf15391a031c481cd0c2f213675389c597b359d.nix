@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage";
-        version = "0.7.3.2";
-      };
+      identifier = { name = "stackage"; version = "0.7.3.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Dummy package forcing installation of other Stackage packages";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.stackage-cabal)
           (hsPkgs.stackage-sandbox)
           (hsPkgs.stackage-setup)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

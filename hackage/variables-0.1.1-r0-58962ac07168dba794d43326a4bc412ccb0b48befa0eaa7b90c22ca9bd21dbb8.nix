@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "variables";
-        version = "0.1.1";
-      };
+      identifier = { name = "variables"; version = "0.1.1"; };
       license = "MIT";
       copyright = "© Alistair Lynn, 2014";
       maintainer = "arplynn@gmail.com";
@@ -22,15 +13,9 @@
       synopsis = "Monads with variables, without deep magic";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.stm)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.stm) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +24,8 @@
             (hsPkgs.hspec)
             (hsPkgs.mtl)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

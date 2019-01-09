@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "rhine-gloss";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "rhine-gloss"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "programming@manuelbaerenz.de";
@@ -22,7 +13,7 @@
       synopsis = "Wrapper to run reactive programs written in Rhine\nwith Gloss as backend";
       description = "This package provides a simple wrapper for the `gloss` library,\nor rather the function `Graphics.Gloss.play`,\nenabling you to write `gloss` applications as synchronous signal functions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,12 @@
           (hsPkgs.rhine)
           (hsPkgs.dunai)
           (hsPkgs.gloss)
-        ];
-      };
-      exes = {
-        "rhine-gloss-gears" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.rhine-gloss)
           ];
         };
+      exes = {
+        "rhine-gloss-gears" = {
+          depends = [ (hsPkgs.base) (hsPkgs.rhine-gloss) ];
+          };
+        };
       };
-    };
-  }
+    }

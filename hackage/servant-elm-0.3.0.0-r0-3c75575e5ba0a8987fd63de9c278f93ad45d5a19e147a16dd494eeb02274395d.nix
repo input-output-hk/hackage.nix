@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-elm";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "servant-elm"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 Matt Bray";
       maintainer = "mattjbray@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Automatically derive Elm functions to query servant webservices.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.servant-foreign)
           (hsPkgs.text)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       exes = {
         "books-example" = {
           depends = [
@@ -42,16 +33,16 @@
             (hsPkgs.elm-export)
             (hsPkgs.servant)
             (hsPkgs.servant-elm)
-          ];
-        };
+            ];
+          };
         "e2e-tests-example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.elm-export)
             (hsPkgs.servant)
             (hsPkgs.servant-elm)
-          ];
-        };
+            ];
+          };
         "giphy-example" = {
           depends = [
             (hsPkgs.base)
@@ -59,17 +50,17 @@
             (hsPkgs.servant)
             (hsPkgs.servant-elm)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "readme-example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.elm-export)
             (hsPkgs.servant)
             (hsPkgs.servant-elm)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "servant-elm-test" = {
           depends = [
@@ -87,8 +78,8 @@
             (hsPkgs.servant)
             (hsPkgs.servant-elm)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

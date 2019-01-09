@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sql-words";
-        version = "0.1.4.0";
-      };
+      identifier = { name = "sql-words"; version = "0.1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "Simple idea SQL keywords data constructor into OverloadedString";
       description = "This package contiains SQL keywords constructors defined as\nOverloadedString literals and helper functions to concate these.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "monoids" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.quickcheck-simple)
             (hsPkgs.QuickCheck)
             (hsPkgs.sql-words)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

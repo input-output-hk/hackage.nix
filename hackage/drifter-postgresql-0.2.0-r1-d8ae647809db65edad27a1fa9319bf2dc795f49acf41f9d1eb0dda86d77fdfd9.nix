@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "drifter-postgresql";
-        version = "0.2.0";
-      };
+      identifier = { name = "drifter-postgresql"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@michaelxavier.net";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL support for the drifter schema migration tool";
       description = "Support for postgresql-simple Query migrations as well as\narbitrary Haskell IO functions. Be sure to check the\nexamples dir for a usage example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.either)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.either)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

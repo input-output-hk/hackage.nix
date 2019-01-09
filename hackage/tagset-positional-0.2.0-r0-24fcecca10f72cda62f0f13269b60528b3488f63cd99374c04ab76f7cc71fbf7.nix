@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tagset-positional";
-        version = "0.2.0";
-      };
+      identifier = { name = "tagset-positional"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Positional tags and tagsets";
       description = "The library provides printing and parsing functions for positional\ntags and tagsets.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.binary)
           (hsPkgs.text-binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

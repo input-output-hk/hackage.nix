@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "dimensions";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "dimensions"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Artem Chirkin";
       maintainer = "chirkin@arch.ethz.ch";
@@ -22,14 +13,9 @@
       synopsis = "Safe type-level dimensionality for multidimensional data.";
       description = "Safe type-level dimensionality for multidimensional data.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) ]; };
       tests = {
         "dimensions-test" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.dimensions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

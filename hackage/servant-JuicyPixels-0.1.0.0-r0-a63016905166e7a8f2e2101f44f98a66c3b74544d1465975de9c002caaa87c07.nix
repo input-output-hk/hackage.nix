@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-JuicyPixels";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "servant-JuicyPixels"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "tvh@tvholtz.de";
@@ -22,7 +13,7 @@
       synopsis = "servant-JuicyPixels";
       description = "servant-JuicyPixels";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.http-media)
           (hsPkgs.JuicyPixels)
           (hsPkgs.servant)
-        ];
-      };
+          ];
+        };
       exes = {
         "image-conversion" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.servant-JuicyPixels)
             (hsPkgs.warp)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

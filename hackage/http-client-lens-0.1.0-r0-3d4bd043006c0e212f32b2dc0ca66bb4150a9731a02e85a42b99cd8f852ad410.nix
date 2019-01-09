@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "http-client-lens";
-        version = "0.1.0";
-      };
+      identifier = { name = "http-client-lens"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014 Rein Henrichs";
       maintainer = "Rein Henrichs <reinh@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Optics for http-client";
       description = "Optics for <http://hackage.haskell.org/package/http-client http-client>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.http-types)
           (hsPkgs.lens)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "LambdaShell";
-        version = "0.9";
-      };
+      identifier = { name = "LambdaShell"; version = "0.9"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "robdockins AT fastmail DOT fm";
@@ -22,7 +13,7 @@
       synopsis = "Simple shell for evaluating lambda expressions";
       description = "The lambda shell is a feature-rich shell environment and command-line tool for\nevaluating terms of the pure, untyped lambda calculus.  The Lambda\nShell builds on the shell creation framework Shellac, and showcases\nmost of Shellac's features.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "lambdaShell" = {
@@ -34,9 +25,9 @@
             (hsPkgs.readline)
             (hsPkgs.Shellac)
             (hsPkgs.Shellac-readline)
-          ];
+            ];
           libs = [ (pkgs."readline") ];
+          };
         };
       };
-    };
-  }
+    }

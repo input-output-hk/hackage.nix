@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi-keymap-emacs";
-        version = "0.17.1";
-      };
+      identifier = { name = "yi-keymap-emacs"; version = "0.17.1"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Yi developers <yi-devel@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "Emacs keymap for Yi editor";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.yi-misc-modes)
           (hsPkgs.yi-language)
           (hsPkgs.yi-rope)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

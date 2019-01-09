@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "FermatsLastMargin";
-        version = "0.1";
-      };
+      identifier = { name = "FermatsLastMargin"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Shae Erisson <shae@ScannedInAvian.com>";
@@ -22,7 +13,7 @@
       synopsis = "Annotate ps and pdf documents";
       description = "Distributed annotation for PostScript and PDF documents.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "flm" = {
@@ -40,8 +31,8 @@
             (hsPkgs.haskell98)
             (hsPkgs.HAppS-IxSet)
             (hsPkgs.HAppS-Util)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

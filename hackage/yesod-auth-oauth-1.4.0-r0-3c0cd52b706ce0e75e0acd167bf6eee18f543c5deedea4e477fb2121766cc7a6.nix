@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "yesod-auth-oauth";
-        version = "1.4.0";
-      };
+      identifier = { name = "yesod-auth-oauth"; version = "1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Litchard";
@@ -22,7 +13,7 @@
       synopsis = "OAuth Authentication for Yesod.";
       description = "Oauth Authentication for Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.yesod-form)
           (hsPkgs.transformers)
           (hsPkgs.lifted-base)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "mongoDB";
-        version = "0.8.1";
-      };
+      identifier = { name = "mongoDB"; version = "0.8.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010-2010 Scott Parish & 10gen Inc.";
       maintainer = "Tony Hannan <tony@10gen.com>";
@@ -22,7 +13,7 @@
       synopsis = "A driver for MongoDB";
       description = "This module lets you connect to MongoDB (www.mongodb.org) and do inserts, queries, updates, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.network)
           (hsPkgs.parsec)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

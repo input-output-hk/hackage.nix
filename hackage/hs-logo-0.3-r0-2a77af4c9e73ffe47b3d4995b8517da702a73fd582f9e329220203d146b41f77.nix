@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hs-logo";
-        version = "0.3";
-      };
+      identifier = { name = "hs-logo"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "deepak.jois@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Logo interpreter written in Haskell";
       description = "Interpreter for the Logo programming language,\nspecialised for turtle graphics.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hs-logo" = {
@@ -37,8 +28,8 @@
             (hsPkgs.diagrams-core)
             (hsPkgs.diagrams-lib)
             (hsPkgs.diagrams-svg)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nowdoc";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "nowdoc"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Yoshikuni Jujo";
       maintainer = "PAF01143@nifty.ne.jp";
@@ -22,15 +13,15 @@
       synopsis = "Here document without variable expansion like PHP Nowdoc";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/nowdoc#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "nowdoc-test" = {
           depends = [
@@ -38,8 +29,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.nowdoc)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

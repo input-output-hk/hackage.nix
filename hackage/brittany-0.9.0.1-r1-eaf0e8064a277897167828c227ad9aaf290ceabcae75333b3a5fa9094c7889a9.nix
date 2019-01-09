@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      brittany-dev-lib = false;
-    };
+    flags = { brittany-dev-lib = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "brittany";
-        version = "0.9.0.1";
-      };
+      identifier = { name = "brittany"; version = "0.9.0.1"; };
       license = "AGPL-3.0-only";
       copyright = "Copyright (C) 2016-2017 Lennart Spitzner";
       maintainer = "Lennart Spitzner <hexagoxel@hexagoxel.de>";
@@ -24,7 +13,7 @@
       synopsis = "Haskell source code formatter";
       description = "See <https://github.com/lspitzner/brittany/blob/master/README.md the README>.\n\nIf you are interested in the implementation, have a look at <https://github.com/lspitzner/brittany/blob/master/doc/implementation/theory.md this document>;\n\nThe implementation is documented in more detail <https://github.com/lspitzner/brittany/blob/master/doc/implementation/index.md here>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,8 +46,8 @@
           (hsPkgs.cmdargs)
           (hsPkgs.czipwith)
           (hsPkgs.ghc-boot-th)
-        ];
-      };
+          ];
+        };
       exes = {
         "brittany" = {
           depends = [
@@ -94,9 +83,9 @@
             (hsPkgs.ghc-boot-th)
             (hsPkgs.hspec)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "unittests" = {
           depends = [
@@ -131,8 +120,8 @@
             (hsPkgs.czipwith)
             (hsPkgs.ghc-boot-th)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "littests" = {
           depends = [
             (hsPkgs.brittany)
@@ -168,8 +157,8 @@
             (hsPkgs.hspec)
             (hsPkgs.filepath)
             (hsPkgs.parsec)
-          ];
-        };
+            ];
+          };
         "libinterfacetests" = {
           depends = [
             (hsPkgs.brittany)
@@ -177,8 +166,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

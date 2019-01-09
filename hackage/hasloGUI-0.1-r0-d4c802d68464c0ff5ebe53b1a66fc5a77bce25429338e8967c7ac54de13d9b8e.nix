@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "hasloGUI";
-        version = "0.1";
-      };
+      identifier = { name = "hasloGUI"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012, Bartosz Wojcik";
       maintainer = "Bartosz Wojcik <bartoszmwojcik@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Loan calculator Gtk GUI. Based on haslo (Haskell Loan) library.";
       description = "Example of usage of loan library named Haslo and of wtk-gtk wrapper over gtk.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "HasloGUI" = {
@@ -38,8 +29,8 @@
             (hsPkgs.haslo)
             (hsPkgs.wtk)
             (hsPkgs.wtk-gtk)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

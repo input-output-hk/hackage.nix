@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reprinter";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "reprinter"; version = "0.2.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "d.a.orchard@kent.ac.uk";
@@ -22,7 +13,7 @@
       synopsis = "Scrap Your Reprinter";
       description = "A datatype generic algorithm for layout-preserving refactoring";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.uniplate)
           (hsPkgs.mtl)
           (hsPkgs.syz)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

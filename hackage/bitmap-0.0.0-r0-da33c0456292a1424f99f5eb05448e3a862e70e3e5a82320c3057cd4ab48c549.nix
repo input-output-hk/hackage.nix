@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bitmap";
-        version = "0.0.0";
-      };
+      identifier = { name = "bitmap"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Balazs Komuves";
       maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
@@ -22,7 +13,7 @@
       synopsis = "A library for handling and manipulating bitmaps.";
       description = "A library for handling and manipulating bitmaps (that is,\nrectangular pixel arrays).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.array)
           (hsPkgs.containers)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

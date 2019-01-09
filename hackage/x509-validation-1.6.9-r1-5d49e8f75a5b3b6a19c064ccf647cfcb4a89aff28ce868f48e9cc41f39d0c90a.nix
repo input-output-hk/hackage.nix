@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "x509-validation";
-        version = "1.6.9";
-      };
+      identifier = { name = "x509-validation"; version = "1.6.9"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "X.509 Certificate and CRL validation";
       description = "X.509 Certificate and CRL validation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.x509)
           (hsPkgs.x509-store)
           (hsPkgs.cryptonite)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-x509-validation" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.x509-store)
             (hsPkgs.x509-validation)
             (hsPkgs.cryptonite)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

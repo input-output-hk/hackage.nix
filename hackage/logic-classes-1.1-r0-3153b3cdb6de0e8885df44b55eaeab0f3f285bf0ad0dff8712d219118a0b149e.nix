@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "logic-classes";
-        version = "1.1";
-      };
+      identifier = { name = "logic-classes"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "SeeReason Partners <partners@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Support for propositional and first order logic, normal forms, and a resolution theorem prover.";
       description = "Package to support Propositional and First Order Logic.  It includes classes\nrepresenting the different types of formulas and terms, some instances of\nthose classes for types used in other logic libraries, and implementations of\nseveral logic algorithms, including conversion to normal form and a simple\nresolution-based theorem prover for any instance of FirstOrderFormula.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,12 +31,8 @@
           (hsPkgs.safecopy)
           (hsPkgs.set-extra)
           (hsPkgs.syb)
-        ];
-      };
-      exes = {
-        "tests" = {
-          depends = [ (hsPkgs.HUnit) ];
+          ];
         };
+      exes = { "tests" = { depends = [ (hsPkgs.HUnit) ]; }; };
       };
-    };
-  }
+    }

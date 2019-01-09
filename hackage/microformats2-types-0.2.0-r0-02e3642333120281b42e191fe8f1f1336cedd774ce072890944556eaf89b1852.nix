@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "microformats2-types";
-        version = "0.2.0";
-      };
+      identifier = { name = "microformats2-types"; version = "0.2.0"; };
       license = "Apache-2.0";
       copyright = "2014 Greg V <floatboth@me.com>";
       maintainer = "floatboth@me.com";
@@ -22,7 +13,7 @@
       synopsis = "Microformats 2 types for Haskell.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.either)
           (hsPkgs.aeson)
           (hsPkgs.pandoc-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

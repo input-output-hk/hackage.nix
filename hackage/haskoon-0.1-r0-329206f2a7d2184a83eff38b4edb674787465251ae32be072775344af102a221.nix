@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskoon";
-        version = "0.1";
-      };
+      identifier = { name = "haskoon"; version = "0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "David Leuschner <leuschner@openfactis.org>";
@@ -22,7 +13,7 @@
       synopsis = "Web Application Abstraction";
       description = "Web Astraction Layer with a binding to CGI providing a simple way to\nmap parameter and header values to data structures (inspired by HAppS)\nand a sitemap functionality to map URLs to functions that answer the request.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.network)
           (hsPkgs.hsp)
           (hsPkgs.hsx)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

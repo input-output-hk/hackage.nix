@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dynamic-cabal";
-        version = "0.3.4";
-      };
+      identifier = { name = "dynamic-cabal"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Benno Fünfstück";
       maintainer = "Benno Fünfstück <benno.fuenfstueck@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Access the functions from the Cabal library without depending on it";
       description = "This library allows you to extract information from cabal files without depending on the Cabal library. Since\nGHC currently depends on Cabal, it's difficult to directly use Cabal if you also like to use the GHC API. This package\nsolves that problem by using the GHC API itself to interface with Cabal, which means that it can use whatever Cabal version\nthe user has installed, at run time (the version is not fixed at compile time). For a short tutorial, see\n<https://github.com/bennofs/dynamic-cabal>.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.void)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "dynamic-cabal-tests" = {
           depends = [
@@ -51,16 +42,16 @@
             (hsPkgs.tasty-th)
             (hsPkgs.containers)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

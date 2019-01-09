@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Data-Hash-Consistent";
-        version = "0.1.1";
-      };
+      identifier = { name = "Data-Hash-Consistent"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@fastmail.fm";
@@ -22,7 +13,7 @@
       synopsis = "Provide a simple consistent hashing mechanism";
       description = "Provide a simple consistent hashing mechanism";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.digest)
           (hsPkgs.utf8-string)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

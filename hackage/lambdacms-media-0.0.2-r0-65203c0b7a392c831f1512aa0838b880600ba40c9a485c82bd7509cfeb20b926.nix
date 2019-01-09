@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "lambdacms-media";
-        version = "0.0.2";
-      };
+      identifier = { name = "lambdacms-media"; version = "0.0.2"; };
       license = "MIT";
       copyright = "(c) 2014 Hoppinger";
       maintainer = "mats@AT-hoppinger.com";
@@ -22,7 +13,7 @@
       synopsis = "Media CMS extension for Yesod apps";
       description = "LambdaCms is a Content Management System (CMS) in Haskell\nusing Yesod. This package contains the \"media\" extension.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.shakespeare)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-lucu-implant-file = true;
-    };
+    flags = { build-lucu-implant-file = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Lucu";
-        version = "0.4";
-      };
+      identifier = { name = "Lucu"; version = "0.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "PHO <pho at cielonegro dot org>";
@@ -24,7 +13,7 @@
       synopsis = "HTTP Daemonic Library";
       description = "Lucu is an HTTP daemonic library. It can be embedded in any\nHaskell program and runs in an independent thread.\nLucu is not a replacement for Apache. It is intended to be\nused to create an efficient web-based application without\nmessing around FastCGI. It is also intended to be run behind a\nreverse-proxy so it doesn't have some facilities like logging,\nclient filtering or such like.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,10 +31,8 @@
           (hsPkgs.time)
           (hsPkgs.unix)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
+      exes = { "lucu-implant-file" = {}; };
       };
-      exes = {
-        "lucu-implant-file" = {};
-      };
-    };
-  }
+    }

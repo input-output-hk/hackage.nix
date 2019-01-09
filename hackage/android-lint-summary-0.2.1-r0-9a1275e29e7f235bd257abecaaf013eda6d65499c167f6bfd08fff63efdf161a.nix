@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      documentation = false;
-    };
+    flags = { documentation = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "android-lint-summary";
-        version = "0.2.1";
-      };
+      identifier = { name = "android-lint-summary"; version = "0.2.1"; };
       license = "Apache-2.0";
       copyright = "2015, Pascal Hartig";
       maintainer = "phartig@twitter.com";
@@ -24,7 +13,7 @@
       synopsis = "A pretty printer for Android Lint errors";
       description = "An easily digestible overview of errors and warnings from Android Lint.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +30,8 @@
           (hsPkgs.stringable)
           (hsPkgs.terminal-size)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs.hscolour);
-      };
+          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs.hscolour);
+        };
       exes = {
         "android-lint-summary" = {
           depends = [
@@ -58,9 +47,9 @@
             (hsPkgs.stringable)
             (hsPkgs.terminal-size)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hspec-tests" = {
           depends = [
@@ -72,8 +61,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hxt)
             (hsPkgs.stringable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

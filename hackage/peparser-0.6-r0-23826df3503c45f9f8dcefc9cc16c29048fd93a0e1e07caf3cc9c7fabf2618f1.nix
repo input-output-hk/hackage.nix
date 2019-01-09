@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "peparser";
-        version = "0.6";
-      };
+      identifier = { name = "peparser"; version = "0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thegravian@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A parser for PE object files.";
       description = "Extract the header information and sections from a file of the PE object format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

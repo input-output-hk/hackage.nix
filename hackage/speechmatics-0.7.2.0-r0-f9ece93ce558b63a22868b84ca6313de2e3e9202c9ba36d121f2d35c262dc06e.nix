@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "speechmatics";
-        version = "0.7.2.0";
-      };
+      identifier = { name = "speechmatics"; version = "0.7.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Daisee Pty Ltd";
       maintainer = "jappie.klooster@daisee.com";
@@ -22,7 +13,7 @@
       synopsis = "Speechmatics api client";
       description = "Upload audio files to speechmatics to get a transcription";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text)
           (hsPkgs.text-format-heavy)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       exes = {
         "speechmatics" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.speechmatics)
             (hsPkgs.text)
             (hsPkgs.text-format-heavy)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "speechmatics-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.speechmatics)
             (hsPkgs.text)
             (hsPkgs.text-format-heavy)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

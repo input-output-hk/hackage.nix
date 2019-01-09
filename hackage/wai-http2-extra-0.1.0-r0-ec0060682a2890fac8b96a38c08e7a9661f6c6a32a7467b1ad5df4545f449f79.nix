@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-http2-extra";
-        version = "0.1.0";
-      };
+      identifier = { name = "wai-http2-extra"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "kazu@iij.ad.jp";
@@ -22,7 +13,7 @@
       synopsis = "WAI utilities for HTTP/2";
       description = "WAI utilities for HTTP/2";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,15 +25,10 @@
           (hsPkgs.wai)
           (hsPkgs.warp)
           (hsPkgs.word8)
-        ];
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       };
-    };
-  }
+    }

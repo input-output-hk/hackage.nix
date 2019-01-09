@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yaop";
-        version = "0.1.2";
-      };
+      identifier = { name = "yaop"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Eugene Smolanka <smolanka.zhacka@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Yet another option parser";
       description = "A simple wrapper over the standard System.Console.GetOpt to make options\ndefining more convenient.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

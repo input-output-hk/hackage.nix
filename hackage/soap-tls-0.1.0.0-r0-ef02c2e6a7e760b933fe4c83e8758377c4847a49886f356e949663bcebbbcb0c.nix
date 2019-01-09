@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "soap-tls";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "soap-tls"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "aenor.realm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "TLS-enabled SOAP transport (using tls package)";
       description = "TLS-enabled SOAP transport (using tls package)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.configurator)
           (hsPkgs.data-default)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

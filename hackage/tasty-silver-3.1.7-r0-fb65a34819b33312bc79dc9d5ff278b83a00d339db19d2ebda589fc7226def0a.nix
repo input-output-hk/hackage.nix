@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "tasty-silver";
-        version = "3.1.7";
-      };
+      identifier = { name = "tasty-silver"; version = "3.1.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "Philipp Hausmann";
@@ -22,7 +13,7 @@
       synopsis = "A fancy test runner, including support for golden tests.";
       description = "This package provides a fancy test runner and support for «golden testing».\nA golden test is an IO action that writes its result to a file.\nTo pass the test, this output file should be identical to the corresponding\n«golden» file, which contains the correct result for the test.\nThe test runner allows filtering tests using regexes, and to interactively\ninspect the result of golden tests.\nThis package is a heavily extended fork of tasty-golden.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.tasty)
           (hsPkgs.temporary)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.process)
             (hsPkgs.temporary)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

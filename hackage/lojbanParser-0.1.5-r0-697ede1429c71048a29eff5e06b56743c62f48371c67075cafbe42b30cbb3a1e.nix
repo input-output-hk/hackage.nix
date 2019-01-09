@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "lojbanParser";
-        version = "0.1.5";
-      };
+      identifier = { name = "lojbanParser"; version = "0.1.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = ".iocikun.juj. <PAF01143@nifty.ne.jp>";
@@ -22,13 +13,9 @@
       synopsis = "lojban parser";
       description = "This is alpha version. The interface may change.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
-      exes = {
-        "testParser" = {
-          depends = [ (hsPkgs.base) ];
-        };
+      exes = { "testParser" = { depends = [ (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

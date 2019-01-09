@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "finite-typelits";
-        version = "0.1.4.1";
-      };
+      identifier = { name = "finite-typelits"; version = "0.1.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mniip@mniip.com";
@@ -22,13 +13,8 @@
       synopsis = "A type inhabited by finitely many values, indexed by type-level naturals.";
       description = "A type inhabited by finitely many values, indexed by type-level naturals.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.deepseq)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.deepseq) ]; };
+      };
+    }

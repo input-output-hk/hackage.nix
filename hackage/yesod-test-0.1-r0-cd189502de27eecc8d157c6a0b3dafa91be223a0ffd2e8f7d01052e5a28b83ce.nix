@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-test";
-        version = "0.1";
-      };
+      identifier = { name = "yesod-test"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Nubis <nubis@woobiz.com.ar>";
@@ -22,7 +13,7 @@
       synopsis = "integration testing for WAI/Yesod Applications";
       description = "Behaviour Oriented integration Testing for Yesod Applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.hspec)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

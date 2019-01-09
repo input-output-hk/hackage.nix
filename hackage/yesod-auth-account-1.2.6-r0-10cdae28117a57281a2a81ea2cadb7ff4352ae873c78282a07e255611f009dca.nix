@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-auth-account";
-        version = "1.2.6";
-      };
+      identifier = { name = "yesod-auth-account"; version = "1.2.6"; };
       license = "MIT";
       copyright = "";
       maintainer = "John Lenz <lenz@math.uic.edu>";
@@ -22,7 +13,7 @@
       synopsis = "An account authentication plugin for Yesod";
       description = "An auth plugin for accounts. Each account consists of a username,\nemail, and password.  The plugin provides new account, email verification,\nand password reset pages that can be customized to enhance the user experience.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-form)
           (hsPkgs.yesod-persistent)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.yesod-test)
             (hsPkgs.yesod-auth)
             (hsPkgs.yesod-auth-account)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

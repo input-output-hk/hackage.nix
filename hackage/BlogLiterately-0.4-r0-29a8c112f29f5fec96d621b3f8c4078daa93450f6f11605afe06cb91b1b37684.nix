@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "BlogLiterately";
-        version = "0.4";
-      };
+      identifier = { name = "BlogLiterately"; version = "0.4"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Robert Greayer 2008-2010, Brent Yorgey 2012";
       maintainer = "Brent Yorgey <byorgey@cis.upenn.edu>";
@@ -22,7 +13,7 @@
       synopsis = "A tool for posting Haskelly articles to blogs";
       description = "Write blog posts in Markdown format, then use BlogLiterately\nto do syntax highlighting, format ghci sessions, and upload\nto any blog supporting the metaWeblog API (such as Wordpress).\n\nSee <http://byorgey.wordpress.com/blogliterately/> for complete\ndocumentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "BlogLiterately" = {
@@ -38,8 +29,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.haxr)
             (hsPkgs.pandoc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

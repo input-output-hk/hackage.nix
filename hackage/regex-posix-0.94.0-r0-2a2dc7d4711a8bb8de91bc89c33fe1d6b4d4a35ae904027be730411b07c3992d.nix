@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "regex-posix";
-        version = "0.94.0";
-      };
+      identifier = { name = "regex-posix"; version = "0.94.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2007, Christopher Kuklewicz";
       maintainer = "TextRegexLazy@personal.mightyreason.com";
@@ -22,7 +13,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The posix regex backend for regex-base";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -32,11 +23,8 @@
             (hsPkgs.array)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
-          ]
-          else [
-            (hsPkgs.regex-base)
-            (hsPkgs.base)
-          ];
+            ]
+          else [ (hsPkgs.regex-base) (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      optimizeadvanced = true;
-    };
+    flags = { optimizeadvanced = true; };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "synthesizer-core";
-        version = "0.8.2";
-      };
+      identifier = { name = "synthesizer-core"; version = "0.8.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -24,7 +13,7 @@
       synopsis = "Audio signal processing coded in Haskell: Low level part";
       description = "Low level audio signal processing\nused by the other synthesizer packages.\nThe routines can be really fast\ndue to StorableVector, Stream-like list type and aggressive inlining.\nFor an interface to Haskore see <http://code.haskell.org/haskore/revised/synthesizer/>.\nFor introductory examples see \"Synthesizer.Plain.Tutorial\"\nand \"Synthesizer.Generic.Tutorial\".\n\nFunctions:\nOscillators, Noise generators, Frequency filters,\nFast Fourier transform for computation of frequency spectrum";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,8 +41,8 @@
           (hsPkgs.random)
           (hsPkgs.process)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -70,9 +59,9 @@
             (hsPkgs.random)
             (hsPkgs.containers)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "fouriertest" = {
           depends = [
@@ -83,8 +72,8 @@
             (hsPkgs.storable-tuple)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "speedtest" = {
           depends = [
             (hsPkgs.synthesizer-core)
@@ -95,8 +84,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "speedtest-exp" = {
           depends = [
             (hsPkgs.synthesizer-core)
@@ -107,8 +96,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.array)
             (hsPkgs.base)
-          ];
-        };
+            ];
+          };
         "speedtest-simple" = {
           depends = [
             (hsPkgs.synthesizer-core)
@@ -116,8 +105,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.old-time)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

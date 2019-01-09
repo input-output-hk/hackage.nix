@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hutton";
-        version = "1.0.0";
-      };
+      identifier = { name = "hutton"; version = "1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak <taylor@fausak.me>";
@@ -22,7 +13,7 @@
       synopsis = "A program for the button on Reddit.";
       description = "Hutton is a program for <https://www.reddit.com/r/thebutton the button> on\nReddit.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hutton" = {
@@ -43,8 +34,8 @@
             (hsPkgs.transformers)
             (hsPkgs.websockets)
             (hsPkgs.wuss)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

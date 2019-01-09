@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "transfer-db";
-        version = "0.3.1.2";
-      };
+      identifier = { name = "transfer-db"; version = "0.3.1.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Mihai Giurgeanu";
       maintainer = "mihai.giurgeanu@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "ODBC database transfer";
       description = "Simple ODBC application that transfers data between 2 databases.\nIt is based on `sqlcli` package that should be installed with\nthe `odbc` flag set.\nTo build the application, you need odbc libraries installed. On\nWindows, they are installed by default. On unix, you should use\n[unixODBC](http://www.unixodbc.org) package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.temporary)
           (hsPkgs.containers)
           (hsPkgs.clock)
-        ];
-      };
+          ];
+        };
       exes = {
         "transfer-db" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.sqlcli)
             (hsPkgs.sqlcli-odbc)
             (hsPkgs.transfer-db)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hspec-tests" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.cpu)
             (hsPkgs.transfer-db)
             (hsPkgs.sqlcli)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

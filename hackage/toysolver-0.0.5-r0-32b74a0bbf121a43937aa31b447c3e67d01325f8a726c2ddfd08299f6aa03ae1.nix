@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { forcechar8 = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "toysolver";
-        version = "0.0.5";
-      };
+      identifier = { name = "toysolver"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "masahiro.sakai@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Assorted decision procedures for SAT, Max-SAT, PB, MIP, etc";
       description = "Toy-level implementation of some decision procedures";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.OptDir)
           (hsPkgs.data-interval)
           (hsPkgs.finite-field)
-        ];
-      };
+          ];
+        };
       exes = {
         "toysolver" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.OptDir)
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "toysat" = {
           depends = [
             (hsPkgs.base)
@@ -80,16 +71,16 @@
             (hsPkgs.unbounded-delays)
             (hsPkgs.vector-space)
             (hsPkgs.toysolver)
-          ] ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
-        };
+            ] ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs.base);
+          };
         "toyfmf" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.toysolver)
             (hsPkgs.logic-TPTP)
-          ];
-        };
+            ];
+          };
         "lpconvert" = {
           depends = [
             (hsPkgs.base)
@@ -97,8 +88,8 @@
             (hsPkgs.filepath)
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
-          ];
-        };
+            ];
+          };
         "pbconvert" = {
           depends = [
             (hsPkgs.base)
@@ -106,9 +97,9 @@
             (hsPkgs.filepath)
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "TestSAT" = {
           depends = [
@@ -120,8 +111,8 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "TestSimplex2" = {
           depends = [
             (hsPkgs.base)
@@ -132,8 +123,8 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "TestMIPSolver2" = {
           depends = [
             (hsPkgs.base)
@@ -146,8 +137,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.OptDir)
             (hsPkgs.stm)
-          ];
-        };
+            ];
+          };
         "TestPolynomial" = {
           depends = [
             (hsPkgs.base)
@@ -162,8 +153,8 @@
             (hsPkgs.data-interval)
             (hsPkgs.finite-field)
             (hsPkgs.prettyclass)
-          ];
-        };
+            ];
+          };
         "TestAReal" = {
           depends = [
             (hsPkgs.base)
@@ -176,8 +167,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.data-interval)
-          ];
-        };
+            ];
+          };
         "TestQE" = {
           depends = [
             (hsPkgs.base)
@@ -191,8 +182,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestContiTraverso" = {
           depends = [
             (hsPkgs.base)
@@ -206,8 +197,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestLPFile" = {
           depends = [
             (hsPkgs.base)
@@ -219,8 +210,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestMPSFile" = {
           depends = [
             (hsPkgs.base)
@@ -232,8 +223,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestPBFile" = {
           depends = [
             (hsPkgs.base)
@@ -244,8 +235,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "TestUtil" = {
           depends = [
             (hsPkgs.base)
@@ -256,9 +247,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "BenchmarkSATLIB" = {
           depends = [
@@ -269,8 +260,8 @@
             (hsPkgs.parse-dimacs)
             (hsPkgs.toysolver)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

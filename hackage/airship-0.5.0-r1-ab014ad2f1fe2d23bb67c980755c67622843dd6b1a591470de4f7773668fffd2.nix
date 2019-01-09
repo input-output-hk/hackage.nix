@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "airship";
-        version = "0.5.0";
-      };
+      identifier = { name = "airship"; version = "0.5.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "reid@helium.com";
@@ -22,7 +13,7 @@
       synopsis = "A Webmachine-inspired HTTP library";
       description = "A Webmachine-inspired HTTP library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,8 +48,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.transformers)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

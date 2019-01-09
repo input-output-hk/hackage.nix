@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "script-monad";
-        version = "0.0.1";
-      };
+      identifier = { name = "script-monad"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Automattic, Inc.";
       maintainer = "nbloomf@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Transformer stack of error, reader, writer, state, and prompt monads";
       description = "Please see the README on GitHub at <https://github.com/nbloomf/script-monad#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,16 +31,13 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.wreq)
-        ];
-      };
-      exes = {
-        "script-monad-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.script-monad)
           ];
         };
-      };
+      exes = {
+        "script-monad-exe" = {
+          depends = [ (hsPkgs.base) (hsPkgs.script-monad) ];
+          };
+        };
       tests = {
         "script-monad-test" = {
           depends = [
@@ -59,8 +47,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

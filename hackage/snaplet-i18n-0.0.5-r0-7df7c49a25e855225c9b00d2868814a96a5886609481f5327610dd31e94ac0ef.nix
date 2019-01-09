@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snaplet-i18n";
-        version = "0.0.5";
-      };
+      identifier = { name = "snaplet-i18n"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Haisheng Wu";
       maintainer = "freizl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "snaplet-i18n";
       description = "A light weight i18n snaplet.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.snap-loader-static)
           (hsPkgs.text)
           (hsPkgs.xmlhtml)
-        ];
-      };
+          ];
+        };
       exes = {
         "demo" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.xmlhtml)
             (hsPkgs.bytestring)
             (hsPkgs.snaplet-i18n)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

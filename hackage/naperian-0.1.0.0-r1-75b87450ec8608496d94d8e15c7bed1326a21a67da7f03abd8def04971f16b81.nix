@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "naperian";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "naperian"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Aaron Vargo 2017";
       maintainer = "Aaron Vargo <fpfundamentalist@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Efficient representable functors";
       description = "See the readme at <https://github.com/aaronvargo/naperian#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.streams)
           (hsPkgs.free)
           (hsPkgs.comonad)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

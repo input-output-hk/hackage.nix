@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tip-lib";
-        version = "0.2.1";
-      };
+      identifier = { name = "tip-lib"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "danr@chalmers.se";
@@ -22,7 +13,7 @@
       synopsis = "tons of inductive problems - support library and tools";
       description = "This package provides a tool for processing inductive theorem proving problems in TIP format (see the homepage for details).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,12 +27,12 @@
           (hsPkgs.array)
           (hsPkgs.optparse-applicative)
           (hsPkgs.structural-induction)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       exes = {
         "tip" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.pretty)
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

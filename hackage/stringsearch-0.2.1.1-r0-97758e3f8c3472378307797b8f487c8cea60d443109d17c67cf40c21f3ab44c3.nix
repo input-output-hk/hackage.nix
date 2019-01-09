@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "stringsearch";
-        version = "0.2.1.1";
-      };
+      identifier = { name = "stringsearch"; version = "0.2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bos@serpentine.com";
@@ -22,16 +13,12 @@
       synopsis = "";
       description = "Fast search of ByteStrings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-          ]
+          then [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.bytestring) ]
           else [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

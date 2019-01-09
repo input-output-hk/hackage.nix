@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mattermost-api-qc";
-        version = "40800.0.0";
-      };
+      identifier = { name = "mattermost-api-qc"; version = "40800.0.0"; };
       license = "ISC";
       copyright = "2017 Kevin Quick";
       maintainer = "kquick@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "QuickCheck instances for the Mattermost client API library";
       description = "A testing library for the mattermost-api library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

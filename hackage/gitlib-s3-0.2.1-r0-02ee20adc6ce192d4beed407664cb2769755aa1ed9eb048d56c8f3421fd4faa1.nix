@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitlib-s3";
-        version = "0.2.1";
-      };
+      identifier = { name = "gitlib-s3"; version = "0.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "johnw@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "A repository backend for storing Git objects in Amazon S3";
       description = "A repository backend for storing Git objects in Amazon S3.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.http-conduit)
           (hsPkgs.binary)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "smoke" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.system-filepath)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Zwaluw";
-        version = "0.1";
-      };
+      identifier = { name = "Zwaluw"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Some Rights Reserved (CC) 2010 Sjoerd Visscher, Martijn van Steenbergen";
       maintainer = "martijn@van.steenbergen.nl";
@@ -22,10 +13,6 @@
       synopsis = "Combinators for bidirectional URL routing";
       description = "Combinators for bidirectional URL routing";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

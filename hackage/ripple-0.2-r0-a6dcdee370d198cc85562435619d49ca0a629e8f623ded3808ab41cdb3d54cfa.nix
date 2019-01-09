@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ripple";
-        version = "0.2";
-      };
+      identifier = { name = "ripple"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "© 2014 Stephen Paul Weber";
       maintainer = "Stephen Paul Weber <singpolyma@singpolyma.net>";
@@ -22,7 +13,7 @@
       synopsis = "Ripple payment system library";
       description = "Interact with Ripple servers, sign transactions, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.crypto-pubkey-types)
           (hsPkgs.ecdsa)
           (hsPkgs.websockets)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

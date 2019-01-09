@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "hsimport";
-        version = "0.7.1";
-      };
+      identifier = { name = "hsimport"; version = "0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel.trstenjak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A command line program for extending the import list of a Haskell source file.";
       description = "A command line program for extending the import list of a Haskell source file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,16 +28,11 @@
           (hsPkgs.attoparsec)
           (hsPkgs.directory)
           (hsPkgs.dyre)
-        ];
-      };
-      exes = {
-        "hsimport" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hsimport)
           ];
         };
-      };
+      exes = {
+        "hsimport" = { depends = [ (hsPkgs.base) (hsPkgs.hsimport) ]; };
+        };
       tests = {
         "hsimport-tests" = {
           depends = [
@@ -56,8 +42,8 @@
             (hsPkgs.filepath)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.hsimport)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

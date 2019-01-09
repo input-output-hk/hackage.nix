@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      documentation = true;
-    };
+    flags = { documentation = true; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "opentok";
-        version = "0.0.5";
-      };
+      identifier = { name = "opentok"; version = "0.0.5"; };
       license = "MIT";
       copyright = "2018 Aaron Rice";
       maintainer = "adrice727@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "An OpenTok SDK for Haskell";
       description = "\nSession creation, token generation, and archive management for the OpenTok platform.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +43,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs.hscolour);
-      };
+          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs.hscolour);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -93,8 +82,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

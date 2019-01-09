@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zip-conduit";
-        version = "0.2.1";
-      };
+      identifier = { name = "zip-conduit"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "cherganov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Working with zip archives via conduits.";
       description = "Working with zip archives via conduits.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.time)
             (hsPkgs.zip-conduit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.transformers)
             (hsPkgs.zip-archive)
             (hsPkgs.zip-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

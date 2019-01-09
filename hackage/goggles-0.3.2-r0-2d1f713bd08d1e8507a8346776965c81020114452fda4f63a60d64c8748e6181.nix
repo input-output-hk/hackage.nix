@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "goggles";
-        version = "0.3.2";
-      };
+      identifier = { name = "goggles"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Marco Zocca";
       maintainer = "zocca.marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "Extensible interface to Web APIs";
       description = "`goggles` helps with exchanging data with APIs that require authentication. In particular, it handles the details of expiring session tokens, so the user does not have to implement this logic in her program.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.containers)
           (hsPkgs.exceptions)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.goggles)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

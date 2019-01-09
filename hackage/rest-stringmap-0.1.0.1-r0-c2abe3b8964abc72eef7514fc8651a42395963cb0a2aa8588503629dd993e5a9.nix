@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rest-stringmap";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "rest-stringmap"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014 Silk B.V.";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Maps with stringy keys that can be transcoded to JSON and XML.";
       description = "Maps with stringy keys that can be transcoded to JSON and XML.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.text)
           (hsPkgs.tostring)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "montage";
-        version = "0.1";
-      };
+      identifier = { name = "montage"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dev@bu.mp";
@@ -22,7 +13,7 @@
       synopsis = "Riak Resolution Proxy";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.protocol-buffers-descriptor)
           (hsPkgs.stats-web)
           (hsPkgs.safe)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

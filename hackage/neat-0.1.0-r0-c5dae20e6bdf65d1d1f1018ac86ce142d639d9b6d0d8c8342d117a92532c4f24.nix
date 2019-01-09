@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "neat";
-        version = "0.1.0";
-      };
+      identifier = { name = "neat"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ajg";
@@ -22,15 +13,11 @@
       synopsis = "A Fast Retargetable Template Engine";
       description = "Static compilation of templates to various languages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.filepath)
-          (hsPkgs.parsec)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.filepath) (hsPkgs.parsec) ];
+        };
       exes = {
         "neat" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.filepath)
             (hsPkgs.neat)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

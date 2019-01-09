@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Stack";
-        version = "0.2.0";
-      };
+      identifier = { name = "Stack"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Robert Walker";
       maintainer = "rwlock404@yahoo.com";
@@ -22,10 +13,6 @@
       synopsis = "Stack data structure type";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

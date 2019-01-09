@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { threaded = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hyakko";
-        version = "0.3.2";
-      };
+      identifier = { name = "hyakko"; version = "0.3.2"; };
       license = "MIT";
       copyright = "(c) 2011 Jeremy Hull";
       maintainer = "Jeremy Hull <sourdrums@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Literate-style Documentation Generator";
       description = "Hyakko is a Haskell port of Docco: the original quick-and-dirty,\nhundred-line-long, literate-programming-style documentation\ngenerator.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hyakko" = {
@@ -37,8 +28,8 @@
             (hsPkgs.directory)
             (hsPkgs.pandoc)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

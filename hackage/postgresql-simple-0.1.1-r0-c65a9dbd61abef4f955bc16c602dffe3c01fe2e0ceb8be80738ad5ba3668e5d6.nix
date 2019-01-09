@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "postgresql-simple";
-        version = "0.1.1";
-      };
+      identifier = { name = "postgresql-simple"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 MailRank, Inc.\n(c) 2011 Leon P Smith";
       maintainer = "Leon P Smith <leon@melding-monads.com>";
@@ -22,7 +13,7 @@
       synopsis = "Mid-Level PostgreSQL client library";
       description = "Mid-Level PostgreSQL client library, forked from mysql-simple.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

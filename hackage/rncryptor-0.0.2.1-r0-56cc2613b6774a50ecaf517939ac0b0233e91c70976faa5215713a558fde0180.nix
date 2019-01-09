@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rncryptor";
-        version = "0.0.2.1";
-      };
+      identifier = { name = "rncryptor"; version = "0.0.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "alfredo.dinapoli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell implementation of the RNCryptor file format";
       description = "Pure Haskell implementation of the RNCrytor spec.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.io-streams)
           (hsPkgs.cipher-aes)
           (hsPkgs.pbkdf)
-        ];
-      };
+          ];
+        };
       exes = {
         "rncryptor-decrypt" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.io-streams)
             (hsPkgs.cipher-aes)
             (hsPkgs.rncryptor)
-          ];
-        };
+            ];
+          };
         "rncryptor-encrypt" = {
           depends = [
             (hsPkgs.base)
@@ -53,9 +44,9 @@
             (hsPkgs.io-streams)
             (hsPkgs.cipher-aes)
             (hsPkgs.rncryptor)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "rncryptor-tests" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

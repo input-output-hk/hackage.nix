@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Blogdown";
-        version = "0.1.0";
-      };
+      identifier = { name = "Blogdown"; version = "0.1.0"; };
       license = "AGPL-3.0-only";
       copyright = "(c) 2017 Alex Becker";
       maintainer = "acbecker@uchicago.edu";
@@ -22,7 +13,7 @@
       synopsis = "A markdown-like markup language designed for blog posts";
       description = "A library and executable that implement a modified, extended version of Markdown designed for writing blog posts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.parsec)
           (hsPkgs.containers)
           (hsPkgs.MissingH)
-        ];
-      };
+          ];
+        };
       exes = {
         "Blogdown" = {
           depends = [
@@ -39,9 +30,9 @@
             (hsPkgs.parsec)
             (hsPkgs.containers)
             (hsPkgs.MissingH)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.parsec)
             (hsPkgs.containers)
             (hsPkgs.MissingH)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

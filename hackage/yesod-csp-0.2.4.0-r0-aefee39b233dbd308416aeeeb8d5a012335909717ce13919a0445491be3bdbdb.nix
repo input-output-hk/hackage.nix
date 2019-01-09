@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-csp";
-        version = "0.2.4.0";
-      };
+      identifier = { name = "yesod-csp"; version = "0.2.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "robertjflong@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Add CSP headers to Yesod apps";
       description = "Add CSP headers to Yesod apps. This helps reduce exposure to XSS attacks and bad assets.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.syb)
           (hsPkgs.wai)
           (hsPkgs.case-insensitive)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.network-uri)
             (hsPkgs.attoparsec)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

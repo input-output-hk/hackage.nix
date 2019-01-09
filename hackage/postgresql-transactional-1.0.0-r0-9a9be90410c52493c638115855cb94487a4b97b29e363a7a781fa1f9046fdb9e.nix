@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-transactional";
-        version = "1.0.0";
-      };
+      identifier = { name = "postgresql-transactional"; version = "1.0.0"; };
       license = "MIT";
       copyright = "2015 Helium";
       maintainer = "patrick@helium.com";
@@ -22,7 +13,7 @@
       synopsis = "a transactional monad on top of postgresql-simple";
       description = "This package is a simple monadic wrapper around the SQL primitives\nprovided by the postgresql-simple package. It provides simple and\npredictable semantics for database options, enforces awareness of\nPostgres's transactional nature at API boundaries, and obviates\nthe need for SQL boilerplate in transactional queries.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.postgresql-simple)
           (hsPkgs.mtl)
           (hsPkgs.monad-control)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

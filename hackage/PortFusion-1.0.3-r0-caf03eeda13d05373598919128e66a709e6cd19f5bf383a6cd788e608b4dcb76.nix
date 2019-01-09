@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      static = false;
-      llvm = false;
-    };
+    flags = { static = false; llvm = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "PortFusion";
-        version = "1.0.3";
-      };
+      identifier = { name = "PortFusion"; version = "1.0.3"; };
       license = "GPL-3.0-only";
       copyright = "Copyright © 2012 Cetin Sert";
       maintainer = "Cetin Sert <fusion@corsis.eu>";
@@ -25,7 +13,7 @@
       synopsis = "CORSIS PortFusion : High-performance Distributed Proxy";
       description = "PortFusion is a minimalistic, cross-platform, transport-layer distributed reverse / forward proxy for TCP released under GPLv3.\n\nA single package that makes the most of each platform by tapping into their unique capabilities, combining this power with an intuitive interface, beautiful design and Haskell's excellent support for unprecedented levels of concurrency and parallelism.\n\nIt strives for the smallest source code size while delivering maximum throughput with near zero overhead.\n\n[Official Binaries]\nare available for download from <http://fusion.corsis.eu> for Windows, Linux, OS X and FreeBSD.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "PortFusion" = {
@@ -34,8 +22,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.vector)
             (hsPkgs.splice)
-          ] ++ [ (hsPkgs.network) ];
+            ] ++ [ (hsPkgs.network) ];
+          };
         };
       };
-    };
-  }
+    }

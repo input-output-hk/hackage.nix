@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blosum";
-        version = "0.1.1.4";
-      };
+      identifier = { name = "blosum"; version = "0.1.1.4"; };
       license = "GPL-2.0-only";
       copyright = "Copyright 2016 Gregory W. Schwartz";
       maintainer = "gregory.schwartz@drexel.edu";
@@ -22,7 +13,7 @@
       synopsis = "BLOSUM generator";
       description = "Generates BLOSUMs for use with finding the degree of amino acid conservation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text-show)
           (hsPkgs.fasta)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       exes = {
         "blosum" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.pipes)
             (hsPkgs.pipes-text)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

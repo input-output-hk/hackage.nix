@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haddock-test";
-        version = "0.0.1";
-      };
+      identifier = { name = "haddock-test"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Simon Marlow, David Waern";
       maintainer = "Simon Hengel <sol@typeful.net>, Mateusz Kowalczyk <fuuzetsu@fuuzetsu.co.uk>";
@@ -22,7 +13,7 @@
       synopsis = "Test utilities for Haddock";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.xml)
           (hsPkgs.xhtml)
           (hsPkgs.syb)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

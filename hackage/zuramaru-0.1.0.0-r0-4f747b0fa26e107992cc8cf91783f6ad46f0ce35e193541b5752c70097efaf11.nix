@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zuramaru";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "zuramaru"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "aiya000";
       maintainer = "aiya000 <aiya000.develop@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A lisp processor, An inline-lisp, in Haskell";
       description = "A lisp dialect";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.text-show)
           (hsPkgs.throwable-exceptions)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "maru" = {
           depends = [
@@ -76,9 +67,9 @@
             (hsPkgs.throwable-exceptions)
             (hsPkgs.transformers)
             (hsPkgs.zuramaru)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "integrate-test" = {
           depends = [
@@ -108,8 +99,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-discover)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "unit-test" = {
           depends = [
             (hsPkgs.base)
@@ -135,8 +126,8 @@
             (hsPkgs.throwable-exceptions)
             (hsPkgs.transformers)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

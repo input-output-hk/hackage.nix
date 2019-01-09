@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "global-config";
-        version = "0.1.0";
-      };
+      identifier = { name = "global-config"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexander Dorofeev <aka.spin@gmail.com>";
@@ -22,15 +13,15 @@
       synopsis = "Global mutable configuration";
       description = "@Data.Global.Config@ provides brain-free pattern to work with global\nconfigurations. Use wisely.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.global-variables)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

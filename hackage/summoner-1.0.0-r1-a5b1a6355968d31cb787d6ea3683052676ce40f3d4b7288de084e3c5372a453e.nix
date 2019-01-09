@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "summoner";
-        version = "1.0.0";
-      };
+      identifier = { name = "summoner"; version = "1.0.0"; };
       license = "MPL-2.0";
       copyright = "2018 Kowainik";
       maintainer = "xrom.xkov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tool for creating completely configured production Haskell projects.";
       description = "Tool for creating completely configured production Haskell projects.\nSee README.md for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,16 +31,11 @@
           (hsPkgs.time)
           (hsPkgs.tomland)
           (hsPkgs.universum)
-        ];
-      };
-      exes = {
-        "summon" = {
-          depends = [
-            (hsPkgs.base-noprelude)
-            (hsPkgs.summoner)
           ];
         };
-      };
+      exes = {
+        "summon" = { depends = [ (hsPkgs.base-noprelude) (hsPkgs.summoner) ]; };
+        };
       tests = {
         "summoner-test" = {
           depends = [
@@ -59,11 +45,9 @@
             (hsPkgs.tasty-hedgehog)
             (hsPkgs.summoner)
             (hsPkgs.universum)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.tasty-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).tasty-discover) ];
+          };
         };
       };
-    };
-  }
+    }

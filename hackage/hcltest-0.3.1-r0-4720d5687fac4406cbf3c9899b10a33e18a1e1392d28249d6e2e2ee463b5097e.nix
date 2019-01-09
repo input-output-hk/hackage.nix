@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hcltest";
-        version = "0.3.1";
-      };
+      identifier = { name = "hcltest"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Benno Fünfstück";
       maintainer = "Benno Fünfstück <benno.fuenfstueck@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A testing library for command line applications.";
       description = "Allows to write tests for command line applications using haskell.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.monad-control)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

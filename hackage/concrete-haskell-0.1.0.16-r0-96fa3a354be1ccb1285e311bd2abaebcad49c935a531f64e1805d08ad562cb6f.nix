@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "concrete-haskell";
-        version = "0.1.0.16";
-      };
+      identifier = { name = "concrete-haskell"; version = "0.1.0.16"; };
       license = "LicenseRef-GPL";
       copyright = "2017";
       maintainer = "tom@cs.jhu.edu";
@@ -22,7 +13,7 @@
       synopsis = "Library for the Concrete data format.";
       description = "Concrete is a Thrift-based data specification designed for Natural Language Processing (NLP) applications.  This library provides a Haskell interface to code generated from the latest release of Concrete (the concrete-haskell-autogen package). It also has an ingest utility for converting various formats (JSON, CSV, XML, etc) to Concrete Communication objects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -64,8 +55,8 @@
           (hsPkgs.zip)
           (hsPkgs.zip-conduit)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "apply_annotators" = {
           depends = [
@@ -108,8 +99,8 @@
             (hsPkgs.zip)
             (hsPkgs.zip-conduit)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "build_graphs" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -151,8 +142,8 @@
             (hsPkgs.zip)
             (hsPkgs.zip-conduit)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "fetch_service" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -194,8 +185,8 @@
             (hsPkgs.zip)
             (hsPkgs.zip-conduit)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "ingest_communications" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -237,8 +228,8 @@
             (hsPkgs.zip)
             (hsPkgs.zip-conduit)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "inspect_communications" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -280,8 +271,8 @@
             (hsPkgs.zip)
             (hsPkgs.zip-conduit)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "store_service" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -323,9 +314,9 @@
             (hsPkgs.zip)
             (hsPkgs.zip-conduit)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "ingesters" = {
           depends = [
@@ -368,8 +359,8 @@
             (hsPkgs.zip)
             (hsPkgs.zip-conduit)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "serialization" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -411,8 +402,8 @@
             (hsPkgs.zip)
             (hsPkgs.zip-conduit)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

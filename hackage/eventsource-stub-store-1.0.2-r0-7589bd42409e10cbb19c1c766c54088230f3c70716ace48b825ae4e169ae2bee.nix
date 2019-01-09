@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eventsource-stub-store";
-        version = "1.0.2";
-      };
+      identifier = { name = "eventsource-stub-store"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yo.eight@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An in-memory stub store implementation.";
       description = "An in-memory stub store implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
         "eventsource-stub-store-test-suite" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.protolude)
             (hsPkgs.aeson)
             (hsPkgs.eventsource-api)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "friday-juicypixels";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "friday-juicypixels"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tommd@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Converts between the Friday and JuicyPixels image types";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.friday)
           (hsPkgs.JuicyPixels)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.file-embed)
             (hsPkgs.hspec)
             (hsPkgs.friday-juicypixels)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

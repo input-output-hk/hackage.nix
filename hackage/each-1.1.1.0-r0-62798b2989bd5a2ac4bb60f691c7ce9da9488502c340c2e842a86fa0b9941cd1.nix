@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "each";
-        version = "1.1.1.0";
-      };
+      identifier = { name = "each"; version = "1.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) dramforever <dramforever@live.com>";
       maintainer = "dramforever@live.com";
@@ -22,15 +13,11 @@
       synopsis = "Template Haskell library for writing monadic expressions more easily";
       description = "See README at the bottom.\n\n/Getting started/: See \"Each\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.dlist)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.template-haskell) (hsPkgs.dlist) ];
+        };
       tests = {
         "each-test" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.each)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

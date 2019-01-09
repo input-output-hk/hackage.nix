@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pretty-relative-time";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "pretty-relative-time"; version = "0.0.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pretty relative time";
       description = "Please see the README on Github at <https://github.com/NorfairKing/pretty-relative-time#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.time)
           (hsPkgs.validity)
           (hsPkgs.validity-time)
-        ];
-      };
+          ];
+        };
       tests = {
         "pretty-relative-time-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.time)
             (hsPkgs.validity)
             (hsPkgs.validity-time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

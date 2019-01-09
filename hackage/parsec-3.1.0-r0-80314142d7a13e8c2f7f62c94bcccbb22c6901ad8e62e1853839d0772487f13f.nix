@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "parsec";
-        version = "3.1.0";
-      };
+      identifier = { name = "parsec"; version = "3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Derek Elkins <derek.a.elkins@gmail.com>";
@@ -22,18 +13,12 @@
       synopsis = "Monadic parser combinators";
       description = "Parsec is designed from scratch as an industrial-strength parser\nlibrary.  It is simple, safe, well documented (on the package\nhomepage), has extensive libraries and good error messages,\nand is also fast.  It is defined as a monad transformer that can be\nstacked on arbitrary monads, and it is also parametric in the\ninput stream type.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.mtl)
-          (hsPkgs.bytestring)
-        ] ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-          ]
+        depends = [ (hsPkgs.mtl) (hsPkgs.bytestring) ] ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

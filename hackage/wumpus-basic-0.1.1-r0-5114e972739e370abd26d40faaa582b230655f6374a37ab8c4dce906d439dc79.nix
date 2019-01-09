@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "wumpus-basic";
-        version = "0.1.1";
-      };
+      identifier = { name = "wumpus-basic"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Stephen Tetley <stephen.tetley@gmail.com>";
       maintainer = "Stephen Tetley <stephen.tetley@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Common drawing utilities built on wumpus-core.";
       description = "\nVery preliminary release...\n\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.vector-space)
           (hsPkgs.monadLib)
           (hsPkgs.wumpus-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

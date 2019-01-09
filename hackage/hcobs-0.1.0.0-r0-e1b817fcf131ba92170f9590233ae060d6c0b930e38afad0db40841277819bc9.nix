@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hcobs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "hcobs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Dario Bertini";
       maintainer = "berdario@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of the Consistent Overhead Byte Stuffing algorithm";
       description = "An implementation of the Consistent Overhead Byte Stuffing algorithm.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.reflection)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "hcobs-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.mtl)
             (hsPkgs.mmorph)
             (hsPkgs.ghc-prim)
-          ];
-        };
+            ];
+          };
         "hcobs-weigh" = {
           depends = [
             (hsPkgs.base)
@@ -54,9 +45,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
             (hsPkgs.base64-bytestring)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "mainbench" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.ghc-prim)
             (hsPkgs.criterion)
             (hsPkgs.base64-bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "lojban";
-        version = "0.3";
-      };
+      identifier = { name = "lojban"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "none";
@@ -22,7 +13,7 @@
       synopsis = "Useful utilities for the Lojban language";
       description = "Some utilities such as querying Jbovlaste XML\nexports for gismu, gloss, rafsi, etc. and\nlujvo-decomposition. More stuff to come.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,14 +31,8 @@
           (hsPkgs.directory)
           (hsPkgs.markov-chain)
           (hsPkgs.mtl)
-        ];
-      };
-      exes = {
-        "jbovlastegendb" = {
-          depends = [
-            (hsPkgs.haskell98)
           ];
         };
+      exes = { "jbovlastegendb" = { depends = [ (hsPkgs.haskell98) ]; }; };
       };
-    };
-  }
+    }

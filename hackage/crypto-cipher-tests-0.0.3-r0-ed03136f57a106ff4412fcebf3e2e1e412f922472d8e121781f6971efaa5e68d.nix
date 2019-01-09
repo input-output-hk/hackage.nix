@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "crypto-cipher-tests";
-        version = "0.0.3";
-      };
+      identifier = { name = "crypto-cipher-tests"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "vincent@snarc.org";
@@ -22,7 +13,7 @@
       synopsis = "Generic cryptography cipher tests";
       description = "Generic cryptography cipher tests";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.byteable)
           (hsPkgs.securemem)
           (hsPkgs.crypto-cipher-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-crypto-cipher-dummy" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

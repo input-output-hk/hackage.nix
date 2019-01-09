@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      buildtests = false;
-    };
+    flags = { splitbase = true; buildtests = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HDBC-postgresql";
-        version = "2.3.2.0";
-      };
+      identifier = { name = "HDBC-postgresql"; version = "2.3.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2005-2011 John Goerzen";
       maintainer = "Nicolas Wu <nick@well-typed.com>";
@@ -25,7 +13,7 @@
       synopsis = "PostgreSQL driver for HDBC";
       description = "This package provides a PostgreSQL driver for HDBC";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,12 +26,12 @@
           (hsPkgs.old-time)
           (hsPkgs.old-locale)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs.base);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs.base);
         libs = [ (pkgs."pq") ];
-      };
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.testpack)
@@ -57,9 +45,9 @@
             (hsPkgs.old-time)
             (hsPkgs.base)
             (hsPkgs.HDBC)
-          ];
+            ];
           libs = [ (pkgs."pq") ];
+          };
         };
       };
-    };
-  }
+    }

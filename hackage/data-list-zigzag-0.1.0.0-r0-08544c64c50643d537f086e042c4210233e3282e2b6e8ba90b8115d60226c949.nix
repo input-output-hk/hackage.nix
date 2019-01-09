@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-list-zigzag";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "data-list-zigzag"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017, Eric Brisco";
       maintainer = "eric.brisco@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "A list but with a balanced enumeration of Cartesian product.";
       description = "A list but with a balanced enumeration of Cartesian product.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

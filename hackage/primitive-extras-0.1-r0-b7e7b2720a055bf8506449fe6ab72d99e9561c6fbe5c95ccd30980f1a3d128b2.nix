@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "primitive-extras";
-        version = "0.1";
-      };
+      identifier = { name = "primitive-extras"; version = "0.1"; };
       license = "MIT";
       copyright = "(c) 2018, Metrix.AI";
       maintainer = "Metrix Ninjas <ninjas@metrix.ai>";
@@ -22,7 +13,7 @@
       synopsis = "Extras for the \"primitive\" library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.foldl)
           (hsPkgs.primitive)
           (hsPkgs.profunctors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "tuple-hlist";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "tuple-hlist"; version = "0.1.0.5"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2012, Nicolas Dudebout <nicolas.dudebout@gatech.edu>";
       maintainer = "Nicolas Dudebout <nicolas.dudebout@gatech.edu>";
@@ -22,14 +13,10 @@
       synopsis = "Functions to convert between tuples and HLists.";
       description = "Functions to convert between tuples and HLists, overloaded on tuple size.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.OneTuple)
-          (hsPkgs.HList)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.OneTuple) (hsPkgs.HList) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "git-gpush";
-        version = "2.0.1.0";
-      };
+      identifier = { name = "git-gpush"; version = "2.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@fpcomplete.com>";
@@ -22,7 +13,7 @@
       synopsis = "More intelligent push-to-GitHub utility.";
       description = "More intelligent push-to-GitHub utility.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "git-gpush" = {
@@ -42,8 +33,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

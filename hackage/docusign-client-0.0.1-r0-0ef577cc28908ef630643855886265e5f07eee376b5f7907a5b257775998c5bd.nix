@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "docusign-client";
-        version = "0.0.1";
-      };
+      identifier = { name = "docusign-client"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dev@capital-match.com";
@@ -22,7 +13,7 @@
       synopsis = "Client bindings for the DocuSign API";
       description = "DocuSign is an electronic signature technology and digital transaction\nmanagement. This is the client API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.servant-client)
           (hsPkgs.text)
           (hsPkgs.uuid)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

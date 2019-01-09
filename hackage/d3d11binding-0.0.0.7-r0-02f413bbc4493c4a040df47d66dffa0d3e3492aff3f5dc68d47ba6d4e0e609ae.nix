@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "d3d11binding";
-        version = "0.0.0.7";
-      };
+      identifier = { name = "d3d11binding"; version = "0.0.0.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "jwvg0425@naver.com";
@@ -22,7 +13,7 @@
       synopsis = "A raw binding for the directX 11";
       description = "A raw binding for the directX 11";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.Win32)
           (hsPkgs.c-storable-deriving)
           (hsPkgs.vect)
-        ];
+          ];
         libs = [
           (pkgs."d3d11")
           (pkgs."d3dx11")
@@ -38,16 +29,12 @@
           (pkgs."d3dxof")
           (pkgs."dxgi")
           (pkgs."dxguid")
-        ];
-      };
-      exes = {
-        "D3D11Binding-Triangle" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Win32)
-            (hsPkgs.d3d11binding)
           ];
         };
+      exes = {
+        "D3D11Binding-Triangle" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Win32) (hsPkgs.d3d11binding) ];
+          };
         "D3D11Binding-Cube" = {
           depends = [
             (hsPkgs.base)
@@ -55,8 +42,8 @@
             (hsPkgs.d3d11binding)
             (hsPkgs.c-storable-deriving)
             (hsPkgs.vect)
-          ];
-        };
+            ];
+          };
         "D3D11Binding-RevolveCube" = {
           depends = [
             (hsPkgs.base)
@@ -64,8 +51,8 @@
             (hsPkgs.d3d11binding)
             (hsPkgs.c-storable-deriving)
             (hsPkgs.vect)
-          ];
-        };
+            ];
+          };
         "D3D11Binding-Lighting" = {
           depends = [
             (hsPkgs.base)
@@ -73,8 +60,8 @@
             (hsPkgs.d3d11binding)
             (hsPkgs.c-storable-deriving)
             (hsPkgs.vect)
-          ];
-        };
+            ];
+          };
         "D3D11Binding-Texture" = {
           depends = [
             (hsPkgs.base)
@@ -82,8 +69,8 @@
             (hsPkgs.d3d11binding)
             (hsPkgs.c-storable-deriving)
             (hsPkgs.vect)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

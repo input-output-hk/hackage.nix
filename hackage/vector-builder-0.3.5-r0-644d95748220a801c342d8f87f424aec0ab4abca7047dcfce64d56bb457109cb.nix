@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vector-builder";
-        version = "0.3.5";
-      };
+      identifier = { name = "vector-builder"; version = "0.3.5"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Vector builder";
       description = "An API for efficient and convenient construction of vectors.\nIt provides the composable `Builder` abstraction, which has instances of the `Monoid` and `Semigroup` classes.\n\n[Usage]\n\nFirst you use the `Builder` abstraction to specify the structure of the vector.\nThen you execute the builder to actually produce the vector.\n\n[Example]\n\nThe following code shows how you can efficiently concatenate different datastructures into a single immutable vector:\n\n>\n>import qualified Data.Vector as A\n>import qualified VectorBuilder.Builder as B\n>import qualified VectorBuilder.Vector as C\n>\n>\n>myVector :: A.Vector a -> [a] -> a -> A.Vector a\n>myVector vector list element =\n>  C.build builder\n>  where\n>    builder =\n>      B.vector vector <>\n>      foldMap B.singleton list <>\n>      B.singleton element";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.vector-builder)
             (hsPkgs.rebase)
-          ];
-        };
+            ];
+          };
         "foldl-profiling" = {
           depends = [
             (hsPkgs.vector-builder)
@@ -51,9 +42,9 @@
             (hsPkgs.criterion)
             (hsPkgs.bug)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "foldl-benchmark" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.foldl)
             (hsPkgs.criterion)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "heist";
-        version = "0.1.2";
-      };
+      identifier = { name = "heist"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "snap@snapframework.com";
@@ -22,7 +13,7 @@
       synopsis = "An xhtml templating system";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.random)
           (hsPkgs.MonadCatchIO-transformers)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

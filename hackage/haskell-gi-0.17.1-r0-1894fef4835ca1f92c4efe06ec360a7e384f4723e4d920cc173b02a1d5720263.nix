@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haskell-gi";
-        version = "0.17.1";
-      };
+      identifier = { name = "haskell-gi"; version = "0.17.1"; };
       license = "LGPL-2.1-only";
       copyright = "";
       maintainer = "Iñaki García Etxebarria (garetxe@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Generate Haskell bindings for GObject Introspection capable libraries";
       description = "Generate Haskell bindings for GObject Introspection capable libraries. This includes most notably\nGtk+, but many other libraries in the GObject ecosystem provide introspection data too.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,15 +33,13 @@
           (hsPkgs.xdg-basedir)
           (hsPkgs.xml-conduit)
           (hsPkgs.text)
-        ];
+          ];
         pkgconfig = [
           (pkgconfPkgs.gobject-introspection-1.0)
           (pkgconfPkgs.gobject-2.0)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       exes = {
         "haskell-gi" = {
           depends = [
@@ -62,8 +51,8 @@
             (hsPkgs.pretty-show)
             (hsPkgs.haskell-gi)
             (hsPkgs.haskell-gi-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

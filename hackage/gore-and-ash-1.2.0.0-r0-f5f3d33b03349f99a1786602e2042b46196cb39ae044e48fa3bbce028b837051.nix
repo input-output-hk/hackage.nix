@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gore-and-ash";
-        version = "1.2.0.0";
-      };
+      identifier = { name = "gore-and-ash"; version = "1.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 Anton Gushcha\n, 2016 Levon Oganyan\n, 2014-2016 Ertugrul Soeylemez";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Core of FRP game engine called Gore&Ash";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

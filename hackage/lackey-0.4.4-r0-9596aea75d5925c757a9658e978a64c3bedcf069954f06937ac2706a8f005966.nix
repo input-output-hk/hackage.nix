@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lackey";
-        version = "0.4.4";
-      };
+      identifier = { name = "lackey"; version = "0.4.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,7 +13,7 @@
       synopsis = "Generate Ruby clients from Servant APIs.";
       description = "Lackey generates Ruby clients from Servant APIs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.servant)
           (hsPkgs.servant-foreign)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "lackey-test-suite" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

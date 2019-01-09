@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.4";
-      identifier = {
-        name = "heist";
-        version = "1.0.1.3";
-      };
+      identifier = { name = "heist"; version = "1.0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "snap@snapframework.com";
@@ -22,7 +13,7 @@
       synopsis = "An Haskell template system supporting both HTML5 and XML.";
       description = "Heist is a powerful template system that supports both HTML5 and XML.\nSome of Heist's features are:\n\n* Designer-friendly HTML5 (or XML) syntax\n\n* Templates can be reloaded to make changes visible without recompiling\nyour Haskell code\n\n* Enforces near-perfect separation of business logic and view\n\n* Powerful abstraction primitives allowing you to eliminate repetition\n\n* Easy creation of domain-specific markup languages\n\n* Built-in support for including JSON and Markdown content in templates\n\n* Simple mechanism for designer-specified template caching\n\n* Optional merging of multiple \\<head\\> tags defined anywhere in the\ndocument";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.xmlhtml)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "testsuite" = {
           depends = [
@@ -88,9 +79,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.xmlhtml)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -124,8 +115,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.xmlhtml)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "closed";
-        version = "0.1.0";
-      };
+      identifier = { name = "closed"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Front Row Education <engineering@frontrowed.com>";
@@ -22,7 +13,7 @@
       synopsis = "Integers bounded by a closed interval";
       description = "Integers bounded by a closed interval";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.cassava)
           (hsPkgs.hashable)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "readme" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.hspec)
             (hsPkgs.markdown-unlit)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

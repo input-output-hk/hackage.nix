@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-markov";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "monad-markov"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Arran D. Stewart 2018";
       maintainer = "maintainer@arranstewart.info";
@@ -22,7 +13,7 @@
       synopsis = "Markov process monad";
       description = "A monad transformer providing a monad in which computations have\naccess to state and a probabilistic transition function.\nThis can be used to model Markov chains.\n\nA type class is provided with one operation, \"nextState\",\nwhich transitions to the next state.\n\nThe transformer is built on top of MonadRandom\n(https://hackage.haskell.org/package/MonadRandom).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.mtl)
           (hsPkgs.random)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ci = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgrest";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "postgrest"; version = "0.3.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "cred+github@begriffs.com";
@@ -22,7 +13,7 @@
       synopsis = "REST API for any Postgres database";
       description = "Reads the schema of a PostgreSQL database and creates RESTful routes\nfor the tables and views, supporting all HTTP verbs that security\npermits.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,8 +46,8 @@
           (hsPkgs.HTTP)
           (hsPkgs.MissingH)
           (hsPkgs.Ranged-sets)
-        ];
-      };
+          ];
+        };
       exes = {
         "postgrest" = {
           depends = [
@@ -92,9 +83,9 @@
             (hsPkgs.http-types)
             (hsPkgs.MissingH)
             (hsPkgs.Ranged-sets)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -135,8 +126,8 @@
             (hsPkgs.HTTP)
             (hsPkgs.MissingH)
             (hsPkgs.Ranged-sets)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

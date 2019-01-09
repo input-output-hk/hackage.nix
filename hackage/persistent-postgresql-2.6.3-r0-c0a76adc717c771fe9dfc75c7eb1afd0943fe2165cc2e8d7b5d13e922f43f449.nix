@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "persistent-postgresql";
-        version = "2.6.3";
-      };
+      identifier = { name = "persistent-postgresql"; version = "2.6.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Backend for the persistent library using postgresql.";
       description = "Based on the postgresql-simple package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.monad-logger)
           (hsPkgs.resource-pool)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

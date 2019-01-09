@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "clevercss";
-        version = "0.1";
-      };
+      identifier = { name = "clevercss"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "georg@python.org";
@@ -22,7 +13,7 @@
       synopsis = "A CSS preprocessor";
       description = "CleverCSS is a CSS preprocessing library that allows defining variables and nesting selectors so that you don't need to Repeat Yourself.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.parsec)
           (hsPkgs.mtl)
           (hsPkgs.haskell98)
-        ];
-      };
+          ];
+        };
       exes = {
         "clevercss" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.parsec)
             (hsPkgs.mtl)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

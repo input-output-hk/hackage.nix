@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { weigh-maps = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "weigh";
-        version = "0.0.3";
-      };
+      identifier = { name = "weigh"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "FP Complete";
       maintainer = "chrisdone@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Measure allocations of a Haskell functions/values";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,12 @@
           (hsPkgs.mtl)
           (hsPkgs.split)
           (hsPkgs.template-haskell)
-        ];
-      };
-      tests = {
-        "weigh-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.weigh)
-            (hsPkgs.deepseq)
           ];
         };
+      tests = {
+        "weigh-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.weigh) (hsPkgs.deepseq) ];
+          };
         "weigh-maps" = {
           depends = [
             (hsPkgs.base)
@@ -51,8 +38,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.bytestring-trie)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

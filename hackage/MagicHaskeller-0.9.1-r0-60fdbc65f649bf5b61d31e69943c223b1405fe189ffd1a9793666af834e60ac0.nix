@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      ghcapi = true;
-      ghc7 = true;
-      readfile = true;
-    };
+    flags = { ghcapi = true; ghc7 = true; readfile = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "MagicHaskeller";
-        version = "0.9.1";
-      };
+      identifier = { name = "MagicHaskeller"; version = "0.9.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Susumu Katayama <skata@cs.miyazaki-u.ac.jp>";
@@ -26,7 +13,7 @@
       synopsis = "Automatic inductive functional programmer by systematic search";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -43,10 +30,10 @@
           (hsPkgs.html)
           (hsPkgs.network)
           (hsPkgs.pretty)
-        ] ++ pkgs.lib.optionals (flags.ghcapi && !system.isWindows) [
+          ] ++ (pkgs.lib).optionals (flags.ghcapi && !system.isWindows) [
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
-        ]) ++ pkgs.lib.optional (flags.readfile) (hsPkgs.haskell-src)) ++ pkgs.lib.optional (flags.ghc7) (hsPkgs.ghc);
+          ]) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs.haskell-src)) ++ (pkgs.lib).optional (flags.ghc7) (hsPkgs.ghc);
+        };
       };
-    };
-  }
+    }

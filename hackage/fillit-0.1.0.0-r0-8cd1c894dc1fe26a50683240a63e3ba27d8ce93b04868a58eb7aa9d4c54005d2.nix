@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fillit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "fillit"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 ishiy";
       maintainer = "ishiy <y.ishihara.1993@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Flexible string substitution";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,24 +22,24 @@
           (hsPkgs.data-default)
           (hsPkgs.parsec)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.unordered-containers)
             (hsPkgs.doctest)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.unordered-containers)
             (hsPkgs.hspec)
             (hsPkgs.fillit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

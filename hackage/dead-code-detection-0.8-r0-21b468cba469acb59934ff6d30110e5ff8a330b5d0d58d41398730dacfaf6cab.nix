@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dead-code-detection";
-        version = "0.8";
-      };
+      identifier = { name = "dead-code-detection"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sönke Hahn <soenkehahn@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "detect dead code in haskell projects";
       description = "detect dead code in haskell projects";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dead-code-detection" = {
@@ -39,9 +30,9 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.gitrev)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.mockery)
             (hsPkgs.interpolate)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

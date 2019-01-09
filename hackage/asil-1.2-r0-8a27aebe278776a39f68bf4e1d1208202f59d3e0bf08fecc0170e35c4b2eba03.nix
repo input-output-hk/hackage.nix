@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "asil";
-        version = "1.2";
-      };
+      identifier = { name = "asil"; version = "1.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Universiteit Utrecht, FITTEST project";
       maintainer = "Arie Middelkoop <ariem@cs.uu.nl>";
@@ -22,7 +13,7 @@
       synopsis = "Action Script Instrumentation Library";
       description = "A library for the analysis and instrumentation of ActionScript programs in Flash files.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.uuagc)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.zip-archive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

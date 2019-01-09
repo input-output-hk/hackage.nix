@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hack2-handler-mongrel2-http";
         version = "2011.10.31";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Hack2 Mongrel2 HTTP handler";
       description = "Hack2 Mongrel2 HTTP handler";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +39,7 @@
           (hsPkgs.unix)
           (hsPkgs.attoparsec)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

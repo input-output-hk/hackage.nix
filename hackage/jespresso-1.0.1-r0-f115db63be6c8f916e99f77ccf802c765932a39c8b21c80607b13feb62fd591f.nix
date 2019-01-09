@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jespresso";
-        version = "1.0.1";
-      };
+      identifier = { name = "jespresso"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012-2015 Stevens Institute of Technology";
       maintainer = "Andrey Chudnov <oss@chudnov.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extract all JavaScript from an HTML page and consolidate it in one script.";
       description = "Allows extraction and consolidation of JavaScript code in an HTML page so that it behaves like the original. Consolidation is a process of transforming an HTML page into an equivalent, but containing JavaScript code only in one inlined script tag. Note that the package versions follow Semantic Versioning model (semver.org).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.network)
           (hsPkgs.data-default-class)
           (hsPkgs.data-default-instances-base)
-        ];
-      };
+          ];
+        };
       exes = {
         "jespresso" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.cmdargs)
             (hsPkgs.HTTP)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "unittest" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.arrows)
             (hsPkgs.transformers)
             (hsPkgs.Diff)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

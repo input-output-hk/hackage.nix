@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gpio";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "gpio"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tyler Olson";
       maintainer = "tydotg@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell GPIO interface, designed specifically for the RaspberryPi.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.optparse-generic)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       exes = {
         "gpio" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.safe)
             (hsPkgs.gpio)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

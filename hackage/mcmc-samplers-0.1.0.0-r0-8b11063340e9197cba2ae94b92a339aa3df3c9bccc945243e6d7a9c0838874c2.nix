@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mcmc-samplers";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mcmc-samplers"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "revenap@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library of combinators to build MCMC kernels, proposals, and targets";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.vector)
           (hsPkgs.statistics)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

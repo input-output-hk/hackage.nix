@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      old-crypto-api = false;
-      conduit11 = true;
-    };
+    flags = { old-crypto-api = false; conduit11 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "crypto-conduit";
-        version = "0.5.5";
-      };
+      identifier = { name = "crypto-conduit"; version = "0.5.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Conduit interface for cryptographic operations (from crypto-api).";
       description = "This package contains everything that you need to use a\ncryptographic package that supports the @crypto-api@ package\nusing conduits from the @conduit@ package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -35,10 +23,10 @@
           (hsPkgs.conduit)
           (hsPkgs.transformers)
           (hsPkgs.resourcet)
-        ] ++ pkgs.lib.optional (flags.conduit11) (hsPkgs.conduit-extra)) ++ [
+          ] ++ (pkgs.lib).optional (flags.conduit11) (hsPkgs.conduit-extra)) ++ [
           (hsPkgs.crypto-api)
-        ];
-      };
+          ];
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -53,8 +41,8 @@
             (hsPkgs.skein)
             (hsPkgs.hspec)
             (hsPkgs.crypto-conduit)
-          ] ++ pkgs.lib.optional (flags.conduit11) (hsPkgs.conduit-extra);
+            ] ++ (pkgs.lib).optional (flags.conduit11) (hsPkgs.conduit-extra);
+          };
         };
       };
-    };
-  }
+    }

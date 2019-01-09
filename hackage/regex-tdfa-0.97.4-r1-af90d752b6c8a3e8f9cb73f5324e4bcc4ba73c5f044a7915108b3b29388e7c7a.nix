@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "regex-tdfa";
-        version = "0.97.4";
-      };
+      identifier = { name = "regex-tdfa"; version = "0.97.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2007-2009, Christopher Kuklewicz";
       maintainer = "TextRegexLazy@personal.mightyreason.com";
@@ -22,7 +13,7 @@
       synopsis = "Accurate POSIX extended regular expression library";
       description = "A new all Haskell \"tagged\" DFA regex engine, inspired by libtre";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,12 +23,9 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.bytestring)
-        ] ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.ghc-prim)
-          ]
+          ] ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.ghc-prim) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

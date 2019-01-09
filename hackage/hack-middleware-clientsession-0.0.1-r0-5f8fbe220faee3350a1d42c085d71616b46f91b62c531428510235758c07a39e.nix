@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "hack-middleware-clientsession";
         version = "0.0.1";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +16,7 @@
       synopsis = "Middleware for easily keeping session data in client cookies.";
       description = "Uses the clientsession package for automatic encryption,\nhashing, expiring and renewing of sessions stored in\ncookies on the client.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +27,7 @@
           (hsPkgs.time)
           (hsPkgs.predicates)
           (hsPkgs.web-encodings)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

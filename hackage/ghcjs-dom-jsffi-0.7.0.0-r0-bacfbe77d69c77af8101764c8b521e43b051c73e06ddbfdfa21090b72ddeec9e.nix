@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "ghcjs-dom-jsffi";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "ghcjs-dom-jsffi"; version = "0.7.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "DOM library using JSFFI and GHCJS";
       description = "Documentent Object Model (DOM) functions that work with\nGHCJS.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.ghcjs-base)
           (hsPkgs.ghcjs-prim)
           (hsPkgs.ghc-prim)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

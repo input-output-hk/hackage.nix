@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { mmap = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "JuicyPixels";
-        version = "3.1.4";
-      };
+      identifier = { name = "JuicyPixels"; version = "3.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "vincent.berthoux@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Picture loading/serialization (in png, jpeg, bitmap, gif, tiff and radiance)";
       description = "<<docimages/juicy.png>>\n\nThis library can load and store images in PNG,Bitmap, Jpeg, Radiance, Tiff and Gif images.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.primitive)
           (hsPkgs.deepseq)
           (hsPkgs.containers)
-        ] ++ pkgs.lib.optional (flags.mmap) (hsPkgs.mmap);
+          ] ++ (pkgs.lib).optional (flags.mmap) (hsPkgs.mmap);
+        };
       };
-    };
-  }
+    }

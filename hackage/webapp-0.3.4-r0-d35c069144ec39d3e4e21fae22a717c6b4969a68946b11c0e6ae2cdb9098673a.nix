@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "webapp";
-        version = "0.3.4";
-      };
+      identifier = { name = "webapp"; version = "0.3.4"; };
       license = "MIT";
       copyright = "(c) 2015 Nathaniel Symer";
       maintainer = "Nathaniel Symer <nate@symer.io>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell web app framework based on WAI & Warp";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.aeson)
           (hsPkgs.case-insensitive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

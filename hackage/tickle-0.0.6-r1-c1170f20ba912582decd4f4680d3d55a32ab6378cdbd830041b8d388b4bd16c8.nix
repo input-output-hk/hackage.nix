@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tickle";
-        version = "0.0.6";
-      };
+      identifier = { name = "tickle"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2014,2015 NICTA Limited";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A port of @Data.Binary@";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\nA port of @Data.Binary@ that tightens up data types and parameterises error messages";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.mtl)
           (hsPkgs.validation)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

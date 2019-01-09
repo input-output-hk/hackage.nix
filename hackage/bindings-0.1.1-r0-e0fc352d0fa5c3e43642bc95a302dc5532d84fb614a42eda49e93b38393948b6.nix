@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bindings";
-        version = "0.1.1";
-      };
+      identifier = { name = "bindings"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "none";
@@ -22,10 +13,6 @@
       synopsis = "Low level bindings for foreign libraries\nfollowing community driven guidelines";
       description = "This package has been left in favor of a new design. See\n@bindings-common@ and others.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

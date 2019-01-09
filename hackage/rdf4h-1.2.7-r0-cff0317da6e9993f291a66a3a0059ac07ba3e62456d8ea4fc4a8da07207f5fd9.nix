@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      small_base = false;
-      tests = false;
-      hpc = true;
-    };
+    flags = { small_base = false; tests = false; hpc = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rdf4h";
-        version = "1.2.7";
-      };
+      identifier = { name = "rdf4h"; version = "1.2.7"; };
       license = "BSD-3-Clause";
       copyright = "(c) Calvin Smith, Rob Stewart";
       maintainer = "Rob Stewart <robstewart@gmail.com>";
@@ -26,7 +13,7 @@
       synopsis = "A library for RDF processing in Haskell";
       description = "'RDF for Haskell' is a library for working with RDF in Haskell.\nAt present it includes parsers and serializers for RDF in the N-Triples\nand Turtle, and parsing support for RDF/XML. It provides abilities such as querying\nfor triples  containing a particular subject, predicate, or object, or\nselecting triples that satisfy an arbitrary predicate function.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +24,15 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
           (hsPkgs.network-uri)
-        ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
           then [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
             (hsPkgs.containers)
-          ]
+            ]
           else [ (hsPkgs.base) ]);
-      };
+        };
       exes = {
         "rdf4h" = {
           depends = [
@@ -56,14 +43,11 @@
             (hsPkgs.text)
             (hsPkgs.hashable)
             (hsPkgs.network-uri)
-          ] ++ (if flags.small_base
-            then [
-              (hsPkgs.base)
-              (hsPkgs.bytestring)
-            ]
+            ] ++ (if flags.small_base
+            then [ (hsPkgs.base) (hsPkgs.bytestring) ]
             else [ (hsPkgs.base) ]);
+          };
         };
-      };
       tests = {
         "test-rdf4h" = {
           depends = [
@@ -83,8 +67,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.hashable)
             (hsPkgs.network-uri)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

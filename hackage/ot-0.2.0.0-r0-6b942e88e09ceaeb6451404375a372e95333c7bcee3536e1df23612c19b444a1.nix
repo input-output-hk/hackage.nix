@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ot";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "ot"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tim@timbaumann.info";
@@ -22,7 +13,7 @@
       synopsis = "Real-time collaborative editing with Operational Transformation";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.either)
           (hsPkgs.mtl)
           (hsPkgs.ghc)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

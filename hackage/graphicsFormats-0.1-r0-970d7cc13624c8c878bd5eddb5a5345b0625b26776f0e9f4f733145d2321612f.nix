@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "graphicsFormats";
-        version = "0.1";
-      };
+      identifier = { name = "graphicsFormats"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas Davie (tom.davie@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Classes for renderable objects.";
       description = "Classes for renderable objects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.QuickCheck)
           (hsPkgs.OpenGL)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

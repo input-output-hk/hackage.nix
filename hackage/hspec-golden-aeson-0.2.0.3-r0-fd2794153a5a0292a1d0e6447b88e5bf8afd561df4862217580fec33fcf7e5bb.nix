@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hspec-golden-aeson";
-        version = "0.2.0.3";
-      };
+      identifier = { name = "hspec-golden-aeson"; version = "0.2.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2016 Plow Technologies";
       maintainer = "mchaver@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Use tests to monitor changes in Aeson serialization";
       description = "Use tests to monitor changes in Aeson serialization";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.quickcheck-arbitrary-adt)
           (hsPkgs.QuickCheck)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.quickcheck-arbitrary-adt)
             (hsPkgs.QuickCheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

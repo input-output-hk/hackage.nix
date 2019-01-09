@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "conduit-extra";
-        version = "1.1.12.1";
-      };
+      identifier = { name = "conduit-extra"; version = "1.1.12.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Batteries included conduit: adapters for common libraries.";
       description = "The conduit package itself maintains relative small dependencies. The purpose of this package is to collect commonly used utility functions wrapping other library dependencies, without depending on heavier-weight dependencies. The basic idea is that this package should only depend on haskell-platform packages and conduit.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.stm)
           (hsPkgs.streaming-commons)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -67,9 +58,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "blaze" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.bytestring-builder)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

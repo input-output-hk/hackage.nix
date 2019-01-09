@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "antiope-messages";
-        version = "6.1.4";
-      };
+      identifier = { name = "antiope-messages"; version = "6.1.4"; };
       license = "MIT";
       copyright = "Arbor Networks";
       maintainer = "mayhem@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/arbor/antiope#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.network-uri)
           (hsPkgs.text)
           (hsPkgs.unliftio-core)
-        ];
-      };
+          ];
+        };
       tests = {
         "antiope-messages-test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.network-uri)
             (hsPkgs.text)
             (hsPkgs.unliftio-core)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

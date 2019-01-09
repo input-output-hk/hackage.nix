@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-generate";
-        version = "0.2.1";
-      };
+      identifier = { name = "haskell-generate"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Benno Fünfstück";
       maintainer = "Benno Fünfstück <benno.fuenfstueck@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "haskell-generate";
       description = "haskell-generate";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xournal-convert";
-        version = "0.1";
-      };
+      identifier = { name = "xournal-convert"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "convert utility for xoj files";
       description = "convert xoj files into various formats (SVG,SVG+index.html..)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,16 +27,12 @@
           (hsPkgs.xournal-parser)
           (hsPkgs.xournal-render)
           (hsPkgs.cairo)
-        ];
-      };
-      exes = {
-        "xournal-convert" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.xournal-convert)
           ];
         };
+      exes = {
+        "xournal-convert" = {
+          depends = [ (hsPkgs.base) (hsPkgs.cmdargs) (hsPkgs.xournal-convert) ];
+          };
+        };
       };
-    };
-  }
+    }

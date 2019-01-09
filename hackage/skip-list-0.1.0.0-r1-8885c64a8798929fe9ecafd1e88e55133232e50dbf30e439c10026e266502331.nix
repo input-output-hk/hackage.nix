@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "skip-list";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "skip-list"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Gregory Malecha";
       maintainer = "gmalecha@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "An implementation of pure skip lists";
       description = "Skip lists provide efficient amortized indexing deep into lists by building an index that, essentially, converts the list into a balance binary tree. See <https://en.wikipedia.org/wiki/Skip_list the wikipedia entry on skip lists> for more information.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "skip-list-test" = {
           depends = [
@@ -34,17 +23,13 @@
             (hsPkgs.skip-list)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-foo" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.skip-list)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.skip-list) ];
+          };
         };
       };
-    };
-  }
+    }

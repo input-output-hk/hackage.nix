@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-protolude";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pipes-protolude"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Kyle McKean";
       maintainer = "mckean.kylej@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Alternate Prelude for the pipes ecosystem";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,23 +33,17 @@
           (hsPkgs.exceptions)
           (hsPkgs.pipes-parse)
           (hsPkgs.pipes-text)
-        ];
-      };
+          ];
+        };
       exes = {
         "pipes-protolude-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pipes-protolude)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.pipes-protolude) ];
+          };
         };
-      };
       tests = {
         "pipes-protolude-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pipes-protolude)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.pipes-protolude) ];
+          };
         };
       };
-    };
-  }
+    }

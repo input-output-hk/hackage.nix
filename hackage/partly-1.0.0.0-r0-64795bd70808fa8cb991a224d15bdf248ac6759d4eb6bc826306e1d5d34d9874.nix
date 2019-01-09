@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "partly";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "partly"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Tim Dixon";
       maintainer = "Tim Dixon <tdixon51793@gmail.com>";
@@ -22,15 +13,11 @@
       synopsis = "Inspect, create, and alter MBRs.";
       description = "A Haskell library and command-line tool to create, inspect, and alter master boot records.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.binary)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.binary) ];
+        };
       exes = {
         "partly" = {
           depends = [
@@ -39,21 +26,14 @@
             (hsPkgs.vector)
             (hsPkgs.base64-bytestring)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "test-partly-lib" = {
-          depends = [
-            (hsPkgs.QuickCheck)
-          ];
-        };
+        "test-partly-lib" = { depends = [ (hsPkgs.QuickCheck) ]; };
         "test-partly-json" = {
-          depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.QuickCheck)
-          ];
+          depends = [ (hsPkgs.aeson) (hsPkgs.QuickCheck) ];
+          };
         };
       };
-    };
-  }
+    }

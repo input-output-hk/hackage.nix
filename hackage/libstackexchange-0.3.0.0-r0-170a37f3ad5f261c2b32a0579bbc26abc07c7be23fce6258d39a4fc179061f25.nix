@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "libstackexchange";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "libstackexchange"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "matvey.aksenov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "StackExchange API interface";
       description = "Provides interface for StackExchange v2.1 API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.aeson)
           (hsPkgs.http-conduit)
           (hsPkgs.profunctors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

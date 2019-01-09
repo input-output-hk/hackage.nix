@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "git-monitor";
-        version = "2.0.1.1";
-      };
+      identifier = { name = "git-monitor"; version = "2.0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@fpcomplete.com>";
@@ -22,7 +13,7 @@
       synopsis = "Passively snapshots working tree changes efficiently.";
       description = "Passively snapshots working tree changes efficiently.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "git-monitor" = {
@@ -41,8 +32,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

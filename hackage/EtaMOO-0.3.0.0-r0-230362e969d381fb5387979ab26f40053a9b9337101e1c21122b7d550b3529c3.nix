@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      llvm = false;
-      64bit = false;
-      outbound-network = false;
-    };
+    flags = { llvm = false; 64bit = false; outbound-network = false; };
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "EtaMOO";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "EtaMOO"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2014–2016 Robert Leslie";
       maintainer = "Rob Leslie <rob@mars.org>";
@@ -26,7 +13,7 @@
       synopsis = "A new implementation of the LambdaMOO server";
       description = "LambdaMOO is a network-accessible, multi-user, programmable, interactive\nsystem well-suited to the construction of text-based adventure games,\nconferencing systems, and other collaborative software.\n\nEtaMOO is an experimental multithreaded implementation of LambdaMOO in\nHaskell with LMDB-backed persistence and anticipated ready support for\nUnicode MOO strings and 64-bit MOO integers. The implementation follows the\nspecifications of the LambdaMOO Programmer's Manual, and should be\ncompatible with most LambdaMOO databases as of about version 1.8.3 of the\nLambdaMOO server code.\n\n/N.B./ This software is still under development and not fully complete.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "etamoo" = {
@@ -58,15 +45,11 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vcache)
             (hsPkgs.vector)
-          ];
-          libs = pkgs.lib.optional (!system.isOsx) (pkgs."crypt");
-          pkgconfig = [
-            (pkgconfPkgs.libpcre)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hsc2hs)
-          ];
+            ];
+          libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt");
+          pkgconfig = [ (pkgconfPkgs.libpcre) ];
+          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "warp-tls-uid";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "warp-tls-uid"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yoshikuni Jujo <PAF01143@nifty.ne.jp>";
@@ -22,7 +13,7 @@
       synopsis = "set group and user id before running server";
       description = "> runTLSSocketWithID tlss settings sock (\"user\", \"bob\") app";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.certificate)
           (hsPkgs.pem)
           (hsPkgs.crypto-random)
-        ];
-      };
+          ];
+        };
       exes = {
         "testServer" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.pem)
             (hsPkgs.crypto-random)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "maam";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "maam"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "david.darais@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Monadic Abstracting Abstract Machines (MAAM) built on Galois Transformers";
       description = "Monadic Abstracting Abstract Machines (MAAM) built on\nGalois Transformers. See \"Galois Transformers and Modular\nAbstract Interpreters\" by Darais, Might and Van Horn.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,12 +22,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
-      exes = {
-        "maam_examples" = {
-          depends = [ (hsPkgs.maam) ];
+          ];
         };
+      exes = { "maam_examples" = { depends = [ (hsPkgs.maam) ]; }; };
       };
-    };
-  }
+    }

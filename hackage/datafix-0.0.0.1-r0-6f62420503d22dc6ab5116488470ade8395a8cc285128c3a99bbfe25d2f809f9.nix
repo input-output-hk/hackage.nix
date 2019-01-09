@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      no-lattices = false;
-    };
+    flags = { no-lattices = false; };
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "datafix";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "datafix"; version = "0.0.0.1"; };
       license = "ISC";
       copyright = "© 2017 Sebastian Graf";
       maintainer = "sgraf1337@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Fixing data-flow problems";
       description = "Fixing data-flow problems in expression trees";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +23,8 @@
           (hsPkgs.vector)
           (hsPkgs.primitive)
           (hsPkgs.pomaps)
-        ] ++ pkgs.lib.optional (!flags.no-lattices) (hsPkgs.lattices);
-      };
+          ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs.lattices);
+        };
       tests = {
         "tests" = {
           depends = ([
@@ -55,8 +44,8 @@
             (hsPkgs.filepath)
             (hsPkgs.turtle)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (!flags.no-lattices) (hsPkgs.lattices)) ++ pkgs.lib.optional (flags.no-lattices) (hsPkgs.pomaps);
-        };
+            ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs.lattices)) ++ (pkgs.lib).optional (flags.no-lattices) (hsPkgs.pomaps);
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
@@ -64,9 +53,9 @@
             (hsPkgs.Glob)
             (hsPkgs.QuickCheck)
             (hsPkgs.datafix)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = ([
@@ -85,8 +74,8 @@
             (hsPkgs.filepath)
             (hsPkgs.turtle)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (!flags.no-lattices) (hsPkgs.lattices)) ++ pkgs.lib.optional (flags.no-lattices) (hsPkgs.pomaps);
+            ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs.lattices)) ++ (pkgs.lib).optional (flags.no-lattices) (hsPkgs.pomaps);
+          };
         };
       };
-    };
-  }
+    }

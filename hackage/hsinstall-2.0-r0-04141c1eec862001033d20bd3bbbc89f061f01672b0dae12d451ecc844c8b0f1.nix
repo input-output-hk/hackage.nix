@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsinstall";
-        version = "2.0";
-      };
+      identifier = { name = "hsinstall"; version = "2.0"; };
       license = "ISC";
       copyright = "2016-2018 Dino Morelli";
       maintainer = "Dino Morelli <dino@ui3.info>";
@@ -22,15 +13,11 @@
       synopsis = "Install Haskell software";
       description = "This is a tool for deploying software projects into directory structures suitable for installation on a system. It builds upon the `stack install` command and adds more features. It's also a tool for easier AppImage creation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.filepath) ];
+        };
       exes = {
         "hsinstall" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.here)
             (hsPkgs.hsinstall)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

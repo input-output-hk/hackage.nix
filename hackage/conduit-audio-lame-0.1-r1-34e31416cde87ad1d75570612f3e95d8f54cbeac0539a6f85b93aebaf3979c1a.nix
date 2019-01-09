@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conduit-audio-lame";
-        version = "0.1";
-      };
+      identifier = { name = "conduit-audio-lame"; version = "0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "miketolly@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "conduit-audio interface to the LAME MP3 library";
       description = "A simple binding to the LAME MP3 library for use with @conduit-audio@,\nto save audio streams as MP3 files.\n\nRequires the LAME library.\nOn Ubuntu, @apt-get install libmp3lame-dev@;\non Mac with Homebrew, @brew install lame@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
+          ];
         libs = [ (pkgs."mp3lame") ];
+        };
       };
-    };
-  }
+    }

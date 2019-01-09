@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-dsl";
-        version = "0.1.1.7";
-      };
+      identifier = { name = "yesod-dsl"; version = "0.1.1.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tero Laitinen";
@@ -22,7 +13,7 @@
       synopsis = "DSL for generating Yesod subsite to manage an RDBMS;";
       description = "A domain specific language and a code generator desined to create RESTful services for managing an RDBMS with Yesod web framework and Persistent.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yesod-dsl" = {
@@ -38,12 +29,12 @@
             (hsPkgs.mtl)
             (hsPkgs.strict)
             (hsPkgs.Cabal)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.alex)
-            (hsPkgs.buildPackages.happy)
-          ];
+            ((hsPkgs.buildPackages).alex)
+            ((hsPkgs.buildPackages).happy)
+            ];
+          };
         };
       };
-    };
-  }
+    }

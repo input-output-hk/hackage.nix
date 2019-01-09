@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tldr";
-        version = "0.2.2";
-      };
+      identifier = { name = "tldr"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Sibi";
       maintainer = "sibi@psibi.in";
@@ -22,7 +13,7 @@
       synopsis = "Haskell tldr client";
       description = "Haskell tldr client with support for updating and viewing tldr pages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.text)
           (hsPkgs.bytestring)
           (hsPkgs.ansi-terminal)
-        ];
-      };
+          ];
+        };
       exes = {
         "tldr" = {
           depends = [
@@ -43,16 +34,9 @@
             (hsPkgs.filepath)
             (hsPkgs.shell-conduit)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
+      tests = { "tldr-test" = { depends = [ (hsPkgs.base) (hsPkgs.tldr) ]; }; };
       };
-      tests = {
-        "tldr-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tldr)
-          ];
-        };
-      };
-    };
-  }
+    }

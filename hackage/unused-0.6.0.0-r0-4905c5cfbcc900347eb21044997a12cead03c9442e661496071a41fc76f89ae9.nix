@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unused";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "unused"; version = "0.6.0.0"; };
       license = "MIT";
       copyright = "2016 Josh Clayton";
       maintainer = "sayhi@joshuaclayton.me";
@@ -22,7 +13,7 @@
       synopsis = "A command line tool to identify unused code.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.transformers)
           (hsPkgs.megaparsec)
           (hsPkgs.inflections)
-        ];
-      };
+          ];
+        };
       exes = {
         "unused" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "unused-test" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.hspec)
             (hsPkgs.containers)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

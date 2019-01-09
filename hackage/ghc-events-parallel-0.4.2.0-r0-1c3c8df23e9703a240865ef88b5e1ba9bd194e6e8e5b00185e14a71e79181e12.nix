@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ghc-events-parallel";
-        version = "0.4.2.0";
-      };
+      identifier = { name = "ghc-events-parallel"; version = "0.4.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Eden group <eden@mathematik.uni-marburg.de>";
@@ -22,7 +13,7 @@
       synopsis = "Library and tool for parsing .eventlog files from parallel GHC";
       description = "Parses .eventlog files emitted by parallel GHC versions\n(6.12.3 and later). This package can replace the original\nghc-events package and defines a superset of functions\nand types.\nIncludes the ghc-events tool permitting, in particular,\nto dump an event log file as text.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.array)
-        ];
-      };
+          ];
+        };
       exes = {
         "ghc-events" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-versions" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

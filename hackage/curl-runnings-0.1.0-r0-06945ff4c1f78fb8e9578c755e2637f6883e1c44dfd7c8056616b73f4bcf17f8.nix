@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "curl-runnings";
-        version = "0.1.0";
-      };
+      identifier = { name = "curl-runnings"; version = "0.1.0"; };
       license = "MIT";
       copyright = "2018 Avi Press";
       maintainer = "mail@avi.press";
@@ -22,7 +13,7 @@
       synopsis = "A framework for declaratively writing curl based API tests";
       description = "Please see the README on Github at <https://github.com/aviaviavi/curl-runnings#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.http-conduit)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "curl-runnings" = {
           depends = [
@@ -45,16 +36,13 @@
             (hsPkgs.curl-runnings)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "curl-runnings-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.curl-runnings)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.curl-runnings) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "selections";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "selections"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2017 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Combinators for operating with selections over an underlying functor";
       description = "See the [README on github](https://github.com/ChrisPenner/selections#readme) for tutorials!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bifunctors)
           (hsPkgs.profunctors)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

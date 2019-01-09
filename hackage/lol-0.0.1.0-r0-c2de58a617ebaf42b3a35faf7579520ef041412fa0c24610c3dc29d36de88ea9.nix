@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      useicc = false;
-      llvm = false;
-    };
+    flags = { useicc = false; llvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lol";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "lol"; version = "0.0.1.0"; };
       license = "GPL-2.0-only";
       copyright = "Eric Crockett, Chris Peikert";
       maintainer = "Eric Crockett <ecrockett0@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "A general-purpose library for lattice cryptography.";
       description = "\\\\Lambda \\\\ocirc \\\\lambda is a general-purpose library for ring-based lattice cryptography.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +39,8 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.vector-th-unbox)
-        ];
-      };
+          ];
+        };
       tests = {
         "lol-test-suite" = {
           depends = [
@@ -67,8 +55,8 @@
             (hsPkgs.time)
             (hsPkgs.type-natural)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

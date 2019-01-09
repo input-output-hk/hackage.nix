@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-postgresql";
-        version = "0.1";
-      };
+      identifier = { name = "servant-postgresql"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014 Zalora SEA";
       maintainer = "alp@zalora.com";
@@ -22,7 +13,7 @@
       synopsis = "Useful functions and instances for using servant with a PostgreSQL context";
       description = "Useful functions and instances for using servant with a PostgreSQL context";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.servant-response)
           (hsPkgs.postgresql-simple)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

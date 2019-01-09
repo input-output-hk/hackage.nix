@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "QuickPlot";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "QuickPlot"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "tepf@tutanota.com";
@@ -24,7 +13,7 @@
       synopsis = "Quick and easy data visualization with Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,15 +31,15 @@
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
           (hsPkgs.haskell-src-meta)
-        ];
-      };
-      exes = {
-        "BasicPlotting" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
-            (hsPkgs.base)
-            (hsPkgs.QuickPlot)
           ];
         };
+      exes = {
+        "BasicPlotting" = {
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
+            (hsPkgs.base)
+            (hsPkgs.QuickPlot)
+            ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3.0";
-      identifier = {
-        name = "n-m";
-        version = "0.0.1";
-      };
+      identifier = { name = "n-m"; version = "0.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2008 Marco Túlio Gontijo e Silva <marcot@riseup.net>";
       maintainer = "Marco Túlio Gontijo e Silva <marcot@riseup.net>";
@@ -22,11 +13,9 @@
       synopsis = "Utility to call iwconfig.";
       description = "This program choses between the available open wireless networks and tries to\nconnect to them using DHCP.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "n-m" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.mtl)
             (hsPkgs.process)
             (hsPkgs.HSH)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

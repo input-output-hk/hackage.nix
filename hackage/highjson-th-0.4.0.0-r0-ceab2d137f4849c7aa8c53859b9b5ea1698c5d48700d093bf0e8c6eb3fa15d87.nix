@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "highjson-th";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "highjson-th"; version = "0.4.0.0"; };
       license = "MIT";
       copyright = "(c) 2017 Alexander Thiemann";
       maintainer = "Alexander Thiemann <mail@athiemann.net>";
@@ -22,7 +13,7 @@
       synopsis = "Template Haskell helpers for highjson specs";
       description = "Template Haskell helpers for highjson specs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.aeson)
           (hsPkgs.swagger2)
-        ];
-      };
+          ];
+        };
       tests = {
         "highjson-th-tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.lens)
             (hsPkgs.swagger2)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

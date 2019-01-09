@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "prettyprinter-convert-ansi-wl-pprint";
         version = "1.1";
-      };
+        };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky at google>";
@@ -22,7 +16,7 @@
       synopsis = "Converter from »ansi-wl-pprint« documents to »prettyprinter«-based ones.";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,15 +26,10 @@
           (hsPkgs.prettyprinter-ansi-terminal)
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.ansi-terminal)
-        ];
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        };
       };
-    };
-  }
+    }

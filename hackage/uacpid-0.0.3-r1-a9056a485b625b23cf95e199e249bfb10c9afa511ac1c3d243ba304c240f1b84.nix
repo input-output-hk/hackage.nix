@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "uacpid";
-        version = "0.0.3";
-      };
+      identifier = { name = "uacpid"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2009 Dino Morelli";
       maintainer = "Dino Morelli <dino@ui3.info>";
@@ -22,7 +13,7 @@
       synopsis = "Userspace Advanced Configuration and Power Interface\nevent daemon";
       description = "uacpid is a daemon designed to be run in userspace\nthat will monitor the local system's acpid socket\nfor hardware events. These events can then be acted\nupon by handlers with access to the user's\nenvironment.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "uacpid" = {
@@ -39,8 +30,8 @@
             (hsPkgs.regex-compat)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "control-dsl";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "control-dsl"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2018 Yang Bo";
       maintainer = "pop.atry@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "An alternative to monads for control flow DSLs";
       description = "This \\\"control-dsl\\\" package is a toolkit to create extensible Domain Specific Languages in @do@-notation.\n\nSee \"Control.Dsl\" for more information.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -36,8 +25,8 @@
             (hsPkgs.doctest)
             (hsPkgs.doctest-discover)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

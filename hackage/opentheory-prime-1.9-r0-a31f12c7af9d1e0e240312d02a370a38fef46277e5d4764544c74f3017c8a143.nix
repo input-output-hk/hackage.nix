@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.6";
-      identifier = {
-        name = "opentheory-prime";
-        version = "1.9";
-      };
+      identifier = { name = "opentheory-prime"; version = "1.9"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Hurd <joe@gilith.com>";
@@ -22,7 +13,7 @@
       synopsis = "Prime numbers";
       description = "Prime numbers\nAutomatically generated from the opentheory package haskell-prime-1.9";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.opentheory-primitive)
           (hsPkgs.opentheory)
-        ];
-      };
+          ];
+        };
       exes = {
         "opentheory-prime-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.opentheory-primitive)
             (hsPkgs.opentheory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

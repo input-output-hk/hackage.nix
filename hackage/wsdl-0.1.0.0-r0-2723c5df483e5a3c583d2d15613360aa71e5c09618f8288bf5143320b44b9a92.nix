@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wsdl";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wsdl"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "me@jude.bio";
@@ -22,7 +13,7 @@
       synopsis = "WSDL parsing in Haskell";
       description = "DO NOT USE, UNSTABLE AND INCOMPLETE.\n\nThis library provides a definition of, parsing and [TODO] generation of WSDL documents.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.hspec)
             (hsPkgs.network-uri)
             (hsPkgs.wsdl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

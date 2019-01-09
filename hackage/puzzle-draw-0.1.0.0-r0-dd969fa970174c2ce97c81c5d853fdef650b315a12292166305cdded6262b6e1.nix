@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "puzzle-draw";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "puzzle-draw"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "rfvollmert@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Creating graphics for pencil puzzles.";
       description = "puzzle-draw is a library for drawing pencil puzzles\nusing Diagrams. It aims to provide a utility layer\non top of Diagrams to help with drawing arbitrary\npuzzles, as well as supporting several specific\npuzzle types directly. In addition, it includes\nfunctionality for parsing puzzle data from a\nYAML file format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.hashable)
           (hsPkgs.text)
           (hsPkgs.SVGFonts)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.diagrams-svg)
             (hsPkgs.bytestring)
             (hsPkgs.puzzle-draw)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

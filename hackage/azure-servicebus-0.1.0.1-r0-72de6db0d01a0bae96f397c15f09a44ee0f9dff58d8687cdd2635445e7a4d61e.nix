@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "azure-servicebus";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "azure-servicebus"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Hemanth Kapila (c) 2014-2015";
       maintainer = "saihemanth@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Windows Azure ServiceBus API";
       description = "Haskell wrappers over Windows Azure ServiceBus API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.async)
           (hsPkgs.http-client)
           (hsPkgs.connection)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

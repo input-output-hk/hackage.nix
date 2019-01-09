@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { pedantic = false; };
     package = {
       specVersion = "1.9.1";
-      identifier = {
-        name = "apache-md5";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "apache-md5"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2009, 2010, 2012, 2013 Peter Trško";
       maintainer = "peter.trsko@gmail.com";
@@ -22,15 +13,12 @@
       synopsis = "Apache server specific MD5 digest algorighm.";
       description = "Haskell implementation of Apache HTTP server specific MD5 digest algorithm\nthat uses OpenSSL @MD5()@ function.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = [ (pkgs."crypto") ];
-      };
+        };
       tests = {
         "apache-md5-unit-tests" = {
           depends = [
@@ -43,10 +31,10 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
           libs = [ (pkgs."crypto") ];
+          };
         };
-      };
       benchmarks = {
         "apache-md5-benchmark" = {
           depends = [
@@ -57,9 +45,9 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
           libs = [ (pkgs."crypto") ];
+          };
         };
       };
-    };
-  }
+    }

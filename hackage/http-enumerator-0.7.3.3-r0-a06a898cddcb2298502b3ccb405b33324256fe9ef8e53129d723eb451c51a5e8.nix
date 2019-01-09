@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test = false;
-      network-bytestring = false;
-    };
+    flags = { test = false; network-bytestring = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "http-enumerator";
-        version = "0.7.3.3";
-      };
+      identifier = { name = "http-enumerator"; version = "0.7.3.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -25,7 +13,7 @@
       synopsis = "HTTP client package with enumerator interface and HTTPS support. (deprecated)";
       description = "This package has been deprecated in favor of http-conduit (<http://hackage.haskell.org/package/http-conduit>), which provides a more powerful and simpler interface. The API is very similar, and migrating should not be problematic. Send concerns about this move to the maintainer (address listed above).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,15 +39,10 @@
           (hsPkgs.base64-bytestring)
           (hsPkgs.asn1-data)
           (hsPkgs.data-default)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
           else [ (hsPkgs.network) ]);
+        };
+      exes = { "http-enumerator" = {}; };
       };
-      exes = {
-        "http-enumerator" = {};
-      };
-    };
-  }
+    }

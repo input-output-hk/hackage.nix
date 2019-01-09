@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hmatrix-gsl";
-        version = "0.16.0.1";
-      };
+      identifier = { name = "hmatrix-gsl"; version = "0.16.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Alberto Ruiz <aruiz@um.es>";
@@ -22,7 +13,7 @@
       synopsis = "Numerical computation";
       description = "Purely functional interface to selected numerical computations,\ninternally implemented using GSL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,11 +23,11 @@
           (hsPkgs.vector)
           (hsPkgs.process)
           (hsPkgs.random)
-        ];
+          ];
         libs = (([
           (pkgs."gsl")
-        ] ++ pkgs.lib.optional (system.isOsx) (pkgs."gsl")) ++ pkgs.lib.optional (system.isFreebsd) (pkgs."gsl")) ++ pkgs.lib.optional (system.isWindows) (pkgs."gsl-0");
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
+          ] ++ (pkgs.lib).optional (system.isOsx) (pkgs."gsl")) ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."gsl")) ++ (pkgs.lib).optional (system.isWindows) (pkgs."gsl-0");
+        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate");
+        };
       };
-    };
-  }
+    }

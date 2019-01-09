@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "on-demand-ssh-tunnel";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "on-demand-ssh-tunnel"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "(c) 2014 Predrag Radovic";
       maintainer = "predrg@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Program that sends traffic through SSH tunnels on-demand";
       description = "Program that sends traffic through SSH tunnels on-demand";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "on-demand-ssh-tunnel" = {
@@ -32,8 +23,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.random)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

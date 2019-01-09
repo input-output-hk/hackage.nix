@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-      no-executable = true;
-    };
+    flags = { development = false; no-executable = true; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "hs2ats";
-        version = "0.2.1.8";
-      };
+      identifier = { name = "hs2ats"; version = "0.2.1.8"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Create ATS types from Haskell types";
       description = "This package enables scanning Haskell source files for data types and then generating [ATS](http://www.ats-lang.org/) types from them.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,16 +27,9 @@
           (hsPkgs.composition-prelude)
           (hsPkgs.deepseq)
           (hsPkgs.cpphs)
-        ];
-      };
-      exes = {
-        "hs2ats" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hs2ats)
           ];
         };
-      };
+      exes = { "hs2ats" = { depends = [ (hsPkgs.base) (hsPkgs.hs2ats) ]; }; };
       tests = {
         "hs2ats-test" = {
           depends = [
@@ -57,17 +38,13 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-dirstream)
             (hsPkgs.system-filepath)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "hs2ats-bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hs2ats)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hs2ats) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

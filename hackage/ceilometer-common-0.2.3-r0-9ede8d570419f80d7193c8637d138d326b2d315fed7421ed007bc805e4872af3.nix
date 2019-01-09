@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ceilometer-common";
-        version = "0.2.3";
-      };
+      identifier = { name = "ceilometer-common"; version = "0.2.3"; };
       license = "BSD-3-Clause";
       copyright = "© 2015 Anchor Systems, Pty Ltd and Others";
       maintainer = "Anchor Engineering <engineering@anchor.com.au>";
@@ -22,7 +13,7 @@
       synopsis = "Common Haskell types and encoding for OpenStack Ceilometer";
       description = "This package defines a library with two interfaces: one\nfor working with the data producers (e.g. the collector for\nOpenStack Ceilometer) and one for the consumers (e.g. the\nBorel metering and billing system).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vaultaire-common)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vaultaire-common)
             (hsPkgs.data-ordlist)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

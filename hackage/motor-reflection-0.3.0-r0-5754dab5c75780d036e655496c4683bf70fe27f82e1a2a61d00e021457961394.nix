@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "motor-reflection";
-        version = "0.3.0";
-      };
+      identifier = { name = "motor-reflection"; version = "0.3.0"; };
       license = "MPL-2.0";
       copyright = "Oskar Wickström";
       maintainer = "oskar.wickstrom@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Reflect on Motor FSM typeclasses to obtain runtime representations";
       description = "Reflect on Motor FSM typeclasses to obtain runtime representations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.motor)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -42,11 +33,9 @@
             (hsPkgs.hspec-discover)
             (hsPkgs.motor)
             (hsPkgs.motor-reflection)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "turkish-deasciifier";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "turkish-deasciifier"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "joomy@cattheory.com";
@@ -22,15 +13,11 @@
       synopsis = "Haskell port of Deniz Yuret's Turkish deasciifier.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.vector)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.vector) ];
+        };
       exes = {
         "turkish-deasciifier" = {
           depends = [
@@ -38,17 +25,17 @@
             (hsPkgs.containers)
             (hsPkgs.vector)
             (hsPkgs.turkish-deasciifier)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.turkish-deasciifier)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

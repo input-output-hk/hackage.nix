@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tai";
-        version = "0";
-      };
+      identifier = { name = "tai"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "davean & tolt 2017";
       maintainer = "oss@xkcd.com";
@@ -22,7 +13,7 @@
       synopsis = "Support library to enable TAI usage on systems with time kept in UTC.";
       description = "This library manages leap second data to allow using TAI time inspite of the system clock being kept in UTC.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.clock)
           (hsPkgs.wreq)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

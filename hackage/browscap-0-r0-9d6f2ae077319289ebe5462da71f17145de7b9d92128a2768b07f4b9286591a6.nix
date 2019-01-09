@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "browscap";
-        version = "0";
-      };
+      identifier = { name = "browscap"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "davean 2012-2017";
       maintainer = "oss@xkcd.com";
@@ -22,7 +13,7 @@
       synopsis = "A reader and interface for the Browser Capabilities Project data files.";
       description = "A reader and interface for the Browser Capabilities Project data files. Currently it uses a linear matcher which is slow.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.wreq)
           (hsPkgs.mtl)
           (hsPkgs.ini)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

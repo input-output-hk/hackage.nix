@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bytestring-in-base = true;
-    };
+    flags = { bytestring-in-base = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "llvm";
-        version = "0.6.4.0";
-      };
+      identifier = { name = "llvm"; version = "0.6.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bryan O'Sullivan <bos@serpentine.com>, Lennart Augustsson <lennart@augustsson.net>";
@@ -24,14 +13,11 @@
       synopsis = "Bindings to the LLVM compiler toolkit";
       description = "Bindings to the LLVM compiler toolkit";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.bytestring-in-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.type-level)
-          ]
+          then [ (hsPkgs.base) (hsPkgs.type-level) ]
           else [
             (hsPkgs.base)
             (hsPkgs.bytestring)
@@ -39,7 +25,7 @@
             (hsPkgs.directory)
             (hsPkgs.process)
             (hsPkgs.type-level)
-          ];
+            ];
+        };
       };
-    };
-  }
+    }

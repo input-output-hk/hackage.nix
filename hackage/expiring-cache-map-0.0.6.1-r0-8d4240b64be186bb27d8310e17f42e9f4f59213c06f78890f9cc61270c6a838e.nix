@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "expiring-cache-map";
-        version = "0.0.6.1";
-      };
+      identifier = { name = "expiring-cache-map"; version = "0.0.6.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Edward L. Blake";
       maintainer = "edwardlblake@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "General purpose simple caching.";
       description = "A simple general purpose shared state cache map with automatic expiration\nof values, for caching the results of accessing a resource such as reading\na file. With variations for Ord and Hashable keys using \"Data.Map.Strict\"\nand \"Data.HashMap.Strict\", respectively.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.hashable)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-threads" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.containers)
             (hsPkgs.hashable)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "test-sequence" = {
           depends = [
             (hsPkgs.base)
@@ -50,8 +41,8 @@
             (hsPkgs.containers)
             (hsPkgs.hashable)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "invalidate-test" = {
           depends = [
             (hsPkgs.base)
@@ -60,8 +51,8 @@
             (hsPkgs.containers)
             (hsPkgs.hashable)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "invalidate-cache-test" = {
           depends = [
             (hsPkgs.base)
@@ -70,8 +61,8 @@
             (hsPkgs.containers)
             (hsPkgs.hashable)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

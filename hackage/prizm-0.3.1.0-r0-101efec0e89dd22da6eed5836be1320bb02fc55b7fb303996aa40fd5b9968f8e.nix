@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14.0";
-      identifier = {
-        name = "prizm";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "prizm"; version = "0.3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Parnell Springmeyer";
       maintainer = "ixmatus@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "A haskell library for computing with colors";
       description = "Prizm is a library for converting between\ndifferent color representations and mutating\ncolors (interpolation, lightness, hue, chroma,\ntint/shade).";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.text) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

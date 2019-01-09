@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "graceful";
-        version = "0.1.1.4";
-      };
+      identifier = { name = "graceful"; version = "0.1.1.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013, Noriyuki OHKAWA";
       maintainer = "Noriyuki OHKAWA <n.ohkawa@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Library to write graceful shutdown / upgrade service.";
       description = "Library to write graceful shutdown / upgrade service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.unix)
           (hsPkgs.stm)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       tests = {
         "graceful-spec" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.stm)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

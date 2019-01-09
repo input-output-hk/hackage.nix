@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { production = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rfc-servant";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "rfc-servant"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "smokejumperit+rfc@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The Servant extensions from the Robert Fischer Commons.";
       description = "Various capabilities supporting @Servant@ development, including creating the concept of a  \"Resource\" (which simplifies REST boilerplate).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.swagger2)
           (hsPkgs.wai)
           (hsPkgs.wreq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

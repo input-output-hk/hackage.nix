@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ssh";
-        version = "0.3.2";
-      };
+      identifier = { name = "ssh"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ganesh Sittampalam <ganesh@earth.li>";
@@ -22,7 +13,7 @@
       synopsis = "A pure-Haskell SSH server library.";
       description = "This a library for implementing your own servers that handle SSH\nrequests and authorization, etc. Similar to Python's Twisted Conch\nlibrary. It's used eg by darcsden to provide basic SSH access.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.SimpleAES)
           (hsPkgs.split)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "ssh-test" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.containers)
             (hsPkgs.base)
             (hsPkgs.ssh)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { utils = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-raml";
-        version = "0.1.1";
-      };
+      identifier = { name = "yesod-raml"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "RAML style route definitions for Yesod";
       description = "RAML style route definitions for Yesod";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.network-uri)
           (hsPkgs.regex-posix)
-        ];
-      };
+          ];
+        };
       exes = {
         "raml-utils" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.yesod-raml)
             (hsPkgs.network-uri)
             (hsPkgs.regex-posix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-routes" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.yesod-raml)
             (hsPkgs.network-uri)
             (hsPkgs.regex-posix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

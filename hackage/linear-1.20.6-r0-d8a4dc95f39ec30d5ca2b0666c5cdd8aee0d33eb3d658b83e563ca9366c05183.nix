@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      template-haskell = true;
-      herbie = false;
-    };
+    flags = { template-haskell = true; herbie = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "linear";
-        version = "1.20.6";
-      };
+      identifier = { name = "linear"; version = "1.20.6"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2015 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Linear Algebra";
       description = "Types and combinators for linear algebra on free vector spaces";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -50,8 +38,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.void)
-        ] ++ pkgs.lib.optional (flags.template-haskell && (compiler.isGhc && true)) (hsPkgs.template-haskell)) ++ pkgs.lib.optional (flags.herbie) (hsPkgs.HerbiePlugin);
-      };
+          ] ++ (pkgs.lib).optional (flags.template-haskell && (compiler.isGhc && true)) (hsPkgs.template-haskell)) ++ (pkgs.lib).optional (flags.herbie) (hsPkgs.HerbiePlugin);
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -59,8 +47,8 @@
             (hsPkgs.doctest)
             (hsPkgs.lens)
             (hsPkgs.simple-reflect)
-          ];
-        };
+            ];
+          };
         "UnitTests" = {
           depends = [
             (hsPkgs.base)
@@ -73,8 +61,8 @@
             (hsPkgs.linear)
             (hsPkgs.reflection)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

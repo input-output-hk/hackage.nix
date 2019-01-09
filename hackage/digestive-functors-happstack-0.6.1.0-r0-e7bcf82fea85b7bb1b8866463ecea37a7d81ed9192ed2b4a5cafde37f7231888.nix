@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "digestive-functors-happstack";
         version = "0.6.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -22,7 +16,7 @@
       synopsis = "Happstack backend for the digestive-functors library";
       description = "Happstack backend for the digestive-functors library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.digestive-functors)
           (hsPkgs.happstack-server)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      withconstraints = true;
-      withdatakinds = false;
-    };
+    flags = { withconstraints = true; withdatakinds = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "smtlib2";
-        version = "0.1";
-      };
+      identifier = { name = "smtlib2"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "guenther@forsyte.at";
@@ -25,7 +13,7 @@
       synopsis = "A type-safe interface to communicate with an SMT solver.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +30,7 @@
           (hsPkgs.transformers)
           (hsPkgs.data-fix)
           (hsPkgs.tagged)
-        ] ++ pkgs.lib.optional (flags.withconstraints) (hsPkgs.constraints);
+          ] ++ (pkgs.lib).optional (flags.withconstraints) (hsPkgs.constraints);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "remote-json-server";
-        version = "0.2";
-      };
+      identifier = { name = "remote-json-server"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 The University of Kansas";
       maintainer = "JDawson@ku.edu";
@@ -22,7 +13,7 @@
       synopsis = "Web server wrapper for remote-json";
       description = "Web server, using scotty, for the JSON RPC protocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.scotty)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

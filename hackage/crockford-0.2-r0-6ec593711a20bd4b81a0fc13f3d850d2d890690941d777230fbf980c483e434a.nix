@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "crockford";
-        version = "0.2";
-      };
+      identifier = { name = "crockford"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Henry Bucklow";
       maintainer = "Henry Bucklow <henry@elsie.org.uk>";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of Douglas Crockford's base32 encoding.";
       description = "An implementation of Douglas Crockford's base32 encoding.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.digits)
           (hsPkgs.safe)
           (hsPkgs.QuickCheck)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "github-types";
-        version = "0.2.0";
-      };
+      identifier = { name = "github-types"; version = "0.2.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,16 +13,11 @@
       synopsis = "Type definitions for objects used by the GitHub v3 API";
       description = "This package includes (some) type definitions for objects\nwhich are consumed or produced by the GitHub v3 API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.text)
-          (hsPkgs.time)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.aeson) (hsPkgs.text) (hsPkgs.time) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -46,8 +32,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.time)
             (hsPkgs.http-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

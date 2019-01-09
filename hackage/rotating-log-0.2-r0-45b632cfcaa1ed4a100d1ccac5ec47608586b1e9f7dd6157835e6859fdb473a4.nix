@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rotating-log";
-        version = "0.2";
-      };
+      identifier = { name = "rotating-log"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Soostone Inc";
       maintainer = "doug.beardsley@soostone.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Size-limited, concurrent, automatically-rotating log writer for production applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.time)
           (hsPkgs.filepath)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-rotate" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.time)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

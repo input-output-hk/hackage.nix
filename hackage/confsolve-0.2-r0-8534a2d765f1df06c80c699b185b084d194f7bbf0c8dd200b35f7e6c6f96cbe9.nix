@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "confsolve";
-        version = "0.2";
-      };
+      identifier = { name = "confsolve"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel.trstenjak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A command line tool for resolving conflicts of file synchronizers. Currently supported are Dropbox and Wuala.";
       description = "A command line tool for resolving conflicts of file synchronizers. Currently supported are Dropbox and Wuala.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "confsolve" = {
@@ -35,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.haskell98)
             (hsPkgs.hashmap)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

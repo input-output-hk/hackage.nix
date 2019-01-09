@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hgen";
-        version = "1.4.0";
-      };
+      identifier = { name = "hgen"; version = "1.4.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "areces@loria.fr";
@@ -22,7 +13,7 @@
       synopsis = "Random generation of modal and hybrid logic formulas";
       description = "Random generation of modal and hybrid logic formulas";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hgen" = {
@@ -38,8 +29,8 @@
             (hsPkgs.directory)
             (hsPkgs.directory)
             (hsPkgs.hylolib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

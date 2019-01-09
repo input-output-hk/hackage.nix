@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "opentheory-bits";
-        version = "1.66";
-      };
+      identifier = { name = "opentheory-bits"; version = "1.66"; };
       license = "MIT";
       copyright = "";
       maintainer = "Joe Leslie-Hurd <joe@gilith.com>";
@@ -22,7 +13,7 @@
       synopsis = "Natural number to bit-list conversions";
       description = "Natural number to bit-list conversions - this package was automatically\ngenerated from the OpenTheory package natural-bits-1.66";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.opentheory-primitive)
           (hsPkgs.opentheory)
           (hsPkgs.opentheory-probability)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

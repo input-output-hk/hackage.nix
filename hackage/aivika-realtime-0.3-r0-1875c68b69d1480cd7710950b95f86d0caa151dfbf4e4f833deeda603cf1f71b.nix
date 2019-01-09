@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "aivika-realtime";
-        version = "0.3";
-      };
+      identifier = { name = "aivika-realtime"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016-2017. David Sorokin <david.sorokin@gmail.com>";
       maintainer = "David Sorokin <david.sorokin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Soft real-time simulation module for the Aivika library";
       description = "This package allows running soft real-time simulations based on the aivika-transformers [1] library.\n\n\\[1] <http://hackage.haskell.org/package/aivika-transformers>\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.vector)
           (hsPkgs.aivika)
           (hsPkgs.aivika-transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

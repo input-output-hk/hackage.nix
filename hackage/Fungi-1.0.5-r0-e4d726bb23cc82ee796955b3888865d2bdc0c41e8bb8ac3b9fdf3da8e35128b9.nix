@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Fungi";
-        version = "1.0.5";
-      };
+      identifier = { name = "Fungi"; version = "1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomasedingcode@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Funge-98 interpreter written in Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "fungi" = {
@@ -40,8 +31,8 @@
             (hsPkgs.transformers)
             (hsPkgs.tuple)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

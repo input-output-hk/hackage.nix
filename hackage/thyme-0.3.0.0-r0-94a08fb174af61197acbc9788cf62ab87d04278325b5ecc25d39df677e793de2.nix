@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bug-for-bug = true;
-      show-internal = false;
-      werror = false;
-    };
+    flags = { bug-for-bug = true; show-internal = false; werror = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "thyme";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "thyme"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2013 Liyang HU";
       maintainer = "thyme@liyang.hu";
@@ -26,7 +13,7 @@
       synopsis = "A faster time library";
       description = "Thyme is a rewrite of the fine @time@ library, with a particular focus\non performance for applications that make heavy use of timestamps.\n\nSee \"Data.Thyme\" for a full description.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +32,8 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.vector-space)
-        ];
-      };
+          ];
+        };
       tests = {
         "sanity" = {
           depends = [
@@ -60,8 +47,8 @@
             (hsPkgs.thyme)
             (hsPkgs.time)
             (hsPkgs.vector-space)
-          ];
-        };
+            ];
+          };
         "rewrite" = {
           depends = [
             (hsPkgs.Cabal)
@@ -73,9 +60,9 @@
             (hsPkgs.system-posix-redirect)
             (hsPkgs.text)
             (hsPkgs.thyme)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -89,8 +76,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.vector-space)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

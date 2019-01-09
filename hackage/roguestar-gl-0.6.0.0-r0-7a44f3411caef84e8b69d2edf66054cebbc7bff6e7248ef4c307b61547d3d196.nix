@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "roguestar-gl";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "roguestar-gl"; version = "0.6.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Christopher Lane Hinson <lane@downstairspeople.org>";
@@ -22,7 +13,7 @@
       synopsis = "Sci-fi roguelike game.  Client library.";
       description = "Roguestar-glut and roguestar-gtk depend on this library for the bulk of their functionality.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.stm)
           (hsPkgs.priority-sync)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

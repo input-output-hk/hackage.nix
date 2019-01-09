@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "netwire";
-        version = "5.0.3";
-      };
+      identifier = { name = "netwire"; version = "5.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2016 Ertugrul Söylemez";
       maintainer = "Ertugrul Söylemez <esz@posteo.de>";
@@ -22,7 +13,7 @@
       synopsis = "Functional reactive programming library";
       description = "This library provides interfaces for and implements wire arrows\nuseful both for functional reactive programming (FRP) and locally\nstateful programming (LSP).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

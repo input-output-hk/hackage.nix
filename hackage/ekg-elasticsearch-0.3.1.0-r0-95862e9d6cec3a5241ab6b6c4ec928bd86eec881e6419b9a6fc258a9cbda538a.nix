@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ekg-elasticsearch";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "ekg-elasticsearch"; version = "0.3.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ben@perurbis.com";
@@ -22,7 +13,7 @@
       synopsis = "Push metrics to elasticsearch";
       description = "This library lets you push system metrics to a elasticsearch server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.wreq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

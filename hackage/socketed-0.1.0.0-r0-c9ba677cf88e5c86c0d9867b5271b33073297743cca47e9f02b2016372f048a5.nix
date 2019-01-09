@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "socketed";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "socketed"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "sen.cenan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "simpe tool to serve piped data over http and websocket";
       description = "simpe tool to serve piped data over http and websocket";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.optparse-applicative)
           (hsPkgs.MissingH)
-        ];
-      };
+          ];
+        };
       exes = {
         "socketed" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.optparse-applicative)
             (hsPkgs.MissingH)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

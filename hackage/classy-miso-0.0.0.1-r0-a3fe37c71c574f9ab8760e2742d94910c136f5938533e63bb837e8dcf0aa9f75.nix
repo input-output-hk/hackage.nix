@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "classy-miso";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "classy-miso"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Robert Fischer";
       maintainer = "smokejumperit+stack@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Typeclass based support for Miso, the Tasty Web Framework for Haskell.";
       description = "Please see the README on Github at <https://github.com/RobertFischer/Classy-Miso#README.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,11 +25,11 @@
           (hsPkgs.network-uri)
           (hsPkgs.containers)
           (hsPkgs.url)
-        ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
+          ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true) [
           (hsPkgs.aeson)
           (hsPkgs.bifunctors)
-        ];
-      };
+          ];
+        };
       exes = {
         "classy-miso-demo" = {
           depends = [
@@ -48,9 +37,9 @@
             (hsPkgs.classy-miso)
             (hsPkgs.miso)
             (hsPkgs.rfc)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "ghcjs-test" = {
           depends = [
@@ -58,8 +47,8 @@
             (hsPkgs.classy-miso)
             (hsPkgs.miso)
             (hsPkgs.rfc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

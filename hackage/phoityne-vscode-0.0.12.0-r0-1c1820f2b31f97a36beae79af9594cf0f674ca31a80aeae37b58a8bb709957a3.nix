@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "phoityne-vscode";
-        version = "0.0.12.0";
-      };
+      identifier = { name = "phoityne-vscode"; version = "0.0.12.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 phoityne_hs";
       maintainer = "phoityne.hs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "ghci debug viewer on Visual Studio Code";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "phoityne-vscode" = {
@@ -51,8 +42,8 @@
             (hsPkgs.parsec)
             (hsPkgs.split)
             (hsPkgs.fsnotify)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

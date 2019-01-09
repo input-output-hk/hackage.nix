@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      small_base = false;
-      network-uri = true;
-    };
+    flags = { small_base = false; network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rdf4h";
-        version = "1.3.3";
-      };
+      identifier = { name = "rdf4h"; version = "1.3.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) Calvin Smith, Rob Stewart, Slava Kravchenko";
       maintainer = "Rob Stewart <robstewart@gmail.com>, Slava Kravchenko";
@@ -25,7 +13,7 @@
       synopsis = "A library for RDF processing in Haskell";
       description = "'RDF for Haskell' is a library for working with RDF in Haskell.\nAt present it includes parsers and serializers for RDF in the N-Triples\nand Turtle, and parsing support for RDF/XML. It provides abilities such as querying\nfor triples  containing a particular subject, predicate, or object, or\nselecting triples that satisfy an arbitrary predicate function.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -39,39 +27,36 @@
           (hsPkgs.deepseq)
           (hsPkgs.binary)
           (hsPkgs.text-binary)
-        ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
           then [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.directory)
             (hsPkgs.containers)
-          ]
+            ]
           else [
             (hsPkgs.base)
-          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ [
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ [
           (hsPkgs.network-uri)
           (hsPkgs.network)
-        ];
-      };
+          ];
+        };
       exes = {
         "rdf4h" = {
           depends = (([
             (hsPkgs.rdf4h)
             (hsPkgs.containers)
             (hsPkgs.text)
-          ] ++ (if flags.small_base
-            then [
-              (hsPkgs.base)
-              (hsPkgs.bytestring)
-            ]
+            ] ++ (if flags.small_base
+            then [ (hsPkgs.base) (hsPkgs.bytestring) ]
             else [
               (hsPkgs.base)
-            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ [
+              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ [
             (hsPkgs.network-uri)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-rdf4h" = {
           depends = ([
@@ -86,12 +71,12 @@
             (hsPkgs.containers)
             (hsPkgs.text)
             (hsPkgs.knob)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ [
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ [
             (hsPkgs.network-uri)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "rdf4h-bench" = {
           depends = [
@@ -99,8 +84,8 @@
             (hsPkgs.criterion)
             (hsPkgs.rdf4h)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

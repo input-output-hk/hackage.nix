@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ridley";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "ridley"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 IRIS Connect Ltd.";
       maintainer = "alfredo@irisconnect.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Quick metrics to grow you app strong.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.inline-c)
           (hsPkgs.vector)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "ridley-test" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.text)
             (hsPkgs.string-conv)
             (hsPkgs.http-client)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

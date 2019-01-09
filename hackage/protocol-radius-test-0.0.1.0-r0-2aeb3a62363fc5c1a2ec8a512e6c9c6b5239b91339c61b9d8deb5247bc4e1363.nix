@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "protocol-radius-test";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "protocol-radius-test"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "testsuit of protocol-radius haskell package";
       description = "This package provides\ntestsuit of protocol-radius haskell package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,16 +25,16 @@
           (hsPkgs.cereal)
           (hsPkgs.protocol-radius)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "isomorphism" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.protocol-radius-test)
             (hsPkgs.quickcheck-simple)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

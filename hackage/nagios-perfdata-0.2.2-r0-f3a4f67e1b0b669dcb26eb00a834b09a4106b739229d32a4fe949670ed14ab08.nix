@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nagios-perfdata";
-        version = "0.2.2";
-      };
+      identifier = { name = "nagios-perfdata"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "2014 Anchor Systems";
       maintainer = "sio@tesser.org";
@@ -22,7 +13,7 @@
       synopsis = "Parse Nagios performance data.";
       description = "Provides an interface for parsing Nagios\nperformance data formatted according to the plugin\ndevelopment guidelines.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.attoparsec)
           (hsPkgs.bifunctors)
-        ];
-      };
+          ];
+        };
       tests = {
         "perfdata-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.MissingH)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

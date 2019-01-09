@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "alsa";
-        version = "0.4";
-      };
+      identifier = { name = "alsa"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert, Iavor S. Diatchki, Henning Thielemann";
       maintainer = "Henning Thielemann <alsa@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Binding to the ALSA Library API.";
       description = "This package provides access to\n\n* ALSA sequencer (MIDI support)\n\n* ALSA realtime audio signal input and output";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.array)
           (hsPkgs.extensible-exceptions)
           (hsPkgs.base)
-        ];
+          ];
         libs = [ (pkgs."asound") ];
+        };
       };
-    };
-  }
+    }

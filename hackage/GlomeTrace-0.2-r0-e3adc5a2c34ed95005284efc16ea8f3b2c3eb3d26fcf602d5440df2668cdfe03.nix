@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "GlomeTrace";
-        version = "0.2";
-      };
+      identifier = { name = "GlomeTrace"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright 2008,2009 Jim Snow";
       maintainer = "Jim Snow <jsnow@cs.pdx.edu>";
@@ -22,14 +13,10 @@
       synopsis = "Ray Tracing Library";
       description = "A ray tracing library with acceleration structure and many supported primitives.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.GlomeVec)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.GlomeVec) ];
+        };
       };
-    };
-  }
+    }

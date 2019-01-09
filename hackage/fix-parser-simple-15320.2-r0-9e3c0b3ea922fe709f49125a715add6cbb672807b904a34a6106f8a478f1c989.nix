@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "fix-parser-simple";
-        version = "15320.2";
-      };
+      identifier = { name = "fix-parser-simple"; version = "15320.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "strake888@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Simple fix-expression parser";
       description = "Simple fix-expression parser";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mmtl)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.mmtl) ]; };
+      };
+    }

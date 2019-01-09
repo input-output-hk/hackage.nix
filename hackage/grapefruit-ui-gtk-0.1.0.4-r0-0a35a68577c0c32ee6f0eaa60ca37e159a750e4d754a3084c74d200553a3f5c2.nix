@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "grapefruit-ui-gtk";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "grapefruit-ui-gtk"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "© 2007–2009 Brandenburgische Technische Universität Cottbus\n© 2011–2013 Wolfgang Jeltsch";
       maintainer = "wolfgang@cs.ioc.ee";
@@ -22,7 +13,7 @@
       synopsis = "GTK+-based backend for declarative user interface programming";
       description = "Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on\nuser interfaces. FRP makes it possible to implement reactive and interactive systems\nin a declarative style. To learn more about FRP, have a look at\n<http://haskell.org/haskellwiki/Functional_Reactive_Programming>.\n\nThis package contains the GTK+-based user interface backend.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.grapefruit-ui)
           (hsPkgs.glib)
           (hsPkgs.gtk)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

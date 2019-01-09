@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "text-loc";
-        version = "0.1";
-      };
+      identifier = { name = "text-loc"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014-2016 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";
       maintainer = "Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Line-column locations within a text.";
       description = "This package provides data types that describe line-column locations\nwithin a text.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hashable)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.hashable) ]; };
+      };
+    }

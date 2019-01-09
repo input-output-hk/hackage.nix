@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "twitch";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "twitch"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "jonathangfischoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A high level file watcher DSL";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.stm-chans)
           (hsPkgs.system-fileio)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "termonad";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "termonad"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Terminal emulator configurable in Haskell";
       description = "Please see <https://github.com/cdepillabout/termonad#readme README.md>.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,34 +43,23 @@
           (hsPkgs.singletons)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-html-qq)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.gtk+-3.0)
-        ];
-      };
-      exes = {
-        "termonad" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.termonad)
           ];
+        pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
         };
+      exes = {
+        "termonad" = { depends = [ (hsPkgs.base) (hsPkgs.termonad) ]; };
         "termonad-readme" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.markdown-unlit)
             (hsPkgs.termonad)
             (hsPkgs.colour)
-          ];
-        };
+            ];
+          };
         "termonad-example-colour-extension" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.termonad)
-            (hsPkgs.colour)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.termonad) (hsPkgs.colour) ];
+          };
         };
-      };
       tests = {
         "doctests" = {
           depends = [
@@ -89,8 +67,8 @@
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "termonad-test" = {
           depends = [
             (hsPkgs.base)
@@ -103,8 +81,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hedgehog)
             (hsPkgs.tasty-hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

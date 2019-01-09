@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-basic";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "data-basic"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "nikola@henezi.com, luka.horvat9@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A database library with a focus on ease of use, type safety and useful error messages";
       description = "Please see README.md at <https://gitlab.com/haskell-hr/basic>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.binary)
           (hsPkgs.string-conv)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "basic-test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.postgresql-simple)
             (hsPkgs.time)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

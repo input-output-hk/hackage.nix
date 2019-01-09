@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "text-render";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "text-render"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "ithinkican@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A type class for rendering objects as text, pretty-printing, etc.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.parsec)
           (hsPkgs.mtl)
           (hsPkgs.classy-prelude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

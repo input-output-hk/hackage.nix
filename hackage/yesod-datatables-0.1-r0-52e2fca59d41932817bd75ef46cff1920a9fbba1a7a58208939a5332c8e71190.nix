@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-datatables";
-        version = "0.1";
-      };
+      identifier = { name = "yesod-datatables"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tero Laitinen";
@@ -22,7 +13,7 @@
       synopsis = "Yesod plugin for DataTables (jQuery grid plugin)";
       description = "DataTables (http://datatables.net) is a capable jQuery plugin. This package contains routines for implementing server-side processing (e.g. request parsing, database querying, and response formatting) for DataTables with Yesod platform.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.aeson)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.transformers)
             (hsPkgs.monad-control)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

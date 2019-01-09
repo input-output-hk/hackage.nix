@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gjk2d";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "gjk2d"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Suzumiya";
       maintainer = "suzumiyasmith@gmail.com";
@@ -22,22 +13,13 @@
       synopsis = "";
       description = "Yet another 2D GJK collision dection algorithm with Linear";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.linear)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.linear) ]; };
       tests = {
         "gjk2d-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.linear)
-            (hsPkgs.gjk2d)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.linear) (hsPkgs.gjk2d) ];
+          };
         };
       };
-    };
-  }
+    }

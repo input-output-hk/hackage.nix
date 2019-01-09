@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = true;
-    };
+    flags = { buildexamples = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "menoh";
-        version = "0.2.0";
-      };
+      identifier = { name = "menoh"; version = "0.2.0"; };
       license = "MIT";
       copyright = "Copyright 2018 Preferred Networks, Inc.";
       maintainer = "Masahiro Sakai <sakai@preferred.jp>";
@@ -24,7 +13,7 @@
       synopsis = "Haskell binding for Menoh DNN inference library";
       description = "Menoh is a MKL-DNN based DNN inference library for ONNX models. See https://github.com/pfnet-research/menoh/ for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,11 +24,9 @@
           (hsPkgs.monad-control)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.menoh)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.menoh) ];
+        };
       exes = {
         "vgg16_example" = {
           depends = [
@@ -48,8 +35,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.menoh)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "mnist_example" = {
           depends = [
             (hsPkgs.base)
@@ -58,9 +45,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.menoh)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Test" = {
           depends = [
@@ -73,8 +60,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

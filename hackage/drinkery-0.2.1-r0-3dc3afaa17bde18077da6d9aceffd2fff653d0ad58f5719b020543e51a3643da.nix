@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "drinkery";
-        version = "0.2.1";
-      };
+      identifier = { name = "drinkery"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017 Fumiaki Kinoshita";
       maintainer = "fumiexcel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Boozy streaming library";
       description = "Please see the README on Github at <https://github.com/fumieval/drinkery#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.mtl)
             (hsPkgs.pipes)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

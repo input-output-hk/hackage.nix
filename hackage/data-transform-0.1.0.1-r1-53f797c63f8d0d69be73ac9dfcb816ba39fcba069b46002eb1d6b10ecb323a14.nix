@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-transform";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "data-transform"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Jonas Scholl";
       maintainer = "jonas.scholl@gmx.de";
@@ -22,14 +13,10 @@
       synopsis = "Functions to transform data structures.";
       description = "This library provides a simple way to transform parts of\ncomplex data structures. It is based on Data.Data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.containers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.containers) ];
+        };
       };
-    };
-  }
+    }

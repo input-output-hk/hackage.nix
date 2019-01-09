@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "VKHS";
-        version = "0.3.2";
-      };
+      identifier = { name = "VKHS"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012, Sergey Mironov";
       maintainer = "ierton@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides access to Vkontakte social network via public API";
       description = "Provides access to Vkontakte API methods. Library requires no interaction\nwith the user during Implicit-flow authentication.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.pretty-show)
           (hsPkgs.vector)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = { "vkq" = {}; };
-    };
-  }
+      };
+    }

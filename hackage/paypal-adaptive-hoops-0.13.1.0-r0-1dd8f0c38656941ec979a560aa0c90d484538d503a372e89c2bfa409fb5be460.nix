@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "paypal-adaptive-hoops";
-        version = "0.13.1.0";
-      };
+      identifier = { name = "paypal-adaptive-hoops"; version = "0.13.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@housejeffries.com";
@@ -22,7 +13,7 @@
       synopsis = "Client for a limited part of PayPal's Adaptive Payments API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,17 +29,17 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.wreq)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.paypal-adaptive-hoops)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "local" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
-        };
+            ];
+          };
         "remote" = {
           depends = [
             (hsPkgs.aeson)
@@ -74,8 +65,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

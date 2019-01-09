@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ztar";
-        version = "0.1.1";
-      };
+      identifier = { name = "ztar"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Brandon Chinn <brandonchinn178@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Creating and extracting arbitrary archives";
       description = "Creating and extracting arbitrary archives.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.process)
           (hsPkgs.text)
           (hsPkgs.unix-compat)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.path)
             (hsPkgs.path-io)
             (hsPkgs.ztar)
-          ];
-        };
+            ];
+          };
         "ztar-test" = {
           depends = [
             (hsPkgs.base)
@@ -57,8 +48,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.ztar)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

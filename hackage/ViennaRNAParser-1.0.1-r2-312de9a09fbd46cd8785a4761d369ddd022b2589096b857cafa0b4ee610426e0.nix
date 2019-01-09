@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ViennaRNAParser";
-        version = "1.0.1";
-      };
+      identifier = { name = "ViennaRNAParser"; version = "1.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "florian.eggenhofer@univie.ac.at";
@@ -22,13 +13,8 @@
       synopsis = "Libary for parsing ViennaRNA package output";
       description = "Currently contains parsers and datatypes for: RNAplex, RNAz, RNAup, RNAalifold, RNAdistance. For more information on the ViennaRNA package refer to <http://www.tbi.univie.ac.at/RNA/>. The libary is tested with Version 2.1.9 of the ViennaRNA package.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.parsec) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "crc";
-        version = "0.0.1.1";
-      };
+      identifier = { name = "crc"; version = "0.0.1.1"; };
       license = "MIT";
       copyright = "2015 Michael Xavier";
       maintainer = "michael@michaelxavier.net";
@@ -22,15 +13,11 @@
       synopsis = "Implements various Cyclic Redundancy Checks (CRC)";
       description = "ByteString-based Cyclic Redundancy Checks";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.vector)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.vector) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +29,9 @@
             (hsPkgs.conduit-extra)
             (hsPkgs.bytestring)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -52,8 +39,8 @@
             (hsPkgs.crc)
             (hsPkgs.criterion)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

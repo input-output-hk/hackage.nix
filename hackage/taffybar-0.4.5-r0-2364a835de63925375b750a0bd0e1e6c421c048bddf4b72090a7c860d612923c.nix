@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "taffybar";
-        version = "0.4.5";
-      };
+      identifier = { name = "taffybar"; version = "0.4.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tristan@nochair.net";
@@ -22,7 +13,7 @@
       synopsis = "A desktop bar similar to xmobar, but with more GUI";
       description = "A somewhat fancier desktop bar than xmobar.  This bar is based on\ngtk2hs and provides several widgets (including a few graphical ones).\nIt also sports an optional snazzy system tray.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,14 +45,9 @@
           (hsPkgs.split)
           (hsPkgs.process)
           (hsPkgs.enclosed-exceptions)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.gtk+-2.0)
-        ];
-      };
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
+        pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+        };
       exes = {
         "taffybar" = {
           depends = [
@@ -71,11 +57,9 @@
             (hsPkgs.safe)
             (hsPkgs.xdg-basedir)
             (hsPkgs.filepath)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.gtk+-2.0)
-          ];
+            ];
+          pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+          };
         };
       };
-    };
-  }
+    }

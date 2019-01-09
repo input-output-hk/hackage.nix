@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hindent";
-        version = "4.5.6";
-      };
+      identifier = { name = "hindent"; version = "4.5.6"; };
       license = "BSD-3-Clause";
       copyright = "2014 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Extensible Haskell pretty printer";
       description = "Extensible Haskell pretty printer. Both a library and an executable.\n\nSee the Github page for usage\\/explanation: <https://github.com/chrisdone/hindent>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "hindent" = {
           depends = [
@@ -46,17 +37,17 @@
             (hsPkgs.applicative-quoters)
             (hsPkgs.ghc-prim)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "hindent-generate-tests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hindent)
             (hsPkgs.text)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hspec" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.text)
             (hsPkgs.hspec)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

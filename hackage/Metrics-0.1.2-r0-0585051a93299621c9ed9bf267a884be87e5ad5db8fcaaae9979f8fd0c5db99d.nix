@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Metrics";
-        version = "0.1.2";
-      };
+      identifier = { name = "Metrics"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Hamner (ben@benhamner.com)";
@@ -22,13 +13,8 @@
       synopsis = "Evaluation metrics commonly used in supervised machine learning";
       description = "Evaluation metrics commonly used in supervised machine learning";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hstats)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.hstats) ]; };
+      };
+    }

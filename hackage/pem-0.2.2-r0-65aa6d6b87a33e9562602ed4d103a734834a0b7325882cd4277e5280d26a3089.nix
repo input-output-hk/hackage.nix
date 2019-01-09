@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pem";
-        version = "0.2.2";
-      };
+      identifier = { name = "pem"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Privacy Enhanced Mail (PEM) format reader and writer.";
       description = "Privacy Enhanced Mail (PEM) format reader and writer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
           (hsPkgs.base64-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-pem" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.pem)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

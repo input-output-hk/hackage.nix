@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sys-process";
-        version = "0.2.0";
-      };
+      identifier = { name = "sys-process"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 NICTA Limited";
       maintainer = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ> <dibblego>";
@@ -22,7 +13,7 @@
       synopsis = "A replacement for System.Exit and System.Process.";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\nA replacement for System.Exit and System.Process.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.notzero)
           (hsPkgs.filepath)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

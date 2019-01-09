@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "amazonka-cloudsearch-domains";
         version = "0.2.2";
-      };
+        };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2013-2014 Brendan Hay";
       maintainer = "Brendan Hay <brendan.g.hay@gmail.com>";
@@ -22,13 +16,8 @@
       synopsis = "Amazon CloudSearch Domain SDK.";
       description = "Pending\n\n/See:/ <http://docs.aws.amazon.com/cloudsearch/latest/developerguide/what-is-cloudsearch.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.amazonka-core)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.amazonka-core) (hsPkgs.base) ]; };
+      };
+    }

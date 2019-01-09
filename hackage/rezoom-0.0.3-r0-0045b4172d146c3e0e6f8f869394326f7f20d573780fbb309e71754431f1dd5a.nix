@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "rezoom";
-        version = "0.0.3";
-      };
+      identifier = { name = "rezoom"; version = "0.0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Joel Taylor <barebonesgraphics@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Github resume generator";
       description = "Generates a resume from your github page.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "rezoom" = {
@@ -36,8 +27,8 @@
             (hsPkgs.datetime)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

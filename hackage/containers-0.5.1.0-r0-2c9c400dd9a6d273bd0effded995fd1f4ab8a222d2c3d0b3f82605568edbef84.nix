@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "containers";
-        version = "0.5.1.0";
-      };
+      identifier = { name = "containers"; version = "0.5.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "fox@ucw.cz";
@@ -22,15 +13,15 @@
       synopsis = "Assorted concrete container types";
       description = "This package contains efficient general-purpose implementations\nof various basic immutable container types.  The declared cost of\neach operation is either worst-case or amortized, but remains\nvalid even if structures are shared.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.deepseq)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs.ghc-prim);
+        };
       tests = {
         "map-lazy-properties" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
-        };
+            ];
+          };
         "map-strict-properties" = {
           depends = [
             (hsPkgs.base)
@@ -56,8 +47,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
-        };
+            ];
+          };
         "set-properties" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +60,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
-        };
+            ];
+          };
         "intmap-lazy-properties" = {
           depends = [
             (hsPkgs.base)
@@ -82,8 +73,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
-        };
+            ];
+          };
         "intmap-strict-properties" = {
           depends = [
             (hsPkgs.base)
@@ -95,8 +86,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
-        };
+            ];
+          };
         "intset-properties" = {
           depends = [
             (hsPkgs.base)
@@ -108,8 +99,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
-        };
+            ];
+          };
         "seq-properties" = {
           depends = [
             (hsPkgs.base)
@@ -119,8 +110,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

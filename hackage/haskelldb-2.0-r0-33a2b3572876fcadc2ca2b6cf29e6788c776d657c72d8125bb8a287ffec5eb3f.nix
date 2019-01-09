@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haskelldb";
-        version = "2.0";
-      };
+      identifier = { name = "haskelldb"; version = "2.0"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "\"Justin Bailey\" <jgbailey@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A library of combinators for generating and executing SQL statements.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.old-locale)
           (hsPkgs.directory)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

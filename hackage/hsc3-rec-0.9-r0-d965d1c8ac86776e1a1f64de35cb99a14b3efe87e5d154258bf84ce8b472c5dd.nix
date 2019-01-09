@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hsc3-rec";
-        version = "0.9";
-      };
+      identifier = { name = "hsc3-rec"; version = "0.9"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape and others, 2008-2011";
       maintainer = "rd@slavepianos.org";
@@ -22,13 +13,8 @@
       synopsis = "Haskell SuperCollider Record Variants";
       description = "hsc3-rec provides record variants of the\nunit generator constructors at hsc3.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hsc3)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.hsc3) ]; };
+      };
+    }

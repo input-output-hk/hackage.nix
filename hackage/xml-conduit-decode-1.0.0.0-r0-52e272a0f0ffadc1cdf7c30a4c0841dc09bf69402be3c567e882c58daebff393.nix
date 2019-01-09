@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xml-conduit-decode";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "xml-conduit-decode"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ben.kolera@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Historical cursors & decoding on top of xml-conduit.";
       description = "Created in the sprit of scalaz-xml.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-conduit-decode)
             (hsPkgs.xml-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dynamic-mvector";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dynamic-mvector"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "puttamalac@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A wrapper around MVector that enables pushing, popping and extending.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.primitive)
-          (hsPkgs.vector)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.primitive) (hsPkgs.vector) ];
+        };
       };
-    };
-  }
+    }

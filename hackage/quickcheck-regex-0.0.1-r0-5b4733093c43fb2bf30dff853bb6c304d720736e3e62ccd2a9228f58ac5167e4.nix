@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "quickcheck-regex";
-        version = "0.0.1";
-      };
+      identifier = { name = "quickcheck-regex"; version = "0.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "Audrey Tang 2014 (CC0)";
       maintainer = "audreyt@audreyt.org";
@@ -22,7 +13,7 @@
       synopsis = "QuickCheck instances for arbitrary regular expressions and regex-conforming strings";
       description = "QuickCheck instances for arbitrary regular expressions and regex-conforming strings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.regex-genex)
           (hsPkgs.regex-tdfa)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

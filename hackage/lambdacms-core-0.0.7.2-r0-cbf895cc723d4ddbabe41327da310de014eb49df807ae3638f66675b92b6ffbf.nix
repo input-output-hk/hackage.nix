@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "lambdacms-core";
-        version = "0.0.7.2";
-      };
+      identifier = { name = "lambdacms-core"; version = "0.0.7.2"; };
       license = "MIT";
       copyright = "(c) 2014 Hoppinger";
       maintainer = "cies@AT-hoppinger.com";
@@ -22,7 +13,7 @@
       synopsis = "Core CMS extension for Yesod apps";
       description = "LambdaCms is a Content Management System (CMS) in Haskell\nusing Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.lists)
           (hsPkgs.wai)
           (hsPkgs.esqueleto)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base43 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "failure";
-        version = "0.1.2";
-      };
+      identifier = { name = "failure"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "pepeiborra@gmail.com";
@@ -22,15 +13,12 @@
       synopsis = "A simple type class for success/failure computations.";
       description = "A simple type class for success/failure computations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.base43
           then [ (hsPkgs.base) ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.transformers)
-          ];
+          else [ (hsPkgs.base) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

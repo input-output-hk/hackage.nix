@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dialog";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "dialog"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Nikita Churaev";
       maintainer = "Nikita Churaev <lamefun.x0r@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Simple dialog-based user interfaces";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.gtk3)
           (hsPkgs.webkitgtk3)
           (hsPkgs.open-browser)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

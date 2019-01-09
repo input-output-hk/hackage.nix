@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      developer = false;
-      native = true;
-    };
+    flags = { developer = false; native = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "blaze-textual-native";
-        version = "0.2.1";
-      };
+      identifier = { name = "blaze-textual-native"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2011 MailRank, Inc.";
       maintainer = "Bryan O'Sullivan <bos@mailrank.com>";
@@ -25,7 +13,7 @@
       synopsis = "Fast rendering of common datatypes";
       description = "A library for efficiently rendering Haskell datatypes to\nbytestrings.\n\n/Note/: if you use GHCi or Template Haskell, please see the\n@README@ file for important details about building this package,\nand other packages that depend on it:\n<https://github.com/mailrank/blaze-textual#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -37,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optional (!flags.native) (hsPkgs.double-conversion)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.11") (hsPkgs.integer-gmp)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) (hsPkgs.integer);
+          ] ++ (pkgs.lib).optional (!flags.native) (hsPkgs.double-conversion)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.11") (hsPkgs.integer-gmp)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9" && (compiler.isGhc && (compiler.version).lt "6.11")) (hsPkgs.integer);
+        };
       };
-    };
-  }
+    }

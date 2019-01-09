@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { analysis = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gauge";
-        version = "0.2.0";
-      };
+      identifier = { name = "gauge"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2009-2016 Bryan O'Sullivan and others";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "small framework for performance measurement and analysis";
       description = "This library provides a powerful but simple way to measure software\nperformance.  It provides both a framework for executing and\nanalysing benchmarks and a set of driver functions that makes it\neasy to build and run benchmarks, and to analyse their results.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.vector)
           (hsPkgs.process)
           (hsPkgs.directory)
-        ] ++ pkgs.lib.optional (flags.analysis) (hsPkgs.math-functions);
-      };
+          ] ++ (pkgs.lib).optional (flags.analysis) (hsPkgs.math-functions);
+        };
       tests = {
         "sanity" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "verbose" = {
           depends = [
             (hsPkgs.HUnit)
@@ -56,8 +47,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "quick" = {
           depends = [
             (hsPkgs.HUnit)
@@ -67,8 +58,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "quick-verbose" = {
           depends = [
             (hsPkgs.HUnit)
@@ -78,8 +69,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "cleanup" = {
           depends = [
             (hsPkgs.HUnit)
@@ -90,16 +81,11 @@
             (hsPkgs.directory)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
-        "self" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.gauge)
-          ];
+        "self" = { depends = [ (hsPkgs.base) (hsPkgs.gauge) ]; };
         };
       };
-    };
-  }
+    }

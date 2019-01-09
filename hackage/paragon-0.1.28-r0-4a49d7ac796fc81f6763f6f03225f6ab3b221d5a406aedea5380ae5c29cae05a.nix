@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "paragon";
-        version = "0.1.28";
-      };
+      identifier = { name = "paragon"; version = "0.1.28"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Niklas Broberg <niklas.broberg@chalmers.se>";
@@ -22,7 +13,7 @@
       synopsis = "Paragon";
       description = "Paragon suite";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,16 +29,11 @@
           (hsPkgs.th-lift)
           (hsPkgs.template-haskell)
           (hsPkgs.bytestring)
-        ] ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-          ]
+          ] ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       exes = {
         "parac" = {
           depends = [
@@ -63,16 +49,11 @@
             (hsPkgs.th-lift)
             (hsPkgs.template-haskell)
             (hsPkgs.bytestring)
-          ] ++ (if flags.base4
-            then [
-              (hsPkgs.base)
-              (hsPkgs.syb)
-            ]
+            ] ++ (if flags.base4
+            then [ (hsPkgs.base) (hsPkgs.syb) ]
             else [ (hsPkgs.base) ]);
-          build-tools = [
-            (hsPkgs.buildPackages.alex)
-          ];
+          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "depends";
-        version = "0.0.1";
-      };
+      identifier = { name = "depends"; version = "0.0.1"; };
       license = "MIT";
       copyright = "(c) 2013 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "A simple configuration management tool for Haskell";
       description = "A simple configuration management tool for Haskell that uses\nconvention over configuration.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "depends" = {
@@ -34,9 +25,9 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.yaml-config)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.yaml-config)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

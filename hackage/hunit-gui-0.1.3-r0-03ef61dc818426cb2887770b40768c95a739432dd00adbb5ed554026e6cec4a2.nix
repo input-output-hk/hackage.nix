@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hunit-gui";
-        version = "0.1.3";
-      };
+      identifier = { name = "hunit-gui"; version = "0.1.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "kim_hunitgui@arlim.org";
@@ -22,7 +13,7 @@
       synopsis = "A GUI testrunner for HUnit";
       description = "hunit-gui is a graphical front-end for HUnit.  It provides a test\ncontroller you can use in place of runTestTT or runTestText, as well\nas an optional cleanup step.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.HUnit)
           (hsPkgs.gtk)
           (hsPkgs.cairo)
-        ];
-      };
+          ];
+        };
       exes = {
         "tests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.gtk)
             (hsPkgs.cairo)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

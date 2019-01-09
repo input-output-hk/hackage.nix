@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoe";
-        version = "1.0.1";
-      };
+      identifier = { name = "hoe"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2015, Hideyuki Tanaka";
       maintainer = "tanaka.hideyuki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "hoe: Haskell One-liner Evaluator";
       description = "@hoe@ is AWK like text processor.\nThis can evaluate scripts in various ways depending on types.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hoe" = {
@@ -35,8 +26,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.split)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

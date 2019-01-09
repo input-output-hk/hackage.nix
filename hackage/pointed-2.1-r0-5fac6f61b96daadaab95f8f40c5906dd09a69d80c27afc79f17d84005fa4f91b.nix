@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pointed";
-        version = "2.1";
-      };
+      identifier = { name = "pointed"; version = "2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell 98 pointed and copointed data";
       description = "Haskell 98 pointed and copointed data";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.stm)
           (hsPkgs.comonad-transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

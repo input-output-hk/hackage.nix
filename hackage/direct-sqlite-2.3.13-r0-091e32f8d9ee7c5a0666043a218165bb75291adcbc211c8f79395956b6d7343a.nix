@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      systemlib = false;
-      fulltextsearch = true;
-      urifilenames = true;
-    };
+    flags = { systemlib = false; fulltextsearch = true; urifilenames = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "direct-sqlite";
-        version = "2.3.13";
-      };
+      identifier = { name = "direct-sqlite"; version = "2.3.13"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012, 2013 Irene Knapp";
       maintainer = "irene.knapp@icloud.com";
@@ -26,18 +13,14 @@
       synopsis = "Low-level binding to SQLite3.  Includes UTF8 and BLOB support.";
       description = "This package is not very different from the other SQLite3 bindings out\nthere, but it fixes a few deficiencies I was finding.  As compared to\nbindings-sqlite3, it is slightly higher-level, in that it supports\nmarshalling of data values to and from the database.  In particular, it\nsupports strings encoded as UTF8, and BLOBs represented as ByteStrings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
         libs = if flags.systemlib
           then [ (pkgs."sqlite3") ]
-          else pkgs.lib.optional (!system.isWindows) (pkgs."pthread");
-      };
+          else (pkgs.lib).optional (!system.isWindows) (pkgs."pthread");
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,8 +31,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.direct-sqlite)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

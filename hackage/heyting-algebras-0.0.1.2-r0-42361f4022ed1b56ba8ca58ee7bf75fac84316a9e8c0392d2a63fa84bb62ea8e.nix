@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      export-properties = true;
-    };
+    flags = { export-properties = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "heyting-algebras";
-        version = "0.0.1.2";
-      };
+      identifier = { name = "heyting-algebras"; version = "0.0.1.2"; };
       license = "MPL-2.0";
       copyright = "(c) 2018 Marcin Szamotulski";
       maintainer = "profunctor@pm.me";
@@ -24,7 +13,7 @@
       synopsis = "Heyting and Boolean algebras";
       description = "This package provides Heyting and Boolean operations together\nwith various constructions of Heyting algebras.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +25,8 @@
           (hsPkgs.tagged)
           (hsPkgs.unordered-containers)
           (hsPkgs.universe-base)
-        ] ++ pkgs.lib.optional (flags.export-properties) (hsPkgs.QuickCheck);
-      };
+          ] ++ (pkgs.lib).optional (flags.export-properties) (hsPkgs.QuickCheck);
+        };
       tests = {
         "heyting-algebras-test" = {
           depends = [
@@ -49,8 +38,8 @@
             (hsPkgs.heyting-algebras)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

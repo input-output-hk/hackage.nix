@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "docker";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "docker"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "deni@denibertovic.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell wrapper for Docker Remote API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.pipes)
           (hsPkgs.pipes-text)
           (hsPkgs.pipes-bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.process)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

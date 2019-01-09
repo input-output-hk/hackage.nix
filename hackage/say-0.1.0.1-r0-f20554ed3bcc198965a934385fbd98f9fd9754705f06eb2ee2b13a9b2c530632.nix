@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "say";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "say"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2016-2018 FP Complete";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Send textual messages to a Handle in a thread-friendly way";
       description = "Please see the README and documentation at <https://www.stackage.org/package/say>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "say-test" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unliftio)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "say-bench" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unliftio)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

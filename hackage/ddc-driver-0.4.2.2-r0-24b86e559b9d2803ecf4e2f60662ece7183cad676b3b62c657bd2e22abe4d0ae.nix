@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddc-driver";
-        version = "0.4.2.2";
-      };
+      identifier = { name = "ddc-driver"; version = "0.4.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Disciplined Disciple Compiler top-level driver.";
       description = "This defines the top-level commands supported by the compiler,\nsuch as @-make@ and @-compile@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.ddc-core-tetra)
           (hsPkgs.ddc-source-tetra)
           (hsPkgs.ddc-build)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

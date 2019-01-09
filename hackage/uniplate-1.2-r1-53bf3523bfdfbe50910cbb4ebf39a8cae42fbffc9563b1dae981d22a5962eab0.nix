@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "uniplate";
-        version = "1.2";
-      };
+      identifier = { name = "uniplate"; version = "1.2"; };
       license = "BSD-3-Clause";
       copyright = "2006-8, Neil Mitchell";
       maintainer = "ndmitchell@gmail.com";
@@ -22,19 +13,12 @@
       synopsis = "Uniform type generic traversals.";
       description = "Uniplate is a boilerplate removal library, with similar goals to the\noriginal Scrap Your Boilerplate work. It requires few extensions to\nHaskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.containers)
-          ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-          ];
+          then [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.containers) ]
+          else [ (hsPkgs.base) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

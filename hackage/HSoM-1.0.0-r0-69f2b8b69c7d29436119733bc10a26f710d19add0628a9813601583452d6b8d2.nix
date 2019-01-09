@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HSoM";
-        version = "1.0.0";
-      };
+      identifier = { name = "HSoM"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008-2015 Paul Hudak and Donya Quick";
       maintainer = "Donya Quick <donyaquick@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Library for computer music education";
       description = "Supporting library for the Haskell School of Music textbook.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,10 +28,10 @@
           (hsPkgs.markov-chain)
           (hsPkgs.pure-fft)
           (hsPkgs.UISF)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

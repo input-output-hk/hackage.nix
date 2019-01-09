@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { threaded = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hbro";
-        version = "0.9.1.0";
-      };
+      identifier = { name = "hbro"; version = "0.9.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral at mailoo dot org";
@@ -22,7 +13,7 @@
       synopsis = "Minimal KISS compliant browser";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.webkit)
           (hsPkgs.xdg-basedir)
           (hsPkgs.zeromq-haskell)
-        ];
-      };
+          ];
+        };
       exes = {
         "hbro" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lindenmayer";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "lindenmayer"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "Copyright (C) 2015 Rein Henrichs";
       maintainer = "Rein Henrichs <rein.henrichs@gmail.com>";
@@ -22,10 +13,6 @@
       synopsis = "L-systems in Haskell";
       description = "L-systems in Haskell";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

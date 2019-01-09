@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "wavesurfer";
-        version = "0.0.4";
-      };
+      identifier = { name = "wavesurfer"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Stefan Kersten 2008";
       maintainer = "Stefan Kersten";
@@ -22,7 +13,7 @@
       synopsis = "Parse WaveSurfer files";
       description = "Parse WaveSurfer files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring-lexing)
           (hsPkgs.bytestring-show)
           (hsPkgs.delimited-text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

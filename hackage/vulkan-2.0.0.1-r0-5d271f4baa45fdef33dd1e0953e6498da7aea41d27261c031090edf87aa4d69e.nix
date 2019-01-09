@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       xlib = false;
@@ -17,13 +11,10 @@
       vi = false;
       ios = false;
       macos = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vulkan";
-        version = "2.0.0.1";
-      };
+      identifier = { name = "vulkan"; version = "2.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Joe Hermaszewski";
       maintainer = "live.long.and.prosper@monoid.al";
@@ -33,17 +24,13 @@
       synopsis = "Bindings to the Vulkan graphics API.";
       description = "Please see readme.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.cpphs)
-          (hsPkgs.base)
-          (hsPkgs.vector-sized)
-        ];
+        depends = [ (hsPkgs.cpphs) (hsPkgs.base) (hsPkgs.vector-sized) ];
         libs = if system.isWindows
           then [ (pkgs."vulkan-1") ]
           else [ (pkgs."vulkan") ];
+        };
       };
-    };
-  }
+    }

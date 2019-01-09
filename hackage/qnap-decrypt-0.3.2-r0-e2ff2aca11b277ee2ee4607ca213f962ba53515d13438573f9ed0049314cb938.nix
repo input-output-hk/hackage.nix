@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "qnap-decrypt";
-        version = "0.3.2";
-      };
+      identifier = { name = "qnap-decrypt"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "2018 ALeX Kazik";
       maintainer = "alex@kazik.de";
@@ -22,7 +13,7 @@
       synopsis = "Decrypt files encrypted by QNAP's Hybrid Backup Sync";
       description = "Please see the README on Github at <https://github.com/alexkazik/qnap-decrypt#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.streaming-commons)
           (hsPkgs.tagged)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "qnap-decrypt" = {
           depends = [
@@ -56,9 +47,9 @@
             (hsPkgs.streaming-commons)
             (hsPkgs.tagged)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "qnap-decrypt-test" = {
           depends = [
@@ -78,8 +69,8 @@
             (hsPkgs.tagged)
             (hsPkgs.temporary)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

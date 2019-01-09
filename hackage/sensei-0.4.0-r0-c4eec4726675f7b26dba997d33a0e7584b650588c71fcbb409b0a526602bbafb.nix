@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sensei";
-        version = "0.4.0";
-      };
+      identifier = { name = "sensei"; version = "0.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "Automatically run Hspec tests on file modifications";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "seito" = {
@@ -44,8 +35,8 @@
             (hsPkgs.unix)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "sensei" = {
           depends = [
             (hsPkgs.ansi-terminal)
@@ -65,8 +56,8 @@
             (hsPkgs.unix)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "sensei-web" = {
           depends = [
             (hsPkgs.ansi-terminal)
@@ -86,9 +77,9 @@
             (hsPkgs.unix)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -115,8 +106,8 @@
             (hsPkgs.unix)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

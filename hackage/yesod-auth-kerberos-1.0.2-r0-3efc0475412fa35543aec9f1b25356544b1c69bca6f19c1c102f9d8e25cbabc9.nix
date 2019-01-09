@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "yesod-auth-kerberos";
-        version = "1.0.2";
-      };
+      identifier = { name = "yesod-auth-kerberos"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Arash Rouhani";
@@ -22,7 +13,7 @@
       synopsis = "Kerberos Authentication for Yesod.";
       description = "Kerberos Authentication for Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

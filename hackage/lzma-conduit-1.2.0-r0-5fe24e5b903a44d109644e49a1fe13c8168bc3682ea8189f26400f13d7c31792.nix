@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lzma-conduit";
-        version = "1.2.0";
-      };
+      identifier = { name = "lzma-conduit"; version = "1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Nathan Howell <nhowell@alphaheavy.com>";
@@ -22,7 +13,7 @@
       synopsis = "Conduit interface for lzma/xz compression.";
       description = "High level bindings to xz-utils.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.lzma)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "lzma-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

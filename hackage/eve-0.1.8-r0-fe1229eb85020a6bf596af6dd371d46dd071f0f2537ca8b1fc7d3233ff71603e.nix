@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eve";
-        version = "0.1.8";
-      };
+      identifier = { name = "eve"; version = "0.1.8"; };
       license = "BSD-3-Clause";
       copyright = "2017 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An extensible event framework";
       description = "An extensible event-driven application framework in haskell for building embarassingly modular software.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.free)
           (hsPkgs.data-default)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "eve-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.lens)
             (hsPkgs.mtl)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

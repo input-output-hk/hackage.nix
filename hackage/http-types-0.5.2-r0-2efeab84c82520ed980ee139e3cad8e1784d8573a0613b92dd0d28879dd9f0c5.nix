@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "http-types";
-        version = "0.5.2";
-      };
+      identifier = { name = "http-types"; version = "0.5.2"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2011 Aristid Breitkreuz";
       maintainer = "aristidb@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generic HTTP types for Haskell (for both client and server code).";
       description = "Generic HTTP types for Haskell (for both client and server code).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,11 +23,11 @@
           (hsPkgs.ascii)
           (hsPkgs.blaze-builder)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.text)
             (hsPkgs.bytestring)
             (hsPkgs.base)
@@ -45,8 +36,8 @@
             (hsPkgs.array)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "phoityne";
-        version = "0.0.5.0";
-      };
+      identifier = { name = "phoityne"; version = "0.0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "phoityne.hs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Deprecated - ghci debug viewer with simple editor.";
       description = "Deprecated - use phoityne-vscode package instead.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "phoityne" = {
@@ -48,16 +39,11 @@
             (hsPkgs.process)
             (hsPkgs.parsec)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "phoityne-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-          ];
+        "phoityne-test" = { depends = [ (hsPkgs.base) (hsPkgs.hspec) ]; };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "creatur";
-        version = "5.9.26";
-      };
+      identifier = { name = "creatur"; version = "5.9.26"; };
       license = "BSD-3-Clause";
       copyright = "2018 Amy de Buitléir";
       maintainer = "amy@nualeargais.ie";
@@ -22,7 +13,7 @@
       synopsis = "Framework for artificial life experiments.";
       description = "Please see the README on GitHub at <https://github.com/mhwombat/creatur#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "creatur-test" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

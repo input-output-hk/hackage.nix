@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { embedded = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "limp-cbc";
-        version = "0.3.2.0";
-      };
+      identifier = { name = "limp-cbc"; version = "0.3.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "amos.robinson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "bindings for integer linear programming solver Coin/CBC";
       description = "very simple binding to external solver, CBC.\nCBC is somewhat faster than GLPK, and also has a more permissive licence.\nrelies on coin/cbc version 2.8.6.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.vector)
           (hsPkgs.limp)
-        ];
+          ];
         libs = if !flags.embedded
           then [
             (pkgs."Cbc")
@@ -44,20 +35,14 @@
             (pkgs."CoinUtils")
             (pkgs."CoinMP")
             (pkgs."stdc++")
-          ]
+            ]
           else [ (pkgs."stdc++") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.limp)
-            (hsPkgs.limp-cbc)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.limp) (hsPkgs.limp-cbc) ];
+          };
         };
       };
-    };
-  }
+    }

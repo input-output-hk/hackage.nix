@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gravatar";
-        version = "0.8.0";
-      };
+      identifier = { name = "gravatar"; version = "0.8.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Pat Brisbin <pbrisbin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Generate Gravatar image URLs";
       description = "Generate Gravatar image URLs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.pureMD5)
           (hsPkgs.HTTP)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.hspec)
             (hsPkgs.gravatar)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

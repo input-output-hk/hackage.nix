@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "protocol-buffers-descriptor";
-        version = "0.3.1";
-      };
+      identifier = { name = "protocol-buffers-descriptor"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Christopher Edward Kuklewicz";
       maintainer = "Chris Kuklewicz <protobuf@personal.mightyreason.com>";
@@ -22,12 +13,10 @@
       synopsis = "Self-description of Google Protocol Buffer specifications";
       description = "Uses protocol-buffers package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.protocol-buffers)
-        ] ++ (if flags.small_base
+        depends = [ (hsPkgs.protocol-buffers) ] ++ (if flags.small_base
           then [
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -37,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
-          ]
+            ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

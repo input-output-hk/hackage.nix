@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      example = false;
-      test-client = false;
-    };
+    flags = { example = false; test-client = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "react-flux";
-        version = "1.2.2";
-      };
+      identifier = { name = "react-flux"; version = "1.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Lenz <wuzzeb@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "A binding to React based on the Flux application architecture for GHCJS";
       description = "See the README below.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +26,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
-        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+        };
       exes = {
         "todo" = {
           depends = [
@@ -47,23 +35,23 @@
             (hsPkgs.react-flux)
             (hsPkgs.deepseq)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          };
         "todo-node" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.deepseq)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          };
         "purecss-side-menu" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.deepseq)
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          };
         "test-client" = {
           depends = [
             (hsPkgs.base)
@@ -72,10 +60,10 @@
             (hsPkgs.text)
             (hsPkgs.deepseq)
             (hsPkgs.aeson)
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          };
         "route-example" = {
-          depends = pkgs.lib.optionals (flags.example) [
+          depends = (pkgs.lib).optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.react-flux)
             (hsPkgs.time)
@@ -85,8 +73,8 @@
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          };
         };
       };
-    };
-  }
+    }

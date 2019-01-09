@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "jdi";
-        version = "0.0.3";
-      };
+      identifier = { name = "jdi"; version = "0.0.3"; };
       license = "GPL-2.0-only";
       copyright = "2012 Victor Denisov";
       maintainer = "Victor Denisov <denisovenator@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Implementation of Java Debug Interface";
       description = "Implementation of Java Debug Interface";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
           (hsPkgs.network)
-        ];
-      };
+          ];
+        };
       exes = {
         "Test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.jdi)
             (hsPkgs.mtl)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

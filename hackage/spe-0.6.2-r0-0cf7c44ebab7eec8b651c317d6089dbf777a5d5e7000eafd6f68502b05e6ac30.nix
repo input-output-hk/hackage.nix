@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "spe";
-        version = "0.6.2";
-      };
+      identifier = { name = "spe"; version = "0.6.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anders.claesson@gmail.com";
@@ -22,15 +13,9 @@
       synopsis = "Combinatorial species lite";
       description = "A simple library for combinatorial species with no\ndependencies but base. See <http://github.com/akc/spe>\nfor an introduction and examples.\nIf you want something more substantial, then you\nwill most likely be happier with the excellent\nspecies package by Brent Yorgey:\n<http://hackage.haskell.org/package/species>";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
+      "library" = { depends = [ (hsPkgs.base) ]; };
+      tests = { "Main" = { depends = [ (hsPkgs.base) ]; }; };
       };
-      tests = {
-        "Main" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
-    };
-  }
+    }

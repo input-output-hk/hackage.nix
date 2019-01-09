@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pandoc-include";
-        version = "0.0.1";
-      };
+      identifier = { name = "pandoc-include"; version = "0.0.1"; };
       license = "MIT";
       copyright = "(c) 2015 Dániel Stein";
       maintainer = "Dániel Stein <daniel@stein.hu>";
@@ -22,7 +13,7 @@
       synopsis = "Include other Markdown files";
       description = "A Pandoc filter that replaces include labeled\nCode Blocks with the contents of the referenced\nMarkdown files. Even nested, recursive includes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.pandoc)
           (hsPkgs.pandoc-types)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "pandoc-include" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.pandoc)
             (hsPkgs.pandoc-types)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

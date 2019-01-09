@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bounds-checking-enabled = false;
-    };
+    flags = { bounds-checking-enabled = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-prim";
-        version = "0.6.2.3";
-      };
+      identifier = { name = "hw-prim"; version = "0.6.2.3"; };
       license = "BSD-3-Clause";
       copyright = "2016-2018 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Primitive functions and data types";
       description = "Primitive functions and data types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +22,8 @@
           (hsPkgs.mmap)
           (hsPkgs.vector)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "hw-prim-test" = {
           depends = [
@@ -50,9 +39,9 @@
             (hsPkgs.hspec)
             (hsPkgs.hw-hspec-hedgehog)
             (hsPkgs.hw-prim)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -64,8 +53,8 @@
             (hsPkgs.criterion)
             (hsPkgs.hw-prim)
             (hsPkgs.mmap)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

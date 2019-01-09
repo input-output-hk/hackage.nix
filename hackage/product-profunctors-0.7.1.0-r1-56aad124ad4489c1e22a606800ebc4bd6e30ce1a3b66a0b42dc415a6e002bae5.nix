@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "product-profunctors";
-        version = "0.7.1.0";
-      };
+      identifier = { name = "product-profunctors"; version = "0.7.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Purely Agile";
@@ -22,7 +13,7 @@
       synopsis = "product-profunctors";
       description = "Product profunctors";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,16 @@
           (hsPkgs.contravariant)
           (hsPkgs.tagged)
           (hsPkgs.template-haskell)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.transformers);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.transformers);
+        };
       tests = {
         "test" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.profunctors)
             (hsPkgs.product-profunctors)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

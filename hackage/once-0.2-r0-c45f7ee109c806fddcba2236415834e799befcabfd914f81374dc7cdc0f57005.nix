@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "once";
-        version = "0.2";
-      };
+      identifier = { name = "once"; version = "0.2"; };
       license = "GPL-3.0-only";
       copyright = "2015,2016 Dmitry Bogatov";
       maintainer = "KAction@gnu.org";
@@ -22,7 +13,7 @@
       synopsis = "memoization for IO actions and functions";
       description = "Please see Control.Once for examples";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.hashable)
           (hsPkgs.unordered-containers)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

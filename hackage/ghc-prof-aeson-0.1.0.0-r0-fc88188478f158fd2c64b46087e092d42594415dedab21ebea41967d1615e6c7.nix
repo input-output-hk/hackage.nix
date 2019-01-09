@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghc-prof-aeson";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ghc-prof-aeson"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018, Mateusz Kowalczyk";
       maintainer = "fuuzetsu@fuuzetsu.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Parser for GHC's JSON profiling output.";
       description = "Parser for GHC's JSON profiling output produced by `-pj`.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.aeson)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "ghc-prof-aeson-test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.ghc-prof-aeson)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

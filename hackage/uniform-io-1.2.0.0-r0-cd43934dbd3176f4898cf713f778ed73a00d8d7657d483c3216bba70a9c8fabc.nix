@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "uniform-io";
-        version = "1.2.0.0";
-      };
+      identifier = { name = "uniform-io"; version = "1.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "marcos@marcosdumay.com";
@@ -22,7 +13,7 @@
       synopsis = "Uniform IO over files, network, anything.";
       description = "This library defines a typeclass for abstracting\nthe differences between the several IO channels available.\nIt also includes implementations for standard IO, files and\nnetwork IO, and easy to use TLS wrapping of network data,\nwith an extensible interface for user supplied instances.\n\nCurrently there's no support for TLS certificate verification.\nThat is planned to be added soon.\n\nRequires a '-threaded' compiler switch.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,13 +28,9 @@
           (hsPkgs.monad-control)
           (hsPkgs.transformers-base)
           (hsPkgs.interruptible)
-        ];
-        libs = [
-          (pkgs."ssl")
-          (pkgs."crypto")
-          (pkgs."pthread")
-        ];
-      };
+          ];
+        libs = [ (pkgs."ssl") (pkgs."crypto") (pkgs."pthread") ];
+        };
       tests = {
         "targets" = {
           depends = [
@@ -51,8 +38,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.bytestring)
             (hsPkgs.uniform-io)
-          ];
-        };
+            ];
+          };
         "blocking" = {
           depends = [
             (hsPkgs.base)
@@ -60,8 +47,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.attoparsec)
             (hsPkgs.uniform-io)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "implicit";
-        version = "0.1.0";
-      };
+      identifier = { name = "implicit"; version = "0.1.0"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "Julia Longtin <julial@turinglace.com>";
@@ -22,7 +13,7 @@
       synopsis = "Math-inspired programmatic 2&3D CAD: CSG, bevels, and shells; gcode export..";
       description = "A math-inspired programmatic CAD library in haskell.\nBuild objects with constructive solid geometry, bevels,\nshells and more in 2D & 3D. Then export to SVGs, STLs,\nor produce gcode directly!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.snap-server)
           (hsPkgs.silently)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "extopenscad" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.parallel)
             (hsPkgs.optparse-applicative)
             (hsPkgs.implicit)
-          ];
-        };
+            ];
+          };
         "implicitsnap" = {
           depends = [
             (hsPkgs.base)
@@ -88,8 +79,8 @@
             (hsPkgs.silently)
             (hsPkgs.transformers)
             (hsPkgs.implicit)
-          ];
-        };
+            ];
+          };
         "Benchmark" = {
           depends = [
             (hsPkgs.base)
@@ -111,9 +102,9 @@
             (hsPkgs.criterion)
             (hsPkgs.transformers)
             (hsPkgs.implicit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-implicit" = {
           depends = [
@@ -123,9 +114,9 @@
             (hsPkgs.hspec)
             (hsPkgs.parsec)
             (hsPkgs.implicit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "parser-bench" = {
           depends = [
@@ -134,8 +125,8 @@
             (hsPkgs.random)
             (hsPkgs.parsec)
             (hsPkgs.implicit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

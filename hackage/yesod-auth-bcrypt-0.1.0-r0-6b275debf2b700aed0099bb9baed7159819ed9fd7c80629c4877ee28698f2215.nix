@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "yesod-auth-bcrypt";
-        version = "0.1.0";
-      };
+      identifier = { name = "yesod-auth-bcrypt"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Oliver Hunt <oliver.huntuk@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "BCrypt salted and hashed passwords in a database as auth for yesod";
       description = "BCrypt salted and hashed passwords in a database as auth for yesod";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -62,7 +53,7 @@
           (hsPkgs.time)
           (hsPkgs.yesod-auth)
           (hsPkgs.bcrypt)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

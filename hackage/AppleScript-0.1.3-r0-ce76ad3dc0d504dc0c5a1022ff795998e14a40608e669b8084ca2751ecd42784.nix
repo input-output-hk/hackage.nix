@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "AppleScript";
-        version = "0.1.3";
-      };
+      identifier = { name = "AppleScript"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Wouter Swierstra <wss@cs.nott.ac.uk>";
@@ -22,13 +13,11 @@
       synopsis = "Call AppleScript from Haskell.";
       description = "This package enables you to compile and\nexecute AppleScript from Haskell applications.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        frameworks = [
-          (pkgs."Carbon")
-        ];
+        frameworks = [ (pkgs."Carbon") ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-simple-bind";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "postgresql-simple-bind"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Al Zohali <zohl@fmap.me>";
@@ -22,7 +13,7 @@
       synopsis = "A FFI-like bindings for PostgreSQL stored functions";
       description = "For tutorial see here: https:\\/\\/github.com\\/zohl\\/postgresql-simple-bind\\/blob\\/master\\/README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.postgresql-simple)
             (hsPkgs.postgresql-simple-bind)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "examples" = {
           depends = [
             (hsPkgs.base)
@@ -60,8 +51,8 @@
             (hsPkgs.postgresql-simple)
             (hsPkgs.postgresql-simple-bind)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

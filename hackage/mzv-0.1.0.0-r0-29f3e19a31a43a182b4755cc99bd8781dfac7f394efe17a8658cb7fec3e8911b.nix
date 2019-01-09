@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mzv";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mzv"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Tom Schrijvers, Bruno Oliveira";
       maintainer = "Ismael Figueroa <ifigueroap@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Implementation of the \"Monads, Zippers and Views\" (Schrijvers and Oliveira, ICFP'11)";
       description = "Implementation of the \"Monads, Zippers and Views\" (Schrijvers and Oliveira, ICFP'11)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.transformers) ]; };
+      };
+    }

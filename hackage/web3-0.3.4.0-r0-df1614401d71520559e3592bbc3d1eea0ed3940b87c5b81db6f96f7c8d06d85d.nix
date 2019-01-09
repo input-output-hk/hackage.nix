@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "web3";
-        version = "0.3.4.0";
-      };
+      identifier = { name = "web3"; version = "0.3.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Alexander Krupenkin";
       maintainer = "mail@akru.me";
@@ -22,7 +13,7 @@
       synopsis = "Ethereum API for Haskell";
       description = "Web3 is a Haskell client library for Ethereum";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.aeson)
           (hsPkgs.text)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "web3-test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.memory)
             (hsPkgs.text)
             (hsPkgs.web3)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

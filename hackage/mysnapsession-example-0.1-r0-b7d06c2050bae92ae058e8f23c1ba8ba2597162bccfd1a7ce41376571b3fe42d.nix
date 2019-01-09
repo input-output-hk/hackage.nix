@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mysnapsession-example";
-        version = "0.1";
-      };
+      identifier = { name = "mysnapsession-example"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chris Smith <cdsmith@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Example project using mysnapsession";
       description = "This is a simple web application that uses the\nmysnapsession package's continuation programming model\nto build an animal guessing game.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "testsnap" = {
@@ -39,8 +30,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.mysnapsession)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

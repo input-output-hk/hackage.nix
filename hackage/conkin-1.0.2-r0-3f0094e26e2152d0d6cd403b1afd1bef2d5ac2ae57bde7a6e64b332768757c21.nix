@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conkin";
-        version = "1.0.2";
-      };
+      identifier = { name = "conkin"; version = "1.0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "noah.easterly@gmail.com";
@@ -24,19 +13,13 @@
       synopsis = "Tools for functors from Hask^k to Hask";
       description = "Tools for functors from Hask^k to Hask";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.pretty-show)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.pretty-show) ];
+          };
         "readme" = {
           depends = [
             (hsPkgs.base)
@@ -45,8 +28,8 @@
             (hsPkgs.pretty-show)
             (hsPkgs.data-default)
             (hsPkgs.conkin)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

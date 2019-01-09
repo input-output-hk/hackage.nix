@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enable-hlint-test = false;
-    };
+    flags = { enable-hlint-test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rss-conduit";
-        version = "0.4.2.1";
-      };
+      identifier = { name = "rss-conduit"; version = "0.4.2.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "koral att mailoo dott org";
@@ -24,7 +13,7 @@
       synopsis = "Streaming parser/renderer for the RSS standard.";
       description = "Cf README file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +34,8 @@
           (hsPkgs.vinyl)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-types)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.semigroups);
+        };
       tests = {
         "Tests" = {
           depends = [
@@ -75,14 +64,9 @@
             (hsPkgs.vinyl)
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-types)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "freesect";
-        version = "0.8";
-      };
+      identifier = { name = "freesect"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Andrew Seniuk <rasfar@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell syntax extension for generalised sections";
       description = "This package provides a preprocessor executable, \\'freesect\\', which\nimplements a broad generalisation of sections (dubbed \\'free sections\\')\nfor partial application and higher-order style.  Some examples\nof free sections can be found in the included test suite; refer\nto the homepage for more info.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "freesect" = {
@@ -36,8 +27,8 @@
             (hsPkgs.cpphs)
             (hsPkgs.pretty)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

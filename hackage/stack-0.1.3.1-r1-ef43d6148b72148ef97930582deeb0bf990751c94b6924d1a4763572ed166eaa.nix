@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      integration-tests = false;
-    };
+    flags = { integration-tests = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack";
-        version = "0.1.3.1";
-      };
+      identifier = { name = "stack"; version = "0.1.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chrisdone@fpcomplete.com";
@@ -24,7 +13,7 @@
       synopsis = "The Haskell Tool Stack";
       description = "Please see the README.md for usage information, and\nthe wiki on Github for more details.  Also, note that\nthe API for the library is not currently stable, and may\nchange significantly, even between minor releases. It is\ncurrently only intended for use by the executable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -99,8 +88,8 @@
           (hsPkgs.word8)
           (hsPkgs.hastache)
           (hsPkgs.project-template)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "stack" = {
           depends = [
@@ -131,9 +120,9 @@
             (hsPkgs.conduit)
             (hsPkgs.transformers)
             (hsPkgs.http-client)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+          };
         };
-      };
       tests = {
         "stack-test" = {
           depends = [
@@ -159,8 +148,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.QuickCheck)
             (hsPkgs.retry)
-          ];
-        };
+            ];
+          };
         "stack-integration-test" = {
           depends = [
             (hsPkgs.base)
@@ -178,8 +167,8 @@
             (hsPkgs.async)
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "string-transform";
-        version = "0.0.1";
-      };
+      identifier = { name = "string-transform"; version = "0.0.1"; };
       license = "MIT";
       copyright = "© ncaq";
       maintainer = "ncaq@ncaq.net";
@@ -22,7 +13,7 @@
       synopsis = "simple and easy haskell string transform";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

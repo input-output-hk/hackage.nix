@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "datadog";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "datadog"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "Datadog client for Haskell. Currently only StatsD supported, other support forthcoming.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.lifted-base)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

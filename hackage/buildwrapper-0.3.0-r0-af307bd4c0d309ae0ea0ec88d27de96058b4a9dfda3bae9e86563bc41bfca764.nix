@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "buildwrapper";
-        version = "0.3.0";
-      };
+      identifier = { name = "buildwrapper"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "JP Moresmau <jpmoresmau@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A library and an executable that provide an easy API for a Haskell IDE";
       description = "Buildwrapper is an alternative to scion.\nIt provides services to configure, build and give information on source files to help IDEs manage Haskell projects.\nYou can use buildwrapper to build project and retrieve errors, get outline for each module source, get the type of something inside a source file, get lexer tokens, etc.\nBuildwrapper is used in the EclipseFP project (Eclipse plugins for Haskell development)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.aeson)
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "buildwrapper" = {
           depends = [
@@ -72,9 +63,9 @@
             (hsPkgs.text)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "buildwrapper-test" = {
           depends = [
@@ -93,8 +84,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

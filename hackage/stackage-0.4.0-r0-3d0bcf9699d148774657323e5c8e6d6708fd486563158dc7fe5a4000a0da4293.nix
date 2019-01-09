@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage";
-        version = "0.4.0";
-      };
+      identifier = { name = "stackage"; version = "0.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "\"Stable Hackage,\" tools for creating a vetted set of packages from Hackage.";
       description = "Please see <http://www.stackage.org/package/stackage> for a description and documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -58,17 +49,17 @@
           (hsPkgs.streaming-commons)
           (hsPkgs.semigroups)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       exes = {
         "stackage" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.stackage)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -83,8 +74,8 @@
             (hsPkgs.containers)
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "hack-handler-epoll";
-        version = "0.1.1";
-      };
+      identifier = { name = "hack-handler-epoll"; version = "0.1.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2010 Toralf Wittner";
       maintainer = "toralf.wittner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "hack handler implementation using epoll";
       description = "Hack handler implemented using System.Linux.Epoll";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.failure)
           (hsPkgs.utf8-string)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

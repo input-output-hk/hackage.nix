@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demos = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fortytwo";
-        version = "1.0.2";
-      };
+      identifier = { name = "fortytwo"; version = "1.0.2"; };
       license = "MIT";
       copyright = "Gianlua Guarini";
       maintainer = "gianluca.guarini@gmail.com";
@@ -22,23 +13,12 @@
       synopsis = "Interactive terminal prompt";
       description = "List of Prompt helpers to pimp the UIs of your haskell programs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.ansi-terminal)
-        ];
-      };
-      exes = {
-        "demo" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.fortytwo)
-          ];
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.ansi-terminal) ];
         };
-      };
+      exes = { "demo" = { depends = [ (hsPkgs.base) (hsPkgs.fortytwo) ]; }; };
       tests = {
         "spec" = {
           depends = [
@@ -47,15 +27,11 @@
             (hsPkgs.process)
             (hsPkgs.async)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "doctest" = {
-          depends = [
-            (hsPkgs.fortytwo)
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+          depends = [ (hsPkgs.fortytwo) (hsPkgs.base) (hsPkgs.doctest) ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      buildtests = false;
-      includecodecs = false;
-    };
+    flags = { splitbase = true; buildtests = false; includecodecs = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "iteratee";
-        version = "0.3.4";
-      };
+      identifier = { name = "iteratee"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John W. Lato <jwlato@gmail.com>";
@@ -26,7 +13,7 @@
       synopsis = "Iteratee-based I/O";
       description = "The IterateeGM monad provides strict, safe, and functional I/O. In addition\nto pure Iteratee processors, file IO and combinator functions are provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -36,18 +23,18 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.haskell98)
           (hsPkgs.transformers)
-        ] ++ [
+          ] ++ [
           (hsPkgs.base)
-        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "testIteratee" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ] ++ [ (hsPkgs.base) ];
+            ] ++ [ (hsPkgs.base) ];
+          };
         };
       };
-    };
-  }
+    }

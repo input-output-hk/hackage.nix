@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "ron";
-        version = "0.1";
-      };
+      identifier = { name = "ron"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Yuriy Syrovetskiy";
       maintainer = "Yuriy Syrovetskiy <haskell@cblp.su>";
@@ -22,7 +13,7 @@
       synopsis = "RON, RON-RDT, and RON-Schema";
       description = "Replicated Object Notation (RON), data types (RDT),\nand RON-Schema";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "bench" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.ron)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vgrep";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "vgrep"; version = "0.1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Franz Thoma";
       maintainer = "franz.thoma@tngtech.com";
@@ -22,7 +13,7 @@
       synopsis = "A pager for grep";
       description = "vgrep is a pager for navigating through grep output.\n\nUsage:\n> grep -rn foo | vgrep\n> vgrep foo /some/path\n> vgrep foo /some/path | vgrep bar\n\n<<https://raw.githubusercontent.com/fmthoma/vgrep/master/vgrep.png>>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unix)
           (hsPkgs.vty)
-        ];
-      };
+          ];
+        };
       exes = {
         "vgrep" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.unix)
             (hsPkgs.vgrep)
             (hsPkgs.vty)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "vgrep-test" = {
           depends = [
@@ -73,14 +64,9 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.vgrep)
-          ];
-        };
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

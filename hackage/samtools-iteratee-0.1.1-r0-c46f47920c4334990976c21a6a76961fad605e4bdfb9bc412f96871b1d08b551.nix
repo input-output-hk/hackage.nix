@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { utilities = false; };
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "samtools-iteratee";
-        version = "0.1.1";
-      };
+      identifier = { name = "samtools-iteratee"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "nick@ingolia.org";
@@ -22,7 +13,7 @@
       synopsis = "Iteratee interface to SamTools library";
       description = "Iteratee interface to SamTools library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.samtools)
           (hsPkgs.transformers)
           (hsPkgs.iteratee)
-        ];
-      };
+          ];
+        };
       exes = {
         "bam-filter" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.transformers)
             (hsPkgs.iteratee)
             (hsPkgs.monads-tf)
-          ];
-        };
+            ];
+          };
         "bam-count" = {
           depends = [
             (hsPkgs.base)
@@ -56,8 +47,8 @@
             (hsPkgs.iteratee)
             (hsPkgs.monads-tf)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

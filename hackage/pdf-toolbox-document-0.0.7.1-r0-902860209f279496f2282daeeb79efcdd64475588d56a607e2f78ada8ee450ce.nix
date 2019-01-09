@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pdf-toolbox-document";
-        version = "0.0.7.1";
-      };
+      identifier = { name = "pdf-toolbox-document"; version = "0.0.7.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Yuras Shumovich 2012-2016";
       maintainer = "Yuras Shumovich <shumovichy@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A collection of tools for processing PDF files.";
       description = "Mid level tools for processing PDF files.\n\nLevel of abstraction: document, catalog, page";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.crypto-api)
           (hsPkgs.pdf-toolbox-core)
           (hsPkgs.pdf-toolbox-content)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

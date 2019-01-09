@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "htoml";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "htoml"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Cies Breijs";
@@ -22,7 +13,7 @@
       synopsis = "A parser for TOML files.";
       description = "TOML is a obvious and minimal format for config files.\n\nThis package provides a TOML parser,\nbuild with the Parsec library of parser combinators.\n\nIt provides a JSON interface using the Aeson library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       exes = {
         "tests" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Tests" = {
           depends = [
@@ -75,9 +66,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -92,8 +83,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.htoml)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

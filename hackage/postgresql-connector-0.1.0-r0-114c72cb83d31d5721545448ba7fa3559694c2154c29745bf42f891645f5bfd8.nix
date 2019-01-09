@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-connector";
-        version = "0.1.0";
-      };
+      identifier = { name = "postgresql-connector"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Mark Fine";
       maintainer = "Mark Fine <mark.fine@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Initial project postgresql-connector from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.postgresql-simple)
           (hsPkgs.resourcet)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

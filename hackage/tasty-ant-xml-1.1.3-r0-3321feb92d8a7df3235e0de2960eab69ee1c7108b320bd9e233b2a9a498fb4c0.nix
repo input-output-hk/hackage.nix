@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty-ant-xml";
-        version = "1.1.3";
-      };
+      identifier = { name = "tasty-ant-xml"; version = "1.1.3"; };
       license = "BSD-3-Clause";
       copyright = "Oliver Charles 2013";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "Render tasty output to XML for Jenkins";
       description = "A tasty ingredient to output test results in XML, using the Ant schema. This XML can be consumed by the Jenkins continuous integration framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.xml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "tagsoup-ht";
-        version = "0.2";
-      };
+      identifier = { name = "tagsoup-ht"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <tagsoup@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "alternative parser for the tagsoup package";
       description = "TagSoup is a package for parsing and extracting information from (possibly malformed) HTML/XHTML documents.\nHere I present my own parser,\nwhich I find (of course) more comprehensible and easier to extend.\nIt also handles XML declarations and CDATA sections correctly.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.tagsoup)
           (hsPkgs.data-accessor)
-        ];
-      };
+          ];
+        };
       exes = {
         "tagsouptest" = {
           depends = [
@@ -39,16 +30,16 @@
             (hsPkgs.mtl)
             (hsPkgs.tagsoup)
             (hsPkgs.data-accessor)
-          ];
-        };
+            ];
+          };
         "validate-tagsoup" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.mtl)
             (hsPkgs.tagsoup)
             (hsPkgs.data-accessor)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

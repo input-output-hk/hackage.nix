@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "linearscan-hoopl";
-        version = "0.8.0";
-      };
+      identifier = { name = "linearscan-hoopl"; version = "0.8.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Makes it easy to use the linearscan register allocator with Hoopl";
       description = "This module provides a convenience wrapper and a type class, 'NodeAlloc',\nwhich makes it much easier to use the @linearscan@ library to allocate\nregisters for Hoople intermediate representations.\n\nAdditionally, it provides a DSL for construction of assembly language DSLs\nthat compile into Hoople program graphs.  See the tests for a concrete\nexample.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.transformers)
           (hsPkgs.free)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.lens-family-core)
             (hsPkgs.deepseq)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

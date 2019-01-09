@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "data-easy";
-        version = "0.4";
-      };
+      identifier = { name = "data-easy"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jmacristovao@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Consistent set of utility functions for Maybe, Either, List, Monoids.";
       description = "Easy to use set of utility functions, implementing a Data.Maybe like\ninterface for other common types, like Either, List, Bool, Tuple,\nor even member of the Monoid type class.\nAlso features a set of conversion functions among them,\nusing sensible defaults.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.either)
           (hsPkgs.safe)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.unix)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "husky";
-        version = "0.4";
-      };
+      identifier = { name = "husky"; version = "0.4"; };
       license = "LicenseRef-GPL";
       copyright = "(C) 2009 Markus Dittrich";
       maintainer = "Markus Dittrich <haskelladdict@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple command line calculator.";
       description = "husky is a command line calculator with a small memory\nfootprint. It can be used in a fashion similar to the\ninteractive shells of python, octave, or ruby.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "husky" = {
@@ -34,8 +25,8 @@
             (hsPkgs.mtl)
             (hsPkgs.old-locale)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

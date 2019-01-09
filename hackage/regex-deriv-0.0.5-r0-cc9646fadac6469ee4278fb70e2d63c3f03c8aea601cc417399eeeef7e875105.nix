@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "regex-deriv";
-        version = "0.0.5";
-      };
+      identifier = { name = "regex-deriv"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2010-2013, Kenny Zhuo Ming Lu and Martin Sulzmann";
       maintainer = "luzhuomi@gmail.com, martin.sulzmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Replaces/Enhances Text.Regex. Implementing regular expression matching using Brzozowski's Deriviatives";
       description = "Regex algorithm implementation using derivatives.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.parallel)
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

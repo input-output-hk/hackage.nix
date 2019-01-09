@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Graphalyze";
-        version = "0.1";
-      };
+      identifier = { name = "Graphalyze"; version = "0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) Ivan Lazar Miljenovic";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Graph-Theoretic Analysis library.";
       description = "A library to use graph theory to analyse the relationships\ninherent in discrete data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -33,13 +24,13 @@
             (hsPkgs.fgl)
             (hsPkgs.graphviz)
             (hsPkgs.bktrees)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.fgl)
             (hsPkgs.graphviz)
             (hsPkgs.bktrees)
-          ];
+            ];
+        };
       };
-    };
-  }
+    }

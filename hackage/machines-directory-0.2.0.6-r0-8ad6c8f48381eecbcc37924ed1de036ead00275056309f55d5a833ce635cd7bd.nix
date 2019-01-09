@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "machines-directory";
-        version = "0.2.0.6";
-      };
+      identifier = { name = "machines-directory"; version = "0.2.0.6"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "alois.cochard@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Directory (system) utilities for the machines library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.transformers)
           (hsPkgs.machines)
           (hsPkgs.machines-io)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "postmark";
-        version = "0.0.1";
-      };
+      identifier = { name = "postmark"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Mark Hibberd";
       maintainer = "Mark Hibberd <mark@hibberd.id.au>";
@@ -22,7 +13,7 @@
       synopsis = "Library for postmarkapp.com HTTP Api";
       description = "postmark";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.timerep)
           (hsPkgs.text)
           (hsPkgs.network-api-support)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

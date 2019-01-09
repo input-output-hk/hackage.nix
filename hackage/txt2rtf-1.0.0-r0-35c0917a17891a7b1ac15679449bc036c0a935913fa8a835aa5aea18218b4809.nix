@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "txt2rtf";
-        version = "1.0.0";
-      };
+      identifier = { name = "txt2rtf"; version = "1.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2005 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,12 +13,6 @@
       synopsis = "Filter to convert plain text files to RTF";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      exes = {
-        "txt2rtf" = {
-          depends = [ (hsPkgs.base) ];
-        };
       };
-    };
-  }
+    components = { exes = { "txt2rtf" = { depends = [ (hsPkgs.base) ]; }; }; };
+    }

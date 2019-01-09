@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "parsestar";
-        version = "1.5";
-      };
+      identifier = { name = "parsestar"; version = "1.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mjgajda@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "NMR-STAR file format parser.";
       description = "Parser for NMR-STAR data used by BMRB databank repository\nof biological nuclear magnetic resonance data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,11 +29,9 @@
           (hsPkgs.derive)
           (hsPkgs.zlib)
           (hsPkgs.containers)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        };
       exes = {
         "PrintCSTypes" = {
           depends = [
@@ -54,8 +43,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.containers)
             (hsPkgs.parsestar)
-          ];
-        };
+            ];
+          };
         "MergeCoord" = {
           depends = [
             (hsPkgs.array)
@@ -65,8 +54,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
             (hsPkgs.parsestar)
-          ];
-        };
+            ];
+          };
         "TestChemShifts" = {
           depends = [
             (hsPkgs.array)
@@ -76,8 +65,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.deepseq)
             (hsPkgs.parsestar)
-          ];
-        };
+            ];
+          };
         "STAR2Fasta" = {
           depends = [
             (hsPkgs.array)
@@ -88,8 +77,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.containers)
             (hsPkgs.parsestar)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

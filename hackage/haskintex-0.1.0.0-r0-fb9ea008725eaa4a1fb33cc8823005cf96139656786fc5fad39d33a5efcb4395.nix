@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskintex";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haskintex"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dhelta.diaz@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Evaluation inside of LaTeX code.";
       description = "The /haskintex/ program is a tool that reads a LaTeX file and evaluates Haskell expressions contained\nin some specific commands and environments. It allows you to define your own functions, use any GHC Haskell language\nextension and, in brief, anything you can do within Haskell. You can freely add any Haskell code you need, and make\nthis code appear /optionally/ in the LaTeX output. It is a tiny program, and therefore, easy to understand, use and\npredict.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haskintex" = {
@@ -35,8 +26,8 @@
             (hsPkgs.process)
             (hsPkgs.HaTeX)
             (hsPkgs.attoparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

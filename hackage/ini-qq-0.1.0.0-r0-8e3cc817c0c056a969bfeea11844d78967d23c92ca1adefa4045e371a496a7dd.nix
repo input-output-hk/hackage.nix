@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ini-qq";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ini-qq"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "BSD3";
       maintainer = "kwangyul.seo@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Quasiquoter for INI";
       description = "This library provides quasiquoters for the ini package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.ini)
           (hsPkgs.template-haskell)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "ini-qq-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.ini-qq)
             (hsPkgs.raw-strings-qq)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

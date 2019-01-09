@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "shadowsocks";
-        version = "1.20180408";
-      };
+      identifier = { name = "shadowsocks"; version = "1.20180408"; };
       license = "MIT";
       copyright = "";
       maintainer = "remotenonsense@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A fast SOCKS5 proxy that help you get through firewalls";
       description = "Shadowsocks implemented in Haskell. Original python version: <https://github.com/clowwindy/shadowsocks>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.network)
           (hsPkgs.optparse-applicative)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "sslocal" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
-          ];
-        };
+            ];
+          };
         "ssserver" = {
           depends = [
             (hsPkgs.base)
@@ -62,9 +53,9 @@
             (hsPkgs.conduit-extra)
             (hsPkgs.network)
             (hsPkgs.streaming-commons)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.cryptohash)
             (hsPkgs.process)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

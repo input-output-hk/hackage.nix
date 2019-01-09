@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      disable-docs = false;
-    };
+    flags = { disable-docs = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "discord-types";
-        version = "0.2.2";
-      };
+      identifier = { name = "discord-types"; version = "0.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "jkoike2013@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Type information for discord-hs";
       description = "Type information for discord-hs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +25,7 @@
           (hsPkgs.vector)
           (hsPkgs.unordered-containers)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

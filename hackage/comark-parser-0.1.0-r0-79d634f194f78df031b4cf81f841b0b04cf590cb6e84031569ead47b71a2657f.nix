@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "comark-parser";
-        version = "0.1.0";
-      };
+      identifier = { name = "comark-parser"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Konstantin Zudov, 2015, 2016, 2017";
       maintainer = "co@zudov.me";
@@ -22,7 +13,7 @@
       synopsis = "Parser for Commonmark (markdown)";
       description = "See <https://github.com/zudov/haskell-comark#readme README>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.control-bool)
           (hsPkgs.containers)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.comark-parser)
             (hsPkgs.comark-testutils)
             (hsPkgs.cmark)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.comark-parser)
             (hsPkgs.deepseq)
             (hsPkgs.file-embed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

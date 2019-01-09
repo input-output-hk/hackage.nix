@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "binding-core";
-        version = "0.2.2";
-      };
+      identifier = { name = "binding-core"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@accursoft.org";
@@ -22,14 +13,9 @@
       synopsis = "Data Binding";
       description = "Bind mutable data and lists to IO objects.\nWrappers for binding to graphical widgets are provided by binding-gtk and binding-wx.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.stm)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.stm) ]; };
       tests = {
         "HTF" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.HTF)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mole";
-        version = "0.0.1";
-      };
+      identifier = { name = "mole"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A glorified string replacement tool";
       description = "A glorified string replacement tool. For a very specific purpose. That\npurpose being to compile and optimize a static website (or a single-page\napplication). Mole inspects source, builds a complete dependency tree,\nminifies and compresses the files, adds fingerprints and writes the result\nto a directory.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mole" = {
@@ -51,9 +42,9 @@
             (hsPkgs.mtl)
             (hsPkgs.kraken)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.stm)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

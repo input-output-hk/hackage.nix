@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "archive";
-        version = "1.2.12";
-      };
+      identifier = { name = "archive"; version = "1.2.12"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "partners@seereason.com";
@@ -22,7 +13,7 @@
       synopsis = "A library and programs for creating hardlinked incremental archives or backups";
       description = "Uses rsync, etc to before backups similar to the old timemachine script and the newer 'Time Machine' OS X tool.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.filepath)
           (hsPkgs.progress)
           (hsPkgs.Extra)
-        ];
-      };
+          ];
+        };
       exes = { "archive" = {}; };
-    };
-  }
+      };
+    }

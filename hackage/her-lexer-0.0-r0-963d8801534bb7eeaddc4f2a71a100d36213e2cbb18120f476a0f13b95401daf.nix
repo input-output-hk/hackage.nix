@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "her-lexer";
-        version = "0.0";
-      };
+      identifier = { name = "her-lexer"; version = "0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Timothy Hobbs<timothyhobbs@seznam.cz>";
@@ -22,13 +13,6 @@
       synopsis = "A lexer for Haskell source code.";
       description = "This is a simple lexer which converts Haskell source code into tolkins and back to ordinary haskell again.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "definitive-filesystem";
-        version = "1.2";
-      };
+      identifier = { name = "definitive-filesystem"; version = "1.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "marc.coiffier@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library that enable you to interact with the filesystem in a definitive way.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.time)
           (hsPkgs.old-locale)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

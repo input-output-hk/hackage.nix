@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arbor-lru-cache";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "arbor-lru-cache"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "2018 Arbor Networks";
       maintainer = "mayhem@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/arbor/arbor-lru-cache#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.generic-lens)
           (hsPkgs.lens)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
         "arbor-lru-cache-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hw-hspec-hedgehog)
             (hsPkgs.arbor-lru-cache)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

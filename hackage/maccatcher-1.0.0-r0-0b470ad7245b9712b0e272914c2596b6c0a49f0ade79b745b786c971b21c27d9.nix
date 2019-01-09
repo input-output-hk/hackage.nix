@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "maccatcher";
-        version = "1.0.0";
-      };
+      identifier = { name = "maccatcher"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jason.dusek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Obtain the host MAC address on *NIX and Windows.";
       description = "Obtain the host MAC address on *NIX and Windows.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.binary)
           (hsPkgs.process)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       exes = { "maccatcher" = {}; };
-    };
-  }
+      };
+    }

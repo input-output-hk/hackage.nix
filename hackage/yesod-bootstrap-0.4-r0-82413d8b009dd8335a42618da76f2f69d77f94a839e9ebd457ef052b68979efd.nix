@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-bootstrap";
-        version = "0.4";
-      };
+      identifier = { name = "yesod-bootstrap"; version = "0.4"; };
       license = "MIT";
       copyright = "Andrew Martin 2016";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bootstrap widgets for yesod";
       description = "Lots of bootstrap widgets for yesod";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

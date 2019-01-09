@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsaddle";
-        version = "0.5.2.0";
-      };
+      identifier = { name = "jsaddle"; version = "0.5.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Interface for JavaScript that works with GHCJS and GHC";
       description = "This package provides an EDSL for calling JavaScript that\ncan be used both from GHCJS and GHC.  When using GHC\nthe application is run using Warp and WebSockets to\ndrive a small JavaScipt helper.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,11 +23,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ (if compiler.isGhcjs && true
-          then [
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.ghcjs-prim)
-          ]
+          ] ++ (if compiler.isGhcjs && true
+          then [ (hsPkgs.ghcjs-base) (hsPkgs.ghcjs-prim) ]
           else [
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
@@ -52,13 +40,13 @@
             (hsPkgs.wai-websockets)
             (hsPkgs.warp)
             (hsPkgs.websockets)
-          ]);
-      };
+            ]);
+        };
       tests = {
         "test-tool" = {
           depends = [
             (hsPkgs.base)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
             (hsPkgs.doctest)
@@ -73,8 +61,8 @@
             (hsPkgs.wai-websockets)
             (hsPkgs.warp)
             (hsPkgs.websockets)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "refresht";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "refresht"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2015 (c) Hiromi ISHII";
       maintainer = "konn.jinro _at_ gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Environment Monad with automatic resource refreshment";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.data-default)
           (hsPkgs.lens)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.data-default)
             (hsPkgs.lens)
             (hsPkgs.exceptions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

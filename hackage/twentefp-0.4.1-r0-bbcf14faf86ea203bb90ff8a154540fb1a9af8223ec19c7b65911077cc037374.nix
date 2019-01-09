@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "twentefp";
-        version = "0.4.1";
-      };
+      identifier = { name = "twentefp"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "christiaan.baaij@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lab Assignments Environment at Univeriteit Twente";
       description = "Lab Assignments Environment at Univeriteit Twente";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.gloss)
           (hsPkgs.time)
           (hsPkgs.parsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

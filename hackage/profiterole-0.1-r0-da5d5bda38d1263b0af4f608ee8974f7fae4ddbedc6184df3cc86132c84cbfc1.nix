@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "profiterole";
-        version = "0.1";
-      };
+      identifier = { name = "profiterole"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2017";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Restructure GHC profile reports";
       description = "Given a GHC profile output, this tool generates alternative views on the data,\nwhich are typically more concise and may reveal new insights.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "profiterole" = {
@@ -36,8 +27,8 @@
             (hsPkgs.hashable)
             (hsPkgs.scientific)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

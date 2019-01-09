@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "teleport";
-        version = "0.0.0.9";
-      };
+      identifier = { name = "teleport"; version = "0.0.0.9"; };
       license = "MIT";
       copyright = "2010 Siddharth Bhat";
       maintainer = "siddu.druid@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "A tool to quickly switch between directories";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "warp-haskell-exe" = {
           depends = [
@@ -40,16 +29,13 @@
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "warp-haskell-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.warp-haskell)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.warp-haskell) ];
+          };
         };
       };
-    };
-  }
+    }

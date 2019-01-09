@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "users-mysql-haskell";
-        version = "0.5.1.0";
-      };
+      identifier = { name = "users-mysql-haskell"; version = "0.5.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diaz.carrete@facebook.com";
@@ -22,7 +13,7 @@
       synopsis = "A mysql-haskell backend for the users library.";
       description = "A mysql-haskell backend for the users library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.time)
           (hsPkgs.uuid)
           (hsPkgs.io-streams)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

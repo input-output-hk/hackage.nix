@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "authenticate";
-        version = "1.3.2.5";
-      };
+      identifier = { name = "authenticate"; version = "1.3.2.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Authentication methods for Haskell web applications.";
       description = "Focus is on third-party authentication methods, such as OpenID and BrowserID.\n\nNote: Facebook support is now provided by the fb package: <http://hackage.haskell.org/package/fb>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.containers)
           (hsPkgs.unordered-containers)
           (hsPkgs.conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

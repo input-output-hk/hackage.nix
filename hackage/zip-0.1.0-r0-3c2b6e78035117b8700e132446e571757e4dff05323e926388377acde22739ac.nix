@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zip";
-        version = "0.1.0";
-      };
+      identifier = { name = "zip"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov@opmbx.org>";
@@ -22,7 +13,7 @@
       synopsis = "Operations on zip archives";
       description = "Operations on zip archives.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -65,17 +56,13 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.zip)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.zip)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.zip) ];
+          };
         };
       };
-    };
-  }
+    }

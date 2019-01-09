@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "model";
-        version = "0.2";
-      };
+      identifier = { name = "model"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Pasqualino `Titto` Assini";
       maintainer = "tittoassini@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Derive a model of a data type using Generics";
       description = "See the tutorial at: https://github.com/tittoassini/model";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.pretty)
           (hsPkgs.transformers)
           (hsPkgs.ListLike)
-        ];
-      };
+          ];
+        };
       tests = {
         "model-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.pretty)
             (hsPkgs.containers)
             (hsPkgs.model)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

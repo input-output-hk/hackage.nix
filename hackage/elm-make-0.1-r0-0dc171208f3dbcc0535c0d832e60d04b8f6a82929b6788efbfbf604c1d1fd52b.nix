@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "elm-make";
-        version = "0.1";
-      };
+      identifier = { name = "elm-make"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014 Evan Czaplicki";
       maintainer = "info@elm-lang.org";
@@ -22,7 +13,7 @@
       synopsis = "A build tool for Elm projects";
       description = "A nice way to build projects that is aware of both elm-compile and\nelm-package, so it can make the build process very smooth.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "elm-make" = {
@@ -41,8 +32,8 @@
             (hsPkgs.mtl)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

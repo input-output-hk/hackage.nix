@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bloodhound";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "bloodhound"; version = "0.1.0.2"; };
       license = "Apache-2.0";
       copyright = "2014, Chris Allen";
       maintainer = "cma@bitemyapp.com";
@@ -22,7 +13,7 @@
       synopsis = "ElasticSearch client library for Haskell";
       description = "ElasticSearch made awesome for Haskell hackers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.time)
           (hsPkgs.text)
           (hsPkgs.http-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

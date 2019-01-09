@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "bk-tree";
-        version = "0.1.1";
-      };
+      identifier = { name = "bk-tree"; version = "0.1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Francesco Mazzoli (f@mazzo.li)";
@@ -22,13 +13,8 @@
       synopsis = "BK-tree implementation";
       description = "BK-tree implementation.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

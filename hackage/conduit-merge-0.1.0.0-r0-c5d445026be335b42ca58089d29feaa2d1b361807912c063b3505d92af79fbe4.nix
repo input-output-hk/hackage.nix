@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conduit-merge";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "conduit-merge"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Yuriy Syrovetskiy";
       maintainer = "cblp@cblp.su";
@@ -22,14 +13,10 @@
       synopsis = "Merge multiple sorted conduits";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.conduit)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.conduit) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

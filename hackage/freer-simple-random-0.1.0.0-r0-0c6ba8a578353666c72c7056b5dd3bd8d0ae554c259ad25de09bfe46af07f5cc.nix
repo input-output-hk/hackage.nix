@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "freer-simple-random";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "freer-simple-random"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Ben Weitzman";
       maintainer = "ben@costarastrology.com";
@@ -22,7 +13,7 @@
       synopsis = "Random number generators using freer-simple";
       description = "Please see the README on Gitlab at <https://gitlab.com/costar-astrology/freer-simple-contrib/tree/master/freer-simple-random>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.freer-simple)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       tests = {
         "freer-simple-random-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.freer-simple-random)
             (hsPkgs.hspec)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "amazonka-sts";
-        version = "0.2.2";
-      };
+      identifier = { name = "amazonka-sts"; version = "0.2.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2013-2014 Brendan Hay";
       maintainer = "Brendan Hay <brendan.g.hay@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Amazon Security Token Service SDK.";
       description = "The AWS Security Token Service (STS) is a web service that enables you to\nrequest temporary, limited-privilege credentials for AWS Identity and Access\nManagement (IAM) users or for users that you authenticate (federated users).\n\n/See:/ <http://docs.aws.amazon.com/STS/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.amazonka-core)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.amazonka-core) (hsPkgs.base) ]; };
+      };
+    }

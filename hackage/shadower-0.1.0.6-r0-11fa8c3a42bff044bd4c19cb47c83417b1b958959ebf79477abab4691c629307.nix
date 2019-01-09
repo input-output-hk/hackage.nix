@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "shadower";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "shadower"; version = "0.1.0.6"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "karun012@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An automated way to run doctests in files that are changing";
       description = "Shadower watches folders with Haskell sources, and runs doctests in files that are modified";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "shadower" = {
@@ -37,9 +28,9 @@
             (hsPkgs.doctest)
             (hsPkgs.safe)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.doctest)
             (hsPkgs.safe)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

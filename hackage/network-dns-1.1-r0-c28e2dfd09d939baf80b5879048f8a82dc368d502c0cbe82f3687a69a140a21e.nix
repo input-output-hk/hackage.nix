@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "network-dns";
-        version = "1.1";
-      };
+      identifier = { name = "network-dns"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "2013, 2017 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";
       maintainer = "Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Domain Name System data structures";
       description = "This package provides Domain Name System data structures and\n(de)serialization routines.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.data-textual)
           (hsPkgs.parsers)
           (hsPkgs.network-ip)
-        ];
-      };
+          ];
+        };
       exes = {
         "hs-network-dns-examples-resolver" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.data-serializer)
             (hsPkgs.network-ip)
             (hsPkgs.network-dns)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.posix-socket);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.posix-socket);
+          };
         };
       };
-    };
-  }
+    }

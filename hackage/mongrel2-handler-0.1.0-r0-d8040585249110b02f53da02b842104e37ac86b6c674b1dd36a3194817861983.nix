@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0.1";
-      identifier = {
-        name = "mongrel2-handler";
-        version = "0.1.0";
-      };
+      identifier = { name = "mongrel2-handler"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Bardur Arantsson <bardur@scientician.net>";
@@ -22,7 +13,7 @@
       synopsis = "Mongrel2 Handler Library";
       description = "Mongrel2 Handler Library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.http-types)
           (hsPkgs.text)
           (hsPkgs.zeromq-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

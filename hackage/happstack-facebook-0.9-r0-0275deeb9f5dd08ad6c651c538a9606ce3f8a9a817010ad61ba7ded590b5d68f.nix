@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      base4 = true;
-      formlets = false;
-    };
+    flags = { base4 = true; formlets = false; };
     package = {
       specVersion = "1.4.0.0";
-      identifier = {
-        name = "happstack-facebook";
-        version = "0.9";
-      };
+      identifier = { name = "happstack-facebook"; version = "0.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "partners@seereason.com";
@@ -25,7 +13,7 @@
       synopsis = "A package for building Facebook applications using Happstack";
       description = "A package for building Facebook applications using Happstack";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -54,15 +42,15 @@
           (hsPkgs.json)
           (hsPkgs.URLT)
           (hsPkgs.filepath)
-        ] ++ pkgs.lib.optionals (flags.base4) [
+          ] ++ (pkgs.lib).optionals (flags.base4) [
           (hsPkgs.base)
           (hsPkgs.syb)
-        ]) ++ pkgs.lib.optionals (flags.formlets) [
+          ]) ++ (pkgs.lib).optionals (flags.formlets) [
           (hsPkgs.happstack-extra)
           (hsPkgs.formlets)
           (hsPkgs.formlets-hsp)
-        ];
-      };
+          ];
+        };
       exes = { "demo" = {}; };
-    };
-  }
+      };
+    }

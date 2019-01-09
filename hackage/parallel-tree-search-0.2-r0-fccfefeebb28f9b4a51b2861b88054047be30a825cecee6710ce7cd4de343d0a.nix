@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "parallel-tree-search";
-        version = "0.2";
-      };
+      identifier = { name = "parallel-tree-search"; version = "0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "sebf@informatik.uni-kiel.de";
@@ -22,14 +13,10 @@
       synopsis = "Parallel Tree Search";
       description = "This Haskell library provides an implementation of parallel search\nbased on the search tree provided by the package tree-monad.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.tree-monad)
-          (hsPkgs.containers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.tree-monad) (hsPkgs.containers) ];
+        };
       };
-    };
-  }
+    }

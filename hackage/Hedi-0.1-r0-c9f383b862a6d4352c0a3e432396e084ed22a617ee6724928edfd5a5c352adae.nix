@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Hedi";
-        version = "0.1";
-      };
+      identifier = { name = "Hedi"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "paolo.veronelli@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Line oriented editor";
       description = "Haskell line editor. Cloned from ed manual.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.process)
           (hsPkgs.pretty)
-        ];
-      };
+          ];
+        };
       exes = {
         "hedi" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.process)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "json2yaml";
-        version = "0.2.2";
-      };
+      identifier = { name = "json2yaml"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utility to convert a file from JSON to YAML format.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "json2yaml" = {
@@ -32,8 +23,8 @@
             (hsPkgs.data-object-json)
             (hsPkgs.bytestring)
             (hsPkgs.attempt)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

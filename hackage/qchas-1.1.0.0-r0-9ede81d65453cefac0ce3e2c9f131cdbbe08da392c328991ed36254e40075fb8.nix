@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "qchas";
-        version = "1.1.0.0";
-      };
+      identifier = { name = "qchas"; version = "1.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Mihai Sebastian Ardelean";
       maintainer = "ardeleanasm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for implementing Quantum Algorithms";
       description = "A library useful for implementing Quantum Algorithms. It contains definitions of Quantum Gates, Qubits.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,17 +21,13 @@
           (hsPkgs.hmatrix)
           (hsPkgs.linear)
           (hsPkgs.random)
-        ];
-      };
-      exes = {
-        "qchas-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hmatrix)
-            (hsPkgs.qchas)
           ];
         };
-      };
+      exes = {
+        "qchas-exe" = {
+          depends = [ (hsPkgs.base) (hsPkgs.hmatrix) (hsPkgs.qchas) ];
+          };
+        };
       tests = {
         "qchas-test" = {
           depends = [
@@ -50,8 +37,8 @@
             (hsPkgs.hmatrix)
             (hsPkgs.linear)
             (hsPkgs.qchas)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

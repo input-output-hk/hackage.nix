@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hszephyr";
-        version = "0.1";
-      };
+      identifier = { name = "hszephyr"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Nelson Elhage <nelhage@nelhage.com>";
@@ -22,7 +13,7 @@
       synopsis = "Simple libzephyr bindings";
       description = "Network.Zephyr provides haskell bindings to MIT's \"Zephyr\" instant\nmessaging / notification service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,11 +21,8 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
           (hsPkgs.time)
-        ];
-        libs = [
-          (pkgs."zephyr")
-          (pkgs."com_err")
-        ];
+          ];
+        libs = [ (pkgs."zephyr") (pkgs."com_err") ];
+        };
       };
-    };
-  }
+    }

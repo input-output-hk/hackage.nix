@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scotty-fay";
-        version = "0.0.2";
-      };
+      identifier = { name = "scotty-fay"; version = "0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Harry Garrood <harry@garrood.me>";
@@ -22,7 +13,7 @@
       synopsis = "Fay integration for Scotty.";
       description = "Fay integration for Scotty. For more information, please see <https://github.com/hdgarrood/scotty-fay>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.text)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       tests = {
         "scotty-fay-tests" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.transformers)
             (hsPkgs.http-types)
             (hsPkgs.scotty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

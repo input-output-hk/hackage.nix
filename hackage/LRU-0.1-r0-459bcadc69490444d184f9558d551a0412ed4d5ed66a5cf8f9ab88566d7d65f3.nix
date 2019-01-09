@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "LRU";
-        version = "0.1";
-      };
+      identifier = { name = "LRU"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,13 +13,8 @@
       synopsis = "Implements an LRU data structure";
       description = "";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.QuickCheck)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.QuickCheck) ]; };
+      };
+    }

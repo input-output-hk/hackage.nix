@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "tic-tac-toe";
-        version = "0.1";
-      };
+      identifier = { name = "tic-tac-toe"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "asenov79@students.rowan.edu";
@@ -22,7 +13,7 @@
       synopsis = "Useful if reading \"Why FP matters\" by John Hughes";
       description = "An attempt to implement the minimax algorithm using tic-tac-toe";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tic-tac-toe" = {
@@ -31,8 +22,8 @@
             (hsPkgs.gtk)
             (hsPkgs.glade)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

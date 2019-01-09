@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      withquickcheck = false;
-    };
+    flags = { withquickcheck = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "combinat";
-        version = "0.2.8.0";
-      };
+      identifier = { name = "combinat"; version = "0.2.8.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2015 Balazs Komuves";
       maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
@@ -24,7 +13,7 @@
       synopsis = "Generate and manipulate various combinatorial objects.";
       description = "A collection of functions to generate, count, manipulate\nand visualize all kinds of combinatorial objects like\npartitions, compositions, trees, permutations, braids,\nYoung tableaux, and so on.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.random)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (flags.withquickcheck) (hsPkgs.QuickCheck);
+          ] ++ (pkgs.lib).optional (flags.withquickcheck) (hsPkgs.QuickCheck);
+        };
       };
-    };
-  }
+    }

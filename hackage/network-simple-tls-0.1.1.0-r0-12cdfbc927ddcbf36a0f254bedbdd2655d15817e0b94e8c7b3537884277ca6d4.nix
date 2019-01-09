@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-simple-tls";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "network-simple-tls"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Renzo Carbonara 2013";
       maintainer = "renzocarbonaraλgmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple interface to TLS secured network sockets.";
       description = "Simple interface to TLS secured network sockets.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.network-simple)
           (hsPkgs.tls)
           (hsPkgs.tls-extra)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

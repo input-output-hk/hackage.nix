@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsnsq";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "hsnsq"; version = "0.1.2.0"; };
       license = "Apache-2.0";
       copyright = "(c) Paul Berens";
       maintainer = "berens.paul@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell NSQ client.";
       description = "Currently a primitive NSQ client, it implements the very basics of an NSQ client for communicating with single NSQ servers. For example usage refer to https://github.com/gamelost/nsq-benchmarks/haskell/benchmark.hs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.async)
           (hsPkgs.hslogger)
           (hsPkgs.hostname)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

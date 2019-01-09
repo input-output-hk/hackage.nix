@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "preview";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "preview"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2017 factis research GmbH";
       maintainer = "kieran.meinhardt@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The method of previewing data (instead of wholly show-ing it)";
       description = "The method of previewing data (instead of wholly show-ing it)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.strict-data)
           (hsPkgs.text)
           (hsPkgs.util-plus)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

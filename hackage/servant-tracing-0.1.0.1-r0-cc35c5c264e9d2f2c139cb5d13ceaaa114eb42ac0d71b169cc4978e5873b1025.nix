@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-tracing";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "servant-tracing"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2018 Chris Coffey";
       maintainer = "chris@foldl.io";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/ChrisCoffey/haskell-opentracing-light#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.http-api-data)
           (hsPkgs.aeson)
           (hsPkgs.http-client)
-        ];
-      };
+          ];
+        };
       exes = {
         "servant-tracing-example" = {
           depends = [
@@ -65,9 +56,9 @@
             (hsPkgs.warp)
             (hsPkgs.async)
             (hsPkgs.http-client)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "servant-tracing-test" = {
           depends = [
@@ -87,8 +78,8 @@
             (hsPkgs.aeson)
             (hsPkgs.containers)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

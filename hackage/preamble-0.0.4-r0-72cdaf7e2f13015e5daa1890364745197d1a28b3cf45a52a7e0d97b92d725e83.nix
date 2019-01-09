@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "preamble";
-        version = "0.0.4";
-      };
+      identifier = { name = "preamble"; version = "0.0.4"; };
       license = "MIT";
       copyright = "Copyright (C) 2016 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Yet another prelude.";
       description = "Yet another prelude, built on BasicPrelude.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,16 +34,12 @@
           (hsPkgs.time)
           (hsPkgs.transformers-base)
           (hsPkgs.unordered-containers)
-        ];
-      };
-      exes = {
-        "shake-preamble" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.basic-prelude)
-            (hsPkgs.shake)
           ];
         };
+      exes = {
+        "shake-preamble" = {
+          depends = [ (hsPkgs.base) (hsPkgs.basic-prelude) (hsPkgs.shake) ];
+          };
+        };
       };
-    };
-  }
+    }

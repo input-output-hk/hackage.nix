@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lmdb-simple";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "lmdb-simple"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2017 Robert Leslie";
       maintainer = "rob@mars.org";
@@ -22,7 +13,7 @@
       synopsis = "Simple API for LMDB";
       description = "This package provides a simple API for using the\nLightning Memory-mapped Database (LMDB).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,32 +21,23 @@
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.lmdb)
-        ];
-      };
-      tests = {
-        "sample" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.lmdb-simple)
           ];
         };
+      tests = {
+        "sample" = { depends = [ (hsPkgs.base) (hsPkgs.lmdb-simple) ]; };
         "hspec" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.lmdb-simple)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "criterion" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.lmdb-simple)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.lmdb-simple) ];
+          };
         };
       };
-    };
-  }
+    }

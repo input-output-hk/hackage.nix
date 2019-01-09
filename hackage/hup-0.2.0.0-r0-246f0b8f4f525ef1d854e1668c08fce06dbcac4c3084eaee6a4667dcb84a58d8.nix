@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enablewebtests = false;
-      patchhelpmessage = false;
-    };
+    flags = { enablewebtests = false; patchhelpmessage = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hup";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hup"; version = "0.2.0.0"; };
       license = "BSD-2-Clause";
       copyright = "phlummox 2016, others where indicated";
       maintainer = "phlummox2@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Upload packages or documentation to a hackage server";
       description = "Upload packages or documentation to a hackage server\n\nSee README for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +28,8 @@
           (hsPkgs.split)
           (hsPkgs.tar)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "hup" = {
           depends = [
@@ -54,9 +42,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.hup)
-          ] ++ [ (hsPkgs.cmdargs) ];
+            ] ++ [ (hsPkgs.cmdargs) ];
+          };
         };
-      };
       tests = {
         "hup-spec" = {
           depends = [
@@ -74,20 +62,20 @@
             (hsPkgs.transformers)
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
-          ] ++ pkgs.lib.optionals (flags.enablewebtests) [
+            ] ++ (pkgs.lib).optionals (flags.enablewebtests) [
             (hsPkgs.network)
             (hsPkgs.vector)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "hup-doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hup)
             (hsPkgs.doctest)
             (hsPkgs.Glob)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

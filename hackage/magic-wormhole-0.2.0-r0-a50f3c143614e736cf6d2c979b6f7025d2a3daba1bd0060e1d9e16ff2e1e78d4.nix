@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "magic-wormhole";
-        version = "0.2.0";
-      };
+      identifier = { name = "magic-wormhole"; version = "0.2.0"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Least Authority TFA GmbH";
@@ -22,7 +13,7 @@
       synopsis = "Interact with Magic Wormhole";
       description = "Magic Wormhole is a scheme to get things from one computer to another,\nsafely.\n\nThis is a library for client-side interactions with a Magic Wormhole server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.stm)
           (hsPkgs.unordered-containers)
           (hsPkgs.websockets)
-        ];
-      };
+          ];
+        };
       exes = {
         "hocus-pocus" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.protolude)
             (hsPkgs.spake2)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tasty" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hedgehog)
             (hsPkgs.tasty-hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

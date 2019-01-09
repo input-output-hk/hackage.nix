@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rss-conduit";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "rss-conduit"; version = "0.2.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral att mailoo dott org";
@@ -22,7 +13,7 @@
       synopsis = "Streaming parser/renderer for the RSS 2.0 standard.";
       description = "Cf README file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-conduit-parse)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "Tests" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-conduit-parse)
             (hsPkgs.xml-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

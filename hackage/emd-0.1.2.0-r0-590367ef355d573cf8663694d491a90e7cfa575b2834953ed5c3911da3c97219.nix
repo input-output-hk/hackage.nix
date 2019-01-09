@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "emd";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "emd"; version = "0.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Justin Le 2018";
       maintainer = "justin@jle.im";
@@ -22,7 +13,7 @@
       synopsis = "Empirical Mode Decomposition and Hilbert-Huang Transform";
       description = "Please see the README on GitHub at <https://github.com/mstksg/emd#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.typelits-witnesses)
           (hsPkgs.vector)
           (hsPkgs.vector-sized)
-        ];
-      };
+          ];
+        };
       tests = {
         "emd-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.emd)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

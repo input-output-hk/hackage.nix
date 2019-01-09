@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      tracedisintegrate = false;
-    };
+    flags = { tracedisintegrate = false; };
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "hakaru";
-        version = "0.6.0";
-      };
+      identifier = { name = "hakaru"; version = "0.6.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ppaml@indiana.edu";
@@ -24,7 +13,7 @@
       synopsis = "A probabilistic programming language";
       description = "Hakaru is a simply-typed probabilistic programming language, designed\nfor easy specification of probabilistic models, and inference algorithms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +43,8 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.syb)
           (hsPkgs.exact-combinatorics)
-        ];
-      };
+          ];
+        };
       exes = {
         "hakaru" = {
           depends = [
@@ -65,8 +54,8 @@
             (hsPkgs.pretty)
             (hsPkgs.vector)
             (hsPkgs.optparse-applicative)
-          ];
-        };
+            ];
+          };
         "compile" = {
           depends = [
             (hsPkgs.base)
@@ -75,8 +64,8 @@
             (hsPkgs.pretty)
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
-          ];
-        };
+            ];
+          };
         "summary" = {
           depends = [
             (hsPkgs.base)
@@ -85,8 +74,8 @@
             (hsPkgs.pretty)
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
-          ];
-        };
+            ];
+          };
         "hk-maple" = {
           depends = [
             (hsPkgs.base)
@@ -95,16 +84,16 @@
             (hsPkgs.pretty)
             (hsPkgs.optparse-applicative)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "density" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.mwc-random)
             (hsPkgs.text)
             (hsPkgs.pretty)
-          ];
-        };
+            ];
+          };
         "disintegrate" = {
           depends = [
             (hsPkgs.base)
@@ -112,30 +101,25 @@
             (hsPkgs.text)
             (hsPkgs.pretty)
             (hsPkgs.optparse-applicative)
-          ];
-        };
+            ];
+          };
         "pretty" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.pretty)
             (hsPkgs.optparse-applicative)
-          ];
-        };
+            ];
+          };
         "prettyinternal" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.pretty)
             (hsPkgs.optparse-applicative)
-          ];
-        };
-        "momiji" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-          ];
-        };
+            ];
+          };
+        "momiji" = { depends = [ (hsPkgs.base) (hsPkgs.text) ]; };
         "normalize" = {
           depends = [
             (hsPkgs.base)
@@ -143,8 +127,8 @@
             (hsPkgs.text)
             (hsPkgs.mtl)
             (hsPkgs.pretty)
-          ];
-        };
+            ];
+          };
         "hkc" = {
           depends = [
             (hsPkgs.base)
@@ -155,8 +139,8 @@
             (hsPkgs.pretty)
             (hsPkgs.process)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "mh" = {
           depends = [
             (hsPkgs.base)
@@ -164,9 +148,9 @@
             (hsPkgs.text)
             (hsPkgs.mtl)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "system-testsuite" = {
           depends = [
@@ -196,8 +180,8 @@
             (hsPkgs.syb)
             (hsPkgs.filepath)
             (hsPkgs.exact-combinatorics)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

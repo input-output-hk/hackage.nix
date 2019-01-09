@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "gtk-helpers";
-        version = "0.0.7";
-      };
+      identifier = { name = "gtk-helpers"; version = "0.0.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.es";
@@ -22,7 +13,7 @@
       synopsis = "A collection of auxiliary operations and widgets related to Gtk";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.glib)
           (hsPkgs.mtl)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

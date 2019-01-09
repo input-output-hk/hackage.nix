@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "forml";
-        version = "0.2";
-      };
+      identifier = { name = "forml"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "steinlink@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A statically typed, functional programming language";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "forml" = {
@@ -51,8 +42,8 @@
             (hsPkgs.cereal)
             (hsPkgs.zlib)
             (hsPkgs.hslogger)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

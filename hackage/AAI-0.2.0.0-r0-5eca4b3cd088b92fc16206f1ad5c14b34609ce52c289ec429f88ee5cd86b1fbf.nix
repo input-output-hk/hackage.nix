@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "AAI";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "AAI"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "(c) 2015 Nils 'bash0r' Jonsson";
       maintainer = "aka.bash0r@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Abstract Application Interface.";
       description = "The Abstract Application Interface is used to define a\ngeneric interface for handling command line parameter\nto command mapping. It may route a command by giving a\nsimple parameter list and a list of supported commands.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

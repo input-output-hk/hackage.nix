@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "rtcm";
-        version = "0.2.13";
-      };
+      identifier = { name = "rtcm"; version = "0.2.13"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015-2017 Swift Navigation, Inc.";
       maintainer = "Swift Navigation <dev@swift-nav.com>";
@@ -22,7 +13,7 @@
       synopsis = "RTCM Library.";
       description = "Haskell bindings for Radio Technical Commission For Maritime\nServices (RTCM) standard, supporting GPS, GLONASS, Galileo and other\nsatellite-based position systems operation with one reference\nstation or a network.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.word24)
-        ];
-      };
+          ];
+        };
       exes = {
         "rtcm32json" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.rtcm)
-          ];
-        };
+            ];
+          };
         "json2rtcm3" = {
           depends = [
             (hsPkgs.aeson)
@@ -63,9 +54,9 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.rtcm)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.word24)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

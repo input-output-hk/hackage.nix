@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "say";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "say"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 FP Complete";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "say-test" = {
           depends = [
@@ -41,9 +32,9 @@
             (hsPkgs.say)
             (hsPkgs.temporary)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "say-bench" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.say)
             (hsPkgs.temporary)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

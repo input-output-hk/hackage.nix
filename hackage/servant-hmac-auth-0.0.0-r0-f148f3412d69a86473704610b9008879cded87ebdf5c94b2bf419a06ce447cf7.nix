@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "servant-hmac-auth";
-        version = "0.0.0";
-      };
+      identifier = { name = "servant-hmac-auth"; version = "0.0.0"; };
       license = "MIT";
       copyright = "2018 Holmusk";
       maintainer = "tech@holmusk.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant authentication with HMAC";
       description = "Servant authentication with HMAC";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.servant-server)
           (hsPkgs.transformers)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       exes = {
         "readme" = {
           depends = [
@@ -56,19 +47,14 @@
             (hsPkgs.servant-client)
             (hsPkgs.servant-server)
             (hsPkgs.warp)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          };
         };
-      };
       tests = {
         "servant-hmac-auth-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.servant-hmac-auth)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.servant-hmac-auth) ];
+          };
         };
       };
-    };
-  }
+    }

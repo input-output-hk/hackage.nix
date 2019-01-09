@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "JsonGrammar";
-        version = "0.3.2";
-      };
+      identifier = { name = "JsonGrammar"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "Some Rights Reserved (CC) 2010-2011 Martijn van Steenbergen";
       maintainer = "martijn@van.steenbergen.nl";
@@ -22,7 +13,7 @@
       synopsis = "Combinators for bidirectional JSON parsing";
       description = "Combinators for bidirectional JSON parsing";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

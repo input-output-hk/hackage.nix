@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "libpq";
-        version = "0.1";
-      };
+      identifier = { name = "libpq"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "grant@tnarg.com";
@@ -22,18 +13,12 @@
       synopsis = "libpq binding for Haskell";
       description = "This binding uses the libpq asynchronous API in\ncombination with threadWaitRead and\nthreadWaitWrite to take advantage of the I/O\nmanager.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.unix)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.unix) ];
         libs = [ (pkgs."pq") ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

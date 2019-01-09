@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "http-pony-transformer-startline";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nfjinjing@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "transform HTTP startlines to tuples";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.http-types)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

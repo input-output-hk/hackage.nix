@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "int-cast";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "int-cast"; version = "0.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "hvr@gnu.org";
@@ -22,13 +13,13 @@
       synopsis = "Checked conversions between integral types";
       description = "Provides statically or dynamically checked conversions between integral types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.nats);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats);
+        };
       tests = {
         "int-cast-test" = {
           depends = [
@@ -37,8 +28,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.nats);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats);
+          };
         };
       };
-    };
-  }
+    }

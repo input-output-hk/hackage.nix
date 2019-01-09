@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "powerqueue-sqs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "powerqueue-sqs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Alexander Thiemann <mail@athiemann.net>";
       maintainer = "mail@athiemann.net";
@@ -22,7 +13,7 @@
       synopsis = "A Amazon SQS backend for powerqueue";
       description = "A Amazon SQS backend for powerqueue";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.aws-simple)
           (hsPkgs.text)
           (hsPkgs.timespan)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

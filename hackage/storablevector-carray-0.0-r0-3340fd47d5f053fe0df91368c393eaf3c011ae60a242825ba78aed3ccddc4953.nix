@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "storablevector-carray";
-        version = "0.0";
-      };
+      identifier = { name = "storablevector-carray"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <storablevector@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Conversion between storablevector and carray";
       description = "Conversion from and to strict storable vectors and c-arrays.\nThis allows you to apply Fast Fourier Transform from the @fft@ package\nto storablevectors.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.carray)
           (hsPkgs.utility-ht)
           (hsPkgs.base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

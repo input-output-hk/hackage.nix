@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fay-builder";
-        version = "0.2.0.3";
-      };
+      identifier = { name = "fay-builder"; version = "0.2.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2013 Silk B.V.";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Compile Fay code on cabal install, and ad-hoc recompile during development";
       description = "Compile Fay code on cabal install, and ad-hoc recompile during development";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.safe)
           (hsPkgs.split)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      werror = false;
-      test-hackage = false;
-      test-strictness = false;
-    };
+    flags = { werror = false; test-hackage = false; test-strictness = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stylish-cabal";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "stylish-cabal"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@jude.xyz";
@@ -26,7 +13,7 @@
       synopsis = "Format Cabal files";
       description = "A tool for nicely formatting your Cabal file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +22,8 @@
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.deepseq)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       exes = {
         "stylish-cabal" = {
           depends = [
@@ -44,16 +31,11 @@
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.optparse-applicative)
             (hsPkgs.stylish-cabal)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
-        };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         "strictness" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +48,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-expectations-pretty-diff)
             (hsPkgs.stylish-cabal)
-          ];
-        };
+            ];
+          };
         "roundtrip" = {
           depends = [
             (hsPkgs.base)
@@ -78,8 +60,8 @@
             (hsPkgs.hspec-core)
             (hsPkgs.hspec-expectations-pretty-diff)
             (hsPkgs.stylish-cabal)
-          ];
-        };
+            ];
+          };
         "roundtrip-hackage" = {
           depends = [
             (hsPkgs.base)
@@ -96,8 +78,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.vector)
             (hsPkgs.wreq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

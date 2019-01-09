@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gridbox";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "gridbox"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "firas@zaidan.de";
@@ -22,19 +13,13 @@
       synopsis = "A grid box model";
       description = "Spans a 2D grid of n rows and m boxes with equal size.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.gridbox)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.gridbox) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

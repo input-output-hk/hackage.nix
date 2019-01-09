@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "debian";
-        version = "3.85.2";
-      };
+      identifier = { name = "debian"; version = "3.85.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering some basic data types defined by\nthe Debian policy manual - version numbers, control file syntax, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,13 +45,10 @@
           (hsPkgs.Unixutils)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-uri)
-          ]
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network) (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       exes = {
         "fakechanges" = {
           depends = [
@@ -68,8 +56,8 @@
             (hsPkgs.debian)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "debian-report" = {
           depends = [
             (hsPkgs.base)
@@ -77,15 +65,11 @@
             (hsPkgs.HaXml)
             (hsPkgs.unix)
             (hsPkgs.pretty)
-          ];
-        };
+            ];
+          };
         "apt-get-build-depends" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.debian)
-            (hsPkgs.process)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.debian) (hsPkgs.process) ];
+          };
         "debian-tests" = {
           depends = [
             (hsPkgs.ansi-wl-pprint)
@@ -108,13 +92,10 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.utf8-string)
-          ] ++ (if flags.network-uri
-            then [
-              (hsPkgs.network)
-              (hsPkgs.network-uri)
-            ]
+            ] ++ (if flags.network-uri
+            then [ (hsPkgs.network) (hsPkgs.network-uri) ]
             else [ (hsPkgs.network) ]);
+          };
         };
       };
-    };
-  }
+    }

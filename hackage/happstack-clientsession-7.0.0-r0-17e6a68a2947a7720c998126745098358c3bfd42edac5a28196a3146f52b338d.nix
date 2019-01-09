@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-clientsession";
-        version = "7.0.0";
-      };
+      identifier = { name = "happstack-clientsession"; version = "7.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Happstack team <happs@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "client-side session data";
       description = "uses the clientsession library to store session data in an HTTP cookie";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.happstack-server)
           (hsPkgs.mtl)
           (hsPkgs.safecopy)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

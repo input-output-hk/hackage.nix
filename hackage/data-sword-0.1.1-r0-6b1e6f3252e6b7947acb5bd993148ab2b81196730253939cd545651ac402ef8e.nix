@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "data-sword";
-        version = "0.1.1";
-      };
+      identifier = { name = "data-sword"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";
       maintainer = "Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Shorter binary words";
       description = "This package provides Template Haskell utilities for declaring short binary\nword data types built on top of longer binary word data types. Signed and\nunsigned 2, 4, 7, 24, and 48-bit types are predefined.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.hashable)
           (hsPkgs.data-bword)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.data-sword)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

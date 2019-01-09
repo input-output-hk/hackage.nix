@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskoin-store";
-        version = "0.1.1";
-      };
+      identifier = { name = "haskoin-store"; version = "0.1.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "xenog@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Storage and index for Bitcoin and Bitcoin Cash";
       description = "Store blocks, transactions, and balances for Bitcoin or Bitcoin Cash, and make that information via REST API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,8 +43,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unliftio)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskoin-store" = {
           depends = [
@@ -80,9 +71,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unliftio)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "haskoin-store-test" = {
           depends = [
@@ -109,8 +100,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unliftio)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

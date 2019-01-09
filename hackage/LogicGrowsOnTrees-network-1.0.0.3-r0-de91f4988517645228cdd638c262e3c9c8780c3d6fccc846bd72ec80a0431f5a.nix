@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      warnings = false;
-      examples = false;
-    };
+    flags = { warnings = false; examples = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "LogicGrowsOnTrees-network";
-        version = "1.0.0.3";
-      };
+      identifier = { name = "LogicGrowsOnTrees-network"; version = "1.0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Gregory Crosswhite <gcrosswhite@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "an adapter for LogicGrowsOnTrees that uses multiple processes running in a network";
       description = "This package provides a adapter for the LogicGrowsOnTrees package that uses\nmultiple processes running in a network for parallelism; see the module\ndocumentation for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +31,8 @@
           (hsPkgs.network)
           (hsPkgs.pretty)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "count-all-nqueens-solutions" = {
           depends = [
@@ -52,8 +40,8 @@
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.base)
             (hsPkgs.cmdtheline)
-          ];
-        };
+            ];
+          };
         "count-all-trivial-tree-leaves" = {
           depends = [
             (hsPkgs.LogicGrowsOnTrees-network)
@@ -61,9 +49,9 @@
             (hsPkgs.base)
             (hsPkgs.cereal)
             (hsPkgs.cmdtheline)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -79,8 +67,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

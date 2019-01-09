@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "broadcast-chan-tests";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "broadcast-chan-tests"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2014-2018 Merijn Verstraaten";
       maintainer = "Merijn Verstraaten <merijn@inconsistent.nl>";
@@ -22,7 +13,7 @@
       synopsis = "Helpers for generating tests for broadcast-chan";
       description = "Provides helpers for implementing the streaming/concurrency tests used by\nbroadcast-chan, broadcast-chan-conduit, and broadcast-chan-pipes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -41,8 +32,8 @@
           (hsPkgs.tasty-travis)
           (hsPkgs.temporary)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.bifunctors)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.transformers);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.bifunctors)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.transformers);
+        };
       tests = {
         "basic" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.foldl)
             (hsPkgs.monad-loops)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "basic-unthreaded" = {
           depends = [
             (hsPkgs.base)
@@ -62,16 +53,16 @@
             (hsPkgs.foldl)
             (hsPkgs.monad-loops)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "parallel-io" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.broadcast-chan)
             (hsPkgs.broadcast-chan-tests)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

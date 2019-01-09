@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bitx-bitcoin";
-        version = "0.12.0.0";
-      };
+      identifier = { name = "bitx-bitcoin"; version = "0.12.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tebello Thejane <zyxoas+hackage@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell library for working with the BitX bitcoin exchange.";
       description = "Haskell bindings to the Luno (formerly BitX) REST API, as described here:\n<https://www.luno.com/en/api>.\n\nNote that since this library interfaces directly with a financial API, great care\nmust be taken in its use. In particular, the author cannot be held accountable for any\nfinancial losses as a result of programming error, whether that error is in your code,\nthe code of the author of this library, or Luno's code. This is just common sense.\n\nIf you need to make sure that nothing funny happens in the code, apart from reading\nthe source yourself, you should also perform a few test transactions with very small\ndenominations, as I will strive to do every time before releasing a new version.\n\nFor a very small usage example, see \"Network.Bitcoin.BitX.Public\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.microlens-th)
           (hsPkgs.http-types)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -57,14 +48,9 @@
             (hsPkgs.directory)
             (hsPkgs.text)
             (hsPkgs.safe)
-          ];
-        };
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
+            ];
+          };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "example" = {
           depends = [
             (hsPkgs.base)
@@ -73,8 +59,8 @@
             (hsPkgs.http-types)
             (hsPkgs.http-client)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "arbb-vm";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "arbb-vm"; version = "0.1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011 Intel Corporation";
       maintainer = "Joel Svensson<svensson.bj@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "FFI binding to the Intel Array Building Blocks (ArBB) virtual machine.";
       description = "DESCRIPTION GOES HERE.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.directory)
           (hsPkgs.containers)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

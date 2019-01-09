@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "growler";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "growler"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ian@iankduncan.com";
@@ -22,7 +13,7 @@
       synopsis = "A revised version of the scotty library that attempts to be simpler and more performant.";
       description = "Growler provides a very similar interface to scotty, with slight tweaks for performance and a few feature tradeoffs. Growler provides the ability to abort actions (handlers) with arbitrary responses, not just in the event of redirects or raising errors. Growler avoids coercing everything into lazy Text values and reading the whole request body into memory. It also eliminates the ability to abort the handler and have another handler handle the request instead (Scotty's 'next' function).\n\nAPI is still in flux, so use at your own risk. Pull requests / issues are welcome.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.pipes)
           (hsPkgs.pipes-aeson)
           (hsPkgs.pipes-wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

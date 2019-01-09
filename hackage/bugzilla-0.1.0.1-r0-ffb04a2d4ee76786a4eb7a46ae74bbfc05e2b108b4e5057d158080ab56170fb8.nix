@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { builddemo = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bugzilla";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "bugzilla"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2014 Seth Fowler";
       maintainer = "mark.seth.fowler@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell interface to the Bugzilla native REST API";
       description = "This package is designed to provide an easy-to-use, typesafe\ninterface to querying Bugzilla from Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "bugzilla" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.containers)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

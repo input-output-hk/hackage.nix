@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-raml-bin";
-        version = "0.1.1";
-      };
+      identifier = { name = "yesod-raml-bin"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The raml helper executable.";
       description = "Provides html documentation and route file generator";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yesod-raml-bin" = {
@@ -40,8 +31,8 @@
             (hsPkgs.yaml)
             (hsPkgs.bytestring)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

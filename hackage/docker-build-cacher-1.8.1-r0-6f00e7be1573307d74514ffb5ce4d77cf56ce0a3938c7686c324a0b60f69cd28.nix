@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "docker-build-cacher";
-        version = "1.8.1";
-      };
+      identifier = { name = "docker-build-cacher"; version = "1.8.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Seatgeek";
       maintainer = "lorenzo@seatgeek.com";
@@ -22,7 +13,7 @@
       synopsis = "Builds a services with docker and caches all of its intermediate stages";
       description = "A CLI tool to speed up multi-stage docker file builds by caching intermediate\nstages separately, so the can be used in successive builds.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "docker-build-cacher" = {
@@ -34,8 +25,8 @@
             (hsPkgs.foldl)
             (hsPkgs.text)
             (hsPkgs.system-filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

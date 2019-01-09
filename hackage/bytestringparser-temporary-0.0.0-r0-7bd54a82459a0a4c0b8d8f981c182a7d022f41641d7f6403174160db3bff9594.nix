@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      split-base = true;
-      applicative-in-base = true;
-    };
+    flags = { split-base = true; applicative-in-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bytestringparser-temporary";
-        version = "0.0.0";
-      };
+      identifier = { name = "bytestringparser-temporary"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jason Dusek <jason.dusek@gmail.com>";
@@ -25,16 +13,14 @@
       synopsis = "Combinator parsing with Data.ByteString.Lazy";
       description = "AttoParsec with a small patch so I can get on with my parser.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (if flags.split-base
           then [ (hsPkgs.base) ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-          ]) ++ [ (hsPkgs.base) ];
+          else [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.containers) ]) ++ [
+          (hsPkgs.base)
+          ];
+        };
       };
-    };
-  }
+    }

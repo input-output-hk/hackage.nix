@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      executable = true;
-      library = true;
-    };
+    flags = { executable = true; library = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ampersand";
-        version = "3.0.1";
-      };
+      identifier = { name = "ampersand"; version = "3.0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Stef Joosten";
       maintainer = "stef.joosten@ou.nl";
@@ -25,7 +13,7 @@
       synopsis = "Toolsuite for automated design of business processes.";
       description = "You can define your business processes by means of rules, written in Relation Algebra.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +33,8 @@
           (hsPkgs.process)
           (hsPkgs.split)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       exes = {
         "ampersand" = {
           depends = [
@@ -54,8 +42,8 @@
             (hsPkgs.graphviz)
             (hsPkgs.filepath)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

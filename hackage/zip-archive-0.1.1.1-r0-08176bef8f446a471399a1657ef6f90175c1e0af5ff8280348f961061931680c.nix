@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      executable = false;
-    };
+    flags = { splitbase = true; executable = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "zip-archive";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "zip-archive"; version = "0.1.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jgm@berkeley.edu";
@@ -25,7 +13,7 @@
       synopsis = "Library for creating and modifying zip archives.";
       description = "The zip-archive library provides functions for creating, modifying,\nand extracting files from zip archives.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -38,16 +26,12 @@
           (hsPkgs.mtl)
           (hsPkgs.utf8-string)
           (hsPkgs.old-time)
-        ] ++ (if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.pretty)
-            (hsPkgs.containers)
-          ]
+          ] ++ (if flags.splitbase
+          then [ (hsPkgs.base) (hsPkgs.pretty) (hsPkgs.containers) ]
           else [
             (hsPkgs.base)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = { "Zip" = {}; };
-    };
-  }
+      };
+    }

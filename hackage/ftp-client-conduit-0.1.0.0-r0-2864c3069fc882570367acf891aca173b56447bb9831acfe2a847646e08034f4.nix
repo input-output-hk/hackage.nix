@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ftp-client-conduit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ftp-client-conduit"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "mrobinson7627@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Transfer file with FTP and FTPS with Conduit";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,15 +23,12 @@
           (hsPkgs.bytestring)
           (hsPkgs.resourcet)
           (hsPkgs.connection)
-        ];
-      };
-      tests = {
-        "ftp-conduit-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ftp-clientconduit)
           ];
         };
+      tests = {
+        "ftp-conduit-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.ftp-clientconduit) ];
+          };
+        };
       };
-    };
-  }
+    }

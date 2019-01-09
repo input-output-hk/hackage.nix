@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "safeio";
-        version = "0.0.4.0";
-      };
+      identifier = { name = "safeio"; version = "0.0.4.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Luis Pedro Coelho";
@@ -22,7 +13,7 @@
       synopsis = "Write output to disk atomically";
       description = "This package implements utilities to perform atomic output\nso as to avoid the problem of partial intermediate files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.filepath)
           (hsPkgs.resourcet)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "safeiotest" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

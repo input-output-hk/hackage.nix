@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "iteratee";
-        version = "0.8.9.6";
-      };
+      identifier = { name = "iteratee"; version = "0.8.9.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John W. Lato <jwlato@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Iteratee-based I/O";
       description = "The Iteratee monad provides strict, safe, and functional I/O. In addition\nto pure Iteratee processors, file IO and combinator functions are provided.\nSee @Data.Iteratee@ for full documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.parallel)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "testIteratee" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
-      };
       benchmarks = {
         "bench-all" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.mtl)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

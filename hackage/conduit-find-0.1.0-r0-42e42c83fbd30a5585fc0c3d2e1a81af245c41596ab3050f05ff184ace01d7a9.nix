@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { leafopt = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "conduit-find";
-        version = "0.1.0";
-      };
+      identifier = { name = "conduit-find"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Erik de Castro Lopo <erikd@mega-nerd.com>";
@@ -22,7 +13,7 @@
       synopsis = "A file-finding conduit that allows user control over traversals.";
       description = "A file-finding conduit that allows user control over traversals.  Please see\nthe module 'Data.Conduit.Find' for more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.either)
           (hsPkgs.monad-control)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       exes = {
         "find-hs" = {
           depends = [
@@ -70,9 +61,9 @@
             (hsPkgs.monad-control)
             (hsPkgs.mmorph)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -96,8 +87,8 @@
             (hsPkgs.mmorph)
             (hsPkgs.filepath)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
@@ -105,8 +96,8 @@
             (hsPkgs.doctest)
             (hsPkgs.filepath)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "raven-haskell";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "raven-haskell"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "aenor.realm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell client for Sentry logging service.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.hspec)
             (hsPkgs.raven-haskell)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "crawlchain";
-        version = "0.1.0.8";
-      };
+      identifier = { name = "crawlchain"; version = "0.1.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "7a3ggptwts@snkmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for simulating user crawl paths (trees) with selectors.";
       description = "Warning: experimental";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.split)
           (hsPkgs.tagsoup)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

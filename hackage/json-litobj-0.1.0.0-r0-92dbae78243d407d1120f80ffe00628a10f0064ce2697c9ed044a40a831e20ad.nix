@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-litobj";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "json-litobj"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jonathan.kochems@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Extends Text.JSON to handle literal JS objects.";
       description = "This module extends Text.JSON to enable the decoding of strings containing literal JS objects.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.json)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.json) ]; };
       tests = {
         "test-json-litobj" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.json)
             (hsPkgs.json-litobj)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

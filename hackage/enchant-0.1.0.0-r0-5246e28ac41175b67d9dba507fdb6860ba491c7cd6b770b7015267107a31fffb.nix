@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "enchant";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "enchant"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Kwang Yul Seo";
       maintainer = "kwangyul.seo@gmail.com";
@@ -24,32 +13,23 @@
       synopsis = "Binding to the Enchant library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        pkgconfig = [
-          (pkgconfPkgs.enchant)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        pkgconfig = [ (pkgconfPkgs.enchant) ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       exes = {
         "enchant-examples-spell-check" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.base)
             (hsPkgs.enchant)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "enchant-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.enchant)
-          ];
+        "enchant-test" = { depends = [ (hsPkgs.base) (hsPkgs.enchant) ]; };
         };
       };
-    };
-  }
+    }

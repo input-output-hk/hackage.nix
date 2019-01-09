@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "th-instance-reification";
-        version = "0.1.0";
-      };
+      identifier = { name = "th-instance-reification"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Fixed versions of instances reification functions";
       description = "Provides fixed versions of 'reifyInstances' and 'isInstance' as per\nthe following ghc issue:\n<https://ghc.haskell.org/trac/ghc/ticket/7066>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.placeholders)
           (hsPkgs.template-haskell)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "th-instance-reification-htf-test-suite" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.placeholders)
             (hsPkgs.template-haskell)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "escaped";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "escaped"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "2018 Patrick Brisbin";
       maintainer = "pbrisbin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Produce Text with terminal escape sequences";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,24 +22,15 @@
           (hsPkgs.quickcheck-instances)
           (hsPkgs.text)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       exes = {
         "escaped-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.escaped)
-            (hsPkgs.text)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.escaped) (hsPkgs.text) ];
+          };
         };
-      };
       tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "hspec" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -56,8 +38,8 @@
             (hsPkgs.escaped)
             (hsPkgs.hspec)
             (hsPkgs.quickcheck-properties)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

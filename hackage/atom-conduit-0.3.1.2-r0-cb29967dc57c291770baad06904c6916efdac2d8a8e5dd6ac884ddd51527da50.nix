@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "atom-conduit";
-        version = "0.3.1.2";
-      };
+      identifier = { name = "atom-conduit"; version = "0.3.1.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral att mailoo dott org";
@@ -22,7 +13,7 @@
       synopsis = "Streaming parser/renderer for the Atom 1.0 standard (RFC 4287).";
       description = "Please refer to README.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-conduit-parse)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "Tests" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-conduit-parse)
             (hsPkgs.xml-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

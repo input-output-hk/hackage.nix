@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "scat";
-        version = "1.1.0.2";
-      };
+      identifier = { name = "scat"; version = "1.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "romain.edelmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generates unique passwords for various websites from a single password.";
       description = "Flexible password generator. For each service, passwords are generated deterministically from a main password and a code. Internally, Scrypt is used to obtain the hash generating the passwords.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "scat" = {
@@ -34,9 +25,9 @@
             (hsPkgs.mtl)
             (hsPkgs.vector)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "scat-tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.mtl)
             (hsPkgs.vector)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

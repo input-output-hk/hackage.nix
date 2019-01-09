@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { include = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "liquidhaskell";
-        version = "0.5.0.1";
-      };
+      identifier = { name = "liquidhaskell"; version = "0.5.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2010-15 Ranjit Jhala, University of California, San Diego.";
       maintainer = "Ranjit Jhala <jhala@cs.ucsd.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Liquid Types for Haskell";
       description = "Liquid Types for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,8 +51,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.fingertree)
           (hsPkgs.Cabal)
-        ];
-      };
+          ];
+        };
       exes = {
         "liquid" = {
           depends = [
@@ -98,9 +89,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.fingertree)
             (hsPkgs.liquidhaskell)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -118,8 +109,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-rerun)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

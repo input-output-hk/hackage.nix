@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gore-and-ash-lambdacube";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "gore-and-ash-lambdacube"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Core module for Gore&Ash engine that do something.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "gore-and-ash-lambdacube-example01" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "gore-and-ash-lambdacube-example02" = {
           depends = [
             (hsPkgs.base)
@@ -78,8 +69,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vector)
             (hsPkgs.linear)
-          ];
-        };
+            ];
+          };
         "gore-and-ash-lambdacube-example03" = {
           depends = [
             (hsPkgs.base)
@@ -99,8 +90,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vector)
             (hsPkgs.linear)
-          ];
-        };
+            ];
+          };
         "gore-and-ash-lambdacube-example04" = {
           depends = [
             (hsPkgs.base)
@@ -120,8 +111,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vector)
             (hsPkgs.linear)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

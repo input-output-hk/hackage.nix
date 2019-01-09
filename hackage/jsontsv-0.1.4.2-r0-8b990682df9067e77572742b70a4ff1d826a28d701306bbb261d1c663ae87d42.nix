@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsontsv";
-        version = "0.1.4.2";
-      };
+      identifier = { name = "jsontsv"; version = "0.1.4.2"; };
       license = "MIT";
       copyright = "(c) 2014 Daniel Choi";
       maintainer = "dhchoi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON to TSV transformer";
       description = "Transforms JSON into tab-separated line-oriented output, for easier processing in Unix-style pipelines.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "jsontsv" = {
@@ -39,8 +30,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.string-qq)
             (hsPkgs.csv)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

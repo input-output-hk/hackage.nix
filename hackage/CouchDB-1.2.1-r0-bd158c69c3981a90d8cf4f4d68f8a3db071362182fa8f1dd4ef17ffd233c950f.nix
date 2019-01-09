@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "CouchDB";
-        version = "1.2.1";
-      };
+      identifier = { name = "CouchDB"; version = "1.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008-2012.";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "CouchDB interface";
       description = "An interface to CouchDB servers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,11 +26,8 @@
           (hsPkgs.json)
           (hsPkgs.utf8-string)
           (hsPkgs.bytestring)
-        ] ++ [
-          (hsPkgs.network)
-          (hsPkgs.network-uri)
-        ];
-      };
+          ] ++ [ (hsPkgs.network) (hsPkgs.network-uri) ];
+        };
       tests = {
         "test-couchdb" = {
           depends = [
@@ -51,11 +39,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.HUnit)
             (hsPkgs.bytestring)
-          ] ++ [
-            (hsPkgs.network)
-            (hsPkgs.network-uri)
-          ];
+            ] ++ [ (hsPkgs.network) (hsPkgs.network-uri) ];
+          };
         };
       };
-    };
-  }
+    }

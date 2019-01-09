@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "websockets-simple";
-        version = "0.0.1";
-      };
+      identifier = { name = "websockets-simple"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Athan Clark";
       maintainer = "athan.clark@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simpler interface to the websockets api";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,15 +26,12 @@
           (hsPkgs.stm)
           (hsPkgs.wai-transformers)
           (hsPkgs.websockets)
-        ];
-      };
-      tests = {
-        "websockets-simple-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.websockets-simple)
           ];
         };
+      tests = {
+        "websockets-simple-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.websockets-simple) ];
+          };
+        };
       };
-    };
-  }
+    }

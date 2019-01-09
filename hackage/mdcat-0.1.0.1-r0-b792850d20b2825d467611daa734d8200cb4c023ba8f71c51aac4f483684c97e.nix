@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mdcat";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "mdcat"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "dorafmon@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Markdown viewer in your terminal";
       description = "A simple command line tool for viewing markdown in your terminal";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mdcat" = {
@@ -32,8 +23,8 @@
             (hsPkgs.directory)
             (hsPkgs.ansi-terminal)
             (hsPkgs.terminfo)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

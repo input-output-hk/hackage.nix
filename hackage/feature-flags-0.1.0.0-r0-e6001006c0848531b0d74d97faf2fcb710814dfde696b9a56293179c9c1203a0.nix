@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "feature-flags";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "feature-flags"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "SaneTracker";
       maintainer = "ian@iankduncan.com";
@@ -22,13 +13,8 @@
       synopsis = "A simple library for dynamically enabling and disabling functionality.";
       description = "A simple library for dynamically enabling and disabling functionality.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.text) ]; };
+      };
+    }

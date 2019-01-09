@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hydrogen-syntax";
-        version = "0.11";
-      };
+      identifier = { name = "hydrogen-syntax"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "julian@scravy.de";
@@ -22,7 +13,7 @@
       synopsis = "Hydrogen Syntax";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.nicify)
           (hsPkgs.parsec)
           (hsPkgs.uuid)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

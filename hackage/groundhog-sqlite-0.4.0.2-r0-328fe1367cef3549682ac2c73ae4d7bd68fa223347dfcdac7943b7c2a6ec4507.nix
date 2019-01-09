@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "groundhog-sqlite";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "groundhog-sqlite"; version = "0.4.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Boris Lykah <lykahb@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Sqlite3 backend for the groundhog library";
       description = "It depends on direct-sqlite library which includes Sqlite C sources, so there are no system dependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.direct-sqlite)
           (hsPkgs.resource-pool)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

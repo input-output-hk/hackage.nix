@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "makefile";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "makefile"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "2016-2017 Nicolas Mattia";
       maintainer = "nicolas@nmattia.com";
@@ -22,15 +13,11 @@
       synopsis = "Simple Makefile parser and generator";
       description = "This package provides a few @Attoparser@ parsers and convenience functions\nfor parsing Makefiles.\nThe datatypes used for describing Makefiles are located in 'Data.Makefile'.\nThe parsers and parsing functions are located in 'Data.Makefile.Parse'.\nTo parse a Makefile in the current folder, simply run 'parseMakefile'. To\nparse a Makefile located at @path@, run 'parseAsMakefile' @path@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.attoparsec) (hsPkgs.text) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.Glob)
             (hsPkgs.QuickCheck)
             (hsPkgs.makefile)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

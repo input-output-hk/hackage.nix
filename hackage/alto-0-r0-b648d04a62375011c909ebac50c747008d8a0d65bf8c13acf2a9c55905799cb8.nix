@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "alto";
-        version = "0";
-      };
+      identifier = { name = "alto"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "davean 2018";
       maintainer = "davean@xkcd.com";
@@ -22,7 +13,7 @@
       synopsis = "Impliment a menu experience fit for web users.";
       description = "A system for building cloud scale menu systems.\nFor an example, see <https://xkcd.com/1975/ Right Click>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,16 +35,10 @@
           (hsPkgs.MonadRandom)
           (hsPkgs.random)
           (hsPkgs.exceptions)
-        ];
-      };
-      exes = {
-        "alto" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.alto)
-            (hsPkgs.warp)
           ];
         };
+      exes = {
+        "alto" = { depends = [ (hsPkgs.base) (hsPkgs.alto) (hsPkgs.warp) ]; };
+        };
       };
-    };
-  }
+    }

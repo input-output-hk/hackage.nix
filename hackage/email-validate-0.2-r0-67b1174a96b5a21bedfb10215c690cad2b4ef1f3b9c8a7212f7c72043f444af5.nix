@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "email-validate";
-        version = "0.2";
-      };
+      identifier = { name = "email-validate"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "George Pollard <porges@porg.es>";
@@ -22,14 +13,10 @@
       synopsis = "Validating an email address string against RFC 5322";
       description = "Validating an email address string against RFC 5322";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.ranges)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.ranges) ];
+        };
       };
-    };
-  }
+    }

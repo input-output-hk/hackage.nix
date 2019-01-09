@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cache";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "cache"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Henri Verroken";
       maintainer = "henriverroken@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An in-memory key/value store with expiration support";
       description = "An in-memory key/value store with expiration support, similar\nto patrickmn/go-cache for Go.\n\nThe cache is a shared mutable HashMap implemented using STM and\nwith support for expiration times.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.stm)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "cache-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.hspec)
             (hsPkgs.stm)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

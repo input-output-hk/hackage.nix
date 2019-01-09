@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-attoparsec";
-        version = "0.9.0";
-      };
+      identifier = { name = "network-attoparsec"; version = "0.9.0"; };
       license = "MIT";
       copyright = "(c) 2014 Leon Mergen";
       maintainer = "leon@solatis.com";
@@ -22,7 +13,7 @@
       synopsis = "Utility functions for running an attoparsec parser against a socket";
       description = "Run an attoparsec parser against a TCP socket";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.network)
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.network-simple)
             (hsPkgs.attoparsec)
             (hsPkgs.network-attoparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "accelerate-typelits";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "accelerate-typelits"; version = "0.1.0.0"; };
       license = "ISC";
       copyright = "(c) 2016 Martin Heuschober";
       maintainer = "Martin Heuschober <epsilonhalbe [at] gmail [dot] com>";
@@ -22,7 +13,7 @@
       synopsis = "a typesafe way encode accelerate matrices and vectors";
       description = "a small wrapper plus convenience functions on top of\naccelerate to represent matrices with their dimensions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.mwc-random)
           (hsPkgs.smallcheck)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

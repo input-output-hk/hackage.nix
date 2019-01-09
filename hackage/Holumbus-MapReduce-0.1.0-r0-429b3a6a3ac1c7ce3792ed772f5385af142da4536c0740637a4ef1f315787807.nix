@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Holumbus-MapReduce";
-        version = "0.1.0";
-      };
+      identifier = { name = "Holumbus-MapReduce"; version = "0.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2010 Stefan Schmidt, Uwe Schmidt, Sebastian Reese";
       maintainer = "Stefan Schmidt <sts@holumbus.org>";
@@ -22,7 +13,7 @@
       synopsis = "a distributed MapReduce framework";
       description = "This package contains a library and tools for the\ncreation of distributed MapReduce applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,11 +33,8 @@
           (hsPkgs.Holumbus-Storage)
           (hsPkgs.extensible-exceptions)
           (hsPkgs.readline)
-        ];
+          ];
+        };
+      exes = { "Master" = {}; "MasterDaemon" = {}; };
       };
-      exes = {
-        "Master" = {};
-        "MasterDaemon" = {};
-      };
-    };
-  }
+    }

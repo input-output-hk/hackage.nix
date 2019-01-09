@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "glade";
-        version = "0.11.0";
-      };
+      identifier = { name = "glade"; version = "0.11.0"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2001-2010 The Gtk2Hs Team";
       maintainer = "gtk2hs-users@sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "Binding to the glade library.";
       description = "This library allows to load externally stored user interfaces into\nprograms. This allows alteration of the interface without recompilation\nof the program.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,10 +26,8 @@
           (hsPkgs.pango)
           (hsPkgs.cairo)
           (hsPkgs.gtk)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.libglade-2.0)
-        ];
+          ];
+        pkgconfig = [ (pkgconfPkgs.libglade-2.0) ];
+        };
       };
-    };
-  }
+    }

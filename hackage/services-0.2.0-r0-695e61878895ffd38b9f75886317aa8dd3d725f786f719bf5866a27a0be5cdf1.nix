@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "services";
-        version = "0.2.0";
-      };
+      identifier = { name = "services"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Orbital Labs";
       maintainer = "seanhess@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools for building services";
       description = "Tools for building services";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.monad-logger)
           (hsPkgs.text)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       tests = {
         "services-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.services)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

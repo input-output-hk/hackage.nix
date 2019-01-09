@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "guess-combinator";
-        version = "0.1.1";
-      };
+      identifier = { name = "guess-combinator"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Etienne Laurin <etienne@atnnn.com>";
@@ -22,13 +13,8 @@
       synopsis = "Generate simple combinators given their type";
       description = "Based on De-typechecker: converting from a type to a term\nby <oleg at pobox.com>\nhttp://www.haskell.org/pipermail/haskell/2005-March/015423.html";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.HList)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.HList) (hsPkgs.base) ]; };
+      };
+    }

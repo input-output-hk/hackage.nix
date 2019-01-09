@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "confide";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "confide"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Alex Milkov";
       maintainer = "amilkov3@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "derive typeclass instances for decoding types from HOCON conf";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.deiko-config)
           (hsPkgs.exceptions)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "confide-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

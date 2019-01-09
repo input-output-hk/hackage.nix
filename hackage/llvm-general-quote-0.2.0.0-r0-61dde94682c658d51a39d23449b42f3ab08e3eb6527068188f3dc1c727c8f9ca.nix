@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "llvm-general-quote";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "llvm-general-quote"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Timo von Holtz 2014";
       maintainer = "Timo von Holtz <tvh@tvholtz.de>";
@@ -22,7 +13,7 @@
       synopsis = "QuasiQuoting llvm code for llvm-general";
       description = "This package provides a QuasiQuotation for llvm-general.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,12 +31,12 @@
           (hsPkgs.haskell-src-meta)
           (hsPkgs.th-lift)
           (hsPkgs.split)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.llvm-general-quote)
             (hsPkgs.llvm-general-pure)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

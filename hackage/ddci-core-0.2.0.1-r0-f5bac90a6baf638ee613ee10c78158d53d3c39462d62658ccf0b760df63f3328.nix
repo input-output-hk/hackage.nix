@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddci-core";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "ddci-core"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "benl@ouroborus.net";
@@ -22,7 +13,7 @@
       synopsis = "Disciple Core language interactive interpreter.";
       description = "DDCi-core is a user-facing interpreter that can type-check,\ntransform and evaluate expressions.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "ddci-core" = {
@@ -35,8 +26,8 @@
             (hsPkgs.ddc-core)
             (hsPkgs.ddc-core-eval)
             (hsPkgs.ddc-core-simpl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

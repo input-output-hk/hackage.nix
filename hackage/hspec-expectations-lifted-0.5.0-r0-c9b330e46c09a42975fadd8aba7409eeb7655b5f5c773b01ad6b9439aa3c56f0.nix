@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspec-expectations-lifted";
-        version = "0.5.0";
-      };
+      identifier = { name = "hspec-expectations-lifted"; version = "0.5.0"; };
       license = "MIT";
       copyright = "(c) 2011-2013 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,23 +13,23 @@
       synopsis = "A version of hspec-expectations generalized to MonadIO";
       description = "A version of hspec-expectations generalized to MonadIO";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.hspec-expectations)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.hspec-expectations-lifted)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       minimal = false;
@@ -14,13 +8,10 @@
       build-hackage-build = true;
       build-hackage-import = false;
       test-create-user = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hackage-server";
-        version = "0.5.0";
-      };
+      identifier = { name = "hackage-server"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "2008-2014 Duncan Coutts,\n2012-2013 Edsko de Vries,\n2013 Google Inc.,\n2010-2011 Matthew Gruen,\n2009-2010 Antoine Latter,\n2008 David Himmelstrup,\n2007 Ross Paterson";
       maintainer = "Duncan Coutts <duncan@community.haskell.org>,\nMatthew Gruen <wikigracenotes@gmail.com>";
@@ -30,7 +21,7 @@
       synopsis = "The Hackage web server";
       description = "The new implementation of the Hackage web server, based on the\nHappstack architecture. This is the implementation used to power\n<http://hackage.haskell.org/>\n\nIt is designed to be easy to run your own instance.\nIt also includes a doc builder client and a mirroring client.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hackage-server" = {
@@ -79,16 +70,16 @@
             (hsPkgs.HStringTemplate)
             (hsPkgs.lifted-base)
             (hsPkgs.QuickCheck)
-          ] ++ pkgs.lib.optionals (!flags.minimal) [
+            ] ++ (pkgs.lib).optionals (!flags.minimal) [
             (hsPkgs.snowball)
             (hsPkgs.tokenize)
-          ];
-          libs = pkgs.lib.optional (!system.isOsx) (pkgs."crypt");
+            ];
+          libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt");
           build-tools = [
-            (hsPkgs.buildPackages.alex)
-            (hsPkgs.buildPackages.happy)
-          ];
-        };
+            ((hsPkgs.buildPackages).alex)
+            ((hsPkgs.buildPackages).happy)
+            ];
+          };
         "hackage-mirror" = {
           depends = [
             (hsPkgs.base)
@@ -114,8 +105,8 @@
             (hsPkgs.mtl)
             (hsPkgs.unix)
             (hsPkgs.aeson)
-          ];
-        };
+            ];
+          };
         "hackage-build" = {
           depends = [
             (hsPkgs.base)
@@ -143,8 +134,8 @@
             (hsPkgs.random)
             (hsPkgs.unix)
             (hsPkgs.hscolour)
-          ];
-        };
+            ];
+          };
         "hackage-import" = {
           depends = [
             (hsPkgs.base)
@@ -173,9 +164,9 @@
             (hsPkgs.attoparsec)
             (hsPkgs.aeson)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "HighLevelTest" = {
           depends = [
@@ -197,8 +188,8 @@
             (hsPkgs.vector)
             (hsPkgs.xml)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "CreateUserTest" = {
           depends = [
             (hsPkgs.base)
@@ -219,8 +210,8 @@
             (hsPkgs.vector)
             (hsPkgs.xml)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

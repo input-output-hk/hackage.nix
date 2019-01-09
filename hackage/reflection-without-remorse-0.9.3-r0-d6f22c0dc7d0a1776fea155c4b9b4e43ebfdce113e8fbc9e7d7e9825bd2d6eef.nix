@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "reflection-without-remorse";
-        version = "0.9.3";
-      };
+      identifier = { name = "reflection-without-remorse"; version = "0.9.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "atzeus@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Efficient free and operational monads.";
       description = "Free and operational monad that efficiently support alternating between building and observing.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.type-aligned)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.type-aligned) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ttrie";
-        version = "0.1.1";
-      };
+      identifier = { name = "ttrie"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2014-2015 Michael Schröder";
       maintainer = "mc.schroeder@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Contention-free STM hash map";
       description = "A contention-free STM hash map.\n\\\"Contention-free\\\" means that the map will never cause spurious conflicts.\nA transaction operating on the map will only ever have to retry if\nanother transaction is operating on the same key at the same time.\n\nThis is an implementation of the /transactional trie/,\nwhich is basically a /lock-free concurrent hash trie/ lifted into STM.\nFor a detailed discussion, including an evaluation of its performance,\nsee Chapter 4 of <https://github.com/mcschroeder/thesis my master's thesis>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.hashable)
           (hsPkgs.primitive)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
         "map-properties" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.hashable)
             (hsPkgs.stm)
             (hsPkgs.ttrie)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.ttrie)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

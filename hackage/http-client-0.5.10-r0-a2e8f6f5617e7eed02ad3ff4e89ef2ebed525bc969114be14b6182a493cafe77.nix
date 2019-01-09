@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-client";
-        version = "0.5.10";
-      };
+      identifier = { name = "http-client"; version = "0.5.10"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "An HTTP client engine";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/http-client>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -47,18 +38,15 @@
           (hsPkgs.mime-types)
           (hsPkgs.ghc-prim)
           (hsPkgs.stm)
-        ] ++ (if flags.network-uri
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-uri)
-          ]
+          ] ++ (if flags.network-uri
+          then [ (hsPkgs.network) (hsPkgs.network-uri) ]
           else [
             (hsPkgs.network)
-          ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ pkgs.lib.optionals (system.isWindows) [
+            ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optionals (system.isWindows) [
           (hsPkgs.Win32)
           (hsPkgs.safe)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -80,8 +68,8 @@
             (hsPkgs.zlib)
             (hsPkgs.async)
             (hsPkgs.streaming-commons)
-          ];
-        };
+            ];
+          };
         "spec-nonet" = {
           depends = [
             (hsPkgs.base)
@@ -104,8 +92,8 @@
             (hsPkgs.async)
             (hsPkgs.streaming-commons)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

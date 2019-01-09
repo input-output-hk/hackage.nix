@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "twiml";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "twiml"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "markandrusroberts@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "TwiML library for Haskell";
       description = "TwiML library for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.void)
           (hsPkgs.xml)
-        ];
-      };
+          ];
+        };
       tests = {
         "Golden" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.Diff)
             (hsPkgs.lens)
             (hsPkgs.twiml)
-          ];
-        };
+            ];
+          };
         "ShouldNotTypecheck" = {
           depends = [
             (hsPkgs.base)
@@ -60,8 +51,8 @@
             (hsPkgs.should-not-typecheck)
             (hsPkgs.twiml)
             (hsPkgs.void)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspec-expectations";
-        version = "0.5.0";
-      };
+      identifier = { name = "hspec-expectations"; version = "0.5.0"; };
       license = "MIT";
       copyright = "(c) 2011-2013 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,15 +13,11 @@
       synopsis = "Catchy combinators for HUnit";
       description = "Catchy combinators for HUnit: <https://github.com/sol/hspec-expectations#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.HUnit)
-          (hsPkgs.transformers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.transformers) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -39,15 +26,11 @@
             (hsPkgs.transformers)
             (hsPkgs.silently)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "readme" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.markdown-unlit)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.markdown-unlit) ];
+          };
         };
       };
-    };
-  }
+    }

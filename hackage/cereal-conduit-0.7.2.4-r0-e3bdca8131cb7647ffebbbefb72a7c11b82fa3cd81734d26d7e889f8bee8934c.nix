@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cereal-conduit";
-        version = "0.7.2.4";
-      };
+      identifier = { name = "cereal-conduit"; version = "0.7.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman";
@@ -22,7 +13,7 @@
       synopsis = "Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits";
       description = "Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits.\n\n[0.7]\nUpgrade to conduit 1.0.0";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-cereal-conduit" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.mtl)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

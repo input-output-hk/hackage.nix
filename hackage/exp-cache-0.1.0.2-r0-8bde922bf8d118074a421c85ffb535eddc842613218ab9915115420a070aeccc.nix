@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "exp-cache";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "exp-cache"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "2018 Chris Coffey";
       maintainer = "chris@foldl.io";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/ChrisCoffey/exp-cache#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.psqueues)
           (hsPkgs.array)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       exes = {
         "exp-cache-benchmarks" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.exp-cache)
             (hsPkgs.criterion)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "exp-cache-test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

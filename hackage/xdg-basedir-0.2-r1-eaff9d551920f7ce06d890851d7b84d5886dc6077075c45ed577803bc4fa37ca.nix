@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "xdg-basedir";
-        version = "0.2";
-      };
+      identifier = { name = "xdg-basedir"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009 Will Donnelly";
       maintainer = "Will Donnelly <will.donnelly@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A basic implementation of the XDG Base Directory specification.";
       description = "On Unix platforms, this should be a very straightforward\nimplementation of the XDG Base Directory spec. On Windows,\nit will attempt to do the right thing with regards to\nchoosing appropriate directories.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.regex-compat)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

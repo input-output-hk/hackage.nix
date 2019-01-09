@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "multilinear";
-        version = "0.2.0";
-      };
+      identifier = { name = "multilinear"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Artur M. Brodzki";
       maintainer = "artur@brodzki.org";
@@ -22,7 +13,7 @@
       synopsis = "Efficient (multi)linear algebra implementation";
       description = "Please see the README on GitHub at <https://github.com/ArturB/multilinear#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.primitive)
           (hsPkgs.statistics)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "multilinear-test" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.multilinear)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "multilinear-bench" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.multilinear)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

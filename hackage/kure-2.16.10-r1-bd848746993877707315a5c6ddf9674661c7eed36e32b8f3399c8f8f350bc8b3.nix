@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kure";
-        version = "2.16.10";
-      };
+      identifier = { name = "kure"; version = "2.16.10"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006--2015 The University of Kansas";
       maintainer = "Neil Sculthorpe <neil.sculthorpe@ntu.ac.uk>";
@@ -22,14 +13,10 @@
       synopsis = "Combinators for Strategic Programming";
       description = "The Kansas University Rewrite Engine (KURE) is a domain-specific language for strategic rewriting.\nKURE was inspired by Stratego and StrategyLib, and has similarities with Scrap Your Boilerplate and Uniplate.\n\nThe basic transformation functionality can be found in \"Language.KURE.Transform\",\nand the traversal functionality can be found in \"Language.KURE.Walker\".\nSeveral basic examples of using KURE are provided in the source-code bundle.\nFor larger examples, see the HERMIT or HTML-KURE packages.\n\nYou can read about KURE in the following article:\n\nThe Kansas University Rewrite Engine: A Haskell-Embedded Strategic Programming Language with Custom Closed Universes.  Neil Sculthorpe, Nicolas Frisby and Andy Gill.  Journal of Functional Programming.  Cambridge University Press, 24(4), pages 434-473, 2014.\n<http://neilsculthorpe.com/publications/kure.pdf>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.dlist)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.dlist) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

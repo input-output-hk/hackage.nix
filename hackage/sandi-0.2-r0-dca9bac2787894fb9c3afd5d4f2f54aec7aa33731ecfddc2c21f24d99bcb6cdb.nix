@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sandi";
-        version = "0.2";
-      };
+      identifier = { name = "sandi"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Magnus Therning, 2012";
       maintainer = "magnus@therning.org";
@@ -22,7 +13,7 @@
       synopsis = "Data encoding library";
       description = "Reasonably fast data encoding library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.conduit)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       tests = {
         "sandi-tests" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "sandi-bench" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

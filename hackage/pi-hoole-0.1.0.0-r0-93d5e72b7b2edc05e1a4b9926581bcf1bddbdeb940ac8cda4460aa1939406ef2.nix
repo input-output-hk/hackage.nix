@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pi-hoole";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "pi-hoole"; version = "0.1.0.0"; };
       license = "AGPL-3.0-only";
       copyright = "2018 Thomas Letan";
       maintainer = "lthms <contact@thomasletan.fr>";
@@ -22,7 +13,7 @@
       synopsis = "Lightweight access control solution for the pijul vcs";
       description = "Please see the introductory post at <https://lthms.xyz/blog/pi-hoole>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.megaparsec)
           (hsPkgs.process)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "pi-hoole-cfg" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.text)
             (hsPkgs.unix)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "pi-hoole-shell" = {
           depends = [
             (hsPkgs.aeson)
@@ -63,8 +54,8 @@
             (hsPkgs.pi-hoole)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "pi-hoole-web" = {
           depends = [
             (hsPkgs.aeson)
@@ -81,16 +72,11 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "pi-hoole-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pi-hoole)
-          ];
+        "pi-hoole-test" = { depends = [ (hsPkgs.base) (hsPkgs.pi-hoole) ]; };
         };
       };
-    };
-  }
+    }

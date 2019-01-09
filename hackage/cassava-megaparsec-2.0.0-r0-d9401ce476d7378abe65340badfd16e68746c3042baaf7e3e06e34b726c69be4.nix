@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "cassava-megaparsec";
-        version = "2.0.0";
-      };
+      identifier = { name = "cassava-megaparsec"; version = "2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.org>";
@@ -22,7 +13,7 @@
       synopsis = "Megaparsec parser of CSV files that plays nicely with Cassava";
       description = "Megaparsec parser of CSV files that plays nicely with Cassava.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.megaparsec)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-megaparsec)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

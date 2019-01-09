@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "wolf";
-        version = "0.3.11";
-      };
+      identifier = { name = "wolf"; version = "0.3.11"; };
       license = "MIT";
       copyright = "Copyright (C) 2015-2016 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Simple Workflow Service Wrapper.";
       description = "Wolf is a wrapper around Amazon Simple Workflow Service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,29 +42,16 @@
           (hsPkgs.time)
           (hsPkgs.uuid)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "wolf-actor" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wolf)
-            (hsPkgs.optparse-generic)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.wolf) (hsPkgs.optparse-generic) ];
+          };
         "wolf-decider" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wolf)
-            (hsPkgs.optparse-generic)
-          ];
-        };
-        "shake-wolf" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.shakers)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.wolf) (hsPkgs.optparse-generic) ];
+          };
+        "shake-wolf" = { depends = [ (hsPkgs.base) (hsPkgs.shakers) ]; };
         };
       };
-    };
-  }
+    }

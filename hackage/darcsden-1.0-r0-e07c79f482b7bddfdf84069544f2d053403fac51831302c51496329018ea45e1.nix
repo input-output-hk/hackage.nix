@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       darcs28 = true;
       highlighting = true;
       closing = true;
       ssh = true;
-    };
+      };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "darcsden";
-        version = "1.0";
-      };
+      identifier = { name = "darcsden"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Alex Suraci <suraci.alex@gmail.com>, Simon Michael <simon@joyful.com>";
@@ -27,7 +18,7 @@
       synopsis = "Darcs repository UI and hosting/collaboration app.";
       description = "A web application and SSH server for browsing and hosting darcs\nrepositories and collaborating with others.\n\nSee the README in the source repository for installation help.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "darcsden" = {
@@ -64,23 +55,23 @@
             (hsPkgs.utf8-string)
             (hsPkgs.xhtml)
             (hsPkgs.xml)
-          ] ++ [
+            ] ++ [
             (hsPkgs.darcs)
-          ]) ++ pkgs.lib.optionals (flags.highlighting) [
+            ]) ++ (pkgs.lib).optionals (flags.highlighting) [
             (hsPkgs.highlighter)
             (hsPkgs.highlighting-kate)
-          ]) ++ pkgs.lib.optional (flags.ssh) (hsPkgs.ssh);
-        };
+            ]) ++ (pkgs.lib).optional (flags.ssh) (hsPkgs.ssh);
+          };
         "darcsden-ssh" = {
           depends = [
             (hsPkgs.darcs)
-          ] ++ pkgs.lib.optional (flags.ssh) (hsPkgs.ssh);
-        };
+            ] ++ (pkgs.lib).optional (flags.ssh) (hsPkgs.ssh);
+          };
         "darcsden-post-hook" = {
           depends = [
             (hsPkgs.darcs)
-          ] ++ pkgs.lib.optional (flags.closing) (hsPkgs.pcre-light);
+            ] ++ (pkgs.lib).optional (flags.closing) (hsPkgs.pcre-light);
+          };
         };
       };
-    };
-  }
+    }

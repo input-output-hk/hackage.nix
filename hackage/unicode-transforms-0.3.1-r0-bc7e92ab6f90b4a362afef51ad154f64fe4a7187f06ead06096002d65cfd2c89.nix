@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      has-icu = false;
-      has-llvm = false;
-    };
+    flags = { dev = false; has-icu = false; has-llvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unicode-transforms";
-        version = "0.3.1";
-      };
+      identifier = { name = "unicode-transforms"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "2016-2017 Harendra Kumar,\n2014–2015 Antonio Nikishaev";
       maintainer = "harendra.kumar@gmail.com";
@@ -26,7 +13,7 @@
       synopsis = "Unicode normalization";
       description = "Fast Unicode 9.0 normalization in Haskell (NFC, NFKC, NFD, NFKD).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +21,8 @@
           (hsPkgs.bitarray)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "extras" = {
           depends = [
@@ -44,8 +31,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.unicode-transforms)
-          ];
-        };
+            ];
+          };
         "quickcheck" = {
           depends = [
             (hsPkgs.base)
@@ -53,8 +40,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.unicode-transforms)
-          ] ++ pkgs.lib.optional (flags.has-icu) (hsPkgs.text-icu);
-        };
+            ] ++ (pkgs.lib).optional (flags.has-icu) (hsPkgs.text-icu);
+          };
         "ucd" = {
           depends = [
             (hsPkgs.base)
@@ -62,9 +49,9 @@
             (hsPkgs.split)
             (hsPkgs.text)
             (hsPkgs.unicode-transforms)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = ([
@@ -77,8 +64,8 @@
             (hsPkgs.path-io)
             (hsPkgs.text)
             (hsPkgs.unicode-transforms)
-          ] ++ pkgs.lib.optional (flags.has-icu) (hsPkgs.text-icu)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.path);
+            ] ++ (pkgs.lib).optional (flags.has-icu) (hsPkgs.text-icu)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.path);
+          };
         };
       };
-    };
-  }
+    }

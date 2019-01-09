@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-conduit";
-        version = "0.0.0.11";
-      };
+      identifier = { name = "hw-conduit"; version = "0.0.0.11"; };
       license = "BSD-3-Clause";
       copyright = "2016 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Conduits for tokenizing streams.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,17 +24,13 @@
           (hsPkgs.hw-bits)
           (hsPkgs.resourcet)
           (hsPkgs.word8)
-        ];
-      };
-      exes = {
-        "hw-conduit-example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.hw-conduit)
           ];
         };
-      };
+      exes = {
+        "hw-conduit-example" = {
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.hw-conduit) ];
+          };
+        };
       tests = {
         "hw-conduit-test" = {
           depends = [
@@ -51,9 +38,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
             (hsPkgs.hw-conduit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -64,8 +51,8 @@
             (hsPkgs.hw-conduit)
             (hsPkgs.mmap)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

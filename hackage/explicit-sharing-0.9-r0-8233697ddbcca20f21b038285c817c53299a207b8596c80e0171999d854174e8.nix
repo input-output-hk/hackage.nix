@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "explicit-sharing";
-        version = "0.9";
-      };
+      identifier = { name = "explicit-sharing"; version = "0.9"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "sebf@informatik.uni-kiel.de";
@@ -22,7 +13,7 @@
       synopsis = "Explicit Sharing of Monadic Effects";
       description = "This package implements a monad for non-deterministic computations\nwith sharing.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
           (hsPkgs.derive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

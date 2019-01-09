@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ethereum-analyzer-webui";
-        version = "1.0.0";
-      };
+      identifier = { name = "ethereum-analyzer-webui"; version = "1.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "k_@berkeley.edu";
@@ -22,7 +13,7 @@
       synopsis = "A web frontend for ethereum-analyzer";
       description = "A web frontend for ethereum-analyzer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -66,8 +57,8 @@
           (hsPkgs.wai-middleware-prometheus)
           (hsPkgs.warp)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       exes = {
         "ethereum-analyzer-webui" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.ethereum-analyzer-webui)
             (hsPkgs.hflags)
             (hsPkgs.monad-logger)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

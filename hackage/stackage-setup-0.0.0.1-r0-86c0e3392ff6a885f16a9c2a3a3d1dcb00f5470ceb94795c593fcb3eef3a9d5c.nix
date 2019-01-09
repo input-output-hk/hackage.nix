@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-setup";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "stackage-setup"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "2015 FP Complete Corporation";
       maintainer = "danburton@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "An executable for downloading a Haskell setup";
       description = "An executable for downloading a Haskell setup";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "stackage-setup" = {
@@ -45,8 +36,8 @@
             (hsPkgs.yaml)
             (hsPkgs.bytestring)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

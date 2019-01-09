@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "husk-scheme";
-        version = "3.5.5";
-      };
+      identifier = { name = "husk-scheme"; version = "3.5.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "Justin Ethier <github.com/justinethier>";
@@ -22,7 +13,7 @@
       synopsis = "R5RS Scheme interpreter, compiler, and library.";
       description = "A dialect of R5RS Scheme written in Haskell. Provides advanced\nfeatures including continuations, hygienic macros, a Haskell FFI,\nand the full numeric tower.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.directory)
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
-        ];
-      };
+          ];
+        };
       exes = {
         "huski" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.directory)
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)
-          ];
-        };
+            ];
+          };
         "huskc" = {
           depends = [
             (hsPkgs.husk-scheme)
@@ -69,8 +60,8 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

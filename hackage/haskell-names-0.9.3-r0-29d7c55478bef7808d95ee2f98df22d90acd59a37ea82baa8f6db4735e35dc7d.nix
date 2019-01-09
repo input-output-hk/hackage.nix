@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-names";
-        version = "0.9.3";
-      };
+      identifier = { name = "haskell-names"; version = "0.9.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Philipp Schuster";
@@ -22,7 +13,7 @@
       synopsis = "Name resolution library for Haskell";
       description = "This package takes modules parsed with `haskell-src-exts`, resolves used names and annotates the parsed module with scoping information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.data-lens-light)
           (hsPkgs.traverse-with-class)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.8") (hsPkgs.tagged);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.8") (hsPkgs.tagged);
+        };
       tests = {
         "test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.filemanip)
             (hsPkgs.pretty-show)
             (hsPkgs.traverse-with-class)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

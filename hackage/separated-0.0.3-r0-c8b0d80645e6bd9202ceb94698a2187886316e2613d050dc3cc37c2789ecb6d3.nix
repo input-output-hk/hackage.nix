@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "separated";
-        version = "0.0.3";
-      };
+      identifier = { name = "separated"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Tony Morris";
       maintainer = "Tony Morris";
@@ -22,15 +13,11 @@
       synopsis = "A data type with elements separated by values";
       description = "A data type with elements separated by values";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.lens)
-          (hsPkgs.semigroups)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.lens) (hsPkgs.semigroups) ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

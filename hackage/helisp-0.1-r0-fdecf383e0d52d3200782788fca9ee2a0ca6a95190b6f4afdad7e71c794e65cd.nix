@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "helisp";
-        version = "0.1";
-      };
+      identifier = { name = "helisp"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -22,7 +13,7 @@
       synopsis = "An incomplete Elisp compiler";
       description = "This is an incomplete compiler for Emacs Lisp;\nthe source might be of interest to others.\n\nThe Darcs repository can be found at\n<http://projects.codersbase.com/repos/helisp>.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "helisp" = {
@@ -32,8 +23,8 @@
             (hsPkgs.containers)
             (hsPkgs.process)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

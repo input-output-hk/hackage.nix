@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "canteven-http";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "canteven-http"; version = "0.1.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "rick@owenssoftware.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for HTTP programming.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.uuid)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snaplet-actionlog";
-        version = "0.2";
-      };
+      identifier = { name = "snaplet-actionlog"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ozataman@gmail.com, mightybyte@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generic action log snaplet for the Snap Framework";
       description = "This snaplet contains support for logging website actions.\nCommon actions are creating, updating, and deleting records.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.xmlhtml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

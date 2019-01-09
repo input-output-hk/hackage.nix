@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hslogger-reader";
-        version = "1.0.0";
-      };
+      identifier = { name = "hslogger-reader"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ard.bates@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parsing hslogger-produced logs.";
       description = "hslogger-reader provides a function to generate a parser for\n<http://hackage.haskell.org/package/hslogger hslogger>-produced logs\nfrom a hslogger format string (see \"System.Log.Formatter\"). The\naccompanying /profiling/ executable demonstrates parsing and computing\nwith a log file in constant memory.\nAlso bundled is the /filter-logs/ executable, a command-line tool to\nfilter a hslogger-syle log file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.hslogger)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       exes = {
         "profiling" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.hslogger-reader)
             (hsPkgs.text)
             (hsPkgs.attoparsec)
-          ];
-        };
+            ];
+          };
         "filter-logs" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +45,8 @@
             (hsPkgs.text-icu)
             (hsPkgs.optparse-applicative)
             (hsPkgs.old-locale)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

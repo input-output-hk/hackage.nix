@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Zora";
-        version = "1.1.23";
-      };
+      identifier = { name = "Zora"; version = "1.1.23"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bgwines@cs.stanford.edu";
@@ -22,7 +13,7 @@
       synopsis = "Graphing library wrapper + assorted useful functions";
       description = "A library of assorted useful functions for working with lists, doing mathematical operations and graphing custom data types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,15 +26,8 @@
           (hsPkgs.fgl)
           (hsPkgs.shelly)
           (hsPkgs.directory)
-        ];
-      };
-      tests = {
-        "test-zora" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Zora)
           ];
         };
+      tests = { "test-zora" = { depends = [ (hsPkgs.base) (hsPkgs.Zora) ]; }; };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "n2o-web";
-        version = "0.11.0";
-      };
+      identifier = { name = "n2o-web"; version = "0.11.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Marat Khafizov (c)";
       maintainer = "xafizoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "N2O adapter for WebSockets";
       description = "Poor man's WebSocket and HTTP static servers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.containers)
           (hsPkgs.fmt)
           (hsPkgs.base64-bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "mudbath";
-        version = "0.0.3";
-      };
+      identifier = { name = "mudbath"; version = "0.0.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "tomas.carnecky@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Continuous deployment server for use with GitHub";
       description = "Mudbath is continuous deployment server which integrates with GitHub. It\nlistens for deployment events and when it receives one, executes a shell\nscript. It reports progress back to GitHub in the form of deployment\nstatus updates.\nMudbath can also send notifications to Slack if the proper keys are\nprovided. Other notification sinks can be easily added if needed.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mudbath" = {
@@ -42,8 +33,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.cryptohash)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

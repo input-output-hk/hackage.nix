@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "GrowlNotify";
-        version = "0.4";
-      };
+      identifier = { name = "GrowlNotify"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nickburlett@mac.com";
@@ -22,7 +13,7 @@
       synopsis = "Notification utility for Growl.";
       description = "Notification utility for Growl.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.Crypto)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "growlnotify" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.Crypto)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

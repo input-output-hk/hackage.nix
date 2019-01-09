@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { servant-0-5 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-swagger-ui";
-        version = "0.2.4.3.4.0";
-      };
+      identifier = { name = "servant-swagger-ui"; version = "0.2.4.3.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Servant swagger ui";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,17 +32,14 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.wai-app-static)
-        ] ++ (if flags.servant-0-5
+          ] ++ (if flags.servant-0-5
           then [
             (hsPkgs.servant)
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
-          ]
-          else [
-            (hsPkgs.servant)
-            (hsPkgs.either)
-          ]);
-      };
+            ]
+          else [ (hsPkgs.servant) (hsPkgs.either) ]);
+        };
       tests = {
         "example" = {
           depends = [
@@ -67,13 +55,10 @@
             (hsPkgs.lens)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ] ++ (if flags.servant-0-5
-            then [
-              (hsPkgs.transformers)
-              (hsPkgs.transformers-compat)
-            ]
+            ] ++ (if flags.servant-0-5
+            then [ (hsPkgs.transformers) (hsPkgs.transformers-compat) ]
             else [ (hsPkgs.either) ]);
+          };
         };
       };
-    };
-  }
+    }

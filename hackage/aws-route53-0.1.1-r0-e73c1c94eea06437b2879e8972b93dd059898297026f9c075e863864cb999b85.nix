@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-route53";
-        version = "0.1.1";
-      };
+      identifier = { name = "aws-route53"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "MemCachier, Inc <code@memcachier.com>.";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Route53 DNS service plugin for the aws package.";
       description = "Amazon Route53 DNS service plugin for the aws package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.time)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-hamlet)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

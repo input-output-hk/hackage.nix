@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hydrogen-multimap";
-        version = "0.3";
-      };
+      identifier = { name = "hydrogen-multimap"; version = "0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "julian@scravy.de";
@@ -22,14 +13,10 @@
       synopsis = "Hydrogen Multimap";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.ghc-prim)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.ghc-prim) ];
+        };
       };
-    };
-  }
+    }

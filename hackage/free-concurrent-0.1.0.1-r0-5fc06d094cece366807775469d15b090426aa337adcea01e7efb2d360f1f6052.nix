@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "free-concurrent";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "free-concurrent"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "srijs@airpost.net";
@@ -22,13 +13,8 @@
       synopsis = "Free monads suitable for concurrent computation";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.type-aligned)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.type-aligned) ]; };
+      };
+    }

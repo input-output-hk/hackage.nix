@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Spock";
-        version = "0.4.3.5";
-      };
+      identifier = { name = "Spock"; version = "0.4.3.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 - 2014 Alexander Thiemann";
       maintainer = "mail@agrafix.net";
@@ -22,7 +13,7 @@
       synopsis = "Another Haskell web toolkit based on scotty";
       description = "This toolbox provides everything you need to get a quick start into web hacking with haskell: sessions, cookies, database helper, csrf-protection, global state and the power of scotty";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,7 +43,7 @@
           (hsPkgs.vault)
           (hsPkgs.path-pieces)
           (hsPkgs.hashable)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

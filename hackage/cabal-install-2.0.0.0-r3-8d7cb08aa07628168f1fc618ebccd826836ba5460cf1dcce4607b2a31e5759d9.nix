@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       old-bytestring = false;
@@ -15,13 +9,10 @@
       debug-tracetree = false;
       parsec = false;
       monolithic = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-install";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "cabal-install"; version = "2.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2003-2017, Cabal Development Team";
       maintainer = "Cabal Development Team <cabal-devel@haskell.org>";
@@ -31,7 +22,7 @@
       synopsis = "The command-line interface for Cabal and Hackage.";
       description = "The \\'cabal\\' command-line program simplifies the process of managing\nHaskell software by automating the fetching, configuration, compilation\nand installation of Haskell libraries and programs.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "cabal" = {
@@ -59,34 +50,22 @@
             (hsPkgs.time)
             (hsPkgs.zlib)
             (hsPkgs.hackage-security)
-          ] ++ (if flags.old-bytestring
-            then [
-              (hsPkgs.bytestring)
-              (hsPkgs.bytestring-builder)
-            ]
-            else [
-              (hsPkgs.bytestring)
-            ])) ++ (if flags.old-directory
-            then [
-              (hsPkgs.directory)
-              (hsPkgs.old-time)
-              (hsPkgs.process)
-            ]
+            ] ++ (if flags.old-bytestring
+            then [ (hsPkgs.bytestring) (hsPkgs.bytestring-builder) ]
+            else [ (hsPkgs.bytestring) ])) ++ (if flags.old-directory
+            then [ (hsPkgs.directory) (hsPkgs.old-time) (hsPkgs.process) ]
             else [
               (hsPkgs.directory)
               (hsPkgs.process)
-            ])) ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
+              ])) ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
             else [
               (hsPkgs.network)
-            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
+              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)
-            ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs.tracetree)) ++ pkgs.lib.optionals (flags.monolithic) [
+              ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs.tracetree)) ++ (pkgs.lib).optionals (flags.monolithic) [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.array)
@@ -109,10 +88,10 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.time)
             (hsPkgs.zlib)
-          ];
-          libs = pkgs.lib.optional (system.isAix) (pkgs."bsd");
+            ];
+          libs = (pkgs.lib).optional (system.isAix) (pkgs."bsd");
+          };
         };
-      };
       tests = {
         "unit-tests" = {
           depends = ((((([
@@ -142,15 +121,15 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tagged)
             (hsPkgs.QuickCheck)
-          ] ++ pkgs.lib.optional (flags.old-directory) (hsPkgs.old-time)) ++ [
+            ] ++ (pkgs.lib).optional (flags.old-directory) (hsPkgs.old-time)) ++ [
             (hsPkgs.network-uri)
             (hsPkgs.network)
-          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
+            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)
-            ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs.tracetree);
-        };
+              ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs.tracetree);
+          };
         "memory-usage-tests" = {
           depends = ((((([
             (hsPkgs.base)
@@ -177,15 +156,15 @@
             (hsPkgs.tagged)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ] ++ pkgs.lib.optional (flags.old-directory) (hsPkgs.old-time)) ++ [
+            ] ++ (pkgs.lib).optional (flags.old-directory) (hsPkgs.old-time)) ++ [
             (hsPkgs.network-uri)
             (hsPkgs.network)
-          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
+            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)
-            ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs.tracetree);
-        };
+              ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs.tracetree);
+          };
         "solver-quickcheck" = {
           depends = ((((([
             (hsPkgs.base)
@@ -213,15 +192,15 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
             (hsPkgs.pretty-show)
-          ] ++ pkgs.lib.optional (flags.old-directory) (hsPkgs.old-time)) ++ [
+            ] ++ (pkgs.lib).optional (flags.old-directory) (hsPkgs.old-time)) ++ [
             (hsPkgs.network-uri)
             (hsPkgs.network)
-          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
+            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [
               (hsPkgs.unix)
-            ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs.tracetree);
-        };
+              ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs.tracetree);
+          };
         "integration-tests2" = {
           depends = ((([
             (hsPkgs.async)
@@ -253,10 +232,10 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tagged)
-          ] ++ pkgs.lib.optional (flags.old-bytestring) (hsPkgs.bytestring-builder)) ++ pkgs.lib.optional (flags.old-directory) (hsPkgs.old-time)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
+            ] ++ (pkgs.lib).optional (flags.old-bytestring) (hsPkgs.bytestring-builder)) ++ (pkgs.lib).optional (flags.old-directory) (hsPkgs.old-time)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "zasni-gerna";
-        version = "0.0.3";
-      };
+      identifier = { name = "zasni-gerna"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yoshikuni Jujo <PAF01143@nifty.ne.jp>";
@@ -22,13 +13,8 @@
       synopsis = "lojban parser (zasni gerna)";
       description = "lojban zasni gerna parser";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.papillon)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.papillon) ]; };
+      };
+    }

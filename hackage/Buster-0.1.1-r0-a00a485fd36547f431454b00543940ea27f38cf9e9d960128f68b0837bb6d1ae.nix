@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Buster";
-        version = "0.1.1";
-      };
+      identifier = { name = "Buster"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2012 Michael Xavier";
       maintainer = "Michael Xavier <michael@michaelxavier.net>";
@@ -22,7 +13,7 @@
       synopsis = "Hits a set of urls periodically to bust caches";
       description = "Buster is a simple tool to periodically make requests to a list of URLs. The\nmain use case for this is to bust caches.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "buster" = {
@@ -40,9 +31,9 @@
             (hsPkgs.hslogger)
             (hsPkgs.transformers)
             (hsPkgs.hinotify)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.unix)
             (hsPkgs.errors)
             (hsPkgs.http-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

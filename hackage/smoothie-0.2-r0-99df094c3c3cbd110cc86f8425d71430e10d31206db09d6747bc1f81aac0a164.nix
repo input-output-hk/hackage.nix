@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "smoothie";
-        version = "0.2";
-      };
+      identifier = { name = "smoothie"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Dimitri Sabadie";
       maintainer = "Dimitri Sabadie <dimitri.sabadie@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Smooth curves via several splines and polynomials.";
       description = "This package exports several splines and curves you can use\nto interpolate points in between.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.linear)
-          (hsPkgs.vector)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.linear) (hsPkgs.vector) ];
+        };
       };
-    };
-  }
+    }

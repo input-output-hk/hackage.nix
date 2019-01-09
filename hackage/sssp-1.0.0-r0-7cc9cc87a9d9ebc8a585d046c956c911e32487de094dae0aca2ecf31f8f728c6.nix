@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { no-cli = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sssp";
-        version = "1.0.0";
-      };
+      identifier = { name = "sssp"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "oss@solidsnack.be";
@@ -22,7 +13,7 @@
       synopsis = "HTTP proxy for S3.";
       description = "An HTTP proxy for S3 that generates signed URLs for GETs and PUTs and\nproxies DELETEs. A very limited form of range queries, using semantic\nversion sort and ASCII set, are supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "sssp" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

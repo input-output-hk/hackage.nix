@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      bounds-checking-enabled = false;
-    };
+    flags = { bounds-checking-enabled = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-streams";
-        version = "0.0.0.4";
-      };
+      identifier = { name = "hw-streams"; version = "0.0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2016-2018 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Primitive functions and data types";
       description = "Primitive functions and data types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +27,8 @@
           (hsPkgs.vector)
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "hw-streams-test" = {
           depends = [
@@ -60,9 +49,9 @@
             (hsPkgs.hspec)
             (hsPkgs.hw-hspec-hedgehog)
             (hsPkgs.hw-streams)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -79,8 +68,8 @@
             (hsPkgs.criterion)
             (hsPkgs.hw-streams)
             (hsPkgs.mmap)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

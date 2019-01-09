@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "diagrams-rasterific";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "diagrams-rasterific"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diagrams-discuss@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Rasterific backend for diagrams.";
       description = "A full-featured backend for rendering\ndiagrams using the Rasterific rendering engine.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.bytestring)
           (hsPkgs.split)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

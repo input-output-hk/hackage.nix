@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stagen";
-        version = "0.0.0";
-      };
+      identifier = { name = "stagen"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Joe Vargas";
@@ -22,7 +13,7 @@
       synopsis = "Static site generator";
       description = "Low dependency static site generator using markdown";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,15 +31,8 @@
           (hsPkgs.parallel)
           (hsPkgs.parsec)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "stagen" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.stagen)
           ];
         };
+      exes = { "stagen" = { depends = [ (hsPkgs.base) (hsPkgs.stagen) ]; }; };
       };
-    };
-  }
+    }

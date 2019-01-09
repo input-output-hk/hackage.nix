@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rawstring-qm";
-        version = "0.1.5";
-      };
+      identifier = { name = "rawstring-qm"; version = "0.1.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tolysz@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple raw string quotation and dictionary interpolation";
       description = "Supply a couple of usefull QuasiQuotes so we can use functions to lookup values\nThis is an initial, and unstable package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.bytestring)
           (hsPkgs.haskell-src-meta)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

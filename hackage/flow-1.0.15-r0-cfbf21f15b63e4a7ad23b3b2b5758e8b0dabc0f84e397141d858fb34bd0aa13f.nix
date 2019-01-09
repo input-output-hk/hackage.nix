@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "flow";
-        version = "1.0.15";
-      };
+      identifier = { name = "flow"; version = "1.0.15"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,11 +13,9 @@
       synopsis = "Write more understandable Haskell.";
       description = "Flow provides operators for writing more understandable Haskell.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "test" = {
           depends = [
@@ -35,8 +24,8 @@
             (hsPkgs.doctest)
             (hsPkgs.flow)
             (hsPkgs.template-haskell)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

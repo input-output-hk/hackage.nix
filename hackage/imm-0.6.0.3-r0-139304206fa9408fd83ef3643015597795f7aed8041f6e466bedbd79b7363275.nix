@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "imm";
-        version = "0.6.0.3";
-      };
+      identifier = { name = "imm"; version = "0.6.0.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral att mailoo dott org";
@@ -22,7 +13,7 @@
       synopsis = "Retrieve RSS/Atom feeds and write one mail per new item in a maildir.";
       description = "Cf README";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,18 +48,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.xdg-basedir)
           (hsPkgs.xml)
-        ] ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
-        ];
-      };
-      exes = {
-        "imm" = {
-          depends = [
-            (hsPkgs.imm)
-            (hsPkgs.base)
-          ];
+          ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
         };
+      exes = { "imm" = { depends = [ (hsPkgs.imm) (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

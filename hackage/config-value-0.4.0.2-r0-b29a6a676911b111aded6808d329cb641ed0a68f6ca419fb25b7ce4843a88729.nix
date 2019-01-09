@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "config-value";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "config-value"; version = "0.4.0.2"; };
       license = "MIT";
       copyright = "2015 Eric Mertens";
       maintainer = "emertens@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple, layout-based value language similar to YAML or JSON";
       description = "This package implments a language similar to YAML or JSON but\nwith fewer special cases and fewer dependencies. It emphasizes\nlayout structure for sections and lists, and requires quotes\naround strings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,11 +22,11 @@
           (hsPkgs.pretty)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       };
-    };
-  }
+    }

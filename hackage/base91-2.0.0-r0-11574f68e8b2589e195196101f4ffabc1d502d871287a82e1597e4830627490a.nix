@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "base91";
-        version = "2.0.0";
-      };
+      identifier = { name = "base91"; version = "2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ajg";
@@ -22,14 +13,9 @@
       synopsis = "A Base91 Encoder & Decoder";
       description = "An implementation of Base91 encoding & decoding of arbitrary bytes (octets)\nto/from characters (all in the ASCII printable range)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mono-traversable)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.mono-traversable) ]; };
       exes = {
         "base91" = {
           depends = [
@@ -38,9 +24,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.mono-traversable)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +36,8 @@
             (hsPkgs.mono-traversable)
             (hsPkgs.text)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

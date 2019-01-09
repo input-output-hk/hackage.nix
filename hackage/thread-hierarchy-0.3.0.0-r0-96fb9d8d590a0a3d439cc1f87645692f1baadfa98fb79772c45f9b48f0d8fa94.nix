@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "thread-hierarchy";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "thread-hierarchy"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017 Naoto Shimazaki";
       maintainer = "Naoto.Shimazaki@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Simple Haskel thread management in hierarchical manner";
       description = "This package provides parent-child association and guaranteed clean-up of children\nover plain Haskell thread.  You can terminate all child threads and grand child threads by\njust killing their parent thread.\nasynchronous exception.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.stm)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.stm) ];
+        };
       tests = {
         "thread-hierarchy-test" = {
           depends = [
@@ -39,8 +26,8 @@
             (hsPkgs.hspec)
             (hsPkgs.stm)
             (hsPkgs.thread-hierarchy)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

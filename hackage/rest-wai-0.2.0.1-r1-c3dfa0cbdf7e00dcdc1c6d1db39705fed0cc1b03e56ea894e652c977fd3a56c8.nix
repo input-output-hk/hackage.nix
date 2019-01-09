@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rest-wai";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "rest-wai"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Rest driver for WAI applications.";
       description = "Rest driver for WAI applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "instant-generics";
-        version = "0.4.1";
-      };
+      identifier = { name = "instant-generics"; version = "0.4.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Universiteit Utrecht, 2012 University of Oxford";
       maintainer = "generics@haskell.org";
@@ -22,7 +13,7 @@
       synopsis = "Generic programming library with a sum of products view";
       description = "This is a generic programming library based on type classes and type families\nfirst described by Chakravarty et al. (see\n<http://www.cse.unsw.edu.au/~chak/project/generics/>). The current release\nimplements the extensions to support indexed datatypes described in:\n\n*  José Pedro Magalhães and Johan Jeuring.\n/Generic Programming for Indexed Datatypes./\nDraft version, 2011.\n<http://dreixel.net/research/pdf/gpid_draft.pdf>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.containers)
           (hsPkgs.syb)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

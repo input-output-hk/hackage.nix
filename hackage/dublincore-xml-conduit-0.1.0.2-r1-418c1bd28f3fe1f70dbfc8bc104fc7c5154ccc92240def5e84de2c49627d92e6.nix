@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enable-hlint-test = false;
-    };
+    flags = { enable-hlint-test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dublincore-xml-conduit";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "dublincore-xml-conduit"; version = "0.1.0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "chahine.moreau@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "XML streaming parser/renderer for the Dublin Core standard elements.";
       description = "Cf README file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +27,8 @@
           (hsPkgs.uri-bytestring)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "Tests" = {
           depends = [
@@ -61,14 +50,9 @@
             (hsPkgs.uri-bytestring)
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-types)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

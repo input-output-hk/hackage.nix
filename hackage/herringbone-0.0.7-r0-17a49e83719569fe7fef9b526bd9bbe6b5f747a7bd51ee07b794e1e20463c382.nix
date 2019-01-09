@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "herringbone";
-        version = "0.0.7";
-      };
+      identifier = { name = "herringbone"; version = "0.0.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "harry@garrood.me";
@@ -22,7 +13,7 @@
       synopsis = "A library for compiling and serving static web assets.";
       description = "A library for compiling and serving static web assets. For more information, please see <https://github.com/hdgarrood/herringbone>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.http-types)
           (hsPkgs.time)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       exes = {
         "herringbone-test-server" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.herringbone)
             (hsPkgs.text)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "herringbone-tests" = {
           depends = [
@@ -78,8 +69,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

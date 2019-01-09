@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "group-with";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "group-with"; version = "0.2.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "ukoehler@techoverflow.net";
@@ -22,14 +13,9 @@
       synopsis = "Classify objects by key-generating function, like SQL GROUP BY";
       description = "A library to classify objects into multimaps by using a function generating\nkeys for any object in the list.\nThis allows an approach similar to SQL GROUP BY.\nProvides a more flexible approach to `GHC.Exts.groupWith`.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
       tests = {
         "test-groupby" = {
           depends = [
@@ -39,8 +25,8 @@
             (hsPkgs.hspec-expectations)
             (hsPkgs.containers)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

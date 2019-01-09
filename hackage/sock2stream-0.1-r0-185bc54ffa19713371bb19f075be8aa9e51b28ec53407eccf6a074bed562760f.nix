@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sock2stream";
-        version = "0.1";
-      };
+      identifier = { name = "sock2stream"; version = "0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "© 2011 Stephen Paul Weber";
       maintainer = "Stephen Paul Weber <singpolyma@singpolyma.net>";
@@ -22,7 +13,7 @@
       synopsis = "Tunnel a socket over a single datastream (stdin/stdout)";
       description = "This is an initial implementation of a socket multiplexer\\/demultiplexer to tunnel Unix domain sockets over pipes\\/streams.\n\nThe primary envisioned use is to tunnel Unix domain sockets over SSH like so:\n\n> mkfifo /tmp/sockin\n> ssh user@host socket2stream -l /path/to/remotesocket < /tmp/sockin | socket2stream -r /path/to/localsocket > /tmp/sockin";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sock2stream" = {
@@ -35,8 +26,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.binary)
             (hsPkgs.chp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

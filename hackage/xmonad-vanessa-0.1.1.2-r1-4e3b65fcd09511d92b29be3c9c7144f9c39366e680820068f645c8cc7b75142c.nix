@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      library = true;
-      gold = true;
-    };
+    flags = { library = true; gold = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xmonad-vanessa";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "xmonad-vanessa"; version = "0.1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Vanessa McHale";
       maintainer = "vanessa.mchale@reconfigure.io";
@@ -25,7 +13,7 @@
       synopsis = "Custom xmonad, which builds with stack or cabal.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,22 +24,12 @@
           (hsPkgs.process)
           (hsPkgs.X11)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
-        "xmonad" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.xmonad-vanessa)
-          ];
+        "xmonad" = { depends = [ (hsPkgs.base) (hsPkgs.xmonad-vanessa) ]; };
+        "getkb" = { depends = [ (hsPkgs.base) (hsPkgs.xmonad-vanessa) ]; };
         };
-        "getkb" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.xmonad-vanessa)
-          ];
-        };
-      };
       tests = {
         "xmonad-test" = {
           depends = [
@@ -59,8 +37,8 @@
             (hsPkgs.xmonad-vanessa)
             (hsPkgs.hspec)
             (hsPkgs.xmonad)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

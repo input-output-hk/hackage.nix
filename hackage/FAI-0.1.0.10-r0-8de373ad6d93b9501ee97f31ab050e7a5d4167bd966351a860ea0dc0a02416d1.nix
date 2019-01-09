@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { enable-cuda = true; };
     package = {
       specVersion = "1.21";
-      identifier = {
-        name = "FAI";
-        version = "0.1.0.10";
-      };
+      identifier = { name = "FAI"; version = "0.1.0.10"; };
       license = "LGPL-3.0-only";
       copyright = "(C) 2018 Johann Lee <me@qinka.pro>";
       maintainer = "me@qinka.pro";
@@ -22,15 +13,12 @@
       synopsis = "Haskell Foreign Accelerate Interface";
       description = "The haskell interface for foreign accelerate framework.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.inline-c)
-        ];
-        libs = pkgs.lib.optional (flags.enable-cuda) (pkgs."cudart");
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.inline-c) ];
+        libs = (pkgs.lib).optional (flags.enable-cuda) (pkgs."cudart");
+        };
       tests = {
         "spec" = {
           depends = [
@@ -38,8 +26,8 @@
             (hsPkgs.FAI)
             (hsPkgs.inline-c)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

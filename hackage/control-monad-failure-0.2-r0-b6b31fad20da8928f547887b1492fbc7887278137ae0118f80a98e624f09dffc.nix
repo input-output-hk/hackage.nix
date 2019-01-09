@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { mtl = true; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "control-monad-failure";
-        version = "0.2";
-      };
+      identifier = { name = "control-monad-failure"; version = "0.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "pepeiborra@gmail.com";
@@ -22,13 +13,13 @@
       synopsis = "A class for monads which can fail with an error.";
       description = "A class for monads which can fail with an error.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (flags.mtl) (hsPkgs.mtl);
+          ] ++ (pkgs.lib).optional (flags.mtl) (hsPkgs.mtl);
+        };
       };
-    };
-  }
+    }

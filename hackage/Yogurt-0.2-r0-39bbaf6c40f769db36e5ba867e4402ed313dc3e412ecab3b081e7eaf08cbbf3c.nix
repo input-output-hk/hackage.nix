@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Yogurt";
-        version = "0.2";
-      };
+      identifier = { name = "Yogurt"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2008 Martijn van Steenbergen";
       maintainer = "martijn@van.steenbergen.nl";
@@ -22,7 +13,7 @@
       synopsis = "A MUD client library";
       description = "A MUD client library for Haskell. Features prioritized, regex-based hooks, variables and timers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.process)
           (hsPkgs.readline)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "hoogle";
-        version = "5.0.17.4";
-      };
+      identifier = { name = "hoogle"; version = "5.0.17.4"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2004-2018";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell API Search";
       description = "Hoogle is a Haskell API search engine, which allows you to\nsearch many standard Haskell libraries by either function name,\nor by approximate type signature.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -66,15 +57,8 @@
           (hsPkgs.warp)
           (hsPkgs.warp-tls)
           (hsPkgs.zlib)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
-      };
-      exes = {
-        "hoogle" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hoogle)
-          ];
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
         };
+      exes = { "hoogle" = { depends = [ (hsPkgs.base) (hsPkgs.hoogle) ]; }; };
       };
-    };
-  }
+    }

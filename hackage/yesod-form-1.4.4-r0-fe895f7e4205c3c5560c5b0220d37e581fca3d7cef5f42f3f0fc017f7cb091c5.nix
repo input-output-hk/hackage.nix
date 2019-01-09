@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-form";
-        version = "1.4.4";
-      };
+      identifier = { name = "yesod-form"; version = "1.4.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Form handling support for Yesod Web Framework";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-form>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,10 +40,10 @@
           (hsPkgs.aeson)
           (hsPkgs.resourcet)
           (hsPkgs.semigroups)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.time)
             (hsPkgs.hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "time-http";
-        version = "0.4";
-      };
+      identifier = { name = "time-http"; version = "0.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "PHO <pho AT cielonegro DOT org>";
@@ -22,7 +13,7 @@
       synopsis = "Parse and format HTTP/1.1 Date and Time strings";
       description = "This package provides functionalities to parse and format\nvarious Date and Time formats allowed in HTTP\\/1.1\n(<http://tools.ietf.org/html/rfc2616#section-3.3>).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.failure)
           (hsPkgs.tagged)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-time-http" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.failure)
             (hsPkgs.tagged)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

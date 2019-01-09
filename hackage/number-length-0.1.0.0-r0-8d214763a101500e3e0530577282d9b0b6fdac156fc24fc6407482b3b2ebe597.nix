@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      pedantic = false;
-      old-base = false;
-    };
+    flags = { pedantic = false; old-base = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "number-length";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "number-length"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015-2016, Peter Trško";
       maintainer = "peter.trsko@gmail.com";
@@ -25,16 +13,13 @@
       synopsis = "Number of digits in a number in decimal and hexadecimal representation.";
       description = "There are situations when it is necessary to know the length of a number in\ndecimal or hexadecimal form. In example when allocating buffer while\nserializing a number in to binary or human readable format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.old-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.tagged)
-          ]
+          then [ (hsPkgs.base) (hsPkgs.tagged) ]
           else [ (hsPkgs.base) ];
-      };
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -43,26 +28,20 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ] ++ (if flags.old-base
-            then [
-              (hsPkgs.base)
-              (hsPkgs.tagged)
-            ]
+            ] ++ (if flags.old-base
+            then [ (hsPkgs.base) (hsPkgs.tagged) ]
             else [ (hsPkgs.base) ]);
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
             (hsPkgs.criterion)
             (hsPkgs.number-length)
-          ] ++ (if flags.old-base
-            then [
-              (hsPkgs.base)
-              (hsPkgs.tagged)
-            ]
+            ] ++ (if flags.old-base
+            then [ (hsPkgs.base) (hsPkgs.tagged) ]
             else [ (hsPkgs.base) ]);
+          };
         };
       };
-    };
-  }
+    }

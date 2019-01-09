@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "imperative-edsl-vhdl";
-        version = "0.2";
-      };
+      identifier = { name = "imperative-edsl-vhdl"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mararon@chalmers.se";
@@ -22,7 +13,7 @@
       synopsis = "Deep embedding of VHDL programs with code generation.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.operational-alacarte)
           (hsPkgs.language-vhdl)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

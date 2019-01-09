@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hPDB-examples";
-        version = "1.0";
-      };
+      identifier = { name = "hPDB-examples"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright by Michal J. Gajda '2009-'2013";
       maintainer = "mjgajda@googlemail.com";
@@ -22,7 +13,7 @@
       synopsis = "Examples for hPDB library";
       description = "Examples for handling Protein Data Bank file format.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "PDB2Fasta" = {
@@ -42,8 +33,8 @@
             (hsPkgs.text)
             (hsPkgs.hPDB)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "ShiftToCenter" = {
           depends = [
             (hsPkgs.base)
@@ -61,8 +52,8 @@
             (hsPkgs.hPDB)
             (hsPkgs.bytestring)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "CleanPDB" = {
           depends = [
             (hsPkgs.base)
@@ -80,8 +71,8 @@
             (hsPkgs.text)
             (hsPkgs.hPDB)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "SplitModels" = {
           depends = [
             (hsPkgs.base)
@@ -99,8 +90,8 @@
             (hsPkgs.hPDB)
             (hsPkgs.bytestring)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "CanonicalAxes" = {
           depends = [
             (hsPkgs.base)
@@ -118,8 +109,8 @@
             (hsPkgs.text)
             (hsPkgs.hPDB)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "PrintEvents" = {
           depends = [
             (hsPkgs.base)
@@ -137,8 +128,8 @@
             (hsPkgs.text)
             (hsPkgs.hPDB)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "PrintStructureObject" = {
           depends = [
             (hsPkgs.base)
@@ -156,8 +147,8 @@
             (hsPkgs.text)
             (hsPkgs.hPDB)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "Rg" = {
           depends = [
             (hsPkgs.base)
@@ -175,8 +166,8 @@
             (hsPkgs.text)
             (hsPkgs.hPDB)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "StericClashCheck" = {
           depends = [
             (hsPkgs.base)
@@ -196,8 +187,8 @@
             (hsPkgs.text-format)
             (hsPkgs.hPDB)
             (hsPkgs.iterable)
-          ];
-        };
+            ];
+          };
         "Viewer" = {
           depends = [
             (hsPkgs.base)
@@ -217,8 +208,8 @@
             (hsPkgs.hPDB)
             (hsPkgs.bytestring)
             (hsPkgs.iterable)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

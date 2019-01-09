@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rollbar";
-        version = "1.0.0";
-      };
+      identifier = { name = "rollbar"; version = "1.0.0"; };
       license = "MIT";
       copyright = "Daggerboard Inc. makers of docmunch.com, Azara Solutions Inc.";
       maintainer = "Azara <engineering@azara.io>, Jeff Taggart <jeff@jetaggart.com>, Steven MacCoun <theraccoun@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "error tracking through rollbar.com";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.resourcet)
           (hsPkgs.http-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

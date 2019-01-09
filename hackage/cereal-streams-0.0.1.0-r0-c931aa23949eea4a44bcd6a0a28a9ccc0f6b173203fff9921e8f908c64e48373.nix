@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cereal-streams";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "cereal-streams"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Soostone Inc, Winterland";
       maintainer = "michael.xavier@soostone.com, winterland1989@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Use cereal to encode/decode io-streams.";
       description = "Use cereal to encode/decode io-streams.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
           (hsPkgs.io-streams)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.derive)
             (hsPkgs.base)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

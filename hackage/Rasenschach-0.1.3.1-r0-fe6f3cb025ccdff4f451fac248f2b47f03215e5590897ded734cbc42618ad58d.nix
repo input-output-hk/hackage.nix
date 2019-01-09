@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Rasenschach";
-        version = "0.1.3.1";
-      };
+      identifier = { name = "Rasenschach"; version = "0.1.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mwoehrle@arcor.de";
@@ -22,7 +13,7 @@
       synopsis = "Soccer simulation";
       description = "Soccer simulation with simple graphics and highly configurable AI";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Rasenschach" = {
@@ -43,8 +34,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.cereal)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

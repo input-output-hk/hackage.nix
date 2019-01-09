@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "purescript";
-        version = "0.5.7";
-      };
+      identifier = { name = "purescript"; version = "0.5.7"; };
       license = "MIT";
       copyright = "(c) 2013-14 Phil Freeman, (c) 2014 Gary Burgess, and other contributors";
       maintainer = "Phil Freeman <paf31@cantab.net>";
@@ -22,7 +13,7 @@
       synopsis = "PureScript Programming Language Compiler";
       description = "A small strongly, statically typed programming language with expressive types, inspired by Haskell and compiling to Javascript.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.pattern-arrows)
           (hsPkgs.monad-unify)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "psc" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.purescript)
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "psc-make" = {
           depends = [
             (hsPkgs.base)
@@ -68,8 +59,8 @@
             (hsPkgs.purescript)
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "psci" = {
           depends = [
             (hsPkgs.base)
@@ -84,8 +75,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.process)
             (hsPkgs.cmdtheline)
-          ];
-        };
+            ];
+          };
         "docgen" = {
           depends = [
             (hsPkgs.base)
@@ -94,8 +85,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.process)
             (hsPkgs.mtl)
-          ];
-        };
+            ];
+          };
         "hierarchy" = {
           depends = [
             (hsPkgs.base)
@@ -107,9 +98,9 @@
             (hsPkgs.parsec)
             (hsPkgs.filepath)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -123,8 +114,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

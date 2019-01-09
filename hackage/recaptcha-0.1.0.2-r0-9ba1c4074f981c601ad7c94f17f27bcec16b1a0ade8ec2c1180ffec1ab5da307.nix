@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "recaptcha";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "recaptcha"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 John MacFarlane";
       maintainer = "John MacFarlane <jgm@berkeley.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Functions for using the reCAPTCHA service in web applications.";
       description = "reCAPTCHA (http://recaptcha.net/) is a service that provides\ncaptchas for preventing automated spam in web applications.\nrecaptcha-hs provides functions for using reCAPTCHA in Haskell\nweb applications.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.HTTP)
           (hsPkgs.xhtml)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

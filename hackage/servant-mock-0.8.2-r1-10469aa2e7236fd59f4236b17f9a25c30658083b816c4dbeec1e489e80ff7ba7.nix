@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-mock";
-        version = "0.8.2";
-      };
+      identifier = { name = "servant-mock"; version = "0.8.2"; };
       license = "BSD-3-Clause";
       copyright = "2015-2016 Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Derive a mock server for free from your servant API types";
       description = "Derive a mock server for free from your servant API types\n\nSee the @Servant.Mock@ module for the documentation and an example.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.transformers)
           (hsPkgs.QuickCheck)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       exes = {
         "mock-app" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.servant-server)
             (hsPkgs.QuickCheck)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.servant-mock)
             (hsPkgs.aeson)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

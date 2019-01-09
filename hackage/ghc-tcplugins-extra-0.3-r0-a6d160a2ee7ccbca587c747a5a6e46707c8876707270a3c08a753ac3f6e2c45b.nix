@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { deverror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghc-tcplugins-extra";
-        version = "0.3";
-      };
+      identifier = { name = "ghc-tcplugins-extra"; version = "0.3"; };
       license = "BSD-2-Clause";
       copyright = "Copyright © 2015-2016, University of Twente,\n2017-2018, QBayLogic";
       maintainer = "christiaan.baaij@gmail.com";
@@ -22,13 +13,6 @@
       synopsis = "Utilities for writing GHC type-checker plugins";
       description = "Utilities for writing GHC type-checker plugins, such as\ncreating constraints, with a stable API covering multiple\nGHC releases.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc) ]; }; };
+    }

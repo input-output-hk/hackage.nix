@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsyslog-tcp";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hsyslog-tcp"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Ömer Sinan Ağacan";
       maintainer = "omeragacan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "syslog over TCP";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.network)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

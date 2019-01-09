@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Hungarian-Munkres";
-        version = "0.1.5";
-      };
+      identifier = { name = "Hungarian-Munkres"; version = "0.1.5"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2014 Kai Zhang";
       maintainer = "Kai Zhang <kai@kzhang.org>";
@@ -22,11 +13,9 @@
       synopsis = "A Linear Sum Assignment Problem (LSAP) solver";
       description = "This library provide a Haskell binding to the libhungarian,\na solver for Linear Sum Assignment Problem (LSAP) implemented\nin C language. It uses Hungarian algorithm\n<http://en.wikipedia.org/wiki/Hungarian_algorithm>, and runs\nin O(n^3) time. This implementation is efficient. Benchmarks\nversus pure haskell implementation are included (run\n\"cabal bench\").";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -37,9 +26,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -49,8 +38,8 @@
             (hsPkgs.Munkres)
             (hsPkgs.random)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

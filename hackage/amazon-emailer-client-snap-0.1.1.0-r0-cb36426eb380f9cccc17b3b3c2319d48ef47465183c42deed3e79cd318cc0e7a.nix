@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "amazon-emailer-client-snap";
         version = "0.1.1.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -22,7 +16,7 @@
       synopsis = "Client library for amazon-emailer daemon";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.snaplet-postgresql-simple)
           (hsPkgs.mtl)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

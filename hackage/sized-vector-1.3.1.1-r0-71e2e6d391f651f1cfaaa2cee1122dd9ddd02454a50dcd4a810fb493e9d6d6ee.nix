@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sized-vector";
-        version = "1.3.1.1";
-      };
+      identifier = { name = "sized-vector"; version = "1.3.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(C) Hiromi ISHII 2013";
       maintainer = "konn.jinro_at_gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Size-parameterized vector types and functions.";
       description = "Size-parameterized vector types and functions using a data-type promotion.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.equational-reasoning)
           (hsPkgs.hashable)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "coercion-bench" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.type-natural)
             (hsPkgs.parallel)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

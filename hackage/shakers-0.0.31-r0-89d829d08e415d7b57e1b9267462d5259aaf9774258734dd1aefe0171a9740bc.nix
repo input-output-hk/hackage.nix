@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "shakers";
-        version = "0.0.31";
-      };
+      identifier = { name = "shakers"; version = "0.0.31"; };
       license = "MIT";
       copyright = "Copyright (C) 2016 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Shake helpers.";
       description = "Primitive helpers for Shake files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,15 +23,10 @@
           (hsPkgs.directory)
           (hsPkgs.regex-compat)
           (hsPkgs.shake)
-        ];
-      };
-      exes = {
-        "shake-shakers" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.shakers)
           ];
         };
+      exes = {
+        "shake-shakers" = { depends = [ (hsPkgs.base) (hsPkgs.shakers) ]; };
+        };
       };
-    };
-  }
+    }

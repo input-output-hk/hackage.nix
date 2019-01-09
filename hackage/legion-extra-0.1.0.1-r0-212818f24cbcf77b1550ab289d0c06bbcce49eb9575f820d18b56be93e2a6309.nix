@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "legion-extra";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "legion-extra"; version = "0.1.0.1"; };
       license = "Apache-2.0";
       copyright = "2016 Rick Owens";
       maintainer = "rick@owensmurray.comm";
@@ -22,7 +13,7 @@
       synopsis = "Extra non-essential utilities for building legion applications.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,15 +28,12 @@
           (hsPkgs.safe)
           (hsPkgs.split)
           (hsPkgs.yaml)
-        ];
-      };
-      tests = {
-        "legion-extra-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.legion-extra)
           ];
         };
+      tests = {
+        "legion-extra-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.legion-extra) ];
+          };
+        };
       };
-    };
-  }
+    }

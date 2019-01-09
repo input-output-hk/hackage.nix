@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "delta-h";
-        version = "0.0.3";
-      };
+      identifier = { name = "delta-h"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "pitekus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Online entropy-based model of lexical category acquisition.";
       description = "Implementation of the model described in Grzegorz Chrupała\nand Afra Alishahi, Online Entropy-based Model of\nLexical Category Acquisition, CoNLL 2010\n<http://www.lsv.uni-saarland.de/personalPages/gchrupala/papers/conll-2010.pdf>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       exes = {
         "delta-h" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.containers)
             (hsPkgs.bytestring)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "stmcontrol";
-        version = "0.1";
-      };
+      identifier = { name = "stmcontrol"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "martin.sulzmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Control communication among retrying transactions";
       description = "Control communication among retrying transactions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.stm)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "resourcet";
-        version = "1.1.2.3";
-      };
+      identifier = { name = "resourcet"; version = "1.1.2.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Deterministic allocation and freeing of scarce resources.";
       description = "A full tutorial is available at <https://www.fpcomplete.com/user/snoyberg/library-documentation/resourcet>.\n\nThis package was originally included with the conduit package, but has existed as a separate package for quite a while. It is fully usable outside of conduit.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.mtl)
           (hsPkgs.mmorph)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hspec)
             (hsPkgs.lifted-base)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

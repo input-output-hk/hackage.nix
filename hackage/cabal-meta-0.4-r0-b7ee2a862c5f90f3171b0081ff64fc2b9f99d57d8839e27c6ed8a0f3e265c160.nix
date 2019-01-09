@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cabal-meta";
-        version = "0.4";
-      };
+      identifier = { name = "cabal-meta"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Greg Weber <greg@gregweber.info>";
@@ -22,15 +13,15 @@
       synopsis = "build multiple packages at once";
       description = "see: <http://www.yesodweb.com/blog/2012/04/cabal-meta> and <http://github.com/yesodweb/cabal-meta>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.shelly)
           (hsPkgs.text)
           (hsPkgs.system-filepath)
-        ] ++ [ (hsPkgs.base) ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        };
       exes = {
         "cabal-meta" = {
           depends = [
@@ -38,9 +29,9 @@
             (hsPkgs.text)
             (hsPkgs.system-filepath)
             (hsPkgs.system-fileio)
-          ] ++ [ (hsPkgs.base) ];
+            ] ++ [ (hsPkgs.base) ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.system-filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

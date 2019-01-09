@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      base4 = true;
-      splitbase = true;
-    };
+    flags = { base4 = true; splitbase = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "data-fin";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "data-fin"; version = "0.1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012--2014 wren ng thornton";
       maintainer = "wren@community.haskell.org";
@@ -25,7 +13,7 @@
       synopsis = "Finite totally ordered sets";
       description = "Finite totally ordered sets";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +23,7 @@
           (hsPkgs.smallcheck)
           (hsPkgs.lazysmallcheck)
           (hsPkgs.QuickCheck)
-        ] ++ [ (hsPkgs.base) ];
+          ] ++ [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

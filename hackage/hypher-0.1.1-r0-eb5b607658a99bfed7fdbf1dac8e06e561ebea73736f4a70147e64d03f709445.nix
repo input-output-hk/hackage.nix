@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hypher";
-        version = "0.1.1";
-      };
+      identifier = { name = "hypher"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2015 Jeff Taggart";
       maintainer = "jeff@jetaggart.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell neo4j client";
       description = "Library to interact with Neo4j databases.\n\nThis library covers:\n\n-Cypher transactions\n\n-CRUD operations for nodes, relationships, labels and indexes\n\n-Batch calls for CRUD operations.\n\n\nAll code has been tested with Neo4j versions 2.0.3 and 2.1.5.\nThis is a fork of: http://hackage.haskell.org/package/haskell-neo4j-client. Attempting to bring it up to date.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-hypher" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.hashable)
             (hsPkgs.monad-control)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

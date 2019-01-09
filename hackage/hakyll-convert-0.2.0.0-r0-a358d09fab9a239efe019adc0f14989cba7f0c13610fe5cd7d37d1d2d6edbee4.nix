@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hakyll-convert";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hakyll-convert"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexander Batischev <eual.jp@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Convert from other blog engines to Hakyll.";
       description = "WordPress and Blogger only let one export posts in\na limited number of formats, none of which are supported\nby Hakyll. @hakyll-convert@ is created to bridge this gap,\nproviding a way to turn other platform's datadumps into\na set of files Hakyll understands.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.xml)
-        ];
-      };
+          ];
+        };
       exes = {
         "hakyll-convert" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.xml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

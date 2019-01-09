@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pcf-font";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "pcf-font"; version = "0.2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017 Michael Swan";
       maintainer = "mswan@fastmail.com";
@@ -22,7 +13,7 @@
       synopsis = "PCF font parsing and rendering library.";
       description = "pcf-font is a library for parsing and rendering X11 PCF fonts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.containers)
           (hsPkgs.vector)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

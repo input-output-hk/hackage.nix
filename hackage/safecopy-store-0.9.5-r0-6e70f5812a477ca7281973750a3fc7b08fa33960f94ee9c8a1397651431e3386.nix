@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "safecopy-store";
-        version = "0.9.5";
-      };
+      identifier = { name = "safecopy-store"; version = "0.9.5"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Anton Gushcha <ncrashed@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Binary serialization with version control.";
       description = "Fork of safecopy that uses store instead of cereal.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "instances" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

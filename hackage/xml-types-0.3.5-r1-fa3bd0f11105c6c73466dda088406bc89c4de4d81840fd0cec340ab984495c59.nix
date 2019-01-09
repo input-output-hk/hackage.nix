@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "xml-types";
-        version = "0.3.5";
-      };
+      identifier = { name = "xml-types"; version = "0.3.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Basic types for representing XML";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

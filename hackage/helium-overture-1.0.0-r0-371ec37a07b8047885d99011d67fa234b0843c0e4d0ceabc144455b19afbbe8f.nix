@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "helium-overture";
-        version = "1.0.0";
-      };
+      identifier = { name = "helium-overture"; version = "1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "patrick@helium.com";
@@ -22,7 +13,7 @@
       synopsis = "A backwards-compatible, modern replacement for the Prelude.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "http-client-auth";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "http-client-auth"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "miguelimo38@yandex.ru";
@@ -22,7 +13,7 @@
       synopsis = "HTTP authorization (both basic and digest) done right";
       description = "Multiple challenges aren't implemented. Authentication-Info header isn't either.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.conduit)
           (hsPkgs.pureMD5)
           (hsPkgs.http-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

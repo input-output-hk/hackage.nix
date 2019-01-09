@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "atl";
-        version = "15322.1";
-      };
+      identifier = { name = "atl"; version = "15322.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "strake888@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Arrow Transformer Library";
       description = "Arrow Transformer Library";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

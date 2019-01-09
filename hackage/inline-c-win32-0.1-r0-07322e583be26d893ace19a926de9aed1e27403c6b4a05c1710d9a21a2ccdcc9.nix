@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "inline-c-win32";
-        version = "0.1";
-      };
+      identifier = { name = "inline-c-win32"; version = "0.1"; };
       license = "MIT";
       copyright = "Anton Dessiatov,";
       maintainer = "anton.dessiatov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Win32 API Context for the inline-c library";
       description = "This is a little helper for the marvelous inline-c library. It provides a context with Win32 API\ndata types so you can use DWORD, BOOL, UINT and other Win32 data types right in your inlined\nfunction types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.inline-c)
           (hsPkgs.template-haskell)
           (hsPkgs.Win32)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

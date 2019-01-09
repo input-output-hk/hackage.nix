@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HaRe";
-        version = "0.7.2.0";
-      };
+      identifier = { name = "HaRe"; version = "0.7.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alan Zimmerman";
@@ -22,7 +13,7 @@
       synopsis = "the Haskell Refactorer.";
       description = "A Haskell 2010 refactoring tool. HaRe supports the full\nHaskell 2010 standard, through making use of the GHC API.\n\nIt is tested against GHC 7.4.x and 7.6.x (via travis-ci.org)\n\nIt currently only has emacs integration built in, community input\nwelcome for others.\n\nWarning: This is alpha code. Always commit code to your version\ncontrol system before refactoring. The developers make no\nwarranties, use at your own risk.\n\nDespite the disclaimer, HaRe attempts to operate in a safe way, by\nfirst writing new files with proposed changes, and only swapping\nthese with the originals when the change is accepted. In the\nprocess the original file is renamed to have the current date/time\nas a suffix. Thus it should be possible to (manually) undo changes.\n\nThe renaming refactoring seems reasonably reliable, as does lifting\nand demoting\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.time)
           (hsPkgs.Strafunski-StrategyLib)
           (hsPkgs.syz)
-        ];
-      };
+          ];
+        };
       exes = {
         "ghc-hare" = {
           depends = [
@@ -78,9 +69,9 @@
             (hsPkgs.Strafunski-StrategyLib)
             (hsPkgs.syz)
             (hsPkgs.HaRe)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -114,8 +105,8 @@
             (hsPkgs.Strafunski-StrategyLib)
             (hsPkgs.syz)
             (hsPkgs.HaRe)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

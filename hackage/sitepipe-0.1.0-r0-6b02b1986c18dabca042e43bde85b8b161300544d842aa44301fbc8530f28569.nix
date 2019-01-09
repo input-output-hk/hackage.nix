@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sitepipe";
-        version = "0.1.0";
-      };
+      identifier = { name = "sitepipe"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple to understand static site generator";
       description = "A simple to understand static site generator";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.aeson)
           (hsPkgs.shelly)
           (hsPkgs.MissingH)
-        ];
-      };
+          ];
+        };
       exes = {
         "sitepipe-exe" = {
           depends = [
@@ -60,16 +51,11 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.mustache)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "sitepipe-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.sitepipe)
-          ];
+        "sitepipe-test" = { depends = [ (hsPkgs.base) (hsPkgs.sitepipe) ]; };
         };
       };
-    };
-  }
+    }

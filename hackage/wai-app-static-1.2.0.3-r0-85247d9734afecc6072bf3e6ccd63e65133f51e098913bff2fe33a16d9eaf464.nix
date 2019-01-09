@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      print = false;
-      blaze_html_0_5 = false;
-    };
+    flags = { print = false; blaze_html_0_5 = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-app-static";
-        version = "1.2.0.3";
-      };
+      identifier = { name = "wai-app-static"; version = "1.2.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -25,7 +13,7 @@
       synopsis = "WAI application for static serving";
       description = "Also provides some helper functions and datatypes for use outside of WAI.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,13 +33,10 @@
           (hsPkgs.base64-bytestring)
           (hsPkgs.cryptohash)
           (hsPkgs.http-date)
-        ] ++ (if flags.blaze_html_0_5
-          then [
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-          ]
+          ] ++ (if flags.blaze_html_0_5
+          then [ (hsPkgs.blaze-html) (hsPkgs.blaze-markup) ]
           else [ (hsPkgs.blaze-html) ]);
-      };
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -70,8 +55,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

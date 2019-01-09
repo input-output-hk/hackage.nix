@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "archiver";
-        version = "0.4";
-      };
+      identifier = { name = "archiver"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Gwern <gwern0@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Archive supplied URLs in WebCite & Internet Archive";
       description = "archiver is a daemon which will process a specified text file,\neach line of which is a URL, and will (randomly) one by one request that\nthe URLs be archived or spidered by <http://www.webcitation.org> and\n<http://www.archive.org> for future reference. (One may optionally specify\nan arbitrary `sh` command like \"wget --page-requisites\" to download URLs locally.)\n\nBecause the interface is a simple text file, this can be combined\nwith other scripts; for example, a script using Sqlite to extract\nvisited URLs from Firefox, or a program extracting URLs from Pandoc\ndocuments. (See <http://www.gwern.net/Archiving%20URLs>.)\n\nFor explanation of the derivation of the code in `Network.URL.Archiver`,\nsee <http://www.gwern.net/haskell/Wikipedia%20Archive%20Bot>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.network)
           (hsPkgs.HTTP)
           (hsPkgs.curl)
-        ];
-      };
+          ];
+        };
       exes = {
         "archiver" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.random)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

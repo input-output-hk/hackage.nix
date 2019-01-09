@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "restyle";
-        version = "0.1.0";
-      };
+      identifier = { name = "restyle"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2010 Daniel Fischer";
       maintainer = "Daniel Fischer <daniel.is.fischer@web.de>";
@@ -22,11 +13,9 @@
       synopsis = "Convert between camel case and separated words style.";
       description = "Functions to transform Haskell source files and\nhaddock(or HsColour)-produced HTML files from camel case\nto separated words or Haskell source from separated words\nto camel case.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "restyle" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

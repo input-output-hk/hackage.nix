@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prometheus-metrics-ghc";
-        version = "0.1.1";
-      };
+      identifier = { name = "prometheus-metrics-ghc"; version = "0.1.1"; };
       license = "Apache-2.0";
       copyright = "2015 Will Coster";
       maintainer = "willcoster@gmail.com";
@@ -22,23 +13,23 @@
       synopsis = "Metrics exposing GHC runtime information for use with prometheus-client.";
       description = "Metrics exposing GHC runtime information for use with prometheus-client.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.prometheus-client)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.prometheus-client)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

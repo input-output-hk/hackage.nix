@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      ghc-six-ten-one = true;
-    };
+    flags = { ghc-six-ten-one = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "vacuum";
-        version = "0.0.9";
-      };
+      identifier = { name = "vacuum"; version = "0.0.9"; };
       license = "LicenseRef-LGPL";
       copyright = "(c) Matt Morrow 2008";
       maintainer = "Matt Morrow <morrow@moonpatio.com>";
@@ -24,7 +13,7 @@
       synopsis = "Extract graph representations of ghc heap values.";
       description = ".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +27,7 @@
           (hsPkgs.array)
           (hsPkgs.pretty)
           (hsPkgs.haskell-src-meta)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

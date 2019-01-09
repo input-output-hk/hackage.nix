@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       build-samples = false;
       use-debug-output = false;
       run-integrated-test = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "twitter-conduit";
-        version = "0.0.5.4";
-      };
+      identifier = { name = "twitter-conduit"; version = "0.0.5.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Takahiro HIMURA <taka@himura.jp>";
@@ -26,7 +17,7 @@
       synopsis = "Twitter API package with conduit interface and Streaming API support.";
       description = "This package provides bindings to Twitter's APIs (see <https://dev.twitter.com/>).\n\nThis package uses the http-conduit package for accessing the Twitter API (see <http://hackage.haskell.org/package/http-conduit>).\nThis package also depends on the twitter-types package (see <http://hackage.haskell.org/package/twitter-types>).\n\nYou can find basic examples in the <https://github.com/himura/twitter-conduit/tree/master/sample> directory.\n\nThis package is under development. If you find something that has not been implemented yet, please send a pull request or open an issue on GitHub.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,11 +42,11 @@
           (hsPkgs.containers)
           (hsPkgs.time)
           (hsPkgs.twitter-types)
-        ];
-      };
+          ];
+        };
       exes = {
         "simple" = {
-          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.transformers-base)
             (hsPkgs.transformers)
@@ -70,10 +61,10 @@
             (hsPkgs.monad-logger)
             (hsPkgs.authenticate-oauth)
             (hsPkgs.twitter-conduit)
-          ];
-        };
+            ];
+          };
         "userstream" = {
-          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers-base)
@@ -96,10 +87,10 @@
             (hsPkgs.monad-logger)
             (hsPkgs.authenticate-oauth)
             (hsPkgs.twitter-conduit)
-          ];
-        };
+            ];
+          };
         "oauth_callback" = {
-          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers-base)
@@ -114,10 +105,10 @@
             (hsPkgs.authenticate-oauth)
             (hsPkgs.twitter-conduit)
             (hsPkgs.scotty)
-          ];
-        };
+            ];
+          };
         "oauth_pin" = {
-          depends = pkgs.lib.optionals (!(!flags.build-samples)) [
+          depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.transformers-base)
@@ -131,24 +122,19 @@
             (hsPkgs.http-conduit)
             (hsPkgs.authenticate-oauth)
             (hsPkgs.twitter-conduit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
-        };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.doctest)
-          ];
-        };
+            ];
+          };
         "spec_main" = {
           depends = [
             (hsPkgs.base)
@@ -177,8 +163,8 @@
             (hsPkgs.containers)
             (hsPkgs.hspec)
             (hsPkgs.twitter-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

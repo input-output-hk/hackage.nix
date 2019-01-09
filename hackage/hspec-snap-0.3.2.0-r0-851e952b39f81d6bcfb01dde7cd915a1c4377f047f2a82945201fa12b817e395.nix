@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hspec-snap";
-        version = "0.3.2.0";
-      };
+      identifier = { name = "hspec-snap"; version = "0.3.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -22,7 +13,7 @@
       synopsis = "A library for testing with Hspec and the Snap Web Framework";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.snap-core)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-hspec-snap" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.transformers)
             (hsPkgs.directory)
             (hsPkgs.hspec-snap)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

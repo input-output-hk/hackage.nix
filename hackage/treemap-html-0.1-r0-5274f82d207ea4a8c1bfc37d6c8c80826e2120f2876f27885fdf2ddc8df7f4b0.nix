@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { testing = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "treemap-html";
-        version = "0.1";
-      };
+      identifier = { name = "treemap-html"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Radoslav Dorcik <radoslav.dorcik@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Generates HTML for Data.Tree as TreeMap";
       description = "Generates HTML for Data.Tree as TreeMap which\nis possible explore directly in browser because\nof small javascript code included.\nEach node is displayed as white box without\nany nested boxes inside.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.html)
           (hsPkgs.containers)
           (hsPkgs.Cabal)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

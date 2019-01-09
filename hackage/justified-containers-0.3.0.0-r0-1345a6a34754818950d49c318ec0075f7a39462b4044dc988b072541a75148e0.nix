@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "justified-containers";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "justified-containers"; version = "0.3.0.0"; };
       license = "BSD-2-Clause";
       copyright = "2017 Matt Noonan";
       maintainer = "matt.noonan@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Keyed container types with type-checked proofs of key presence.";
       description = "This package contains wrappers around standard container types,\nthat provide guarantees about the presence of keys within the\ncontainer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.roles)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.roles) ];
+        };
       tests = {
         "justified-containers-spec" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.should-not-typecheck)
             (hsPkgs.ghc-prim)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-basic";
-        version = "0.2.0.4";
-      };
+      identifier = { name = "data-basic"; version = "0.2.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "nikola@henezi.com, luka.horvat9@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A database library with a focus on ease of use, type safety and useful error messages";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.simple-logging)
           (hsPkgs.scientific)
           (hsPkgs.attoparsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "basic-test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.lens)
             (hsPkgs.aeson)
             (hsPkgs.string-conv)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

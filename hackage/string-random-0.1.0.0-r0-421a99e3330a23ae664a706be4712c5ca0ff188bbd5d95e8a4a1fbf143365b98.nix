@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "string-random";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "string-random"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016- hiratara";
       maintainer = "hiratara@cpan.org";
@@ -22,7 +13,7 @@
       synopsis = "A library for generating random string from a regular experession";
       description = "With this package you can generate random strings from\nregular expressions. If you are using QuickCheck, you can\nalso check the quickcheck-string-random package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.random)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "string-random-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "string-random-quickcheck" = {
           depends = [
             (hsPkgs.base)
@@ -55,8 +46,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "fay";
-        version = "0.10.1.0";
-      };
+      identifier = { name = "fay"; version = "0.10.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2012 Chris Done";
       maintainer = "chrisdone@gmail.com, adam@edea.se";
@@ -22,7 +13,7 @@
       synopsis = "A compiler for Fay, a Haskell subset that compiles to JavaScript.";
       description = "Fay is a proper subset of Haskell which can be compiled (type-checked)\nwith GHC, and compiled to JavaScript. It is lazy, pure, with a Fay monad,\nan FFI, tail-recursion optimization (experimental). It implements no type\nsystem, for type-checking you should use GHC.\n\n/Documentation/\n\nSee documentation at <http://fay-lang.org/> or build your own documentation with:\n\n> \$ cabal unpack fay\n> \$ cd fay-*\n> \$ cabal install\n> \$ dist/build/fay-docs/fay-docs\n\n\n/Examples/\n\nSee <http://fay-lang.org/#examples>.\n\n/Release Notes/\n\n* Enable strict list for arithmetic sequences optimisation only when compiler optimise flag set.\n\n* Add print and putStrLn to the Prelude\n\n* Add list utility functions from the standard Prelude\n\n* Test optimized as well as unoptimized builds.\n\n* Standard precendence and associativity for infix operators\n\n* Add function utilities from Prelude, including seq\n\n* Add math functions in Prelude\n\n* Add support for sections (desugaring to lambdas)\n\n* Added example of the ContT and Deferred monad, sleep and readFile.\n\n* Add more of the prelude, including error and a lot of math stuff.\n\n* Remove needs for module declarations in modules that define main.\n\n* Support enumThen ([1,2..]) style lists.\n\n* Add support for enumFromThenTo ([1,2..10]) lists.\n\nSee full history at: <https://github.com/faylang/fay/commits>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.directory)
           (hsPkgs.groom)
           (hsPkgs.random)
-        ] ++ pkgs.lib.optionals (!flags.devel) [
+          ] ++ (pkgs.lib).optionals (!flags.devel) [
           (hsPkgs.HUnit)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
@@ -58,8 +49,8 @@
           (hsPkgs.test-framework)
           (hsPkgs.test-framework-hunit)
           (hsPkgs.test-framework-th)
-        ];
-      };
+          ];
+        };
       exes = {
         "fay" = {
           depends = [
@@ -87,8 +78,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.split)
             (hsPkgs.haskeline)
-          ];
-        };
+            ];
+          };
         "fay-tests" = {
           depends = [
             (hsPkgs.base)
@@ -116,8 +107,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th)
-          ];
-        };
+            ];
+          };
         "fay-docs" = {
           depends = [
             (hsPkgs.base)
@@ -146,8 +137,8 @@
             (hsPkgs.language-ecmascript)
             (hsPkgs.groom)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

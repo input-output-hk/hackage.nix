@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "network-fancy";
-        version = "0.2.2";
-      };
+      identifier = { name = "network-fancy"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "Taru Karttunen <taruti@taruti.net>";
       maintainer = "taruti@taruti.net";
@@ -22,16 +13,13 @@
       synopsis = "Networking support with a cleaner API";
       description = "Networking support with a cleaner API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = if system.isWindows
           then [ (pkgs."ws2_32") ]
-          else pkgs.lib.optional (system.isSolaris) (pkgs."socket") ++ pkgs.lib.optional (system.isLinux) (pkgs."pthread");
+          else (pkgs.lib).optional (system.isSolaris) (pkgs."socket") ++ (pkgs.lib).optional (system.isLinux) (pkgs."pthread");
+        };
       };
-    };
-  }
+    }

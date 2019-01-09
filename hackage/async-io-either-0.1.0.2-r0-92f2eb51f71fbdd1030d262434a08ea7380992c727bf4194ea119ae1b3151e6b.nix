@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "async-io-either";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "async-io-either"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2017 Sean Chalmers";
       maintainer = "sclhiannan@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Could be useful";
       description = "A way of running any IO type and capturing any exception, maybe, I think...";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.async)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.async) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

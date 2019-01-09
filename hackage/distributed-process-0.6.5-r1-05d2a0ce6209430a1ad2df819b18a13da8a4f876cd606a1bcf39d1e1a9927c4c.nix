@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      th = true;
-      old-locale = false;
-    };
+    flags = { th = true; old-locale = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distributed-process";
-        version = "0.6.5";
-      };
+      identifier = { name = "distributed-process"; version = "0.6.5"; };
       license = "BSD-3-Clause";
       copyright = "Well-Typed LLP, Tweag I/O Limited";
       maintainer = "Facundo Domínguez <facundo.dominguez@tweag.io>";
@@ -25,7 +13,7 @@
       synopsis = "Cloud Haskell: Erlang-style concurrency in Haskell";
       description = "This is an implementation of Cloud Haskell, as described in\n/Towards Haskell in the Cloud/ by Jeff Epstein, Andrew Black,\nand Simon Peyton Jones\n(<http://research.microsoft.com/en-us/um/people/simonpj/papers/parallel/>),\nalthough some of the details are different. The precise message\npassing semantics are based on /A unified semantics for future Erlang/\nby Hans Svensson, Lars-&#xc5;ke Fredlund and Clara Benac Earle.\nYou will probably also want to install a Cloud Haskell backend such\nas distributed-process-simplelocalnet.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -43,18 +31,12 @@
           (hsPkgs.rank1dynamic)
           (hsPkgs.syb)
           (hsPkgs.exceptions)
-        ] ++ [
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-        ]) ++ (if flags.old-locale
-          then [
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-          ]
+          ] ++ [ (hsPkgs.containers) (hsPkgs.deepseq) ]) ++ (if flags.old-locale
+          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
           else [
             (hsPkgs.time)
-          ])) ++ pkgs.lib.optional (flags.th) (hsPkgs.template-haskell);
-      };
+            ])) ++ (pkgs.lib).optional (flags.th) (hsPkgs.template-haskell);
+        };
       benchmarks = {
         "distributed-process-throughput" = {
           depends = [
@@ -63,8 +45,8 @@
             (hsPkgs.network-transport-tcp)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "distributed-process-latency" = {
           depends = [
             (hsPkgs.base)
@@ -72,8 +54,8 @@
             (hsPkgs.network-transport-tcp)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "distributed-process-channels" = {
           depends = [
             (hsPkgs.base)
@@ -81,8 +63,8 @@
             (hsPkgs.network-transport-tcp)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "distributed-process-spawns" = {
           depends = [
             (hsPkgs.base)
@@ -90,8 +72,8 @@
             (hsPkgs.network-transport-tcp)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
-          ];
-        };
+            ];
+          };
         "distributed-process-ring" = {
           depends = [
             (hsPkgs.base)
@@ -99,8 +81,8 @@
             (hsPkgs.network-transport-tcp)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

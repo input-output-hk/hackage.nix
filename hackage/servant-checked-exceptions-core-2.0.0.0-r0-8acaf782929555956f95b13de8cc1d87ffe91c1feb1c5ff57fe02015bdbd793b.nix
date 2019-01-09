@@ -1,20 +1,12 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexample = false;
-    };
+    flags = { buildexample = false; };
     package = {
       specVersion = "1.10";
       identifier = {
         name = "servant-checked-exceptions-core";
         version = "2.0.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2017-2018 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -24,7 +16,7 @@
       synopsis = "Checked exceptions for Servant APIs.";
       description = "Please see <https://github.com/cdepillabout/servant-checked-exceptions#readme README.md>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +32,8 @@
           (hsPkgs.servant-docs)
           (hsPkgs.text)
           (hsPkgs.world-peace)
-        ];
-      };
+          ];
+        };
       exes = {
         "servant-checked-exceptions-example-docs" = {
           depends = [
@@ -53,17 +45,13 @@
             (hsPkgs.servant-checked-exceptions-core)
             (hsPkgs.servant-docs)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "servant-checked-exceptions-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         };
       };
-    };
-  }
+    }

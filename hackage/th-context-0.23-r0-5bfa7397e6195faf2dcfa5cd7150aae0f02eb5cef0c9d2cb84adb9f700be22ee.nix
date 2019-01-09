@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "th-context";
-        version = "0.23";
-      };
+      identifier = { name = "th-context"; version = "0.23"; };
       license = "BSD-3-Clause";
       copyright = "(c) David Fox";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -22,7 +13,7 @@
       synopsis = "Test instance context";
       description = "Use these functions to decide an a not-quite naive fashion\nwhether an instance already exists that satisfies a given\ncontext.  This can be used to decide whether an instance\nneeds to be generated, as in th-reify-many.  Known limitation:\nthe instances inserted into the InstMap are not fully recognized\nwhen computing the context.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.th-desugar)
           (hsPkgs.th-orphans)
           (hsPkgs.th-typegraph)
-        ];
-      };
+          ];
+        };
       tests = {
         "th-context-tests" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.th-orphans)
             (hsPkgs.th-reify-many)
             (hsPkgs.th-typegraph)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

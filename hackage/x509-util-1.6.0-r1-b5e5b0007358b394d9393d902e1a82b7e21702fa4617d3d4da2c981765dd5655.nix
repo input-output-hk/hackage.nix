@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "x509-util";
-        version = "1.6.0";
-      };
+      identifier = { name = "x509-util"; version = "1.6.0"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Utility for X509 certificate and chain";
       description = "utility to parse, show, validate, sign and produce X509 certificates and chain.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "x509-util" = {
@@ -38,8 +29,8 @@
             (hsPkgs.pem)
             (hsPkgs.directory)
             (hsPkgs.cryptonite)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

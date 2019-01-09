@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "readme-lhs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "readme-lhs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "See readme.lhs";
       description = "See readme.lhs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.foldl)
           (hsPkgs.text)
           (hsPkgs.attoparsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "lhs" = {
           depends = [
@@ -43,17 +34,17 @@
             (hsPkgs.filepath)
             (hsPkgs.text)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "readme" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.protolude)
             (hsPkgs.text)
             (hsPkgs.foldl)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.readme-lhs)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

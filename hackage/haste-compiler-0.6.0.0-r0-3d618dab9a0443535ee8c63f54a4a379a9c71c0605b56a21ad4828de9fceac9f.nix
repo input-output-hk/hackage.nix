@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      portable = false;
-      static = false;
-    };
+    flags = { portable = false; static = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haste-compiler";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "haste-compiler"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anton@ekblad.cc";
@@ -25,7 +13,7 @@
       synopsis = "Haskell To ECMAScript compiler";
       description = "This package provides a featureful compiler from Haskell to\nJavaScript based on GHC. It generates small, fast code, makes\nuse of standard Haskell libraries, integrates with Cabal,\nsupports most GHC extensions and works on Windows, Linux and\nOSX.\nNon-Linux users are strongly recommended to download pre-built\nbinary packages from haste-lang.org instead of building\nfrom source.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "haste-boot" = {
@@ -45,8 +33,8 @@
             (hsPkgs.ghc)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "hastec" = {
           depends = [
             (hsPkgs.base)
@@ -67,8 +55,8 @@
             (hsPkgs.directory)
             (hsPkgs.cryptonite)
             (hsPkgs.ghc-simple)
-          ];
-        };
+            ];
+          };
         "haste-pkg" = {
           depends = [
             (hsPkgs.base)
@@ -82,11 +70,11 @@
             (hsPkgs.bytestring)
             (hsPkgs.shellmate)
             (hsPkgs.ghc)
-          ] ++ pkgs.lib.optionals (!system.isWindows) [
+            ] ++ (pkgs.lib).optionals (!system.isWindows) [
             (hsPkgs.unix)
             (hsPkgs.terminfo)
-          ];
-        };
+            ];
+          };
         "haste-cat" = {
           depends = [
             (hsPkgs.base)
@@ -102,8 +90,8 @@
             (hsPkgs.mtl)
             (hsPkgs.directory)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

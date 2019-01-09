@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      browser = false;
-      development = false;
-    };
+    flags = { browser = false; development = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rfc";
-        version = "0.0.0.24";
-      };
+      identifier = { name = "rfc"; version = "0.0.0.24"; };
       license = "BSD-3-Clause";
       copyright = "(c)2018 Robert Fischer";
       maintainer = "smokejumperit+rfc@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Robert Fischer's Common library";
       description = "An enhanced Prelude and various utilities for Aeson, Servant, PSQL, and Redis that Robert Fischer uses.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -54,12 +42,12 @@
           (hsPkgs.natural-transformation)
           (hsPkgs.url)
           (hsPkgs.network-uri)
-        ] ++ pkgs.lib.optionals (flags.browser) [
+          ] ++ (pkgs.lib).optionals (flags.browser) [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)
           (hsPkgs.miso)
           (hsPkgs.servant)
-        ]) ++ pkgs.lib.optionals (!flags.browser) [
+          ]) ++ (pkgs.lib).optionals (!flags.browser) [
           (hsPkgs.servant-server)
           (hsPkgs.servant)
           (hsPkgs.servant-docs)
@@ -81,7 +69,7 @@
           (hsPkgs.markdown)
           (hsPkgs.servant-client)
           (hsPkgs.binary)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "friday-scale-dct";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "friday-scale-dct"; version = "1.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alex Mason <axman6@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Scale Friday images with DCT";
       description = "Scale Friday Images with DCT";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,11 +23,11 @@
           (hsPkgs.fft)
           (hsPkgs.carray)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
-          depends = pkgs.lib.optionals (flags.example) [
+          depends = (pkgs.lib).optionals (flags.example) [
             (hsPkgs.base)
             (hsPkgs.base-compat)
             (hsPkgs.JuicyPixels)
@@ -49,8 +40,8 @@
             (hsPkgs.JuicyPixels)
             (hsPkgs.JuicyPixels-util)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

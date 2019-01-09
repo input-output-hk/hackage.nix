@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "language-sh";
-        version = "0.0.3.1";
-      };
+      identifier = { name = "language-sh"; version = "0.0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Stephen Hicks <sdh33@cornell.edu>";
@@ -22,7 +13,7 @@
       synopsis = "A package for parsing shell scripts";
       description = "Language.Sh is a collection of modules for parsing and\nmanipulating expressions in shell grammar.\nThis is part of a larger project, shsh.\nPlease note that the API is somewhat unstable until we\nreach version 1.0.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.pcre-light)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

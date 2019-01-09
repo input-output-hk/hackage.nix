@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "NTRU";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "NTRU"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014, CyberPoint International, LLC";
       maintainer = "opensource@cyberpointllc.com";
@@ -22,7 +13,7 @@
       synopsis = "NTRU Cryptography";
       description = "A Haskell implementation of the NTRU cryptographic system, following the IEEE Standard Specification for Public Key Crpytographic Techniques Based on Hard Problems over Lattices (IEEE Std 1363.1-2008)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.polynomial)
           (hsPkgs.arithmoi)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

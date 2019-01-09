@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { production = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rfc-prelude";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "rfc-prelude"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "smokejumperit+rfc@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The Prelude from the Robert Fischer Commons.";
       description = "A Prelude deriving from @Classy-Prelude@ which provides additional useful bits of  functionality and convenient names.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.unliftio)
           (hsPkgs.unliftio-core)
           (hsPkgs.uuid-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

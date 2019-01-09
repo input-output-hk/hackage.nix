@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "logfloat";
-        version = "0.11.1";
-      };
+      identifier = { name = "logfloat"; version = "0.11.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2007--2009 wren ng thornton";
       maintainer = "wren@community.haskell.org";
@@ -22,15 +13,12 @@
       synopsis = "Log-domain floating point numbers";
       description = "This module presents a type for storing numbers\nin the log-domain. The main reason for doing this\nis to prevent underflow when multiplying many\nprobabilities as is done in Hidden Markov Models.\nIt is also helpful for preventing overflow.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.array)
-          ]
+          then [ (hsPkgs.base) (hsPkgs.array) ]
           else [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ide-backend-common";
-        version = "0.10.1";
-      };
+      identifier = { name = "ide-backend-common"; version = "0.10.1"; };
       license = "MIT";
       copyright = "(c) 2015 FP Complete";
       maintainer = "Duncan Coutts <duncan@well-typed.com>";
@@ -22,7 +13,7 @@
       synopsis = "Shared library used be ide-backend and ide-backend-server";
       description = "Should not be used by end users";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -52,12 +43,9 @@
           (hsPkgs.network)
           (hsPkgs.process)
           (hsPkgs.base64-bytestring)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
-          then [
-            (hsPkgs.Win32)
-            (hsPkgs.time)
-          ]
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (if system.isWindows
+          then [ (hsPkgs.Win32) (hsPkgs.time) ]
           else [ (hsPkgs.unix) ]);
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { hayoosnap = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Hayoo";
-        version = "1.2.0";
-      };
+      identifier = { name = "Hayoo"; version = "1.2.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2007 - 2012 Uwe Schmidt, Sebastian M. Schlatt and Timo B. Kranz";
       maintainer = "Timo B. Huebel <tbh@holumbus.org>";
@@ -22,7 +13,7 @@
       synopsis = "The Hayoo! search engine for Haskell API search on hackage";
       description = "The Hayoo! search engine based no the Holumbus framework provides a document indexer\nand a crawler to build indexes over Haddock generated API documentation and packages\nas well as a query interface for these indexes.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hayooIndexer" = {
@@ -49,8 +40,8 @@
             (hsPkgs.process)
             (hsPkgs.tar)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "hayooSearch" = {
           depends = [
             (hsPkgs.base)
@@ -62,10 +53,8 @@
             (hsPkgs.json)
             (hsPkgs.text)
             (hsPkgs.xhtml-combinators)
-          ] ++ [
-            (hsPkgs.hack-handler-simpleserver)
-          ];
-        };
+            ] ++ [ (hsPkgs.hack-handler-simpleserver) ];
+          };
         "hayooSnap" = {
           depends = [
             (hsPkgs.base)
@@ -82,8 +71,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.xhtml-combinators)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

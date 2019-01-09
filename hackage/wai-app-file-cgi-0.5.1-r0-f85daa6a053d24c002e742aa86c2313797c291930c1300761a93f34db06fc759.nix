@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "wai-app-file-cgi";
-        version = "0.5.1";
-      };
+      identifier = { name = "wai-app-file-cgi"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "File/CGI/Rev Proxy App of WAI";
       description = "This WAI application handles static files,\nexecutes CGI scripts, and reverse proxy.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.http-conduit)
           (hsPkgs.lifted-base)
           (hsPkgs.attoparsec-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

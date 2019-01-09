@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yaml2owl";
-        version = "0.0.1";
-      };
+      identifier = { name = "yaml2owl"; version = "0.0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "abimelech@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate OWL schema from YAML syntax, and an RDFa template.";
       description = "A command-line tool for reading a simplified rough draft of an\nRDFS/OWL schema in YAML format (example in \"examples\"),\nand converting it to an OWL schema serialized as Turtle.\nAlso, makes some RDFa \"templates\".  This is intended for quick\nscaffolding of a site that uses RDFa templates to present instance\ndata of RDF.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yaml2owl" = {
@@ -36,8 +27,8 @@
             (hsPkgs.yaml)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

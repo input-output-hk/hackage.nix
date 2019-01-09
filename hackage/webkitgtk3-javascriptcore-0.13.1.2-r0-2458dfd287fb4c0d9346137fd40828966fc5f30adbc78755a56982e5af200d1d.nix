@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "webkitgtk3-javascriptcore";
         version = "0.13.1.2";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "JavaScriptCore FFI from webkitgtk";
       description = "FFI for JavaScriptCore module from webkitgtk";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,10 +24,8 @@
           (hsPkgs.glib)
           (hsPkgs.gtk3)
           (hsPkgs.webkitgtk3)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.webkitgtk-3.0)
-        ];
+          ];
+        pkgconfig = [ (pkgconfPkgs.webkitgtk-3.0) ];
+        };
       };
-    };
-  }
+    }

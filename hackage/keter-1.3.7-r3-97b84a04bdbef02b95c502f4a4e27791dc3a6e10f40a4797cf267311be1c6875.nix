@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "keter";
-        version = "1.3.7";
-      };
+      identifier = { name = "keter"; version = "1.3.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Web application deployment manager, focusing on Haskell web frameworks";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/keter>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -71,8 +62,8 @@
           (hsPkgs.stm)
           (hsPkgs.async)
           (hsPkgs.lifted-base)
-        ];
-      };
+          ];
+        };
       exes = {
         "keter" = {
           depends = [
@@ -80,8 +71,8 @@
             (hsPkgs.keter)
             (hsPkgs.system-filepath)
             (hsPkgs.data-default)
-          ];
-        };
+            ];
+          };
         "hello" = {
           depends = [
             (hsPkgs.base)
@@ -94,9 +85,9 @@
             (hsPkgs.directory)
             (hsPkgs.data-default)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -107,8 +98,8 @@
             (hsPkgs.hspec)
             (hsPkgs.unix)
             (hsPkgs.keter)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

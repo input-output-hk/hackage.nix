@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "chell-quickcheck";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "chell-quickcheck"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "John Millikin <jmillikin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "QuickCheck support for Chell, a quiet test runner";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.random)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hpp";
-        version = "0.5.0.1";
-      };
+      identifier = { name = "hpp"; version = "0.5.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2015-2016 Anthony Cowley";
       maintainer = "acowley@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell pre-processor";
       description = "See the README for usage examples";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-trie)
           (hsPkgs.ghc-prim)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.semigroups);
+        };
       exes = {
         "hpp" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.directory)
             (hsPkgs.time)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "aslib" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.hpp)
             (hsPkgs.transformers)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

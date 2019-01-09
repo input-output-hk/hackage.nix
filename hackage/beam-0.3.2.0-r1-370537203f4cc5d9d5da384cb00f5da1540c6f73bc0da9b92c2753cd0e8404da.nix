@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "beam";
-        version = "0.3.2.0";
-      };
+      identifier = { name = "beam"; version = "0.3.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "travis@athougies.net";
@@ -22,7 +13,7 @@
       synopsis = "A type-safe SQL mapper for Haskell that doesn't use Template Haskell";
       description = "See the documentation on [my blog](http://travis.athougies.net/tags/beam.html) and on [GitHub](https://github.com/tathougies/beam/tree/master/Doc).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.convertible)
           (hsPkgs.microlens)
           (hsPkgs.uniplate)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

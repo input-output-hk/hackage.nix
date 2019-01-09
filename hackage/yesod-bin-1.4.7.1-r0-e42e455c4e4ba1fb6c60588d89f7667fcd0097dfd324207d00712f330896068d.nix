@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-bin";
-        version = "1.4.7.1";
-      };
+      identifier = { name = "yesod-bin"; version = "1.4.7.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,27 +13,12 @@
       synopsis = "The yesod helper executable.";
       description = "Provides scaffolding, devel server, and some simple code generation helpers.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "yesod-ghc-wrapper" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
-        };
-        "yesod-ld-wrapper" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
-        };
-        "yesod-ar-wrapper" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-          ];
-        };
+        "yesod-ghc-wrapper" = { depends = [ (hsPkgs.base) (hsPkgs.Cabal) ]; };
+        "yesod-ld-wrapper" = { depends = [ (hsPkgs.base) (hsPkgs.Cabal) ]; };
+        "yesod-ar-wrapper" = { depends = [ (hsPkgs.base) (hsPkgs.Cabal) ]; };
         "yesod" = {
           depends = [
             (hsPkgs.base)
@@ -92,8 +68,8 @@
             (hsPkgs.streaming-commons)
             (hsPkgs.warp-tls)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

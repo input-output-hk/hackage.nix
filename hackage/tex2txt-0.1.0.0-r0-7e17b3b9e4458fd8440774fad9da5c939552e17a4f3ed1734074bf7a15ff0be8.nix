@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tex2txt";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tex2txt"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "VTeX, Vidas Daudaravicius";
       maintainer = "vidas.daudaravicius@vtex.lt";
@@ -22,7 +13,7 @@
       synopsis = "LaTeX to plain-text conversion";
       description = "tex2txt converts LaTeX files to linguistic coherent plain-text which could be used for many natural language processing and analysis tasks. The primary aim of the tool is to help NLP community to simplify building large databases of NLP-ready texts from LaTeX sources. The tool can also be used as a system component when input is LaTeX text.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.parsec)
           (hsPkgs.deepseq)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "tex2txt" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.parsec)
             (hsPkgs.deepseq)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

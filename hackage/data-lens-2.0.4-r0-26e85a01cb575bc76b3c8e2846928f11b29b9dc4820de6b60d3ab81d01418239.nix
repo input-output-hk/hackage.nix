@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      derivedatatypeable = true;
-    };
+    flags = { derivedatatypeable = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "data-lens";
-        version = "2.0.4";
-      };
+      identifier = { name = "data-lens"; version = "2.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Haskell 98 Lenses";
       description = "Haskell 98 Lenses";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +25,7 @@
           (hsPkgs.distributive)
           (hsPkgs.semigroupoids)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

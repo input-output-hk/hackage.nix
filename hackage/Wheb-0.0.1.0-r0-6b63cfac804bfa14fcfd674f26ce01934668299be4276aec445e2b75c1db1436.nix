@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Wheb";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "Wheb"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "hanooter@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The easy Haskell WAI Framework";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.pwstore-fast)
           (hsPkgs.uuid)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

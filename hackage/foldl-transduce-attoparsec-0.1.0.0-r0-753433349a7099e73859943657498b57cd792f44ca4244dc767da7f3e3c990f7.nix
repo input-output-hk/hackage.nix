@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "foldl-transduce-attoparsec";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2015 Daniel Diaz";
       maintainer = "diaz_carrete@yahoo.com";
@@ -22,7 +16,7 @@
       synopsis = "Attoparsec and foldl-transduce integration.";
       description = "Attoparsec and foldl-transduce integration.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +27,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.transformers)
           (hsPkgs.monoid-subclasses)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,16 +41,16 @@
             (hsPkgs.foldl-transduce)
             (hsPkgs.foldl-transduce-attoparsec)
             (hsPkgs.attoparsec)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.attoparsec)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

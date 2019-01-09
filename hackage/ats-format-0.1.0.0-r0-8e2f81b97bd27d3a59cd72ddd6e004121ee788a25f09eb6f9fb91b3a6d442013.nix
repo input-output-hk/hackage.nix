@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ats-format";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ats-format"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "A source-code formatter for ATS";
       description = "An opinionated source-code formatter for ATS (http://www.ats-lang.org/).";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,37 +33,24 @@
           (hsPkgs.directory)
           (hsPkgs.process)
           (hsPkgs.file-embed)
-        ];
+          ];
         build-tools = [
-          (hsPkgs.buildPackages.happy)
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
-      exes = {
-        "atsfmt" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ats-format)
+          ((hsPkgs.buildPackages).happy)
+          ((hsPkgs.buildPackages).alex)
           ];
         };
-      };
+      exes = {
+        "atsfmt" = { depends = [ (hsPkgs.base) (hsPkgs.ats-format) ]; };
+        };
       tests = {
         "ats-format-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ats-format)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.ats-format) (hsPkgs.hspec) ];
+          };
         };
-      };
       benchmarks = {
         "ats-format-bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.ats-format)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.ats-format) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

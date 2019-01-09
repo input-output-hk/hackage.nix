@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "LambdaDesigner";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "LambdaDesigner"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Ulysses Popple";
       maintainer = "ulysses.popple@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A type-safe EDSL for TouchDesigner written in Haskell.";
       description = "TouchDesigner nodes written as functions in Haskell and sent to TouchDesigner as json.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zeromq4-clone-pattern";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "zeromq4-clone-pattern"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Henri Verroken";
       maintainer = "henriverroken@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell implementation of the ZeroMQ clone pattern.";
       description = "Haskell implementation of the ZeroMQ Reliable Pub-Sub (Clone) pattern.\n\nDEPRECATED BY https://hackage.haskell.org/package/zeromq4-patterns";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,16 +25,13 @@
           (hsPkgs.stm)
           (hsPkgs.transformers)
           (hsPkgs.zeromq4-haskell)
-        ];
-      };
-      exes = {
-        "zeromq4-clone-pattern-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.zeromq4-clone-pattern)
           ];
         };
-      };
+      exes = {
+        "zeromq4-clone-pattern-exe" = {
+          depends = [ (hsPkgs.base) (hsPkgs.zeromq4-clone-pattern) ];
+          };
+        };
       tests = {
         "zeromq4-clone-pattern-test" = {
           depends = [
@@ -55,8 +43,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

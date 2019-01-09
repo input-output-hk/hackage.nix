@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "netspec";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "netspec"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Dan Burton";
       maintainer = "danburton.email@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simplify static Networking tasks";
       description = "A Networking library for static Networking tasks.\n\nTo learn about how to use this library in general,\nsee <http://github.com/DanBurton/netspec#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

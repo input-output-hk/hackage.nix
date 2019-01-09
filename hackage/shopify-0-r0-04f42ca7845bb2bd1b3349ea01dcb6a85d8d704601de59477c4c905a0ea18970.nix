@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "shopify";
-        version = "0";
-      };
+      identifier = { name = "shopify"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "davean 2012-2017";
       maintainer = "oss@xkcd.com";
@@ -22,7 +13,7 @@
       synopsis = "A haskell API binding for shopify.com";
       description = "A haskell API binding for shopify.com";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.time)
           (hsPkgs.base64-bytestring)
           (hsPkgs.control-monad-exception)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

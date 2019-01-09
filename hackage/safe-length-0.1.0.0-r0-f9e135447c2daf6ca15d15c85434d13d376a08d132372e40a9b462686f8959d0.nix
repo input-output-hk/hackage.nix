@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "safe-length";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "safe-length"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@n-heptane.com";
@@ -22,11 +13,9 @@
       synopsis = "Tired of accidentally calling length on tuples? Relief at last!";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -36,8 +25,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.safe-length)
             (hsPkgs.should-not-typecheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "directory-layout";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "directory-layout"; version = "0.3.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "matvey.aksenov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Declare, construct and verify directory layout";
       description = "Language to express directory layouts";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.semigroupoids)
           (hsPkgs.lens)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "basics-suite" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.process)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +45,8 @@
             (hsPkgs.doctest)
             (hsPkgs.wordexp)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

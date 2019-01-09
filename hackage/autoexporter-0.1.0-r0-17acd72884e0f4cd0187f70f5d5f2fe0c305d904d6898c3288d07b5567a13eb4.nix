@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "autoexporter";
-        version = "0.1.0";
-      };
+      identifier = { name = "autoexporter"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Taylor Fausak";
@@ -22,22 +13,13 @@
       synopsis = "Automatically re-export modules.";
       description = "Autoexporter automatically re-exports modules.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.filepath) ];
+        };
       exes = {
-        "autoexporter" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.autoexporter)
-          ];
+        "autoexporter" = { depends = [ (hsPkgs.base) (hsPkgs.autoexporter) ]; };
         };
       };
-    };
-  }
+    }

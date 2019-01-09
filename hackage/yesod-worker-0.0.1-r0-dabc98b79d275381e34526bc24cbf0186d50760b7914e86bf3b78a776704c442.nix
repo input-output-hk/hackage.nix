@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-worker";
-        version = "0.0.1";
-      };
+      identifier = { name = "yesod-worker"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "jamesdabbs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Drop-in(ish) background worker system for Yesod apps";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.fast-logger)
           (hsPkgs.yesod-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

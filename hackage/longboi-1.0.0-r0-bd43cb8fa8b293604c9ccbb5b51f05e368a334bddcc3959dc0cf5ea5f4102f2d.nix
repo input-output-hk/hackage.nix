@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "longboi";
-        version = "1.0.0";
-      };
+      identifier = { name = "longboi"; version = "1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "dcartwright@layer3com.com";
@@ -22,10 +13,6 @@
       synopsis = "Dependently-typed linked list implementation";
       description = "Length-indexed linked lists, a simple\nexercise in dependent types.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

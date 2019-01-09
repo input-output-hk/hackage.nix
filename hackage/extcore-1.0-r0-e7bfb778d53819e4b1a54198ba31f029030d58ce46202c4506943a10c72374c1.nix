@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "extcore";
-        version = "1.0";
-      };
+      identifier = { name = "extcore"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tim Chevalier <chevalier@alum.wellesley.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Libraries for processing GHC Core";
       description = "Libraries for processing GHC Core";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.pretty)
           (hsPkgs.array)
           (hsPkgs.bytestring)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "6.8.2") (hsPkgs.syb);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).gt "6.8.2") (hsPkgs.syb);
+        };
       };
-    };
-  }
+    }

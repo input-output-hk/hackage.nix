@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "di-monad";
-        version = "1.0";
-      };
+      identifier = { name = "di-monad"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "Renzo Carbonara 2017-2018";
       maintainer = "renλren.zone";
@@ -22,7 +13,7 @@
       synopsis = "mtl flavoured typeful hierarchical structured logging for di-core.";
       description = "mtl flavoured typeful hierarchical structured logging for di-core.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.pipes)
           (hsPkgs.stm)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

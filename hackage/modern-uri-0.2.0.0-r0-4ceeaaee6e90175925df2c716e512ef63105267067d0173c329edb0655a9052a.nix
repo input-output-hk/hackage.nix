@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "modern-uri";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "modern-uri"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Modern library for working with URIs";
       description = "Modern library for working with URIs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.tagged)
           (hsPkgs.template-haskell)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.megaparsec)
             (hsPkgs.modern-uri)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         };
-      };
       benchmarks = {
         "bench-speed" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.megaparsec)
             (hsPkgs.modern-uri)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "bench-memory" = {
           depends = [
             (hsPkgs.base)
@@ -76,8 +67,8 @@
             (hsPkgs.modern-uri)
             (hsPkgs.text)
             (hsPkgs.weigh)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

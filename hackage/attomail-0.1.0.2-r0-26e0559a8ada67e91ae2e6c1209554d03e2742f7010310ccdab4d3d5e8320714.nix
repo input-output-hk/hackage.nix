@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "attomail";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "attomail"; version = "0.1.0.2"; };
       license = "BSD-2-Clause";
       copyright = "phlummox 2017";
       maintainer = "phlummox2@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Minimal mail delivery agent (MDA) for local mail with maildir support";
       description = "Acts as a minimal (local delivery only, many features un-implemented) mail\ndelivery agent (or MDA), delivering mail to a local @maildir@ format spool.\nHandy when you don't want to install an MTA (Mail Transfer Agent) or\nfuller-featured MDA - you just want a program which accepts\n@sendmail@-style delivery of messages from local programs, and dumps them\nsomewhere you can read them.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "attomail" = {
@@ -44,9 +35,9 @@
             (hsPkgs.email-validate)
             (hsPkgs.hsemail-ns)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "attomail-doctest" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.doctest)
             (hsPkgs.Glob)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

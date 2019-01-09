@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "jmacro-rpc";
-        version = "0.3.2";
-      };
+      identifier = { name = "jmacro-rpc"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "gershomb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON-RPC clients and servers using JMacro, and evented client-server Reactive Programming.";
       description = "Base jmacro-rpc package. Provides server-independent functions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.blaze-html)
           (hsPkgs.contravariant)
           (hsPkgs.scientific)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

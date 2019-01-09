@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "data-forest";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "data-forest"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,19 +13,13 @@
       synopsis = "A simple multi-way tree data structure.";
       description = "In some contexts, /forests/ are more important than /trees/. The /forest/ library provides a @Tree@ type much like the one from the popular /containers/ library, but it also provides a @Forest@ type with its own @Functor@ and @Foldable@ instances.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.forest)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.forest) ];
+          };
         };
       };
-    };
-  }
+    }

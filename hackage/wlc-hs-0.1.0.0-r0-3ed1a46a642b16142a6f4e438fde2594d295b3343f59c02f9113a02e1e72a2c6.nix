@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wlc-hs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wlc-hs"; version = "0.1.0.0"; };
       license = "ISC";
       copyright = "";
       maintainer = "moritz.kiefer@purelyfunctional.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for the wlc library";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +25,9 @@
           (hsPkgs.transformers)
           (hsPkgs.xkbcommon)
           (hsPkgs.pretty)
-        ];
+          ];
         libs = [ (pkgs."wlc") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

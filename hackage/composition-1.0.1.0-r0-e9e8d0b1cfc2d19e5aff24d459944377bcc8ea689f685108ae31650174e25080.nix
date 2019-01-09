@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "composition";
-        version = "1.0.1.0";
-      };
+      identifier = { name = "composition"; version = "1.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "danburton.email@gmail.com";
@@ -22,8 +13,6 @@
       synopsis = "Combinators for unorthodox function composition";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {};
-    };
-  }
+      };
+    components = { "library" = {}; };
+    }

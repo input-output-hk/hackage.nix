@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Gifcurry";
-        version = "2.1.0.0";
-      };
+      identifier = { name = "Gifcurry"; version = "2.1.0.0"; };
       license = "Apache-2.0";
       copyright = "(C) 2016 David Lettier";
       maintainer = "Lettier";
@@ -22,7 +13,7 @@
       synopsis = "Create animated GIFs, overlaid with optional text, from video files.";
       description = "GIF creation utility.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.directory)
           (hsPkgs.text)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       exes = {
         "gifcurry_gui" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.directory)
             (hsPkgs.text)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "gifcurry_cli" = {
           depends = [
             (hsPkgs.base)
@@ -55,8 +46,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.text)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

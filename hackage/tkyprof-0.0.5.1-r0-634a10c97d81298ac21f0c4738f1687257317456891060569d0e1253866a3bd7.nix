@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      production = true;
-      devel = false;
-    };
+    flags = { production = true; devel = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tkyprof";
-        version = "0.0.5.1";
-      };
+      identifier = { name = "tkyprof"; version = "0.0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mitsutoshi Aoe <maoe@foldr.in>";
@@ -25,7 +13,7 @@
       synopsis = "A visualizer for GHC Profiling Reports";
       description = "A visualizer for GHC Profiling Reports";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
@@ -55,16 +43,16 @@
             (hsPkgs.yesod-form)
             (hsPkgs.yesod-json)
             (hsPkgs.yesod-static)
-          ];
-        };
+            ];
+          };
         "prof2json" = {
           depends = [
             (hsPkgs.filepath)
             (hsPkgs.mtl)
             (hsPkgs.blaze-builder)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

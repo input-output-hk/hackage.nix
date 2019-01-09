@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-jmacro";
-        version = "7.0.12.1";
-      };
+      identifier = { name = "happstack-jmacro"; version = "7.0.12.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@n-heptane.com";
@@ -22,7 +13,7 @@
       synopsis = "Support for using JMacro with Happstack";
       description = "JMacro provides QuasiQuote support for embedding javascript in Haskell source. This module provides some helper functions for serving the generated javascript via Happstack";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.wl-pprint-text)
           (hsPkgs.text)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

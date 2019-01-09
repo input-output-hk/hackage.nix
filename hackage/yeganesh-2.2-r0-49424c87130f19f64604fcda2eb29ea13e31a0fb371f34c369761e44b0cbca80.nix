@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "yeganesh";
-        version = "2.2";
-      };
+      identifier = { name = "yeganesh"; version = "2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "daniel@wagner-home.com";
@@ -22,7 +13,7 @@
       synopsis = "small dmenu wrapper";
       description = "I get so annoyed when I go to use dmenu, and the three\nprograms I use every day aren't at the beginning of the\nlist.  Let's make it so, and automatically!";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yeganesh" = {
@@ -35,8 +26,8 @@
             (hsPkgs.strict)
             (hsPkgs.time)
             (hsPkgs.xdg-basedir)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "primitive-containers";
-        version = "0.2.0";
-      };
+      identifier = { name = "primitive-containers"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/andrewthad/primitive-containers>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.primitive)
           (hsPkgs.primitive-sort)
           (hsPkgs.contiguous)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.quickcheck-classes)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "gauge" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.gauge)
             (hsPkgs.random)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

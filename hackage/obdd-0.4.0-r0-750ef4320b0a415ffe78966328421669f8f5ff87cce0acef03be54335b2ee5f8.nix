@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "obdd";
-        version = "0.4.0";
-      };
+      identifier = { name = "obdd"; version = "0.4.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Johannes Waldmann";
@@ -22,7 +13,7 @@
       synopsis = "Ordered Reduced Binary Decision Diagrams";
       description = "Construct, combine and query OBDDs;\nan efficient representation for formulas in propositional logic";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,37 +23,21 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.process)
-        ];
-      };
+          ];
+        };
       tests = {
         "obdd-placement" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.obdd)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.obdd) ];
+          };
         "obdd-queens" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.obdd)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.obdd) ];
+          };
         "obdd-queens2" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.obdd)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.obdd) ];
+          };
         "obdd-sort" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.obdd)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.obdd) ];
+          };
         };
       };
-    };
-  }
+    }

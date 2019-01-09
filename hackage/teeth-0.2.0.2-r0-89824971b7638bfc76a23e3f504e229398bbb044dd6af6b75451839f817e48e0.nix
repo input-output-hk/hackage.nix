@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "teeth";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "teeth"; version = "0.2.0.2"; };
       license = "MIT";
       copyright = "copyright © 2015 Joe Hermaszewski";
       maintainer = "roots@monoid.al";
@@ -22,10 +13,6 @@
       synopsis = "Dental data types";
       description = "Some data types useful for describing the hard pointy things inside your mouth";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

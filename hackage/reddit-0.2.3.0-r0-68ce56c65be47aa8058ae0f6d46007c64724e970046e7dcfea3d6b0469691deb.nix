@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "reddit";
-        version = "0.2.3.0";
-      };
+      identifier = { name = "reddit"; version = "0.2.3.0"; };
       license = "BSD-2-Clause";
       copyright = "Copyright (c) Fraser Murray, 2013-2018";
       maintainer = "fraser.m.murray@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library for interfacing with Reddit's API";
       description = "A library for interfacing with Reddit''s API in Haskell. Handles logins, rate-limiting and converting to and from JSON responses. Supports most user-facing Reddit API functions, as well as some moderator endpoints. Check out the readme at <https://github.com/intolerable/reddit>.\nContributions are welcome.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "test-anon" = {
           depends = [
             (hsPkgs.Cabal)
@@ -69,8 +60,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "test-io" = {
           depends = [
             (hsPkgs.Cabal)
@@ -86,8 +77,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

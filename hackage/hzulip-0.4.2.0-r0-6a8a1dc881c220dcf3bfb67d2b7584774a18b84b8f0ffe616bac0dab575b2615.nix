@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hzulip";
-        version = "0.4.2.0";
-      };
+      identifier = { name = "hzulip"; version = "0.4.2.0"; };
       license = "GPL-2.0-only";
       copyright = "Pedro Tacla Yamada <tacla.yamada@gmail.com> 2014";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A haskell wrapper for the Zulip API.";
       description = "This a Zulip API wrapper for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.lens-aeson)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "hzulip-spec" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.hspec)
             (hsPkgs.raw-strings-qq)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

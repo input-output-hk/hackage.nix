@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "modulo";
-        version = "1.9.1";
-      };
+      identifier = { name = "modulo"; version = "1.9.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Hans Hoglund <hans@hanshoglund.se>";
@@ -22,7 +13,7 @@
       synopsis = "Modular C code generator";
       description = "Modulo is a tool that generates modular, standard C interfaces based on a high-level\ndescription language. The idea is to specify functionality in the module language\nand implement it in any language that supports C-style calling conventions.\nThis package include generators for C, Haskell, Common Lisp and NodeJS-style JavaScript.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.pandoc-types)
           (hsPkgs.process)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = { "modulo" = {}; };
-    };
-  }
+      };
+    }

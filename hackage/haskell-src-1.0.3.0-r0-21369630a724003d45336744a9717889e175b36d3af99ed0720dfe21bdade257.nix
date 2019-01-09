@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-src";
-        version = "1.0.3.0";
-      };
+      identifier = { name = "haskell-src"; version = "1.0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Herbert Valerio Riedel <hvr@gnu.org>";
@@ -22,7 +13,7 @@
       synopsis = "Support for manipulating Haskell source code";
       description = "The @haskell-src@ package provides support for manipulating Haskell\nsource code. The package provides a lexer, parser and\npretty-printer, and a definition of a Haskell abstract syntax tree\n(AST). Common uses of this package are to parse or generate\n<http://www.haskell.org/onlinereport/ Haskell 98> code";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,13 +21,11 @@
           (hsPkgs.syb)
           (hsPkgs.pretty)
           (hsPkgs.array)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
           (hsPkgs.semigroups)
           (hsPkgs.fail)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.happy)
-        ];
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        };
       };
-    };
-  }
+    }

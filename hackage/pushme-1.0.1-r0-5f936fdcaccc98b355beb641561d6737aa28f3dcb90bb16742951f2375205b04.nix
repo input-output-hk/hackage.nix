@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pushme";
-        version = "1.0.1";
-      };
+      identifier = { name = "pushme"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Wiegley <johnw@newartisans.com>";
@@ -22,7 +13,7 @@
       synopsis = "Script I use for synchronizing my data among machines";
       description = "Script I use for synchronizing my data among machines.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pushme" = {
@@ -51,8 +42,8 @@
             (hsPkgs.unix)
             (hsPkgs.unordered-containers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

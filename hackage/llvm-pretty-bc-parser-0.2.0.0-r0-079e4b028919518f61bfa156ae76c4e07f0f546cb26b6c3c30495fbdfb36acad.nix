@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "llvm-pretty-bc-parser";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "llvm-pretty-bc-parser"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Trevor Elliott";
@@ -22,7 +13,7 @@
       synopsis = "LLVM bitcode parsing library";
       description = "A parser for the LLVM bitcode file format, yielding a Module from the\nllvm-pretty package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
           (hsPkgs.llvm-pretty)
-        ];
-      };
+          ];
+        };
       exes = {
         "llvm-disasm" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.cereal)
             (hsPkgs.llvm-pretty)
             (hsPkgs.llvm-pretty-bc-parser)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "disasm-test" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.filepath)
             (hsPkgs.llvm-pretty)
             (hsPkgs.llvm-pretty-bc-parser)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hedn";
-        version = "0.1.9.0";
-      };
+      identifier = { name = "hedn"; version = "0.1.9.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Alexander Bondarenko";
       maintainer = "aenor.realm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "EDN parsing and encoding";
       description = "A EDN parsing and encoding library inspired by Data.Aeson.\n\nBased on specs published at <https://github.com/edn-format/edn>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.time)
           (hsPkgs.time-locale-compat)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.hspec-contrib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

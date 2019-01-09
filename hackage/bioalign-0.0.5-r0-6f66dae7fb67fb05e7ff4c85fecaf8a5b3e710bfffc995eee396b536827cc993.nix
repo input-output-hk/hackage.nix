@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bioalign";
-        version = "0.0.5";
-      };
+      identifier = { name = "bioalign"; version = "0.0.5"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "dfornika@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Data structures and helper functions for calculating alignments";
       description = "Data structures and helper functions for calculating alignments";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.biocore)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.biocore) (hsPkgs.bytestring) ];
+        };
       };
-    };
-  }
+    }

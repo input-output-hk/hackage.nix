@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddc-core-tetra";
-        version = "0.4.2.1";
-      };
+      identifier = { name = "ddc-core-tetra"; version = "0.4.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Disciplined Disciple Compiler intermediate language.";
       description = "Disciplined Disciple Compiler intermediate language\nwith internalized effect judgement.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.ddc-core)
           (hsPkgs.ddc-core-salt)
           (hsPkgs.ddc-core-simpl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

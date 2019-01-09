@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "aws-elastic-transcoder";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "aws-elastic-transcoder"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(C) Chris Dornan";
       maintainer = "chris.dornan@irisconnect.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell suite for the Elastic Transcoder service";
       description = "This suite extends the aws suite for the Amazon Web Services (AWS) to interface the AWS Elastic Transcoder service for transcoding video.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "ets-json" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.regex-compat)
             (hsPkgs.safe)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

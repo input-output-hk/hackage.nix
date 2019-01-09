@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "webdriver";
-        version = "0.5.3";
-      };
+      identifier = { name = "webdriver"; version = "0.5.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "acurtis@spsu.edu";
@@ -22,7 +13,7 @@
       synopsis = "a Haskell client for the Selenium WebDriver protocol";
       description = "A Selenium WebDriver client for Haskell.\nYou can use it to automate browser sessions\nfor testing, system administration, etc.\n\nFor more information about Selenium itself, see\n<http://seleniumhq.org/>\n\nTo find out what's been changed in this version and others,\nsee the change log at\n<https://github.com/kallisti-dev/hs-webdriver/blob/master/CHANGELOG.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.temporary)
           (hsPkgs.base64-bytestring)
           (hsPkgs.cond)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-search-baidu" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.webdriver)
             (hsPkgs.text)
             (hsPkgs.parallel)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

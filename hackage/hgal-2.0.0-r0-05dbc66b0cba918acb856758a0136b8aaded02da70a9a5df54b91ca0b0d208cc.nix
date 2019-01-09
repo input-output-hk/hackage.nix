@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hgal";
-        version = "2.0.0";
-      };
+      identifier = { name = "hgal"; version = "2.0.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jeanphilippe.bernardy (google mail)";
@@ -22,7 +13,7 @@
       synopsis = "library for computation automorphism group and canonical labelling of a graph";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.array)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

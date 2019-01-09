@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "elm-websocket";
-        version = "1.0";
-      };
+      identifier = { name = "elm-websocket"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Rhys Keepence";
       maintainer = "rhyskeepence@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate ELM code from a Wai websocket application.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.wai-websockets)
           (hsPkgs.websockets)
           (hsPkgs.wl-pprint-text)
-        ];
-      };
+          ];
+        };
       exes = {
         "elm-websocket-example" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.wai)
             (hsPkgs.wai-middleware-static)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "elm-websocket-code-generator" = {
           depends = [
             (hsPkgs.base)
@@ -71,9 +62,9 @@
             (hsPkgs.wai)
             (hsPkgs.wai-middleware-static)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "elm-websocket-test" = {
           depends = [
@@ -89,8 +80,8 @@
             (hsPkgs.wai)
             (hsPkgs.websockets)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

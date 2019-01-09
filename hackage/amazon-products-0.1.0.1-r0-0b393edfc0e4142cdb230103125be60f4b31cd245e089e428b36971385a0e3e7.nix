@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "amazon-products";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "amazon-products"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrewrademacher@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Connector for Amazon Products API";
       description = "Allows users to directly access Amazon Products API,\nwithout having to work with the underlying REST and\nauthentication layers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.containers)
           (hsPkgs.cryptohash)
           (hsPkgs.byteable)
-        ];
-      };
+          ];
+        };
       exes = {
         "repl" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.transformers)
             (hsPkgs.http-conduit)
             (hsPkgs.amazon-products)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

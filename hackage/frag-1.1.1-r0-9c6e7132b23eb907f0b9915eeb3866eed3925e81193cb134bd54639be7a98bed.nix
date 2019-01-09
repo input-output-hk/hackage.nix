@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "frag";
-        version = "1.1.1";
-      };
+      identifier = { name = "frag"; version = "1.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "dons@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "A 3-D First Person Shooter Game";
       description = "A fast and basic reimplementation of the Quake III Arena engine\nin Haskell; supports many Quake III Arena maps.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "frag" = {
@@ -32,8 +23,8 @@
             (hsPkgs.OpenGL)
             (hsPkgs.array)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

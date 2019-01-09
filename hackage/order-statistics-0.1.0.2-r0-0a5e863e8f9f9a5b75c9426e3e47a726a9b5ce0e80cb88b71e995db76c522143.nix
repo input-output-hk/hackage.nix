@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "order-statistics";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "order-statistics"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "L-Estimators for robust statistics";
       description = "L-Estimators for robust statistics";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.vector)
           (hsPkgs.vector-space)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

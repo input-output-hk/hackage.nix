@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vectortiles";
-        version = "1.4.0";
-      };
+      identifier = { name = "vectortiles"; version = "1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "colingw@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "GIS Vector Tiles, as defined by Mapbox.";
       description = "GIS Vector Tiles, as defined by Mapbox.\nThis library implements version 2.1 of the official Mapbox spec, as defined\nhere: <https://github.com/mapbox/vector-tile-spec/tree/master/2.1>\n\nNote that currently this library ignores top-level protobuf extensions,\n/Value/ extensions, and /UNKNOWN/ geometries.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "vectortiles-test" = {
           depends = [
@@ -57,9 +48,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.vectortiles)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "vectortiles-bench" = {
           depends = [
@@ -77,8 +68,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.vectortiles)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

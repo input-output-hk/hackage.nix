@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "nix-derivation";
-        version = "1.0.0";
-      };
+      identifier = { name = "nix-derivation"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Gabriel Gonzalez";
       maintainer = "Gabriel439@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parse and render *.drv files";
       description = "Use this package to parse and render Nix derivation files (i.e. *.drv files)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.system-filepath)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.nix-derivation)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "property" = {
           depends = [
             (hsPkgs.base)
@@ -53,9 +44,9 @@
             (hsPkgs.system-filepath)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.criterion)
             (hsPkgs.nix-derivation)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

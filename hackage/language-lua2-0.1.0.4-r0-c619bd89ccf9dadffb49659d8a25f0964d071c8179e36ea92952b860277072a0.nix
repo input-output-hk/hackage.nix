@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { exes = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-lua2";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "language-lua2"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mitchellwrosen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lua parser and pretty printer";
       description = "Lua parser and pretty printer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.wl-pprint)
-        ];
-      };
+          ];
+        };
       exes = {
         "parse" = {
           depends = [
@@ -49,17 +40,17 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.srcloc)
             (hsPkgs.wl-pprint)
-          ];
-        };
+            ];
+          };
         "lex" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.lexer-applicative)
             (hsPkgs.language-lua2)
             (hsPkgs.srcloc)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "language-lua2-test" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

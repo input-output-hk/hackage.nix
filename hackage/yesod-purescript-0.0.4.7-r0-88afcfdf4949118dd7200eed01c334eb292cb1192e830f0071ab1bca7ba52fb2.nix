@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-purescript";
-        version = "0.0.4.7";
-      };
+      identifier = { name = "yesod-purescript"; version = "0.0.4.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "mpietrzak@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "PureScript integration for Yesod";
       description = "PureScript is an awesome statically typed language that compiles to JS and runs in your browser, and this module makes it easier to use PureScript in Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           (hsPkgs.yesod-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

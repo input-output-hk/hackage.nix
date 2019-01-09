@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Ordinary";
-        version = "0.2018.1.8";
-      };
+      identifier = { name = "Ordinary"; version = "0.2018.1.8"; };
       license = "BSD-3-Clause";
       copyright = "2018 Marisa Kirisame";
       maintainer = "lolisa@marisa.moe";
@@ -22,15 +13,11 @@
       synopsis = "A Programming Language in Construction";
       description = "Please see the README on Github at <https://github.com/MarisaKirisame/Ordinary#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.safe)
-          (hsPkgs.threepenny-gui)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.safe) (hsPkgs.threepenny-gui) ];
+        };
       exes = {
         "Ordinary-exe" = {
           depends = [
@@ -38,9 +25,9 @@
             (hsPkgs.base)
             (hsPkgs.safe)
             (hsPkgs.threepenny-gui)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "Ordinary-test" = {
           depends = [
@@ -48,8 +35,8 @@
             (hsPkgs.base)
             (hsPkgs.safe)
             (hsPkgs.threepenny-gui)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

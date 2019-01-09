@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "heavy-logger-instances";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "heavy-logger-instances"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Ilya Portnov";
       maintainer = "portnov84@rambler.ru";
@@ -22,7 +13,7 @@
       synopsis = "Orphan instances for data types in heavy-logger package";
       description = "Orphan instances for data types in heavy-logger package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.text-format-heavy)
-        ];
-      };
+          ];
+        };
       tests = {
         "binary-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.text-format-heavy)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

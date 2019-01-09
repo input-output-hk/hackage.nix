@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "zoom-cache";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "zoom-cache"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "conrad@metadecks.org";
@@ -22,7 +13,7 @@
       synopsis = "A streamable, seekable, zoomable cache file format";
       description = "This library provides a monadic writing and iteratee reading\ninterface for zoom-cache files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
@@ -37,8 +28,8 @@
             (hsPkgs.MonadCatchIO-transformers)
             (hsPkgs.mtl)
             (hsPkgs.ui-command)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

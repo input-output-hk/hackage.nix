@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "vowpal-utils";
-        version = "0.1.1";
-      };
+      identifier = { name = "vowpal-utils"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Carter Schonwald  Copyright (c) 2012";
       maintainer = "first dot last at gmail dot com";
@@ -22,13 +13,8 @@
       synopsis = "Vowpal Wabbit utilities";
       description = "Vowpal Wabbit hash and utils";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
+      };
+    }

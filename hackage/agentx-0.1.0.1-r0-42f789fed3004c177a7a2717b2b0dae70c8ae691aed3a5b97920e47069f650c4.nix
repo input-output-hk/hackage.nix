@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "agentx";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "agentx"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chemistmail@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "AgentX protocol for snmp subagents";
       description = "Native implementation agentx protocol (rfc2741)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.pipes-network)
           (hsPkgs.pipes)
           (hsPkgs.pipes-concurrency)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

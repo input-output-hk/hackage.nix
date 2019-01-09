@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-auth-server";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "servant-auth-server"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Julian K. Arni";
       maintainer = "jkarni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "servant-server/servant-auth compatibility";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.crypto-api)
           (hsPkgs.data-default-class)
           (hsPkgs.http-api-data)
-        ];
-      };
+          ];
+        };
       exes = {
         "readme" = {
           depends = [
@@ -83,9 +74,9 @@
             (hsPkgs.warp)
             (hsPkgs.markdown-unlit)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -123,8 +114,8 @@
             (hsPkgs.wreq)
             (hsPkgs.http-types)
             (hsPkgs.http-client)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

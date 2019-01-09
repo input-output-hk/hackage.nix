@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      monad_unlift_0_2 = true;
-    };
+    flags = { monad_unlift_0_2 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-curator";
-        version = "0.14.3";
-      };
+      identifier = { name = "stackage-curator"; version = "0.14.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@fpcomplete.com";
@@ -24,7 +13,7 @@
       synopsis = "Tools for curating Stackage bundles";
       description = "Please see <http://www.stackage.org/package/stackage-curator> for a description and documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -82,13 +71,10 @@
           (hsPkgs.exceptions)
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
-        ] ++ (if flags.monad_unlift_0_2
-          then [
-            (hsPkgs.monad-unlift)
-            (hsPkgs.monad-unlift-ref)
-          ]
+          ] ++ (if flags.monad_unlift_0_2
+          then [ (hsPkgs.monad-unlift) (hsPkgs.monad-unlift-ref) ]
           else [ (hsPkgs.monad-unlift) ]);
-      };
+        };
       exes = {
         "stackage-curator" = {
           depends = [
@@ -100,8 +86,8 @@
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "stackage-build-plan" = {
           depends = [
             (hsPkgs.base)
@@ -110,9 +96,9 @@
             (hsPkgs.optparse-simple)
             (hsPkgs.text)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -128,8 +114,8 @@
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

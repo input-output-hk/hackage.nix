@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "conduit";
-        version = "1.2.4";
-      };
+      identifier = { name = "conduit"; version = "1.2.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming data processing library.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/conduit>.\n\n@conduit@ is a solution to the streaming data problem, allowing for production, transformation, and consumption of streams of data in constant memory. It is an alternative to lazy I\\/O which guarantees deterministic resource handling, and fits in the same general solution space as @enumerator@\\/@iteratee@ and @pipes@. For a tutorial, please visit <https://www.fpcomplete.com/user/snoyberg/library-documentation/conduit-overview>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.mtl)
           (hsPkgs.void)
           (hsPkgs.mmorph)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.containers)
             (hsPkgs.exceptions)
             (hsPkgs.safe)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "optimize-201408" = {
           depends = [
@@ -67,16 +58,16 @@
             (hsPkgs.mwc-random)
             (hsPkgs.criterion)
             (hsPkgs.kan-extensions)
-          ];
-        };
+            ];
+          };
         "unfused" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.conduit)
             (hsPkgs.criterion)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

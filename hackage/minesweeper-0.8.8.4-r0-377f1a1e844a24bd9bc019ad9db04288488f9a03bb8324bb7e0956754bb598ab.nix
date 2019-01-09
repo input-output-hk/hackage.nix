@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "minesweeper";
-        version = "0.8.8.4";
-      };
+      identifier = { name = "minesweeper"; version = "0.8.8.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "divip@aszt.inf.elte.hu";
@@ -22,7 +13,7 @@
       synopsis = "Minesweeper game which is always solvable without guessing";
       description = "Minesweeper game which is always solvable without guessing.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "minesweeper" = {
@@ -38,11 +29,11 @@
             (hsPkgs.gtk)
             (hsPkgs.cairo)
             (hsPkgs.glade)
-          ] ++ pkgs.lib.optionals (flags.tests) [
+            ] ++ (pkgs.lib).optionals (flags.tests) [
             (hsPkgs.numeric-prelude)
             (hsPkgs.lazysmallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

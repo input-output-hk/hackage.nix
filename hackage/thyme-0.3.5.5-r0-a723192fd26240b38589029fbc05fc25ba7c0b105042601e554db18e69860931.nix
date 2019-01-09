@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       bug-for-bug = true;
@@ -12,13 +6,10 @@
       lens = false;
       show-internal = false;
       werror = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "thyme";
-        version = "0.3.5.5";
-      };
+      identifier = { name = "thyme"; version = "0.3.5.5"; };
       license = "BSD-3-Clause";
       copyright = "© 2013−2014 Liyang HU";
       maintainer = "thyme@liyang.hu";
@@ -28,7 +19,7 @@
       synopsis = "A faster time library";
       description = "Thyme is a rewrite of the fine @time@ library, with a particular focus\non performance for applications that make heavy use of timestamps.\n\nSee <http://hackage.haskell.org/package/thyme/docs/Data-Thyme.html Data.Thyme> for a full description.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -47,11 +38,11 @@
           (hsPkgs.vector)
           (hsPkgs.vector-th-unbox)
           (hsPkgs.vector-space)
-        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32)) ++ (if flags.lens
+          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32)) ++ (if flags.lens
           then [ (hsPkgs.lens) ]
           else [ (hsPkgs.profunctors) ]);
-        build-tools = pkgs.lib.optional (system.isOsx) (hsPkgs.buildPackages.cpphs);
-      };
+        build-tools = (pkgs.lib).optional (system.isOsx) ((hsPkgs.buildPackages).cpphs);
+        };
       tests = {
         "sanity" = {
           depends = [
@@ -64,13 +55,10 @@
             (hsPkgs.thyme)
             (hsPkgs.time)
             (hsPkgs.vector-space)
-          ] ++ (if flags.lens
+            ] ++ (if flags.lens
             then [ (hsPkgs.lens) ]
-            else [
-              (hsPkgs.profunctors)
-              (hsPkgs.mtl)
-            ]);
-        };
+            else [ (hsPkgs.profunctors) (hsPkgs.mtl) ]);
+          };
         "rewrite" = {
           depends = [
             (hsPkgs.Cabal)
@@ -82,15 +70,15 @@
             (hsPkgs.system-posix-redirect)
             (hsPkgs.text)
             (hsPkgs.thyme)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (flags.hlint) [
+          depends = (pkgs.lib).optionals (flags.hlint) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -104,10 +92,10 @@
             (hsPkgs.time)
             (hsPkgs.vector)
             (hsPkgs.vector-space)
-          ] ++ (if flags.lens
+            ] ++ (if flags.lens
             then [ (hsPkgs.lens) ]
             else [ (hsPkgs.profunctors) ]);
+          };
         };
       };
-    };
-  }
+    }

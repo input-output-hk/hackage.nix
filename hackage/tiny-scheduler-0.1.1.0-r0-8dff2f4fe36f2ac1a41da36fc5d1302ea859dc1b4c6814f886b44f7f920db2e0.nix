@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tiny-scheduler";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "tiny-scheduler"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "None";
       maintainer = "functor.soup@gmail.com";
@@ -22,14 +13,8 @@
       synopsis = "tiny no-brainer job scheduler";
       description = "this is a tiny library to make scheduling jobs to run predermined intervals easier";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.async)
-          (hsPkgs.time)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.async) (hsPkgs.time) ]; };
+      };
+    }

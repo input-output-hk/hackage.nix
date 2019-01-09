@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "mohws";
-        version = "0.2";
-      };
+      identifier = { name = "mohws"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Simon Marlow, Bjorn Bringert";
       maintainer = "Henning Thielemann <webserver@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Modular Haskell Web Server";
       description = "A web server with a module system and support for CGI.\nBased on Simon Marlow's original Haskell Web Server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.transformers)
           (hsPkgs.explicit-exception)
           (hsPkgs.data-accessor)
-        ];
-      };
+          ];
+        };
       exes = {
         "hws" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.transformers)
             (hsPkgs.explicit-exception)
             (hsPkgs.data-accessor)
-          ];
-        };
+            ];
+          };
         "hws-dyn" = {
           depends = [
             (hsPkgs.base)
@@ -87,8 +78,8 @@
             (hsPkgs.explicit-exception)
             (hsPkgs.data-accessor)
             (hsPkgs.ghc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "refty";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "refty"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "(c) 2017 Shinya Takahashi";
       maintainer = "Shinya Takahashi <s.takahashi313@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Formatted JSON generator for API server inspired by normalizr.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,10 @@
           (hsPkgs.aeson)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
-      };
-      tests = {
-        "refty-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.refty)
           ];
         };
+      tests = {
+        "refty-test" = { depends = [ (hsPkgs.base) (hsPkgs.refty) ]; };
+        };
       };
-    };
-  }
+    }

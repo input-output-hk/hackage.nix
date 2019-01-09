@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "MetaHDBC";
-        version = "0.1.2";
-      };
+      identifier = { name = "MetaHDBC"; version = "0.1.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Mads Lindstrøm <mads.lindstroem@gmail.com>";
       maintainer = "Mads Lindstrøm <mads.lindstroem@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Statically checked database access";
       description = "Using Template Haskell and HDBC to do statically checked\ndatabase access.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.HDBC-odbc)
           (hsPkgs.template-haskell)
           (hsPkgs.convertible)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

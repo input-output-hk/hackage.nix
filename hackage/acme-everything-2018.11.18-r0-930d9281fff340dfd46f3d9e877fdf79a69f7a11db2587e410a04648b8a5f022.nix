@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "acme-everything";
-        version = "2018.11.18";
-      };
+      identifier = { name = "acme-everything"; version = "2018.11.18"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky(λ)gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Install everything.";
       description = "This package requires the entirety of Hackage to be built.\n\nThe joke started when a colleague liked the\n@leftToMaybe :: Either a b -> Maybe a@ function from @either@, which has a\n*huge* footprint compared to the utility it provides.\n\nThis got us thinking about seemingly small packages that have lots of hidden\ntransitive dependencies, e.g. \"only\" @base@, @lens@ and @yesod@. And that's\nwhere `acme-everything` was born, which (transitively) depends on the\nentirety of Hackage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -7559,7 +7550,7 @@
           (hsPkgs.zsh-battery)
           (hsPkgs.ztail)
           (hsPkgs.Zwaluw)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

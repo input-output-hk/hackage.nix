@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "signal";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "signal"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "remdezx+github@gmail.com";
@@ -22,20 +13,13 @@
       synopsis = "Signal handling, multiplatform way";
       description = "This simple library allows you to handle os signals on both Linux and Windows.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
-      exes = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.signal)
-          ];
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
         };
+      exes = { "test" = { depends = [ (hsPkgs.base) (hsPkgs.signal) ]; }; };
       };
-    };
-  }
+    }

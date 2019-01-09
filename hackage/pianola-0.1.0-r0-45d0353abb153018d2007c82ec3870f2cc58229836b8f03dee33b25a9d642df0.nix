@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pianola";
-        version = "0.1.0";
-      };
+      identifier = { name = "pianola"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "diaz_carrete@yahoo.com";
@@ -22,7 +13,7 @@
       synopsis = "Remotely controlling Java Swing applications";
       description = "This is a library for remotely controlling\nJava Swing desktop applications that have been\ninstrumented with a special pianola agent.\nThe agent exposes the Swing component hierarchy\nover the network, and accepts requests for\ngenerating GUI events. The library handles the\ninteraction on the Haskell side.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.streams)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-pianola" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.streams)
             (hsPkgs.transformers)
             (hsPkgs.pianola)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

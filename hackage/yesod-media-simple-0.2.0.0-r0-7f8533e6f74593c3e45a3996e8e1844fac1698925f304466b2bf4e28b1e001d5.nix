@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-media-simple";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "yesod-media-simple"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2014 Michael Sloan";
       maintainer = "mgsloan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple display of media types, served by yesod";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.vector)
           (hsPkgs.yesod)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

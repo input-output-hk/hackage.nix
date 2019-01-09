@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "arbor-datadog";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "arbor-datadog"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "mayhem@arbor.net";
@@ -22,7 +13,7 @@
       synopsis = "Datadog client for Haskell.";
       description = "Datadog client for Haskell. Supports both the HTTP API and StatsD.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "datadog-api-test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.arbor-datadog)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

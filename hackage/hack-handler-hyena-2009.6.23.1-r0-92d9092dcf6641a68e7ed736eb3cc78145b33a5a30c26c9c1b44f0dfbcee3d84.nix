@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack-handler-hyena";
-        version = "2009.6.23.1";
-      };
+      identifier = { name = "hack-handler-hyena"; version = "2009.6.23.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hyena hack handler";
       description = "Hyena hack handler";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.hack)
           (hsPkgs.hyena)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

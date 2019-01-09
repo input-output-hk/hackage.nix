@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-json-errors";
-        version = "0.1.1";
-      };
+      identifier = { name = "wai-middleware-json-errors"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Orbital Labs";
       maintainer = "seanhess@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Converts errors from plaintext to json";
       description = "Converts errors from plaintext to json";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.wai)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "wai-middleware-json-errors-test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.wai)
             (hsPkgs.base)
             (hsPkgs.wai-middleware-json-errors)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

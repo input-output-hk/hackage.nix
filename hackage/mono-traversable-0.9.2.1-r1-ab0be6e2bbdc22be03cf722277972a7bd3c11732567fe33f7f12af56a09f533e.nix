@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mono-traversable";
-        version = "0.9.2.1";
-      };
+      identifier = { name = "mono-traversable"; version = "0.9.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Type classes for mapping, folding, and traversing monomorphic containers";
       description = "Monomorphic variants of the Functor, Foldable, and Traversable typeclasses. If you understand Haskell's basic typeclasses, you understand mono-traversable. In addition to what you are used to, it adds on an IsSequence typeclass and has code for marking data structures as non-empty.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.vector-algorithms)
           (hsPkgs.dlist)
           (hsPkgs.dlist-instances)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -59,9 +50,9 @@
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.foldl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "sorting" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.mono-traversable)
             (hsPkgs.vector)
             (hsPkgs.mwc-random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "redis-resp";
-        version = "0.3.2";
-      };
+      identifier = { name = "redis-resp"; version = "0.3.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "(c) 2014 Toralf Wittner";
       maintainer = "Toralf Wittner <tw@dtex.org>";
@@ -22,7 +13,7 @@
       synopsis = "REdis Serialization Protocol (RESP) implementation.";
       description = "REdis Serialization Protocol (RESP) implementation as specified\nin <http://redis.io/topics/protocol>.\n\nAdditionally most Redis commands are declared as an GADT which\nenables different interpretations such as\n<http://hackage.haskell.org/package/redis-io redis-io>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.split)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

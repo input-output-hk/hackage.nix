@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-recorder";
-        version = "0.1.1";
-      };
+      identifier = { name = "monad-recorder"; version = "0.1.1"; };
       license = "MIT";
       copyright = "2017 Harendra Kumar";
       maintainer = "harendra.kumar@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Record and replay the results of monadic actions";
       description = "A monad transformer and class that allows recording\nthe results of monadic actions and replay them later.\nInspired by the logging implementation in the transient\npackage by Alberto G. Corona. Related packages:\n\n* https://hackage.haskell.org/package/transient\n* https://hackage.haskell.org/package/Workflow";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,16 @@
           (hsPkgs.mtl)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.monad-recorder)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.transformers);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.transformers);
+          };
         };
       };
-    };
-  }
+    }

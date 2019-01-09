@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ilist";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ilist"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yom@artyom.me";
@@ -22,11 +13,9 @@
       synopsis = "Optimised list functions for doing index-related things";
       description = "Optimised list functions for doing index-related things. They're faster than common idioms in all cases, and sometimes they fuse better as well.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -34,9 +23,9 @@
             (hsPkgs.hspec)
             (hsPkgs.ilist)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -46,8 +35,8 @@
             (hsPkgs.lens)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

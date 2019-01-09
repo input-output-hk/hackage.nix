@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "commsec-keyexchange";
-        version = "0.2.1";
-      };
+      identifier = { name = "commsec-keyexchange"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomas.dubuisson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Key agreement for commsec.";
       description = "Use RSA keys to authenticate a key exchange to\nestablish a commsec 'Connection'.  This package comes with\nthe same warnings as 'commsec': There is minimal testing\nand no code review.  Use at your own risk.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.DRBG)
           (hsPkgs.monadcryptorandom)
           (hsPkgs.cereal)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

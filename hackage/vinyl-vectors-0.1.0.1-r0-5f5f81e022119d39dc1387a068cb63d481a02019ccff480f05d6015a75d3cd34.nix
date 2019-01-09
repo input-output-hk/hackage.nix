@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vinyl-vectors";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "vinyl-vectors"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2010 Author Here";
       maintainer = "example@example.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "This library provides vectors of vinyl records stored\nas a structure of arrays. This vectors types provided\nimplement the generic vector interface and can be\nused with any library that accepts a generic vector\ntype.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,19 +23,19 @@
           (hsPkgs.primitive)
           (hsPkgs.constraints)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "sorting" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.vinyl-vectors)
             (hsPkgs.base)
             (hsPkgs.vector-algorithms)
             (hsPkgs.text)
             (hsPkgs.vinyl)
             (hsPkgs.microlens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

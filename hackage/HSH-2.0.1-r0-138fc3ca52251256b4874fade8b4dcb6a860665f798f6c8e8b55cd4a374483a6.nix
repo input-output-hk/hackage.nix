@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "HSH";
-        version = "2.0.1";
-      };
+      identifier = { name = "HSH"; version = "2.0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2006-2009 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,7 +13,7 @@
       synopsis = "Library to mix shell scripting with Haskell programs";
       description = "HSH is designed to let you mix and match shell expressions with\nHaskell programs. With HSH, it is possible to easily run shell\ncommands, capture their output or provide their input, and pipe them\nto and from other shell commands and arbitrary Haskell functions at will.\nCategory: System";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,11 +29,11 @@
           (hsPkgs.regex-posix)
           (hsPkgs.directory)
           (hsPkgs.bytestring)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) ([
+          depends = (pkgs.lib).optionals (flags.buildtests) ([
             (hsPkgs.base)
             (hsPkgs.utf8-string)
             (hsPkgs.process)
@@ -57,8 +48,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.HUnit)
             (hsPkgs.testpack)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix));
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix));
+          };
         };
       };
-    };
-  }
+    }

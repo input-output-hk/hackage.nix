@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "twentefp-websockets";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "twentefp-websockets"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2011 Siniša Biđin\n(c) 2011-2013 Jasper Van der Jeugt\n(c) 2011 Steffen Schuldenzucker\n(c) 2011 Alex Lang";
       maintainer = "Sebastiaan la Fleur <sebastiaan.la.fleur@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A fork of the popular websockets package. It is used for the practical assignments of the University of Twente. A sensible and clean way to write WebSocket-capable servers in Haskell.";
       description = "A fork of the popular websockets package. It is used for the practical assignments of the University of Twente.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.SHA)
           (hsPkgs.text)
           (hsPkgs.entropy)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

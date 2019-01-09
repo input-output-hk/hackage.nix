@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "codepad";
-        version = "0.1";
-      };
+      identifier = { name = "codepad"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2010 Chris Done";
       maintainer = "Chris Done <chrisdone@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Submit and retrieve paste output from CodePad.org.";
       description = "Submit and retrieve paste output from http://codepad.org/";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.network)
           (hsPkgs.curl)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

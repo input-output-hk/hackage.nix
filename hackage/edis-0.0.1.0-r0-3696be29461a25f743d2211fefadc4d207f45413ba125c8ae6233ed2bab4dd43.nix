@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "edis";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "edis"; version = "0.0.1.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2015 Ting-Yan Lai";
       maintainer = "banacorn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Statically typechecked client for Redis";
       description = "This library is a Haskell client for the Redis datastore built on top of\nHedis, with stronger type-level guarantees.\n\nFor detailed documentation, see the \"Database.Edis\" module.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.hedis)
           (hsPkgs.cereal)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

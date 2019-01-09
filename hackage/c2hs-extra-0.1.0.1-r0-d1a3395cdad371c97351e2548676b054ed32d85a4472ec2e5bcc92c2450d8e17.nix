@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "c2hs-extra";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "c2hs-extra"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "Copyright: (c) 2016-2017 Tao He";
       maintainer = "sighingnow@gmail.com";
@@ -22,13 +13,11 @@
       synopsis = "Convenient marshallers for complicate C types.";
       description = "Convenient marshallers for complicate C types.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

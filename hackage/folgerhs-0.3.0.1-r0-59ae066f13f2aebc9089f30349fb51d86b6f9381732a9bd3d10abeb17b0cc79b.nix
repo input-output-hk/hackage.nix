@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "folgerhs";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "folgerhs"; version = "0.3.0.1"; };
       license = "GPL-3.0-only";
       copyright = "2017 Uma Zalakain";
       maintainer = "uma@gisa-elkartea.org";
@@ -22,7 +13,7 @@
       synopsis = "Toolset for Folger Shakespeare Library's XML annotated plays";
       description = "Toolset for Folger Shakespeare Library's XML annotated plays";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.gloss)
-        ];
-      };
+          ];
+        };
       exes = {
         "folgerhs" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.array)
             (hsPkgs.gloss)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

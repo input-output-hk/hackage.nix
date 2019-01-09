@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "compose-ltr";
-        version = "0.2.3";
-      };
+      identifier = { name = "compose-ltr"; version = "0.2.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "123.wizek@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "More intuitive, left-to-right function composition.";
       description = "More intuitive, left-to-right function composition.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "spec" = {
           depends = [
@@ -34,8 +23,8 @@
             (hsPkgs.base)
             (hsPkgs.hspec)
             (hsPkgs.compose-ltr)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

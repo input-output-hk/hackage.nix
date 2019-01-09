@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "steambrowser";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "steambrowser"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "hherman1@macalester.edu";
@@ -22,7 +13,7 @@
       synopsis = "List and launch steam games from the cli";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "steambrowser" = {
@@ -31,8 +22,8 @@
             (hsPkgs.parsec)
             (hsPkgs.transformers)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hascat-system";
-        version = "0.2";
-      };
+      identifier = { name = "hascat-system"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Björn Teegen 2006, Florian Micheler 2010";
       maintainer = "fmi@informatik.uni-kiel.de";
@@ -22,7 +13,7 @@
       synopsis = "Hascat System Package";
       description = "Modules for programming Hascat system applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "criu-rpc";
-        version = "0.0.1";
-      };
+      identifier = { name = "criu-rpc"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Stephen O'Brien";
       maintainer = "wayofthepie@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "CRIU RPC client.";
       description = "Low level client for the CRIU RPC API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.network)
           (hsPkgs.text)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

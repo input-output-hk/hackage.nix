@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { conffmt = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-conf";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "language-conf"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2016 Pedro Tacla Yamada";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Conf parsers and pretty-printers for the Haskell programming language.";
       description = "@language-conf@ contains @.conf@ (e.g. nginx configuration) parsers and pretty-printers for the Haskell programming language.\n\"Data.Conf\" exports all the API surface in the package.\n\"ConfFmt\" is a @.conf@ file formatter that serves as an example; it's built as @conffmt@ by the cabal configuration. You can see its' source-code <https://github.com/beijaflor-io/language-hcl/src/ConfFmt.hs here>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.aeson)
-        ];
-      };
+          ];
+        };
       exes = {
         "conffmt" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.megaparsec)
             (hsPkgs.language-conf)
             (hsPkgs.pretty)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hspec" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.text)
             (hsPkgs.aeson)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

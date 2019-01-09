@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "req";
-        version = "0.4.0";
-      };
+      identifier = { name = "req"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Easy-to-use, type-safe, expandable, high-level HTTP library";
       description = "Easy-to-use, type-safe, expandable, high-level HTTP library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "pure-tests" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.req)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "httpbin-tests" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -83,8 +74,8 @@
             (hsPkgs.retry)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "MissingH";
-        version = "1.4.0.1";
-      };
+      identifier = { name = "MissingH"; version = "1.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2004-2016 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,7 +13,7 @@
       synopsis = "Large utility library";
       description = "MissingH is a library of all sorts of utility functions for\nHaskell programmers.  It is written in pure Haskell and thus should\nbe extremely portable and easy to use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.old-locale)
           (hsPkgs.array)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.testpack)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

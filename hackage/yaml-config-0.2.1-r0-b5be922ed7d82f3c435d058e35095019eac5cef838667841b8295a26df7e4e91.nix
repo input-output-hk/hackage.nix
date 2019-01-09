@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "yaml-config";
-        version = "0.2.1";
-      };
+      identifier = { name = "yaml-config"; version = "0.2.1"; };
       license = "MIT";
       copyright = "Selectel";
       maintainer = "mitroshin@selectel.org";
@@ -22,7 +13,7 @@
       synopsis = "Configuration management";
       description = "Configuration management";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.yaml)
           (hsPkgs.failure)
-        ];
-      };
+          ];
+        };
       tests = {
         "howl-tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "GiveYouAHead";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "GiveYouAHead"; version = "0.2.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "qinka@live.com";
@@ -22,7 +13,7 @@
       synopsis = "to auto-do somethings";
       description = "to auto-do somethings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.directory)
           (hsPkgs.process)
           (hsPkgs.extra)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

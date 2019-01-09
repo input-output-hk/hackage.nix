@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       small_base = true;
@@ -13,13 +7,10 @@
       hexpat = true;
       embed_data_files = false;
       unicode_collation = false;
-    };
+      };
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "pandoc-citeproc";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "pandoc-citeproc"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jgm@berkeley.edu";
@@ -29,7 +20,7 @@
       synopsis = "Supports using pandoc with citeproc";
       description = "The pandoc-citeproc library exports functions for\nusing the citeproc system with pandoc.  It relies on\nciteproc-hs, a library for rendering\nbibliographic reference citations into a variety\nof styles using a macro language called Citation\nStyle Language (CSL). More details on CSL can be\nfound here: <http://citationstyles.org/>.\n\nCurrently this package includes a copy of the citeproc-hs\ncode. When citeproc-hs is updated to be compatible,\nthis package will simply depend on citeproc-hs.\n\nThis package also contains two executables: pandoc-citeproc,\nwhich works as a pandoc filter (pandoc >= 1.12), and\nbiblio2yaml, which converts bibliographic databases to\na yaml format suitable for inclusion in pandoc YAML\nmetadata.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = (((([
@@ -46,30 +37,25 @@
           (hsPkgs.text)
           (hsPkgs.vector)
           (hsPkgs.texmath)
-        ] ++ pkgs.lib.optional (flags.bibutils) (hsPkgs.hs-bibutils)) ++ pkgs.lib.optionals (flags.network) [
+          ] ++ (pkgs.lib).optional (flags.bibutils) (hsPkgs.hs-bibutils)) ++ (pkgs.lib).optionals (flags.network) [
           (hsPkgs.network)
           (hsPkgs.HTTP)
-        ]) ++ (if flags.hexpat
+          ]) ++ (if flags.hexpat
           then [ (hsPkgs.hexpat) ]
-          else [
-            (hsPkgs.xml)
-          ])) ++ (if flags.unicode_collation
-          then [
-            (hsPkgs.text)
-            (hsPkgs.text-icu)
-          ]
+          else [ (hsPkgs.xml) ])) ++ (if flags.unicode_collation
+          then [ (hsPkgs.text) (hsPkgs.text-icu) ]
           else [
             (hsPkgs.rfc5051)
-          ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
+            ])) ++ (if compiler.isGhc && (compiler.version).ge "6.10"
           then [
             (hsPkgs.base)
             (hsPkgs.syb)
             (hsPkgs.parsec)
             (hsPkgs.old-locale)
             (hsPkgs.time)
-          ]
+            ]
           else [ (hsPkgs.base) ]);
-      };
+        };
       exes = {
         "pandoc-citeproc" = {
           depends = [
@@ -77,8 +63,8 @@
             (hsPkgs.pandoc-citeproc)
             (hsPkgs.pandoc-types)
             (hsPkgs.aeson)
-          ];
-        };
+            ];
+          };
         "biblio2yaml" = {
           depends = [
             (hsPkgs.base)
@@ -88,9 +74,9 @@
             (hsPkgs.attoparsec)
             (hsPkgs.text)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-pandoc-citeproc" = {
           depends = [
@@ -102,8 +88,8 @@
             (hsPkgs.pandoc-citeproc)
             (hsPkgs.process)
             (hsPkgs.Diff)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

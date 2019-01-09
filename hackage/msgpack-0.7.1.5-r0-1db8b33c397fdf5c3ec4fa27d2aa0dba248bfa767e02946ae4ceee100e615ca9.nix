@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "msgpack";
-        version = "0.7.1.5";
-      };
+      identifier = { name = "msgpack"; version = "0.7.1.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2009-2011, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell implementation of MessagePack";
       description = "A Haskell implementation of MessagePack <http://msgpack.org/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.blaze-builder)
           (hsPkgs.deepseq)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "msgpack-tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.msgpack)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

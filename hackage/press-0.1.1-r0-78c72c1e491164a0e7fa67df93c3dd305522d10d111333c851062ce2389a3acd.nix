@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "press";
-        version = "0.1.1";
-      };
+      identifier = { name = "press"; version = "0.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "bickfordb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Text template library targeted at the web / HTML generation";
       description = "Press is a general purpose text templating engine that is targeted at generating HTML / Web content.  It uses the same syntax Django/Jinja templates use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.json)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

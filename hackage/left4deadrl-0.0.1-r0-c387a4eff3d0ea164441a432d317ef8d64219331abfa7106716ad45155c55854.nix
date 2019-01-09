@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "left4deadrl";
-        version = "0.0.1";
-      };
+      identifier = { name = "left4deadrl"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "andrew.pennebaker@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wau codec";
       description = "A base unary encoder/decoder";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "left4deadrl" = {
@@ -31,8 +22,8 @@
             (hsPkgs.random)
             (hsPkgs.random-shuffle)
             (hsPkgs.hscharm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

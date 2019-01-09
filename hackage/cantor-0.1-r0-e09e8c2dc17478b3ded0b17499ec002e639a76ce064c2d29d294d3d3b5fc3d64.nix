@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cantor";
-        version = "0.1";
-      };
+      identifier = { name = "cantor"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "klangner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Analiza Java source code";
       description = "Application for analyzing Java source code";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cantor" = {
@@ -34,9 +25,9 @@
             (hsPkgs.gtk)
             (hsPkgs.filepath)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.hxt)
             (hsPkgs.hxt-xpath)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

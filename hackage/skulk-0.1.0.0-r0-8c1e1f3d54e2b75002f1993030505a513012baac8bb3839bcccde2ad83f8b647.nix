@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "skulk";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "skulk"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "(C) Ivan Appel 2016";
       maintainer = "ivan.appel@gmail.com";
@@ -22,19 +13,13 @@
       synopsis = "Eclectic collection of utility functions";
       description = "Eclectic collection of utility functions";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "tests" = {
-          depends = [
-            (hsPkgs.skulk)
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.skulk) (hsPkgs.base) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

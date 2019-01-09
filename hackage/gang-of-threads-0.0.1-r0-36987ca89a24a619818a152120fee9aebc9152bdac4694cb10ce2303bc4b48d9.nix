@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gang-of-threads";
-        version = "0.0.1";
-      };
+      identifier = { name = "gang-of-threads"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bastian Holst <bho@informatik.uni-kiel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Non-deterministic parallelism with bags";
       description = "Package implementing a bag-of-tasks approach to parallelism. This is an\napproach to non-deterministic parallelism, where non-deterministic means\nthat the order of multiple values from the same set depends on the scheduling.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.stm)
           (hsPkgs.mtl)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

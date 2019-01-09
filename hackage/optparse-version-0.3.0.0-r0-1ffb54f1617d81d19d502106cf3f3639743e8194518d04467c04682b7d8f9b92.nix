@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "optparse-version";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "optparse-version"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 David Smith";
       maintainer = "shmish111@gmail.com";
@@ -22,13 +13,10 @@
       synopsis = "";
       description = "Simple Option to display version text file";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.optparse-applicative)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.optparse-applicative) ];
+        };
       };
-    };
-  }
+    }

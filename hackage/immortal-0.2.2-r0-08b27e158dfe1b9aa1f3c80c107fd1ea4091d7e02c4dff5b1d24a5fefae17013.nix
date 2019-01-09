@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "immortal";
-        version = "0.2.2";
-      };
+      identifier = { name = "immortal"; version = "0.2.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "roma@ro-che.info";
@@ -22,7 +13,7 @@
       synopsis = "Spawn threads that never die (unless told to do so)";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
           (hsPkgs.stm)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.transformers)
             (hsPkgs.stm)
             (hsPkgs.lifted-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

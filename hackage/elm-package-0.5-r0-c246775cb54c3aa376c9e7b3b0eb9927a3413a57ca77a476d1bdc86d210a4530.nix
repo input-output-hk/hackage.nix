@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "elm-package";
-        version = "0.5";
-      };
+      identifier = { name = "elm-package"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2013-2014 Evan Czaplicki";
       maintainer = "info@elm-lang.org";
@@ -22,7 +13,7 @@
       synopsis = "Package manager for Elm libraries";
       description = "elm-package is a package manager that lets you install, update, and\npublish Elm libraries.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.zip-archive)
-        ];
-      };
+          ];
+        };
       exes = {
         "elm-package" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.zip-archive)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

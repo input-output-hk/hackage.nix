@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildanatool = false;
-    };
+    flags = { buildanatool = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "concraft";
-        version = "0.14.1";
-      };
+      identifier = { name = "concraft"; version = "0.14.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011-2018 Jakub Waszczuk, IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Morphological disambiguation based on constrained CRFs";
       description = "A morphological disambiguation library based on\nconstrained conditional random fields.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,15 +43,15 @@
           (hsPkgs.temporary)
           (hsPkgs.parallel)
           (hsPkgs.data-memocombinators)
-        ];
-      };
-      exes = {
-        "concraft-analyse-model" = {
-          depends = pkgs.lib.optionals (flags.buildanatool) [
-            (hsPkgs.cmdargs)
-            (hsPkgs.logfloat)
           ];
         };
+      exes = {
+        "concraft-analyse-model" = {
+          depends = (pkgs.lib).optionals (flags.buildanatool) [
+            (hsPkgs.cmdargs)
+            (hsPkgs.logfloat)
+            ];
+          };
+        };
       };
-    };
-  }
+    }

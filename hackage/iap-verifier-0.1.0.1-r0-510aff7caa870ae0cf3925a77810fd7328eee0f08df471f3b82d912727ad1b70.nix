@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "iap-verifier";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "iap-verifier"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "t.t.mc1192.sf@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple wrapper of In-App-Purchase receipt validate APIs.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.monads-tf)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

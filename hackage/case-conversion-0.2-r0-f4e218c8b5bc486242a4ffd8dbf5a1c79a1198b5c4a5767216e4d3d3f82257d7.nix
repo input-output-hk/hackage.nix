@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "case-conversion";
-        version = "0.2";
-      };
+      identifier = { name = "case-conversion"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "hawk.alan@gmail.com";
@@ -22,24 +13,14 @@
       synopsis = "Convert between different cases";
       description = "Convert Between Snake,Camel and Spinal Case";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-      };
-      exes = {
-        "case-converter" = {
-          depends = [ (hsPkgs.base) ];
-        };
-      };
+      "library" = { depends = [ (hsPkgs.base) ]; };
+      exes = { "case-converter" = { depends = [ (hsPkgs.base) ]; }; };
       tests = {
         "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.case-conversion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.case-conversion) ];
+          };
         };
       };
-    };
-  }
+    }

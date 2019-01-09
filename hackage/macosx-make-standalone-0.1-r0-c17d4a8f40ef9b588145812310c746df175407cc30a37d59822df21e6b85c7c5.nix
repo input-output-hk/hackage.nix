@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "macosx-make-standalone";
-        version = "0.1";
-      };
+      identifier = { name = "macosx-make-standalone"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2012 Utrecht University";
       maintainer = "atze@uu.nl";
@@ -22,7 +13,7 @@
       synopsis = "Make a macosx app standalone deployable";
       description = "Make a macosx app standalone by bundling all dylibs into it.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "macosx-make-standalone" = {
@@ -39,8 +30,8 @@
             (hsPkgs.unix)
             (hsPkgs.deepseq)
             (hsPkgs.graph-visit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cachix";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "cachix"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "2018 Domen Kožar";
       maintainer = "domen@enlambda.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/cachix/cachix#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -66,8 +57,8 @@
           (hsPkgs.unix)
           (hsPkgs.uri-bytestring)
           (hsPkgs.versions)
-        ];
-      };
+          ];
+        };
       exes = {
         "cachix" = {
           depends = [
@@ -112,9 +103,9 @@
             (hsPkgs.unix)
             (hsPkgs.uri-bytestring)
             (hsPkgs.versions)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "cachix-test" = {
           depends = [
@@ -160,8 +151,8 @@
             (hsPkgs.unix)
             (hsPkgs.uri-bytestring)
             (hsPkgs.versions)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "stringlike";
-        version = "0.0.0";
-      };
+      identifier = { name = "stringlike"; version = "0.0.0"; };
       license = "MIT";
       copyright = "Selectel";
       maintainer = "Fedor Gogolev <knsd@knsd.net>";
@@ -22,15 +13,11 @@
       synopsis = "Transformations to several string-like types";
       description = "Transformations to several string-like types";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
+        };
       tests = {
         "stringlike-tests" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

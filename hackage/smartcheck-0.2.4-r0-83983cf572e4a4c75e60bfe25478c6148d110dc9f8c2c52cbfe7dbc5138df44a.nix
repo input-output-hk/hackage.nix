@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      regression-flag = false;
-    };
+    flags = { regression-flag = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "smartcheck";
-        version = "0.2.4";
-      };
+      identifier = { name = "smartcheck"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "copyright, Lee Pike 2012.";
       maintainer = "leepike@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "A smarter QuickCheck.";
       description = "See the README.md: fast, small shrinking and generalization of failing test-cases from QuickCheck.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.regression-flag
@@ -37,7 +26,7 @@
             (hsPkgs.generic-deriving)
             (hsPkgs.ghc-prim)
             (hsPkgs.lazysmallcheck)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
@@ -46,8 +35,8 @@
             (hsPkgs.containers)
             (hsPkgs.generic-deriving)
             (hsPkgs.ghc-prim)
-          ];
-      };
+            ];
+        };
       exes = {
         "sc-qc" = {
           depends = [
@@ -59,8 +48,8 @@
             (hsPkgs.containers)
             (hsPkgs.generic-deriving)
             (hsPkgs.ghc-prim)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

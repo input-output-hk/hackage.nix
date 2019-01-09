@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-form-json";
-        version = "0.0.1";
-      };
+      identifier = { name = "yesod-form-json"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Anton Cheshkov";
       maintainer = "Anton Cheshkov <acheshkov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Extension for Yesod web framework to handle JSON requests as applicative forms";
       description = "Extension for Yesod web framework to handle JSON requests as applicative forms";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.containers)
           (hsPkgs.yesod-core)
           (hsPkgs.aeson)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

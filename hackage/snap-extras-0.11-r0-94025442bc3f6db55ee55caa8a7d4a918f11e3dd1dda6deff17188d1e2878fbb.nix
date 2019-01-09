@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snap-extras";
-        version = "0.11";
-      };
+      identifier = { name = "snap-extras"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "oz@soostone.com";
@@ -22,7 +13,7 @@
       synopsis = "A collection of useful helpers and utilities for Snap web applications.";
       description = "This package contains a collection of helper functions\nthat come in handy in most practical, real-world\napplications. Check individual modules to understand\nwhat's here. You can simply import Snap.Extras and use\nthe initializer in there to get them all at once.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,11 +46,11 @@
           (hsPkgs.transformers)
           (hsPkgs.wl-pprint-text)
           (hsPkgs.xmlhtml)
-        ];
-      };
+          ];
+        };
       exes = {
         "PollExample" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
@@ -74,9 +65,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -89,8 +80,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

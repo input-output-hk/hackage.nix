@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dynamic-cabal";
-        version = "0.3.2";
-      };
+      identifier = { name = "dynamic-cabal"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Benno Fünfstück";
       maintainer = "Benno Fünfstück <benno.fuenfstueck@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "dynamic-cabal";
       description = "dynamic-cabal";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.void)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "dynamic-cabal-tests" = {
           depends = [
@@ -50,16 +41,16 @@
             (hsPkgs.tasty-th)
             (hsPkgs.containers)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

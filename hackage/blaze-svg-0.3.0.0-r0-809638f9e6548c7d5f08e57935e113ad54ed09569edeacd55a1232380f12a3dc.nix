@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "blaze-svg";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "blaze-svg"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "deepak.jois@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "SVG combinator library";
       description = "SVG combinator library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.blaze-markup)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.blaze-markup) ];
+        };
       };
-    };
-  }
+    }

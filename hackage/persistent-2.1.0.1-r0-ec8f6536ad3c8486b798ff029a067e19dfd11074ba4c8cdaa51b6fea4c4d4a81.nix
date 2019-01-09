@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { nooverlap = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent";
-        version = "2.1.0.1";
-      };
+      identifier = { name = "persistent"; version = "2.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>, Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe, multi-backend data serialization.";
       description = "Type-safe, data serialization. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,8 +46,8 @@
           (hsPkgs.scientific)
           (hsPkgs.resource-pool)
           (hsPkgs.tagged)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -79,8 +70,8 @@
             (hsPkgs.monad-control)
             (hsPkgs.blaze-html)
             (hsPkgs.scientific)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "dbus-th-introspection";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "dbus-th-introspection"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "portnov84@rambler.ru";
@@ -22,7 +13,7 @@
       synopsis = "Generate bindings for DBus calls by using DBus introspection and dbus-th";
       description = "This package is aimed to simplify writing bindings for DBus interfaces by using\nDBus introspection and dbus-th package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.dbus)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "dbus-introspect-hs" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.dbus)
             (hsPkgs.containers)
             (hsPkgs.cmdargs)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

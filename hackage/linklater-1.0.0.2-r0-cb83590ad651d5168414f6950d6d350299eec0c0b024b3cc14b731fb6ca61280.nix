@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { developer = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "linklater";
-        version = "1.0.0.2";
-      };
+      identifier = { name = "linklater"; version = "1.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@haolian.org";
@@ -22,7 +13,7 @@
       synopsis = "Write bots for your Slack account, and then go to sleep (because it's so easy and late at night)";
       description = "\nA library for writing <https://slack.com/> Slack chat bots.\n\nA mistake?";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.containers)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

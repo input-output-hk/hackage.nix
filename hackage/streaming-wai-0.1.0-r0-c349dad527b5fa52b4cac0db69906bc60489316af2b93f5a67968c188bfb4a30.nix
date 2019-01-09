@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "streaming-wai";
-        version = "0.1.0";
-      };
+      identifier = { name = "streaming-wai"; version = "0.1.0"; };
       license = "MIT";
       copyright = "2015 William Casarin";
       maintainer = "bill@casarin.me";
@@ -22,7 +13,7 @@
       synopsis = "Streaming Wai utilities";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.bytestring-builder)
           (hsPkgs.streaming)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

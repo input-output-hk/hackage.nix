@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "SourceGraph";
-        version = "0.1";
-      };
+      identifier = { name = "SourceGraph"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Ivan Lazar Miljenovic";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Use graph-theory to analyse your code";
       description = "SourceGraph uses the Graphalyze library to analyse\nCabalized Haskell code.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "SourceGraph" = {
@@ -32,16 +23,16 @@
             (hsPkgs.graphviz)
             (hsPkgs.Cabal)
             (hsPkgs.haskell-src-exts)
-          ] ++ (if flags.small_base
+            ] ++ (if flags.small_base
             then [
               (hsPkgs.base)
               (hsPkgs.containers)
               (hsPkgs.filepath)
               (hsPkgs.random)
               (hsPkgs.directory)
-            ]
+              ]
             else [ (hsPkgs.base) ]);
+          };
         };
       };
-    };
-  }
+    }

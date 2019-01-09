@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "highjson-swagger";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "highjson-swagger"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "(c) 2017 Alexander Thiemann";
       maintainer = "Alexander Thiemann <mail@athiemann.net>";
@@ -22,7 +13,7 @@
       synopsis = "Derive swagger instances from highjson specs";
       description = "Derive swagger instances from highjson specs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.lens)
           (hsPkgs.insert-ordered-containers)
           (hsPkgs.hvect)
-        ];
-      };
+          ];
+        };
       tests = {
         "highjson-swagger-tests" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.lens)
             (hsPkgs.swagger2)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

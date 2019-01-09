@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "rallod";
-        version = "0.0.1";
-      };
+      identifier = { name = "rallod"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Parker, Matt <moonmaster9000@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "'\$' in reverse.";
       description = "A Simple package that exports '==>', which operates in the opposite direction of '\$'.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.haskell98)
-          (hsPkgs.base)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.haskell98) (hsPkgs.base) ]; };
+      };
+    }

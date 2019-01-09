@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "timemap";
-        version = "0.0.7";
-      };
+      identifier = { name = "timemap"; version = "0.0.7"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/githubuser/timemap#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.stm-containers)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "timemap-test" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.time)
             (hsPkgs.timemap)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "timemap-bench1" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.time)
             (hsPkgs.timemap)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "timemap-bench2" = {
           depends = [
             (hsPkgs.base)
@@ -86,8 +77,8 @@
             (hsPkgs.time)
             (hsPkgs.timemap)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

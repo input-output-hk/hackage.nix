@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "annotated-wl-pprint";
-        version = "0.7.0";
-      };
+      identifier = { name = "annotated-wl-pprint"; version = "0.7.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "david@davidchristiansen.dk";
@@ -22,10 +13,6 @@
       synopsis = "The Wadler/Leijen Pretty Printer, with annotation support";
       description = "This is a modified version of wl-pprint, which was based on Wadler's\npaper \"A Prettier  Printer\".  See the haddocks for full info.  This\nversion allows the library user to annotate the text with semantic\ninformation, which can later be rendered in a variety of ways.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

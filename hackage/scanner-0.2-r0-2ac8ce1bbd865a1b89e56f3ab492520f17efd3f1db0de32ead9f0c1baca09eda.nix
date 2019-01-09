@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scanner";
-        version = "0.2";
-      };
+      identifier = { name = "scanner"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) Yuras Shumovich 2016";
       maintainer = "shumovichy@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "Fast non-backtracking incremental combinator parsing for bytestrings";
       description = "Parser combinator library designed to be fast. It doesn't\nsupport backtracking.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
       tests = {
         "spec" = {
           depends = [
@@ -37,9 +23,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
             (hsPkgs.scanner)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -50,8 +36,8 @@
             (hsPkgs.cereal)
             (hsPkgs.criterion)
             (hsPkgs.scanner)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

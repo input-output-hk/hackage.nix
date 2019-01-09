@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "treemap";
-        version = "2.4.0.20180213";
-      };
+      identifier = { name = "treemap"; version = "2.4.0.20180213"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Julien Moutinho <julm+treemap@autogeree.net>";
@@ -22,7 +13,7 @@
       synopsis = "A tree of Data.Map.";
       description = "A tree of Data.Map,\nwhich is like a 'Map'\nbut whose key is now a 'NonEmpty' list of 'Map' keys (a 'Path')\nenabling the possibility to gather mapped values\nby 'Path' prefixes (inside a 'Node').";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.strict)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "treemap-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

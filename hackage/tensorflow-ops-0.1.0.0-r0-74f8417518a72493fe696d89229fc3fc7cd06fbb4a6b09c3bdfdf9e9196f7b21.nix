@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "tensorflow-ops";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tensorflow-ops"; version = "0.1.0.0"; };
       license = "LicenseRef-Apache";
       copyright = "Google Inc.";
       maintainer = "tensorflow-haskell@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Friendly layer around TensorFlow bindings.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.tensorflow-proto)
           (hsPkgs.tensorflow-core-ops)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "RegressionTest" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tensorflow)
             (hsPkgs.tensorflow-core-ops)
             (hsPkgs.tensorflow-ops)
-          ];
-        };
+            ];
+          };
         "MatrixTest" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +57,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "BuildTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -81,8 +72,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "EmbeddingOpsTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -100,8 +91,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "ArrayOpsTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -118,8 +109,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "OpsTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -138,8 +129,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "VariableTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -151,8 +142,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "DataFlowOpsTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -168,8 +159,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "GradientTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -184,8 +175,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "MiscTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -199,8 +190,8 @@
             (hsPkgs.tensorflow-proto)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
-        };
+            ];
+          };
         "NNTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -213,8 +204,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "QueueTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -229,8 +220,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "TracingTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -242,8 +233,8 @@
             (hsPkgs.tensorflow-ops)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
-        };
+            ];
+          };
         "TypesTest" = {
           depends = [
             (hsPkgs.HUnit)
@@ -261,9 +252,9 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "FeedFetchBench" = {
           depends = [
@@ -274,8 +265,8 @@
             (hsPkgs.tensorflow-ops)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

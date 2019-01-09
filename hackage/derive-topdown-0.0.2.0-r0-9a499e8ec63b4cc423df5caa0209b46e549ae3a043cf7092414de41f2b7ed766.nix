@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "derive-topdown";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "derive-topdown"; version = "0.0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) songzh";
       maintainer = "songzh <Haskell.Zhang.Song@hotmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Help Haskellers derive class instances for composited data types.";
       description = "This package will make it easier to derive class instance for complex composited data types by using Template Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.th-expand-syns)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "derive-topdown-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.haskell-src)
             (hsPkgs.simple-sql-parser)
             (hsPkgs.GenericPretty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

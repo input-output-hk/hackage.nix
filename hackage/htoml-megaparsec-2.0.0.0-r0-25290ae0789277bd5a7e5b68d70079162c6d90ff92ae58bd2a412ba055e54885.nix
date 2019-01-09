@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "htoml-megaparsec";
-        version = "2.0.0.0";
-      };
+      identifier = { name = "htoml-megaparsec"; version = "2.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013-2016 Cies Breijs, 2017-2018 Vanessa McHale";
       maintainer = "Vanessa McHale <vamchale@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Parser for TOML files";
       description = "TOML is an obvious and minimal format for config files.\nThis package provides a TOML parser\nbuilt with the Megaparsec.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.composition-prelude)
           (hsPkgs.deepseq)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.void);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.void);
+        };
       sublibs = {
         "htoml-internal" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.composition-prelude)
             (hsPkgs.deepseq)
             (hsPkgs.time)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs.void);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.void);
+          };
         };
-      };
       tests = {
         "htoml-test" = {
           depends = [
@@ -74,9 +65,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -85,8 +76,8 @@
             (hsPkgs.htoml-internal)
             (hsPkgs.criterion)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

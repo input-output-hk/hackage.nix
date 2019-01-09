@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "samtools-conduit";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "samtools-conduit"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "nick@ingolia.org";
@@ -22,7 +13,7 @@
       synopsis = "Conduit interface to SAM/BAM format files through samtools";
       description = "Conduit interface to SAM/BAM format files through samtools";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.transformers)
           (hsPkgs.resourcet)
           (hsPkgs.conduit)
-        ];
-      };
+          ];
+        };
       exes = {
         "samtools-conduit-copy" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.transformers)
             (hsPkgs.resourcet)
             (hsPkgs.conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

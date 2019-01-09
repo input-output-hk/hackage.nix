@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { scrape-bds = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pvss";
-        version = "0.2.0";
-      };
+      identifier = { name = "pvss"; version = "0.2.0"; };
       license = "MIT";
       copyright = "2016 IOHK";
       maintainer = "vincent.hanquez@iohk.io";
@@ -22,7 +13,7 @@
       synopsis = "Public Verifiable Secret Sharing";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,11 +26,11 @@
           (hsPkgs.cryptonite-openssl)
           (hsPkgs.foundation)
           (hsPkgs.integer-gmp)
-        ] ++ pkgs.lib.optionals (flags.scrape-bds) [
+          ] ++ (pkgs.lib).optionals (flags.scrape-bds) [
           (hsPkgs.mcl)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "pvss-exe" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.cryptonite)
             (hsPkgs.pvss)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "pvss-test" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.pvss)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

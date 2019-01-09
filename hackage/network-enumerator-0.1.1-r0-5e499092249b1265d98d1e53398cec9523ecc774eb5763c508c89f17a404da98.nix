@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-includes-bytestring = true;
-    };
+    flags = { network-includes-bytestring = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "network-enumerator";
-        version = "0.1.1";
-      };
+      identifier = { name = "network-enumerator"; version = "0.1.1"; };
       license = "MIT";
       copyright = "Copyright (c) John Millikin 2010";
       maintainer = "jmillikin@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Enumerators for network sockets";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,12 +21,9 @@
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
           (hsPkgs.enumerator)
-        ] ++ (if flags.network-includes-bytestring
+          ] ++ (if flags.network-includes-bytestring
           then [ (hsPkgs.network) ]
-          else [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]);
+          else [ (hsPkgs.network) (hsPkgs.network-bytestring) ]);
+        };
       };
-    };
-  }
+    }

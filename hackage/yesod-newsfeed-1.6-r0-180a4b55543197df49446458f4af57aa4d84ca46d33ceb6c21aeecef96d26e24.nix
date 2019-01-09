@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-newsfeed";
-        version = "1.6";
-      };
+      identifier = { name = "yesod-newsfeed"; version = "1.6"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Helper functions and data types for producing News feeds.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-newsfeed>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

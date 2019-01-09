@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "java-poker";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "java-poker"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "toby.net.info+git@gmail.com";
@@ -22,21 +13,11 @@
       synopsis = "The etude of the Haskell programming";
       description = "poker like a JAVA";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random-shuffle)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.random-shuffle) ]; };
       exes = {
-        "java-poker" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.java-poker)
-          ];
+        "java-poker" = { depends = [ (hsPkgs.base) (hsPkgs.java-poker) ]; };
         };
       };
-    };
-  }
+    }

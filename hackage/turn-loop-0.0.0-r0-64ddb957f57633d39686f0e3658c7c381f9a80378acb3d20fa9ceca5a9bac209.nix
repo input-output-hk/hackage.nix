@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "turn-loop";
-        version = "0.0.0";
-      };
+      identifier = { name = "turn-loop"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Joe Vargas";
@@ -22,14 +13,10 @@
       synopsis = "Manage multiple turned-based sessions";
       description = "Manage multiple turned-based sessions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.stm)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.stm) ];
+        };
       };
-    };
-  }
+    }

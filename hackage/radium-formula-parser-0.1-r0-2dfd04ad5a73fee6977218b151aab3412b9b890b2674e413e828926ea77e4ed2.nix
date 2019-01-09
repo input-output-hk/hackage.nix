@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "radium-formula-parser";
-        version = "0.1";
-      };
+      identifier = { name = "radium-formula-parser"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "klangner@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Chemistry";
       description = "Parser for chemical formulas";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.parsec)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.parsec) ];
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.Cabal)
             (hsPkgs.containers)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "localize";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "localize"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "portnov84@rambler.ru";
@@ -22,7 +13,7 @@
       synopsis = "GNU Gettext-based messages localization library";
       description = "More or less fully functional translation framework,\nbased on @haskell-gettext@ and @text-format-heavy@\npackages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.directory)
           (hsPkgs.Glob)
           (hsPkgs.setlocale)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

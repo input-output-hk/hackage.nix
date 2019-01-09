@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "composition-prelude";
-        version = "1.5.0.0";
-      };
+      identifier = { name = "composition-prelude"; version = "1.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017-2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,13 +13,11 @@
       synopsis = "Higher-order function combinators";
       description = "Replacement for `composition` or `composition-exta`, exporting everything in one module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        build-tools = [
-          (hsPkgs.buildPackages.cpphs)
-        ];
+        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        };
       };
-    };
-  }
+    }

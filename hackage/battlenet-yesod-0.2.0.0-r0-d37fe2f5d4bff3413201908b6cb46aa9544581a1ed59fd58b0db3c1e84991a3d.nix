@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "battlenet-yesod";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "battlenet-yesod"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "teo@nullable.se";
@@ -22,7 +13,7 @@
       synopsis = "Yesod integration for the battlenet package";
       description = "Yesod integration for the battlenet package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.battlenet)
           (hsPkgs.text)
           (hsPkgs.yesod-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

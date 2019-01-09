@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "unix-time";
-        version = "0.1.2";
-      };
+      identifier = { name = "unix-time"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,15 +13,11 @@
       synopsis = "Unix time parser/formatter and utilities";
       description = "Fast parser\\/formatter\\/utilities for Unix time";
       buildType = "Configure";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.old-time)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.old-time) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-th-prime)
             (hsPkgs.unix-time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

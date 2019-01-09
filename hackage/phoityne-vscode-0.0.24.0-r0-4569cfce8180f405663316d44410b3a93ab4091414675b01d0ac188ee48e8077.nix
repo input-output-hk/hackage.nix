@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "phoityne-vscode";
-        version = "0.0.24.0";
-      };
+      identifier = { name = "phoityne-vscode"; version = "0.0.24.0"; };
       license = "BSD-3-Clause";
       copyright = "2016-2018 phoityne_hs";
       maintainer = "phoityne.hs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Debug Adapter for Visual Studio Code.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "phoityne-vscode" = {
@@ -53,8 +44,8 @@
             (hsPkgs.safe-exceptions)
             (hsPkgs.lens)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

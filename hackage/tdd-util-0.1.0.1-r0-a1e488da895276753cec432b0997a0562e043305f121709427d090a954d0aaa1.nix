@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tdd-util";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "tdd-util"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 Byron James Johnson";
       maintainer = "Byron James Johnson <ByronJohnsonFP@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for TDD with test-framework, HUnit, and QuickCheck";
       description = "This library provides utility functions for TDD in the manner of \"MissingH\".\n\nThis package contains a test suite that is an excellent example of using\nthis library and may be cargo culted to save time starting TDD on a new\nproject.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.test-framework)
           (hsPkgs.test-framework-hunit)
           (hsPkgs.test-framework-quickcheck2)
-        ];
-      };
+          ];
+        };
       tests = {
         "tdd-util-tests" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

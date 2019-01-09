@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wolf";
-        version = "0.1.0";
-      };
+      identifier = { name = "wolf"; version = "0.1.0"; };
       license = "MIT";
       copyright = "Copyright (C) 2015 Swift Navigation, Inc.";
       maintainer = "Mark Fine <dev@swiftnav.com>";
@@ -22,7 +13,7 @@
       synopsis = "Amazon Simple Workflow Service Wrapper.";
       description = "Wolf is a wrapper around Amazon Simple Workflow Service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "wolf-register" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-execute" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +60,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-decide" = {
           depends = [
             (hsPkgs.base)
@@ -78,8 +69,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "wolf-act" = {
           depends = [
             (hsPkgs.base)
@@ -91,8 +82,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

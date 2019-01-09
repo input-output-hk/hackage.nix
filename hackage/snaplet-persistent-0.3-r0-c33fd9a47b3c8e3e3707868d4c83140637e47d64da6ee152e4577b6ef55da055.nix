@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snaplet-persistent";
-        version = "0.3";
-      };
+      identifier = { name = "snaplet-persistent"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ozataman@gmail.com, mightybyte@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "persistent snaplet for the Snap Framework";
       description = "Snaplet support for using the Postgresql database\nwith a Snap Framework application via the persistent\npackage.  It also includes an authentication backend.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

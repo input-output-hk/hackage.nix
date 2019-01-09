@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.1";
-      identifier = {
-        name = "pngload";
-        version = "0.1";
-      };
+      identifier = { name = "pngload"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008 Marko Lauronen";
       maintainer = "Marko Lauronen <marko.lauronen@pp1.inet.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Pure Haskell loader for PNG images";
       description = "This package provides a simple PNG loader for PNG images. It currently supports\n24bit RGB(A) images with no interlacing.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.array)
           (hsPkgs.mtl)
           (hsPkgs.haskell98)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cgrep";
-        version = "6.4.9";
-      };
+      identifier = { name = "cgrep"; version = "6.4.9"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Nicola Bonelli <nicola@pfq.io>";
@@ -22,7 +13,7 @@
       synopsis = "Command line tool";
       description = "Cgrep: a context-aware grep for source codes";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cgrep" = {
@@ -46,8 +37,8 @@
             (hsPkgs.either)
             (hsPkgs.mtl)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty";
-        version = "0.8.1.1";
-      };
+      identifier = { name = "tasty"; version = "0.8.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "roma@ro-che.info";
@@ -22,7 +13,7 @@
       synopsis = "Modern and extensible testing framework";
       description = "See <http://documentup.com/feuerbach/tasty>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.unbounded-delays)
           (hsPkgs.async)
           (hsPkgs.ansi-terminal)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim);
+        };
       };
-    };
-  }
+    }

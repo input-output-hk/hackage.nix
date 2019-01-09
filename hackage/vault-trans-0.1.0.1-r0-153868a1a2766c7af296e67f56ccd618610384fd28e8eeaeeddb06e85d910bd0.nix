@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vault-trans";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "vault-trans"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Bitnomial, Inc. (c) 2018";
       maintainer = "michael@bitnomial.com, opensource@bitnomial.com";
@@ -22,7 +13,7 @@
       synopsis = "A monad transformer for vault-tool";
       description = "Monad transformer for interfacing with vault.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vault-tool)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

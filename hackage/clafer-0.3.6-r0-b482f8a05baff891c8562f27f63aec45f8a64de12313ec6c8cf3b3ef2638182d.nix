@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "clafer";
-        version = "0.3.6";
-      };
+      identifier = { name = "clafer"; version = "0.3.6"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michał Antkiewicz <mantkiew@gsd.uwaterloo.ca>";
@@ -22,7 +13,7 @@
       synopsis = "clafer compiles Clafer models to other formats, such as Alloy, XML, HTML, Dot.";
       description = "Clafer is a general purpose, lightweight, structural modeling language developed at GSD Lab, University of Waterloo. Lightweight modeling aims at improving the understanding of the problem domain in the early stages of software development and determining the requirements with fewer defects. Clafer's goal is to make modeling more accessible to a wider range of users and domains. The tool provides a reference language implementation. It translates models to other formats (e.g. Alloy, XML) to allow for reasoning with existing tools.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.test-framework-quickcheck2)
           (hsPkgs.test-framework-th)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "clafer" = {
           depends = [
@@ -86,9 +77,9 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.text)
             (hsPkgs.clafer)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-suite" = {
           depends = [
@@ -120,8 +111,8 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.text)
             (hsPkgs.clafer)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

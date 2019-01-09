@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dataenc";
-        version = "0.14.0.5";
-      };
+      identifier = { name = "dataenc"; version = "0.14.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Magnus Therning, 2007-2012";
       maintainer = "none";
@@ -22,26 +13,22 @@
       synopsis = "Data encoding library";
       description = "Data encoding library currently providing Base16, Base32,\nBase32Hex, Base64, Base64Url, Base85, Python string escaping,\nQuoted-Printable, URL encoding, uuencode, xxencode, and yEncoding.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.array)
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.array) (hsPkgs.base) (hsPkgs.containers) ];
+        };
       exes = {
         "tests" = {
-          depends = pkgs.lib.optionals (flags.tests) [
+          depends = (pkgs.lib).optionals (flags.tests) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-th)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

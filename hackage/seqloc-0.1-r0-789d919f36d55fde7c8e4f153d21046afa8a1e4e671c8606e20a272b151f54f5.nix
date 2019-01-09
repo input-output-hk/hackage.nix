@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "seqloc";
-        version = "0.1";
-      };
+      identifier = { name = "seqloc"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nick@ingolia.org";
@@ -22,7 +13,7 @@
       synopsis = "Handle sequence locations for bioinformatics";
       description = "Handle sequence locations for bioinformatics";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.haskell98)
           (hsPkgs.attoparsec)
-        ];
-      };
+          ];
+        };
       exes = {
         "test-seqloc" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.QuickCheck)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

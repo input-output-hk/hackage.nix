@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "language-sally";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "language-sally"; version = "0.1.2.0"; };
       license = "ISC";
       copyright = "Galois, Inc. 2017";
       maintainer = "bjones@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "AST and pretty printer for Sally";
       description = "AST and pretty printer for the Sally\n<https://github.com/SRI-CSL/sally> input language";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.ansi-wl-pprint)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

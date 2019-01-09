@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Hashell";
-        version = "0.15";
-      };
+      identifier = { name = "Hashell"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "luis@arjox.org";
@@ -22,7 +13,7 @@
       synopsis = "Simple shell written in Haskell";
       description = "A simple shell written in Haskell; through the GHC API, it allows\nevaluation of Haskell expressions.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hashell" = {
@@ -36,8 +27,8 @@
             (hsPkgs.process)
             (hsPkgs.ghc)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

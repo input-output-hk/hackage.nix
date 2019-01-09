@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "simplex";
-        version = "0.3.2";
-      };
+      identifier = { name = "simplex"; version = "0.3.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
@@ -22,7 +13,7 @@
       synopsis = "A simple markup language that translates to LaTeX";
       description = "A simple markup language that translates to LaTeX";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "simplex" = {
@@ -36,8 +27,8 @@
             (hsPkgs.mtl)
             (hsPkgs.old-time)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

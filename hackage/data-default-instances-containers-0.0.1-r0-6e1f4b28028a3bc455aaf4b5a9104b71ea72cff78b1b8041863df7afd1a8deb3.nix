@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "data-default-instances-containers";
         version = "0.0.1";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<l.mai@web.de>";
@@ -22,14 +16,14 @@
       synopsis = "Default instances for types in containers";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

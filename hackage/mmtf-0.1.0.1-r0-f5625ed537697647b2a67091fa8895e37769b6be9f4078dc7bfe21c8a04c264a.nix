@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mmtf";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "mmtf"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2017, Pavel Yakovlev";
       maintainer = "pavel@yakovlev.me";
@@ -22,7 +13,7 @@
       synopsis = "Macromolecular Transmission Format implementation";
       description = "Haskell implementation of MMTF biological structure format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "mmtf-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

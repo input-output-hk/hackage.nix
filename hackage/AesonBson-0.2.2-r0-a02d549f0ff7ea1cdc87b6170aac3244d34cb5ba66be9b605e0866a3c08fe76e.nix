@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "AesonBson";
-        version = "0.2.2";
-      };
+      identifier = { name = "AesonBson"; version = "0.2.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "CC0";
       maintainer = "Niklas Hambüchen <mail@nh2.me>";
@@ -22,7 +13,7 @@
       synopsis = "Mapping between Aeson's JSON and Bson objects.";
       description = "This package lets you convert between Aeson's JSON and Bson objects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.bson)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.hspec)
             (hsPkgs.HUnit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

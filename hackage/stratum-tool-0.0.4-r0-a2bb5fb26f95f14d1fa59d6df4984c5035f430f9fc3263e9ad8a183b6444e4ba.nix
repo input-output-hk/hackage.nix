@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ssl = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "stratum-tool";
-        version = "0.0.4";
-      };
+      identifier = { name = "stratum-tool"; version = "0.0.4"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "joel.lehtonen@koodilehto.fi";
@@ -22,7 +13,7 @@
       synopsis = "Client for Stratum protocol";
       description = "Connects to Electrum server via Stratum protocol and\nallows querying bitcoin wallet balances and other commands\nsupported by the server. It supports the original JSON format\nin addition to shell script friendly JSON breadcrumbs format.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "stratum-tool" = {
@@ -42,8 +33,8 @@
             (hsPkgs.curl)
             (hsPkgs.vector)
             (hsPkgs.unordered-containers)
-          ] ++ pkgs.lib.optional (flags.ssl) (hsPkgs.connection);
+            ] ++ (pkgs.lib).optional (flags.ssl) (hsPkgs.connection);
+          };
         };
       };
-    };
-  }
+    }

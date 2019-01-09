@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rison";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "rison"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Martin Vlk";
       maintainer = "martin@vlkk.cz";
@@ -22,7 +13,7 @@
       synopsis = "Parses and renders RISON strings.";
       description = "Rison gets parsed into and serialized from Aeson Valueobjects. Please see README.md for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.vector)
           (hsPkgs.scientific)
           (hsPkgs.text-format)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -55,8 +46,8 @@
             (hsPkgs.rison)
             (hsPkgs.scientific)
             (hsPkgs.text-format)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

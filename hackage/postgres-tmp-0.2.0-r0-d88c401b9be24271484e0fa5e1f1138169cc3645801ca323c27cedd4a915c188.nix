@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgres-tmp";
-        version = "0.2.0";
-      };
+      identifier = { name = "postgres-tmp"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2016";
       maintainer = "moritz.kiefer@purelyfunctional.org";
@@ -22,7 +13,7 @@
       synopsis = "Create a temporary database that is deleted after performing some operation";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.postgresql-simple)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

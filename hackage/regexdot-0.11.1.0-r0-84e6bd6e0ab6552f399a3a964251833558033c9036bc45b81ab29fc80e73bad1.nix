@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      havedeepseq = true;
-      llvm = false;
-      threaded = true;
-    };
+    flags = { havedeepseq = true; llvm = false; threaded = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "regexdot";
-        version = "0.11.1.0";
-      };
+      identifier = { name = "regexdot"; version = "0.11.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "(C) 2010 Dr. Alistair Ward";
       maintainer = "regexdot <at> functionalley <dot> eu";
@@ -26,18 +13,16 @@
       synopsis = "A polymorphic, POSIX, extended regex-engine.";
       description = "Provides a portable, POSIX, extended regex-engine, designed to process a list of /arbitrary/ objects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
           (hsPkgs.parsec)
           (hsPkgs.toolshed)
-        ] ++ (if flags.havedeepseq
+          ] ++ (if flags.havedeepseq
           then [ (hsPkgs.deepseq) ]
-          else [
-            (hsPkgs.parallel)
-          ])) ++ [ (hsPkgs.parallel) ];
+          else [ (hsPkgs.parallel) ])) ++ [ (hsPkgs.parallel) ];
+        };
       };
-    };
-  }
+    }

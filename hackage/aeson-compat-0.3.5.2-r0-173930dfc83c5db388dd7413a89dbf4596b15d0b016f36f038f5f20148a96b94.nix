@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-compat";
-        version = "0.3.5.2";
-      };
+      identifier = { name = "aeson-compat"; version = "0.3.5.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Compatibility layer for aeson";
       description = "Compatibility layer for @aeson@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.vector)
           (hsPkgs.semigroups)
           (hsPkgs.tagged)
-        ];
-      };
+          ];
+        };
       tests = {
         "aeson-compat-test" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hlibsass";
-        version = "0.1.2.1";
-      };
+      identifier = { name = "hlibsass"; version = "0.1.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "fiolek94@gmail.com";
@@ -22,23 +13,16 @@
       synopsis = "Low-level bindings to libsass";
       description = "This package provides (very) low level bindings to libsass. It uses libsass\ncompiled to static library, so if you use this in your project, you have to\nlink your project with C++ runtime(which libsass does automatically - links\nwith /libstdc++/).\nFor documentation visit <https://github.com/sass/libsass>.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        libs = [
-          (pkgs."sass")
-          (pkgs."stdc++")
-        ];
-      };
+        libs = [ (pkgs."sass") (pkgs."stdc++") ];
+        };
       tests = {
         "tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.hlibsass)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.hlibsass) ];
+          };
         };
       };
-    };
-  }
+    }

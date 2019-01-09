@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HueAPI";
-        version = "0.2.4";
-      };
+      identifier = { name = "HueAPI"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sjoerd@q42.nl";
@@ -22,7 +13,7 @@
       synopsis = "API for controlling Philips Hue lights";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.lens-aeson)
           (hsPkgs.wreq)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

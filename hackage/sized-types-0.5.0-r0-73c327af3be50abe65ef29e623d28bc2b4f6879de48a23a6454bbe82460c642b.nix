@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { all = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sized-types";
-        version = "0.5.0";
-      };
+      identifier = { name = "sized-types"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2013 The University of Kansas";
       maintainer = "Andy Gill <andygill@ku.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Sized types in Haskell using the GHC Nat kind.";
       description = "Providing matrixes, sparse matrixes, and signed and unsigned bit vectors, using GHC Nat kind.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,20 +21,15 @@
           (hsPkgs.array)
           (hsPkgs.containers)
           (hsPkgs.singletons)
-        ];
-      };
+          ];
+        };
       exes = {
         "sized-types-test1" = {
           depends = if flags.all
-            then [
-              (hsPkgs.base)
-              (hsPkgs.QuickCheck)
-            ]
+            then [ (hsPkgs.base) (hsPkgs.QuickCheck) ]
             else [ (hsPkgs.base) ];
-        };
-        "sized-types-example1" = {
-          depends = [ (hsPkgs.base) ];
+          };
+        "sized-types-example1" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

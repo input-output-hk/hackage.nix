@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "java-reflect";
-        version = "0.9.1";
-      };
+      identifier = { name = "java-reflect"; version = "0.9.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
@@ -22,7 +13,7 @@
       synopsis = "Tools for reflecting on Java classes.";
       description = "Tools for reflecting on Java classes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.java-bridge)
           (hsPkgs.containers)
           (hsPkgs.hx)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

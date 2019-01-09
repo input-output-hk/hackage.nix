@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "h-gpgme";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "h-gpgme"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "(c) Reto Habluetzel 2015";
       maintainer = "rethab@rethab.ch";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "High Level Binding for GnuPG Made Easy (gpgme)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.either)
           (hsPkgs.time)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

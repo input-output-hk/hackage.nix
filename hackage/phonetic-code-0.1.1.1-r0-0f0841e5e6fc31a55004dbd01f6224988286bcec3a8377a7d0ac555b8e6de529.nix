@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "phonetic-code";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "phonetic-code"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright © 2008 Bart Massey";
       maintainer = "bart@cs.pdx.edu";
@@ -22,7 +13,7 @@
       synopsis = "Phonetic codes: Soundex and Phonix";
       description = "This package implements the \"phonetic coding\" algorithms\nSoundex and Phonix.  A phonetic coding algorithm\ntransforms a word into a similarity hash based on an\napproximation of its sounds.  Thus, similar-sounding\nwords tend to have the same hash.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.regex-compat)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

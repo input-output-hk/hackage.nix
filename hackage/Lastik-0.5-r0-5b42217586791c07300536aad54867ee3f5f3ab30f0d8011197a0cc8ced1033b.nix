@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Lastik";
-        version = "0.5";
-      };
+      identifier = { name = "Lastik"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A library for compiling programs in a variety of languages";
       description = "A library for compiling programs in a variety of languages including Java, Scala and C#.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -35,7 +26,7 @@
             (hsPkgs.zip-archive)
             (hsPkgs.pureMD5)
             (hsPkgs.SHA)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.filepath)
@@ -43,7 +34,7 @@
             (hsPkgs.zip-archive)
             (hsPkgs.pureMD5)
             (hsPkgs.SHA)
-          ];
+            ];
+        };
       };
-    };
-  }
+    }

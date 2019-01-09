@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "static-tensor";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "static-tensor"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2017 Alexey Vagarenko";
       maintainer = "vagarenko@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tensors of statically known size";
       description = "This library provides a toolkit for working with tensors of statically known size and element's type.\nSee README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.singletons)
           (hsPkgs.split)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "coreDump" = {
           depends = [
@@ -45,9 +36,9 @@
             (hsPkgs.text)
             (hsPkgs.typed-process)
             (hsPkgs.Diff)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "matMul" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.mwc-random)
             (hsPkgs.static-tensor)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

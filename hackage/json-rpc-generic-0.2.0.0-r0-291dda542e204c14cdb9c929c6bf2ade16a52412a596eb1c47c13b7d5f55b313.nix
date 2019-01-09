@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-rpc-generic";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "json-rpc-generic"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016 Kei Hibino";
       maintainer = "ex8k.hibino@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generic encoder and decode for JSON-RPC";
       description = "This package contains generic encoder and decode for JSON-RPC";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.scientific)
           (hsPkgs.vector)
           (hsPkgs.aeson)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-main" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.json-rpc-generic)
             (hsPkgs.quickcheck-simple)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

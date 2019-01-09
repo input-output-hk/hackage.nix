@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { gtk3 = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoodle-render";
-        version = "0.5";
-      };
+      identifier = { name = "hoodle-render"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hoodle file renderer";
       description = "Rendering library using cairo for hoodle file format";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,9 +39,7 @@
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
-        ] ++ (if flags.gtk3
-          then [ (hsPkgs.gtk3) ]
-          else [ (hsPkgs.gtk) ]);
+          ] ++ (if flags.gtk3 then [ (hsPkgs.gtk3) ] else [ (hsPkgs.gtk) ]);
+        };
       };
-    };
-  }
+    }

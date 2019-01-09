@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "leapseconds";
-        version = "1.0";
-      };
+      identifier = { name = "leapseconds"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Ashley Yakeley";
       maintainer = "ashley@semantic.org";
@@ -22,14 +13,9 @@
       synopsis = "";
       description = "Interpretation of leap second files.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
       tests = {
         "test" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.leapseconds)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

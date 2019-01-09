@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "reflection";
-        version = "0.0.0";
-      };
+      identifier = { name = "reflection"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2009 Edward A. Kmett, 2004 Oleg Kiselyov and Chung-chieh Shan";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,10 +13,6 @@
       synopsis = "Functional Pearl: Implicit Configurations";
       description = "Implementation of the code in \"Functional Pearl: Implicit Configurations\" by Oleg Kiselyov and Chung-chieh Shan";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

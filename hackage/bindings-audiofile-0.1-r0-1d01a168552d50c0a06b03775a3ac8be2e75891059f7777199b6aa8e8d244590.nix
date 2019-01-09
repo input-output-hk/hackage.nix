@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "bindings-audiofile";
-        version = "0.1";
-      };
+      identifier = { name = "bindings-audiofile"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "PHO <pho at cielonegro dot org>";
@@ -22,16 +13,11 @@
       synopsis = "Low level bindings to audiofile";
       description = "Bindings to audiofile: <http://www.68k.org/~michael/audiofile/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-DSL)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.audiofile)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
+        pkgconfig = [ (pkgconfPkgs.audiofile) ];
+        };
       };
-    };
-  }
+    }

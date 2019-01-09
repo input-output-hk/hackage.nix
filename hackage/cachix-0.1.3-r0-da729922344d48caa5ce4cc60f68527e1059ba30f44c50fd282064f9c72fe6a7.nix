@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "cachix";
-        version = "0.1.3";
-      };
+      identifier = { name = "cachix"; version = "0.1.3"; };
       license = "Apache-2.0";
       copyright = "2018 Domen Kožar";
       maintainer = "domen@enlambda.com";
@@ -22,7 +13,7 @@
       synopsis = "Command line client for Nix binary cache hosting https://cachix.org";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -69,20 +60,14 @@
           (hsPkgs.unix)
           (hsPkgs.uri-bytestring)
           (hsPkgs.versions)
-        ];
-      };
-      exes = {
-        "cachix" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cachix)
-            (hsPkgs.cachix-api)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
           ];
         };
-      };
+      exes = {
+        "cachix" = {
+          depends = [ (hsPkgs.base) (hsPkgs.cachix) (hsPkgs.cachix-api) ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
+        };
       tests = {
         "cachix-test" = {
           depends = [
@@ -92,8 +77,8 @@
             (hsPkgs.hspec)
             (hsPkgs.protolude)
             (hsPkgs.here)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

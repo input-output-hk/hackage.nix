@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "liblawless";
-        version = "0.19.3";
-      };
+      identifier = { name = "liblawless"; version = "0.19.3"; };
       license = "GPL-3.0-only";
       copyright = "© 2016 Evan Cofsky";
       maintainer = "evan@theunixman.com";
@@ -22,7 +13,7 @@
       synopsis = "Prelude based on protolude for GHC 8 and beyond.";
       description = "A Prelude relpacement for GHC 8 with a focus on building\napplications with Lenses, Machines, and Applicatives.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -64,8 +55,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.zippers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-liblawless" = {
           depends = [
@@ -87,8 +78,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

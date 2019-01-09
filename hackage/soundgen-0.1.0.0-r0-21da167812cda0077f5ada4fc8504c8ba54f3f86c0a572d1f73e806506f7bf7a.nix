@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "soundgen";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "soundgen"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "luca_ciciriello@hotmail.com";
@@ -22,16 +13,10 @@
       synopsis = "sound generator";
       description = "Simple tone generator. You can decide the tone frequency and duration";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "sound" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.WAVE)
-            (hsPkgs.split)
-          ];
+        "sound" = { depends = [ (hsPkgs.base) (hsPkgs.WAVE) (hsPkgs.split) ]; };
         };
       };
-    };
-  }
+    }

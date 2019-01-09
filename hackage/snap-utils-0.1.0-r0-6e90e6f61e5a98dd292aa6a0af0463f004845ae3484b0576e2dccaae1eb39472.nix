@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "snap-utils";
-        version = "0.1.0";
-      };
+      identifier = { name = "snap-utils"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Luke Hoersten <luke@hoersten.org>";
@@ -22,7 +13,7 @@
       synopsis = "Snap Framework utility funtions.";
       description = "Utilities for Snap Framework apps.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.heist)
           (hsPkgs.http-types)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

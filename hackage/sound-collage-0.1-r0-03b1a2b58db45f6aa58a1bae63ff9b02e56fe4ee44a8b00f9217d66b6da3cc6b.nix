@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "sound-collage";
-        version = "0.1";
-      };
+      identifier = { name = "sound-collage"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "Approximate a song from other pieces of sound";
       description = "Approximate a song from other pieces of sound";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sound-collage" = {
@@ -43,8 +34,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

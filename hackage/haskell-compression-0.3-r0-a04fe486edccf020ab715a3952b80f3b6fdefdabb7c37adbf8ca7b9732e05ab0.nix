@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-compression";
-        version = "0.3";
-      };
+      identifier = { name = "haskell-compression"; version = "0.3"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "hawk.alan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "compress files";
       description = "A program to compress a file";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.bimap)
           (hsPkgs.boolean-list)
-        ];
-      };
+          ];
+        };
       exes = {
         "hs-compress" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.bimap)
             (hsPkgs.boolean-list)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "html-tokenizer";
-        version = "0.6";
-      };
+      identifier = { name = "html-tokenizer"; version = "0.6"; };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "An \"attoparsec\"-based HTML tokenizer";
       description = "This library can be used as a basis for streaming HTML parsers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text-builder)
           (hsPkgs.vector)
           (hsPkgs.vector-builder)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.QuickCheck)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

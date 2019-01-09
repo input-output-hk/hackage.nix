@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "alfred";
-        version = "0.5";
-      };
+      identifier = { name = "alfred"; version = "0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "paba@di.ku.dk";
@@ -22,7 +13,7 @@
       synopsis = "utility library for Alfred version 2";
       description = "A utility library for writing workflows for Alfred version 2\n(<http://www.alfredapp.com>). Examples can be found at\n<https://github.com/pa-ba/alfred/tree/master/examples>. Alfred 2\nworkflows that use these examples can be found at\n<https://github.com/pa-ba/alfred/tree/master/workflows>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,9 +25,9 @@
           (hsPkgs.hexpat)
           (hsPkgs.http-conduit)
           (hsPkgs.http-types)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

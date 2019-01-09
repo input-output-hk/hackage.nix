@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3-data";
-        version = "0.15";
-      };
+      identifier = { name = "hsc3-data"; version = "0.15"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2013-2014";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "haskell supercollider data";
       description = "Data related functions useful when working with SC3.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.split)
           (hsPkgs.SVGPath)
           (hsPkgs.xml)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

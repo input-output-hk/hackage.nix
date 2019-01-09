@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "phash";
-        version = "0.0.3";
-      };
+      identifier = { name = "phash"; version = "0.0.3"; };
       license = "GPL-3.0-only";
       copyright = "Copyright: (c) 2014 Michael Xavier";
       maintainer = "Michael Xavier <michael@michaelxavier.net>";
@@ -22,12 +13,9 @@
       synopsis = "Haskell bindings to pHash, the open source perceptual hash library";
       description = "See http://www.phash.org/ for more info. Note that you\nmust have libphash installed on your system to use this\nlibrary. Check your system library.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-        libs = [ (pkgs."pHash") ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; libs = [ (pkgs."pHash") ]; };
       tests = {
         "spec" = {
           depends = [
@@ -37,17 +25,13 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.smallcheck)
-          ];
+            ];
           libs = [ (pkgs."pHash") ];
-        };
+          };
         "docs" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.phash)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.phash) ];
           libs = [ (pkgs."pHash") ];
+          };
         };
       };
-    };
-  }
+    }

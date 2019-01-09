@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "time-exts";
-        version = "3.0.3";
-      };
+      identifier = { name = "time-exts"; version = "3.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2013-2017 Enzo Haussecker";
       maintainer = "Enzo Haussecker <enzo@sovereign.io>";
@@ -22,7 +13,7 @@
       synopsis = "Yet another time library";
       description = "A stand-alone time library implementing Unix and UTC timestamps with varying granularity.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.tz)
-        ];
-      };
+          ];
+        };
       tests = {
         "time-exts-unit-tests" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.tz)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

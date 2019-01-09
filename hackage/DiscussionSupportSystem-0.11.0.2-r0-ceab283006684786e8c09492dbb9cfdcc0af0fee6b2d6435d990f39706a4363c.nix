@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "DiscussionSupportSystem";
-        version = "0.11.0.2";
-      };
+      identifier = { name = "DiscussionSupportSystem"; version = "0.11.0.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "masakazu.minamiyama@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Discussion support system";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,16 @@
           (hsPkgs.html)
           (hsPkgs.blaze-markup)
           (hsPkgs.blaze-html)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.DiscussionSupportSystem)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

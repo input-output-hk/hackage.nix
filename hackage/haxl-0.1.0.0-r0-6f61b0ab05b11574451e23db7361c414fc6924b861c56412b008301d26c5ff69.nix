@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haxl";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haxl"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2014 (C) 2014 Facebook, Inc.";
       maintainer = "The Haxl Team <haxl-team@fb.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell library for efficient, concurrent,\nand concise data access.";
       description = "Haxl is a library and EDSL for efficient scheduling of concurrent data\naccesses with a concise applicative API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.haxl)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-lsp-types";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "haskell-lsp-types"; version = "0.6.0.0"; };
       license = "MIT";
       copyright = "Alan Zimmerman, 2016-2018";
       maintainer = "alan.zimm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell library for the Microsoft Language Server Protocol, data types";
       description = "An implementation of the types to allow language implementors to\nsupport the Language Server Protocol for their specific language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.scientific)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

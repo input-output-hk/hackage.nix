@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "affine-invariant-ensemble-mcmc";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jared@jtobin.ca";
@@ -22,7 +16,7 @@
       synopsis = "General-purpose sampling";
       description = "A general-purpose sampling routine for badly-scaled distributions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +26,7 @@
           (hsPkgs.mwc-random)
           (hsPkgs.primitive)
           (hsPkgs.split)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

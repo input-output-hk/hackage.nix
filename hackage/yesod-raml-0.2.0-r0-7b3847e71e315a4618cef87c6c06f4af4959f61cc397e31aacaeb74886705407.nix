@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-raml";
-        version = "0.2.0";
-      };
+      identifier = { name = "yesod-raml"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "junji.hashimoto@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "RAML style route definitions for Yesod";
       description = "RAML style route definitions for Yesod";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.regex-posix)
           (hsPkgs.th-lift)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-routes" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.th-lift)
             (hsPkgs.vector)
             (hsPkgs.data-default)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      avx2 = false;
-      bmi2 = false;
-      sse42 = true;
-    };
+    flags = { avx2 = false; bmi2 = false; sse42 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-dsv";
-        version = "0.3.0";
-      };
+      identifier = { name = "hw-dsv"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -26,7 +13,7 @@
       synopsis = "Unbelievably fast streaming DSV file parser";
       description = "Please see the README on Github at <https://github.com/haskell-works/hw-dsv#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,14 +28,12 @@
           (hsPkgs.hw-prim)
           (hsPkgs.hw-simd)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
           (hsPkgs.transformers)
           (hsPkgs.semigroups)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       exes = {
         "hw-dsv" = {
           depends = [
@@ -68,12 +53,12 @@
             (hsPkgs.lens)
             (hsPkgs.optparse-applicative)
             (hsPkgs.resourcet)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
             (hsPkgs.transformers)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hw-dsv-space" = {
           depends = [
@@ -91,11 +76,11 @@
             (hsPkgs.cassava)
             (hsPkgs.hw-dsv)
             (hsPkgs.weigh)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
             (hsPkgs.transformers)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "hw-dsv-test" = {
           depends = [
             (hsPkgs.base)
@@ -115,12 +100,12 @@
             (hsPkgs.hspec)
             (hsPkgs.hw-hspec-hedgehog)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
             (hsPkgs.transformers)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -140,11 +125,11 @@
             (hsPkgs.directory)
             (hsPkgs.hw-dsv)
             (hsPkgs.mmap)
-          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
+            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
             (hsPkgs.transformers)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

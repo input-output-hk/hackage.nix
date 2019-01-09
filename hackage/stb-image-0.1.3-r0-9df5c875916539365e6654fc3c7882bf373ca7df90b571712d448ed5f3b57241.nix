@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      base4 = true;
-    };
+    flags = { splitbase = true; base4 = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "stb-image";
-        version = "0.1.3";
-      };
+      identifier = { name = "stb-image"; version = "0.1.3"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
@@ -25,14 +13,12 @@
       synopsis = "A wrapper around Sean Barrett's JPEG/PNG decoder";
       description = "Partial implementation of JPEG, PNG, TGA, BMP, PSD decoders,\nwith a really simple API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
-          then [
-            (hsPkgs.bytestring)
-          ] ++ [ (hsPkgs.base) ]
+          then [ (hsPkgs.bytestring) ] ++ [ (hsPkgs.base) ]
           else [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

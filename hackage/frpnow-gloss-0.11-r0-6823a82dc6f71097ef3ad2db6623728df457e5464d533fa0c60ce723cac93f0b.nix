@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "frpnow-gloss";
-        version = "0.11";
-      };
+      identifier = { name = "frpnow-gloss"; version = "0.11"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "atzeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Program awesome stuff with Gloss and frpnow!";
       description = "Program awesome stuff with Gloss and frpnow!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.transformers)
           (hsPkgs.frpnow)
           (hsPkgs.gloss)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

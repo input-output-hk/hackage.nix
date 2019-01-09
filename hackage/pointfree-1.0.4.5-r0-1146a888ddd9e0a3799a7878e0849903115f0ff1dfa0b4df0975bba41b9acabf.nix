@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pointfree";
-        version = "1.0.4.5";
-      };
+      identifier = { name = "pointfree"; version = "1.0.4.5"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Ben Millwood <haskell@benmachine.co.uk>";
@@ -22,7 +13,7 @@
       synopsis = "Tool for refactoring expressions into pointfree form";
       description = "The pointfree tool is a standalone command-line version of the pl\nplugin for lambdabot.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pointfree" = {
@@ -32,9 +23,9 @@
             (hsPkgs.containers)
             (hsPkgs.haskell-src-exts)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

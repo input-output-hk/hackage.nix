@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "darcsden";
-        version = "0.5";
-      };
+      identifier = { name = "darcsden"; version = "0.5"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "i.am@toogeneric.com";
@@ -22,7 +13,7 @@
       synopsis = "darcs project hosting and collaboration";
       description = "A web and SSH server for hosting darcs projects and collaborating with\nothers.\n\nSee darcsden --readme for installation instructions.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "darcsden" = {
@@ -60,10 +51,10 @@
             (hsPkgs.time)
             (hsPkgs.xhtml)
             (hsPkgs.xml)
-          ];
-        };
+            ];
+          };
         "darcsden-ssh" = {};
         "darcsden-post-hook" = {};
+        };
       };
-    };
-  }
+    }

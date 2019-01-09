@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "legion";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "legion"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "2015-2016 Rick Owens";
       maintainer = "rick@owenssoftware.com";
@@ -22,7 +13,7 @@
       synopsis = "Distributed, stateful, homogeneous microservice framework.";
       description = "Legion is a framework for writing distributed,\nhomogeneous, stateful microservices in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.unix)
           (hsPkgs.uuid)
           (hsPkgs.warp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

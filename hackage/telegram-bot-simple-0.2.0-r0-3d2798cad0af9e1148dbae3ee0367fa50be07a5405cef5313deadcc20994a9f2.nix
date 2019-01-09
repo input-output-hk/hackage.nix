@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "telegram-bot-simple";
-        version = "0.2.0";
-      };
+      identifier = { name = "telegram-bot-simple"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Nickolay Kudasov";
       maintainer = "nickolay.kudasov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Easy to use library for building Telegram bots.";
       description = "Please see the README on Github at <https://github.com/fizruk/telegram-bot-simple#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "example-echo-bot" = {
           depends = [
@@ -76,8 +67,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "example-todo-bot" = {
           depends = [
             (hsPkgs.aeson)
@@ -103,8 +94,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

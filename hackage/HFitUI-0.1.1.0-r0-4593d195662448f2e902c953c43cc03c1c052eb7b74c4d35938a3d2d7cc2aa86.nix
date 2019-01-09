@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "HFitUI";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "HFitUI"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 QSpider";
       maintainer = "iqsf@ya.ru";
@@ -22,7 +13,7 @@
       synopsis = "The library for generating a graphical interface on the web";
       description = "The library for generating a graphical interface on the web for the Haskell programming language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,23 +28,13 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       exes = {
-        "HFitUI-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HFitUI)
-          ];
+        "HFitUI-exe" = { depends = [ (hsPkgs.base) (hsPkgs.HFitUI) ]; };
         };
-      };
       tests = {
-        "HFitUI-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HFitUI)
-          ];
+        "HFitUI-test" = { depends = [ (hsPkgs.base) (hsPkgs.HFitUI) ]; };
         };
       };
-    };
-  }
+    }

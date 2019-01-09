@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "web-push";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "web-push"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "2017 Sarthak Bagaria";
       maintainer = "neokits@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Send messages using Web Push protocol.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.mtl)
           (hsPkgs.jose)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "web-push-test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.base64-bytestring)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

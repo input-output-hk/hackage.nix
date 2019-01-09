@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tpb";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tpb"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Jacob Thomas Errington 2017";
       maintainer = "hackage@mail.jerrington.me";
@@ -22,7 +13,7 @@
       synopsis = "Applications for interacting with the Pushbullet API";
       description = "This package provides two programs, tpb and pb-notify, for interacting with\nthe Pushbullet API. The former is primarily used for sending SMS whereas the\nlatter is used for showing desktop notifications when SMS are received.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tpb" = {
@@ -46,8 +37,8 @@
             (hsPkgs.servant)
             (hsPkgs.servant-client)
             (hsPkgs.servant-pushbullet-client)
-          ];
-        };
+            ];
+          };
         "pb-notify" = {
           depends = [
             (hsPkgs.aeson)
@@ -59,8 +50,8 @@
             (hsPkgs.time)
             (hsPkgs.websockets)
             (hsPkgs.wuss)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

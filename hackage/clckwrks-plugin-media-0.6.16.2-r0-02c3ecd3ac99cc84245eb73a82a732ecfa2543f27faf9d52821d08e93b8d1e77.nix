@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "clckwrks-plugin-media";
-        version = "0.6.16.2";
-      };
+      identifier = { name = "clckwrks-plugin-media"; version = "0.6.16.2"; };
       license = "BSD-3-Clause";
       copyright = "2012 Jeremy Shaw, SeeReason Partners LLC";
       maintainer = "Jeremy Shaw <jeremy@n-heptane.com>";
@@ -22,7 +13,7 @@
       synopsis = "media plugin for clckwrks";
       description = "support for images and image gallerys.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.web-plugins)
           (hsPkgs.web-routes)
           (hsPkgs.web-routes-th)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

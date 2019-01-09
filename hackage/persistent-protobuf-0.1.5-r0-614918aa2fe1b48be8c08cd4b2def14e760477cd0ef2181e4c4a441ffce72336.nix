@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "persistent-protobuf";
-        version = "0.1.5";
-      };
+      identifier = { name = "persistent-protobuf"; version = "0.1.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2012 Akamai Technologies, Inc.";
       maintainer = "mistone@akamai.com";
@@ -22,7 +13,7 @@
       synopsis = "Template-Haskell helpers for integrating protobufs with persistent.";
       description = "Template-Haskell helpers for integrating protobufs with persistent.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.protocol-buffers-descriptor)
           (hsPkgs.template-haskell)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "citation-resolve";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "citation-resolve"; version = "0.3.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "muranushi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "convert document IDs such as DOI, ISBN, arXiv ID to bibliographic reference.";
       description = "This modules provides a way to convert document identifiers, such\nas DOIs, ISBNs, arXiv IDs to bibliographic references.\n\nEach type of identifiers will be converted via internet services\nto a bibliographic record of type 'Text.CSL.Reference' , which in\nturn can be rendered in various format using @citeproc-hs@ package\n<hackage.haskell.org/package/citeproc-hs> .\n\nMoreover, the server responses are cached in a local database,\nmaking the server load as little as possible.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -54,16 +45,16 @@
             (hsPkgs.filepath)
             (hsPkgs.MissingH)
             (hsPkgs.doctest)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.binary-search)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

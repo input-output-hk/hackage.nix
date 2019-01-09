@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "ddc-core-llvm";
-        version = "0.4.1.3";
-      };
+      identifier = { name = "ddc-core-llvm"; version = "0.4.1.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Disciplined Disciple Compiler LLVM code generator.";
       description = "Disciplined Disciple Compiler LLVM code generator.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.ddc-core)
           (hsPkgs.ddc-core-simpl)
           (hsPkgs.ddc-core-salt)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

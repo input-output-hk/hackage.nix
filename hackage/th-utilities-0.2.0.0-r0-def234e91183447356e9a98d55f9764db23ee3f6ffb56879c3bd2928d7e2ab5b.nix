@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "th-utilities";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "th-utilities"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2016 FP Complete";
       maintainer = "Michael Sloan <sloan@fpcomplete.com>";
@@ -22,7 +13,7 @@
       synopsis = "Collection of useful functions for use with Template Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.th-orphans)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.th-utilities)
             (hsPkgs.hspec)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

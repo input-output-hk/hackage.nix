@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-kafka-conduit";
-        version = "2.1.0";
-      };
+      identifier = { name = "hw-kafka-conduit"; version = "2.1.0"; };
       license = "MIT";
       copyright = "Alexey Raga";
       maintainer = "Alexey Raga <alexey.raga@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Conduit bindings for hw-kafka-client";
       description = "Conduit bindings for hw-kafka-client";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.mtl)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "kafka-conduit-example" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.containers)
             (hsPkgs.resourcet)
             (hsPkgs.hw-kafka-conduit)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "kafka-client-conduit-test" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

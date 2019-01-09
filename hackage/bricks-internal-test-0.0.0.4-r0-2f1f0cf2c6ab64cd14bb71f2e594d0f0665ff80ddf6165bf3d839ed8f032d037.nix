@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bricks-internal-test";
-        version = "0.0.0.4";
-      };
+      identifier = { name = "bricks-internal-test"; version = "0.0.0.4"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "...";
       description = "...";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.hedgehog)
           (hsPkgs.template-haskell)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

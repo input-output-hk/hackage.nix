@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "clustering";
-        version = "0.1.1";
-      };
+      identifier = { name = "clustering"; version = "0.1.1"; };
       license = "MIT";
       copyright = "(c) 2015 Kai Zhang";
       maintainer = "kai@kzhang.org";
@@ -22,7 +13,7 @@
       synopsis = "High performance clustering algorithms";
       description = "Following clutering methods are included in this library:\n\n1 Agglomerative hierarchical clustering. Complete linkage O(n^2),\nSingle linkage O(n^2), Average linkage O(n^2),\nWeighted linkage O(n^2), Ward's linkage O(n^2).\n\n2 KMeans clustering.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mwc-random)
           (hsPkgs.primitive)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.clustering)
             (hsPkgs.hierarchical-clustering)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.vector)
             (hsPkgs.clustering)
             (hsPkgs.hierarchical-clustering)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

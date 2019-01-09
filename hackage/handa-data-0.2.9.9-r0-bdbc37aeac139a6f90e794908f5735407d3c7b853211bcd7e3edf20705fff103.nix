@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "handa-data";
-        version = "0.2.9.9";
-      };
+      identifier = { name = "handa-data"; version = "0.2.9.9"; };
       license = "MIT";
       copyright = "(c) 2005-16 Brian W Bush";
       maintainer = "Brian W Bush <consult@brianwbush.info>";
@@ -22,10 +13,6 @@
       synopsis = "This package is deprecated.  It formerly contained Haskell utilities for data structures and data manipulation.";
       description = "This package is deprecated.  This Haskell library formerly contained data structures and data manipulation functions for general uses.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

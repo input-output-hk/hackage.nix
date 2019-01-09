@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "process-qq";
-        version = "0.2.0";
-      };
+      identifier = { name = "process-qq"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Quasi-Quoters for exec process";
       description = "Quasi-Quoters for exec process";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.process)
           (hsPkgs.enumerator)
           (hsPkgs.shakespeare-text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

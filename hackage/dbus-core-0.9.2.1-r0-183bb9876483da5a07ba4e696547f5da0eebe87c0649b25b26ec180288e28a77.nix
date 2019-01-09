@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dbus-core";
-        version = "0.9.2.1";
-      };
+      identifier = { name = "dbus-core"; version = "0.9.2.1"; };
       license = "GPL-3.0-only";
       copyright = "John Millikin 2010-2011";
       maintainer = "John Millikin <jmillikin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Low-level D-Bus protocol implementation";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.unix)
           (hsPkgs.vector)
           (hsPkgs.xml-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

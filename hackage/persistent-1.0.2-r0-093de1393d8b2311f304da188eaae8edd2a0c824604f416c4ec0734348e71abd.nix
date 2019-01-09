@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      nooverlap = false;
-      blaze_html_0_5 = true;
-    };
+    flags = { nooverlap = false; blaze_html_0_5 = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent";
-        version = "1.0.2";
-      };
+      identifier = { name = "persistent"; version = "1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -25,7 +13,7 @@
       synopsis = "Type-safe, multi-backend data serialization.";
       description = "Type-safe, data serialization. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,13 +37,10 @@
           (hsPkgs.vector)
           (hsPkgs.attoparsec)
           (hsPkgs.template-haskell)
-        ] ++ (if flags.blaze_html_0_5
-          then [
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-          ]
+          ] ++ (if flags.blaze_html_0_5
+          then [ (hsPkgs.blaze-html) (hsPkgs.blaze-markup) ]
           else [ (hsPkgs.blaze-html) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -63,8 +48,8 @@
             (hsPkgs.hspec)
             (hsPkgs.containers)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HaXml";
-        version = "1.13.2";
-      };
+      identifier = { name = "HaXml"; version = "1.13.2"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "";
@@ -22,45 +13,15 @@
       synopsis = "Utilities for manipulating XML documents";
       description = "Haskell utilities for parsing, filtering, transforming and\ngenerating XML documents.";
       buildType = "Custom";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-        ];
-      };
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
       exes = {
-        "Canonicalise" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-          ];
-        };
-        "Xtract" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-          ];
-        };
-        "Validate" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-          ];
-        };
-        "MkOneOf" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-          ];
-        };
-        "DtdToHaskell" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell98)
-          ];
+        "Canonicalise" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+        "Xtract" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+        "Validate" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+        "MkOneOf" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+        "DtdToHaskell" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
         };
       };
-    };
-  }
+    }

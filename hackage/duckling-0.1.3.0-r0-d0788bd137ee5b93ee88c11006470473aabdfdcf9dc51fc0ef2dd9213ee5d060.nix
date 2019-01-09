@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "duckling";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "duckling"; version = "0.1.3.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2014-present, Facebook, Inc.";
       maintainer = "duckling-team@fb.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell library for parsing text into structured data.";
       description = "Duckling is a library for parsing text into structured data.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.time)
           (hsPkgs.timezone-series)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "duckling-regen-exe" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.haskell-src-exts)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "duckling-example-exe" = {
           depends = [
             (hsPkgs.duckling)
@@ -72,8 +63,8 @@
             (hsPkgs.timezone-olson)
             (hsPkgs.timezone-series)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "duckling-request-sample" = {
           depends = [
             (hsPkgs.duckling)
@@ -87,8 +78,8 @@
             (hsPkgs.timezone-olson)
             (hsPkgs.timezone-series)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "duckling-expensive" = {
           depends = [
             (hsPkgs.duckling)
@@ -102,9 +93,9 @@
             (hsPkgs.timezone-olson)
             (hsPkgs.timezone-series)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "duckling-test" = {
           depends = [
@@ -116,8 +107,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

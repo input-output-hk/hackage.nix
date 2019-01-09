@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "modular-prelude";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "modular-prelude"; version = "0.3.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "danburton.email@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A new Prelude featuring first class modules";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.containers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

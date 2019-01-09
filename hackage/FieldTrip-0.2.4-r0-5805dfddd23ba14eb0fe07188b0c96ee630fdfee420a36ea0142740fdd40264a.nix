@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "FieldTrip";
-        version = "0.2.4";
-      };
+      identifier = { name = "FieldTrip"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007-2008 by Conal Elliott and Andy Gill";
       maintainer = "conal@conal.net, andygill@ku.edu";
@@ -22,7 +13,7 @@
       synopsis = "Functional 3D";
       description = "FieldTrip is a library for functional 3D geometry\n\nPlease see the project wiki page: <http://haskell.org/haskellwiki/FieldTrip>\n\n&#169; 2008 by Andy Gill and Conal Elliott; BSD3 license.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.MemoTrie)
           (hsPkgs.vector-space)
           (hsPkgs.graphicsFormats)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

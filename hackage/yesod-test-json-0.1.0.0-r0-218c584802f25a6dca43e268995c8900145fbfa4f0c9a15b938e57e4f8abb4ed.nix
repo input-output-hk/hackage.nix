@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yesod-test-json";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "yesod-test-json"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "amsay@amsay.net";
@@ -22,7 +13,7 @@
       synopsis = "Utility functions for testing JSON web services written in Yesod";
       description = "yesod-test-json provides combinators for using the hspec and wai-test libraries together.\nIt is meant to be used like yesod-test, but for web services as opposed to web applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.transformers)
           (hsPkgs.yesod-default)
           (hsPkgs.conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

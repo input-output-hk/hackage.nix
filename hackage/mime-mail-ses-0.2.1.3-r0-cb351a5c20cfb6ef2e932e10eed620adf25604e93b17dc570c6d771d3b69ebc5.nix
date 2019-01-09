@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "mime-mail-ses";
-        version = "0.2.1.3";
-      };
+      identifier = { name = "mime-mail-ses"; version = "0.2.1.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Send mime-mail messages via Amazon SES";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.http-types)
           (hsPkgs.monad-control)
           (hsPkgs.cryptohash-cryptoapi)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

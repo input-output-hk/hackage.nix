@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hulk";
-        version = "0.2.0";
-      };
+      identifier = { name = "hulk"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2010-2013 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "IRC server written in Haskell.";
       description = "An IRC server with (mandatory) server authentication, log recall, bumping.\nIntended for private business use or hobby work.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.unix)
           (hsPkgs.case-insensitive)
           (hsPkgs.monad-extras)
-        ];
-      };
+          ];
+        };
       exes = {
         "hulk" = {
           depends = [
@@ -73,11 +64,9 @@
             (hsPkgs.unix)
             (hsPkgs.case-insensitive)
             (hsPkgs.monad-extras)
-          ];
-        };
-        "hulk-generate-pass" = {
-          depends = [ (hsPkgs.base) ];
+            ];
+          };
+        "hulk-generate-pass" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

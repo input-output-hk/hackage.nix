@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "http-querystring";
-        version = "1.0";
-      };
+      identifier = { name = "http-querystring"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Yusuke Nomura<yunomu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "The HTTP query builder.";
       description = "The HTTP query builder.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,10 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.http-types)
-        ];
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -48,8 +34,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

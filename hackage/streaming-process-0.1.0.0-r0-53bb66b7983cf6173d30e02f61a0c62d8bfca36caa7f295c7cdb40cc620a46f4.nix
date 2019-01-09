@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "streaming-process";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "streaming-process"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "Ivan Lazar Miljenovic";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming support for running system process";
       description = "Stream data in and out of external commands.  Configuration options\nare available to choose which inputs and outputs to use.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.streaming-with)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "simple-processes" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.streaming)
             (hsPkgs.streaming-bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

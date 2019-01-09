@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tyro";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "tyro"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Richard Lupton";
       maintainer = "example@example.com";
@@ -22,7 +13,7 @@
       synopsis = "Type derived JSON parsing using Aeson";
       description = "A library for deriving JSON parsers (using Aeson) by indicating\nJSON structure at the type level.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.aeson)
           (hsPkgs.text)
           (hsPkgs.singletons)
-        ];
-      };
+          ];
+        };
       tests = {
         "tyro-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.text)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

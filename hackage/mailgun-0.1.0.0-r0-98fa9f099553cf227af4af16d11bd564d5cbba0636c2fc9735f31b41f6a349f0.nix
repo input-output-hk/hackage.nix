@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mailgun";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mailgun"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrewrademacher@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Connector to Rackspace's Mailgun Service";
       description = "Allows users to directly access Rackspace's Mailgun service\nwithout having to work with the underlying REST service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,16 +28,12 @@
           (hsPkgs.monad-control)
           (hsPkgs.http-client)
           (hsPkgs.failure)
-        ];
-      };
-      exes = {
-        "send" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.mailgun)
           ];
         };
+      exes = {
+        "send" = {
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.mailgun) ];
+          };
         "sendmany" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +41,8 @@
             (hsPkgs.http-conduit)
             (hsPkgs.transformers)
             (hsPkgs.mailgun)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

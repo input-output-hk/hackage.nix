@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "markov-processes";
-        version = "0.0.2";
-      };
+      identifier = { name = "markov-processes"; version = "0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Vikram Verma <me@vikramverma.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hidden Markov processes.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.memoize)
           (hsPkgs.MonadRandom)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       tests = {
         "markov-tests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.markov-processes)
             (hsPkgs.memoize)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

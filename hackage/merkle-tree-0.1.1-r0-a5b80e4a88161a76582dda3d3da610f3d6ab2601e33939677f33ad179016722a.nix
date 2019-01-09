@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "merkle-tree";
-        version = "0.1.1";
-      };
+      identifier = { name = "merkle-tree"; version = "0.1.1"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Adjoint Inc. (info@adjoint.io)";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of a Merkle tree and merkle tree proofs of inclusion";
       description = "An implementation of a Merkle tree and merkle tree proofs of inclusion";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.memory)
           (hsPkgs.protolude)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       tests = {
         "merkle-test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.random)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

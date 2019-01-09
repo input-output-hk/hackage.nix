@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kawaii";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "kawaii"; version = "0.0.1.0"; };
       license = "LicenseRef-Apache";
       copyright = "";
       maintainer = "Eduardo Trujillo <ed@chromabits.com>";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for serving static sites and blogs with Wai/Warp";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.mtl)
           (hsPkgs.monad-logger)
           (hsPkgs.monad-control)
-        ];
-      };
+          ];
+        };
       tests = {
         "wai-static-extra-spec" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.hakyll-serve)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

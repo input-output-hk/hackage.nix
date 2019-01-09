@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-examples = false;
-    };
+    flags = { build-examples = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3-process";
-        version = "0.10.0";
-      };
+      identifier = { name = "hsc3-process"; version = "0.10.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Stefan Kersten and others 2008-2013";
       maintainer = "kaoskorobase@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Create and control scsynth processes";
       description = "This library allows to create and control scsynth processes.\n\nChangeLog: <https://github.com/kaoskorobase/hsc3-process/blob/master/ChangeLog.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.time-compat)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "hsc3-sine" = {
           depends = [
@@ -50,8 +39,8 @@
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-process)
-          ];
-        };
+            ];
+          };
         "hsc3-nrt" = {
           depends = [
             (hsPkgs.base)
@@ -59,8 +48,8 @@
             (hsPkgs.hosc)
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

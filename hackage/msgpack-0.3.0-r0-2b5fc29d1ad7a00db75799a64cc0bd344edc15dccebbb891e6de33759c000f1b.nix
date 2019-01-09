@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "msgpack";
-        version = "0.3.0";
-      };
+      identifier = { name = "msgpack"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell binding to MessagePack";
       description = "A Haskell binding to MessagePack <http://msgpack.sourceforge.jp/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.attoparsec)
           (hsPkgs.binary)
           (hsPkgs.data-binary-ieee754)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

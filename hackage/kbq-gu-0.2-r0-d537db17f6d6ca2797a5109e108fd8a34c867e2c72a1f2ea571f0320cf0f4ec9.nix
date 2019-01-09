@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.1.3";
-      identifier = {
-        name = "kbq-gu";
-        version = "0.2";
-      };
+      identifier = { name = "kbq-gu"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "copyleft, share whatever you modify and any derivatives as well, including modules, additions and everything else.";
       maintainer = "andrii.z@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Rpoku spoken word programming language";
       description = "Rpoku spoken word programming language compilers or translators";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "rpokuToAssembler" = {
-          depends = [ (hsPkgs.base) ];
-        };
-        "rpokuToLanguage" = {
-          depends = [ (hsPkgs.base) ];
+        "rpokuToAssembler" = { depends = [ (hsPkgs.base) ]; };
+        "rpokuToLanguage" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

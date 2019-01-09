@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hack2-interface-wai";
-        version = "2017.1.4";
-      };
+      identifier = { name = "hack2-interface-wai"; version = "2017.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hack2 interface to WAI";
       description = "Convert a Hack2 App to a WAI app";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.http-types)
           (hsPkgs.case-insensitive)
           (hsPkgs.safe)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

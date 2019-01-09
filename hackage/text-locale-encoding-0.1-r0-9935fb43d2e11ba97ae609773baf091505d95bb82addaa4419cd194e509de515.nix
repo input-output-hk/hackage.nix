@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { trustworthy = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "text-locale-encoding";
-        version = "0.1";
-      };
+      identifier = { name = "text-locale-encoding"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "kudahkukarek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Encode and decode Text to/from ByteString using TextEncoding";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring-handle)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yam-web";
-        version = "0.3.2";
-      };
+      identifier = { name = "yam-web"; version = "0.3.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Daniel YU <leptonyu@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Yam Web";
       description = "base web module for yam";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.yam-config)
           (hsPkgs.yam-logger)
           (hsPkgs.yam-transaction)
-        ];
-      };
+          ];
+        };
       exes = {
         "yam-web" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.yam-logger)
             (hsPkgs.yam-transaction)
             (hsPkgs.yam-web)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

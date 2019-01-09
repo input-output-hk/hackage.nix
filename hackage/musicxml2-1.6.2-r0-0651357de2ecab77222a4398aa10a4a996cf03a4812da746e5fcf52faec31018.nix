@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "musicxml2";
-        version = "1.6.2";
-      };
+      identifier = { name = "musicxml2"; version = "1.6.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hans Hoglund";
@@ -22,7 +13,7 @@
       synopsis = "A representation of the MusicXML format.";
       description = "A representation of the MusicXML format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.xml)
           (hsPkgs.music-pitch-literal)
           (hsPkgs.music-dynamics-literal)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hask-home";
-        version = "2009.3.18";
-      };
+      identifier = { name = "hask-home"; version = "2009.3.18"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert 2006";
       maintainer = "Greg Heartsfield <scsibug@imap.cc>";
@@ -22,7 +13,7 @@
       synopsis = "Generate homepages for cabal packages";
       description = "This program generates simple homepages for cabalized\nHaskell packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hask-home" = {
@@ -37,14 +28,9 @@
             (hsPkgs.directory)
             (hsPkgs.hsemail)
             (hsPkgs.parsec)
-          ];
-        };
-        "hask-home-upload" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
+            ];
+          };
+        "hask-home-upload" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
         };
       };
-    };
-  }
+    }

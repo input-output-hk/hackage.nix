@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bloodhound";
-        version = "0.7.0.1";
-      };
+      identifier = { name = "bloodhound"; version = "0.7.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014, Chris Allen";
       maintainer = "cma@bitemyapp.com";
@@ -22,7 +13,7 @@
       synopsis = "ElasticSearch client library for Haskell";
       description = "ElasticSearch made awesome for Haskell hackers";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.exceptions)
           (hsPkgs.data-default-class)
           (hsPkgs.blaze-builder)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -63,17 +54,17 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.mtl)
             (hsPkgs.quickcheck-properties)
-          ];
-        };
+            ];
+          };
         "doctests" = {
-          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
+          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.8") [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.doctest-prop)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

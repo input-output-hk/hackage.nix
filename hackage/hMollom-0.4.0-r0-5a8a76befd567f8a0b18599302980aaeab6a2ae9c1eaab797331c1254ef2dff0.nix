@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hMollom";
-        version = "0.4.0";
-      };
+      identifier = { name = "hMollom"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "itkovian@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library to interact with the @Mollom anti-spam service";
       description = "Library to interact with the @Mollom anti-spam service";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.pureMD5)
           (hsPkgs.old-time)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test-hlint = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Yampa";
-        version = "0.10.1";
-      };
+      identifier = { name = "Yampa"; version = "0.10.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ivan Perez (ivan.perez@keera.co.uk)";
@@ -22,21 +13,16 @@
       synopsis = "Library for programming hybrid systems.";
       description = "Domain-specific language embedded in Haskell for programming\nhybrid (mixed discrete-time and continuous-time) systems. Yampa is based on\nthe concepts of Functional Reactive Programming (FRP) and is structured using\narrow combinators.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.random) ]; };
       tests = {
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

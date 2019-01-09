@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bower-json";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "bower-json"; version = "0.5.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "harry@garrood.me";
@@ -22,7 +13,7 @@
       synopsis = "Read bower.json from Haskell";
       description = "Bower is a package manager for the web (see <http://bower.io>).\nThis package provides a data type and ToJSON/FromJSON instances for Bower's\npackage manifest file, bower.json.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.vector)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

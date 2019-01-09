@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "BCMtools";
-        version = "0.1.0";
-      };
+      identifier = { name = "BCMtools"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2015 Kai Zhang";
       maintainer = "kai@kzhang.org";
@@ -22,7 +13,7 @@
       synopsis = "Big Contact Map Tools";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.vector)
           (hsPkgs.zlib)
           (hsPkgs.matrices)
-        ];
-      };
+          ];
+        };
       exes = {
         "bcmtools" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.split)
             (hsPkgs.data-default-class)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

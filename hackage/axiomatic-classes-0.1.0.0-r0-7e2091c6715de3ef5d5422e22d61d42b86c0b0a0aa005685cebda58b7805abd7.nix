@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "axiomatic-classes";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "axiomatic-classes"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "simon@cse.yorku.ca";
@@ -22,7 +13,7 @@
       synopsis = "Specify axioms for type classes and quickCheck all available instances";
       description = "Provides a way to specify axioms for type classes\nand to quickCheck all available instances against\nthem";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.quickcheck-report)
           (hsPkgs.semigroups)
           (hsPkgs.monad-loops)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

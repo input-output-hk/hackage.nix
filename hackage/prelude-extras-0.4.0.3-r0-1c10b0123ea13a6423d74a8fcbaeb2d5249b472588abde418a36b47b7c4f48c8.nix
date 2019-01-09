@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "prelude-extras";
-        version = "0.4.0.3";
-      };
+      identifier = { name = "prelude-extras"; version = "0.4.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011-2016 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,10 +13,6 @@
       synopsis = "Higher order versions of Prelude classes";
       description = "Higher order versions of Prelude classes to ease programming with polymorphic recursion and reduce UndecidableInstances\n\nSee <http://flint.cs.yale.edu/trifonov/papers/sqcc.pdf> for further discussion of the approach taken here.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

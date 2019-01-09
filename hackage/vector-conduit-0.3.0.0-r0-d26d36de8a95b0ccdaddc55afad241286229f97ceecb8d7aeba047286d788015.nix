@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "vector-conduit";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "vector-conduit"; version = "0.3.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "jaredhance@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Conduit utilities for vectors";
       description = "Provides sources and sinks for vectors.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.primitive)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "vector-conduit-tests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.QuickCheck)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

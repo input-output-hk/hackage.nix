@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gtk-strut";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "gtk-strut"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Ivan Malison";
       maintainer = "IvanMalison@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Libary for creating strut windows with gi-gtk";
       description = "Please see the README on Github at <https://github.com/IvanMalison/gtk-strut#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.gi-gtk)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

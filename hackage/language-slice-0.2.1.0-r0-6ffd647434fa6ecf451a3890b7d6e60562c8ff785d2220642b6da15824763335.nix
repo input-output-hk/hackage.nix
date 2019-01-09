@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-slice";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "language-slice"; version = "0.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Paul Koerbitz 2013";
       maintainer = "paul.koerbitz@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "AST and parser for the ZeroC Slice language (Specification language for ICE)";
       description = "AST and parser for the ZeroC Slice language (Specification language for ICE)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-          (hsPkgs.bytestring)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.attoparsec) (hsPkgs.bytestring) ];
+        };
       tests = {
         "test-parser" = {
           depends = [
@@ -42,8 +29,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.bytestring)
             (hsPkgs.language-slice)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

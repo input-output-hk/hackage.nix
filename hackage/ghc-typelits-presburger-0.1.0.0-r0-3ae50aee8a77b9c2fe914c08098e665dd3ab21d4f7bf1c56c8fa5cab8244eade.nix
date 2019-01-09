@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghc-typelits-presburger";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ghc-typelits-presburger"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 (c) Hiromi ISHII";
       maintainer = "konn.jinro _at_ gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,16 +23,16 @@
           (hsPkgs.presburger)
           (hsPkgs.equational-reasoning)
           (hsPkgs.reflection)
-        ];
-      };
+          ];
+        };
       exes = {
         "simple-arith" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.ghc-typelits-presburger)
             (hsPkgs.equational-reasoning)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

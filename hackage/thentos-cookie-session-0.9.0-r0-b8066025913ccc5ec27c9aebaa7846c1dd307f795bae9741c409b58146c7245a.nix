@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { profiling = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "thentos-cookie-session";
-        version = "0.9.0";
-      };
+      identifier = { name = "thentos-cookie-session"; version = "0.9.0"; };
       license = "LicenseRef-AGPL";
       copyright = "liquid democracy e.V. (https://liqd.net/)";
       maintainer = "mf@zerobuzz.net, np@nicolaspouillard.fr";
@@ -22,7 +13,7 @@
       synopsis = "All-in-one session handling for servant-based frontends";
       description = "Uses cookies to store session keys.\n\nOffers CSRF protection.\n\nDesigned with HTML frontends in mind, but Suitable for any HTTP service.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
           (hsPkgs.wai-session)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.wai-session)
             (hsPkgs.transformers)
             (hsPkgs.vault)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

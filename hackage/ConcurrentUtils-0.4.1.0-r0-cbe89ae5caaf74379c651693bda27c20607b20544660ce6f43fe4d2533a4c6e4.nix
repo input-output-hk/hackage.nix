@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ConcurrentUtils";
-        version = "0.4.1.0";
-      };
+      identifier = { name = "ConcurrentUtils"; version = "0.4.1.0"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "info@alkalisoftware.net";
@@ -22,7 +13,7 @@
       synopsis = "Concurrent utilities";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.parallel)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

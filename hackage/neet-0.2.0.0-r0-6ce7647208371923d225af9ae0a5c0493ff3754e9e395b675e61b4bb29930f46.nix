@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "neet";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "neet"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2015 Leon Medvinsky";
       maintainer = "lmedvinsky@hotmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A NEAT library for Haskell";
       description = "This package provides functions for creating, training, and using NEAT neural\nnetworks.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.cereal)
           (hsPkgs.random)
           (hsPkgs.parallel)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

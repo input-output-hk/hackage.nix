@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "free-game";
-        version = "1.0.4";
-      };
+      identifier = { name = "free-game"; version = "1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2012-2013 Fumiaki Kinoshita";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Create games for free";
       description = "free-game defines a monad that integrates features to create 2D games.\n\nA simple playback and effectors will be supported in future versions.\n\nTwitter: #hs_free_game";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,7 +42,7 @@
           (hsPkgs.void)
           (hsPkgs.boundingboxes)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

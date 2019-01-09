@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "massiv-io";
-        version = "0.1.4.0";
-      };
+      identifier = { name = "massiv-io"; version = "0.1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Alexey Kuleshevich";
       maintainer = "alexey@kuleshevi.ch";
@@ -22,7 +13,7 @@
       synopsis = "Import/export of Image files into massiv Arrays";
       description = "This package contains functionality for import/export of arrays\ninto the real world. For now it only has the ability to read/write\nimage files in various formats.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.JuicyPixels)
           (hsPkgs.netpbm)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

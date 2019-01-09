@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tidal";
-        version = "0.9.2";
-      };
+      identifier = { name = "tidal"; version = "0.9.2"; };
       license = "GPL-3.0-only";
       copyright = "(c) Tidal contributors, 2017";
       maintainer = "Alex McLean <alex@slab.org>, Mike Hodnick <mike.hodnick@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Pattern language for improvised music";
       description = "Tidal is a domain specific language for live coding pattern.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.websockets)
           (hsPkgs.mtl)
           (hsPkgs.applicative-numbers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

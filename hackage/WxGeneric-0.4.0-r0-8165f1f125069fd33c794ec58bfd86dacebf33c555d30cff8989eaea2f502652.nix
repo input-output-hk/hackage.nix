@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "WxGeneric";
-        version = "0.4.0";
-      };
+      identifier = { name = "WxGeneric"; version = "0.4.0"; };
       license = "LicenseRef-LGPL";
       copyright = "Mads Lindstrøm <mads_lindstroem@yahoo.dk>";
       maintainer = "Mads Lindstrøm <mads_lindstroem@yahoo.dk>";
@@ -22,7 +13,7 @@
       synopsis = "Library which constructing generic (SYB3-based) widgets for WxHaskell";
       description = "Constructs widgets for WxHaskell using SybWidget.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.xtc)
           (hsPkgs.wx)
           (hsPkgs.wxcore)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

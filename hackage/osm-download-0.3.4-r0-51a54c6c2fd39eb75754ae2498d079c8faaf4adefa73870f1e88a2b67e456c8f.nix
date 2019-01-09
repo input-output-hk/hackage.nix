@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "osm-download";
-        version = "0.3.4";
-      };
+      identifier = { name = "osm-download"; version = "0.3.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas.DuBuisson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Download Open Street Map tiles";
       description = "Download and locally cache open street map tiles based on HTTP\ncache control headers.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.data-default)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

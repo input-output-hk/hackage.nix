@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "gray-extended";
-        version = "1.5.3";
-      };
+      identifier = { name = "gray-extended"; version = "1.5.3"; };
       license = "BSD-3-Clause";
       copyright = "2018 Amy de Buitléir";
       maintainer = "amy@nualeargais.ie";
@@ -22,11 +13,9 @@
       synopsis = "Gray encoding schemes";
       description = "Please see the README on GitHub at <https://github.com/mhwombat/gray-extended#readme>";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "gray-extended-test" = {
           depends = [
@@ -35,8 +24,8 @@
             (hsPkgs.gray-extended)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

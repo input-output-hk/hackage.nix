@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cerberus";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "cerberus"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Yann Esposito";
       maintainer = "yann.esposito@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Protect and control API access with cerberus";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.wai-middleware-caching-lru)
           (hsPkgs.wai-middleware-caching-redis)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "cerberus" = {
           depends = [
@@ -56,16 +47,11 @@
             (hsPkgs.cerberus)
             (hsPkgs.cmdargs)
             (hsPkgs.pretty-show)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "cerberus-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cerberus)
-          ];
+        "cerberus-test" = { depends = [ (hsPkgs.base) (hsPkgs.cerberus) ]; };
         };
       };
-    };
-  }
+    }

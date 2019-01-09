@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "regex-tdfa-utf8";
-        version = "1.0";
-      };
+      identifier = { name = "regex-tdfa-utf8"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@list.mightyreason.com";
@@ -22,7 +13,7 @@
       synopsis = "This combines regex-tdfa with utf8-string to allow searching over UTF8 encoded lazy bytestrings.";
       description = "This combines regex-tdfa with utf8-string to allow searching over UTF8 encoded lazy bytestrings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.utf8-string)
           (hsPkgs.regex-base)
           (hsPkgs.regex-tdfa)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

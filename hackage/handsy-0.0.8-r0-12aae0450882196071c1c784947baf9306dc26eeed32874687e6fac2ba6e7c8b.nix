@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "handsy";
-        version = "0.0.8";
-      };
+      identifier = { name = "handsy"; version = "0.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "utdemir@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A DSL to describe common shell operations and interpeters for running them locally and remotely.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.free)
           (hsPkgs.process-extras)
           (hsPkgs.shell-escape)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.shell-escape)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

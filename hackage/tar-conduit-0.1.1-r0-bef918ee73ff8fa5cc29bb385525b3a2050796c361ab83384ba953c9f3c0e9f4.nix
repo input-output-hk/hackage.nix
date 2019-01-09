@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tar-conduit";
-        version = "0.1.1";
-      };
+      identifier = { name = "tar-conduit"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com, bartavelle@gmail.com";
@@ -22,14 +13,14 @@
       synopsis = "Parse tar files using conduit for streaming";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.conduit-combinators)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

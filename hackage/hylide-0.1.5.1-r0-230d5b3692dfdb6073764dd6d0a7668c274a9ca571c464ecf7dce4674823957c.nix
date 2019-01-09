@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hylide";
-        version = "0.1.5.1";
-      };
+      identifier = { name = "hylide"; version = "0.1.5.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "freshdried@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "WebGL live-coding environment for writing shaders with Hylogen";
       description = "WebGL live-coding environment for writing shaders with Hylogen";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.hylogen)
-          (hsPkgs.base)
-          (hsPkgs.vector-space)
-        ];
-      };
+        depends = [ (hsPkgs.hylogen) (hsPkgs.base) (hsPkgs.vector-space) ];
+        };
       exes = {
         "hylide" = {
           depends = [
@@ -48,8 +35,8 @@
             (hsPkgs.wai)
             (hsPkgs.http-types)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "happstack-auth";
-        version = "0.2";
-      };
+      identifier = { name = "happstack-auth"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mail@n-sch.de";
@@ -22,7 +13,7 @@
       synopsis = "A Happstack Authentication Suite";
       description = "An easy way to to implement user authentication for\nHappstack web applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.happstack-data)
           (hsPkgs.Crypto)
           (hsPkgs.convertible)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

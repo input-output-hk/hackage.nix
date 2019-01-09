@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Spock-worker";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "Spock-worker"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "(c) 2014 Alexander Thiemann";
       maintainer = "mail@agrafix.net";
@@ -22,7 +13,7 @@
       synopsis = "Background workers for Spock";
       description = "Adds a background-job queue to Spock";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

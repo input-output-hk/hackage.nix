@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      use-mock-network = false;
-    };
+    flags = { use-mock-network = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-transport-tcp";
-        version = "0.5.1";
-      };
+      identifier = { name = "network-transport-tcp"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "Well-Typed LLP, Tweag I/O Limited";
       maintainer = "Facundo Domínguez <facundo.dominguez@tweag.io>";
@@ -24,7 +13,7 @@
       synopsis = "TCP instantiation of Network.Transport";
       description = "TCP instantiation of Network.Transport";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.network)
-        ];
-      };
+          ];
+        };
       tests = {
         "TestTCP" = {
           depends = [
@@ -44,10 +33,10 @@
             (hsPkgs.network)
             (hsPkgs.network-transport)
             (hsPkgs.network-transport-tcp)
-          ];
-        };
+            ];
+          };
         "TestQC" = {
-          depends = pkgs.lib.optionals (flags.use-mock-network) [
+          depends = (pkgs.lib).optionals (flags.use-mock-network) [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
@@ -64,8 +53,8 @@
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.lockfree-queue)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

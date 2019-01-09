@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bamboo";
-        version = "2009.4.30";
-      };
+      identifier = { name = "bamboo"; version = "2009.4.30"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple blog engine on Hack";
       description = "A simple blog engine on Hack";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -57,7 +48,7 @@
           (hsPkgs.hcheat)
           (hsPkgs.hack)
           (hsPkgs.hack-contrib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

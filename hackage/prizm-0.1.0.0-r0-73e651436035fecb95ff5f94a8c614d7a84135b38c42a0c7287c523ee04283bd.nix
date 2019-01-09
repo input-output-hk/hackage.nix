@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14.0";
-      identifier = {
-        name = "prizm";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "prizm"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Parnell Springmeyer";
       maintainer = "ixmatus@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "A haskell library for computing with colors";
       description = "Prizm can convert between many different color\nrepresentations; notably the sRGB and CIE\nrepresentations. Future versions will\nimplementations for mutating colors as well.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

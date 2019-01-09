@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "skypelogexport";
-        version = "0.2";
-      };
+      identifier = { name = "skypelogexport"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jdevelop@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Export Skype chat logs to text files";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "skypelogexport" = {
@@ -40,8 +31,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.attoparsec)
             (hsPkgs.ghc-binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

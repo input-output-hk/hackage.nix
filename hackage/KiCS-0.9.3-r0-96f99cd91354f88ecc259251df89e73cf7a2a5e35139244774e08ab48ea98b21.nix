@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "KiCS";
-        version = "0.9.3";
-      };
+      identifier = { name = "KiCS"; version = "0.9.3"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Björn Peemöller";
@@ -22,7 +13,7 @@
       synopsis = "A compiler from Curry to Haskell";
       description = "This package builds the Curry to Haskell compiler \"kics\".\nThis package also includes many Curry libraries.\nHave a look at the list of modules \"Curry.Module.*\"";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.syb)
           (hsPkgs.unix)
           (hsPkgs.curry-frontend)
-        ];
-      };
+          ];
+        };
       exes = {
         "kics" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.process)
             (hsPkgs.curry-base)
             (hsPkgs.curry-frontend)
-          ];
-        };
+            ];
+          };
         "kicsi" = {
           depends = [
             (hsPkgs.base)
@@ -65,8 +56,8 @@
             (hsPkgs.readline)
             (hsPkgs.curry-base)
             (hsPkgs.curry-frontend)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

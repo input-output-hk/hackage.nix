@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-accept-language";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wai-accept-language"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "tkms@mitsuji.org";
@@ -22,7 +13,7 @@
       synopsis = "Rewrite based on Accept-Language header";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.http-types)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
-        ];
-      };
+          ];
+        };
       exes = {
         "wai-accept-language-exe" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.wai-app-static)
             (hsPkgs.file-embed)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

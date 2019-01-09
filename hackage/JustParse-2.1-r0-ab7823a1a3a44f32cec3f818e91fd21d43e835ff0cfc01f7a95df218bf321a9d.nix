@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "JustParse";
-        version = "2.1";
-      };
+      identifier = { name = "JustParse"; version = "2.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "grantslatton@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "A simple and comprehensive Haskell parsing library";
       description = "A simple and comprehensive Haskell parsing library";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

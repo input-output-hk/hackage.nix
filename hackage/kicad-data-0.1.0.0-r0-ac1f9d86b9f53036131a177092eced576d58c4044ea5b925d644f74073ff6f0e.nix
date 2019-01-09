@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kicad-data";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "kicad-data"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2014";
       maintainer = "kaspar.emanuel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parser and writer for KiCad files.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.lens-family)
           (hsPkgs.ieee754)
           (hsPkgs.pretty-compact)
-        ];
-      };
+          ];
+        };
       tests = {
         "kicad-data-quickcheck" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.pretty-compact)
             (hsPkgs.kicad-data)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

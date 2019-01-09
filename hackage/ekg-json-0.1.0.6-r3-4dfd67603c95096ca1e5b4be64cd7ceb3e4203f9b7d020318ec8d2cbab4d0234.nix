@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ekg-json";
-        version = "0.1.0.6";
-      };
+      identifier = { name = "ekg-json"; version = "0.1.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "johan.tibell@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON encoding of ekg metrics";
       description = "Encodes ekg metrics as JSON, using the same encoding as used by the\nekg package, thus allowing ekg metrics to be served by other HTTP\nservers than the one used by the ekg package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.ekg-core)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

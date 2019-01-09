@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "cabal-file-th";
-        version = "0.2.1";
-      };
+      identifier = { name = "cabal-file-th"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nkpart@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Template Haskell expressions for reading fields from a project's cabal file.";
       description = "Template Haskell expressions for reading fields from a project's cabal file.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,15 +21,10 @@
           (hsPkgs.Cabal)
           (hsPkgs.directory)
           (hsPkgs.template-haskell)
-        ];
-      };
-      tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cabal-file-th)
           ];
         };
+      tests = {
+        "test" = { depends = [ (hsPkgs.base) (hsPkgs.cabal-file-th) ]; };
+        };
       };
-    };
-  }
+    }

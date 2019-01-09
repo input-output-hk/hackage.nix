@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "postgresql-simple-typed";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "postgresql-simple-typed"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014-5 Marcin Tolysz";
       maintainer = "tolysz@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Typed extension for PostgreSQL simple";
       description = "Simplifies simple";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

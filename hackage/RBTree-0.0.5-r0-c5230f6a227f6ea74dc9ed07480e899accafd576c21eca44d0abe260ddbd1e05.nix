@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "RBTree";
-        version = "0.0.5";
-      };
+      identifier = { name = "RBTree"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "2010-2011 Wu Xingbo (wuxb45@gmail.com)";
       maintainer = "Wu Xingbo";
@@ -22,10 +13,6 @@
       synopsis = "Pure haskell Red-Black-Tree implemetation";
       description = "This package implemets Red-Black tree data-structure.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

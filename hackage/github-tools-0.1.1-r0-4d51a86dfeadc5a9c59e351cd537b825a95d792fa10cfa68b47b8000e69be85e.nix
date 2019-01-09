@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "github-tools";
-        version = "0.1.1";
-      };
+      identifier = { name = "github-tools"; version = "0.1.1"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "iphydf@users.noreply.github.com";
@@ -22,7 +13,7 @@
       synopsis = "Various Github helper utilities.";
       description = "- Pull Request status tool.\n- Change log generator.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pull-status" = {
@@ -41,8 +32,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "changelog" = {
           depends = [
             (hsPkgs.base)
@@ -55,8 +46,8 @@
             (hsPkgs.http-client-tls)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

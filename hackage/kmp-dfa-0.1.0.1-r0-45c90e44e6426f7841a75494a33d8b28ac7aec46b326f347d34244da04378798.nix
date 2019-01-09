@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kmp-dfa";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "kmp-dfa"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "paolo.veronelli@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "KMP algorithm implementation, based on Deterministic Finite State Automata";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.QuickCheck)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.QuickCheck) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.array)
             (hsPkgs.QuickCheck)
             (hsPkgs.kmp-dfa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

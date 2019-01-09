@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dawdle";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "dawdle"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "arnon.shimoni@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generates DDL suggestions based on a CSV file";
       description = "Generates DDL suggestions based on a CSV file";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.pretty)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "dawdle" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.text)
             (hsPkgs.filepath)
             (hsPkgs.dawdle)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

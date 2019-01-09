@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "egison";
-        version = "2.3.1";
-      };
+      identifier = { name = "egison"; version = "2.3.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "egisatoshi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "An Interpreter for the Programming Language Egison";
       description = "An interpreter for the programming language Egison.\nA feature of Egison is the strong pattern match facility.\nWith Egison, you can represent pattern matching for unfree data intuitively,\nespecially for collection data, such as lists, multisets, sets, and so on.\nThis package include sample Egison program codes \"*-test.egi\" in \"sample/\" directory.\nThis package also include Emacs Lisp file \"egison-mode.el\" in \"elisp/\" directory.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.directory)
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
-        ];
-      };
+          ];
+        };
       exes = {
         "egison" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.ghc)
             (hsPkgs.ghc-paths)
             (hsPkgs.regex-posix)
-          ];
-        };
+            ];
+          };
         "egisonc" = {
           depends = [
             (hsPkgs.egison)
@@ -69,8 +60,8 @@
             (hsPkgs.ghc-paths)
             (hsPkgs.filepath)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

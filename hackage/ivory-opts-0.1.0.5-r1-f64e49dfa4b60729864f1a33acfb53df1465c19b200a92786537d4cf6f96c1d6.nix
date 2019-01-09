@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ivory-opts";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "ivory-opts"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "leepike@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Ivory compiler optimizations.";
       description = "Ivory compiler optimizations as well as compiler insertions.  Primarily used by backends.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.ivory)
           (hsPkgs.monadLib)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

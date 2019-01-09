@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "proteome";
-        version = "0.3.5.0";
-      };
+      identifier = { name = "proteome"; version = "0.3.5.0"; };
       license = "MIT";
       copyright = "2018 Torsten Schmits";
       maintainer = "tek@tryp.io";
@@ -22,7 +13,7 @@
       synopsis = "neovim project manager";
       description = "Please see the README on GitHub at <https://github.com/tek/proteome-hs>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +44,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unliftio)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "proteome" = {
           depends = [
@@ -86,9 +77,9 @@
             (hsPkgs.transformers)
             (hsPkgs.unliftio)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "proteome-functional" = {
           depends = [
@@ -121,8 +112,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unliftio)
             (hsPkgs.utf8-string)
-          ];
-        };
+            ];
+          };
         "proteome-unit" = {
           depends = [
             (hsPkgs.HTF)
@@ -154,8 +145,8 @@
             (hsPkgs.transformers)
             (hsPkgs.unliftio)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

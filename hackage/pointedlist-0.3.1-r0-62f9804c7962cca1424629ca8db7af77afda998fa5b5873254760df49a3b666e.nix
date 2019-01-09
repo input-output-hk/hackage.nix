@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "pointedlist";
-        version = "0.3.1";
-      };
+      identifier = { name = "pointedlist"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeffwheeler@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A zipper-like comonad which works as a list, tracking a position.";
       description = "A PointedList tracks the position in a non-empty list which works similarly\nto a zipper. A current item is always required, and therefore the list may\nnever be empty.\nA circular PointedList wraps around to the other end when progressing past\nthe actual edge.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.data-accessor)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.binary) (hsPkgs.data-accessor) ];
+        };
       };
-    };
-  }
+    }

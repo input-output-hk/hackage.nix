@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haskelldb-hsql-oracle";
-        version = "1.0.0";
-      };
+      identifier = { name = "haskelldb-hsql-oracle"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "haskelldb-users@lists.sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "HaskellDB support for the HSQL Oracle driver.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,10 +23,8 @@
           (hsPkgs.haskelldb-hsql)
           (hsPkgs.hsql)
           (hsPkgs.hsql-oracle)
-        ];
+          ];
+        };
+      exes = { "DBDirect-hsql-oracle" = {}; };
       };
-      exes = {
-        "DBDirect-hsql-oracle" = {};
-      };
-    };
-  }
+    }

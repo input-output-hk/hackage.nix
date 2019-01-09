@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "pure-priority-queue-tests";
-        version = "0.12";
-      };
+      identifier = { name = "pure-priority-queue-tests"; version = "0.12"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "brad.larsen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tests for the pure-priority-queue package";
       description = "This package provides a test program for the\npure-priority-queue package.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pure-priority-queue-tests" = {
@@ -33,8 +24,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

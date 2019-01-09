@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nice-html";
-        version = "0.4.1";
-      };
+      identifier = { name = "nice-html"; version = "0.4.1"; };
       license = "MIT";
       copyright = "2017 Mike Ledger";
       maintainer = "mike@quasimal.com";
@@ -22,7 +13,7 @@
       synopsis = "A fast and nice HTML templating library with distinct compilation/rendering phases.";
       description = "A fast and nice HTML templating library with distinct compilation/rendering phases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.bifunctors)
           (hsPkgs.data-default-class)
           (hsPkgs.lens)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "mem" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.weigh)
             (hsPkgs.pretty-show)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "mem-prof" = {
           depends = [
             (hsPkgs.base)
@@ -71,8 +62,8 @@
             (hsPkgs.weigh)
             (hsPkgs.pretty-show)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "perf" = {
           depends = [
             (hsPkgs.base)
@@ -88,8 +79,8 @@
             (hsPkgs.transformers)
             (hsPkgs.shakespeare)
             (hsPkgs.type-of-html)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "repa-examples";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "repa-examples"; version = "1.0.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,7 +13,7 @@
       synopsis = "Examples using the Repa array library.";
       description = "Examples using the Repa array library.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "repa-laplace" = {
@@ -31,16 +22,16 @@
             (hsPkgs.random)
             (hsPkgs.dph-prim-par)
             (hsPkgs.repa)
-          ];
-        };
+            ];
+          };
         "repa-mmult" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.dph-prim-par)
             (hsPkgs.repa)
-          ];
-        };
+            ];
+          };
         "repa-fft" = {
           depends = [
             (hsPkgs.base)
@@ -48,8 +39,8 @@
             (hsPkgs.dph-prim-par)
             (hsPkgs.dph-base)
             (hsPkgs.repa)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

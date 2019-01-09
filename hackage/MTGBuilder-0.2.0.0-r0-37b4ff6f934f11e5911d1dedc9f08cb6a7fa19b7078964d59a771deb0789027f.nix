@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "MTGBuilder";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "MTGBuilder"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "elvishjerricco@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Builds decks out of a meta";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mtg-builder" = {
@@ -31,8 +22,8 @@
             (hsPkgs.parsec)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

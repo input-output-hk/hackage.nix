@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { upload = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yackage";
-        version = "0.7.0.8";
-      };
+      identifier = { name = "yackage"; version = "0.7.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Personal Hackage replacement for testing new packages.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/yackage>.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "yackage" = {
@@ -48,16 +39,16 @@
             (hsPkgs.vector)
             (hsPkgs.unordered-containers)
             (hsPkgs.conduit)
-          ];
-        };
+            ];
+          };
         "yackage-upload" = {
-          depends = pkgs.lib.optionals (flags.upload) [
+          depends = (pkgs.lib).optionals (flags.upload) [
             (hsPkgs.base)
             (hsPkgs.http-conduit)
             (hsPkgs.blaze-builder)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "n2o";
-        version = "0.11.1";
-      };
+      identifier = { name = "n2o"; version = "0.11.1"; };
       license = "BSD-3-Clause";
       copyright = "2018 Marat Khafizov (c)";
       maintainer = "xafizoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Abstract Protocol Loop";
       description = "Embeddable Application Protocol Loop";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,12 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.containers)
-        ];
-      };
-      tests = {
-        "n2o-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.n2o)
-            (hsPkgs.hspec)
           ];
         };
+      tests = {
+        "n2o-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.n2o) (hsPkgs.hspec) ];
+          };
+        };
       };
-    };
-  }
+    }

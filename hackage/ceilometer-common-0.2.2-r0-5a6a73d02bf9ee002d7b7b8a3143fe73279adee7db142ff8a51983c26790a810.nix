@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ceilometer-common";
-        version = "0.2.2";
-      };
+      identifier = { name = "ceilometer-common"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "© 2015 Anchor Systems, Pty Ltd and Others";
       maintainer = "Anchor Engineering <engineering@anchor.com.au>";
@@ -22,7 +13,7 @@
       synopsis = "Common Haskell types and encoding for ceilometer";
       description = "Provides a set of common types for use with ceilometer related packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vaultaire-common)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vaultaire-common)
             (hsPkgs.data-ordlist)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

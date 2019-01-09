@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsqml-demo-samples";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "hsqml-demo-samples"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014 Robin KAY";
       maintainer = "komadori@gekkou.co.uk";
@@ -22,23 +13,15 @@
       synopsis = "HsQML sample programs";
       description = "HsQML sample programs";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hsqml-factorial1" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.hsqml)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.hsqml) ];
+          };
         "hsqml-factorial2" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.hsqml)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.hsqml) ];
+          };
         };
       };
-    };
-  }
+    }

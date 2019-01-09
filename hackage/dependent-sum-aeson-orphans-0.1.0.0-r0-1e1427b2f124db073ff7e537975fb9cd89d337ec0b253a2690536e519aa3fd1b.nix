@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "dependent-sum-aeson-orphans";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2018 Obsidian Systems LLC";
       maintainer = "maintainer@obsidian.systems";
@@ -22,7 +16,7 @@
       synopsis = "";
       description = "JSON instances for DSum and DMap";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +26,7 @@
           (hsPkgs.dependent-sum)
           (hsPkgs.constraints)
           (hsPkgs.constraints-extras)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

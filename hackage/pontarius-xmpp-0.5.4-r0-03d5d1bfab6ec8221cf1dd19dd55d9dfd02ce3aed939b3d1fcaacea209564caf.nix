@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { with-th = true; };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "pontarius-xmpp";
-        version = "0.5.4";
-      };
+      identifier = { name = "pontarius-xmpp"; version = "0.5.4"; };
       license = "BSD-3-Clause";
       copyright = "Dmitry Astapov, Pierre Kovalev, Mahdi Abdinejadi, Jon Kristensen,\nIETF Trust, Philipp Balzarek";
       maintainer = "info@jonkri.com";
@@ -22,7 +13,7 @@
       synopsis = "An XMPP client library";
       description = "Pontarius XMPP is a work in progress implementation of RFC 6120\n(\"XMPP CORE\"), RFC 6121 (\"XMPP IM\"), and RFC 6122 (\"XMPP ADDR\").\nWhile in alpha, Pontarius XMPP works quite well and fulfills most\nrequirements of the RFCs.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -61,10 +52,10 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-picklers)
           (hsPkgs.xml-types)
-        ] ++ [
+          ] ++ [
           (hsPkgs.bytestring)
-        ]) ++ pkgs.lib.optional (flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) (hsPkgs.template-haskell);
-      };
+          ]) ++ (pkgs.lib).optional (flags.with-th && (compiler.isGhc && (compiler.version).ge "7.6.1")) (hsPkgs.template-haskell);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -98,8 +89,8 @@
             (hsPkgs.transformers)
             (hsPkgs.xml-picklers)
             (hsPkgs.xml-types)
-          ];
-        };
+            ];
+          };
         "doctest" = {
           depends = [
             (hsPkgs.base)
@@ -109,8 +100,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.derive)
             (hsPkgs.quickcheck-instances)
-          ];
-        };
+            ];
+          };
         "runtests" = {
           depends = [
             (hsPkgs.base)
@@ -131,17 +122,17 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tls)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.pontarius-xmpp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

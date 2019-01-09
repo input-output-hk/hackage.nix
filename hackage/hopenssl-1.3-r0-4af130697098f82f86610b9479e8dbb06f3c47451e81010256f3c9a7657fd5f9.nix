@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hopenssl";
-        version = "1.3";
-      };
+      identifier = { name = "hopenssl"; version = "1.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2004-2010 Peter Simons";
       maintainer = "Peter Simons <simons@cryp.to>";
@@ -22,14 +13,11 @@
       synopsis = "FFI bindings to OpenSSL's EVP digest interface";
       description = "Foreign-function bindings to the OpenSSL library\n<http://www.openssl.org/>. Currently provides\naccess to the messages digests MD2, MD5, SHA,\nSHA1, DSS, DSS1, and RIPEMD160 through the\nEVP digest interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) ];
         libs = [ (pkgs."crypto") ];
+        };
       };
-    };
-  }
+    }

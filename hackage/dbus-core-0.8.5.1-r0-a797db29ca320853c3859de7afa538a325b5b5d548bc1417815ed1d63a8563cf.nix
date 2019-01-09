@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test = false;
-      hpc = false;
-    };
+    flags = { test = false; hpc = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dbus-core";
-        version = "0.8.5.1";
-      };
+      identifier = { name = "dbus-core"; version = "0.8.5.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "jmillikin@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Low-level D-Bus protocol implementation";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,16 +28,16 @@
           (hsPkgs.network)
           (hsPkgs.libxml-sax)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       exes = {
         "dbus-core-tests" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

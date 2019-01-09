@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Chitra";
-        version = "0.2";
-      };
+      identifier = { name = "Chitra"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ckkashyap@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A platform independent mechanism to render graphics using vnc.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Chitra" = {
@@ -32,8 +23,8 @@
             (hsPkgs.binary)
             (hsPkgs.bytestring)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

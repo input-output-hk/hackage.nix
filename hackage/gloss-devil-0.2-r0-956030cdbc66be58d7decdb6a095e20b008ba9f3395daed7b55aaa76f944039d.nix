@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gloss-devil";
-        version = "0.2";
-      };
+      identifier = { name = "gloss-devil"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas.DuBuisson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Display images in Gloss using libdevil for decoding";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.repa)
           (hsPkgs.repa-devil)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

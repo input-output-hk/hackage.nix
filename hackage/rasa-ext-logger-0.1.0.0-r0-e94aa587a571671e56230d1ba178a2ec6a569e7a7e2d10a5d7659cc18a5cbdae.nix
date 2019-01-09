@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rasa-ext-logger";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "rasa-ext-logger"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2016 Chris Penner";
       maintainer = "christopher.penner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Rasa Ext for logging state/actions";
       description = "Rasa Ext for logging state/actions";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.lens)
           (hsPkgs.mtl)
           (hsPkgs.lens)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

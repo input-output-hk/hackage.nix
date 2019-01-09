@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "loop-effin";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "loop-effin"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Hiromi ISHII 2014";
       maintainer = "konn.jinro_at_gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "control-monad-loop port for effin";
       description = "control-monad-loop like loop structure for effin.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.effin)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.effin) ]; };
+      };
+    }

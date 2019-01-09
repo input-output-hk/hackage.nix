@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      cross = false;
-      development = false;
-    };
+    flags = { cross = false; development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "cdeps";
-        version = "0.1.2.3";
-      };
+      identifier = { name = "cdeps"; version = "0.1.2.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Extract dependencies from C code.";
       description = "This package provides the ability to extract dependencies from C code, for use with [shake](https://shakebuild.com) or otherwise. This can also be used to extract dependencies from Haskell source using the C preprocessor.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,29 +23,25 @@
           (hsPkgs.array)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
           (hsPkgs.transformers)
           (hsPkgs.semigroups)
-        ];
-        build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.alex);
-      };
+          ];
+        build-tools = (pkgs.lib).optional (!flags.cross) ((hsPkgs.buildPackages).alex);
+        };
       exes = {
         "cdeps" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.cdeps)
             (hsPkgs.optparse-applicative)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          };
         };
-      };
       tests = {
         "cdeps-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cdeps)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.cdeps) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

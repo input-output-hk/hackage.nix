@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "haskhol-core";
-        version = "1.1.0";
-      };
+      identifier = { name = "haskhol-core"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Evan Austin <ecaustin@ittc.ku.edu>";
@@ -22,7 +13,7 @@
       synopsis = "The core logical system of HaskHOL, an EDSL for HOL theorem\nproving.";
       description = "More details can be found at the following page:\nhttp://haskhol.org.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.text-show)
           (hsPkgs.th-lift)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

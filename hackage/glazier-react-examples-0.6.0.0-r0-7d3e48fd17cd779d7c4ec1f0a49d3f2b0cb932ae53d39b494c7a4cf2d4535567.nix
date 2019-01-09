@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "glazier-react-examples";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "glazier-react-examples"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Louis Pan";
       maintainer = "louis@pan.me";
@@ -22,7 +13,7 @@
       synopsis = "Examples of using glazier-react";
       description = "Examples of using glazier-react";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "glazier-react-todo" = {
@@ -46,11 +37,11 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
+            ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true) [
             (hsPkgs.ghcjs-base)
             (hsPkgs.ghcjs-prim)
-          ]) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs.ghcjs-base-stub);
+            ]) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.ghcjs-base-stub);
+          };
         };
       };
-    };
-  }
+    }

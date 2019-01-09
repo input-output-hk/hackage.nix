@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       network-bytestring = false;
       allow-sendfilefd = true;
       warp-debug = false;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "warp";
-        version = "3.1.11";
-      };
+      identifier = { name = "warp"; version = "3.1.11"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -26,7 +17,7 @@
       synopsis = "A fast, light-weight web server for WAI applications.";
       description = "HTTP\\/1.0, HTTP\\/1.1 and HTTP\\/2 are supported.\nFor HTTP\\/2,  Warp supports direct and ALPN (in TLS)\nbut not upgrade.\nAPI docs and the README are available at\n<http://www.stackage.org/package/warp>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -53,24 +44,14 @@
           (hsPkgs.hashable)
           (hsPkgs.unordered-containers)
           (hsPkgs.http-date)
-        ] ++ (if flags.network-bytestring
-          then [
-            (hsPkgs.network)
-            (hsPkgs.network-bytestring)
-          ]
-          else [
-            (hsPkgs.network)
-          ])) ++ (if system.isWindows
+          ] ++ (if flags.network-bytestring
+          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
+          else [ (hsPkgs.network) ])) ++ (if system.isWindows
           then [ (hsPkgs.time) ]
           else [ (hsPkgs.unix) ]);
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -107,9 +88,9 @@
             (hsPkgs.hashable)
             (hsPkgs.unordered-containers)
             (hsPkgs.http-date)
-          ] ++ pkgs.lib.optional ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) (hsPkgs.unix);
+          };
         };
-      };
       benchmarks = {
         "parser" = {
           depends = [
@@ -119,8 +100,8 @@
             (hsPkgs.http-types)
             (hsPkgs.network)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

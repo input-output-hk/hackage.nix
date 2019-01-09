@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dns";
-        version = "3.0.4";
-      };
+      identifier = { name = "dns"; version = "3.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "DNS library in Haskell";
       description = "A thread-safe DNS library for both clients and servers written\nin pure Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -41,9 +32,9 @@
           (hsPkgs.psqueues)
           (hsPkgs.safe)
           (hsPkgs.time)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.semigroups)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.split);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs."iphlpapi");
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.split);
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."iphlpapi");
+        };
       tests = {
         "network" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.hspec)
             (hsPkgs.network)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.dns)
@@ -63,14 +54,9 @@
             (hsPkgs.hspec)
             (hsPkgs.iproute)
             (hsPkgs.word8)
-          ];
-        };
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

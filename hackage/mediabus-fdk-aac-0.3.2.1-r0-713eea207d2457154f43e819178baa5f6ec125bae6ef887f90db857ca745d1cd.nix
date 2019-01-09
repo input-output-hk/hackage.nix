@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mediabus-fdk-aac";
-        version = "0.3.2.1";
-      };
+      identifier = { name = "mediabus-fdk-aac"; version = "0.3.2.1"; };
       license = "BSD-3-Clause";
       copyright = "2016, 2017 Sven Heyll, Lindenbaum GmbH";
       maintainer = "sven.heyll@lindenbaum.eu";
@@ -22,7 +13,7 @@
       synopsis = "Mediabus plugin for the Frauenhofer ISO-14496-3 AAC FDK";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,12 +35,10 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
+          ];
         libs = [ (pkgs."m") ];
-        pkgconfig = [
-          (pkgconfPkgs.fdk-aac)
-        ];
-      };
+        pkgconfig = [ (pkgconfPkgs.fdk-aac) ];
+        };
       tests = {
         "examples" = {
           depends = [
@@ -62,9 +51,9 @@
             (hsPkgs.mediabus)
             (hsPkgs.conduit)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "encoder-benchmark" = {
           depends = [
@@ -78,8 +67,8 @@
             (hsPkgs.mediabus)
             (hsPkgs.conduit)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

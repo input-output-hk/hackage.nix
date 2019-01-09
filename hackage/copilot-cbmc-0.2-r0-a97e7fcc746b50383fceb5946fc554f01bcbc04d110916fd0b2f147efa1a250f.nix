@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "copilot-cbmc";
-        version = "0.2";
-      };
+      identifier = { name = "copilot-cbmc"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "leepike@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "Copilot interface to a C model-checker.";
       description = "Depends on CBMC <http://www.cprover.org/cbmc/>.  Generates a driver to prove the Atom and SBV backends generate equivalent code.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.pretty)
           (hsPkgs.copilot-sbv)
           (hsPkgs.copilot-c99)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "revdectime";
-        version = "0.1.1";
-      };
+      identifier = { name = "revdectime"; version = "0.1.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "kamil.stachowski@gmail.com";
@@ -22,15 +13,10 @@
       synopsis = "A French revolutionary decimal time (metric) clock";
       description = "A French revolutionary decimal time (metric) clock";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
-        "revdectime" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.old-time)
-          ];
+        "revdectime" = { depends = [ (hsPkgs.base) (hsPkgs.old-time) ]; };
         };
       };
-    };
-  }
+    }

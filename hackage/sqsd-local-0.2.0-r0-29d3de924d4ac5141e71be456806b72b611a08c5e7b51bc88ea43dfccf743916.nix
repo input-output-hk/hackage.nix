@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sqsd-local";
-        version = "0.2.0";
-      };
+      identifier = { name = "sqsd-local"; version = "0.2.0"; };
       license = "MPL-2.0";
       copyright = "AllRightsReserved";
       maintainer = "oskar.wickstrom@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "A local version of sqsd, the daemon that runs in Elastic Beanstalk's Worker Environments.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sqsd-local" = {
@@ -40,16 +31,13 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
             (hsPkgs.wreq)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "sqsd-local-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.sqsd-local)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.sqsd-local) ];
+          };
         };
       };
-    };
-  }
+    }

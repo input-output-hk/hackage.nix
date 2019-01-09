@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "starling";
-        version = "0.1.0";
-      };
+      identifier = { name = "starling"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Antoine Latter <aslatter@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A memcached client";
       description = "A haskell memcached client. See http:\\/\\/memcached.org\nfor more information.\n\nThis implements the new binary protocol,\nso it only works with memcached version\n1.3 and newer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.binary)
           (hsPkgs.bytestring)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

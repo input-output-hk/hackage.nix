@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "tcache-AWS";
-        version = "0.0.1";
-      };
+      identifier = { name = "tcache-AWS"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Alberto Gómez Corona";
       maintainer = "Alberto Gómez Corona";
@@ -22,7 +13,7 @@
       synopsis = "tcache  using Amazon Web Services as default persistence mechanism";
       description = "See examples in \"Data.TCache.AWS\"";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.http-conduit)
           (hsPkgs.network)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

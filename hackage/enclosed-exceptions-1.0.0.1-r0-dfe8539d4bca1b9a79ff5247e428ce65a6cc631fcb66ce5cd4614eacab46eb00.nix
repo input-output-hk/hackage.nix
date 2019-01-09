@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "enclosed-exceptions";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "enclosed-exceptions"; version = "1.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "jmacristovao@gmail.com, michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Catching all exceptions from within an enclosed computation";
       description = "Catching all exceptions raised within an enclosed computation,\nwhile remaining responsive to (external) asynchronous exceptions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.async)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

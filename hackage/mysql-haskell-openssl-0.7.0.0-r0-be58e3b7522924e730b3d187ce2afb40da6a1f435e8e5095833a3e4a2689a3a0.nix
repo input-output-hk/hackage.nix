@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mysql-haskell-openssl";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "mysql-haskell-openssl"; version = "0.7.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Winterland";
       maintainer = "winterland1989@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "TLS support for mysql-haskell package using openssl";
       description = "TLS support for mysql-haskell package using openssl";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.wire-streams)
           (hsPkgs.mysql-haskell)
           (hsPkgs.HsOpenSSL)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

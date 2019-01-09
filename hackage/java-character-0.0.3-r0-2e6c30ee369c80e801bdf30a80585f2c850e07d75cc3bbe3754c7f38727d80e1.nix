@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "java-character";
-        version = "0.0.3";
-      };
+      identifier = { name = "java-character"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Tony Morris";
       maintainer = "Tony Morris";
@@ -22,13 +13,8 @@
       synopsis = "Functions to simulate Java's Character class.";
       description = "Functions to simulate the java.lang.Character class of Java. The specification of this class is required to implement some programming language grammars.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

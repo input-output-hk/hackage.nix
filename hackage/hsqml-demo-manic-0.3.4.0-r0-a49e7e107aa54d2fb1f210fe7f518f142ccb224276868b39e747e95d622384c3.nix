@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsqml-demo-manic";
-        version = "0.3.4.0";
-      };
+      identifier = { name = "hsqml-demo-manic"; version = "0.3.4.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014-2016 Robin KAY";
       maintainer = "komadori@gekkou.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "HsQML-based clone of Pipe Mania";
       description = "HsQML-based clone of Pipe Mania";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hsqml-manic" = {
@@ -32,8 +23,8 @@
             (hsPkgs.text)
             (hsPkgs.MonadRandom)
             (hsPkgs.hsqml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

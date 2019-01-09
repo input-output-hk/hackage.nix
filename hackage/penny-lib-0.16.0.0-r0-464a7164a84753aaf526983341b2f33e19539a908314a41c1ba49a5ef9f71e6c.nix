@@ -1,23 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      test = false;
-      incabal = true;
-      buildlib = true;
-    };
+    flags = { debug = false; test = false; incabal = true; buildlib = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "penny-lib";
-        version = "0.16.0.0";
-      };
+      identifier = { name = "penny-lib"; version = "0.16.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2012-2013 Omari Norman.";
       maintainer = "omari@smileystation.com";
@@ -27,7 +13,7 @@
       synopsis = "Extensible double-entry accounting system - library";
       description = "Penny is a double-entry accounting system. It is inspired\nby, but incompatible with, John Wiegley's Ledger, which is available\nat <http://ledger-cli.org/>.\n\nThis package is a library. To start using Penny you will want to\ninstall the penny-bin package, which has the executable programs.\nMore about the penny-bin package, along with a full sales pitch\nfor Penny and how to get started, is at\n<http://hackage.haskell.org/package/penny-bin>. It may be installed\nwith \"cabal install penny-bin\".\n\nThe Penny library is a full system to work with double-entry\naccounting transactions and postings and to make reports with them.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +37,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "penny-test" = {
           depends = [
@@ -82,8 +68,8 @@
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
             (hsPkgs.random-shuffle)
-          ];
-        };
+            ];
+          };
         "penny-gibberish" = {
           depends = [
             (hsPkgs.base)
@@ -113,8 +99,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.random-shuffle)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

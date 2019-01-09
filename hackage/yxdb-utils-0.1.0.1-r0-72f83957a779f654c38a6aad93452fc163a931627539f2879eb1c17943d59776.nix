@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yxdb-utils";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "yxdb-utils"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "michael.burge@rentrakmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for reading and writing Alteryx .yxdb files";
       description = "Two command-line utilities (csv2yxdb and yxdb2csv) that are used to convert csv files with a specific header line into Alteryx .yxdb files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -59,22 +50,12 @@
           (hsPkgs.transformers)
           (hsPkgs.xml-conduit)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
-        "csv2yxdb" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.yxdb-utils)
-          ];
+        "csv2yxdb" = { depends = [ (hsPkgs.base) (hsPkgs.yxdb-utils) ]; };
+        "yxdb2csv" = { depends = [ (hsPkgs.base) (hsPkgs.yxdb-utils) ]; };
         };
-        "yxdb2csv" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.yxdb-utils)
-          ];
-        };
-      };
       tests = {
         "yxdb-tests" = {
           depends = [
@@ -116,8 +97,8 @@
             (hsPkgs.transformers)
             (hsPkgs.vector)
             (hsPkgs.xml-conduit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

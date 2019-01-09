@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Villefort";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "Villefort"; version = "0.1.0.5"; };
       license = "BSD-3-Clause";
       copyright = "2017 Chris Reuter";
       maintainer = "creuter@lsoc.org";
@@ -22,7 +13,7 @@
       synopsis = "Villefort is a task manager and time tracker written in haskell.";
       description = "Villefort is powered by a sqlite";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.time)
           (hsPkgs.FindBin)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "Villefort" = {
           depends = [
@@ -46,16 +37,11 @@
             (hsPkgs.split)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "Villefort-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Villefort)
-          ];
+        "Villefort-test" = { depends = [ (hsPkgs.base) (hsPkgs.Villefort) ]; };
         };
       };
-    };
-  }
+    }

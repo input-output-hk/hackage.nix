@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-encodings";
-        version = "0.9.3";
-      };
+      identifier = { name = "http-encodings"; version = "0.9.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012-2015 Stevens Institute of Technology";
       maintainer = "Andrey Chudnov <oss@chudnov.com>";
@@ -22,7 +13,7 @@
       synopsis = "A library for encoding and decoding bodies of HTTP messages";
       description = "A library for encoding and decoding bodies of HTTP messages, designed to work with the HTTP and http-server libraries. No heuristic encoding detection at this time. WANTED: a library implementing the Unix \"compress\" command encoding/decoding (or the LZW algorithm). The package versions follow Semantic Versioning model (semver.org).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.mtl)
           (hsPkgs.mime)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

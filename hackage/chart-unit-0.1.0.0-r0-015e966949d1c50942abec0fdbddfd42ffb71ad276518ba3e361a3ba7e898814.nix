@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chart-unit";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "chart-unit"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Tony Day";
       maintainer = "tonyday567@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A set of native haskell charts.";
       description = "readme.lhs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.primitive)
           (hsPkgs.protolude)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "readme" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.protolude)
             (hsPkgs.random-fu)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

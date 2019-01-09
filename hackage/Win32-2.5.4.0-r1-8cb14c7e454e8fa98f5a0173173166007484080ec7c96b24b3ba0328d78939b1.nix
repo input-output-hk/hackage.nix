@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Win32";
-        version = "2.5.4.0";
-      };
+      identifier = { name = "Win32"; version = "2.5.4.0"; };
       license = "BSD-3-Clause";
       copyright = "Alastair Reid, 1999-2003; shelarcy, 2012-2013; Tamar Christina, 2016-2017";
       maintainer = "Haskell Libraries <libraries@haskell.org>";
@@ -22,14 +13,14 @@
       synopsis = "A binding to part of the Win32 library";
       description = "A binding to part of the Win32 library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.filepath)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unbuildable);
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unbuildable);
         libs = [
           (pkgs."user32")
           (pkgs."gdi32")
@@ -40,7 +31,7 @@
           (pkgs."shlwapi")
           (pkgs."msimg32")
           (pkgs."imm32")
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

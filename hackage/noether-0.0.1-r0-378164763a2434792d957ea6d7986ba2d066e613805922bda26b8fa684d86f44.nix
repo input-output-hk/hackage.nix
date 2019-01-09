@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "noether";
-        version = "0.0.1";
-      };
+      identifier = { name = "noether"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Soham Chowdhury";
@@ -22,7 +13,7 @@
       synopsis = "Math in Haskell.";
       description = "TODO";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,33 +33,18 @@
           (hsPkgs.safe)
           (hsPkgs.pretty-show)
           (hsPkgs.vector)
-        ];
-      };
-      exes = {
-        "noether" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.noether)
           ];
         };
-      };
+      exes = { "noether" = { depends = [ (hsPkgs.base) (hsPkgs.noether) ]; }; };
       tests = {
         "noether-test-suite" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.noether)
-            (hsPkgs.hedgehog)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.noether) (hsPkgs.hedgehog) ];
+          };
         };
-      };
       benchmarks = {
         "noether-benchmarks" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.noether)
-            (hsPkgs.criterion)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.noether) (hsPkgs.criterion) ];
+          };
         };
       };
-    };
-  }
+    }

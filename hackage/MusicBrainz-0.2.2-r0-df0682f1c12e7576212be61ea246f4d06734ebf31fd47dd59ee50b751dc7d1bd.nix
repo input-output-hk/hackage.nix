@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "MusicBrainz";
-        version = "0.2.2";
-      };
+      identifier = { name = "MusicBrainz"; version = "0.2.2"; };
       license = "GPL-3.0-only";
       copyright = "2012-2014 Clint Adams";
       maintainer = "clint@debian.org";
@@ -22,7 +13,7 @@
       synopsis = "interface to MusicBrainz XML2 web service";
       description = "interface to MusicBrainz XML2 web service";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.HTTP)
           (hsPkgs.aeson)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

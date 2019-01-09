@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "warp-grpc";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "warp-grpc"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Lucas DiCioccio";
       maintainer = "lucas@dicioccio.fr";
@@ -22,7 +13,7 @@
       synopsis = "A minimal gRPC server on top of Warp.";
       description = "Please see the README on Github at <https://github.com/githubuser/warp-grpc#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.wai)
           (hsPkgs.warp)
           (hsPkgs.warp-tls)
-        ];
-      };
+          ];
+        };
       exes = {
         "warp-grpc-exe" = {
           depends = [
@@ -53,9 +44,9 @@
             (hsPkgs.warp)
             (hsPkgs.warp-grpc)
             (hsPkgs.warp-tls)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "warp-grpc-test" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.warp)
             (hsPkgs.warp-grpc)
             (hsPkgs.warp-tls)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

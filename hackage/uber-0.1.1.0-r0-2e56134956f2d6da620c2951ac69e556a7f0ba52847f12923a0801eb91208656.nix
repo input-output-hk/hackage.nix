@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "uber";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "uber"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tarun <tj.joshi7@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Uber client for Haskell";
       description = "Bindings for Uber API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.aeson)
           (hsPkgs.text)
           (hsPkgs.webapi)
-        ];
-      };
+          ];
+        };
       tests = {
         "uber-test" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text)
             (hsPkgs.uber)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

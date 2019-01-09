@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "graphite";
-        version = "0.8.0.0";
-      };
+      identifier = { name = "graphite"; version = "0.8.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Daniel Campoverde";
       maintainer = "alx@sillybytes.net";
@@ -22,7 +13,7 @@
       synopsis = "Graphs and networks library";
       description = "Represent, analyze and visualize graphs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.random)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "graphite-test" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.graphite)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "graphite-benchmark" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.graphite)
             (hsPkgs.deepseq)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

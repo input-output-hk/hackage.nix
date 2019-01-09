@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hierarchy";
-        version = "0.2.0";
-      };
+      identifier = { name = "hierarchy"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2015 (c) John Wiegley. All Rights Reserved.";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Pipes-based library for predicated traversal of generated trees";
       description = "Pipes-based library for predicated traversal of generated trees";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.pipes)
           (hsPkgs.directory)
           (hsPkgs.unix)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.doctest)
             (hsPkgs.filepath)
             (hsPkgs.semigroups)
-          ];
-        };
+            ];
+          };
         "test" = {
           depends = [
             (hsPkgs.base)
@@ -62,8 +53,8 @@
             (hsPkgs.mtl)
             (hsPkgs.hspec)
             (hsPkgs.hspec-expectations)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

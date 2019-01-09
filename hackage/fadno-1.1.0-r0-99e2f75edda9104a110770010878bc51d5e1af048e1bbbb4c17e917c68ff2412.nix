@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fadno";
-        version = "1.1.0";
-      };
+      identifier = { name = "fadno"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "spopejoy@panix.com";
@@ -22,7 +13,7 @@
       synopsis = "Minimal library for music generation and notation";
       description = "Provides the Note type and HasNote class with polymorphic pitch and duration representations,\nmetering, barring and time signature utilities, plus midi and MusicXML support.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.xml)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.lens)
             (hsPkgs.hspec)
             (hsPkgs.hspec-contrib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "mohws";
-        version = "0.1";
-      };
+      identifier = { name = "mohws"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Simon Marlow, Bjorn Bringert";
       maintainer = "Bjorn Bringert <bjorn@bringert.net>";
@@ -22,7 +13,7 @@
       synopsis = "Modular Haskell Web Server";
       description = "A web server with a module system and support for CGI.\nBased on Simon Marlow's original Haskell Web Server.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hws" = {
@@ -38,8 +29,8 @@
             (hsPkgs.old-time)
             (hsPkgs.old-locale)
             (hsPkgs.array)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

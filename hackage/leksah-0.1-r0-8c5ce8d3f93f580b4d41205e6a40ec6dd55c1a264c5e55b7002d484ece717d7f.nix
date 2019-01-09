@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "leksah";
-        version = "0.1";
-      };
+      identifier = { name = "leksah"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "2007 Juergen Nicklisch-Franken";
       maintainer = "Juergen Nicklisch-Franken";
@@ -22,7 +13,7 @@
       synopsis = "Genuine Haskell Face";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "leksah" = {
@@ -43,8 +34,8 @@
             (hsPkgs.ghc)
             (hsPkgs.binary)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

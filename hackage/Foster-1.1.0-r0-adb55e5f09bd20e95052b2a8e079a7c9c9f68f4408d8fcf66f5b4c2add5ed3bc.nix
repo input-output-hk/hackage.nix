@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Foster";
-        version = "1.1.0";
-      };
+      identifier = { name = "Foster"; version = "1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "notjefff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities to generate and solve puzzles";
       description = "Utilities to generate and solve puzzles";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "foster" = {
@@ -33,9 +24,9 @@
             (hsPkgs.array)
             (hsPkgs.cmdtheline)
             (hsPkgs.strict)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "foster-benchmark" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.cmdtheline)
             (hsPkgs.strict)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

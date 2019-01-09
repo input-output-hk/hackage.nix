@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distributed-process-fsm";
-        version = "0.0.1";
-      };
+      identifier = { name = "distributed-process-fsm"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Tim Watson 2017";
       maintainer = "Tim Watson <watson.timothy@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "The Cloud Haskell implementation of Erlang/OTP gen_statem";
       description = "Cloud Haskell framework for building finite state machines around CSPs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "FsmTests" = {
           depends = [
@@ -73,8 +64,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.rematch)
             (hsPkgs.ghc-prim)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

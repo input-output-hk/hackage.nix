@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "syntaxnet-haskell";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "syntaxnet-haskell"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017 Michal Gajda, Sergey Bushnyak";
       maintainer = "sergey.bushnyak@sigrlami.eu";
@@ -22,7 +13,7 @@
       synopsis = "Working with Google's SyntaxNet output files - CoNLL, Tree";
       description = "Allows to parse SyntaxNet output files in CoNLL or Syntax Tree formats.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.safe)
           (hsPkgs.split)
           (hsPkgs.haskell-conll)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.hspec)
             (hsPkgs.haskell-conll)
             (hsPkgs.cassava)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

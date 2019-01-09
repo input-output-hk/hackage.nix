@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haggis";
-        version = "0.1.3.0";
-      };
+      identifier = { name = "haggis"; version = "0.1.3.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Tycho Andersen <tycho@tycho.ws>";
@@ -22,7 +13,7 @@
       synopsis = "A static site generator with blogging/comments support";
       description = "Haggis is a static site generator with support for blogging.\nHaggis has very few restrictions on how you manage your content,\nand supports any markup format that pandoc does.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.HDBC-sqlite3)
           (hsPkgs.convertible)
           (hsPkgs.blaze-html)
-        ];
-      };
+          ];
+        };
       exes = {
         "haggis" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.directory)
             (hsPkgs.haggis)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

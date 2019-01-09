@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Finance-Quote-Yahoo";
-        version = "0.5.0";
-      };
+      identifier = { name = "Finance-Quote-Yahoo"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@fastmail.fm";
@@ -22,7 +13,7 @@
       synopsis = "Obtain quote data from finance.yahoo.com";
       description = "Obtain quote data from finance.yahoo.com";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,13 +21,9 @@
           (hsPkgs.HTTP)
           (hsPkgs.HTTP-Simple)
           (hsPkgs.time)
-        ] ++ (if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.old-locale)
-          ]
+          ] ++ (if flags.splitbase
+          then [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.old-locale) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

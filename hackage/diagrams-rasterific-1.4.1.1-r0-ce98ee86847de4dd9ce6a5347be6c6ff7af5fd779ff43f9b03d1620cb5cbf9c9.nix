@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "diagrams-rasterific";
-        version = "1.4.1.1";
-      };
+      identifier = { name = "diagrams-rasterific"; version = "1.4.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "diagrams-discuss@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Rasterific backend for diagrams.";
       description = "A full-featured backend for rendering\ndiagrams using the Rasterific rendering engine.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.bytestring)
           (hsPkgs.file-embed)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-render" = {
           depends = [
@@ -50,24 +41,24 @@
             (hsPkgs.diagrams-rasterific)
             (hsPkgs.diagrams-core)
             (hsPkgs.diagrams-lib)
-          ];
-        };
+            ];
+          };
         "test-widths" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-rasterific)
             (hsPkgs.diagrams-core)
             (hsPkgs.diagrams-lib)
-          ];
-        };
+            ];
+          };
         "test-size" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.diagrams-rasterific)
             (hsPkgs.diagrams-core)
             (hsPkgs.diagrams-lib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

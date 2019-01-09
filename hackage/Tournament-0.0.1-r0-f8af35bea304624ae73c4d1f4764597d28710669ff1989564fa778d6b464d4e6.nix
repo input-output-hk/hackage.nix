@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Tournament";
-        version = "0.0.1";
-      };
+      identifier = { name = "Tournament"; version = "0.0.1"; };
       license = "MIT";
       copyright = "2012, Eirik Albrigtsen";
       maintainer = "analsandblaster@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Tournament related algorithms";
       description = "Tournament is a pure library which generates and updates competition\nbased structures that represent basic FFA or Duel tournaments.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.containers) ];
+        };
       tests = {
         "test-tournament" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

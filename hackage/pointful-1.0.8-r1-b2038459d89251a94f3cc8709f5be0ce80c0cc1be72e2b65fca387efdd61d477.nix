@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pointful";
-        version = "1.0.8";
-      };
+      identifier = { name = "pointful"; version = "1.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mikhail Glushenkov <mikhail.glushenkov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Pointful refactoring tool";
       description = "Stand-alone command-line version of the pointful plugin\nfor Lambdabot.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.mtl)
           (hsPkgs.syb)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "pointful" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.mtl)
             (hsPkgs.syb)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

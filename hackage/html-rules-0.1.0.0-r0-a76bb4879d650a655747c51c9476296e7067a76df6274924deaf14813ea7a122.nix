@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "html-rules";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "html-rules"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Kyle Carter 2014, All rights reserved";
       maintainer = "Kyle Carter <kcarter@galois.com>";
@@ -22,7 +13,7 @@
       synopsis = "Perform traversals of HTML structures using sets of rules.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.tagsoup)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

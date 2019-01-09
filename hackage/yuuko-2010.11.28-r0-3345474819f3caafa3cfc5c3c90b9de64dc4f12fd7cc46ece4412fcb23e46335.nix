@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "yuuko";
-        version = "2010.11.28";
-      };
+      identifier = { name = "yuuko"; version = "2010.11.28"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A transcendental HTML parser gently wrapping the HXT library";
       description = "Parse without thinking ...\n\nyuuko \"//body\" \"<html><body>hi</body></html>\"\n\n> [\"hi\"]";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.curl)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "yuuko" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.curl)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

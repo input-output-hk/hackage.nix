@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Semantique";
-        version = "0.2.2";
-      };
+      identifier = { name = "Semantique"; version = "0.2.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "lemmih@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Command-line tool for maintaining the Semantique database.";
       description = "Command-line tool for maintaining the Semantique database. See <http://semantik.tv/>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "semantique" = {
@@ -38,8 +29,8 @@
             (hsPkgs.text)
             (hsPkgs.containers)
             (hsPkgs.classify)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

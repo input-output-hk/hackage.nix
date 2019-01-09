@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "diffdump";
-        version = "0.7.5";
-      };
+      identifier = { name = "diffdump"; version = "0.7.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Greg Fitzgerald <garious@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Tools for diffing stdout";
       description = "Command-line tools for diffing and patching stdout";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "diffdump" = {
@@ -37,14 +28,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.unix)
-          ];
-        };
-        "patchdump" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-          ];
+            ];
+          };
+        "patchdump" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
         };
       };
-    };
-  }
+    }

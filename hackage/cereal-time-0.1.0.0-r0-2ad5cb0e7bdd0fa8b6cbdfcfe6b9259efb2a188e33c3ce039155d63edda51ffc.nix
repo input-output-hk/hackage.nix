@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cereal-time";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "cereal-time"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Al Zohali <zohl@fmap.me>";
@@ -22,15 +13,11 @@
       synopsis = "Serialize instances for types from `time` package.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.cereal)
-          (hsPkgs.time)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.cereal) (hsPkgs.time) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.cereal-time)
             (hsPkgs.hspec)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

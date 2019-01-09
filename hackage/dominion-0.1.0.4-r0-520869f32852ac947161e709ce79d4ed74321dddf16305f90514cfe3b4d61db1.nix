@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "dominion";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "dominion"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bluemangroupie@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A simulator for the board game Dominion.";
       description = "A simulator for the board game Dominion.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.random-extras)
           (hsPkgs.random)
           (hsPkgs.hscolour)
-        ];
-      };
+          ];
+        };
       exes = {
         "dominion" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.random-extras)
             (hsPkgs.random)
             (hsPkgs.hscolour)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-dominion" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.hscolour)
             (hsPkgs.dominion)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

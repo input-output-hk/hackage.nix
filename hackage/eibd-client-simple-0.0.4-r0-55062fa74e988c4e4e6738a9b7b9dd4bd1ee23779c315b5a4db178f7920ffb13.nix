@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "eibd-client-simple";
-        version = "0.0.4";
-      };
+      identifier = { name = "eibd-client-simple"; version = "0.0.4"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (c) Ole Krüger 2014";
       maintainer = "ole.krueger@campus.tu-berlin.de";
@@ -22,7 +13,7 @@
       synopsis = "EIBd Client";
       description = "EIBd Client written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
+          ];
         libs = [ (pkgs."eibclient") ];
+        };
       };
-    };
-  }
+    }

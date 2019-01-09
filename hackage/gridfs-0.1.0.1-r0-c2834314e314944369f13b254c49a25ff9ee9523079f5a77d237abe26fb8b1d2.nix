@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gridfs";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "gridfs"; version = "0.1.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2016 Martin Norbäck Olivers";
       maintainer = "brent.tubbs@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "GridFS (MongoDB file storage) implementation";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

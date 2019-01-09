@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskelzinc";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haskelzinc"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "klara.mar@cs.kuleuven.be";
@@ -22,7 +13,7 @@
       synopsis = "CP in Haskell through MiniZinc";
       description = "This library aims to link Haskell with MiniZinc. It\nprovides an abstract syntax tree for the MiniZinc\nlanguage, with which one can define MiniZinc\nconstraint models. One can directly get the solution(s)\nof the model or separately use the corresponding modules\nof the library to pretty-print the model or parse its\nsolution(s).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.filepath)
           (hsPkgs.containers)
           (hsPkgs.parsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

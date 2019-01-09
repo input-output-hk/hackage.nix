@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hssqlppp";
-        version = "0.0.5";
-      };
+      identifier = { name = "hssqlppp"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2009 Jake Wheat";
       maintainer = "jakewheatmail@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Sql parser, pretty printer and type checker";
       description = "Sql parser, pretty printer and type checker, targets PostGreSQL SQL and PL/pgSQL, uses Parsec and UUAGC.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.parsec)
           (hsPkgs.pretty)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "HsSqlSystem" = {
           depends = [
@@ -42,16 +33,16 @@
             (hsPkgs.HDBC)
             (hsPkgs.HDBC-postgresql)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "HsSqlPppTests" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

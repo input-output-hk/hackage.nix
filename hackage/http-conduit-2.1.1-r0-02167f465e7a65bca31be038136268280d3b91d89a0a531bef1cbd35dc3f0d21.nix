@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "http-conduit";
-        version = "2.1.1";
-      };
+      identifier = { name = "http-conduit"; version = "2.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP client package with conduit interface and HTTPS support.";
       description = "This package uses conduit for parsing the actual contents of the HTTP connection. It also provides higher-level functions which allow you to avoid directly dealing with streaming data. See <http://www.yesodweb.com/book/http-conduit> for more information.\n\nThe @Network.HTTP.Conduit.Browser@ module has been moved to <http://hackage.haskell.org/package/http-conduit-browser/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.http-client-tls)
           (hsPkgs.monad-control)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.http-conduit)
             (hsPkgs.conduit-extra)
             (hsPkgs.streaming-commons)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

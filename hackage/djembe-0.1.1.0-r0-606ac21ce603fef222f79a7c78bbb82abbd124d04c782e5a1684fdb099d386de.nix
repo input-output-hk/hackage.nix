@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "djembe";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "djembe"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "2015 Reed Rosenbluth";
       maintainer = "Reed.Rosenbluth@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Hit drums with haskell";
       description = "A simple DSL for composing drum beats in haskell.\nDjembe uses the system MIDI device to play these beats.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.hspec)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "djembe-test" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.djembe)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

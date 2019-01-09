@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi-dynamic-configuration";
-        version = "0.14.0";
-      };
+      identifier = { name = "yi-dynamic-configuration"; version = "0.14.0"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Yi developers <yi-devel@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "Dynamic configuration support for Yi";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.microlens-platform)
           (hsPkgs.text)
           (hsPkgs.yi-rope)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

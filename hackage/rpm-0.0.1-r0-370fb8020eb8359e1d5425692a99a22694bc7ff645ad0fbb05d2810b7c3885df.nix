@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      tests = false;
-      hpc = true;
-    };
+    flags = { tests = false; hpc = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "rpm";
-        version = "0.0.1";
-      };
+      identifier = { name = "rpm"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "stoltene2@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Cozy little project to question unruly rpm packages.";
       description = "RPM is a decent system for listing dependencies among packages.  In its simplest form it works quite well.  Dependency management can become troublesome if you have a system that provides numerous packages.  Worse yet, if you provide many packages for many different versions of a software application.  This library aims to provide a rich set of combinators to assert the validity of a collection of RPMs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +22,11 @@
           (hsPkgs.process)
           (hsPkgs.directory)
           (hsPkgs.HaXml)
-        ];
-      };
+          ];
+        };
       exes = {
         "test-rpm" = {
-          depends = pkgs.lib.optionals (!(!flags.tests)) [
+          depends = (pkgs.lib).optionals (!(!flags.tests)) [
             (hsPkgs.base)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck)
@@ -49,8 +37,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

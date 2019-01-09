@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cabal-audit";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "cabal-audit"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@joelt.io";
@@ -22,7 +13,7 @@
       synopsis = "Check how up-to-date your .cabal dependencies are.";
       description = "Check how up-to-date your .cabal dependencies are.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal-audit" = {
@@ -33,8 +24,8 @@
             (hsPkgs.filepath)
             (hsPkgs.HTTP)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

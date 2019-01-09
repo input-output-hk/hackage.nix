@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "chuchu";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "chuchu"; version = "0.1.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2012 Marco Túlio Pimenta Gontijo <marcotmarcot@gmail.com>";
       maintainer = "Marco Túlio Pimenta Gontijo <marcotmarcot@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Behaviour Driven Development like Cucumber for Haskell";
       description = "Chuchu is a system similar to Ruby's Cucumber for Behaviour Driven\nDevelopment.  It works with a language similar to Cucumber's Gherkin, which is\nparsed using package abacate.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.parsec)
           (hsPkgs.cmdargs)
           (hsPkgs.abacate)
-        ];
-      };
+          ];
+        };
       tests = {
         "environment" = {
           depends = [
@@ -41,24 +32,24 @@
             (hsPkgs.unix)
             (hsPkgs.chuchu)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "calculator" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
             (hsPkgs.HUnit)
-          ];
-        };
+            ];
+          };
         "prefix" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.transformers)
             (hsPkgs.chuchu)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

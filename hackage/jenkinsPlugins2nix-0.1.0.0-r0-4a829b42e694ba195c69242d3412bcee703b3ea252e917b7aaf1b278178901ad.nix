@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jenkinsPlugins2nix";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "jenkinsPlugins2nix"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Mateusz Kowalczyk";
       maintainer = "fuuzetsu@fuuzetsu.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate nix for Jenkins plugins.";
       description = "Generate nix for Jenkins plugins.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
           (hsPkgs.zip-archive)
-        ];
-      };
+          ];
+        };
       exes = {
         "jenkinsPlugins2nix" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.jenkinsPlugins2nix)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "jenkinsPlugins2nix-test" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.jenkinsPlugins2nix)
             (hsPkgs.tasty-hspec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

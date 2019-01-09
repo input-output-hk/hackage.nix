@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "req-conduit";
-        version = "1.0.0";
-      };
+      identifier = { name = "req-conduit"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov92@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Conduit helpers for the req HTTP client library";
       description = "Conduit helpers for the req HTTP client library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.req)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "httpbin-tests" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.resourcet)
             (hsPkgs.temporary)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "weigh-bench" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.temporary)
             (hsPkgs.weigh)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

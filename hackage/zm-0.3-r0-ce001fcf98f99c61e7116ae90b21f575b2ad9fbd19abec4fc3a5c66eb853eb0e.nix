@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zm";
-        version = "0.3";
-      };
+      identifier = { name = "zm"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Pasqualino `Titto` Assini";
       maintainer = "tittoassini@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Language independent, reproducible, absolute types";
       description = "See the <http://github.com/tittoassini/zm online tutorial>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,13 +29,10 @@
           (hsPkgs.flat)
           (hsPkgs.model)
           (hsPkgs.either)
-        ] ++ (if compiler.isGhcjs && true
+          ] ++ (if compiler.isGhcjs && true
           then [ (hsPkgs.ghcjs-base) ]
-          else [
-            (hsPkgs.cryptonite)
-            (hsPkgs.memory)
-          ]);
-      };
+          else [ (hsPkgs.cryptonite) (hsPkgs.memory) ]);
+        };
       tests = {
         "zm-test" = {
           depends = [
@@ -60,15 +48,11 @@
             (hsPkgs.flat)
             (hsPkgs.model)
             (hsPkgs.zm)
-          ];
-        };
+            ];
+          };
         "zm-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.filemanip)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.filemanip) ];
+          };
         };
       };
-    };
-  }
+    }

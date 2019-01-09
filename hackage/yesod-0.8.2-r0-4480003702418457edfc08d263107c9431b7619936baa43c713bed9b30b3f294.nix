@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghc7 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod";
-        version = "0.8.2";
-      };
+      identifier = { name = "yesod"; version = "0.8.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "Yesod is a framework designed to foster creation of RESTful web application that have strong compile-time guarantees of correctness. It also affords space efficient code and portability to many deployment backends, from CGI to stand-alone serving.\n\nThe Yesod documentation site <http://docs.yesodweb.com/> has much more information, tutorials and information on some of the supporting packages, like Hamlet and web-routes-quasi.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.warp)
           (hsPkgs.mime-mail)
           (hsPkgs.hjsmin)
-        ] ++ [ (hsPkgs.base) ];
-      };
+          ] ++ [ (hsPkgs.base) ];
+        };
       exes = {
         "yesod" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.http-types)
             (hsPkgs.blaze-builder)
             (hsPkgs.process)
-          ] ++ [ (hsPkgs.base) ];
+            ] ++ [ (hsPkgs.base) ];
+          };
         };
       };
-    };
-  }
+    }

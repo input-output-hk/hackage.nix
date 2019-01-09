@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dcpu16";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dcpu16"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Anatoly Krivolapov";
       maintainer = "example@example.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.parsec)
           (hsPkgs.containers)
           (hsPkgs.spool)
-        ];
-      };
+          ];
+        };
       exes = {
         "dcpu16-exe" = {
           depends = [
@@ -42,16 +33,11 @@
             (hsPkgs.dcpu16)
             (hsPkgs.optparse-applicative)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "dcpu16-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.dcpu16)
-          ];
+        "dcpu16-test" = { depends = [ (hsPkgs.base) (hsPkgs.dcpu16) ]; };
         };
       };
-    };
-  }
+    }

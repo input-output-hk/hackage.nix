@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "codemonitor";
-        version = "0.2";
-      };
+      identifier = { name = "codemonitor"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Rickard Lindberg <ricli85@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Tool that automatically runs arbitrary commands when files change on disk.";
       description = "Tool that automatically runs arbitrary commands when files change on disk.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "codemonitor" = {
@@ -39,8 +30,8 @@
             (hsPkgs.directory)
             (hsPkgs.time)
             (hsPkgs.MissingH)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

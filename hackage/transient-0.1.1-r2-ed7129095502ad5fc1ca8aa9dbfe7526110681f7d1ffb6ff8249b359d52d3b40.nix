@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "transient";
-        version = "0.1.1";
-      };
+      identifier = { name = "transient"; version = "0.1.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "agocorona@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Making composable programs with multithreading, events and distributed computing";
       description = "see <http://github.com/agocorona/transient>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.time)
           (hsPkgs.TCache)
           (hsPkgs.SHA)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

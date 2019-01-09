@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "space";
-        version = "0.1.0";
-      };
+      identifier = { name = "space"; version = "0.1.0"; };
       license = "Apache-2.0";
       copyright = "2017 XT";
       maintainer = "e@xtendo.org";
@@ -22,7 +13,7 @@
       synopsis = "Experimental library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,15 +35,10 @@
           (hsPkgs.wai)
           (hsPkgs.warp)
           (hsPkgs.base)
-        ];
-      };
-      tests = {
-        "space-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.space)
           ];
         };
+      tests = {
+        "space-test" = { depends = [ (hsPkgs.base) (hsPkgs.space) ]; };
+        };
       };
-    };
-  }
+    }

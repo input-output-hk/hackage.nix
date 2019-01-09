@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "react-tutorial-haskell-server";
         version = "1.0.0";
-      };
+        };
       license = "AGPL-3.0-only";
       copyright = "(c) Alexander Berntsen 2016";
       maintainer = "alexander@plaimi.net";
@@ -22,7 +16,7 @@
       synopsis = "react-tutorial web server";
       description = "Haskell server for Facebook's react-tutorial.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "server" = {
@@ -34,8 +28,8 @@
             (hsPkgs.scotty)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

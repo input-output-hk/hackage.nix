@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "errors-ext";
-        version = "0.2";
-      };
+      identifier = { name = "errors-ext"; version = "0.2"; };
       license = "LicenseRef-Apache";
       copyright = "2017 Warlock <internalmike@gmail.com>";
       maintainer = "Warlock <internalmike@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bracket-like functions for ExceptT over IO monad.";
       description = "Bracket-like functions for ExceptT over IO monad.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.errors)
           (hsPkgs.exceptions)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "errors-ext-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.errors)
             (hsPkgs.exceptions)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

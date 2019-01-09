@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hdbc-aeson";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "hdbc-aeson"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "dhchoi@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Deserialize from HDBC rows to FromJSON instances";
       description = "Deserialize from HDBC rows to FromJSON instances";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.scientific)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

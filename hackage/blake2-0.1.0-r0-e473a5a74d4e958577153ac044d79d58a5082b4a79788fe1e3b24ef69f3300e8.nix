@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      hlint = true;
-      doctest = true;
-      llvm = false;
-    };
+    flags = { hlint = true; doctest = true; llvm = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "blake2";
-        version = "0.1.0";
-      };
+      identifier = { name = "blake2"; version = "0.1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "jgalt@centromere.net";
@@ -26,14 +13,9 @@
       synopsis = "A library providing BLAKE2";
       description = "This library provides the <https://blake2.net/ BLAKE2> hash algorithms.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.bytestring) ]; };
       tests = {
         "properties" = {
           depends = [
@@ -44,15 +26,15 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
-        };
+            ];
+          };
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -60,8 +42,8 @@
             (hsPkgs.blake2)
             (hsPkgs.bytestring)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

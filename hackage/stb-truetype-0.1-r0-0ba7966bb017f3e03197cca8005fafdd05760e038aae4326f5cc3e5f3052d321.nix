@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      base4 = true;
-    };
+    flags = { splitbase = true; base4 = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "stb-truetype";
-        version = "0.1";
-      };
+      identifier = { name = "stb-truetype"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
@@ -25,7 +13,7 @@
       synopsis = "A wrapper around Sean Barrett's TrueType rasterizer library.";
       description = "A wrapper around Sean Barrett's TrueType rasterizer library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -34,8 +22,8 @@
             (hsPkgs.array)
             (hsPkgs.containers)
             (hsPkgs.bytestring)
-          ]
+            ]
           else [ (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

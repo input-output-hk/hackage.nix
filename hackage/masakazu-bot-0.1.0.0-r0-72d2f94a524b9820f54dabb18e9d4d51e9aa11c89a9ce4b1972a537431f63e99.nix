@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "masakazu-bot";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "masakazu-bot"; version = "0.1.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "masakazu.minamiyama@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "@minamiyama1994_bot on haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "masakazu-bot" = {
@@ -43,8 +34,8 @@
             (hsPkgs.persistent-sqlite)
             (hsPkgs.persistent-template)
             (hsPkgs.persistent)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

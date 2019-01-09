@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       linux-bbone-tests = false;
       test-doctests = true;
       test-hlint = true;
       examples = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hpio";
-        version = "0.8.0.1";
-      };
+      identifier = { name = "hpio"; version = "0.8.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016, Drew Hess";
       maintainer = "Drew Hess <src@drewhess.com>";
@@ -27,7 +18,7 @@
       synopsis = "Monads for GPIO in Haskell";
       description = "This package provides an embedded DSL for writing cross-platform\nGPIO programs in Haskell. Currently only Linux is supported (via the\n@sysfs@ filesystem), but other Unix GPIO platforms will be supported\nin the future.\n\nMonads and low-level actions are also provided for each supported\nplatform's native GPIO API, if you want to program directly to\nthe platform API.\n\nExample programs are provided in the 'examples' directory of the\nsource code distribution. There is also a \"System.GPIO.Tutorial\"\nmodule, which explains how to use the cross-platform DSL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,11 +37,11 @@
           (hsPkgs.transformers-compat)
           (hsPkgs.unix)
           (hsPkgs.unix-bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "hpio-sysfs-example" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.base-compat)
@@ -60,10 +51,10 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
-          ];
-        };
+            ];
+          };
         "hpio-example" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.base-compat)
@@ -74,10 +65,10 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
-          ];
-        };
+            ];
+          };
         "hpio-reader-example" = {
-          depends = pkgs.lib.optionals (!(!flags.examples)) [
+          depends = (pkgs.lib).optionals (!(!flags.examples)) [
             (hsPkgs.base)
             (hsPkgs.async)
             (hsPkgs.base-compat)
@@ -88,23 +79,23 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hlint" = {
-          depends = pkgs.lib.optionals (!(!flags.test-hlint)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
             (hsPkgs.base)
             (hsPkgs.hlint)
-          ];
-        };
+            ];
+          };
         "doctest" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.lt "7.10")) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests || compiler.isGhc && (compiler.version).lt "7.10")) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -124,8 +115,8 @@
             (hsPkgs.transformers-compat)
             (hsPkgs.unix)
             (hsPkgs.unix-bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

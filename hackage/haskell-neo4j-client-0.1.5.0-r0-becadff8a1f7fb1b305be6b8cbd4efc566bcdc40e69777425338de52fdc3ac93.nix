@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haskell-neo4j-client";
-        version = "0.1.5.0";
-      };
+      identifier = { name = "haskell-neo4j-client"; version = "0.1.5.0"; };
       license = "MIT";
       copyright = "(c) 2014 Antoni Silvestre";
       maintainer = "antoni.silvestre@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell neo4j client";
       description = "Library to interact with Neo4j databases. For now, its API covers basic operations for nodes, relationships, labels\nand indexes and provides calls to use these in batch mode.\n\nBasic support for Cypher implemented\n\nAll code has been tested with Neo4j version 2.0.3";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.lifted-base)
           (hsPkgs.hashable)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-haskell-neo4j-rest-client" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.lifted-base)
             (hsPkgs.hashable)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Finance-Treasury";
-        version = "0.1";
-      };
+      identifier = { name = "Finance-Treasury"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "stevelihn@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Obtain Treasury yield curve data";
       description = "Obtain Treasury yield curve data from Department of Treasury website";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -35,7 +26,7 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
             (hsPkgs.hxt)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.network)
@@ -43,7 +34,7 @@
             (hsPkgs.HTTP-Simple)
             (hsPkgs.time)
             (hsPkgs.hxt)
-          ];
+            ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kdesrc-build-extra";
-        version = "0.1.1";
-      };
+      identifier = { name = "kdesrc-build-extra"; version = "0.1.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "ivan.cukic@kde.org";
@@ -22,7 +13,7 @@
       synopsis = "Build profiles for kdesrc-build";
       description = "A tool that allows defining build profiles on top of the kdesrc-build system for building KDE packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "kdesrc-build-extra" = {
@@ -35,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.bytestring)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

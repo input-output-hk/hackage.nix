@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-lsp";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "haskell-lsp"; version = "0.2.2.0"; };
       license = "MIT";
       copyright = "Alan Zimmerman, 2016-2017";
       maintainer = "alan.zimm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell library for the Microsoft Language Server Protocol";
       description = "An implementation of the types, and basic message server to\nallow language implementors to support the Language Server\nProtocol for their specific language.\n\nAn example of this is for Haskell via the Haskell IDE\nEngine, at https://github.com//haskell-ide-engine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.yi-rope)
-        ];
-      };
+          ];
+        };
       exes = {
         "lsp-hello" = {
           depends = [
@@ -71,9 +62,9 @@
             (hsPkgs.vector)
             (hsPkgs.yi-rope)
             (hsPkgs.haskell-lsp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "haskell-lsp-test" = {
           depends = [
@@ -90,8 +81,8 @@
             (hsPkgs.yi-rope)
             (hsPkgs.haskell-lsp)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "odbc";
-        version = "0.0.1";
-      };
+      identifier = { name = "odbc"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "FP Complete 2018";
       maintainer = "chrisdone@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell binding to the ODBC API, aimed at SQL Server driver";
       description = "Haskell binding to the ODBC API. This has been tested\nagainst the Microsoft SQL Server ODBC drivers. Its test\nsuite runs on OS X, Windows and Linux.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,11 +26,11 @@
           (hsPkgs.formatting)
           (hsPkgs.containers)
           (hsPkgs.time)
-        ];
+          ];
         libs = if system.isWindows || system.isWindows
           then [ (pkgs."odbc32") ]
           else [ (pkgs."odbc") ];
-      };
+        };
       exes = {
         "odbc" = {
           depends = [
@@ -48,9 +39,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -61,9 +52,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "space" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.weigh)
             (hsPkgs.text)
             (hsPkgs.async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

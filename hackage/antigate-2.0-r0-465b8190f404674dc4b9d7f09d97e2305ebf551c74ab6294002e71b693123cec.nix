@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "antigate";
-        version = "2.0";
-      };
+      identifier = { name = "antigate"; version = "2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "kudah <kudahkukarek@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Interface for antigate.com captcha recognition API";
       description = "Haskell interface for antigate.com captcha recognition service\nand other services supporting its API (e.g. captchabot, decaptcher)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.transformers)
           (hsPkgs.failure)
           (hsPkgs.deepseq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

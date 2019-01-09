@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "OpenCLRaw";
-        version = "1.0.1001";
-      };
+      identifier = { name = "OpenCLRaw"; version = "1.0.1001"; };
       license = "BSD-3-Clause";
       copyright = "Renaissance Computing Institute";
       maintainer = "J.R. Heard";
@@ -22,14 +13,10 @@
       synopsis = "The OpenCL Standard for heterogenous data-parallel computing";
       description = "The OpenCL system for open heterogenous data parallel supercomputing.\n**General Notes on the differences between Haskell and the OpenCL-C implementation**\n* Side-effectful procedures capable of returning an error code only return a Maybe ErrorCode, with Nothing returned upon success\n* Procedures which follow the pattern of returning a pointer to an object and taking a final parameter as an error code instead return Either ErrorCode ObjectType\n* Procedures which prefix with clGetInfo* merely take the object, parameter name, and parameter size to allocate. The allocation handled by OpenCLRaw and returned as a Haskell-managed ForeignPtr ()\n* Enumerations and constants are replaced by newtypes for the sake of type-safety.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

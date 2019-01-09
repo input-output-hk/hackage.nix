@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      template_2_4 = false;
-    };
+    flags = { template_2_4 = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "data-accessor-template";
-        version = "0.2.1.7";
-      };
+      identifier = { name = "data-accessor-template"; version = "0.2.1.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -24,16 +13,14 @@
       synopsis = "Utilities for accessing and manipulating fields of records";
       description = "Automate generation of @Accessor@'s of the @data-accessor@ package\nby Template Haskell functions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.data-accessor)
           (hsPkgs.utility-ht)
           (hsPkgs.base)
-        ] ++ [
-          (hsPkgs.template-haskell)
-        ];
+          ] ++ [ (hsPkgs.template-haskell) ];
+        };
       };
-    };
-  }
+    }

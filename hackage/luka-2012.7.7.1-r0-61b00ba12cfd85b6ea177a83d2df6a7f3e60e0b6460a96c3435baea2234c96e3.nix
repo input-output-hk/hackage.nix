@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "luka";
-        version = "2012.7.7.1";
-      };
+      identifier = { name = "luka"; version = "2012.7.7.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang";
@@ -22,15 +13,11 @@
       synopsis = "Simple ObjectiveC runtime binding";
       description = "Simple ObjectiveC runtime binding";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.air)
-          (hsPkgs.libffi)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.air) (hsPkgs.libffi) ];
         libs = [ (pkgs."objc") ];
+        };
       };
-    };
-  }
+    }

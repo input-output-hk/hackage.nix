@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      create = false;
-      runtimelist = false;
-    };
+    flags = { create = false; runtimelist = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "publicsuffixlist";
-        version = "0.0.4";
-      };
+      identifier = { name = "publicsuffixlist"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Myles C. Maxfield <myles.maxfield@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Is a given string a domain suffix?";
       description = "Is a given string a domain suffix?";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,11 +24,11 @@
           (hsPkgs.text)
           (hsPkgs.utf8-string)
           (hsPkgs.cereal)
-        ] ++ pkgs.lib.optionals (flags.create) [
+          ] ++ (pkgs.lib).optionals (flags.create) [
           (hsPkgs.idna)
           (hsPkgs.conduit)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-public-suffix-list" = {
           depends = [
@@ -53,8 +41,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.cereal)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

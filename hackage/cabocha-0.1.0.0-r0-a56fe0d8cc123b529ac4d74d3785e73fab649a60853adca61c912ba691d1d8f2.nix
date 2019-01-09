@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabocha";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "cabocha"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Miyazawa Akira <pecorarista@gmail.com>";
@@ -22,24 +13,16 @@
       synopsis = "";
       description = "A Haskell binding to CaboCha <http://taku910.github.io/cabocha>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
         libs = [ (pkgs."cabocha") ];
-      };
+        };
       tests = {
         "tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.cabocha)
-            (hsPkgs.text-format)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.cabocha) (hsPkgs.text-format) ];
+          };
         };
       };
-    };
-  }
+    }

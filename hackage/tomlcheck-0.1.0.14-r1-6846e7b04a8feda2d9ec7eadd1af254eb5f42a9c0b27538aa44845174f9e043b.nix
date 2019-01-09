@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      optimize = false;
-      native = false;
-      development = false;
-    };
+    flags = { optimize = false; native = false; development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "tomlcheck";
-        version = "0.1.0.14";
-      };
+      identifier = { name = "tomlcheck"; version = "0.1.0.14"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Vanessa McHale";
       maintainer = "vanessa.mchale@reconfigure.io";
@@ -26,7 +13,7 @@
       synopsis = "Command-line tool to check syntax of TOML files";
       description = "This is a command-line wrapper around htoml-megaparsec.\nIt is intended to be used as a syntax checker that can be\ncalled by your text editor.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,15 +22,10 @@
           (hsPkgs.optparse-generic)
           (hsPkgs.megaparsec)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "tomlcheck" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tomlcheck)
           ];
         };
+      exes = {
+        "tomlcheck" = { depends = [ (hsPkgs.base) (hsPkgs.tomlcheck) ]; };
+        };
       };
-    };
-  }
+    }

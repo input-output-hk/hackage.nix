@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "circlehs";
-        version = "0.0.3";
-      };
+      identifier = { name = "circlehs"; version = "0.0.3"; };
       license = "MIT";
       copyright = "2016 Denis Shevchenko";
       maintainer = "me@dshevchenko.biz";
@@ -22,7 +13,7 @@
       synopsis = "The CircleCI REST API for Haskell";
       description = "The CircleCI REST API implementation in Haskell. For more info please see <https://circleci.com/docs/api/ official API reference>.\n\nBuilt with <http://hackage.haskell.org/package/servant Servant>.\n\n/Please note that implementation is incomplete yet./";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.transformers)
           (hsPkgs.http-client)
           (hsPkgs.http-client-tls)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

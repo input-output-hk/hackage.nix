@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "system-fileio";
-        version = "0.3.16";
-      };
+      identifier = { name = "system-fileio"; version = "0.3.16"; };
       license = "MIT";
       copyright = "";
       maintainer = "FP Complete <michael@fpcomplete.com>";
@@ -22,7 +13,7 @@
       synopsis = "Consistent filesystem interaction across GHC versions";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,13 +22,10 @@
           (hsPkgs.system-filepath)
           (hsPkgs.text)
           (hsPkgs.time)
-        ] ++ (if system.isWindows
-          then [
-            (hsPkgs.Win32)
-            (hsPkgs.directory)
-          ]
+          ] ++ (if system.isWindows
+          then [ (hsPkgs.Win32) (hsPkgs.directory) ]
           else [ (hsPkgs.unix) ]);
-      };
+        };
       tests = {
         "filesystem_tests" = {
           depends = [
@@ -50,8 +38,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

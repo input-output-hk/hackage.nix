@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Finance-Quote-Yahoo";
-        version = "0.3";
-      };
+      identifier = { name = "Finance-Quote-Yahoo"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@fastmail.fm";
@@ -22,7 +13,7 @@
       synopsis = "Obtain quote data from finance.yahoo.com";
       description = "Obtain quote data from finance.yahoo.com";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.HTTP-Simple)
           (hsPkgs.MissingH)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

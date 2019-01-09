@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "axel";
-        version = "0.0.1";
-      };
+      identifier = { name = "axel"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Joshua Grosso";
       maintainer = "jgrosso256@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The Axel programming language.";
       description = "Haskell's semantics, plus Lisp's macros. Meet Axel – a purely functional, extensible, and powerful programming language.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,24 +33,15 @@
           (hsPkgs.typed-process)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "axel-exe" = {
-          depends = [
-            (hsPkgs.axel)
-            (hsPkgs.base)
-            (hsPkgs.directory)
-          ];
+          depends = [ (hsPkgs.axel) (hsPkgs.base) (hsPkgs.directory) ];
+          };
         };
-      };
       tests = {
-        "axel-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-          ];
+        "axel-test" = { depends = [ (hsPkgs.base) (hsPkgs.hspec) ]; };
         };
       };
-    };
-  }
+    }

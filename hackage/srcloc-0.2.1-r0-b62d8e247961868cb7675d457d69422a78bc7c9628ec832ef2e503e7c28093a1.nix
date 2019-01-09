@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "srcloc";
-        version = "0.2.1";
-      };
+      identifier = { name = "srcloc"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2006-2012 Harvard University";
       maintainer = "mainland@eecs.harvard.edu";
@@ -22,13 +13,6 @@
       synopsis = "Data types for managing source code locations.";
       description = "Data types for managing source code locations.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.syb)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.syb) ]; }; };
+    }

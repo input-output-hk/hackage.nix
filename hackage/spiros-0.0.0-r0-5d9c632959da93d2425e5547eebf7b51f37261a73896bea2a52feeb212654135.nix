@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "spiros";
-        version = "0.0.0";
-      };
+      identifier = { name = "spiros"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Spiros Boosalis";
       maintainer = "samboosalis@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "my custom prelude";
       description = "my custom prelude. diverges from base's; adding, removing, and shadowing.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.split)
           (hsPkgs.wl-pprint-text)
           (hsPkgs.data-default-class)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

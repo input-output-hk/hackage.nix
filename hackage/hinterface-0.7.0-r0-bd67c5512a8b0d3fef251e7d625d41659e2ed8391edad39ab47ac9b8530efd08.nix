@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "hinterface";
-        version = "0.7.0";
-      };
+      identifier = { name = "hinterface"; version = "0.7.0"; };
       license = "BSD-3-Clause";
       copyright = "2016-2018 Timo Koepke, Sven Heyll";
       maintainer = "timo.koepke@googlemail.com, sven.heyll@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell / Erlang interoperability library";
       description = "A library for building nodes of a distributed Erlang system in Haskell.\nNodes can be created and registered to an epmd, Erlang terms can be\nmarshalled to/from Erlangs binary term representation and message can\nbe sent to or received from processes running on a different node.\nIn it's preliminary state hinterface supports of Erlangs binary terms\nand a subset of the distribution protocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "hinterface-test" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.hspec)
             (hsPkgs.monad-logger)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

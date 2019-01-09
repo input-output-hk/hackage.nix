@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "utf8-validator";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "utf8-validator"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Edward George";
       maintainer = "edwardgeorge@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Constant-space UTF8 validator for ByteStrings";
       description = "Constant-space UTF8 validator for ByteStrings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
+        };
       tests = {
         "utf8-validator-test" = {
           depends = [
@@ -41,17 +28,17 @@
             (hsPkgs.text)
             (hsPkgs.utf8-string)
             (hsPkgs.utf8-validator)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "utf8-validator-bench" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.criterion)
             (hsPkgs.utf8-validator)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

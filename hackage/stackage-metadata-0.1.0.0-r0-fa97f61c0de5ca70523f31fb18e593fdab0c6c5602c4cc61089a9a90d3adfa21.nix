@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-metadata";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "stackage-metadata"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Grab current metadata for all packages";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.directory)
           (hsPkgs.transformers)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "all-cabal-metadata-tool" = {
           depends = [
@@ -64,8 +55,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.tar)
             (hsPkgs.stackage-update)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

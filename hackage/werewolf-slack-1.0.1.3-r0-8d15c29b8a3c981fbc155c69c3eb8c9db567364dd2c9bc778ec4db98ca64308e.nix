@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "werewolf-slack";
-        version = "1.0.1.3";
-      };
+      identifier = { name = "werewolf-slack"; version = "1.0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "public@hjwylde.com";
@@ -22,7 +13,7 @@
       synopsis = "A chat interface for playing werewolf in Slack";
       description = "A chat interface for playing werewolf in Slack.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "werewolf-slack" = {
@@ -41,8 +32,8 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.werewolf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

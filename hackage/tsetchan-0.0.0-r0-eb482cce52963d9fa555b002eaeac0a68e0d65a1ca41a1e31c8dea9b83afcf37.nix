@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tsetchan";
-        version = "0.0.0";
-      };
+      identifier = { name = "tsetchan"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Author name here";
       maintainer = "example@example.com";
@@ -22,15 +13,11 @@
       synopsis = "Hides duplicating channels when broadcasting";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.stm)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.stm) (hsPkgs.containers) ];
+        };
       tests = {
         "tsetchan-test" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.tsetchan)
             (hsPkgs.async)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base4 = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "language-java";
-        version = "0.2.0";
-      };
+      identifier = { name = "language-java"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer";
       description = "Java source manipulation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,10 +21,8 @@
           (hsPkgs.pretty)
           (hsPkgs.cpphs)
           (hsPkgs.parsec)
-        ] ++ [ (hsPkgs.base) ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
+          ] ++ [ (hsPkgs.base) ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       };
-    };
-  }
+    }

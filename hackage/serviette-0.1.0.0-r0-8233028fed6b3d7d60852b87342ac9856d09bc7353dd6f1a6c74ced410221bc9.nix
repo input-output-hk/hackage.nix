@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "serviette";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "serviette"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Sasa Bogicevic";
       maintainer = "brutallesale@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON to Sql raw string or db result in json format";
       description = "Use json to query the database and receive results";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.generic-deriving)
           (hsPkgs.protolude)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

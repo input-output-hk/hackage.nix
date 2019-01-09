@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.23";
-      identifier = {
-        name = "glirc";
-        version = "2.18";
-      };
+      identifier = { name = "glirc"; version = "2.18"; };
       license = "ISC";
       copyright = "2016 Eric Mertens";
       maintainer = "emertens@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Console IRC client";
       description = "Console IRC client\n\nglirc is a console IRC client with an emphasis on providing\ndynamic views into the model of your IRC connections.\n\n<https://github.com/glguy/irc-core/wiki Documentation Wiki>";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -60,11 +51,9 @@
           (hsPkgs.x509)
           (hsPkgs.x509-store)
           (hsPkgs.x509-system)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       exes = {
         "glirc2" = {
           depends = [
@@ -72,17 +61,11 @@
             (hsPkgs.glirc)
             (hsPkgs.lens)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.glirc)
-            (hsPkgs.HUnit)
-          ];
+        "test" = { depends = [ (hsPkgs.base) (hsPkgs.glirc) (hsPkgs.HUnit) ]; };
         };
       };
-    };
-  }
+    }

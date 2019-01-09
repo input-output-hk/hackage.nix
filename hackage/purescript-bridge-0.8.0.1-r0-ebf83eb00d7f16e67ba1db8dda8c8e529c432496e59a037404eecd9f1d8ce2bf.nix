@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "purescript-bridge";
-        version = "0.8.0.1";
-      };
+      identifier = { name = "purescript-bridge"; version = "0.8.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "robert . klotzner A T gmx . at";
@@ -22,7 +13,7 @@
       synopsis = "Generate PureScript data types from Haskell data types";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.generic-deriving)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.text)
             (hsPkgs.hspec)
             (hsPkgs.hspec-expectations-pretty-diff)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

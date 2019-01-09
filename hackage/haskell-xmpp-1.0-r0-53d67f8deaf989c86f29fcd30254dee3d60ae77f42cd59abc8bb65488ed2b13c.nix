@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haskell-xmpp";
-        version = "1.0";
-      };
+      identifier = { name = "haskell-xmpp"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2005-2011 Dmitry Astapov, k.pierre";
       maintainer = "Dmitry Astapov <dastapov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell XMPP (eXtensible Message Passing Protocol, a.k.a. Jabber) library";
       description = "Haskell XMPP (eXtensible Message Passing Protocol, a.k.a. Jabber) library\n\nUnlike package network-protocol-xmpp, which uses libxml-sax, this library uses HaXml and supports MUC.\nHowever, MUC support of the moment is worse than that in package XMPP.\n\nThis library make extensive use of STM and threads to simplify writing message-handling code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,12 +29,12 @@
           (hsPkgs.regex-compat)
           (hsPkgs.stm)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskell-xmpp-test" = {
-          depends = pkgs.lib.optional (flags.examples) (hsPkgs.base);
+          depends = (pkgs.lib).optional (flags.examples) (hsPkgs.base);
+          };
         };
       };
-    };
-  }
+    }

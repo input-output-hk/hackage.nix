@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-xml";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "hw-xml"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2016 John Ky,\nAlexey Raga";
       maintainer = "alexey.raga@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Conduits for tokenizing streams.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           (hsPkgs.word8)
-        ];
-      };
+          ];
+        };
       exes = {
         "hw-xml-example" = {
           depends = [
@@ -62,9 +53,9 @@
             (hsPkgs.hw-rankselect)
             (hsPkgs.hw-xml)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hw-xml-test" = {
           depends = [
@@ -82,9 +73,9 @@
             (hsPkgs.hw-rankselect-base)
             (hsPkgs.hw-xml)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -100,8 +91,8 @@
             (hsPkgs.mmap)
             (hsPkgs.resourcet)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

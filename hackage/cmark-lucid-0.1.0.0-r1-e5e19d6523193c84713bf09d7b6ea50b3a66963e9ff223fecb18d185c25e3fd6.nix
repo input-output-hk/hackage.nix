@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cmark-lucid";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "cmark-lucid"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yom@artyom.me";
@@ -22,14 +13,10 @@
       synopsis = "Use cmark with Lucid";
       description = "A package for rendering Markdown (parsed via cmark) to Lucid's HTML.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.cmark)
-          (hsPkgs.lucid)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.cmark) (hsPkgs.lucid) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "legion-discovery";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "legion-discovery"; version = "1.0.0.1"; };
       license = "Apache-2.0";
       copyright = "2016 Rick Owens";
       maintainer = "rick@owensmurray.com";
@@ -22,7 +13,7 @@
       synopsis = "A discovery service based on Legion.";
       description = "A simple service discovery service based on Legion,\nthat natively supports the idea of interface\nversions, and the idea that clients may only be\ninterested in finding certain (compatible) versions\nof the services they are looking for.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,23 +43,17 @@
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "legion-discovery" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.legion-discovery)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.legion-discovery) ];
+          };
         };
-      };
       tests = {
         "legion-discovery-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.legion-discovery)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.legion-discovery) ];
+          };
         };
       };
-    };
-  }
+    }

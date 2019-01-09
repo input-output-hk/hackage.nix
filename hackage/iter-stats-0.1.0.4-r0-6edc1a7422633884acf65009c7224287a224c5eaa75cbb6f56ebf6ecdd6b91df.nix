@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "iter-stats";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "iter-stats"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "John W. Lato, 2012";
       maintainer = "jwlato@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "iteratees for statistical processing";
       description = "efficient statistical values of data streams";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.iteratee)
           (hsPkgs.ListLike)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "iter-stats-tests" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.iteratee)
             (hsPkgs.ListLike)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

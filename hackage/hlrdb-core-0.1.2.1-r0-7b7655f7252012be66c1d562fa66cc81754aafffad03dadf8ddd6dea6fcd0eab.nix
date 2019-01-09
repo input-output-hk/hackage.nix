@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "hlrdb-core";
-        version = "0.1.2.1";
-      };
+      identifier = { name = "hlrdb-core"; version = "0.1.2.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "identicalsnowflake@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "High-level Redis Database Core API";
       description = "A library for type-driven interaction with Redis";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.random)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

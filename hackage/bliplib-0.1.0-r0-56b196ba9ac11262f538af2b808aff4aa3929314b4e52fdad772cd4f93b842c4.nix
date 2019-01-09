@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "bliplib";
-        version = "0.1.0";
-      };
+      identifier = { name = "bliplib"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bernie Pope <florbitous@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Support code for Blip.";
       description = "Support code for the Blip compiler. In particular, a library for reading, writing and manipulating Python 3 bytecode files.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.pretty)
           (hsPkgs.bytestring)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

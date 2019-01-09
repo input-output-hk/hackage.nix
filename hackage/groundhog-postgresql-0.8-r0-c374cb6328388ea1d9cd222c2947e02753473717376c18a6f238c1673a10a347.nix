@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "groundhog-postgresql";
-        version = "0.8";
-      };
+      identifier = { name = "groundhog-postgresql"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Boris Lykah <lykahb@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL backend for the groundhog library.";
       description = "This package uses postgresql-simple and postgresql-libpq.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.time)
           (hsPkgs.vector)
           (hsPkgs.resourcet)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

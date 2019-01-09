@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "tagging";
-        version = "0.1";
-      };
+      identifier = { name = "tagging"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "overture2112@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Library for tagging data";
       description = "A library for tagging data according to regex rules and manipulating the\ntagged structures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.pcre-light)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.pcre-light) ];
+        };
       };
-    };
-  }
+    }

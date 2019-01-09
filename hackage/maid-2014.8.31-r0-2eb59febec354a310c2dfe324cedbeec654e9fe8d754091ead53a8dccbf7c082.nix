@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "maid";
-        version = "2014.8.31";
-      };
+      identifier = { name = "maid"; version = "2014.8.31"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A simple static web server";
       description = "Serve files from the current path";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "maid" = {
@@ -41,8 +32,8 @@
             (hsPkgs.text)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

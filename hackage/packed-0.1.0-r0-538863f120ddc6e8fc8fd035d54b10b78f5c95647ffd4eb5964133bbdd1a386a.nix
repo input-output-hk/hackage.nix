@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "packed";
-        version = "0.1.0";
-      };
+      identifier = { name = "packed"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/andrewthad/bytearray#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.primitive)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) (hsPkgs.primitive) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -42,17 +29,13 @@
             (hsPkgs.tasty)
             (hsPkgs.containers)
             (hsPkgs.ghc-prim)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.packed)
-            (hsPkgs.gauge)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.packed) (hsPkgs.gauge) ];
+          };
         };
       };
-    };
-  }
+    }

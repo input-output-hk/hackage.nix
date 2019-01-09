@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "remotion";
-        version = "0.2.0";
-      };
+      identifier = { name = "remotion"; version = "0.2.0"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "A library for client-server applications based on custom protocols";
       description = "An API abstracting over the typical tasks of client-server communication.\nIt automates the authentication process, failure management and\nthe task of keeping the connections alive.\nIt allows the user to implement protocols of any form.\nUseful for writing all kinds of services.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -55,8 +46,8 @@
           (hsPkgs.errors)
           (hsPkgs.mtl)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "remotion-htf-test-suite" = {
           depends = [
@@ -94,8 +85,8 @@
             (hsPkgs.errors)
             (hsPkgs.mtl)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      static = false;
-      embed_data_files = false;
-      trypandoc = false;
-    };
+    flags = { static = false; embed_data_files = false; trypandoc = false; };
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "pandoc";
-        version = "2.4";
-      };
+      identifier = { name = "pandoc"; version = "2.4"; };
       license = "GPL-2.0-only";
       copyright = "(c) 2006-2018 John MacFarlane";
       maintainer = "John MacFarlane <jgm@berkeley.edu>";
@@ -26,7 +13,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read several dialects of Markdown and\n(subsets of) HTML, reStructuredText, LaTeX, DocBook, JATS,\nMediaWiki markup, TWiki markup, TikiWiki markup, Creole 1.0,\nHaddock markup, OPML, Emacs Org-Mode, Emacs Muse, txt2tags,\nVimwiki, Word Docx, ODT, EPUB, FictionBook2, roff man,\nand Textile, and it can write Markdown, reStructuredText,\nXHTML, HTML 5, LaTeX, ConTeXt, DocBook, JATS, OPML, TEI,\nOpenDocument, ODT, Word docx, PowerPoint pptx,\nRTF, MediaWiki, DokuWiki, ZimWiki, Textile,\nroff man, roff ms, plain text, Emacs Org-Mode,\nAsciiDoc, Haddock markup, EPUB (v2 and v3),\nFictionBook2, InDesign ICML, Muse, LaTeX beamer slides,\nand several kinds of HTML/JavaScript slide shows\n(S5, Slidy, Slideous, DZSlides, reveal.js).\n\nIn contrast to most existing tools for converting Markdown\nto HTML, pandoc has a modular design: it consists of a set of\nreaders, which parse text in a given format and produce a\nnative representation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -80,21 +67,21 @@
           (hsPkgs.case-insensitive)
           (hsPkgs.unicode-transforms)
           (hsPkgs.HsYAML)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
           (hsPkgs.semigroups)
           (hsPkgs.basement)
           (hsPkgs.foundation)
-        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs.base-compat)) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (flags.embed_data_files) (hsPkgs.file-embed);
-      };
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs.base-compat)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (flags.embed_data_files) (hsPkgs.file-embed);
+        };
       exes = {
         "pandoc" = {
           depends = ([
             (hsPkgs.pandoc)
             (hsPkgs.base)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs.base-compat);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs.base-compat);
+          };
         "trypandoc" = {
-          depends = (pkgs.lib.optionals (flags.trypandoc) [
+          depends = ((pkgs.lib).optionals (flags.trypandoc) [
             (hsPkgs.base)
             (hsPkgs.aeson)
             (hsPkgs.pandoc)
@@ -102,9 +89,9 @@
             (hsPkgs.wai-extra)
             (hsPkgs.wai)
             (hsPkgs.http-types)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs.base-compat);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs.base-compat);
+          };
         };
-      };
       tests = {
         "test-pandoc" = {
           depends = ([
@@ -131,9 +118,9 @@
             (hsPkgs.zip-archive)
             (hsPkgs.xml)
             (hsPkgs.Glob)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs.base-compat);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs.base-compat);
+          };
         };
-      };
       benchmarks = {
         "weigh-pandoc" = {
           depends = ([
@@ -142,8 +129,8 @@
             (hsPkgs.text)
             (hsPkgs.weigh)
             (hsPkgs.mtl)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs.base-compat);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs.base-compat);
+          };
         "benchmark-pandoc" = {
           depends = ([
             (hsPkgs.pandoc)
@@ -154,8 +141,8 @@
             (hsPkgs.text)
             (hsPkgs.mtl)
             (hsPkgs.criterion)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs.base-compat);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs.base-compat);
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haddock-api";
-        version = "2.16.1";
-      };
+      identifier = { name = "haddock-api"; version = "2.16.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Simon Marlow, David Waern";
       maintainer = "Simon Hengel <sol@typeful.net>, Mateusz Kowalczyk <fuuzetsu@fuuzetsu.co.uk>";
@@ -22,7 +13,7 @@
       synopsis = "A documentation-generation tool for Haskell libraries";
       description = "Haddock is a documentation-generation tool for Haskell\nlibraries";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
           (hsPkgs.haddock-library)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

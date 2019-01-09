@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "Elm";
-        version = "0.12";
-      };
+      identifier = { name = "Elm"; version = "0.12"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2011-2014 Evan Czaplicki";
       maintainer = "info@elm-lang.org";
@@ -22,7 +13,7 @@
       synopsis = "The Elm language module.";
       description = "Elm aims to make client-side web-development more pleasant.\nIt is a statically/strongly typed, functional reactive\nlanguage to HTML, CSS, and JS. This package provides a\nlibrary for Elm compilation in Haskell and a compiler\nexecutable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.transformers)
           (hsPkgs.union-find)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "elm" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.transformers)
             (hsPkgs.union-find)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "elm-doc" = {
           depends = [
             (hsPkgs.aeson)
@@ -91,9 +82,9 @@
             (hsPkgs.pretty)
             (hsPkgs.text)
             (hsPkgs.union-find)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-elm" = {
           depends = [
@@ -127,8 +118,8 @@
             (hsPkgs.transformers)
             (hsPkgs.union-find)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

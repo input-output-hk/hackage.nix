@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cmd-item";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "cmd-item"; version = "0.0.1.0"; };
       license = "MIT";
       copyright = "Copyright (C) 2015 Geraud Boyer";
       maintainer = "Geraud Boyer <geraud@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Library to compose and reuse command line fragments";
       description = "Library to compose and reuse command line fragments";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.templater)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

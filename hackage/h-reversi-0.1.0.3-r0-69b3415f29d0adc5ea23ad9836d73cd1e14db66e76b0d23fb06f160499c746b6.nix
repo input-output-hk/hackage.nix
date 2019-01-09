@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "h-reversi";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "h-reversi"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "Apoorv Ingle";
       maintainer = "apoorv.ingle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Reversi game in haskell/blank-canvas";
       description = "@h-reversi@ uses html5/blank-canvas underneath\n\n<<https://raw.githubusercontent.com/apoorvingle/h-reversi/master/images/screenshot.jpeg>>\n\nPlease visit <https://github.com/apoorvingle/h-reversi h-reversi> for more details\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.split)
           (hsPkgs.stm)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "h-reversi" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.split)
             (hsPkgs.stm)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "h-reversi-properties" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.hspec)
             (hsPkgs.split)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

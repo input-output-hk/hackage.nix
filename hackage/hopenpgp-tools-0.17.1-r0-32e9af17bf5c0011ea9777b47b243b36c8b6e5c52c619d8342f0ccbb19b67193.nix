@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hopenpgp-tools";
-        version = "0.17.1";
-      };
+      identifier = { name = "hopenpgp-tools"; version = "0.17.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2012-2015 Clint Adams";
       maintainer = "Clint Adams <clint@debian.org>";
@@ -22,7 +13,7 @@
       synopsis = "hOpenPGP-based command-line tools";
       description = "command-line tools for performing some OpenPGP-related operations";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hot" = {
@@ -47,12 +38,12 @@
             (hsPkgs.transformers)
             (hsPkgs.wl-pprint-extras)
             (hsPkgs.yaml)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.alex)
-            (hsPkgs.buildPackages.happy)
-          ];
-        };
+            ((hsPkgs.buildPackages).alex)
+            ((hsPkgs.buildPackages).happy)
+            ];
+          };
         "hokey" = {
           depends = [
             (hsPkgs.base)
@@ -82,8 +73,8 @@
             (hsPkgs.wl-pprint-extras)
             (hsPkgs.wl-pprint-terminfo)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "hkt" = {
           depends = [
             (hsPkgs.base)
@@ -114,12 +105,12 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.wl-pprint-extras)
             (hsPkgs.yaml)
-          ];
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.alex)
-            (hsPkgs.buildPackages.happy)
-          ];
+            ((hsPkgs.buildPackages).alex)
+            ((hsPkgs.buildPackages).happy)
+            ];
+          };
         };
       };
-    };
-  }
+    }

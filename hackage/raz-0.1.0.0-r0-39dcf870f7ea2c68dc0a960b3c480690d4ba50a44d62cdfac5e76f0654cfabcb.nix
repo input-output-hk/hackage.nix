@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "raz";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "raz"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "lysxia@gmail.com";
@@ -22,24 +13,16 @@
       synopsis = "Random Access Zippers";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.deepseq)
-          (hsPkgs.MonadRandom)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.deepseq) (hsPkgs.MonadRandom) ];
+        };
       tests = {
         "raz-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.MonadRandom)
-            (hsPkgs.raz)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.MonadRandom) (hsPkgs.raz) ];
+          };
         };
-      };
       benchmarks = {
         "raz-bench" = {
           depends = [
@@ -49,8 +32,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.MonadRandom)
             (hsPkgs.raz)
-          ];
-        };
+            ];
+          };
         "sequence-bench" = {
           depends = [
             (hsPkgs.base)
@@ -59,8 +42,8 @@
             (hsPkgs.random)
             (hsPkgs.raz)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

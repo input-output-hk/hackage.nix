@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wavefront";
-        version = "0.7.0.3";
-      };
+      identifier = { name = "wavefront"; version = "0.7.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Dimitri Sabadie";
       maintainer = "Dimitri Sabadie <dimitri.sabadie@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Wavefront OBJ loader";
       description = "A Wavefront OBJ loader. Currently supports polygonal information. More could\nbe added if needed (like curves and surface) if people contribute. Feel free\nto help!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "json-types";
-        version = "0.1";
-      };
+      identifier = { name = "json-types"; version = "0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "jmillikin@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Basic types for representing JSON";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.containers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.containers) ];
+        };
       };
-    };
-  }
+    }

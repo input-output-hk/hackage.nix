@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "airbrake";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "airbrake"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "me@joelt.io";
@@ -22,7 +13,7 @@
       synopsis = "An Airbrake notifier for Haskell";
       description = "Airbrake notifier.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
           (hsPkgs.wai)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gps";
-        version = "1.1";
-      };
+      identifier = { name = "gps"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas DuBuisson";
@@ -22,7 +13,7 @@
       synopsis = "For manipulating GPS coordinates and trails.";
       description = "Useful for manipulating GPS coordinages (in various forms), building paths, and performing basic computations.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.gpx-conduit)
           (hsPkgs.vector)
           (hsPkgs.statistics)
-        ];
-      };
+          ];
+        };
       tests = {
         "gps-tests" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.vector)
             (hsPkgs.statistics)
             (hsPkgs.gps)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aivika-transformers";
-        version = "4.3.5";
-      };
+      identifier = { name = "aivika-transformers"; version = "4.3.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2016. David Sorokin <david.sorokin@gmail.com>";
       maintainer = "David Sorokin <david.sorokin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Transformers for the Aivika simulation library";
       description = "This package is a generalization of the Aivika [1] simulation library\nwith extensive use of monad transformers and type families.\n\n\\[1] <http://hackage.haskell.org/package/aivika>\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.random)
           (hsPkgs.vector)
           (hsPkgs.aivika)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

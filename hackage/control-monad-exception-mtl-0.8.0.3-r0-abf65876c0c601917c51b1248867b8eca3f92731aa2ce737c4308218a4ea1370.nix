@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "control-monad-exception-mtl";
         version = "0.8.0.3";
-      };
+        };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "pepeiborra@gmail.com";
@@ -22,14 +16,14 @@
       synopsis = "MTL instances for the EMT exceptions monad transformer";
       description = "MTL instances for the EMT exceptions monad transformer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.control-monad-exception)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

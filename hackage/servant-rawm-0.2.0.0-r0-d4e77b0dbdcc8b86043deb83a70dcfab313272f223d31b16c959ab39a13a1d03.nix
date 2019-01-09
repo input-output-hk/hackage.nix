@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexample = false;
-    };
+    flags = { buildexample = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-rawm";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "servant-rawm"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Embed a raw 'Application' in a Servant API";
       description = "Please see <https://github.com/cdepillabout/servant-rawm#readme README.md>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +32,8 @@
           (hsPkgs.servant-server)
           (hsPkgs.wai)
           (hsPkgs.wai-app-static)
-        ];
-      };
+          ];
+        };
       exes = {
         "servant-rawm-example-client" = {
           depends = [
@@ -57,8 +46,8 @@
             (hsPkgs.servant-rawm)
             (hsPkgs.servant-client)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "servant-rawm-example-docs" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +55,8 @@
             (hsPkgs.servant-rawm)
             (hsPkgs.servant-docs)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "servant-rawm-example-server" = {
           depends = [
             (hsPkgs.base)
@@ -77,8 +66,8 @@
             (hsPkgs.transformers)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

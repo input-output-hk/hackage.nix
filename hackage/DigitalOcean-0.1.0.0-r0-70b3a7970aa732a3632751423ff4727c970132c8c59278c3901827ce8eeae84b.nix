@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "DigitalOcean";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "DigitalOcean"; version = "0.1.0.0"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "lclarkmichalek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A client library for the DigitalOcean API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.vector)
           (hsPkgs.transformers)
           (hsPkgs.exceptions)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             (hsPkgs.lens)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

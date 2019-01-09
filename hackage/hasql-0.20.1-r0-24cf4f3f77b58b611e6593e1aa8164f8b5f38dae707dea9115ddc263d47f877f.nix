@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hasql";
-        version = "0.20.1";
-      };
+      identifier = { name = "hasql"; version = "0.20.1"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "An efficient native PostgreSQL driver";
       description = "A highly efficient PostgreSQL driver and a flexible mapping API.\n\nThis is an experimental version, which implements the binary protocol natively.\n\nThis package is the root of the \\\"hasql\\\" ecosystem.\n\nThe API is completely disinfected from exceptions. All error-reporting is explicit and is presented using the 'Either' type.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -59,8 +50,8 @@
           (hsPkgs.bug)
           (hsPkgs.base-prelude)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -74,17 +65,17 @@
             (hsPkgs.foldl)
             (hsPkgs.bug)
             (hsPkgs.rerebase)
-          ];
-        };
+            ];
+          };
         "profiling" = {
           depends = [
             (hsPkgs.hasql)
             (hsPkgs.foldl)
             (hsPkgs.bug)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -93,8 +84,8 @@
             (hsPkgs.foldl)
             (hsPkgs.bug)
             (hsPkgs.rerebase)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

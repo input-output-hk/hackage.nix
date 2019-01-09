@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "language-puppet";
-        version = "1.0.1";
-      };
+      identifier = { name = "language-puppet"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools to parse and evaluate the Puppet DSL.";
       description = "This is a set of tools that is supposed to fill all your Puppet needs : syntax checks, catalog compilation, PuppetDB queries, simulationg of complex interactions between nodes, Puppet master replacement, and more !";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -67,8 +58,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           (hsPkgs.yaml)
-        ];
-      };
+          ];
+        };
       exes = {
         "puppetresources" = {
           depends = [
@@ -93,8 +84,8 @@
             (hsPkgs.containers)
             (hsPkgs.Glob)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "pdbquery" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -107,9 +98,9 @@
             (hsPkgs.lens)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-evals" = {
           depends = [
@@ -118,8 +109,8 @@
             (hsPkgs.text)
             (hsPkgs.lens)
             (hsPkgs.parsers)
-          ];
-        };
+            ];
+          };
         "test-lexer" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -130,8 +121,8 @@
             (hsPkgs.vector)
             (hsPkgs.ansi-wl-pprint)
             (hsPkgs.unix)
-          ];
-        };
+            ];
+          };
         "test-expr" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -140,8 +131,8 @@
             (hsPkgs.parsers)
             (hsPkgs.vector)
             (hsPkgs.ansi-wl-pprint)
-          ];
-        };
+            ];
+          };
         "test-hiera" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -154,8 +145,8 @@
             (hsPkgs.vector)
             (hsPkgs.unordered-containers)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test-puppetdb" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -164,8 +155,8 @@
             (hsPkgs.strict-base-types)
             (hsPkgs.lens)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "erbparser" = {
           depends = [
             (hsPkgs.language-puppet)
@@ -173,8 +164,8 @@
             (hsPkgs.strict-base-types)
             (hsPkgs.lens)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "MuCheck";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "MuCheck"; version = "0.1.0.1"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "ledu@onid.oregonstate.edu\nrahul@gopinath.org";
@@ -22,7 +13,7 @@
       synopsis = "Automated Mutation Testing";
       description = "This package defines a mutation analysis library for haskell\nprograms. It does this by parsing the haskell source, and\nreplacing a few of the common haskell functions and operators\nwith other, but similar operators and functions, and running\nthe testsuite to check whether the difference has been\ndetected. Currently, it supports QuickCheck and HUnit tests.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.mtl)
           (hsPkgs.HUnit)
           (hsPkgs.filepath)
-        ];
-      };
+          ];
+        };
       exes = {
         "mucheck" = {
           depends = [
@@ -49,9 +40,9 @@
             (hsPkgs.mtl)
             (hsPkgs.HUnit)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

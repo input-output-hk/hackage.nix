@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "task-distribution";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "task-distribution"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Axel Mannhardt";
       maintainer = "7a3ggptwts@snkmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.vector)
           (hsPkgs.containers)
           (hsPkgs.async)
-        ];
-      };
+          ];
+        };
       exes = {
         "slave" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.json)
             (hsPkgs.strings)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "example" = {
           depends = [
             (hsPkgs.base)
@@ -74,8 +65,8 @@
             (hsPkgs.json)
             (hsPkgs.strings)
             (hsPkgs.bytestring)
-          ];
-        };
+            ];
+          };
         "task-distribution-object-code-remote" = {
           depends = [
             (hsPkgs.base)
@@ -94,8 +85,8 @@
             (hsPkgs.vector)
             (hsPkgs.text)
             (hsPkgs.zlib)
-          ];
-        };
+            ];
+          };
         "run-demo-task" = {
           depends = [
             (hsPkgs.base)
@@ -103,8 +94,8 @@
             (hsPkgs.zlib)
             (hsPkgs.split)
             (hsPkgs.async)
-          ];
-        };
+            ];
+          };
         "test-visit-performance" = {
           depends = [
             (hsPkgs.base)
@@ -112,9 +103,9 @@
             (hsPkgs.containers)
             (hsPkgs.json)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test-node-matching" = {
           depends = [
@@ -139,8 +130,8 @@
             (hsPkgs.vector)
             (hsPkgs.split)
             (hsPkgs.hslogger)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

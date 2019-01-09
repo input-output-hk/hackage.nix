@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hsoz";
-        version = "0.0.0.4";
-      };
+      identifier = { name = "hsoz"; version = "0.0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2016 Rodney Lorrimar";
       maintainer = "Rodney Lorrimar <dev@rodney.id.au>";
@@ -22,7 +13,7 @@
       synopsis = "Iron, Hawk, Oz: Web auth protocols";
       description = "hsoz is a Haskell implementation of the Iron, Hawk, and Oz web\nauthentication protocols. These protocols originate from the OAuth2\nstandardisation process, but are designed to be simpler to implement\nfor the common case of web applications.\n\nThe top-level \"Network.Iron\", \"Network.Hawk\", \"Network.Oz\" modules\ncontain further instructions on their usage. There are also some\nexample server and client programs within the\n<https://github.com/rvl/hsoz project git repository>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -58,8 +49,8 @@
           (hsPkgs.vault)
           (hsPkgs.wai)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "hsoz-example" = {
           depends = [
@@ -82,8 +73,8 @@
             (hsPkgs.uri-bytestring)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
-        };
+            ];
+          };
         "iron" = {
           depends = [
             (hsPkgs.hsoz)
@@ -96,9 +87,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hsoz-test" = {
           depends = [
@@ -118,8 +109,8 @@
             (hsPkgs.wai)
             (hsPkgs.http-client)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

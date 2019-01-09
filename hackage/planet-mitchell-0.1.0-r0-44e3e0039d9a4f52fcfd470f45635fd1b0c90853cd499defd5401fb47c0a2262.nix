@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "planet-mitchell";
-        version = "0.1.0";
-      };
+      identifier = { name = "planet-mitchell"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2018, Mitchell Rosen";
       maintainer = "Mitchell Rosen <mitchellwrosen@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Planet Mitchell";
       description = "Planet Mitchell.\n\nThis package provides a curated, highly unstable collection of reorganized\nre-exports. Mostly for personal use at the moment, me but please poke around\nand see README.md for a bit more information ;)\n\nA note on module names:\n\n/Partial/ means the module contains partial functions that may throw\nexceptions if preconditions are violated.\n\n/Unsafe/ means the module contains unsafe functions that either:\n\n* assume that preconditions hold, e.g. @unsafeEmailAddress@, which constructs\nan @EmailAddress@ from a @ByteString@ that is assumed to be valid.\n\n* do other suspicious things like interleave @IO@ with evaluation, as\n@unsafePerformIO@, or lie to the type checker, as @unsafeCoerce@. In a word,\ndragons.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -135,7 +126,7 @@
           (hsPkgs.vector)
           (hsPkgs.vector-builder)
           (hsPkgs.writer-cps-mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

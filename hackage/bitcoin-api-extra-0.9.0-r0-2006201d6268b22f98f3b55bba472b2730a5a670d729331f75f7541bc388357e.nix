@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bitcoin-api-extra";
-        version = "0.9.0";
-      };
+      identifier = { name = "bitcoin-api-extra"; version = "0.9.0"; };
       license = "MIT";
       copyright = "(c) 2015 Leon Mergen";
       maintainer = "leon@solatis.com";
@@ -22,7 +13,7 @@
       synopsis = "Higher level constructs on top of the bitcoin-api package";
       description = "Where `bitcoin-api` focusses solely on interacting with the Bitcoin Core client,\nthis library attempts to provide higher level constructs on top of that API.\nIt provides a collection of algorithms and useful interfaces for communicating\nwith Bitcoin.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.bitcoin-block)
           (hsPkgs.bitcoin-tx)
           (hsPkgs.bitcoin-api)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.bitcoin-api)
             (hsPkgs.bitcoin-tx)
             (hsPkgs.bitcoin-api-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

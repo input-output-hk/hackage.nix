@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "core";
-        version = "0.1";
-      };
+      identifier = { name = "core"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "lemmih@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "External core parser and pretty printer.";
       description = "External core parser and pretty printer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.parsec)
           (hsPkgs.bytestring)
           (hsPkgs.pretty)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

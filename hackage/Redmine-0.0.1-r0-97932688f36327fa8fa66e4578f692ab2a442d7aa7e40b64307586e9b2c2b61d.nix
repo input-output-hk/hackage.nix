@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Redmine";
-        version = "0.0.1";
-      };
+      identifier = { name = "Redmine"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "charles.stpierre@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Library to access Redmine's REST services";
       description = "Library to access Redmine's REST services";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.connection)
           (hsPkgs.MissingH)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-Redmine" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.aeson)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

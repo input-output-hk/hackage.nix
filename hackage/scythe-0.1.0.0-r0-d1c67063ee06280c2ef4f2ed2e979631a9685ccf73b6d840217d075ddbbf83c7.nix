@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scythe";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "scythe"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "David Johnson (c) 2018";
       maintainer = "djohnson.m@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Fast CSV lexing on ByteString";
       description = "RFC-4180 compliant CSV lexing on ByteString";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,19 +22,13 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
           (hsPkgs.text)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       exes = {
         "scythe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.scythe)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.scythe) ];
+          };
         };
       };
-    };
-  }
+    }

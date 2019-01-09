@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      no-exe = false;
-      system-libyaml = false;
-      no-unicode = false;
-    };
+    flags = { no-exe = false; system-libyaml = false; no-unicode = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "yaml";
-        version = "0.8.9.2";
-      };
+      identifier = { name = "yaml"; version = "0.8.9.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -26,7 +13,7 @@
       synopsis = "Support for parsing and rendering YAML documents.";
       description = "Provides support for parsing and emitting Yaml documents.\n\nThis package includes the full libyaml C library version 0.1.2 by Kirill\nSimonov (<http://pyyaml.org/wiki/LibYAML>) in the package so you\ndon't need to worry about any non-Haskell dependencies.\n\nThe package is broken down into two modules.\n\"Data.Yaml\" provides a high-level interface based\naround the JSON datatypes provided by the @aeson@\npackage. \"Text.Libyaml\" provides a lower-level,\nstreaming interface. For most users, \"Data.Yaml\" is recommended.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,9 +29,9 @@
           (hsPkgs.text)
           (hsPkgs.attoparsec)
           (hsPkgs.scientific)
-        ];
-        pkgconfig = pkgs.lib.optional (flags.system-libyaml) (pkgconfPkgs.yaml-0.1);
-      };
+          ];
+        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs.yaml-0.1);
+        };
       exes = {
         "yaml2json" = {
           depends = [
@@ -52,17 +39,17 @@
             (hsPkgs.yaml)
             (hsPkgs.bytestring)
             (hsPkgs.aeson)
-          ];
-        };
+            ];
+          };
         "json2yaml" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.yaml)
             (hsPkgs.bytestring)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -79,8 +66,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "FastxPipe";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "FastxPipe"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014-2015 Rob O'Callahan";
       maintainer = "rcallahan@eurekagenomics.com";
@@ -22,7 +13,7 @@
       synopsis = "Fasta and Fastq streaming";
       description = "Optimized fasta and fastq parsing using Pipes";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.pipes)
           (hsPkgs.pipes-bytestring)
           (hsPkgs.pipes-attoparsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

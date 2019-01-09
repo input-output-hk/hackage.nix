@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "swagger2";
-        version = "2.0";
-      };
+      identifier = { name = "swagger2"; version = "2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015, GetShopTV";
       maintainer = "nickolay@getshoptv.com";
@@ -22,7 +13,7 @@
       synopsis = "Swagger 2.0 data model";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -63,15 +54,11 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.lens)
-          ];
-        };
+            ];
+          };
         "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         };
       };
-    };
-  }
+    }

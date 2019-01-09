@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "json-schema";
-        version = "0.7.3.0";
-      };
+      identifier = { name = "json-schema"; version = "0.7.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Types and type classes for defining JSON schemas.";
       description = "Types and type classes for defining JSON schemas.\n\n/Documentation/\n\nSee <https://github.com/silkapp/json-schema/blob/master/README.md>\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "json-schema-generic-aeson-tests" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.tasty-th)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

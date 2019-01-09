@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      network-uri = true;
-      mtl-compat = false;
-    };
+    flags = { network-uri = true; mtl-compat = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "DAV";
-        version = "1.3.1";
-      };
+      identifier = { name = "DAV"; version = "1.3.1"; };
       license = "GPL-3.0-only";
       copyright = "Copyright (C) 2012-2016  Clint Adams";
       maintainer = "clint@debian.org";
@@ -25,7 +13,7 @@
       synopsis = "RFC 4918 WebDAV support";
       description = "This is a library for the Web Distributed Authoring and Versioning\n(WebDAV) extensions to HTTP.  At present it supports a very small\nsubset of client functionality.\n\nIn addition, there is an executable, hdav, which can be used for\ncommand-line operation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,13 +33,10 @@
           (hsPkgs.utf8-string)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-hamlet)
-        ] ++ (if flags.mtl-compat
-          then [
-            (hsPkgs.mtl)
-            (hsPkgs.mtl-compat)
-          ]
+          ] ++ (if flags.mtl-compat
+          then [ (hsPkgs.mtl) (hsPkgs.mtl-compat) ]
           else [ (hsPkgs.mtl) ]);
-      };
+        };
       exes = {
         "hdav" = {
           depends = ([
@@ -74,20 +59,12 @@
             (hsPkgs.utf8-string)
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-hamlet)
-          ] ++ (if flags.mtl-compat
-            then [
-              (hsPkgs.mtl)
-              (hsPkgs.mtl-compat)
-            ]
-            else [
-              (hsPkgs.mtl)
-            ])) ++ (if flags.network-uri
-            then [
-              (hsPkgs.network-uri)
-              (hsPkgs.network)
-            ]
+            ] ++ (if flags.mtl-compat
+            then [ (hsPkgs.mtl) (hsPkgs.mtl-compat) ]
+            else [ (hsPkgs.mtl) ])) ++ (if flags.network-uri
+            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
             else [ (hsPkgs.network) ]);
+          };
         };
       };
-    };
-  }
+    }

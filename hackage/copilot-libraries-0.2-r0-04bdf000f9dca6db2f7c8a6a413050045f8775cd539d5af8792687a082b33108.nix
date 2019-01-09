@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "copilot-libraries";
-        version = "0.2";
-      };
+      identifier = { name = "copilot-libraries"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "niswegmann@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Haskell-embedded DSL for monitoring hard real-time\ndistributed systems.";
       description = "Libraries for the Copilot language";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.copilot-language)
           (hsPkgs.parsec)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

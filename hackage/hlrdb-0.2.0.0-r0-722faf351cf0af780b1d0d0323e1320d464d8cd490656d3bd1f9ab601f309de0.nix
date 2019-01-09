@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "hlrdb";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "hlrdb"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "identicalsnowflake@protonmail.com";
@@ -22,7 +13,7 @@
       synopsis = "High-level Redis Database";
       description = "A library for type-driven interaction with Redis";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.store)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

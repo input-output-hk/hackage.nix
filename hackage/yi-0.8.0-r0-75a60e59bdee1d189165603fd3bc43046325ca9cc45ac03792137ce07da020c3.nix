@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       pango = false;
@@ -13,13 +7,10 @@
       ghcapi = false;
       profiling = false;
       testing = true;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi";
-        version = "0.8.0";
-      };
+      identifier = { name = "yi"; version = "0.8.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -29,7 +20,7 @@
       synopsis = "The Haskell-Scriptable Editor";
       description = "Yi is a text editor written in Haskell and extensible in Haskell. The goal of the Yi project is\nto provide a flexible, powerful, and correct editor for haskell hacking.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (((((([
@@ -70,30 +61,28 @@
           (hsPkgs.xdg-basedir)
           (hsPkgs.ghc)
           (hsPkgs.transformers-base)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32)) ++ pkgs.lib.optionals (flags.testing) [
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32)) ++ (pkgs.lib).optionals (flags.testing) [
           (hsPkgs.QuickCheck)
           (hsPkgs.random)
-        ]) ++ pkgs.lib.optionals (flags.pango) [
+          ]) ++ (pkgs.lib).optionals (flags.pango) [
           (hsPkgs.gtk)
           (hsPkgs.glib)
           (hsPkgs.pango)
-        ]) ++ pkgs.lib.optionals (flags.vty) [
+          ]) ++ (pkgs.lib).optionals (flags.vty) [
           (hsPkgs.unix-compat)
           (hsPkgs.vty)
-        ]) ++ pkgs.lib.optionals (flags.scion) [
+          ]) ++ (pkgs.lib).optionals (flags.scion) [
           (hsPkgs.scion)
           (hsPkgs.ghc-syb-utils)
-        ]) ++ pkgs.lib.optionals (flags.ghcapi) [
+          ]) ++ (pkgs.lib).optionals (flags.ghcapi) [
           (hsPkgs.ghc-paths)
           (hsPkgs.old-time)
           (hsPkgs.rosezipper)
           (hsPkgs.pureMD5)
           (hsPkgs.ghc-paths)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
       exes = {
         "parserTest" = {
           depends = [
@@ -103,18 +92,13 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.yi)
-          ];
-        };
+            ];
+          };
         "yi" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.yi)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.alex)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.yi) ];
+          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          };
         };
-      };
       tests = {
         "test-suite" = {
           depends = [
@@ -127,8 +111,8 @@
             (hsPkgs.filepath)
             (hsPkgs.directory)
             (hsPkgs.yi)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

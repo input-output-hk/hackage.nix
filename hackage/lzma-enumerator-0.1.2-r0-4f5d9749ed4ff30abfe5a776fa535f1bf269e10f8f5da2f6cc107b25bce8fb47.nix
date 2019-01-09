@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lzma-enumerator";
-        version = "0.1.2";
-      };
+      identifier = { name = "lzma-enumerator"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Nathan Howell <nhowell@alphaheavy.com>";
@@ -22,7 +13,7 @@
       synopsis = "Enumerator interface for lzma/xz compression.";
       description = "High level bindings to xz-utils.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,9 +22,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.enumerator)
           (hsPkgs.mtl)
-        ];
+          ];
         libs = [ (pkgs."lzma") ];
-      };
+        };
       tests = {
         "lzma-test" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

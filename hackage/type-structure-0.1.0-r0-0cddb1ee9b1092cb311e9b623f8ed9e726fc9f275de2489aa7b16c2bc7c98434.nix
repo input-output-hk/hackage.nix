@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "type-structure";
-        version = "0.1.0";
-      };
+      identifier = { name = "type-structure"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Type structure analysis";
       description = "Provides facilities to match type structures.\nUseful for checking protocol compliance in client-server applications.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.th-instance-reification)
           (hsPkgs.template-haskell)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "type-structure-htf-test-suite" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.th-instance-reification)
             (hsPkgs.template-haskell)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

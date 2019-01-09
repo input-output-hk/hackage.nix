@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fixedwidth-hs";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "fixedwidth-hs"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael.o.church@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Quick parsing of fixed-width data formats.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.attoparsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

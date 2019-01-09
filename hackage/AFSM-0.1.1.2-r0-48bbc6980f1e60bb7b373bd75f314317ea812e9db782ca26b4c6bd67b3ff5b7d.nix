@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "AFSM";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "AFSM"; version = "0.1.1.2"; };
       license = "MIT";
       copyright = "Hanzhong Xu, Meng Meng";
       maintainer = "hanzh.xu@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Arrowized functional state machines";
       description = "Arrowized functional state machines.\nThis module is inspired by Yampa and the paper\n/Functional Reactive Programming, Continued*/ written by\nHenrik Nilsson, Antony Courtney and John Peterson.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

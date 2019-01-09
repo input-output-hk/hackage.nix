@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "KdTree";
-        version = "0.2";
-      };
+      identifier = { name = "KdTree"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2011, Issac Trotts";
       maintainer = "issac.trotts@gmail.com";
@@ -22,17 +13,9 @@
       synopsis = "KdTree, for efficient search in K-dimensional point clouds.";
       description = "This is a simple library for k-d trees in Haskell. It enables efficient\nsearching through collections of points in O(log N) time on average,\nusing the nearestNeighbor function.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
+      "library" = { depends = [ (hsPkgs.base) ]; };
+      exes = { "KdTreeTest" = { depends = [ (hsPkgs.QuickCheck) ]; }; };
       };
-      exes = {
-        "KdTreeTest" = {
-          depends = [
-            (hsPkgs.QuickCheck)
-          ];
-        };
-      };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "delimiter-separated";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "delimiter-separated"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Utrecht University, Department of Information and Computing Sciences, Software Technology group";
       maintainer = "atze@uu.nl";
@@ -22,14 +13,10 @@
       synopsis = "Library for dealing with tab and/or comma (or other) separated files";
       description = "Delimeter separated file handling";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.uhc-util)
-          (hsPkgs.uulib)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.uhc-util) (hsPkgs.uulib) ];
+        };
       };
-    };
-  }
+    }

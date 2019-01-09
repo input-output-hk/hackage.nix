@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dbus-core";
-        version = "0.3";
-      };
+      identifier = { name = "dbus-core"; version = "0.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Low-level DBus protocol implementation";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.containers)
           (hsPkgs.unix)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

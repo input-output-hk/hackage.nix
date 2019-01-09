@@ -1,23 +1,14 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       integration-tests = false;
       disable-git-info = false;
       static = false;
       hide-dependency-versions = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stack";
-        version = "1.5.1";
-      };
+      identifier = { name = "stack"; version = "1.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "manny@fpcomplete.com";
@@ -27,7 +18,7 @@
       synopsis = "The Haskell Tool Stack";
       description = "Please see the README.md for usage information, and\nthe wiki on Github for more details.  Also, note that\nthe API for the library is not currently stable, and may\nchange significantly, even between minor releases. It is\ncurrently only intended for use by the executable.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -123,13 +114,10 @@
           (hsPkgs.store-core)
           (hsPkgs.annotated-wl-pprint)
           (hsPkgs.file-embed)
-        ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
-          else [
-            (hsPkgs.unix)
-            (hsPkgs.pid1)
-          ]);
-      };
+          else [ (hsPkgs.unix) (hsPkgs.pid1) ]);
+        };
       exes = {
         "stack" = {
           depends = ([
@@ -156,12 +144,12 @@
             (hsPkgs.stack)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32)) ++ pkgs.lib.optionals (!flags.disable-git-info) [
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32)) ++ (pkgs.lib).optionals (!flags.disable-git-info) [
             (hsPkgs.gitrev)
             (hsPkgs.optparse-simple)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "stack-test" = {
           depends = [
@@ -200,8 +188,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.template-haskell)
             (hsPkgs.yaml)
-          ];
-        };
+            ];
+          };
         "stack-integration-test" = {
           depends = [
             (hsPkgs.async)
@@ -219,8 +207,8 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.unix-compat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

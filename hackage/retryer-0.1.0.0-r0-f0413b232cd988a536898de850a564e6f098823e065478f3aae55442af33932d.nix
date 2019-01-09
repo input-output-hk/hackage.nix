@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "retryer";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "retryer"; version = "0.1.0.0"; };
       license = "MPL-2.0";
       copyright = "";
       maintainer = "dgonyeo@csh.rit.edu";
@@ -22,7 +13,7 @@
       synopsis = "Small haskell app that takes a command, and continually re-runs it until it exits successfully";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "retryer" = {
@@ -30,8 +21,8 @@
             (hsPkgs.base)
             (hsPkgs.process)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

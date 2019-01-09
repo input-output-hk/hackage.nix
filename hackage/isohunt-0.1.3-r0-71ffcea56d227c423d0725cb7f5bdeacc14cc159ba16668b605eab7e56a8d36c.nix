@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "isohunt";
-        version = "0.1.3";
-      };
+      identifier = { name = "isohunt"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "reiner.pope@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to the isoHunt torrent search API";
       description = "Bindings to the isoHunt torrent search API, as described in\n<http://ca.isohunt.com/forum/viewtopic.php?p=433527#433527>\n\nTo get started, see \"IsoHunt.Search\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.vector)
           (hsPkgs.unordered-containers)
           (hsPkgs.bytestring)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "groundhog-mysql";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "groundhog-mysql"; version = "0.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Boris Lykah <lykahb@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "MySQL backend for the groundhog library.";
       description = "This package uses mysql-simple and mysql";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.resource-pool)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-conduit";
-        version = "0.15";
-      };
+      identifier = { name = "servant-conduit"; version = "0.15"; };
       license = "BSD-3-Clause";
       copyright = "2018 Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant Stream support for conduit.";
       description = "Servant Stream support for conduit.\n\nProvides 'ToSourceIO' and 'FromSourceIO' instances for 'ConduitT'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.servant)
           (hsPkgs.unliftio-core)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.http-client)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

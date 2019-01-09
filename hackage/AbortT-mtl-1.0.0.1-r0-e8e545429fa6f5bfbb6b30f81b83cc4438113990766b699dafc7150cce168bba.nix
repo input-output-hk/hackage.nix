@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "AbortT-mtl";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "AbortT-mtl"; version = "1.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Gregory Crosswhite <gcrosswhite@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "mtl instances for the AbortT monad transformer";
       description = "This module provides instances for the mtl classes for AbortT.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.AbortT-transformers)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.AbortT-transformers) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

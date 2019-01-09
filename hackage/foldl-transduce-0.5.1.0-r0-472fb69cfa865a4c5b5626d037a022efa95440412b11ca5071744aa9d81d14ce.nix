@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8.0.2";
-      identifier = {
-        name = "foldl-transduce";
-        version = "0.5.1.0";
-      };
+      identifier = { name = "foldl-transduce"; version = "0.5.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Daniel Diaz";
       maintainer = "diaz_carrete@yahoo.com";
@@ -22,7 +13,7 @@
       synopsis = "Transducers for foldl folds.";
       description = "Stateful transducers and streaming-preserving grouping operations for foldl folds.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,16 +32,12 @@
           (hsPkgs.void)
           (hsPkgs.split)
           (hsPkgs.monoid-subclasses)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.free)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.free) (hsPkgs.doctest) ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.base)
@@ -62,9 +49,9 @@
             (hsPkgs.split)
             (hsPkgs.foldl)
             (hsPkgs.foldl-transduce)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -73,8 +60,8 @@
             (hsPkgs.lens-family-core)
             (hsPkgs.foldl)
             (hsPkgs.foldl-transduce)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

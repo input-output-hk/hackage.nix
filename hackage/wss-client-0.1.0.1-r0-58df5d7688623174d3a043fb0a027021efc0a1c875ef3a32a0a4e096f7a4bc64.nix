@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-sample = false;
-    };
+    flags = { build-sample = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wss-client";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "wss-client"; version = "0.1.0.1"; };
       license = "Apache-2.0";
       copyright = "2018 Yuji Yamamoto";
       maintainer = "yuji-yamamoto@iij.ad.jp";
@@ -24,7 +13,7 @@
       synopsis = "A-little-higher-level WebSocket client.";
       description = "A-little-higher-level WebSocket client. Based on http-client and http-client-tls.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,17 +23,13 @@
           (hsPkgs.http-client-tls)
           (hsPkgs.network-uri)
           (hsPkgs.websockets)
-        ];
-      };
-      exes = {
-        "wss-client-sample" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wss-client)
-            (hsPkgs.bytestring)
           ];
         };
-      };
+      exes = {
+        "wss-client-sample" = {
+          depends = [ (hsPkgs.base) (hsPkgs.wss-client) (hsPkgs.bytestring) ];
+          };
+        };
       tests = {
         "wss-client-test" = {
           depends = [
@@ -52,8 +37,8 @@
             (hsPkgs.wss-client)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

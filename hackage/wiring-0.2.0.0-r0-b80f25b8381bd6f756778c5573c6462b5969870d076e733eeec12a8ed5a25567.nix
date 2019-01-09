@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wiring";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "wiring"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "git@futurenotfound.com";
@@ -22,7 +13,7 @@
       synopsis = "Wiring, promotion and demotion of types.";
       description = "This package provides the ability to join up or wire instances of types\n(such as ReaderT/WriterT/RWST) with some semi-automatic conversions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

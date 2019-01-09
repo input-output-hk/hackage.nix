@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.0";
-      identifier = {
-        name = "moto-postgresql";
-        version = "0.0.1";
-      };
+      identifier = { name = "moto-postgresql"; version = "0.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "ren@ren!zone";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL-based migrations registry for moto.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.postgresql-simple)
           (hsPkgs.moto)
           (hsPkgs.safe-exceptions)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

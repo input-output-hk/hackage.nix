@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { safe-aeson = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsonschema-gen";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "jsonschema-gen"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Shohei Murayama <shohei.murayama@gmail.com>";
       maintainer = "shohei.murayama@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON Schema generator from Algebraic data type";
       description = "This library contains a JSON Schema generator.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,11 +25,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ] ++ [
-          (hsPkgs.aeson)
-          (hsPkgs.scientific)
-        ];
-      };
+          ] ++ [ (hsPkgs.aeson) (hsPkgs.scientific) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +38,8 @@
             (hsPkgs.process)
             (hsPkgs.tagged)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "huff";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "huff"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "awesomelyawesome@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A fast-foward-based planner";
       description = "An implementation of the fast-forward planner, as a quasi-quoter.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,18 +26,11 @@
           (hsPkgs.text)
           (hsPkgs.array)
           (hsPkgs.template-haskell)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.alex)
-        ];
-      };
-      exes = {
-        "blocksWorld" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.huff)
           ];
+        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        };
+      exes = {
+        "blocksWorld" = { depends = [ (hsPkgs.base) (hsPkgs.huff) ]; };
         };
       };
-    };
-  }
+    }

@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enable-hlint-test = false;
-    };
+    flags = { enable-hlint-test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "opml-conduit";
-        version = "0.6.0.4";
-      };
+      identifier = { name = "opml-conduit"; version = "0.6.0.4"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "chahine.moreau@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Streaming parser/renderer for the OPML 2.0 format.";
       description = "This library implements the OPML 2.0 standard (<http://dev.opml.org/spec2.html>) as a 'conduit' parser/renderer.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +33,8 @@
           (hsPkgs.uri-bytestring)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -71,14 +60,9 @@
             (hsPkgs.time)
             (hsPkgs.uri-bytestring)
             (hsPkgs.xml-conduit)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

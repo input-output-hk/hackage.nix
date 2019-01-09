@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "context-free-grammar";
-        version = "0.1.0";
-      };
+      identifier = { name = "context-free-grammar"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Eric Nedervold";
       maintainer = "Eric Nedervold<nedervoldsoftware@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Basic algorithms on context-free grammars";
       description = "Basic algorithms on context-free grammars:\n\n* augmenting a grammar\n\n* calculating nullability\n\n* calculating reachability\n\n* calculating productivity\n\n* calculating first sets\n\n* calculating follow sets\n\n* calculating predict sets\n\nYou may define your context-free grammar textually using 'parse'\nor with the quasiquoter 'bnf' (both in \"Data.Cfg.Bnf\"), or you may\nuse any data structure you like after making it an instance of\n'Cfg' (found in \"Data.Cfg.Cfg\").\n\nTesting is very thin in this version; basically just\nsanity-checking.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mtl)
           (hsPkgs.pretty)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

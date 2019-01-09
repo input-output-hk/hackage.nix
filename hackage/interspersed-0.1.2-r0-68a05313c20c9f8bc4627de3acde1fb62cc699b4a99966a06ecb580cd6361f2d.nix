@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "interspersed";
-        version = "0.1.2";
-      };
+      identifier = { name = "interspersed"; version = "0.1.2"; };
       license = "MIT";
       copyright = "(c) 2016, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,14 +13,10 @@
       synopsis = "An abstraction over interspersing monadic actions";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.transformers)
-          (hsPkgs.base-prelude)
-          (hsPkgs.base)
-        ];
+        depends = [ (hsPkgs.transformers) (hsPkgs.base-prelude) (hsPkgs.base) ];
+        };
       };
-    };
-  }
+    }

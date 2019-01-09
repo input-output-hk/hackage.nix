@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "hylotab";
-        version = "1.2.1";
-      };
+      identifier = { name = "hylotab"; version = "1.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "guillaumh@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tableau based theorem prover for hybrid logics";
       description = "HyLoTab is a proof-of-concept tableaux prover for\nhybrid logics originally written in 2002 by Jan van Eijck.\nIt is no longer developped, but it is kept compatible\nwith the syntax used in HyLoLib.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hylotab" = {
@@ -32,8 +23,8 @@
             (hsPkgs.mtl)
             (hsPkgs.mtl)
             (hsPkgs.hylolib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

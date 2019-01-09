@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "phone-metadata";
-        version = "0.0.1.4";
-      };
+      identifier = { name = "phone-metadata"; version = "0.0.1.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "raghu.ugare@gmail.com,\nvijay.hassan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Phonenumber Metadata based on Google's libphonenumber";
       description = "Phonenumber Metadata based on Google's libphonenumber";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,12 @@
           (hsPkgs.containers)
           (hsPkgs.hxt)
           (hsPkgs.text)
-        ];
-      };
-      tests = {
-        "tests" = {
-          depends = [
-            (hsPkgs.phone-metadata)
-            (hsPkgs.base)
-            (hsPkgs.hspec)
           ];
         };
+      tests = {
+        "tests" = {
+          depends = [ (hsPkgs.phone-metadata) (hsPkgs.base) (hsPkgs.hspec) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Zora";
-        version = "1.1.8";
-      };
+      identifier = { name = "Zora"; version = "1.1.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bgwines@cs.stanford.edu";
@@ -22,7 +13,7 @@
       synopsis = "A library of assorted useful functions and data types and classes.";
       description = "A library of assorted useful functions and data types and classes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

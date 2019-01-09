@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "conversion-case-insensitive";
         version = "1.0.0.0";
-      };
+        };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,13 +16,10 @@
       synopsis = "\"Conversion\" instances for the \"case-insensitive\" library";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.case-insensitive)
-          (hsPkgs.conversion)
-        ];
+        depends = [ (hsPkgs.case-insensitive) (hsPkgs.conversion) ];
+        };
       };
-    };
-  }
+    }

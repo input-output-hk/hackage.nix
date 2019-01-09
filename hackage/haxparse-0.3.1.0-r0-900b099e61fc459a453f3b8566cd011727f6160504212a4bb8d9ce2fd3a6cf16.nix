@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "haxparse";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "haxparse"; version = "0.3.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "me@joelt.io";
@@ -22,7 +13,7 @@
       synopsis = "Readable HaxBall replays";
       description = "Provides an interface for parsing HaxBall replays.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "haxparse" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
             (hsPkgs.zlib)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

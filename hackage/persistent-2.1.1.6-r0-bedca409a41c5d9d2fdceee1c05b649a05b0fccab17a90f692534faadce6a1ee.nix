@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { nooverlap = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent";
-        version = "2.1.1.6";
-      };
+      identifier = { name = "persistent"; version = "2.1.1.6"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>, Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "Type-safe, multi-backend data serialization.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/persistent>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.scientific)
           (hsPkgs.resource-pool)
           (hsPkgs.tagged)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.monad-control)
             (hsPkgs.blaze-html)
             (hsPkgs.scientific)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

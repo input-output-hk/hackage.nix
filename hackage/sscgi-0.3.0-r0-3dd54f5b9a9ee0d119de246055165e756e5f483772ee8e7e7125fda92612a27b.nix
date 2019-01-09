@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "sscgi";
-        version = "0.3.0";
-      };
+      identifier = { name = "sscgi"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jekor@jekor.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple SCGI Library";
       description = "This is a simple implementation of the SCGI protocol without support for the Network.CGI interface. It's still rough but currently powers www.vocabulink.com and jekor.com.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.MonadCatchIO-mtl)
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

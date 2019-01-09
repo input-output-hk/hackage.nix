@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HAppS-Server";
-        version = "0.9.2";
-      };
+      identifier = { name = "HAppS-Server"; version = "0.9.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "AlexJacobson@HAppS.org";
@@ -22,7 +13,7 @@
       synopsis = "Web related tools and services.";
       description = "Web framework";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,7 +39,7 @@
           (hsPkgs.old-locale)
           (hsPkgs.directory)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

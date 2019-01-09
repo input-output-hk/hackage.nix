@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm-fast = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "madlang";
-        version = "2.1.1.0";
-      };
+      identifier = { name = "madlang"; version = "2.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Vanessa McHale";
       maintainer = "tmchale@wisc.edu";
@@ -22,7 +13,7 @@
       synopsis = "Randomized templating language DSL";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,16 +30,9 @@
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.containers)
           (hsPkgs.tibetan-utils)
-        ];
-      };
-      exes = {
-        "madlang" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.madlang)
           ];
         };
-      };
+      exes = { "madlang" = { depends = [ (hsPkgs.base) (hsPkgs.madlang) ]; }; };
       tests = {
         "madlang-test" = {
           depends = [
@@ -59,9 +43,9 @@
             (hsPkgs.text)
             (hsPkgs.mtl)
             (hsPkgs.hspec-megaparsec)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "tweeths-bench" = {
           depends = [
@@ -70,8 +54,8 @@
             (hsPkgs.madlang)
             (hsPkgs.megaparsec)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

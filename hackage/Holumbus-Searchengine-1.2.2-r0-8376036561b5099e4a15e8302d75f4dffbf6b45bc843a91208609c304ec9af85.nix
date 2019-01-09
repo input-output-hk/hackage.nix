@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Holumbus-Searchengine";
-        version = "1.2.2";
-      };
+      identifier = { name = "Holumbus-Searchengine"; version = "1.2.2"; };
       license = "MIT";
       copyright = "Copyright (c) 2007 - 2012 Uwe Schmidt, Sebastian M. Gauck and Timo B. Kranz";
       maintainer = "Timo B. Huebel <tbh@holumbus.org>, Uwe Schmidt <uwe@fh-wedel.de>";
@@ -22,7 +13,7 @@
       synopsis = "A search and indexing engine.";
       description = "The Holumbus-Searchengine library provides a document indexer\nand crawler to build indexes over document collections\nas well as a sophisticated query interface for these indexes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,10 +36,7 @@
           (hsPkgs.parsec)
           (hsPkgs.process)
           (hsPkgs.unix)
-        ] ++ [
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-        ];
+          ] ++ [ (hsPkgs.containers) (hsPkgs.deepseq) ];
+        };
       };
-    };
-  }
+    }

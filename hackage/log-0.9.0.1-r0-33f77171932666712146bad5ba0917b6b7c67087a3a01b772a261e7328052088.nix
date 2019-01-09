@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "log";
-        version = "0.9.0.1";
-      };
+      identifier = { name = "log"; version = "0.9.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Scrive AB";
       maintainer = "Andrzej Rybczak <andrzej@rybczak.net>,\nJonathan Jouty <jonathan@scrive.com>,\nMikhail Glushenkov <mikhail@scrive.com>,\nOleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Structured logging solution with multiple backends";
       description = "A library that provides a way to record structured\nlog messages with multiple backends.\n\nSupported backends:\n\n* standard output\n\n* Elasticsearch\n\n* PostgreSQL";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.log-base)
           (hsPkgs.log-elasticsearch)
           (hsPkgs.log-postgres)
-        ];
-      };
+          ];
+        };
       tests = {
         "log-test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.time)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "log-test-integration" = {
           depends = [
             (hsPkgs.aeson)
@@ -66,9 +57,9 @@
             (hsPkgs.time)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "log-bench" = {
           depends = [
@@ -81,8 +72,8 @@
             (hsPkgs.text-show)
             (hsPkgs.transformers)
             (hsPkgs.transformers-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

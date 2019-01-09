@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-elements";
-        version = "1.0";
-      };
+      identifier = { name = "yesod-elements"; version = "1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Non template haskell markup building function in the spirit of lucid";
       description = "Build yesod widgets without shakespearean templating";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.yesod-core)
-          (hsPkgs.blaze-html)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.yesod-core) (hsPkgs.blaze-html) ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yi-keymap-vim";
-        version = "0.17.1";
-      };
+      identifier = { name = "yi-keymap-vim"; version = "0.17.1"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "Yi developers <yi-devel@googlegroups.com>";
@@ -22,7 +13,7 @@
       synopsis = "Vim keymap for Yi editor";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.yi-core)
           (hsPkgs.yi-language)
           (hsPkgs.yi-rope)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -74,8 +65,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.yi-keymap-vim)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "date-conversions";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "date-conversions"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "2017";
       maintainer = "jclayton@thoughtbot.com";
@@ -22,15 +13,9 @@
       synopsis = "Date conversions";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-          (hsPkgs.dates)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) (hsPkgs.dates) ]; };
       tests = {
         "date-conversions-test" = {
           depends = [
@@ -40,8 +25,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.time)
             (hsPkgs.dates)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

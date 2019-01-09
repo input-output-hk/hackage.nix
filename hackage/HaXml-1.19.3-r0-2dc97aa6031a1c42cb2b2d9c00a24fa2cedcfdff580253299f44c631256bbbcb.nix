@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      bytestringinbase = false;
-    };
+    flags = { splitbase = true; bytestringinbase = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HaXml";
-        version = "1.19.3";
-      };
+      identifier = { name = "HaXml"; version = "1.19.3"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "author";
@@ -25,29 +13,24 @@
       synopsis = "Utilities for manipulating XML documents";
       description = "Haskell utilities for parsing, filtering, transforming and\ngenerating XML documents.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
           (hsPkgs.haskell98)
           (hsPkgs.polyparse)
-        ] ++ (if flags.splitbase
+          ] ++ (if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.pretty)
             (hsPkgs.random)
             (hsPkgs.containers)
-          ]
-          else [
-            (hsPkgs.base)
-          ])) ++ (if flags.bytestringinbase
+            ]
+          else [ (hsPkgs.base) ])) ++ (if flags.bytestringinbase
           then [ (hsPkgs.base) ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-          ]);
-      };
+          else [ (hsPkgs.base) (hsPkgs.bytestring) ]);
+        };
       exes = {
         "Canonicalise" = {};
         "CanonicaliseLazy" = {};
@@ -56,6 +39,6 @@
         "Validate" = {};
         "MkOneOf" = {};
         "DtdToHaskell" = {};
+        };
       };
-    };
-  }
+    }

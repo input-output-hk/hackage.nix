@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-client-core";
-        version = "0.13";
-      };
+      identifier = { name = "servant-client-core"; version = "0.13"; };
       license = "BSD-3-Clause";
       copyright = "2014-2016 Zalora South East Asia Pte Ltd, 2016-2017 Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Core functionality and class for client function generation for servant APIs";
       description = "This library provides backend-agnostic generation of client functions. For\nmore information, see the README.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.http-types)
           (hsPkgs.network-uri)
           (hsPkgs.safe)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -52,11 +43,9 @@
             (hsPkgs.deepseq)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

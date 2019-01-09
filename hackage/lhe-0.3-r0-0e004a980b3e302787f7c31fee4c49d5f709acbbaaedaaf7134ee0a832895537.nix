@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "lhe";
-        version = "0.3";
-      };
+      identifier = { name = "lhe"; version = "0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "bytbox@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Parser and writer for Les-Houches event files";
       description = "This package implements a parser and writer for the Les-Houches event file format as described in hep-ph/0609017";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.haskell2010)
-          (hsPkgs.HaXml)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.haskell2010) (hsPkgs.HaXml) (hsPkgs.bytestring) ];
+        };
       };
-    };
-  }
+    }

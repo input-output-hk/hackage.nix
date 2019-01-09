@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cereal-plus";
-        version = "0.4.1";
-      };
+      identifier = { name = "cereal-plus"; version = "0.4.1"; };
       license = "MIT";
       copyright = "(c) 2013, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "An extended serialization library on top of \"cereal\"";
       description = "Provides non-orphan instances for an extended range of types,\ntransformer types and support for mutable data,\nwhile reapproaching the naming conventions of \\\"cereal\\\" library.\nFor a streaming frontend over this library see\n<http://hackage.haskell.org/package/pipes-cereal-plus \"pipes-cereal-plus\">";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.errors)
           (hsPkgs.mtl)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "cereal-plus-htf-test-suite" = {
           depends = [
@@ -66,8 +57,8 @@
             (hsPkgs.errors)
             (hsPkgs.mtl)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

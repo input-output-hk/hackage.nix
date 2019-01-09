@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "scalpel";
-        version = "0.2.1";
-      };
+      identifier = { name = "scalpel"; version = "0.2.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "willcoster@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A high level web scraping library for Haskell.";
       description = "Scalpel is a web scraping library inspired by libraries like Parsec and\nPerl's Web::Scraper Scalpel builds on top of TagSoup to provide a\ndeclarative and monadic interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.regex-tdfa)
           (hsPkgs.tagsoup)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "lib-tests" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.scalpel)
             (hsPkgs.tagsoup)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gact";
-        version = "0.2";
-      };
+      identifier = { name = "gact"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Ketil Malde <ketil@malde.org>";
@@ -22,7 +13,7 @@
       synopsis = "General Alignment Clustering Tool";
       description = "Cluster sequences from PSL alignments.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "gact" = {
@@ -33,8 +24,8 @@
             (hsPkgs.hashable)
             (hsPkgs.unordered-containers)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

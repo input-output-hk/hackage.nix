@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "matplotlib";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "matplotlib"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Andrei Barbu";
       maintainer = "andrei@0xab.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to Matplotlib; a Python plotting library";
       description = "Matplotlib is probably the most full featured plotting library out there. These bindings provide a quick, easy, and extensible way to use it in Haskell. Type-safety is largely non-existent and sacrificed for maximum extensibility.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.aeson)
           (hsPkgs.temporary)
-        ];
-      };
+          ];
+        };
       tests = {
         "matplotlib-test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

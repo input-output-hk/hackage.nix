@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "dbjava";
-        version = "1.7";
-      };
+      identifier = { name = "dbjava"; version = "1.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "carliros.g@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Decompiler Bytecode Java";
       description = "A serializer and deserializer of Jvm classfile format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.uulib)
           (hsPkgs.process)
           (hsPkgs.haskell98)
-        ];
-      };
+          ];
+        };
       exes = {
         "dbjava" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.uulib)
             (hsPkgs.process)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

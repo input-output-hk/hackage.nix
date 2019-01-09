@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "matrix-market-attoparsec";
-        version = "0.1.0.8";
-      };
+      identifier = { name = "matrix-market-attoparsec"; version = "0.1.0.8"; };
       license = "BSD-2-Clause";
       copyright = "2017 Marco Zocca";
       maintainer = "zocca marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "Parsing and serialization functions for the NIST Matrix Market format";
       description = "Parsing and serialization functions for the NIST Matrix Market format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.exceptions)
           (hsPkgs.scientific)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.directory)
             (hsPkgs.hspec)
             (hsPkgs.matrix-market-attoparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

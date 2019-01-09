@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-throttle";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wai-middleware-throttle"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015, Christopher Reichert";
       maintainer = "creichert07@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "WAI Middleware for Request Throttling";
       description = "WAI Middleware for request rate limiting and throttling.\n\nDesigned to be configured in the spirit of the NGinx module.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.http-types)
           (hsPkgs.stm)
           (hsPkgs.token-bucket)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.blaze-builder);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs.blaze-builder);
+        };
       tests = {
         "spec" = {
           depends = [
@@ -52,28 +43,15 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.stm)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         "haddock" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.regex-compat)
-          ];
-        };
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.regex-compat) ];
+          };
+        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

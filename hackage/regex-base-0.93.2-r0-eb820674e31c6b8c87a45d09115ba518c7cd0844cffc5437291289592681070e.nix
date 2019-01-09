@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      newbase = true;
-      splitbase = true;
-    };
+    flags = { newbase = true; splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "regex-base";
-        version = "0.93.2";
-      };
+      identifier = { name = "regex-base"; version = "0.93.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2006, Christopher Kuklewicz";
       maintainer = "TextRegexLazy@personal.mightyreason.com";
@@ -25,7 +13,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "Interface API for regex-posix,pcre,parsec,tdfa,dfa";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.newbase
@@ -35,7 +23,7 @@
             (hsPkgs.containers)
             (hsPkgs.bytestring)
             (hsPkgs.array)
-          ]
+            ]
           else if flags.splitbase
             then [
               (hsPkgs.base)
@@ -43,11 +31,8 @@
               (hsPkgs.containers)
               (hsPkgs.bytestring)
               (hsPkgs.array)
-            ]
-            else [
-              (hsPkgs.base)
-              (hsPkgs.mtl)
-            ];
+              ]
+            else [ (hsPkgs.base) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

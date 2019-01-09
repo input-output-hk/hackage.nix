@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-doctests = true;
-      lib-werror = false;
-    };
+    flags = { test-doctests = true; lib-werror = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "approximate";
-        version = "0.1";
-      };
+      identifier = { name = "approximate"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Approximate discrete values and numbers";
       description = "This package provides approximate discrete values and numbers.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,11 +36,11 @@
           (hsPkgs.semigroups)
           (hsPkgs.safecopy)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.doctest)
@@ -60,8 +48,8 @@
             (hsPkgs.generic-deriving)
             (hsPkgs.semigroups)
             (hsPkgs.simple-reflect)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apiary-redis";
-        version = "1.5.0";
-      };
+      identifier = { name = "apiary-redis"; version = "1.5.0"; };
       license = "MIT";
       copyright = "(c) 2017 Winter Han";
       maintainer = "Winter Han<drkoster@qq.com>";
@@ -22,7 +13,7 @@
       synopsis = "redis support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/redis.hs>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.hedis)
           (hsPkgs.apiary)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

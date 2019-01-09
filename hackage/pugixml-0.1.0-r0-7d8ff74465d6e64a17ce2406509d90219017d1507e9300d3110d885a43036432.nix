@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pugixml";
-        version = "0.1.0";
-      };
+      identifier = { name = "pugixml"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2014 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "pugixml binding.";
       description = "pugixml binding.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,9 +21,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.data-default-class)
           (hsPkgs.template-haskell)
-        ];
+          ];
         libs = [ (pkgs."stdc++") ];
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.pugixml)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       usepkgconfig = false;
@@ -12,13 +6,10 @@
       forceghcilib = true;
       useexithook = true;
       enableqmldebugging = false;
-    };
+      };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hsqml";
-        version = "0.3.5.0";
-      };
+      identifier = { name = "hsqml"; version = "0.3.5.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2017 Robin KAY";
       maintainer = "komadori@gekkou.co.uk";
@@ -28,7 +19,7 @@
       synopsis = "Haskell binding for Qt Quick";
       description = "A Haskell binding for Qt Quick, a cross-platform framework for creating\ngraphical user interfaces. For further information on installing and using\nthis library, please see the project's web site.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.tagged)
           (hsPkgs.transformers)
-        ];
+          ];
         libs = if system.isWindows && !flags.usepkgconfig
           then [
             (pkgs."Qt5Core")
@@ -47,26 +38,24 @@
             (pkgs."Qt5Qml")
             (pkgs."Qt5Quick")
             (pkgs."stdc++")
-          ]
+            ]
           else [ (pkgs."stdc++") ];
-        frameworks = pkgs.lib.optionals (!(system.isWindows && !flags.usepkgconfig)) (pkgs.lib.optionals (system.isOsx && !flags.usepkgconfig) [
+        frameworks = (pkgs.lib).optionals (!(system.isWindows && !flags.usepkgconfig)) ((pkgs.lib).optionals (system.isOsx && !flags.usepkgconfig) [
           (pkgs."QtCore")
           (pkgs."QtGui")
           (pkgs."QtWidgets")
           (pkgs."QtQml")
           (pkgs."QtQuick")
-        ]);
-        pkgconfig = pkgs.lib.optionals (!(system.isWindows && !flags.usepkgconfig)) (pkgs.lib.optionals (!(system.isOsx && !flags.usepkgconfig)) [
+          ]);
+        pkgconfig = (pkgs.lib).optionals (!(system.isWindows && !flags.usepkgconfig)) ((pkgs.lib).optionals (!(system.isOsx && !flags.usepkgconfig)) [
           (pkgconfPkgs.Qt5Core)
           (pkgconfPkgs.Qt5Gui)
           (pkgconfPkgs.Qt5Widgets)
           (pkgconfPkgs.Qt5Qml)
           (pkgconfPkgs.Qt5Quick)
-        ]);
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+          ]);
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       tests = {
         "hsqml-test1" = {
           depends = [
@@ -77,8 +66,8 @@
             (hsPkgs.tagged)
             (hsPkgs.QuickCheck)
             (hsPkgs.hsqml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

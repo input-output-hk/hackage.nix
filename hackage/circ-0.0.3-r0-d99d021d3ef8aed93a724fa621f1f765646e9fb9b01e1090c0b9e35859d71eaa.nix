@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "circ";
-        version = "0.0.3";
-      };
+      identifier = { name = "circ"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tom Hawkins <tomahawkins@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "A Compiler IR Compiler.";
       description = "A Compiler IR Compiler.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.directory)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.directory) ];
+        };
       };
-    };
-  }
+    }

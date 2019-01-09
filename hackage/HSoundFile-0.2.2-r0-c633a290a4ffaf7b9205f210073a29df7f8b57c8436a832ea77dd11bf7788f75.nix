@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HSoundFile";
-        version = "0.2.2";
-      };
+      identifier = { name = "HSoundFile"; version = "0.2.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John W. Lato, jwlato@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Audio file reading/writing";
       description = "encode and decode soundfiles using lazy ByteStrings.\nAudio files may be read or written, with classes and\ndata structures to facilitate conversion between different\nformats.  Currently only wave format is supported.\nError handling is supported via Control.Monad.ErrorT.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,12 +22,9 @@
           (hsPkgs.filepath)
           (hsPkgs.mtl)
           (hsPkgs.parallel)
-        ] ++ (if flags.splitbase
-          then [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-          ]
+          ] ++ (if flags.splitbase
+          then [ (hsPkgs.base) (hsPkgs.bytestring) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

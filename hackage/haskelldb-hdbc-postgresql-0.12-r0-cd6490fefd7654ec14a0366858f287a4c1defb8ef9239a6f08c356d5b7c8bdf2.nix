@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskelldb-hdbc-postgresql";
-        version = "0.12";
-      };
+      identifier = { name = "haskelldb-hdbc-postgresql"; version = "0.12"; };
       license = "BSD-3-Clause";
       copyright = "The authors";
       maintainer = "haskelldb-users@lists.sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "HaskellDB support for the HDBC PostgreSQL driver.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,10 +23,8 @@
           (hsPkgs.haskelldb-hdbc)
           (hsPkgs.HDBC)
           (hsPkgs.HDBC-postgresql)
-        ];
+          ];
+        };
+      exes = { "DBDirect-hdbc-postgresql" = {}; };
       };
-      exes = {
-        "DBDirect-hdbc-postgresql" = {};
-      };
-    };
-  }
+    }

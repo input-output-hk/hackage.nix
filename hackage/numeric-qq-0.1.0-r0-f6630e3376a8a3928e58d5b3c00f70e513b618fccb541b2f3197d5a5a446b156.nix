@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "numeric-qq";
-        version = "0.1.0";
-      };
+      identifier = { name = "numeric-qq"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2014, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -22,7 +13,7 @@
       synopsis = "Quasi-quoters for numbers of different bases";
       description = "Quasi-quoters for numbers of different bases";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.loch-th)
           (hsPkgs.placeholders)
           (hsPkgs.base)
-        ];
-      };
+          ];
+        };
       tests = {
         "internal-tests" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.loch-th)
             (hsPkgs.placeholders)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

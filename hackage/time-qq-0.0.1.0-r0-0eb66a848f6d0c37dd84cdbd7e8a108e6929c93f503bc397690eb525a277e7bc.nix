@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "time-qq";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "time-qq"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Christian Marie <christian@ponies.io>";
       maintainer = "Christian Marie <christian@ponies.io>";
@@ -22,7 +13,7 @@
       synopsis = "Quasi-quoter for UTCTime times";
       description = "Quasi-quoter for UTCTime times";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,16 +21,12 @@
           (hsPkgs.template-haskell)
           (hsPkgs.time)
           (hsPkgs.time-locale-compat)
-        ];
-      };
-      tests = {
-        "unit" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.time-qq)
           ];
         };
+      tests = {
+        "unit" = {
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.time-qq) ];
+          };
+        };
       };
-    };
-  }
+    }

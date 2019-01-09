@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bimaps";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "bimaps"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Christian Hoener zu Siederdissen, 2014 - 2016";
       maintainer = "choener@bioinf.uni-leipzig.de";
@@ -22,7 +13,7 @@
       synopsis = "bijections with multiple implementations.";
       description = "Bijections between sets of values.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.vector)
           (hsPkgs.vector-binary-instances)
           (hsPkgs.vector-th-unbox)
-        ];
-      };
+          ];
+        };
       tests = {
         "properties" = {
           depends = [
@@ -51,9 +42,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-th)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "BenchmarkBimaps" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.mwc-random)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghcjs-codemirror";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "ghcjs-codemirror"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish.K.Mackenzie@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Installs CodeMirror JavaScript files";
       description = "CodeMirror is a versatile text editor implemented in\nJavaScript for the browser. It is specialized for\nediting code, and comes with a number of language modes\nand addons that implement more advanced editing\nfunctionaly.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

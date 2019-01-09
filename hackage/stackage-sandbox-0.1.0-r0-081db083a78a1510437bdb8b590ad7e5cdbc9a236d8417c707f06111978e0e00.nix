@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-sandbox";
-        version = "0.1.0";
-      };
+      identifier = { name = "stackage-sandbox"; version = "0.1.0"; };
       license = "MIT";
       copyright = "2015 FP Complete Corporation";
       maintainer = "danburton@fpcomplete.com";
@@ -22,7 +13,7 @@
       synopsis = "Work with shared stackage sandboxes";
       description = "Work with shared stackage sandboxes";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "stackage-sandbox" = {
@@ -35,8 +26,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.process)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

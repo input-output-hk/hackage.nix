@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      maintainer = false;
-      build-examples = false;
-    };
+    flags = { maintainer = false; build-examples = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "byline";
-        version = "0.3.1.0";
-      };
+      identifier = { name = "byline"; version = "0.3.1.0"; };
       license = "BSD-2-Clause";
       copyright = "Copyright: (c) 2015-2018 Peter J. Jones";
       maintainer = "Peter Jones <pjones@devalot.com>";
@@ -25,7 +13,7 @@
       synopsis = "Library for creating command-line interfaces (colors, menus, etc.)";
       description = "Byline simplifies writing interactive terminal applications by\nbuilding upon @ansi-terminal@ and @haskeline@.  This makes it\npossible to print messages and prompts that include terminal escape\nsequences such as colors that are automatically disabled when\nstandard input is a file.  It also means that Byline works on both\nPOSIX-compatible systems and on Windows.\n\nThe primary features of Byline include printing messages, prompting\nfor input, and generating custom menus.  It was inspired by the\n@highline@ Ruby library and the @terminal@ library by Craig Roche.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,23 +27,13 @@
           (hsPkgs.terminfo-hs)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       exes = {
         "simple" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.byline)
-            (hsPkgs.text)
-          ];
-        };
-        "menu" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.byline)
-            (hsPkgs.text)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.byline) (hsPkgs.text) ];
+          };
+        "menu" = { depends = [ (hsPkgs.base) (hsPkgs.byline) (hsPkgs.text) ]; };
         };
       };
-    };
-  }
+    }

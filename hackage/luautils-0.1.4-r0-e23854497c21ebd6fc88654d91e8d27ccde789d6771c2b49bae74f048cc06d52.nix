@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "luautils";
-        version = "0.1.4";
-      };
+      identifier = { name = "luautils"; version = "0.1.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "ajnsit@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Helpers for Haskell integration with Lua";
       description = "This package is an add-on to the @HsLua@ package by Gracjan Polak.\nHsLua only provides a very bare-bones wrapper over the Lua API, and this\npackage is meant to fill in the gap by providing some commonly used features.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.bytestring)
           (hsPkgs.binary)
-        ];
-      };
+          ];
+        };
       tests = {
         "simple" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.text)
             (hsPkgs.binary)
             (hsPkgs.text-binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

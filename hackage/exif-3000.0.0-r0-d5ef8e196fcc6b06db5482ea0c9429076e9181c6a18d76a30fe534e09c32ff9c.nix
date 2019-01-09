@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "exif";
-        version = "3000.0.0";
-      };
+      identifier = { name = "exif"; version = "3000.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert";
       maintainer = "bjorn@bringert.net";
@@ -22,14 +13,11 @@
       synopsis = "A Haskell binding to a subset of libexif";
       description = "This is a Haskell binding to a subset of libexif.\nOnly tag reading is currently supported.\nImage files containing EXIF data can be read from memory or\ndisk.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        libs = [
-          (pkgs."exif")
-          (pkgs."m")
-        ];
+        libs = [ (pkgs."exif") (pkgs."m") ];
+        };
       };
-    };
-  }
+    }

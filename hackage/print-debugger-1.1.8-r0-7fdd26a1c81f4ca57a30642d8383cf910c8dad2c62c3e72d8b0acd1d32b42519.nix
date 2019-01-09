@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "print-debugger";
-        version = "1.1.8";
-      };
+      identifier = { name = "print-debugger"; version = "1.1.8"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "johnmichaelreedfas@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Debug print formatting library.";
       description = "Print debugging with stack trace for Haskell (formatted for ease \t                   of use). See screenshot: http://i.imgur.com/KCXYHNk.png";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.split)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.split) ]; };
+      };
+    }

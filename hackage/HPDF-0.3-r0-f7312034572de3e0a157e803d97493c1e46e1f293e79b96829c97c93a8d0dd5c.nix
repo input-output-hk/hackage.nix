@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HPDF";
-        version = "0.3";
-      };
+      identifier = { name = "HPDF"; version = "0.3"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2006, alpha";
       maintainer = "misc@NOSPAMalpheccar.org";
@@ -22,7 +13,7 @@
       synopsis = "PDF API for Haskell";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.mtl)
           (hsPkgs.regex-compat)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

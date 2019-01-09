@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "ghcjs-dom-jsaddle";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "ghcjs-dom-jsaddle"; version = "0.7.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
@@ -22,12 +13,6 @@
       synopsis = "DOM library that supports both GHCJS and GHC using jsaddle";
       description = "Documentent Object Model (DOM) functions that work with\nGHCJS, but can also be used with GHC and a Browser.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.jsaddle-dom)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.jsaddle-dom) ]; }; };
+    }

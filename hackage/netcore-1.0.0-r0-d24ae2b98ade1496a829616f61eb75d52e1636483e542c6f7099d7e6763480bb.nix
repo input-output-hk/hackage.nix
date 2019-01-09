@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "netcore";
-        version = "1.0.0";
-      };
+      identifier = { name = "netcore"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011--2012, Cornell University and Princeton University";
       maintainer = "Arjun Guha <arjun@cs.cornell.edu>,\nCole Schlesinger <cschlesi@cs.princeton.edu>,\nAlec Story <avs38@cornell.edu>";
@@ -22,7 +13,7 @@
       synopsis = "The NetCore compiler and runtime system for OpenFlow networks.";
       description = "NetCore is a high-level network programming language. This package provides\na NetCore compiler and runtime system for OpenFlow networks.\nSee the 'Frenetic.NetCore' module for commonly used functions.\nWe have several example programs available online at\n<https://github.com/frenetic-lang/netcore/tree/master/examples>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.syb)
           (hsPkgs.bimap)
           (hsPkgs.network)
-        ];
-      };
+          ];
+        };
       tests = {
         "frenetic-tests" = {
           depends = [
@@ -71,9 +62,9 @@
             (hsPkgs.syb)
             (hsPkgs.bimap)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "frenetic-benchmark" = {
           depends = [
@@ -94,8 +85,8 @@
             (hsPkgs.syb)
             (hsPkgs.bimap)
             (hsPkgs.network)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

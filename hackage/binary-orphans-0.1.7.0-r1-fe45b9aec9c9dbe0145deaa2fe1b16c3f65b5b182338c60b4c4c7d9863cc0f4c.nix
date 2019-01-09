@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-orphans";
-        version = "0.1.7.0";
-      };
+      identifier = { name = "binary-orphans"; version = "0.1.7.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Orphan instances for binary";
       description = "`binary-orphans` defines orphan instances for types in some popular packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -39,11 +30,11 @@
           (hsPkgs.vector)
           (hsPkgs.text-binary)
           (hsPkgs.vector-binary-instances)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.10")) [
           (hsPkgs.void)
           (hsPkgs.nats)
-        ];
-      };
+          ];
+        };
       tests = {
         "binary-orphans-test" = {
           depends = ([
@@ -63,11 +54,11 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.10")) [
             (hsPkgs.void)
             (hsPkgs.nats)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

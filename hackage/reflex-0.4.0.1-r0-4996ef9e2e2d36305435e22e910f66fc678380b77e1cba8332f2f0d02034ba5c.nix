@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "reflex";
-        version = "0.4.0.1";
-      };
+      identifier = { name = "reflex"; version = "0.4.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ryan.trinkle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Higher-order Functional Reactive Programming";
       description = "Reflex is a high-performance, deterministic, higher-order Functional Reactive Programming system";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.syb)
-        ];
-      };
+          ];
+        };
       tests = {
         "cross-impl" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.containers)
             (hsPkgs.dependent-map)
             (hsPkgs.MemoTrie)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "spider-bench" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.primitive)
             (hsPkgs.criterion)
             (hsPkgs.reflex)
-          ];
-        };
+            ];
+          };
         "saulzar-bench" = {
           depends = [
             (hsPkgs.base)
@@ -87,8 +78,8 @@
             (hsPkgs.criterion)
             (hsPkgs.split)
             (hsPkgs.reflex)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

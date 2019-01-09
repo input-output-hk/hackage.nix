@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "persistent-cereal";
-        version = "0.1.0";
-      };
+      identifier = { name = "persistent-cereal"; version = "0.1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "difrumin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Helper functions for writing Persistent instances";
       description = "Minor boilerplate for writing Persistance instances for values that are serializable with the 'cereal' library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.cereal)
           (hsPkgs.persistent)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

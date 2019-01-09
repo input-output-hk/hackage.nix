@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ftp-conduit";
-        version = "0.0.5";
-      };
+      identifier = { name = "ftp-conduit"; version = "0.0.5"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Myles C. Maxfield <myles.maxfield@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "FTP client package with conduit interface based off http-conduit";
       description = "This package allows files on remote FTP servers to be available through the Conduit interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.byteorder)
           (hsPkgs.transformers)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

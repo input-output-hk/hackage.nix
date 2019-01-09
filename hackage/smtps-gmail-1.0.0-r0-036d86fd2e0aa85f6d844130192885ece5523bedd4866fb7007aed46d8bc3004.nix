@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16.0";
-      identifier = {
-        name = "smtps-gmail";
-        version = "1.0.0";
-      };
+      identifier = { name = "smtps-gmail"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2013, Enzo Haussecker. All rights reserved.";
       maintainer = "Enzo Haussecker <enzo@ucsd.edu>";
@@ -22,7 +13,7 @@
       synopsis = "Gmail API";
       description = "Send email from your Gmail account using the simple message transfer protocol with transport layer security.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.tls)
           (hsPkgs.tls-extra)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "gmail" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.tls)
             (hsPkgs.tls-extra)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

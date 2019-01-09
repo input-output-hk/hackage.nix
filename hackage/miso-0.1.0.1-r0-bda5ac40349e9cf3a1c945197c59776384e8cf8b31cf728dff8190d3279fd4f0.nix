@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      examples = false;
-      tests = false;
-    };
+    flags = { examples = false; tests = false; };
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "miso";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "miso"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017 David M. Johnson";
       maintainer = "David M. Johnson <djohnson.m@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "A tasty Haskell front-end framework";
       description = "Miso is a small isomorphic Haskell front-end framework featuring a virtual-dom, diffing / patching algorithm, event delegation, event batching, SVG, Server-sent events, Websockets, and an extensible Subscription-based subsystem. Inspired by Elm, Redux and Bobril. `IO` and other effects (like `XHR`) can be introduced into the system via the `Effect` data type. Miso makes heavy use of the GHCJS FFI and therefore has minimal dependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +23,7 @@
           (hsPkgs.containers)
           (hsPkgs.network-uri)
           (hsPkgs.text)
-        ] ++ (if compiler.isGhcjs && true
+          ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs.ghcjs-base)
             (hsPkgs.containers)
@@ -44,12 +32,9 @@
             (hsPkgs.servant)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ]
-          else [
-            (hsPkgs.lucid)
-            (hsPkgs.vector)
-          ]);
-      };
+            ]
+          else [ (hsPkgs.lucid) (hsPkgs.vector) ]);
+        };
       exes = {
         "todo-mvc" = {
           depends = [
@@ -57,23 +42,19 @@
             (hsPkgs.aeson)
             (hsPkgs.containers)
             (hsPkgs.miso)
-          ];
-        };
+            ];
+          };
         "mario" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.miso)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.miso) ];
+          };
         "simple" = {
           depends = [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.miso)
-          ];
-        };
+            ];
+          };
         "tests" = {
           depends = [
             (hsPkgs.aeson)
@@ -82,8 +63,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-core)
             (hsPkgs.ghcjs-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

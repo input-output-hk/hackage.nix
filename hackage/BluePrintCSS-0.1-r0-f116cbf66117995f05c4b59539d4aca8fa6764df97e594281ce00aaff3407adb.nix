@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      hsx = false;
-      blaze = false;
-    };
+    flags = { hsx = false; blaze = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "BluePrintCSS";
-        version = "0.1";
-      };
+      identifier = { name = "BluePrintCSS"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Sergey Mironov <ierton@gmail.com>";
@@ -25,13 +13,13 @@
       synopsis = "Html document layout library.";
       description = "The library helps to format html documents using popular BluePrint CSS framework <http://www.blueprintcss.org/>. Currently, Blaze and HSX html generators are supported (note 'blaze' and 'hsx' flags). See repository for complex examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
           (hsPkgs.base)
           (hsPkgs.mtl)
-        ] ++ pkgs.lib.optional (flags.blaze) (hsPkgs.blaze-html)) ++ pkgs.lib.optional (flags.hsx) (hsPkgs.hsx);
+          ] ++ (pkgs.lib).optional (flags.blaze) (hsPkgs.blaze-html)) ++ (pkgs.lib).optional (flags.hsx) (hsPkgs.hsx);
+        };
       };
-    };
-  }
+    }

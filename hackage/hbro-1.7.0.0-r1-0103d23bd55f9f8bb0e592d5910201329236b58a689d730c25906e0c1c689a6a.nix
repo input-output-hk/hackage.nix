@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { threaded = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hbro";
-        version = "1.7.0.0";
-      };
+      identifier = { name = "hbro"; version = "1.7.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "chahine.moreau@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Minimal extensible web-browser";
       description = "Cf README";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -67,15 +58,8 @@
           (hsPkgs.uuid)
           (hsPkgs.webkitgtk3)
           (hsPkgs.zeromq4-haskell)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.integer-simple);
-      };
-      exes = {
-        "hbro" = {
-          depends = [
-            (hsPkgs.hbro)
-            (hsPkgs.base)
-          ];
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.integer-simple);
         };
+      exes = { "hbro" = { depends = [ (hsPkgs.hbro) (hsPkgs.base) ]; }; };
       };
-    };
-  }
+    }

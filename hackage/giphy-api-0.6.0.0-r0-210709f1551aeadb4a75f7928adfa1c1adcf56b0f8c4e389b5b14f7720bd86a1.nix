@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildsample = false;
-    };
+    flags = { buildsample = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "giphy-api";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "giphy-api"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Pascal Hartig <phartig@rdrei.net>";
@@ -24,7 +13,7 @@
       synopsis = "Giphy HTTP API wrapper and CLI search tool.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,21 +31,21 @@
           (hsPkgs.servant-client)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "giphy-search" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.network-uri)
             (hsPkgs.text)
-          ] ++ pkgs.lib.optionals (flags.buildsample) [
+            ] ++ (pkgs.lib).optionals (flags.buildsample) [
             (hsPkgs.giphy-api)
             (hsPkgs.lens)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -71,8 +60,8 @@
             (hsPkgs.lens)
             (hsPkgs.network-uri)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

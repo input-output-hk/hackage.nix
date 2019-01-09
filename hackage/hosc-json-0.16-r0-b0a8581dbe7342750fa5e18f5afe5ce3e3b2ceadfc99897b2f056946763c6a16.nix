@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hosc-json";
-        version = "0.16";
-      };
+      identifier = { name = "hosc-json"; version = "0.16"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape, 2013-2017";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Open Sound Control JSON Serialisation";
       description = "hosc-json";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,7 +29,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

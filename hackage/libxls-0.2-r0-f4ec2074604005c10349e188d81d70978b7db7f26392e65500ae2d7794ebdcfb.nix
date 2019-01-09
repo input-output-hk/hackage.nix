@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "libxls";
-        version = "0.2";
-      };
+      identifier = { name = "libxls"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "xuminhui189@gmail.com";
@@ -22,16 +13,11 @@
       synopsis = "Bindings to libxls";
       description = "Read Data From xls file";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bindings-DSL)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

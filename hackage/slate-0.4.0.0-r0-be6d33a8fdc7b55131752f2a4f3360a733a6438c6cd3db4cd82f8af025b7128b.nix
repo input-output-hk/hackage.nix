@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "slate";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "slate"; version = "0.4.0.0"; };
       license = "MIT";
       copyright = "Copyright (c) 2017, evuez";
       maintainer = "helloevuez@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A note taking CLI tool.";
       description = "Please see the README on Github at <https://github.com/evuez/slate#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.optparse-applicative)
-        ];
-      };
+          ];
+        };
       exes = {
         "slate" = {
           depends = [
@@ -40,9 +31,9 @@
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
             (hsPkgs.slate)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "slate-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
             (hsPkgs.slate)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ListT";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "ListT"; version = "0.1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "m.farkasdyck@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "List transformer";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-          (hsPkgs.util)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.util) ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -41,8 +28,8 @@
             (hsPkgs.tasty-smallcheck)
             (hsPkgs.transformers)
             (hsPkgs.util)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

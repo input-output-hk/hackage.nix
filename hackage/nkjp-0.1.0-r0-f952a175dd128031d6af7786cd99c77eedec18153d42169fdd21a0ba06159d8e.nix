@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "nkjp";
-        version = "0.1.0";
-      };
+      identifier = { name = "nkjp"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012 IPI PAN";
       maintainer = "waszczuk.kuba@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Manipulating the National Corpus of Polish (NKJP)";
       description = "The library provides parsing and printing utilities for the\nNational Corpus of Polish (NKJP).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.tar)
           (hsPkgs.filepath)
           (hsPkgs.data-named)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

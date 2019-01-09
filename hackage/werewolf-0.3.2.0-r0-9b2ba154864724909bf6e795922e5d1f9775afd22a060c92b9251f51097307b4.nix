@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "werewolf";
-        version = "0.3.2.0";
-      };
+      identifier = { name = "werewolf"; version = "0.3.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "public@hjwylde.com";
@@ -22,7 +13,7 @@
       synopsis = "A game engine for running werewolf in a chat client";
       description = "This engine is based off of Werewolves of Millers Hollow\n(http://www.games-wiki.org/wiki/Werewolves_of_Millers_Hollow/).\nSee https://github.com/hjwylde/werewolf for help on writing chat interfaces.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.random-shuffle)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "werewolf" = {
           depends = [
@@ -54,9 +45,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.werewolf)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "werewolf-test" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.werewolf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "exp-pairs";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "exp-pairs"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "andrew.lelechenko@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Linear programming over exponent pairs";
       description = "Package implements an algorithm to minimize rational objective function over the set of exponent pairs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.prettyprinter)
           (hsPkgs.deepseq)
           (hsPkgs.containers)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.exp-pairs)
             (hsPkgs.matrix)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

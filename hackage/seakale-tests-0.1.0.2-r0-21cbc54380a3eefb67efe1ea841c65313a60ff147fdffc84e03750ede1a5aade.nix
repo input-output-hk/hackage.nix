@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "seakale-tests";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "seakale-tests"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "thomas.feron@redspline.com";
@@ -22,7 +13,7 @@
       synopsis = "Helpers to test code using Seakale";
       description = "This package provides a way to run code written with Seakale with a fake database using mocks.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.free)
           (hsPkgs.recursion-schemes)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

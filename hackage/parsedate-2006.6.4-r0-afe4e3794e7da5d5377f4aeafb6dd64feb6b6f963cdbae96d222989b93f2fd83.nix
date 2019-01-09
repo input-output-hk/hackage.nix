@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "parsedate";
-        version = "2006.6.4";
-      };
+      identifier = { name = "parsedate"; version = "2006.6.4"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert";
       maintainer = "bjorn@bringert.net";
@@ -22,14 +13,10 @@
       synopsis = "Haskell library for parsing dates and times";
       description = "This library provides a function for parsing dates and times\ngiven a date format string.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.haskell98)
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-        ];
+        depends = [ (hsPkgs.haskell98) (hsPkgs.base) (hsPkgs.parsec) ];
+        };
       };
-    };
-  }
+    }

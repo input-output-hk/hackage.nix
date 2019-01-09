@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "TigerHash";
-        version = "0.2";
-      };
+      identifier = { name = "TigerHash"; version = "0.2"; };
       license = "GPL-2.0-only";
       copyright = "(c) 2010 Nikolay Orlyuk";
       maintainer = "virkony@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "TigerHash with C implementation";
       description = "This library provides Tiger Hash algorithm implemented in C\nand built with Haskell interface. As well there is implementation\nof Merkle Tree known as TTH (Tiger Tree Hash).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
           (hsPkgs.dataenc)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

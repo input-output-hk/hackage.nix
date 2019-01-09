@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "liboath-hs";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "liboath-hs"; version = "0.0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "2017 Matt Parsons";
       maintainer = "parsonsmatt@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings to liboath";
       description = "See README for details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,12 +22,10 @@
           (hsPkgs.safe-exceptions)
           (hsPkgs.bytestring)
           (hsPkgs.time)
-        ];
+          ];
         libs = [ (pkgs."oath") ];
-        pkgconfig = [
-          (pkgconfPkgs.liboath)
-        ];
-      };
+        pkgconfig = [ (pkgconfPkgs.liboath) ];
+        };
       exes = {
         "oathtool-hs" = {
           depends = [
@@ -44,16 +33,13 @@
             (hsPkgs.liboath-hs)
             (hsPkgs.time)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "liboath-hs-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.liboath-hs)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.liboath-hs) ];
+          };
         };
       };
-    };
-  }
+    }

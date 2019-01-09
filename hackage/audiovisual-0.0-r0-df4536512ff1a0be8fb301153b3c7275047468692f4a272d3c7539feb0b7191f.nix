@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "audiovisual";
-        version = "0.0";
-      };
+      identifier = { name = "audiovisual"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Fumiaki Kinoshita";
       maintainer = "Fumiaki Kinoshita <fumiexcel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A battery-included audiovisual framework";
       description = "Types and utilities for audio and graphic stuff";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.void)
           (hsPkgs.transformers)
           (hsPkgs.WAVE)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

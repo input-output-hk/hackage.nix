@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      development = false;
-    };
+    flags = { development = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "recursion-schemes-ext";
-        version = "1.0.0.3";
-      };
+      identifier = { name = "recursion-schemes-ext"; version = "1.0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Amateur addenda to recursion-schemes";
       description = "This package provides some exotic recursion schemes as well monadic versions of some morphisms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +21,8 @@
           (hsPkgs.recursion-schemes)
           (hsPkgs.lens)
           (hsPkgs.composition-prelude)
-        ];
-      };
+          ];
+        };
       tests = {
         "recursion-schemes-test" = {
           depends = [
@@ -42,9 +31,9 @@
             (hsPkgs.recursion-schemes)
             (hsPkgs.deepseq)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "recursion-schemes-bench" = {
           depends = [
@@ -53,8 +42,8 @@
             (hsPkgs.criterion)
             (hsPkgs.deepseq)
             (hsPkgs.recursion-schemes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

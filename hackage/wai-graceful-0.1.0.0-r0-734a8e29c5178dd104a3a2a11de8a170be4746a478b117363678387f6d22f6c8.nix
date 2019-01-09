@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-graceful";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "wai-graceful"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "aenor.realm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Graceful shutdown for WAI applications.";
       description = "something here";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.http-types)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

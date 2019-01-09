@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pomodoro";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "pomodoro"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Al Zohali <zohl@fmap.me>";
@@ -22,7 +13,7 @@
       synopsis = "pomodoro timer";
       description = "A simple pomodoro timer. Features: task bar, popup and\nsound notifications, tracking to file, command\nline interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "pomodoro" = {
@@ -40,8 +31,8 @@
             (hsPkgs.unix)
             (hsPkgs.wx)
             (hsPkgs.wxcore)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

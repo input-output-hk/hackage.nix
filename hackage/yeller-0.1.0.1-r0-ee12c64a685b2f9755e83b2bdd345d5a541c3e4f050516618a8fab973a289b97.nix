@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yeller";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "yeller"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "clients@yellerapp.com";
@@ -22,7 +13,7 @@
       synopsis = "A Yeller Client For Haskell";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.http-client)
           (hsPkgs.http-client-tls)
           (hsPkgs.http-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-yeller" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.http-client)
             (hsPkgs.http-client-tls)
             (hsPkgs.http-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

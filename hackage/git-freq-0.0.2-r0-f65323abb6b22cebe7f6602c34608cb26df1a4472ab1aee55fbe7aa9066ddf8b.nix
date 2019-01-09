@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "git-freq";
-        version = "0.0.2";
-      };
+      identifier = { name = "git-freq"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Fujimura Daisuke<me@fujimuradaisuke.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Git subcommand to show total addition, deletion per file";
       description = "A Git subcommand to show total addition, deletion per file";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "git-freq" = {
@@ -33,9 +24,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spec" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

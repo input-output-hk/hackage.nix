@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      base4 = true;
-    };
+    flags = { splitbase = true; base4 = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "fft";
-        version = "0.1.4";
-      };
+      identifier = { name = "fft"; version = "0.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<jed@59A2.org>";
@@ -25,7 +13,7 @@
       synopsis = "Bindings to the FFTW library.";
       description = "Bindings to the FFTW library.\n\nProvides high performance discrete fourier transforms in\narbitrary dimensions.  Include transforms of complex data,\nreal data, and real to real transforms.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (if flags.splitbase
@@ -35,19 +23,16 @@
             (hsPkgs.carray)
             (hsPkgs.storable-complex)
             (hsPkgs.ix-shapable)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.carray)
             (hsPkgs.storable-complex)
             (hsPkgs.ix-shapable)
-          ]) ++ (if flags.base4
-          then [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-          ]
+            ]) ++ (if flags.base4
+          then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
         libs = [ (pkgs."fftw3") ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "enumerable";
-        version = "0.0.2";
-      };
+      identifier = { name = "enumerable"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2009 Daniel Peebles";
       maintainer = "Daniel Peebles <pumpkingod@gmail.com>";
@@ -22,14 +13,14 @@
       synopsis = "A typeclass for enumerating all values a type";
       description = "Fully enumerate any type, including functions of enumerable types! Includes a fun controversial function equality instance too :)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.tagged)
           (hsPkgs.control-monad-omega)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

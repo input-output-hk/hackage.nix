@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-rpc";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "json-rpc"; version = "0.4.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "root@haskoin.com";
@@ -22,7 +13,7 @@
       synopsis = "Fully-featured JSON-RPC 2.0 library";
       description = "This JSON-RPC library is fully-compatible with JSON-RPC 2.0 and 1.0. It\nprovides an interface that combines a JSON-RPC client and server. It can set\nand keep track of request ids to parse responses. There is support for\nsending and receiving notifications.  You may use any underlying transport.\nBasic TCP client and server provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-json-rpc" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

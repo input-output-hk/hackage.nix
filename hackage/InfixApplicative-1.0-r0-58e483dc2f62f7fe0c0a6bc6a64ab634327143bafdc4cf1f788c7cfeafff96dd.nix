@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "InfixApplicative";
-        version = "1.0";
-      };
+      identifier = { name = "InfixApplicative"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Thomas Davie (tom.davie@gmail.com)";
@@ -22,13 +13,8 @@
       synopsis = "liftA2 for infix operators.";
       description = "liftA2 for infix operators.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.haskell98)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.haskell98) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "pcap";
-        version = "0.3.1";
-      };
+      identifier = { name = "pcap"; version = "0.3.1"; };
       license = "BSD-4-Clause";
       copyright = "";
       maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
@@ -22,7 +13,7 @@
       synopsis = "A system-independent interface for user-level packet capture";
       description = "A system-independent interface for user-level packet capture";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.network)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

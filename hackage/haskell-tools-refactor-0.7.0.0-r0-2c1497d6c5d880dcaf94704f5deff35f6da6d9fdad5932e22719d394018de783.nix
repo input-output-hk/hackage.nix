@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-tools-refactor";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "haskell-tools-refactor"; version = "0.7.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nboldi@elte.hu";
@@ -22,7 +13,7 @@
       synopsis = "Refactoring Tool for Haskell";
       description = "Contains a set of refactorings based on the Haskell-Tools framework to easily transform a Haskell program. For the descriptions of the implemented refactorings, see the homepage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.haskell-tools-backend-ghc)
           (hsPkgs.haskell-tools-rewrite)
           (hsPkgs.haskell-tools-prettyprint)
-        ];
-      };
+          ];
+        };
       tests = {
         "haskell-tools-test" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.haskell-tools-refactor)
             (hsPkgs.old-time)
             (hsPkgs.polyparse)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

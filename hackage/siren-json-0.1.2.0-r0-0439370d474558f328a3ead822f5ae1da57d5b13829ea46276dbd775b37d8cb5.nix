@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "siren-json";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "siren-json"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "(c) 2017 Alex Brandt";
       maintainer = "alunduil@alunduil.com";
@@ -22,7 +13,7 @@
       synopsis = "Siren Tools for Haskell";
       description = "Types, classes, and functions for using the Siren—Hypermedia Type in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.network-uri-json)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "siren-json-tests" = {
           depends = [
@@ -56,11 +47,9 @@
             (hsPkgs.test-invariant)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

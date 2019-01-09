@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "getemx";
-        version = "0.1";
-      };
+      identifier = { name = "getemx"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "wolfson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Fetch from emusic using .emx files";
       description = "Read emusic's .emx files and download media";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "getemx" = {
@@ -37,8 +28,8 @@
             (hsPkgs.old-locale)
             (hsPkgs.time)
             (hsPkgs.haskell98)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

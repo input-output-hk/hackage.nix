@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "porter";
-        version = "0.1";
-      };
+      identifier = { name = "porter"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Wotton, <mwotton@gmail.com>";
@@ -22,12 +13,6 @@
       synopsis = "Implementation of the Porter stemming algorithm";
       description = "Sourced from http://tartarus.org/~martin/PorterStemmer";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.haskell2010)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.haskell2010) ]; }; };
+    }

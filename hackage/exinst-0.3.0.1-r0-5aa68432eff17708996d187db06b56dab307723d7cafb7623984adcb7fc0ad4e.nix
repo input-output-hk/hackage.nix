@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       aeson = true;
@@ -12,13 +6,10 @@
       deepseq = true;
       hashable = true;
       quickcheck = true;
-    };
+      };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "exinst";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "exinst"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Renzo Carbonara 2015-2017";
       maintainer = "renzoλcarbonara.com.ar";
@@ -28,7 +19,7 @@
       synopsis = "Recover instances for your existential types.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (((([
@@ -36,12 +27,12 @@
           (hsPkgs.constraints)
           (hsPkgs.profunctors)
           (hsPkgs.singletons)
-        ] ++ pkgs.lib.optional (flags.aeson) (hsPkgs.aeson)) ++ pkgs.lib.optionals (flags.bytes) [
+          ] ++ (pkgs.lib).optional (flags.aeson) (hsPkgs.aeson)) ++ (pkgs.lib).optionals (flags.bytes) [
           (hsPkgs.bytes)
           (hsPkgs.binary)
           (hsPkgs.cereal)
-        ]) ++ pkgs.lib.optional (flags.deepseq) (hsPkgs.deepseq)) ++ pkgs.lib.optional (flags.hashable) (hsPkgs.hashable)) ++ pkgs.lib.optional (flags.quickcheck) (hsPkgs.QuickCheck);
-      };
+          ]) ++ (pkgs.lib).optional (flags.deepseq) (hsPkgs.deepseq)) ++ (pkgs.lib).optional (flags.hashable) (hsPkgs.hashable)) ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs.QuickCheck);
+        };
       tests = {
         "tests" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

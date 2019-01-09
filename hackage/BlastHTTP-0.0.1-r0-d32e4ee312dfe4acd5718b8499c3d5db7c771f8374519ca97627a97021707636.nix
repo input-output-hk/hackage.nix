@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "BlastHTTP";
-        version = "0.0.1";
-      };
+      identifier = { name = "BlastHTTP"; version = "0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "egg@tbi.univie.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "Libary to interface with the NCBI blast REST interface";
       description = "Searches for a provided nucleotide or protein sequence with the NCBI Blast REST service and returns a blast result in xml format as BlastResult datatype.\n\nFor more information on BLAST refer to: <http://blast.ncbi.nlm.nih.gov/Blast.cgi>.\n\nInformation on the webservice can be found at: <http://www.ncbi.nlm.nih.gov/BLAST/developer.shtml>.\n\nIf you plan to submit more than 20 searches in one session, please look up the Usage Guidelines in the webservice information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.mtl)
           (hsPkgs.blastxml)
           (hsPkgs.biocore)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

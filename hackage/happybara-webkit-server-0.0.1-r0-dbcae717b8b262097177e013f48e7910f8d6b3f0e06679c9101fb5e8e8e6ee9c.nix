@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "happybara-webkit-server";
-        version = "0.0.1";
-      };
+      identifier = { name = "happybara-webkit-server"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 Charles Strahan";
       maintainer = "Charles Strahan <charles.c.strahan@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "WebKit Server binary for Happybara (taken from capybara-webkit)";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.process)
           (hsPkgs.directory)
           (hsPkgs.filepath)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

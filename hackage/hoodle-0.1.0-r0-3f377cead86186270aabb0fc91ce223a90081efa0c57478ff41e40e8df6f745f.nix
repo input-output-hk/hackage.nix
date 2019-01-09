@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoodle";
-        version = "0.1.0";
-      };
+      identifier = { name = "hoodle"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Executable for hoodle";
       description = "Hoodle is a pen notetaking program written in haskell.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.configurator)
           (hsPkgs.dyre)
           (hsPkgs.hoodle-core)
-        ];
-      };
+          ];
+        };
       exes = {
         "hoodle" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.cmdargs)
             (hsPkgs.hoodle-core)
             (hsPkgs.hoodle)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

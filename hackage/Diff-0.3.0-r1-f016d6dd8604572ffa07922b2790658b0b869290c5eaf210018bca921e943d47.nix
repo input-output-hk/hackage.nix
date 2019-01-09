@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small-base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Diff";
-        version = "0.3.0";
-      };
+      identifier = { name = "Diff"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "s.clover@gmail.com";
@@ -22,17 +13,12 @@
       synopsis = "O(ND) diff algorithm in haskell.";
       description = "Basic implementation of the standard diff algorithm.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.pretty)
-        ] ++ (if flags.small-base
-          then [
-            (hsPkgs.base)
-            (hsPkgs.array)
-          ]
+        depends = [ (hsPkgs.pretty) ] ++ (if flags.small-base
+          then [ (hsPkgs.base) (hsPkgs.array) ]
           else [ (hsPkgs.base) ]);
+        };
       };
-    };
-  }
+    }

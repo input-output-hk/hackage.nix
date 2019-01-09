@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sized-grid";
-        version = "0.1.1.5";
-      };
+      identifier = { name = "sized-grid"; version = "0.1.1.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "ed@wastell.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Multidimensional grids with sized specified at compile time";
       description = "`size-grid` allows you to make finite sized grids and have their size and shape confirmed at compile time\n\nConsult the readme for a short tutorial and explanation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.random)
           (hsPkgs.vector)
           (hsPkgs.vector-space)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.vector-space)
             (hsPkgs.QuickCheck)
             (hsPkgs.tasty-quickcheck)
-          ];
-        };
+            ];
+          };
         "readme" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +60,8 @@
             (hsPkgs.markdown-unlit)
             (hsPkgs.sized-grid)
             (hsPkgs.vector-space)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

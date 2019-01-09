@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hack-contrib-press";
-        version = "0.1.0";
-      };
+      identifier = { name = "hack-contrib-press"; version = "0.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "bickfordb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Hack helper that renders Press templates";
       description = "Hack helper that renders Press templates";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.parsec)
           (hsPkgs.press)
           (hsPkgs.json)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

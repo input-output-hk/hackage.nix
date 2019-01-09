@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskey-btree";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "haskey-btree"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2017, Henri Verroken, Steven Keuchel";
       maintainer = "steven.keuchel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "B+-tree implementation in Haskell.";
       description = "This package provides two B+-tree implementations. The first one is a pure\nB+-tree of a specific order, while the second one is an impure one backed\nby a page allocator.\n\nFor more information on how to use this package, visit\n<https://github.com/haskell-haskey/haskey-btree>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.stm)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "haskey-btree-properties" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.haskey-btree)
-          ];
-        };
+            ];
+          };
         "haskey-btree-integration" = {
           depends = [
             (hsPkgs.base)
@@ -70,8 +61,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.haskey-btree)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

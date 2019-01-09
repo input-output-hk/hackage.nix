@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "logging-facade";
-        version = "0.3.0";
-      };
+      identifier = { name = "logging-facade"; version = "0.3.0"; };
       license = "MIT";
       copyright = "(c) 2014-2017 Simon Hengel";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,23 +13,15 @@
       synopsis = "Simple logging abstraction that allows multiple back-ends";
       description = "Simple logging abstraction that allows multiple back-ends";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.call-stack)
-          (hsPkgs.transformers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.call-stack) (hsPkgs.transformers) ];
+        };
       tests = {
         "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.logging-facade)
-            (hsPkgs.hspec)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.logging-facade) (hsPkgs.hspec) ];
+          };
         };
       };
-    };
-  }
+    }

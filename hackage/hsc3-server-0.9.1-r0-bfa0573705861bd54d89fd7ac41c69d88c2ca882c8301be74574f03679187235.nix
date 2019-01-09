@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      build-examples = false;
-    };
+    flags = { build-examples = false; };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "hsc3-server";
-        version = "0.9.1";
-      };
+      identifier = { name = "hsc3-server"; version = "0.9.1"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) Stefan Kersten 2008-2014";
       maintainer = "kaoskorobase@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "SuperCollider server resource management and synchronization.";
       description = "This library provides abstractions for managing SuperCollider server\nresources like node, buffer and bus ids and synchronization primitives.\n\nChangeLog: <https://github.com/kaoskorobase/hsc3-server/blob/master/ChangeLog.md>\n\nExamples: <https://github.com/kaoskorobase/hsc3-server/tree/master/examples>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +33,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       exes = {
         "hsc3-hello" = {
           depends = [
@@ -54,8 +43,8 @@
             (hsPkgs.hsc3)
             (hsPkgs.hsc3-server)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "hsc3-sine-grains" = {
           depends = [
             (hsPkgs.base)
@@ -65,9 +54,9 @@
             (hsPkgs.random)
             (hsPkgs.transformers)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hsc3-server-test" = {
           depends = [
@@ -79,8 +68,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

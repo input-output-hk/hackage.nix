@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "http-pony-transformer-case-insensitive";
         version = "0.1.0.2";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nfjinjing@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Tag http headers as case insensitive";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +24,7 @@
           (hsPkgs.profunctors)
           (hsPkgs.lens)
           (hsPkgs.case-insensitive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

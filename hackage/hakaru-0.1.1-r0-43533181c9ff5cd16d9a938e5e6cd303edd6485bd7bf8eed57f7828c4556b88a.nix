@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hakaru";
-        version = "0.1.1";
-      };
+      identifier = { name = "hakaru"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ppaml@indiana.edu";
@@ -22,7 +13,7 @@
       synopsis = "A probabilistic programming embedded DSL";
       description = "Hakaru is an embedded DSL for performing probabilistic inference. It supports multiple inference backends.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.statistics)
           (hsPkgs.hmatrix)
           (hsPkgs.parsec)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

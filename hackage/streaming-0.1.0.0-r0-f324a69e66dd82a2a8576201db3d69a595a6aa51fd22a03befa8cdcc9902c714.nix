@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "streaming";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "streaming"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "what_is_it_to_do_anything@yahoo.com";
@@ -22,7 +13,7 @@
       synopsis = "A general free monad transformer optimized for streaming applications.";
       description = "Stream is an optimized variant of FreeT.\nIt can be used wherever FreeT is used, but is focused\non employment with functors like '((,) a)' which generate\neffectful sequences or \\\"producers\\\"";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mmorph)
           (hsPkgs.transformers)
           (hsPkgs.ghc-prim)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

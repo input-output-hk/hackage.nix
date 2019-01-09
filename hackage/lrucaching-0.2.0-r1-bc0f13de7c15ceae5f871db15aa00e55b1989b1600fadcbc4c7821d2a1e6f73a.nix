@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lrucaching";
-        version = "0.2.0";
-      };
+      identifier = { name = "lrucaching"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2016";
       maintainer = "moritz.kiefer@purelyfunctional.org";
@@ -22,7 +13,7 @@
       synopsis = "LRU cache";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.hashable)
           (hsPkgs.psqueues)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "lru-test" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.lrucaching)
             (hsPkgs.QuickCheck)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

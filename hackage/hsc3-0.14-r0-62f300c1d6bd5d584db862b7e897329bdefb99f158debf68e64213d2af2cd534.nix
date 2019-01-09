@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsc3";
-        version = "0.14";
-      };
+      identifier = { name = "hsc3"; version = "0.14"; };
       license = "LicenseRef-GPL";
       copyright = "(c) Rohan Drape and others, 2006-2013";
       maintainer = "rd@slavepianos.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell SuperCollider";
       description = "Haskell client for the SuperCollider synthesis server,\n<http://audiosynth.com/>.\n\nFor installation and configuration see the Tutorial at\n<http://rd.slavepianos.org/?t=hsc3-texts>.\n\nhsc3 has two implementations of the non-determinstic\nUnit Generators, \"Sound.SC3.UGen.ID\" and\n\"Sound.SC3.UGen.Monad\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.random)
           (hsPkgs.split)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

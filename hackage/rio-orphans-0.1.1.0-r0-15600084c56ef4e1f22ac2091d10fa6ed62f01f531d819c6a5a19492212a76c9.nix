@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rio-orphans";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "rio-orphans"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Orphan instances for the RIO type in the rio package";
       description = "See README and Haddocks at <https://www.stackage.org/package/rio-orphans>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.rio)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       tests = {
         "rio-orphans-test" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.rio)
             (hsPkgs.rio-orphans)
             (hsPkgs.transformers-base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "music-preludes";
-        version = "1.2";
-      };
+      identifier = { name = "music-preludes"; version = "1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hans Hoglund";
@@ -22,7 +13,7 @@
       synopsis = "Some useful preludes for the Music Suite.";
       description = "Some useful preludes for the Haskell Music Suite.\nThis library is part of the Haskell Music Suite, see <http://musicsuite.github.com>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.music-pitch-literal)
           (hsPkgs.music-dynamics)
           (hsPkgs.music-dynamics-literal)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

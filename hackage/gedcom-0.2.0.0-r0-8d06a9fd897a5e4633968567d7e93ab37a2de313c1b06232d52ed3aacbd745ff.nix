@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gedcom";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "gedcom"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Callum Lowcay";
       maintainer = "cwslowcay@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Parser for the GEDCOM genealogy file format.";
       description = "A parser for the legacy GEDCOM 5.5 file format. GEDCOM is\na widely used file format in genealogy.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text-all)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "gedcom-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hspec)
             (hsPkgs.text-all)
             (hsPkgs.megaparsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "htaglib";
-        version = "0.1.1";
-      };
+      identifier = { name = "htaglib"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Karpov <markkarpov@opmbx.org>";
@@ -22,12 +13,9 @@
       synopsis = "Bindings to TagLib, audio meta-data library";
       description = "Bindings to TagLib, audio meta-data library.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
-        libs = [ (pkgs."tag_c") ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; libs = [ (pkgs."tag_c") ]; };
       tests = {
         "tests" = {
           depends = [
@@ -38,8 +26,8 @@
             (hsPkgs.htaglib)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

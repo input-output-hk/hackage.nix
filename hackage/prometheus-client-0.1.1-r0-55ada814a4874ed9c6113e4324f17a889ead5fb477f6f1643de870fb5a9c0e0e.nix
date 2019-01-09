@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prometheus-client";
-        version = "0.1.1";
-      };
+      identifier = { name = "prometheus-client"; version = "0.1.1"; };
       license = "Apache-2.0";
       copyright = "2015 Will Coster";
       maintainer = "willcoster@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell client library for http://prometheus.io.";
       description = "Haskell client library for http://prometheus.io.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,16 +26,16 @@
           (hsPkgs.transformers)
           (hsPkgs.time)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.prometheus-client)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.QuickCheck)
@@ -59,9 +50,9 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -71,8 +62,8 @@
             (hsPkgs.prometheus-client)
             (hsPkgs.random)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

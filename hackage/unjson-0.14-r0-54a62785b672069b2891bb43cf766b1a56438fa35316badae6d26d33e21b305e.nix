@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "unjson";
-        version = "0.14";
-      };
+      identifier = { name = "unjson"; version = "0.14"; };
       license = "BSD-3-Clause";
       copyright = "Gracjan Polak";
       maintainer = "Gracjan Polak <gracjanpolak@gmail.com>, Mikhail Glushenkov <mikhail@scrive.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bidirectional JSON parsing and generation.";
       description = "Bidirectional JSON parsing and generation with automatic documentation support.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.primitive)
           (hsPkgs.time)
           (hsPkgs.invariant)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.time)
             (hsPkgs.hashable)
             (hsPkgs.invariant)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,23 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      chart = false;
-      vty = false;
-      web = false;
-      web610 = false;
-    };
+    flags = { chart = false; vty = false; web = false; web610 = false; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "hledger";
-        version = "0.11";
-      };
+      identifier = { name = "hledger"; version = "0.11"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -27,7 +13,7 @@
       synopsis = "A command-line (or curses or web-based) double-entry accounting tool.";
       description = "hledger reads a plain text general journal or time log\ndescribing your transactions and displays precise\nbalance and register reports via command-line, curses\nor web interface.  It is a remix, in haskell, of John\nWiegley's excellent c++ ledger.  hledger aims to be a\npractical, accessible tool for end users and a useful\nlibrary for finance-minded haskell programmers.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +33,8 @@
           (hsPkgs.safe)
           (hsPkgs.time)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "hledger" = {
           depends = ((([
@@ -68,14 +54,14 @@
             (hsPkgs.safe)
             (hsPkgs.time)
             (hsPkgs.utf8-string)
-          ] ++ pkgs.lib.optionals (flags.chart) [
+            ] ++ (pkgs.lib).optionals (flags.chart) [
             (hsPkgs.Chart)
             (hsPkgs.colour)
-          ]) ++ pkgs.lib.optional (flags.vty) (hsPkgs.vty)) ++ pkgs.lib.optionals (flags.web) [
+            ]) ++ (pkgs.lib).optional (flags.vty) (hsPkgs.vty)) ++ (pkgs.lib).optionals (flags.web) [
             (hsPkgs.io-storage)
             (hsPkgs.yesod)
             (hsPkgs.convertible-text)
-          ]) ++ pkgs.lib.optionals (flags.web610) [
+            ]) ++ (pkgs.lib).optionals (flags.web610) [
             (hsPkgs.hsp)
             (hsPkgs.hsx)
             (hsPkgs.xhtml)
@@ -86,8 +72,8 @@
             (hsPkgs.hack-handler-simpleserver)
             (hsPkgs.HTTP)
             (hsPkgs.applicative-extras)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

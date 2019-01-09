@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "generic-random";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "generic-random"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "lysxia@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generic random generators";
       description = "Please see the README below.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,17 +29,17 @@
           (hsPkgs.transformers)
           (hsPkgs.MonadRandom)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-tree" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.QuickCheck)
             (hsPkgs.generic-random)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-binarytree" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.transformers)
             (hsPkgs.generic-random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hs-duktape";
-        version = "0.1.0";
-      };
+      identifier = { name = "hs-duktape"; version = "0.1.0"; };
       license = "MIT";
       copyright = "2015 Greg V <greg@unrelenting.technology>, 2013-2015 Duktape authors";
       maintainer = "greg@unrelenting.technology";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for a very compact embedded ECMAScript (JavaScript) engine.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.text)
           (hsPkgs.bytestring)
           (hsPkgs.aeson)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.aeson-qq)
             (hsPkgs.template-haskell)
             (hsPkgs.hs-duktape)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

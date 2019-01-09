@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { developer = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ruby-marshal";
-        version = "0.1.0";
-      };
+      identifier = { name = "ruby-marshal"; version = "0.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "hello@filib.io";
@@ -22,7 +13,7 @@
       synopsis = "Parse a subset of Ruby objects serialised with Marshal.dump.";
       description = "Parse a subset of Ruby objects serialised with Marshal.dump.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.string-conv)
           (hsPkgs.mtl)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.mtl)
             (hsPkgs.string-conv)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

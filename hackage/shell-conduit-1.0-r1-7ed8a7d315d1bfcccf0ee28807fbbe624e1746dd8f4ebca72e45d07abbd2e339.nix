@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "shell-conduit";
-        version = "1.0";
-      };
+      identifier = { name = "shell-conduit"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "2014 Chris Done";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Write shell scripts with Conduit";
       description = "Write shell scripts with Conduit. See \"Data.Conduit.Shell\" for documentation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

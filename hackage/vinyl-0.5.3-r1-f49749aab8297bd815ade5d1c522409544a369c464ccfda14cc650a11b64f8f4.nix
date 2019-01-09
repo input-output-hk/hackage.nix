@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vinyl";
-        version = "0.5.3";
-      };
+      identifier = { name = "vinyl"; version = "0.5.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "jonsterling@me.com";
@@ -22,14 +13,9 @@
       synopsis = "Extensible Records";
       description = "Extensible records for Haskell with lenses using modern GHC features.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -38,9 +24,9 @@
             (hsPkgs.vinyl)
             (hsPkgs.doctest)
             (hsPkgs.singletons)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-builder-all" = {
           depends = [
@@ -51,15 +37,11 @@
             (hsPkgs.mwc-random)
             (hsPkgs.lens)
             (hsPkgs.linear)
-          ];
-        };
+            ];
+          };
         "equality" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.vinyl)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.vinyl) ];
+          };
         };
       };
-    };
-  }
+    }

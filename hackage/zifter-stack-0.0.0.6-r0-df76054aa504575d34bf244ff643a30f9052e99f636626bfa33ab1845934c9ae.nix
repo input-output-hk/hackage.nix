@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zifter-stack";
-        version = "0.0.0.6";
-      };
+      identifier = { name = "zifter-stack"; version = "0.0.0.6"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "zifter-stack";
       description = "zifter-stack";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.path)
           (hsPkgs.path-io)
           (hsPkgs.safe)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "constraints";
-        version = "0.9.1";
-      };
+      identifier = { name = "constraints"; version = "0.9.1"; };
       license = "BSD-2-Clause";
       copyright = "Copyright (C) 2011-2015 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Constraint manipulation";
       description = "GHC 7.4 gave us the ability to talk about @ConstraintKinds@. They stopped crashing the compiler in GHC 7.6.\n\nThis package provides a vocabulary for working with them.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.mtl)
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "butter";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "butter"; version = "0.1.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2018 SID.run";
       maintainer = "matt.p.ahrens@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Monad Transformer for Asyncronous Message Passing";
       description = "Please see the README on Github at <https://github.com/System-Indystress/Butter#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "Lang-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "Protocol-test" = {
           depends = [
             (hsPkgs.HUnit)
@@ -73,8 +64,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

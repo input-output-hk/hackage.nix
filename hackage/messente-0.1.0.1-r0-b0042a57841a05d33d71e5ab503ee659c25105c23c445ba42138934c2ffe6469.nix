@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "messente";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "messente"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "kaiko@zazler.com";
@@ -22,7 +13,7 @@
       synopsis = "Messente SMS Gateway";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.network)
           (hsPkgs.HTTP)
           (hsPkgs.http-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

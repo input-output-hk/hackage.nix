@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "ntp-control";
-        version = "0.1";
-      };
+      identifier = { name = "ntp-control"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "magnus@scrive.com";
@@ -22,7 +13,7 @@
       synopsis = "Client library for NTP control messaging";
       description = "Support for monitoring NTP server performance, including quering NTP system variables and system status.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.network)
           (hsPkgs.old-locale)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-query" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.network)
             (hsPkgs.old-locale)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

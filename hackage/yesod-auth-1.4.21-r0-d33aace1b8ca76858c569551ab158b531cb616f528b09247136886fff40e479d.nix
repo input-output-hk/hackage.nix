@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "yesod-auth";
-        version = "1.4.21";
-      };
+      identifier = { name = "yesod-auth"; version = "1.4.21"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Authentication for Yesod.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-auth>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -67,9 +58,9 @@
           (hsPkgs.conduit)
           (hsPkgs.conduit-extra)
           (hsPkgs.nonce)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
+        };
       };
-    };
-  }
+    }

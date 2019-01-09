@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "monad-levels";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "monad-levels"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Ivan.Miljenovic@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Specific levels of monad transformers";
       description = "An automatic way of adding instances to monad classes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
           (hsPkgs.constraints)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

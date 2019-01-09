@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cryptoconditions";
-        version = "0.2.2.1";
-      };
+      identifier = { name = "cryptoconditions"; version = "0.2.2.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2017 Scott Sadler";
       maintainer = "Scott Sadler <scott@scottsadler.de>";
@@ -22,7 +13,7 @@
       synopsis = "Interledger Crypto-Conditions";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.cryptonite)
           (hsPkgs.memory)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "cryptoconditions-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.transformers)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "freetype-simple";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "freetype-simple"; version = "0.1.0.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "capsjac <capsjac at gmail dot com>";
@@ -22,7 +13,7 @@
       synopsis = "Single line text rendering for OpenGL ES";
       description = "Single line text rendering utility. See README.md for more information.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.linear)
           (hsPkgs.freetype2)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

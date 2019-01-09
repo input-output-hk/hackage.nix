@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zeromq4-simple";
-        version = "0.0.0";
-      };
+      identifier = { name = "zeromq4-simple"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 (c) Local Cooking Inc.";
       maintainer = "athan.clark@localcooking.com";
@@ -22,7 +13,7 @@
       synopsis = "More constrained extensions to zeromq4-haskell";
       description = "Please see the README on GitHub at <https://github.com/githubuser/zeromq4-simple#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.hashable)
           (hsPkgs.uuid)
           (hsPkgs.zeromq4-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hsharc";
-        version = "0.12";
-      };
+      identifier = { name = "hsharc"; version = "0.12"; };
       license = "LicenseRef-GPL";
       copyright = "Rohan Drape, 2007-2012";
       maintainer = "rd@slavepianos.org";
@@ -22,13 +13,6 @@
       synopsis = "Haskell SHARC bindings";
       description = "Parser for SHARC data (the Sandell Harmonic Archive)";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.xml)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.xml) ]; }; };
+    }

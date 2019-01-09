@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "dsp";
-        version = "0.1";
-      };
+      identifier = { name = "dsp"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "Matt Donadio, 2003";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -22,10 +13,6 @@
       synopsis = "Haskell Digital Signal Processing";
       description = "Digital Signal Processing, Fourier Transform, Linear Algebra, Interpolation";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

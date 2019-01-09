@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "genvalidity-vector";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "genvalidity-vector"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017-2018 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "GenValidity support for vector";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.validity)
           (hsPkgs.validity-vector)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "genvalidity-vector-test" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.genvalidity-vector)
             (hsPkgs.hspec)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

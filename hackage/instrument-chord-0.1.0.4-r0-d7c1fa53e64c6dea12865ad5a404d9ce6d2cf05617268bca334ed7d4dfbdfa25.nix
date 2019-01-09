@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "instrument-chord";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "instrument-chord"; version = "0.1.0.4"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "w@xy30.com";
@@ -22,13 +13,8 @@
       synopsis = "Render Instrument Chords";
       description = "Library which Pretty Prints Guitar Chords";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.music-diatonic)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.music-diatonic) ]; };
+      };
+    }

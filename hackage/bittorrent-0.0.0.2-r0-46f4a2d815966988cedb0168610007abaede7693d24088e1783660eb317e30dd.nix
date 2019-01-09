@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bittorrent";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "bittorrent"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013, Sam Truzjan";
       maintainer = "Sam Truzjan <pxqr.sta@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bittorrent protocol implementation.";
       description = "A library for making Haskell bittorrent applications easy.\n\nFor more information see:\n<https://github.com/cobit/bittorrent/blob/master/README.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -68,8 +59,8 @@
           (hsPkgs.entropy)
           (hsPkgs.filepath)
           (hsPkgs.mmap)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -86,8 +77,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.bencoding)
             (hsPkgs.bittorrent)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

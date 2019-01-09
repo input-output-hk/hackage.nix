@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "stackage-upload";
-        version = "0.1.0.5";
-      };
+      identifier = { name = "stackage-upload"; version = "0.1.0.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "A more secure version of cabal upload which uses HTTPS";
       description = "For more information, see <https://www.stackage.org/package/stackage-upload>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.filepath)
           (hsPkgs.process)
           (hsPkgs.temporary)
-        ];
-      };
+          ];
+        };
       exes = {
         "stackage-upload" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.stackage-upload)
             (hsPkgs.stackage-cli)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

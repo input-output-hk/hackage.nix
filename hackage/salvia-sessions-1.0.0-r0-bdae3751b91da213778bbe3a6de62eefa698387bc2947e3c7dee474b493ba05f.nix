@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "salvia-sessions";
-        version = "1.0.0";
-      };
+      identifier = { name = "salvia-sessions"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sfvisser@cs.uu.nl";
@@ -22,7 +13,7 @@
       synopsis = "Session support for the Salvia webserver.";
       description = "Session support for the Salvia webserver.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.salvia)
           (hsPkgs.salvia-protocol)
           (hsPkgs.monads-fd)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       tfrandom = true;
@@ -12,13 +6,10 @@
       readfile = true;
       debug = false;
       networkuri = true;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "MagicHaskeller";
-        version = "0.9.6.4.7";
-      };
+      identifier = { name = "MagicHaskeller"; version = "0.9.6.4.7"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Susumu Katayama <skata@cs.miyazaki-u.ac.jp>";
@@ -28,7 +19,7 @@
       synopsis = "Automatic inductive functional programmer by systematic search";
       description = "MagicHaskeller is an inductive functional programming system for Haskell.\nThis package contains the MagicHaskeller library, which can be used within GHCi or as an API for inductive program synthesis.\nIt also contains the MagicHaskeller executable that is a standalone synthesis program which can be used interactively or as a backend server,\nand the MagicHaskeller.cgi executable that is a CGI frontend for providing the Web interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -45,14 +36,14 @@
           (hsPkgs.html)
           (hsPkgs.pretty)
           (hsPkgs.hashable)
-        ] ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs.tf-random)) ++ pkgs.lib.optionals (flags.ghcapi && !system.isWindows) [
+          ] ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs.tf-random)) ++ (pkgs.lib).optionals (flags.ghcapi && !system.isWindows) [
           (hsPkgs.ghc)
           (hsPkgs.ghc-paths)
-        ]) ++ pkgs.lib.optional (flags.readfile) (hsPkgs.haskell-src)) ++ [
+          ]) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs.haskell-src)) ++ [
           (hsPkgs.network)
           (hsPkgs.network-uri)
-        ];
-      };
+          ];
+        };
       exes = {
         "MagicHaskeller" = {
           depends = ((([
@@ -76,11 +67,11 @@
             (hsPkgs.abstract-par)
             (hsPkgs.ghc-paths)
             (hsPkgs.ghc)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs.tf-random)) ++ pkgs.lib.optional (flags.readfile) (hsPkgs.haskell-src)) ++ [
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs.tf-random)) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs.haskell-src)) ++ [
             (hsPkgs.network)
             (hsPkgs.network-uri)
-          ];
-        };
+            ];
+          };
         "MagicHaskeller.cgi" = {
           depends = (([
             (hsPkgs.time)
@@ -101,11 +92,11 @@
             (hsPkgs.hint)
             (hsPkgs.extensible-exceptions)
             (hsPkgs.haskell-src)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.mueval)) ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs.tf-random)) ++ [
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.mueval)) ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs.tf-random)) ++ [
             (hsPkgs.network)
             (hsPkgs.network-uri)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

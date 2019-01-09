@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "refurb";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "refurb"; version = "0.2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Confer Health, Inc.";
       maintainer = "oss@confer.care";
@@ -22,7 +13,7 @@
       synopsis = "Tools for maintaining a database";
       description = "Tools for maintaining a database";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,8 +38,8 @@
           (hsPkgs.these)
           (hsPkgs.thyme)
           (hsPkgs.vector-space)
-        ];
-      };
+          ];
+        };
       tests = {
         "refurb-test" = {
           depends = [
@@ -75,8 +66,8 @@
             (hsPkgs.vector-space)
             (hsPkgs.refurb)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

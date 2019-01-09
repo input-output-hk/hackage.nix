@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "chr-lang";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "chr-lang"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "atzedijkstra@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "AST + surface language around chr";
       description = "AST + surface language around chr, with executable for parsing and running the evaluator.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,16 +28,12 @@
           (hsPkgs.chr-pretty)
           (hsPkgs.chr-data)
           (hsPkgs.chr-core)
-        ];
-      };
-      exes = {
-        "chr-term" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.chr-data)
-            (hsPkgs.chr-lang)
           ];
         };
+      exes = {
+        "chr-term" = {
+          depends = [ (hsPkgs.base) (hsPkgs.chr-data) (hsPkgs.chr-lang) ];
+          };
+        };
       };
-    };
-  }
+    }

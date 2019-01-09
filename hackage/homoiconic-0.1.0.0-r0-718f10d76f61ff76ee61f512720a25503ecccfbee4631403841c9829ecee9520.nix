@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "homoiconic";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "homoiconic"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mike@izbicki.me";
@@ -22,33 +13,13 @@
       synopsis = "Constructs FAlgebras from typeclasses, making Haskell functions homoiconic";
       description = "This library lets you automatically create FAlgebras for many type classes. From these FAlgebras and the free monad, we can generate abstract syntax trees for the type class. This lets us make many functions homoiconic.";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-        ];
-      };
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };
       tests = {
-        "Homogeneous" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.homoiconic)
-          ];
-        };
-        "Heterogeneous" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.homoiconic)
-          ];
-        };
-        "Constrained" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.homoiconic)
-          ];
+        "Homogeneous" = { depends = [ (hsPkgs.base) (hsPkgs.homoiconic) ]; };
+        "Heterogeneous" = { depends = [ (hsPkgs.base) (hsPkgs.homoiconic) ]; };
+        "Constrained" = { depends = [ (hsPkgs.base) (hsPkgs.homoiconic) ]; };
         };
       };
-    };
-  }
+    }

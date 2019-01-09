@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { cm = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "crdt";
-        version = "9.1";
-      };
+      identifier = { name = "crdt"; version = "9.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Yuriy Syrovetskiy, Nikolay Loginov;\n2018 Yuriy Syrovetskiy";
       maintainer = "Yuriy Syrovetskiy <cblp@cblp.su>";
@@ -22,7 +13,7 @@
       synopsis = "Conflict-free replicated data types";
       description = "Definitions of CmRDT and CvRDT. Implementations for some classic CRDTs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,11 +29,11 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8")) [
+          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8")) [
           (hsPkgs.fail)
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

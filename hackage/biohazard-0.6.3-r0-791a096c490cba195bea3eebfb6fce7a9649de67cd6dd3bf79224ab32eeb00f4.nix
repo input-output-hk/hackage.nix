@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "biohazard";
-        version = "0.6.3";
-      };
+      identifier = { name = "biohazard"; version = "0.6.3"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2010-2015 Udo Stenzel";
       maintainer = "udo.stenzel@eva.mpg.de";
@@ -22,7 +13,7 @@
       synopsis = "bioinformatics support library";
       description = "This is a collection of modules I separated from\nvarious bioinformatics tools.  The hope is to make\nthem reusable and easier to maintain.  Also includes\nsome of these tools and a bunch that work on mitochondrial\nsequences.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -54,8 +45,8 @@
           (hsPkgs.vector-algorithms)
           (hsPkgs.vector-th-unbox)
           (hsPkgs.zlib)
-        ];
-      };
+          ];
+        };
       exes = {
         "afroengineer" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.iteratee)
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "bam-fixpair" = {
           depends = [
             (hsPkgs.base)
@@ -77,32 +68,32 @@
             (hsPkgs.bytestring)
             (hsPkgs.hashable)
             (hsPkgs.transformers)
-          ];
-        };
+            ];
+          };
         "bam-meld" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "bam-resample" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "bam-rewrap" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.biohazard)
             (hsPkgs.bytestring)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "bam-rmdup" = {
           depends = [
             (hsPkgs.base)
@@ -113,22 +104,14 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
-          ];
-        };
+            ];
+          };
         "bam-trim" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.biohazard) (hsPkgs.bytestring) ];
+          };
         "count-coverage" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.iteratee)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.biohazard) (hsPkgs.iteratee) ];
+          };
         "dmg-est" = {
           depends = [
             (hsPkgs.async)
@@ -136,8 +119,8 @@
             (hsPkgs.biohazard)
             (hsPkgs.nonlinear-optimization)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "fastq2bam" = {
           depends = [
             (hsPkgs.base)
@@ -146,8 +129,8 @@
             (hsPkgs.containers)
             (hsPkgs.iteratee)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "glf-consensus" = {
           depends = [
             (hsPkgs.base)
@@ -156,8 +139,8 @@
             (hsPkgs.containers)
             (hsPkgs.exceptions)
             (hsPkgs.iteratee)
-          ];
-        };
+            ];
+          };
         "gt-call" = {
           depends = [
             (hsPkgs.base)
@@ -167,8 +150,8 @@
             (hsPkgs.iteratee)
             (hsPkgs.text)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "jivebunny" = {
           depends = [
             (hsPkgs.aeson)
@@ -185,16 +168,16 @@
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
             (hsPkgs.vector-th-unbox)
-          ];
-        };
+            ];
+          };
         "mt-anno" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.bytestring)
             (hsPkgs.biohazard)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "mt-ccheck" = {
           depends = [
             (hsPkgs.base)
@@ -202,14 +185,9 @@
             (hsPkgs.biohazard)
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
-          ];
-        };
-        "wiggle-coverage" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-          ];
+            ];
+          };
+        "wiggle-coverage" = { depends = [ (hsPkgs.base) (hsPkgs.biohazard) ]; };
         };
       };
-    };
-  }
+    }

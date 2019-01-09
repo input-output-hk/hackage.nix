@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "shared-memory";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "shared-memory"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Niklas Hambüchen <mail@nh2.me>";
@@ -22,17 +13,12 @@
       synopsis = "POSIX shared memory";
       description = "POSIX shared memory library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.unix) ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       tests = {
         "test-shared-memory-example" = {
           depends = [
@@ -40,8 +26,8 @@
             (hsPkgs.shared-memory)
             (hsPkgs.bytestring)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

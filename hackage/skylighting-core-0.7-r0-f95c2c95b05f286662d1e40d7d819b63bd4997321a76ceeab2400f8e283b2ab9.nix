@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      executable = false;
-      system-pcre = false;
-    };
+    flags = { executable = false; system-pcre = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "skylighting-core";
-        version = "0.7";
-      };
+      identifier = { name = "skylighting-core"; version = "0.7"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2016-2018 John MacFarlane";
       maintainer = "jgm@berkeley.edu";
@@ -25,7 +13,7 @@
       synopsis = "syntax highlighting library";
       description = "Skylighting is a syntax highlighting library.\nIt derives its tokenizers from XML syntax\ndefinitions used by KDE's KSyntaxHighlighting\nframework, so any syntax supported by that\nframework can be added. An optional command-line\nprogram is provided.\nSkylighting is intended to be the successor to\nhighlighting-kate.\nThis package provides the core highlighting\nfunctionality under a permissive license. It also\nbundles XML parser definitions licensed under the\nGPL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,12 +36,10 @@
           (hsPkgs.containers)
           (hsPkgs.ansi-terminal)
           (hsPkgs.colour)
-        ] ++ (if flags.system-pcre
+          ] ++ (if flags.system-pcre
           then [ (hsPkgs.regex-pcre) ]
-          else [
-            (hsPkgs.regex-pcre-builtin)
-          ]);
-      };
+          else [ (hsPkgs.regex-pcre-builtin) ]);
+        };
       exes = {
         "skylighting-extract" = {
           depends = [
@@ -73,13 +59,11 @@
             (hsPkgs.directory)
             (hsPkgs.ansi-terminal)
             (hsPkgs.colour)
-          ] ++ (if flags.system-pcre
+            ] ++ (if flags.system-pcre
             then [ (hsPkgs.regex-pcre) ]
-            else [
-              (hsPkgs.regex-pcre-builtin)
-            ]);
+            else [ (hsPkgs.regex-pcre-builtin) ]);
+          };
         };
-      };
       tests = {
         "test-skylighting" = {
           depends = [
@@ -100,9 +84,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.skylighting-core)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmark-skylighting" = {
           depends = [
@@ -113,8 +97,8 @@
             (hsPkgs.containers)
             (hsPkgs.directory)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

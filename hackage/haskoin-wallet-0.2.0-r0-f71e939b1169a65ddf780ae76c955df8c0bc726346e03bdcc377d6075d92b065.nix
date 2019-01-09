@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      mysql = false;
-      library-only = false;
-    };
+    flags = { mysql = false; library-only = false; };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "haskoin-wallet";
-        version = "0.2.0";
-      };
+      identifier = { name = "haskoin-wallet"; version = "0.2.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "plaprade+hackage@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "Implementation of a Bitcoin SPV Wallet with BIP32 and multisig support.";
       description = "This package provides a SPV (simple payment verification) wallet\nimplementation. It features BIP32 key management, deterministic signatures\n(RFC-6979) and first order support for multi-signature transactions. You\ncan communicate with the wallet process through a ZeroMQ API or through a\ncommand-line tool called \"hw\" which is also provided in this package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -67,22 +55,13 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.yaml)
           (hsPkgs.zeromq4-haskell)
-        ] ++ (if flags.mysql
-          then [
-            (hsPkgs.persistent-mysql)
-          ]
-          else [
-            (hsPkgs.persistent-sqlite)
-          ]);
-      };
-      exes = {
-        "hw" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskoin-wallet)
-          ];
+          ] ++ (if flags.mysql
+          then [ (hsPkgs.persistent-mysql) ]
+          else [ (hsPkgs.persistent-sqlite) ]);
         };
-      };
+      exes = {
+        "hw" = { depends = [ (hsPkgs.base) (hsPkgs.haskoin-wallet) ]; };
+        };
       tests = {
         "test-haskoin-wallet" = {
           depends = [
@@ -105,8 +84,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

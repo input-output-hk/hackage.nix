@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6.0";
-      identifier = {
-        name = "gtkglext";
-        version = "0.11.0";
-      };
+      identifier = { name = "gtkglext"; version = "0.11.0"; };
       license = "LicenseRef-GPL";
       copyright = "(c) 2001-2010 The Gtk2Hs Team";
       maintainer = "gtk2hs-users@sourceforge.net";
@@ -22,7 +13,7 @@
       synopsis = "Binding to the GTK+ OpenGL Extension";
       description = "GtkGLExt provides the GDK objects to support OpenGL rendering in GTK+,\nand GtkWidget API add-ons to make GTK+ widgets OpenGL-capable.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,10 +26,8 @@
           (hsPkgs.pango)
           (hsPkgs.cairo)
           (hsPkgs.gtk)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.gtkglext-1.0)
-        ];
+          ];
+        pkgconfig = [ (pkgconfPkgs.gtkglext-1.0) ];
+        };
       };
-    };
-  }
+    }

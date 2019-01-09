@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "mega-sdist";
-        version = "0.3.3.2";
-      };
+      identifier = { name = "mega-sdist"; version = "0.3.3.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Handles uploading to Hackage from mega repos";
       description = "Please see the description on Github at <https://github.com/snoyberg/mega-sdist#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "mega-sdist" = {
@@ -37,8 +28,8 @@
             (hsPkgs.rio-orphans)
             (hsPkgs.tar-conduit)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

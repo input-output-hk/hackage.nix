@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; };
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "tinyXml";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "tinyXml"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "pepeiborra@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A fast DOM parser for a subset of XML";
       description = "Fast DOM parser for XML with no support for entities, CDATA sections nor namespaces.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.vector)
           (hsPkgs.primitive)
-        ];
-      };
+          ];
+        };
       exes = {
         "validate" = {
           depends = [
@@ -44,9 +35,9 @@
             (hsPkgs.optparse-generic)
             (hsPkgs.directory)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.filepath)
             (hsPkgs.primitive)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "introduction";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "introduction"; version = "0.0.1.0"; };
       license = "MIT";
       copyright = "2016 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A prelude for safe new projects";
       description = "A prelude for safe new projects";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,7 +38,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.validity)
           (hsPkgs.validity-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

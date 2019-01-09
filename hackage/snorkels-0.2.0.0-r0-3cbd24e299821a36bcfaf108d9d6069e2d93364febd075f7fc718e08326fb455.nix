@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "snorkels";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "snorkels"; version = "0.2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "linus@sphalerite.org & contact@unaizalakain.info";
@@ -22,7 +13,7 @@
       synopsis = "Strategic board game of medium complexity";
       description = "Implementation in Haskell of the strategic board game\nSnorkels. Snorkels is often used as a first step when\nteaching people to play Go.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.bimap)
           (hsPkgs.parsec)
           (hsPkgs.optparse-applicative)
-        ];
-      };
+          ];
+        };
       exes = {
         "snorkels" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.bimap)
             (hsPkgs.parsec)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

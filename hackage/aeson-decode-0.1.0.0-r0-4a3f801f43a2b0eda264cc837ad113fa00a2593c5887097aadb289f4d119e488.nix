@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-decode";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "aeson-decode"; version = "0.1.0.0"; };
       license = "Apache-2.0";
       copyright = "2018 Typeclass Consulting, LLC";
       maintainer = "Chris Martin, Julie Moronuki";
@@ -22,7 +13,7 @@
       synopsis = "Easy functions for converting from Aeson.Value";
       description = "A small and simple library for interpreting JSON after it has\nbeen parsed by @aeson@ into the @Value@ type.\n\nDecoding failures do not come with any error messages; results\nare all @Maybe@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "hedgehog" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.hedgehog)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

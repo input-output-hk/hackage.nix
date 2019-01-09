@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cabal-install-bundle";
-        version = "0.16.0.2.1";
-      };
+      identifier = { name = "cabal-install-bundle"; version = "0.16.0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "paczesiowa@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "The (bundled) command-line interface for Cabal and Hackage.";
       description = "This is cabal-install with bundled dependencies. Easier to bootstrap.";
       buildType = "Configure";
-    };
+      };
     components = {
       exes = {
         "cabal" = {
@@ -39,9 +30,9 @@
             (hsPkgs.old-time)
             (hsPkgs.bytestring)
             (hsPkgs.unix)
-          ];
+            ];
           libs = [ (pkgs."z") ];
+          };
         };
       };
-    };
-  }
+    }

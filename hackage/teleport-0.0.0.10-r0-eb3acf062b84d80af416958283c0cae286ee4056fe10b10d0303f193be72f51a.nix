@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "teleport";
-        version = "0.0.0.10";
-      };
+      identifier = { name = "teleport"; version = "0.0.0.10"; };
       license = "MIT";
       copyright = "2010 Siddharth Bhat";
       maintainer = "siddu.druid@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "A tool to quickly switch between directories";
       description = "A tool to quickly switch between directories\nPlease see README.md for more details";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       exes = {
         "teleport-exe" = {
           depends = [
@@ -40,16 +29,11 @@
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
             (hsPkgs.ansi-terminal)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "teleport-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.teleport)
-          ];
+        "teleport-test" = { depends = [ (hsPkgs.base) (hsPkgs.teleport) ]; };
         };
       };
-    };
-  }
+    }

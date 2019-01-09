@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hcron";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "hcron"; version = "0.0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Timo B. Kranz <me@tbk.name>";
@@ -22,7 +13,7 @@
       synopsis = "A simple job scheduler, which just runs some IO action at a given time.";
       description = "A simple job scheduler for Haskell, which just runs some IO () action at a given time.\nCurrently almost all of this package is based on the excellent cron modules found in the\nBuildBox package by Ben Lippmeier.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.pretty)
           (hsPkgs.bytestring)
           (hsPkgs.stm)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

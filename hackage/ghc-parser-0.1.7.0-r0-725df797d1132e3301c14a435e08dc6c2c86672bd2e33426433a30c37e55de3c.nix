@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "ghc-parser";
-        version = "0.1.7.0";
-      };
+      identifier = { name = "ghc-parser"; version = "0.1.7.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "andrew.gibiansky@gmail.com";
@@ -22,17 +13,14 @@
       synopsis = "Haskell source parser from GHC.";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.ghc) ];
         build-tools = [
-          (hsPkgs.buildPackages.happy)
-          (hsPkgs.buildPackages.cpphs)
-        ];
+          ((hsPkgs.buildPackages).happy)
+          ((hsPkgs.buildPackages).cpphs)
+          ];
+        };
       };
-    };
-  }
+    }

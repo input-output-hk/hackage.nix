@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aws-ec2";
-        version = "0.3.7";
-      };
+      identifier = { name = "aws-ec2"; version = "0.3.7"; };
       license = "BSD-3-Clause";
       copyright = "See contributors list in README and LICENSE file";
       maintainer = "MemCachier, Inc <code@memcachier.com>";
@@ -22,7 +13,7 @@
       synopsis = "AWS EC2/VPC, ELB and CloudWatch client library for Haskell";
       description = "AWS client library with focus on infrastructure services like EC2 (with VPC), ELB and CloudWatch, extension to <https://github.com/aristidb/aws>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -51,8 +42,8 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.iproute)
           (hsPkgs.aws)
-        ];
-      };
+          ];
+        };
       exes = {
         "put-metric" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.aws)
             (hsPkgs.aws-ec2)
-          ];
-        };
+            ];
+          };
         "run-inst" = {
           depends = [
             (hsPkgs.base)
@@ -77,8 +68,8 @@
             (hsPkgs.containers)
             (hsPkgs.unordered-containers)
             (hsPkgs.aeson)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

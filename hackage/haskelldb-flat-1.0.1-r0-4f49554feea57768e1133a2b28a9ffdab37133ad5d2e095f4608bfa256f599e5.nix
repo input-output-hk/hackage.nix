@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { split-base = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "haskelldb-flat";
-        version = "1.0.1";
-      };
+      identifier = { name = "haskelldb-flat"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Bringert";
       maintainer = "Maintainer: haskelldb-users@lists.sourceforge.net";
@@ -22,23 +13,18 @@
       synopsis = "An experimental HaskellDB back-end in pure Haskell (no SQL)";
       description = "This is a very experimental HaskellDB back-end which is written in pure Haskell\nand doesn't use SQL. It stores the database in a file. Using this with\nconcurrent writes leads to data loss. This back-end does not support transactions.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.mtl)
-          (hsPkgs.haskelldb)
-        ] ++ (if flags.split-base
+        depends = [ (hsPkgs.mtl) (hsPkgs.haskelldb) ] ++ (if flags.split-base
           then [
             (hsPkgs.base)
             (hsPkgs.containers)
             (hsPkgs.old-time)
             (hsPkgs.directory)
-          ]
+            ]
           else [ (hsPkgs.base) ]);
+        };
+      exes = { "DBDirect-flat" = {}; };
       };
-      exes = {
-        "DBDirect-flat" = {};
-      };
-    };
-  }
+    }

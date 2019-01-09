@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "distributed-process-monad-control";
         version = "0.5.1.3";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@jeremyhuffman.com";
@@ -22,7 +16,7 @@
       synopsis = "Orphan instances for MonadBase and MonadBaseControl.";
       description = "This module exports instances for @'MonadBase' @'IO' and\n@'MonadBaseControl' @'IO' for the @'Process' monad. This is for use\nin conjunction with a library requiring these instances, such as the\n@<http://hackage.haskell.org/package/lifted-base lifted-base> package.\n\nA tutorial segment regarding use of this in distributed-process applications may\nbe found <http://haskell-distributed.github.io/tutorials/3ch.html#monad-transformer-stacks here>.\n\nPlease excercise caution in usage of this instance, as it can\nenable use of functions such as 'forkIO' (or, 'fork' from 'lifted-base')\nwhich compromise invariants in the Process monad and can lead to confusing\nand subtle issues. Always use the Cloud Haskell functions such as `spawnLocal` instead.\n\nexample usage:\n\n>import Control.Distributed.Process.MonadBaseControl()\n>import Control.Concurrent.MVar.Lifted (withMVar)\n>\n>processWithMVar :: MVar a -> (a -> Process b) -> Process b\n>processWithMvar = withMVar";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +25,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

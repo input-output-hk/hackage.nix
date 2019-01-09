@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hGelf";
-        version = "0.1";
-      };
+      identifier = { name = "hGelf"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Andy Georges";
       maintainer = "itkovian@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Haskell GELF library";
       description = "Library for sending messages in the GELF format to a server accepting Graylog2 Extended Log Format messages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.zlib)
           (hsPkgs.cereal)
           (hsPkgs.pureMD5)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

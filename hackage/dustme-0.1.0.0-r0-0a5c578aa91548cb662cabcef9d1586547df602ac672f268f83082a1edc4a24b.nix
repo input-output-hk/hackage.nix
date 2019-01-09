@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dustme";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "dustme"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "AllRightsReserved";
       maintainer = "mwotton@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,24 +32,13 @@
           (hsPkgs.terminfo)
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
-        ];
-      };
-      exes = {
-        "dustme" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.dustme)
           ];
         };
-      };
+      exes = { "dustme" = { depends = [ (hsPkgs.base) (hsPkgs.dustme) ]; }; };
       tests = {
         "dustme-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.dustme)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.dustme) ];
+          };
         };
       };
-    };
-  }
+    }

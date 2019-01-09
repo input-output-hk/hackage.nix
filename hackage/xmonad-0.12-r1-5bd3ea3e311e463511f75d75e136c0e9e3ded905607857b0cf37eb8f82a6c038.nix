@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      testing = false;
-      generatemanpage = false;
-    };
+    flags = { testing = false; generatemanpage = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "xmonad";
-        version = "0.12";
-      };
+      identifier = { name = "xmonad"; version = "0.12"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "xmonad@haskell.org";
@@ -25,7 +13,7 @@
       synopsis = "A tiling window manager";
       description = "xmonad is a tiling window manager for X. Windows are arranged\nautomatically to tile the screen without gaps or overlap, maximising\nscreen use. All features of the window manager are accessible from\nthe keyboard: a mouse is strictly optional. xmonad is written and\nextensible in Haskell. Custom layout algorithms, and other\nextensions, may be written by the user in config files. Layouts are\napplied dynamically, and different layouts may be used on each\nworkspace. Xinerama is fully supported, allowing windows to be tiled\non several screens.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +29,8 @@
           (hsPkgs.unix)
           (hsPkgs.utf8-string)
           (hsPkgs.X11)
-        ];
-      };
+          ];
+        };
       exes = {
         "xmonad" = {
           depends = [
@@ -51,18 +39,18 @@
             (hsPkgs.unix)
             (hsPkgs.X11)
             (hsPkgs.xmonad)
-          ];
-        };
+            ];
+          };
         "generatemanpage" = {
-          depends = pkgs.lib.optionals (flags.generatemanpage) [
+          depends = (pkgs.lib).optionals (flags.generatemanpage) [
             (hsPkgs.base)
             (hsPkgs.Cabal)
             (hsPkgs.pandoc)
             (hsPkgs.pretty)
             (hsPkgs.regex-posix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "properties" = {
           depends = [
@@ -72,8 +60,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.X11)
             (hsPkgs.xmonad)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

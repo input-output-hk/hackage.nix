@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dao";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "dao"; version = "0.1.0.1"; };
       license = "GPL-3.0-only";
       copyright = "(C) 2008-2014 Ramin Honary, all rights reserved.";
       maintainer = "ramin.honary@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Dao is meta programming language with its own built-in\ninterpreted language, designed with artificial\nintelligence applications in mind.";
       description = "The Dao modules and interactive program is a meta programming language\nintended for artificial intelligence uses. It is very much like the\nclassic UNIX \"AWK\" scripting language, but instead of using POSIX-style\nregular epxressions, the patterns used in Dao are designed to more easily\nmatch natural language input.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,8 +33,8 @@
           (hsPkgs.containers)
           (hsPkgs.deepseq)
           (hsPkgs.data-binary-ieee754)
-        ];
-      };
+          ];
+        };
       exes = {
         "dao" = {
           depends = [
@@ -63,9 +54,9 @@
             (hsPkgs.containers)
             (hsPkgs.deepseq)
             (hsPkgs.data-binary-ieee754)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "main" = {
           depends = [
@@ -85,8 +76,8 @@
             (hsPkgs.containers)
             (hsPkgs.deepseq)
             (hsPkgs.data-binary-ieee754)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

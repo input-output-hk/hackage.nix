@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.21";
-      identifier = {
-        name = "mailchimp";
-        version = "0.3.0";
-      };
+      identifier = { name = "mailchimp"; version = "0.3.0"; };
       license = "MIT";
       copyright = "2016 Juan Pedro Villa Isaza";
       maintainer = "Juan Pedro Villa Isaza <jpvillaisaza@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for the MailChimp API";
       description = "Haskell bindings for the MailChimp API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,16 +28,12 @@
           (hsPkgs.servant-client)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
-      tests = {
-        "sd" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.mailchimp)
           ];
         };
+      tests = {
+        "sd" = {
+          depends = [ (hsPkgs.base) (hsPkgs.hspec) (hsPkgs.mailchimp) ];
+          };
+        };
       };
-    };
-  }
+    }

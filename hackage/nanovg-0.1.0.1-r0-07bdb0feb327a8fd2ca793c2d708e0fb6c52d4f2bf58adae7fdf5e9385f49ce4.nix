@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nanovg";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "nanovg"; version = "0.1.0.1"; };
       license = "ISC";
       copyright = "2016 Moritz Kiefer";
       maintainer = "moritz.kiefer@purelyfunctional.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for nanovg";
       description = "Raw bindings to the OpenGL vector graphics library NanoVG";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,14 +23,9 @@
           (hsPkgs.linear)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-        libs = [
-          (pkgs."GLU")
-          (pkgs."GL")
-          (pkgs."m")
-          (pkgs."GLEW")
-        ];
-      };
+          ];
+        libs = [ (pkgs."GLU") (pkgs."GL") (pkgs."m") (pkgs."GLEW") ];
+        };
       exes = {
         "example00" = {
           depends = [
@@ -53,9 +39,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "nanovg-test" = {
           depends = [
@@ -66,8 +52,8 @@
             (hsPkgs.linear)
             (hsPkgs.nanovg)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

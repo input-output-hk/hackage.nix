@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "puffytools";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "puffytools"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2014, Peter Harpending";
       maintainer = "pharpend2@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A CLI assistant";
       description = "A CLI-based \"personal assistant.\" It will keep journal entries, remind you of\nthings, remind others of things, keep dates for you, etc.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "ptk" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.vector)
             (hsPkgs.time)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

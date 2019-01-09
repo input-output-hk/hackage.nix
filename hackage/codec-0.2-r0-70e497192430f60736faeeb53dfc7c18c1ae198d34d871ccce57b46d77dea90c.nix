@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "codec";
-        version = "0.2";
-      };
+      identifier = { name = "codec"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chpatrick@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple bidirectional serialization";
       description = "See README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.transformers)
           (hsPkgs.profunctors)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "codec-tests" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.generic-arbitrary)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

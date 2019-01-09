@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "gitHUD";
-        version = "1.3.0";
-      };
+      identifier = { name = "gitHUD"; version = "1.3.0"; };
       license = "BSD-3-Clause";
       copyright = "Grégory Bataille 2015";
       maintainer = "gbataille.dev@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "More efficient replacement to the great git-radar";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,16 +22,9 @@
           (hsPkgs.parsec)
           (hsPkgs.mtl)
           (hsPkgs.unix)
-        ];
-      };
-      exes = {
-        "gitHUD" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.gitHUD)
           ];
         };
-      };
+      exes = { "gitHUD" = { depends = [ (hsPkgs.base) (hsPkgs.gitHUD) ]; }; };
       tests = {
         "gitHUD-test" = {
           depends = [
@@ -52,8 +36,8 @@
             (hsPkgs.parsec)
             (hsPkgs.mtl)
             (hsPkgs.gitHUD)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

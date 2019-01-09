@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "spatial-math";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "spatial-math"; version = "0.5.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012, Greg Horn";
       maintainer = "gregmainland@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "3d math including quaternions/euler angles/dcms and utility functions";
       description = "This is a port of my 'mathlib' C library: `https://github.com/ghorn/mathlib`";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,15 +24,10 @@
           (hsPkgs.linear)
           (hsPkgs.lens)
           (hsPkgs.TypeCompose)
-        ];
-      };
-      tests = {
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "unit-tests" = {
           depends = [
             (hsPkgs.base)
@@ -49,8 +35,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

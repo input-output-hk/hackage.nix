@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { lib-werror = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "drifter";
-        version = "0.2";
-      };
+      identifier = { name = "drifter"; version = "0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Xavier <michael@michaelxavier.net>";
@@ -22,7 +13,7 @@
       synopsis = "Simple schema management for arbitrary databases.";
       description = "Simple support for migrating database schemas, which allows\nhaskell functions to be run as a part of the migration.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.fgl)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

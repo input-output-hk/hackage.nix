@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      dev = false;
-      library-only = false;
-    };
+    flags = { dev = false; library-only = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "Yablog";
-        version = "0.1.1";
-      };
+      identifier = { name = "Yablog"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Hiromi ISHII";
@@ -25,7 +13,7 @@
       synopsis = "A simple blog engine powered by Yesod.";
       description = "A simple blog engine powered by Yesod.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {};
       exes = {
@@ -71,8 +59,8 @@
             (hsPkgs.directory)
             (hsPkgs.containers)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

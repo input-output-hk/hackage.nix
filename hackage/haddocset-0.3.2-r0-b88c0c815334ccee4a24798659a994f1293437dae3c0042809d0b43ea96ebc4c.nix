@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haddocset";
-        version = "0.3.2";
-      };
+      identifier = { name = "haddocset"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2014-2015 Hirotomo Moriwaki";
       maintainer = "HirotomoMoriwaki<philopon.dependence@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Generate docset of Dash by Haddock haskell documentation tool";
       description = "please read README.md <https://github.com/philopon/haddocset/blob/master/README.md>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "haddocset" = {
@@ -43,10 +34,10 @@
             (hsPkgs.exceptions)
             (hsPkgs.resourcet)
             (hsPkgs.mtl)
-          ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
+            ] ++ (if compiler.isGhc && (compiler.version).ge "7.8"
             then [ (hsPkgs.haddock-api) ]
             else [ (hsPkgs.haddock) ]);
+          };
         };
       };
-    };
-  }
+    }

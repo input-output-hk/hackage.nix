@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cpphs";
-        version = "1.18.1";
-      };
+      identifier = { name = "cpphs"; version = "1.18.1"; };
       license = "LicenseRef-LGPL";
       copyright = "2004-2013, Malcolm Wallace";
       maintainer = "Malcolm Wallace <Malcolm.Wallace@me.com>";
@@ -22,7 +13,7 @@
       synopsis = "A liberalised re-implementation of cpp, the C pre-processor.";
       description = "Cpphs is a re-implementation of the C pre-processor that is both\nmore compatible with Haskell, and itself written in Haskell so\nthat it can be distributed with compilers.\n\nThis version of the C pre-processor is pretty-much\nfeature-complete and compatible with traditional (K&R)\npre-processors.  Additional features include: a plain-text mode;\nan option to unlit literate code files; and an option to turn\noff macro-expansion.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.old-locale)
           (hsPkgs.old-time)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "cpphs" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.old-locale)
             (hsPkgs.old-time)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

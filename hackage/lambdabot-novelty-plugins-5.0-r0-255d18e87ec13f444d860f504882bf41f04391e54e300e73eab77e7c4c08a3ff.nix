@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lambdabot-novelty-plugins";
-        version = "5.0";
-      };
+      identifier = { name = "lambdabot-novelty-plugins"; version = "5.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "James Cook <mokus@deepbondi.net>";
@@ -22,7 +13,7 @@
       synopsis = "Novelty plugins for Lambdabot";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nProvided plugins:\n\n[bf] Run Brainf*ck code.\n[dice] Roll some dice.\n[elite] zPEak Gib8erI\$|-|.\n[filter] More gibberish.\n[numberwang] Sorry, that's not Numberwang.\n[quote] Parrot profound wisdom.\n[slap] Delegate punishment.\n[unlambda] Run Unlambda code.\n[vixen] Let's chat, honey.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.regex-tdfa)
           (hsPkgs.brainfuck)
           (hsPkgs.unlambda)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

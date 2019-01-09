@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ghcjs-fetch";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "ghcjs-fetch"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2017 Moritz Kiefer";
       maintainer = "moritz.kiefer@purelyfunctional.org";
@@ -22,7 +13,7 @@
       synopsis = "GHCJS bindings for the JavaScript Fetch API";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,15 +22,13 @@
           (hsPkgs.bytestring)
           (hsPkgs.case-insensitive)
           (hsPkgs.http-types)
-        ] ++ (if compiler.isGhcjs && true
+          ] ++ (if compiler.isGhcjs && true
           then [ (hsPkgs.ghcjs-base) ]
-          else [
-            (hsPkgs.ghcjs-base-stub)
-          ]);
-      };
+          else [ (hsPkgs.ghcjs-base-stub) ]);
+        };
       tests = {
         "ghcjs-fetch-test" = {
-          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true))) [
+          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
             (hsPkgs.aeson)
             (hsPkgs.base)
             (hsPkgs.ghcjs-base)
@@ -50,8 +39,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

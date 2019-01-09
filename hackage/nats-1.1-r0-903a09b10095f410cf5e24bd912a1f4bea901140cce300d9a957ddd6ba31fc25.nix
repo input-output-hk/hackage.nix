@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      hashable = true;
-      binary = true;
-      template-haskell = true;
-    };
+    flags = { hashable = true; binary = true; template-haskell = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nats";
-        version = "1.1";
-      };
+      identifier = { name = "nats"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011-2014 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -26,12 +13,12 @@
       synopsis = "Natural numbers";
       description = "Natural numbers";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.9") ((([
+        depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.9") ((([
           (hsPkgs.base)
-        ] ++ pkgs.lib.optional (flags.binary) (hsPkgs.binary)) ++ pkgs.lib.optional (flags.template-haskell) (hsPkgs.template-haskell)) ++ pkgs.lib.optional (flags.hashable) (hsPkgs.hashable));
+          ] ++ (pkgs.lib).optional (flags.binary) (hsPkgs.binary)) ++ (pkgs.lib).optional (flags.template-haskell) (hsPkgs.template-haskell)) ++ (pkgs.lib).optional (flags.hashable) (hsPkgs.hashable));
+        };
       };
-    };
-  }
+    }

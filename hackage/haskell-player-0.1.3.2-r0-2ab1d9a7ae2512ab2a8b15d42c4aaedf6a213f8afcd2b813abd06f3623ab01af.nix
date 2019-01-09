@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haskell-player";
-        version = "0.1.3.2";
-      };
+      identifier = { name = "haskell-player"; version = "0.1.3.2"; };
       license = "BSD-3-Clause";
       copyright = "2016 Giovanni Cappellotto";
       maintainer = "potomak84@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A terminal music player based on afplay";
       description = "A minimal graphical interface on top of afplay and afinfo\nbuilt using brick.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,23 +30,17 @@
           (hsPkgs.vector)
           (hsPkgs.vty)
           (hsPkgs.xml-conduit)
-        ];
-      };
+          ];
+        };
       exes = {
         "haskell-player" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell-player)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.haskell-player) ];
+          };
         };
-      };
       tests = {
         "haskell-player-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell-player)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.haskell-player) ];
+          };
         };
       };
-    };
-  }
+    }

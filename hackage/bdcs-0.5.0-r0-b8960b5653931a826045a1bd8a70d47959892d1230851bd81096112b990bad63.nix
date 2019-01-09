@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { scripts = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bdcs";
-        version = "0.5.0";
-      };
+      identifier = { name = "bdcs"; version = "0.5.0"; };
       license = "LGPL-2.1-only";
       copyright = "";
       maintainer = "clumens@redhat.com";
@@ -22,7 +13,7 @@
       synopsis = "Tools for managing a content store of software packages";
       description = "This module provides a library and various tools for managing a content store and\nmetadata database.  These store the contents of software packages that make up a\nLinux distribution as well as a lot of metadata about those software packages.\nTools are inclued to construct those stores from pre-built software and to pull\nfiles back out to turn into bootable images.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -71,11 +62,9 @@
           (hsPkgs.unix)
           (hsPkgs.unordered-containers)
           (hsPkgs.xml-conduit)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.ostree-1)
-        ];
-      };
+          ];
+        pkgconfig = [ (pkgconfPkgs.ostree-1) ];
+        };
       exes = {
         "bdcs" = {
           depends = [
@@ -87,8 +76,8 @@
             (hsPkgs.monad-loops)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "bdcs-import" = {
           depends = [
             (hsPkgs.bdcs)
@@ -99,8 +88,8 @@
             (hsPkgs.mtl)
             (hsPkgs.network-uri)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "bdcs-inspect" = {
           depends = [
             (hsPkgs.bdcs)
@@ -111,8 +100,8 @@
             (hsPkgs.monad-loops)
             (hsPkgs.process)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "inspect-groups" = {
           depends = [
             (hsPkgs.aeson)
@@ -127,8 +116,8 @@
             (hsPkgs.persistent-sqlite)
             (hsPkgs.regex-pcre)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "inspect-ls" = {
           depends = [
             (hsPkgs.aeson)
@@ -143,8 +132,8 @@
             (hsPkgs.regex-pcre)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "inspect-nevras" = {
           depends = [
             (hsPkgs.bdcs)
@@ -155,8 +144,8 @@
             (hsPkgs.mtl)
             (hsPkgs.regex-pcre)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "bdcs-export" = {
           depends = [
             (hsPkgs.bdcs)
@@ -167,25 +156,20 @@
             (hsPkgs.directory)
             (hsPkgs.mtl)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "bdcs-tmpfiles" = {
           depends = [
             (hsPkgs.bdcs)
             (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.monad-logger)
-          ];
-        };
+            ];
+          };
         "bdcs-depsolve" = {
-          depends = [
-            (hsPkgs.bdcs)
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-          ];
+          depends = [ (hsPkgs.bdcs) (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.text) ];
+          };
         };
-      };
       tests = {
         "test-bdcs" = {
           depends = [
@@ -216,8 +200,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

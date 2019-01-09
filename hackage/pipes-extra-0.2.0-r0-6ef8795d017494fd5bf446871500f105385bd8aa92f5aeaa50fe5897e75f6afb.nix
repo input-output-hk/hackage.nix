@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pipes-extra";
-        version = "0.2.0";
-      };
+      identifier = { name = "pipes-extra"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "p.capriotti@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Various basic utilities for Pipes.";
       description = "This module contains basic utilities for Pipes to deal with files and chunked binary data, as well as extra combinators like 'zip' and 'tee'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,35 +21,35 @@
           (hsPkgs.transformers)
           (hsPkgs.pipes-core)
           (hsPkgs.bytestring)
-        ];
-      };
+          ];
+        };
       exes = {
         "telnet" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.pipes-extra)
             (hsPkgs.transformers)
             (hsPkgs.network)
-          ];
-        };
+            ];
+          };
         "compress" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.pipes-extra)
             (hsPkgs.pipes-zlib)
-          ];
-        };
+            ];
+          };
         "decompress" = {
-          depends = pkgs.lib.optionals (flags.examples) [
+          depends = (pkgs.lib).optionals (flags.examples) [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.pipes-extra)
             (hsPkgs.pipes-zlib)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -71,9 +62,9 @@
             (hsPkgs.mtl)
             (hsPkgs.pipes-core)
             (hsPkgs.pipes-extra)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-general" = {
           depends = [
@@ -83,16 +74,16 @@
             (hsPkgs.transformers)
             (hsPkgs.conduit)
             (hsPkgs.criterion)
-          ];
-        };
+            ];
+          };
         "bench-simple" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.pipes-core)
             (hsPkgs.transformers)
             (hsPkgs.criterion)
-          ];
-        };
+            ];
+          };
         "bench-zlib" = {
           depends = [
             (hsPkgs.base)
@@ -106,8 +97,8 @@
             (hsPkgs.zlib-conduit)
             (hsPkgs.zlib)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

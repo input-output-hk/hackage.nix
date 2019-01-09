@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      splitbase = true;
-      separatesyb = true;
-    };
+    flags = { splitbase = true; separatesyb = true; };
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "storablevector";
-        version = "0.2.12.1";
-      };
+      identifier = { name = "storablevector"; version = "0.2.12.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Henning Thielemann <storablevector@henning-thielemann.de>";
@@ -25,7 +13,7 @@
       synopsis = "Fast, packed, strict storable arrays with a list interface like ByteString";
       description = "Fast, packed, strict storable arrays\nwith a list interface,\na chunky lazy list interface with variable chunk size\nand an interface for write access via the @ST@ monad.\nThis is much like @bytestring@ and @binary@\nbut can be used for every 'Foreign.Storable.Storable' type.\nSee also package\n<http://hackage.haskell.org/package/vector>\nwith a similar intention.\n\nWe do not provide advanced fusion optimization,\nsince especially for lazy vectors\nthis would either be incorrect or not applicable.\nHowever we provide fusion with lazy lists in the package\n<http://hackage.haskell.org/package/storablevector-streamfusion>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,20 +23,14 @@
           (hsPkgs.deepseq)
           (hsPkgs.unsafe)
           (hsPkgs.QuickCheck)
-        ] ++ (if compiler.isJhc && true
-          then [
-            (hsPkgs.statethread)
-            (hsPkgs.base)
-          ]
+          ] ++ (if compiler.isJhc && true
+          then [ (hsPkgs.statethread) (hsPkgs.base) ]
           else if flags.splitbase
             then if flags.separatesyb
-              then [
-                (hsPkgs.base)
-                (hsPkgs.syb)
-              ]
+              then [ (hsPkgs.base) (hsPkgs.syb) ]
               else [ (hsPkgs.base) ]
             else [ (hsPkgs.base) ]);
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -56,14 +38,11 @@
             (hsPkgs.bytestring)
             (hsPkgs.utility-ht)
             (hsPkgs.QuickCheck)
-          ] ++ (if flags.splitbase
-            then [
-              (hsPkgs.random)
-              (hsPkgs.base)
-            ]
+            ] ++ (if flags.splitbase
+            then [ (hsPkgs.random) (hsPkgs.base) ]
             else [ (hsPkgs.base) ]);
+          };
         };
-      };
       benchmarks = {
         "speedtest" = {
           depends = [
@@ -72,14 +51,13 @@
             (hsPkgs.sample-frame)
             (hsPkgs.unsafe)
             (hsPkgs.deepseq)
-          ] ++ [ (hsPkgs.base) ];
-        };
+            ] ++ [ (hsPkgs.base) ];
+          };
         "speedpointer" = {
-          depends = [
-            (hsPkgs.storablevector)
-            (hsPkgs.utility-ht)
-          ] ++ [ (hsPkgs.base) ];
+          depends = [ (hsPkgs.storablevector) (hsPkgs.utility-ht) ] ++ [
+            (hsPkgs.base)
+            ];
+          };
         };
       };
-    };
-  }
+    }

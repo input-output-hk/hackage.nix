@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "snap-loader-dynamic";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "snap-loader-dynamic"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "snap@snapframework.com";
@@ -22,7 +13,7 @@
       synopsis = "Snap dynamic loader";
       description = "Snap Framework dynamic code loader for development mode";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -32,14 +23,14 @@
           (hsPkgs.snap-core)
           (hsPkgs.time)
           (hsPkgs.template-haskell)
-        ] ++ [
+          ] ++ [
           (hsPkgs.hint)
-        ]) ++ (if compiler.isGhc && compiler.version.ge "7.6.0"
+          ]) ++ (if compiler.isGhc && (compiler.version).ge "7.6.0"
           then [ (hsPkgs.directory) ]
           else [
             (hsPkgs.directory)
             (hsPkgs.old-time)
-          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

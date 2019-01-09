@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HSmarty";
-        version = "0.2.0.3";
-      };
+      identifier = { name = "HSmarty"; version = "0.2.0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 - 2015 by Alexander Thiemann";
       maintainer = "Alexander Thiemann <mail@athiemann.net>";
@@ -22,7 +13,7 @@
       synopsis = "Small template engine";
       description = "Haskell implementation of a subset of the PHP-Smarty template language";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "TestHSmarty" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.base)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

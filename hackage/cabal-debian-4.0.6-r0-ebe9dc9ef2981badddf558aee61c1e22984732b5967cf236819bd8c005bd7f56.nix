@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      tests = false;
-      local-debian = false;
-    };
+    flags = { tests = false; local-debian = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cabal-debian";
-        version = "4.0.6";
-      };
+      identifier = { name = "cabal-debian"; version = "4.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -25,7 +13,7 @@
       synopsis = "Create a debianization for a cabal package";
       description = "This package provides two methods for generating the debianization\n(i.e. the contents of the 'debian' subdirectory) for a cabal package.\nAn executable named cabal-debian, and a library API to handle more\ncomplex packaging issues.  For documentation of the executable run\n@cabal-debian --help@, for documentation of the library API follow\nthe link to the @Debian.Debianize@ module below.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +37,7 @@
           (hsPkgs.text)
           (hsPkgs.unix)
           (hsPkgs.utf8-string)
-        ] ++ (if flags.local-debian
+          ] ++ (if flags.local-debian
           then [
             (hsPkgs.regex-compat)
             (hsPkgs.bytestring)
@@ -57,9 +45,9 @@
             (hsPkgs.network)
             (hsPkgs.old-locale)
             (hsPkgs.time)
-          ]
+            ]
           else [ (hsPkgs.debian) ]);
-      };
+        };
       exes = {
         "cabal-debian" = {
           depends = [
@@ -84,7 +72,7 @@
             (hsPkgs.text)
             (hsPkgs.unix)
             (hsPkgs.utf8-string)
-          ] ++ (if flags.local-debian
+            ] ++ (if flags.local-debian
             then [
               (hsPkgs.regex-compat)
               (hsPkgs.bytestring)
@@ -92,9 +80,9 @@
               (hsPkgs.network)
               (hsPkgs.old-locale)
               (hsPkgs.time)
-            ]
+              ]
             else [ (hsPkgs.debian) ]);
-        };
+          };
         "cabal-debian-tests" = {
           depends = [
             (hsPkgs.ansi-wl-pprint)
@@ -119,7 +107,7 @@
             (hsPkgs.text)
             (hsPkgs.unix)
             (hsPkgs.utf8-string)
-          ] ++ (if flags.local-debian
+            ] ++ (if flags.local-debian
             then [
               (hsPkgs.regex-compat)
               (hsPkgs.bytestring)
@@ -127,9 +115,9 @@
               (hsPkgs.network)
               (hsPkgs.old-locale)
               (hsPkgs.time)
-            ]
+              ]
             else [ (hsPkgs.debian) ]);
+          };
         };
       };
-    };
-  }
+    }

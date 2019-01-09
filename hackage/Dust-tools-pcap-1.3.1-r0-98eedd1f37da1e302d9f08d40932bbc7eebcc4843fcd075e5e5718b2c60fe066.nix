@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Dust-tools-pcap";
-        version = "1.3.1";
-      };
+      identifier = { name = "Dust-tools-pcap"; version = "1.3.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "brandon@ischool.utexas.edu";
@@ -22,7 +13,7 @@
       synopsis = "Network filtering exploration tools that rely on pcap";
       description = "A set of tools for exploring network filtering";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "replay-convert" = {
@@ -45,8 +36,8 @@
             (hsPkgs.directory)
             (hsPkgs.split)
             (hsPkgs.pcap)
-          ];
-        };
+            ];
+          };
         "shaper-update" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +57,8 @@
             (hsPkgs.split)
             (hsPkgs.pcap)
             (hsPkgs.csv)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

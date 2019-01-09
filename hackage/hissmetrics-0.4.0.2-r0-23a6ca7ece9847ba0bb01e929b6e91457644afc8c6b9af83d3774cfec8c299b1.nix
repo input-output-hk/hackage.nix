@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hissmetrics";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "hissmetrics"; version = "0.4.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Unofficial API bindings to KISSmetrics.";
       description = "This package provides simple functions that allow you to access\nKISSmetrics using Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.conduit)
           (hsPkgs.http-types)
           (hsPkgs.http-conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

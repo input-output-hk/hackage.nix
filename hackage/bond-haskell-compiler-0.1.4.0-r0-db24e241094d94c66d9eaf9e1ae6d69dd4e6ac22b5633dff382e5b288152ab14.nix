@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bond-haskell-compiler";
-        version = "0.1.4.0";
-      };
+      identifier = { name = "bond-haskell-compiler"; version = "0.1.4.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2015 Andrey Sverdlichenko";
       maintainer = "Andrey Sverdlichenko";
@@ -22,7 +13,7 @@
       synopsis = "Bond code generator for Haskell";
       description = "Bond is a cross-platform framework for handling schematized\ndata. It supports cross-language de/serialization and\npowerful generic mechanisms for efficiently manipulating\ndata.\n\nThe package contains a command-line compiler/codegen\ntool, named hbc, which is used to generate code for Haskell\nprograms using Bond.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.filepath)
           (hsPkgs.haskell-src-exts)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "hbc" = {
           depends = [
@@ -45,13 +36,11 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.monad-loops)
-          ];
+            ];
+          };
         };
-      };
       tests = {
-        "bond-haskell-compiler-test" = {
-          depends = [ (hsPkgs.base) ];
+        "bond-haskell-compiler-test" = { depends = [ (hsPkgs.base) ]; };
         };
       };
-    };
-  }
+    }

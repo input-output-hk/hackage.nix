@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fastparser";
-        version = "0.3.1.1";
-      };
+      identifier = { name = "fastparser"; version = "0.3.1.1"; };
       license = "BSD-3-Clause";
       copyright = "Simon Marechal";
       maintainer = "bartavelle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A fast, but bare bones, bytestring parser combinators library.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.containers)
           (hsPkgs.kan-extensions)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       benchmarks = {
         "timestamps" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.criterion)
             (hsPkgs.fastparser)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

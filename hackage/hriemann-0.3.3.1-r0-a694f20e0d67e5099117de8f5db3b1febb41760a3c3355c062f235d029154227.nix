@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hriemann";
-        version = "0.3.3.1";
-      };
+      identifier = { name = "hriemann"; version = "0.3.3.1"; };
       license = "MIT";
       copyright = "2017 David Smith";
       maintainer = "shmish111@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A Riemann Client for Haskell";
       description = "A Riemann Client for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,16 +33,11 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unagi-chan)
-        ];
-      };
-      exes = {
-        "hriemann-exe" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hriemann)
           ];
         };
-      };
+      exes = {
+        "hriemann-exe" = { depends = [ (hsPkgs.base) (hsPkgs.hriemann) ]; };
+        };
       tests = {
         "hriemann-test" = {
           depends = [
@@ -63,8 +49,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-core)
             (hsPkgs.kazura-queue)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

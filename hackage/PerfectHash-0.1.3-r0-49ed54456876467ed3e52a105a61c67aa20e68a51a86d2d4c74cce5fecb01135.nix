@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "PerfectHash";
-        version = "0.1.3";
-      };
+      identifier = { name = "PerfectHash"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Mark Wotton <mwotton@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A perfect hashing library for mapping bytestrings to values.";
       description = "A perfect hashing library for mapping bytestrings to values.\nInsertion is not supported (by design): this is just a binding\nto the C-based CMPH library (http://cmph.sf.net). Only fromList\nand lookup operations are supported, but in many circumstances\nthis is all that's required.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.array)
           (hsPkgs.time)
           (hsPkgs.binary)
-        ];
+          ];
         libs = [ (pkgs."cmph") ];
+        };
       };
-    };
-  }
+    }

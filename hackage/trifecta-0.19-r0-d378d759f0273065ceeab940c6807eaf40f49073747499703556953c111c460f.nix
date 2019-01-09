@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "trifecta";
-        version = "0.19";
-      };
+      identifier = { name = "trifecta"; version = "0.19"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2010-2011 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A modern parser combinator library with convenient diagnostics";
       description = "A modern unicode-aware parser combinator library with slicing and Clang-style colored diagnostics";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.keys)
           (hsPkgs.wl-pprint-extras)
           (hsPkgs.wl-pprint-terminfo)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

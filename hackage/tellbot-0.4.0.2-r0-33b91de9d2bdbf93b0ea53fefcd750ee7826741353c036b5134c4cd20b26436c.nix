@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tellbot";
-        version = "0.4.0.2";
-      };
+      identifier = { name = "tellbot"; version = "0.4.0.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Dimitri Sabadie <dimitri.sabadie@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "IRC tellbot";
       description = "An IRC bot that can be used to create queuing message.\nIt also offers a simple administration IRC bot interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "tellbot" = {
@@ -36,8 +27,8 @@
             (hsPkgs.containers)
             (hsPkgs.bifunctors)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "magicbane";
-        version = "0.1.2";
-      };
+      identifier = { name = "magicbane"; version = "0.1.2"; };
       license = "LicenseRef-PublicDomain";
       copyright = "2017 Greg V <greg@unrelenting.technology>";
       maintainer = "greg@unrelenting.technology";
@@ -22,7 +13,7 @@
       synopsis = "A web framework that integrates Servant, ClassyPrelude, EKG, fast-logger, wai-cli…";
       description = "Inspired by Dropwizard, Magicbane provides a packaged framework for developing web services using the best available libraries, including Servant, ClassyPrelude, Aeson, EKG/monad-metrics, fast-logger/monad-logger, wai-cli and others.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -69,7 +60,7 @@
           (hsPkgs.http-api-data)
           (hsPkgs.mime-types)
           (hsPkgs.envy)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

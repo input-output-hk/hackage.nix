@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "funion";
-        version = "0.0.1";
-      };
+      identifier = { name = "funion"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nathanwiegand@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A unioning file-system using HFuse";
       description = "A unioning file-system using HFuse";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "funion" = {
@@ -35,8 +26,8 @@
             (hsPkgs.directory)
             (hsPkgs.unix)
             (hsPkgs.filepath)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

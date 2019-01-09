@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "monad-lrs";
-        version = "0.0.2";
-      };
+      identifier = { name = "monad-lrs"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bjin1990+haskell@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "a monad to calculate linear recursive sequence";
       description = "A monad to calculate linear recursive sequence efficiently. Matrix\nmultiplication and fast exponentiation algorithm are used to speed\nup calculating the number with particular index in the sequence. This\nlibrary also provides a monadic DSL to describe the sequence.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
       tests = {
         "Test" = {
           depends = [
@@ -38,8 +24,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

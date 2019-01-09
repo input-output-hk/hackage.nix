@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "squeeze";
-        version = "1.0.2.4";
-      };
+      identifier = { name = "squeeze"; version = "1.0.2.4"; };
       license = "LicenseRef-GPL";
       copyright = "(C) 2010 Dr. Alistair Ward";
       maintainer = "squeeze <at> functionalley <dot> eu";
@@ -22,7 +13,7 @@
       synopsis = "A file-packing application.";
       description = "Returns progressively better subsets of the specified files, selected to fit into a limited space, without wasting more than the specific ratio.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "squeeze" = {
@@ -37,8 +28,8 @@
             (hsPkgs.random)
             (hsPkgs.toolshed)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

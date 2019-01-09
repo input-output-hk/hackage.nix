@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dhall-check";
-        version = "1.0.0.1";
-      };
+      identifier = { name = "dhall-check"; version = "1.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "BSD3";
       maintainer = "anfelor@posteo.de";
@@ -22,7 +13,7 @@
       synopsis = "Check all dhall files in a project";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "dhall-check" = {
@@ -35,8 +26,8 @@
             (hsPkgs.fsnotify)
             (hsPkgs.trifecta)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

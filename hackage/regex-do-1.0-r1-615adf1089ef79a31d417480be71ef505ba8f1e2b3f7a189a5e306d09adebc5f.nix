@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "regex-do";
-        version = "1.0";
-      };
+      identifier = { name = "regex-do"; version = "1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "Imants Cekusins";
@@ -22,7 +13,7 @@
       synopsis = "PCRE regex funs: ! bug in groupReplace";
       description = "Convenience functions to search, replace, format String | ByteString with PCRE regex";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.array)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.array)
             (hsPkgs.text)
             (hsPkgs.regex-do)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

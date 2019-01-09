@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "servant-swagger-ui-redoc";
         version = "0.3.0.1.21.2";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +16,7 @@
       synopsis = "Servant swagger ui: ReDoc theme";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)\n\nReDoc theme: https://github.com/Rebilly/ReDoc";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +28,7 @@
           (hsPkgs.servant-server)
           (hsPkgs.swagger2)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

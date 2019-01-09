@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cqrs-example";
-        version = "0.8.0";
-      };
+      identifier = { name = "cqrs-example"; version = "0.8.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "spam@scientician.net";
@@ -22,7 +13,7 @@
       synopsis = "Example for cqrs package";
       description = "Example for cqrs package";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cqrs-example" = {
@@ -54,9 +45,9 @@
             (hsPkgs.wai-eventsource)
             (hsPkgs.wai-extra)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "cqrs-example-tests" = {
           depends = [
@@ -78,8 +69,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

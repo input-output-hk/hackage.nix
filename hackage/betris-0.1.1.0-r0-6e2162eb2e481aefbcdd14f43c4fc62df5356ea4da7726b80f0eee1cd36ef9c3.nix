@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "betris";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "betris"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Mario Lang";
       maintainer = "mlang@blind.guru";
@@ -22,7 +13,7 @@
       synopsis = "A horizontal version of tetris for braille users";
       description = "Please see the README at <https://github.com/mlang/betris#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.stm-chans)
           (hsPkgs.time-units)
           (hsPkgs.vty)
-        ];
-      };
+          ];
+        };
       exes = {
         "betris" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.stm-chans)
             (hsPkgs.time-units)
             (hsPkgs.vty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

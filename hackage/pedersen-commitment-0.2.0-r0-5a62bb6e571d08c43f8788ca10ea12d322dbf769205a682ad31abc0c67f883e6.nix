@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pedersen-commitment";
-        version = "0.2.0";
-      };
+      identifier = { name = "pedersen-commitment"; version = "0.2.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Adjoint Inc (info@adjoint.io)";
@@ -22,7 +13,7 @@
       synopsis = "An implementation of Pedersen commitment schemes";
       description = "An implementation of Pedersen commitment schemes for multiparty protocols.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.mtl)
           (hsPkgs.protolude)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

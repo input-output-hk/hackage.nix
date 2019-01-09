@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rollbar-hs";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "rollbar-hs"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Hardy Jones";
       maintainer = "jones3.hardy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Core Rollbar data types and APIs.";
       description = "Provides a type-safe encoding of the Rollbar API.\nAlso provides functions to communicate with the Rollbar API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
-        ];
-      };
+          ];
+        };
       tests = {
         "doc-test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.lens-aeson)
             (hsPkgs.rollbar-hs)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

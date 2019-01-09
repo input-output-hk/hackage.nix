@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "pipes-bzip";
-        version = "0.2.0.3";
-      };
+      identifier = { name = "pipes-bzip"; version = "0.2.0.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012, Hideyuki Tanaka";
       maintainer = "Alexey Smirnov";
@@ -22,7 +13,7 @@
       synopsis = "Streaming compression/decompression via pipes.";
       description = "Streaming compression/decompression via pipes.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,9 +24,9 @@
           (hsPkgs.pipes-safe)
           (hsPkgs.data-default)
           (hsPkgs.bindings-DSL)
-        ];
+          ];
         libs = [ (pkgs."bz2") ];
-      };
+        };
       tests = {
         "test" = {
           depends = [
@@ -51,16 +42,11 @@
             (hsPkgs.directory)
             (hsPkgs.MonadRandom)
             (hsPkgs.bzlib)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
-        "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.pipes-bzip)
-          ];
+        "bench" = { depends = [ (hsPkgs.base) (hsPkgs.pipes-bzip) ]; };
         };
       };
-    };
-  }
+    }

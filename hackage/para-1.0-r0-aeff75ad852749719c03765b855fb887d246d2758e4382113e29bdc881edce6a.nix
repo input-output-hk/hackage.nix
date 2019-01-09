@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "para";
-        version = "1.0";
-      };
+      identifier = { name = "para"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kevin Quick <quick@sparq.org>";
@@ -22,10 +13,6 @@
       synopsis = "Text paragraph formatting";
       description = "A paragraph formatting utility.  Provided with input text that is\narbitrarily split amongst several strings, this utility will\nreformat the text into paragraphs which do not exceed the\nspecified width.  Paragraphs are delimited by blank lines in the\ninput.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

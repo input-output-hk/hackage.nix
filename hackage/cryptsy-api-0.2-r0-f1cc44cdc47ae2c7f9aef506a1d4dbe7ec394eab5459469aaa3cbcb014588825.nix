@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cryptsy-api";
-        version = "0.2";
-      };
+      identifier = { name = "cryptsy-api"; version = "0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "2013 Boyd Stephen Smith Jr.";
       maintainer = "bss@iguanasuicide.net";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for Cryptsy cryptocurrency exchange API.";
       description = "Bindings for Cryptsy cryptocurrency exchange API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

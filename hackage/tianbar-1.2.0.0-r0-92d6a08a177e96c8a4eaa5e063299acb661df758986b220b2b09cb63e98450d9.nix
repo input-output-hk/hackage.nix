@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tianbar";
-        version = "1.2.0.0";
-      };
+      identifier = { name = "tianbar"; version = "1.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "a@koterpillar.com";
@@ -22,7 +13,7 @@
       synopsis = "A desktop bar based on WebKit";
       description = "A desktop bar using WebKit for rendering as much as possible.\nBased on Taffybar.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.utf8-string)
           (hsPkgs.blaze-html)
           (hsPkgs.blaze-markup)
-        ];
-      };
+          ];
+        };
       exes = {
         "tianbar" = {
           depends = [
@@ -66,12 +57,10 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.utf8-string)
             (hsPkgs.xdg-basedir)
-          ];
-          pkgconfig = [
-            (pkgconfPkgs.gtk+-3.0)
-          ];
+            ];
+          pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -105,8 +94,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.utf8-string)
             (hsPkgs.xdg-basedir)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

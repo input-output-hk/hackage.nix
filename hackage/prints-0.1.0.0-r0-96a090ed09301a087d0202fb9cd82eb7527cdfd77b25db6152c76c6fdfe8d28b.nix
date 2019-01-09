@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prints";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "prints"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) Evan Turner";
       maintainer = "ev@evturn.com";
@@ -22,7 +13,7 @@
       synopsis = "The Artist Formerly Known as Prints";
       description = "In 1993, in rebellion against Warner Bros., which refused\nto release Prince's enormous backlog of music at a steady\npace, he changed his name to an unpronounceable symbol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.pretty-simple)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

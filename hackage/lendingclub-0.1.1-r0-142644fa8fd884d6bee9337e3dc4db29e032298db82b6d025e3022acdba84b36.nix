@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lendingclub";
-        version = "0.1.1";
-      };
+      identifier = { name = "lendingclub"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Matthew Wraith";
       maintainer = "wraithm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for the LendingClub marketplace API";
       description = "Bindings for the LendingClub marketplace API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.HsOpenSSL)
           (hsPkgs.http-streams)
           (hsPkgs.blaze-builder)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

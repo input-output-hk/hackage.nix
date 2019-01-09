@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "BufferedSocket";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "BufferedSocket"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tomas.o.more@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "BROKEN VERSION";
       description = "THIS VERSION IS BROKEN DO NOT USE!";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

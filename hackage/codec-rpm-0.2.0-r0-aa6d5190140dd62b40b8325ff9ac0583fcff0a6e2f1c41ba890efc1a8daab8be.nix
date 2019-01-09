@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "codec-rpm";
-        version = "0.2.0";
-      };
+      identifier = { name = "codec-rpm"; version = "0.2.0"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "clumens@redhat.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for manipulating RPM files";
       description = "This module provides a library for reading RPM files and converting them\ninto useful data structures.  There is currently no way to operate in\nreverse - that is, for building an RPM file out of a data structure.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.pretty)
           (hsPkgs.resourcet)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -53,8 +44,8 @@
             (hsPkgs.attoparsec)
             (hsPkgs.codec-rpm)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

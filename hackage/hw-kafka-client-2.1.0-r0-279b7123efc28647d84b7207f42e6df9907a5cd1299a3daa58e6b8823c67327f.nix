@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hw-kafka-client";
-        version = "2.1.0";
-      };
+      identifier = { name = "hw-kafka-client"; version = "2.1.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Alexey Raga <alexey.raga@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Kafka bindings for Haskell";
       description = "Apache Kafka bindings backed by the librdkafka C library.\n\nFeatures include:\n\n* Consumer groups: auto-rebalancing consumers\n\n* Keyed and keyless messages producing/consuming\n\n* Batch producing messages";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,12 +24,10 @@
           (hsPkgs.temporary)
           (hsPkgs.transformers)
           (hsPkgs.unix)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
         libs = [ (pkgs."rdkafka") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       exes = {
         "kafka-client-example" = {
           depends = [
@@ -50,9 +39,9 @@
             (hsPkgs.transformers)
             (hsPkgs.unix)
             (hsPkgs.hw-kafka-client)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -65,8 +54,8 @@
             (hsPkgs.hspec)
             (hsPkgs.regex-posix)
             (hsPkgs.either)
-          ];
-        };
+            ];
+          };
         "integration-tests" = {
           depends = [
             (hsPkgs.base)
@@ -78,8 +67,8 @@
             (hsPkgs.hspec)
             (hsPkgs.regex-posix)
             (hsPkgs.either)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

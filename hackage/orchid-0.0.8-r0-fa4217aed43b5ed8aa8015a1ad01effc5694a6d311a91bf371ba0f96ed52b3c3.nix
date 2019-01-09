@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "orchid";
-        version = "0.0.8";
-      };
+      identifier = { name = "orchid"; version = "0.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sfvisser@cs.uu.nl";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Wiki Library";
       description = "Haskell Wiki Library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,7 +36,7 @@
           (hsPkgs.unix)
           (hsPkgs.nano-md5)
           (hsPkgs.hscolour)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { posix = true; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "cautious-file";
-        version = "1.0.2";
-      };
+      identifier = { name = "cautious-file"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) Robin Green 2009, 2011";
       maintainer = "Robin Green <greenrd@greenrd.org>";
@@ -22,7 +13,7 @@
       synopsis = "Ways to write a file cautiously, to reduce the chances of problems such as data loss due to crashes or power failures";
       description = "On non-Windows systems, posix-specific functions are used to reduce the chance of data loss further";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,10 +25,8 @@
           (hsPkgs.filepath)
           (hsPkgs.bytestring)
           (hsPkgs.bytestring)
-        ] ++ pkgs.lib.optional (flags.posix && !system.isWindows) (hsPkgs.unix);
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
+          ] ++ (pkgs.lib).optional (flags.posix && !system.isWindows) (hsPkgs.unix);
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       };
-    };
-  }
+    }

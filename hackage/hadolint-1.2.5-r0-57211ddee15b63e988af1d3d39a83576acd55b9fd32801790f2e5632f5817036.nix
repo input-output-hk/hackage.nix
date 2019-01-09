@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hadolint";
-        version = "1.2.5";
-      };
+      identifier = { name = "hadolint"; version = "1.2.5"; };
       license = "GPL-3.0-only";
       copyright = "Lukas Martinelli";
       maintainer = "me@lukasmartinelli.ch";
@@ -22,7 +13,7 @@
       synopsis = "Dockerfile Linter JavaScript API";
       description = "A smarter Dockerfile linter that helps you build best practice Docker images.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.language-docker)
           (hsPkgs.parsec)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       exes = {
         "hadolint" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.language-docker)
             (hsPkgs.optparse-applicative)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "hadolint-unit-tests" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.language-docker)
             (hsPkgs.parsec)
             (hsPkgs.split)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "starrover2";
-        version = "0.1.1";
-      };
+      identifier = { name = "starrover2"; version = "0.1.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Antti Salonen 2010";
       maintainer = "Antti Salonen<ajsalonen at gmail dot com>";
@@ -22,7 +13,7 @@
       synopsis = "Space simulation game";
       description = "Space simulation game.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "starrover2" = {
@@ -37,8 +28,8 @@
             (hsPkgs.FTGL)
             (hsPkgs.directory)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

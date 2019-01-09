@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "PasswordGenerator";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "PasswordGenerator"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "denisovenator@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Simple library for generating passwords";
       description = "Simple library for generating passwords.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.QuickCheck)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.QuickCheck) ]; };
+      };
+    }

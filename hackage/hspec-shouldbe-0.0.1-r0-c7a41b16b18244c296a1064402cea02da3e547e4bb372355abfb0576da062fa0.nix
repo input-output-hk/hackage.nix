@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hspec-shouldbe";
-        version = "0.0.1";
-      };
+      identifier = { name = "hspec-shouldbe"; version = "0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "";
@@ -22,13 +13,8 @@
       synopsis = "Convenience wrapper and utilities for hspec";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.hspec)
-          (hsPkgs.test-shouldbe)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.hspec) (hsPkgs.test-shouldbe) ]; };
+      };
+    }

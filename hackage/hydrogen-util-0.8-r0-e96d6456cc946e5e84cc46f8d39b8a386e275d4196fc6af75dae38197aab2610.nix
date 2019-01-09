@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.14";
-      identifier = {
-        name = "hydrogen-util";
-        version = "0.8";
-      };
+      identifier = { name = "hydrogen-util"; version = "0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "julian@scravy.de";
@@ -22,7 +13,7 @@
       synopsis = "Hydrogen Tools";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.hydrogen-prelude)
           (hsPkgs.parsec)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

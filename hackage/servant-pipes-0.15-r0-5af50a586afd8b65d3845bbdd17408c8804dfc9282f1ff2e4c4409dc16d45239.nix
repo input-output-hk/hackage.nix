@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-pipes";
-        version = "0.15";
-      };
+      identifier = { name = "servant-pipes"; version = "0.15"; };
       license = "BSD-3-Clause";
       copyright = "2018 Servant Contributors";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant Stream support for pipes";
       description = "Servant Stream support for pipes.\n\nProvides 'ToSourceIO' and 'FromSourceIO' instances for 'Proxy' and 'SafeT'.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.mtl)
           (hsPkgs.monad-control)
           (hsPkgs.servant)
-        ];
-      };
+          ];
+        };
       tests = {
         "example" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.http-client)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

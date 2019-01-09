@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       boundschecks = true;
       unsafechecks = false;
       internalchecks = false;
-    };
+      };
     package = {
       specVersion = "1.2.3";
-      identifier = {
-        name = "vector-algorithms";
-        version = "0.3.2";
-      };
+      identifier = { name = "vector-algorithms"; version = "0.3.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Dan Doel <dan.doel@gmail.com>";
@@ -26,14 +17,10 @@
       synopsis = "Efficient algorithms for vector arrays";
       description = "Efficient algorithms for vector arrays";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-          (hsPkgs.primitive)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.vector) (hsPkgs.primitive) ];
+        };
       };
-    };
-  }
+    }

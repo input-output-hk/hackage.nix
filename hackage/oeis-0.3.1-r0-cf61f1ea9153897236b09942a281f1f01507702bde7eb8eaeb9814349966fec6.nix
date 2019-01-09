@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "oeis";
-        version = "0.3.1";
-      };
+      identifier = { name = "oeis"; version = "0.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Brian Lewis <brian@lorf.org>";
@@ -22,14 +13,10 @@
       synopsis = "Interface to the Online Encyclopedia of Integer Sequences";
       description = "Interface to the Online Encyclopedia of Integer Sequences. See <http://oeis.org/>.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-          (hsPkgs.HTTP)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.network) (hsPkgs.HTTP) ];
+        };
       };
-    };
-  }
+    }

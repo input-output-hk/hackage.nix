@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-async";
-        version = "0.1.0";
-      };
+      identifier = { name = "pipes-async"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2015, John Wiegley";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "A higher-level interface to using concurrency with pipes";
       description = "Provides combinators like '>&>' for easily adding concurrency.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.monad-control)
           (hsPkgs.pipes)
           (hsPkgs.pipes-safe)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,8 +38,8 @@
             (hsPkgs.pipes-safe)
             (hsPkgs.hspec)
             (hsPkgs.pipes-async)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

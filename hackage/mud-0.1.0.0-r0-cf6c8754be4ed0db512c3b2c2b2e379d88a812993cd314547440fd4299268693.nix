@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mud";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "mud"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2014-2017, Thomas Feron";
       maintainer = "thomas.feron@redspline.com";
@@ -22,7 +13,7 @@
       synopsis = "Multi-version deployer for web applications";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,17 +27,11 @@
           (hsPkgs.free)
           (hsPkgs.time)
           (hsPkgs.parsec)
-        ];
-      };
-      exes = {
-        "mud" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.mud)
-            (hsPkgs.mtl)
           ];
         };
-      };
+      exes = {
+        "mud" = { depends = [ (hsPkgs.base) (hsPkgs.mud) (hsPkgs.mtl) ]; };
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -59,8 +44,8 @@
             (hsPkgs.directory)
             (hsPkgs.unix)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

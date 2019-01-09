@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "webcrank";
-        version = "0.2";
-      };
+      identifier = { name = "webcrank"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2012 Mark Hibberd";
       maintainer = "Richard Wallace <rwallace@thewallacepack.net>";
@@ -22,7 +13,7 @@
       synopsis = "Webmachine inspired toolkit for building http applications and services.";
       description = "Webmachine inspired toolkit for building http applications and services.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.mtl)
             (hsPkgs.unordered-containers)
             (hsPkgs.webcrank)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

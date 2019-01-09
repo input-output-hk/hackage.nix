@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "gc-monitoring-wai";
-        version = "0.1.2";
-      };
+      identifier = { name = "gc-monitoring-wai"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yi.codeplayer@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "a wai application to show GHC.GCStats";
       description = "a wai application to show GHC.GCStats, look `test.hs` for usage, package also contains a munin plugin script in python.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.wai)
           (hsPkgs.aeson)
           (hsPkgs.conduit)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

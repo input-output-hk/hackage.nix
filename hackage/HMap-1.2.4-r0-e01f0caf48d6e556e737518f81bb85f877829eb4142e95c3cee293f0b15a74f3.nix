@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "HMap";
-        version = "1.2.4";
-      };
+      identifier = { name = "HMap"; version = "1.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "atzeus@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Fast heterogeneous maps and unconstrained typeable like functionality.";
       description = "Fast heterogeneous maps based on Hashmaps and type-able like functionality for type that are not typeable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.hashable)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

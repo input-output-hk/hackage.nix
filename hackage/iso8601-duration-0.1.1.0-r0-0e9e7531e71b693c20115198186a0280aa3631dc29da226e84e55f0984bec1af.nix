@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "iso8601-duration";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "iso8601-duration"; version = "0.1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016-2018 Alberto Valverde";
       maintainer = "alberto@meteogrid.com";
@@ -22,7 +13,7 @@
       synopsis = "Types and parser for ISO8601 durations";
       description = "Types and parser for ISO8601 durations and intervals";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.attoparsec)
           (hsPkgs.time)
           (hsPkgs.bytestring-lexing)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -44,8 +35,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
             (hsPkgs.iso8601-duration)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

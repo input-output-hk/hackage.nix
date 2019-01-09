@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sensu-run";
-        version = "0.5.0";
-      };
+      identifier = { name = "sensu-run"; version = "0.5.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2016-2018 Mitsutoshi Aoe";
       maintainer = "maoe@foldr.in";
@@ -22,7 +13,7 @@
       synopsis = "A tool to send command execution results to Sensu";
       description = "@sensu-run@ is a command line tool to send command execution results to Sensu\nmonitoring server.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sensu-run" = {
@@ -45,8 +36,8 @@
             (hsPkgs.unix-compat)
             (hsPkgs.vector)
             (hsPkgs.wreq)
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
         };
       };
-    };
-  }
+    }

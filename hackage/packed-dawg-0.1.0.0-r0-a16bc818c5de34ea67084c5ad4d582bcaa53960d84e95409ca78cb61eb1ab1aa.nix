@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "packed-dawg";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "packed-dawg"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "puttamalac@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generation and traversal of highly compressed directed acyclic word graphs.";
       description = "Generation and traversal of highly compressed directed acyclic word graphs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.binary)
           (hsPkgs.deepseq)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-hunit)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-dawg-gen" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

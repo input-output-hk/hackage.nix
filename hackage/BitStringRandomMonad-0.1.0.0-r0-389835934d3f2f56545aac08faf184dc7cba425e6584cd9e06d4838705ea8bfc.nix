@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "BitStringRandomMonad";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "BitStringRandomMonad"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "marcus@conditionraise.se";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "A library which turns a bytestring into a random monad.\nInput could be any PRNG which can output a lazy\nbytestring.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.primitive)
           (hsPkgs.parallel)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

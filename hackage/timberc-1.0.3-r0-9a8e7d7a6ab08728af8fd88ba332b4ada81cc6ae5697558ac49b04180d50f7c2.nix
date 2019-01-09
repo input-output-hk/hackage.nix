@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "timberc";
-        version = "1.0.3";
-      };
+      identifier = { name = "timberc"; version = "1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Johan Nordlander <nordland@csee.ltu.se>";
@@ -22,7 +13,7 @@
       synopsis = "The Timber Compiler.";
       description = "This is a compiler for a strict and pure functional\nlanguage";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "timberc" = {
@@ -36,11 +27,9 @@
             (hsPkgs.array)
             (hsPkgs.bzlib)
             (hsPkgs.bytestring)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.happy)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          };
         };
       };
-    };
-  }
+    }

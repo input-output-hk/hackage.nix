@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "riemann";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "riemann"; version = "0.1.1.0"; };
       license = "MIT";
       copyright = "2013 Joseph Abrahamson";
       maintainer = "me@jspha.com";
@@ -22,7 +13,7 @@
       synopsis = "A Riemann client for Haskell";
       description = "A Riemann client for Haskell";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.mtl)
           (hsPkgs.transformers)
           (hsPkgs.cereal)
-        ];
-      };
+          ];
+        };
       exes = {
         "riemann-client" = {
           depends = [
@@ -60,9 +51,9 @@
             (hsPkgs.mtl)
             (hsPkgs.transformers)
             (hsPkgs.cereal)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "doctest" = {
           depends = [
@@ -70,8 +61,8 @@
             (hsPkgs.directory)
             (hsPkgs.doctest)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "property" = {
           depends = [
             (hsPkgs.base)
@@ -79,8 +70,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.riemann)
-          ];
-        };
+            ];
+          };
         "unit" = {
           depends = [
             (hsPkgs.base)
@@ -88,8 +79,8 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.riemann)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

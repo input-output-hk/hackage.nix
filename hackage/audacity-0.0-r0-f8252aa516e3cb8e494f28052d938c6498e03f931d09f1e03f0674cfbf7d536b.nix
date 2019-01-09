@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "audacity";
-        version = "0.0";
-      };
+      identifier = { name = "audacity"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@henning-thielemann.de";
@@ -24,18 +13,14 @@
       synopsis = "Interchange with the Audacity sound signal editor";
       description = "This package provides functions\nfor interchange with the Audacity sound signal editor.\nCurrently we support import and export of label tracks.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.utility-ht)
-          (hsPkgs.deepseq)
-          (hsPkgs.base)
-        ];
-      };
+        depends = [ (hsPkgs.utility-ht) (hsPkgs.deepseq) (hsPkgs.base) ];
+        };
       exes = {
         "sox-concat" = {
-          depends = pkgs.lib.optionals (flags.buildexamples) [
+          depends = (pkgs.lib).optionals (flags.buildexamples) [
             (hsPkgs.audacity)
             (hsPkgs.soxlib)
             (hsPkgs.storablevector)
@@ -43,8 +28,8 @@
             (hsPkgs.non-empty)
             (hsPkgs.utility-ht)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

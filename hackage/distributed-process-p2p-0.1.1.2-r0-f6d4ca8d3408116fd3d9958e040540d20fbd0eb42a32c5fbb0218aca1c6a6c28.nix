@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distributed-process-p2p";
-        version = "0.1.1.2";
-      };
+      identifier = { name = "distributed-process-p2p"; version = "0.1.1.2"; };
       license = "BSD-3-Clause";
       copyright = "Alexander Bondarenko";
       maintainer = "aenor.realm@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Peer-to-peer node discovery for Cloud Haskell";
       description = "Bootstraps a peer-to-peer connection network from a set of known hosts.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.distributed-process)
           (hsPkgs.network-transport)
           (hsPkgs.network-transport-tcp)
-        ];
-      };
+          ];
+        };
       exes = {
         "jollycloud" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.mtl)
             (hsPkgs.distributed-process)
             (hsPkgs.distributed-process-p2p)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

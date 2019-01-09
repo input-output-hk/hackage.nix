@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "ruff";
-        version = "0.1";
-      };
+      identifier = { name = "ruff"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2011 Claude Heiland-Allen";
       maintainer = "claudiusmaximus@goto10.org";
@@ -22,7 +13,7 @@
       synopsis = "relatively useful fractal functions";
       description = "A library for analysis and exploration of fractals.  This initial\nversion provides angled internal addresses, external ray tracing,\nand iterations for images of the Mandelbrot Set.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.wl-pprint-text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

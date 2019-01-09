@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "functor-combo";
-        version = "0.0.6";
-      };
+      identifier = { name = "functor-combo"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010 by Conal Elliott";
       maintainer = "conal@conal.net";
@@ -22,7 +13,7 @@
       synopsis = "Functor combinators with tries & zippers";
       description = "Simple functor combinators, their derivatives, and their use for tries\nMaybe split out derivatives and/or tries later.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.data-inttrie)
           (hsPkgs.lub)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

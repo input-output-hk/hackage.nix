@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "language-sqlite";
-        version = "1.0";
-      };
+      identifier = { name = "language-sqlite"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2010 Dan Knapp";
       maintainer = "dankna@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Full parser and generator for SQL as implemented by SQLite3";
       description = "This is a full parser and generator for SQL as implemented by SQLite3.\nIt is well-typed in the sense that it is possible to construct an\nabstract syntax tree if and only if it corresponds to valid SQL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
           (hsPkgs.utf8-string)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

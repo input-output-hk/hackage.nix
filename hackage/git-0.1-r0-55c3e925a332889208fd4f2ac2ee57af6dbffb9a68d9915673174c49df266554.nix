@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      executable = false;
-      debug = false;
-    };
+    flags = { executable = false; debug = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "git";
-        version = "0.1";
-      };
+      identifier = { name = "git"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -25,7 +13,7 @@
       synopsis = "Git operations in haskell";
       description = "\nAn haskell implementation of git storage operations, allowing users\nto manipulate git repositories (read and write).\n\nThis implementation is fully interoperable with the main C implementation.\n\nThis is stricly only manipulating the git store (what's inside the .git directory),\nand doesn't do anything with the index or your working directory files.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +34,8 @@
           (hsPkgs.patience)
           (hsPkgs.system-filepath)
           (hsPkgs.system-fileio)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-unit" = {
           depends = [
@@ -57,8 +45,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.hourglass)
             (hsPkgs.git)
-          ];
-        };
+            ];
+          };
         "test-repository" = {
           depends = [
             (hsPkgs.base)
@@ -68,8 +56,8 @@
             (hsPkgs.hourglass)
             (hsPkgs.bytedump)
             (hsPkgs.git)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

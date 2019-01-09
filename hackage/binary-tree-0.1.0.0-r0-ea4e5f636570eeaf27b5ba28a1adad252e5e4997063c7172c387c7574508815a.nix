@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "binary-tree";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "binary-tree"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2018 Donnacha Oisín Kidney";
       maintainer = "mail@doisinkidney.com";
@@ -22,14 +13,14 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/oisdk/binary-tree#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.deepseq)
-        ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
+        };
       tests = {
         "binary-tree-test" = {
           depends = [
@@ -41,17 +32,17 @@
             (hsPkgs.checkers)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
-          ];
-        };
+            ];
+          };
         "doctests" = {
           depends = [
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.binary-tree)
             (hsPkgs.doctest)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.binary-tree)
             (hsPkgs.criterion)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

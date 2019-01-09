@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "network-protocol-xmpp";
-        version = "0.2.1";
-      };
+      identifier = { name = "network-protocol-xmpp"; version = "0.2.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jmillikin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Client <-> Server communication over XMPP";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.network)
           (hsPkgs.bytestring)
           (hsPkgs.SHA)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

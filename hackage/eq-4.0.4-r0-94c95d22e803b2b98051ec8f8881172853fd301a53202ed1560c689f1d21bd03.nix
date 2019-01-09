@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "eq";
-        version = "4.0.4";
-      };
+      identifier = { name = "eq"; version = "4.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2011-2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,13 +13,8 @@
       synopsis = "Leibnizian equality";
       description = "Leibnizian equality";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.semigroupoids)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.semigroupoids) ]; };
+      };
+    }

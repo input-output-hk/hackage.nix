@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "selinux";
-        version = "0.1";
-      };
+      identifier = { name = "selinux"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "stegeman@gmail.com";
@@ -22,14 +13,11 @@
       synopsis = "SELinux bindings";
       description = "Haskell bindings for the SELinux API";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.unix)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.unix) ];
         libs = [ (pkgs."selinux") ];
+        };
       };
-    };
-  }
+    }

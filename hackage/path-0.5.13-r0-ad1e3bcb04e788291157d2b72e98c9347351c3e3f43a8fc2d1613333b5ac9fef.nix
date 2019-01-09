@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { validity = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "path";
-        version = "0.5.13";
-      };
+      identifier = { name = "path"; version = "0.5.13"; };
       license = "BSD-3-Clause";
       copyright = "2015–2017 FP Complete";
       maintainer = "Chris Done <chrisdone@fpcomplete.com>";
@@ -22,7 +13,7 @@
       synopsis = "Support for well-typed paths";
       description = "Support for well-typed paths.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.filepath)
           (hsPkgs.hashable)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,10 +36,10 @@
             (hsPkgs.hspec)
             (hsPkgs.mtl)
             (hsPkgs.path)
-          ];
-        };
+            ];
+          };
         "validity-test" = {
-          depends = pkgs.lib.optionals (flags.validity) [
+          depends = (pkgs.lib).optionals (flags.validity) [
             (hsPkgs.QuickCheck)
             (hsPkgs.aeson)
             (hsPkgs.base)
@@ -60,8 +51,8 @@
             (hsPkgs.mtl)
             (hsPkgs.path)
             (hsPkgs.validity)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

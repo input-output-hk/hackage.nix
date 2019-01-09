@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { ghcjs = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hackernews";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "hackernews"; version = "0.5.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "djohnson.m@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "API for Hacker News";
       description = "API for news.ycombinator.com";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.ghcjs
@@ -35,7 +26,7 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ]
+            ]
           else [
             (hsPkgs.HsOpenSSL)
             (hsPkgs.aeson)
@@ -48,8 +39,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.transformers)
-          ];
-      };
+            ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.hackernews)
             (hsPkgs.hspec)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

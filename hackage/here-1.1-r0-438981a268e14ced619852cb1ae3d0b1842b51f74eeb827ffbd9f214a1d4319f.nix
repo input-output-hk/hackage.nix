@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "here";
-        version = "1.1";
-      };
+      identifier = { name = "here"; version = "1.1"; };
       license = "BSD-3-Clause";
       copyright = "©2013 Taylor M. Hedberg";
       maintainer = "t@tmh.cc";
@@ -22,7 +13,7 @@
       synopsis = "Here docs & interpolated strings via quasiquotation";
       description = "Here docs & interpolated strings via quasiquotation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.mtl)
           (hsPkgs.parsec)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

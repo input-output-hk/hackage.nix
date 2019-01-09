@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "keysafe";
-        version = "0.20160922";
-      };
+      identifier = { name = "keysafe"; version = "0.20160922"; };
       license = "AGPL-3.0-only";
       copyright = "2016 Joey Hess";
       maintainer = "Joey Hess <joey@kitenet.net>";
@@ -22,7 +13,7 @@
       synopsis = "back up a secret key securely to the cloud";
       description = "Keysafe backs up a secret key to several cloud servers, split up\nso that no one server can access the whole secret by itself.\n\nA password is used to encrypt the data, and it is made expensive\nto decrypt, so password cracking is infeasibly expensive.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "keysafe" = {
@@ -68,9 +59,9 @@
             (hsPkgs.async)
             (hsPkgs.unix-compat)
             (hsPkgs.exceptions)
-          ];
+            ];
           libs = [ (pkgs."argon2") ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Monadius";
-        version = "0.9.20071204";
-      };
+      identifier = { name = "Monadius"; version = "0.9.20071204"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Takayuki Muranushi <muranushi@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "2-D arcade scroller";
       description = "A fast-paced 2-D scrolling vector graphics clone of the arcade game Gradius.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "monadius" = {
@@ -32,8 +23,8 @@
             (hsPkgs.OpenGL)
             (hsPkgs.array)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "gsmenu";
-        version = "3.0";
-      };
+      identifier = { name = "gsmenu"; version = "3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "athas@sigkill.dk";
@@ -22,7 +13,7 @@
       synopsis = "A visual generic menu";
       description = "Grid-oriented element selection inspired by XMonadContrib's GridSelect.";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "gsmenu" = {
@@ -35,8 +26,8 @@
             (hsPkgs.sindre)
             (hsPkgs.text)
             (hsPkgs.permute)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

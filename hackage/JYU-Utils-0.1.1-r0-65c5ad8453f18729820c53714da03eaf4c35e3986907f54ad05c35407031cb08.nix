@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "JYU-Utils";
-        version = "0.1.1";
-      };
+      identifier = { name = "JYU-Utils"; version = "0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "ville.tirronen@jyu.fi";
@@ -22,7 +13,7 @@
       synopsis = "Some utility functions for JYU projects";
       description = "List, function and monad utility functions.\nIncludes an old variant of MonadRandom that is used in\nCV-package.\nPretty much the only reason to ever use this\nis to compile CV-package, and that is also just\ndue legacy reasons.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.lazysmallcheck)
           (hsPkgs.mwc-random)
           (hsPkgs.deepseq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "elm-compiler";
-        version = "0.14";
-      };
+      identifier = { name = "elm-compiler"; version = "0.14"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2011-2014 Evan Czaplicki";
       maintainer = "info@elm-lang.org";
@@ -22,7 +13,7 @@
       synopsis = "Values to help with elm-package, elm-make, and elm-lang.org.";
       description = "Elm aims to make client-side web-development pleasant. It is a\nstatically/strongly typed, functional reactive language that compiles to\nHTML, CSS, and JS. This package provides a couple helpful values that are\nintended for use in packages such as elm-package and elm-make.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,8 +39,8 @@
           (hsPkgs.transformers)
           (hsPkgs.union-find)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "elm-doc" = {
           depends = [
@@ -71,9 +62,9 @@
             (hsPkgs.text)
             (hsPkgs.transformers)
             (hsPkgs.union-find)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "compiler-tests" = {
           depends = [
@@ -106,8 +97,8 @@
             (hsPkgs.transformers)
             (hsPkgs.union-find)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

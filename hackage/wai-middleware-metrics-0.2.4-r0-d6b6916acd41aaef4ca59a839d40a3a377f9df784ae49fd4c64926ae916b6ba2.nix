@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-middleware-metrics";
-        version = "0.2.4";
-      };
+      identifier = { name = "wai-middleware-metrics"; version = "0.2.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "arnaudpourseb@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A WAI middleware to collect EKG request metrics";
       description = "This WAI middleware counts the number of requests, the number of responses by status code and keeps a latency distribution.\n\nIt can be added to any WAI-based webserver, such as Yesod, Scotty, Spock and Servant.\n\nThe counters are EKG Counters from ekg-core. <https://ocharles.org.uk/blog/posts/2012-12-11-24-day-of-hackage-ekg.html>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.wai)
-        ];
-      };
+          ];
+        };
       tests = {
         "metrics-test" = {
           depends = [
@@ -52,9 +43,9 @@
             (hsPkgs.http-types)
             (hsPkgs.time)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "metrics-bench" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.http-types)
             (hsPkgs.time)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "conduit-tokenize-attoparsec";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "2016 John Ky";
       maintainer = "newhoggy@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Conduits for tokenizing streams.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +26,8 @@
           (hsPkgs.conduit)
           (hsPkgs.text)
           (hsPkgs.resourcet)
-        ];
-      };
+          ];
+        };
       exes = {
         "conduit-tokenize-attoparsec-example" = {
           depends = [
@@ -42,9 +36,9 @@
             (hsPkgs.conduit)
             (hsPkgs.conduit-tokenize-attoparsec)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "conduit-tokenize-attoparsec-test" = {
           depends = [
@@ -54,8 +48,8 @@
             (hsPkgs.conduit-tokenize-attoparsec)
             (hsPkgs.hspec)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

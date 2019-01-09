@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      enable-hlint-test = false;
-    };
+    flags = { enable-hlint-test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "euler-tour-tree";
-        version = "0.1.1.0";
-      };
+      identifier = { name = "euler-tour-tree"; version = "0.1.1.0"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "chahine.moreau@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "Euler tour trees";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +24,8 @@
           (hsPkgs.parser-combinators)
           (hsPkgs.transformers)
           (hsPkgs.Unique)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit-tests" = {
           depends = [
@@ -45,8 +34,8 @@
             (hsPkgs.containers)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "property-tests" = {
           depends = [
             (hsPkgs.euler-tour-tree)
@@ -57,14 +46,9 @@
             (hsPkgs.sequence)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
-        };
-        "hlint-tests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+            ];
+          };
+        "hlint-tests" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };
       };
-    };
-  }
+    }

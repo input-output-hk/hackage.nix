@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "artifact";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "artifact"; version = "0.0.0.0"; };
       license = "AGPL-3.0-or-later";
       copyright = "2018 Leif Metcalf";
       maintainer = "Leif Metcalf <me@leif.nz>";
@@ -22,7 +13,7 @@
       synopsis = "Basic types and instances for Valve's Artifact Card-set API";
       description = "See README at <https://gitlab.com/leifmetcalf/artifact#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.containers)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

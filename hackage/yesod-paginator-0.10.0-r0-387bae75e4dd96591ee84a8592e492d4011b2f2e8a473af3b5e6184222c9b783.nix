@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod-paginator";
-        version = "0.10.0";
-      };
+      identifier = { name = "yesod-paginator"; version = "0.10.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "pbrisbin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A pagination approach for yesod";
       description = "Paginate a list showing a per-item widget and links to other pages";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.persistent)
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-session-postgresql";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "wai-session-postgresql"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2015 Hans-Christian Esperer";
       maintainer = "Hans-Christian Esperer <hc@hcesperer.org>";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL backed Wai session store";
       description = "Provides a PostgreSQL backed session store for the Network.Wai.Session interface.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,15 +30,12 @@
           (hsPkgs.transformers)
           (hsPkgs.wai)
           (hsPkgs.wai-session)
-        ];
-      };
-      tests = {
-        "postgresql-session-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.wai-session-postgresql)
           ];
         };
+      tests = {
+        "postgresql-session-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.wai-session-postgresql) ];
+          };
+        };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "haskell-tools-experimental-refactorings";
         version = "1.0.0.1";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nboldi@elte.hu";
@@ -22,7 +16,7 @@
       synopsis = "Refactoring Tool for Haskell";
       description = "Contains experimental refactorings implemented in the Haskell-tools framework for tutorial purposes, or to be added later to the set of mature refactorings.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +38,8 @@
           (hsPkgs.haskell-tools-rewrite)
           (hsPkgs.haskell-tools-prettyprint)
           (hsPkgs.haskell-tools-refactor)
-        ];
-      };
+          ];
+        };
       tests = {
         "haskell-tools-experimental-refactorings-test" = {
           depends = [
@@ -72,8 +66,8 @@
             (hsPkgs.haskell-tools-prettyprint)
             (hsPkgs.haskell-tools-refactor)
             (hsPkgs.haskell-tools-experimental-refactorings)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

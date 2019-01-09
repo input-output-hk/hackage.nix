@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "habit";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "habit"; version = "0.2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Alexander Krupenkin";
       maintainer = "mail@akru.me";
@@ -22,7 +13,7 @@
       synopsis = "Haskell message bot framework";
       description = "Framework for building text message bots for popular platforms";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,16 +35,12 @@
           (hsPkgs.resourcet)
           (hsPkgs.pipes)
           (hsPkgs.text)
-        ];
-      };
-      exes = {
-        "hello-bot" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.habit)
-            (hsPkgs.text)
           ];
         };
+      exes = {
+        "hello-bot" = {
+          depends = [ (hsPkgs.base) (hsPkgs.habit) (hsPkgs.text) ];
+          };
+        };
       };
-    };
-  }
+    }

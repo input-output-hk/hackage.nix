@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "werewolf-slack";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "werewolf-slack"; version = "0.3.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "public@hjwylde.com";
@@ -22,7 +13,7 @@
       synopsis = "A Slack chat client for playing werewolf";
       description = "The game engine is based off of the party game Mafia, also known as Werewolf.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "werewolf-slack" = {
@@ -41,8 +32,8 @@
             (hsPkgs.wai)
             (hsPkgs.warp)
             (hsPkgs.werewolf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

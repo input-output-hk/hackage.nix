@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "enummapset-th";
-        version = "0.5.1.0";
-      };
+      identifier = { name = "enummapset-th"; version = "0.5.1.0"; };
       license = "BSD-3-Clause";
       copyright = "© 2012 Liyang HU";
       maintainer = "enummapset-th@liyang.hu";
@@ -22,7 +13,7 @@
       synopsis = "TH-generated EnumSet/EnumMap wrappers around IntSet/IntMap.";
       description = "This package wraps @IntSet@ and @IntMap@ from @containers@, and provides\nfast sets and maps keyed on any data type with a well-behaved @Enum@\ninstance. Useful for derived @Enum@s, newtype'd @Int@s, or any data type\nthat can be packed into an @Int@: just implement @fromEnum@ and @toEnum@.\n\nThe boilerplate is generated using Template Haskell, so unlike\n@enummapset@ it's easier to maintain and keep up-to-date with\n@containers@. On the downside, it's less portable.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.containers)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

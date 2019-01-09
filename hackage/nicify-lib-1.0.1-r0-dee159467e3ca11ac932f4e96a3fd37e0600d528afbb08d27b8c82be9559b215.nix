@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nicify-lib";
-        version = "1.0.1";
-      };
+      identifier = { name = "nicify-lib"; version = "1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "julian@scravy.de";
@@ -22,14 +13,10 @@
       synopsis = "Pretty print the standard output of default `Show` instances.";
       description = "Pretty print the standard output of `show` for algebraic datatypes";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.transformers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.parsec) (hsPkgs.transformers) ];
+        };
       };
-    };
-  }
+    }

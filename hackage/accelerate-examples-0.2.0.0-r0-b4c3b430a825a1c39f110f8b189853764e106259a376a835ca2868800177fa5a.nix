@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      cuda = true;
-      io = false;
-    };
+    flags = { cuda = true; io = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "accelerate-examples";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "accelerate-examples"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>";
@@ -25,7 +13,7 @@
       synopsis = "Examples using the Accelerate library";
       description = "Examples using the Accelerate library";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "accelerate-examples" = {
@@ -47,9 +35,9 @@
             (hsPkgs.pretty)
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
-          ];
+            ];
           libs = [ (pkgs."stdc++") ];
+          };
         };
       };
-    };
-  }
+    }

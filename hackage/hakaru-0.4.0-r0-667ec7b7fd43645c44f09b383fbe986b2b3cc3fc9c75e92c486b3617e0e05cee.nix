@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      tracedisintegrate = false;
-    };
+    flags = { tracedisintegrate = false; };
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "hakaru";
-        version = "0.4.0";
-      };
+      identifier = { name = "hakaru"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ppaml@indiana.edu";
@@ -24,7 +13,7 @@
       synopsis = "A probabilistic programming language";
       description = "Hakaru is a simply-typed probabilistic programming language, designed\nfor easy specification of probabilistic models, and inference algorithms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,8 +42,8 @@
           (hsPkgs.filepath)
           (hsPkgs.bytestring)
           (hsPkgs.optparse-applicative)
-        ];
-      };
+          ];
+        };
       exes = {
         "hakaru" = {
           depends = [
@@ -65,8 +54,8 @@
             (hsPkgs.vector)
             (hsPkgs.optparse-applicative)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "compile" = {
           depends = [
             (hsPkgs.base)
@@ -76,8 +65,8 @@
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "summary" = {
           depends = [
             (hsPkgs.base)
@@ -87,8 +76,8 @@
             (hsPkgs.filepath)
             (hsPkgs.optparse-applicative)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "hk-maple" = {
           depends = [
             (hsPkgs.base)
@@ -98,8 +87,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.containers)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "density" = {
           depends = [
             (hsPkgs.base)
@@ -107,8 +96,8 @@
             (hsPkgs.text)
             (hsPkgs.pretty)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "disintegrate" = {
           depends = [
             (hsPkgs.base)
@@ -117,23 +106,19 @@
             (hsPkgs.pretty)
             (hsPkgs.optparse-applicative)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "pretty" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.text)
             (hsPkgs.pretty)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "momiji" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.hakaru)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.hakaru) ];
+          };
         "normalize" = {
           depends = [
             (hsPkgs.base)
@@ -142,8 +127,8 @@
             (hsPkgs.mtl)
             (hsPkgs.pretty)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "hkc" = {
           depends = [
             (hsPkgs.base)
@@ -155,8 +140,8 @@
             (hsPkgs.process)
             (hsPkgs.semigroups)
             (hsPkgs.hakaru)
-          ];
-        };
+            ];
+          };
         "mh" = {
           depends = [
             (hsPkgs.base)
@@ -165,9 +150,9 @@
             (hsPkgs.mtl)
             (hsPkgs.pretty)
             (hsPkgs.hakaru)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "system-testsuite" = {
           depends = [
@@ -195,8 +180,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.directory)
             (hsPkgs.optparse-applicative)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

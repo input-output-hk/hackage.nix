@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-job-queue";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "yesod-job-queue"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "2016 Daishi Nakajima";
       maintainer = "nakaji.dayo@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Background jobs library for Yesod.";
       description = "Background jobs library for Yesod\n\n* It contains management API and web interface.\n* Queue backend is Redis.\n* Support cron scheduler\n\nUsage and screen shot are available in README.md";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.file-embed)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "yesod-job-queue-example" = {
           depends = [
@@ -55,16 +46,13 @@
             (hsPkgs.monad-logger)
             (hsPkgs.classy-prelude-yesod)
             (hsPkgs.hedis)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "yesod-job-queue-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.yesod-job-queue)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.yesod-job-queue) ];
+          };
         };
       };
-    };
-  }
+    }

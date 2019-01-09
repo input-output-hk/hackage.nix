@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "elo";
-        version = "0.1.0";
-      };
+      identifier = { name = "elo"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2015 Mark Fine";
       maintainer = "mark.fine@gmail.com";
@@ -22,19 +13,13 @@
       synopsis = "Elo Rating Library";
       description = "Please see README.md";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "elo-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.elo)
-            (hsPkgs.tasty)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.elo) (hsPkgs.tasty) ];
+          };
         };
       };
-    };
-  }
+    }

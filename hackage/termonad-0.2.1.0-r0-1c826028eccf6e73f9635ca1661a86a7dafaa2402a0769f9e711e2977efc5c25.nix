@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "termonad";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "termonad"; version = "0.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Terminal emulator configurable in Haskell";
       description = "Please see <https://github.com/cdepillabout/termonad#readme README.md>.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,19 +37,12 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-html-qq)
-        ];
-        pkgconfig = [
-          (pkgconfPkgs.gtk+-3.0)
-        ];
-      };
-      exes = {
-        "termonad" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.termonad)
           ];
+        pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
         };
-      };
+      exes = {
+        "termonad" = { depends = [ (hsPkgs.base) (hsPkgs.termonad) ]; };
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -66,8 +50,8 @@
             (hsPkgs.doctest)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "termonad-test" = {
           depends = [
             (hsPkgs.base)
@@ -76,8 +60,8 @@
             (hsPkgs.termonad)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hedgehog)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

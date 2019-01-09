@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dfinity-radix-tree";
-        version = "0.0.0";
-      };
+      identifier = { name = "dfinity-radix-tree"; version = "0.0.0"; };
       license = "GPL-3.0-only";
       copyright = "2018 DFINITY Stiftung";
       maintainer = "DFINITY USA Research <team@dfinity.org>";
@@ -22,7 +13,7 @@
       synopsis = "A Merkleized key–value data store.";
       description = "This library provides a simple data integrity layer for LevelDB.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,8 +34,8 @@
           (hsPkgs.resourcet)
           (hsPkgs.semigroups)
           (hsPkgs.serialise)
-        ];
-      };
+          ];
+        };
       exes = {
         "dfinity-radix-tree-unit-tests" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.resourcet)
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "dfinity-radix-tree-benchmarks" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +60,8 @@
             (hsPkgs.data-default-class)
             (hsPkgs.dfinity-radix-tree)
             (hsPkgs.resourcet)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "marvin";
-        version = "0.0.4";
-      };
+      identifier = { name = "marvin"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2016 Justus Adam";
       maintainer = "dev@justus.science";
@@ -22,7 +13,7 @@
       synopsis = "A modular bot for slack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,8 +40,8 @@
           (hsPkgs.mtl)
           (hsPkgs.unordered-containers)
           (hsPkgs.mono-traversable)
-        ];
-      };
+          ];
+        };
       exes = {
         "marvin-pp" = {
           depends = [
@@ -65,8 +56,8 @@
             (hsPkgs.mono-traversable)
             (hsPkgs.text)
             (hsPkgs.aeson)
-          ];
-        };
+            ];
+          };
         "marvin-init" = {
           depends = [
             (hsPkgs.base)
@@ -76,8 +67,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.mono-traversable)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

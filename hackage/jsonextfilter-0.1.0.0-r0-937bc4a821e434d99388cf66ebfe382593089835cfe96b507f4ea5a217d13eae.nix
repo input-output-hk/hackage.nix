@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "jsonextfilter";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "jsonextfilter"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "MackeyRMS";
@@ -22,7 +13,7 @@
       synopsis = "Filter select values in JSON objects to unix programs";
       description = "Filter select values in JSON objects to unix programs";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "jsonextfilter" = {
@@ -40,8 +31,8 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.string-qq)
             (hsPkgs.monads-tf)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

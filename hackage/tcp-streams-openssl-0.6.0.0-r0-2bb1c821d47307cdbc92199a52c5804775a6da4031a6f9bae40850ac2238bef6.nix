@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tcp-streams-openssl";
-        version = "0.6.0.0";
-      };
+      identifier = { name = "tcp-streams-openssl"; version = "0.6.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Winterland 2016";
       maintainer = "winterland1989@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Tcp streams using openssl for tls support.";
       description = "Tcp streams using openssl for tls support.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.tcp-streams)
           (hsPkgs.HsOpenSSL)
           (hsPkgs.HsOpenSSL-x509-system)
-        ];
-      };
+          ];
+        };
       tests = {
         "testsuite" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

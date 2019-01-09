@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.19";
-      identifier = {
-        name = "quoridor-hs";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "quoridor-hs"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Tal Walter <talw10@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Quoridor implementation in Haskell";
       description = "An implementation in Haskell of the 2-to-4-player strategy game.\nFor more information, see:\n<https://github.com/talw/quoridor-hs>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,16 +35,11 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.network)
-        ];
-      };
-      exes = {
-        "quoridor-exec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.quoridor-hs)
           ];
         };
-      };
+      exes = {
+        "quoridor-exec" = { depends = [ (hsPkgs.base) (hsPkgs.quoridor-hs) ]; };
+        };
       tests = {
         "quoridor-tests" = {
           depends = [
@@ -61,8 +47,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.quoridor-hs)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

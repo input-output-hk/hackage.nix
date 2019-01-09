@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "xmonad-utils";
-        version = "0.1.2";
-      };
+      identifier = { name = "xmonad-utils"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<andrea.rossato@unitn.it>";
@@ -22,7 +13,7 @@
       synopsis = "A small collection of X utilities";
       description = "A small collection of X utilities useful when\nrunning XMonad. It includes:\n\n* hxsel, which returns the text currently in the X selection;\n\n* hslock, a simple X screen lock;\n\n* hmanage: an utility to toggle the override-redirect property of any\nwindow;\n\n* and hhp, a simple utility to hide the pointer, similar\nto unclutter.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hxsel" = {
@@ -32,8 +23,8 @@
             (hsPkgs.ghc)
             (hsPkgs.unix)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "hxput" = {
           depends = [
             (hsPkgs.base)
@@ -41,8 +32,8 @@
             (hsPkgs.ghc)
             (hsPkgs.unix)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "hslock" = {
           depends = [
             (hsPkgs.base)
@@ -50,9 +41,9 @@
             (hsPkgs.ghc)
             (hsPkgs.unix)
             (hsPkgs.random)
-          ];
+            ];
           libs = [ (pkgs."crypt") ];
-        };
+          };
         "hmanage" = {
           depends = [
             (hsPkgs.base)
@@ -60,8 +51,8 @@
             (hsPkgs.ghc)
             (hsPkgs.unix)
             (hsPkgs.random)
-          ];
-        };
+            ];
+          };
         "hhp" = {
           depends = [
             (hsPkgs.base)
@@ -69,8 +60,8 @@
             (hsPkgs.ghc)
             (hsPkgs.unix)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

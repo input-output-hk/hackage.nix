@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "google-drive";
-        version = "0.4.1";
-      };
+      identifier = { name = "google-drive"; version = "0.4.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Pat Brisbin <pbrisbin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Google Drive API access";
       description = "Interacting with the Google Drive API\n\nSee https://github.com/pbrisbin/google-drive for usage and details.\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.load-env)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

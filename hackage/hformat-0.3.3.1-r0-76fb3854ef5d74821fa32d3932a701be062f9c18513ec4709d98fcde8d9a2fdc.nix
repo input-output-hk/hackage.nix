@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hformat";
-        version = "0.3.3.1";
-      };
+      identifier = { name = "hformat"; version = "0.3.3.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "voidex@live.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple Haskell formatting";
       description = "String formatting";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.base-unicode-symbols)
           (hsPkgs.ansi-terminal)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "test" = {
           depends = [
@@ -40,8 +31,8 @@
             (hsPkgs.text)
             (hsPkgs.hspec)
             (hsPkgs.hformat)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

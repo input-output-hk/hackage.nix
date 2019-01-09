@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "funnyprint";
-        version = "0.0.5";
-      };
+      identifier = { name = "funnyprint"; version = "0.0.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "Yuriy Pitomets";
@@ -22,15 +13,11 @@
       synopsis = "funnyPrint function to colorize GHCi output.";
       description = "see FunnyPrint.funnyPrint.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.hscolour)
-          (hsPkgs.ipprint)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.hscolour) (hsPkgs.ipprint) ];
+        };
       tests = {
         "funnyprint-test-suite" = {
           depends = [
@@ -40,9 +27,9 @@
             (hsPkgs.funnyprint)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hspec)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "funnyprint-benchmarks" = {
           depends = [
@@ -51,8 +38,8 @@
             (hsPkgs.ipprint)
             (hsPkgs.funnyprint)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

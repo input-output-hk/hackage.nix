@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vault-tool";
-        version = "0.0.0.4";
-      };
+      identifier = { name = "vault-tool"; version = "0.0.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "mutantlemon@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Client library for HashiCorp's Vault tool (via HTTP API)";
       description = "Client library for HashiCorp's Vault tool (via HTTP API)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.http-client-tls)
           (hsPkgs.aeson)
           (hsPkgs.unordered-containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

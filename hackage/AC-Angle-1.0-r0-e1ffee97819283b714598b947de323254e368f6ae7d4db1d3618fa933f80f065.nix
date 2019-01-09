@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "AC-Angle";
-        version = "1.0";
-      };
+      identifier = { name = "AC-Angle"; version = "1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "MathematicalOrchid@hotmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Angles in degrees and radians.";
       description = "A simple little library for dealing with geometric angles.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

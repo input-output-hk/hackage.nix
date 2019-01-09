@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "apply-refact";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "apply-refact"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "matthewtpickering@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Perform refactorings specified by the refact library.";
       description = "Perform refactorings specified by the refact library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.mtl)
           (hsPkgs.process)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "refactor" = {
           depends = [
@@ -55,9 +46,9 @@
             (hsPkgs.filepath)
             (hsPkgs.temporary-rc)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -80,8 +71,8 @@
             (hsPkgs.silently)
             (hsPkgs.temporary-rc)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { gtk3 = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoodle-publish";
-        version = "0.2";
-      };
+      identifier = { name = "hoodle-publish"; version = "0.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "publish hoodle files as a static web site";
       description = "This package provieds a simple tool hoodle-publish which make a static web site from a directory containing hoodle files";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -48,10 +39,8 @@
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
           (hsPkgs.uuid)
-        ] ++ (if flags.gtk3
-          then [ (hsPkgs.gtk3) ]
-          else [ (hsPkgs.gtk) ]);
-      };
+          ] ++ (if flags.gtk3 then [ (hsPkgs.gtk3) ] else [ (hsPkgs.gtk) ]);
+        };
       exes = {
         "hoodle-publish" = {
           depends = [
@@ -61,10 +50,8 @@
             (hsPkgs.directory-tree)
             (hsPkgs.filepath)
             (hsPkgs.hoodle-publish)
-          ] ++ (if flags.gtk3
-            then [ (hsPkgs.gtk3) ]
-            else [ (hsPkgs.gtk) ]);
+            ] ++ (if flags.gtk3 then [ (hsPkgs.gtk3) ] else [ (hsPkgs.gtk) ]);
+          };
         };
       };
-    };
-  }
+    }

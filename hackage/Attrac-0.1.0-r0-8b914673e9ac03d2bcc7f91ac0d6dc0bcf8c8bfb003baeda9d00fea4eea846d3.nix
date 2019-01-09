@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "Attrac";
-        version = "0.1.0";
-      };
+      identifier = { name = "Attrac"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ruben Henner Zilibowitz <rzilibowitz at yahoo dot com dot au>";
@@ -22,7 +13,7 @@
       synopsis = "Visualisation of Strange Attractors in 3-Dimensions";
       description = "This software uses innovative techniques to achieve 3-D visualisation\nof the point sets known as Strange Attractors resulting from iteration\nof non-linear maps on points in Euclidean Space.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "Attrac" = {
@@ -33,8 +24,8 @@
             (hsPkgs.GLUT)
             (hsPkgs.colour)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

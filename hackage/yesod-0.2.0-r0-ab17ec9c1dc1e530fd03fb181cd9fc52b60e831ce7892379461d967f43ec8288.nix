@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildtests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "yesod";
-        version = "0.2.0";
-      };
+      identifier = { name = "yesod"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -22,7 +13,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "Yesod is a framework designed to foster creation of RESTful web application that have strong compile-time guarantees of correctness. It also affords space efficient code and portability to many deployment backends, from CGI to stand-alone serving.\n\nThe Yesod documentation site <http://docs.yesodweb.com/> has much more information, tutorials and information on some of the supporting packages, like Hamlet and web-routes-quasi.\n\nAs a quick overview, here is a fully-functional Hello World application:\n\n> {-# LANGUAGE TypeFamilies, QuasiQuotes, TemplateHaskell #-}\n> import Yesod\n> data HelloWorld = HelloWorld\n> mkYesod \"HelloWorld\" [\$parseRoutes|/ Home GET|]\n> instance Yesod HelloWorld where approot _ = \"\"\n> getHome = return \$ RepPlain \$ cs \"Hello World!\"\n> main = toWaiApp HelloWorld >>= basicHandler 3000";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -47,18 +38,18 @@
           (hsPkgs.control-monad-attempt)
           (hsPkgs.cereal)
           (hsPkgs.old-locale)
-        ];
-      };
+          ];
+        };
       exes = {
         "runtests" = {
-          depends = pkgs.lib.optionals (flags.buildtests) [
+          depends = (pkgs.lib).optionals (flags.buildtests) [
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-hunit)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

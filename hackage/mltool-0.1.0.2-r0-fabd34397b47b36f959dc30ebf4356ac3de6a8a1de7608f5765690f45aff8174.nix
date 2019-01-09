@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mltool";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "mltool"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016-2017 Alexander Ignatyev";
       maintainer = "ignatyev.alexander@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Machine Learning Toolbox";
       description = "Haskell Machine Learning Toolkit\nincludes various methods of supervised learning:\nlinear regression, logistic regression, SVN, neural networks, etc.\nas well as some methods of unsupervised methods: K-Means and PCA.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.deepseq)
           (hsPkgs.random)
           (hsPkgs.MonadRandom)
-        ];
-      };
+          ];
+        };
       tests = {
         "mltool-test" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

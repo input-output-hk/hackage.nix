@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "incremental-maps";
-        version = "0.0.0.0";
-      };
+      identifier = { name = "incremental-maps"; version = "0.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jelken@itcollege.ee";
@@ -22,7 +13,7 @@
       synopsis = "Package for doing incremental computations on maps";
       description = "This package is about incremental computing.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.fingertree)
           (hsPkgs.order-maintenance)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "map-tests" = {
           depends = [
@@ -43,9 +34,9 @@
             (hsPkgs.containers)
             (hsPkgs.QuickCheck)
             (hsPkgs.incremental-maps)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.deepseq)
             (hsPkgs.dlist)
             (hsPkgs.incremental-maps)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

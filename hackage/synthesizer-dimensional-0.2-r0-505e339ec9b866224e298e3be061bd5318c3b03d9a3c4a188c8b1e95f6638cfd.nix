@@ -1,22 +1,13 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       splitbase = true;
       optimizeadvanced = true;
       buildexamples = false;
-    };
+      };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "synthesizer-dimensional";
-        version = "0.2";
-      };
+      identifier = { name = "synthesizer-dimensional"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
@@ -26,7 +17,7 @@
       synopsis = "Audio signal processing with static physical dimensions";
       description = "High-level functions which use physical units and\nabstract from the sample rate in a statically type safe way.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,21 +32,15 @@
           (hsPkgs.storablevector)
           (hsPkgs.binary)
           (hsPkgs.bytestring)
-        ] ++ (if flags.splitbase
+          ] ++ (if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.random)
             (hsPkgs.old-time)
             (hsPkgs.process)
-          ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.special-functors)
-          ]);
+            ]
+          else [ (hsPkgs.base) (hsPkgs.special-functors) ]);
+        };
+      exes = { "demonstration" = {}; "traumzauberbaum" = {}; };
       };
-      exes = {
-        "demonstration" = {};
-        "traumzauberbaum" = {};
-      };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { leafopt = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-files";
-        version = "0.1.3";
-      };
+      identifier = { name = "pipes-files"; version = "0.1.3"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2015 (c) John Wiegley. All Rights Reserved.";
       maintainer = "johnw@newartisans.com";
@@ -22,7 +13,7 @@
       synopsis = "Fast traversal of directory trees using pipes";
       description = "Fast traversal of directory trees using pipes";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.posix-paths)
           (hsPkgs.pipes-safe)
           (hsPkgs.logict)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.filepath)
             (hsPkgs.semigroups)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "test" = {
           depends = [
             (hsPkgs.base)
@@ -76,8 +67,8 @@
             (hsPkgs.hspec)
             (hsPkgs.hspec-expectations)
             (hsPkgs.logict)
-          ];
-        };
+            ];
+          };
         "find-hs" = {
           depends = [
             (hsPkgs.base)
@@ -92,8 +83,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.process)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

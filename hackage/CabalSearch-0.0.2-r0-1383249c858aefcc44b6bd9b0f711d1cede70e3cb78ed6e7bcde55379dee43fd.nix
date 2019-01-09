@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "CabalSearch";
-        version = "0.0.2";
-      };
+      identifier = { name = "CabalSearch"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright 2011 Johan Brinch";
       maintainer = "Johan Brinch <brinchj@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Search cabal packages by name";
       description = "CabalSearch builds an index of cabal packages and search through them by\nname. It acts as a 'cabal list' replacement. To get started, install the\npackage and run: @cabalsearch --rebuild@. Now try it out with a query:\n@cabalsearch cabal@.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabalsearch" = {
@@ -35,8 +26,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

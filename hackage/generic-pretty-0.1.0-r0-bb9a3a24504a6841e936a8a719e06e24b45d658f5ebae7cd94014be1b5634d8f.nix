@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "generic-pretty";
-        version = "0.1.0";
-      };
+      identifier = { name = "generic-pretty"; version = "0.1.0"; };
       license = "MIT";
       copyright = "(c) 2015 Hideyuki Tanaka";
       maintainer = "tanaka.hideyuki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pretty printing for Generic value";
       description = "Pretty printing for Generic value. For more detail, please refer to <https://github.com/tanakh/generic-pretty>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "generic-pretty-test" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.generic-pretty)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

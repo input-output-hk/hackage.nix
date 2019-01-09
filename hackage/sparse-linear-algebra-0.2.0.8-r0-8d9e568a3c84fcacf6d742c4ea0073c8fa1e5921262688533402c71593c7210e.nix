@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sparse-linear-algebra";
-        version = "0.2.0.8";
-      };
+      identifier = { name = "sparse-linear-algebra"; version = "0.2.0.8"; };
       license = "GPL-3.0-only";
       copyright = "2016 Marco Zocca";
       maintainer = "zocca.marco gmail";
@@ -22,7 +13,7 @@
       synopsis = "Numerical computation in native Haskell";
       description = "Currently the library provides iterative linear solvers, matrix decompositions, eigenvalue computations and related utilities. Please see README.md for details";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,13 +24,9 @@
           (hsPkgs.primitive)
           (hsPkgs.mtl)
           (hsPkgs.mwc-random)
-        ];
-      };
-      exes = {
-        "sparse-linear-algebra" = {
-          depends = [ (hsPkgs.base) ];
+          ];
         };
-      };
+      exes = { "sparse-linear-algebra" = { depends = [ (hsPkgs.base) ]; }; };
       tests = {
         "spec" = {
           depends = [
@@ -51,8 +38,8 @@
             (hsPkgs.primitive)
             (hsPkgs.sparse-linear-algebra)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

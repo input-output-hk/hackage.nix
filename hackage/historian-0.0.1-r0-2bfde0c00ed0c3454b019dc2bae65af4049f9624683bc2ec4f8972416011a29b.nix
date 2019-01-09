@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "historian";
-        version = "0.0.1";
-      };
+      identifier = { name = "historian"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "max.rabkin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Extract the interesting bits from shell history";
       description = "Extract interesting commands and add them to a text file.\n\\\"Interesting\\\" means not matching any regular expression in the\nfile. This allows one to keep a textual database of commands.\nNever again say \\\"I wish I remembered what arguments to give\nwibble to make it flibber the gibbet\\\" three months after you\nlooked it up.\nWARNING: historian truncates ~/.bash_history.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "historian" = {
@@ -34,8 +25,8 @@
             (hsPkgs.regex-posix)
             (hsPkgs.regex-compat)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

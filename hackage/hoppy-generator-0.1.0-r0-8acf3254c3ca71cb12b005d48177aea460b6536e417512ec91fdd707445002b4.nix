@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hoppy-generator";
-        version = "0.1.0";
-      };
+      identifier = { name = "hoppy-generator"; version = "0.1.0"; };
       license = "AGPL-3.0-only";
       copyright = "Copyright 2015-2016 Bryan Gardiner";
       maintainer = "Bryan Gardiner <bog@khumba.net>";
@@ -22,7 +13,7 @@
       synopsis = "C++ FFI generator - Code generator";
       description = "Hoppy generates Haskell bindings to C++ libraries.\n\nThis package is the code generator.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.filepath)
           (hsPkgs.haskell-src)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

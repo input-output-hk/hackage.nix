@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "resolve";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "resolve"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "GPL3";
       maintainer = "haskell@riaqn.org";
@@ -22,7 +13,7 @@
       synopsis = "A name resolusion library";
       description = "Please see README.org";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.parsec)
           (hsPkgs.hslogger)
           (hsPkgs.iproute)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

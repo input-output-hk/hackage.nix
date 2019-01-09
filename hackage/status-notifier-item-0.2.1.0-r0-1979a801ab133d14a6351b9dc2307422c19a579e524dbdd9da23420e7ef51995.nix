@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "status-notifier-item";
-        version = "0.2.1.0";
-      };
+      identifier = { name = "status-notifier-item"; version = "0.2.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2018 Ivan Malison";
       maintainer = "IvanMalison@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A wrapper over the StatusNotifierItem/libappindicator dbus specification";
       description = "Please see the README on Github at <https://github.com/IvanMalison/status-notifier-item#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "sni-cl-tool" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.dbus)
             (hsPkgs.optparse-applicative)
             (hsPkgs.status-notifier-item)
-          ];
-        };
+            ];
+          };
         "status-notifier-watcher" = {
           depends = [
             (hsPkgs.base)
@@ -57,8 +48,8 @@
             (hsPkgs.hslogger)
             (hsPkgs.optparse-applicative)
             (hsPkgs.status-notifier-item)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

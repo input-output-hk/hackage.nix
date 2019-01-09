@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "prologue";
-        version = "3.1.4";
-      };
+      identifier = { name = "prologue"; version = "3.1.4"; };
       license = "Apache-2.0";
       copyright = "Copyright (C) 2016-2018 Wojciech Danilo";
       maintainer = "Wojciech Danilo <wojciech.danilo@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Better, more general Prelude exporting common utilities.";
       description = "Replacement for the Haskell's Prelude, exposing more commonly used functions and patching old GHC ones to behave in the newest GHC's way.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -61,7 +52,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.typelevel)
           (hsPkgs.vector)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

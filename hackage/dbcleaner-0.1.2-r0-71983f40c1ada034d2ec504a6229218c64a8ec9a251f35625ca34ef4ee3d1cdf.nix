@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dbcleaner";
-        version = "0.1.2";
-      };
+      identifier = { name = "dbcleaner"; version = "0.1.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "hackage@stackbuilders.com";
@@ -22,15 +13,11 @@
       synopsis = "Clean database tables automatically around hspec tests";
       description = "A simple database cleaner library for testing that provides\ndifferent cleanup strategies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.postgresql-simple)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.postgresql-simple) (hsPkgs.text) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.hspec)
             (hsPkgs.postgresql-simple)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

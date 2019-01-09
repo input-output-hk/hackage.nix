@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "leapseconds-announced";
-        version = "2017.0.0.1";
-      };
+      identifier = { name = "leapseconds-announced"; version = "2017.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Bjorn Buckwalter 2009-2016";
       maintainer = "bjorn@buckwalter.se";
@@ -22,14 +13,9 @@
       synopsis = "Leap seconds announced at library release time.";
       description = "Provides an easy to use static 'Data.Time.Clock.TAI.LeapSecondTable'\nwith the leap seconds announced at library release time.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.time) ]; };
       tests = {
         "tests" = {
           depends = [
@@ -37,8 +23,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.base)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

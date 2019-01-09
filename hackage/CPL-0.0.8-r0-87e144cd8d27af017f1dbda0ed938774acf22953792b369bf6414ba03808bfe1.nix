@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      readline = true;
-      haskeline = true;
-      linuxstatic = false;
-    };
+    flags = { readline = true; haskeline = true; linuxstatic = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "CPL";
-        version = "0.0.8";
-      };
+      identifier = { name = "CPL"; version = "0.0.8"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "masahiro.sakai@gmail.com";
@@ -26,7 +13,7 @@
       synopsis = "An interpreter of Hagino's Categorical Programming Language (CPL).";
       description = "An interpreter of Hagino's Categorical Programming Language (CPL).";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cpl" = {
@@ -36,10 +23,10 @@
             (hsPkgs.containers)
             (hsPkgs.array)
             (hsPkgs.parsec)
-          ] ++ (if flags.readline
+            ] ++ (if flags.readline
             then [ (hsPkgs.readline) ]
-            else pkgs.lib.optional (flags.haskeline) (hsPkgs.haskeline));
+            else (pkgs.lib).optional (flags.haskeline) (hsPkgs.haskeline));
+          };
         };
       };
-    };
-  }
+    }

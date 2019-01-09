@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cipher-blowfish";
-        version = "0.0.3";
-      };
+      identifier = { name = "cipher-blowfish"; version = "0.0.3"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -22,7 +13,7 @@
       synopsis = "Blowfish cipher";
       description = "Blowfish cipher primitives";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.vector)
           (hsPkgs.securemem)
           (hsPkgs.crypto-cipher-types)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-cipher-blowfish" = {
           depends = [
@@ -46,9 +37,9 @@
             (hsPkgs.crypto-cipher-types)
             (hsPkgs.crypto-cipher-tests)
             (hsPkgs.cipher-blowfish)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench-cipher-blowfish" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.crypto-cipher-types)
             (hsPkgs.crypto-cipher-benchmarks)
             (hsPkgs.cipher-blowfish)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

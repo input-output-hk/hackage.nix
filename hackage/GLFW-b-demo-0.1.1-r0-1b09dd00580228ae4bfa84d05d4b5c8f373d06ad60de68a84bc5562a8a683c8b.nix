@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "GLFW-b-demo";
-        version = "0.1.1";
-      };
+      identifier = { name = "GLFW-b-demo"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Brian Lewis <brian@lorf.org>";
@@ -22,7 +13,7 @@
       synopsis = "GLFW-b test\\/example\\/demo";
       description = "GLFW-b test\\/example\\/demo.\n\nRun 'GLFW-b-demo' and use a joystick or cursor keys to rotate an\nRGB cube. /Please help me think of more interesting stuff to do/\n/in here./";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "GLFW-b-demo" = {
@@ -31,8 +22,8 @@
             (hsPkgs.OpenGL)
             (hsPkgs.GLURaw)
             (hsPkgs.base)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

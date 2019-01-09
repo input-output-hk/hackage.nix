@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "gist";
-        version = "0.1";
-      };
+      identifier = { name = "gist"; version = "0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "simon@joyful.com";
@@ -22,7 +13,7 @@
       synopsis = "A reliable command-line client for gist.github.com";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "gist" = {
@@ -33,8 +24,8 @@
             (hsPkgs.conduit)
             (hsPkgs.http-conduit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

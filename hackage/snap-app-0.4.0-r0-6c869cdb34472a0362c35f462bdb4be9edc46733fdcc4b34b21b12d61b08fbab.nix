@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "snap-app";
-        version = "0.4.0";
-      };
+      identifier = { name = "snap-app"; version = "0.4.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "chrisdone@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple modules for writing apps with Snap, abstracted from hpaste.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.data-default)
           (hsPkgs.filepath)
           (hsPkgs.directory)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

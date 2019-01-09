@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tdigest-Chart";
-        version = "0.2";
-      };
+      identifier = { name = "tdigest-Chart"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Chart generation from tdigest";
       description = "Chart generation from tdigest.\n\n@\n...\n@";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.tdigest)
           (hsPkgs.lens)
           (hsPkgs.Chart)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-      };
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       tests = {
         "tdigest-chart-examples" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.Chart-diagrams)
             (hsPkgs.mwc-random)
             (hsPkgs.statistics)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

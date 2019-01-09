@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "sixfiguregroup";
-        version = "0.0.1";
-      };
+      identifier = { name = "sixfiguregroup"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2016, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
       maintainer = "Tony Morris";
@@ -22,7 +13,7 @@
       synopsis = "A six figure group of time";
       description = "A six figure group of time as described by AirServices Australia (airservices) in the Aeronautical Information Package (AIP)";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.digit)
           (hsPkgs.lens)
           (hsPkgs.parsers)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

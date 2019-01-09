@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      no_arbitrary = false;
-      no_comonad = false;
-      tutorial = false;
-    };
+    flags = { no_arbitrary = false; no_comonad = false; tutorial = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "edit";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "edit"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Varun Gandhi 2018";
       maintainer = "Varun Gandhi <theindigamer15@gmail.com>";
@@ -26,18 +13,18 @@
       synopsis = "A monad for rewriting things.";
       description = "Edit is a monad for rewriting things.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
           (hsPkgs.base)
           (hsPkgs.deepseq)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optional (!flags.no_arbitrary) (hsPkgs.QuickCheck)) ++ pkgs.lib.optional (!flags.no_comonad) (hsPkgs.comonad)) ++ pkgs.lib.optionals (flags.tutorial) [
+          ] ++ (pkgs.lib).optional (!flags.no_arbitrary) (hsPkgs.QuickCheck)) ++ (pkgs.lib).optional (!flags.no_comonad) (hsPkgs.comonad)) ++ (pkgs.lib).optionals (flags.tutorial) [
           (hsPkgs.uniplate)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-edit" = {
           depends = [
@@ -50,8 +37,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-discover)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

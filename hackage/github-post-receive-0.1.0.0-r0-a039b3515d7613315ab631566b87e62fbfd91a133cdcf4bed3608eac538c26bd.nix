@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "github-post-receive";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "github-post-receive"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2013 Shohei Yasutake";
       maintainer = "Shohei Yasutake <amkkun@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "github web hooks server";
       description = "This is a server of github web hooks.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "github-post-receive" = {
@@ -34,8 +25,8 @@
             (hsPkgs.process)
             (hsPkgs.scotty)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "haskore";
-        version = "0.0.5";
-      };
+      identifier = { name = "haskore"; version = "0.0.5"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Henning Thielemann <haskore@henning-thielemann.de>";
@@ -22,7 +13,7 @@
       synopsis = "The Haskore Computer Music System";
       description = "Compose music using programming features.\nOutput in MIDI, CSound, SuperCollider or as a audio signal.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,22 +27,16 @@
           (hsPkgs.parsec)
           (hsPkgs.QuickCheck)
           (hsPkgs.HUnit)
-        ] ++ (if flags.splitbase
+          ] ++ (if flags.splitbase
           then [
             (hsPkgs.base)
             (hsPkgs.array)
             (hsPkgs.random)
             (hsPkgs.process)
             (hsPkgs.containers)
-          ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.special-functors)
-          ]);
+            ]
+          else [ (hsPkgs.base) (hsPkgs.special-functors) ]);
+        };
+      exes = { "test" = {}; "autotrack" = {}; };
       };
-      exes = {
-        "test" = {};
-        "autotrack" = {};
-      };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "turtle-options";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "turtle-options"; version = "0.1.0.3"; };
       license = "BSD-3-Clause";
       copyright = "2016 Elie Genard";
       maintainer = "elaye@users.noreply.github.com";
@@ -22,7 +13,7 @@
       synopsis = "Collection of command line options and parsers for these options";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,17 +22,13 @@
           (hsPkgs.text)
           (hsPkgs.optional-args)
           (hsPkgs.turtle)
-        ];
-      };
-      exes = {
-        "example" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.turtle)
-            (hsPkgs.turtle-options)
           ];
         };
-      };
+      exes = {
+        "example" = {
+          depends = [ (hsPkgs.base) (hsPkgs.turtle) (hsPkgs.turtle-options) ];
+          };
+        };
       tests = {
         "turtle-options-test" = {
           depends = [
@@ -49,8 +36,8 @@
             (hsPkgs.turtle-options)
             (hsPkgs.HUnit)
             (hsPkgs.parsec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

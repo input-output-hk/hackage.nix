@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "control-monad-exception-monadsfd";
         version = "0.10.3";
-      };
+        };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "pepeiborra@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Monads-fd instances for the EMT exceptions monad transformer";
       description = "Monads-fd instances for the EMT exceptions monad transformer";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +24,7 @@
           (hsPkgs.control-monad-exception)
           (hsPkgs.transformers)
           (hsPkgs.monads-fd)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

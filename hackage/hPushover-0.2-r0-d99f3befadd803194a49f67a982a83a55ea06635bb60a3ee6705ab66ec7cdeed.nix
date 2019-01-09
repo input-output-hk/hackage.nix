@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hPushover";
-        version = "0.2";
-      };
+      identifier = { name = "hPushover"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Wander Hillen";
       maintainer = "wjw.hillen@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pushover.net API functions";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
           (hsPkgs.aeson)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

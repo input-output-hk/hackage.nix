@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "read-io";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "read-io"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "firas@zaidan.de";
@@ -22,7 +13,7 @@
       synopsis = "Read IO library";
       description = "A lightweight library to read and write data types deriving Read and Show.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.filepath)
           (hsPkgs.directory)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.containers)
             (hsPkgs.read-io)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

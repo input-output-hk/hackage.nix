@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "encoding-io";
-        version = "0.0.1";
-      };
+      identifier = { name = "encoding-io"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Shao Cheng";
       maintainer = "Shao Cheng <astrohavoc@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Encoding-aware file I/O.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.chunked-data)
           (hsPkgs.deepseq)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

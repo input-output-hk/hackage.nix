@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "emacs-keys";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "emacs-keys"; version = "0.0.1.0"; };
       license = "ISC";
       copyright = "";
       maintainer = "moritz.kiefer@purelyfunctional.org";
@@ -22,7 +13,7 @@
       synopsis = "library to parse emacs style keybinding into the modifiers and the chars";
       description = "Allows parsing emacs style keybindings like \"M-a\", \"C-M-a\" or\n\"M-Return\". For convenience a TH helper that turns parse\nerrors into compile errors is also provided.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.xkbcommon)
           (hsPkgs.th-lift)
           (hsPkgs.split)
-        ];
-      };
+          ];
+        };
       tests = {
         "tasty" = {
           depends = [
@@ -42,14 +33,9 @@
             (hsPkgs.tasty-hspec)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.xkbcommon)
-          ];
-        };
-        "doctests" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
+            ];
+          };
+        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         };
       };
-    };
-  }
+    }

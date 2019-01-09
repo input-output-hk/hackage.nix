@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "DysFRP";
-        version = "0.1";
-      };
+      identifier = { name = "DysFRP"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Marek Materzok";
@@ -22,7 +13,7 @@
       synopsis = "dysFunctional Reactive Programming";
       description = "Simple imperative implementation of FRP.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.contravariant)
           (hsPkgs.mtl)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

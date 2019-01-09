@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "orchid-demo";
-        version = "0.0.6";
-      };
+      identifier = { name = "orchid-demo"; version = "0.0.6"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sfvisser@cs.uu.nl";
@@ -22,7 +13,7 @@
       synopsis = "Haskell Wiki Demo";
       description = "Haskell Wiki Demo";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "orchid-demo" = {
@@ -36,8 +27,8 @@
             (hsPkgs.extensible-exceptions)
             (hsPkgs.Pipe)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

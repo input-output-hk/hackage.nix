@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "MorseCode";
-        version = "0.0.5";
-      };
+      identifier = { name = "MorseCode"; version = "0.0.5"; };
       license = "GPL-3.0-only";
       copyright = "(c) 2009 Andy Stewart";
       maintainer = "lazycat.manatee@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Morse code";
       description = "Morse code";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.containers)
-          (hsPkgs.base)
-          (hsPkgs.split)
-        ];
+        depends = [ (hsPkgs.containers) (hsPkgs.base) (hsPkgs.split) ];
+        };
       };
-    };
-  }
+    }

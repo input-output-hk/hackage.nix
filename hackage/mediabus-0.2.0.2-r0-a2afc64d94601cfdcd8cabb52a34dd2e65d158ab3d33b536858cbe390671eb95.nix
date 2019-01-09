@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "mediabus";
-        version = "0.2.0.2";
-      };
+      identifier = { name = "mediabus"; version = "0.2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2016,2017 Sven Heyll, Lindenbaum GmbH";
       maintainer = "sven.heyll@lindenbaum.eu";
@@ -22,7 +13,7 @@
       synopsis = "Multimedia streaming on top of Conduit";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -56,8 +47,8 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -88,8 +79,8 @@
             (hsPkgs.transformers)
             (hsPkgs.type-spec)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "haskelldb-connect-hdbc-lifted";
         version = "0.1.0.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kei Hibino <ex8k.hibino@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Bracketed HaskellDB HDBC session using lifted-base";
       description = "This package includes bracketed HDBC session function\nusing lifted-base for HaskellDB.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +27,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.monad-control)
           (hsPkgs.lifted-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

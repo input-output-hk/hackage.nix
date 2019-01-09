@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "bitcoin-types";
-        version = "0.9.0";
-      };
+      identifier = { name = "bitcoin-types"; version = "0.9.0"; };
       license = "MIT";
       copyright = "(c) 2015 Leon Mergen";
       maintainer = "leon@solatis.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides consistent low-level types used commonly among Bitcoin implementations";
       description = "Instead of having each Bitcoin library re-define the low level types it is using,\nthis library provides a ready-to-use collection of low-level types and aliases.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.binary)
           (hsPkgs.hexstring)
           (hsPkgs.base58string)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.base58string)
             (hsPkgs.hexstring)
             (hsPkgs.bitcoin-types)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

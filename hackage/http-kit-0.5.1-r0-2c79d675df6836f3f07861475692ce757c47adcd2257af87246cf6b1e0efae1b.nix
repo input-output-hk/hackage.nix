@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http-kit";
-        version = "0.5.1";
-      };
+      identifier = { name = "http-kit"; version = "0.5.1"; };
       license = "MIT";
       copyright = "(c) 2014 Zalora South East Asia Pte. Ltd";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "A low-level HTTP library";
       description = "A low-level HTTP library that can be used to build more\nsophisticated applications on top of it.\n\nThe design goals are:\n\n[secure] To mitigate denial-of-service attacks, everything is\nbounded.\n\n[efficient] Message bodies are read in chunks, so that they\ncan be processed in constant space.\n\n[universal] No framework for streaming @IO@ is used.  This\nallows you to build on top of it, using the libraries that\nfit your purpose.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.http-types)
           (hsPkgs.case-insensitive)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

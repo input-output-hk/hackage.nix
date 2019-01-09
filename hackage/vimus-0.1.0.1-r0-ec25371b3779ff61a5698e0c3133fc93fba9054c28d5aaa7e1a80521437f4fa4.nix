@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "vimus";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "vimus"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Simon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "An MPD client with vim-like key bindings";
       description = "An MPD client with vim-like key bindings\n\n<https://github.com/vimus/vimus#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,20 +32,11 @@
           (hsPkgs.directory)
           (hsPkgs.data-default)
           (hsPkgs.template-haskell)
-        ];
-        libs = [ (pkgs."ncursesw") ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
-      exes = {
-        "vimus" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.vimus)
           ];
+        libs = [ (pkgs."ncursesw") ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
-      };
+      exes = { "vimus" = { depends = [ (hsPkgs.base) (hsPkgs.vimus) ]; }; };
       tests = {
         "spec" = {
           depends = [
@@ -67,8 +49,8 @@
             (hsPkgs.hspec-expectations)
             (hsPkgs.transformers)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

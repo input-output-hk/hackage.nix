@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "uuagc-bootstrap";
-        version = "0.9.38.6.1";
-      };
+      identifier = { name = "uuagc-bootstrap"; version = "0.9.38.6.1"; };
       license = "LicenseRef-GPL";
       copyright = "Universiteit Utrecht";
       maintainer = "Arie Middelkoop <ariem@cs.uu.nl>";
@@ -22,7 +13,7 @@
       synopsis = "Attribute Grammar System of Universiteit Utrecht";
       description = "Generates Haskell files from an attribute grammar specification";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.uulib)
           (hsPkgs.filepath)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       exes = {
         "uuagc-bootstrap" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.uulib)
             (hsPkgs.mtl)
             (hsPkgs.haskell-src-exts)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

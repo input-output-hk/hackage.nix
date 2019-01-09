@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "battlenet";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "battlenet"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "teo@nullable.se";
@@ -22,7 +13,7 @@
       synopsis = "API client for Battle.Net";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.text)
           (hsPkgs.aeson)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

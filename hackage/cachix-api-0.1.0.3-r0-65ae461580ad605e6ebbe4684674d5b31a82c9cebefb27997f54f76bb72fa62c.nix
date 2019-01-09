@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "2.2";
-      identifier = {
-        name = "cachix-api";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "cachix-api"; version = "0.1.0.3"; };
       license = "Apache-2.0";
       copyright = "2018 Domen Kožar";
       maintainer = "domen@enlambda.com";
@@ -22,7 +13,7 @@
       synopsis = "Servant HTTP API specification for https://cachix.org";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,17 +40,13 @@
           (hsPkgs.swagger2)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
-      exes = {
-        "cachix-gen-swagger" = {
-          depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.cachix-api)
           ];
         };
-      };
+      exes = {
+        "cachix-gen-swagger" = {
+          depends = [ (hsPkgs.aeson) (hsPkgs.base) (hsPkgs.cachix-api) ];
+          };
+        };
       tests = {
         "cachix-api-test" = {
           depends = [
@@ -89,11 +76,9 @@
             (hsPkgs.swagger2)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

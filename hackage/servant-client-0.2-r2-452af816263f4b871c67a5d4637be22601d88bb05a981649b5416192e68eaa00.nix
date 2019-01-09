@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-client";
-        version = "0.2";
-      };
+      identifier = { name = "servant-client"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "2014 Zalora South East Asia Pte Ltd";
       maintainer = "alpmestan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "automatical derivation of haskell functions that let you query servant webservices";
       description = "This library lets you derive automatically Haskell functions that\nlet you query each endpoint of a <http://hackage.haskell.org/package/servant servant> webservice.\n\nExample below.\n\n> type MyApi = \"books\" :> Get [Book] -- GET /books\n>         :<|> \"books\" :> ReqBody Book :> Post Book -- POST /books\n>\n> myApi :: Proxy MyApi\n> myApi = Proxy\n>\n> getAllBooks :: BaseUrl -> EitherT String IO [Book]\n> postNewBook :: Book -> BaseUrl -> EitherT String IO Book\n> (getAllBooks :<|> postNewBook) = client myApi";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +31,8 @@
           (hsPkgs.string-conversions)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.servant-client)
             (hsPkgs.wai)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

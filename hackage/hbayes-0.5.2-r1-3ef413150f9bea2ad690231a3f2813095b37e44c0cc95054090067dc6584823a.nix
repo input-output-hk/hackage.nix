@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      local = false;
-      profile = false;
-    };
+    flags = { local = false; profile = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hbayes";
-        version = "0.5.2";
-      };
+      identifier = { name = "hbayes"; version = "0.5.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2012-2016, alpheccar";
       maintainer = "misc@alpheccar.org";
@@ -25,7 +13,7 @@
       synopsis = "Bayesian Networks";
       description = "Algorithms for Bayesian Networks.\nIt is a very preliminary version. It has only been tested on very simple\nexamples where it worked. It should be considered as experimental and not used\nin any production work.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +38,8 @@
           (hsPkgs.mwc-random)
           (hsPkgs.statistics)
           (hsPkgs.gamma)
-        ];
-      };
+          ];
+        };
       tests = {
         "hbayes-Tests" = {
           depends = [
@@ -78,8 +66,8 @@
             (hsPkgs.mwc-random)
             (hsPkgs.statistics)
             (hsPkgs.gamma)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

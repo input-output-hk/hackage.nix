@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      debug = false;
-      eventlog = false;
-    };
+    flags = { debug = false; eventlog = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-anonymous-i2p";
-        version = "0.9.2";
-      };
+      identifier = { name = "network-anonymous-i2p"; version = "0.9.2"; };
       license = "MIT";
       copyright = "(c) 2014 Leon Mergen";
       maintainer = "leon@solatis.com";
@@ -25,7 +13,7 @@
       synopsis = "Haskell API for I2P anonymous networking";
       description = "Haskell API for I2P anonymous networking";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +28,8 @@
           (hsPkgs.uuid)
           (hsPkgs.transformers)
           (hsPkgs.mtl)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-suite" = {
           depends = [
@@ -58,8 +46,8 @@
             (hsPkgs.hspec-expectations)
             (hsPkgs.hspec-attoparsec)
             (hsPkgs.network-anonymous-i2p)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "leksah";
-        version = "0.4.3";
-      };
+      identifier = { name = "leksah"; version = "0.4.3"; };
       license = "LicenseRef-GPL";
       copyright = "2007-2009 Jürgen Nicklisch-Franken";
       maintainer = "maintainer@leksah.org";
@@ -22,7 +13,7 @@
       synopsis = "Haskell IDE written in Haskell";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "leksah" = {
@@ -45,8 +36,8 @@
             (hsPkgs.process)
             (hsPkgs.regex-posix)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

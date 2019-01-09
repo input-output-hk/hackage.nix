@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "seacat";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "seacat"; version = "1.0.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "mike@barrucadu.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "Small web framework using Warp and WAI";
       description = "A small Haskell web framework using Warp and WAI that tries to get\nout of your way and let you do what you want, but also providing\nmore advanced features like rate limiting and flood protection.\n\n[WAI] <http://hackage.haskell.org/package/wai>\n\n[Warp] <http://hackage.haskell.org/package/warp>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,7 +43,7 @@
           (hsPkgs.wai-middleware-static)
           (hsPkgs.warp)
           (hsPkgs.web-routes)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

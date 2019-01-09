@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "HCodecs";
-        version = "0.5.1";
-      };
+      identifier = { name = "HCodecs"; version = "0.5.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2007-2014 George Giorgidze";
       maintainer = "George Giorgidze (giorgidze@gmail.com)\n, Pavel Krajcevski (krajcevski@gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files.";
       description = "The library provides functions to read, write and manipulate MIDI, WAVE and\nSoundFont2 multimedia files. It is written entirely in Haskell (without any\nFFI). It uses efficient  parsing and building combinators for binary data\nstored in ByteStrings (based on the one in 'binary' package).\n\nCorrectness of significant parts of the library has been validated with\nQuickCheck and Haskell Program Coverage (HPC) tool-kits.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.array)
           (hsPkgs.QuickCheck)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.semigroups)
             (hsPkgs.array)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

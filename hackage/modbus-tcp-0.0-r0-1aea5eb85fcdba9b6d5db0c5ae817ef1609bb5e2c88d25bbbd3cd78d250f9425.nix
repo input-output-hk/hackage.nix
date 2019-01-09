@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "modbus-tcp";
-        version = "0.0";
-      };
+      identifier = { name = "modbus-tcp"; version = "0.0"; };
       license = "BSD-3-Clause";
       copyright = "2013 Roel van Dijk, Tim Schwarte";
       maintainer = "Roel van Dijk <vandijk.roel@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Communicate with Modbus devices over TCP";
       description = "Implements the Modbus TPC/IP protocol.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

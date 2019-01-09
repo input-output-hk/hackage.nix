@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "boundingboxes";
-        version = "0.2";
-      };
+      identifier = { name = "boundingboxes"; version = "0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "fumiexcel@gmail.com";
@@ -22,14 +13,9 @@
       synopsis = "The type for 2D bounding box";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.lens)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.lens) ]; };
       tests = {
         "properties" = {
           depends = [
@@ -42,8 +28,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.random)
             (hsPkgs.boundingboxes)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

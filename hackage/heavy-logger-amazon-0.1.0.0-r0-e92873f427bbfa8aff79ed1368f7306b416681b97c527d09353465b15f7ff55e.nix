@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "heavy-logger-amazon";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "heavy-logger-amazon"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 ILya Portnov";
       maintainer = "portnov84@rambler.ru";
@@ -22,7 +13,7 @@
       synopsis = "heavy-logger compatibility with amazonka-core logging";
       description = "This package is a simple adapter for use of @amazonka@ package with @heavy-logger@.\n\n@Amazonka@ has it's own interface for logging. This package provides implementation of that interface by @heavy-logger@.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.heavy-logger)
           (hsPkgs.amazonka-core)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

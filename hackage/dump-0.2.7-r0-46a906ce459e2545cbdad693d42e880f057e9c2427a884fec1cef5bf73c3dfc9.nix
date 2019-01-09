@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "dump";
-        version = "0.2.7";
-      };
+      identifier = { name = "dump"; version = "0.2.7"; };
       license = "MIT";
       copyright = "";
       maintainer = "dumplibhs.psssst@dfgh.net";
@@ -22,7 +13,7 @@
       synopsis = "Dumps the names and values of expressions to ease debugging.";
       description = "Can be used with \"Debug.Trace\", \"Test.QuickCheck\", or just\nplain old \"System.IO\"'s \"putStrLn\".\n\nSee README.md and FEATURES.md for further details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.interpolatedstring-perl6)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.interpolatedstring-perl6)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

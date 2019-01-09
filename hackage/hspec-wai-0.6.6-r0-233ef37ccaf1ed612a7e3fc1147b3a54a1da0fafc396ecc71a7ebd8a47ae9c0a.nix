@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hspec-wai";
-        version = "0.6.6";
-      };
+      identifier = { name = "hspec-wai"; version = "0.6.6"; };
       license = "MIT";
       copyright = "(c) 2012-2014 Fujimura Daisuke,\n(c) 2014-2015 Simon Hengel";
       maintainer = "Fujimura Daisuke <me@fujimuradaisuke.com>,\nSimon Hengel <sol@typeful.net>";
@@ -22,7 +13,7 @@
       synopsis = "Experimental Hspec support for testing WAI applications";
       description = "Experimental Hspec support for testing WAI applications";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.hspec-expectations)
           (hsPkgs.QuickCheck)
           (hsPkgs.with-location)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.with-location)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

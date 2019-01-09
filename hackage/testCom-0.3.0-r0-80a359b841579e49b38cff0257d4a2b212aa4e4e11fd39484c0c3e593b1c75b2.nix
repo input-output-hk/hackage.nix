@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "testCom";
-        version = "0.3.0";
-      };
+      identifier = { name = "testCom"; version = "0.3.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "nobrakal@cthugha.org";
@@ -22,7 +13,7 @@
       synopsis = "Write your tests in comments";
       description = "With some TemplateHaskell magic, you can write your tests in your comments directly above a function declaration with a minimalistic syntax.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.haskell-src-meta)
           (hsPkgs.random)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -39,8 +30,8 @@
             (hsPkgs.template-haskell)
             (hsPkgs.haskell-src-meta)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

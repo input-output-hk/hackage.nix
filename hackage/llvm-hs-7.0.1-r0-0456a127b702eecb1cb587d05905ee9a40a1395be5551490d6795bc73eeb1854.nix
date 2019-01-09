@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      shared-llvm = true;
-      debug = false;
-    };
+    flags = { shared-llvm = true; debug = false; };
     package = {
       specVersion = "1.24";
-      identifier = {
-        name = "llvm-hs";
-        version = "7.0.1";
-      };
+      identifier = { name = "llvm-hs"; version = "7.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Benjamin S. Scarlet and Google Inc.";
       maintainer = "Anthony Cowley, Stephen Diehl, Moritz Kiefer <moritz.kiefer@purelyfunctional.org>";
@@ -25,7 +13,7 @@
       synopsis = "General purpose LLVM bindings";
       description = "llvm-hs is a set of Haskell bindings for LLVM <http://llvm.org/>. Unlike other current Haskell bindings,\nit uses an ADT to represent LLVM IR (<http://llvm.org/docs/LangRef.html>), and so offers two advantages: it\nhandles almost all of the stateful complexities of using the LLVM API to build IR; and it supports moving IR not\nonly from Haskell into LLVM C++ objects, but the other direction - from LLVM C++ into Haskell.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,11 +28,9 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.llvm-hs-pure)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.hsc2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -63,8 +49,8 @@
             (hsPkgs.pretty-show)
             (hsPkgs.process)
             (hsPkgs.temporary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

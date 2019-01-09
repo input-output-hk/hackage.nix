@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-mon";
-        version = "1.0.0";
-      };
+      identifier = { name = "cabal-mon"; version = "1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "iavor.diatchki@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A monitor for cabal builds";
       description = "A vty-based wrapper around the `fswatch` utility,\nwhich makes it easy to monitor parallel Cabal builds.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "cabal-mon" = {
@@ -34,8 +25,8 @@
             (hsPkgs.filepath)
             (hsPkgs.process)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

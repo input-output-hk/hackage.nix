@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "zlib-enum";
-        version = "0.0";
-      };
+      identifier = { name = "zlib-enum"; version = "0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "Malte Sommerkorn <malte.sommerkorn@googlemail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Enumerator interface for zlib compression";
       description = "zlib-enum is a stop-gap package to provide enumeratees for\nzlib compression/decompression.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.mtl)
           (hsPkgs.enumerator)
           (hsPkgs.zlib-bindings)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

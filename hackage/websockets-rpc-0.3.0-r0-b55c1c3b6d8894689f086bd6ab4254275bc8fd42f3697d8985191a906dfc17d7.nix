@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      example = false;
-      example-client = false;
-    };
+    flags = { example = false; example-client = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "websockets-rpc";
-        version = "0.3.0";
-      };
+      identifier = { name = "websockets-rpc"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Simple streaming RPC mechanism using WebSockets";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +33,8 @@
           (hsPkgs.uuid)
           (hsPkgs.wai-transformers)
           (hsPkgs.websockets)
-        ];
-      };
+          ];
+        };
       exes = {
         "example" = {
           depends = [
@@ -59,8 +47,8 @@
             (hsPkgs.mtl)
             (hsPkgs.wai-transformers)
             (hsPkgs.websockets)
-          ];
-        };
+            ];
+          };
         "example-client" = {
           depends = [
             (hsPkgs.base)
@@ -72,9 +60,9 @@
             (hsPkgs.mtl)
             (hsPkgs.wai-transformers)
             (hsPkgs.websockets)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -85,8 +73,8 @@
             (hsPkgs.quickcheck-instances)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

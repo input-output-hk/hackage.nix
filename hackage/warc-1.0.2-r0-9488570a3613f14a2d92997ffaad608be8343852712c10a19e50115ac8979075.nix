@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "warc";
-        version = "1.0.2";
-      };
+      identifier = { name = "warc"; version = "1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Ben Gamari";
       maintainer = "ben@smart-cactus.org";
@@ -22,7 +13,7 @@
       synopsis = "A parser for the Web Archive (WARC) format";
       description = "A streaming parser for the Web Archive (WARC) format.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,8 +32,8 @@
           (hsPkgs.time)
           (hsPkgs.text)
           (hsPkgs.mmorph)
-        ];
-      };
+          ];
+        };
       exes = {
         "warc-export" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.errors)
             (hsPkgs.time)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

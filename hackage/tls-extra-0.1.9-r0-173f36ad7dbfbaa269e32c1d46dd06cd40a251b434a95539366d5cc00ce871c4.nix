@@ -1,22 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test = false;
-      bench = false;
-      executable = false;
-    };
+    flags = { test = false; bench = false; executable = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tls-extra";
-        version = "0.1.9";
-      };
+      identifier = { name = "tls-extra"; version = "0.1.9"; };
       license = "BSD-3-Clause";
       copyright = "Vincent Hanquez <vincent@snarc.org>";
       maintainer = "Vincent Hanquez <vincent@snarc.org>";
@@ -26,7 +13,7 @@
       synopsis = "TLS extra default values and helpers";
       description = "a set of extra definitions, default values and helpers for tls.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,35 +28,35 @@
           (hsPkgs.cryptocipher)
           (hsPkgs.certificate)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "stunnel" = {
-          depends = pkgs.lib.optionals (flags.executable) [
+          depends = (pkgs.lib).optionals (flags.executable) [
             (hsPkgs.network)
             (hsPkgs.cmdargs)
-          ];
-        };
+            ];
+          };
         "checkciphers" = {
-          depends = pkgs.lib.optionals (flags.executable) [
+          depends = (pkgs.lib).optionals (flags.executable) [
             (hsPkgs.network)
             (hsPkgs.cmdargs)
-          ];
-        };
+            ];
+          };
         "retrievecertificate" = {
-          depends = pkgs.lib.optionals (flags.executable) [
+          depends = (pkgs.lib).optionals (flags.executable) [
             (hsPkgs.network)
             (hsPkgs.cmdargs)
-          ];
-        };
+            ];
+          };
         "Tests" = {
-          depends = pkgs.lib.optionals (flags.test) [
+          depends = (pkgs.lib).optionals (flags.test) [
             (hsPkgs.base)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

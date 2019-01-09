@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      threaded = true;
-      gpl = true;
-    };
+    flags = { threaded = true; gpl = true; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "hlint";
-        version = "2.1";
-      };
+      identifier = { name = "hlint"; version = "2.1"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2006-2018";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "Source code suggestions";
       description = "HLint gives suggestions on how to improve your source code.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -50,15 +38,8 @@
           (hsPkgs.extra)
           (hsPkgs.refact)
           (hsPkgs.aeson)
-        ] ++ pkgs.lib.optional (flags.gpl) (hsPkgs.hscolour)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs.semigroups);
-      };
-      exes = {
-        "hlint" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hlint)
-          ];
+          ] ++ (pkgs.lib).optional (flags.gpl) (hsPkgs.hscolour)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
         };
+      exes = { "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; }; };
       };
-    };
-  }
+    }

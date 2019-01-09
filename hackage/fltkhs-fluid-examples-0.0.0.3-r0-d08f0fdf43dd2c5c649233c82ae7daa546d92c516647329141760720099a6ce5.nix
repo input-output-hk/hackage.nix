@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { fastcompile = true; };
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "fltkhs-fluid-examples";
-        version = "0.0.0.3";
-      };
+      identifier = { name = "fltkhs-fluid-examples"; version = "0.0.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "aditya.siram@gmail.com";
@@ -22,51 +13,27 @@
       synopsis = "Fltkhs Fluid Examples";
       description = "Examples of using Fluid with FLTKHS";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "fltkhs-fluid-radio" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.fltkhs)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.fltkhs) ];
+          };
         "fltkhs-fluid-tabs" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.fltkhs)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.fltkhs) ];
+          };
         "fltkhs-fluid-valuators" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.fltkhs)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.fltkhs) ];
+          };
         "fltkhs-fluid-inactive" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.fltkhs)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.fltkhs) ];
+          };
         "fltkhs-fluid-fast-slow" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.fltkhs)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.fltkhs) ];
+          };
         "fltkhs-fluid-tree" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.fltkhs)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.fltkhs) ];
+          };
         };
       };
-    };
-  }
+    }

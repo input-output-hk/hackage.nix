@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Slides";
-        version = "0.1.0.4";
-      };
+      identifier = { name = "Slides"; version = "0.1.0.4"; };
       license = "MIT";
       copyright = "";
       maintainer = "lukahorvat9@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Generate slides from Haskell code";
       description = "Make presentations in Haskell with diagrams";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.regexpr)
           (hsPkgs.utf8-string)
           (hsPkgs.diagrams-lib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

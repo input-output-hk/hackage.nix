@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "terntup";
-        version = "0.0.1";
-      };
+      identifier = { name = "terntup"; version = "0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "andrew.pennebaker@gmail.com";
@@ -22,11 +13,9 @@
       synopsis = "a ternary library";
       description = "a library for converting to and from (balanced) ternary";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "reference" = {
           depends = [
@@ -36,8 +25,8 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

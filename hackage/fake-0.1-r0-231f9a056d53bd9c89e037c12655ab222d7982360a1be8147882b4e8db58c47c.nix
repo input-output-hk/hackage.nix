@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fake";
-        version = "0.1";
-      };
+      identifier = { name = "fake"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "Doug Beardsley, Formation Inc.";
       maintainer = "mightybyte@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Randomly generated fake data";
       description = "QuickCheck generates completely random data for the\npurposes of test and catching corner cases.  The fake\npackage provides tools for generating data that looks\nplausibly real.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,8 +23,8 @@
           (hsPkgs.random)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.random)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

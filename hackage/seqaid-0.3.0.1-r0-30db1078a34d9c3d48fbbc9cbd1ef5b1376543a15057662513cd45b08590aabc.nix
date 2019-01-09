@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       hello_hackage_visitor = false;
@@ -21,13 +15,10 @@
       nfdatan_only = false;
       show_type = true;
       use_cpphs = true;
-    };
+      };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "seqaid";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "seqaid"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Andrew Seniuk <rasfar@gmail.com>";
@@ -37,7 +28,7 @@
       synopsis = "Dynamic strictness control, including space leak repair";
       description = "Seqaid is a GHC plugin providing non-invasive auto-instrumentation of Haskell projects, for dynamic strictness (and parallelism) control. This will soon include optimisation for automated space leak relief using minimal strictification. [The optimiser is still in development however.]\n\nRefer to the seqaid <http://www.fremissant.net/seqaid homepage> for more information.\n\nPlease share your comments on this <http://www.reddit.com/r/haskell/comments/2pscxh/ann_deepseqbounded_seqaid_leaky/ reddit> discussion.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (((([
@@ -48,20 +39,20 @@
           (hsPkgs.regex-pcre)
           (hsPkgs.array)
           (hsPkgs.mtl)
-        ] ++ [
+          ] ++ [
           (hsPkgs.ghc-paths)
           (hsPkgs.temporary)
           (hsPkgs.transformers)
           (hsPkgs.exceptions)
           (hsPkgs.filepath)
-        ]) ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs.cpphs)) ++ [
+          ]) ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.cpphs)) ++ [
           (hsPkgs.ghc)
           (hsPkgs.template-haskell)
-        ]) ++ pkgs.lib.optional (flags.seqable_only) (hsPkgs.generics-sop)) ++ pkgs.lib.optionals (!flags.demo_mode) [
+          ]) ++ (pkgs.lib).optional (flags.seqable_only) (hsPkgs.generics-sop)) ++ (pkgs.lib).optionals (!flags.demo_mode) [
           (hsPkgs.hashtables)
           (hsPkgs.hashable)
-        ];
-      };
+          ];
+        };
       exes = {
         "seqaid" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.temporary)
             (hsPkgs.directory)
             (hsPkgs.process)
-          ] ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs.cpphs);
-        };
+            ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.cpphs);
+          };
         "seqaidpp" = {
           depends = [
             (hsPkgs.base)
@@ -79,8 +70,8 @@
             (hsPkgs.process)
             (hsPkgs.directory)
             (hsPkgs.Cabal)
-          ] ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs.cpphs);
+            ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.cpphs);
+          };
         };
       };
-    };
-  }
+    }

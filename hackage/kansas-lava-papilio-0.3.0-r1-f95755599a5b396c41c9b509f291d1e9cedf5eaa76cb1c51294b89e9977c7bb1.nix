@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "kansas-lava-papilio";
-        version = "0.3.0";
-      };
+      identifier = { name = "kansas-lava-papilio"; version = "0.3.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2012 Gergő Érdi";
       maintainer = "Gergő Érdi <gergo@erdi.hu>";
@@ -22,7 +13,7 @@
       synopsis = "Kansas Lava support files for the Papilio FPGA board";
       description = "IO definitions of the Papilio FPGA board and its Wings and MegaWings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.directory)
           (hsPkgs.bytestring)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

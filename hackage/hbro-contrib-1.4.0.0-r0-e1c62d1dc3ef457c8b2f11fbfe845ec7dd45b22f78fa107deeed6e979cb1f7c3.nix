@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hbro-contrib";
-        version = "1.4.0.0";
-      };
+      identifier = { name = "hbro-contrib"; version = "1.4.0.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "koral <koral at mailoo dot org>";
@@ -22,7 +13,7 @@
       synopsis = "Third-party extensions to hbro.";
       description = "Cf README";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,7 +41,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.unix)
           (hsPkgs.webkitgtk3)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

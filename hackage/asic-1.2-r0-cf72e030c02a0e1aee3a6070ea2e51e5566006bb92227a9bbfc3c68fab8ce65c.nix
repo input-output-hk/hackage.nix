@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "asic";
-        version = "1.2";
-      };
+      identifier = { name = "asic"; version = "1.2"; };
       license = "LicenseRef-LGPL";
       copyright = "Universiteit Utrecht, FITTEST project";
       maintainer = "Arie Middelkoop <ariem@cs.uu.nl>";
@@ -22,7 +13,7 @@
       synopsis = "Action Script Instrumentation Compiler";
       description = "A compiler for the instrumentation of ActionScript programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "asic" = {
@@ -32,8 +23,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.utf8-string)
             (hsPkgs.asil)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

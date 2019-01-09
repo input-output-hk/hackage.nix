@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "local-search";
-        version = "0.0.6";
-      };
+      identifier = { name = "local-search"; version = "0.0.6"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2013 Richard Senington";
       maintainer = "sc06r2s@leeds.ac.uk";
@@ -22,7 +13,7 @@
       synopsis = "Generalised local search within Haskell, for applications in combinatorial optimisation.";
       description = "This library operates by representing metaheuristics as generators of solutions, or\nstreams of solutions, which are themselves the result of resolving the interactions of\nother streams of values. The library contains combinators for constructing and\nmanaging these structures.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.random)
           (hsPkgs.combinatorial-problems)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

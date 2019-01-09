@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "proteaaudio";
-        version = "0.7.0";
-      };
+      identifier = { name = "proteaaudio"; version = "0.7.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "csaba.hruska@gmail.com";
@@ -22,35 +13,30 @@
       synopsis = "Simple audio library for Windows, Linux, OSX.";
       description = "Simple audio library for Windows, Linux, OSX. Supports Ogg and Wav playback and multichannel mixing.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-        ];
-        libs = (pkgs.lib.optionals (system.isWindows) [
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
+        libs = ((pkgs.lib).optionals (system.isWindows) [
           (pkgs."stdc++")
           (pkgs."ole32")
           (pkgs."dsound")
           (pkgs."winmm")
-        ] ++ pkgs.lib.optionals (system.isLinux) [
+          ] ++ (pkgs.lib).optionals (system.isLinux) [
           (pkgs."stdc++")
           (pkgs."pthread")
           (pkgs."pulse-simple")
           (pkgs."pulse")
-        ]) ++ pkgs.lib.optionals (system.isOsx) [
+          ]) ++ (pkgs.lib).optionals (system.isOsx) [
           (pkgs."stdc++")
           (pkgs."pthread")
-        ];
-        frameworks = pkgs.lib.optionals (system.isOsx) [
+          ];
+        frameworks = (pkgs.lib).optionals (system.isOsx) [
           (pkgs."CoreFoundation")
           (pkgs."CoreAudio")
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
-      };
+          ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       exes = {
         "proteaaudio-play" = {
           depends = [
@@ -58,8 +44,8 @@
             (hsPkgs.filepath)
             (hsPkgs.bytestring)
             (hsPkgs.proteaaudio)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

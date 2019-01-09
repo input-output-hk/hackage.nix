@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambdabot-utils";
-        version = "4.2.2";
-      };
+      identifier = { name = "lambdabot-utils"; version = "4.2.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Jan Stolarek <jan.stolarek@p.lodz.pl>";
@@ -22,7 +13,7 @@
       synopsis = "Utility libraries for the advanced IRC bot, Lambdabot";
       description = "This package is deprecated.  It's functionality has been folded into the lambdabot package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.unix)
           (hsPkgs.utf8-string)
           (hsPkgs.zlib)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

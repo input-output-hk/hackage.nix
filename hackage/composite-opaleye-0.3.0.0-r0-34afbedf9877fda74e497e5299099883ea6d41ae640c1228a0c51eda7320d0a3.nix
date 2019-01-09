@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "composite-opaleye";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "composite-opaleye"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Confer Health, Inc.";
       maintainer = "oss@confer.care";
@@ -22,7 +13,7 @@
       synopsis = "Opaleye SQL for Frames records";
       description = "Integration between Frames records and Opaleye SQL, allowing records to be stored, retrieved, and queried from PostgreSQL.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vinyl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

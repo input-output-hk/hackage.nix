@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      cgi = true;
-      test = true;
-    };
+    flags = { cgi = true; test = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "texmath";
-        version = "0.2";
-      };
+      identifier = { name = "texmath"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "jgm@berkeley.edu";
@@ -25,7 +13,7 @@
       synopsis = "Conversion of LaTeX math formulas to MathML.";
       description = "The texmathml library provides functions to convert LaTeX\nmath formulas to presentation MathML. It supports\nbasic LaTeX and AMS extensions, but not macros.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,16 +21,11 @@
           (hsPkgs.xml)
           (hsPkgs.parsec)
           (hsPkgs.containers)
-        ];
-      };
-      exes = {
-        "testTeXMathML" = {};
-        "texmath-cgi" = {
-          depends = [
-            (hsPkgs.cgi)
-            (hsPkgs.json)
           ];
         };
+      exes = {
+        "testTeXMathML" = {};
+        "texmath-cgi" = { depends = [ (hsPkgs.cgi) (hsPkgs.json) ]; };
+        };
       };
-    };
-  }
+    }

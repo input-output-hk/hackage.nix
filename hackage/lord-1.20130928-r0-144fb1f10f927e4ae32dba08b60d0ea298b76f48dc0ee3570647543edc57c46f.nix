@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lord";
-        version = "1.20130928";
-      };
+      identifier = { name = "lord"; version = "1.20130928"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "remotenonsense@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Lord of radio daemon";
       description = "A unified interface to online radio service providers, use mpd as backend.\n\nSupported radios:\n<http://cmd.fm>\n<http://douban.fm>\n<http://jing.fm>";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "lord" = {
@@ -51,9 +42,9 @@
             (hsPkgs.utf8-string)
             (hsPkgs.xml-conduit)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -83,8 +74,8 @@
             (hsPkgs.utf8-string)
             (hsPkgs.xml-conduit)
             (hsPkgs.yaml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

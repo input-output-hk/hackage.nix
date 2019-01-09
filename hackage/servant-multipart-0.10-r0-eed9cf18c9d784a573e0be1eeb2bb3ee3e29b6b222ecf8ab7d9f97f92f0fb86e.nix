@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "servant-multipart";
-        version = "0.10";
-      };
+      identifier = { name = "servant-multipart"; version = "0.10"; };
       license = "BSD-3-Clause";
       copyright = "2016-2017 Alp Mestanogullari";
       maintainer = "alpmestan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "multipart/form-data (e.g file upload) support for servant";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.transformers)
           (hsPkgs.wai)
           (hsPkgs.wai-extra)
-        ];
-      };
+          ];
+        };
       exes = {
         "upload" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.transformers)
             (hsPkgs.warp)
             (hsPkgs.wai)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

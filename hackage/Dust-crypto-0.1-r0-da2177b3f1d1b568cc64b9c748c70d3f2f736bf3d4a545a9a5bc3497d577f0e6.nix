@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "Dust-crypto";
-        version = "0.1";
-      };
+      identifier = { name = "Dust-crypto"; version = "0.1"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "brandon@ischool.utexas.edu";
@@ -22,7 +13,7 @@
       synopsis = "Cryptographic operations";
       description = "Cryptographic operations used by the Dust polymorphic protocl engine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,9 +35,9 @@
           (hsPkgs.crypto-api)
           (hsPkgs.cryptohash)
           (hsPkgs.threefish)
-        ];
-        libs = pkgs.lib.optional (system.isLinux || system.isOsx) (pkgs."crypto");
-      };
+          ];
+        libs = (pkgs.lib).optional (system.isLinux || system.isOsx) (pkgs."crypto");
+        };
       tests = {
         "crypto" = {
           depends = [
@@ -61,8 +52,8 @@
             (hsPkgs.cereal)
             (hsPkgs.ghc-prim)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "canteven-parsedate";
-        version = "1.0.1.2";
-      };
+      identifier = { name = "canteven-parsedate"; version = "1.0.1.2"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "rowens@sumall.com, ababkin@sumall.com";
@@ -22,7 +13,7 @@
       synopsis = "Date / time parsing utilities that try to guess the date / time format.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.time)
           (hsPkgs.timezone-series)
           (hsPkgs.tz)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-parsedate" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.time)
             (hsPkgs.timezone-series)
             (hsPkgs.tz)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

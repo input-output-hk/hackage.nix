@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "derp";
-        version = "0.1.1";
-      };
+      identifier = { name = "derp"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "david.darais@gmail.com";
@@ -22,13 +13,8 @@
       synopsis = "Derivative Parsing";
       description = "A parser based on derivatives of parser combinators (Might and Darais).";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      };
+    }

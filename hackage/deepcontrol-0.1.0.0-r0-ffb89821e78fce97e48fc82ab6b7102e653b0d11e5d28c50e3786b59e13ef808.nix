@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "deepcontrol";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "deepcontrol"; version = "0.1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "KONISHI Yohsuke";
       maintainer = "ocean0yohsuke@gmail.com";
@@ -22,36 +13,19 @@
       synopsis = "Enable deeper level style of programming than the usual control provides";
       description = "This module enables deeper level style of programming than the usual control provides, especially for Applicative and Monad.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; };
       tests = {
         "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.QuickCheck)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.QuickCheck) ];
+          };
         "UnitTest_Applicative" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.deepcontrol)
-          ];
-        };
+          depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.deepcontrol) ];
+          };
         "UnitTest_Monad" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.deepcontrol)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.deepcontrol) ];
+          };
         };
       };
-    };
-  }
+    }

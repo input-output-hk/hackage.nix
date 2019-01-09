@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "kan-extensions";
-        version = "5.2";
-      };
+      identifier = { name = "kan-extensions"; version = "5.2"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2008-2016 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Kan extensions, Kan lifts, the Yoneda lemma, and (co)density (co)monads";
       description = "Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.tagged)
           (hsPkgs.transformers)
           (hsPkgs.transformers-compat)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.fail);
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.fail);
+        };
       };
-    };
-  }
+    }

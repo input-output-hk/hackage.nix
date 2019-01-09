@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty-auto";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tasty-auto"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "2017 Daniel Mendler";
       maintainer = "Daniel Mendler <mail@daniel-mendler.de>";
@@ -22,15 +13,11 @@
       synopsis = "Simple auto discovery for Tasty";
       description = "Simple auto discovery for Tasty";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.filepath) ];
+        };
       exes = {
         "tasty-auto" = {
           depends = [
@@ -38,9 +25,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             (hsPkgs.tasty-auto)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "test" = {
           depends = [
@@ -54,8 +41,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-smallcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

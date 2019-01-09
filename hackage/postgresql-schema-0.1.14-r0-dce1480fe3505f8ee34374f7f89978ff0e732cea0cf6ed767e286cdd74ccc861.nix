@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.22";
-      identifier = {
-        name = "postgresql-schema";
-        version = "0.1.14";
-      };
+      identifier = { name = "postgresql-schema"; version = "0.1.14"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Mark Fine";
       maintainer = "mark.fine@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL Schema Management";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.postgresql-simple)
           (hsPkgs.shelly)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "schema-add" = {
           depends = [
@@ -43,8 +34,8 @@
             (hsPkgs.shelly)
             (hsPkgs.text)
             (hsPkgs.time)
-          ];
-        };
+            ];
+          };
         "schema-apply" = {
           depends = [
             (hsPkgs.base)
@@ -53,8 +44,8 @@
             (hsPkgs.postgresql-schema)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "schema-clear" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.postgresql-schema)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

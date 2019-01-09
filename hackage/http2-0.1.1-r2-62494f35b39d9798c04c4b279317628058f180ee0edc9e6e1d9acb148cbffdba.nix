@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "http2";
-        version = "0.1.1";
-      };
+      identifier = { name = "http2"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
@@ -22,7 +13,7 @@
       synopsis = "HTTP/2.0 library including HPACK";
       description = "HTTP/2.0 library including HPACK.\nCurrently only (coming) HPACK 06 is supported.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,15 +22,10 @@
           (hsPkgs.blaze-builder)
           (hsPkgs.bytestring)
           (hsPkgs.hashtables)
-        ];
-      };
-      tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
           ];
         };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -48,8 +34,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.hashtables)
             (hsPkgs.hspec)
-          ];
-        };
+            ];
+          };
         "hpack" = {
           depends = [
             (hsPkgs.base)
@@ -65,8 +51,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

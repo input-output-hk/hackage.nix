@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Neks";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "Neks"; version = "0.4.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "will.yager@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple networked key/value store";
       description = "Neks is a fast, simple in-memory key/value server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.vector)
           (hsPkgs.hashable)
           (hsPkgs.directory)
-        ];
-      };
+          ];
+        };
       exes = {
         "NeksClient" = {
           depends = [
@@ -51,8 +42,8 @@
             (hsPkgs.vector)
             (hsPkgs.hashable)
             (hsPkgs.directory)
-          ];
-        };
+            ];
+          };
         "NeksServer" = {
           depends = [
             (hsPkgs.base)
@@ -65,8 +56,8 @@
             (hsPkgs.vector)
             (hsPkgs.hashable)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

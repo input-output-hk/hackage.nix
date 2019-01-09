@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-middleware-cache-redis";
-        version = "0.2.0";
-      };
+      identifier = { name = "wai-middleware-cache-redis"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexander Dorofeev <aka.spin@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Redis backend for wai-middleware-cache";
       description = "This package provides Redis backend for wai-middleware-cache";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,7 +32,7 @@
           (hsPkgs.wai)
           (hsPkgs.wai-middleware-cache)
           (hsPkgs.lifted-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

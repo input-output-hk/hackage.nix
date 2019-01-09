@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "fclabels-monadlib";
-        version = "0.1.1";
-      };
+      identifier = { name = "fclabels-monadlib"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Bardur Arantsson <bardur@scientician.net>";
@@ -22,7 +13,7 @@
       synopsis = "MonadLib monadic interface for the \"fclabels\" package.";
       description = "A MonadLib-compatible monadic interface for the \"fclabels\" package.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.monadLib)
           (hsPkgs.fclabels)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

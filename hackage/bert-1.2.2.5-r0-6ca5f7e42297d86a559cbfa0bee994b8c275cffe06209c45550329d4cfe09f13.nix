@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "bert";
-        version = "1.2.2.5";
-      };
+      identifier = { name = "bert"; version = "1.2.2.5"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2011 marius a. eriksen; (c) 2013 Roman Cheplyaka";
       maintainer = "Roman Cheplyaka <roma@ro-che.info>";
@@ -22,7 +13,7 @@
       synopsis = "BERT implementation";
       description = "Implements the BERT serialization and RPC protocols\ndescribed at <http://bert-rpc.org/>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.conduit-extra)
           (hsPkgs.binary-conduit)
           (hsPkgs.void)
-        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-      };
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       tests = {
         "test" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.containers)
             (hsPkgs.bytestring)
             (hsPkgs.binary)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

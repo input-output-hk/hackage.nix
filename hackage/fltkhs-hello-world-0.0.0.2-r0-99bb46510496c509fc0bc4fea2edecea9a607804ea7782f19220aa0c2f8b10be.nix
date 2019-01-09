@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      fastcompile = false;
-    };
+    flags = { fastcompile = false; };
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "fltkhs-hello-world";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "fltkhs-hello-world"; version = "0.0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "aditya.siram@gmail.com";
@@ -24,15 +13,10 @@
       synopsis = "Fltkhs template project";
       description = "Starter kit for an FLTKHS project";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
-        "fltkhs-hello-world" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.fltkhs)
-          ];
+        "fltkhs-hello-world" = { depends = [ (hsPkgs.base) (hsPkgs.fltkhs) ]; };
         };
       };
-    };
-  }
+    }

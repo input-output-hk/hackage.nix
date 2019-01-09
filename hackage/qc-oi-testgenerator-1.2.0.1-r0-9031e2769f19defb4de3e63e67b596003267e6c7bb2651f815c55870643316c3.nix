@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "qc-oi-testgenerator";
-        version = "1.2.0.1";
-      };
+      identifier = { name = "qc-oi-testgenerator"; version = "1.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@tobias.goedderz.info";
@@ -22,7 +13,7 @@
       synopsis = "Compile time generation of operation invariance tests for QuickCheck";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.QuickCheck)
           (hsPkgs.fclabels)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

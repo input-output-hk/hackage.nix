@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       nvvm = false;
@@ -12,13 +6,10 @@
       bounds-checks = true;
       unsafe-checks = false;
       internal-checks = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "accelerate-llvm-ptx";
-        version = "1.0.0.0";
-      };
+      identifier = { name = "accelerate-llvm-ptx"; version = "1.0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>";
@@ -28,7 +19,7 @@
       synopsis = "Accelerate backend generating LLVM";
       description = "This library implements a backend for the /Accelerate/ language which\ngenerates LLVM-IR targeting CUDA capable GPUs. For further information,\nrefer to the main /Accelerate/ package:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -49,7 +40,7 @@
           (hsPkgs.pretty)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ] ++ pkgs.lib.optional (flags.nvvm) (hsPkgs.nvvm);
+          ] ++ (pkgs.lib).optional (flags.nvvm) (hsPkgs.nvvm);
+        };
       };
-    };
-  }
+    }

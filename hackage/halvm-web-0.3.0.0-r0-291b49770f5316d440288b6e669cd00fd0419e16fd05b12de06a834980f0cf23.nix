@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "halvm-web";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "halvm-web"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2016, Adam Wick";
       maintainer = "awick@galois.com";
@@ -22,7 +13,7 @@
       synopsis = "A simple, static HaLVM web server";
       description = "A simple, static HaLVM web server";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "halvm-web" = {
@@ -40,8 +31,8 @@
             (hsPkgs.simple-tar)
             (hsPkgs.text)
             (hsPkgs.XenDevice)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

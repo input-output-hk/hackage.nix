@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "binary-ext";
-        version = "1.0.8.5.1";
-      };
+      identifier = { name = "binary-ext"; version = "1.0.8.5.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Warlock <internalmike@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "An alternate with typed errors for Data.Binary.Get monad from 'binary' library.";
       description = "An alternate with typed errors for Data.Binary.Get monad from 'binary' library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.array)
           (hsPkgs.binary)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") (hsPkgs.ghc-prim);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs.ghc-prim);
+        };
       tests = {
         "qc" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.array)
             (hsPkgs.containers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") (hsPkgs.ghc-prim);
-        };
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs.ghc-prim);
+          };
         "read-write-file" = {
           depends = [
             (hsPkgs.base)
@@ -58,8 +49,8 @@
             (hsPkgs.HUnit)
             (hsPkgs.array)
             (hsPkgs.containers)
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") (hsPkgs.ghc-prim);
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.6") (hsPkgs.ghc-prim);
+          };
         };
       };
-    };
-  }
+    }

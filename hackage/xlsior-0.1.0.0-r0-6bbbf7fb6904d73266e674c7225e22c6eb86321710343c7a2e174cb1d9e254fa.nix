@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "xlsior";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "xlsior"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "ropoctl@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Streaming Excel file generation and parsing";
       description = "Streaming Excel file generation and parsing";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.mtl)
           (hsPkgs.attoparsec)
           (hsPkgs.scientific)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -56,8 +47,8 @@
             (hsPkgs.bytestring)
             (hsPkgs.time)
             (hsPkgs.old-locale)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

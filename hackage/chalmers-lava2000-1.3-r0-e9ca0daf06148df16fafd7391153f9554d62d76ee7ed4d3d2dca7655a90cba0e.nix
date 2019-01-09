@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "chalmers-lava2000";
-        version = "1.3";
-      };
+      identifier = { name = "chalmers-lava2000"; version = "1.3"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008. Koen Claessen <koen@chalmers.se>";
       maintainer = "Emil Axelsson <emax@chalmers.se>";
@@ -22,7 +13,7 @@
       synopsis = "Hardware description library";
       description = "Hardware description library";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.base)
           (hsPkgs.process)
           (hsPkgs.random)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

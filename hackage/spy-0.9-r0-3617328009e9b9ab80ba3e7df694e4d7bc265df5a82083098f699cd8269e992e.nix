@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "spy";
-        version = "0.9";
-      };
+      identifier = { name = "spy"; version = "0.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "stefan@saasen.me";
@@ -22,7 +13,7 @@
       synopsis = "A compact file system watcher for Mac OS X, Linux and Windows";
       description = "Spy can be used to watch for file changes and to either report the modified files or run a command if files change. It can be used to trigger compilation, to run tests or start a deployment.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "spy" = {
@@ -38,9 +29,9 @@
             (hsPkgs.system-filepath)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "spy-testsuite" = {
           depends = [
@@ -60,8 +51,8 @@
             (hsPkgs.system-filepath)
             (hsPkgs.time)
             (hsPkgs.unix)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

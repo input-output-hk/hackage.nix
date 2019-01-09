@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "extensible-effects-concurrent";
         version = "0.12.0";
-      };
+        };
       license = "BSD-3-Clause";
       copyright = "Copyright Sven Heyll";
       maintainer = "sven.heyll@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Message passing concurrency as extensible-effect";
       description = "Please see the README on GitHub at <https://github.com/sheyll/extensible-effects-concurrent#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +38,8 @@
           (hsPkgs.extensible-effects)
           (hsPkgs.stm)
           (hsPkgs.transformers-base)
-        ];
-      };
+          ];
+        };
       exes = {
         "extensible-effects-concurrent-example-1" = {
           depends = [
@@ -54,8 +48,8 @@
             (hsPkgs.extensible-effects-concurrent)
             (hsPkgs.extensible-effects)
             (hsPkgs.lens)
-          ];
-        };
+            ];
+          };
         "extensible-effects-concurrent-example-2" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +57,8 @@
             (hsPkgs.extensible-effects-concurrent)
             (hsPkgs.extensible-effects)
             (hsPkgs.lens)
-          ];
-        };
+            ];
+          };
         "extensible-effects-concurrent-example-3" = {
           depends = [
             (hsPkgs.base)
@@ -74,17 +68,17 @@
             (hsPkgs.extensible-effects)
             (hsPkgs.filepath)
             (hsPkgs.lens)
-          ];
-        };
+            ];
+          };
         "extensible-effects-concurrent-example-4" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.extensible-effects-concurrent)
             (hsPkgs.extensible-effects)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "extensible-effects-concurrent-test" = {
           depends = [
@@ -102,8 +96,8 @@
             (hsPkgs.lens)
             (hsPkgs.HUnit)
             (hsPkgs.stm)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

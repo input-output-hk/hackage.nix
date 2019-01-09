@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "aeson-utils";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "aeson-utils"; version = "0.3.0.2"; };
       license = "BSD-3-Clause";
       copyright = "2014, Silk B.V";
       maintainer = "code@silk.co";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for working with Aeson.";
       description = "Utilities for working with Aeson.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.scientific)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

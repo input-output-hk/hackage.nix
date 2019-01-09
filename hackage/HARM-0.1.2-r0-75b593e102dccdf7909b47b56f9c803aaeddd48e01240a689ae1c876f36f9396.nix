@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HARM";
-        version = "0.1.2";
-      };
+      identifier = { name = "HARM"; version = "0.1.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "Alex Mason (axman6@gmail.com)";
@@ -22,24 +13,12 @@
       synopsis = "A simple ARM emulator in haskell";
       description = "A simple ARM virtual machine designed for teaching assembly";
       buildType = "Simple";
-    };
+      };
     components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-        ];
-      };
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.array) ]; };
       exes = {
-        "runarm" = {
-          depends = [ (hsPkgs.base) ];
-        };
-        "dbgarm" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-          ];
+        "runarm" = { depends = [ (hsPkgs.base) ]; };
+        "dbgarm" = { depends = [ (hsPkgs.base) (hsPkgs.array) ]; };
         };
       };
-    };
-  }
+    }

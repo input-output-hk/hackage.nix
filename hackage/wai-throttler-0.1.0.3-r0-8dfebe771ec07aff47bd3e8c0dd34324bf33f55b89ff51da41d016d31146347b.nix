@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wai-throttler";
-        version = "0.1.0.3";
-      };
+      identifier = { name = "wai-throttler"; version = "0.1.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "maxim.kulkin@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Wai middleware for request throttling";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.time)
           (hsPkgs.wai)
           (hsPkgs.http-types)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

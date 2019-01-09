@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "buildbox-tools";
-        version = "1.5.0.2";
-      };
+      identifier = { name = "buildbox-tools"; version = "1.5.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@ouroborus.net>";
@@ -22,16 +13,12 @@
       synopsis = "Tools for working with buildbox benchmark result files.";
       description = "Tools for working with buildbox benchmark result files.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "buildbox-results" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.buildbox)
-            (hsPkgs.parseargs)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.buildbox) (hsPkgs.parseargs) ];
+          };
         };
       };
-    };
-  }
+    }

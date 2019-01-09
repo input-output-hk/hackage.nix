@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "libmpd";
-        version = "0.1.3";
-      };
+      identifier = { name = "libmpd"; version = "0.1.3"; };
       license = "LicenseRef-LGPL";
       copyright = "Ben Sinclair 2005-2007";
       maintainer = "bsinclai@turing.une.edu.au";
@@ -22,14 +13,10 @@
       synopsis = "An MPD client library.";
       description = "A client library for MPD, the Music Player Daemon.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-          (hsPkgs.mtl)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.network) (hsPkgs.mtl) ];
+        };
       };
-    };
-  }
+    }

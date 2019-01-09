@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tracy";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "tracy"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "denis.redozubov@gmail.com";
@@ -22,10 +13,6 @@
       synopsis = "Convenience wrappers for non-intrusive debug tracing";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.12";
-      identifier = {
-        name = "cuckoo-filter";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "cuckoo-filter"; version = "0.2.0.1"; };
       license = "MIT";
       copyright = "2018 Chris Coffey";
       maintainer = "chris@foldl.io";
@@ -22,7 +13,7 @@
       synopsis = "Pure and impure Cuckoo Filter";
       description = "Please see the README on Github at <https://github.com/ChrisCoffey/cuckoo-filter#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,8 +25,8 @@
           (hsPkgs.containers)
           (hsPkgs.hashable)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "benchmarks" = {
           depends = [
@@ -50,9 +41,9 @@
             (hsPkgs.hashable)
             (hsPkgs.random)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "cuckoo-filter-test" = {
           depends = [
@@ -69,8 +60,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

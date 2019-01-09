@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "network-uri-json";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "network-uri-json"; version = "0.1.2.0"; };
       license = "MIT";
       copyright = "(c) 2017 Alex Brandt";
       maintainer = "alunduil@alunduil.com";
@@ -22,7 +13,7 @@
       synopsis = "FromJSON and ToJSON Instances for Network.URI";
       description = "FromJSON and ToJSON instances for Network.URI.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.base)
           (hsPkgs.network-uri)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "network-uri-json-tests" = {
           depends = [
@@ -43,11 +34,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.test-invariant)
             (hsPkgs.text)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

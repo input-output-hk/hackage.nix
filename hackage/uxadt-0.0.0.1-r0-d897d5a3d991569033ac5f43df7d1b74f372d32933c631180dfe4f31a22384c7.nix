@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "uxadt";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "uxadt"; version = "0.0.0.1"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Andrei Lapets <lapets@bu.edu>";
@@ -22,13 +13,8 @@
       synopsis = "Cross-language extensible representation for algebraic data types.";
       description = "Universal (cross-language) extensible representation for algebraic data type instances.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.MissingH)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.MissingH) ]; };
+      };
+    }

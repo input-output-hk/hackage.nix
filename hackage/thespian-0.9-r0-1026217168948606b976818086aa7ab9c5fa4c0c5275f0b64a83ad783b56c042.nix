@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "thespian";
-        version = "0.9";
-      };
+      identifier = { name = "thespian"; version = "0.9"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "alexander.the.average@gmail.com";
@@ -22,13 +13,6 @@
       synopsis = "Lightweight Erlang-style actors for Haskell";
       description = "";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

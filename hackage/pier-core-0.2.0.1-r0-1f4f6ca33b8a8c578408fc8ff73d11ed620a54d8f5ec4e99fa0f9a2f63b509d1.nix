@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pier-core";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "pier-core"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "judah.jacobson@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for writing forwards-declared build systems in haskell.";
       description = "A library for writing build systems in Haskell, built on top of\n<http://shakebuild.com shake>.\n\nPier provides a generic approach to building and caching file outputs.\nIt enables build actions to be written in a \"forwards\" style, which\ngenerally leads to simpler logic than backwards-defined build systems\nsuch as make or (normal) Shake, where each step of the build logic must\nbe written as a new build rule.\n\nFor more details, see \"Pier.Core.Artifact\".";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -43,7 +34,7 @@
           (hsPkgs.temporary)
           (hsPkgs.text)
           (hsPkgs.unix)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

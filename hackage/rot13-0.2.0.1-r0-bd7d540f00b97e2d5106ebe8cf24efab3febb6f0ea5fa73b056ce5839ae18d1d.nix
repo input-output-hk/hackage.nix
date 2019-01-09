@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rot13";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "rot13"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) Kyle Van Berendonck, 2014";
       maintainer = "kvanberendonck@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "Fast ROT13 cipher for Haskell.";
       description = "A fast ROT13 cipher for Haskell implemented using as few branches as possible.\nFor more information on ROT13, see: <https://en.wikipedia.org/wiki/ROT13>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -40,8 +27,8 @@
             (hsPkgs.text)
             (hsPkgs.QuickCheck)
             (hsPkgs.rot13)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

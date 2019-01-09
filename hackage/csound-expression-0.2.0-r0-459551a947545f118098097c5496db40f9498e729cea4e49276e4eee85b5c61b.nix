@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "csound-expression";
-        version = "0.2.0";
-      };
+      identifier = { name = "csound-expression"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<anton.kholomiov@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Csound combinator library";
       description = "Csound code generator. See \"CsoundExpr.Tutorial\" for guides and examples.\nWARNING : API changes (see TemporalFunctor method tmap, and ./Changelog)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.Boolean)
           (hsPkgs.temporal-media)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

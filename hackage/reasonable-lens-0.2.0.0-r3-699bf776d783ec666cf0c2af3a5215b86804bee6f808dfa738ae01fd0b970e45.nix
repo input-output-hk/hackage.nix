@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "reasonable-lens";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "reasonable-lens"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "(C) 2014 Tokiwo Ousaka";
       maintainer = "Tokiwo Ousaka";
@@ -22,7 +13,7 @@
       synopsis = "Just size lens implementation.";
       description = "It is more small but adequate lens implementation.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.split)
           (hsPkgs.template-haskell)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

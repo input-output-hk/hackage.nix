@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "dph-seq";
-        version = "0.5.1.1";
-      };
+      identifier = { name = "dph-seq"; version = "0.5.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ben Lippmeier <benl@cse.unsw.edu.au>";
@@ -22,7 +13,7 @@
       synopsis = "Data structures for Nested Data-Parallel Haskell.";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.dph-base)
           (hsPkgs.dph-prim-seq)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

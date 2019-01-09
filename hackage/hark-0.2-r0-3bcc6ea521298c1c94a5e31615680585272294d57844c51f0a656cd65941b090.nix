@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hark";
-        version = "0.2";
-      };
+      identifier = { name = "hark"; version = "0.2"; };
       license = "LicenseRef-GPL";
       copyright = "(C) 2009 Markus Dittrich";
       maintainer = "Markus Dittrich <haskelladdict@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Gentoo package query tool.";
       description = "hark is a query tool for the package database of\ninstalled packages on Gentoo Linux systems.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "hark" = {
@@ -36,8 +27,8 @@
             (hsPkgs.directory)
             (hsPkgs.old-time)
             (hsPkgs.old-locale)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

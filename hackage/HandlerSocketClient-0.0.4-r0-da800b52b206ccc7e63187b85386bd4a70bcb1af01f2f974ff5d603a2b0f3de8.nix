@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "HandlerSocketClient";
-        version = "0.0.4";
-      };
+      identifier = { name = "HandlerSocketClient"; version = "0.0.4"; };
       license = "BSD-3-Clause";
       copyright = "2011 Wu Xingbo (wuxb45@gmail.com)";
       maintainer = "Wu Xingbo";
@@ -22,14 +13,10 @@
       synopsis = "Haskell implementation of a HandlerSocket client (API).";
       description = "This package implemets API for a HandlerSocket client.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-          (hsPkgs.bytestring)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.network) (hsPkgs.bytestring) ];
+        };
       };
-    };
-  }
+    }

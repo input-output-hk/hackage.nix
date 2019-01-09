@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "package-description-remote";
         version = "0.1.0.0";
-      };
+        };
       license = "MIT";
       copyright = "Copyright (c) 2015 Pedro Tacla Yamada";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +16,7 @@
       synopsis = "Fetches a 'GenericPackageDescription' from Hackage";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,15 +26,12 @@
           (hsPkgs.lens)
           (hsPkgs.lens-aeson)
           (hsPkgs.wreq)
-        ];
-      };
-      tests = {
-        "package-description-remote-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.package-description-remote)
           ];
         };
+      tests = {
+        "package-description-remote-test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.package-description-remote) ];
+          };
+        };
       };
-    };
-  }
+    }

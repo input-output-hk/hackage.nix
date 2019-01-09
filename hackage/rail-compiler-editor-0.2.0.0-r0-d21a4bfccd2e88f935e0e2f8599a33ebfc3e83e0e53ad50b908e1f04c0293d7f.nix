@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rail-compiler-editor";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "rail-compiler-editor"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "borgers@mi.fu-berlin.de";
@@ -22,7 +13,7 @@
       synopsis = "Compiler and editor for the esolang rail.";
       description = "A compiler and a graphical editor for the esoteric programming language rail.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "RailCompiler" = {
@@ -32,8 +23,8 @@
             (hsPkgs.llvm-general)
             (hsPkgs.mtl)
             (hsPkgs.containers)
-          ];
-        };
+            ];
+          };
         "RailEditor" = {
           depends = [
             (hsPkgs.base)
@@ -44,9 +35,9 @@
             (hsPkgs.transformers)
             (hsPkgs.gtk)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "testcases" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.mtl)
             (hsPkgs.containers)
             (hsPkgs.process)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

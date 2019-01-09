@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "fay-geoposition";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "fay-geoposition"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Altera Praxis Pty Ltd";
       maintainer = "eocallaghan@alterapraxis.com";
@@ -22,13 +13,8 @@
       synopsis = "W3C compliant implementation of GeoPosition API.";
       description = "W3C compliant implementation of GeoPosition API within the Fay Monad";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.fay-base)
-          (hsPkgs.fay-text)
-        ];
       };
-    };
-  }
+    components = {
+      "library" = { depends = [ (hsPkgs.fay-base) (hsPkgs.fay-text) ]; };
+      };
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "sproxy-web";
-        version = "0.3.1";
-      };
+      identifier = { name = "sproxy-web"; version = "0.3.1"; };
       license = "MIT";
       copyright = "2014-2016, Zalora South East Asia Pte. Ltd";
       maintainer = "Igor Pashev <pashev.igor@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Web interface to sproxy database";
       description = "Web frontend for managing sproxy.\nSee https://hackage.haskell.org/package/sproxy";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "sproxy-web" = {
@@ -47,8 +38,8 @@
             (hsPkgs.wai-extra)
             (hsPkgs.wai-middleware-static)
             (hsPkgs.warp)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

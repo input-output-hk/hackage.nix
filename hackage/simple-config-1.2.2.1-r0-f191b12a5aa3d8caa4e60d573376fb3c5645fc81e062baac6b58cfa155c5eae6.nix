@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network-uri = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "simple-config";
-        version = "1.2.2.1";
-      };
+      identifier = { name = "simple-config"; version = "1.2.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yunomu@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Simple config file parser generator";
       description = "Simple config file parser generator";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,17 +23,10 @@
           (hsPkgs.transformers)
           (hsPkgs.data-default)
           (hsPkgs.template-haskell)
-        ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
           then [ (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
-      };
-      tests = {
-        "spec" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-          ];
         };
+      tests = { "spec" = { depends = [ (hsPkgs.base) (hsPkgs.hspec) ]; }; };
       };
-    };
-  }
+    }

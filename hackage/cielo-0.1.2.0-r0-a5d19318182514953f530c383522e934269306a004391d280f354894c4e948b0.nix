@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cielo";
-        version = "0.1.2.0";
-      };
+      identifier = { name = "cielo"; version = "0.1.2.0"; };
       license = "AGPL-3.0-only";
       copyright = "";
       maintainer = "tacla.yamada@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Cielo API v3 Bindings for Haskell";
       description = "Cielo API v3 Bindings";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.http-types)
           (hsPkgs.http-client)
           (hsPkgs.data-default)
-        ];
-      };
+          ];
+        };
       tests = {
         "hspec" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.cielo)
             (hsPkgs.pretty-show)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "btree";
-        version = "0.3";
-      };
+      identifier = { name = "btree"; version = "0.3"; };
       license = "BSD-3-Clause";
       copyright = "2017 Andrew Martin";
       maintainer = "andrew.thaddeus@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "B-Tree on Unmanaged Heap";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.primitive)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) (hsPkgs.primitive) ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -45,9 +32,9 @@
             (hsPkgs.primitive)
             (hsPkgs.hashable)
             (hsPkgs.MonadRandom)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -56,8 +43,8 @@
             (hsPkgs.clock)
             (hsPkgs.hashable)
             (hsPkgs.ghc-prim)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

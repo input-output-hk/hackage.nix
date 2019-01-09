@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      unsafe-operations = true;
-    };
+    flags = { unsafe-operations = true; };
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "parameterized-utils";
-        version = "1.0.1";
-      };
+      identifier = { name = "parameterized-utils"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jhendrix@galois.com";
@@ -24,7 +13,7 @@
       synopsis = "Classes and data structures for working with data-kind indexed types";
       description = "This packages contains collection classes and type representations\nused for working with values that have a single parameter.  It's\nintended for things like expression libraries where one wishes\nto leverage the Haskell type-checker to improve type-safety by encoding\nthe object language type system into data kinds.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,8 +29,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       tests = {
         "parameterizedTests" = {
           depends = [
@@ -57,8 +46,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

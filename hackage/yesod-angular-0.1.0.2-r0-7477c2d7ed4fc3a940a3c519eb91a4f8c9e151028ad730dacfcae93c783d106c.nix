@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-angular";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "yesod-angular"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Christopher Reichert <creichert07@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Angular JS integratoin";
       description = "Angular JS integration for Yesod.\n\nThis module is based on Michael Snoyman's original work\nin the <https://github.com/snoyberg/yesod-js> repository.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.yesod)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

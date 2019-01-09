@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.20";
-      identifier = {
-        name = "haskus-utils";
-        version = "0.7.0.0";
-      };
+      identifier = { name = "haskus-utils"; version = "0.7.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Sylvain Henry 2017";
       maintainer = "sylvain@haskus.fr";
@@ -22,7 +13,7 @@
       synopsis = "Haskus utility modules";
       description = "Various utility modules used by Haskus packages.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.file-embed)
           (hsPkgs.extra)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.haskus-utils)
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

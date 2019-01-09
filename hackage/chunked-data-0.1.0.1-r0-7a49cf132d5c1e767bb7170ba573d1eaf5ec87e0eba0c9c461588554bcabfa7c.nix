@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "chunked-data";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "chunked-data"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Typeclasses for dealing with various chunked data representations";
       description = "Originally present in classy-prelude.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,7 +27,7 @@
           (hsPkgs.containers)
           (hsPkgs.vector)
           (hsPkgs.semigroups)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

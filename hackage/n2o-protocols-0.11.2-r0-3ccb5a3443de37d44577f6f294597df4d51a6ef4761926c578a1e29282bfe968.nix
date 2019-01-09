@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "n2o-protocols";
-        version = "0.11.2";
-      };
+      identifier = { name = "n2o-protocols"; version = "0.11.2"; };
       license = "BSD-3-Clause";
       copyright = "2018 Marat Khafizov (c)";
       maintainer = "xafizoff@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "N2O Protocols Starter Pack";
       description = "N2O Protocols: Interfaces and Implementations";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.containers)
           (hsPkgs.base64-bytestring)
           (hsPkgs.time)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

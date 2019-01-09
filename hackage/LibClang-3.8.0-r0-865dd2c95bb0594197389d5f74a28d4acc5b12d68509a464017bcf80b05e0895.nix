@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "LibClang";
-        version = "3.8.0";
-      };
+      identifier = { name = "LibClang"; version = "3.8.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Chetan Taralekar <chetant@gmail.com>, Seth Fowler <mark.seth.fowler@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Haskell bindings for libclang (a C++ parsing library)";
       description = "LibClang package provides bindings to libclang.\n\nThis should be enough for parsing C/C++ code, walking the AST and querying nodes and completion queries.\n\n* NOTE: This version is set to build against llvm 3.8.0\n\nPlease use <https://github.com/chetant/LibClang/issues> to report bugs";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,14 +28,10 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           (hsPkgs.vector)
-        ];
+          ];
         libs = [ (pkgs."clang-3.8") ];
-        pkgconfig = [
-          (pkgconfPkgs.ncurses)
-        ];
-        build-tools = [
-          (hsPkgs.buildPackages.c2hs)
-        ];
+        pkgconfig = [ (pkgconfPkgs.ncurses) ];
+        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        };
       };
-    };
-  }
+    }

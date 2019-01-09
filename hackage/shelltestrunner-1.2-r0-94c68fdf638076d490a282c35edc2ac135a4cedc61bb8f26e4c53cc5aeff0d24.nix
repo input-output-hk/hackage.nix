@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "shelltestrunner";
-        version = "1.2";
-      };
+      identifier = { name = "shelltestrunner"; version = "1.2"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Simon Michael <simon@joyful.com>";
@@ -22,7 +13,7 @@
       synopsis = "A tool for testing command-line programs.";
       description = "shelltestrunner is a cross-platform tool for testing command-line\nprograms (or arbitrary shell commands.)  It reads simple declarative tests\nspecifying a command, some input, and the expected output, error output\nand exit status.  Tests can be run selectively, in parallel, with a\ntimeout, in color, and/or with differences highlighted.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "shelltest" = {
@@ -41,8 +32,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.utf8-string)
             (hsPkgs.Diff)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

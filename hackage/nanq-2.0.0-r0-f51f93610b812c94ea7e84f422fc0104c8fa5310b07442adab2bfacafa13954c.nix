@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "nanq";
-        version = "2.0.0";
-      };
+      identifier = { name = "nanq"; version = "2.0.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "colingw@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Performs 漢字検定 (National Kanji Exam) level analysis on given Kanji.";
       description = "`nanq` can inform the user of a number of statistics\nregarding Kanji and the Nation Kanji Examination, also\nknown as 漢字検定 or 漢検. In the most simple case,\nit will reveal what inputed Kanji belong to what\nLevel of the exam.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.containers)
           (hsPkgs.microlens)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       exes = {
         "nanq" = {
           depends = [
@@ -46,8 +37,8 @@
             (hsPkgs.microlens-aeson)
             (hsPkgs.optparse-applicative)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

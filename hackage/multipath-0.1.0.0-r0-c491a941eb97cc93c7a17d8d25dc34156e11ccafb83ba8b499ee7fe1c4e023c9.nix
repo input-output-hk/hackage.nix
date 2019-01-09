@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "multipath";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "multipath"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "flegmer@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Parser and builder for unix-path-like objects.";
       description = "Parser and builder for unix-path-like objects used in multiformats (https://github.com/multiformats)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.utf8-string)
-          (hsPkgs.parsec)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.utf8-string) (hsPkgs.parsec) ];
+        };
       };
-    };
-  }
+    }

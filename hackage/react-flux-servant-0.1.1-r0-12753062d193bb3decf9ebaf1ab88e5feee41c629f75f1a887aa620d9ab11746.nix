@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "react-flux-servant";
-        version = "0.1.1";
-      };
+      identifier = { name = "react-flux-servant"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "John Lenz <wuzzeb@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Allow react-flux stores to send requests to a servant server";
       description = "See the README below.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.servant)
           (hsPkgs.aeson)
           (hsPkgs.text)
-        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+        };
       };
-    };
-  }
+    }

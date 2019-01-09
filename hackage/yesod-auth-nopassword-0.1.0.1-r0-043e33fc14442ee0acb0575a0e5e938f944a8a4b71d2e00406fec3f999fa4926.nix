@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-auth-nopassword";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "yesod-auth-nopassword"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2016 Dan Palmer";
       maintainer = "dan@danpalmer.me";
@@ -22,7 +13,7 @@
       synopsis = "A plugin for Yesod to provide email-only authentication.";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-auth)
           (hsPkgs.yesod-form)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

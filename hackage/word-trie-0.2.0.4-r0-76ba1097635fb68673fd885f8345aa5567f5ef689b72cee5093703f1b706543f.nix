@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "word-trie";
-        version = "0.2.0.4";
-      };
+      identifier = { name = "word-trie"; version = "0.2.0.4"; };
       license = "GPL-2.0-only";
       copyright = "";
       maintainer = "yi-devel@googlegroups.com";
@@ -22,7 +13,7 @@
       synopsis = "Implementation of a finite trie over words.";
       description = "Implementation of a finite trie over words.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.binary)
           (hsPkgs.containers)
           (hsPkgs.derive)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.derive)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

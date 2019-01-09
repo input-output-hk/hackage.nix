@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ticker";
-        version = "1.0.0";
-      };
+      identifier = { name = "ticker"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 OSANAI Kazuyoshi";
       maintainer = "osmium.k@gmail.com";
@@ -22,15 +13,11 @@
       synopsis = "A concurrent utility inspired by Ticker in golang";
       description = "A concurrent utility inspired by Ticker in golang";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.async)
-          (hsPkgs.safe-exceptions)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.async) (hsPkgs.safe-exceptions) ];
+        };
       tests = {
         "ticker-hspec" = {
           depends = [
@@ -39,15 +26,11 @@
             (hsPkgs.hspec)
             (hsPkgs.async)
             (hsPkgs.deepseq)
-          ];
-        };
+            ];
+          };
         "ticker-doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          };
         };
       };
-    };
-  }
+    }

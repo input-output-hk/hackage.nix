@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "caffegraph";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "caffegraph"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "andrew@tullo.ch";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "A compiler for building, optimizing, visualizing, and generating (Caffe/Torch) DNNs";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -42,7 +33,7 @@
           (hsPkgs.temporary)
           (hsPkgs.optparse-applicative)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

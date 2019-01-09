@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "confcrypt";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "confcrypt"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "2018 Chris Coffey, CollegeVine";
       maintainer = "chris@collegevine.com";
@@ -22,7 +13,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/CollegeVine/confcrypt#readme>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.parser-combinators)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       exes = {
         "confcrypt" = {
           depends = [
@@ -68,9 +59,9 @@
             (hsPkgs.parser-combinators)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "confcrypt-test" = {
           depends = [
@@ -99,8 +90,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

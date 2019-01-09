@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { clock = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tasty";
-        version = "1.0.1.1";
-      };
+      identifier = { name = "tasty"; version = "1.0.1.1"; };
       license = "MIT";
       copyright = "";
       maintainer = "Roman Cheplyaka <roma@ro-che.info>";
@@ -22,7 +13,7 @@
       synopsis = "Modern and extensible testing framework";
       description = "Tasty is a modern testing framework for Haskell.\nIt lets you combine your unit tests, golden\ntests, QuickCheck/SmallCheck properties, and any\nother types of tests into a single test suite.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = (([
@@ -35,11 +26,11 @@
           (hsPkgs.unbounded-delays)
           (hsPkgs.async)
           (hsPkgs.ansi-terminal)
-        ] ++ (if flags.clock
+          ] ++ (if flags.clock
           then [ (hsPkgs.clock) ]
           else [
             (hsPkgs.time)
-          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim)) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
       };
-    };
-  }
+    }

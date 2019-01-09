@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "feed-translator";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "feed-translator"; version = "0.1.0.0"; };
       license = "AGPL-3.0-only";
       copyright = "(c) 2015 Hong Minhee";
       maintainer = "hongminhee@member.fsf.org";
@@ -22,7 +13,7 @@
       synopsis = "Translate syndication feeds";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "feed-translator" = {
@@ -45,8 +36,8 @@
             (hsPkgs.warp)
             (hsPkgs.wreq)
             (hsPkgs.xml)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

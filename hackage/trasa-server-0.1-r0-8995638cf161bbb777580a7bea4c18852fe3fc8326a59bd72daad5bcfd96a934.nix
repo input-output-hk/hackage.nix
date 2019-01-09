@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "trasa-server";
-        version = "0.1";
-      };
+      identifier = { name = "trasa-server"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "2017 Kyle McKean";
       maintainer = "mckean.kylej@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Type safe web server";
       description = "WAI integration for trasa";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
           (hsPkgs.trasa)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -52,8 +43,8 @@
             (hsPkgs.doctest)
             (hsPkgs.warp)
             (hsPkgs.http-client)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

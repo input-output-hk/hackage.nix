@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HDBC";
-        version = "1.0.1";
-      };
+      identifier = { name = "HDBC"; version = "1.0.1"; };
       license = "LicenseRef-LGPL";
       copyright = "Copyright (c) 2005-2006 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,13 +13,6 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-        ];
       };
-    };
-  }
+    components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.mtl) ]; }; };
+    }

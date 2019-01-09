@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { llvm-fast = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "tweet-hs";
-        version = "0.4.0.7";
-      };
+      identifier = { name = "tweet-hs"; version = "0.4.0.7"; };
       license = "BSD-3-Clause";
       copyright = "2016 Vanessa McHale";
       maintainer = "tmchale@wisc.edu";
@@ -22,7 +13,7 @@
       synopsis = "Post tweets from stdin";
       description = "a Command Line Interface Tweeter";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,15 +32,8 @@
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.MissingH)
           (hsPkgs.directory)
-        ];
-      };
-      exes = {
-        "tweet" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.tweet-hs)
           ];
         };
+      exes = { "tweet" = { depends = [ (hsPkgs.base) (hsPkgs.tweet-hs) ]; }; };
       };
-    };
-  }
+    }

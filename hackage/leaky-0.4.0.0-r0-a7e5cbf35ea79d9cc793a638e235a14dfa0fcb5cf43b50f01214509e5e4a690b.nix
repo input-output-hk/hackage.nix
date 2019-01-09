@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       hello_hackage_visitor = false;
@@ -19,13 +13,10 @@
       use_infinite_list = false;
       use_strict_blob = true;
       use_cpphs = true;
-    };
+      };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "leaky";
-        version = "0.4.0.0";
-      };
+      identifier = { name = "leaky"; version = "0.4.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Andrew Seniuk <rasfar@gmail.com>";
@@ -35,7 +26,7 @@
       synopsis = "Robust space leak, and its strictification";
       description = "Robust space leak, and its strictification, for testing <http://hackage.haskell.org/package/deepseq-bounded deepseq-bounded> and <http://hackage.haskell.org/package/seqaid seqaid>.\n\nSee also the project <http://www.fremissant.net/leaky homepage> for more information.\n\nPlease share your comments on this <http://www.reddit.com/r/haskell/comments/2pscxh/ann_deepseqbounded_seqaid_leaky/ reddit> discussion.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "leaky" = {
@@ -47,8 +38,8 @@
             (hsPkgs.generics-sop)
             (hsPkgs.template-haskell)
             (hsPkgs.seqaid)
-          ] ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs.cpphs)) ++ pkgs.lib.optional (flags.omnitypic) (hsPkgs.ghc-prim);
+            ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.cpphs)) ++ (pkgs.lib).optional (flags.omnitypic) (hsPkgs.ghc-prim);
+          };
         };
       };
-    };
-  }
+    }

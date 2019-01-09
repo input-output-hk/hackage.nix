@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tests = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "roundtrip-xml";
-        version = "0.3.0.2";
-      };
+      identifier = { name = "roundtrip-xml"; version = "0.3.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Stefan Wehr <wehr@factisresearch.com>,";
@@ -22,7 +13,7 @@
       synopsis = "Bidirectional (de-)serialization for XML.";
       description = "Roundtrip allows the definition of bidirectional\n(de-)serialization specifications. This package provides\nconcrete implementations of these specifications\nfor the serialization format XML. See the roundtrip\npackage for more details.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -41,11 +32,11 @@
           (hsPkgs.reference)
           (hsPkgs.roundtrip)
           (hsPkgs.roundtrip-string)
-        ];
-      };
+          ];
+        };
       exes = {
         "tests" = {
-          depends = pkgs.lib.optionals (flags.tests) [
+          depends = (pkgs.lib).optionals (flags.tests) [
             (hsPkgs.base)
             (hsPkgs.HTF)
             (hsPkgs.filepath)
@@ -57,8 +48,8 @@
             (hsPkgs.enumerator)
             (hsPkgs.xml-enumerator)
             (hsPkgs.reference)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

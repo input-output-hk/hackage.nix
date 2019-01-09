@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { haste-inst = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "react-haskell";
-        version = "1.2.0.0";
-      };
+      identifier = { name = "react-haskell"; version = "1.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "joelburget@gmail.com";
@@ -22,18 +13,16 @@
       synopsis = "Haskell React bindings";
       description = "This package provides high level bindings to Facebook's <facebook.github.io/react/ React> library, meant for use with <haste-lang.org Haste>.\n\nReact is a JavaScript library for building user interfaces. React (and React-Haskell) is focused on just UI - it's not a framework.\n\nCurrently React-Haskell can render simple stateful components, but not what React calls classes. Put another way, React-Haskell doesn't support lifecycle methods yet.\n\nHere's a simple example which demonstrates basic elements, attributes, state, and handling events.\n\n> statefulView :: StatefulReact JSString ()\n> statefulView = div_ <! class_ \"container\" \$ do\n>     str <- getState\n>     input_ <! value_ str\n>            <! onChange (\\_ evt -> toJSStr \$ map toUpper \$ fromJSStr \$ targetValue evt)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.transformers)
           (hsPkgs.monads-tf)
-        ] ++ (if flags.haste-inst
+          ] ++ (if flags.haste-inst
           then [ (hsPkgs.haste-lib) ]
-          else [
-            (hsPkgs.haste-compiler)
-          ]);
+          else [ (hsPkgs.haste-compiler) ]);
+        };
       };
-    };
-  }
+    }

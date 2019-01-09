@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      patched-for-trac-9262 = true;
-    };
+    flags = { patched-for-trac-9262 = true; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "th-context";
-        version = "0.13";
-      };
+      identifier = { name = "th-context"; version = "0.13"; };
       license = "BSD-3-Clause";
       copyright = "(c) David Fox";
       maintainer = "David Fox <dsf@seereason.com>";
@@ -24,7 +13,7 @@
       synopsis = "Test instance context";
       description = "Use these functions to decide an a not-quite naive fashion\nwhether an instance already exists that satisfies a given\ncontext.  This can be used to decide whether an instance\nneeds to be generated, as in th-reify-many.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +26,8 @@
           (hsPkgs.template-haskell)
           (hsPkgs.th-desugar)
           (hsPkgs.th-orphans)
-        ];
-      };
+          ];
+        };
       tests = {
         "th-context-tests" = {
           depends = [
@@ -58,8 +47,8 @@
             (hsPkgs.th-desugar)
             (hsPkgs.th-orphans)
             (hsPkgs.th-reify-many)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

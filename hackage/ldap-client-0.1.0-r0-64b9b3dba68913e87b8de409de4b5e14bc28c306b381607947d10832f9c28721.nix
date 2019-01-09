@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ldap-client";
-        version = "0.1.0";
-      };
+      identifier = { name = "ldap-client"; version = "0.1.0"; };
       license = "BSD-2-Clause";
       copyright = "2015 Matvey Aksenov";
       maintainer = "matvey.aksenov@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Pure Haskell LDAP Client Library";
       description = "Pure Haskell LDAP client library implementing (the parts of) RFC 4511.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.semigroups)
           (hsPkgs.stm)
           (hsPkgs.text)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.ldap-client)
             (hsPkgs.process)
             (hsPkgs.semigroups)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

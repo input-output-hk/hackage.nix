@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { poppler = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hoodle-render";
-        version = "0.1";
-      };
+      identifier = { name = "hoodle-render"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Hoodle file renderer";
       description = "Rendering library using cairo for hoodle file format";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = if flags.poppler
@@ -37,7 +28,7 @@
             (hsPkgs.lens)
             (hsPkgs.hoodle-types)
             (hsPkgs.TypeCompose)
-          ]
+            ]
           else [
             (hsPkgs.base)
             (hsPkgs.mtl)
@@ -48,7 +39,7 @@
             (hsPkgs.lens)
             (hsPkgs.hoodle-types)
             (hsPkgs.TypeCompose)
-          ];
+            ];
+        };
       };
-    };
-  }
+    }

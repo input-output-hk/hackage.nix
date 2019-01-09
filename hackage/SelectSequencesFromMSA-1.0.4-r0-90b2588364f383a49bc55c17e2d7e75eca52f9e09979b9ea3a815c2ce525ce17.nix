@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "SelectSequencesFromMSA";
-        version = "1.0.4";
-      };
+      identifier = { name = "SelectSequencesFromMSA"; version = "1.0.4"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "egg@informatik.uni.freiburg.de";
@@ -22,7 +13,7 @@
       synopsis = "Selects a representative subset of sequences from multiple sequence alignment.";
       description = "SelectSequences is a tool for selection of a representative subset of sequences from a multiple sequence alignment in clustal format.\n\nOptional Dependencies:\n\n* <https://www.tbi.univie.ac.at/~wash/RNAz/ RNAz>\nInstallation via cabal-install:\n\n> cabal install SelectSequencesFromMSA";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.text-metrics)
-        ];
-      };
+          ];
+        };
       exes = {
         "SelectSequencesFromMSA" = {
           depends = [
@@ -54,8 +45,8 @@
             (hsPkgs.either-unwrap)
             (hsPkgs.SelectSequencesFromMSA)
             (hsPkgs.directory)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

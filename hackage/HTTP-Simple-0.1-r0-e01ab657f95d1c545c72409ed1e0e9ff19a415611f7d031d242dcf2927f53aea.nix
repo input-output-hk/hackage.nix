@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "HTTP-Simple";
-        version = "0.1";
-      };
+      identifier = { name = "HTTP-Simple"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell@fastmail.fm";
@@ -22,14 +13,10 @@
       synopsis = "Enable simple wrappers to Network.HTTP";
       description = "Enable simple wrappers to Network.HTTP";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-          (hsPkgs.HTTP)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.network) (hsPkgs.HTTP) ];
+        };
       };
-    };
-  }
+    }

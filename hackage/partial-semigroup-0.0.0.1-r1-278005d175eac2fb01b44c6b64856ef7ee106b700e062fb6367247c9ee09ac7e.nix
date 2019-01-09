@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "partial-semigroup";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "partial-semigroup"; version = "0.0.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "Chris Martin <ch.martin@gmail.com>";
@@ -22,26 +13,19 @@
       synopsis = "A partial binary associative operator";
       description = "A partial semigroup is like a semigroup, but the\noperator is partial. We represent this in Haskell\nas a total function @appendMaybe :: a -> a -> Maybe a@.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
-        "doctest" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-          ];
-        };
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
         "hedgehog" = {
           depends = [
             (hsPkgs.base)
             (hsPkgs.hedgehog)
             (hsPkgs.partial-semigroup)
             (hsPkgs.partial-semigroup-test)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

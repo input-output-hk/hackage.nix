@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "coin";
-        version = "1.0";
-      };
+      identifier = { name = "coin"; version = "1.0"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Piotr Borek <piotrborek@op.pl>";
@@ -22,7 +13,7 @@
       synopsis = "Simple account manager";
       description = "Simple account manager";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "coin" = {
@@ -51,8 +42,8 @@
             (hsPkgs.lens-simple)
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

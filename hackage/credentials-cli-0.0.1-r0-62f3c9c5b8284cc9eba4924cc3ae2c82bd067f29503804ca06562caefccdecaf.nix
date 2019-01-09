@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "credentials-cli";
-        version = "0.0.1";
-      };
+      identifier = { name = "credentials-cli"; version = "0.0.1"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2015-2016 Brendan Hay";
       maintainer = "Brendan Hay <brendan.g.hay@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Secure Credentials Administration";
       description = "@credentials@ is a console application used to administer secure credentials\nvia the <http://hackage.haskell.org/package/credentials credentials> library of the same name.\n\nYou can read more about use-cases and prerequisites <https://github.com/brendanhay/credentials here>.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "credentials" = {
@@ -49,8 +40,8 @@
             (hsPkgs.transformers-base)
             (hsPkgs.unordered-containers)
             (hsPkgs.uri-bytestring)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

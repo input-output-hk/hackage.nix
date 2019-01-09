@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { boltzmann = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "generic-random";
-        version = "0.5.0.0";
-      };
+      identifier = { name = "generic-random"; version = "0.5.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "lysxia@gmail.com";
@@ -22,13 +13,13 @@
       synopsis = "Generic random generators";
       description = "Please see the README.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)
-        ] ++ pkgs.lib.optional (flags.boltzmann) (hsPkgs.boltzmann-samplers);
+          ] ++ (pkgs.lib).optional (flags.boltzmann) (hsPkgs.boltzmann-samplers);
+        };
       };
-    };
-  }
+    }

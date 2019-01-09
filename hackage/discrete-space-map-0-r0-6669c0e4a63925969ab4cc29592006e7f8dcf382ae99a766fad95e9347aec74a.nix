@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "discrete-space-map";
-        version = "0";
-      };
+      identifier = { name = "discrete-space-map"; version = "0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "sjoerd@w3future.com";
@@ -22,7 +13,7 @@
       synopsis = "A discrete space map.";
       description = "A discrete space map implemented as a zipper on an infinite perfect binary tree.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.keys)
           (hsPkgs.semigroupoids)
           (hsPkgs.representable-functors)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

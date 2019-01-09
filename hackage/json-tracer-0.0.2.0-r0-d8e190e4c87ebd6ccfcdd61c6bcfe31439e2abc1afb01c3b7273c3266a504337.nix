@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "json-tracer";
-        version = "0.0.2.0";
-      };
+      identifier = { name = "json-tracer"; version = "0.0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2017 Taku Terao";
       maintainer = "autotaker@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A polymorphic, type-safe, json-structured tracing library";
       description = "\nA polymorphic, type-safe, structured tracing library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.text)
           (hsPkgs.aeson)
           (hsPkgs.template-haskell)
-        ];
-      };
+          ];
+        };
       tests = {
         "unit-test" = {
           depends = [
@@ -50,8 +41,8 @@
             (hsPkgs.hspec-expectations)
             (hsPkgs.hspec-discover)
             (hsPkgs.microlens)
-          ];
-        };
+            ];
+          };
         "example" = {
           depends = [
             (hsPkgs.base)
@@ -63,8 +54,8 @@
             (hsPkgs.containers)
             (hsPkgs.bytestring)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

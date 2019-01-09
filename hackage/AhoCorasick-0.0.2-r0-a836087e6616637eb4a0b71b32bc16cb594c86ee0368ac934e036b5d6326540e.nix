@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "AhoCorasick";
-        version = "0.0.2";
-      };
+      identifier = { name = "AhoCorasick"; version = "0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Sergey S Lymar (c) 2012";
       maintainer = "Sergey S Lymar <sergey.lymar@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Aho-Corasick string matching algorithm";
       description = "Aho-Corasick string matching algorithm.\n\nSee homepage for examples of usage: <http://github.com/lymar/AhoCorasick>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.hashable)
           (hsPkgs.array)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

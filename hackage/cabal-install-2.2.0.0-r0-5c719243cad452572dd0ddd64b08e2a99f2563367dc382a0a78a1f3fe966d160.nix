@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       native-dns = true;
@@ -13,13 +7,10 @@
       debug-tracetree = false;
       lib = false;
       monolithic = false;
-    };
+      };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cabal-install";
-        version = "2.2.0.0";
-      };
+      identifier = { name = "cabal-install"; version = "2.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "2003-2018, Cabal Development Team";
       maintainer = "Cabal Development Team <cabal-devel@haskell.org>";
@@ -29,7 +20,7 @@
       synopsis = "The command-line interface for Cabal and Hackage.";
       description = "The \\'cabal\\' command-line program simplifies the process of managing\nHaskell software by automating the fetching, configuration, compilation\nand installation of Haskell libraries and programs.\n\nThis package only provides an executable and cannot be used as a\nlibrary (ignore the module listing below.)";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = ((([
@@ -60,16 +51,14 @@
           (hsPkgs.time)
           (hsPkgs.zlib)
           (hsPkgs.hackage-security)
-        ] ++ pkgs.lib.optionals (flags.native-dns) (if system.isWindows
+          ] ++ (pkgs.lib).optionals (flags.native-dns) (if system.isWindows
           then [ (hsPkgs.windns) ]
-          else [
-            (hsPkgs.resolv)
-          ])) ++ (if system.isWindows
+          else [ (hsPkgs.resolv) ])) ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [
             (hsPkgs.unix)
-          ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs.tracetree);
-      };
+            ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs.tracetree);
+        };
       exes = {
         "cabal" = {
           depends = (if flags.lib
@@ -79,7 +68,7 @@
               (hsPkgs.base)
               (hsPkgs.directory)
               (hsPkgs.filepath)
-            ]
+              ]
             else ((([
               (hsPkgs.async)
               (hsPkgs.array)
@@ -108,15 +97,13 @@
               (hsPkgs.time)
               (hsPkgs.zlib)
               (hsPkgs.hackage-security)
-            ] ++ pkgs.lib.optionals (flags.native-dns) (if system.isWindows
+              ] ++ (pkgs.lib).optionals (flags.native-dns) (if system.isWindows
               then [ (hsPkgs.windns) ]
-              else [
-                (hsPkgs.resolv)
-              ])) ++ (if system.isWindows
+              else [ (hsPkgs.resolv) ])) ++ (if system.isWindows
               then [ (hsPkgs.Win32) ]
               else [
                 (hsPkgs.unix)
-              ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs.tracetree)) ++ pkgs.lib.optionals (flags.monolithic) [
+                ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs.base)) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs.tracetree)) ++ (pkgs.lib).optionals (flags.monolithic) [
             (hsPkgs.Cabal)
             (hsPkgs.QuickCheck)
             (hsPkgs.array)
@@ -140,10 +127,10 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.time)
             (hsPkgs.zlib)
-          ];
-          libs = pkgs.lib.optional (system.isAix) (pkgs."bsd");
+            ];
+          libs = (pkgs.lib).optional (system.isAix) (pkgs."bsd");
+          };
         };
-      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -169,8 +156,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tagged)
             (hsPkgs.QuickCheck)
-          ];
-        };
+            ];
+          };
         "memory-usage-tests" = {
           depends = [
             (hsPkgs.base)
@@ -182,8 +169,8 @@
             (hsPkgs.tagged)
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
-          ];
-        };
+            ];
+          };
         "solver-quickcheck" = {
           depends = [
             (hsPkgs.base)
@@ -199,8 +186,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.QuickCheck)
             (hsPkgs.pretty-show)
-          ];
-        };
+            ];
+          };
         "integration-tests2" = {
           depends = [
             (hsPkgs.base)
@@ -214,8 +201,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.tagged)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

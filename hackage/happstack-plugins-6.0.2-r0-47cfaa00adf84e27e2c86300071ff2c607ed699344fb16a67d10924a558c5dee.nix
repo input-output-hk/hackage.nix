@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      base4 = true;
-      tests = false;
-    };
+    flags = { base4 = true; tests = false; };
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "happstack-plugins";
-        version = "6.0.2";
-      };
+      identifier = { name = "happstack-plugins"; version = "6.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Happstack team <happs@googlegroups.com>";
@@ -25,7 +13,7 @@
       synopsis = "The haskell application server stack + reload";
       description = "This library provides support for automatically recompiling and reloading modules into a running server.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +25,7 @@
           (hsPkgs.mtl)
           (hsPkgs.plugins)
           (hsPkgs.template-haskell)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

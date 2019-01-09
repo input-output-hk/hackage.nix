@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "cereal-io-streams";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "cereal-io-streams"; version = "0.0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "Soostone Inc";
       maintainer = "michael.xavier@soostone.com";
@@ -22,7 +13,7 @@
       synopsis = "io-streams support for the cereal binary serialization library";
       description = "io-streams support for the cereal binary serialization library\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.cereal)
           (hsPkgs.io-streams)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.derive)
             (hsPkgs.base)
             (hsPkgs.mtl)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -62,8 +53,8 @@
             (hsPkgs.cereal-conduit)
             (hsPkgs.conduit)
             (hsPkgs.conduit-extra)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

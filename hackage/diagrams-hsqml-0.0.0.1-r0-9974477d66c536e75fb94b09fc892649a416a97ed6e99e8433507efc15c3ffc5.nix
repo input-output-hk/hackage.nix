@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "diagrams-hsqml";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "diagrams-hsqml"; version = "0.0.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "marcin.jan.mrotek@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "HsQML (Qt5) backend for Diagrams";
       description = "`diagrams-hsqml` is a `diagrams` backend painting on a QtQuick Canvas.\n\nTo use the package, you only need the main module \"Diagrams.Backend.HsQML\"\n\nExample usage and QML scripts provided in \"Diagrams.Backend.HsQML.Tutorial\"";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,7 +26,7 @@
           (hsPkgs.lens)
           (hsPkgs.text)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

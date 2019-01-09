@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { release = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "purescript";
-        version = "0.12.0";
-      };
+      identifier = { name = "purescript"; version = "0.12.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013-17 Phil Freeman, (c) 2014-17 Gary Burgess";
       maintainer = "Phil Freeman <paf31@cantab.net>";
@@ -22,7 +13,7 @@
       synopsis = "PureScript Programming Language Compiler";
       description = "A small strongly, statically typed programming language with expressive types, inspired by Haskell and compiling to JavaScript.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -77,8 +68,8 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.utf8-string)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       exes = {
         "purs" = {
           depends = [
@@ -142,9 +133,9 @@
             (hsPkgs.wai-websockets)
             (hsPkgs.warp)
             (hsPkgs.websockets)
-          ] ++ pkgs.lib.optional (!flags.release) (hsPkgs.gitrev);
+            ] ++ (pkgs.lib).optional (!flags.release) (hsPkgs.gitrev);
+          };
         };
-      };
       tests = {
         "tests" = {
           depends = [
@@ -205,8 +196,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.utf8-string)
             (hsPkgs.vector)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

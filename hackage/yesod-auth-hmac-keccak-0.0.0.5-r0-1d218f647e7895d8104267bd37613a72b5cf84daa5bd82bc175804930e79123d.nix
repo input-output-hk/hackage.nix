@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "yesod-auth-hmac-keccak";
-        version = "0.0.0.5";
-      };
+      identifier = { name = "yesod-auth-hmac-keccak"; version = "0.0.0.5"; };
       license = "MIT";
       copyright = "";
       maintainer = "nek0@chelnok.de";
@@ -22,7 +13,7 @@
       synopsis = "An account authentication plugin for yesod with encrypted\ntoken transfer.";
       description = "This authentication plugin for Yesod uses a challenge-response\nauthentication mechanism, where the password is encrypted via HMAC-\nKeccak on the client side.";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.random)
           (hsPkgs.mtl)
           (hsPkgs.shakespeare)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

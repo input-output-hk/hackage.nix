@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pipes-interleave";
-        version = "1.0.0";
-      };
+      identifier = { name = "pipes-interleave"; version = "1.0.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2013 Ben Gamari";
       maintainer = "bgamari.foss@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Interleave and merge streams of elements";
       description = "Interleave and merge streams of elements";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,7 +21,7 @@
           (hsPkgs.containers)
           (hsPkgs.pipes)
           (hsPkgs.heaps)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "wl-pprint-ansiterm";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "wl-pprint-ansiterm"; version = "0.1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2015 Hiroki Hattori; Copyright (C) 2011 Edward A. Kmett";
       maintainer = "seagull.kamome@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "ANSI Terminal support with wl-pprint-extras";
       description = "ANSI Terminal support with wl-pprint-extras";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.wl-pprint-extras)
           (hsPkgs.transformers)
           (hsPkgs.text)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

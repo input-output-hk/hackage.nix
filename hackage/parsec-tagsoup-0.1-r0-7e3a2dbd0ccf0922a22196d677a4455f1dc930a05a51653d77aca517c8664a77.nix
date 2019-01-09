@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "parsec-tagsoup";
-        version = "0.1";
-      };
+      identifier = { name = "parsec-tagsoup"; version = "0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "pepeiborra@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "Parsec parsers for Tagsoup tag streams";
       description = "This package provides a Tag token parser, as well as Tag specific parsing combinators.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.tagsoup)
-          (hsPkgs.parsec)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.tagsoup) (hsPkgs.parsec) ];
+        };
       };
-    };
-  }
+    }

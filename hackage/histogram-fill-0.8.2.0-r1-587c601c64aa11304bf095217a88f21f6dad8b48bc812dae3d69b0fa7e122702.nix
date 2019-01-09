@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "histogram-fill";
-        version = "0.8.2.0";
-      };
+      identifier = { name = "histogram-fill"; version = "0.8.2.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Alexey Khudyakov <alexey.skladnoy@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Library for histograms creation.";
       description = "This is library for histograms filling. Its aim to provide\nconvenient way to create and fill histograms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.primitive)
           (hsPkgs.monad-primitive)
           (hsPkgs.vector)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -41,8 +32,8 @@
             (hsPkgs.mwc-random)
             (hsPkgs.vector)
             (hsPkgs.criterion)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

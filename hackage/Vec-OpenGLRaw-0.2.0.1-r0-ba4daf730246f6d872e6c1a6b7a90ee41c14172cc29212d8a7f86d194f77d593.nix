@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "Vec-OpenGLRaw";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "Vec-OpenGLRaw"; version = "0.2.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "lane@downstairspeople.org";
@@ -22,14 +13,10 @@
       synopsis = "Instances and functions to interoperate Vec and OpenGL.";
       description = "Provides:\n* NearZero instances for all OpenGL numeric types";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.Vec)
-          (hsPkgs.OpenGLRaw)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.Vec) (hsPkgs.OpenGLRaw) ];
+        };
       };
-    };
-  }
+    }

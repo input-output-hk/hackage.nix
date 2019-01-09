@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "warp-tls";
-        version = "1.2.0.3";
-      };
+      identifier = { name = "warp-tls"; version = "1.2.0.3"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "SSL support for Warp via the TLS package";
       description = "SSL support for Warp via the TLS package";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,7 +31,7 @@
           (hsPkgs.tls)
           (hsPkgs.crypto-api)
           (hsPkgs.network)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

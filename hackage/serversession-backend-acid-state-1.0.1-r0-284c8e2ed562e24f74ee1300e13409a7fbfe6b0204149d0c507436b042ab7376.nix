@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -12,7 +6,7 @@
       identifier = {
         name = "serversession-backend-acid-state";
         version = "1.0.1";
-      };
+        };
       license = "MIT";
       copyright = "";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -22,7 +16,7 @@
       synopsis = "Storage backend for serversession using acid-state.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession-backend-acid-state>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +27,8 @@
           (hsPkgs.safecopy)
           (hsPkgs.unordered-containers)
           (hsPkgs.serversession)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -47,8 +41,8 @@
             (hsPkgs.hspec)
             (hsPkgs.serversession)
             (hsPkgs.serversession-backend-acid-state)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

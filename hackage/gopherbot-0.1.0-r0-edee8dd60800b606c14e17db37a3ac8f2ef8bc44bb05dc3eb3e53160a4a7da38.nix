@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "gopherbot";
-        version = "0.1.0";
-      };
+      identifier = { name = "gopherbot"; version = "0.1.0"; };
       license = "LicenseRef-GPL";
       copyright = "Copyright (c) 2005-2006 John Goerzen";
       maintainer = "John Goerzen <jgoerzen@complete.org>";
@@ -22,7 +13,7 @@
       synopsis = "Spidering robot to download files from Gopherspace";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "gopherbot" = {
@@ -34,8 +25,8 @@
             (hsPkgs.MissingH)
             (hsPkgs.HDBC-postgresql)
             (hsPkgs.HDBC)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "pontarius-xmpp";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "pontarius-xmpp"; version = "0.1.0.2"; };
       license = "LicenseRef-OtherLicense";
       copyright = "Dmitry Astapov, Pierre Kovalev, Mahdi Abdinejadi, Jon Kristensen,\nIETF Trust, Philipp Balzarek";
       maintainer = "info@jonkri.com";
@@ -22,7 +13,7 @@
       synopsis = "An incomplete implementation of RFC 6120 (XMPP: Core)";
       description = "Pontarius is a work in progress implementation of\nRFC 6120 (XMPP: Core).";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -53,7 +44,7 @@
           (hsPkgs.xml-picklers)
           (hsPkgs.data-default)
           (hsPkgs.stringprep)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

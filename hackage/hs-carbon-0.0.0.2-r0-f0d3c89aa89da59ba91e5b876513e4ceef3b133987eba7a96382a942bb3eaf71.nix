@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      buildexamples = false;
-    };
+    flags = { buildexamples = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hs-carbon";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "hs-carbon"; version = "0.0.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "cholmgreen@gmail.com";
@@ -24,7 +13,7 @@
       synopsis = "A Haskell framework for parallel monte carlo simulations";
       description = "hs-carbon is a PRNG-agnostic Haskell framework for running monte-carlo\nsimulations. The library will provide several \"skeletons\" for abstracting\naway common usage patterns.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +22,8 @@
           (hsPkgs.random)
           (hsPkgs.parallel)
           (hsPkgs.deepseq)
-        ];
-      };
+          ];
+        };
       exes = {
         "PiExample" = {
           depends = [
@@ -44,8 +33,8 @@
             (hsPkgs.tf-random)
             (hsPkgs.parallel)
             (hsPkgs.deepseq)
-          ];
-        };
+            ];
+          };
         "IntegralExample" = {
           depends = [
             (hsPkgs.base)
@@ -54,8 +43,8 @@
             (hsPkgs.tf-random)
             (hsPkgs.parallel)
             (hsPkgs.deepseq)
-          ];
-        };
+            ];
+          };
         "TransportExample" = {
           depends = [
             (hsPkgs.base)
@@ -66,8 +55,8 @@
             (hsPkgs.gloss)
             (hsPkgs.monad-loops)
             (hsPkgs.deepseq)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

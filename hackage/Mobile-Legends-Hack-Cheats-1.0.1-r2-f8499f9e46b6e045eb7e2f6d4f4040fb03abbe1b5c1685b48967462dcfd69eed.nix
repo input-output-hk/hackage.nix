@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "Mobile-Legends-Hack-Cheats";
-        version = "1.0.1";
-      };
+      identifier = { name = "Mobile-Legends-Hack-Cheats"; version = "1.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "none";
@@ -22,11 +13,9 @@
       synopsis = "spam";
       description = "spam.";
       buildType = "Custom";
-    };
-    components = {
-      "library" = {
-        depends = [ (hsPkgs.base) ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) ]; };
       tests = {
         "doctests" = {
           depends = [
@@ -35,8 +24,8 @@
             (hsPkgs.servant-auth-docs)
             (hsPkgs.QuickCheck)
             (hsPkgs.template-haskell)
-          ];
-        };
+            ];
+          };
         "spec" = {
           depends = [
             (hsPkgs.base)
@@ -48,11 +37,9 @@
             (hsPkgs.servant-auth-docs)
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
-          ];
-          build-tools = [
-            (hsPkgs.buildPackages.hspec-discover)
-          ];
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          };
         };
       };
-    };
-  }
+    }

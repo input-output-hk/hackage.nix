@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9";
-      identifier = {
-        name = "kontrakcja-templates";
-        version = "0.1";
-      };
+      identifier = { name = "kontrakcja-templates"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "bartek@scrive.com";
@@ -22,7 +13,7 @@
       synopsis = "Utilities for working with many HStringTemplate templates from files";
       description = "This library adds support for working with multiple templates in a single file,\nand .csv files containing mapping from template names to multiple template versions\n(e.g. for translations)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,8 +29,8 @@
           (hsPkgs.html)
           (hsPkgs.MissingH)
           (hsPkgs.parsec)
-        ];
-      };
+          ];
+        };
       tests = {
         "test-text-string-templates" = {
           depends = [
@@ -58,8 +49,8 @@
             (hsPkgs.old-time)
             (hsPkgs.HStringTemplate)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

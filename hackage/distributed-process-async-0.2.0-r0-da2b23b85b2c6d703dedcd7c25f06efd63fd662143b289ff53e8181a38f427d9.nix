@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { perf = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "distributed-process-async";
-        version = "0.2.0";
-      };
+      identifier = { name = "distributed-process-async"; version = "0.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Tim Watson 2012 - 2014";
       maintainer = "watson.timothy@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Cloud Haskell Async API";
       description = "This package provides a higher-level interface over Processes, in which an Async a is a\nconcurrent, possibly distributed Process that will eventually deliver a value of type a.\nThe package provides ways to create Async computations, wait for their results, and cancel them.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -40,13 +31,13 @@
           (hsPkgs.stm)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.5") [
+          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.5") [
           (hsPkgs.template-haskell)
           (hsPkgs.derive)
           (hsPkgs.uniplate)
           (hsPkgs.ghc-prim)
-        ];
-      };
+          ];
+        };
       tests = {
         "AsyncTests" = {
           depends = [
@@ -67,8 +58,8 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.rematch)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

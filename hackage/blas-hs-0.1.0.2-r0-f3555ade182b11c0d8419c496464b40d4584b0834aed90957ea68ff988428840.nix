@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "blas-hs";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "blas-hs"; version = "0.1.0.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "rf@rufflewind.com";
@@ -22,14 +13,9 @@
       synopsis = "Low-level Haskell bindings to Blas.";
       description = "This package provides a complete low-level binding to\nBlas via the foreign function interface, allowing Haskell\nprograms to take advantage of optimized routines for\nvector and matrix operations in Haskell.  See the source\nrepository for more info.";
       buildType = "Simple";
-    };
-    components = {
-      "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.storable-complex)
-        ];
       };
+    components = {
+      "library" = { depends = [ (hsPkgs.base) (hsPkgs.storable-complex) ]; };
       tests = {
         "test" = {
           depends = [
@@ -37,9 +23,9 @@
             (hsPkgs.blas-hs)
             (hsPkgs.Cabal)
             (hsPkgs.vector)
-          ];
+            ];
           libs = [ (pkgs."blas") ];
+          };
         };
       };
-    };
-  }
+    }

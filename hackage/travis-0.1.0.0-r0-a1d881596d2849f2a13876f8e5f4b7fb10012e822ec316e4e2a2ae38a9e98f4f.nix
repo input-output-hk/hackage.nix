@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "travis";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "travis"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tomtau@hku.hk";
@@ -22,7 +13,7 @@
       synopsis = "A simple client implementation using Travis CI API.";
       description = "A simple client implementation using Travis CI API.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.http-conduit)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

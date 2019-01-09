@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "regex";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "regex"; version = "0.0.0.2"; };
       license = "BSD-3-Clause";
       copyright = "Chris Dornan 2016-2017";
       maintainer = "chris.dornan@irisconnect.co.uk";
@@ -22,7 +13,7 @@
       synopsis = "A Regular Expression Toolkit for regex-base";
       description = "A Regular Expression Toolkit for regex-base with\nCompile-time checking of RE syntax, data types for\nmatches and captures, a text replacement toolkit,\nportable options, high-level AWK-like tools\nfor building text processing apps, regular expression\nmacros and test bench, a tutorial and copious examples.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,8 +36,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "re-gen-modules" = {
           depends = [
@@ -59,8 +50,8 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "re-include" = {
           depends = [
             (hsPkgs.regex)
@@ -69,8 +60,8 @@
             (hsPkgs.directory)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "re-nginx-log-processor" = {
           depends = [
             (hsPkgs.regex)
@@ -85,8 +76,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "re-pp" = {
           depends = [
             (hsPkgs.regex)
@@ -95,8 +86,8 @@
             (hsPkgs.directory)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "re-tutorial" = {
           depends = [
             (hsPkgs.regex)
@@ -121,9 +112,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "re-gen-modules-test" = {
           depends = [
@@ -136,8 +127,8 @@
             (hsPkgs.regex-tdfa)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "re-include-test" = {
           depends = [
             (hsPkgs.regex)
@@ -146,8 +137,8 @@
             (hsPkgs.directory)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "re-nginx-log-processor-test" = {
           depends = [
             (hsPkgs.regex)
@@ -162,8 +153,8 @@
             (hsPkgs.time)
             (hsPkgs.transformers)
             (hsPkgs.unordered-containers)
-          ];
-        };
+            ];
+          };
         "re-pp-test" = {
           depends = [
             (hsPkgs.regex)
@@ -172,8 +163,8 @@
             (hsPkgs.directory)
             (hsPkgs.shelly)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "re-tests" = {
           depends = [
             (hsPkgs.regex)
@@ -190,8 +181,8 @@
             (hsPkgs.tasty-hunit)
             (hsPkgs.template-haskell)
             (hsPkgs.text)
-          ];
-        };
+            ];
+          };
         "re-tutorial-test" = {
           depends = [
             (hsPkgs.regex)
@@ -216,8 +207,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.unordered-containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

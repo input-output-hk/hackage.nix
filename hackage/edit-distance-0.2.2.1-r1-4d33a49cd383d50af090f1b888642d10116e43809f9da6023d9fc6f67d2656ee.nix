@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "edit-distance";
-        version = "0.2.2.1";
-      };
+      identifier = { name = "edit-distance"; version = "0.2.2.1"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2008-2013 Maximilian Bolinbroke";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -22,7 +13,7 @@
       synopsis = "Levenshtein and restricted Damerau-Levenshtein edit distances";
       description = "Optimized edit distances for fuzzy matching, including Levenshtein and restricted Damerau-Levenshtein algorithms.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -30,8 +21,8 @@
           (hsPkgs.array)
           (hsPkgs.random)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "edit-distance-tests" = {
           depends = [
@@ -42,9 +33,9 @@
             (hsPkgs.test-framework)
             (hsPkgs.QuickCheck)
             (hsPkgs.test-framework-quickcheck2)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "edit-distance-benchmark" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.unix)
             (hsPkgs.criterion)
             (hsPkgs.containers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

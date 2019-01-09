@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.9.2";
-      identifier = {
-        name = "reflex-dom";
-        version = "0.1";
-      };
+      identifier = { name = "reflex-dom"; version = "0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ryan.trinkle@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Glitch-free Functional Reactive Web Apps";
       description = "Reflex-DOM is a Functional Reactive web framework based on the Reflex FRP engine";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,14 +35,14 @@
           (hsPkgs.data-default)
           (hsPkgs.aeson)
           (hsPkgs.time)
-        ] ++ (if compiler.isGhcjs && true
+          ] ++ (if compiler.isGhcjs && true
           then [ (hsPkgs.ghcjs-base) ]
           else [
             (hsPkgs.glib)
             (hsPkgs.gtk3)
             (hsPkgs.webkitgtk3)
             (hsPkgs.webkitgtk3-javascriptcore)
-          ]);
+            ]);
+        };
       };
-    };
-  }
+    }

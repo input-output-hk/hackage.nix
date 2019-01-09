@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      static = false;
-      development = false;
-    };
+    flags = { static = false; development = false; };
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "ats-format";
-        version = "0.2.0.28";
-      };
+      identifier = { name = "ats-format"; version = "0.2.0.28"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2017-2018 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -25,7 +13,7 @@
       synopsis = "A source-code formatter for ATS";
       description = "An opinionated source-code formatter for [ATS](http://www.ats-lang.org/).";
       buildType = "Custom";
-    };
+      };
     components = {
       exes = {
         "atsfmt" = {
@@ -40,8 +28,8 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.process)
             (hsPkgs.file-embed)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

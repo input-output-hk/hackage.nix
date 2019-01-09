@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "rospkg";
-        version = "0.2.2.0";
-      };
+      identifier = { name = "rospkg"; version = "0.2.2.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2016 Alexander Krupenkin";
       maintainer = "mail@akru.me";
@@ -22,7 +13,7 @@
       synopsis = "ROS package system information";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,24 +26,15 @@
           (hsPkgs.directory)
           (hsPkgs.bytestring)
           (hsPkgs.fast-tagsoup)
-        ];
-      };
+          ];
+        };
       exes = {
         "rospkg" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.rospkg)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.rospkg) ];
+          };
         };
-      };
       tests = {
-        "rospkg-test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.rospkg)
-          ];
+        "rospkg-test" = { depends = [ (hsPkgs.base) (hsPkgs.rospkg) ]; };
         };
       };
-    };
-  }
+    }

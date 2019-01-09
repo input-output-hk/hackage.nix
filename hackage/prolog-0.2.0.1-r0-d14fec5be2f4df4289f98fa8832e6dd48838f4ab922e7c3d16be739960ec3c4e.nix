@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "prolog";
-        version = "0.2.0.1";
-      };
+      identifier = { name = "prolog"; version = "0.2.0.1"; };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "none";
@@ -22,7 +13,7 @@
       synopsis = "A Prolog interpreter written in Haskell.";
       description = "A Prolog interpreter written in Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.th-lift)
           (hsPkgs.transformers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

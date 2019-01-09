@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "DataTreeView";
-        version = "0.1.1";
-      };
+      identifier = { name = "DataTreeView"; version = "0.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "anotheraddress@gmx.de";
@@ -22,7 +13,7 @@
       synopsis = "A GTK widget for displaying arbitrary Data.Data.Data instances";
       description = "Screenshot: <http://i.imgur.com/5JlhG.png>\n\nExample use:\n\n> import DataTreeView\n> main = simpleView [([\"hello\",\"world\",error \"this works too\"],25)]";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.lifted-base)
           (hsPkgs.transformers-base)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

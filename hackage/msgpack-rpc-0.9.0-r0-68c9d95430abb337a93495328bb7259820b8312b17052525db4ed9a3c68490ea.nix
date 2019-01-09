@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "msgpack-rpc";
-        version = "0.9.0";
-      };
+      identifier = { name = "msgpack-rpc"; version = "0.9.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) 2010-2012, Hideyuki Tanaka";
       maintainer = "Hideyuki Tanaka <tanaka.hideyuki@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A MessagePack-RPC Implementation";
       description = "A MessagePack-RPC Implementation <http://msgpack.org/>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,8 +28,8 @@
           (hsPkgs.network-conduit)
           (hsPkgs.attoparsec-conduit)
           (hsPkgs.msgpack)
-        ];
-      };
+          ];
+        };
       tests = {
         "msgpack-rpc-test" = {
           depends = [
@@ -48,8 +39,8 @@
             (hsPkgs.async)
             (hsPkgs.hspec)
             (hsPkgs.msgpack-rpc)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

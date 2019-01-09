@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "hsp-cgi";
-        version = "0.4";
-      };
+      identifier = { name = "hsp-cgi"; version = "0.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Niklas Broberg <nibro@cs.chalmers.se>";
@@ -22,7 +13,7 @@
       synopsis = "Facilitates running Haskell Server Pages web pages as CGI programs.";
       description = "Haskell Server Pages (HSP) is an extension of vanilla Haskell, targetted at the task of\nwriting dynamic server-side web pages. This module provides facilities to allow such pages\nto be run as CGI programs.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.network)
           (hsPkgs.containers)
           (hsPkgs.harp)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

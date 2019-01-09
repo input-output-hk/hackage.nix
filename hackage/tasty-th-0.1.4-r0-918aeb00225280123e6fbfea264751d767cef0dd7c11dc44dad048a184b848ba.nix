@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "tasty-th";
-        version = "0.1.4";
-      };
+      identifier = { name = "tasty-th"; version = "0.1.4"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Benno Fünfstück <benno.fuenfstueck@gmail.com>";
@@ -22,14 +13,10 @@
       synopsis = "Automatic tasty test case discovery using TH";
       description = "Generate tasty TestTrees automatically with TemplateHaskell. See the README for example usage.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.tasty)
-          (hsPkgs.template-haskell)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.tasty) (hsPkgs.template-haskell) ];
+        };
       };
-    };
-  }
+    }

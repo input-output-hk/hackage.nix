@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "animate-preview";
-        version = "0.1.2";
-      };
+      identifier = { name = "animate-preview"; version = "0.1.2"; };
       license = "BSD-3-Clause";
       copyright = "2018 Joe Vargas";
       maintainer = "Joe Vargas";
@@ -22,7 +13,7 @@
       synopsis = "Preview tool for sprite animation";
       description = "Preview tool for sprite animation";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,15 +41,12 @@
           (hsPkgs.text)
           (hsPkgs.text-conversions)
           (hsPkgs.vector)
-        ];
-      };
-      exes = {
-        "animate-preview" = {
-          depends = [
-            (hsPkgs.animate-preview)
-            (hsPkgs.base)
           ];
         };
+      exes = {
+        "animate-preview" = {
+          depends = [ (hsPkgs.animate-preview) (hsPkgs.base) ];
+          };
+        };
       };
-    };
-  }
+    }

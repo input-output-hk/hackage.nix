@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "UMM";
-        version = "0.1.3";
-      };
+      identifier = { name = "UMM"; version = "0.1.3"; };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Uwe Hollerbach <uh@alumni.caltech.edu>";
@@ -22,7 +13,7 @@
       synopsis = "A small command-line accounting tool: hledger + bugs - features? maybe...";
       description = "This is a very minimal command-line program to read a\nplain-text ledger file and display balance information\nand other reports. I could have used hledger or ledger\nfor this, but I had some things I wanted to do a little\ndifferently... so I did.";
       buildType = "Simple";
-    };
+      };
     components = {
       exes = {
         "umm" = {
@@ -32,8 +23,8 @@
             (hsPkgs.parsec)
             (hsPkgs.old-time)
             (hsPkgs.utf8-string)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

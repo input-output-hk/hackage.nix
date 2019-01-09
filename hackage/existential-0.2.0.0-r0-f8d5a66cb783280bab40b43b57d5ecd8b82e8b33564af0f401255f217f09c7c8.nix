@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "existential";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "existential"; version = "0.2.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "simon@cse.yorku.ca";
@@ -22,7 +13,7 @@
       synopsis = "Existential types with lens-like accessors.";
       description = "Existential types encapsulated in Cell type together with some lens-like accessors. A template-haskell-based factory generator is also provided to use TypeRep to reconstruct Cell objects.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,7 +30,7 @@
           (hsPkgs.quickcheck-report)
           (hsPkgs.portable-template-haskell-lens)
           (hsPkgs.control-invariants)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

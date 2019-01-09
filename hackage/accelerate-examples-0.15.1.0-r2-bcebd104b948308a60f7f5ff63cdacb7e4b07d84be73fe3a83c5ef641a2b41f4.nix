@@ -1,10 +1,4 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       gui = true;
@@ -27,13 +21,10 @@
       pagerank = true;
       ray = true;
       kmeans = true;
-    };
+      };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "accelerate-examples";
-        version = "0.15.1.0";
-      };
+      identifier = { name = "accelerate-examples"; version = "0.15.1.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>";
@@ -43,7 +34,7 @@
       synopsis = "Examples using the Accelerate library";
       description = "This package demonstrates a number of computation kernels and applications\nshowcasing the /Accelerate/ language and associated backend implementations.\nIt is also used for performance and regression testing.\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>\n";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ((((([
@@ -60,7 +51,7 @@
           (hsPkgs.test-framework)
           (hsPkgs.test-framework-hunit)
           (hsPkgs.test-framework-quickcheck2)
-        ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ pkgs.lib.optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ pkgs.lib.optional (flags.llvm-gpu) (hsPkgs.accelerate-llvm-ptx)) ++ pkgs.lib.optional (flags.cilk) (hsPkgs.accelerate-icc-opencl)) ++ pkgs.lib.optional (flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (flags.codespeed) [
+          ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs.accelerate-cuda)) ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ (pkgs.lib).optional (flags.llvm-gpu) (hsPkgs.accelerate-llvm-ptx)) ++ (pkgs.lib).optional (flags.cilk) (hsPkgs.accelerate-icc-opencl)) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs.ekg)) ++ (pkgs.lib).optionals (flags.codespeed) [
           (hsPkgs.aeson)
           (hsPkgs.bytestring)
           (hsPkgs.HTTP)
@@ -71,11 +62,11 @@
           (hsPkgs.template-haskell)
           (hsPkgs.text)
           (hsPkgs.time)
-        ];
-      };
+          ];
+        };
       exes = {
         "accelerate-nofib" = {
-          depends = pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optionals (!(!flags.nofib)) [
+          depends = (pkgs.lib).optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ (pkgs.lib).optionals (!(!flags.nofib)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-fft)
@@ -90,11 +81,11 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.random)
-          ];
+            ];
           libs = [ (pkgs."stdc++") ];
-        };
+          };
         "accelerate-smvm" = {
-          depends = pkgs.lib.optionals (!(!flags.smvm)) [
+          depends = (pkgs.lib).optionals (!(!flags.smvm)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -106,19 +97,19 @@
             (hsPkgs.mwc-random)
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
-          ];
-        };
+            ];
+          };
         "accelerate-crystal" = {
-          depends = pkgs.lib.optionals (!(!flags.crystal)) [
+          depends = (pkgs.lib).optionals (!(!flags.crystal)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
             (hsPkgs.fclabels)
             (hsPkgs.gloss-raster-accelerate)
-          ];
-        };
+            ];
+          };
         "accelerate-canny" = {
-          depends = pkgs.lib.optionals (!(!flags.canny)) [
+          depends = (pkgs.lib).optionals (!(!flags.canny)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-io)
@@ -127,10 +118,10 @@
             (hsPkgs.repa)
             (hsPkgs.repa-io)
             (hsPkgs.vector)
-          ];
-        };
+            ];
+          };
         "accelerate-mandelbrot" = {
-          depends = pkgs.lib.optionals (!(!flags.mandelbrot)) [
+          depends = (pkgs.lib).optionals (!(!flags.mandelbrot)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-io)
@@ -138,10 +129,10 @@
             (hsPkgs.fclabels)
             (hsPkgs.gloss)
             (hsPkgs.gloss-accelerate)
-          ];
-        };
+            ];
+          };
         "accelerate-fluid" = {
-          depends = pkgs.lib.optionals (!(!flags.fluid)) [
+          depends = (pkgs.lib).optionals (!(!flags.fluid)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-io)
@@ -150,20 +141,20 @@
             (hsPkgs.fclabels)
             (hsPkgs.gloss)
             (hsPkgs.gloss-rendering)
-          ];
-        };
+            ];
+          };
         "accelerate-nbody" = {
-          depends = pkgs.lib.optionals (!(!flags.nbody)) [
+          depends = (pkgs.lib).optionals (!(!flags.nbody)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
             (hsPkgs.fclabels)
             (hsPkgs.gloss)
             (hsPkgs.mwc-random)
-          ];
-        };
+            ];
+          };
         "accelerate-smoothlife" = {
-          depends = pkgs.lib.optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optionals (!(!flags.smoothlife)) [
+          depends = (pkgs.lib).optional (flags.cuda) (hsPkgs.accelerate-cuda) ++ (pkgs.lib).optionals (!(!flags.smoothlife)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-fft)
@@ -173,10 +164,10 @@
             (hsPkgs.gloss)
             (hsPkgs.gloss-accelerate)
             (hsPkgs.mwc-random)
-          ];
-        };
+            ];
+          };
         "accelerate-hashcat" = {
-          depends = pkgs.lib.optionals (!(!flags.hashcat)) [
+          depends = (pkgs.lib).optionals (!(!flags.hashcat)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -186,10 +177,10 @@
             (hsPkgs.criterion)
             (hsPkgs.fclabels)
             (hsPkgs.mwc-random)
-          ];
-        };
+            ];
+          };
         "accelerate-fft" = {
-          depends = pkgs.lib.optionals (!(!flags.fft)) [
+          depends = (pkgs.lib).optionals (!(!flags.fft)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-fft)
@@ -197,10 +188,10 @@
             (hsPkgs.base)
             (hsPkgs.fclabels)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "accelerate-pagerank" = {
-          depends = pkgs.lib.optionals (!(!flags.pagerank)) [
+          depends = (pkgs.lib).optionals (!(!flags.pagerank)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.accelerate-io)
@@ -211,10 +202,10 @@
             (hsPkgs.fclabels)
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
-          ];
-        };
+            ];
+          };
         "accelerate-ray" = {
-          depends = pkgs.lib.optionals (!(!flags.ray)) [
+          depends = (pkgs.lib).optionals (!(!flags.ray)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -222,10 +213,10 @@
             (hsPkgs.gloss)
             (hsPkgs.gloss-accelerate)
             (hsPkgs.gloss-raster-accelerate)
-          ];
-        };
+            ];
+          };
         "accelerate-kmeans" = {
-          depends = pkgs.lib.optionals (!(!flags.kmeans)) [
+          depends = (pkgs.lib).optionals (!(!flags.kmeans)) [
             (hsPkgs.accelerate)
             (hsPkgs.accelerate-examples)
             (hsPkgs.base)
@@ -234,8 +225,8 @@
             (hsPkgs.fclabels)
             (hsPkgs.normaldistribution)
             (hsPkgs.random)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

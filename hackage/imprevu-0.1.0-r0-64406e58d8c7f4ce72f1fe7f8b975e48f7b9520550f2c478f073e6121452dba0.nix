@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "imprevu";
-        version = "0.1.0";
-      };
+      identifier = { name = "imprevu"; version = "0.1.0"; };
       license = "BSD-3-Clause";
       copyright = "2016 Corentin Dupont";
       maintainer = "Corentin Dupont";
@@ -22,7 +13,7 @@
       synopsis = "Reactive programming language based on a DSL";
       description = "A DSL to express events";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -45,16 +36,12 @@
           (hsPkgs.semigroups)
           (hsPkgs.shortcut)
           (hsPkgs.NoTrace)
-        ];
-      };
-      tests = {
-        "test" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.Imprevu)
-            (hsPkgs.Cabal)
           ];
         };
+      tests = {
+        "test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.Imprevu) (hsPkgs.Cabal) ];
+          };
+        };
       };
-    };
-  }
+    }

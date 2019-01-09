@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.16";
-      identifier = {
-        name = "aws-kinesis";
-        version = "0.1.3";
-      };
+      identifier = { name = "aws-kinesis"; version = "0.1.3"; };
       license = "Apache-2.0";
       copyright = "Copyright (c) 2013-2014 PivotCloud, Inc.";
       maintainer = "Lars Kuhtz <lkuhtz@pivotmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "Bindings for Amazon Kinesis";
       description = "Bindings for <http://aws.amazon.com/kinesis/ Amazon Kinesis>\n\nAmazon Kinesis is an AWS service for real-time processing of\nstreaming data at massive scale.\n\n/API Version: 2013-12-02/\n\n<http://docs.aws.amazon.com/kinesis/2013-12-02/APIReference>";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,8 +35,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.transformers)
-        ];
-      };
+          ];
+        };
       tests = {
         "kinesis-tests" = {
           depends = [
@@ -63,8 +54,8 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.text)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

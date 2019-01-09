@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "zifter-hindent";
-        version = "0.0.0.2";
-      };
+      identifier = { name = "zifter-hindent"; version = "0.0.0.2"; };
       license = "MIT";
       copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "zifter-hindent";
       description = "zifter-hindent";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.path)
           (hsPkgs.path-io)
           (hsPkgs.safe)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

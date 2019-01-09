@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "0";
-      identifier = {
-        name = "zcache";
-        version = "0.0.0";
-      };
+      identifier = { name = "zcache"; version = "0.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "amsay@amsay.net";
@@ -22,7 +13,7 @@
       synopsis = "Zobrist keys for game state tracking";
       description = "ZCache provides zobrist key generation for perfect information games.\nIt also includes convenience data structures  (maps and sets) that\nuse zobrist keys internally.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.array)
           (hsPkgs.mersenne-random-pure64)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

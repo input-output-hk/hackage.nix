@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      in-ghc-tree = false;
-      test = false;
-    };
+    flags = { in-ghc-tree = false; test = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "haddock";
-        version = "2.12.0";
-      };
+      identifier = { name = "haddock"; version = "2.12.0"; };
       license = "BSD-3-Clause";
       copyright = "(c) Simon Marlow, David Waern";
       maintainer = "David Waern <david.waern@gmail.com>";
@@ -25,7 +13,7 @@
       synopsis = "A documentation-generation tool for Haskell libraries";
       description = "Haddock is a documentation-generation tool for Haskell\nlibraries";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = ([
@@ -39,12 +27,12 @@
           (hsPkgs.xhtml)
           (hsPkgs.Cabal)
           (hsPkgs.ghc)
-        ] ++ pkgs.lib.optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths)) ++ pkgs.lib.optional (flags.test) (hsPkgs.QuickCheck);
-        build-tools = pkgs.lib.optionals (!flags.in-ghc-tree) [
-          (hsPkgs.buildPackages.alex)
-          (hsPkgs.buildPackages.happy)
-        ];
-      };
+          ] ++ (pkgs.lib).optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths)) ++ (pkgs.lib).optional (flags.test) (hsPkgs.QuickCheck);
+        build-tools = (pkgs.lib).optionals (!flags.in-ghc-tree) [
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
       exes = {
         "haddock" = {
           depends = ([
@@ -58,13 +46,13 @@
             (hsPkgs.xhtml)
             (hsPkgs.Cabal)
             (hsPkgs.ghc)
-          ] ++ pkgs.lib.optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths)) ++ pkgs.lib.optional (flags.test) (hsPkgs.QuickCheck);
-          build-tools = pkgs.lib.optionals (!flags.in-ghc-tree) [
-            (hsPkgs.buildPackages.alex)
-            (hsPkgs.buildPackages.happy)
-          ];
+            ] ++ (pkgs.lib).optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths)) ++ (pkgs.lib).optional (flags.test) (hsPkgs.QuickCheck);
+          build-tools = (pkgs.lib).optionals (!flags.in-ghc-tree) [
+            ((hsPkgs.buildPackages).alex)
+            ((hsPkgs.buildPackages).happy)
+            ];
+          };
         };
-      };
       tests = {
         "html-tests" = {
           depends = [
@@ -73,8 +61,8 @@
             (hsPkgs.process)
             (hsPkgs.filepath)
             (hsPkgs.Cabal)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

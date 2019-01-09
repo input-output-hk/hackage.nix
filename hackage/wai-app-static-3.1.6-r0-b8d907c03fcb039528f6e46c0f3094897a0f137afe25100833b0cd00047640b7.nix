@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { print = false; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-app-static";
-        version = "3.1.6";
-      };
+      identifier = { name = "wai-app-static"; version = "3.1.6"; };
       license = "MIT";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>, Greg Weber <greg@gregweber.info>";
@@ -22,7 +13,7 @@
       synopsis = "WAI application for static serving";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-app-static>.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -52,8 +43,8 @@
           (hsPkgs.wai-extra)
           (hsPkgs.optparse-applicative)
           (hsPkgs.warp)
-        ];
-      };
+          ];
+        };
       exes = {
         "warp" = {
           depends = [
@@ -64,9 +55,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.text)
             (hsPkgs.mime-types)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "runtests" = {
           depends = [
@@ -89,8 +80,8 @@
             (hsPkgs.filepath)
             (hsPkgs.temporary)
             (hsPkgs.mockery)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

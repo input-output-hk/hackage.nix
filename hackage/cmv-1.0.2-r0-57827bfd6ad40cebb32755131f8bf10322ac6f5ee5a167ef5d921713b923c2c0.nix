@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "cmv";
-        version = "1.0.2";
-      };
+      identifier = { name = "cmv"; version = "1.0.2"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "egg@informatik.uni-freiburg.de";
@@ -22,7 +13,7 @@
       synopsis = "Detailed visualization of CMs, HMMs and their comparisions";
       description = "cmv is a collection of tools for the visualisation of Hidden Markov Models (HMMV) and RNA-family models (CMV). Moreover it can visualise comparisons of these models (HMMCV,CMCV), and annotate linked regions in the structural alignments they were constructed from and via, 3rd party tools, in their consensus secondary structure.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,8 +37,8 @@
           (hsPkgs.StockholmAlignment)
           (hsPkgs.BiobaseTypes)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "CMCV" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.either-unwrap)
             (hsPkgs.filepath)
             (hsPkgs.StockholmAlignment)
-          ];
-        };
+            ];
+          };
         "CMV" = {
           depends = [
             (hsPkgs.base)
@@ -89,8 +80,8 @@
             (hsPkgs.either-unwrap)
             (hsPkgs.filepath)
             (hsPkgs.StockholmAlignment)
-          ];
-        };
+            ];
+          };
         "CMCWStoCMCV" = {
           depends = [
             (hsPkgs.base)
@@ -109,8 +100,8 @@
             (hsPkgs.cmv)
             (hsPkgs.either-unwrap)
             (hsPkgs.filepath)
-          ];
-        };
+            ];
+          };
         "CMCtoHMMC" = {
           depends = [
             (hsPkgs.base)
@@ -130,8 +121,8 @@
             (hsPkgs.either-unwrap)
             (hsPkgs.filepath)
             (hsPkgs.BioHMM)
-          ];
-        };
+            ];
+          };
         "HMMCtoCMC" = {
           depends = [
             (hsPkgs.base)
@@ -151,8 +142,8 @@
             (hsPkgs.either-unwrap)
             (hsPkgs.filepath)
             (hsPkgs.BioHMM)
-          ];
-        };
+            ];
+          };
         "CMVJson" = {
           depends = [
             (hsPkgs.base)
@@ -169,8 +160,8 @@
             (hsPkgs.either-unwrap)
             (hsPkgs.filepath)
             (hsPkgs.aeson)
-          ];
-        };
+            ];
+          };
         "HMMCV" = {
           depends = [
             (hsPkgs.base)
@@ -188,8 +179,8 @@
             (hsPkgs.filepath)
             (hsPkgs.BioHMM)
             (hsPkgs.StockholmAlignment)
-          ];
-        };
+            ];
+          };
         "HMMV" = {
           depends = [
             (hsPkgs.base)
@@ -207,8 +198,8 @@
             (hsPkgs.filepath)
             (hsPkgs.BioHMM)
             (hsPkgs.StockholmAlignment)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "nondeterminism";
-        version = "1.4";
-      };
+      identifier = { name = "nondeterminism"; version = "1.4"; };
       license = "LicenseRef-LGPL";
       copyright = "";
       maintainer = "Andrei Barbu <andrei@0xab.com>";
@@ -22,15 +13,11 @@
       synopsis = "A monad and monad transformer for nondeterministic computations.";
       description = "Nondeterministic computations";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.containers)
-        ];
-      };
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.containers) ];
+        };
       tests = {
         "AmbTests" = {
           depends = [
@@ -38,8 +25,8 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
             (hsPkgs.nondeterminism)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

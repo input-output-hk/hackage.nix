@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "jsonrpc-conduit";
-        version = "0.3.0";
-      };
+      identifier = { name = "jsonrpc-conduit"; version = "0.3.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "gbrsales@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "JSON-RPC 2.0 server over a Conduit.";
       description = "@jsonrpc-conduit@ implements the basic building block of a JSON-RPC 2.0 server.\n\nIt provides a @Conduit@ that consumes RPC requests and invokes user-provided\nfunctions to handle them. Conversion of values to and from JSON is almost\ncompletely automatic thanks to the @aeson@ library.\n\nThe JSON-RPC conduit is generic with respect to the channel used to exchange\ndata with the client. It can use a network connection or, for example,\nthe standard input / ouput  of a process. The latter is demonstrated by the\n@jsonrpc-conduit-demo@ executable, which can be compiled using the @demo@ flag.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -36,8 +27,8 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           (hsPkgs.unordered-containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "spec" = {
           depends = [
@@ -49,8 +40,8 @@
             (hsPkgs.hspec)
             (hsPkgs.jsonrpc-conduit)
             (hsPkgs.text)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

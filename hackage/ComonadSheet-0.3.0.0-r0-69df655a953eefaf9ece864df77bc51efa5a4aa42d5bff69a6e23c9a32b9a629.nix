@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "ComonadSheet";
-        version = "0.3.0.0";
-      };
+      identifier = { name = "ComonadSheet"; version = "0.3.0.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2013-2014 Kenneth W. Foner";
       maintainer = "kenneth.foner@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "A library for expressing spreadsheet-like computations as the fixed-points of comonads.";
       description = "@ComonadSheet@ is a library for expressing spreadsheet-like computations with absolute and relative references, using fixed-points of n-dimensional comonads. For examples of use, see the <https://github.com/kwf/ComonadSheet GitHub page> for the library.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.IndexedList)
           (hsPkgs.Tape)
           (hsPkgs.containers)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

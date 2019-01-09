@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "transformers-eff";
-        version = "0.2.0.0";
-      };
+      identifier = { name = "transformers-eff"; version = "0.2.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -22,7 +13,7 @@
       synopsis = "An approach to managing composable effects, ala mtl/transformers/extensible-effects/Eff";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,8 +22,8 @@
           (hsPkgs.list-transformer)
           (hsPkgs.free)
           (hsPkgs.mmorph)
-        ];
-      };
+          ];
+        };
       benchmarks = {
         "oleg" = {
           depends = [
@@ -42,8 +33,8 @@
             (hsPkgs.mtl)
             (hsPkgs.pipes)
             (hsPkgs.transformers)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

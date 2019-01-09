@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambdacube-ir";
-        version = "0.3.0.1";
-      };
+      identifier = { name = "lambdacube-ir"; version = "0.3.0.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "csaba.hruska@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "LambdaCube 3D intermediate representation of 3D graphics pipelines";
       description = "LambdaCube 3D intermediate representation of 3D graphics pipelines";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -32,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.aeson)
           (hsPkgs.mtl)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

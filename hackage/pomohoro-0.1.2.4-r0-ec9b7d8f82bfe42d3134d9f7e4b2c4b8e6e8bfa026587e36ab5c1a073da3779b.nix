@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "pomohoro";
-        version = "0.1.2.4";
-      };
+      identifier = { name = "pomohoro"; version = "0.1.2.4"; };
       license = "ISC";
       copyright = "(c) 2016 kqr";
       maintainer = "k@rdw.se";
@@ -22,7 +13,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -35,8 +26,8 @@
           (hsPkgs.time)
           (hsPkgs.text)
           (hsPkgs.configurator)
-        ];
-      };
+          ];
+        };
       exes = {
         "pomohoro-exe" = {
           depends = [
@@ -47,9 +38,9 @@
             (hsPkgs.optparse-applicative)
             (hsPkgs.hdaemonize)
             (hsPkgs.time)
-          ];
+            ];
+          };
         };
-      };
       tests = {
         "pomohoro-test" = {
           depends = [
@@ -57,8 +48,8 @@
             (hsPkgs.pomohoro)
             (hsPkgs.protolude)
             (hsPkgs.hspec)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

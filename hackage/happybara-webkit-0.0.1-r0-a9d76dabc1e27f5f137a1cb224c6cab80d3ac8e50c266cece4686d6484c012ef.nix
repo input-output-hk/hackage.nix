@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "happybara-webkit";
-        version = "0.0.1";
-      };
+      identifier = { name = "happybara-webkit"; version = "0.0.1"; };
       license = "MIT";
       copyright = "Copyright (c) 2014 Charles Strahan";
       maintainer = "charles.c.strahan@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "WebKit Happybara driver";
       description = "";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -46,7 +37,7 @@
           (hsPkgs.vector)
           (hsPkgs.aeson)
           (hsPkgs.case-insensitive)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

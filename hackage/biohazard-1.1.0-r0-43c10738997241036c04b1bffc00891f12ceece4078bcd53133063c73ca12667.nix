@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "biohazard";
-        version = "1.1.0";
-      };
+      identifier = { name = "biohazard"; version = "1.1.0"; };
       license = "BSD-3-Clause";
       copyright = "(C) 2010-2017 Udo Stenzel";
       maintainer = "u.stenzel@web.de";
@@ -22,7 +13,7 @@
       synopsis = "bioinformatics support library";
       description = "This is a collection of modules I separated from\nvarious bioinformatics tools.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -44,7 +35,7 @@
           (hsPkgs.vector-algorithms)
           (hsPkgs.vector-th-unbox)
           (hsPkgs.zlib)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
       };
-    };
-  }
+    }

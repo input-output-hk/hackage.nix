@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10.0";
-      identifier = {
-        name = "snaplet-sedna";
-        version = "0.0.1.0";
-      };
+      identifier = { name = "snaplet-sedna"; version = "0.0.1.0"; };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Eric Jones (ericclaudejones at gmail.com)";
@@ -22,7 +13,7 @@
       synopsis = "Snaplet for Sedna Bindings. Essentailly a rip of snaplet-hdbc.";
       description = "Snaplet for Sedna native XML database bindings.\nhttp://www.sedna.org/";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -34,7 +25,7 @@
           (hsPkgs.resource-pool)
           (hsPkgs.sednaDBXML)
           (hsPkgs.snap)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

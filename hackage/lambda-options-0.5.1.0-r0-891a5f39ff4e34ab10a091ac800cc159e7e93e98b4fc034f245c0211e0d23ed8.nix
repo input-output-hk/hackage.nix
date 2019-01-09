@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "lambda-options";
-        version = "0.5.1.0";
-      };
+      identifier = { name = "lambda-options"; version = "0.5.1.0"; };
       license = "LicenseRef-OtherLicense";
       copyright = "";
       maintainer = "thomasedingcode@gmail.com";
@@ -22,14 +13,10 @@
       synopsis = "A modern command-line parser for Haskell.";
       description = "A modern command-line parser for Haskell.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
-        depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.containers)
-        ];
+        depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.containers) ];
+        };
       };
-    };
-  }
+    }

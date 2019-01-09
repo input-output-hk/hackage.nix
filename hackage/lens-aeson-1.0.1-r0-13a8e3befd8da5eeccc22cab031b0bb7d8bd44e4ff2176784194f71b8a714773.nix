@@ -1,20 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      test-doctests = true;
-    };
+    flags = { test-doctests = true; };
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "lens-aeson";
-        version = "1.0.1";
-      };
+      identifier = { name = "lens-aeson"; version = "1.0.1"; };
       license = "MIT";
       copyright = "Copyright (C) 2012 Paul Wilson\nCopyright (C) 2013 Edward A. Kmett";
       maintainer = "Edward A. Kmett <ekmett@gmail.com>";
@@ -24,7 +13,7 @@
       synopsis = "Law-abiding lenses for aeson";
       description = "Law-abiding lenses for aeson";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,18 +26,18 @@
           (hsPkgs.bytestring)
           (hsPkgs.aeson)
           (hsPkgs.scientific)
-        ];
-      };
+          ];
+        };
       tests = {
         "doctests" = {
-          depends = pkgs.lib.optionals (!(!flags.test-doctests)) [
+          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
             (hsPkgs.base)
             (hsPkgs.doctest)
             (hsPkgs.generic-deriving)
             (hsPkgs.semigroups)
             (hsPkgs.simple-reflect)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

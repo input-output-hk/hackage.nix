@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.6";
-      identifier = {
-        name = "hxt-http";
-        version = "9.1.2";
-      };
+      identifier = { name = "hxt-http"; version = "9.1.2"; };
       license = "MIT";
       copyright = "Copyright (c) 2011 Uwe Schmidt";
       maintainer = "Uwe Schmidt <uwe@fh-wedel.de>";
@@ -22,7 +13,7 @@
       synopsis = "Interface to native Haskell HTTP package HTTP";
       description = "Interface to native Haskell HTTP package HTTP.\nThis package can be used as alternative for the hxt-curl package\nfor accessing documents via HTTP";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.network)
           (hsPkgs.HTTP)
           (hsPkgs.hxt)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4.0";
-      identifier = {
-        name = "BiobaseInfernal";
-        version = "0.5.4.1";
-      };
+      identifier = { name = "BiobaseInfernal"; version = "0.5.4.1"; };
       license = "GPL-3.0-only";
       copyright = "Christian Hoener zu Siederdissen, 2011";
       maintainer = "choener@tbi.univie.ac.at";
@@ -22,7 +13,7 @@
       synopsis = "Infernal data structures and tools";
       description = "Provides import and export facilities for Infernal/Rfam data\nformats. We include Stockholm, CM, verbose Infernal results,\nand tabulated Infernal results. Some small tools are included.\n\nThe VerboseHit format is slightly extended to allow simple\nannotations. This extension should be backward-compatible with\nstandard-compliant parsers.\n\n\n\nChanges in 0.5.4.1\n\n* fix-up for VH export\n\n* half-baked CM type (not useful yet)";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -37,7 +28,7 @@
           (hsPkgs.tuple)
           (hsPkgs.vector)
           (hsPkgs.PrimitiveArray)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "wai-extra";
-        version = "1.3.3.2";
-      };
+      identifier = { name = "wai-extra"; version = "1.3.3.2"; };
       license = "MIT";
       copyright = "";
       maintainer = "michael@snoyman.com";
@@ -22,7 +13,7 @@
       synopsis = "Provides some basic WAI handlers and middleware.";
       description = "The goal here is to provide common features without many dependencies.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -50,8 +41,8 @@
           (hsPkgs.void)
           (hsPkgs.stringsearch)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "tests" = {
           depends = [
@@ -72,8 +63,8 @@
             (hsPkgs.data-default)
             (hsPkgs.conduit)
             (hsPkgs.fast-logger)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

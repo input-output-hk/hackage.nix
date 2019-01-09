@@ -1,21 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
-    flags = {
-      split-base = true;
-      applicative-in-base = true;
-    };
+    flags = { split-base = true; applicative-in-base = true; };
     package = {
       specVersion = "1.2";
-      identifier = {
-        name = "bytestringparser";
-        version = "0.2.1";
-      };
+      identifier = { name = "bytestringparser"; version = "0.2.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "";
@@ -25,16 +13,14 @@
       synopsis = "Combinator parsing with Data.ByteString.Lazy";
       description = "";
       buildType = "Custom";
-    };
+      };
     components = {
       "library" = {
         depends = (if flags.split-base
           then [ (hsPkgs.base) ]
-          else [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-          ]) ++ [ (hsPkgs.base) ];
+          else [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.containers) ]) ++ [
+          (hsPkgs.base)
+          ];
+        };
       };
-    };
-  }
+    }

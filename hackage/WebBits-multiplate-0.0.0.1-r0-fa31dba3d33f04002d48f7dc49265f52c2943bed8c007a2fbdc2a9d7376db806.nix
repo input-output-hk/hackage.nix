@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.4";
-      identifier = {
-        name = "WebBits-multiplate";
-        version = "0.0.0.1";
-      };
+      identifier = { name = "WebBits-multiplate"; version = "0.0.0.1"; };
       license = "MIT";
       copyright = "2011, Balazs Endresz";
       maintainer = "Balazs Endresz <balazs.endresz@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A Multiplate instance for JavaScript.";
       description = "Provides a Multiplate instance for the JavaScript AST in the WebBits package.\nThe MultiplateSimplified module is based on the multiplate-simplified package,\nwhich makes it a bit more readable, and easier to work with\nbut the extra type class it uses might affect performance.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -31,7 +22,7 @@
           (hsPkgs.multiplate)
           (hsPkgs.multiplate-simplified)
           (hsPkgs.WebBits)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

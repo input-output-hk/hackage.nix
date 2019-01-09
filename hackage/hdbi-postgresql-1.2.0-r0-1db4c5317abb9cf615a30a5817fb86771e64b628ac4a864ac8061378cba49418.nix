@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.8";
-      identifier = {
-        name = "hdbi-postgresql";
-        version = "1.2.0";
-      };
+      identifier = { name = "hdbi-postgresql"; version = "1.2.0"; };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2005-2013 John Goerzen";
       maintainer = "Aleksey Uymanov <s9gf4ult@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "PostgreSQL driver for hdbi";
       description = "This package provides a PostgreSQL driver for hdbi";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -39,8 +30,8 @@
           (hsPkgs.text)
           (hsPkgs.time)
           (hsPkgs.uuid)
-        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs.base);
-      };
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs.base);
+        };
       tests = {
         "runtests" = {
           depends = [
@@ -68,8 +59,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.uuid)
-          ];
-        };
+            ];
+          };
         "puretests" = {
           depends = [
             (hsPkgs.base)
@@ -94,8 +85,8 @@
             (hsPkgs.text)
             (hsPkgs.time)
             (hsPkgs.uuid)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

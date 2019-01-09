@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "hodatime";
-        version = "0.1.1.1";
-      };
+      identifier = { name = "hodatime"; version = "0.1.1.1"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<jason.johnson.081@gmail.com>";
@@ -22,7 +13,7 @@
       synopsis = "A fully featured date/time library based on Nodatime";
       description = "A library for dealing with time, dates, calendars and time zones";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       tests = {
         "test" = {
           depends = [
@@ -46,17 +37,13 @@
             (hsPkgs.time)
             (hsPkgs.bytestring)
             (hsPkgs.hodatime)
-          ];
+            ];
+          };
         };
-      };
       benchmarks = {
         "bench" = {
-          depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.random)
-          ];
+          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.random) ];
+          };
         };
       };
-    };
-  }
+    }

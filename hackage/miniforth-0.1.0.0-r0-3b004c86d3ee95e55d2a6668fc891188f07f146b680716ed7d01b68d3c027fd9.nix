@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "miniforth";
-        version = "0.1.0.0";
-      };
+      identifier = { name = "miniforth"; version = "0.1.0.0"; };
       license = "MIT";
       copyright = "";
       maintainer = "tenorbiel@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Miniature FORTH-like interpreter";
       description = "Miniature FORTH-like interpreter for muno";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,8 +24,8 @@
           (hsPkgs.parsec3-numbers)
           (hsPkgs.MonadRandom)
           (hsPkgs.containers)
-        ];
-      };
+          ];
+        };
       exes = {
         "miniforth" = {
           depends = [
@@ -45,8 +36,8 @@
             (hsPkgs.containers)
             (hsPkgs.readline)
             (hsPkgs.miniforth)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }

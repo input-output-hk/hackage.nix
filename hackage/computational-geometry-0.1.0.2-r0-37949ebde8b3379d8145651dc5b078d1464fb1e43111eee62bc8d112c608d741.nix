@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = {
-        name = "computational-geometry";
-        version = "0.1.0.2";
-      };
+      identifier = { name = "computational-geometry"; version = "0.1.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Maksymilian.Owsianny@gmail.com";
@@ -22,7 +13,7 @@
       synopsis = "Collection of algorithms in Computational Geometry.";
       description = "Collection of algorithms in Computational Geometry.";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -33,7 +24,7 @@
           (hsPkgs.linear)
           (hsPkgs.lens-family-core)
           (hsPkgs.ansi-wl-pprint)
-        ];
+          ];
+        };
       };
-    };
-  }
+    }

@@ -1,18 +1,9 @@
-{ system
-, compiler
-, flags
-, pkgs
-, hsPkgs
-, pkgconfPkgs
-, ... }:
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { use-ioref = false; };
     package = {
       specVersion = "1.10";
-      identifier = {
-        name = "traildb";
-        version = "0.1.0.1";
-      };
+      identifier = { name = "traildb"; version = "0.1.0.1"; };
       license = "MIT";
       copyright = "AdRoll Inc (c) 2016";
       maintainer = "mikko.juola@adroll.com";
@@ -22,7 +13,7 @@
       synopsis = "TrailDB bindings for Haskell";
       description = "Check out README.md for information on these bindings.\n\nTrailDB project home page is at traildb.io";
       buildType = "Simple";
-    };
+      };
     components = {
       "library" = {
         depends = [
@@ -38,13 +29,9 @@
           (hsPkgs.transformers)
           (hsPkgs.unix)
           (hsPkgs.vector)
-        ];
-        libs = [
-          (pkgs."traildb")
-          (pkgs."Judy")
-          (pkgs."cmph")
-        ];
-      };
+          ];
+        libs = [ (pkgs."traildb") (pkgs."Judy") (pkgs."cmph") ];
+        };
       benchmarks = {
         "bench-traildb" = {
           depends = [
@@ -56,8 +43,8 @@
             (hsPkgs.directory)
             (hsPkgs.random)
             (hsPkgs.traildb)
-          ];
+            ];
+          };
         };
       };
-    };
-  }
+    }
