@@ -1,0 +1,120 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = { ci = false; };
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "postgrest"; version = "5.2.0"; };
+      license = "MIT";
+      copyright = "";
+      maintainer = "Steve Chávez <stevechavezast@gmail.com>";
+      author = "Joe Nelson, Adam Baker";
+      homepage = "https://postgrest.org";
+      url = "";
+      synopsis = "REST API for any Postgres database";
+      description = "Reads the schema of a PostgreSQL database and creates RESTful routes\nfor the tables and views, supporting all HTTP verbs that security\npermits.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.aeson)
+          (hsPkgs.ansi-wl-pprint)
+          (hsPkgs.base)
+          (hsPkgs.base64-bytestring)
+          (hsPkgs.bytestring)
+          (hsPkgs.case-insensitive)
+          (hsPkgs.cassava)
+          (hsPkgs.configurator-ng)
+          (hsPkgs.containers)
+          (hsPkgs.contravariant)
+          (hsPkgs.contravariant-extras)
+          (hsPkgs.either)
+          (hsPkgs.gitrev)
+          (hsPkgs.hasql)
+          (hsPkgs.hasql-pool)
+          (hsPkgs.hasql-transaction)
+          (hsPkgs.heredoc)
+          (hsPkgs.HTTP)
+          (hsPkgs.http-types)
+          (hsPkgs.insert-ordered-containers)
+          (hsPkgs.interpolatedstring-perl6)
+          (hsPkgs.jose)
+          (hsPkgs.lens)
+          (hsPkgs.lens-aeson)
+          (hsPkgs.network-uri)
+          (hsPkgs.optparse-applicative)
+          (hsPkgs.parsec)
+          (hsPkgs.protolude)
+          (hsPkgs.Ranged-sets)
+          (hsPkgs.regex-tdfa)
+          (hsPkgs.scientific)
+          (hsPkgs.swagger2)
+          (hsPkgs.text)
+          (hsPkgs.time)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.vector)
+          (hsPkgs.wai)
+          (hsPkgs.wai-cors)
+          (hsPkgs.wai-extra)
+          (hsPkgs.wai-middleware-static)
+          (hsPkgs.cookie)
+          ];
+        };
+      exes = {
+        "postgrest" = {
+          depends = [
+            (hsPkgs.auto-update)
+            (hsPkgs.base)
+            (hsPkgs.hasql)
+            (hsPkgs.hasql-pool)
+            (hsPkgs.hasql-transaction)
+            (hsPkgs.postgrest)
+            (hsPkgs.protolude)
+            (hsPkgs.text)
+            (hsPkgs.time)
+            (hsPkgs.warp)
+            (hsPkgs.bytestring)
+            (hsPkgs.base64-bytestring)
+            (hsPkgs.retry)
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          };
+        };
+      tests = {
+        "spec" = {
+          depends = [
+            (hsPkgs.aeson)
+            (hsPkgs.aeson-qq)
+            (hsPkgs.async)
+            (hsPkgs.auto-update)
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.base64-bytestring)
+            (hsPkgs.case-insensitive)
+            (hsPkgs.cassava)
+            (hsPkgs.containers)
+            (hsPkgs.contravariant)
+            (hsPkgs.hasql)
+            (hsPkgs.hasql-pool)
+            (hsPkgs.hasql-transaction)
+            (hsPkgs.heredoc)
+            (hsPkgs.hjsonschema)
+            (hsPkgs.hspec)
+            (hsPkgs.hspec-wai)
+            (hsPkgs.hspec-wai-json)
+            (hsPkgs.http-types)
+            (hsPkgs.lens)
+            (hsPkgs.lens-aeson)
+            (hsPkgs.monad-control)
+            (hsPkgs.postgrest)
+            (hsPkgs.process)
+            (hsPkgs.protolude)
+            (hsPkgs.regex-tdfa)
+            (hsPkgs.time)
+            (hsPkgs.transformers-base)
+            (hsPkgs.wai)
+            (hsPkgs.wai-extra)
+            ];
+          };
+        };
+      };
+    }

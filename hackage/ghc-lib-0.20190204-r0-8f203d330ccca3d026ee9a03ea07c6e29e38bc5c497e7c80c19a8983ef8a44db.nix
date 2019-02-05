@@ -1,0 +1,64 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.12";
+      identifier = { name = "ghc-lib"; version = "0.20190204"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Digital Asset";
+      author = "The GHC Team and Digital Asset";
+      homepage = "https://github.com/digital-asset/ghc-lib";
+      url = "";
+      synopsis = "The GHC API, decoupled from GHC versions";
+      description = "A package equivalent to the @ghc@ package, but which can be loaded on many compiler versions.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.ghc-prim)
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.bytestring)
+          (hsPkgs.binary)
+          (hsPkgs.filepath)
+          (hsPkgs.directory)
+          (hsPkgs.array)
+          (hsPkgs.deepseq)
+          (hsPkgs.pretty)
+          (hsPkgs.time)
+          (hsPkgs.transformers)
+          (hsPkgs.process)
+          (hsPkgs.hpc)
+          ] ++ (if !system.isWindows
+          then [ (hsPkgs.unix) ]
+          else [ (hsPkgs.Win32) ]);
+        build-tools = [
+          ((hsPkgs.buildPackages).alex)
+          ((hsPkgs.buildPackages).happy)
+          ];
+        };
+      exes = {
+        "ghc-lib" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.array)
+            (hsPkgs.bytestring)
+            (hsPkgs.directory)
+            (hsPkgs.process)
+            (hsPkgs.filepath)
+            (hsPkgs.containers)
+            (hsPkgs.deepseq)
+            (hsPkgs.ghc-prim)
+            (hsPkgs.haskeline)
+            (hsPkgs.time)
+            (hsPkgs.transformers)
+            (hsPkgs.ghc-lib)
+            ] ++ (if !system.isWindows
+            then [ (hsPkgs.unix) ]
+            else [ (hsPkgs.Win32) ]);
+          };
+        };
+      };
+    }
