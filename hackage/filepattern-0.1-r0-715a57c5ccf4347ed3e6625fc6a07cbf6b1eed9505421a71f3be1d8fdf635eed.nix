@@ -1,0 +1,39 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.18";
+      identifier = { name = "filepattern"; version = "0.1"; };
+      license = "BSD-3-Clause";
+      copyright = "Neil Mitchell 2011-2019";
+      maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
+      author = "Neil Mitchell <ndmitchell@gmail.com>, Evan Rutledge Borden <evan@evan-borden.com>";
+      homepage = "";
+      url = "";
+      synopsis = "File path glob-like matching";
+      description = "A library for matching files using patterns such as @\\\"src\\/**\\/*.png\\\"@ for all @.png@ files\nrecursively under the @src@ directory. Features:\n\n* All matching is /O(n)/.\n\n* See \"System.FilePattern\" and 'System.FilePattern.?==' simple matching and semantics.\n\n* Use 'System.FilePattern.match' and 'System.FilePattern.substitute' to extract suitable\nstrings from the @*@ and @**@ matches, and substitute them back into other patterns.\n\n* Use 'System.FilePattern.step' and 'System.FilePattern.matchMany' to perform bulk matching\nof many patterns against many paths simultaneously.\n\n* Use \"System.FilePattern.Directory\" to perform optimised directory traverals using patterns.\n\nOriginally taken from the <https://hackage.haskell.org/package/shake Shake library>.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.directory)
+          (hsPkgs.extra)
+          (hsPkgs.filepath)
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups);
+        };
+      tests = {
+        "filepattern-test" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.directory)
+            (hsPkgs.extra)
+            (hsPkgs.filepattern)
+            (hsPkgs.filepath)
+            (hsPkgs.QuickCheck)
+            ];
+          };
+        };
+      };
+    }

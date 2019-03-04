@@ -1,0 +1,68 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "2.2";
+      identifier = { name = "datadog-tracing"; version = "1.0.0"; };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2019 Symbiont.io";
+      maintainer = "Sam Halliday";
+      author = "Sam Halliday";
+      homepage = "";
+      url = "";
+      synopsis = "Datadog tracing client and mock agent.";
+      description = "An HTTP client to publish tracing to\na [datadog agent](https://docs.datadoghq.com/agent/?tab=agentv6).\n\nIn addition, an HTTP server is provided that can be used in place of\nthe official agent, that does not communicate with upstream datadog\nservers, allowing replay of all data from a `GET /dump` endpoint,\ncompatible with `jaeger-flamegraph`.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.text)
+          (hsPkgs.aeson)
+          (hsPkgs.servant)
+          (hsPkgs.generic-random)
+          (hsPkgs.refined)
+          (hsPkgs.prettyprinter)
+          (hsPkgs.servant-client)
+          (hsPkgs.time)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.quickcheck-text)
+          ];
+        };
+      exes = {
+        "datadog-agent" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.containers)
+            (hsPkgs.text)
+            (hsPkgs.aeson)
+            (hsPkgs.servant)
+            (hsPkgs.datadog)
+            (hsPkgs.servant-server)
+            (hsPkgs.warp)
+            ];
+          };
+        };
+      tests = {
+        "tests" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.containers)
+            (hsPkgs.text)
+            (hsPkgs.aeson)
+            (hsPkgs.servant)
+            (hsPkgs.datadog)
+            (hsPkgs.hspec-golden-aeson)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hspec)
+            ];
+          build-tools = [ ((hsPkgs.buildPackages).tasty-discover) ];
+          };
+        };
+      };
+    }
