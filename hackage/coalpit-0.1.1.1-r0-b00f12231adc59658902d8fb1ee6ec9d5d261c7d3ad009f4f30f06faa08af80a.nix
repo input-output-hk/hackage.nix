@@ -1,0 +1,40 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "coalpit"; version = "0.1.1.1"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "defanor@uberspace.net";
+      author = "defanor";
+      homepage = "";
+      url = "";
+      synopsis = "Command-line options and DSV parsing and printing";
+      description = "This library generates parsers and printers for\ngiven data types, in the form of command-line\narguments or DSVs – so that they can be used to\nquickly get CLIs via a shared library, while\nbeing suitable for scripting and as user\ninterfaces.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.megaparsec)
+          (hsPkgs.scientific)
+          (hsPkgs.time)
+          (hsPkgs.network-uri)
+          ];
+        };
+      tests = {
+        "test-coalpit" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.coalpit)
+            (hsPkgs.generic-random)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.tasty-travis)
+            ];
+          };
+        };
+      };
+    }
