@@ -1,0 +1,29 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.8";
+      identifier = { name = "network-simple-ws"; version = "0.1"; };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) Renzo Carbonara 2018";
+      maintainer = "renλren.zone";
+      author = "Renzo Carbonara";
+      homepage = "https://github.com/k0001/network-simple-ws";
+      url = "";
+      synopsis = "Simple interface to WebSockets.";
+      description = "Simple interface to WebSockets.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.case-insensitive)
+          (hsPkgs.safe-exceptions)
+          (hsPkgs.network-simple)
+          (hsPkgs.websockets)
+          ];
+        };
+      };
+    }

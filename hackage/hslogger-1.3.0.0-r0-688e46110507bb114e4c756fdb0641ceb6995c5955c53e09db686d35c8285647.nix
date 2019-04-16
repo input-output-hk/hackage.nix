@@ -1,0 +1,37 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = { network--gt-3_0_0 = true; };
+    package = {
+      specVersion = "1.12";
+      identifier = { name = "hslogger"; version = "1.3.0.0"; };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2004-2018 John Goerzen\n, (c) 2019      Herbert Valerio Riedel";
+      maintainer = "hvr@gnu.org";
+      author = "John Goerzen";
+      homepage = "https://github.com/hvr/hslogger/wiki";
+      url = "";
+      synopsis = "Versatile logging framework";
+      description = "@hslogger@ is a logging framework for Haskell, roughly similar\nto [Python's logging module](https://docs.python.org/2/library/logging.html).\n\n@hslogger@ lets each log message have a priority and source be associated\nwith it.  The programmer can then define global handlers that route\nor filter messages based on the priority and source.  @hslogger@ also\nhas a [Syslog](https://tools.ietf.org/html/rfc5424) handler built in.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = ([
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.time)
+          (hsPkgs.old-locale)
+          ] ++ (if flags.network--gt-3_0_0
+          then [ (hsPkgs.network-bsd) (hsPkgs.network) ]
+          else [
+            (hsPkgs.network)
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        };
+      tests = {
+        "runtests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.hslogger) ];
+          };
+        };
+      };
+    }
