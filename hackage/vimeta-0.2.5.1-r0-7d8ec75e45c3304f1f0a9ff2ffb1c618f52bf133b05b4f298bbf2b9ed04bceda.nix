@@ -1,0 +1,48 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.18";
+      identifier = { name = "vimeta"; version = "0.2.5.1"; };
+      license = "BSD-2-Clause";
+      copyright = "Copyright (c) 2013-2019 Peter Jones";
+      maintainer = "Peter Jones <pjones@devalot.com>";
+      author = "Peter Jones <pjones@devalot.com>";
+      homepage = "https://code.devalot.com/open/vimeta";
+      url = "";
+      synopsis = "Frontend for video metadata tagging tools";
+      description = "Vimeta is a tool to fetch video metadata from the interwebs and\nupdate video files using a tagging tool.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.aeson)
+          (hsPkgs.byline)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.directory)
+          (hsPkgs.either)
+          (hsPkgs.filepath)
+          (hsPkgs.http-client)
+          (hsPkgs.http-client-tls)
+          (hsPkgs.http-types)
+          (hsPkgs.mtl)
+          (hsPkgs.old-locale)
+          (hsPkgs.optparse-applicative)
+          (hsPkgs.parsec)
+          (hsPkgs.process)
+          (hsPkgs.temporary)
+          (hsPkgs.text)
+          (hsPkgs.themoviedb)
+          (hsPkgs.time)
+          (hsPkgs.time-locale-compat)
+          (hsPkgs.transformers)
+          (hsPkgs.xdg-basedir)
+          (hsPkgs.yaml)
+          ];
+        };
+      exes = { "vimeta" = { depends = [ (hsPkgs.base) (hsPkgs.vimeta) ]; }; };
+      };
+    }
