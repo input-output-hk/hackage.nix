@@ -1,0 +1,44 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = { binary = true; parsec = true; attoparsec = true; };
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "parsers"; version = "0.12.10"; };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2010-2013 Edward A. Kmett";
+      maintainer = "Edward A. Kmett <ekmett@gmail.com>";
+      author = "Edward A. Kmett";
+      homepage = "http://github.com/ekmett/parsers/";
+      url = "";
+      synopsis = "Parsing combinators";
+      description = "This library provides convenient combinators for working with and building parsing combinator libraries.\n\nGiven a few simple instances, e.g. for the class 'Text.Parser.Combinators.Parsing' in \"Text.Parser.Combinators.Parsing\" you\nget access to a large number of canned definitions. Instances exist for the parsers provided by @parsec@,\n@attoparsec@ and base’s \"Text.Read\".";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = (([
+          (hsPkgs.base)
+          (hsPkgs.base-orphans)
+          (hsPkgs.charset)
+          (hsPkgs.containers)
+          (hsPkgs.semigroups)
+          (hsPkgs.text)
+          (hsPkgs.transformers)
+          (hsPkgs.mtl)
+          (hsPkgs.scientific)
+          (hsPkgs.unordered-containers)
+          ] ++ (pkgs.lib).optional (flags.binary) (hsPkgs.binary)) ++ (pkgs.lib).optional (flags.parsec) (hsPkgs.parsec)) ++ (pkgs.lib).optional (flags.attoparsec) (hsPkgs.attoparsec);
+        };
+      tests = {
+        "quickcheck" = {
+          depends = ([
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.parsers)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.quickcheck-instances)
+            ] ++ (pkgs.lib).optional (flags.parsec) (hsPkgs.parsec)) ++ (pkgs.lib).optional (flags.attoparsec) (hsPkgs.attoparsec);
+          };
+        };
+      };
+    }
