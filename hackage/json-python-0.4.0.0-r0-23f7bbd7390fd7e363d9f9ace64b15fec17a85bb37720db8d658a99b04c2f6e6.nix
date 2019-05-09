@@ -24,7 +24,7 @@
           (hsPkgs.containers)
           (hsPkgs.pureMD5)
           ];
-        pkgconfig = [ (pkgconfPkgs.python) ];
+        pkgconfig = [ (pkgconfPkgs."python") ];
         };
       };
     }

@@ -39,7 +39,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.template-haskell)
           ];
-        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs.yaml-0.1);
+        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1");
         };
       exes = {
         "yaml2json" = {

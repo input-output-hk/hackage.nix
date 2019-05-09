@@ -23,7 +23,7 @@
           (hsPkgs.transformers)
           (hsPkgs.monad-control)
           ];
-        pkgconfig = [ (pkgconfPkgs.groonga) ];
+        pkgconfig = [ (pkgconfPkgs."groonga") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       };

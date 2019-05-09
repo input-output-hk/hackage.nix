@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.vector) ];
         libs = [ (pkgs."nm-glib") (pkgs."g") ];
-        pkgconfig = [ (pkgconfPkgs.glib-2.0) (pkgconfPkgs.libnm-glib) ];
+        pkgconfig = [ (pkgconfPkgs."glib-2.0") (pkgconfPkgs."libnm-glib") ];
         };
       exes = { "nm-demo" = { depends = [ (hsPkgs.base) (hsPkgs.nm) ]; }; };
       };

@@ -22,7 +22,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
           ];
-        pkgconfig = [ (pkgconfPkgs.gobject-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gobject-2.0") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       };

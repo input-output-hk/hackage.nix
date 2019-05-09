@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) (hsPkgs.array) ];
         libs = [ (pkgs."eskit") ];
-        pkgconfig = [ (pkgconfPkgs.eskit) ];
+        pkgconfig = [ (pkgconfPkgs."eskit") ];
         };
       };
     }

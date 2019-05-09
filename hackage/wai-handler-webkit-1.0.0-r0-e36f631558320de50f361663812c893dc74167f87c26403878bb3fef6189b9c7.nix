@@ -23,7 +23,7 @@
           (pkgs."QtNetwork4")
           (pkgs."QtWebKit4")
           ];
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.QtWebKit);
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."QtWebKit");
         };
       };
     }

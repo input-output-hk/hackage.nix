@@ -41,8 +41,8 @@
           (pkgs."QtDeclarative")
           ]);
         pkgconfig = (pkgs.lib).optionals (!(system.isWindows && !flags.usepkgconfig)) ((pkgs.lib).optionals (!(system.isOsx && !flags.usepkgconfig)) [
-          (pkgconfPkgs.QtScript)
-          (pkgconfPkgs.QtDeclarative)
+          (pkgconfPkgs."QtScript")
+          (pkgconfPkgs."QtDeclarative")
           ]);
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };

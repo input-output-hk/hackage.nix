@@ -25,7 +25,7 @@
           (hsPkgs.crypto-cipher-types)
           ];
         libs = (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."nettle");
-        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs.nettle);
+        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."nettle");
         };
       tests = {
         "test-ciphers" = {

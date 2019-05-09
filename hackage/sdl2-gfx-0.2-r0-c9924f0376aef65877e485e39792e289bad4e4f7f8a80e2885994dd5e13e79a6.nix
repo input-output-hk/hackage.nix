@@ -28,7 +28,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           ];
-        pkgconfig = [ (pkgconfPkgs.sdl2) (pkgconfPkgs.SDL2_gfx) ];
+        pkgconfig = [ (pkgconfPkgs."sdl2") (pkgconfPkgs."SDL2_gfx") ];
         };
       exes = {
         "sdl2-gfx-example" = {

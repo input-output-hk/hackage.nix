@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.netlib-ffi) (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.blas) ];
+        pkgconfig = [ (pkgconfPkgs."blas") ];
         };
       exes = {
         "blas-demo" = {

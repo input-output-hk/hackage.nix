@@ -25,7 +25,7 @@
           (hsPkgs.cairo)
           (hsPkgs.pango)
           ];
-        pkgconfig = [ (pkgconfPkgs.libaosd) (pkgconfPkgs.libaosd-text) ];
+        pkgconfig = [ (pkgconfPkgs."libaosd") (pkgconfPkgs."libaosd-text") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       tests = {

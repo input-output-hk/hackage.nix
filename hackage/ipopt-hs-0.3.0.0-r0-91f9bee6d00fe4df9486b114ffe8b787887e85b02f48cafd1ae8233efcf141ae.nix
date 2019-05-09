@@ -26,7 +26,7 @@
           (hsPkgs.ansi-wl-pprint)
           (hsPkgs.vector-space)
           ];
-        pkgconfig = [ (pkgconfPkgs.ipopt) ];
+        pkgconfig = [ (pkgconfPkgs."ipopt") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {

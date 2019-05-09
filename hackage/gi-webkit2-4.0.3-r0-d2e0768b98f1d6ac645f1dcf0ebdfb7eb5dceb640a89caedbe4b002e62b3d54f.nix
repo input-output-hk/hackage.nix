@@ -34,7 +34,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.webkit2gtk-4.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkit2gtk-4.0") ];
         };
       };
     }

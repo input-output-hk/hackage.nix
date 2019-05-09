@@ -22,7 +22,7 @@
           (hsPkgs.filepath)
           (hsPkgs.composition-prelude)
           ];
-        pkgconfig = [ (pkgconfPkgs.libarchive) ];
+        pkgconfig = [ (pkgconfPkgs."libarchive") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

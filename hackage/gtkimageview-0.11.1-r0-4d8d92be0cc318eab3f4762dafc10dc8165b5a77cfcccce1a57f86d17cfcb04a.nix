@@ -25,7 +25,7 @@
           (hsPkgs.glib)
           (hsPkgs.gtk)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtkimageview) ];
+        pkgconfig = [ (pkgconfPkgs."gtkimageview") ];
         };
       };
     }

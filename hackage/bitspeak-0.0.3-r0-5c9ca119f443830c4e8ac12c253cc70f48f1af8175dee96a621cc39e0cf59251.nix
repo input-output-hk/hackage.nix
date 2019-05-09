@@ -24,9 +24,9 @@
             (hsPkgs.bindings-gobject)
             ];
           pkgconfig = [
-            (pkgconfPkgs.gdk-2.0)
-            (pkgconfPkgs.gtk+-2.0)
-            (pkgconfPkgs.pango)
+            (pkgconfPkgs."gdk-2.0")
+            (pkgconfPkgs."gtk+-2.0")
+            (pkgconfPkgs."pango")
             ];
           };
         };

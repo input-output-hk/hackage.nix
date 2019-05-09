@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.glib) (hsPkgs.gtk3) ];
-        pkgconfig = [ (pkgconfPkgs.appindicator3-0.1) ];
+        pkgconfig = [ (pkgconfPkgs."appindicator3-0.1") ];
         };
       exes = {
         "demo" = {

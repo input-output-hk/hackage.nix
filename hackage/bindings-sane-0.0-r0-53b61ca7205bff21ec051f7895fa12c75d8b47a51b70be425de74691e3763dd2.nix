@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
-        pkgconfig = [ (pkgconfPkgs.sane-backends) ];
+        pkgconfig = [ (pkgconfPkgs."sane-backends") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       };

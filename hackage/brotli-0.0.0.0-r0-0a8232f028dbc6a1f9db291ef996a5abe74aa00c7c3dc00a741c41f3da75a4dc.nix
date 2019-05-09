@@ -17,7 +17,10 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.transformers) ];
-        pkgconfig = [ (pkgconfPkgs.libbrotlienc) (pkgconfPkgs.libbrotlidec) ];
+        pkgconfig = [
+          (pkgconfPkgs."libbrotlienc")
+          (pkgconfPkgs."libbrotlidec")
+          ];
         };
       tests = {
         "brotli-tests" = {

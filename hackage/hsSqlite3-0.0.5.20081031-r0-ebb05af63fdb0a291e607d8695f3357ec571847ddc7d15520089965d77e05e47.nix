@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.sqlite3) ];
+        pkgconfig = [ (pkgconfPkgs."sqlite3") ];
         };
       exes = { "5minutes" = {}; };
       };

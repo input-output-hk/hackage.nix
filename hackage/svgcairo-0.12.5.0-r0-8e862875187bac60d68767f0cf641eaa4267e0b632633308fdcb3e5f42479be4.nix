@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.glib) (hsPkgs.cairo) ];
-        pkgconfig = [ (pkgconfPkgs.librsvg-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."librsvg-2.0") ];
         };
       };
     }

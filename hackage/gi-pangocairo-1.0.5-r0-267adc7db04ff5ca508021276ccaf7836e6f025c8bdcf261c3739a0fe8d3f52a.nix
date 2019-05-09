@@ -28,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.pangocairo) ];
+        pkgconfig = [ (pkgconfPkgs."pangocairo") ];
         };
       };
     }

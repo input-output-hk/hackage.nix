@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.xau) ];
+        pkgconfig = [ (pkgconfPkgs."xau") ];
         };
       };
     }

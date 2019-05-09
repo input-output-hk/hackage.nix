@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.unix) ];
-        pkgconfig = [ (pkgconfPkgs.libudev) ];
+        pkgconfig = [ (pkgconfPkgs."libudev") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       exes = {

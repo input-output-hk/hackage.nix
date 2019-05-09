@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.gtk) (hsPkgs.glib) (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.gtk+-2.0) (pkgconfPkgs.x11) ];
+        pkgconfig = [ (pkgconfPkgs."gtk+-2.0") (pkgconfPkgs."x11") ];
         };
       };
     }

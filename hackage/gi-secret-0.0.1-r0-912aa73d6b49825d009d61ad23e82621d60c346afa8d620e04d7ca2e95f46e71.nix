@@ -32,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.libsecret-1) ];
+        pkgconfig = [ (pkgconfPkgs."libsecret-1") ];
         };
       };
     }

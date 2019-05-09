@@ -32,7 +32,7 @@
           (hsPkgs.cairo)
           ] ++ (pkgs.lib).optional (flags.have-gio) (hsPkgs.gio);
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
-        pkgconfig = [ (pkgconfPkgs.gthread-2.0) (pkgconfPkgs.gtk+-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."gthread-2.0") (pkgconfPkgs."gtk+-3.0") ];
         };
       exes = {
         "gtk2hs-demo-actionMenu" = {

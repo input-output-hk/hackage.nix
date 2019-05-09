@@ -22,8 +22,8 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         pkgconfig = if flags.specificpkgconfig
-          then [ (pkgconfPkgs.llvm-3.5) ]
-          else [ (pkgconfPkgs.llvm) ];
+          then [ (pkgconfPkgs."llvm-3.5") ]
+          else [ (pkgconfPkgs."llvm") ];
         };
       exes = {
         "llvm-diff-ffi" = {

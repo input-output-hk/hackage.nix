@@ -24,7 +24,7 @@
           (hsPkgs.glib)
           (hsPkgs.gtk)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtksourceview-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtksourceview-2.0") ];
         };
       };
     }

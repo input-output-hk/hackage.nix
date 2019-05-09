@@ -31,7 +31,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.gstreamer-pbutils-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."gstreamer-pbutils-1.0") ];
         };
       };
     }

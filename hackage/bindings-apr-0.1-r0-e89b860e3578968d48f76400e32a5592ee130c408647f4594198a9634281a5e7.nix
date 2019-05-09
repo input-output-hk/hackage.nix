@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
-        pkgconfig = [ (pkgconfPkgs.apr-1) ];
+        pkgconfig = [ (pkgconfPkgs."apr-1") ];
         };
       };
     }

@@ -22,7 +22,7 @@
           (hsPkgs.transformers)
           (hsPkgs.transformers-base)
           ];
-        pkgconfig = [ (pkgconfPkgs.blkid) ];
+        pkgconfig = [ (pkgconfPkgs."blkid") ];
         };
       };
     }

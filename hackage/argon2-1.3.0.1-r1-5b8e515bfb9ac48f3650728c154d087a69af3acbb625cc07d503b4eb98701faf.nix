@@ -27,7 +27,7 @@
           (hsPkgs.text-short)
           ];
         libs = (pkgs.lib).optionals (flags.use-system-library) ((pkgs.lib).optional (!flags.pkg-config) (pkgs."argon2"));
-        pkgconfig = (pkgs.lib).optionals (flags.use-system-library) ((pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs.libargon2));
+        pkgconfig = (pkgs.lib).optionals (flags.use-system-library) ((pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs."libargon2"));
         };
       tests = {
         "tests" = {

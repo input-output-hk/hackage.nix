@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.sdl2) ];
         libs = [ (pkgs."SDL2") ];
-        pkgconfig = [ (pkgconfPkgs.sdl2) (pkgconfPkgs.SDL2_image) ];
+        pkgconfig = [ (pkgconfPkgs."sdl2") (pkgconfPkgs."SDL2_image") ];
         };
       };
     }

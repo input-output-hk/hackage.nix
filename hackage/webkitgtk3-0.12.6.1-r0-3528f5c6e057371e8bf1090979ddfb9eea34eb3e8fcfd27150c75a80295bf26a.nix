@@ -24,7 +24,7 @@
           (hsPkgs.mtl)
           (hsPkgs.gtk3)
           ];
-        pkgconfig = [ (pkgconfPkgs.webkitgtk-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkitgtk-3.0") ];
         };
       };
     }

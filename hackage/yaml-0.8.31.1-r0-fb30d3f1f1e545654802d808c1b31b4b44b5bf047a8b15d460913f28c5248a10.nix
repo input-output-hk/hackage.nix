@@ -39,7 +39,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.template-haskell)
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0.2") (hsPkgs.unsupported-ghc-version);
-        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs.yaml-0.1);
+        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1");
         };
       exes = {
         "yaml2json" = {

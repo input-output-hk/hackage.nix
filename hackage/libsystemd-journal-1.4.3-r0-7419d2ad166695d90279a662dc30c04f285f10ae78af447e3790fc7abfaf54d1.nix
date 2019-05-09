@@ -32,7 +32,7 @@
           (hsPkgs.uniplate)
           (hsPkgs.semigroups)
           ];
-        pkgconfig = [ (pkgconfPkgs.libsystemd) ];
+        pkgconfig = [ (pkgconfPkgs."libsystemd") ];
         };
       };
     }

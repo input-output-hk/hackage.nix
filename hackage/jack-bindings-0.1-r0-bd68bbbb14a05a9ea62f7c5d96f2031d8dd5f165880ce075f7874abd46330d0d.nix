@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.mtl) ];
-        pkgconfig = [ (pkgconfPkgs.jack) ];
+        pkgconfig = [ (pkgconfPkgs."jack") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

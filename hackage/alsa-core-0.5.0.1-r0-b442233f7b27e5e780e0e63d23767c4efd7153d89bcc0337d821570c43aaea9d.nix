@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.extensible-exceptions) (hsPkgs.base) ];
         libs = (pkgs.lib).optional (!flags.pkgconfig) (pkgs."asound");
-        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs.alsa);
+        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."alsa");
         };
       };
     }

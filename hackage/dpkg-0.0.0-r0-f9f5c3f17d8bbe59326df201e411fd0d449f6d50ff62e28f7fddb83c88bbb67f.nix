@@ -17,13 +17,13 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) (hsPkgs.monad-loops) ];
-        pkgconfig = [ (pkgconfPkgs.libdpkg) ];
+        pkgconfig = [ (pkgconfPkgs."libdpkg") ];
         };
       tests = {
         "test" = {
           depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.dpkg) ];
           libs = [ (pkgs."dpkg") ];
-          pkgconfig = [ (pkgconfPkgs.libdpkg) ];
+          pkgconfig = [ (pkgconfPkgs."libdpkg") ];
           };
         };
       };

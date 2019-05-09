@@ -43,7 +43,7 @@
             (hsPkgs.yesod-json)
             (hsPkgs.yesod-static)
             ] ++ (pkgs.lib).optionals (flags.production) ((pkgs.lib).optional (!flags.web) (hsPkgs.wai-handler-webkit));
-          pkgconfig = (pkgs.lib).optionals (flags.production) ((pkgs.lib).optional (!flags.web) (pkgconfPkgs.QtWebKit));
+          pkgconfig = (pkgs.lib).optionals (flags.production) ((pkgs.lib).optional (!flags.web) (pkgconfPkgs."QtWebKit"));
           };
         "prof2json" = {
           depends = [

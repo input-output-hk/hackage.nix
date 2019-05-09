@@ -30,7 +30,7 @@
           (pkgs."GLEW")
           ];
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenGL");
-        pkgconfig = (pkgs.lib).optional (!system.isOsx) (pkgconfPkgs.glew);
+        pkgconfig = (pkgs.lib).optional (!system.isOsx) (pkgconfPkgs."glew");
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {

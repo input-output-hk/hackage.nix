@@ -32,7 +32,7 @@
             (hsPkgs.random)
             (hsPkgs.global-variables)
             ];
-          pkgconfig = [ (pkgconfPkgs.libsoup-gnome-2.4) ];
+          pkgconfig = [ (pkgconfPkgs."libsoup-gnome-2.4") ];
           };
         };
       };

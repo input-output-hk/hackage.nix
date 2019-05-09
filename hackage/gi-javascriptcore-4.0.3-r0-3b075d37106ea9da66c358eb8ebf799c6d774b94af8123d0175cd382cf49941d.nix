@@ -25,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.javascriptcoregtk-4.0) ];
+        pkgconfig = [ (pkgconfPkgs."javascriptcoregtk-4.0") ];
         };
       };
     }

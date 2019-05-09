@@ -33,7 +33,10 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.dbusmenu-gtk3-0.4) (pkgconfPkgs.gtk+-3.0) ];
+        pkgconfig = [
+          (pkgconfPkgs."dbusmenu-gtk3-0.4")
+          (pkgconfPkgs."gtk+-3.0")
+          ];
         };
       };
     }

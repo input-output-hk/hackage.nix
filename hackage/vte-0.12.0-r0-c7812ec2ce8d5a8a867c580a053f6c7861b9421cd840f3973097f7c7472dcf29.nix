@@ -26,7 +26,7 @@
           (hsPkgs.pango)
           (hsPkgs.gtk)
           ];
-        pkgconfig = [ (pkgconfPkgs.vte) ];
+        pkgconfig = [ (pkgconfPkgs."vte") ];
         };
       };
     }

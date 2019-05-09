@@ -24,7 +24,7 @@
           (hsPkgs.monad-control)
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."groonga");
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.groonga);
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."groonga");
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       };

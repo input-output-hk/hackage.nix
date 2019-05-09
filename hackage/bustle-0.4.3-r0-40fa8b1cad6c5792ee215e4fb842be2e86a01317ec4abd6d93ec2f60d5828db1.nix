@@ -35,7 +35,7 @@
             (hsPkgs.text)
             (hsPkgs.time)
             ];
-          pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."glib-2.0") ];
           };
         "test-monitor" = {
           depends = [
@@ -54,7 +54,7 @@
             (hsPkgs.pcap)
             (hsPkgs.text)
             ];
-          pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."glib-2.0") ];
           };
         "dump-messages" = {
           depends = [

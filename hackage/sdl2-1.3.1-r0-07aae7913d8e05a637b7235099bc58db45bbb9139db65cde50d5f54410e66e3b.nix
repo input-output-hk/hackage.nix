@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.transformers) ];
         libs = [ (pkgs."SDL2") ];
-        pkgconfig = [ (pkgconfPkgs.sdl2) ];
+        pkgconfig = [ (pkgconfPkgs."sdl2") ];
         };
       };
     }

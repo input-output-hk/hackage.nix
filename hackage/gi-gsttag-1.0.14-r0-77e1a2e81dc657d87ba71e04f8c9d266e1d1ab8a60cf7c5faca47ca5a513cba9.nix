@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.gstreamer-tag-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."gstreamer-tag-1.0") ];
         };
       };
     }

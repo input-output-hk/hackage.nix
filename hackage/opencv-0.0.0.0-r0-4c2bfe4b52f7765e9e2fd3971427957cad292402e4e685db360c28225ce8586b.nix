@@ -37,7 +37,7 @@
           (hsPkgs.vector)
           ];
         libs = [ (pkgs."stdc++") ];
-        pkgconfig = [ (pkgconfPkgs.opencv) ];
+        pkgconfig = [ (pkgconfPkgs."opencv") ];
         };
       tests = {
         "doc-images-opencv" = {

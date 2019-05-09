@@ -31,7 +31,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.libnotify) ];
+        pkgconfig = [ (pkgconfPkgs."libnotify") ];
         };
       };
     }

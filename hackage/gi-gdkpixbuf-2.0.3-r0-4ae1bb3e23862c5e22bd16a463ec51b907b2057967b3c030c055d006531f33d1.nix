@@ -28,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gdk-pixbuf-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gdk-pixbuf-2.0") ];
         };
       };
     }

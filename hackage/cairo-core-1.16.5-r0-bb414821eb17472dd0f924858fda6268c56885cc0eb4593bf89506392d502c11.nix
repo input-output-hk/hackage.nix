@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.monad-extras) (hsPkgs.transformers) ];
-        pkgconfig = [ (pkgconfPkgs.cairo) ];
+        pkgconfig = [ (pkgconfPkgs."cairo") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

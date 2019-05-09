@@ -26,7 +26,7 @@
           (hsPkgs.vector)
           ] ++ (pkgs.lib).optional (!flags.no-linear) (hsPkgs.linear);
         libs = [ (pkgs."SDL2") ];
-        pkgconfig = [ (pkgconfPkgs.sdl2) ];
+        pkgconfig = [ (pkgconfPkgs."sdl2") ];
         };
       exes = {
         "lazyfoo-lesson-01" = {

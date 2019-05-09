@@ -40,7 +40,7 @@
             (pkgs."Ws2_32")
             ]
           else (pkgs.lib).optional (flags.no-pkg-config) (pkgs."uv"));
-        pkgconfig = (pkgs.lib).optionals (!flags.integer-simple) ((pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!flags.no-pkg-config) (pkgconfPkgs.libuv)));
+        pkgconfig = (pkgs.lib).optionals (!flags.integer-simple) ((pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!flags.no-pkg-config) (pkgconfPkgs."libuv")));
         build-tools = (pkgs.lib).optionals (!flags.integer-simple) [
           ((hsPkgs.buildPackages).hsc2hs)
           ((hsPkgs.buildPackages).hspec-discover)

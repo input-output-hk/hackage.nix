@@ -23,7 +23,7 @@
           (hsPkgs.dlist)
           (hsPkgs.filepath)
           ];
-        pkgconfig = [ (pkgconfPkgs.libarchive) ];
+        pkgconfig = [ (pkgconfPkgs."libarchive") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

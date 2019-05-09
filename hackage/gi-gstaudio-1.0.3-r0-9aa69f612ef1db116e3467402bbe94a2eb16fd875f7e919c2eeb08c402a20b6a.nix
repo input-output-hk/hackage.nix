@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gstreamer-audio-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."gstreamer-audio-1.0") ];
         };
       };
     }

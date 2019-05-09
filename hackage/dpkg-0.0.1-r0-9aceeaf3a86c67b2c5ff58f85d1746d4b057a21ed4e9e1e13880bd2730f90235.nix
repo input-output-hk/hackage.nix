@@ -22,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.monad-loops)
           ];
-        pkgconfig = [ (pkgconfPkgs.libdpkg) ];
+        pkgconfig = [ (pkgconfPkgs."libdpkg") ];
         };
       tests = {
         "test" = {
@@ -33,7 +33,7 @@
             (hsPkgs.bytestring)
             ];
           libs = [ (pkgs."dpkg") ];
-          pkgconfig = [ (pkgconfPkgs.libdpkg) ];
+          pkgconfig = [ (pkgconfPkgs."libdpkg") ];
           };
         };
       };

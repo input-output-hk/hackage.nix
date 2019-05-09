@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."glib-2.0") ];
         };
       };
     }

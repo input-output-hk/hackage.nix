@@ -21,7 +21,7 @@
           (hsPkgs.bindings-DSL)
           (hsPkgs.bindings-audiofile)
           ];
-        pkgconfig = [ (pkgconfPkgs.esound) ];
+        pkgconfig = [ (pkgconfPkgs."esound") ];
         };
       };
     }

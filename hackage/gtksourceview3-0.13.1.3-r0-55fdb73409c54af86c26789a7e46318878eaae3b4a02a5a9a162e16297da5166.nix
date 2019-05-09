@@ -25,7 +25,7 @@
           (hsPkgs.glib)
           (hsPkgs.gtk3)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtksourceview-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtksourceview-3.0") ];
         };
       };
     }

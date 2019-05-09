@@ -28,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.libgit2-glib-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."libgit2-glib-1.0") ];
         };
       };
     }

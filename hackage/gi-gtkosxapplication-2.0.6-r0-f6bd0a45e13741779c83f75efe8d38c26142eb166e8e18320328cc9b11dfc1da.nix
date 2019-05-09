@@ -31,7 +31,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtk-mac-integration-gtk3) ];
+        pkgconfig = [ (pkgconfPkgs."gtk-mac-integration-gtk3") ];
         };
       };
     }

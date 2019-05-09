@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
-        pkgconfig = [ (pkgconfPkgs.audiofile) ];
+        pkgconfig = [ (pkgconfPkgs."audiofile") ];
         };
       };
     }

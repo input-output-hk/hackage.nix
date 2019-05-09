@@ -23,7 +23,7 @@
           (hsPkgs.network)
           (hsPkgs.text)
           ];
-        pkgconfig = [ (pkgconfPkgs.hyperestraier) (pkgconfPkgs.qdbm) ];
+        pkgconfig = [ (pkgconfPkgs."hyperestraier") (pkgconfPkgs."qdbm") ];
         };
       };
     }

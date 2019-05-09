@@ -29,7 +29,7 @@
           (hsPkgs.vector)
           (hsPkgs.vector-algorithms)
           ];
-        pkgconfig = [ (pkgconfPkgs.arpack) ];
+        pkgconfig = [ (pkgconfPkgs."arpack") ];
         };
       tests = {
         "tests" = {

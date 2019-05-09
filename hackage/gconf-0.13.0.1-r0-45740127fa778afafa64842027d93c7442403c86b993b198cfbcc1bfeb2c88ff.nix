@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.glib) (hsPkgs.text) ];
-        pkgconfig = [ (pkgconfPkgs.gconf-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gconf-2.0") ];
         };
       };
     }

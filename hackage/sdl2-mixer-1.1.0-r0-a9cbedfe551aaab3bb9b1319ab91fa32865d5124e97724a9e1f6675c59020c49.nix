@@ -27,7 +27,7 @@
           (hsPkgs.vector)
           ];
         libs = [ (pkgs."SDL2_mixer") ];
-        pkgconfig = [ (pkgconfPkgs.SDL2_mixer) ];
+        pkgconfig = [ (pkgconfPkgs."SDL2_mixer") ];
         };
       exes = {
         "sdl2-mixer-basic" = {

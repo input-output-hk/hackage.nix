@@ -31,7 +31,7 @@
           (hsPkgs.MissingH)
           (hsPkgs.optparse-applicative)
           ];
-        pkgconfig = [ (pkgconfPkgs.libqrencode) ];
+        pkgconfig = [ (pkgconfPkgs."libqrencode") ];
         };
       tests = {
         "test-lib" = {

@@ -28,13 +28,13 @@
           (hsPkgs.tk)
           ];
         pkgconfig = [
-          (pkgconfPkgs.poppler-glib)
-          (pkgconfPkgs.gobject-2.0)
-          (pkgconfPkgs.glib-2.0)
-          (pkgconfPkgs.cairo)
-          (pkgconfPkgs.gdk-2.0)
-          (pkgconfPkgs.gdk-pixbuf-2.0)
-          (pkgconfPkgs.pango)
+          (pkgconfPkgs."poppler-glib")
+          (pkgconfPkgs."gobject-2.0")
+          (pkgconfPkgs."glib-2.0")
+          (pkgconfPkgs."cairo")
+          (pkgconfPkgs."gdk-2.0")
+          (pkgconfPkgs."gdk-pixbuf-2.0")
+          (pkgconfPkgs."pango")
           ];
         };
       };

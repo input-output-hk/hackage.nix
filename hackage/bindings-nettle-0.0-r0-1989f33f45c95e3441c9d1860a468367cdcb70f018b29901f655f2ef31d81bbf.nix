@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.nettle) ];
+        pkgconfig = [ (pkgconfPkgs."nettle") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       };

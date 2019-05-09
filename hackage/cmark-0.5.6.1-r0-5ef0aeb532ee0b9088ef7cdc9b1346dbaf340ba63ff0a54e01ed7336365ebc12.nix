@@ -21,7 +21,7 @@
           (hsPkgs.text)
           (hsPkgs.bytestring)
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim);
-        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs.libcmark);
+        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."libcmark");
         };
       tests = {
         "test-cmark" = {

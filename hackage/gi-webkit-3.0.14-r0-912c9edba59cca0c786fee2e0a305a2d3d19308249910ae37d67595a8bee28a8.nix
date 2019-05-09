@@ -35,7 +35,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.webkitgtk-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkitgtk-3.0") ];
         };
       };
     }

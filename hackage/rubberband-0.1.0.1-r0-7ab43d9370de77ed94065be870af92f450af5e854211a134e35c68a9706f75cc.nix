@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.vector) ];
         libs = [ (pkgs."rubberband") ];
-        pkgconfig = [ (pkgconfPkgs.rubberband) ];
+        pkgconfig = [ (pkgconfPkgs."rubberband") ];
         };
       };
     }

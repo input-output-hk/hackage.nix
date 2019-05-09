@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.enchant) ];
+        pkgconfig = [ (pkgconfPkgs."enchant") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {

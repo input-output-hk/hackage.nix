@@ -32,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (flags.enable-overloading) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.vte-2.91) ];
+        pkgconfig = [ (pkgconfPkgs."vte-2.91") ];
         };
       };
     }

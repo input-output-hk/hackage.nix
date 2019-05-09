@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.transformers) ];
-        pkgconfig = [ (pkgconfPkgs.hidapi-libusb) ];
+        pkgconfig = [ (pkgconfPkgs."hidapi-libusb") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

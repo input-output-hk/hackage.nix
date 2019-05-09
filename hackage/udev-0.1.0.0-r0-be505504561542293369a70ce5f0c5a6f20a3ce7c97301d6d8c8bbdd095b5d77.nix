@@ -22,7 +22,7 @@
           (hsPkgs.unix)
           (hsPkgs.posix-paths)
           ];
-        pkgconfig = [ (pkgconfPkgs.libudev) ];
+        pkgconfig = [ (pkgconfPkgs."libudev") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       exes = {

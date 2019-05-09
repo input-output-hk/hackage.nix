@@ -52,7 +52,7 @@
             (hsPkgs.gtk)
             (hsPkgs.X11)
             ];
-          pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."gtk+-2.0") ];
           };
         "bluetilemockwin" = {
           depends = [ (hsPkgs.base) (hsPkgs.base) (hsPkgs.gtk) ];

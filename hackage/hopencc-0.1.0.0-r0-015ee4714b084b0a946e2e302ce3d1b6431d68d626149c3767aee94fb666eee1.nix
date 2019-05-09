@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.utf8-string) (hsPkgs.bytestring) ];
-        pkgconfig = [ (pkgconfPkgs.opencc) ];
+        pkgconfig = [ (pkgconfPkgs."opencc") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       tests = {

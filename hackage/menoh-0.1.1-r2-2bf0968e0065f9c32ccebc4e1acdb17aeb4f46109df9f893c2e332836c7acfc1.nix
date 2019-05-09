@@ -25,7 +25,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           ];
-        pkgconfig = [ (pkgconfPkgs.menoh) ];
+        pkgconfig = [ (pkgconfPkgs."menoh") ];
         };
       exes = {
         "vgg16_example" = {

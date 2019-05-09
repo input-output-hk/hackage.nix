@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."gsasl") ];
-        pkgconfig = [ (pkgconfPkgs.libgsasl) ];
+        pkgconfig = [ (pkgconfPkgs."libgsasl") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

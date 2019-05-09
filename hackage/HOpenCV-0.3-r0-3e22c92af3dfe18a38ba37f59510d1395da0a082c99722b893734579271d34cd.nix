@@ -21,12 +21,12 @@
           (hsPkgs.allocated-processor)
           (hsPkgs.vector-space)
           ];
-        pkgconfig = [ (pkgconfPkgs.opencv) ];
+        pkgconfig = [ (pkgconfPkgs."opencv") ];
         };
       exes = {
         "cannyVideo" = {
           depends = [ (hsPkgs.base) ];
-          pkgconfig = [ (pkgconfPkgs.opencv) ];
+          pkgconfig = [ (pkgconfPkgs."opencv") ];
           };
         };
       };

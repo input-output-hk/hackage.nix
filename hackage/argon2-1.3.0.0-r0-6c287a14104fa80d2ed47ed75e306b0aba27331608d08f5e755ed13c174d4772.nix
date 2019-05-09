@@ -22,7 +22,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.text-short)
           ];
-        pkgconfig = (pkgs.lib).optional (flags.use-system-library) (pkgconfPkgs.argon2);
+        pkgconfig = (pkgs.lib).optional (flags.use-system-library) (pkgconfPkgs."argon2");
         };
       tests = {
         "tests" = {

@@ -82,7 +82,7 @@
           (hsPkgs.HTTP)
           ]) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ (pkgs.lib).optional (flags.hashed-storage-diff) (hsPkgs.lcs)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
         libs = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (!flags.pkgconfig) (pkgs."curl"));
-        pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs.libcurl));
+        pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."libcurl"));
         };
       exes = {
         "darcs" = {

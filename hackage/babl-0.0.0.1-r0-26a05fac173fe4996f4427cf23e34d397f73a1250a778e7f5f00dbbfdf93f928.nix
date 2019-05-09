@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."babl-0.1") ];
-        pkgconfig = [ (pkgconfPkgs.babl) ];
+        pkgconfig = [ (pkgconfPkgs."babl") ];
         };
       };
     }

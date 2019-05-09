@@ -33,7 +33,7 @@
           (pkgs."casadi")
           (pkgs."dl")
           ];
-        pkgconfig = [ (pkgconfPkgs.ipopt) ];
+        pkgconfig = [ (pkgconfPkgs."ipopt") ];
         };
       };
     }

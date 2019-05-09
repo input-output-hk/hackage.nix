@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.glib) (hsPkgs.gtk) ];
-        pkgconfig = [ (pkgconfPkgs.libglade-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."libglade-2.0") ];
         };
       };
     }

@@ -22,7 +22,7 @@
           (hsPkgs.Cabal)
           (hsPkgs.vector)
           ];
-        pkgconfig = [ (pkgconfPkgs.opencv) ];
+        pkgconfig = [ (pkgconfPkgs."opencv") ];
         };
       };
     }

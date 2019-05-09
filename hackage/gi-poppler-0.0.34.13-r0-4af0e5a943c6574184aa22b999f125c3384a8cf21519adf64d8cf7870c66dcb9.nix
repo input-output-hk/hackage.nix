@@ -28,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.poppler-glib) ];
+        pkgconfig = [ (pkgconfPkgs."poppler-glib") ];
         };
       };
     }

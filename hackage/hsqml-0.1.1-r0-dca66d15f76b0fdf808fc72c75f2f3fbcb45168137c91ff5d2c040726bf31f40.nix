@@ -31,7 +31,7 @@
           (pkgs."QtDeclarative4")
           (pkgs."stdc++")
           ];
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.QtDeclarative);
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."QtDeclarative");
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       tests = {

@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.llvm) ];
+        pkgconfig = [ (pkgconfPkgs."llvm") ];
         };
       exes = {
         "llvm-diff-ffi" = {

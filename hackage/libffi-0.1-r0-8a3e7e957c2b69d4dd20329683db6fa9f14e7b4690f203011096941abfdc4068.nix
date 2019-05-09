@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = [ (pkgs."ffi") ];
-        pkgconfig = [ (pkgconfPkgs.libffi) ];
+        pkgconfig = [ (pkgconfPkgs."libffi") ];
         };
       };
     }

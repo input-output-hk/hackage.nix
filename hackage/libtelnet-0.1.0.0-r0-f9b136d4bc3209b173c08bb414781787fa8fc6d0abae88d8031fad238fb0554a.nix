@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
-        pkgconfig = [ (pkgconfPkgs.libtelnet) ];
+        pkgconfig = [ (pkgconfPkgs."libtelnet") ];
         };
       exes = {
         "example" = {

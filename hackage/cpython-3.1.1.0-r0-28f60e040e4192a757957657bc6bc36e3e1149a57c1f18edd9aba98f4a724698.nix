@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.text) ];
-        pkgconfig = [ (pkgconfPkgs.python-3.1) ];
+        pkgconfig = [ (pkgconfPkgs."python-3.1") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

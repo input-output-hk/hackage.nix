@@ -32,7 +32,7 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.either)
           ];
-        pkgconfig = [ (pkgconfPkgs.libqrencode) ];
+        pkgconfig = [ (pkgconfPkgs."libqrencode") ];
         };
       tests = {
         "test-lib" = {

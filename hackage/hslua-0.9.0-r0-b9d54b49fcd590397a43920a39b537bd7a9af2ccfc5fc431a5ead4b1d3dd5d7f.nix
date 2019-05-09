@@ -38,12 +38,12 @@
           then (pkgs.lib).optional (!flags.use-pkgconfig) (pkgs."luajit-5.1")
           else (pkgs.lib).optional (!flags.use-pkgconfig) (pkgs."lua"));
         pkgconfig = (pkgs.lib).optionals (flags.system-lua || flags.luajit || flags.lua501 || flags.lua502) (if flags.luajit
-          then (pkgs.lib).optional (flags.use-pkgconfig) (pkgconfPkgs.luajit)
+          then (pkgs.lib).optional (flags.use-pkgconfig) (pkgconfPkgs."luajit")
           else (pkgs.lib).optionals (flags.use-pkgconfig) (if flags.lua501
-            then [ (pkgconfPkgs.lua5.1) ]
+            then [ (pkgconfPkgs."lua5.1") ]
             else if flags.lua502
-              then [ (pkgconfPkgs.lua5.2) ]
-              else [ (pkgconfPkgs.lua5.3) ]));
+              then [ (pkgconfPkgs."lua5.2") ]
+              else [ (pkgconfPkgs."lua5.3") ]));
         };
       tests = {
         "test-hslua" = {

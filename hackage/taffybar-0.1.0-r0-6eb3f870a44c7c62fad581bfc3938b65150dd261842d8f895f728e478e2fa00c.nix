@@ -36,12 +36,12 @@
           (hsPkgs.xmonad-contrib)
           (hsPkgs.xmonad)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtk+-2.0") ];
         };
       exes = {
         "taffybar" = {
           depends = [ (hsPkgs.base) (hsPkgs.dyre) (hsPkgs.gtk) ];
-          pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."gtk+-2.0") ];
           };
         };
       };

@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
-        pkgconfig = [ (pkgconfPkgs.libcddb) ];
+        pkgconfig = [ (pkgconfPkgs."libcddb") ];
         };
       };
     }

@@ -36,11 +36,11 @@
           (hsPkgs.gi-gtk-hs)
           (hsPkgs.haskell-gi-overloading)
           ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.ghc);
-        pkgconfig = ([ (pkgconfPkgs.gdk-3.0) ] ++ (if flags.gtk-318
-          then [ (pkgconfPkgs.gtk+-3.0) ]
-          else [ (pkgconfPkgs.gdk-3.0) ])) ++ (if flags.gtk-320
-          then [ (pkgconfPkgs.gtk+-3.0) ]
-          else [ (pkgconfPkgs.gdk-3.0) ]);
+        pkgconfig = ([ (pkgconfPkgs."gdk-3.0") ] ++ (if flags.gtk-318
+          then [ (pkgconfPkgs."gtk+-3.0") ]
+          else [ (pkgconfPkgs."gdk-3.0") ])) ++ (if flags.gtk-320
+          then [ (pkgconfPkgs."gtk+-3.0") ]
+          else [ (pkgconfPkgs."gdk-3.0") ]);
         };
       };
     }

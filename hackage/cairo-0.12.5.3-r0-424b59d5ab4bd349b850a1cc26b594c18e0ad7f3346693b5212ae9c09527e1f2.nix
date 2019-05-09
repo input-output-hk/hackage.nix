@@ -24,8 +24,8 @@
           (hsPkgs.array)
           ];
         pkgconfig = (([
-          (pkgconfPkgs.cairo)
-          ] ++ (pkgs.lib).optional (flags.cairo_pdf) (pkgconfPkgs.cairo-pdf)) ++ (pkgs.lib).optional (flags.cairo_ps) (pkgconfPkgs.cairo-ps)) ++ (pkgs.lib).optional (flags.cairo_svg) (pkgconfPkgs.cairo-svg);
+          (pkgconfPkgs."cairo")
+          ] ++ (pkgs.lib).optional (flags.cairo_pdf) (pkgconfPkgs."cairo-pdf")) ++ (pkgs.lib).optional (flags.cairo_ps) (pkgconfPkgs."cairo-ps")) ++ (pkgs.lib).optional (flags.cairo_svg) (pkgconfPkgs."cairo-svg");
         };
       };
     }

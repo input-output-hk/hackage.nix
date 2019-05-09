@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
         libs = [ (pkgs."svm") ];
-        pkgconfig = [ (pkgconfPkgs.libsvm) ];
+        pkgconfig = [ (pkgconfPkgs."libsvm") ];
         };
       };
     }

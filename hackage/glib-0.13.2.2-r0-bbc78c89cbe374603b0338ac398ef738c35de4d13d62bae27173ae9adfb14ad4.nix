@@ -23,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.containers)
           ];
-        pkgconfig = [ (pkgconfPkgs.glib-2.0) (pkgconfPkgs.gobject-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."glib-2.0") (pkgconfPkgs."gobject-2.0") ];
         };
       };
     }

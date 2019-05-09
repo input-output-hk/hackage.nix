@@ -21,7 +21,7 @@
           (hsPkgs.proto-lens)
           (hsPkgs.proto-lens-protoc)
           ];
-        pkgconfig = [ (pkgconfPkgs.protobuf) ];
+        pkgconfig = [ (pkgconfPkgs."protobuf") ];
         };
       };
     }

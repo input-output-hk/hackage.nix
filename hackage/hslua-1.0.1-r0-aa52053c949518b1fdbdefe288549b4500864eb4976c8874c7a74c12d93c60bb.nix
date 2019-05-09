@@ -33,7 +33,7 @@
           (hsPkgs.text)
           ];
         libs = (pkgs.lib).optionals (flags.system-lua || flags.pkg-config) ((pkgs.lib).optional (!flags.pkg-config) (pkgs."lua"));
-        pkgconfig = (pkgs.lib).optionals (flags.system-lua || flags.pkg-config) ((pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs.lua5.3));
+        pkgconfig = (pkgs.lib).optionals (flags.system-lua || flags.pkg-config) ((pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs."lua5.3"));
         };
       tests = {
         "test-hslua" = {

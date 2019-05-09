@@ -25,15 +25,15 @@
         depends = [ (hsPkgs.enumset) (hsPkgs.base) ];
         pkgconfig = if flags.llvm304
           then if flags.specificpkgconfig
-            then [ (pkgconfPkgs.llvm-3.4) ]
-            else [ (pkgconfPkgs.llvm) ]
+            then [ (pkgconfPkgs."llvm-3.4") ]
+            else [ (pkgconfPkgs."llvm") ]
           else if flags.llvm305
             then if flags.specificpkgconfig
-              then [ (pkgconfPkgs.llvm-3.5) ]
-              else [ (pkgconfPkgs.llvm) ]
+              then [ (pkgconfPkgs."llvm-3.5") ]
+              else [ (pkgconfPkgs."llvm") ]
             else if flags.specificpkgconfig
-              then [ (pkgconfPkgs.llvm-3.6) ]
-              else [ (pkgconfPkgs.llvm) ];
+              then [ (pkgconfPkgs."llvm-3.6") ]
+              else [ (pkgconfPkgs."llvm") ];
         };
       exes = {
         "llvm-ffi-example" = {

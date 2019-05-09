@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.OpenGL) ];
-        pkgconfig = [ (pkgconfPkgs.glew) (pkgconfPkgs.egl) ];
+        pkgconfig = [ (pkgconfPkgs."glew") (pkgconfPkgs."egl") ];
         };
       };
     }

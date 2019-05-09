@@ -30,7 +30,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gio-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gio-2.0") ];
         };
       };
     }

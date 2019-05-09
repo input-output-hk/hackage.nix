@@ -19,7 +19,7 @@
         depends = if flags.old_base
           then [ (hsPkgs.base) ]
           else [ (hsPkgs.base) (hsPkgs.bytestring) ];
-        pkgconfig = [ (pkgconfPkgs.libpcre) ];
+        pkgconfig = [ (pkgconfPkgs."libpcre") ];
         };
       };
     }

@@ -106,7 +106,7 @@
           (hsPkgs.leksah-server)
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
-        pkgconfig = (pkgs.lib).optional (flags.gtk-318) (pkgconfPkgs.gtk+-3.0) ++ (pkgs.lib).optional (flags.gtk-320) (pkgconfPkgs.gtk+-3.0);
+        pkgconfig = (pkgs.lib).optional (flags.gtk-318) (pkgconfPkgs."gtk+-3.0") ++ (pkgs.lib).optional (flags.gtk-320) (pkgconfPkgs."gtk+-3.0");
         };
       exes = {
         "leksah" = {

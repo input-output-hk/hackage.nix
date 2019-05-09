@@ -25,7 +25,7 @@
           (hsPkgs.glib)
           (hsPkgs.gtk)
           ];
-        pkgconfig = [ (pkgconfPkgs.gdk-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gdk-2.0") ];
         };
       };
     }

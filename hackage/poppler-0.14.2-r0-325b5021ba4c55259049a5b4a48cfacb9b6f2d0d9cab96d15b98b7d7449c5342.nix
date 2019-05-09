@@ -27,19 +27,19 @@
           ] ++ (if flags.gtk3 then [ (hsPkgs.gtk3) ] else [ (hsPkgs.gtk) ]);
         pkgconfig = if flags.gtk3
           then [
-            (pkgconfPkgs.poppler-glib)
-            (pkgconfPkgs.cairo)
-            (pkgconfPkgs.gdk-3.0)
-            (pkgconfPkgs.pango)
+            (pkgconfPkgs."poppler-glib")
+            (pkgconfPkgs."cairo")
+            (pkgconfPkgs."gdk-3.0")
+            (pkgconfPkgs."pango")
             ]
           else [
-            (pkgconfPkgs.poppler-glib)
-            (pkgconfPkgs.gobject-2.0)
-            (pkgconfPkgs.glib-2.0)
-            (pkgconfPkgs.cairo)
-            (pkgconfPkgs.gdk-2.0)
-            (pkgconfPkgs.gdk-pixbuf-2.0)
-            (pkgconfPkgs.pango)
+            (pkgconfPkgs."poppler-glib")
+            (pkgconfPkgs."gobject-2.0")
+            (pkgconfPkgs."glib-2.0")
+            (pkgconfPkgs."cairo")
+            (pkgconfPkgs."gdk-2.0")
+            (pkgconfPkgs."gdk-pixbuf-2.0")
+            (pkgconfPkgs."pango")
             ];
         };
       };

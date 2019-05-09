@@ -26,13 +26,13 @@
           (hsPkgs.glib)
           ];
         pkgconfig = [
-          (pkgconfPkgs.gstreamer-0.10)
-          (pkgconfPkgs.gstreamer-audio-0.10)
-          (pkgconfPkgs.gstreamer-base-0.10)
-          (pkgconfPkgs.gstreamer-controller-0.10)
-          (pkgconfPkgs.gstreamer-dataprotocol-0.10)
-          (pkgconfPkgs.gstreamer-net-0.10)
-          (pkgconfPkgs.gstreamer-plugins-base-0.10)
+          (pkgconfPkgs."gstreamer-0.10")
+          (pkgconfPkgs."gstreamer-audio-0.10")
+          (pkgconfPkgs."gstreamer-base-0.10")
+          (pkgconfPkgs."gstreamer-controller-0.10")
+          (pkgconfPkgs."gstreamer-dataprotocol-0.10")
+          (pkgconfPkgs."gstreamer-net-0.10")
+          (pkgconfPkgs."gstreamer-plugins-base-0.10")
           ];
         };
       };

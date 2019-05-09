@@ -38,7 +38,7 @@
             (hsPkgs.hgettext)
             (hsPkgs.setlocale)
             ];
-          pkgconfig = [ (pkgconfPkgs.glib-2.0) (pkgconfPkgs.gio-unix-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."glib-2.0") (pkgconfPkgs."gio-unix-2.0") ];
           };
         "dump-messages" = {
           depends = [

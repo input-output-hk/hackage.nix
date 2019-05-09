@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.stm) ];
         libs = (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6");
-        pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs.hunspell);
+        pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."hunspell");
         };
       tests = {
         "hunspell-hs-test" = {
@@ -29,7 +29,7 @@
             (hsPkgs.stm)
             ];
           libs = (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6");
-          pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs.hunspell);
+          pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."hunspell");
           };
         };
       benchmarks = {
@@ -42,7 +42,7 @@
             (hsPkgs.stm)
             ];
           libs = (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6");
-          pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs.hunspell);
+          pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."hunspell");
           };
         };
       };

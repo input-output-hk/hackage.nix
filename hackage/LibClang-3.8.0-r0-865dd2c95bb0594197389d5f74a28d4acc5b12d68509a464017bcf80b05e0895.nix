@@ -30,7 +30,7 @@
           (hsPkgs.vector)
           ];
         libs = [ (pkgs."clang-3.8") ];
-        pkgconfig = [ (pkgconfPkgs.ncurses) ];
+        pkgconfig = [ (pkgconfPkgs."ncurses") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

@@ -32,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.libsoup-2.4) ];
+        pkgconfig = [ (pkgconfPkgs."libsoup-2.4") ];
         };
       };
     }

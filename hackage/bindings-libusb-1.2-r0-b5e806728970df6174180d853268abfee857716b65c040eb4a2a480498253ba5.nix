@@ -21,7 +21,7 @@
           (hsPkgs.bindings-common)
           (hsPkgs.bindings-posix)
           ];
-        pkgconfig = [ (pkgconfPkgs.libusb-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."libusb-1.0") ];
         };
       };
     }

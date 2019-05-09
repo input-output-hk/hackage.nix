@@ -35,10 +35,10 @@
           (pkgs."m")
           ];
         pkgconfig = [
-          (pkgconfPkgs.GraphicsMagick)
-          (pkgconfPkgs.lcms)
-          (pkgconfPkgs.freetype2)
-          (pkgconfPkgs.libxml-2.0)
+          (pkgconfPkgs."GraphicsMagick")
+          (pkgconfPkgs."lcms")
+          (pkgconfPkgs."freetype2")
+          (pkgconfPkgs."libxml-2.0")
           ];
         };
       };

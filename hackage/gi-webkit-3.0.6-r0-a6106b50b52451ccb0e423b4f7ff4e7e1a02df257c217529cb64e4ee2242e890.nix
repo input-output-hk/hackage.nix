@@ -38,7 +38,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.webkitgtk-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkitgtk-3.0") ];
         };
       };
     }

@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
-        pkgconfig = [ (pkgconfPkgs.fluidsynth) ];
+        pkgconfig = [ (pkgconfPkgs."fluidsynth") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       };

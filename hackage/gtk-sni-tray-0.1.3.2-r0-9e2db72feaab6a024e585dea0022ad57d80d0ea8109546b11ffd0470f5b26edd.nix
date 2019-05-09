@@ -41,7 +41,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.unix)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtk+-3.0") ];
         };
       exes = {
         "gtk-sni-tray-standalone" = {

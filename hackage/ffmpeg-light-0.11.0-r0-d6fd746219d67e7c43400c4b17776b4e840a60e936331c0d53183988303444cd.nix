@@ -26,11 +26,11 @@
           (hsPkgs.JuicyPixels)
           ];
         pkgconfig = [
-          (pkgconfPkgs.libavutil)
-          (pkgconfPkgs.libavformat)
-          (pkgconfPkgs.libavcodec)
-          (pkgconfPkgs.libswscale)
-          (pkgconfPkgs.libavdevice)
+          (pkgconfPkgs."libavutil")
+          (pkgconfPkgs."libavformat")
+          (pkgconfPkgs."libavcodec")
+          (pkgconfPkgs."libswscale")
+          (pkgconfPkgs."libavdevice")
           ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };

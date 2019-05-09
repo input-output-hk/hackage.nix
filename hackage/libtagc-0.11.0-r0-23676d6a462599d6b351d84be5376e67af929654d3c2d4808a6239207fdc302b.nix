@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.glib) ];
         libs = [ (pkgs."tag_c") ];
-        pkgconfig = [ (pkgconfPkgs.taglib_c) ];
+        pkgconfig = [ (pkgconfPkgs."taglib_c") ];
         };
       };
     }

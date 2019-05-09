@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.syb) (hsPkgs.unix) ];
-        pkgconfig = [ (pkgconfPkgs.libvirt) ];
+        pkgconfig = [ (pkgconfPkgs."libvirt") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

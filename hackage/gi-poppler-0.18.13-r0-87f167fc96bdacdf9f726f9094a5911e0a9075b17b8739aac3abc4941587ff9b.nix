@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (flags.enable-overloading) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.poppler-glib) ];
+        pkgconfig = [ (pkgconfPkgs."poppler-glib") ];
         };
       };
     }

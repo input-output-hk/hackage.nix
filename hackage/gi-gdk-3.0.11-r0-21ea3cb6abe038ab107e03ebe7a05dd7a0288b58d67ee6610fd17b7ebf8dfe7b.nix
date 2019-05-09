@@ -35,7 +35,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gdk-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."gdk-3.0") ];
         };
       };
     }

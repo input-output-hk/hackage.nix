@@ -29,8 +29,8 @@
           (hsPkgs.vector-space)
           ];
         pkgconfig = [
-          (pkgconfPkgs.ipopt)
-          ] ++ (pkgs.lib).optional (flags.nlopt) (pkgconfPkgs.nlopt);
+          (pkgconfPkgs."ipopt")
+          ] ++ (pkgs.lib).optional (flags.nlopt) (pkgconfPkgs."nlopt");
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {

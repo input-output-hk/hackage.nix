@@ -48,11 +48,11 @@
           (pkgs."QtQuick")
           ]);
         pkgconfig = (pkgs.lib).optionals (!(system.isWindows && !flags.usepkgconfig)) ((pkgs.lib).optionals (!(system.isOsx && !flags.usepkgconfig)) [
-          (pkgconfPkgs.Qt5Core)
-          (pkgconfPkgs.Qt5Gui)
-          (pkgconfPkgs.Qt5Widgets)
-          (pkgconfPkgs.Qt5Qml)
-          (pkgconfPkgs.Qt5Quick)
+          (pkgconfPkgs."Qt5Core")
+          (pkgconfPkgs."Qt5Gui")
+          (pkgconfPkgs."Qt5Widgets")
+          (pkgconfPkgs."Qt5Qml")
+          (pkgconfPkgs."Qt5Quick")
           ]);
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };

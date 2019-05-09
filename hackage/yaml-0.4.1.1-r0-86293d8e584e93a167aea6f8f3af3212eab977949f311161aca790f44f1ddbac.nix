@@ -22,7 +22,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.enumerator)
           ];
-        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs.yaml-0.1);
+        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1");
         };
       exes = {
         "runtests" = {
@@ -36,7 +36,7 @@
             (hsPkgs.bytestring)
             (hsPkgs.enumerator)
             ];
-          pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs.yaml-0.1);
+          pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1");
           };
         };
       };

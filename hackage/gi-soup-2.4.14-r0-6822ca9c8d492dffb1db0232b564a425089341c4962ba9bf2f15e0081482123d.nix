@@ -28,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.libsoup-2.4) ];
+        pkgconfig = [ (pkgconfPkgs."libsoup-2.4") ];
         };
       };
     }

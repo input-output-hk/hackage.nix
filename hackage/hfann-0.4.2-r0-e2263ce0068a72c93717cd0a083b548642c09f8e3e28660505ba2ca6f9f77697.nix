@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."doublefann") (pkgs."m") ];
-        pkgconfig = [ (pkgconfPkgs.fann) ];
+        pkgconfig = [ (pkgconfPkgs."fann") ];
         };
       exes = {
         "HFANNTest" = {

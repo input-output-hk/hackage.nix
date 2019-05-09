@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.gtk-mac-integration-gtk3) ];
+        pkgconfig = [ (pkgconfPkgs."gtk-mac-integration-gtk3") ];
         };
       };
     }

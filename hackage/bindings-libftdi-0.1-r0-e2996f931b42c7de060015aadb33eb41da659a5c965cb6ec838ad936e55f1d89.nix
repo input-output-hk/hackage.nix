@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
-        pkgconfig = [ (pkgconfPkgs.libusb-1.0) (pkgconfPkgs.libftdi) ];
+        pkgconfig = [ (pkgconfPkgs."libusb-1.0") (pkgconfPkgs."libftdi") ];
         };
       };
     }

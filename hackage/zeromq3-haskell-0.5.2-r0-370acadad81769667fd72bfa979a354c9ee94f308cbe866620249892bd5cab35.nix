@@ -26,7 +26,7 @@
           (hsPkgs.MonadCatchIO-transformers)
           ];
         libs = (pkgs.lib).optional (system.isFreebsd) (pkgs."pthread");
-        pkgconfig = [ (pkgconfPkgs.libzmq) ];
+        pkgconfig = [ (pkgconfPkgs."libzmq") ];
         };
       tests = {
         "zeromq-haskell-tests" = {

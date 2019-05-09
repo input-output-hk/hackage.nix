@@ -26,11 +26,11 @@
           (hsPkgs.HUnit)
           (hsPkgs.QuickCheck)
           ];
-        pkgconfig = [ (pkgconfPkgs.libxfconf-0) ];
+        pkgconfig = [ (pkgconfPkgs."libxfconf-0") ];
         };
       exes = {
-        "tests" = { pkgconfig = [ (pkgconfPkgs.libxfconf-0) ]; };
-        "testGlib" = { pkgconfig = [ (pkgconfPkgs.libxfconf-0) ]; };
+        "tests" = { pkgconfig = [ (pkgconfPkgs."libxfconf-0") ]; };
+        "testGlib" = { pkgconfig = [ (pkgconfPkgs."libxfconf-0") ]; };
         };
       };
     }

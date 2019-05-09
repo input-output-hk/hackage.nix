@@ -26,8 +26,8 @@
           then [ (pkgs."panel") (pkgs."ncurses") (pkgs."pthread") ]
           else [ (pkgs."panelw") (pkgs."ncursesw") (pkgs."pthread") ]);
         pkgconfig = (pkgs.lib).optionals (flags.use-pkgconfig) (if flags.force-narrow-library
-          then [ (pkgconfPkgs.ncurses) (pkgconfPkgs.panel) ]
-          else [ (pkgconfPkgs.ncursesw) (pkgconfPkgs.panelw) ]);
+          then [ (pkgconfPkgs."ncurses") (pkgconfPkgs."panel") ]
+          else [ (pkgconfPkgs."ncursesw") (pkgconfPkgs."panelw") ]);
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

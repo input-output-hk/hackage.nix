@@ -23,10 +23,10 @@
           (hsPkgs.bindings-gobject)
           ];
         pkgconfig = [
-          (pkgconfPkgs.gobject-2.0)
-          (pkgconfPkgs.gthread-2.0)
-          (pkgconfPkgs.gmodule-2.0)
-          (pkgconfPkgs.gts)
+          (pkgconfPkgs."gobject-2.0")
+          (pkgconfPkgs."gthread-2.0")
+          (pkgconfPkgs."gmodule-2.0")
+          (pkgconfPkgs."gts")
           ];
         };
       };

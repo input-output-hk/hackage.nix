@@ -24,7 +24,7 @@
           (hsPkgs.glib)
           (hsPkgs.gtk3)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtk-mac-integration) ];
+        pkgconfig = [ (pkgconfPkgs."gtk-mac-integration") ];
         };
       };
     }

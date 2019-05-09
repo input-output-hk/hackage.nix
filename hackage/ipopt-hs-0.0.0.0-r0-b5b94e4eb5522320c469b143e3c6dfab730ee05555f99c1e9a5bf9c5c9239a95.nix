@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.vector) (hsPkgs.ad) ];
-        pkgconfig = [ (pkgconfPkgs.ipopt) ];
+        pkgconfig = [ (pkgconfPkgs."ipopt") ];
         };
       exes = {
         "ipopt-hs_Test1" = {

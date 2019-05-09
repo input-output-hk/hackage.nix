@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.ostree-1) ];
+        pkgconfig = [ (pkgconfPkgs."ostree-1") ];
         };
       };
     }

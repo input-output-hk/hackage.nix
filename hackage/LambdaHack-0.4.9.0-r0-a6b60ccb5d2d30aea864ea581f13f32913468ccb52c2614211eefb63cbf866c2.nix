@@ -48,8 +48,8 @@
           then [ (hsPkgs.hscurses) ]
           else if flags.vty then [ (hsPkgs.vty) ] else [ (hsPkgs.gtk) ]);
         pkgconfig = (pkgs.lib).optionals (!flags.curses) ((pkgs.lib).optionals (!flags.vty) [
-          (pkgconfPkgs.gtk+-2.0)
-          (pkgconfPkgs.x11)
+          (pkgconfPkgs."gtk+-2.0")
+          (pkgconfPkgs."x11")
           ]);
         };
       exes = {

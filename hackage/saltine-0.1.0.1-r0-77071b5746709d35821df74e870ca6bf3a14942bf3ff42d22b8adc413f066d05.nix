@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.profunctors) ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."sodium");
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.libsodium);
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libsodium");
         };
       tests = {
         "tests" = {

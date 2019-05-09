@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.X11) (hsPkgs.utf8-string) ];
-        pkgconfig = [ (pkgconfPkgs.xft) ];
+        pkgconfig = [ (pkgconfPkgs."xft") ];
         };
       };
     }

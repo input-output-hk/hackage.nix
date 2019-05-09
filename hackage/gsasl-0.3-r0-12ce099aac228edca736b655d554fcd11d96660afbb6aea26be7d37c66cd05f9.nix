@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.bytestring) ];
         libs = [ (pkgs."gsasl") ];
-        pkgconfig = [ (pkgconfPkgs.libgsasl) ];
+        pkgconfig = [ (pkgconfPkgs."libgsasl") ];
         };
       };
     }

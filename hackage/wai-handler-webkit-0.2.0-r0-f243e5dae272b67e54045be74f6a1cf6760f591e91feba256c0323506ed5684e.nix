@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.wai) (hsPkgs.warp) ];
-        pkgconfig = [ (pkgconfPkgs.QtWebKit) ];
+        pkgconfig = [ (pkgconfPkgs."QtWebKit") ];
         };
       };
     }

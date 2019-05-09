@@ -34,8 +34,8 @@
           (hsPkgs.text)
           ];
         pkgconfig = [
-          (pkgconfPkgs.gobject-introspection-1.0)
-          (pkgconfPkgs.gobject-2.0)
+          (pkgconfPkgs."gobject-introspection-1.0")
+          (pkgconfPkgs."gobject-2.0")
           ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };

@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.glib) (hsPkgs.gtk) (hsPkgs.webkit) ];
-        pkgconfig = [ (pkgconfPkgs.webkit-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkit-1.0") ];
         };
       };
     }

@@ -28,8 +28,8 @@
           (hsPkgs.glib)
           (hsPkgs.cairo)
           ] ++ [ (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.cairo) (pkgconfPkgs.pangocairo) ] ++ [
-          (pkgconfPkgs.pango)
+        pkgconfig = [ (pkgconfPkgs."cairo") (pkgconfPkgs."pangocairo") ] ++ [
+          (pkgconfPkgs."pango")
           ];
         };
       };

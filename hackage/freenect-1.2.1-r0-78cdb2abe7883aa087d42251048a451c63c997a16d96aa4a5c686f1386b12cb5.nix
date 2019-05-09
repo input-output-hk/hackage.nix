@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.vector) ];
         libs = [ (pkgs."freenect") (pkgs."freenect_sync") ];
-        pkgconfig = [ (pkgconfPkgs.libfreenect) ];
+        pkgconfig = [ (pkgconfPkgs."libfreenect") ];
         };
       };
     }

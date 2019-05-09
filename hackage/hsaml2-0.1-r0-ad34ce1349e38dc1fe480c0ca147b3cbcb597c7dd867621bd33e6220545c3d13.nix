@@ -41,7 +41,7 @@
           (hsPkgs.x509)
           (hsPkgs.zlib)
           ];
-        pkgconfig = [ (pkgconfPkgs.libxml-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."libxml-2.0") ];
         };
       tests = {
         "tests" = {

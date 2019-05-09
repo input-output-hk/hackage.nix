@@ -26,7 +26,7 @@
           (hsPkgs.utility-ht)
           (hsPkgs.base)
           ];
-        pkgconfig = [ (pkgconfPkgs.sox) ];
+        pkgconfig = [ (pkgconfPkgs."sox") ];
         };
       };
     }

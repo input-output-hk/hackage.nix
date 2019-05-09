@@ -27,7 +27,7 @@
           (hsPkgs.mtl)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.webkit-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkit-1.0") ];
         };
       };
     }

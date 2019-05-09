@@ -22,13 +22,13 @@
           (hsPkgs.unix)
           (hsPkgs.bytestring)
           ];
-        pkgconfig = [ (pkgconfPkgs.augeas) ];
+        pkgconfig = [ (pkgconfPkgs."augeas") ];
         };
       exes = {
         "test-haskell-augeas" = {
           depends = [ (hsPkgs.HUnit) ];
           libs = [ (pkgs."augeas") ];
-          pkgconfig = [ (pkgconfPkgs.augeas) ];
+          pkgconfig = [ (pkgconfPkgs."augeas") ];
           };
         };
       };

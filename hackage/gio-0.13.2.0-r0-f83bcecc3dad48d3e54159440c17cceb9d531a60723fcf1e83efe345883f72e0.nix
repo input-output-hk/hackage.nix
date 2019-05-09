@@ -24,7 +24,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.glib)
           ];
-        pkgconfig = [ (pkgconfPkgs.gio-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gio-2.0") ];
         };
       };
     }

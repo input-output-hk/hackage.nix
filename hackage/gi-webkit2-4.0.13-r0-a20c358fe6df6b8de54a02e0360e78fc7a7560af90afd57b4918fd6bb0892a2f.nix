@@ -34,7 +34,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (flags.enable-overloading) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.webkit2gtk-4.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkit2gtk-4.0") ];
         };
       };
     }

@@ -23,7 +23,7 @@
           (pkgs."crypto")
           (pkgs."ssl")
           ]);
-        pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs.libpq);
+        pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs."libpq");
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       };

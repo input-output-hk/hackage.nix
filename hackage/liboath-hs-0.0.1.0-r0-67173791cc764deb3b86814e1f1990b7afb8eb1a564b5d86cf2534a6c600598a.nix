@@ -24,7 +24,7 @@
           (hsPkgs.time)
           ];
         libs = [ (pkgs."oath") ];
-        pkgconfig = [ (pkgconfPkgs.liboath) ];
+        pkgconfig = [ (pkgconfPkgs."liboath") ];
         };
       exes = {
         "oathtool-hs" = {

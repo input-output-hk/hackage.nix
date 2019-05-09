@@ -31,7 +31,7 @@
           (hsPkgs.colour)
           (hsPkgs.data-default)
           ];
-        pkgconfig = [ (pkgconfPkgs.cairo) ];
+        pkgconfig = [ (pkgconfPkgs."cairo") ];
         };
       exes = { "hgis" = { depends = [ (hsPkgs.base) (hsPkgs.hgis) ]; }; };
       tests = {

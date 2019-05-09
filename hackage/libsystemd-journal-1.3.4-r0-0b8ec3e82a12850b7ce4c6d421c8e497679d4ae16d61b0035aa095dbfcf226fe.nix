@@ -31,7 +31,7 @@
           (hsPkgs.hsyslog)
           (hsPkgs.uniplate)
           ];
-        pkgconfig = [ (pkgconfPkgs.libsystemd) ];
+        pkgconfig = [ (pkgconfPkgs."libsystemd") ];
         };
       };
     }

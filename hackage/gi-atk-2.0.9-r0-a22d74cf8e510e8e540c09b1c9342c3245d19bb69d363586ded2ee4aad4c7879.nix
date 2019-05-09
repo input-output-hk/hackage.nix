@@ -30,7 +30,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.atk) ];
+        pkgconfig = [ (pkgconfPkgs."atk") ];
         };
       };
     }

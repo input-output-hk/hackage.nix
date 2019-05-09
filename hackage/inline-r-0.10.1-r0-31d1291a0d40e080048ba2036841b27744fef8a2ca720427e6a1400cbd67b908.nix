@@ -41,7 +41,7 @@
           (hsPkgs.inline-c)
           ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."R");
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.libR);
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libR");
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       tests = {

@@ -27,7 +27,7 @@
           (hsPkgs.cairo)
           (hsPkgs.gtk)
           ];
-        pkgconfig = [ (pkgconfPkgs.webkit-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkit-1.0") ];
         };
       };
     }

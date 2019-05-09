@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.mtl) ];
-        pkgconfig = [ (pkgconfPkgs.dvdread) ];
+        pkgconfig = [ (pkgconfPkgs."dvdread") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

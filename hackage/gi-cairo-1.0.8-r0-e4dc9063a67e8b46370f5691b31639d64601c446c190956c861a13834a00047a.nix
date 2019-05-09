@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.cairo-gobject) ];
+        pkgconfig = [ (pkgconfPkgs."cairo-gobject") ];
         };
       };
     }

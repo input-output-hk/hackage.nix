@@ -40,7 +40,7 @@
             (hsPkgs.aeson)
             (hsPkgs.bytestring)
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
-          pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+          pkgconfig = [ (pkgconfPkgs."gtk+-3.0") ];
           };
         };
       };

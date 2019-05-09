@@ -36,7 +36,7 @@
           (hsPkgs.permute)
           (hsPkgs.utf8-string)
           ];
-        pkgconfig = [ (pkgconfPkgs.xft) ];
+        pkgconfig = [ (pkgconfPkgs."xft") ];
         };
       exes = {
         "sindre" = {
@@ -60,7 +60,7 @@
             (hsPkgs.permute)
             (hsPkgs.utf8-string)
             ];
-          pkgconfig = [ (pkgconfPkgs.xft) ];
+          pkgconfig = [ (pkgconfPkgs."xft") ];
           };
         };
       };

@@ -23,7 +23,7 @@
           (hsPkgs.cairo)
           (hsPkgs.mtl)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtk+-2.0") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

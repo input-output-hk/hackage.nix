@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) (hsPkgs.bytestring) ];
-        pkgconfig = [ (pkgconfPkgs.libbladeRF) ];
+        pkgconfig = [ (pkgconfPkgs."libbladeRF") ];
         };
       tests = { "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; }; };
       };

@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-DSL) ];
-        pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."glib-2.0") ];
         };
       };
     }

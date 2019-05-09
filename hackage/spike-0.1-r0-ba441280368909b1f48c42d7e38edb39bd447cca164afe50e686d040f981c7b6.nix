@@ -29,7 +29,7 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             ];
-          pkgconfig = [ (pkgconfPkgs.libsoup-gnome-2.4) ];
+          pkgconfig = [ (pkgconfPkgs."libsoup-gnome-2.4") ];
           };
         };
       };

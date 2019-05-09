@@ -25,7 +25,7 @@
           (hsPkgs.unix)
           ];
         libs = [ (pkgs."ssh2") ];
-        pkgconfig = [ (pkgconfPkgs.libssh2) ];
+        pkgconfig = [ (pkgconfPkgs."libssh2") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {

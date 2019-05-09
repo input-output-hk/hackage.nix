@@ -31,7 +31,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gstreamer-base-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."gstreamer-base-1.0") ];
         };
       };
     }

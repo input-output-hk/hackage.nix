@@ -64,7 +64,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.xml-conduit)
           ];
-        pkgconfig = [ (pkgconfPkgs.ostree-1) ];
+        pkgconfig = [ (pkgconfPkgs."ostree-1") ];
         };
       exes = {
         "bdcs" = {

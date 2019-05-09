@@ -35,13 +35,13 @@
           (pkgs."pthread")
           ];
         pkgconfig = [
-          (pkgconfPkgs.GraphicsMagick)
-          (pkgconfPkgs.lcms)
-          (pkgconfPkgs.freetype2)
-          (pkgconfPkgs.sm)
-          (pkgconfPkgs.ice)
-          (pkgconfPkgs.x11)
-          (pkgconfPkgs.libxml-2.0)
+          (pkgconfPkgs."GraphicsMagick")
+          (pkgconfPkgs."lcms")
+          (pkgconfPkgs."freetype2")
+          (pkgconfPkgs."sm")
+          (pkgconfPkgs."ice")
+          (pkgconfPkgs."x11")
+          (pkgconfPkgs."libxml-2.0")
           ];
         };
       };

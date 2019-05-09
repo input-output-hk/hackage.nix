@@ -24,7 +24,7 @@
           (hsPkgs.time)
           (hsPkgs.mtl)
           ];
-        pkgconfig = [ (pkgconfPkgs.libzip) ];
+        pkgconfig = [ (pkgconfPkgs."libzip") ];
         };
       };
     }

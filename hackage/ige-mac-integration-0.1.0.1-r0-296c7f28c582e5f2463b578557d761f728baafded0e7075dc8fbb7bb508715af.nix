@@ -25,7 +25,7 @@
           (hsPkgs.glib)
           (hsPkgs.gtk)
           ];
-        pkgconfig = [ (pkgconfPkgs.ige-mac-integration) ];
+        pkgconfig = [ (pkgconfPkgs."ige-mac-integration") ];
         };
       };
     }

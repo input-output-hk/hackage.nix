@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-common) ];
-        pkgconfig = [ (pkgconfPkgs.sqlite3) ];
+        pkgconfig = [ (pkgconfPkgs."sqlite3") ];
         };
       };
     }

@@ -21,7 +21,7 @@
           (hsPkgs.bytestring)
           ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.2" && (compiler.version).lt "7.6")) (hsPkgs.ghc-prim);
         libs = (pkgs.lib).optionals (!flags.pkg-config) ((pkgs.lib).optional (!system.isWindows) (pkgs."z"));
-        pkgconfig = (pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs.zlib);
+        pkgconfig = (pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs."zlib");
         };
       tests = {
         "tests" = {

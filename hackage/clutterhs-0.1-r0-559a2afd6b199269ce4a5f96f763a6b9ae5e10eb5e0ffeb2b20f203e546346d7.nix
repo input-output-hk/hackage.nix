@@ -27,10 +27,10 @@
           (hsPkgs.array)
           ];
         pkgconfig = [
-          (pkgconfPkgs.glib-2.0)
-          (pkgconfPkgs.gobject-2.0)
-          (pkgconfPkgs.clutter-1.0)
-          (pkgconfPkgs.pango)
+          (pkgconfPkgs."glib-2.0")
+          (pkgconfPkgs."gobject-2.0")
+          (pkgconfPkgs."clutter-1.0")
+          (pkgconfPkgs."pango")
           ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };

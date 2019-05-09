@@ -26,7 +26,7 @@
           (hsPkgs.system-filepath)
           (hsPkgs.MonadCatchIO-transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+        pkgconfig = [ (pkgconfPkgs."ImageMagick") (pkgconfPkgs."MagickWand") ];
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       exes = {
@@ -41,7 +41,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "extent" = {
           depends = [
@@ -54,7 +57,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "floodfill" = {
           depends = [
@@ -67,7 +73,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "cyclops" = {
           depends = [
@@ -80,7 +89,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "clipmask" = {
           depends = [
@@ -93,7 +105,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "paint-trans" = {
           depends = [
@@ -106,7 +121,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "round-mask" = {
           depends = [
@@ -119,7 +137,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "make-tile" = {
           depends = [
@@ -132,7 +153,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "draw-shapes" = {
           depends = [
@@ -145,7 +169,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "text-effects" = {
           depends = [
@@ -158,7 +185,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "gel" = {
           depends = [
@@ -172,7 +202,10 @@
             (hsPkgs.lifted-base)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "reflect" = {
           depends = [
@@ -185,7 +218,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "3dlogo" = {
           depends = [
@@ -198,7 +234,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "affine" = {
           depends = [
@@ -211,7 +250,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "grayscale" = {
           depends = [
@@ -224,7 +266,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "modulate" = {
           depends = [
@@ -237,7 +282,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "landscape3d" = {
           depends = [
@@ -250,7 +298,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "tilt-shift" = {
           depends = [
@@ -263,7 +314,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "bunny" = {
           depends = [
@@ -276,7 +330,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "pixel-mod" = {
           depends = [
@@ -289,7 +346,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         "wandtest" = {
           depends = [
@@ -302,7 +362,10 @@
             (hsPkgs.system-filepath)
             (hsPkgs.imagemagick)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         };
       tests = {
@@ -324,7 +387,10 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             ];
-          pkgconfig = [ (pkgconfPkgs.ImageMagick) (pkgconfPkgs.MagickWand) ];
+          pkgconfig = [
+            (pkgconfPkgs."ImageMagick")
+            (pkgconfPkgs."MagickWand")
+            ];
           };
         };
       };

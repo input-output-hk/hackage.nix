@@ -23,7 +23,7 @@
           (hsPkgs.transformers)
           ];
         libs = (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."tag_c");
-        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs.taglib_c);
+        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."taglib_c");
         };
       };
     }

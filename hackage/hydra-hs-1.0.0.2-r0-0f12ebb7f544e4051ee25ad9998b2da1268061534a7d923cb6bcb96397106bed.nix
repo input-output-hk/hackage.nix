@@ -21,8 +21,8 @@
           then (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."sixense")
           else (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."sixense_x64");
         pkgconfig = if !system.isX86_64
-          then (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs.libsixense)
-          else (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs.libsixense_x64);
+          then (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."libsixense")
+          else (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."libsixense_x64");
         };
       tests = {
         "hydra-test" = { depends = [ (hsPkgs.base) (hsPkgs.hydra-hs) ]; };

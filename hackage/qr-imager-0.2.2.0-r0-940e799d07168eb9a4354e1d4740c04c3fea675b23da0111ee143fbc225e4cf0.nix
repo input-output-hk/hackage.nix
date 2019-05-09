@@ -31,7 +31,7 @@
           (hsPkgs.MissingH)
           (hsPkgs.optparse-applicative)
           ];
-        pkgconfig = [ (pkgconfPkgs.libqrencode) ];
+        pkgconfig = [ (pkgconfPkgs."libqrencode") ];
         };
       exes = {
         "qrpipe" = { depends = [ (hsPkgs.base) (hsPkgs.qr-imager) ]; };

@@ -31,7 +31,7 @@
           (hsPkgs.optparse-applicative)
           (hsPkgs.split)
           ];
-        pkgconfig = [ (pkgconfPkgs.libqrencode) ];
+        pkgconfig = [ (pkgconfPkgs."libqrencode") ];
         };
       tests = {
         "test-lib" = {

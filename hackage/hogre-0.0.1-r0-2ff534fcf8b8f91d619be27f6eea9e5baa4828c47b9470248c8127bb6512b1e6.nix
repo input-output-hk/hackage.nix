@@ -23,9 +23,9 @@
           (pkgs."CEGUIBase")
           ];
         pkgconfig = [
-          (pkgconfPkgs.OGRE)
-          (pkgconfPkgs.CEGUI)
-          (pkgconfPkgs.CEGUI-OGRE)
+          (pkgconfPkgs."OGRE")
+          (pkgconfPkgs."CEGUI")
+          (pkgconfPkgs."CEGUI-OGRE")
           ];
         };
       };

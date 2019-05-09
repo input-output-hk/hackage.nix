@@ -23,7 +23,7 @@
           (hsPkgs.utf8-string)
           ];
         libs = [ (pkgs."systemd-daemon") ];
-        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs.libsystemd-daemon);
+        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."libsystemd-daemon");
         };
       tests = {
         "run-tests" = {

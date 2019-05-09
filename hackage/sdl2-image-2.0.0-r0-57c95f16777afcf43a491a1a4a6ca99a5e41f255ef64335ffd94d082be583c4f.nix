@@ -24,7 +24,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.sdl2) (pkgconfPkgs.SDL2_image) ];
+        pkgconfig = [ (pkgconfPkgs."sdl2") (pkgconfPkgs."SDL2_image") ];
         };
       exes = {
         "sdl2-image-example" = {

@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.vector) (hsPkgs.containers) ];
         libs = [ (pkgs."stdc++") ];
-        pkgconfig = [ (pkgconfPkgs.casadi) ];
+        pkgconfig = [ (pkgconfPkgs."casadi") ];
         };
       };
     }

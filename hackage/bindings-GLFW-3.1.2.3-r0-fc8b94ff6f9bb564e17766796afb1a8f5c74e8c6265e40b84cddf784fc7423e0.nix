@@ -51,7 +51,7 @@
           (pkgs."CoreFoundation")
           (pkgs."CoreVideo")
           ]);
-        pkgconfig = (pkgs.lib).optional (flags.system-glfw) (pkgconfPkgs.glfw3);
+        pkgconfig = (pkgs.lib).optional (flags.system-glfw) (pkgconfPkgs."glfw3");
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       tests = {

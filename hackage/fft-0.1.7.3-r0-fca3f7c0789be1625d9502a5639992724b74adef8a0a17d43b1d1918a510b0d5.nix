@@ -25,7 +25,7 @@
           else [ (hsPkgs.base) ])) ++ (if flags.base4
           then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
-        pkgconfig = [ (pkgconfPkgs.fftw3) ];
+        pkgconfig = [ (pkgconfPkgs."fftw3") ];
         };
       tests = {
         "test-fft" = {

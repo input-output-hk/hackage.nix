@@ -26,7 +26,7 @@
           (hsPkgs.unix)
           (hsPkgs.base)
           ];
-        pkgconfig = [ (pkgconfPkgs.jack) ];
+        pkgconfig = [ (pkgconfPkgs."jack") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {

@@ -42,7 +42,7 @@
           (hsPkgs.unordered-containers)
           ];
         libs = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (!flags.use-pkgconfig) (pkgs."sqlite3")) ++ (pkgs.lib).optional (!system.isWindows) (pkgs."pthread");
-        pkgconfig = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (flags.use-pkgconfig) (pkgconfPkgs.sqlite3));
+        pkgconfig = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (flags.use-pkgconfig) (pkgconfPkgs."sqlite3"));
         };
       exes = {
         "sanity" = {

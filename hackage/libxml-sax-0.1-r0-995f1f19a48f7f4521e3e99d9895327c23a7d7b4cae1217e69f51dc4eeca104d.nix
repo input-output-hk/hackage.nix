@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."xml2") ];
-        pkgconfig = [ (pkgconfPkgs.libxml-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."libxml-2.0") ];
         };
       };
     }

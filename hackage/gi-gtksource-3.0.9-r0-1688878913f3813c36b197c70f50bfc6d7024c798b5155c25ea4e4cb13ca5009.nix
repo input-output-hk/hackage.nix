@@ -37,7 +37,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtksourceview-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtksourceview-3.0") ];
         };
       };
     }

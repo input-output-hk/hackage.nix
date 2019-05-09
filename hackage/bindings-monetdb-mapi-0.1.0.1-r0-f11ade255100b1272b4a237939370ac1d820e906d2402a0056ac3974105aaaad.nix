@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.monetdb-mapi) ];
+        pkgconfig = [ (pkgconfPkgs."monetdb-mapi") ];
         };
       };
     }

@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.haskell98) ];
         libs = [ (pkgs."OgreMain") ];
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.OGRE);
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."OGRE");
         };
       };
     }

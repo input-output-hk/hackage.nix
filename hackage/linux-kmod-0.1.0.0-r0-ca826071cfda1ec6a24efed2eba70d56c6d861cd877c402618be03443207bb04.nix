@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.unix) ];
-        pkgconfig = [ (pkgconfPkgs.libkmod) ];
+        pkgconfig = [ (pkgconfPkgs."libkmod") ];
         };
       };
     }

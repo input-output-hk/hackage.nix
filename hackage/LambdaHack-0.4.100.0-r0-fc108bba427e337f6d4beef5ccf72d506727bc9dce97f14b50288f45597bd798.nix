@@ -53,7 +53,7 @@
           ] ++ (if flags.curses
           then [ (hsPkgs.hscurses) ]
           else if flags.vty then [ (hsPkgs.vty) ] else [ (hsPkgs.gtk) ]);
-        pkgconfig = (pkgs.lib).optionals (!flags.curses) ((pkgs.lib).optional (!flags.vty) (pkgconfPkgs.gtk+-2.0));
+        pkgconfig = (pkgs.lib).optionals (!flags.curses) ((pkgs.lib).optional (!flags.vty) (pkgconfPkgs."gtk+-2.0"));
         };
       exes = {
         "LambdaHack" = {

@@ -32,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.ostree-1) ];
+        pkgconfig = [ (pkgconfPkgs."ostree-1") ];
         };
       };
     }

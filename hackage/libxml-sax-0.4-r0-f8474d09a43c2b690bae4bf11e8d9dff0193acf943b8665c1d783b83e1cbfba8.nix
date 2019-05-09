@@ -24,7 +24,7 @@
           (hsPkgs.failable-list)
           ];
         libs = [ (pkgs."xml2") ];
-        pkgconfig = [ (pkgconfPkgs.libxml-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."libxml-2.0") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

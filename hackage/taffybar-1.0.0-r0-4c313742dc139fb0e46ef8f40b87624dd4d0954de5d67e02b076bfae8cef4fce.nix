@@ -58,7 +58,7 @@
           (hsPkgs.xmonad)
           (hsPkgs.xmonad-contrib)
           ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
-        pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtk+-3.0") ];
         };
       exes = {
         "taffybar" = {
@@ -78,7 +78,7 @@
             (hsPkgs.utf8-string)
             (hsPkgs.xdg-basedir)
             ];
-          pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+          pkgconfig = [ (pkgconfPkgs."gtk+-3.0") ];
           };
         };
       };

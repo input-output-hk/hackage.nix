@@ -58,7 +58,10 @@
             (hsPkgs.utf8-string)
             (hsPkgs.xdg-basedir)
             ];
-          pkgconfig = [ (pkgconfPkgs.gtk+-3.0) (pkgconfPkgs.webkit2gtk-4.0) ];
+          pkgconfig = [
+            (pkgconfPkgs."gtk+-3.0")
+            (pkgconfPkgs."webkit2gtk-4.0")
+            ];
           };
         };
       tests = {

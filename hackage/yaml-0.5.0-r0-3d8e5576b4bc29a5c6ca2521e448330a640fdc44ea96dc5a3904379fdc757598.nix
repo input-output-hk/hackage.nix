@@ -27,7 +27,7 @@
           (hsPkgs.vector)
           (hsPkgs.text)
           ];
-        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs.yaml-0.1);
+        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1");
         };
       tests = {
         "test" = {
@@ -44,7 +44,7 @@
             (hsPkgs.unordered-containers)
             ];
           libs = [ (pkgs."yaml") ];
-          pkgconfig = [ (pkgconfPkgs.yaml-0.1) ];
+          pkgconfig = [ (pkgconfPkgs."yaml-0.1") ];
           };
         };
       };

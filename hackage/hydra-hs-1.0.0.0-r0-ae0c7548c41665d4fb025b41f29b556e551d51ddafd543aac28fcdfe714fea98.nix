@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.hmatrix) ];
         libs = (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."sixense");
-        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs.libsixense);
+        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."libsixense");
         };
       tests = {
         "hydra-test" = { depends = [ (hsPkgs.base) (hsPkgs.hydra-hs) ]; };

@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.mtl) ];
-        pkgconfig = (pkgs.lib).optional (flags.system-lua) (pkgconfPkgs.lua);
+        pkgconfig = (pkgs.lib).optional (flags.system-lua) (pkgconfPkgs."lua");
         };
       tests = {
         "simple-test" = { depends = [ (hsPkgs.base) (hsPkgs.hslua) ]; };

@@ -23,7 +23,7 @@
           (hsPkgs.temporary)
           (hsPkgs.unix)
           ];
-        pkgconfig = [ (pkgconfPkgs.rdkafka) ];
+        pkgconfig = [ (pkgconfPkgs."rdkafka") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {

@@ -28,7 +28,7 @@
           (hsPkgs.base)
           ];
         libs = (pkgs.lib).optional (!flags.pkgconfig) (pkgs."jack");
-        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs.jack);
+        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."jack");
         build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
         };
       exes = {

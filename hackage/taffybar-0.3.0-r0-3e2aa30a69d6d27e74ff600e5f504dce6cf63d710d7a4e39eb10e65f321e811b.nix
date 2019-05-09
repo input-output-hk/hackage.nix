@@ -43,7 +43,7 @@
           (hsPkgs.X11)
           (hsPkgs.split)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtk+-2.0") ];
         };
       exes = {
         "taffybar" = {
@@ -54,7 +54,7 @@
             (hsPkgs.xdg-basedir)
             (hsPkgs.filepath)
             ];
-          pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."gtk+-2.0") ];
           };
         };
       };

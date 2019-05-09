@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.bytestring) ];
-        pkgconfig = [ (pkgconfPkgs.libgsasl) ];
+        pkgconfig = [ (pkgconfPkgs."libgsasl") ];
         };
       };
     }

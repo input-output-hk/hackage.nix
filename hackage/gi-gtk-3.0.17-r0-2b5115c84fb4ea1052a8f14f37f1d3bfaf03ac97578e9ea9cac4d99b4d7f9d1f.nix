@@ -33,7 +33,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."gtk+-3.0") ];
         };
       };
     }

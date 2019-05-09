@@ -53,7 +53,7 @@
           (hsPkgs.HTTP)
           ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs.bytestring)) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs.zlib)) ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs.utf8-string)) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo);
         libs = (pkgs.lib).optional (flags.curl) (pkgs."curl") ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z");
-        pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.libcurl)));
+        pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl")));
         };
       exes = {
         "witnesses" = { libs = (pkgs.lib).optional (!flags.zlib) (pkgs."z"); };
@@ -84,7 +84,7 @@
             (hsPkgs.HTTP)
             ])) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs.bytestring)) ++ (pkgs.lib).optional (flags.zlib) (hsPkgs.zlib)) ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs.utf8-string)) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo);
           libs = ((pkgs.lib).optional (!flags.zlib) (pkgs."z") ++ (pkgs.lib).optional (flags.curl) (pkgs."curl")) ++ (pkgs.lib).optional (!flags.zlib) (pkgs."z");
-          pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.libcurl)));
+          pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl")));
           };
         "unit" = {
           depends = ((((((pkgs.lib).optionals (!(!flags.test)) [

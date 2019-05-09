@@ -55,7 +55,7 @@
             (hsPkgs.utf8-string)
             (hsPkgs.xdg-basedir)
             ];
-          pkgconfig = [ (pkgconfPkgs.gtk+-3.0) ];
+          pkgconfig = [ (pkgconfPkgs."gtk+-3.0") ];
           };
         };
       };

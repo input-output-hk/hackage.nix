@@ -28,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (flags.enable-overloading) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.libsecret-1) ];
+        pkgconfig = [ (pkgconfPkgs."libsecret-1") ];
         };
       };
     }

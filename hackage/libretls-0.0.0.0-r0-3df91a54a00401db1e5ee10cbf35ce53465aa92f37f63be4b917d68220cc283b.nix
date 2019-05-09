@@ -23,7 +23,7 @@
           (hsPkgs.primitive)
           (hsPkgs.monad-ste)
           ];
-        pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs.libtls);
+        pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."libtls");
         };
       tests = {
         "hunit" = {

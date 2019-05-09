@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.bytestring) ];
         libs = [ (pkgs."idn") ];
-        pkgconfig = [ (pkgconfPkgs.libidn) ];
+        pkgconfig = [ (pkgconfPkgs."libidn") ];
         };
       };
     }

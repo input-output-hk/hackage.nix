@@ -28,7 +28,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.libnotify) ];
+        pkgconfig = [ (pkgconfPkgs."libnotify") ];
         };
       };
     }

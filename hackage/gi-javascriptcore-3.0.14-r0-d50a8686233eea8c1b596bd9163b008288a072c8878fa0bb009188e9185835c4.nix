@@ -25,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.javascriptcoregtk-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."javascriptcoregtk-3.0") ];
         };
       };
     }

@@ -26,7 +26,7 @@
           ];
         libs = (((pkgs.lib).optional (system.isOsx) (pkgs."gsl") ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."gsl")) ++ (pkgs.lib).optional (system.isWindows) (pkgs."gsl-0")) ++ (pkgs.lib).optional (flags.onlygsl) (pkgs."gsl");
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate");
-        pkgconfig = (pkgs.lib).optional (!flags.onlygsl) (pkgconfPkgs.gsl);
+        pkgconfig = (pkgs.lib).optional (!flags.onlygsl) (pkgconfPkgs."gsl");
         };
       };
     }

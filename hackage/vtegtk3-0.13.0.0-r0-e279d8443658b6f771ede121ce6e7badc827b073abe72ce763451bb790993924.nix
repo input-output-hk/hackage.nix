@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.glib) (hsPkgs.pango) (hsPkgs.gtk3) ];
-        pkgconfig = [ (pkgconfPkgs.vte-2.90) ];
+        pkgconfig = [ (pkgconfPkgs."vte-2.90") ];
         };
       };
     }

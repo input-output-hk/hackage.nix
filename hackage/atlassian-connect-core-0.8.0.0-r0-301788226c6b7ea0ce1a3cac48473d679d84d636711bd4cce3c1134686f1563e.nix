@@ -43,7 +43,7 @@
           (hsPkgs.network-api-support)
           (hsPkgs.cryptohash)
           ] ++ [ (hsPkgs.network-uri) (hsPkgs.network) ];
-        pkgconfig = [ (pkgconfPkgs.zlib) ];
+        pkgconfig = [ (pkgconfPkgs."zlib") ];
         };
       };
     }

@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.bytestring) ];
         libs = [ (pkgs."idn") ];
-        pkgconfig = [ (pkgconfPkgs.libidn) ];
+        pkgconfig = [ (pkgconfPkgs."libidn") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       tests = {
@@ -33,7 +33,7 @@
             (hsPkgs.text)
             ];
           libs = [ (pkgs."idn") ];
-          pkgconfig = [ (pkgconfPkgs.libidn) ];
+          pkgconfig = [ (pkgconfPkgs."libidn") ];
           build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
           };
         };

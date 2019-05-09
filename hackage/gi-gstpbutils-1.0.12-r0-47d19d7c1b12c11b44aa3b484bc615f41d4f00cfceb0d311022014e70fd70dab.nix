@@ -35,7 +35,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gstreamer-pbutils-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."gstreamer-pbutils-1.0") ];
         };
       };
     }

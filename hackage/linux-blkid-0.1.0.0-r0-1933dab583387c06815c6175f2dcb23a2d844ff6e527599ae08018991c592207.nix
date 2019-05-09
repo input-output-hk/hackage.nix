@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.transformers) ];
-        pkgconfig = [ (pkgconfPkgs.blkid) ];
+        pkgconfig = [ (pkgconfPkgs."blkid") ];
         };
       };
     }

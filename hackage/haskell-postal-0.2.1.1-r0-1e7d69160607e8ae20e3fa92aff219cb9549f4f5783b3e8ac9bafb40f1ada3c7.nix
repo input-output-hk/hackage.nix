@@ -22,7 +22,7 @@
           (hsPkgs.text)
           (hsPkgs.inline-c)
           ];
-        pkgconfig = [ (pkgconfPkgs.libpostal) ];
+        pkgconfig = [ (pkgconfPkgs."libpostal") ];
         };
       tests = {
         "spec" = {
@@ -33,7 +33,7 @@
             (hsPkgs.inline-c)
             (hsPkgs.hspec)
             ];
-          pkgconfig = [ (pkgconfPkgs.libpostal) ];
+          pkgconfig = [ (pkgconfPkgs."libpostal") ];
           };
         };
       };

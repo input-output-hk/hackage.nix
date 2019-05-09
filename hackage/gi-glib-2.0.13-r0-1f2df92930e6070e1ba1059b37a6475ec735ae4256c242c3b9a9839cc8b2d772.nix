@@ -25,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (flags.enable-overloading) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."glib-2.0") ];
         };
       };
     }

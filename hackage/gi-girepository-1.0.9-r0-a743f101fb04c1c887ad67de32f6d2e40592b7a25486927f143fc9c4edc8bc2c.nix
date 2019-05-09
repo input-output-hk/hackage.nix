@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gobject-introspection-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."gobject-introspection-1.0") ];
         };
       };
     }

@@ -26,7 +26,7 @@
           (hsPkgs.vector)
           ];
         libs = (pkgs.lib).optional (!flags.use-pkg-config) (pkgs."tcod");
-        pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs.libtcod);
+        pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs."libtcod");
         };
       exes = {
         "tcod-haskell-sample01" = {

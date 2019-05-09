@@ -35,10 +35,10 @@
             (hsPkgs.X11)
             ];
           pkgconfig = [
-            (pkgconfPkgs.x11)
-            (pkgconfPkgs.xcb)
-            (pkgconfPkgs.xau)
-            (pkgconfPkgs.xdmcp)
+            (pkgconfPkgs."x11")
+            (pkgconfPkgs."xcb")
+            (pkgconfPkgs."xau")
+            (pkgconfPkgs."xdmcp")
             ];
           };
         };

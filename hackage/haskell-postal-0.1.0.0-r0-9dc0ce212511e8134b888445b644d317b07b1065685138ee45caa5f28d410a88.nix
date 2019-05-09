@@ -23,7 +23,7 @@
           (hsPkgs.text)
           (hsPkgs.inline-c)
           ];
-        pkgconfig = [ (pkgconfPkgs.libpostal) ];
+        pkgconfig = [ (pkgconfPkgs."libpostal") ];
         };
       exes = {
         "haskell-postal" = {
@@ -34,7 +34,7 @@
             (hsPkgs.text)
             (hsPkgs.inline-c)
             ];
-          pkgconfig = [ (pkgconfPkgs.libpostal) ];
+          pkgconfig = [ (pkgconfPkgs."libpostal") ];
           };
         };
       };

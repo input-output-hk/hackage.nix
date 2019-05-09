@@ -21,7 +21,7 @@
           (hsPkgs.bindings-DSL)
           (hsPkgs.bindings-glib)
           ];
-        pkgconfig = [ (pkgconfPkgs.gts) ];
+        pkgconfig = [ (pkgconfPkgs."gts") ];
         };
       };
     }

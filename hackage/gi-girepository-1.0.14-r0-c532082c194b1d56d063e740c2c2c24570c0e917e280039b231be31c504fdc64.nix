@@ -26,7 +26,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.gobject-introspection-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."gobject-introspection-1.0") ];
         };
       };
     }

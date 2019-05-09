@@ -18,7 +18,7 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.containers) ];
         libs = [ (pkgs."xine") ];
-        pkgconfig = [ (pkgconfPkgs.libxine) ];
+        pkgconfig = [ (pkgconfPkgs."libxine") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       };

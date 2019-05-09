@@ -29,7 +29,7 @@
           (hsPkgs.casadi-bindings-core)
           ];
         libs = [ (pkgs."stdc++") ];
-        pkgconfig = [ (pkgconfPkgs.casadi) ];
+        pkgconfig = [ (pkgconfPkgs."casadi") ];
         };
       tests = {
         "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };

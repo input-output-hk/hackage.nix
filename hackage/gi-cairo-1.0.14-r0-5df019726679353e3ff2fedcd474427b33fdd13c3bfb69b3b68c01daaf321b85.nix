@@ -25,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.cairo-gobject) ];
+        pkgconfig = [ (pkgconfPkgs."cairo-gobject") ];
         };
       };
     }

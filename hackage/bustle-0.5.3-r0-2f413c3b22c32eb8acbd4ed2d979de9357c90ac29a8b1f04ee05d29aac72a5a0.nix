@@ -42,7 +42,7 @@
             (hsPkgs.text)
             (hsPkgs.time)
             ] ++ (pkgs.lib).optional (flags.withgtk2hsbuildtools) (hsPkgs.gtk2hs-buildtools);
-          pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."glib-2.0") ];
           };
         "test-monitor" = {
           depends = [
@@ -63,7 +63,7 @@
             (hsPkgs.setlocale)
             (hsPkgs.text)
             ];
-          pkgconfig = [ (pkgconfPkgs.glib-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."glib-2.0") ];
           };
         "dump-messages" = {
           depends = [

@@ -61,7 +61,7 @@
           (hsPkgs.wai-cors)
           (hsPkgs.warp)
           ];
-        pkgconfig = [ (pkgconfPkgs.libgit2-glib-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."libgit2-glib-1.0") ];
         };
       exes = {
         "bdcs-api-server" = { depends = [ (hsPkgs.base) (hsPkgs.bdcs-api) ]; };

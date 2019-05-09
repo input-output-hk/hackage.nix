@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bindings-common) ];
-        pkgconfig = [ (pkgconfPkgs.libusb-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."libusb-1.0") ];
         };
       };
     }

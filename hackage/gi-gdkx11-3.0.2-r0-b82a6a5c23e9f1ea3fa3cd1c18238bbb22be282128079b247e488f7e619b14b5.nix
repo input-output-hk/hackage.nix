@@ -30,7 +30,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.gdk-x11-3.0) ];
+        pkgconfig = [ (pkgconfPkgs."gdk-x11-3.0") ];
         };
       };
     }

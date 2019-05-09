@@ -25,7 +25,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gobject-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gobject-2.0") ];
         };
       };
     }

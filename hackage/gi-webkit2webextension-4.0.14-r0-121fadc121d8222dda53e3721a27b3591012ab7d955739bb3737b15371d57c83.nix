@@ -29,7 +29,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ [ (hsPkgs.haskell-gi-overloading) ];
-        pkgconfig = [ (pkgconfPkgs.webkit2gtk-web-extension-4.0) ];
+        pkgconfig = [ (pkgconfPkgs."webkit2gtk-web-extension-4.0") ];
         };
       };
     }

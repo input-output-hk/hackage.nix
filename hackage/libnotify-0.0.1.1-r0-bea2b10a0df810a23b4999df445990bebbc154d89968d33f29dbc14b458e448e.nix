@@ -23,7 +23,7 @@
           (hsPkgs.gtk)
           (hsPkgs.mtl)
           ];
-        pkgconfig = [ (pkgconfPkgs.libnotify) ];
+        pkgconfig = [ (pkgconfPkgs."libnotify") ];
         };
       };
     }

@@ -35,7 +35,7 @@
           (hsPkgs.filepath)
           (hsPkgs.monad-loops)
           ];
-        pkgconfig = [ (pkgconfPkgs.cairo) ];
+        pkgconfig = [ (pkgconfPkgs."cairo") ];
         };
       exes = { "hgis" = { depends = [ (hsPkgs.base) (hsPkgs.hgis) ]; }; };
       tests = {

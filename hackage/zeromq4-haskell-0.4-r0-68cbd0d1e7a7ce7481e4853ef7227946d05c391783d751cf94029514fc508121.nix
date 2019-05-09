@@ -26,7 +26,7 @@
           (hsPkgs.transformers)
           ];
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."zmq") ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."pthread");
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs.libzmq);
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libzmq");
         };
       tests = {
         "zeromq-haskell-tests" = {

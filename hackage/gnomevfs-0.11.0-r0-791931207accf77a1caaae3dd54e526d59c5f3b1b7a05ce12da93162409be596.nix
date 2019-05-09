@@ -26,8 +26,8 @@
           (hsPkgs.gtk)
           ];
         pkgconfig = [
-          (pkgconfPkgs.gnome-vfs-2.0)
-          (pkgconfPkgs.gnome-vfs-module-2.0)
+          (pkgconfPkgs."gnome-vfs-2.0")
+          (pkgconfPkgs."gnome-vfs-module-2.0")
           ];
         };
       };

@@ -21,7 +21,7 @@
           (hsPkgs.bindings-DSL)
           (hsPkgs.bindings-posix)
           ];
-        pkgconfig = [ (pkgconfPkgs.directfb) ];
+        pkgconfig = [ (pkgconfPkgs."directfb") ];
         };
       };
     }

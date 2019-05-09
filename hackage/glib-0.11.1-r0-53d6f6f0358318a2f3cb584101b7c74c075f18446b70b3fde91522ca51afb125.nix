@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.haskell98) ];
-        pkgconfig = [ (pkgconfPkgs.glib-2.0) (pkgconfPkgs.gobject-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."glib-2.0") (pkgconfPkgs."gobject-2.0") ];
         };
       };
     }

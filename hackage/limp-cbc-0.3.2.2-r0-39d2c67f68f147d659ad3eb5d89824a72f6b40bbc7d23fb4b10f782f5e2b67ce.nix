@@ -23,7 +23,7 @@
           (hsPkgs.limp)
           ];
         libs = [ (pkgs."stdc++") ];
-        pkgconfig = (pkgs.lib).optional (!flags.embedded) (pkgconfPkgs.cbc);
+        pkgconfig = (pkgs.lib).optional (!flags.embedded) (pkgconfPkgs."cbc");
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       tests = {

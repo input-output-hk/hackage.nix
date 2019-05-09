@@ -25,7 +25,7 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.base)
           ];
-        pkgconfig = [ (pkgconfPkgs.alsa) ];
+        pkgconfig = [ (pkgconfPkgs."alsa") ];
         };
       exes = {
         "alsa-minisynth" = {

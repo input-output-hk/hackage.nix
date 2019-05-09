@@ -32,12 +32,12 @@
             ]) ++ (if flags.base4
           then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
-        pkgconfig = [ (pkgconfPkgs.fftw3) ];
+        pkgconfig = [ (pkgconfPkgs."fftw3") ];
         };
       exes = {
         "test-fft" = {
           depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs.QuickCheck);
-          pkgconfig = [ (pkgconfPkgs.fftw3) ];
+          pkgconfig = [ (pkgconfPkgs."fftw3") ];
           };
         };
       };

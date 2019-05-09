@@ -24,7 +24,7 @@
           (hsPkgs.mtl)
           (hsPkgs.glib)
           ];
-        pkgconfig = [ (pkgconfPkgs.gconf-2.0) ];
+        pkgconfig = [ (pkgconfPkgs."gconf-2.0") ];
         };
       };
     }

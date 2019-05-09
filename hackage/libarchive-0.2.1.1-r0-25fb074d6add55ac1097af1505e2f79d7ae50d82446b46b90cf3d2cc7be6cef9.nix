@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.filepath) ];
-        pkgconfig = [ (pkgconfPkgs.libarchive) ];
+        pkgconfig = [ (pkgconfPkgs."libarchive") ];
         };
       };
     }

@@ -32,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.vte-2.91) ];
+        pkgconfig = [ (pkgconfPkgs."vte-2.91") ];
         };
       };
     }

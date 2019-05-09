@@ -35,7 +35,7 @@
           (hsPkgs.tasty-golden)
           (hsPkgs.tasty-hunit)
           ];
-        pkgconfig = [ (pkgconfPkgs.zlib) ];
+        pkgconfig = [ (pkgconfPkgs."zlib") ];
         build-tools = [
           ((hsPkgs.buildPackages).alex)
           ((hsPkgs.buildPackages).happy)

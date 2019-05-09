@@ -26,7 +26,7 @@
           (hsPkgs.casadi-bindings-internal)
           ];
         libs = [ (pkgs."stdc++") ];
-        pkgconfig = [ (pkgconfPkgs.casadi_ipopt_interface) ];
+        pkgconfig = [ (pkgconfPkgs."casadi_ipopt_interface") ];
         };
       };
     }

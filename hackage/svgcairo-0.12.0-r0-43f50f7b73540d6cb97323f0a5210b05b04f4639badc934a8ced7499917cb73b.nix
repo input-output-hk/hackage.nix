@@ -25,7 +25,7 @@
           (hsPkgs.glib)
           (hsPkgs.cairo)
           ];
-        pkgconfig = [ (pkgconfPkgs.librsvg-2.0) (pkgconfPkgs.cairo-svg) ];
+        pkgconfig = [ (pkgconfPkgs."librsvg-2.0") (pkgconfPkgs."cairo-svg") ];
         };
       };
     }

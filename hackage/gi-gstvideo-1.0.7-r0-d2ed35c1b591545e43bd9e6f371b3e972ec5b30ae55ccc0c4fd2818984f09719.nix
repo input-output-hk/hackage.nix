@@ -33,7 +33,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.gstreamer-video-1.0) ];
+        pkgconfig = [ (pkgconfPkgs."gstreamer-video-1.0") ];
         };
       };
     }

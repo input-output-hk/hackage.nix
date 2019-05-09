@@ -21,7 +21,7 @@
           (pkgs."zip")
           (pkgs."z")
           ];
-        pkgconfig = (pkgs.lib).optional (!flags.nopkgconfig) (pkgconfPkgs.libzip);
+        pkgconfig = (pkgs.lib).optional (!flags.nopkgconfig) (pkgconfPkgs."libzip");
         };
       };
     }

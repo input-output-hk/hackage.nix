@@ -44,7 +44,7 @@
           (hsPkgs.xml-conduit)
           (hsPkgs.xml-html-qq)
           ];
-        pkgconfig = [ (pkgconfPkgs.gtk+-3.0) (pkgconfPkgs.vte-2.91) ];
+        pkgconfig = [ (pkgconfPkgs."gtk+-3.0") (pkgconfPkgs."vte-2.91") ];
         };
       exes = {
         "termonad" = { depends = [ (hsPkgs.base) (hsPkgs.termonad) ]; };

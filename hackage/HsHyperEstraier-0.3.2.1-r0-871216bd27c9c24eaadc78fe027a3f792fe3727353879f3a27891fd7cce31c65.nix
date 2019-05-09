@@ -22,7 +22,7 @@
           (hsPkgs.network)
           (hsPkgs.utf8-string)
           ];
-        pkgconfig = [ (pkgconfPkgs.hyperestraier) (pkgconfPkgs.qdbm) ];
+        pkgconfig = [ (pkgconfPkgs."hyperestraier") (pkgconfPkgs."qdbm") ];
         };
       };
     }

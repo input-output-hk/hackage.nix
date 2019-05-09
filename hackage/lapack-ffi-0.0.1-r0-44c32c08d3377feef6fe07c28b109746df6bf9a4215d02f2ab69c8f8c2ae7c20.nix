@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.netlib-ffi) (hsPkgs.base) ];
-        pkgconfig = [ (pkgconfPkgs.lapack) ];
+        pkgconfig = [ (pkgconfPkgs."lapack") ];
         };
       };
     }

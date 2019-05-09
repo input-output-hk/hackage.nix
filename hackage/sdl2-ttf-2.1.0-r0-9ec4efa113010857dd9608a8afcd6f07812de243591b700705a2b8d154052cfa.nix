@@ -24,7 +24,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ];
-        pkgconfig = [ (pkgconfPkgs.sdl2) (pkgconfPkgs.SDL2_ttf) ];
+        pkgconfig = [ (pkgconfPkgs."sdl2") (pkgconfPkgs."SDL2_ttf") ];
         };
       exes = {
         "sdl2-ttf-example" = {

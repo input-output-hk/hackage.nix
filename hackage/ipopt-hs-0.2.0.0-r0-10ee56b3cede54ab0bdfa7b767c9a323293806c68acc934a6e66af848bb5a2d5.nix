@@ -24,7 +24,7 @@
           (hsPkgs.mtl)
           (hsPkgs.lens)
           ];
-        pkgconfig = [ (pkgconfPkgs.ipopt) ];
+        pkgconfig = [ (pkgconfPkgs."ipopt") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {

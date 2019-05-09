@@ -30,7 +30,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (compiler.isGhc && false) (hsPkgs.haskell-gi-overloading);
-        pkgconfig = [ (pkgconfPkgs.pangocairo) ];
+        pkgconfig = [ (pkgconfPkgs."pangocairo") ];
         };
       };
     }

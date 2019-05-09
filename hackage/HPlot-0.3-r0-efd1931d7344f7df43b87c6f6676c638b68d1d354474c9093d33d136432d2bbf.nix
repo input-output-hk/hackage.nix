@@ -17,7 +17,7 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.gtk) (hsPkgs.glade) (hsPkgs.glib) ];
-        pkgconfig = [ (pkgconfPkgs.plplotd-gnome2) ];
+        pkgconfig = [ (pkgconfPkgs."plplotd-gnome2") ];
         build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
         };
       exes = {
@@ -32,7 +32,7 @@
             (hsPkgs.glade)
             (hsPkgs.glib)
             ];
-          pkgconfig = [ (pkgconfPkgs.plplotd-gnome2) ];
+          pkgconfig = [ (pkgconfPkgs."plplotd-gnome2") ];
           };
         };
       };

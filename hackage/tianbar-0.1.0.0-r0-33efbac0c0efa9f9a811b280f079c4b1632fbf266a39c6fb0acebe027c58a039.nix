@@ -28,7 +28,7 @@
             (hsPkgs.xdg-basedir)
             (hsPkgs.process)
             ];
-          pkgconfig = [ (pkgconfPkgs.gtk+-2.0) ];
+          pkgconfig = [ (pkgconfPkgs."gtk+-2.0") ];
           };
         };
       };

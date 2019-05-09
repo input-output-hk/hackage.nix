@@ -37,7 +37,7 @@
           (hsPkgs.vector)
           ];
         libs = [ (pkgs."m") ];
-        pkgconfig = [ (pkgconfPkgs.fdk-aac) ];
+        pkgconfig = [ (pkgconfPkgs."fdk-aac") ];
         };
       tests = {
         "examples" = {
