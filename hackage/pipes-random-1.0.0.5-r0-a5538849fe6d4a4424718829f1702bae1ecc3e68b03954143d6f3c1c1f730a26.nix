@@ -1,0 +1,27 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.24";
+      identifier = { name = "pipes-random"; version = "1.0.0.5"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "colin@fosskers.ca";
+      author = "Colin Woodbury";
+      homepage = "https://github.com/fosskers/pipes-random";
+      url = "";
+      synopsis = "Producers for handling randomness.";
+      description = "Producers for handling randomness.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.mwc-random)
+          (hsPkgs.pipes)
+          (hsPkgs.vector)
+          ];
+        };
+      };
+    }
