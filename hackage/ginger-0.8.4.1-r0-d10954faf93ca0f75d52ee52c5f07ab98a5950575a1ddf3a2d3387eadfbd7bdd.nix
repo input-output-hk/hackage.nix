@@ -1,0 +1,79 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "ginger"; version = "0.8.4.1"; };
+      license = "MIT";
+      copyright = "";
+      maintainer = "tdammers@gmail.com";
+      author = "Tobias Dammers";
+      homepage = "https://ginger.tobiasdammers.nl/";
+      url = "";
+      synopsis = "An implementation of the Jinja2 template language in Haskell";
+      description = "Ginger is Jinja, minus the most blatant pythonisms. Wants\nto be feature complete, but isn't quite there yet.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.aeson)
+          (hsPkgs.aeson-pretty)
+          (hsPkgs.bytestring)
+          (hsPkgs.data-default)
+          (hsPkgs.filepath)
+          (hsPkgs.http-types)
+          (hsPkgs.mtl)
+          (hsPkgs.parsec)
+          (hsPkgs.regex-tdfa)
+          (hsPkgs.safe)
+          (hsPkgs.scientific)
+          (hsPkgs.text)
+          (hsPkgs.time)
+          (hsPkgs.transformers)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.utf8-string)
+          (hsPkgs.vector)
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+        };
+      exes = {
+        "ginger" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.ginger)
+            (hsPkgs.aeson)
+            (hsPkgs.bytestring)
+            (hsPkgs.data-default)
+            (hsPkgs.optparse-applicative)
+            (hsPkgs.process)
+            (hsPkgs.text)
+            (hsPkgs.transformers)
+            (hsPkgs.unordered-containers)
+            (hsPkgs.utf8-string)
+            (hsPkgs.yaml)
+            ];
+          };
+        };
+      tests = {
+        "tests" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.ginger)
+            (hsPkgs.aeson)
+            (hsPkgs.bytestring)
+            (hsPkgs.data-default)
+            (hsPkgs.mtl)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.text)
+            (hsPkgs.time)
+            (hsPkgs.transformers)
+            (hsPkgs.unordered-containers)
+            (hsPkgs.utf8-string)
+            ];
+          };
+        };
+      };
+    }
