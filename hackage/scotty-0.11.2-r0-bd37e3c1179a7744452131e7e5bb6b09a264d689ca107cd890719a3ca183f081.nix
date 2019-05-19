@@ -58,8 +58,8 @@
             (hsPkgs.wai)
             ] ++ (pkgs.lib).optional (flags.hpc-coveralls) (hsPkgs.hpc-coveralls);
           build-tools = [
-            ((hsPkgs.buildPackages).hspec-discover)
-            ] ++ (pkgs.lib).optional (flags.hpc-coveralls) ((hsPkgs.buildPackages).hpc-coveralls);
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ] ++ (pkgs.lib).optional (flags.hpc-coveralls) (hsPkgs.buildPackages.hpc-coveralls or (pkgs.buildPackages.hpc-coveralls));
           };
         };
       };

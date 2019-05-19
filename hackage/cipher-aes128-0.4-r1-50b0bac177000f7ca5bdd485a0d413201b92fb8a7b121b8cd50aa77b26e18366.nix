@@ -13,6 +13,13 @@
       synopsis = "AES128 using AES-NI when available.";
       description = "AES128 with crypto-api instances and a trampoline between Vincent Hanquez's C-based and x86 NI-based AES.  Patches welcome to add additional high-performance backends (ARM?)";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        ];
       };
     components = {
       "library" = {

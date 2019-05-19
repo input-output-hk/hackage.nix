@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.bindings-DSL) (hsPkgs.base) (hsPkgs.CV) ];
         libs = [ (pkgs."dc1394") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

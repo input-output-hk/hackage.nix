@@ -22,6 +22,9 @@
           (hsPkgs.random)
           (hsPkgs.vector)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       tests = {
         "test-ordinal" = {

@@ -13,6 +13,14 @@
       synopsis = "A library for various character encodings";
       description = "Haskell has excellent handling of Unicode, the Char type covers all Unicode chars. Unfortunately, there's no possibility to read or write something to the outer world in an encoding other than ascii due to the lack of support for encodings. This library should help with that.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers))
+        (hsPkgs.buildPackages.HaXml or (pkgs.buildPackages.HaXml))
+        (hsPkgs.buildPackages.ghc-prim or (pkgs.buildPackages.ghc-prim))
+        ];
       };
     components = {
       "library" = {

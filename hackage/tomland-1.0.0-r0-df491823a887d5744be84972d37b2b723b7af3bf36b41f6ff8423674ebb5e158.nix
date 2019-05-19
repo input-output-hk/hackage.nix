@@ -34,7 +34,9 @@
       exes = {
         "readme" = {
           depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.tomland) ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         "play-tomland" = {
           depends = [
@@ -65,7 +67,9 @@
             (hsPkgs.tomland)
             (hsPkgs.unordered-containers)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).tasty-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover))
+            ];
           };
         };
       benchmarks = {

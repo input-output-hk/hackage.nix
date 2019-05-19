@@ -23,7 +23,9 @@
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       tests = {
         "test" = {

@@ -54,6 +54,7 @@
           ]))) ++ (pkgs.lib).optional (flags.external-bytestring) (hsPkgs.bytestring)) ++ (pkgs.lib).optional (flags.external-zlib) (hsPkgs.zlib)) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ (pkgs.lib).optional (flags.haskeline) (hsPkgs.haskeline);
         libs = ((pkgs.lib).optional (flags.curl) (pkgs."curl") ++ (pkgs.lib).optional (!flags.external-zlib) (pkgs."z")) ++ (pkgs.lib).optional (flags.curses) (pkgs."curses");
         pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl")));
+        build-tools = (pkgs.lib).optionals (!flags.curl) ((pkgs.lib).optional (flags.libwww) (hsPkgs.buildPackages.libwww-config or (pkgs.buildPackages.libwww-config)));
         };
       exes = {
         "darcs" = {
@@ -82,6 +83,7 @@
             ]))) ++ (pkgs.lib).optional (flags.external-bytestring) (hsPkgs.bytestring)) ++ (pkgs.lib).optional (flags.external-zlib) (hsPkgs.zlib)) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ (pkgs.lib).optional (flags.haskeline && !system.isWindows) (hsPkgs.haskeline);
           libs = (((pkgs.lib).optional (!flags.external-zlib) (pkgs."z") ++ (pkgs.lib).optional (flags.curl) (pkgs."curl")) ++ (pkgs.lib).optional (!flags.external-zlib) (pkgs."z")) ++ (pkgs.lib).optional (flags.curses) (pkgs."curses");
           pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optionals (flags.curl-pipelining) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libcurl")));
+          build-tools = (pkgs.lib).optionals (!flags.curl) ((pkgs.lib).optional (flags.libwww) (hsPkgs.buildPackages.libwww-config or (pkgs.buildPackages.libwww-config)));
           };
         };
       };

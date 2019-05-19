@@ -17,7 +17,9 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.unix) ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "test-shared-memory-example" = {

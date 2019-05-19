@@ -13,6 +13,13 @@
       synopsis = "Distributive functors -- Dual to Traversable";
       description = "Distributive functors -- Dual to Traversable";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        ];
       };
     components = {
       "library" = {

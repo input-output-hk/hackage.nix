@@ -17,6 +17,9 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.transformers) ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       };
     }

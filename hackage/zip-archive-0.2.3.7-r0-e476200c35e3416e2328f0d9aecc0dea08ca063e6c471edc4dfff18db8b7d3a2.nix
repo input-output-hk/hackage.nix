@@ -56,6 +56,9 @@
             (hsPkgs.HUnit)
             (hsPkgs.zip-archive)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.zip or (pkgs.buildPackages.zip))
+            ];
           };
         };
       };

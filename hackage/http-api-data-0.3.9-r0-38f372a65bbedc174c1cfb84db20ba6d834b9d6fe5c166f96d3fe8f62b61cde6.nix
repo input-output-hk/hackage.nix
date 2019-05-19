@@ -13,6 +13,11 @@
       synopsis = "Converting to/from HTTP API data like URL pieces, headers and query parameters.";
       description = "This package defines typeclasses used for converting Haskell data types to and from HTTP API data.\n\nPlease see README.md";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {
@@ -48,7 +53,9 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.quickcheck-instances)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         "doctests" = {
           depends = [

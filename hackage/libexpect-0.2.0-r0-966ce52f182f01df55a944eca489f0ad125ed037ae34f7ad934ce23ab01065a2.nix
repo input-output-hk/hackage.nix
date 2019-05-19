@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.unix) ];
         libs = [ (pkgs."expect") ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

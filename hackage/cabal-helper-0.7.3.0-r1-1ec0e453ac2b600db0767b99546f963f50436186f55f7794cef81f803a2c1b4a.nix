@@ -13,6 +13,16 @@
       synopsis = "Simple interface to some of Cabal's configuration state used by ghc-mod";
       description = "@cabal-helper@ provides a library which wraps the internal use of an\nexecutable to lift the restrictions imposed by linking against versions of\nGHC before @7.10@. This has the pleasant side effect of isolating the user\nfrom having to deal with Cabal version changes manually as @cabal-helper@\ncan simply recompile it's helper program automatically as needed.\n\n@cabal-helper@ uses a wrapper executable to compile the actual cabal-helper\nexecutable at runtime while linking against an arbitrary version of\nCabal. This runtime-compiled helper executable is then used to extract\nvarious bits and peices from Cabal\\'s on disk state (dist/setup-config)\nwritten by it's configure command.\n\nIn addition to this the wrapper executable also supports installing any\nversion of Cabal from hackage in case it cannot be found in any available\npackage database. The wrapper installs these instances of the Cabal library\ninto a private package database so as to not interfere with the user's\npackages.\n\nFurthermore the wrapper supports one special case namely reading a state\nfile for Cabal itself. This is needed as Cabal compiles it's Setup.hs using\nitself and not using any version of Cabal installed in any package database.\n\n@cabal-helper@ can compile with @Cabal >= 1.14@ but requires @Cabal >= 1.16@\nat runtime.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell))
+        (hsPkgs.buildPackages.transformers or (pkgs.buildPackages.transformers))
+        ];
       };
     components = {
       "library" = {
@@ -63,6 +73,9 @@
             (hsPkgs.template-haskell)
             (hsPkgs.ghc-prim)
             (hsPkgs.cabal-helper)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
             ];
           };
         };

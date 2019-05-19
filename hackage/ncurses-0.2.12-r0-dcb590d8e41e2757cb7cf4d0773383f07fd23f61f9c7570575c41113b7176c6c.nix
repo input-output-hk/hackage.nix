@@ -28,7 +28,9 @@
         pkgconfig = (pkgs.lib).optionals (flags.use-pkgconfig) (if flags.force-narrow-library
           then [ (pkgconfPkgs."ncurses") (pkgconfPkgs."panel") ]
           else [ (pkgconfPkgs."ncursesw") (pkgconfPkgs."panelw") ]);
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

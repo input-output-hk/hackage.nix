@@ -147,10 +147,10 @@
             then [ (hsPkgs.time) (hsPkgs.old-locale) ]
             else [ (hsPkgs.time) ]);
           build-tools = [
-            ((hsPkgs.buildPackages).arbtt)
-            ((hsPkgs.buildPackages).arbtt)
-            ((hsPkgs.buildPackages).arbtt)
-            ((hsPkgs.buildPackages).arbtt)
+            (hsPkgs.buildPackages.arbtt or (pkgs.buildPackages.arbtt))
+            (hsPkgs.buildPackages.arbtt or (pkgs.buildPackages.arbtt))
+            (hsPkgs.buildPackages.arbtt or (pkgs.buildPackages.arbtt))
+            (hsPkgs.buildPackages.arbtt or (pkgs.buildPackages.arbtt))
             ];
           };
         };

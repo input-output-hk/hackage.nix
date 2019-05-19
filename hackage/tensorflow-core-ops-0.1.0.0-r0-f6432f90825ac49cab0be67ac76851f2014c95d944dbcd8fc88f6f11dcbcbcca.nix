@@ -13,6 +13,18 @@
       synopsis = "Haskell wrappers for Core Tensorflow Ops.";
       description = "Code generated signatures for the Ops in libtensorflow.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.proto-lens or (pkgs.buildPackages.proto-lens))
+        (hsPkgs.buildPackages.tensorflow-opgen or (pkgs.buildPackages.tensorflow-opgen))
+        (hsPkgs.buildPackages.tensorflow or (pkgs.buildPackages.tensorflow))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.mainland-pretty or (pkgs.buildPackages.mainland-pretty))
+        (hsPkgs.buildPackages.text or (pkgs.buildPackages.text))
+        ];
       };
     components = {
       "library" = {

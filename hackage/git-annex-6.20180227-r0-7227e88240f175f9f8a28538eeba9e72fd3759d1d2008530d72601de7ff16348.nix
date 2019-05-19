@@ -28,6 +28,21 @@
       synopsis = "manage files with git, without checking their contents into git";
       description = "git-annex allows managing files with git, without checking the file\ncontents into git. While that may seem paradoxical, it is useful when\ndealing with files larger than git can currently easily handle, whether due\nto limitations in memory, time, or disk space.\n\nIt can store large files in many places, from local hard drives, to a\nlarge number of cloud storage services, including S3, WebDAV,\nand rsync, with a dozen cloud storage providers usable via plugins.\nFiles can be stored encrypted with gpg, so that the cloud storage\nprovider cannot see your data. git-annex keeps track of where each file\nis stored, so it knows how many copies are available, and has many\nfacilities to ensure your data is preserved.\n\ngit-annex can also be used to keep a folder in sync between computers,\nnoticing when files are changed, and automatically committing them\nto git and transferring them to other computers. The git-annex webapp\nmakes it easy to set up and use git-annex this way.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.hslogger or (pkgs.buildPackages.hslogger))
+        (hsPkgs.buildPackages.split or (pkgs.buildPackages.split))
+        (hsPkgs.buildPackages.unix-compat or (pkgs.buildPackages.unix-compat))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.exceptions or (pkgs.buildPackages.exceptions))
+        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.IfElse or (pkgs.buildPackages.IfElse))
+        (hsPkgs.buildPackages.data-default or (pkgs.buildPackages.data-default))
+        (hsPkgs.buildPackages.utf8-string or (pkgs.buildPackages.utf8-string))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       exes = {

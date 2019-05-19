@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."termbox") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "example" = { depends = [ (hsPkgs.base) (hsPkgs.termbox-bindings) ]; };

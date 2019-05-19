@@ -19,7 +19,9 @@
         depends = [ (hsPkgs.array) (hsPkgs.pretty) (hsPkgs.cpphs) ] ++ [
           (hsPkgs.base)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       tests = {
         "test" = {

@@ -13,6 +13,11 @@
       synopsis = "A data type with elements separated by values";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nA data type with elements separated by values";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

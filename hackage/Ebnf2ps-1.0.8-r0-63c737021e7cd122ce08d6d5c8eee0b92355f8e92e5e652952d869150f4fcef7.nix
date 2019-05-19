@@ -26,7 +26,9 @@
             (hsPkgs.array)
             (hsPkgs.haskell98)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          build-tools = [
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            ];
           };
         };
       };

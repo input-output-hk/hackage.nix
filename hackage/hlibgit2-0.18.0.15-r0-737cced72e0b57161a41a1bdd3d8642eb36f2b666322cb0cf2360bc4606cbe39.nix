@@ -26,6 +26,9 @@
       tests = {
         "smoke" = {
           depends = [ (hsPkgs.base) (hsPkgs.hlibgit2) (hsPkgs.process) ];
+          build-tools = [
+            (hsPkgs.buildPackages.git or (pkgs.buildPackages.git))
+            ];
           };
         };
       };

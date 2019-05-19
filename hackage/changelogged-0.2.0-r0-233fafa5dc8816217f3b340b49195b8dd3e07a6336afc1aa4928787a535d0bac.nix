@@ -13,6 +13,11 @@
       synopsis = "Changelog manager for Git projects.";
       description = "Please see the README on Github at <https://github.com/GetShopTV/changelogged#readme>";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

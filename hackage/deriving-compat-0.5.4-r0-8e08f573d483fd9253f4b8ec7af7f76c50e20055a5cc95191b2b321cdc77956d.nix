@@ -43,7 +43,9 @@
             ] ++ [ (hsPkgs.base) ]) ++ (if flags.new-functor-classes
             then [ (hsPkgs.transformers) (hsPkgs.transformers-compat) ]
             else [ (hsPkgs.transformers) ]);
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

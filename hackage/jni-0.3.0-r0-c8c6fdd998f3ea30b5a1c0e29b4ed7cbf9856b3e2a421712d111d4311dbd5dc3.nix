@@ -26,7 +26,9 @@
           (hsPkgs.thread-local-storage)
           ];
         libs = [ (pkgs."jvm") ];
-        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+          ];
         };
       };
     }

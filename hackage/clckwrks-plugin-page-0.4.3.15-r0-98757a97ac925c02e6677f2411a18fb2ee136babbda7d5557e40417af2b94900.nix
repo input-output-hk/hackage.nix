@@ -13,6 +13,10 @@
       synopsis = "support for CMS/Blogging in clckwrks";
       description = "This provides two similar concepts Pages and Posts. Both allow\nyou to create page content by editting pages in the browser. A Post\nis simply a page which is displayed in the blog.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {
@@ -48,6 +52,9 @@
           (hsPkgs.web-routes)
           (hsPkgs.web-routes-happstack)
           (hsPkgs.web-routes-th)
+          ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs))
           ];
         };
       };

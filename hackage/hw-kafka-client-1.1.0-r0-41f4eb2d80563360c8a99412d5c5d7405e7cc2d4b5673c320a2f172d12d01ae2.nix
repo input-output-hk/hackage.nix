@@ -26,7 +26,9 @@
           (hsPkgs.unix)
           ];
         libs = [ (pkgs."rdkafka") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "kafka-client-example" = {

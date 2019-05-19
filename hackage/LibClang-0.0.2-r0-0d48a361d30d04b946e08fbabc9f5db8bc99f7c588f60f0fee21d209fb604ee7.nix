@@ -17,7 +17,9 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.ffi) (hsPkgs.greencard) ];
-        build-tools = [ ((hsPkgs.buildPackages).greencard) ];
+        build-tools = [
+          (hsPkgs.buildPackages.greencard or (pkgs.buildPackages.greencard))
+          ];
         };
       };
     }

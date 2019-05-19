@@ -17,7 +17,9 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.xmms2-client) ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

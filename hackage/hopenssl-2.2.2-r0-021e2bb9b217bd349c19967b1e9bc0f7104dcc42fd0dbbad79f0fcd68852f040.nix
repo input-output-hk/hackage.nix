@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = [ (pkgs."crypto") ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "check-low-level-digest-api" = {

@@ -102,7 +102,9 @@
             (hsPkgs.uri-bytestring)
             (hsPkgs.versions)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       tests = {

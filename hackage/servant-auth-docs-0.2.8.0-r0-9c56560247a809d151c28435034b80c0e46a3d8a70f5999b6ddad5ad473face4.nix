@@ -13,6 +13,11 @@
       synopsis = "servant-docs/servant-auth compatibility";
       description = "Please see README.md";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {
@@ -47,7 +52,9 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

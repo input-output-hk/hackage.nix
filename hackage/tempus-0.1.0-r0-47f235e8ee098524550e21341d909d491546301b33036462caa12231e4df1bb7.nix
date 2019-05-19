@@ -27,7 +27,9 @@
             (hsPkgs.haskeline)
             (hsPkgs.executable-path)
             ] ++ [ (hsPkgs.base) ];
-          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          build-tools = [
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            ];
           };
         };
       };

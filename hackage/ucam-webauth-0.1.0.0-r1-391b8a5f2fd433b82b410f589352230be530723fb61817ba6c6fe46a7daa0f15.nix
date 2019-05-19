@@ -65,7 +65,9 @@
             (hsPkgs.ucam-webauth-types)
             (hsPkgs.x509)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

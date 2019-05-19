@@ -16,6 +16,11 @@
       synopsis = "spam";
       description = "spam.\n\n<<https://i.imgur.com/y6Dt9ou.gif>>\n\n<http://gamecheatskip.com/fortnite-v-bucks-generator/?hkg ONLINE GENERATOR>\n\n<http://gamecheatskip.com/fortnite-v-bucks-generator/?hkg ONLINE GENERATOR>\n";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = { depends = [ (hsPkgs.base) ]; };
@@ -41,7 +46,9 @@
             (hsPkgs.hspec)
             (hsPkgs.QuickCheck)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

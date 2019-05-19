@@ -61,7 +61,9 @@
             (hsPkgs.tf-random)
             (hsPkgs.transformers)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-meta) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-meta or (pkgs.buildPackages.hspec-meta))
+            ];
           };
         };
       };

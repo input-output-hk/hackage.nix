@@ -36,6 +36,9 @@
             (hsPkgs.template-haskell)
             (hsPkgs.process)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.python3 or (pkgs.buildPackages.python3))
+            ];
           };
         };
       };

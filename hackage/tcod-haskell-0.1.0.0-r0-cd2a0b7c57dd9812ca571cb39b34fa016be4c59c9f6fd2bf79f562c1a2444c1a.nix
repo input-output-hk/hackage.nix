@@ -13,6 +13,11 @@
       synopsis = "Bindings to libtcod roguelike engine";
       description = "Haskell bindings for popular library for making roguelike games";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        ];
       };
     components = {
       "library" = {

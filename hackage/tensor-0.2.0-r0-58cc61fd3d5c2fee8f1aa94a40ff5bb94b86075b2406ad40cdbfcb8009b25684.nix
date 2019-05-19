@@ -17,6 +17,9 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.ghc-prim) (hsPkgs.vector) ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       };
     }

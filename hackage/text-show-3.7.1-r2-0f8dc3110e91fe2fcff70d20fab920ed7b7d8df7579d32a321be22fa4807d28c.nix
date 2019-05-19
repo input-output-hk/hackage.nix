@@ -75,7 +75,9 @@
             else [ (hsPkgs.template-haskell) ])) ++ [
             (hsPkgs.transformers)
             ]) ++ (pkgs.lib).optional (!flags.developer) (hsPkgs.text-show);
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       benchmarks = {

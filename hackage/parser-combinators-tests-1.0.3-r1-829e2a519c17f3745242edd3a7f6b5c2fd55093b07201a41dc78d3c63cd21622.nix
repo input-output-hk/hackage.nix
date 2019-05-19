@@ -27,7 +27,9 @@
             (hsPkgs.megaparsec-tests)
             (hsPkgs.parser-combinators)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

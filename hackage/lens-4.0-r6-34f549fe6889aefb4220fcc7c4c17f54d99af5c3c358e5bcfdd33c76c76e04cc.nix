@@ -64,7 +64,9 @@
           (hsPkgs.void)
           (hsPkgs.zlib)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+          ];
         };
       tests = {
         "templates" = { depends = [ (hsPkgs.base) (hsPkgs.lens) ]; };

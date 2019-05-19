@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         pkgconfig = [ (pkgconfPkgs."raptor2") (pkgconfPkgs."redland") ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

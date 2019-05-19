@@ -13,6 +13,12 @@
       synopsis = "Expose Java iterators as streams from the streaming package.";
       description = "Please see README.md.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.inline-java or (pkgs.buildPackages.inline-java))
+        (hsPkgs.buildPackages.jvm-batching or (pkgs.buildPackages.jvm-batching))
+        ];
       };
     components = {
       "library" = {

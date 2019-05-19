@@ -13,6 +13,16 @@
       synopsis = "Fast functions on integers.";
       description = "Fast functions for number theory and combinatorics with a high level of safety guaranteed by [ATS](http://www.ats-lang.org/). This package also provides a\n'Storable' instance for GMP's @mpz@ type.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.http-client or (pkgs.buildPackages.http-client))
+        (hsPkgs.buildPackages.http-client-tls or (pkgs.buildPackages.http-client-tls))
+        (hsPkgs.buildPackages.tar or (pkgs.buildPackages.tar))
+        (hsPkgs.buildPackages.zlib or (pkgs.buildPackages.zlib))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.parallel-io or (pkgs.buildPackages.parallel-io))
+        ];
       };
     components = {
       "library" = {

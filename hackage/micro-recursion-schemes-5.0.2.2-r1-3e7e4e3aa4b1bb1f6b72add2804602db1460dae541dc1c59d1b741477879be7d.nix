@@ -23,7 +23,7 @@
             (hsPkgs.template-haskell)
             ]
           else [ (hsPkgs.base) (hsPkgs.bifunctors) ];
-        build-tools = (pkgs.lib).optional (flags.template-haskell) ((hsPkgs.buildPackages).cpphs);
+        build-tools = (pkgs.lib).optional (flags.template-haskell) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
         };
       tests = {
         "Expr" = {

@@ -44,8 +44,8 @@
           (hsPkgs.utf8-string)
           ] ++ (pkgs.lib).optional (flags.self-contained) (hsPkgs.heredoc);
         build-tools = [
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).happy)
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
           ];
         };
       exes = {

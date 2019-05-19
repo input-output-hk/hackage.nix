@@ -33,6 +33,11 @@
           (pkgconfPkgs."gstreamer-net-0.10")
           (pkgconfPkgs."gstreamer-plugins-base-0.10")
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+          (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen))
+          (hsPkgs.buildPackages.gtk2hsHookGenerator or (pkgs.buildPackages.gtk2hsHookGenerator))
+          ];
         };
       };
     }

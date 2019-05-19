@@ -13,6 +13,11 @@
       synopsis = "TensorFlow protocol buffers.";
       description = "Please see README.md";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.proto-lens-protoc or (pkgs.buildPackages.proto-lens-protoc))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        ];
       };
     components = {
       "library" = {

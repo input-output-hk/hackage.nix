@@ -42,6 +42,9 @@
           (hsPkgs.test-framework-quickcheck2)
           (hsPkgs.test-framework-th)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "clafer" = {
@@ -71,6 +74,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
             (hsPkgs.clafer)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
             ];
           };
         };
@@ -102,6 +108,9 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.test-framework-th)
             (hsPkgs.clafer)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
             ];
           };
         };

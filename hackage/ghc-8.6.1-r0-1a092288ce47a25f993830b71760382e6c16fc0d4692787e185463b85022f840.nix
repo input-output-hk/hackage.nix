@@ -40,8 +40,8 @@
             (hsPkgs.unix)
             ] ++ (pkgs.lib).optional (flags.terminfo) (hsPkgs.terminfo));
         build-tools = [
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).happy)
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
           ];
         };
       };

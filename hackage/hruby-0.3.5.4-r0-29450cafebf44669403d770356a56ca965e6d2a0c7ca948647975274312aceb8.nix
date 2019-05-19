@@ -13,6 +13,11 @@
       synopsis = "Embed a Ruby intepreter in your Haskell program !";
       description = "This doesn't work with Ruby 1.9. Everything you need should be in Foreign.Ruby.Safe.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        ];
       };
     components = {
       "library" = {

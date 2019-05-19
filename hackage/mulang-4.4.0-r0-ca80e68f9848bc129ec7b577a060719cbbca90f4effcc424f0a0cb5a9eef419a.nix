@@ -39,8 +39,8 @@
           (hsPkgs.process)
           ];
         build-tools = [
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).alex)
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
           ];
         };
       exes = {
@@ -55,8 +55,8 @@
             (hsPkgs.mulang)
             ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
           build-tools = [
-            ((hsPkgs.buildPackages).happy)
-            ((hsPkgs.buildPackages).alex)
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
             ];
           };
         };
@@ -73,8 +73,8 @@
             (hsPkgs.containers)
             ];
           build-tools = [
-            ((hsPkgs.buildPackages).happy)
-            ((hsPkgs.buildPackages).alex)
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
             ];
           };
         };

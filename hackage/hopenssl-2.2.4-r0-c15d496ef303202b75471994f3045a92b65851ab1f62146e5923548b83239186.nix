@@ -20,7 +20,9 @@
         libs = [
           (pkgs."crypto")
           ] ++ (pkgs.lib).optional (flags.link-libz) (pkgs."z");
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "check-low-level-digest-api" = {

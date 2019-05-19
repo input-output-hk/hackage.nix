@@ -29,7 +29,9 @@
           (hsPkgs.cpphs)
           (hsPkgs.pqueue)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       exes = {
         "homplexity-cli" = {

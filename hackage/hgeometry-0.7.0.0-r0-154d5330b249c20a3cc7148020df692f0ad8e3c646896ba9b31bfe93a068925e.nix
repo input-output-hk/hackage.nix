@@ -121,7 +121,9 @@
             (hsPkgs.singletons)
             (hsPkgs.colour)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         "bapc_examples" = {
           depends = [

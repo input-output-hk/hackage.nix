@@ -31,7 +31,9 @@
           ];
         libs = [ (pkgs."clang-3.8") ];
         pkgconfig = [ (pkgconfPkgs."ncurses") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

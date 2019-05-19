@@ -55,6 +55,9 @@
             (hsPkgs.temporary)
             (hsPkgs.filepath)
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          build-tools = [
+            (hsPkgs.buildPackages.unzip or (pkgs.buildPackages.unzip))
+            ];
           };
         };
       };

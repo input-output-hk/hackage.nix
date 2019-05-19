@@ -20,6 +20,10 @@
       synopsis = "Supports using pandoc with citeproc";
       description = "The pandoc-citeproc library supports automatic\ngeneration of citations and a bibliography in pandoc\ndocuments using the Citation Style Language (CSL)\nmacro language. More details on CSL can be found at\n<http://citationstyles.org/>.\n\nIn addition to a library, the package includes\nan executable, pandoc-citeproc, which works as a pandoc\nfilter and also has a mode for converting bibliographic\ndatabases into CSL JSON and pandoc YAML metadata formats.\n\npandoc-citeproc originated as a fork of Andrea\nRossato's citeproc-hs.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {
@@ -91,6 +95,9 @@
             (hsPkgs.containers)
             (hsPkgs.vector)
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs.base-compat);
+          build-tools = [
+            (hsPkgs.buildPackages.pandoc-citeproc or (pkgs.buildPackages.pandoc-citeproc))
+            ];
           };
         };
       tests = {
@@ -111,6 +118,9 @@
             (hsPkgs.temporary)
             (hsPkgs.yaml)
             ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs.semigroups)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs.base-compat);
+          build-tools = [
+            (hsPkgs.buildPackages.pandoc-citeproc or (pkgs.buildPackages.pandoc-citeproc))
+            ];
           };
         };
       };

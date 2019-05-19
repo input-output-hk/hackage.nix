@@ -31,7 +31,9 @@
             (hsPkgs.parsec)
             (hsPkgs.utf8-string)
             ] ++ [ (hsPkgs.base) ];
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };

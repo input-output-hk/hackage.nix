@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.text) ];
         libs = [ (pkgs."odpic") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "odpic-raw-test" = {

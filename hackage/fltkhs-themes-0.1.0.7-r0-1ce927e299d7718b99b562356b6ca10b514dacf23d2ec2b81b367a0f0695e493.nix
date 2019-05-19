@@ -13,6 +13,10 @@
       synopsis = "A set of themed widgets that provides drop in replacements to the ones in FLTKHS.";
       description = "Please see the README on Github at <https://github.com/deech/fltkhs-themes#readme>";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        ];
       };
     components = {
       "library" = {

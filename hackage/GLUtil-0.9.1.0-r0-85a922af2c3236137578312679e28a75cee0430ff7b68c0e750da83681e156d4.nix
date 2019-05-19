@@ -30,7 +30,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.1") (hsPkgs.hpp);
-        build-tools = (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10.1")) ((hsPkgs.buildPackages).cpphs);
+        build-tools = (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10.1")) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
         };
       };
     }

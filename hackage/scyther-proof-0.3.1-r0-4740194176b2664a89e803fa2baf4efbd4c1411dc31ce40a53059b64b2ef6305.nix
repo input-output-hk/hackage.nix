@@ -32,7 +32,9 @@
           (hsPkgs.json)
           (hsPkgs.uniplate)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "scyther-proof" = {

@@ -19,6 +19,12 @@
       synopsis = "Haskell binding for Qt Quick";
       description = "A Haskell binding for Qt Quick, a cross-platform framework for creating\ngraphical user interfaces. For further information on installing and using\nthis library, please see the project's web site.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        ];
       };
     components = {
       "library" = {
@@ -54,7 +60,9 @@
           (pkgconfPkgs."Qt5Qml")
           (pkgconfPkgs."Qt5Quick")
           ]);
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "hsqml-test1" = {

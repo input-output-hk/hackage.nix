@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.utf8-string) (hsPkgs.bytestring) ];
         pkgconfig = [ (pkgconfPkgs."opencc") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "test-opencc" = {

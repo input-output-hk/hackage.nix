@@ -19,7 +19,9 @@
         depends = [
           (hsPkgs.base)
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "tests" = { depends = [ (hsPkgs.base) (hsPkgs.code-page) ]; };

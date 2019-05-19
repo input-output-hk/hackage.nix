@@ -64,7 +64,9 @@
             (hsPkgs.text)
             (hsPkgs.mtl)
             ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
-          build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+            ];
           };
         };
       exes = {

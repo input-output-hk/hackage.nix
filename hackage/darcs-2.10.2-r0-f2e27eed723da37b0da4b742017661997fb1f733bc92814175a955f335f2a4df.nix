@@ -88,6 +88,9 @@
             ]))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ (pkgs.lib).optional (flags.hashed-storage-diff) (hsPkgs.lcs)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
         libs = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (!flags.pkgconfig) (pkgs."curl"));
         pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."libcurl"));
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "darcs" = {
@@ -96,6 +99,9 @@
             (hsPkgs.darcs)
             (hsPkgs.filepath)
             (hsPkgs.regex-compat-tdfa)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
             ];
           };
         };
@@ -123,6 +129,9 @@
             (hsPkgs.test-framework-hunit)
             (hsPkgs.test-framework-quickcheck2)
             ] ++ [ (hsPkgs.text) ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         "hashed-storage-test" = {
           depends = [

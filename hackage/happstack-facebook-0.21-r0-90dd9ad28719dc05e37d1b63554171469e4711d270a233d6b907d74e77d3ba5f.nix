@@ -53,6 +53,12 @@
           (hsPkgs.formlets-hsp)
           ];
         };
-      exes = { "demo" = {}; };
+      exes = {
+        "demo" = {
+          build-tools = [
+            (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx))
+            ];
+          };
+        };
       };
     }

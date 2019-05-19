@@ -59,6 +59,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.uuid)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.couchdb or (pkgs.buildPackages.couchdb))
+            ];
           };
         };
       };

@@ -26,6 +26,9 @@
           ] ++ [
           (hsPkgs.mtl)
           ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       tests = {
         "test" = {
@@ -47,6 +50,9 @@
             (hsPkgs.split)
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
             ];
           };
         };

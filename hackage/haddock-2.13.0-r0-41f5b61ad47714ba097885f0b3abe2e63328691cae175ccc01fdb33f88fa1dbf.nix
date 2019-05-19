@@ -28,8 +28,8 @@
           (hsPkgs.ghc)
           ] ++ (pkgs.lib).optional (!flags.in-ghc-tree) (hsPkgs.ghc-paths);
         build-tools = (pkgs.lib).optionals (!flags.in-ghc-tree) [
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).happy)
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
           ];
         };
       exes = {

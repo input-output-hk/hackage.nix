@@ -34,7 +34,9 @@
           (hsPkgs.time)
           (hsPkgs.timezone-olson)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       exes = {
         "test-time-exts" = {
@@ -56,7 +58,9 @@
             (hsPkgs.time)
             (hsPkgs.timezone-olson)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+            ];
           };
         };
       };

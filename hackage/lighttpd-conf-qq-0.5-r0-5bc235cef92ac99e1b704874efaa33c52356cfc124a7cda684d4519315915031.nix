@@ -24,6 +24,9 @@
           (hsPkgs.array)
           (hsPkgs.bytestring)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       };
     }

@@ -31,7 +31,9 @@
           ] ++ (if flags.base4
           then [ (hsPkgs.base) (hsPkgs.syb) ]
           else [ (hsPkgs.base) ]);
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "parac" = {
@@ -50,7 +52,9 @@
             ] ++ (if flags.base4
             then [ (hsPkgs.base) (hsPkgs.syb) ]
             else [ (hsPkgs.base) ]);
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };

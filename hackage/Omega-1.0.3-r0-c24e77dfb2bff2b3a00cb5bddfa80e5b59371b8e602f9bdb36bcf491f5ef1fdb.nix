@@ -20,7 +20,9 @@
         libs = if flags.useinstalledomega
           then [ (pkgs."omega") (pkgs."stdc++") ]
           else [ (pkgs."stdc++") ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "test-Omega" = {
@@ -28,7 +30,9 @@
           libs = if flags.useinstalledomega
             then [ (pkgs."omega") (pkgs."stdc++") ]
             else [ (pkgs."stdc++") ];
-          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+            ];
           };
         };
       };

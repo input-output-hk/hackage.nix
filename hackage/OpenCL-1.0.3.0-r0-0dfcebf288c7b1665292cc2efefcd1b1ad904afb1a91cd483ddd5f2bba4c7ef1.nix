@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.mtl) ];
         frameworks = (pkgs.lib).optional (system.isLinux) (pkgs."OpenCL") ++ (pkgs.lib).optional (system.isOsx) (pkgs."OpenCL");
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "tests" = {

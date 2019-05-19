@@ -13,6 +13,10 @@
       synopsis = "Binding to libSDL_ttf";
       description = "This is a sample library which allows you to use TrueType\nfonts in your SDL applications.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {

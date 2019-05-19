@@ -13,6 +13,10 @@
       synopsis = "Additional types of channels for STM.";
       description = "Additional types of channels for STM.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        ];
       };
     components = { "library" = { depends = [ (hsPkgs.base) (hsPkgs.stm) ]; }; };
     }

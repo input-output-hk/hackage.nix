@@ -33,6 +33,9 @@
           (hsPkgs.string-conversions)
           (hsPkgs.clafer)
           ] ++ [ (hsPkgs.HaXml) ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "claferIG" = {
@@ -48,6 +51,9 @@
             (hsPkgs.haskeline)
             (hsPkgs.clafer)
             (hsPkgs.claferIG)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
             ];
           };
         };

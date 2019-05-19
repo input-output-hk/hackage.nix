@@ -25,7 +25,9 @@
           (hsPkgs.vector)
           ];
         libs = [ (pkgs."mxnet") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "mxnet-test" = {

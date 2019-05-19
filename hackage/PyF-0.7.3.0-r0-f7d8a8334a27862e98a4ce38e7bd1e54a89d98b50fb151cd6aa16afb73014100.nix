@@ -36,6 +36,9 @@
             (hsPkgs.template-haskell)
             (hsPkgs.process)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.python3 or (pkgs.buildPackages.python3))
+            ];
           };
         "pyf-failure" = {
           depends = [
@@ -51,6 +54,9 @@
             (hsPkgs.deepseq)
             (hsPkgs.directory)
             (hsPkgs.HUnit)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.python3 or (pkgs.buildPackages.python3))
             ];
           };
         };

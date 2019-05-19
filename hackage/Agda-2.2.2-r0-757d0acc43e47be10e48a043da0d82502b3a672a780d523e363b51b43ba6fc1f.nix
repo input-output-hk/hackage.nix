@@ -37,8 +37,8 @@
           (hsPkgs.xhtml)
           ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs.ghc-prim);
         build-tools = [
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).alex)
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
           ];
         };
       exes = {

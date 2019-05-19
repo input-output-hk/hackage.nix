@@ -53,7 +53,7 @@
           (hsPkgs.unix)
           (hsPkgs.vector)
           ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.bytestring);
-        build-tools = (pkgs.lib).optional (system.isOsx) ((hsPkgs.buildPackages).c2hs) ++ (pkgs.lib).optional (system.isLinux) ((hsPkgs.buildPackages).c2hs);
+        build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs)) ++ (pkgs.lib).optional (system.isLinux) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs));
         };
       };
     }

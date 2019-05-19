@@ -13,6 +13,11 @@
       synopsis = "A framework for pre-commit checks.";
       description = "Make your Haskell git repositories fashionable.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {
@@ -86,6 +91,9 @@
             (hsPkgs.hspec)
             (hsPkgs.process)
             (hsPkgs.temporary)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.git or (pkgs.buildPackages.git))
             ];
           };
         };

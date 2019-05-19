@@ -49,7 +49,7 @@
           (hsPkgs.prettyprinter)
           (hsPkgs.generic-deriving)
           ] ++ [ (hsPkgs.deepseq) ];
-        build-tools = (pkgs.lib).optional (flags.cpphs) ((hsPkgs.buildPackages).cpphs);
+        build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
         };
       exes = {
         "example-spiros" = {
@@ -59,13 +59,13 @@
             (hsPkgs.text)
             (hsPkgs.optparse-applicative)
             ];
-          build-tools = (pkgs.lib).optional (flags.cpphs) ((hsPkgs.buildPackages).cpphs);
+          build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
           };
         };
       tests = {
         "doc" = {
           depends = [ (hsPkgs.base) (hsPkgs.spiros) (hsPkgs.doctest) ];
-          build-tools = (pkgs.lib).optional (flags.cpphs) ((hsPkgs.buildPackages).cpphs);
+          build-tools = (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
           };
         };
       };

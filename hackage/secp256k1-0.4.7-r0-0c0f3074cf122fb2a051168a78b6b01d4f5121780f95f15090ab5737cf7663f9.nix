@@ -13,6 +13,10 @@
       synopsis = "Bindings for secp256k1 library from Bitcoin Core";
       description = "Please see README.md";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {

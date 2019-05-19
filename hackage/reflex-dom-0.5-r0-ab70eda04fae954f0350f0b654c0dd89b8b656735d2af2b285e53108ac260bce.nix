@@ -45,7 +45,7 @@
             else if flags.webkit2gtk
               then [ (hsPkgs.jsaddle-webkit2gtk) ]
               else (pkgs.lib).optional (!flags.android) (hsPkgs.jsaddle-webkit2gtk));
-        build-tools = (pkgs.lib).optional (flags.android) ((hsPkgs.buildPackages).hsc2hs);
+        build-tools = (pkgs.lib).optional (flags.android) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
         };
       exes = {
         "sortableList" = {

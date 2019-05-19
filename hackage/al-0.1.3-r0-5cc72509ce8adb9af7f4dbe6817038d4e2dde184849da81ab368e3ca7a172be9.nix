@@ -20,7 +20,9 @@
         libs = if system.isWindows
           then [ (pkgs."OpenAL32") ]
           else [ (pkgs."openal") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

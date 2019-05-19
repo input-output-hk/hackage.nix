@@ -31,7 +31,7 @@
           then [ (hsPkgs.unix) ]
           else [ (hsPkgs.process) (hsPkgs.deepseq) ]);
         libs = (pkgs.lib).optional (flags.libmagic) (pkgs."magic");
-        build-tools = (pkgs.lib).optional (flags.libmagic) ((hsPkgs.buildPackages).hsc2hs);
+        build-tools = (pkgs.lib).optional (flags.libmagic) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
         };
       exes = {
         "marmalade-upload" = {

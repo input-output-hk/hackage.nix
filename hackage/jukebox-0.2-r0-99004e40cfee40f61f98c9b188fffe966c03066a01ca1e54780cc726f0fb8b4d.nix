@@ -32,7 +32,9 @@
           (hsPkgs.containers)
           (hsPkgs.uglymemo)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = { "jukebox" = { depends = [ (hsPkgs.base) (hsPkgs.jukebox) ]; }; };
       };

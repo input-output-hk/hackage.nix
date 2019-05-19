@@ -24,7 +24,9 @@
           (hsPkgs.mtl)
           ];
         libs = [ (pkgs."geos_c") ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "test" = {
@@ -38,7 +40,9 @@
             (hsPkgs.cassava)
             ];
           libs = [ (pkgs."geos_c") ];
-          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+            ];
           };
         };
       };

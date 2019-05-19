@@ -13,6 +13,11 @@
       synopsis = "Lifting linear vector spaces into Accelerate";
       description = "Lifting linear vector spaces into Accelerate";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        ];
       };
     components = {
       "library" = {

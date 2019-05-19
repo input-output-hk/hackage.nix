@@ -24,8 +24,8 @@
           (hsPkgs.utf8-light)
           ];
         build-tools = [
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).happy)
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
           ];
         };
       exes = {

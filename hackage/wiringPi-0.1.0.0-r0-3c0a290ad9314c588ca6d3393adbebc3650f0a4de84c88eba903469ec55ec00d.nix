@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."wiringPi") ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       exes = {
         "pwm-example" = { depends = [ (hsPkgs.base) (hsPkgs.wiringPi) ]; };

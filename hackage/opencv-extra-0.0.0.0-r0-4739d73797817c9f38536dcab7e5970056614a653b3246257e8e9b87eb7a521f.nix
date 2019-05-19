@@ -13,6 +13,10 @@
       synopsis = "Haskell binding to OpenCV-3.x extra modules";
       description = "";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {

@@ -48,7 +48,7 @@
           ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs.syb)) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
           (hsPkgs.deepseq)
           ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs.deepseq-generics))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs.generics-sop))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_seqable) (hsPkgs.parallel))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_patnode) (hsPkgs.parallel))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_pseq_patnode) (hsPkgs.parallel));
-        build-tools = (pkgs.lib).optional (flags.use_cpphs) ((hsPkgs.buildPackages).cpphs);
+        build-tools = (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
         };
       tests = {
         "deepseq-bounded-tests" = {
@@ -62,7 +62,7 @@
             ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs.ghc-prim)) ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs.syb)) ++ (pkgs.lib).optionals (flags.use_ww_deepseq) ([
             (hsPkgs.deepseq)
             ] ++ (pkgs.lib).optional (!flags.haskell98_fragment) (hsPkgs.deepseq-generics))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_sop) (hsPkgs.generics-sop))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_seqable) (hsPkgs.parallel))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_par_patnode) (hsPkgs.parallel))) ++ (pkgs.lib).optionals (!flags.haskell98_fragment) ((pkgs.lib).optional (flags.use_pseq_patnode) (hsPkgs.parallel));
-          build-tools = (pkgs.lib).optional (flags.use_cpphs) ((hsPkgs.buildPackages).cpphs);
+          build-tools = (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
           };
         };
       };

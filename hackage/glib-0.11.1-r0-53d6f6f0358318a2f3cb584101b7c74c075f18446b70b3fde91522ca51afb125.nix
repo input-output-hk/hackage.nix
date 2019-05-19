@@ -18,6 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.haskell98) ];
         pkgconfig = [ (pkgconfPkgs."glib-2.0") (pkgconfPkgs."gobject-2.0") ];
+        build-tools = [
+          (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+          ];
         };
       };
     }

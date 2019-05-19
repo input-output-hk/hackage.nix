@@ -38,6 +38,9 @@
           (hsPkgs.split)
           (hsPkgs.text)
           ] ++ [ (hsPkgs.HaXml) ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "clafer" = {
@@ -51,6 +54,9 @@
             (hsPkgs.split)
             (hsPkgs.clafer)
             ] ++ [ (hsPkgs.HaXml) ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         };
       tests = {
@@ -69,6 +75,9 @@
             (hsPkgs.tasty-th)
             (hsPkgs.clafer)
             ] ++ [ (hsPkgs.HaXml) ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         };
       };

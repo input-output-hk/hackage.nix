@@ -24,7 +24,9 @@
       tests = {
         "doctest-driver-gen-test" = {
           depends = [ (hsPkgs.base) (hsPkgs.doctest) ];
-          build-tools = [ ((hsPkgs.buildPackages).doctest-driver-gen) ];
+          build-tools = [
+            (hsPkgs.buildPackages.doctest-driver-gen or (pkgs.buildPackages.doctest-driver-gen))
+            ];
           };
         };
       };

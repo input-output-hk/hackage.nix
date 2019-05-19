@@ -13,6 +13,11 @@
       synopsis = "Provides batched marshalling of values between Java and Haskell.";
       description = "Please see README.md.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.inline-java or (pkgs.buildPackages.inline-java))
+        ];
       };
     components = {
       "library" = {

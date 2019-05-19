@@ -13,6 +13,12 @@
       synopsis = "Haskell bindings for a very compact embedded ECMAScript (JavaScript) engine.";
       description = "";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        ];
       };
     components = {
       "library" = {

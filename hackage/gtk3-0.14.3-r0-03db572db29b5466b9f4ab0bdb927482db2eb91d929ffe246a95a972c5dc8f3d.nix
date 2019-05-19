@@ -13,6 +13,11 @@
       synopsis = "Binding to the Gtk+ 3 graphical user interface library";
       description = "This is the core library of the Gtk2Hs suite of libraries for Haskell\nbased on Gtk+. Gtk+ is an extensive and mature multi-platform toolkit\nfor creating graphical user interfaces.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.gtk2hs-buildtools or (pkgs.buildPackages.gtk2hs-buildtools))
+        ];
       };
     components = {
       "library" = {
@@ -29,6 +34,11 @@
           ] ++ (pkgs.lib).optional (flags.have-gio) (hsPkgs.gio);
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32");
         pkgconfig = [ (pkgconfPkgs."gthread-2.0") (pkgconfPkgs."gtk+-3.0") ];
+        build-tools = [
+          (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+          (hsPkgs.buildPackages.gtk2hsHookGenerator or (pkgs.buildPackages.gtk2hsHookGenerator))
+          (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen))
+          ];
         };
       exes = {
         "gtk2hs-demo-actionMenu" = {

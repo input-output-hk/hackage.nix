@@ -39,7 +39,9 @@
             (hsPkgs.HOC-AppKit)
             (hsPkgs.HOC-Foundation)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };

@@ -38,7 +38,9 @@
             (hsPkgs.transformers)
             (hsPkgs.transformers-compat)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

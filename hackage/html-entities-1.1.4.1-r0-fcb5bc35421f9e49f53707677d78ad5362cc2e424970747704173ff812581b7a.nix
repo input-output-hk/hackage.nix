@@ -13,6 +13,11 @@
       synopsis = "A codec library for HTML-escaped text and HTML-entities";
       description = "This library provides the following APIs for coding and decoding of\nHTML-escaped text:\n\n* \\\"attoparsec\\\" parser\n\n* Text decoder\n\n* Encoding text builder";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

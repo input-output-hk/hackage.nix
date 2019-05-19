@@ -41,6 +41,9 @@
           (hsPkgs.string-conversions)
           (hsPkgs.split)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "clafer" = {
@@ -53,6 +56,9 @@
             (hsPkgs.cmdargs)
             (hsPkgs.split)
             (hsPkgs.clafer)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
             ];
           };
         };
@@ -74,8 +80,16 @@
             (hsPkgs.tasty-th)
             (hsPkgs.clafer)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
-        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        "doctests" = {
+          depends = [ (hsPkgs.base) (hsPkgs.doctest) ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
+          };
         };
       };
     }

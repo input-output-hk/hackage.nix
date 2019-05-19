@@ -31,7 +31,9 @@
           (hsPkgs.process)
           (hsPkgs.containers)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "jukebox" = {
@@ -51,7 +53,9 @@
             (hsPkgs.containers)
             (hsPkgs.jukebox)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };

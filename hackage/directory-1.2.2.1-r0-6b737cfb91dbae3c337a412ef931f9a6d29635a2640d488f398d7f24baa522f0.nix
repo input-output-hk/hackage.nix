@@ -24,6 +24,14 @@
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.unix) ]);
         };
-      tests = { "test" = { depends = [ (hsPkgs.base) (hsPkgs.directory) ]; }; };
+      tests = {
+        "test" = {
+          depends = [ (hsPkgs.base) (hsPkgs.directory) ];
+          build-tools = [
+            (hsPkgs.buildPackages.python or (pkgs.buildPackages.python))
+            (hsPkgs.buildPackages.which or (pkgs.buildPackages.which))
+            ];
+          };
+        };
       };
     }

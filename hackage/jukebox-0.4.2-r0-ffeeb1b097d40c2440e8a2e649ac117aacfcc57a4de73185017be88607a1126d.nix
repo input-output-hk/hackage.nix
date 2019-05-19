@@ -29,7 +29,9 @@
           (hsPkgs.containers)
           (hsPkgs.uglymemo)
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optional (flags.minisat) (hsPkgs.minisat);
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = { "jukebox" = { depends = [ (hsPkgs.base) (hsPkgs.jukebox) ]; }; };
       };

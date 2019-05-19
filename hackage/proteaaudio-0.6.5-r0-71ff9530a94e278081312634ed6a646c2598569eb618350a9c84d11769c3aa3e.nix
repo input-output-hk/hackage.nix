@@ -34,7 +34,9 @@
           (pkgs."CoreFoundation")
           (pkgs."CoreAudio")
           ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "proteaaudio-play" = {

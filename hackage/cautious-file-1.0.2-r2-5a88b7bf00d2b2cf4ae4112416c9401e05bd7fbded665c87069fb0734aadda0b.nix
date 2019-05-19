@@ -13,6 +13,11 @@
       synopsis = "Ways to write a file cautiously, to reduce the chances of problems such as data loss due to crashes or power failures";
       description = "On non-Windows systems, posix-specific functions are used to reduce the chance of data loss further";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        ];
       };
     components = {
       "library" = {
@@ -26,7 +31,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.bytestring)
           ] ++ (pkgs.lib).optional (flags.posix && !system.isWindows) (hsPkgs.unix);
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

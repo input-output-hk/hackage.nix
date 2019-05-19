@@ -13,11 +13,17 @@
       synopsis = "A cross platform library for loading bundled fonts into your application";
       description = "Please see the README on Github at <https://github.com/deech/load-font#readme>";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        ];
       };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "load-font-exe" = {

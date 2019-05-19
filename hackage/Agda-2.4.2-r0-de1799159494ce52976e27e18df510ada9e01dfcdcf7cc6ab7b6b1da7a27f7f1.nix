@@ -48,9 +48,9 @@
           then [ (hsPkgs.old-time) (hsPkgs.directory) ]
           else [ (hsPkgs.time) (hsPkgs.directory) ]);
         build-tools = [
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).cpphs)
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
           ];
         };
       exes = {

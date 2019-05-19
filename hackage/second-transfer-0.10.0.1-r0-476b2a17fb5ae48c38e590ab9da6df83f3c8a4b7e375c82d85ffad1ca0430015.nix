@@ -54,7 +54,9 @@
           (hsPkgs.unix)
           ];
         libs = ((pkgs.lib).optional (system.isOsx) (pkgs."second_transfer__enable_tls") ++ (pkgs.lib).optional (system.isLinux) (pkgs."stdc++")) ++ (pkgs.lib).optionals (flags.fastc) ((pkgs.lib).optional (system.isLinux) (pkgs."botan-1.11"));
-        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+          ];
         };
       tests = {
         "hunit-tests" = {
@@ -76,7 +78,9 @@
             (hsPkgs.second-transfer)
             (hsPkgs.stm)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+            ];
           };
         };
       };

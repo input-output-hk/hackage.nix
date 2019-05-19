@@ -13,6 +13,11 @@
       synopsis = "A markdown-like markup language designed for blog posts";
       description = "A library and executable that implement a modified, extended version of Markdown designed for writing blog posts.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.MissingH or (pkgs.buildPackages.MissingH))
+        ];
       };
     components = {
       "library" = {

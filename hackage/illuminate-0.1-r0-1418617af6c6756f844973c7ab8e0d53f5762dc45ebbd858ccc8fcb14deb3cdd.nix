@@ -26,7 +26,9 @@
           (hsPkgs.filemanip)
           (hsPkgs.filepath)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "illuminate" = {
@@ -37,7 +39,9 @@
             (hsPkgs.xhtml)
             (hsPkgs.html)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };

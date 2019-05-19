@@ -13,6 +13,10 @@
       synopsis = "Console IRC client";
       description = "Console IRC client";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       exes = {

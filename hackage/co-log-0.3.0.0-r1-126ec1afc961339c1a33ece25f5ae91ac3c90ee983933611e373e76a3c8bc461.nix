@@ -49,11 +49,15 @@
             (hsPkgs.co-log-core)
             (hsPkgs.text)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         "tutorial-intro" = {
           depends = [ (hsPkgs.base) (hsPkgs.co-log) (hsPkgs.co-log-core) ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         "tutorial-custom" = {
           depends = [
@@ -62,7 +66,9 @@
             (hsPkgs.co-log-core)
             (hsPkgs.mtl)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       tests = {

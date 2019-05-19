@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.socket) ];
         libs = (pkgs.lib).optional (!system.isFreebsd) (pkgs."sctp");
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "SendReceiveMessage" = {
@@ -44,7 +46,9 @@
             (hsPkgs.socket)
             (hsPkgs.socket-sctp)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+            ];
           };
         "Notifications" = {
           depends = [

@@ -13,6 +13,12 @@
       synopsis = "A proof assistant for Magic: The Gathering puzzles.";
       description = "Please see the README on GitHub at <https://github.com/githubuser/dovin#readme>";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        ];
       };
     components = {
       "library" = {

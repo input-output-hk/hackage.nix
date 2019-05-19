@@ -23,7 +23,9 @@
           (hsPkgs.deepseq)
           (hsPkgs.scientific)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       tests = {
         "dhall-lex-test" = {

@@ -26,6 +26,9 @@
         libs = [
           (pkgs."mx")
           ] ++ (pkgs.lib).optional (flags.engine) (pkgs."eng");
+        build-tools = if flags.mcr
+          then [ (hsPkgs.buildPackages.mcr or (pkgs.buildPackages.mcr)) ]
+          else [ (hsPkgs.buildPackages.matlab or (pkgs.buildPackages.matlab)) ];
         };
       };
     }

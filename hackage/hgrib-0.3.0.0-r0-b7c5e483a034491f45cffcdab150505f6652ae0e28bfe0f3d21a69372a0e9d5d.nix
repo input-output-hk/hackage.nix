@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.transformers) ];
         libs = [ (pkgs."grib_api") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = { "get" = { depends = [ (hsPkgs.base) (hsPkgs.hgrib) ]; }; };
       tests = {

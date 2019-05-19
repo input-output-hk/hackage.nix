@@ -61,7 +61,9 @@
             (hsPkgs.vector)
             (hsPkgs.weigh)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         "hw-dsv-test" = {
           depends = [
@@ -80,7 +82,9 @@
             (hsPkgs.text)
             (hsPkgs.vector)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       benchmarks = {

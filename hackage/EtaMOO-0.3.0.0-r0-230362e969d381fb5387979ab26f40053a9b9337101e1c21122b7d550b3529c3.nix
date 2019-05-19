@@ -48,7 +48,9 @@
             ];
           libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt");
           pkgconfig = [ (pkgconfPkgs."libpcre") ];
-          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+            ];
           };
         };
       };

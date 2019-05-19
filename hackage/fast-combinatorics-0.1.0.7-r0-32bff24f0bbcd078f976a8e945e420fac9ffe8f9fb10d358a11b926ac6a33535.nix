@@ -13,6 +13,15 @@
       synopsis = "Fast combinatorics.";
       description = "Fast combinatorics code with a high level of safety guaranteed by writing it in ATS.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.http-client or (pkgs.buildPackages.http-client))
+        (hsPkgs.buildPackages.http-client-tls or (pkgs.buildPackages.http-client-tls))
+        (hsPkgs.buildPackages.tar or (pkgs.buildPackages.tar))
+        (hsPkgs.buildPackages.zlib or (pkgs.buildPackages.zlib))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        ];
       };
     components = {
       "library" = { depends = [ (hsPkgs.base) (hsPkgs.composition-prelude) ]; };

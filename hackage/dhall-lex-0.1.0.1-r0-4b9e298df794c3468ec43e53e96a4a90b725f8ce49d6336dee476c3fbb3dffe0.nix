@@ -22,7 +22,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       tests = {
         "dhall-lex-test" = {

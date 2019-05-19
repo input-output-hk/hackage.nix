@@ -30,8 +30,8 @@
             (hsPkgs.readline)
             ];
           build-tools = [
-            ((hsPkgs.buildPackages).happy)
-            ((hsPkgs.buildPackages).alex)
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
             ];
           };
         };

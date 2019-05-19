@@ -13,6 +13,11 @@
       synopsis = "Massiv (Массив) is an Array Library.";
       description = "Multi-dimensional Arrays with fusion, stencils and parallel computation.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

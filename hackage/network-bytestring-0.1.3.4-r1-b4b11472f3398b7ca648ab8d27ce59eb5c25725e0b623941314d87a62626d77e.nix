@@ -21,7 +21,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.network)
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

@@ -18,6 +18,10 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.glib) (hsPkgs.cairo) ];
         pkgconfig = [ (pkgconfPkgs."librsvg-2.0") ];
+        build-tools = [
+          (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+          (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen))
+          ];
         };
       };
     }

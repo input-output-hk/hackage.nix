@@ -13,6 +13,11 @@
       synopsis = "A modern parser combinator library with convenient diagnostics";
       description = "A modern parser combinator library with slicing and Clang-style colored diagnostics";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

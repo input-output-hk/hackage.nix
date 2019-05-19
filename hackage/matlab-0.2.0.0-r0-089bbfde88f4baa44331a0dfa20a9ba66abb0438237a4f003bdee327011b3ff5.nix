@@ -26,6 +26,7 @@
           (pkgs."mx")
           (pkgs."mat")
           ] ++ (pkgs.lib).optional (flags.engine) (pkgs."eng");
+        build-tools = (pkgs.lib).optional (flags.runtime) (hsPkgs.buildPackages.mcc or (pkgs.buildPackages.mcc));
         };
       };
     }

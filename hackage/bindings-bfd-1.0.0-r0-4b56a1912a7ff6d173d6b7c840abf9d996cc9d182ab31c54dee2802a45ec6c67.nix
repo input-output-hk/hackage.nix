@@ -24,9 +24,9 @@
           ];
         libs = [ (pkgs."bfd") (pkgs."opcodes") ];
         build-tools = [
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).hsc2hs)
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
           ];
         };
       };

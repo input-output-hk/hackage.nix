@@ -23,6 +23,9 @@
           (hsPkgs.directory)
           (hsPkgs.base)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       };
     }

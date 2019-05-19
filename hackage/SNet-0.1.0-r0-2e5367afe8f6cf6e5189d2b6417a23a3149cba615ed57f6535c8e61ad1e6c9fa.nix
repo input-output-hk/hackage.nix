@@ -25,7 +25,10 @@
           (hsPkgs.mtl)
           (hsPkgs.transformers)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hsc or (pkgs.buildPackages.c2hsc))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

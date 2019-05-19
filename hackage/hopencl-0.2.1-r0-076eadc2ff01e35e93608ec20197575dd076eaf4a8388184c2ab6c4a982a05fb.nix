@@ -19,7 +19,9 @@
         depends = [ (hsPkgs.base) (hsPkgs.bytestring) ];
         libs = (pkgs.lib).optional (!system.isOsx) (pkgs."OpenCL");
         frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenCL");
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "unit" = {

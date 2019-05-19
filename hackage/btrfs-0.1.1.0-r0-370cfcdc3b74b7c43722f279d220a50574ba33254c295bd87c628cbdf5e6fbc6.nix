@@ -22,7 +22,9 @@
           (hsPkgs.time)
           (hsPkgs.bytestring)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       exes = {
         "btrfs-defrag" = {

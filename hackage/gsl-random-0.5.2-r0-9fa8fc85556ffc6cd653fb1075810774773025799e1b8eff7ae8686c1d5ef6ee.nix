@@ -13,6 +13,9 @@
       synopsis = "Bindings the the GSL random number generation facilities.";
       description = "Bindings to the GNU Scientific Library random and quasi-random number\ngenerators and random distributions.\n";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = { depends = [ (hsPkgs.base) (hsPkgs.vector) ]; };

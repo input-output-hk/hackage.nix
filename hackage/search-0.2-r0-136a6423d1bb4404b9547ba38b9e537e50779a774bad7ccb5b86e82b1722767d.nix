@@ -13,6 +13,11 @@
       synopsis = "Infinite search in finite time with Hilbert's epsilon";
       description = "Infinite search in finite time with Hilbert's epsilon";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

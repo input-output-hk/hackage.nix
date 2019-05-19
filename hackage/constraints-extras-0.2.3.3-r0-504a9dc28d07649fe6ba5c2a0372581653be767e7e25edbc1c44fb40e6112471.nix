@@ -30,7 +30,9 @@
             (hsPkgs.constraints)
             (hsPkgs.constraints-extras)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       };

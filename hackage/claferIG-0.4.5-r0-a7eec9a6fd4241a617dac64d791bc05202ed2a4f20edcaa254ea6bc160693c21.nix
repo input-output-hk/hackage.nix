@@ -35,6 +35,9 @@
           (hsPkgs.mtl-compat)
           (hsPkgs.clafer)
           ] ++ [ (hsPkgs.HaXml) ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "claferIG" = {
@@ -52,6 +55,9 @@
             (hsPkgs.mtl-compat)
             (hsPkgs.clafer)
             (hsPkgs.claferIG)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
             ];
           };
         };

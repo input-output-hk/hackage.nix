@@ -23,6 +23,9 @@
           (hsPkgs.pretty)
           (hsPkgs.protolude)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.doctest or (pkgs.buildPackages.doctest))
+          ];
         };
       tests = {
         "language-elm-test" = {
@@ -34,6 +37,9 @@
             (hsPkgs.mtl)
             (hsPkgs.pretty)
             (hsPkgs.protolude)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.doctest or (pkgs.buildPackages.doctest))
             ];
           };
         };

@@ -40,8 +40,8 @@
             (pkgconfPkgs."gobject-2.0")
             ];
           build-tools = [
-            ((hsPkgs.buildPackages).hsc2hs)
-            ((hsPkgs.buildPackages).c2hs)
+            (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
             ];
           };
         };

@@ -47,7 +47,9 @@
           (hsPkgs.mtl)
           (hsPkgs.vinyl)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).autoexporter) ];
+        build-tools = [
+          (hsPkgs.buildPackages.autoexporter or (pkgs.buildPackages.autoexporter))
+          ];
         };
       exes = {
         "morley" = {

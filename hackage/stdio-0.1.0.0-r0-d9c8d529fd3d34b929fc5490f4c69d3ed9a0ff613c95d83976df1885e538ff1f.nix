@@ -42,8 +42,8 @@
             ]
           else [ (pkgs."uv") ]);
         build-tools = (pkgs.lib).optionals (!flags.integer-simple) [
-          ((hsPkgs.buildPackages).hsc2hs)
-          ((hsPkgs.buildPackages).hspec-discover)
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
           ];
         };
       tests = {

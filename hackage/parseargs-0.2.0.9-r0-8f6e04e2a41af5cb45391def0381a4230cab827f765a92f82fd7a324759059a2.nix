@@ -24,7 +24,9 @@
       tests = {
         "test-parseargs" = {
           depends = [ (hsPkgs.base) (hsPkgs.process) ];
-          build-tools = [ ((hsPkgs.buildPackages).parseargs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.parseargs or (pkgs.buildPackages.parseargs))
+            ];
           };
         };
       };

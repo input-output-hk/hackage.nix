@@ -22,10 +22,16 @@
           (hsPkgs.array)
           (hsPkgs.fclabels)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "wordsearch" = {
           depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.fclabels) ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         };
       };

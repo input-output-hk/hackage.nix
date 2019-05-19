@@ -13,6 +13,10 @@
       synopsis = "High-level, byte-based file and directory path manipulations (deprecated)";
       description = "Please see: https://plus.google.com/+MichaelSnoyman/posts/Ft5hnPqpgEx";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        ];
       };
     components = {
       "library" = {

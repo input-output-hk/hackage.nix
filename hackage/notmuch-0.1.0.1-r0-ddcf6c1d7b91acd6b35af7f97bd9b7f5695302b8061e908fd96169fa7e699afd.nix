@@ -27,7 +27,9 @@
           (hsPkgs.text)
           ];
         libs = [ (pkgs."notmuch") (pkgs."talloc") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "hs-notmuch-files" = {

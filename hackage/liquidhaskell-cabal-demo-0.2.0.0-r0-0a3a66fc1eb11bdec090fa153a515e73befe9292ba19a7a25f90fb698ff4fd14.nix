@@ -13,6 +13,11 @@
       synopsis = "Demo of Liquid Haskell integration for Cabal and stack";
       description = "Please see the\n<https://github.com/spinda/liquidhaskell-cabal-demo/blob/0.2.0.0/README.md README>\non GitHub for more information.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.liquidhaskell-cabal or (pkgs.buildPackages.liquidhaskell-cabal))
+        ];
       };
     components = {
       "library" = { depends = [ (hsPkgs.base) (hsPkgs.liquidhaskell-cabal) ]; };

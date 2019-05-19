@@ -61,6 +61,7 @@
           (hsPkgs.HTTP)
           ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo));
         libs = (pkgs.lib).optionals (!(!flags.library)) ((pkgs.lib).optional (flags.curl) (pkgs."curl"));
+        build-tools = (pkgs.lib).optional (!(!flags.library)) (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc));
         };
       exes = {
         "darcs" = {
@@ -94,6 +95,9 @@
             (hsPkgs.HTTP)
             ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo);
           libs = (pkgs.lib).optional (flags.curl) (pkgs."curl");
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         "darcs-test" = {
           depends = (pkgs.lib).optionals (!(!flags.test)) (((((([
@@ -133,6 +137,9 @@
             (hsPkgs.HTTP)
             ]);
           libs = (pkgs.lib).optionals (!(!flags.test)) ((pkgs.lib).optional (flags.curl) (pkgs."curl"));
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         };
       };

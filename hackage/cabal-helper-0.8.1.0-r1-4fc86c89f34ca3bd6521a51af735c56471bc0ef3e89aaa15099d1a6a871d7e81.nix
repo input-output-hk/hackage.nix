@@ -46,7 +46,10 @@
             (hsPkgs.unix-compat)
             (hsPkgs.utf8-string)
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.base)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
-          build-tools = [ ((hsPkgs.buildPackages).cabal-install) ];
+          build-tools = [
+            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            ];
           };
         "cabal-helper-main" = {
           depends = [
@@ -76,7 +79,11 @@
             (hsPkgs.unix-compat)
             (hsPkgs.utf8-string)
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.base)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
-          build-tools = [ ((hsPkgs.buildPackages).cabal-install) ];
+          build-tools = [
+            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            ];
           };
         "ghc-session" = {
           depends = ([
@@ -97,7 +104,10 @@
             (hsPkgs.unix-compat)
             (hsPkgs.utf8-string)
             ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.base)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
-          build-tools = [ ((hsPkgs.buildPackages).cabal-install) ];
+          build-tools = [
+            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            ];
           };
         };
       };

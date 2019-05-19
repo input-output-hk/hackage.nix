@@ -34,7 +34,9 @@
             (hsPkgs.hslogger)
             ];
           libs = [ (pkgs."zip") ];
-          build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+            ];
           };
         "mumrik" = {
           depends = [
@@ -56,7 +58,9 @@
             (hsPkgs.hslogger)
             ];
           libs = [ (pkgs."zip") ];
-          build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+            ];
           };
         };
       };

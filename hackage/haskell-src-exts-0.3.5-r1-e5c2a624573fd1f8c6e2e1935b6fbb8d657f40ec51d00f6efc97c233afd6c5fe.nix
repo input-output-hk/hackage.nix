@@ -19,7 +19,9 @@
         depends = [ (hsPkgs.base) ] ++ (if flags.splitbase
           then [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.pretty) ]
           else [ (hsPkgs.base) ]);
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       };
     }

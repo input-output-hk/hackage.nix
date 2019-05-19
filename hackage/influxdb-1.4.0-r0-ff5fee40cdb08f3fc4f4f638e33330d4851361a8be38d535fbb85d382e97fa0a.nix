@@ -13,6 +13,11 @@
       synopsis = "Haskell client library for InfluxDB";
       description = "@influxdb@ is a Haskell client library for InfluxDB.\n\nRead \"Database.InfluxDB\" for a quick start guide.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

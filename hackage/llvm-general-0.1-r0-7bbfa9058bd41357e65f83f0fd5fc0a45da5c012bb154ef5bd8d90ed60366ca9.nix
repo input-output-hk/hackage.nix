@@ -29,6 +29,9 @@
           (hsPkgs.setenv)
           ];
         libs = [ (pkgs."LLVM-3.2svn") (pkgs."stdc++") ];
+        build-tools = [
+          (hsPkgs.buildPackages.llvm-config or (pkgs.buildPackages.llvm-config))
+          ];
         };
       tests = {
         "test" = {

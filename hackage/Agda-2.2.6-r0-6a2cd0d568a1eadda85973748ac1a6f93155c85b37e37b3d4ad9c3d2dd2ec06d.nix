@@ -37,8 +37,8 @@
           then [ (hsPkgs.base) ]
           else [ (hsPkgs.base) (hsPkgs.utf8-string) ]);
         build-tools = [
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).alex)
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
           ];
         };
       exes = {

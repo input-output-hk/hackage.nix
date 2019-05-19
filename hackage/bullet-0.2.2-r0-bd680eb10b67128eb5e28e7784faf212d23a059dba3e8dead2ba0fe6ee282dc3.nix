@@ -25,7 +25,9 @@
           (pkgs."stdc++")
           ];
         pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."bullet");
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

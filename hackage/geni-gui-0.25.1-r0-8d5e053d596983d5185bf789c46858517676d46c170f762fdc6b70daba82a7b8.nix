@@ -13,6 +13,14 @@
       synopsis = "GenI graphical user interface";
       description = "";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-macosx or (pkgs.buildPackages.cabal-macosx))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        ];
       };
     components = {
       "library" = {

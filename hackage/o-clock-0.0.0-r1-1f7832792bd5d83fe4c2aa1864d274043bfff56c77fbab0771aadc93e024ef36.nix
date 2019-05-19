@@ -35,7 +35,9 @@
           };
         "readme-test" = {
           depends = [ (hsPkgs.base) (hsPkgs.o-clock) (hsPkgs.markdown-unlit) ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       benchmarks = {

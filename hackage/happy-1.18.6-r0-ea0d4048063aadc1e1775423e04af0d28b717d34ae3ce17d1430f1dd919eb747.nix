@@ -20,6 +20,9 @@
           depends = [ (hsPkgs.base) (hsPkgs.mtl) ] ++ (if flags.small_base
             then [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.containers) ]
             else [ (hsPkgs.base) ]);
+          build-tools = [
+            (hsPkgs.buildPackages.perl or (pkgs.buildPackages.perl))
+            ];
           };
         };
       };

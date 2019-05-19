@@ -19,6 +19,11 @@
         depends = [ (hsPkgs.base) (hsPkgs.haskell98) (hsPkgs.cgen) ];
         libs = [ (pkgs."OgreMain") ];
         pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."OGRE");
+        build-tools = [
+          (hsPkgs.buildPackages.cgen or (pkgs.buildPackages.cgen))
+          (hsPkgs.buildPackages.grgen or (pkgs.buildPackages.grgen))
+          (hsPkgs.buildPackages.cgen-hs or (pkgs.buildPackages.cgen-hs))
+          ];
         };
       };
     }

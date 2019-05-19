@@ -13,6 +13,12 @@
       synopsis = "Binding to the Pango text rendering engine.";
       description = "This package provides a wrapper around the Pango C library that\nallows high-quality rendering of Unicode text. It can be used\neither with Cairo to output text in PDF, PS or other\ndocuments or with Gtk+ to display text on-screen.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.gtk2hs-buildtools or (pkgs.buildPackages.gtk2hs-buildtools))
+        ];
       };
     components = {
       "library" = {
@@ -30,6 +36,10 @@
           ] ++ [ (hsPkgs.base) ];
         pkgconfig = [ (pkgconfPkgs."cairo") (pkgconfPkgs."pangocairo") ] ++ [
           (pkgconfPkgs."pango")
+          ];
+        build-tools = [
+          (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+          (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen))
           ];
         };
       };

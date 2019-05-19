@@ -34,7 +34,9 @@
           (hsPkgs.text-format)
           (hsPkgs.transformers)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "morte" = {

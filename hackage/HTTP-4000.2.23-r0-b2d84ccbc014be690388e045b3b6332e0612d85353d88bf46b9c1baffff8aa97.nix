@@ -34,6 +34,9 @@
           else [
             (hsPkgs.network)
             ])) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       tests = {
         "test" = {
@@ -61,6 +64,9 @@
             ] ++ (if flags.conduit10
             then [ (hsPkgs.conduit) ]
             else [ (hsPkgs.conduit) (hsPkgs.conduit-extra) ]));
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         };
       };

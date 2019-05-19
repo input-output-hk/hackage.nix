@@ -37,7 +37,9 @@
             (pkgs."stdc++")
             ]
           else [ (pkgs."stdc++") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "test" = {

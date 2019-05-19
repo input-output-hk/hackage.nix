@@ -13,6 +13,10 @@
       synopsis = "Library for creating and modifying zip archives.";
       description = "The zip-archive library provides functions for creating, modifying,\nand extracting files from zip archives.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {
@@ -33,6 +37,7 @@
           else [
             (hsPkgs.base)
             ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+        build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.unzip or (pkgs.buildPackages.unzip));
         };
       exes = {
         "zip-archive" = {

@@ -31,7 +31,9 @@
           (hsPkgs.universum)
           (hsPkgs.yaml)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).require) ];
+        build-tools = [
+          (hsPkgs.buildPackages.require or (pkgs.buildPackages.require))
+          ];
         };
       exes = {
         "tintin" = {
@@ -42,7 +44,9 @@
             (hsPkgs.tintin)
             (hsPkgs.universum)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).require) ];
+          build-tools = [
+            (hsPkgs.buildPackages.require or (pkgs.buildPackages.require))
+            ];
           };
         };
       tests = {

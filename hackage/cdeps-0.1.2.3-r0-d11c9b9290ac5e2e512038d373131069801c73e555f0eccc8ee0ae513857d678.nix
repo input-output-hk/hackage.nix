@@ -27,7 +27,7 @@
           (hsPkgs.transformers)
           (hsPkgs.semigroups)
           ];
-        build-tools = (pkgs.lib).optional (!flags.cross) ((hsPkgs.buildPackages).alex);
+        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex));
         };
       exes = {
         "cdeps" = {

@@ -41,6 +41,9 @@
           (hsPkgs.test-framework-th)
           (hsPkgs.clafer)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "claferIG" = {
@@ -68,6 +71,9 @@
             (hsPkgs.test-framework-th)
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
             ];
           };
         };

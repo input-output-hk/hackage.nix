@@ -39,7 +39,9 @@
           (pkgconfPkgs."gobject-introspection-1.0")
           (pkgconfPkgs."gobject-2.0")
           ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "doctests" = {

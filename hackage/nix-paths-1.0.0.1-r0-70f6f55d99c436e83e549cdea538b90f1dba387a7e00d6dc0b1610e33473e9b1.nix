@@ -15,6 +15,14 @@
       buildType = "Custom";
       };
     components = {
-      "library" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
+      "library" = {
+        depends = [ (hsPkgs.base) (hsPkgs.process) ];
+        build-tools = (pkgs.lib).optionals (!flags.allow-relative-paths) [
+          (hsPkgs.buildPackages.nix-instantiate or (pkgs.buildPackages.nix-instantiate))
+          (hsPkgs.buildPackages.nix-build or (pkgs.buildPackages.nix-build))
+          (hsPkgs.buildPackages.nix-env or (pkgs.buildPackages.nix-env))
+          (hsPkgs.buildPackages.nix-store or (pkgs.buildPackages.nix-store))
+          ];
+        };
       };
     }

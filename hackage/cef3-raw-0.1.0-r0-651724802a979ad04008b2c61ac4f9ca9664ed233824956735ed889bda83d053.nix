@@ -22,7 +22,9 @@
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
         libs = (pkgs.lib).optional (system.isLinux) (pkgs."cef") ++ (pkgs.lib).optional (system.isWindows) (pkgs."libcef");
         pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."gtk+-2.0");
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

@@ -48,6 +48,9 @@
           (hsPkgs.web-routes-happstack)
           (hsPkgs.web-routes-th)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx))
+          ];
         };
       };
     }

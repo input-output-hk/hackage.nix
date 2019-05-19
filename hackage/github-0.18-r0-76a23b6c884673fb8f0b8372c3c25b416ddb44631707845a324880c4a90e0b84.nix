@@ -65,7 +65,9 @@
             ] ++ (if flags.aeson-compat
             then [ (hsPkgs.aeson-compat) ]
             else [ (hsPkgs.aeson-extra) ]);
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

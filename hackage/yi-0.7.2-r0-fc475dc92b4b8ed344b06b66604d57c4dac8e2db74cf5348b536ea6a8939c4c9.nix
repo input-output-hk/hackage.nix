@@ -78,7 +78,9 @@
           (hsPkgs.rosezipper)
           (hsPkgs.pureMD5)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "parserTest" = {
@@ -93,7 +95,9 @@
           };
         "yi" = {
           depends = [ (hsPkgs.base) (hsPkgs.yi) ];
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       tests = {

@@ -58,6 +58,9 @@
           (hsPkgs.web-routes-th)
           (hsPkgs.xss-sanitize)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs))
+          ];
         };
       };
     }

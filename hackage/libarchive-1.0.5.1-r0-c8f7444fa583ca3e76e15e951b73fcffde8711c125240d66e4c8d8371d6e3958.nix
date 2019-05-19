@@ -24,7 +24,7 @@
           (hsPkgs.filepath)
           ];
         pkgconfig = [ (pkgconfPkgs."libarchive") ];
-        build-tools = (pkgs.lib).optional (!flags.cross) ((hsPkgs.buildPackages).c2hs);
+        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs));
         };
       };
     }

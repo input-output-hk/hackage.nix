@@ -38,7 +38,9 @@
             (hsPkgs.hspec-discover)
             (hsPkgs.hspec-meta)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-meta) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-meta or (pkgs.buildPackages.hspec-meta))
+            ];
           };
         };
       };

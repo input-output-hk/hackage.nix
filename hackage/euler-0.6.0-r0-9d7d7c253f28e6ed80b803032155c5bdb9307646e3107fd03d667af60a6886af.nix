@@ -21,7 +21,9 @@
         "hpc" = { depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.xml) ]; };
         "hlint" = {
           depends = [ (hsPkgs.base) (hsPkgs.hlint) ];
-          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          build-tools = [
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            ];
           };
         "haddock" = {
           depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.regex-posix) ];

@@ -30,7 +30,9 @@
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "hw-simd-test" = {
@@ -53,7 +55,9 @@
             (hsPkgs.vector)
             (hsPkgs.hw-simd)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       benchmarks = {

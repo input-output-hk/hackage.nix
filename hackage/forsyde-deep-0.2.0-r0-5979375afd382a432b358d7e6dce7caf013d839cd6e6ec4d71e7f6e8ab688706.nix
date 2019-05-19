@@ -13,6 +13,25 @@
       synopsis = "ForSyDe's Haskell-embedded Domain Specific Language.";
       description = "The ForSyDe (Formal System Design) methodology has been developed with the objective to move system design to a higher level of abstraction and to bridge the abstraction gap by transformational design refinement.\nThis library provides ForSyDe's implementation as a Haskell-embedded Domain Specific Language (DSL). For more information, please see ForSyDe's website: <https://forsyde.github.io/>.\nThis library provides the deep implementation of ForSyDe in Haskell.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.parameterized-data or (pkgs.buildPackages.parameterized-data))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.regex-posix or (pkgs.buildPackages.regex-posix))
+        (hsPkgs.buildPackages.mtl or (pkgs.buildPackages.mtl))
+        (hsPkgs.buildPackages.syb or (pkgs.buildPackages.syb))
+        (hsPkgs.buildPackages.pretty or (pkgs.buildPackages.pretty))
+        (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.random or (pkgs.buildPackages.random))
+        (hsPkgs.buildPackages.type-level or (pkgs.buildPackages.type-level))
+        (hsPkgs.buildPackages.HUnit or (pkgs.buildPackages.HUnit))
+        (hsPkgs.buildPackages.QuickCheck or (pkgs.buildPackages.QuickCheck))
+        ];
       };
     components = {
       "library" = {

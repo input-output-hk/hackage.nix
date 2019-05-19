@@ -35,7 +35,9 @@
             (hsPkgs.hw-hspec-hedgehog)
             (hsPkgs.hw-ci-assist)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

@@ -63,6 +63,9 @@
         libs = [
           (pkgs."ssl")
           ] ++ (pkgs.lib).optional (!system.isOsx) (pkgs."cryptopp");
+        build-tools = [
+          (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs))
+          ];
         };
       };
     }

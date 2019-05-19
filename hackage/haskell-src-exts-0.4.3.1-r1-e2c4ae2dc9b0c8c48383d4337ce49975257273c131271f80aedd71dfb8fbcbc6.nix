@@ -22,7 +22,9 @@
           (hsPkgs.pretty)
           (hsPkgs.cpphs)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       };
     }

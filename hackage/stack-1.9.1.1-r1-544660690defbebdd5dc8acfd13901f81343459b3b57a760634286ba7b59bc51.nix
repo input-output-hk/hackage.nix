@@ -19,6 +19,11 @@
       synopsis = "The Haskell Tool Stack";
       description = "Please see the README.md for usage information, and the wiki on Github for more details.  Also, note that the API for the library is not currently stable, and may change significantly, even between minor releases. It is currently only intended for use by the executable.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        ];
       };
     components = {
       "library" = {
@@ -106,7 +111,7 @@
           ] ++ (if system.isWindows
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.bindings-uname) (hsPkgs.unix) ]);
-        build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+        build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
         };
       exes = {
         "stack" = {
@@ -201,7 +206,7 @@
             (hsPkgs.githash)
             (hsPkgs.optparse-simple)
             ];
-          build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+          build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
           };
         };
       tests = {
@@ -291,7 +296,7 @@
             ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.bindings-uname) (hsPkgs.unix) ]);
-          build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+          build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
           };
         "stack-test" = {
           depends = [
@@ -382,7 +387,7 @@
             ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.bindings-uname) (hsPkgs.unix) ]);
-          build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+          build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
           };
         };
       };

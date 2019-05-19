@@ -13,6 +13,11 @@
       synopsis = "Monadic Getters and Folds";
       description = "This package contains combinators and types for working with\nmonadic getters and folds as split off from the original\nlens package.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

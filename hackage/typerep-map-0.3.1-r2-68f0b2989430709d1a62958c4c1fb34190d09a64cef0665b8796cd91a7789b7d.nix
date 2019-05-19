@@ -48,7 +48,9 @@
             (hsPkgs.tasty-hspec)
             (hsPkgs.QuickCheck)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).tasty-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover))
+            ];
           };
         };
       benchmarks = {

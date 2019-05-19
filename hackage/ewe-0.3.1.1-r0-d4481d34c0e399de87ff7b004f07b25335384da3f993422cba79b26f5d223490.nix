@@ -13,6 +13,13 @@
       synopsis = "An interpreter for EWE programming language";
       description = "A Haskell implementation of the EWE programming language originally created and developed by Kent D. Lee. EWE is an extension of the RAM programming language. RAM was created by Sethi. This is use for academic purpose only.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal))
+        (hsPkgs.buildPackages.uulib or (pkgs.buildPackages.uulib))
+        (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       exes = {
@@ -27,8 +34,9 @@
             (hsPkgs.uuagc-cabal)
             ];
           build-tools = [
-            ((hsPkgs.buildPackages).alex)
-            ((hsPkgs.buildPackages).happy)
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc))
             ];
           };
         };

@@ -66,8 +66,8 @@
           (hsPkgs.zlib)
           ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
         build-tools = [
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).happy)
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
           ];
         };
       exes = {

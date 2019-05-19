@@ -27,7 +27,9 @@
           (hsPkgs.yi-language)
           (hsPkgs.yi-rope)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       tests = {
         "spec" = {

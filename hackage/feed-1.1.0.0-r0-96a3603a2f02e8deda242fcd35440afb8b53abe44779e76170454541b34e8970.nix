@@ -57,7 +57,9 @@
             (hsPkgs.xml-conduit)
             (hsPkgs.xml-types)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       };

@@ -25,6 +25,9 @@
             (hsPkgs.dequeue)
             (hsPkgs.data-default)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         };
       };

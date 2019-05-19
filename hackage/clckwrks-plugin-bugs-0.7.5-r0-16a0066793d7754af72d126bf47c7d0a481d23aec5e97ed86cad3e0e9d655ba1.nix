@@ -44,6 +44,9 @@
           ] ++ (if flags.network-uri
           then [ (hsPkgs.network) (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
+        build-tools = [
+          (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs))
+          ];
         };
       };
     }

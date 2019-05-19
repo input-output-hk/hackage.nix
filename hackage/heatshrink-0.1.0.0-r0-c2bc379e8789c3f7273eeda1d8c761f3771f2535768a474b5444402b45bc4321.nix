@@ -17,7 +17,9 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.bytestring) (hsPkgs.cereal) (hsPkgs.base) ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "heatshrink-test" = {

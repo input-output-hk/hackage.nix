@@ -68,6 +68,9 @@
           then [ (hsPkgs.network) (hsPkgs.network-uri) ]
           else [ (hsPkgs.network) ]);
         libs = [ (pkgs."ssl") ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs))
+          ];
         };
       };
     }

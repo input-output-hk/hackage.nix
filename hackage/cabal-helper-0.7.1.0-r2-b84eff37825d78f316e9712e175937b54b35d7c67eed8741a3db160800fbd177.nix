@@ -63,6 +63,9 @@
             (hsPkgs.template-haskell)
             (hsPkgs.temporary)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            ];
           };
         };
       };

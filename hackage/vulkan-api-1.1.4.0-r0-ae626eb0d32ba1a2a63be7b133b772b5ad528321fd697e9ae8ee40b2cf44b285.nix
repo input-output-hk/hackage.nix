@@ -32,7 +32,9 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = (pkgs.lib).optionals (flags.usenativeffi-1-0 || flags.usenativeffi-1-1) (((pkgs.lib).optional (system.isWindows) (pkgs."vulkan-1") ++ (pkgs.lib).optional (system.isOsx) (pkgs."vulkan")) ++ (pkgs.lib).optional (!system.isWindows && !system.isOsx) (pkgs."vulkan"));
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

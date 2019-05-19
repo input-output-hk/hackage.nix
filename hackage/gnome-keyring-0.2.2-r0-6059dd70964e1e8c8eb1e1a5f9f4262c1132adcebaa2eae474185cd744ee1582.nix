@@ -25,7 +25,9 @@
           ];
         libs = [ (pkgs."gnome-keyring") ];
         pkgconfig = [ (pkgconfPkgs."gnome-keyring-1") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

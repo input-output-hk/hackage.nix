@@ -13,6 +13,11 @@
       synopsis = "Tree representations of datatypes";
       description = "@type-tree@ provides TH splices for generating tree representations of\nthe types contained in datatypes. This is useful for, for example,\ngenerating class instances for a deeply nested datatype.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

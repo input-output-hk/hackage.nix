@@ -13,6 +13,11 @@
       synopsis = "Utilities functions to proto-lens.";
       description = "Useful things for working with protos.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.proto-lens-setup or (pkgs.buildPackages.proto-lens-setup))
+        ];
       };
     components = {
       "library" = {

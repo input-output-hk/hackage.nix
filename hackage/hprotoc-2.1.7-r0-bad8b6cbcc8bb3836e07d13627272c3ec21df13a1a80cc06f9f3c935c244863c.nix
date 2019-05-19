@@ -31,7 +31,9 @@
           (hsPkgs.parsec)
           (hsPkgs.utf8-string)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "hprotoc" = {
@@ -50,7 +52,9 @@
             (hsPkgs.parsec)
             (hsPkgs.utf8-string)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };

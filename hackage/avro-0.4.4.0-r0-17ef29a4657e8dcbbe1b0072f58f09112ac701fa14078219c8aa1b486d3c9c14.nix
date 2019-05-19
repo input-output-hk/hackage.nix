@@ -71,7 +71,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs.template-haskell);
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       benchmarks = {

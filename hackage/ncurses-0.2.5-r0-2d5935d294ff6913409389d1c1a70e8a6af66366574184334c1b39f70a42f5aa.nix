@@ -25,7 +25,9 @@
         libs = if system.isOsx
           then [ (pkgs."panel") (pkgs."ncurses") ]
           else [ (pkgs."panelw") (pkgs."ncursesw") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

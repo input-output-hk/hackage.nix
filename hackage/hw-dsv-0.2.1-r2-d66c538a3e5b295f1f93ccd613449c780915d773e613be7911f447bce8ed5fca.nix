@@ -73,7 +73,9 @@
             (hsPkgs.semigroups)
             (hsPkgs.transformers)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         "hw-dsv-test" = {
           depends = [
@@ -96,7 +98,9 @@
             (hsPkgs.semigroups)
             (hsPkgs.transformers)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       benchmarks = {

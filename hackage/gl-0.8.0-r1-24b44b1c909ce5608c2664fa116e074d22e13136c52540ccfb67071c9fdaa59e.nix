@@ -13,6 +13,15 @@
       synopsis = "Complete OpenGL raw bindings";
       description = "Complete OpenGL raw bindings";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.hxt or (pkgs.buildPackages.hxt))
+        (hsPkgs.buildPackages.transformers or (pkgs.buildPackages.transformers))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers))
+        ];
       };
     components = {
       "library" = {

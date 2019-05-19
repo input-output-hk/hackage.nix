@@ -54,7 +54,9 @@
             (hsPkgs.time)
             (hsPkgs.unordered-containers)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).tasty-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.tasty-discover or (pkgs.buildPackages.tasty-discover))
+            ];
           };
         };
       };

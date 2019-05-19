@@ -29,6 +29,9 @@
           (hsPkgs.setenv)
           ];
         libs = [ (pkgs."stdc++") ];
+        build-tools = [
+          (hsPkgs.buildPackages.llvm-config or (pkgs.buildPackages.llvm-config))
+          ];
         };
       tests = {
         "test" = {

@@ -24,7 +24,9 @@
           ];
         libs = [ (pkgs."stdc++") ];
         pkgconfig = (pkgs.lib).optional (!flags.embedded) (pkgconfPkgs."cbc");
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "examples" = {

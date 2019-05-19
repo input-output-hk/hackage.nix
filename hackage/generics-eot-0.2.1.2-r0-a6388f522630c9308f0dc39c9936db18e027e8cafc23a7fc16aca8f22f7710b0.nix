@@ -17,7 +17,9 @@
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.markdown-unlit) ];
-        build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+        build-tools = [
+          (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+          ];
         };
       tests = {
         "quickcheck" = {
@@ -33,8 +35,8 @@
             (hsPkgs.shake)
             ];
           build-tools = [
-            ((hsPkgs.buildPackages).markdown-unlit)
-            ((hsPkgs.buildPackages).hspec-discover)
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
             ];
           };
         "spec" = {
@@ -47,8 +49,8 @@
             (hsPkgs.markdown-unlit)
             ];
           build-tools = [
-            ((hsPkgs.buildPackages).markdown-unlit)
-            ((hsPkgs.buildPackages).hspec-discover)
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
             ];
           };
         };

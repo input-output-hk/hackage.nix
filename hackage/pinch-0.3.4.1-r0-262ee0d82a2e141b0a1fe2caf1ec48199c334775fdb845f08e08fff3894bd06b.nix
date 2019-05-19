@@ -29,7 +29,9 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+          ];
         };
       tests = {
         "pinch-spec" = {
@@ -45,7 +47,9 @@
             (hsPkgs.unordered-containers)
             (hsPkgs.vector)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

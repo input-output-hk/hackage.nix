@@ -44,7 +44,9 @@
             (hsPkgs.shelly)
             (hsPkgs.text)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+            ];
           };
         "test-system" = {
           depends = [
@@ -55,7 +57,9 @@
             (hsPkgs.shelly)
             (hsPkgs.text)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+            ];
           };
         "regression-suite" = {
           depends = [

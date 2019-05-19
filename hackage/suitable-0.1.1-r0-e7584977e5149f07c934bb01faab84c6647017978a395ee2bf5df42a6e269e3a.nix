@@ -15,6 +15,11 @@
       buildType = "Simple";
       };
     components = {
-      "library" = { depends = [ (hsPkgs.base) (hsPkgs.containers) ]; };
+      "library" = {
+        depends = [ (hsPkgs.base) (hsPkgs.containers) ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
+        };
       };
     }

@@ -37,7 +37,9 @@
           (hsPkgs.time)
           ];
         libs = [ (pkgs."ssl") (pkgs."crypto") ];
-        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+          ];
         };
       tests = {
         "compiling-ok" = {
@@ -65,7 +67,9 @@
             (hsPkgs.attoparsec)
             (hsPkgs.time)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+            ];
           };
         };
       };

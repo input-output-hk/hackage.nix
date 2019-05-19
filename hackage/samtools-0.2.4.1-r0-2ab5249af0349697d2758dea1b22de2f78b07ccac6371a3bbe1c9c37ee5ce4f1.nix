@@ -23,7 +23,9 @@
           (hsPkgs.seqloc)
           ];
         libs = [ (pkgs."z") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "samtest" = {
@@ -36,7 +38,9 @@
             (hsPkgs.filepath)
             ];
           libs = [ (pkgs."z") ];
-          build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+            ];
           };
         };
       };

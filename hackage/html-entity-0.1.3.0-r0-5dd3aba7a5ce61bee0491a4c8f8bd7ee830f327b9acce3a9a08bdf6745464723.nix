@@ -13,6 +13,11 @@
       synopsis = "HTML entity decoding and encoding for Text";
       description = "Fast, attoparsec-powered HTML entity decoding and encoding for Text";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

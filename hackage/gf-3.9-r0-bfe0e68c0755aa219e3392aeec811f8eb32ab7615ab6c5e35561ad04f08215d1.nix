@@ -57,9 +57,9 @@
           (pkgs."pgf")
           (pkgs."gu")
           ];
-        build-tools = (pkgs.lib).optional (flags.c-runtime) ((hsPkgs.buildPackages).hsc2hs) ++ [
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).alex)
+        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs)) ++ [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
           ];
         };
       exes = {

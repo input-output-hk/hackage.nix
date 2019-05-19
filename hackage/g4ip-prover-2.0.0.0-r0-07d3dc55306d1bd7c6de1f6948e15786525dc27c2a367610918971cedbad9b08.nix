@@ -22,7 +22,9 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       exes = {
         "g4ip-prover" = {
@@ -32,7 +34,9 @@
             (hsPkgs.directory)
             (hsPkgs.filepath)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          build-tools = [
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            ];
           };
         };
       tests = {

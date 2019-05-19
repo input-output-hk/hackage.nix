@@ -40,7 +40,7 @@
             (hsPkgs.template-haskell)
             (hsPkgs.seqaid)
             ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.cpphs)) ++ (pkgs.lib).optional (flags.omnitypic) (hsPkgs.ghc-prim);
-          build-tools = (pkgs.lib).optional (flags.use_cpphs) ((hsPkgs.buildPackages).cpphs);
+          build-tools = (pkgs.lib).optional (flags.use_cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
           };
         };
       };

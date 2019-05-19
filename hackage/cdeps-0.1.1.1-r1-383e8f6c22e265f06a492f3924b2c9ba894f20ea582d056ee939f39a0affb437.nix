@@ -24,7 +24,9 @@
           (hsPkgs.directory)
           (hsPkgs.filepath)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "cdeps" = {

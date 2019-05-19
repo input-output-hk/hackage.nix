@@ -30,7 +30,9 @@
       tests = {
         "tests" = {
           depends = [ (hsPkgs.base) (hsPkgs.process) ];
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };

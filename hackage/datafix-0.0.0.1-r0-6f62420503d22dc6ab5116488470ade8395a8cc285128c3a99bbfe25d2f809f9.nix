@@ -13,6 +13,11 @@
       synopsis = "Fixing data-flow problems";
       description = "Fixing data-flow problems in expression trees";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-toolkit or (pkgs.buildPackages.cabal-toolkit))
+        ];
       };
     components = {
       "library" = {

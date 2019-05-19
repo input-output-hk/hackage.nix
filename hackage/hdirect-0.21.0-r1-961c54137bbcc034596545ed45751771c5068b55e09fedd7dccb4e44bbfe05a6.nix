@@ -22,7 +22,9 @@
           (hsPkgs.pretty)
           (hsPkgs.array)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       exes = {
         "hdirect" = {
@@ -32,7 +34,9 @@
             (hsPkgs.pretty)
             (hsPkgs.array)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          build-tools = [
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            ];
           };
         };
       };

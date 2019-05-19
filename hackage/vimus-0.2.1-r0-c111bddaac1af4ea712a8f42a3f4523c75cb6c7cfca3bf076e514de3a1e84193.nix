@@ -35,7 +35,9 @@
           (hsPkgs.time-locale-compat)
           ];
         libs = [ (pkgs."ncursesw") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = { "vimus" = { depends = [ (hsPkgs.base) (hsPkgs.vimus) ]; }; };
       tests = {

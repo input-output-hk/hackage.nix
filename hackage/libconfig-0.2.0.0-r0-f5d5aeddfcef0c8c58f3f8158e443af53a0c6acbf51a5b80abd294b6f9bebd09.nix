@@ -100,7 +100,9 @@
                         (hsPkgs.transformers)
                         ];
         libs = [ (pkgs."config") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "doctest" = {

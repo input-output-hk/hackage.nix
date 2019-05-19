@@ -24,7 +24,9 @@
           (pkgs."ws2_32")
           (pkgs."iphlpapi")
           ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "spec" = {
@@ -36,7 +38,9 @@
             (hsPkgs.network)
             (hsPkgs.hspec)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         "doctests" = {
           depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.network) ];

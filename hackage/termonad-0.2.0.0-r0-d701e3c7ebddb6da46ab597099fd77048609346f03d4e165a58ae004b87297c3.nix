@@ -13,6 +13,11 @@
       synopsis = "Terminal emulator configurable in Haskell";
       description = "Please see <https://github.com/cdepillabout/termonad#readme README.md>.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

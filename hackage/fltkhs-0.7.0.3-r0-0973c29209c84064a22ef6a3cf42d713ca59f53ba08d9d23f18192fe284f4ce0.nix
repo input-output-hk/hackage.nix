@@ -13,6 +13,12 @@
       synopsis = "FLTK bindings";
       description = "Low level bindings for the FLTK GUI toolkit. For installation and quick start instruction please scroll all the way down to the README.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        ];
       };
     components = {
       "library" = {
@@ -22,7 +28,9 @@
           (hsPkgs.text)
           (hsPkgs.vector)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ] ++ (pkgs.lib).optional (!system.isOsx && !system.isWindows) (hsPkgs.buildPackages.pkg-config or (pkgs.buildPackages.pkg-config));
         };
       exes = {
         "fltkhs-fluidtohs" = {

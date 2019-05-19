@@ -25,7 +25,9 @@
         libs = [
           (pkgs."abc")
           ] ++ (pkgs.lib).optional (flags.enable-pthreads) (pkgs."pthread");
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "long-test" = { depends = [ (hsPkgs.base) (hsPkgs.abcBridge) ]; };

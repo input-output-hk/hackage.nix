@@ -22,6 +22,9 @@
           (hsPkgs.hsp)
           (hsPkgs.text)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs))
+          ];
         };
       };
     }

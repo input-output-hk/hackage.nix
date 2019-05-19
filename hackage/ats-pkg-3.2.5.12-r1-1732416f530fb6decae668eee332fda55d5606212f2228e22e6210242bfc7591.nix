@@ -44,7 +44,9 @@
           (hsPkgs.tar)
           (hsPkgs.filemanip)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+          ];
         };
       sublibs = {
         "quaalude" = {

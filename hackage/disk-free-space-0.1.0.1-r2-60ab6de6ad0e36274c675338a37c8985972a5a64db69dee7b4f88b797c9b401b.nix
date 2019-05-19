@@ -19,7 +19,7 @@
         depends = [
           (hsPkgs.base)
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
-        build-tools = (pkgs.lib).optional (!system.isWindows) ((hsPkgs.buildPackages).hsc2hs);
+        build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
         };
       };
     }

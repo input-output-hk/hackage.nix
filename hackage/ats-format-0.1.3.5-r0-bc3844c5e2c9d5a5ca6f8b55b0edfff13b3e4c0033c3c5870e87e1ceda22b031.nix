@@ -13,6 +13,11 @@
       synopsis = "A source-code formatter for ATS";
       description = "An opinionated source-code formatter for [ATS](http://www.ats-lang.org/).";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cli-setup or (pkgs.buildPackages.cli-setup))
+        ];
       };
     components = {
       "library" = {
@@ -34,8 +39,8 @@
           (hsPkgs.file-embed)
           ];
         build-tools = [
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).alex)
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
           ];
         };
       exes = {

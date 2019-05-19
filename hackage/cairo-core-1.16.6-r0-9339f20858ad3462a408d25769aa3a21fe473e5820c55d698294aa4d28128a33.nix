@@ -13,12 +13,26 @@
       synopsis = "Cairo Haskell binding (partial)";
       description = "For using Cairo in Haskell. Functions/Types for X11, Windows, MacOS are not included.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.haskell-src-exts or (pkgs.buildPackages.haskell-src-exts))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.http-client or (pkgs.buildPackages.http-client))
+        (hsPkgs.buildPackages.http-client-tls or (pkgs.buildPackages.http-client-tls))
+        (hsPkgs.buildPackages.hxt or (pkgs.buildPackages.hxt))
+        (hsPkgs.buildPackages.hxt-xpath or (pkgs.buildPackages.hxt-xpath))
+        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring))
+        ];
       };
     components = {
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.monad-extras) (hsPkgs.transformers) ];
         pkgconfig = [ (pkgconfPkgs."cairo") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

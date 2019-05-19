@@ -20,7 +20,9 @@
           then [ (hsPkgs.base) (hsPkgs.array) (hsPkgs.containers) ]
           else [ (hsPkgs.base) ];
         libs = [ (pkgs."m") ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

@@ -60,9 +60,9 @@
           (hsPkgs.semigroups)
           ];
         build-tools = [
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).happy)
-          ] ++ (pkgs.lib).optional (flags.cpphs) ((hsPkgs.buildPackages).cpphs);
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ] ++ (pkgs.lib).optional (flags.cpphs) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
         };
       exes = {
         "agda" = { depends = [ (hsPkgs.Agda) (hsPkgs.base) ]; };

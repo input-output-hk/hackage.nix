@@ -13,6 +13,13 @@
       synopsis = "Ruler tool for UHC";
       description = "Ruler tool used by UHC (Utrecht Haskell Compiler)";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal))
+        (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc))
+        (hsPkgs.buildPackages.shuffle or (pkgs.buildPackages.shuffle))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       exes = {

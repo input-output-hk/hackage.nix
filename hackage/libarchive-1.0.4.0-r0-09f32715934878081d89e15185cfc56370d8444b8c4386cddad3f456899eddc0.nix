@@ -23,7 +23,9 @@
           (hsPkgs.composition-prelude)
           ];
         pkgconfig = [ (pkgconfPkgs."libarchive") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

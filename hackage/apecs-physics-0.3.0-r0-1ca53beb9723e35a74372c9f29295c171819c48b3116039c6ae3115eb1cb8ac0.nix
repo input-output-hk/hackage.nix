@@ -13,6 +13,10 @@
       synopsis = "2D physics for apecs";
       description = "2D physics for apecs. Uses Chipmunk physics library under the hood.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {

@@ -21,7 +21,9 @@
       exes = {
         "readme" = {
           depends = [ (hsPkgs.base) (hsPkgs.shellmet) (hsPkgs.text) ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       tests = {

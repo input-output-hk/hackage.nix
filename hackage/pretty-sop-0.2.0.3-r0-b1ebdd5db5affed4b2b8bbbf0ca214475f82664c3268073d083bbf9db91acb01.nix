@@ -26,7 +26,9 @@
             (hsPkgs.generics-sop)
             (hsPkgs.pretty-show)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       };

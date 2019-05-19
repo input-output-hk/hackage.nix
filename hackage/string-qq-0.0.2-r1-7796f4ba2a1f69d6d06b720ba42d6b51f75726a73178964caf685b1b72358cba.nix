@@ -13,6 +13,11 @@
       synopsis = "QuasiQuoter for non-interpolated strings, texts and bytestrings.";
       description = "QuasiQuoter for non-interpolated strings, texts and bytestrings.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        ];
       };
     components = {
       "library" = { depends = [ (hsPkgs.base) (hsPkgs.template-haskell) ]; };

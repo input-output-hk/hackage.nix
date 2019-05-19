@@ -58,7 +58,9 @@
             (hsPkgs.markdown-unlit)
             (hsPkgs.text)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         "pure-how-to" = {
           depends = [
@@ -68,7 +70,9 @@
             (hsPkgs.mtl)
             (hsPkgs.text)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       tests = {
@@ -87,7 +91,9 @@
             (hsPkgs.universum)
             (hsPkgs.unordered-containers)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

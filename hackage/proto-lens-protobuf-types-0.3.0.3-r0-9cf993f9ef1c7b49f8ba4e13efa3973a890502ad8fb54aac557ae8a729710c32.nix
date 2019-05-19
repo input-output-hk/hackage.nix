@@ -13,6 +13,11 @@
       synopsis = "Basic protocol buffer message types.";
       description = "This package provides bindings standard protocol message types, for use with the proto-lens library.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.proto-lens-protoc or (pkgs.buildPackages.proto-lens-protoc))
+        ];
       };
     components = {
       "library" = {

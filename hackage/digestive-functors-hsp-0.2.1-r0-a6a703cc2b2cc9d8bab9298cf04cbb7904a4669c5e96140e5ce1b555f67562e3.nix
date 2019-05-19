@@ -23,6 +23,7 @@
           (hsPkgs.hsx)
           (hsPkgs.text)
           ];
+        build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx));
         };
       };
     }

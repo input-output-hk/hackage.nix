@@ -13,6 +13,16 @@
       synopsis = "Provides the SHA1 hash of the program executable";
       description = "See README.md";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cryptohash or (pkgs.buildPackages.cryptohash))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.file-embed or (pkgs.buildPackages.file-embed))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell))
+        ];
       };
     components = {
       "library" = {

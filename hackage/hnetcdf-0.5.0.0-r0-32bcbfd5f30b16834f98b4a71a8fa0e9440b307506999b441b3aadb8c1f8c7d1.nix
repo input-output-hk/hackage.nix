@@ -25,7 +25,9 @@
           (hsPkgs.vector)
           ];
         libs = [ (pkgs."netcdf") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "example1" = {

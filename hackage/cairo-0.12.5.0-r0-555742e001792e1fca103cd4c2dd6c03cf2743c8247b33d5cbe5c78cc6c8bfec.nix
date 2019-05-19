@@ -26,6 +26,9 @@
         pkgconfig = (([
           (pkgconfPkgs."cairo")
           ] ++ (pkgs.lib).optional (flags.cairo_pdf) (pkgconfPkgs."cairo-pdf")) ++ (pkgs.lib).optional (flags.cairo_ps) (pkgconfPkgs."cairo-ps")) ++ (pkgs.lib).optional (flags.cairo_svg) (pkgconfPkgs."cairo-svg");
+        build-tools = [
+          (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+          ];
         };
       };
     }

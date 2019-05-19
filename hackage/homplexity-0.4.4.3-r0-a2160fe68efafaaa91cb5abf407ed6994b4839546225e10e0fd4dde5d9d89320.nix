@@ -28,7 +28,9 @@
           (hsPkgs.template-haskell)
           (hsPkgs.cpphs)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       exes = {
         "homplexity-cli" = {

@@ -13,6 +13,12 @@
       synopsis = "Shuffle tool for UHC";
       description = "Shuffle tool used by UHC (Utrecht Haskell Compiler)";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal))
+        (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {

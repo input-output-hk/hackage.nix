@@ -47,7 +47,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         "readme" = {
           depends = [
@@ -64,7 +66,9 @@
             (hsPkgs.text)
             (hsPkgs.time)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       };

@@ -53,7 +53,9 @@
             (hsPkgs.time)
             ]
           else [ (hsPkgs.base) ]);
-        build-tools = (pkgs.lib).optionals (flags.embed_data_files) ((pkgs.lib).optional (system.isOsx) ((hsPkgs.buildPackages).cpphs));
+        build-tools = (pkgs.lib).optionals (flags.embed_data_files) ([
+          (hsPkgs.buildPackages.hsb2hs or (pkgs.buildPackages.hsb2hs))
+          ] ++ (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs)));
         };
       exes = {
         "pandoc-citeproc" = {

@@ -19,7 +19,9 @@
         depends = if flags.small_base
           then [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.array) ]
           else [ (hsPkgs.base) ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       };
     }

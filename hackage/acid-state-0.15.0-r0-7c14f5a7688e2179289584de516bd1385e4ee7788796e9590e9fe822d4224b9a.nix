@@ -47,7 +47,9 @@
             (hsPkgs.safecopy)
             (hsPkgs.template-haskell)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         "state-machine" = {
           depends = [

@@ -32,6 +32,11 @@
       exes = {
         "shh-example" = {
           depends = [ (hsPkgs.base) (hsPkgs.async) (hsPkgs.shh) ];
+          build-tools = [
+            (hsPkgs.buildPackages.coreutils or (pkgs.buildPackages.coreutils))
+            (hsPkgs.buildPackages.vault or (pkgs.buildPackages.vault))
+            (hsPkgs.buildPackages.vim or (pkgs.buildPackages.vim))
+            ];
           };
         };
       tests = {
@@ -42,6 +47,10 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.tasty-hunit)
             (hsPkgs.shh)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.perl or (pkgs.buildPackages.perl))
+            (hsPkgs.buildPackages.vim or (pkgs.buildPackages.vim))
             ];
           };
         };

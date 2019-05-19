@@ -22,7 +22,9 @@
           (hsPkgs.old-time)
           (hsPkgs.binary)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       tests = {
         "doctests" = {
@@ -39,7 +41,9 @@
             (hsPkgs.unix-time)
             (hsPkgs.hspec)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

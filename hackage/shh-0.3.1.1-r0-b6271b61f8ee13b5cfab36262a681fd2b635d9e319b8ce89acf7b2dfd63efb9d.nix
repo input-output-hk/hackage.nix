@@ -42,6 +42,9 @@
             (hsPkgs.shh)
             (hsPkgs.split)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         "shh-example" = {
           depends = [ (hsPkgs.base) (hsPkgs.async) (hsPkgs.shh) ];

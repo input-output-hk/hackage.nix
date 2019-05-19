@@ -29,6 +29,9 @@
           (hsPkgs.unix)
           (hsPkgs.curry-frontend)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.kics or (pkgs.buildPackages.kics))
+          ];
         };
       exes = {
         "kics" = {

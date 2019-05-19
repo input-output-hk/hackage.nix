@@ -22,6 +22,9 @@
           (hsPkgs.transformers)
           (hsPkgs.suitable)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       tests = {
         "test" = {

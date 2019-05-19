@@ -32,7 +32,9 @@
             (hsPkgs.mtl)
             (hsPkgs.QuickCheck)
             ] ++ [ (hsPkgs.base) ];
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };

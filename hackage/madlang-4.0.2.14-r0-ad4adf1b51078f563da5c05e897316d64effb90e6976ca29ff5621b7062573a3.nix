@@ -13,6 +13,11 @@
       synopsis = "Randomized templating language DSL";
       description = "Madlang is a text templating language written in Haskell,\nmeant to explore computational creativity and generative\nliterature.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cli-setup or (pkgs.buildPackages.cli-setup))
+        ];
       };
     components = {
       "library" = {

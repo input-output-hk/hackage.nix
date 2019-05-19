@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) ];
         libs = [ (pkgs."mpi") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = { "mpi-hs" = { depends = [ (hsPkgs.base) (hsPkgs.mpi-hs) ]; }; };
       tests = {

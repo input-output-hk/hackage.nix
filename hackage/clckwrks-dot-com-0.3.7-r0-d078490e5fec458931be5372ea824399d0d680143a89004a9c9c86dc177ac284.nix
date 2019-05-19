@@ -32,6 +32,9 @@
             (hsPkgs.text)
             (hsPkgs.web-plugins)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.hsx2hs or (pkgs.buildPackages.hsx2hs))
+            ];
           };
         "clckwrks-dot-com-backups" = {
           depends = (pkgs.lib).optionals (flags.backups) [

@@ -28,8 +28,8 @@
           (hsPkgs.random)
           ];
         build-tools = [
-          ((hsPkgs.buildPackages).hsc2hs)
-          ((hsPkgs.buildPackages).cpphs)
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
           ];
         };
       exes = {

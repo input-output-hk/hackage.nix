@@ -24,7 +24,9 @@
           (hsPkgs.deepseq)
           (hsPkgs.text)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       tests = {
         "microaeson" = {

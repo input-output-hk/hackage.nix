@@ -24,7 +24,9 @@
           (hsPkgs.stm)
           (hsPkgs.unix)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       exes = {
         "hherbstclient" = {
@@ -37,7 +39,9 @@
             (hsPkgs.unix)
             (hsPkgs.hlwm)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+            ];
           };
         };
       };

@@ -38,19 +38,27 @@
         "driver-test" = { depends = [ (hsPkgs.base) (hsPkgs.hspec) ]; };
         "html-test" = {
           depends = [ (hsPkgs.base) (hsPkgs.filepath) (hsPkgs.haddock-test) ];
-          build-tools = [ ((hsPkgs.buildPackages).haddock) ];
+          build-tools = [
+            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock))
+            ];
           };
         "hypsrc-test" = {
           depends = [ (hsPkgs.base) (hsPkgs.filepath) (hsPkgs.haddock-test) ];
-          build-tools = [ ((hsPkgs.buildPackages).haddock) ];
+          build-tools = [
+            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock))
+            ];
           };
         "latex-test" = {
           depends = [ (hsPkgs.base) (hsPkgs.filepath) (hsPkgs.haddock-test) ];
-          build-tools = [ ((hsPkgs.buildPackages).haddock) ];
+          build-tools = [
+            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock))
+            ];
           };
         "hoogle-test" = {
           depends = [ (hsPkgs.base) (hsPkgs.filepath) (hsPkgs.haddock-test) ];
-          build-tools = [ ((hsPkgs.buildPackages).haddock) ];
+          build-tools = [
+            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock))
+            ];
           };
         };
       };

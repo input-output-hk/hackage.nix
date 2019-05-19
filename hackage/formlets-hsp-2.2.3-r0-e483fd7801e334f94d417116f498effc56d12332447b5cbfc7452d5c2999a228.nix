@@ -25,6 +25,9 @@
           (hsPkgs.mtl)
           (hsPkgs.applicative-extras)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.trhsx or (pkgs.buildPackages.trhsx))
+          ];
         };
       };
     }

@@ -18,7 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.freetype2) (hsPkgs.OpenGL) ];
         libs = (pkgs.lib).optional (flags.use_font_config) (pkgs."fontconfig");
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       exes = {
         "hellobye" = {

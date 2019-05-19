@@ -28,7 +28,9 @@
           ];
         libs = (pkgs.lib).optional (!flags.pkgconfig) (pkgs."jack");
         pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."jack");
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       exes = {
         "amplify" = { depends = [ (hsPkgs.jack) (hsPkgs.base) ]; };

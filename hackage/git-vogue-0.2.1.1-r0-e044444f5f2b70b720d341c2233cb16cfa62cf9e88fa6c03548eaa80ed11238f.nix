@@ -79,6 +79,9 @@
             (hsPkgs.process)
             (hsPkgs.temporary)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.git or (pkgs.buildPackages.git))
+            ];
           };
         };
       };

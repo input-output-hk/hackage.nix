@@ -22,7 +22,7 @@
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.filepath) (hsPkgs.Win32) ]);
         libs = (pkgs.lib).optionals (system.isWindows) ((pkgs.lib).optional (!flags.win32-2-5) (pkgs."ntdll"));
-        build-tools = (pkgs.lib).optionals (system.isWindows) ((pkgs.lib).optional (!flags.win32-2-5) ((hsPkgs.buildPackages).hsc2hs));
+        build-tools = (pkgs.lib).optionals (system.isWindows) ((pkgs.lib).optional (!flags.win32-2-5) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs)));
         };
       };
     }

@@ -36,7 +36,7 @@
           (pkgs."gu")
           (pkgs."pgf")
           ];
-        build-tools = (pkgs.lib).optional (flags.c-runtime) ((hsPkgs.buildPackages).hsc2hs);
+        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
         };
       exes = {
         "gf" = {
@@ -73,8 +73,8 @@
             (hsPkgs.data-binary-ieee754)
             ];
           build-tools = [
-            ((hsPkgs.buildPackages).happy)
-            ((hsPkgs.buildPackages).alex)
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
             ];
           };
         "pgf-shell" = {

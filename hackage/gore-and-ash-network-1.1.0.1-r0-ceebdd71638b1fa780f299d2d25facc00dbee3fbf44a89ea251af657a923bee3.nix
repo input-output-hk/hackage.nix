@@ -38,7 +38,9 @@
         libs = if system.isWindows
           then [ (pkgs."gmp-10") ]
           else [ (pkgs."gmp") ];
-        build-tools = [ ((hsPkgs.buildPackages).hsc2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          ];
         };
       };
     }

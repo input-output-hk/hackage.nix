@@ -13,6 +13,13 @@
       synopsis = "FFI bindings to xfconf";
       description = "Xfconf is a simple client-server configuration storage and query\nsystem build on top of glib and used by XFCE.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers))
+        ];
       };
     components = {
       "library" = {
@@ -27,10 +34,29 @@
           (hsPkgs.QuickCheck)
           ];
         pkgconfig = [ (pkgconfPkgs."libxfconf-0") ];
+        build-tools = [
+          (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+          (hsPkgs.buildPackages.gtk2hsHookGenerator or (pkgs.buildPackages.gtk2hsHookGenerator))
+          (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen))
+          ];
         };
       exes = {
-        "tests" = { pkgconfig = [ (pkgconfPkgs."libxfconf-0") ]; };
-        "testGlib" = { pkgconfig = [ (pkgconfPkgs."libxfconf-0") ]; };
+        "tests" = {
+          pkgconfig = [ (pkgconfPkgs."libxfconf-0") ];
+          build-tools = [
+            (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+            (hsPkgs.buildPackages.gtk2hsHookGenerator or (pkgs.buildPackages.gtk2hsHookGenerator))
+            (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen))
+            ];
+          };
+        "testGlib" = {
+          pkgconfig = [ (pkgconfPkgs."libxfconf-0") ];
+          build-tools = [
+            (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+            (hsPkgs.buildPackages.gtk2hsHookGenerator or (pkgs.buildPackages.gtk2hsHookGenerator))
+            (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen))
+            ];
+          };
         };
       };
     }

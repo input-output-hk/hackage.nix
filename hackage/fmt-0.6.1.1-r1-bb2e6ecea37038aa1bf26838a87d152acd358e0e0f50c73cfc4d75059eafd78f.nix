@@ -45,7 +45,9 @@
           };
         "doctests" = {
           depends = [ (hsPkgs.base) (hsPkgs.doctest) ];
-          build-tools = [ ((hsPkgs.buildPackages).doctest-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.doctest-discover or (pkgs.buildPackages.doctest-discover))
+            ];
           };
         };
       benchmarks = {

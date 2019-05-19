@@ -41,8 +41,8 @@
         libs = (pkgs.lib).optional (system.isWindows) (pkgs."R");
         pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libR");
         build-tools = [
-          ((hsPkgs.buildPackages).c2hs)
-          ((hsPkgs.buildPackages).hsc2hs)
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
           ];
         };
       tests = {

@@ -58,6 +58,7 @@
           (hsPkgs.HTTP)
           ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo));
         libs = (pkgs.lib).optionals (!(!flags.library)) ((pkgs.lib).optional (flags.curl) (pkgs."curl"));
+        build-tools = (pkgs.lib).optional (!(!flags.library)) (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc));
         };
       exes = {
         "witnesses" = {
@@ -92,6 +93,7 @@
             (hsPkgs.network)
             (hsPkgs.HTTP)
             ]);
+          build-tools = (pkgs.lib).optional (!(!flags.type-witnesses)) (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc));
           };
         "darcs" = {
           depends = (((([
@@ -123,6 +125,9 @@
             (hsPkgs.HTTP)
             ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs.terminfo);
           libs = (pkgs.lib).optional (flags.curl) (pkgs."curl");
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         "unit" = {
           depends = (pkgs.lib).optionals (!(!flags.test)) ((((([
@@ -157,6 +162,7 @@
             (hsPkgs.network)
             (hsPkgs.HTTP)
             ]);
+          build-tools = (pkgs.lib).optional (!(!flags.test)) (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc));
           };
         };
       };

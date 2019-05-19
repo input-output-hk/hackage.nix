@@ -38,7 +38,9 @@
           (hsPkgs.ListZipper)
           (hsPkgs.composition)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+          ];
         };
       };
     }

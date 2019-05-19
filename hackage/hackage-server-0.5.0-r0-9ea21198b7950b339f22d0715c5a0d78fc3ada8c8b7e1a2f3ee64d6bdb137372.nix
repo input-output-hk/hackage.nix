@@ -76,8 +76,8 @@
             ];
           libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt");
           build-tools = [
-            ((hsPkgs.buildPackages).alex)
-            ((hsPkgs.buildPackages).happy)
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
             ];
           };
         "hackage-mirror" = {

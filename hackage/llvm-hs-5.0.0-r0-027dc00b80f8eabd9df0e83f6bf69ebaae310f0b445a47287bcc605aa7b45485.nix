@@ -13,6 +13,11 @@
       synopsis = "General purpose LLVM bindings";
       description = "llvm-hs is a set of Haskell bindings for LLVM <http://llvm.org/>. Unlike other current Haskell bindings,\nit uses an ADT to represent LLVM IR (<http://llvm.org/docs/LangRef.html>), and so offers two advantages: it\nhandles almost all of the stateful complexities of using the LLVM API to build IR; and it supports moving IR not\nonly from Haskell into LLVM C++ objects, but the other direction - from LLVM C++ into Haskell.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers))
+        ];
       };
     components = {
       "library" = {
@@ -31,6 +36,9 @@
           ] ++ (if flags.semigroups
           then [ (hsPkgs.base) (hsPkgs.semigroups) ]
           else [ (hsPkgs.base) ]);
+        build-tools = [
+          (hsPkgs.buildPackages.llvm-config or (pkgs.buildPackages.llvm-config))
+          ];
         };
       tests = {
         "test" = {

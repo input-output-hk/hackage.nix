@@ -13,6 +13,11 @@
       synopsis = "backs up everything github knows about a repository, to the repository";
       description = "github-backup is a simple tool you run in a git repository you cloned from\nGithub. It backs up everything Github knows about the repository, including\nother forks, issues, comments, milestones, pull requests, and watchers.\nAlso includes gitriddance, which can be used to close all open issues and\npull requests.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.hslogger or (pkgs.buildPackages.hslogger))
+        (hsPkgs.buildPackages.MissingH or (pkgs.buildPackages.MissingH))
+        ];
       };
     components = {
       exes = {

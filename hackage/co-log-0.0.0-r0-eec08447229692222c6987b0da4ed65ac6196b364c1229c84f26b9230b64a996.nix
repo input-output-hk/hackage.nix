@@ -42,7 +42,9 @@
           };
         "readme" = {
           depends = [ (hsPkgs.base-noprelude) (hsPkgs.co-log) (hsPkgs.text) ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       };

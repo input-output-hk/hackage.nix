@@ -32,6 +32,7 @@
             (pkgs."clntsh")
             ])) ++ (pkgs.lib).optional (flags.postgres) (pkgs."pq")) ++ (pkgs.lib).optional (flags.sqlite) (pkgs."sqlite3");
         pkgconfig = (pkgs.lib).optionals (flags.sqlite) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."sqlite3"));
+        build-tools = (((pkgs.lib).optional (flags.odbc) (hsPkgs.buildPackages.odbcconf or (pkgs.buildPackages.odbcconf)) ++ (pkgs.lib).optional (flags.oracle) (hsPkgs.buildPackages.sqlplus or (pkgs.buildPackages.sqlplus))) ++ (pkgs.lib).optional (flags.postgres) (hsPkgs.buildPackages.pg_config or (pkgs.buildPackages.pg_config))) ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs.buildPackages.sqlite3 or (pkgs.buildPackages.sqlite3));
         };
       };
     }

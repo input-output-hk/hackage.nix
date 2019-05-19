@@ -94,7 +94,9 @@
               ])) ++ (pkgs.lib).optional (!flags.developer) (hsPkgs.text-show-instances)) ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.terminfo) (hsPkgs.unix) ]);
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

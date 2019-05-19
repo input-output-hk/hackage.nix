@@ -24,7 +24,9 @@
           (hsPkgs.unix)
           ];
         libs = [ (pkgs."bdd") (pkgs."mem") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       };
     }

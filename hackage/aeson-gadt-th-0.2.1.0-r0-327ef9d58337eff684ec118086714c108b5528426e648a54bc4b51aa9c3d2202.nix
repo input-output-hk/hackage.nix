@@ -34,7 +34,9 @@
             (hsPkgs.dependent-map)
             (hsPkgs.aeson-gadt-th)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).markdown-unlit) ];
+          build-tools = [
+            (hsPkgs.buildPackages.markdown-unlit or (pkgs.buildPackages.markdown-unlit))
+            ];
           };
         };
       tests = {

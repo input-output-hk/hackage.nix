@@ -35,8 +35,8 @@
           (hsPkgs.transformers)
           ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.terminfo);
         build-tools = [
-          ((hsPkgs.buildPackages).happy)
-          ((hsPkgs.buildPackages).alex)
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
           ];
         };
       exes = { "hermit" = { depends = [ (hsPkgs.base) (hsPkgs.hermit) ]; }; };

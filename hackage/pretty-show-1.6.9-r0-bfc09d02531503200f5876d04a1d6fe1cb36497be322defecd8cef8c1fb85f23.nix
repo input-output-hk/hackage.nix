@@ -24,7 +24,9 @@
           (hsPkgs.filepath)
           (hsPkgs.ghc-prim)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       exes = {
         "ppsh" = { depends = [ (hsPkgs.base) (hsPkgs.pretty-show) ]; };

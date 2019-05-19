@@ -13,6 +13,10 @@
       synopsis = "Bindings to mcl, a generic and fast pairing-based cryptography library";
       description = "Base library: https://github.com/herumi/mcl";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        ];
       };
     components = {
       "library" = {

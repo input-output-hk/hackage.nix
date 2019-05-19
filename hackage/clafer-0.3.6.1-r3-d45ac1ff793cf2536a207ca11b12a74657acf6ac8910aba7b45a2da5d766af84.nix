@@ -44,6 +44,9 @@
           (hsPkgs.test-framework-th)
           (hsPkgs.text)
           ] ++ [ (hsPkgs.HaXml) ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
         "clafer" = {
@@ -76,6 +79,9 @@
             (hsPkgs.text)
             (hsPkgs.clafer)
             ] ++ [ (hsPkgs.HaXml) ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         };
       tests = {
@@ -109,6 +115,9 @@
             (hsPkgs.text)
             (hsPkgs.clafer)
             ] ++ [ (hsPkgs.HaXml) ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
           };
         };
       };

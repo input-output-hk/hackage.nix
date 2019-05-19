@@ -38,7 +38,9 @@
             (hsPkgs.process)
             (hsPkgs.syb)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).happy) ];
+          build-tools = [
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            ];
           };
         };
       };

@@ -18,6 +18,11 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.glib) (hsPkgs.gtk) (hsPkgs.webkit) ];
         pkgconfig = [ (pkgconfPkgs."webkit-1.0") ];
+        build-tools = [
+          (hsPkgs.buildPackages.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs))
+          (hsPkgs.buildPackages.gtk2hsHookGenerator or (pkgs.buildPackages.gtk2hsHookGenerator))
+          (hsPkgs.buildPackages.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen))
+          ];
         };
       };
     }

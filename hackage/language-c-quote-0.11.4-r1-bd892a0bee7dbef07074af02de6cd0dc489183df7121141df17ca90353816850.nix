@@ -34,11 +34,11 @@
           then [ (hsPkgs.haskell-src-meta) ]
           else [ (hsPkgs.haskell-exp-parser) ]);
         build-tools = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.4") [
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).happy)
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
           ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.4") [
-          ((hsPkgs.buildPackages).alex)
-          ((hsPkgs.buildPackages).happy)
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
           ];
         };
       tests = {

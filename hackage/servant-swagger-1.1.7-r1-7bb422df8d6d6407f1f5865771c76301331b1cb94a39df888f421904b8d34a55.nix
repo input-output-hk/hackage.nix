@@ -13,6 +13,11 @@
       synopsis = "Generate a Swagger/OpenAPI/OAS 2.0 specification for your servant API.";
       description = "Swagger is a project used to describe and document RESTful APIs. The core of the\nproject is the [OpenAPI Specification (OAS)](https://swagger.io/docs/specification/about/).\nThis library implements v2.0 of the spec. Unlike Servant it is language-agnostic and thus is\nquite popular among developers in different languages. It has also existed for a longer time\nand has more helpful tooling.\n\nThis package provides means to generate a Swagger/OAS specification for a Servant API\nand also to partially test whether an API conforms with its specification.\n\nGenerated Swagger specification then can be used for many things such as\n\n* displaying interactive documentation using [Swagger UI](http://swagger.io/swagger-ui/);\n\n* generating clients and servers in many languages using [Swagger Codegen](http://swagger.io/swagger-codegen/);\n\n* and [many others](http://swagger.io/open-source-integrations/).";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {
@@ -61,7 +66,9 @@
             (hsPkgs.utf8-string)
             (hsPkgs.time)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).hspec-discover) ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
           };
         };
       };

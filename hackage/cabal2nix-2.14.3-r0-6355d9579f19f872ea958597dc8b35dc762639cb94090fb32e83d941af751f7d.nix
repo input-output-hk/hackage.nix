@@ -82,6 +82,9 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-golden)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.cabal2nix or (pkgs.buildPackages.cabal2nix))
+            ];
           };
         };
       };

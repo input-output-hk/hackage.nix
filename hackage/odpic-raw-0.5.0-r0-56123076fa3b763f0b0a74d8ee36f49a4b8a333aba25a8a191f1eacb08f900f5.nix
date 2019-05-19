@@ -25,7 +25,9 @@
           (hsPkgs.scientific)
           (hsPkgs.time)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "odpic-raw-test" = {
@@ -40,7 +42,9 @@
             (hsPkgs.scientific)
             (hsPkgs.time)
             ];
-          build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+            ];
           };
         };
       };

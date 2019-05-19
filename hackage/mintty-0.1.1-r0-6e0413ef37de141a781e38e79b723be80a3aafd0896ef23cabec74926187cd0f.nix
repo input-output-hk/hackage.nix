@@ -21,7 +21,7 @@
           ] ++ (pkgs.lib).optionals (system.isWindows) (if flags.win32-2-5
           then [ (hsPkgs.Win32) ]
           else [ (hsPkgs.filepath) (hsPkgs.Win32) ]);
-        build-tools = (pkgs.lib).optionals (system.isWindows) ((pkgs.lib).optional (!flags.win32-2-5) ((hsPkgs.buildPackages).hsc2hs));
+        build-tools = (pkgs.lib).optionals (system.isWindows) ((pkgs.lib).optional (!flags.win32-2-5) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs)));
         };
       };
     }

@@ -24,7 +24,9 @@
           (hsPkgs.vector)
           ];
         libs = [ (pkgs."GLU") (pkgs."GL") (pkgs."m") (pkgs."GLEW") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "example00" = {

@@ -25,7 +25,9 @@
           (hsPkgs.semigroups)
           (hsPkgs.fail)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).happy) ];
+        build-tools = [
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+          ];
         };
       };
     }

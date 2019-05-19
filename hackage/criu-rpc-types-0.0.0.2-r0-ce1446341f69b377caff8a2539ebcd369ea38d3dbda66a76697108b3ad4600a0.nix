@@ -13,6 +13,10 @@
       synopsis = "Criu RPC protocol buffer types.";
       description = "Types and lenses for the CRIU RPC API generated using proto-lens.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.proto-lens-protoc or (pkgs.buildPackages.proto-lens-protoc))
+        ];
       };
     components = {
       "library" = {

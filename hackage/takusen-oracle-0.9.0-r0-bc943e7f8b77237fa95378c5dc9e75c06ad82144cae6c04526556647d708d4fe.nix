@@ -25,6 +25,9 @@
         libs = if system.isWindows
           then [ (pkgs."oci") ]
           else [ (pkgs."clntsh") ];
+        build-tools = [
+          (hsPkgs.buildPackages.sqlplus or (pkgs.buildPackages.sqlplus))
+          ];
         };
       exes = {
         "takusen_tests" = {

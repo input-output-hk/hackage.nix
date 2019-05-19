@@ -26,7 +26,9 @@
           (hsPkgs.uniplate)
           (hsPkgs.transformers)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).cpphs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+          ];
         };
       };
     }

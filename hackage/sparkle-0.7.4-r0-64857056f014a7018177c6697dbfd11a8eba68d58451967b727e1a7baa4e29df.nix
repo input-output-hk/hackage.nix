@@ -13,6 +13,12 @@
       synopsis = "Distributed Apache Spark applications in Haskell";
       description = "See https://www.stackage.org/package/sparkle.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.inline-java or (pkgs.buildPackages.inline-java))
+        (hsPkgs.buildPackages.jvm-streaming or (pkgs.buildPackages.jvm-streaming))
+        ];
       };
     components = {
       "library" = {

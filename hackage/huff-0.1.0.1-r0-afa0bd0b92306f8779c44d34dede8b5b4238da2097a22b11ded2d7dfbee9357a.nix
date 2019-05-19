@@ -27,7 +27,9 @@
           (hsPkgs.array)
           (hsPkgs.template-haskell)
           ];
-        build-tools = [ ((hsPkgs.buildPackages).alex) ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          ];
         };
       exes = {
         "blocksWorld" = { depends = [ (hsPkgs.base) (hsPkgs.huff) ]; };

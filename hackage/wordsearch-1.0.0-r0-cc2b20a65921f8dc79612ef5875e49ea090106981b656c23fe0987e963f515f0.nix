@@ -23,9 +23,17 @@
           (hsPkgs.fclabels)
           (hsPkgs.data-default)
           ];
+        build-tools = [
+          (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+          ];
         };
       exes = {
-        "wordSearch" = { depends = [ (hsPkgs.base) (hsPkgs.fclabels) ]; };
+        "wordSearch" = {
+          depends = [ (hsPkgs.base) (hsPkgs.fclabels) ];
+          build-tools = [
+            (hsPkgs.buildPackages.ghc or (pkgs.buildPackages.ghc))
+            ];
+          };
         };
       };
     }

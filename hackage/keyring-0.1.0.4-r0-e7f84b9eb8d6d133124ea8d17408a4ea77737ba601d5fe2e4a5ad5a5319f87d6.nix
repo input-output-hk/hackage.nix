@@ -24,7 +24,7 @@
           (pkgs."Security")
           (pkgs."CoreFoundation")
           ];
-        build-tools = (pkgs.lib).optional (system.isOsx) ((hsPkgs.buildPackages).hsc2hs);
+        build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs));
         };
       exes = {
         "keyring-example" = { depends = [ (hsPkgs.base) (hsPkgs.keyring) ]; };

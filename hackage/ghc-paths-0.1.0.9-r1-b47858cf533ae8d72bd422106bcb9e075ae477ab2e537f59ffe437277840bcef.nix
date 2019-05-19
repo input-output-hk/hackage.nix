@@ -13,6 +13,11 @@
       synopsis = "Knowledge of GHC's installation directories";
       description = "Knowledge of GHC's installation directories";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        ];
       };
     components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
     }

@@ -23,6 +23,9 @@
             (hsPkgs.HSH)
             (hsPkgs.filepath)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.hasktags or (pkgs.buildPackages.hasktags))
+            ];
           };
         };
       };

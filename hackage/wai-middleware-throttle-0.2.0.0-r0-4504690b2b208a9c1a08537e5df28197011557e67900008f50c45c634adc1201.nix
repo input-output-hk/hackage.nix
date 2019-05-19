@@ -44,7 +44,9 @@
           };
         "haddock" = {
           depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.regex-compat) ];
-          build-tools = [ ((hsPkgs.buildPackages).haddock) ];
+          build-tools = [
+            (hsPkgs.buildPackages.haddock or (pkgs.buildPackages.haddock))
+            ];
           };
         "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
         };

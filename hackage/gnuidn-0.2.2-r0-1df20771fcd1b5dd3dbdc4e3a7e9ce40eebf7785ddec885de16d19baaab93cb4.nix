@@ -19,7 +19,9 @@
         depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.bytestring) ];
         libs = [ (pkgs."idn") ];
         pkgconfig = [ (pkgconfPkgs."libidn") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       tests = {
         "gnuidn_tests" = {
@@ -34,7 +36,9 @@
             ];
           libs = [ (pkgs."idn") ];
           pkgconfig = [ (pkgconfPkgs."libidn") ];
-          build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+            ];
           };
         };
       };

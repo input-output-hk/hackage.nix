@@ -18,6 +18,9 @@
       "library" = {
         depends = [ (hsPkgs.base) (hsPkgs.vector) ];
         libs = [ (pkgs."gfortran") ];
+        build-tools = [
+          (hsPkgs.buildPackages.gfortran or (pkgs.buildPackages.gfortran))
+          ];
         };
       tests = {
         "test" = {

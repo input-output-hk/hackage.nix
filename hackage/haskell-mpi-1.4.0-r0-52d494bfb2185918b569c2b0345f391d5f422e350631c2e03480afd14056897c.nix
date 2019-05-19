@@ -26,7 +26,9 @@
         libs = if flags.mpich14
           then [ (pkgs."mpich") (pkgs."opa") (pkgs."mpl") ]
           else [ (pkgs."mpi") (pkgs."open-rte") (pkgs."open-pal") ];
-        build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+        build-tools = [
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          ];
         };
       exes = {
         "haskell-mpi-testsuite" = {
@@ -40,7 +42,9 @@
           libs = if flags.mpich14
             then [ (pkgs."mpich") (pkgs."opa") (pkgs."mpl") ]
             else [ (pkgs."mpi") (pkgs."open-rte") (pkgs."open-pal") ];
-          build-tools = [ ((hsPkgs.buildPackages).c2hs) ];
+          build-tools = [
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+            ];
           };
         "haskell-mpi-comprunclean" = {
           depends = (pkgs.lib).optionals (flags.test) [

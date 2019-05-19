@@ -37,6 +37,9 @@
             (hsPkgs.formatting)
             (hsPkgs.process)
             ];
+          build-tools = [
+            (hsPkgs.buildPackages.python3 or (pkgs.buildPackages.python3))
+            ];
           };
         };
       };

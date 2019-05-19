@@ -13,6 +13,11 @@
       synopsis = "Work stealing scheduler for Massiv (Массив) and other parallel applications.";
       description = "A work stealing scheduler that is used by [massiv](https://www.stackage.org/package/massiv) array librarry, but can be useful for any other library or application that fits such model of computation.";
       buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        ];
       };
     components = {
       "library" = {

@@ -22,7 +22,7 @@
           (hsPkgs.th-abstraction)
           (hsPkgs.template-haskell)
           ];
-        build-tools = (pkgs.lib).optional (flags.template-haskell) ((hsPkgs.buildPackages).cpphs);
+        build-tools = (pkgs.lib).optional (flags.template-haskell) (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs));
         };
       tests = {
         "Expr" = {

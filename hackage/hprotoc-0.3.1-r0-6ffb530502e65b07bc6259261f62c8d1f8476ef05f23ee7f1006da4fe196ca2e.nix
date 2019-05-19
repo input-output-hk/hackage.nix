@@ -36,7 +36,9 @@
               (hsPkgs.QuickCheck)
               ]
             else [ (hsPkgs.base) ]);
-          build-tools = [ ((hsPkgs.buildPackages).alex) ];
+          build-tools = [
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            ];
           };
         };
       };
