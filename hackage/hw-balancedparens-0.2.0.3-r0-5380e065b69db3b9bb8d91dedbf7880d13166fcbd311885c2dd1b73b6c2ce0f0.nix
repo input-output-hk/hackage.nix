@@ -1,0 +1,59 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "2.2";
+      identifier = { name = "hw-balancedparens"; version = "0.2.0.3"; };
+      license = "BSD-3-Clause";
+      copyright = "2016-2019 John Ky";
+      maintainer = "newhoggy@gmail.com";
+      author = "John Ky";
+      homepage = "http://github.com/haskell-works/hw-balancedparens#readme";
+      url = "";
+      synopsis = "Balanced parentheses";
+      description = "Balanced parentheses.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.deepseq)
+          (hsPkgs.hw-bits)
+          (hsPkgs.hw-excess)
+          (hsPkgs.hw-prim)
+          (hsPkgs.hw-rankselect-base)
+          (hsPkgs.vector)
+          ];
+        };
+      tests = {
+        "hw-balancedparens-test" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.hspec)
+            (hsPkgs.hw-bits)
+            (hsPkgs.hw-prim)
+            (hsPkgs.hw-rankselect-base)
+            (hsPkgs.vector)
+            (hsPkgs.hw-balancedparens)
+            ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            ];
+          };
+        };
+      benchmarks = {
+        "bench" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.criterion)
+            (hsPkgs.hw-bits)
+            (hsPkgs.hw-prim)
+            (hsPkgs.vector)
+            (hsPkgs.hw-balancedparens)
+            ];
+          };
+        };
+      };
+    }
