@@ -1,0 +1,99 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = { examples = false; integration = false; };
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "servant-elm"; version = "0.6.0.2"; };
+      license = "BSD-3-Clause";
+      copyright = "2015-2016 Matt Bray";
+      maintainer = "mattjbray@gmail.com";
+      author = "Matt Bray";
+      homepage = "http://github.com/mattjbray/servant-elm#readme";
+      url = "";
+      synopsis = "Automatically derive Elm functions to query servant webservices.";
+      description = "Please see README.md";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.aeson)
+          (hsPkgs.directory)
+          (hsPkgs.elm-bridge)
+          (hsPkgs.lens)
+          (hsPkgs.servant)
+          (hsPkgs.servant-foreign)
+          (hsPkgs.text)
+          (hsPkgs.wl-pprint-text)
+          ];
+        };
+      exes = {
+        "books-example" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.elm-bridge)
+            (hsPkgs.servant)
+            (hsPkgs.servant-elm)
+            ];
+          };
+        "e2e-tests-example" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.elm-bridge)
+            (hsPkgs.servant)
+            (hsPkgs.servant-elm)
+            ];
+          };
+        "giphy-example" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.elm-bridge)
+            (hsPkgs.servant)
+            (hsPkgs.servant-elm)
+            (hsPkgs.text)
+            ];
+          };
+        "readme-example" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.elm-bridge)
+            (hsPkgs.servant)
+            (hsPkgs.servant-elm)
+            ];
+          };
+        };
+      tests = {
+        "servant-elm-test" = {
+          depends = [
+            (hsPkgs.Diff)
+            (hsPkgs.HUnit)
+            (hsPkgs.aeson)
+            (hsPkgs.base)
+            (hsPkgs.elm-bridge)
+            (hsPkgs.hspec)
+            (hsPkgs.servant)
+            (hsPkgs.servant-client)
+            (hsPkgs.servant-elm)
+            (hsPkgs.text)
+            ];
+          };
+        "servant-elm-test-integration" = {
+          depends = [
+            (hsPkgs.aeson)
+            (hsPkgs.base)
+            (hsPkgs.directory)
+            (hsPkgs.elm-bridge)
+            (hsPkgs.hspec)
+            (hsPkgs.interpolate)
+            (hsPkgs.mockery)
+            (hsPkgs.process)
+            (hsPkgs.servant)
+            (hsPkgs.servant-elm)
+            (hsPkgs.text)
+            (hsPkgs.typed-process)
+            ];
+          };
+        };
+      };
+    }
