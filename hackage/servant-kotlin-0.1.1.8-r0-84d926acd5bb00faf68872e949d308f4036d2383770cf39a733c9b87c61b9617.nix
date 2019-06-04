@@ -1,0 +1,72 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.12";
+      identifier = { name = "servant-kotlin"; version = "0.1.1.8"; };
+      license = "MIT";
+      copyright = "2017-2018 MATSUBARA Nobutada";
+      maintainer = "MATSUBARA Nobutada";
+      author = "MATSUBARA Nobutada";
+      homepage = "https://github.com/matsubara0507/servant-kotlin#readme";
+      url = "";
+      synopsis = "Automatically derive Kotlin class to query servant webservices";
+      description = "See README at <https://github.com/matsubara0507/servant-kotlin#readme>";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.directory)
+          (hsPkgs.formatting)
+          (hsPkgs.lens)
+          (hsPkgs.servant)
+          (hsPkgs.servant-foreign)
+          (hsPkgs.text)
+          (hsPkgs.time)
+          (hsPkgs.wl-pprint-text)
+          ];
+        };
+      tests = {
+        "spec" = {
+          depends = [
+            (hsPkgs.aeson)
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.directory)
+            (hsPkgs.formatting)
+            (hsPkgs.hspec)
+            (hsPkgs.http-api-data)
+            (hsPkgs.lens)
+            (hsPkgs.servant)
+            (hsPkgs.servant-foreign)
+            (hsPkgs.text)
+            (hsPkgs.time)
+            (hsPkgs.wl-pprint-text)
+            ];
+          };
+        };
+      benchmarks = {
+        "generate-test" = {
+          depends = [
+            (hsPkgs.aeson)
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.directory)
+            (hsPkgs.formatting)
+            (hsPkgs.http-api-data)
+            (hsPkgs.lens)
+            (hsPkgs.servant)
+            (hsPkgs.servant-foreign)
+            (hsPkgs.servant-kotlin)
+            (hsPkgs.shelly)
+            (hsPkgs.text)
+            (hsPkgs.time)
+            (hsPkgs.wl-pprint-text)
+            ];
+          };
+        };
+      };
+    }
