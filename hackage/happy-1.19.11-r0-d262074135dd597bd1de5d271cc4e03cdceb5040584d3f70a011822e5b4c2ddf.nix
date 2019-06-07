@@ -1,0 +1,36 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = { small_base = true; };
+    package = {
+      specVersion = "1.8";
+      identifier = { name = "happy"; version = "1.19.11"; };
+      license = "BSD-2-Clause";
+      copyright = "(c) Andy Gill, Simon Marlow";
+      maintainer = "Simon Marlow <marlowsd@gmail.com>";
+      author = "Andy Gill and Simon Marlow";
+      homepage = "https://www.haskell.org/happy/";
+      url = "";
+      synopsis = "Happy is a parser generator for Haskell";
+      description = "Happy is a parser generator for Haskell.  Given a grammar\nspecification in BNF, Happy generates Haskell code to parse the\ngrammar.  Happy works in a similar way to the @yacc@ tool for C.";
+      buildType = "Custom";
+      setup-depends = [
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
+        ];
+      };
+    components = {
+      exes = {
+        "happy" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.array)
+            (hsPkgs.containers)
+            (hsPkgs.mtl)
+            ];
+          };
+        };
+      tests = { "tests" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; }; };
+      };
+    }
