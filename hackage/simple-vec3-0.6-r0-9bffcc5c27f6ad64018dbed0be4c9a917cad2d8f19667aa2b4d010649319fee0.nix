@@ -1,0 +1,49 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.12";
+      identifier = { name = "simple-vec3"; version = "0.6"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "dima@dzhus.org";
+      author = "Dmitry Dzhus";
+      homepage = "https://github.com/dzhus/simple-vec3#readme";
+      url = "";
+      synopsis = "Three-dimensional vectors of doubles with basic operations";
+      description = "Simple three-dimensional vectors of doubles with basic vector and matrix operations, supporting \"Data.Vector.Unboxed\" and \"Data.Vector.Storable\".";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [ (hsPkgs.QuickCheck) (hsPkgs.base) (hsPkgs.vector) ];
+        };
+      tests = {
+        "simple-vec3-doctests" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.doctest-driver-gen)
+            ];
+          };
+        "simple-vec3-test" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.simple-vec3)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
+            ];
+          };
+        };
+      benchmarks = {
+        "simple-vec3-benchmark" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.criterion)
+            (hsPkgs.simple-vec3)
+            (hsPkgs.vector)
+            ];
+          };
+        };
+      };
+    }
