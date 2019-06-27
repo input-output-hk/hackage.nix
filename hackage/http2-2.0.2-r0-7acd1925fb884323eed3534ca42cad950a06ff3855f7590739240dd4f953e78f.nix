@@ -1,0 +1,192 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = { devel = false; };
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "http2"; version = "2.0.2"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Kazu Yamamoto <kazu@iij.ad.jp>";
+      author = "Kazu Yamamoto <kazu@iij.ad.jp>";
+      homepage = "https://github.com/kazu-yamamoto/http2";
+      url = "";
+      synopsis = "HTTP/2 library";
+      description = "HTTP/2 library including frames, priority queues, HPACK and server.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.bytestring)
+          (hsPkgs.case-insensitive)
+          (hsPkgs.containers)
+          (hsPkgs.http-types)
+          (hsPkgs.network)
+          (hsPkgs.network-byte-order)
+          (hsPkgs.psqueues)
+          (hsPkgs.stm)
+          (hsPkgs.time-manager)
+          ];
+        };
+      exes = {
+        "hpack-encode" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.aeson)
+            (hsPkgs.aeson-pretty)
+            (hsPkgs.array)
+            (hsPkgs.base16-bytestring)
+            (hsPkgs.bytestring)
+            (hsPkgs.case-insensitive)
+            (hsPkgs.containers)
+            (hsPkgs.http2)
+            (hsPkgs.network-byte-order)
+            (hsPkgs.text)
+            (hsPkgs.unordered-containers)
+            (hsPkgs.vector)
+            (hsPkgs.word8)
+            ];
+          };
+        "hpack-debug" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.aeson)
+            (hsPkgs.array)
+            (hsPkgs.base16-bytestring)
+            (hsPkgs.bytestring)
+            (hsPkgs.case-insensitive)
+            (hsPkgs.containers)
+            (hsPkgs.http2)
+            (hsPkgs.network-byte-order)
+            (hsPkgs.text)
+            (hsPkgs.unordered-containers)
+            (hsPkgs.vector)
+            (hsPkgs.word8)
+            ];
+          };
+        "hpack-stat" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.aeson)
+            (hsPkgs.aeson-pretty)
+            (hsPkgs.array)
+            (hsPkgs.bytestring)
+            (hsPkgs.case-insensitive)
+            (hsPkgs.containers)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.http2)
+            (hsPkgs.network-byte-order)
+            (hsPkgs.text)
+            (hsPkgs.unordered-containers)
+            (hsPkgs.vector)
+            (hsPkgs.word8)
+            ];
+          };
+        "frame-encode" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.aeson)
+            (hsPkgs.aeson-pretty)
+            (hsPkgs.base16-bytestring)
+            (hsPkgs.bytestring)
+            (hsPkgs.http2)
+            (hsPkgs.text)
+            (hsPkgs.unordered-containers)
+            ];
+          };
+        };
+      tests = {
+        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        "spec" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.array)
+            (hsPkgs.base16-bytestring)
+            (hsPkgs.bytestring)
+            (hsPkgs.case-insensitive)
+            (hsPkgs.containers)
+            (hsPkgs.hspec)
+            (hsPkgs.http-types)
+            (hsPkgs.network)
+            (hsPkgs.network-byte-order)
+            (hsPkgs.psqueues)
+            (hsPkgs.stm)
+            (hsPkgs.time-manager)
+            ];
+          };
+        "hpack" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.aeson)
+            (hsPkgs.aeson-pretty)
+            (hsPkgs.array)
+            (hsPkgs.base16-bytestring)
+            (hsPkgs.bytestring)
+            (hsPkgs.case-insensitive)
+            (hsPkgs.containers)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.hspec)
+            (hsPkgs.http-types)
+            (hsPkgs.network)
+            (hsPkgs.network-byte-order)
+            (hsPkgs.psqueues)
+            (hsPkgs.stm)
+            (hsPkgs.text)
+            (hsPkgs.time-manager)
+            (hsPkgs.unordered-containers)
+            (hsPkgs.vector)
+            ];
+          };
+        "frame" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.Glob)
+            (hsPkgs.aeson)
+            (hsPkgs.aeson-pretty)
+            (hsPkgs.base16-bytestring)
+            (hsPkgs.bytestring)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.hspec)
+            (hsPkgs.http2)
+            (hsPkgs.network-byte-order)
+            (hsPkgs.text)
+            (hsPkgs.unordered-containers)
+            ];
+          };
+        };
+      benchmarks = {
+        "priority" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.array)
+            (hsPkgs.case-insensitive)
+            (hsPkgs.containers)
+            (hsPkgs.gauge)
+            (hsPkgs.heaps)
+            (hsPkgs.mwc-random)
+            (hsPkgs.network-byte-order)
+            (hsPkgs.psqueues)
+            (hsPkgs.stm)
+            ];
+          };
+        "header-compression" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.array)
+            (hsPkgs.bytestring)
+            (hsPkgs.case-insensitive)
+            (hsPkgs.containers)
+            (hsPkgs.gauge)
+            (hsPkgs.network-byte-order)
+            (hsPkgs.stm)
+            (hsPkgs.http2)
+            ];
+          };
+        };
+      };
+    }
