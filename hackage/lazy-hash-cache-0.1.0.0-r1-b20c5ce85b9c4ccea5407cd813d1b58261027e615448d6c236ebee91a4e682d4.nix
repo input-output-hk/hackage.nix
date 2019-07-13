@@ -1,0 +1,35 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "lazy-hash-cache"; version = "0.1.0.0"; };
+      license = "GPL-3.0-only";
+      copyright = "";
+      maintainer = "(@) jsag \$ hvl.no";
+      author = "Justus Sagemüller";
+      homepage = "";
+      url = "";
+      synopsis = "Storing computed values for re-use when the same program runs again.";
+      description = "";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.lazy-hash)
+          (hsPkgs.hashable)
+          (hsPkgs.binary)
+          (hsPkgs.bytestring)
+          (hsPkgs.base16-bytestring)
+          (hsPkgs.filepath)
+          (hsPkgs.directory)
+          (hsPkgs.temporary)
+          (hsPkgs.data-default-class)
+          (hsPkgs.microlens)
+          (hsPkgs.microlens-th)
+          ];
+        };
+      };
+    }
