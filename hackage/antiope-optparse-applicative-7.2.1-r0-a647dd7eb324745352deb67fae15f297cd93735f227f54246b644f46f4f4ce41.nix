@@ -1,0 +1,46 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "2.2";
+      identifier = {
+        name = "antiope-optparse-applicative";
+        version = "7.2.1";
+        };
+      license = "MIT";
+      copyright = "Arbor Networks";
+      maintainer = "mayhem@arbor.net";
+      author = "Arbor Networks";
+      homepage = "https://github.com/arbor/antiope#readme";
+      url = "";
+      synopsis = "Please see the README on Github at <https://github.com/arbor/antiope#readme>";
+      description = "Please see the README on Github at <https://github.com/arbor/antiope#readme>.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.amazonka)
+          (hsPkgs.amazonka-core)
+          (hsPkgs.amazonka-s3)
+          (hsPkgs.optparse-applicative)
+          (hsPkgs.text)
+          ];
+        };
+      tests = {
+        "antiope-optparse-applicative-test" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.aeson)
+            (hsPkgs.amazonka)
+            (hsPkgs.amazonka-core)
+            (hsPkgs.amazonka-s3)
+            (hsPkgs.hedgehog)
+            (hsPkgs.hspec)
+            (hsPkgs.hw-hspec-hedgehog)
+            ];
+          };
+        };
+      };
+    }
