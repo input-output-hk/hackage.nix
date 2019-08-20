@@ -1,0 +1,29 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.8";
+      identifier = { name = "postgresql-simple-interpolate"; version = "0.1"; };
+      license = "BSD-3-Clause";
+      copyright = "©2019 Elliot Cameron";
+      maintainer = "eacameron@gmail.com";
+      author = "Elliot Cameron";
+      homepage = "https://github.com/3noch/postgresql-simple-interpolate";
+      url = "";
+      synopsis = "Interpolated SQL queries via quasiquotation";
+      description = "Interpolated SQL queries via quasiquotation";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.haskell-src-meta)
+          (hsPkgs.mtl)
+          (hsPkgs.parsec)
+          (hsPkgs.postgresql-simple)
+          (hsPkgs.template-haskell)
+          ];
+        };
+      };
+    }
