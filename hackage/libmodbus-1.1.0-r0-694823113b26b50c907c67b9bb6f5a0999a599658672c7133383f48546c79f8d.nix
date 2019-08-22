@@ -1,0 +1,28 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.8";
+      identifier = { name = "libmodbus"; version = "1.1.0"; };
+      license = "BSD-2-Clause";
+      copyright = "2019 Joey Hess";
+      maintainer = "Joey Hess <id@joeyh.name>";
+      author = "Joey Hess";
+      homepage = "";
+      url = "";
+      synopsis = "Haskell bindings to the C modbus library";
+      description = "This library supports Modbus communication over both TCP and serial ports.\n\nIt is a FFI to the C modbus library from https://libmodbus.org/";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.vector)
+          (hsPkgs.data-default)
+          (hsPkgs.bytestring)
+          ];
+        libs = [ (pkgs."modbus") ];
+        };
+      };
+    }
