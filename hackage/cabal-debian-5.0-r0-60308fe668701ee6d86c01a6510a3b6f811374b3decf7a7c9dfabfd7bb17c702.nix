@@ -1,0 +1,85 @@
+{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "cabal-debian"; version = "5.0"; };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2007-2014, David Fox, Jeremy Shaw; 2017-2019 Clint Adams";
+      maintainer = "Clint Adams <clint@debian.org>";
+      author = "David Fox <dsf@seereason.com>";
+      homepage = "https://github.com/clinty/cabal-debian";
+      url = "";
+      synopsis = "Create a Debianization for a Cabal package";
+      description = "This package supports the generation of a package Debianization (i.e.\nthe files in the @debian@ subdirectory) for a cabal package,\neither through a library API or using the cabal-debian executable.\nFor documentation of the executable, run\n@cabal-debian --help@, for documentation of the library API follow\nthe link to the @Debian.Debianize@ module below.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs.base)
+          (hsPkgs.bifunctors)
+          (hsPkgs.Cabal)
+          (hsPkgs.containers)
+          (hsPkgs.data-default)
+          (hsPkgs.deepseq)
+          (hsPkgs.Diff)
+          (hsPkgs.directory)
+          (hsPkgs.exceptions)
+          (hsPkgs.filepath)
+          (hsPkgs.hsemail)
+          (hsPkgs.HUnit)
+          (hsPkgs.lens)
+          (hsPkgs.mtl)
+          (hsPkgs.network-uri)
+          (hsPkgs.newtype-generics)
+          (hsPkgs.parsec)
+          (hsPkgs.pretty)
+          (hsPkgs.process)
+          (hsPkgs.pureMD5)
+          (hsPkgs.regex-tdfa)
+          (hsPkgs.syb)
+          (hsPkgs.text)
+          (hsPkgs.unix)
+          (hsPkgs.unliftio)
+          (hsPkgs.utf8-string)
+          (hsPkgs.optparse-applicative)
+          (hsPkgs.ansi-wl-pprint)
+          (hsPkgs.debian)
+          ];
+        };
+      exes = {
+        "cabal-debian" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.cabal-debian)
+            (hsPkgs.Cabal)
+            (hsPkgs.debian)
+            (hsPkgs.lens)
+            (hsPkgs.mtl)
+            (hsPkgs.pretty)
+            ];
+          };
+        };
+      tests = {
+        "cabal-debian-tests" = {
+          depends = [
+            (hsPkgs.base)
+            (hsPkgs.cabal-debian)
+            (hsPkgs.Cabal)
+            (hsPkgs.containers)
+            (hsPkgs.debian)
+            (hsPkgs.Diff)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.hsemail)
+            (hsPkgs.HUnit)
+            (hsPkgs.lens)
+            (hsPkgs.pretty)
+            (hsPkgs.process)
+            (hsPkgs.text)
+            ];
+          };
+        };
+      };
+    }
