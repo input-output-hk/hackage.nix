@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { test = false; };
     package = {
@@ -17,40 +56,40 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.ad)
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.hashable)
-          (hsPkgs.hmatrix)
-          (hsPkgs.ieee754)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.MonadRandom)
-          (hsPkgs.mtl)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.transformers)
-          (hsPkgs.vector)
+          (hsPkgs."ad" or (buildDepError "ad"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
+          (hsPkgs."ieee754" or (buildDepError "ieee754"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       tests = {
         "test-tree" = {
           depends = (pkgs.lib).optionals (flags.test) [
-            (hsPkgs.base)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.optparse-generic)
-            (hsPkgs.boltzmann-samplers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
+            (hsPkgs."boltzmann-samplers" or (buildDepError "boltzmann-samplers"))
             ];
           };
         };
       benchmarks = {
         "bench-binarytree" = {
           depends = (pkgs.lib).optionals (flags.test) [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.transformers)
-            (hsPkgs.testing-feat)
-            (hsPkgs.boltzmann-samplers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."testing-feat" or (buildDepError "testing-feat"))
+            (hsPkgs."boltzmann-samplers" or (buildDepError "boltzmann-samplers"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,61 +56,61 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.containers)
-          (hsPkgs.scientific)
-          (hsPkgs.vector)
-          (hsPkgs.haskell-src)
-          (hsPkgs.language-java)
-          (hsPkgs.language-javascript)
-          (hsPkgs.language-python)
-          (hsPkgs.aeson)
-          (hsPkgs.inflections)
-          (hsPkgs.parsec)
-          (hsPkgs.ParsecTools)
-          (hsPkgs.split)
-          (hsPkgs.hashable)
-          (hsPkgs.process)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
+          (hsPkgs."language-java" or (buildDepError "language-java"))
+          (hsPkgs."language-javascript" or (buildDepError "language-javascript"))
+          (hsPkgs."language-python" or (buildDepError "language-python"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."inflections" or (buildDepError "inflections"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."ParsecTools" or (buildDepError "ParsecTools"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."process" or (buildDepError "process"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
           ];
         };
       exes = {
         "mulang" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.aeson)
-            (hsPkgs.process)
-            (hsPkgs.neat-interpolation)
-            (hsPkgs.mulang)
-            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs.ghcjs-base);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
+            (hsPkgs."mulang" or (buildDepError "mulang"))
+            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"));
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
             ];
           };
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.aeson)
-            (hsPkgs.hspec)
-            (hsPkgs.neat-interpolation)
-            (hsPkgs.mulang)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."neat-interpolation" or (buildDepError "neat-interpolation"))
+            (hsPkgs."mulang" or (buildDepError "mulang"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
             ];
           };
         };

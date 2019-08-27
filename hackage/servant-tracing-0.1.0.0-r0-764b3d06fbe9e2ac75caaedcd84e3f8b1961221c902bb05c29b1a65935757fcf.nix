@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,67 +56,67 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.servant)
-          (hsPkgs.servant-server)
-          (hsPkgs.containers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.time)
-          (hsPkgs.wai)
-          (hsPkgs.bytestring)
-          (hsPkgs.bytestring-lexing)
-          (hsPkgs.hashable)
-          (hsPkgs.mtl)
-          (hsPkgs.random)
-          (hsPkgs.text)
-          (hsPkgs.async)
-          (hsPkgs.monad-control)
-          (hsPkgs.lifted-base)
-          (hsPkgs.http-api-data)
-          (hsPkgs.aeson)
-          (hsPkgs.http-client)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."servant" or (buildDepError "servant"))
+          (hsPkgs."servant-server" or (buildDepError "servant-server"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."bytestring-lexing" or (buildDepError "bytestring-lexing"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
           ];
         };
       exes = {
         "servant-tracing-example" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.servant-tracing)
-            (hsPkgs.servant)
-            (hsPkgs.servant-server)
-            (hsPkgs.bytestring)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.containers)
-            (hsPkgs.wai)
-            (hsPkgs.monad-control)
-            (hsPkgs.lifted-base)
-            (hsPkgs.warp)
-            (hsPkgs.async)
-            (hsPkgs.http-client)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."servant-tracing" or (buildDepError "servant-tracing"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
             ];
           };
         };
       tests = {
         "servant-tracing-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.servant-tracing)
-            (hsPkgs.http-api-data)
-            (hsPkgs.transformers)
-            (hsPkgs.containers)
-            (hsPkgs.monad-control)
-            (hsPkgs.text)
-            (hsPkgs.mtl)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.aeson)
-            (hsPkgs.containers)
-            (hsPkgs.time)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."servant-tracing" or (buildDepError "servant-tracing"))
+            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."time" or (buildDepError "time"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; debugoutput = false; };
     package = {
@@ -17,62 +56,62 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.binary)
-          (hsPkgs.bits)
-          (hsPkgs.cereal)
-          (hsPkgs.cereal-vector)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.hashable)
-          (hsPkgs.lens)
-          (hsPkgs.log-domain)
-          (hsPkgs.mtl)
-          (hsPkgs.primitive)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.smallcheck)
-          (hsPkgs.tasty)
-          (hsPkgs.tasty-quickcheck)
-          (hsPkgs.tasty-smallcheck)
-          (hsPkgs.tasty-th)
-          (hsPkgs.text)
-          (hsPkgs.vector)
-          (hsPkgs.vector-binary-instances)
-          (hsPkgs.vector-th-unbox)
-          (hsPkgs.DPutils)
-          (hsPkgs.OrderedBits)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bits" or (buildDepError "bits"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."cereal-vector" or (buildDepError "cereal-vector"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."log-domain" or (buildDepError "log-domain"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
+          (hsPkgs."tasty" or (buildDepError "tasty"))
+          (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+          (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
+          (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
+          (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
+          (hsPkgs."DPutils" or (buildDepError "DPutils"))
+          (hsPkgs."OrderedBits" or (buildDepError "OrderedBits"))
           ];
         };
       tests = {
         "properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.binary)
-            (hsPkgs.bits)
-            (hsPkgs.cereal)
-            (hsPkgs.cereal-vector)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.hashable)
-            (hsPkgs.lens)
-            (hsPkgs.log-domain)
-            (hsPkgs.mtl)
-            (hsPkgs.primitive)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.smallcheck)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-smallcheck)
-            (hsPkgs.tasty-th)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.vector-binary-instances)
-            (hsPkgs.vector-th-unbox)
-            (hsPkgs.DPutils)
-            (hsPkgs.OrderedBits)
-            (hsPkgs.PrimitiveArray)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bits" or (buildDepError "bits"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."cereal-vector" or (buildDepError "cereal-vector"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."log-domain" or (buildDepError "log-domain"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
+            (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
+            (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
+            (hsPkgs."DPutils" or (buildDepError "DPutils"))
+            (hsPkgs."OrderedBits" or (buildDepError "OrderedBits"))
+            (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
             ];
           };
         };

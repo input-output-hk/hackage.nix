@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,70 +56,70 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.BoundedChan)
-          (hsPkgs.base16-bytestring)
-          (hsPkgs.bytestring)
-          (hsPkgs.concurrent-extra)
-          (hsPkgs.conduit)
-          (hsPkgs.containers)
-          (hsPkgs.cryptonite)
-          (hsPkgs.data-default-class)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.dlist)
-          (hsPkgs.hashtables)
-          (hsPkgs.lens-simple)
-          (hsPkgs.leveldb-haskell)
-          (hsPkgs.lrucaching)
-          (hsPkgs.memory)
-          (hsPkgs.mtl)
-          (hsPkgs.reducers)
-          (hsPkgs.resourcet)
-          (hsPkgs.serialise)
-          (hsPkgs.temporary)
-          (hsPkgs.transformers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))
+          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."concurrent-extra" or (buildDepError "concurrent-extra"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."dlist" or (buildDepError "dlist"))
+          (hsPkgs."hashtables" or (buildDepError "hashtables"))
+          (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
+          (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
+          (hsPkgs."lrucaching" or (buildDepError "lrucaching"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."reducers" or (buildDepError "reducers"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."serialise" or (buildDepError "serialise"))
+          (hsPkgs."temporary" or (buildDepError "temporary"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
-        libs = [ (pkgs."leveldb") ];
+        libs = [ (pkgs."leveldb" or (sysDepError "leveldb")) ];
         };
       exes = {
         "dfinity-radix-tree-example" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.base16-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.dfinity-radix-tree)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."dfinity-radix-tree" or (buildDepError "dfinity-radix-tree"))
             ];
           };
         };
       tests = {
         "dfinity-radix-tree-tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.BoundedChan)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.aeson)
-            (hsPkgs.base16-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.clock)
-            (hsPkgs.concurrent-extra)
-            (hsPkgs.conduit)
-            (hsPkgs.containers)
-            (hsPkgs.cryptonite)
-            (hsPkgs.dfinity-radix-tree)
-            (hsPkgs.filepath)
-            (hsPkgs.leveldb-haskell)
-            (hsPkgs.memory)
-            (hsPkgs.mtl)
-            (hsPkgs.resourcet)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.temporary)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."clock" or (buildDepError "clock"))
+            (hsPkgs."concurrent-extra" or (buildDepError "concurrent-extra"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."dfinity-radix-tree" or (buildDepError "dfinity-radix-tree"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
+            (hsPkgs."memory" or (buildDepError "memory"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };

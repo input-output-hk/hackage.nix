@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
@@ -17,68 +56,68 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.blaze-html)
-          (hsPkgs.bytestring)
-          (hsPkgs.clay)
-          (hsPkgs.exceptions)
-          (hsPkgs.hashable)
-          (hsPkgs.http-media)
-          (hsPkgs.http-types)
-          (hsPkgs.lucid)
-          (hsPkgs.mmorph)
-          (hsPkgs.monad-control)
-          (hsPkgs.monad-logger)
-          (hsPkgs.mtl)
-          (hsPkgs.pandoc)
-          (hsPkgs.resourcet)
-          (hsPkgs.shakespeare)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-base)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.urlpath)
-          (hsPkgs.wai)
-          (hsPkgs.wai-transformers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."clay" or (buildDepError "clay"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."http-media" or (buildDepError "http-media"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."lucid" or (buildDepError "lucid"))
+          (hsPkgs."mmorph" or (buildDepError "mmorph"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."pandoc" or (buildDepError "pandoc"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."urlpath" or (buildDepError "urlpath"))
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
           ];
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.wai-middleware-content-type)
-            (hsPkgs.aeson)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.blaze-html)
-            (hsPkgs.bytestring)
-            (hsPkgs.clay)
-            (hsPkgs.exceptions)
-            (hsPkgs.hashable)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-wai)
-            (hsPkgs.http-media)
-            (hsPkgs.http-types)
-            (hsPkgs.lucid)
-            (hsPkgs.mmorph)
-            (hsPkgs.monad-control)
-            (hsPkgs.monad-logger)
-            (hsPkgs.mtl)
-            (hsPkgs.pandoc)
-            (hsPkgs.pandoc-types)
-            (hsPkgs.resourcet)
-            (hsPkgs.shakespeare)
-            (hsPkgs.text)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hspec)
-            (hsPkgs.transformers)
-            (hsPkgs.transformers-base)
-            (hsPkgs.urlpath)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.wai)
-            (hsPkgs.wai-transformers)
-            (hsPkgs.warp)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."wai-middleware-content-type" or (buildDepError "wai-middleware-content-type"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."clay" or (buildDepError "clay"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
+            (hsPkgs."http-media" or (buildDepError "http-media"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."lucid" or (buildDepError "lucid"))
+            (hsPkgs."mmorph" or (buildDepError "mmorph"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."pandoc" or (buildDepError "pandoc"))
+            (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+            (hsPkgs."urlpath" or (buildDepError "urlpath"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-transformers" or (buildDepError "wai-transformers"))
+            (hsPkgs."warp" or (buildDepError "warp"))
             ];
           };
         };

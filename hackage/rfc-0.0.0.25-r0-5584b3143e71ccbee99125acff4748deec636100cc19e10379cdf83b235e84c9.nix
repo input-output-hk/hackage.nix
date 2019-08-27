@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { development = false; };
     package = {
@@ -17,63 +56,67 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.classy-prelude)
-          (hsPkgs.uuid-types)
-          (hsPkgs.containers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.text-conversions)
-          (hsPkgs.data-default)
-          (hsPkgs.lens)
-          (hsPkgs.http-types)
-          (hsPkgs.http-api-data)
-          (hsPkgs.time-units)
-          (hsPkgs.text)
-          (hsPkgs.lifted-async)
-          (hsPkgs.unliftio)
-          (hsPkgs.unliftio-core)
-          (hsPkgs.monad-control)
-          (hsPkgs.natural-transformation)
-          (hsPkgs.network-uri)
-          (hsPkgs.attoparsec)
-          (hsPkgs.resource-pool)
-          (hsPkgs.time)
-          (hsPkgs.aeson-diff)
-          (hsPkgs.mtl)
-          (hsPkgs.miso)
-          (hsPkgs.url)
-          (hsPkgs.mono-traversable)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
+          (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."text-conversions" or (buildDepError "text-conversions"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+          (hsPkgs."time-units" or (buildDepError "time-units"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
+          (hsPkgs."unliftio" or (buildDepError "unliftio"))
+          (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."natural-transformation" or (buildDepError "natural-transformation"))
+          (hsPkgs."network-uri" or (buildDepError "network-uri"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."aeson-diff" or (buildDepError "aeson-diff"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."miso" or (buildDepError "miso"))
+          (hsPkgs."url" or (buildDepError "url"))
+          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
           ] ++ (if compiler.isGhcjs && true
-          then [ (hsPkgs.aeson) (hsPkgs.bifunctors) (hsPkgs.servant) ]
+          then [
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            ]
           else [
-            (hsPkgs.servant-server)
-            (hsPkgs.servant)
-            (hsPkgs.servant-docs)
-            (hsPkgs.servant-blaze)
-            (hsPkgs.blaze-html)
-            (hsPkgs.wai)
-            (hsPkgs.aeson)
-            (hsPkgs.wai-extra)
-            (hsPkgs.wai-cors)
-            (hsPkgs.wai-cli)
-            (hsPkgs.envy)
-            (hsPkgs.postgresql-typed)
-            (hsPkgs.hedis)
-            (hsPkgs.simple-logger)
-            (hsPkgs.temporary)
-            (hsPkgs.http-client)
-            (hsPkgs.http-client-tls)
-            (hsPkgs.wreq)
-            (hsPkgs.servant-swagger)
-            (hsPkgs.swagger2)
-            (hsPkgs.markdown)
-            (hsPkgs.servant-client)
-            (hsPkgs.binary)
-            (hsPkgs.network)
-            (hsPkgs.warp)
-            (hsPkgs.mtl)
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-docs" or (buildDepError "servant-docs"))
+            (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."wai-cors" or (buildDepError "wai-cors"))
+            (hsPkgs."wai-cli" or (buildDepError "wai-cli"))
+            (hsPkgs."envy" or (buildDepError "envy"))
+            (hsPkgs."postgresql-typed" or (buildDepError "postgresql-typed"))
+            (hsPkgs."hedis" or (buildDepError "hedis"))
+            (hsPkgs."simple-logger" or (buildDepError "simple-logger"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
+            (hsPkgs."wreq" or (buildDepError "wreq"))
+            (hsPkgs."servant-swagger" or (buildDepError "servant-swagger"))
+            (hsPkgs."swagger2" or (buildDepError "swagger2"))
+            (hsPkgs."markdown" or (buildDepError "markdown"))
+            (hsPkgs."servant-client" or (buildDepError "servant-client"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ]);
         };
       };

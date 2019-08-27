@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { wai3 = true; };
     package = {
@@ -17,38 +56,51 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.mtl)
-          (hsPkgs.monad-control)
-          (hsPkgs.transformers-base)
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.data-default-class)
-          (hsPkgs.reflection)
-          (hsPkgs.http-types)
-          (hsPkgs.mime-types)
-          (hsPkgs.exceptions)
-          (hsPkgs.blaze-html)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.case-insensitive)
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs.tagged)) ++ (if flags.wai3
-          then [ (hsPkgs.wai) (hsPkgs.wai-extra) ]
-          else [ (hsPkgs.wai) (hsPkgs.wai-extra) (hsPkgs.conduit) ]);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+          (hsPkgs."reflection" or (buildDepError "reflection"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."mime-types" or (buildDepError "mime-types"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (buildDepError "tagged"))) ++ (if flags.wai3
+          then [
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            ]
+          else [
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            ]);
         };
       tests = {
         "test-framework" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.apiary)
-            (hsPkgs.bytestring)
-            (hsPkgs.http-types)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."apiary" or (buildDepError "apiary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
             ] ++ (if flags.wai3
-            then [ (hsPkgs.wai) (hsPkgs.wai-extra) ]
-            else [ (hsPkgs.wai) (hsPkgs.wai-test) ]);
+            then [
+              (hsPkgs."wai" or (buildDepError "wai"))
+              (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+              ]
+            else [
+              (hsPkgs."wai" or (buildDepError "wai"))
+              (hsPkgs."wai-test" or (buildDepError "wai-test"))
+              ]);
           };
         };
       };

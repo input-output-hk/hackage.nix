@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,83 +56,83 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.word24)
-          (hsPkgs.bytestring)
-          (hsPkgs.monads-tf)
-          (hsPkgs.asn1-encoding)
-          (hsPkgs.asn1-types)
-          (hsPkgs.pem)
-          (hsPkgs.x509)
-          (hsPkgs.x509-store)
-          (hsPkgs.x509-validation)
-          (hsPkgs.crypto-numbers)
-          (hsPkgs.crypto-random)
-          (hsPkgs.cryptohash)
-          (hsPkgs.crypto-pubkey)
-          (hsPkgs.crypto-pubkey-types)
-          (hsPkgs.cipher-aes)
-          (hsPkgs.bytable)
-          (hsPkgs.handle-like)
-          (hsPkgs.stm)
-          (hsPkgs.transformers-base)
-          (hsPkgs.monad-control)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."word24" or (buildDepError "word24"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
+          (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
+          (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
+          (hsPkgs."pem" or (buildDepError "pem"))
+          (hsPkgs."x509" or (buildDepError "x509"))
+          (hsPkgs."x509-store" or (buildDepError "x509-store"))
+          (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
+          (hsPkgs."crypto-numbers" or (buildDepError "crypto-numbers"))
+          (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
+          (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
+          (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
+          (hsPkgs."bytable" or (buildDepError "bytable"))
+          (hsPkgs."handle-like" or (buildDepError "handle-like"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ];
         };
       tests = {
         "stm-test" = {
           depends = [
-            (hsPkgs.peyotls)
-            (hsPkgs.handle-like)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.network)
-            (hsPkgs.stm)
-            (hsPkgs.x509)
-            (hsPkgs.x509-store)
-            (hsPkgs.crypto-random)
+            (hsPkgs."peyotls" or (buildDepError "peyotls"))
+            (hsPkgs."handle-like" or (buildDepError "handle-like"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."x509" or (buildDepError "x509"))
+            (hsPkgs."x509-store" or (buildDepError "x509-store"))
+            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
             ];
           };
         "debug-test" = {
           depends = [
-            (hsPkgs.peyotls)
-            (hsPkgs.handle-like)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.network)
-            (hsPkgs.stm)
-            (hsPkgs.x509)
-            (hsPkgs.x509-store)
-            (hsPkgs.crypto-random)
-            (hsPkgs.random)
+            (hsPkgs."peyotls" or (buildDepError "peyotls"))
+            (hsPkgs."handle-like" or (buildDepError "handle-like"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."x509" or (buildDepError "x509"))
+            (hsPkgs."x509-store" or (buildDepError "x509-store"))
+            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         "reneg-test" = {
           depends = [
-            (hsPkgs.peyotls)
-            (hsPkgs.handle-like)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.network)
-            (hsPkgs.stm)
-            (hsPkgs.x509)
-            (hsPkgs.x509-store)
-            (hsPkgs.crypto-random)
-            (hsPkgs.random)
+            (hsPkgs."peyotls" or (buildDepError "peyotls"))
+            (hsPkgs."handle-like" or (buildDepError "handle-like"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."x509" or (buildDepError "x509"))
+            (hsPkgs."x509-store" or (buildDepError "x509-store"))
+            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         "ci-reneg-test" = {
           depends = [
-            (hsPkgs.peyotls)
-            (hsPkgs.handle-like)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.network)
-            (hsPkgs.stm)
-            (hsPkgs.x509)
-            (hsPkgs.x509-store)
-            (hsPkgs.crypto-random)
-            (hsPkgs.random)
+            (hsPkgs."peyotls" or (buildDepError "peyotls"))
+            (hsPkgs."handle-like" or (buildDepError "handle-like"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."x509" or (buildDepError "x509"))
+            (hsPkgs."x509-store" or (buildDepError "x509-store"))
+            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,60 +56,60 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.binary-parser)
-          (hsPkgs.bytestring-strict-builder)
-          (hsPkgs.aeson)
-          (hsPkgs.uuid)
-          (hsPkgs.time)
-          (hsPkgs.scientific)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-          (hsPkgs.vector)
-          (hsPkgs.network-ip)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.containers)
-          (hsPkgs.loch-th)
-          (hsPkgs.placeholders)
-          (hsPkgs.transformers)
-          (hsPkgs.base-prelude)
-          (hsPkgs.base)
+          (hsPkgs."binary-parser" or (buildDepError "binary-parser"))
+          (hsPkgs."bytestring-strict-builder" or (buildDepError "bytestring-strict-builder"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."uuid" or (buildDepError "uuid"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."network-ip" or (buildDepError "network-ip"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."loch-th" or (buildDepError "loch-th"))
+          (hsPkgs."placeholders" or (buildDepError "placeholders"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
+          (hsPkgs."base" or (buildDepError "base"))
           ];
         };
       tests = {
         "tasty" = {
           depends = [
-            (hsPkgs.postgresql-binary)
-            (hsPkgs.postgresql-libpq)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.aeson)
-            (hsPkgs.json-ast)
-            (hsPkgs.conversion)
-            (hsPkgs.conversion-bytestring)
-            (hsPkgs.conversion-text)
-            (hsPkgs.network-ip)
-            (hsPkgs.loch-th)
-            (hsPkgs.placeholders)
-            (hsPkgs.rerebase)
+            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
+            (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."json-ast" or (buildDepError "json-ast"))
+            (hsPkgs."conversion" or (buildDepError "conversion"))
+            (hsPkgs."conversion-bytestring" or (buildDepError "conversion-bytestring"))
+            (hsPkgs."conversion-text" or (buildDepError "conversion-text"))
+            (hsPkgs."network-ip" or (buildDepError "network-ip"))
+            (hsPkgs."loch-th" or (buildDepError "loch-th"))
+            (hsPkgs."placeholders" or (buildDepError "placeholders"))
+            (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
           };
         };
       benchmarks = {
         "encoding" = {
           depends = [
-            (hsPkgs.postgresql-binary)
-            (hsPkgs.criterion)
-            (hsPkgs.rerebase)
+            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
           };
         "decoding" = {
           depends = [
-            (hsPkgs.postgresql-binary)
-            (hsPkgs.criterion)
-            (hsPkgs.rerebase)
+            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
           };
         };

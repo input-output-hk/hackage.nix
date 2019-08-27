@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,74 +56,74 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.concise)
-          (hsPkgs.containers)
-          (hsPkgs.cryptonite)
-          (hsPkgs.lens)
-          (hsPkgs.memory)
-          (hsPkgs.monad-time)
-          (hsPkgs.mtl)
-          (hsPkgs.semigroups)
-          (hsPkgs.template-haskell)
-          (hsPkgs.safe)
-          (hsPkgs.aeson)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.network-uri)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.quickcheck-instances)
-          (hsPkgs.x509)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."concise" or (buildDepError "concise"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."monad-time" or (buildDepError "monad-time"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."network-uri" or (buildDepError "network-uri"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+          (hsPkgs."x509" or (buildDepError "x509"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       exes = {
         "jose-example" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.jose)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."jose" or (buildDepError "jose"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.attoparsec)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.cryptonite)
-            (hsPkgs.lens)
-            (hsPkgs.memory)
-            (hsPkgs.monad-time)
-            (hsPkgs.mtl)
-            (hsPkgs.semigroups)
-            (hsPkgs.template-haskell)
-            (hsPkgs.safe)
-            (hsPkgs.aeson)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.network-uri)
-            (hsPkgs.vector)
-            (hsPkgs.x509)
-            (hsPkgs.concise)
-            (hsPkgs.jose)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hspec)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."memory" or (buildDepError "memory"))
+            (hsPkgs."monad-time" or (buildDepError "monad-time"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."x509" or (buildDepError "x509"))
+            (hsPkgs."concise" or (buildDepError "concise"))
+            (hsPkgs."jose" or (buildDepError "jose"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ];
           };
         };

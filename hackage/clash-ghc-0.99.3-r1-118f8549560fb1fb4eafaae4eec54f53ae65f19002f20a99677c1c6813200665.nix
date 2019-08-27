@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,51 +56,57 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.array)
-          (hsPkgs.base)
-          (hsPkgs.bifunctors)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.ghc)
-          (hsPkgs.process)
-          (hsPkgs.hashable)
-          (hsPkgs.haskeline)
-          (hsPkgs.lens)
-          (hsPkgs.mtl)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unbound-generics)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.clash-lib)
-          (hsPkgs.clash-prelude)
-          (hsPkgs.concurrent-supply)
-          (hsPkgs.ghc-typelits-extra)
-          (hsPkgs.ghc-typelits-knownnat)
-          (hsPkgs.ghc-typelits-natnormalise)
-          (hsPkgs.deepseq)
-          (hsPkgs.time)
-          (hsPkgs.ghc-boot)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.ghci)
-          (hsPkgs.uniplate)
-          (hsPkgs.reflection)
-          (hsPkgs.integer-gmp)
-          (hsPkgs.primitive)
-          (hsPkgs.vector)
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."haskeline" or (buildDepError "haskeline"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unbound-generics" or (buildDepError "unbound-generics"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."clash-lib" or (buildDepError "clash-lib"))
+          (hsPkgs."clash-prelude" or (buildDepError "clash-prelude"))
+          (hsPkgs."concurrent-supply" or (buildDepError "concurrent-supply"))
+          (hsPkgs."ghc-typelits-extra" or (buildDepError "ghc-typelits-extra"))
+          (hsPkgs."ghc-typelits-knownnat" or (buildDepError "ghc-typelits-knownnat"))
+          (hsPkgs."ghc-typelits-natnormalise" or (buildDepError "ghc-typelits-natnormalise"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."ghci" or (buildDepError "ghci"))
+          (hsPkgs."uniplate" or (buildDepError "uniplate"))
+          (hsPkgs."reflection" or (buildDepError "reflection"))
+          (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (if system.isWindows
-          then [ (hsPkgs.Win32) ]
-          else [ (hsPkgs.unix) ]);
+          then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+          else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
         };
       exes = {
         "clash" = {
-          depends = [ (hsPkgs.base) (hsPkgs.clash-ghc) ];
-          libs = [ (pkgs."pthread") ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."clash-ghc" or (buildDepError "clash-ghc"))
+            ];
+          libs = [ (pkgs."pthread" or (sysDepError "pthread")) ];
           };
         "clashi" = {
-          depends = [ (hsPkgs.base) (hsPkgs.clash-ghc) ];
-          libs = [ (pkgs."pthread") ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."clash-ghc" or (buildDepError "clash-ghc"))
+            ];
+          libs = [ (pkgs."pthread" or (sysDepError "pthread")) ];
           };
         };
       };

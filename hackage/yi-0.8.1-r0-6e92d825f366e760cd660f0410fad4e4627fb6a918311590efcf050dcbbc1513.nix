@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       pango = false;
@@ -24,97 +63,100 @@
     components = {
       "library" = {
         depends = (((((([
-          (hsPkgs.Cabal)
-          (hsPkgs.Diff)
-          (hsPkgs.array)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.process)
-          (hsPkgs.old-locale)
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.bytestring)
-          (hsPkgs.cautious-file)
-          (hsPkgs.concrete-typerep)
-          (hsPkgs.derive)
-          (hsPkgs.data-default)
-          (hsPkgs.lens)
-          (hsPkgs.dlist)
-          (hsPkgs.dyre)
-          (hsPkgs.filepath)
-          (hsPkgs.fingertree)
-          (hsPkgs.hashable)
-          (hsPkgs.hint)
-          (hsPkgs.mtl)
-          (hsPkgs.parsec)
-          (hsPkgs.pointedlist)
-          (hsPkgs.regex-base)
-          (hsPkgs.regex-tdfa)
-          (hsPkgs.safe)
-          (hsPkgs.split)
-          (hsPkgs.template-haskell)
-          (hsPkgs.time)
-          (hsPkgs.utf8-string)
-          (hsPkgs.uniplate)
-          (hsPkgs.unix-compat)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.xdg-basedir)
-          (hsPkgs.ghc)
-          (hsPkgs.transformers-base)
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32)) ++ (pkgs.lib).optionals (flags.testing) [
-          (hsPkgs.QuickCheck)
-          (hsPkgs.random)
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."Diff" or (buildDepError "Diff"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."cautious-file" or (buildDepError "cautious-file"))
+          (hsPkgs."concrete-typerep" or (buildDepError "concrete-typerep"))
+          (hsPkgs."derive" or (buildDepError "derive"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."dlist" or (buildDepError "dlist"))
+          (hsPkgs."dyre" or (buildDepError "dyre"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."fingertree" or (buildDepError "fingertree"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."hint" or (buildDepError "hint"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."pointedlist" or (buildDepError "pointedlist"))
+          (hsPkgs."regex-base" or (buildDepError "regex-base"))
+          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."uniplate" or (buildDepError "uniplate"))
+          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."xdg-basedir" or (buildDepError "xdg-basedir"))
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"))) ++ (pkgs.lib).optionals (flags.testing) [
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."random" or (buildDepError "random"))
           ]) ++ (pkgs.lib).optionals (flags.pango) [
-          (hsPkgs.gtk)
-          (hsPkgs.glib)
-          (hsPkgs.pango)
+          (hsPkgs."gtk" or (buildDepError "gtk"))
+          (hsPkgs."glib" or (buildDepError "glib"))
+          (hsPkgs."pango" or (buildDepError "pango"))
           ]) ++ (pkgs.lib).optionals (flags.vty) [
-          (hsPkgs.unix-compat)
-          (hsPkgs.vty)
+          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+          (hsPkgs."vty" or (buildDepError "vty"))
           ]) ++ (pkgs.lib).optionals (flags.scion) [
-          (hsPkgs.scion)
-          (hsPkgs.ghc-syb-utils)
+          (hsPkgs."scion" or (buildDepError "scion"))
+          (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
           ]) ++ (pkgs.lib).optionals (flags.ghcapi) [
-          (hsPkgs.ghc-paths)
-          (hsPkgs.old-time)
-          (hsPkgs.rosezipper)
-          (hsPkgs.pureMD5)
-          (hsPkgs.ghc-paths)
+          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
+          (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
+          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
           ];
         };
       exes = {
         "parserTest" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.yi)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."yi" or (buildDepError "yi"))
             ];
           };
         "yi" = {
-          depends = [ (hsPkgs.base) (hsPkgs.yi) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."yi" or (buildDepError "yi"))
+            ];
           build-tools = [
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
             ];
           };
         };
       tests = {
         "test-suite" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.yi)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."yi" or (buildDepError "yi"))
             ];
           };
         };

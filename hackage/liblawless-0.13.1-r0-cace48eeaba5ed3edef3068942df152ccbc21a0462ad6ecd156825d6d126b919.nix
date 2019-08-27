@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,60 +56,60 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.binary)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.mtl)
-          (hsPkgs.time)
-          (hsPkgs.base-unicode-symbols)
-          (hsPkgs.concurrent-machines)
-          (hsPkgs.stm)
-          (hsPkgs.machines)
-          (hsPkgs.contravariant)
-          (hsPkgs.semigroups)
-          (hsPkgs.exceptions)
-          (hsPkgs.containers-unicode-symbols)
-          (hsPkgs.data-textual)
-          (hsPkgs.parsers)
-          (hsPkgs.text-printer)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.hjsonschema)
-          (hsPkgs.random)
-          (hsPkgs.lens)
-          (hsPkgs.path)
-          (hsPkgs.path-io)
-          (hsPkgs.temporary)
-          (hsPkgs.protolude)
-          (hsPkgs.stm-containers)
-          (hsPkgs.text-icu)
-          (hsPkgs.text-icu-normalized)
-          (hsPkgs.yaml)
-          (hsPkgs.zippers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
+          (hsPkgs."concurrent-machines" or (buildDepError "concurrent-machines"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."machines" or (buildDepError "machines"))
+          (hsPkgs."contravariant" or (buildDepError "contravariant"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."containers-unicode-symbols" or (buildDepError "containers-unicode-symbols"))
+          (hsPkgs."data-textual" or (buildDepError "data-textual"))
+          (hsPkgs."parsers" or (buildDepError "parsers"))
+          (hsPkgs."text-printer" or (buildDepError "text-printer"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hjsonschema" or (buildDepError "hjsonschema"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."path" or (buildDepError "path"))
+          (hsPkgs."path-io" or (buildDepError "path-io"))
+          (hsPkgs."temporary" or (buildDepError "temporary"))
+          (hsPkgs."protolude" or (buildDepError "protolude"))
+          (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
+          (hsPkgs."text-icu" or (buildDepError "text-icu"))
+          (hsPkgs."text-icu-normalized" or (buildDepError "text-icu-normalized"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."zippers" or (buildDepError "zippers"))
           ];
         };
       tests = {
         "test-liblawless" = {
           depends = [
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.exceptions)
-            (hsPkgs.filepath)
-            (hsPkgs.liblawless)
-            (hsPkgs.semigroups)
-            (hsPkgs.temporary)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework-th)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."liblawless" or (buildDepError "liblawless"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-locale = false; };
     package = {
@@ -17,59 +56,62 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.aeson)
-          (hsPkgs.attoparsec)
-          (hsPkgs.base)
-          (hsPkgs.bifunctors)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.conduit)
-          (hsPkgs.conduit-extra)
-          (hsPkgs.cryptonite)
-          (hsPkgs.deepseq)
-          (hsPkgs.exceptions)
-          (hsPkgs.hashable)
-          (hsPkgs.http-client)
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-types)
-          (hsPkgs.lens)
-          (hsPkgs.memory)
-          (hsPkgs.mtl)
-          (hsPkgs.resourcet)
-          (hsPkgs.scientific)
-          (hsPkgs.semigroups)
-          (hsPkgs.tagged)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-compat)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.xml-conduit)
-          (hsPkgs.xml-types)
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs.nats)) ++ (if flags.old-locale
-          then [ (hsPkgs.old-locale) (hsPkgs.time) ]
-          else [ (hsPkgs.time) ]);
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+          (hsPkgs."xml-types" or (buildDepError "xml-types"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs."nats" or (buildDepError "nats"))) ++ (if flags.old-locale
+          then [
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            ]
+          else [ (hsPkgs."time" or (buildDepError "time")) ]);
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.amazonka-core)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.conduit)
-            (hsPkgs.data-ordlist)
-            (hsPkgs.http-conduit)
-            (hsPkgs.http-types)
-            (hsPkgs.lens)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-unicode)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.time)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."data-ordlist" or (buildDepError "data-ordlist"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-unicode" or (buildDepError "quickcheck-unicode"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
             ];
           };
         };

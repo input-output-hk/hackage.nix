@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       threaded = true;
@@ -22,94 +61,100 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.hledger)
-          (hsPkgs.hledger-lib)
-          (hsPkgs.base)
-          (hsPkgs.base-compat)
-          (hsPkgs.blaze-html)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.bytestring)
-          (hsPkgs.clientsession)
-          (hsPkgs.cmdargs)
-          (hsPkgs.data-default)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.hjsmin)
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-client)
-          (hsPkgs.HUnit)
-          (hsPkgs.conduit-extra)
-          (hsPkgs.parsec)
-          (hsPkgs.safe)
-          (hsPkgs.shakespeare)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.wai)
-          (hsPkgs.wai-extra)
-          (hsPkgs.wai-handler-launch)
-          (hsPkgs.warp)
-          (hsPkgs.yaml)
-          (hsPkgs.yesod)
-          (hsPkgs.yesod-core)
-          (hsPkgs.yesod-form)
-          (hsPkgs.yesod-static)
-          (hsPkgs.json)
+          (hsPkgs."hledger" or (buildDepError "hledger"))
+          (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-compat" or (buildDepError "base-compat"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."clientsession" or (buildDepError "clientsession"))
+          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."HUnit" or (buildDepError "HUnit"))
+          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+          (hsPkgs."wai-handler-launch" or (buildDepError "wai-handler-launch"))
+          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."yesod" or (buildDepError "yesod"))
+          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+          (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
+          (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
+          (hsPkgs."json" or (buildDepError "json"))
           ] ++ (if flags.old-locale
-          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-          else [ (hsPkgs.time) ]);
+          then [
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            ]
+          else [ (hsPkgs."time" or (buildDepError "time")) ]);
         };
       exes = {
         "hledger-web" = {
           depends = [
-            (hsPkgs.hledger-lib)
-            (hsPkgs.hledger)
-            (hsPkgs.hledger-web)
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.bytestring)
-            (hsPkgs.clientsession)
-            (hsPkgs.cmdargs)
-            (hsPkgs.data-default)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.hjsmin)
-            (hsPkgs.http-conduit)
-            (hsPkgs.http-client)
-            (hsPkgs.HUnit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.parsec)
-            (hsPkgs.safe)
-            (hsPkgs.shakespeare)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.wai)
-            (hsPkgs.wai-extra)
-            (hsPkgs.wai-handler-launch)
-            (hsPkgs.warp)
-            (hsPkgs.yaml)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-core)
-            (hsPkgs.yesod-form)
-            (hsPkgs.yesod-static)
-            (hsPkgs.json)
+            (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
+            (hsPkgs."hledger" or (buildDepError "hledger"))
+            (hsPkgs."hledger-web" or (buildDepError "hledger-web"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."clientsession" or (buildDepError "clientsession"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."wai-handler-launch" or (buildDepError "wai-handler-launch"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
+            (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
+            (hsPkgs."json" or (buildDepError "json"))
             ] ++ (if flags.old-locale
-            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-            else [ (hsPkgs.time) ]);
+            then [
+              (hsPkgs."time" or (buildDepError "time"))
+              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              ]
+            else [ (hsPkgs."time" or (buildDepError "time")) ]);
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.hledger-web)
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.hspec)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-test)
+            (hsPkgs."hledger-web" or (buildDepError "hledger-web"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
             ];
           };
         };

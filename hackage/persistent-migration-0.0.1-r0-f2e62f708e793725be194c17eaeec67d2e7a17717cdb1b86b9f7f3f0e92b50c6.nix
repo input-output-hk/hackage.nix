@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,53 +56,53 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.fgl)
-          (hsPkgs.persistent)
-          (hsPkgs.mtl)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.unordered-containers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."fgl" or (buildDepError "fgl"))
+          (hsPkgs."persistent" or (buildDepError "persistent"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
         };
       tests = {
         "persistent-migration-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.conduit)
-            (hsPkgs.containers)
-            (hsPkgs.mtl)
-            (hsPkgs.persistent)
-            (hsPkgs.persistent-migration)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-golden)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."persistent" or (buildDepError "persistent"))
+            (hsPkgs."persistent-migration" or (buildDepError "persistent-migration"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "persistent-migration-integration" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.exceptions)
-            (hsPkgs.monad-logger)
-            (hsPkgs.mtl)
-            (hsPkgs.process)
-            (hsPkgs.persistent)
-            (hsPkgs.persistent-migration)
-            (hsPkgs.persistent-postgresql)
-            (hsPkgs.persistent-template)
-            (hsPkgs.resource-pool)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-golden)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.temporary)
-            (hsPkgs.text)
-            (hsPkgs.yaml)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."persistent" or (buildDepError "persistent"))
+            (hsPkgs."persistent-migration" or (buildDepError "persistent-migration"))
+            (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
+            (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
+            (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         };

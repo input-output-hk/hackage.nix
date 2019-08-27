@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,56 +56,56 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.clock)
-          (hsPkgs.hashable)
-          (hsPkgs.http-types)
-          (hsPkgs.mtl)
-          (hsPkgs.retry)
-          (hsPkgs.safe-exceptions)
-          (hsPkgs.streaming)
-          (hsPkgs.streaming-wai)
-          (hsPkgs.streaming-bytestring)
-          (hsPkgs.streaming-utils)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.vector-algorithms)
-          (hsPkgs.wai)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."clock" or (buildDepError "clock"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."retry" or (buildDepError "retry"))
+          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+          (hsPkgs."streaming" or (buildDepError "streaming"))
+          (hsPkgs."streaming-wai" or (buildDepError "streaming-wai"))
+          (hsPkgs."streaming-bytestring" or (buildDepError "streaming-bytestring"))
+          (hsPkgs."streaming-utils" or (buildDepError "streaming-utils"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
+          (hsPkgs."wai" or (buildDepError "wai"))
           ];
         };
       exes = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.warp)
-            (hsPkgs.prometheus-effect)
-            (hsPkgs.http-types)
-            (hsPkgs.wai)
-            (hsPkgs.random)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."prometheus-effect" or (buildDepError "prometheus-effect"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };
       tests = {
         "weight" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.weigh)
-            (hsPkgs.prometheus-effect)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."weigh" or (buildDepError "weigh"))
+            (hsPkgs."prometheus-effect" or (buildDepError "prometheus-effect"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };
       benchmarks = {
         "benchmarks" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.prometheus-effect)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."prometheus-effect" or (buildDepError "prometheus-effect"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

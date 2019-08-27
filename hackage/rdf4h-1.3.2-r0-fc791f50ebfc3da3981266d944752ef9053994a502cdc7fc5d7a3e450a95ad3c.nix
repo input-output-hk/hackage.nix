@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { small_base = false; network-uri = true; };
     package = {
@@ -17,87 +56,90 @@
     components = {
       "library" = {
         depends = (([
-          (hsPkgs.parsec)
-          (hsPkgs.fgl)
-          (hsPkgs.HTTP)
-          (hsPkgs.hxt)
-          (hsPkgs.text)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.hashable)
-          (hsPkgs.deepseq)
-          (hsPkgs.binary)
-          (hsPkgs.text-binary)
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."fgl" or (buildDepError "fgl"))
+          (hsPkgs."HTTP" or (buildDepError "HTTP"))
+          (hsPkgs."hxt" or (buildDepError "hxt"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."text-binary" or (buildDepError "text-binary"))
           ] ++ (if flags.small_base
           then [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ]
           else [
-            (hsPkgs.base)
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ [
-          (hsPkgs.network-uri)
-          (hsPkgs.network)
+            (hsPkgs."base" or (buildDepError "base"))
+            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ [
+          (hsPkgs."network-uri" or (buildDepError "network-uri"))
+          (hsPkgs."network" or (buildDepError "network"))
           ];
         };
       exes = {
         "rdf4h" = {
           depends = (([
-            (hsPkgs.parsec)
-            (hsPkgs.HTTP)
-            (hsPkgs.hxt)
-            (hsPkgs.containers)
-            (hsPkgs.text)
-            (hsPkgs.hashable)
-            (hsPkgs.deepseq)
-            (hsPkgs.binary)
-            (hsPkgs.text-binary)
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."text-binary" or (buildDepError "text-binary"))
             ] ++ (if flags.small_base
-            then [ (hsPkgs.base) (hsPkgs.bytestring) ]
+            then [
+              (hsPkgs."base" or (buildDepError "base"))
+              (hsPkgs."bytestring" or (buildDepError "bytestring"))
+              ]
             else [
-              (hsPkgs.base)
-              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
+              (hsPkgs."base" or (buildDepError "base"))
+              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ [
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."network" or (buildDepError "network"))
             ];
           };
         };
       tests = {
         "test-rdf4h" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.HTTP)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
-            (hsPkgs.bytestring)
-            (hsPkgs.hxt)
-            (hsPkgs.containers)
-            (hsPkgs.text)
-            (hsPkgs.knob)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.hashable)
-            (hsPkgs.fgl)
-            (hsPkgs.deepseq)
-            (hsPkgs.binary)
-            (hsPkgs.text-binary)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ [
-            (hsPkgs.network-uri)
-            (hsPkgs.network)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."knob" or (buildDepError "knob"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."fgl" or (buildDepError "fgl"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."text-binary" or (buildDepError "text-binary"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ [
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."network" or (buildDepError "network"))
             ];
           };
         };
       benchmarks = {
         "rdf4h-bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.rdf4h)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."rdf4h" or (buildDepError "rdf4h"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

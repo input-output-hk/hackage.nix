@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { oldtime = false; };
     package = {
@@ -17,105 +56,111 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.base)
-          (hsPkgs.base-compat)
-          (hsPkgs.array)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.bytestring)
-          (hsPkgs.cmdargs)
-          (hsPkgs.containers)
-          (hsPkgs.csv)
-          (hsPkgs.data-default)
-          (hsPkgs.Decimal)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.megaparsec)
-          (hsPkgs.mtl)
-          (hsPkgs.mtl-compat)
-          (hsPkgs.old-time)
-          (hsPkgs.pretty-show)
-          (hsPkgs.regex-tdfa)
-          (hsPkgs.safe)
-          (hsPkgs.split)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.uglymemo)
-          (hsPkgs.utf8-string)
-          (hsPkgs.HUnit)
-          (hsPkgs.parsec)
-          (hsPkgs.semigroups)
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (if flags.oldtime
-          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-          else [ (hsPkgs.time) ]);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-compat" or (buildDepError "base-compat"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."csv" or (buildDepError "csv"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."Decimal" or (buildDepError "Decimal"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."HUnit" or (buildDepError "HUnit"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (if flags.oldtime
+          then [
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            ]
+          else [ (hsPkgs."time" or (buildDepError "time")) ]);
         };
       tests = {
         "doctests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.array)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.bytestring)
-            (hsPkgs.cmdargs)
-            (hsPkgs.containers)
-            (hsPkgs.csv)
-            (hsPkgs.data-default)
-            (hsPkgs.Decimal)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.mtl-compat)
-            (hsPkgs.old-time)
-            (hsPkgs.pretty-show)
-            (hsPkgs.regex-tdfa)
-            (hsPkgs.safe)
-            (hsPkgs.split)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.uglymemo)
-            (hsPkgs.utf8-string)
-            (hsPkgs.HUnit)
-            (hsPkgs.doctest)
-            (hsPkgs.Glob)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."csv" or (buildDepError "csv"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."Decimal" or (buildDepError "Decimal"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."Glob" or (buildDepError "Glob"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
           };
         "hunittests" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.array)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.bytestring)
-            (hsPkgs.cmdargs)
-            (hsPkgs.containers)
-            (hsPkgs.csv)
-            (hsPkgs.data-default)
-            (hsPkgs.Decimal)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.mtl-compat)
-            (hsPkgs.old-time)
-            (hsPkgs.pretty-show)
-            (hsPkgs.regex-tdfa)
-            (hsPkgs.safe)
-            (hsPkgs.split)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.uglymemo)
-            (hsPkgs.utf8-string)
-            (hsPkgs.HUnit)
-            (hsPkgs.hledger-lib)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim)) ++ (if flags.oldtime
-            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-            else [ (hsPkgs.time) ]);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."csv" or (buildDepError "csv"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."Decimal" or (buildDepError "Decimal"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."mtl-compat" or (buildDepError "mtl-compat"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."uglymemo" or (buildDepError "uglymemo"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."hledger-lib" or (buildDepError "hledger-lib"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (if flags.oldtime
+            then [
+              (hsPkgs."time" or (buildDepError "time"))
+              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              ]
+            else [ (hsPkgs."time" or (buildDepError "time")) ]);
           };
         };
       };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       threaded = true;
@@ -25,77 +64,83 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.containers)
-          (hsPkgs.parsec)
-          (hsPkgs.xhtml)
-          (hsPkgs.mtl)
-          (hsPkgs.network)
-          (hsPkgs.filepath)
-          (hsPkgs.process)
-          (hsPkgs.directory)
-          (hsPkgs.bytestring)
-          (hsPkgs.zip-archive)
-          (hsPkgs.utf8-string)
-          (hsPkgs.old-time)
-          (hsPkgs.HTTP)
-          (hsPkgs.texmath)
-          (hsPkgs.xml)
-          (hsPkgs.random)
-          (hsPkgs.extensible-exceptions)
-          (hsPkgs.citeproc-hs)
-          (hsPkgs.pandoc-types)
-          (hsPkgs.json)
-          (hsPkgs.dlist)
-          (hsPkgs.tagsoup)
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."xhtml" or (buildDepError "xhtml"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."HTTP" or (buildDepError "HTTP"))
+          (hsPkgs."texmath" or (buildDepError "texmath"))
+          (hsPkgs."xml" or (buildDepError "xml"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
+          (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"))
+          (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
+          (hsPkgs."json" or (buildDepError "json"))
+          (hsPkgs."dlist" or (buildDepError "dlist"))
+          (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
           ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
-          then [ (hsPkgs.base) (hsPkgs.syb) ]
+          then [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            ]
           else [
-            (hsPkgs.base)
-            ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs.highlighting-kate);
+            (hsPkgs."base" or (buildDepError "base"))
+            ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"));
         };
       exes = {
         "pandoc" = {
           depends = ([
-            (hsPkgs.containers)
-            (hsPkgs.parsec)
-            (hsPkgs.xhtml)
-            (hsPkgs.mtl)
-            (hsPkgs.network)
-            (hsPkgs.filepath)
-            (hsPkgs.process)
-            (hsPkgs.directory)
-            (hsPkgs.bytestring)
-            (hsPkgs.zip-archive)
-            (hsPkgs.utf8-string)
-            (hsPkgs.old-time)
-            (hsPkgs.HTTP)
-            (hsPkgs.texmath)
-            (hsPkgs.xml)
-            (hsPkgs.random)
-            (hsPkgs.extensible-exceptions)
-            (hsPkgs.citeproc-hs)
-            (hsPkgs.pandoc-types)
-            (hsPkgs.json)
-            (hsPkgs.dlist)
-            (hsPkgs.tagsoup)
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."xhtml" or (buildDepError "xhtml"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."texmath" or (buildDepError "texmath"))
+            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."extensible-exceptions" or (buildDepError "extensible-exceptions"))
+            (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"))
+            (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
+            (hsPkgs."json" or (buildDepError "json"))
+            (hsPkgs."dlist" or (buildDepError "dlist"))
+            (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
-            then [ (hsPkgs.base) (hsPkgs.syb) ]
+            then [
+              (hsPkgs."base" or (buildDepError "base"))
+              (hsPkgs."syb" or (buildDepError "syb"))
+              ]
             else [
-              (hsPkgs.base)
-              ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs.highlighting-kate);
+              (hsPkgs."base" or (buildDepError "base"))
+              ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"));
           };
         "markdown2pdf" = {};
         "test-pandoc" = {
           depends = (pkgs.lib).optionals (!(!flags.tests)) [
-            (hsPkgs.base)
-            (hsPkgs.Diff)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
-            (hsPkgs.template-haskell)
-            (hsPkgs.ansi-terminal)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Diff" or (buildDepError "Diff"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
             ];
           };
         };

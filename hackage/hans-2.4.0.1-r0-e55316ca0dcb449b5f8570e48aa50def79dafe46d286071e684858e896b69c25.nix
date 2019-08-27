@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       bounded-channels = false;
@@ -23,102 +62,105 @@
     components = {
       "library" = {
         depends = (([
-          (hsPkgs.base)
-          (hsPkgs.cereal)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.monadLib)
-          (hsPkgs.time)
-          (hsPkgs.fingertree)
-          (hsPkgs.stm)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."monadLib" or (buildDepError "monadLib"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."fingertree" or (buildDepError "fingertree"))
+          (hsPkgs."stm" or (buildDepError "stm"))
           ] ++ (if system.isHalvm
-          then [ (hsPkgs.XenDevice) (hsPkgs.HALVMCore) ]
+          then [
+            (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
+            (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
+            ]
           else [
-            (hsPkgs.unix)
-            ])) ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs.BoundedChan)) ++ [
-          (hsPkgs.random)
+            (hsPkgs."unix" or (buildDepError "unix"))
+            ])) ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))) ++ [
+          (hsPkgs."random" or (buildDepError "random"))
           ];
         };
       exes = {
         "test" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.cereal)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.monadLib)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.hans)
-            ] ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs.BoundedChan)) ++ (pkgs.lib).optionals (system.isHalvm) [
-            (hsPkgs.XenDevice)
-            (hsPkgs.HALVMCore)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."monadLib" or (buildDepError "monadLib"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."hans" or (buildDepError "hans"))
+            ] ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))) ++ (pkgs.lib).optionals (system.isHalvm) [
+            (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
+            (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
             ];
           };
         "web-server" = {
           depends = (pkgs.lib).optionals (!system.isHalvm) ((pkgs.lib).optionals (flags.web-server) [
-            (hsPkgs.base)
-            (hsPkgs.cereal)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.monadLib)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.HTTP)
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.hans)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."monadLib" or (buildDepError "monadLib"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."hans" or (buildDepError "hans"))
             ]);
           };
         "tcp-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cereal)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.monadLib)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.hans)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."monadLib" or (buildDepError "monadLib"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."hans" or (buildDepError "hans"))
             ] ++ (pkgs.lib).optionals (system.isHalvm) [
-            (hsPkgs.XenDevice)
-            (hsPkgs.HALVMCore)
+            (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
+            (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
             ];
           };
         "echo-client" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cereal)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.monadLib)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.hans)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."monadLib" or (buildDepError "monadLib"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."hans" or (buildDepError "hans"))
             ] ++ (pkgs.lib).optionals (system.isHalvm) [
-            (hsPkgs.XenDevice)
-            (hsPkgs.HALVMCore)
+            (hsPkgs."XenDevice" or (buildDepError "XenDevice"))
+            (hsPkgs."HALVMCore" or (buildDepError "HALVMCore"))
             ];
           };
         "tcp-test-client" = {
           depends = (pkgs.lib).optionals (!system.isHalvm) [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.network)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."network" or (buildDepError "network"))
             ];
           };
         "test-suite" = {
           depends = (pkgs.lib).optionals (flags.enable-tests) [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.old-locale)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.random)
-            (hsPkgs.cereal)
-            (hsPkgs.hans)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."hans" or (buildDepError "hans"))
             ];
           };
         };

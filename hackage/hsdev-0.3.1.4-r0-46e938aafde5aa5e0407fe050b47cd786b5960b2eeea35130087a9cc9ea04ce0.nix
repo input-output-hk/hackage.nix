@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { docs = true; };
     package = {
@@ -17,116 +56,116 @@
     components = {
       "library" = {
         depends = (((([
-          (hsPkgs.base)
-          (hsPkgs.HTTP)
-          (hsPkgs.aeson)
-          (hsPkgs.aeson-pretty)
-          (hsPkgs.array)
-          (hsPkgs.async)
-          (hsPkgs.attoparsec)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.cpphs)
-          (hsPkgs.data-default)
-          (hsPkgs.deepseq)
-          (hsPkgs.direct-sqlite)
-          (hsPkgs.directory)
-          (hsPkgs.exceptions)
-          (hsPkgs.filepath)
-          (hsPkgs.fsnotify)
-          (hsPkgs.ghc-boot)
-          (hsPkgs.ghc-paths)
-          (hsPkgs.ghc-syb-utils)
-          (hsPkgs.haskell-names)
-          (hsPkgs.haskell-src-exts)
-          (hsPkgs.hformat)
-          (hsPkgs.hlint)
-          (hsPkgs.lens)
-          (hsPkgs.lifted-base)
-          (hsPkgs.mmorph)
-          (hsPkgs.monad-control)
-          (hsPkgs.monad-loops)
-          (hsPkgs.mtl)
-          (hsPkgs.network)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.process)
-          (hsPkgs.regex-pcre-builtin)
-          (hsPkgs.scientific)
-          (hsPkgs.simple-log)
-          (hsPkgs.sqlite-simple)
-          (hsPkgs.stm)
-          (hsPkgs.syb)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.text-region)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-base)
-          (hsPkgs.traverse-with-class)
-          (hsPkgs.uniplate)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."HTTP" or (buildDepError "HTTP"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cpphs" or (buildDepError "cpphs"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."direct-sqlite" or (buildDepError "direct-sqlite"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
+          (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"))
+          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+          (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
+          (hsPkgs."haskell-names" or (buildDepError "haskell-names"))
+          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
+          (hsPkgs."hformat" or (buildDepError "hformat"))
+          (hsPkgs."hlint" or (buildDepError "hlint"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."mmorph" or (buildDepError "mmorph"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."simple-log" or (buildDepError "simple-log"))
+          (hsPkgs."sqlite-simple" or (buildDepError "sqlite-simple"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."text-region" or (buildDepError "text-region"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."traverse-with-class" or (buildDepError "traverse-with-class"))
+          (hsPkgs."uniplate" or (buildDepError "uniplate"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (if system.isWindows
-          then [ (hsPkgs.Win32) ]
+          then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
           else [
-            (hsPkgs.unix)
+            (hsPkgs."unix" or (buildDepError "unix"))
             ])) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.4" && (compiler.isGhc && (compiler.version).lt "8.5")) [
-          (hsPkgs.ghc)
-          (hsPkgs.Cabal)
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.2" && (compiler.isGhc && (compiler.version).lt "8.3")) [
-          (hsPkgs.ghc)
-          (hsPkgs.Cabal)
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.0" && (compiler.isGhc && (compiler.version).lt "8.2")) [
-          (hsPkgs.ghc)
-          (hsPkgs.Cabal)
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
           ]) ++ (pkgs.lib).optionals (flags.docs) [
-          (hsPkgs.hdocs)
-          (hsPkgs.haddock-api)
-          (hsPkgs.haddock-library)
+          (hsPkgs."hdocs" or (buildDepError "hdocs"))
+          (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
+          (hsPkgs."haddock-library" or (buildDepError "haddock-library"))
           ];
         };
       exes = {
         "hsdev" = {
           depends = [
-            (hsPkgs.hsdev)
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.exceptions)
-            (hsPkgs.filepath)
-            (hsPkgs.monad-loops)
-            (hsPkgs.mtl)
-            (hsPkgs.network)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.process)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."hsdev" or (buildDepError "hsdev"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.hsdev)
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-lens)
-            (hsPkgs.async)
-            (hsPkgs.containers)
-            (hsPkgs.data-default)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.hformat)
-            (hsPkgs.hspec)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
+            (hsPkgs."hsdev" or (buildDepError "hsdev"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-lens" or (buildDepError "aeson-lens"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hformat" or (buildDepError "hformat"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

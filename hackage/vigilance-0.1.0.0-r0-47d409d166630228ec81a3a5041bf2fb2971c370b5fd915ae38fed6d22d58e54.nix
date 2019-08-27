@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { no-server = false; no-client = false; };
     package = {
@@ -18,134 +57,134 @@
       exes = {
         "vigilance-server" = {
           depends = (pkgs.lib).optionals (!flags.no-server) [
-            (hsPkgs.base)
-            (hsPkgs.async)
-            (hsPkgs.aeson)
-            (hsPkgs.attoparsec)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.bytestring)
-            (hsPkgs.acid-state)
-            (hsPkgs.classy-prelude)
-            (hsPkgs.configurator)
-            (hsPkgs.containers)
-            (hsPkgs.data-store)
-            (hsPkgs.directory)
-            (hsPkgs.either)
-            (hsPkgs.entropy)
-            (hsPkgs.errors)
-            (hsPkgs.fast-logger)
-            (hsPkgs.http-streams)
-            (hsPkgs.http-types)
-            (hsPkgs.io-streams)
-            (hsPkgs.interpolatedstring-perl6)
-            (hsPkgs.lens)
-            (hsPkgs.mime-mail)
-            (hsPkgs.monad-loops)
-            (hsPkgs.monad-logger)
-            (hsPkgs.mtl)
-            (hsPkgs.safecopy)
-            (hsPkgs.stm)
-            (hsPkgs.time)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unix)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.wai)
-            (hsPkgs.wai-extra)
-            (hsPkgs.warp)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-core)
-            (hsPkgs.yesod-platform)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."acid-state" or (buildDepError "acid-state"))
+            (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
+            (hsPkgs."configurator" or (buildDepError "configurator"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-store" or (buildDepError "data-store"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."either" or (buildDepError "either"))
+            (hsPkgs."entropy" or (buildDepError "entropy"))
+            (hsPkgs."errors" or (buildDepError "errors"))
+            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+            (hsPkgs."http-streams" or (buildDepError "http-streams"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."io-streams" or (buildDepError "io-streams"))
+            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
+            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."yesod-platform" or (buildDepError "yesod-platform"))
             ];
           };
         "vigilance" = {
           depends = (pkgs.lib).optionals (!flags.no-client) [
-            (hsPkgs.base)
-            (hsPkgs.async)
-            (hsPkgs.aeson)
-            (hsPkgs.attoparsec)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.bytestring)
-            (hsPkgs.acid-state)
-            (hsPkgs.classy-prelude)
-            (hsPkgs.configurator)
-            (hsPkgs.containers)
-            (hsPkgs.data-store)
-            (hsPkgs.directory)
-            (hsPkgs.either)
-            (hsPkgs.entropy)
-            (hsPkgs.errors)
-            (hsPkgs.fast-logger)
-            (hsPkgs.http-streams)
-            (hsPkgs.http-types)
-            (hsPkgs.io-streams)
-            (hsPkgs.interpolatedstring-perl6)
-            (hsPkgs.lens)
-            (hsPkgs.mime-mail)
-            (hsPkgs.monad-loops)
-            (hsPkgs.mtl)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.safecopy)
-            (hsPkgs.stm)
-            (hsPkgs.time)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unix)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.warp)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-core)
-            (hsPkgs.yesod-platform)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."acid-state" or (buildDepError "acid-state"))
+            (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
+            (hsPkgs."configurator" or (buildDepError "configurator"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-store" or (buildDepError "data-store"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."either" or (buildDepError "either"))
+            (hsPkgs."entropy" or (buildDepError "entropy"))
+            (hsPkgs."errors" or (buildDepError "errors"))
+            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+            (hsPkgs."http-streams" or (buildDepError "http-streams"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."io-streams" or (buildDepError "io-streams"))
+            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
+            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."yesod-platform" or (buildDepError "yesod-platform"))
             ];
           };
         };
       tests = {
         "test-vigilance" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.async)
-            (hsPkgs.aeson)
-            (hsPkgs.attoparsec)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.bytestring)
-            (hsPkgs.acid-state)
-            (hsPkgs.classy-prelude)
-            (hsPkgs.configurator)
-            (hsPkgs.containers)
-            (hsPkgs.data-store)
-            (hsPkgs.directory)
-            (hsPkgs.entropy)
-            (hsPkgs.errors)
-            (hsPkgs.fast-logger)
-            (hsPkgs.http-streams)
-            (hsPkgs.http-types)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-expectations)
-            (hsPkgs.HUnit)
-            (hsPkgs.interpolatedstring-perl6)
-            (hsPkgs.io-streams)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-properties)
-            (hsPkgs.lens)
-            (hsPkgs.derive)
-            (hsPkgs.mime-mail)
-            (hsPkgs.monad-loops)
-            (hsPkgs.mtl)
-            (hsPkgs.safecopy)
-            (hsPkgs.stm)
-            (hsPkgs.time)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unix)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.warp)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-core)
-            (hsPkgs.yesod-platform)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."acid-state" or (buildDepError "acid-state"))
+            (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
+            (hsPkgs."configurator" or (buildDepError "configurator"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-store" or (buildDepError "data-store"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."entropy" or (buildDepError "entropy"))
+            (hsPkgs."errors" or (buildDepError "errors"))
+            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+            (hsPkgs."http-streams" or (buildDepError "http-streams"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."io-streams" or (buildDepError "io-streams"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-properties" or (buildDepError "quickcheck-properties"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."derive" or (buildDepError "derive"))
+            (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
+            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."yesod-platform" or (buildDepError "yesod-platform"))
             ];
           };
         };

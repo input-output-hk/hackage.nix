@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,73 +56,89 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.random)
-          (hsPkgs.math-functions)
-          (hsPkgs.mtl)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."math-functions" or (buildDepError "math-functions"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         };
       tests = {
         "shadyGambler" = {
-          depends = [ (hsPkgs.base) (hsPkgs.stochastic) (hsPkgs.containers) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            ];
           };
         "monadLaws" = {
-          depends = [ (hsPkgs.base) (hsPkgs.stochastic) (hsPkgs.random) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."random" or (buildDepError "random"))
+            ];
           };
         "normal3" = {
-          depends = [ (hsPkgs.base) (hsPkgs.stochastic) (hsPkgs.random) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."random" or (buildDepError "random"))
+            ];
           };
         "normal10" = {
-          depends = [ (hsPkgs.base) (hsPkgs.stochastic) (hsPkgs.random) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."random" or (buildDepError "random"))
+            ];
           };
         "chart" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.stochastic)
-            (hsPkgs.random)
-            (hsPkgs.Chart-cairo)
-            (hsPkgs.Chart)
-            (hsPkgs.containers)
-            (hsPkgs.mtl)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
+            (hsPkgs."Chart" or (buildDepError "Chart"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           };
         "coolCharts" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.stochastic)
-            (hsPkgs.random)
-            (hsPkgs.Chart-cairo)
-            (hsPkgs.Chart)
-            (hsPkgs.containers)
-            (hsPkgs.mtl)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
+            (hsPkgs."Chart" or (buildDepError "Chart"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           };
         "swindler" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.stochastic)
-            (hsPkgs.containers)
-            (hsPkgs.random)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         "montyHall" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.stochastic)
-            (hsPkgs.containers)
-            (hsPkgs.random)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         "contrivedGambler" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.stochastic)
-            (hsPkgs.random)
-            (hsPkgs.Chart-cairo)
-            (hsPkgs.Chart)
-            (hsPkgs.containers)
-            (hsPkgs.mtl)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."stochastic" or (buildDepError "stochastic"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."Chart-cairo" or (buildDepError "Chart-cairo"))
+            (hsPkgs."Chart" or (buildDepError "Chart"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           };
         };

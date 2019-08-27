@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { developer = false; fast = false; bytestring-builder = false; };
     package = {
@@ -17,70 +56,76 @@
     components = {
       "library" = {
         depends = (([
-          (hsPkgs.attoparsec)
-          (hsPkgs.base)
-          (hsPkgs.base-compat)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.dlist)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.hashable)
-          (hsPkgs.scientific)
-          (hsPkgs.tagged)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.time-locale-compat)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-compat" or (buildDepError "base-compat"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."dlist" or (buildDepError "dlist"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ] ++ (if flags.bytestring-builder
-          then [ (hsPkgs.bytestring) (hsPkgs.bytestring-builder) ]
+          then [
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
+            ]
           else [
-            (hsPkgs.bytestring)
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ])) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
-          (hsPkgs.semigroups)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-compat)
-          (hsPkgs.fail)
-          ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats);
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+          (hsPkgs."fail" or (buildDepError "fail"))
+          ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."nats" or (buildDepError "nats"));
         };
       tests = {
         "tests" = {
           depends = ((([
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.aeson)
-            (hsPkgs.attoparsec)
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.base-orphans)
-            (hsPkgs.base16-bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.dlist)
-            (hsPkgs.generic-deriving)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.hashable)
-            (hsPkgs.scientific)
-            (hsPkgs.tagged)
-            (hsPkgs.template-haskell)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.time-locale-compat)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.quickcheck-instances)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
+            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."dlist" or (buildDepError "dlist"))
+            (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
             ] ++ (if flags.bytestring-builder
-            then [ (hsPkgs.bytestring) (hsPkgs.bytestring-builder) ]
+            then [
+              (hsPkgs."bytestring" or (buildDepError "bytestring"))
+              (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
+              ]
             else [
-              (hsPkgs.bytestring)
+              (hsPkgs."bytestring" or (buildDepError "bytestring"))
               ])) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
-            (hsPkgs.semigroups)
-            (hsPkgs.transformers)
-            (hsPkgs.transformers-compat)
-            ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs.nats)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8") (hsPkgs.hashable-time);
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+            ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."nats" or (buildDepError "nats"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8") (hsPkgs."hashable-time" or (buildDepError "hashable-time"));
           };
         };
       };

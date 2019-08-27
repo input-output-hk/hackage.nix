@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,27 +56,27 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.regex-compat)
-          (hsPkgs.regex-posix)
-          (hsPkgs.HUnit)
-          (hsPkgs.process)
-          (hsPkgs.unix)
-          (hsPkgs.old-locale)
-          (hsPkgs.directory)
-          (hsPkgs.Unixutils)
-          (hsPkgs.network)
-          (hsPkgs.time)
-          (hsPkgs.bytestring)
-          (hsPkgs.mtl)
-          (hsPkgs.xhtml)
-          (hsPkgs.pretty)
-          (hsPkgs.debian)
-          (hsPkgs.debian-mirror)
-          (hsPkgs.help)
-          (hsPkgs.filepath)
-          (hsPkgs.progress)
-          (hsPkgs.Extra)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
+          (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
+          (hsPkgs."HUnit" or (buildDepError "HUnit"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."Unixutils" or (buildDepError "Unixutils"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."xhtml" or (buildDepError "xhtml"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."debian" or (buildDepError "debian"))
+          (hsPkgs."debian-mirror" or (buildDepError "debian-mirror"))
+          (hsPkgs."help" or (buildDepError "help"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."progress" or (buildDepError "progress"))
+          (hsPkgs."Extra" or (buildDepError "Extra"))
           ];
         };
       exes = { "archive" = {}; };

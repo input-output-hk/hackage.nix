@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,58 +56,58 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.ansi-wl-pprint)
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.exceptions)
-          (hsPkgs.matrix)
-          (hsPkgs.mtl)
-          (hsPkgs.pretty-show)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.split)
-          (hsPkgs.tree-diff)
-          (hsPkgs.vector)
-          (hsPkgs.unliftio)
+          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."matrix" or (buildDepError "matrix"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."tree-diff" or (buildDepError "tree-diff"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."unliftio" or (buildDepError "unliftio"))
           ];
         };
       tests = {
         "quickcheck-state-machine-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.doctest)
-            (hsPkgs.filelock)
-            (hsPkgs.filepath)
-            (hsPkgs.http-client)
-            (hsPkgs.matrix)
-            (hsPkgs.monad-logger)
-            (hsPkgs.mtl)
-            (hsPkgs.network)
-            (hsPkgs.persistent)
-            (hsPkgs.persistent-postgresql)
-            (hsPkgs.persistent-template)
-            (hsPkgs.process)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.quickcheck-state-machine)
-            (hsPkgs.random)
-            (hsPkgs.resourcet)
-            (hsPkgs.servant)
-            (hsPkgs.servant-client)
-            (hsPkgs.servant-server)
-            (hsPkgs.strict)
-            (hsPkgs.string-conversions)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.text)
-            (hsPkgs.tree-diff)
-            (hsPkgs.vector)
-            (hsPkgs.wai)
-            (hsPkgs.warp)
-            (hsPkgs.unliftio)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."filelock" or (buildDepError "filelock"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."matrix" or (buildDepError "matrix"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."persistent" or (buildDepError "persistent"))
+            (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
+            (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."quickcheck-state-machine" or (buildDepError "quickcheck-state-machine"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-client" or (buildDepError "servant-client"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."tree-diff" or (buildDepError "tree-diff"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ];
           };
         };

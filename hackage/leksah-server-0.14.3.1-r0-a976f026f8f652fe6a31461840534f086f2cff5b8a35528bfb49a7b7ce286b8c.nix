@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { threaded = true; network-uri = true; };
     package = {
@@ -17,121 +56,139 @@
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs.Cabal)
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.binary-shared)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.executable-path)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.ghc)
-          (hsPkgs.ltk)
-          (hsPkgs.parsec)
-          (hsPkgs.pretty)
-          (hsPkgs.time)
-          (hsPkgs.deepseq)
-          (hsPkgs.hslogger)
-          (hsPkgs.conduit)
-          (hsPkgs.conduit-extra)
-          (hsPkgs.resourcet)
-          (hsPkgs.attoparsec-conduit)
-          (hsPkgs.attoparsec)
-          (hsPkgs.transformers)
-          (hsPkgs.strict)
-          (hsPkgs.text)
-          (hsPkgs.HTTP)
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."binary-shared" or (buildDepError "binary-shared"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."executable-path" or (buildDepError "executable-path"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."ltk" or (buildDepError "ltk"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."hslogger" or (buildDepError "hslogger"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."strict" or (buildDepError "strict"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."HTTP" or (buildDepError "HTTP"))
           ] ++ [
-          (hsPkgs.haddock)
+          (hsPkgs."haddock" or (buildDepError "haddock"))
           ]) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-          then [ (hsPkgs.process) ]
-          else [ (hsPkgs.process-leksah) ])) ++ (if system.isWindows
-          then [ (hsPkgs.Win32) ]
-          else [ (hsPkgs.unix) ])) ++ (if flags.network-uri
-          then [ (hsPkgs.network-uri) (hsPkgs.network) ]
-          else [ (hsPkgs.network) ]);
+          then [ (hsPkgs."process" or (buildDepError "process")) ]
+          else [
+            (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
+            ])) ++ (if system.isWindows
+          then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+          else [
+            (hsPkgs."unix" or (buildDepError "unix"))
+            ])) ++ (if flags.network-uri
+          then [
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."network" or (buildDepError "network"))
+            ]
+          else [ (hsPkgs."network" or (buildDepError "network")) ]);
         libs = (pkgs.lib).optionals (system.isWindows) [
-          (pkgs."kernel32")
-          (pkgs."pango-1.0")
-          (pkgs."glib-2.0")
+          (pkgs."kernel32" or (sysDepError "kernel32"))
+          (pkgs."pango-1.0" or (sysDepError "pango-1.0"))
+          (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
           ];
         };
       exes = {
         "leksah-server" = {
           depends = ((([
-            (hsPkgs.Cabal)
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.binary-shared)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.executable-path)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc)
-            (hsPkgs.ltk)
-            (hsPkgs.parsec)
-            (hsPkgs.pretty)
-            (hsPkgs.time)
-            (hsPkgs.deepseq)
-            (hsPkgs.hslogger)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.resourcet)
-            (hsPkgs.attoparsec-conduit)
-            (hsPkgs.attoparsec)
-            (hsPkgs.transformers)
-            (hsPkgs.strict)
-            (hsPkgs.text)
-            (hsPkgs.HTTP)
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."binary-shared" or (buildDepError "binary-shared"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."executable-path" or (buildDepError "executable-path"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ltk" or (buildDepError "ltk"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
             ] ++ [
-            (hsPkgs.haddock)
+            (hsPkgs."haddock" or (buildDepError "haddock"))
             ]) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-            then [ (hsPkgs.process) ]
-            else [ (hsPkgs.process-leksah) ])) ++ (if system.isWindows
-            then [ (hsPkgs.Win32) ]
-            else [ (hsPkgs.unix) ])) ++ (if flags.network-uri
-            then [ (hsPkgs.network-uri) (hsPkgs.network) ]
-            else [ (hsPkgs.network) ]);
+            then [ (hsPkgs."process" or (buildDepError "process")) ]
+            else [
+              (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
+              ])) ++ (if system.isWindows
+            then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+            else [
+              (hsPkgs."unix" or (buildDepError "unix"))
+              ])) ++ (if flags.network-uri
+            then [
+              (hsPkgs."network-uri" or (buildDepError "network-uri"))
+              (hsPkgs."network" or (buildDepError "network"))
+              ]
+            else [ (hsPkgs."network" or (buildDepError "network")) ]);
           libs = (pkgs.lib).optionals (system.isWindows) [
-            (pkgs."kernel32")
-            (pkgs."pango-1.0")
-            (pkgs."glib-2.0")
+            (pkgs."kernel32" or (sysDepError "kernel32"))
+            (pkgs."pango-1.0" or (sysDepError "pango-1.0"))
+            (pkgs."glib-2.0" or (sysDepError "glib-2.0"))
             ];
           };
         "leksahecho" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hslogger)
-            (hsPkgs.deepseq)
-            (hsPkgs.bytestring)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.resourcet)
-            (hsPkgs.attoparsec-conduit)
-            (hsPkgs.attoparsec)
-            (hsPkgs.transformers)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."text" or (buildDepError "text"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-            then [ (hsPkgs.process) ]
-            else [ (hsPkgs.process-leksah) ]);
+            then [ (hsPkgs."process" or (buildDepError "process")) ]
+            else [
+              (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
+              ]);
           };
         };
       tests = {
         "test-tool" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hslogger)
-            (hsPkgs.leksah-server)
-            (hsPkgs.HUnit)
-            (hsPkgs.transformers)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.resourcet)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."leksah-server" or (buildDepError "leksah-server"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-            then [ (hsPkgs.process) ]
-            else [ (hsPkgs.process-leksah) ]);
+            then [ (hsPkgs."process" or (buildDepError "process")) ]
+            else [
+              (hsPkgs."process-leksah" or (buildDepError "process-leksah"))
+              ]);
           };
         };
       };

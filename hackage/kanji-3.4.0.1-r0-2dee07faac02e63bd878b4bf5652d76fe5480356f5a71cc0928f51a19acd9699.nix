@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,53 +56,53 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.containers)
-          (hsPkgs.text)
-          (hsPkgs.deepseq)
-          (hsPkgs.hashable)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
           ];
         };
       exes = {
         "kanji" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.containers)
-            (hsPkgs.text)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.kanji)
-            (hsPkgs.microlens)
-            (hsPkgs.microlens-aeson)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."kanji" or (buildDepError "kanji"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."microlens-aeson" or (buildDepError "microlens-aeson"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };
       tests = {
         "kanji-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.containers)
-            (hsPkgs.text)
-            (hsPkgs.HUnit-approx)
-            (hsPkgs.kanji)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."HUnit-approx" or (buildDepError "HUnit-approx"))
+            (hsPkgs."kanji" or (buildDepError "kanji"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
           };
         };
       benchmarks = {
         "kanji-bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.containers)
-            (hsPkgs.text)
-            (hsPkgs.criterion)
-            (hsPkgs.kanji)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."kanji" or (buildDepError "kanji"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -16,36 +55,44 @@
       };
     components = {
       "library" = {
-        depends = [ (hsPkgs.base) (hsPkgs.transformers) (hsPkgs.mtl) ];
+        depends = [
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          ];
         };
       tests = {
         "spaceleak" = {
-          depends = [ (hsPkgs.stateWriter) (hsPkgs.base) (hsPkgs.mtl) ];
+          depends = [
+            (hsPkgs."stateWriter" or (buildDepError "stateWriter"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            ];
           };
         "rwscompare" = {
           depends = [
-            (hsPkgs.stateWriter)
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.mtl)
-            (hsPkgs.free)
+            (hsPkgs."stateWriter" or (buildDepError "stateWriter"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."free" or (buildDepError "free"))
             ];
           };
         };
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs.stateWriter)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.containers)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.lens)
-            (hsPkgs.vector)
-            (hsPkgs.dlist)
-            (hsPkgs.deepseq)
+            (hsPkgs."stateWriter" or (buildDepError "stateWriter"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."dlist" or (buildDepError "dlist"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
           };
         };

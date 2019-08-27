@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,73 +56,85 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.ad)
-          (hsPkgs.array)
-          (hsPkgs.bytestring)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.ghc-typelits-natnormalise)
-          (hsPkgs.hspec)
-          (hsPkgs.kan-extensions)
-          (hsPkgs.lens)
-          (hsPkgs.MonadRandom)
-          (hsPkgs.monad-par)
-          (hsPkgs.monad-par-extras)
-          (hsPkgs.mtl)
-          (hsPkgs.parallel)
-          (hsPkgs.pipes)
-          (hsPkgs.pipes-bytestring)
-          (hsPkgs.pipes-safe)
-          (hsPkgs.profunctors)
-          (hsPkgs.reflection)
-          (hsPkgs.STMonadTrans)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.typelits-witnesses)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."ad" or (buildDepError "ad"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."ghc-typelits-natnormalise" or (buildDepError "ghc-typelits-natnormalise"))
+          (hsPkgs."hspec" or (buildDepError "hspec"))
+          (hsPkgs."kan-extensions" or (buildDepError "kan-extensions"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+          (hsPkgs."monad-par" or (buildDepError "monad-par"))
+          (hsPkgs."monad-par-extras" or (buildDepError "monad-par-extras"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."parallel" or (buildDepError "parallel"))
+          (hsPkgs."pipes" or (buildDepError "pipes"))
+          (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
+          (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
+          (hsPkgs."profunctors" or (buildDepError "profunctors"))
+          (hsPkgs."reflection" or (buildDepError "reflection"))
+          (hsPkgs."STMonadTrans" or (buildDepError "STMonadTrans"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."typelits-witnesses" or (buildDepError "typelits-witnesses"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       exes = {
         "iris" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.attoparsec)
-            (hsPkgs.neural)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."neural" or (buildDepError "neural"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "sqrt" = {
-          depends = [ (hsPkgs.base) (hsPkgs.MonadRandom) (hsPkgs.neural) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+            (hsPkgs."neural" or (buildDepError "neural"))
+            ];
           };
         "MNIST" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.JuicyPixels)
-            (hsPkgs.neural)
-            (hsPkgs.pipes)
-            (hsPkgs.pipes-zlib)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
+            (hsPkgs."neural" or (buildDepError "neural"))
+            (hsPkgs."pipes" or (buildDepError "pipes"))
+            (hsPkgs."pipes-zlib" or (buildDepError "pipes-zlib"))
             ];
           };
         };
       tests = {
         "neural-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.MonadRandom)
-            (hsPkgs.neural)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+            (hsPkgs."neural" or (buildDepError "neural"))
             ];
           };
         "neural-doctest" = {
-          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.Glob) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."Glob" or (buildDepError "Glob"))
+            ];
           };
         };
       benchmarks = {
         "neural-bench" = {
-          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.neural) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."neural" or (buildDepError "neural"))
+            ];
           };
         };
       };

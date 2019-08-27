@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
@@ -17,77 +56,77 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.attoparsec)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.cryptonite)
-          (hsPkgs.data-default)
-          (hsPkgs.exceptions)
-          (hsPkgs.http-types)
-          (hsPkgs.memory)
-          (hsPkgs.servant)
-          (hsPkgs.servant-server)
-          (hsPkgs.string-class)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.wai)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."servant" or (buildDepError "servant"))
+          (hsPkgs."servant-server" or (buildDepError "servant-server"))
+          (hsPkgs."string-class" or (buildDepError "string-class"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."wai" or (buildDepError "wai"))
           ];
         };
       exes = {
         "example" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.containers)
-            (hsPkgs.data-default)
-            (hsPkgs.mtl)
-            (hsPkgs.http-media)
-            (hsPkgs.random)
-            (hsPkgs.servant)
-            (hsPkgs.servant-auth-hmac)
-            (hsPkgs.servant-blaze)
-            (hsPkgs.servant-server)
-            (hsPkgs.string-class)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unix)
-            (hsPkgs.wai)
-            (hsPkgs.warp)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."http-media" or (buildDepError "http-media"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-auth-hmac" or (buildDepError "servant-auth-hmac"))
+            (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."string-class" or (buildDepError "string-class"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."warp" or (buildDepError "warp"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.cereal)
-            (hsPkgs.containers)
-            (hsPkgs.cryptonite)
-            (hsPkgs.data-default)
-            (hsPkgs.hspec-expectations)
-            (hsPkgs.hspec-wai)
-            (hsPkgs.hspec)
-            (hsPkgs.http-types)
-            (hsPkgs.random)
-            (hsPkgs.servant)
-            (hsPkgs.servant-auth-hmac)
-            (hsPkgs.servant-server)
-            (hsPkgs.string-class)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.wai)
-            (hsPkgs.wai-extra)
-            (hsPkgs.with-location)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
+            (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-auth-hmac" or (buildDepError "servant-auth-hmac"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."string-class" or (buildDepError "string-class"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."with-location" or (buildDepError "with-location"))
             ];
           };
         };

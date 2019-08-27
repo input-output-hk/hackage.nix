@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,28 +56,28 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.exceptions)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.inline-c)
-          (hsPkgs.primitive)
-          (hsPkgs.text)
-          (hsPkgs.template-haskell)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."inline-c" or (buildDepError "inline-c"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
-        libs = [ (pkgs."hdf5") ];
+        libs = [ (pkgs."hdf5" or (sysDepError "hdf5")) ];
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hdf5-lite)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hdf5-lite" or (buildDepError "hdf5-lite"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           };
         };

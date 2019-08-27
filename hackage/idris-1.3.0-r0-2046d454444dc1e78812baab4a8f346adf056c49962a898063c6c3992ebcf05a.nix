@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       ffi = false;
@@ -21,121 +60,124 @@
       description = "Idris is a general purpose language with full dependent types.\nIt is compiled, with eager evaluation.\nDependent types allow types to be predicated on values,\nmeaning that some aspects of a program's behaviour can be\nspecified precisely in the type. The language is closely\nrelated to Epigram and Agda. There is a tutorial at\n<http://www.idris-lang.org/documentation>.\nFeatures include:\n\n* Full, first class, dependent types with dependent pattern matching\n\n* where clauses, with rule, case expressions,\npattern matching let and lambda bindings\n\n* Interfaces (similar to type classes), monad comprehensions\n\n* do notation, idiom brackets, syntactic conveniences for lists,\ntuples, dependent pairs\n\n* Totality checking\n\n* Coinductive types\n\n* Indentation significant syntax, extensible syntax\n\n* Cumulative universes\n\n* Simple foreign function interface (to C)\n\n* Hugs style interactive environment";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath))
-        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
+        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (buildToolDepError "directory")))
+        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (buildToolDepError "filepath")))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (buildToolDepError "process")))
         ];
       };
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.annotated-wl-pprint)
-          (hsPkgs.ansi-terminal)
-          (hsPkgs.ansi-wl-pprint)
-          (hsPkgs.array)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.binary)
-          (hsPkgs.blaze-html)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.bytestring)
-          (hsPkgs.cheapskate)
-          (hsPkgs.code-page)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.fingertree)
-          (hsPkgs.haskeline)
-          (hsPkgs.ieee754)
-          (hsPkgs.megaparsec)
-          (hsPkgs.mtl)
-          (hsPkgs.network)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.pretty)
-          (hsPkgs.process)
-          (hsPkgs.regex-tdfa)
-          (hsPkgs.safe)
-          (hsPkgs.split)
-          (hsPkgs.terminal-size)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.uniplate)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.utf8-string)
-          (hsPkgs.vector)
-          (hsPkgs.vector-binary-instances)
-          (hsPkgs.zip-archive)
-          (hsPkgs.fsnotify)
-          (hsPkgs.async)
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (if system.isWindows
-          then [ (hsPkgs.mintty) (hsPkgs.Win32) ]
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."annotated-wl-pprint" or (buildDepError "annotated-wl-pprint"))
+          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."cheapskate" or (buildDepError "cheapskate"))
+          (hsPkgs."code-page" or (buildDepError "code-page"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."fingertree" or (buildDepError "fingertree"))
+          (hsPkgs."haskeline" or (buildDepError "haskeline"))
+          (hsPkgs."ieee754" or (buildDepError "ieee754"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."terminal-size" or (buildDepError "terminal-size"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."uniplate" or (buildDepError "uniplate"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
+          (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
+          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
+          (hsPkgs."async" or (buildDepError "async"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"))) ++ (if system.isWindows
+          then [
+            (hsPkgs."mintty" or (buildDepError "mintty"))
+            (hsPkgs."Win32" or (buildDepError "Win32"))
+            ]
           else [
-            (hsPkgs.unix)
-            ])) ++ (pkgs.lib).optional (flags.ffi) (hsPkgs.libffi)) ++ (pkgs.lib).optional (flags.gmp) (hsPkgs.libffi);
-        libs = (pkgs.lib).optional (flags.gmp) (pkgs."gmp");
+            (hsPkgs."unix" or (buildDepError "unix"))
+            ])) ++ (pkgs.lib).optional (flags.ffi) (hsPkgs."libffi" or (buildDepError "libffi"))) ++ (pkgs.lib).optional (flags.gmp) (hsPkgs."libffi" or (buildDepError "libffi"));
+        libs = (pkgs.lib).optional (flags.gmp) (pkgs."gmp" or (sysDepError "gmp"));
         };
       exes = {
         "idris" = {
           depends = [
-            (hsPkgs.idris)
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.haskeline)
-            (hsPkgs.transformers)
+            (hsPkgs."idris" or (buildDepError "idris"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "idris-codegen-c" = {
           depends = [
-            (hsPkgs.idris)
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.haskeline)
-            (hsPkgs.transformers)
+            (hsPkgs."idris" or (buildDepError "idris"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "idris-codegen-javascript" = {
           depends = [
-            (hsPkgs.idris)
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.haskeline)
-            (hsPkgs.transformers)
+            (hsPkgs."idris" or (buildDepError "idris"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "idris-codegen-node" = {
           depends = [
-            (hsPkgs.idris)
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.haskeline)
-            (hsPkgs.transformers)
+            (hsPkgs."idris" or (buildDepError "idris"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };
       tests = {
         "regression-and-feature-tests" = {
           depends = [
-            (hsPkgs.idris)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.process)
-            (hsPkgs.time)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.haskeline)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.tagged)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-golden)
-            (hsPkgs.tasty-rerun)
-            (hsPkgs.bytestring)
-            (hsPkgs.transformers)
+            (hsPkgs."idris" or (buildDepError "idris"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
+            (hsPkgs."tasty-rerun" or (buildDepError "tasty-rerun"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };

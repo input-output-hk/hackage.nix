@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { enable-hlint-test = false; };
     package = {
@@ -17,56 +56,61 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.atom-conduit)
-          (hsPkgs.base)
-          (hsPkgs.conduit)
-          (hsPkgs.conduit-combinators)
-          (hsPkgs.containers)
-          (hsPkgs.dublincore-xml-conduit)
-          (hsPkgs.safe-exceptions)
-          (hsPkgs.lens-simple)
-          (hsPkgs.safe)
-          (hsPkgs.singletons)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.timerep)
-          (hsPkgs.uri-bytestring)
-          (hsPkgs.vinyl)
-          (hsPkgs.xml-conduit)
-          (hsPkgs.xml-types)
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs.semigroups);
+          (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."dublincore-xml-conduit" or (buildDepError "dublincore-xml-conduit"))
+          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+          (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."singletons" or (buildDepError "singletons"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."timerep" or (buildDepError "timerep"))
+          (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+          (hsPkgs."vinyl" or (buildDepError "vinyl"))
+          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+          (hsPkgs."xml-types" or (buildDepError "xml-types"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (buildDepError "semigroups"));
         };
       tests = {
         "Tests" = {
           depends = [
-            (hsPkgs.rss-conduit)
-            (hsPkgs.atom-conduit)
-            (hsPkgs.base)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.bytestring)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-combinators)
-            (hsPkgs.data-default)
-            (hsPkgs.dublincore-xml-conduit)
-            (hsPkgs.lens-simple)
-            (hsPkgs.mono-traversable)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.resourcet)
-            (hsPkgs.safe-exceptions)
-            (hsPkgs.singletons)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.time)
-            (hsPkgs.text)
-            (hsPkgs.uri-bytestring)
-            (hsPkgs.vinyl)
-            (hsPkgs.xml-conduit)
-            (hsPkgs.xml-types)
+            (hsPkgs."rss-conduit" or (buildDepError "rss-conduit"))
+            (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."dublincore-xml-conduit" or (buildDepError "dublincore-xml-conduit"))
+            (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
+            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+            (hsPkgs."singletons" or (buildDepError "singletons"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+            (hsPkgs."vinyl" or (buildDepError "vinyl"))
+            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+            (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ];
           };
-        "hlint" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
+        "hlint" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hlint" or (buildDepError "hlint"))
+            ];
+          };
         };
       };
     }

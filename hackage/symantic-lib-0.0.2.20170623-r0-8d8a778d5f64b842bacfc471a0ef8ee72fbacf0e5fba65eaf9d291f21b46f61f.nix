@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,46 +56,46 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.monad-classes)
-          (hsPkgs.mono-traversable)
-          (hsPkgs.symantic)
-          (hsPkgs.symantic-grammar)
-          (hsPkgs.transformers)
-          (hsPkgs.text)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."monad-classes" or (buildDepError "monad-classes"))
+          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+          (hsPkgs."symantic" or (buildDepError "symantic"))
+          (hsPkgs."symantic-grammar" or (buildDepError "symantic-grammar"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."text" or (buildDepError "text"))
           ];
         };
       tests = {
         "symantic-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.megaparsec)
-            (hsPkgs.monad-classes)
-            (hsPkgs.mono-traversable)
-            (hsPkgs.symantic-grammar)
-            (hsPkgs.symantic)
-            (hsPkgs.symantic-lib)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."monad-classes" or (buildDepError "monad-classes"))
+            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+            (hsPkgs."symantic-grammar" or (buildDepError "symantic-grammar"))
+            (hsPkgs."symantic" or (buildDepError "symantic"))
+            (hsPkgs."symantic-lib" or (buildDepError "symantic-lib"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "ebnf" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.megaparsec)
-            (hsPkgs.symantic-grammar)
-            (hsPkgs.symantic)
-            (hsPkgs.symantic-lib)
-            (hsPkgs.transformers)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."symantic-grammar" or (buildDepError "symantic-grammar"))
+            (hsPkgs."symantic" or (buildDepError "symantic"))
+            (hsPkgs."symantic-lib" or (buildDepError "symantic-lib"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

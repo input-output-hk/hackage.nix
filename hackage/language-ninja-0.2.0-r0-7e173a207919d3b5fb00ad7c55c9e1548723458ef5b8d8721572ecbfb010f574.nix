@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -14,121 +53,121 @@
       description = "A Haskell library for parsing, pretty-printing, and\ncompiling the Ninja build language.\nThe best place to start reading this documentation is\nthe \"Language.Ninja\" module.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (buildToolDepError "cabal-doctest")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.flow)
-          (hsPkgs.hashable)
-          (hsPkgs.intern)
-          (hsPkgs.megaparsec)
-          (hsPkgs.mtl)
-          (hsPkgs.lens)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.semigroups)
-          (hsPkgs.smallcheck)
-          (hsPkgs.system-filepath)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.versions)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."flow" or (buildDepError "flow"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."intern" or (buildDepError "intern"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
+          (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."versions" or (buildDepError "versions"))
           ];
         };
       exes = {
         "ninja-lex" = {
           depends = [
-            (hsPkgs.language-ninja)
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.flow)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.optparse-generic)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
+            (hsPkgs."language-ninja" or (buildDepError "language-ninja"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."flow" or (buildDepError "flow"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "ninja-parse" = {
           depends = [
-            (hsPkgs.language-ninja)
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.flow)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.optparse-generic)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
+            (hsPkgs."language-ninja" or (buildDepError "language-ninja"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."flow" or (buildDepError "flow"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "ninja-compile" = {
           depends = [
-            (hsPkgs.language-ninja)
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.flow)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.optparse-generic)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
+            (hsPkgs."language-ninja" or (buildDepError "language-ninja"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."flow" or (buildDepError "flow"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."optparse-generic" or (buildDepError "optparse-generic"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.language-ninja)
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.flow)
-            (hsPkgs.hashable)
-            (hsPkgs.lens)
-            (hsPkgs.monad-mock)
-            (hsPkgs.mtl)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.semigroups)
-            (hsPkgs.smallcheck)
-            (hsPkgs.system-filepath)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-html)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-lens)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-smallcheck)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.turtle)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.versions)
+            (hsPkgs."language-ninja" or (buildDepError "language-ninja"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."flow" or (buildDepError "flow"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."monad-mock" or (buildDepError "monad-mock"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
+            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-html" or (buildDepError "tasty-html"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-lens" or (buildDepError "tasty-lens"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."turtle" or (buildDepError "turtle"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."versions" or (buildDepError "versions"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.0") [
-            (hsPkgs.ghc)
-            (hsPkgs.haddock-api)
-            (hsPkgs.haddock-library)
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
+            (hsPkgs."haddock-library" or (buildDepError "haddock-library"))
             ];
           };
         "doctests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.template-haskell)
-            (hsPkgs.cabal-doctest)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."cabal-doctest" or (buildDepError "cabal-doctest"))
             ];
           };
         };

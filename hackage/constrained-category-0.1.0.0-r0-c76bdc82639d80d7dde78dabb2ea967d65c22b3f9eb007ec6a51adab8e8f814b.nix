@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,30 +56,30 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.alg)
-          (hsPkgs.category)
-          (hsPkgs.constraint)
-          (hsPkgs.unconstrained)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."alg" or (buildDepError "alg"))
+          (hsPkgs."category" or (buildDepError "category"))
+          (hsPkgs."constraint" or (buildDepError "constraint"))
+          (hsPkgs."unconstrained" or (buildDepError "unconstrained"))
           ];
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.smallcheck)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-smallcheck)
-            (hsPkgs.constrained-category)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
+            (hsPkgs."constrained-category" or (buildDepError "constrained-category"))
             ];
           };
         };
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.constrained-category)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."constrained-category" or (buildDepError "constrained-category"))
             ];
           };
         };

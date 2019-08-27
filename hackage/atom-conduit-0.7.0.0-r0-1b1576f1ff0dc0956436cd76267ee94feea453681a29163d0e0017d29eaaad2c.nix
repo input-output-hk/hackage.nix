@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { enable-hlint-test = false; };
     package = {
@@ -17,79 +56,83 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base-noprelude)
-          (hsPkgs.relude)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.conduit)
-          (hsPkgs.safe-exceptions)
-          (hsPkgs.lens-simple)
-          (hsPkgs.parsers)
-          (hsPkgs.prettyprinter)
-          (hsPkgs.refined)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.timerep)
-          (hsPkgs.uri-bytestring)
-          (hsPkgs.xml-conduit)
-          (hsPkgs.xml-types)
+          (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
+          (hsPkgs."relude" or (buildDepError "relude"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+          (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
+          (hsPkgs."parsers" or (buildDepError "parsers"))
+          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+          (hsPkgs."refined" or (buildDepError "refined"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."timerep" or (buildDepError "timerep"))
+          (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+          (hsPkgs."xml-types" or (buildDepError "xml-types"))
           ];
         };
       tests = {
         "quickcheck" = {
           depends = [
-            (hsPkgs.base-noprelude)
-            (hsPkgs.relude)
-            (hsPkgs.atom-conduit)
-            (hsPkgs.conduit)
-            (hsPkgs.generic-random)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.refined)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.time)
-            (hsPkgs.text)
-            (hsPkgs.uri-bytestring)
-            (hsPkgs.xml-conduit)
-            (hsPkgs.xml-types)
+            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
+            (hsPkgs."relude" or (buildDepError "relude"))
+            (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."generic-random" or (buildDepError "generic-random"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."refined" or (buildDepError "refined"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+            (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ];
           };
         "golden" = {
           depends = [
-            (hsPkgs.base-noprelude)
-            (hsPkgs.relude)
-            (hsPkgs.atom-conduit)
-            (hsPkgs.conduit)
-            (hsPkgs.data-default)
-            (hsPkgs.filepath)
-            (hsPkgs.pretty-simple)
-            (hsPkgs.resourcet)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-golden)
-            (hsPkgs.text)
-            (hsPkgs.xml-conduit)
+            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
+            (hsPkgs."relude" or (buildDepError "relude"))
+            (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."pretty-simple" or (buildDepError "pretty-simple"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
             ];
           };
         "unit" = {
           depends = [
-            (hsPkgs.base-noprelude)
-            (hsPkgs.relude)
-            (hsPkgs.atom-conduit)
-            (hsPkgs.conduit)
-            (hsPkgs.data-default)
-            (hsPkgs.lens-simple)
-            (hsPkgs.refined)
-            (hsPkgs.resourcet)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.time)
-            (hsPkgs.uri-bytestring)
-            (hsPkgs.xml-conduit)
-            (hsPkgs.xml-types)
+            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
+            (hsPkgs."relude" or (buildDepError "relude"))
+            (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
+            (hsPkgs."refined" or (buildDepError "refined"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+            (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ];
           };
         "hlint" = {
-          depends = [ (hsPkgs.base-noprelude) (hsPkgs.relude) (hsPkgs.hlint) ];
+          depends = [
+            (hsPkgs."base-noprelude" or (buildDepError "base-noprelude"))
+            (hsPkgs."relude" or (buildDepError "relude"))
+            (hsPkgs."hlint" or (buildDepError "hlint"))
+            ];
           };
         };
       };

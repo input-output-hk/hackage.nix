@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       md5 = true;
@@ -23,34 +62,34 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.binary)
-          (hsPkgs.containers)
-          (hsPkgs.old-locale)
-          (hsPkgs.time)
-          (hsPkgs.bytestring)
-          (hsPkgs.template-haskell)
-          (hsPkgs.haskell-src-meta)
-          (hsPkgs.network)
-          (hsPkgs.parsec)
-          (hsPkgs.utf8-string)
-          ] ++ (pkgs.lib).optional (flags.md5) (hsPkgs.cryptohash)) ++ (if flags.binary
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          ] ++ (pkgs.lib).optional (flags.md5) (hsPkgs."cryptohash" or (buildDepError "cryptohash"))) ++ (if flags.binary
           then [
-            (hsPkgs.postgresql-binary)
-            (hsPkgs.text)
-            (hsPkgs.uuid)
-            (hsPkgs.scientific)
+            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
             ]
-          else ((pkgs.lib).optional (flags.text) (hsPkgs.text) ++ (pkgs.lib).optional (flags.uuid) (hsPkgs.uuid)) ++ (pkgs.lib).optional (flags.scientific) (hsPkgs.scientific));
+          else ((pkgs.lib).optional (flags.text) (hsPkgs."text" or (buildDepError "text")) ++ (pkgs.lib).optional (flags.uuid) (hsPkgs."uuid" or (buildDepError "uuid"))) ++ (pkgs.lib).optional (flags.scientific) (hsPkgs."scientific" or (buildDepError "scientific")));
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.network)
-            (hsPkgs.time)
-            (hsPkgs.postgresql-typed)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."postgresql-typed" or (buildDepError "postgresql-typed"))
             ];
           };
         };

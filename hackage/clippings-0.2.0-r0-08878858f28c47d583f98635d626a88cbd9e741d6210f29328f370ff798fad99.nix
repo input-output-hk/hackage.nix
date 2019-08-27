@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,40 +56,40 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-          (hsPkgs.parsec)
-          (hsPkgs.old-locale)
-          (hsPkgs.strptime)
-          (hsPkgs.data-default)
-          (hsPkgs.functor-infix)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."strptime" or (buildDepError "strptime"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."functor-infix" or (buildDepError "functor-infix"))
           ];
         };
       exes = {
         "clippings2tsv" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bifunctors)
-            (hsPkgs.clippings)
-            (hsPkgs.cassava)
-            (hsPkgs.parsec)
-            (hsPkgs.bytestring)
-            (hsPkgs.safecopy)
-            (hsPkgs.functor-infix)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+            (hsPkgs."clippings" or (buildDepError "clippings"))
+            (hsPkgs."cassava" or (buildDepError "cassava"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."functor-infix" or (buildDepError "functor-infix"))
             ];
           };
         };
       tests = {
         "clippings-tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.clippings)
-            (hsPkgs.data-default)
-            (hsPkgs.parsec)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.assertions)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."clippings" or (buildDepError "clippings"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."assertions" or (buildDepError "assertions"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         };

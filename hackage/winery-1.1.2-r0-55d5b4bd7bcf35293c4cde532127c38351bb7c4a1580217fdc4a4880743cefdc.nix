@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,75 +56,75 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.cpu)
-          (hsPkgs.fast-builder)
-          (hsPkgs.hashable)
-          (hsPkgs.HUnit)
-          (hsPkgs.megaparsec)
-          (hsPkgs.mtl)
-          (hsPkgs.prettyprinter)
-          (hsPkgs.prettyprinter-ansi-terminal)
-          (hsPkgs.scientific)
-          (hsPkgs.semigroups)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.QuickCheck)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cpu" or (buildDepError "cpu"))
+          (hsPkgs."fast-builder" or (buildDepError "fast-builder"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."HUnit" or (buildDepError "HUnit"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+          (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
         };
       exes = {
         "winery" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.winery)
-            (hsPkgs.megaparsec)
-            (hsPkgs.text)
-            (hsPkgs.prettyprinter)
-            (hsPkgs.prettyprinter-ansi-terminal)
-            (hsPkgs.bytestring)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."winery" or (buildDepError "winery"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+            (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.winery)
-            (hsPkgs.vector)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.fast-builder)
-            (hsPkgs.time)
-            (hsPkgs.text)
-            (hsPkgs.containers)
-            (hsPkgs.scientific)
-            (hsPkgs.bytestring)
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."winery" or (buildDepError "winery"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."fast-builder" or (buildDepError "fast-builder"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         };
       benchmarks = {
         "bench-winery" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.gauge)
-            (hsPkgs.aeson)
-            (hsPkgs.cereal)
-            (hsPkgs.winery)
-            (hsPkgs.binary)
-            (hsPkgs.serialise)
-            (hsPkgs.store)
-            (hsPkgs.text)
-            (hsPkgs.bytestring)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gauge" or (buildDepError "gauge"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."winery" or (buildDepError "winery"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."serialise" or (buildDepError "serialise"))
+            (hsPkgs."store" or (buildDepError "store"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
             ];
           };
         };

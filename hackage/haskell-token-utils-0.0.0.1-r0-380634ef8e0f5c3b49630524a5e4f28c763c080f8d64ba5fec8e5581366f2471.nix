@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,44 +56,44 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.dual-tree)
-          (hsPkgs.semigroups)
-          (hsPkgs.monoid-extras)
-          (hsPkgs.mtl)
-          (hsPkgs.pretty)
-          (hsPkgs.rosezipper)
-          (hsPkgs.ghc)
-          (hsPkgs.ghc-syb-utils)
-          (hsPkgs.syb)
-          (hsPkgs.haskell-src-exts)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."dual-tree" or (buildDepError "dual-tree"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
           ];
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Diff)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.hspec)
-            (hsPkgs.rosezipper)
-            (hsPkgs.dual-tree)
-            (hsPkgs.semigroups)
-            (hsPkgs.monoid-extras)
-            (hsPkgs.mtl)
-            (hsPkgs.pretty)
-            (hsPkgs.kure)
-            (hsPkgs.syb)
-            (hsPkgs.ghc)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.ghc-syb-utils)
-            (hsPkgs.ghc-mod)
-            (hsPkgs.haskell-src-exts)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Diff" or (buildDepError "Diff"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."rosezipper" or (buildDepError "rosezipper"))
+            (hsPkgs."dual-tree" or (buildDepError "dual-tree"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."monoid-extras" or (buildDepError "monoid-extras"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."kure" or (buildDepError "kure"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
+            (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
+            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             ];
           };
         };

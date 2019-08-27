@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,47 +56,47 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.conduit)
-          (hsPkgs.old-locale)
-          (hsPkgs.old-time)
-          (hsPkgs.wai)
-          (hsPkgs.wai-extra)
-          (hsPkgs.http-types)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.bytestring)
-          (hsPkgs.postgresql-simple)
-          (hsPkgs.resource-pool)
-          (hsPkgs.resourcet)
-          (hsPkgs.network)
-          (hsPkgs.mtl)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
+          (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         };
       exes = {
         "smpl" = {
           depends = [
-            (hsPkgs.attoparsec)
-            (hsPkgs.base)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.cmdargs)
-            (hsPkgs.conduit)
-            (hsPkgs.hint)
-            (hsPkgs.system-filepath)
-            (hsPkgs.system-fileio)
-            (hsPkgs.old-locale)
-            (hsPkgs.old-time)
-            (hsPkgs.wai)
-            (hsPkgs.wai-extra)
-            (hsPkgs.wai-handler-devel)
-            (hsPkgs.http-types)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.bytestring)
-            (hsPkgs.postgresql-simple)
-            (hsPkgs.network)
-            (hsPkgs.mtl)
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."hint" or (buildDepError "hint"))
+            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
+            (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."wai-handler-devel" or (buildDepError "wai-handler-devel"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           };
         };

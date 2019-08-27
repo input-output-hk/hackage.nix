@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,214 +56,218 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.async)
-          (hsPkgs.attoparsec)
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.bytestring)
-          (hsPkgs.bytestring-mmap)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.exceptions)
-          (hsPkgs.filepath)
-          (hsPkgs.iteratee)
-          (hsPkgs.ListLike)
-          (hsPkgs.nonlinear-optimization)
-          (hsPkgs.primitive)
-          (hsPkgs.random)
-          (hsPkgs.scientific)
-          (hsPkgs.stm)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unix)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.Vec)
-          (hsPkgs.vector)
-          (hsPkgs.vector-algorithms)
-          (hsPkgs.vector-th-unbox)
-          (hsPkgs.zlib)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."bytestring-mmap" or (buildDepError "bytestring-mmap"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."iteratee" or (buildDepError "iteratee"))
+          (hsPkgs."ListLike" or (buildDepError "ListLike"))
+          (hsPkgs."nonlinear-optimization" or (buildDepError "nonlinear-optimization"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."Vec" or (buildDepError "Vec"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
+          (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
+          (hsPkgs."zlib" or (buildDepError "zlib"))
           ];
         };
       exes = {
         "redeye-dar" = {
           depends = [
-            (hsPkgs.async)
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.filepath)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.text)
-            (hsPkgs.vector)
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "redeye-div" = {
           depends = [
-            (hsPkgs.async)
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.filepath)
-            (hsPkgs.hmatrix)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.text)
-            (hsPkgs.vector)
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "redeye-pileup" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.iteratee)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.Vec)
-            (hsPkgs.vector)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."iteratee" or (buildDepError "iteratee"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."Vec" or (buildDepError "Vec"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "redeye-single" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.iteratee)
-            (hsPkgs.filepath)
-            (hsPkgs.text)
-            (hsPkgs.unix)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."iteratee" or (buildDepError "iteratee"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "gt-scan" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.iteratee)
-            (hsPkgs.nonlinear-optimization)
-            (hsPkgs.primitive)
-            (hsPkgs.strict)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.text)
-            (hsPkgs.vector)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."iteratee" or (buildDepError "iteratee"))
+            (hsPkgs."nonlinear-optimization" or (buildDepError "nonlinear-optimization"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "afroengineer" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.iteratee)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."iteratee" or (buildDepError "iteratee"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "bam-fixpair" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.hashable)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "bam-meld" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "bam-resample" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.random)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         "bam-rewrap" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "bam-rmdup" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.iteratee)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.vector-algorithms)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."iteratee" or (buildDepError "iteratee"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             ];
           };
         "bam-trim" = {
-          depends = [ (hsPkgs.base) (hsPkgs.biohazard) (hsPkgs.bytestring) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            ];
           };
         "fastq2bam" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.iteratee)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."iteratee" or (buildDepError "iteratee"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "jivebunny" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.biohazard)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.hashable)
-            (hsPkgs.random)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.vector-algorithms)
-            (hsPkgs.vector-th-unbox)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
+            (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
             ];
           };
         "mt-anno" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.biohazard)
-            (hsPkgs.containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "mt-ccheck" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.biohazard)
-            (hsPkgs.containers)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."biohazard" or (buildDepError "biohazard"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };

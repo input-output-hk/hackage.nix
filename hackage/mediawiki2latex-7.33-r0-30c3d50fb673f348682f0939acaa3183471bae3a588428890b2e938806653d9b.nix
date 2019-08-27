@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,42 +57,42 @@
       exes = {
         "mediawiki2latex" = {
           depends = [
-            (hsPkgs.directory-tree)
-            (hsPkgs.network-uri)
-            (hsPkgs.bytestring)
-            (hsPkgs.process)
-            (hsPkgs.http-conduit)
-            (hsPkgs.http-client)
-            (hsPkgs.http-types)
-            (hsPkgs.bytestring)
-            (hsPkgs.temporary)
-            (hsPkgs.file-embed)
-            (hsPkgs.url)
-            (hsPkgs.hxt-http)
-            (hsPkgs.hxt)
-            (hsPkgs.utf8-string)
-            (hsPkgs.parsec)
-            (hsPkgs.HTTP)
-            (hsPkgs.split)
-            (hsPkgs.containers)
-            (hsPkgs.base)
-            (hsPkgs.highlighting-kate)
-            (hsPkgs.utility-ht)
-            (hsPkgs.transformers)
-            (hsPkgs.directory)
-            (hsPkgs.blaze-html)
-            (hsPkgs.array)
-            (hsPkgs.filepath)
-            (hsPkgs.text)
-            (hsPkgs.happstack-server)
-            (hsPkgs.mtl)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.time)
-            (hsPkgs.zip-archive)
-            (hsPkgs.deepseq)
-            (hsPkgs.hashable)
-            (hsPkgs.strict)
-            (hsPkgs.network)
+            (hsPkgs."directory-tree" or (buildDepError "directory-tree"))
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."file-embed" or (buildDepError "file-embed"))
+            (hsPkgs."url" or (buildDepError "url"))
+            (hsPkgs."hxt-http" or (buildDepError "hxt-http"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
+            (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."network" or (buildDepError "network"))
             ];
           };
         };

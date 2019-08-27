@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,67 +56,67 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.MonadRandom)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.arithmoi)
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.bytestring)
-          (hsPkgs.errors)
-          (hsPkgs.galois-field)
-          (hsPkgs.integer-logarithms)
-          (hsPkgs.memory)
-          (hsPkgs.protolude)
-          (hsPkgs.random)
-          (hsPkgs.wl-pprint-text)
+          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."errors" or (buildDepError "errors"))
+          (hsPkgs."galois-field" or (buildDepError "galois-field"))
+          (hsPkgs."integer-logarithms" or (buildDepError "integer-logarithms"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."protolude" or (buildDepError "protolude"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           ];
         };
       tests = {
         "pairing-tests" = {
           depends = [
-            (hsPkgs.MonadRandom)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.arithmoi)
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.errors)
-            (hsPkgs.galois-field)
-            (hsPkgs.hexstring)
-            (hsPkgs.integer-logarithms)
-            (hsPkgs.memory)
-            (hsPkgs.protolude)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.random)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-discover)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.wl-pprint-text)
+            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."errors" or (buildDepError "errors"))
+            (hsPkgs."galois-field" or (buildDepError "galois-field"))
+            (hsPkgs."hexstring" or (buildDepError "hexstring"))
+            (hsPkgs."integer-logarithms" or (buildDepError "integer-logarithms"))
+            (hsPkgs."memory" or (buildDepError "memory"))
+            (hsPkgs."protolude" or (buildDepError "protolude"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             ];
           };
         };
       benchmarks = {
         "pairing-benchmarks" = {
           depends = [
-            (hsPkgs.MonadRandom)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.arithmoi)
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.criterion)
-            (hsPkgs.errors)
-            (hsPkgs.galois-field)
-            (hsPkgs.integer-logarithms)
-            (hsPkgs.memory)
-            (hsPkgs.protolude)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.random)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.wl-pprint-text)
+            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."arithmoi" or (buildDepError "arithmoi"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."errors" or (buildDepError "errors"))
+            (hsPkgs."galois-field" or (buildDepError "galois-field"))
+            (hsPkgs."integer-logarithms" or (buildDepError "integer-logarithms"))
+            (hsPkgs."memory" or (buildDepError "memory"))
+            (hsPkgs."protolude" or (buildDepError "protolude"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
             ];
           };
         };

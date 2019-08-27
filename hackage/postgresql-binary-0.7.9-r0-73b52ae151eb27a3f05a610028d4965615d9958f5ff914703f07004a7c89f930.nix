@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,78 +56,78 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.binary-parser)
-          (hsPkgs.aeson)
-          (hsPkgs.uuid)
-          (hsPkgs.time)
-          (hsPkgs.scientific)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-          (hsPkgs.vector)
-          (hsPkgs.loch-th)
-          (hsPkgs.placeholders)
-          (hsPkgs.foldl)
-          (hsPkgs.transformers)
-          (hsPkgs.base-prelude)
-          (hsPkgs.base)
+          (hsPkgs."binary-parser" or (buildDepError "binary-parser"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."uuid" or (buildDepError "uuid"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."loch-th" or (buildDepError "loch-th"))
+          (hsPkgs."placeholders" or (buildDepError "placeholders"))
+          (hsPkgs."foldl" or (buildDepError "foldl"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
+          (hsPkgs."base" or (buildDepError "base"))
           ];
         };
       tests = {
         "tasty" = {
           depends = [
-            (hsPkgs.postgresql-binary)
-            (hsPkgs.postgresql-libpq)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-smallcheck)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.aeson)
-            (hsPkgs.json-ast)
-            (hsPkgs.uuid)
-            (hsPkgs.time)
-            (hsPkgs.scientific)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.loch-th)
-            (hsPkgs.placeholders)
-            (hsPkgs.conversion)
-            (hsPkgs.conversion-bytestring)
-            (hsPkgs.conversion-text)
-            (hsPkgs.either)
-            (hsPkgs.transformers)
-            (hsPkgs.rebase)
-            (hsPkgs.base)
+            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
+            (hsPkgs."postgresql-libpq" or (buildDepError "postgresql-libpq"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."json-ast" or (buildDepError "json-ast"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."loch-th" or (buildDepError "loch-th"))
+            (hsPkgs."placeholders" or (buildDepError "placeholders"))
+            (hsPkgs."conversion" or (buildDepError "conversion"))
+            (hsPkgs."conversion-bytestring" or (buildDepError "conversion-bytestring"))
+            (hsPkgs."conversion-text" or (buildDepError "conversion-text"))
+            (hsPkgs."either" or (buildDepError "either"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."rebase" or (buildDepError "rebase"))
+            (hsPkgs."base" or (buildDepError "base"))
             ];
           };
         };
       benchmarks = {
         "encoding" = {
           depends = [
-            (hsPkgs.postgresql-binary)
-            (hsPkgs.criterion)
-            (hsPkgs.time)
-            (hsPkgs.scientific)
-            (hsPkgs.text)
-            (hsPkgs.bytestring)
-            (hsPkgs.deepseq)
-            (hsPkgs.mtl-prelude)
-            (hsPkgs.base-prelude)
+            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
           };
         "decoding" = {
           depends = [
-            (hsPkgs.postgresql-binary)
-            (hsPkgs.criterion)
-            (hsPkgs.time)
-            (hsPkgs.scientific)
-            (hsPkgs.text)
-            (hsPkgs.bytestring)
-            (hsPkgs.deepseq)
-            (hsPkgs.mtl-prelude)
-            (hsPkgs.base-prelude)
+            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."mtl-prelude" or (buildDepError "mtl-prelude"))
+            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
           };
         };

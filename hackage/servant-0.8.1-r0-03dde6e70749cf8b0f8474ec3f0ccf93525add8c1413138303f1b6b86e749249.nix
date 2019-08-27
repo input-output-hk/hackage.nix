@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,49 +56,49 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.base-compat)
-          (hsPkgs.aeson)
-          (hsPkgs.attoparsec)
-          (hsPkgs.bytestring)
-          (hsPkgs.bytestring-conversion)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.http-api-data)
-          (hsPkgs.http-media)
-          (hsPkgs.http-types)
-          (hsPkgs.mtl)
-          (hsPkgs.mmorph)
-          (hsPkgs.text)
-          (hsPkgs.string-conversions)
-          (hsPkgs.network-uri)
-          (hsPkgs.vault)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-compat" or (buildDepError "base-compat"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."bytestring-conversion" or (buildDepError "bytestring-conversion"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+          (hsPkgs."http-media" or (buildDepError "http-media"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."mmorph" or (buildDepError "mmorph"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
+          (hsPkgs."network-uri" or (buildDepError "network-uri"))
+          (hsPkgs."vault" or (buildDepError "vault"))
           ];
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.aeson)
-            (hsPkgs.attoparsec)
-            (hsPkgs.bytestring)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.servant)
-            (hsPkgs.string-conversions)
-            (hsPkgs.text)
-            (hsPkgs.url)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."url" or (buildDepError "url"))
             ];
           };
         "doctests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.servant)
-            (hsPkgs.doctest)
-            (hsPkgs.filemanip)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."filemanip" or (buildDepError "filemanip"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         };

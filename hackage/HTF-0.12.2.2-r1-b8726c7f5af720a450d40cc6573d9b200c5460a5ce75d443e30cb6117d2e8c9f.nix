@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,84 +56,89 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.Diff)
-          (hsPkgs.HUnit)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.aeson)
-          (hsPkgs.array)
-          (hsPkgs.base)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.cpphs)
-          (hsPkgs.directory)
-          (hsPkgs.haskell-lexer)
-          (hsPkgs.haskell-src)
-          (hsPkgs.lifted-base)
-          (hsPkgs.monad-control)
-          (hsPkgs.mtl)
-          (hsPkgs.old-time)
-          (hsPkgs.pretty)
-          (hsPkgs.process)
-          (hsPkgs.random)
-          (hsPkgs.regex-compat)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.vector)
-          (hsPkgs.xmlgen)
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          (hsPkgs."Diff" or (buildDepError "Diff"))
+          (hsPkgs."HUnit" or (buildDepError "HUnit"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cpphs" or (buildDepError "cpphs"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."haskell-lexer" or (buildDepError "haskell-lexer"))
+          (hsPkgs."haskell-src" or (buildDepError "haskell-src"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."xmlgen" or (buildDepError "xmlgen"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
         build-tools = [
-          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+          (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
           ];
         };
       exes = {
         "htfpp" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.cpphs)
-            (hsPkgs.directory)
-            (hsPkgs.haskell-lexer)
-            (hsPkgs.mtl)
-            (hsPkgs.old-time)
-            (hsPkgs.random)
-            (hsPkgs.text)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cpphs" or (buildDepError "cpphs"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."haskell-lexer" or (buildDepError "haskell-lexer"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs))
+            (hsPkgs.buildPackages.cpphs or (pkgs.buildPackages.cpphs or (buildToolDepError "cpphs")))
             ];
           };
         };
       tests = {
         "MiscTests" = {
           depends = [
-            (hsPkgs.HTF)
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.random)
+            (hsPkgs."HTF" or (buildDepError "HTF"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         "TestHTF" = {
           depends = [
-            (hsPkgs.HTF)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.process)
-            (hsPkgs.random)
-            (hsPkgs.regex-compat)
-            (hsPkgs.temporary)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."HTF" or (buildDepError "HTF"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         "TestThreadPools" = {
-          depends = [ (hsPkgs.HTF) (hsPkgs.base) (hsPkgs.mtl) (hsPkgs.random) ];
+          depends = [
+            (hsPkgs."HTF" or (buildDepError "HTF"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."random" or (buildDepError "random"))
+            ];
           };
         };
       };

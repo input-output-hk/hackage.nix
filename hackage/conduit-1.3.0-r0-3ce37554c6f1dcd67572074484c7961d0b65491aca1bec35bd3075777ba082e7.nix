@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,69 +56,72 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.resourcet)
-          (hsPkgs.transformers)
-          (hsPkgs.mtl)
-          (hsPkgs.primitive)
-          (hsPkgs.unliftio-core)
-          (hsPkgs.exceptions)
-          (hsPkgs.mono-traversable)
-          (hsPkgs.vector)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-          (hsPkgs.filepath)
-          (hsPkgs.directory)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."directory" or (buildDepError "directory"))
           ] ++ (if system.isWindows
-          then [ (hsPkgs.Win32) (hsPkgs.filepath) ]
-          else [ (hsPkgs.unix) ]);
+          then [
+            (hsPkgs."Win32" or (buildDepError "Win32"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            ]
+          else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
         };
       tests = {
         "conduit-test" = {
           depends = [
-            (hsPkgs.conduit)
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.transformers)
-            (hsPkgs.mtl)
-            (hsPkgs.resourcet)
-            (hsPkgs.containers)
-            (hsPkgs.exceptions)
-            (hsPkgs.safe)
-            (hsPkgs.split)
-            (hsPkgs.mono-traversable)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.bytestring)
-            (hsPkgs.silently)
-            (hsPkgs.filepath)
-            (hsPkgs.unliftio)
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."silently" or (buildDepError "silently"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."unliftio" or (buildDepError "unliftio"))
             ];
           };
         };
       benchmarks = {
         "optimize-201408" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.conduit)
-            (hsPkgs.vector)
-            (hsPkgs.deepseq)
-            (hsPkgs.containers)
-            (hsPkgs.transformers)
-            (hsPkgs.hspec)
-            (hsPkgs.mwc-random)
-            (hsPkgs.gauge)
-            (hsPkgs.kan-extensions)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."gauge" or (buildDepError "gauge"))
+            (hsPkgs."kan-extensions" or (buildDepError "kan-extensions"))
             ];
           };
         "unfused" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.conduit)
-            (hsPkgs.gauge)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."gauge" or (buildDepError "gauge"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };

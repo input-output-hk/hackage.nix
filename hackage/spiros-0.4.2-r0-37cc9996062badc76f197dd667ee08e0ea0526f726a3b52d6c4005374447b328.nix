@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       develop = false;
@@ -23,47 +62,51 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.transformers)
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.template-haskell)
-          (hsPkgs.semigroups)
-          (hsPkgs.th-lift-instances)
-          (hsPkgs.exceptions)
-          (hsPkgs.data-default-class)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.hashable)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.unix-compat)
-          (hsPkgs.process)
-          (hsPkgs.time)
-          (hsPkgs.cpuinfo)
-          (hsPkgs.safe)
-          (hsPkgs.stm)
-          (hsPkgs.split)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.string-conv)
-          (hsPkgs.prettyprinter)
-          (hsPkgs.generic-deriving)
-          ] ++ [ (hsPkgs.deepseq) ];
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."th-lift-instances" or (buildDepError "th-lift-instances"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."cpuinfo" or (buildDepError "cpuinfo"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."string-conv" or (buildDepError "string-conv"))
+          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+          (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
+          ] ++ [ (hsPkgs."deepseq" or (buildDepError "deepseq")) ];
         };
       exes = {
         "example-spiros" = {
           depends = [
-            (hsPkgs.spiros)
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.optparse-applicative)
+            (hsPkgs."spiros" or (buildDepError "spiros"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
             ];
           };
         };
       tests = {
         "doc" = {
-          depends = [ (hsPkgs.base) (hsPkgs.spiros) (hsPkgs.doctest) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."spiros" or (buildDepError "spiros"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            ];
           };
         };
       };

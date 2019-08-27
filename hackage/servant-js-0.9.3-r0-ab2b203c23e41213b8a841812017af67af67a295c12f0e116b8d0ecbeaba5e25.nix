@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
@@ -17,44 +56,44 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.base-compat)
-          (hsPkgs.charset)
-          (hsPkgs.lens)
-          (hsPkgs.servant-foreign)
-          (hsPkgs.servant)
-          (hsPkgs.text)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-compat" or (buildDepError "base-compat"))
+          (hsPkgs."charset" or (buildDepError "charset"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."servant-foreign" or (buildDepError "servant-foreign"))
+          (hsPkgs."servant" or (buildDepError "servant"))
+          (hsPkgs."text" or (buildDepError "text"))
           ];
         };
       exes = {
         "counter" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.filepath)
-            (hsPkgs.lens)
-            (hsPkgs.servant)
-            (hsPkgs.servant-server)
-            (hsPkgs.servant-js)
-            (hsPkgs.stm)
-            (hsPkgs.transformers)
-            (hsPkgs.warp)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."servant-js" or (buildDepError "servant-js"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."warp" or (buildDepError "warp"))
             ];
           };
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-expectations)
-            (hsPkgs.language-ecmascript)
-            (hsPkgs.lens)
-            (hsPkgs.servant)
-            (hsPkgs.servant-js)
-            (hsPkgs.text)
-            (hsPkgs.QuickCheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
+            (hsPkgs."language-ecmascript" or (buildDepError "language-ecmascript"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-js" or (buildDepError "servant-js"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           };
         };

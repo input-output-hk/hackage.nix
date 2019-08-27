@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,16 +57,16 @@
       exes = {
         "layers" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.pretty-show)
-            (hsPkgs.cmdargs)
-            (hsPkgs.data-lens)
-            (hsPkgs.OpenGLRaw)
-            (hsPkgs.GLFW-b)
-            (hsPkgs.ListZipper)
-            (hsPkgs.composition)
-            (hsPkgs.Gamgine)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."data-lens" or (buildDepError "data-lens"))
+            (hsPkgs."OpenGLRaw" or (buildDepError "OpenGLRaw"))
+            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
+            (hsPkgs."ListZipper" or (buildDepError "ListZipper"))
+            (hsPkgs."composition" or (buildDepError "composition"))
+            (hsPkgs."Gamgine" or (buildDepError "Gamgine"))
             ];
           };
         };

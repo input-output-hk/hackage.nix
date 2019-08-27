@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       debug = false;
@@ -22,32 +61,32 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.accelerate)
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.binary)
-          (hsPkgs.bytestring)
-          (hsPkgs.cryptohash)
-          (hsPkgs.cuda)
-          (hsPkgs.directory)
-          (hsPkgs.fclabels)
-          (hsPkgs.filepath)
-          (hsPkgs.hashable)
-          (hsPkgs.hashtables)
-          (hsPkgs.language-c-quote)
-          (hsPkgs.mainland-pretty)
-          (hsPkgs.mtl)
-          (hsPkgs.old-time)
-          (hsPkgs.pretty)
-          (hsPkgs.process)
-          (hsPkgs.SafeSemaphore)
-          (hsPkgs.srcloc)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
+          (hsPkgs."accelerate" or (buildDepError "accelerate"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."cuda" or (buildDepError "cuda"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."fclabels" or (buildDepError "fclabels"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."hashtables" or (buildDepError "hashtables"))
+          (hsPkgs."language-c-quote" or (buildDepError "language-c-quote"))
+          (hsPkgs."mainland-pretty" or (buildDepError "mainland-pretty"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
+          (hsPkgs."srcloc" or (buildDepError "srcloc"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ] ++ (if system.isWindows
-          then [ (hsPkgs.Win32) ]
-          else [ (hsPkgs.unix) ]);
+          then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+          else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
         };
       };
     }

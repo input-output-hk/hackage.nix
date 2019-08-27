@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { new_type_eq = false; };
     package = {
@@ -17,57 +56,57 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.base-orphans)
-          (hsPkgs.semigroups)
-          (hsPkgs.template-haskell)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.mtl)
-          (hsPkgs.tagged)
-          (hsPkgs.profunctors)
-          (hsPkgs.array)
-          ] ++ (pkgs.lib).optional (flags.new_type_eq) (hsPkgs.base);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."profunctors" or (buildDepError "profunctors"))
+          (hsPkgs."array" or (buildDepError "array"))
+          ] ++ (pkgs.lib).optional (flags.new_type_eq) (hsPkgs."base" or (buildDepError "base"));
         };
       tests = {
         "examples" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.hspec-expectations)
-            (hsPkgs.process)
-            (hsPkgs.syb)
-            (hsPkgs.cmdargs)
-            (hsPkgs.lens)
-            (hsPkgs.HList)
-            (hsPkgs.mtl)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.array)
-            (hsPkgs.semigroups)
-            (hsPkgs.template-haskell)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."HList" or (buildDepError "HList"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
           };
         "doctests" = {
           depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.9" && (compiler.isGhc && (compiler.version).le "7.11")) [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.process)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."process" or (buildDepError "process"))
             ];
           };
         "properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-expectations)
-            (hsPkgs.HList)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.template-haskell)
-            (hsPkgs.array)
-            (hsPkgs.syb)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.11") (hsPkgs.semigroups);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
+            (hsPkgs."HList" or (buildDepError "HList"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.11") (hsPkgs."semigroups" or (buildDepError "semigroups"));
           };
         };
       };

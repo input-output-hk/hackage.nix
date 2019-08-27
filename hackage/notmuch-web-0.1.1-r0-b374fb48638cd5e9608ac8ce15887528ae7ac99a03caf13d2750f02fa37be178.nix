@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; library-only = false; };
     package = {
@@ -17,79 +56,79 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.attoparsec)
-          (hsPkgs.attoparsec-conduit)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.blaze-html)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.conduit)
-          (hsPkgs.containers)
-          (hsPkgs.data-default)
-          (hsPkgs.directory)
-          (hsPkgs.email-validate)
-          (hsPkgs.filepath)
-          (hsPkgs.hamlet)
-          (hsPkgs.hashable)
-          (hsPkgs.hjsmin)
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-types)
-          (hsPkgs.lifted-base)
-          (hsPkgs.mime-mail)
-          (hsPkgs.monad-control)
-          (hsPkgs.network)
-          (hsPkgs.old-locale)
-          (hsPkgs.pandoc)
-          (hsPkgs.process)
-          (hsPkgs.process-conduit)
-          (hsPkgs.pwstore-fast)
-          (hsPkgs.random)
-          (hsPkgs.shakespeare-css)
-          (hsPkgs.shakespeare-js)
-          (hsPkgs.shakespeare-text)
-          (hsPkgs.tagsoup)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.text-icu)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.wai)
-          (hsPkgs.wai-extra)
-          (hsPkgs.warp)
-          (hsPkgs.xss-sanitize)
-          (hsPkgs.yaml)
-          (hsPkgs.yesod)
-          (hsPkgs.yesod-auth)
-          (hsPkgs.yesod-core)
-          (hsPkgs.yesod-form)
-          (hsPkgs.yesod-static)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."email-validate" or (buildDepError "email-validate"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hamlet" or (buildDepError "hamlet"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."pandoc" or (buildDepError "pandoc"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."process-conduit" or (buildDepError "process-conduit"))
+          (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
+          (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
+          (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
+          (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."text-icu" or (buildDepError "text-icu"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."xss-sanitize" or (buildDepError "xss-sanitize"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."yesod" or (buildDepError "yesod"))
+          (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
+          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+          (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
+          (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           ];
         };
       exes = {
         "notmuch-web" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.notmuch-web)
-            (hsPkgs.pwstore-fast)
-            (hsPkgs.text)
-            (hsPkgs.yesod)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."notmuch-web" or (buildDepError "notmuch-web"))
+            (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
             ];
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.notmuch-web)
-            (hsPkgs.hspec)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-test)
-            (hsPkgs.yesod-core)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."notmuch-web" or (buildDepError "notmuch-web"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
           };
         };

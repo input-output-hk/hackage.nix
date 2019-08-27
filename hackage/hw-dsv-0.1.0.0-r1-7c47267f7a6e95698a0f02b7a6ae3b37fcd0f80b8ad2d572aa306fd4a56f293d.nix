@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { bmi2 = false; sse42 = true; };
     package = {
@@ -17,93 +56,93 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bits-extra)
-          (hsPkgs.bytestring)
-          (hsPkgs.hw-bits)
-          (hsPkgs.hw-prim)
-          (hsPkgs.hw-rankselect)
-          (hsPkgs.hw-rankselect-base)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bits-extra" or (buildDepError "bits-extra"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+          (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+          (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+          (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       exes = {
         "hw-dsv" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bits-extra)
-            (hsPkgs.bytestring)
-            (hsPkgs.hedgehog)
-            (hsPkgs.hw-bits)
-            (hsPkgs.hw-dsv)
-            (hsPkgs.hw-prim)
-            (hsPkgs.hw-rankselect)
-            (hsPkgs.hw-rankselect-base)
-            (hsPkgs.lens)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.resourcet)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bits-extra" or (buildDepError "bits-extra"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
+            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+            (hsPkgs."hw-dsv" or (buildDepError "hw-dsv"))
+            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       tests = {
         "hw-dsv-space" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bits-extra)
-            (hsPkgs.bytestring)
-            (hsPkgs.cassava)
-            (hsPkgs.hw-bits)
-            (hsPkgs.hw-dsv)
-            (hsPkgs.hw-prim)
-            (hsPkgs.hw-rankselect)
-            (hsPkgs.hw-rankselect-base)
-            (hsPkgs.vector)
-            (hsPkgs.weigh)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bits-extra" or (buildDepError "bits-extra"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cassava" or (buildDepError "cassava"))
+            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+            (hsPkgs."hw-dsv" or (buildDepError "hw-dsv"))
+            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."weigh" or (buildDepError "weigh"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
             ];
           };
         "hw-dsv-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bits-extra)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.hedgehog)
-            (hsPkgs.hspec)
-            (hsPkgs.hw-bits)
-            (hsPkgs.hw-dsv)
-            (hsPkgs.hw-hspec-hedgehog)
-            (hsPkgs.hw-prim)
-            (hsPkgs.hw-rankselect)
-            (hsPkgs.hw-rankselect-base)
-            (hsPkgs.text)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bits-extra" or (buildDepError "bits-extra"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+            (hsPkgs."hw-dsv" or (buildDepError "hw-dsv"))
+            (hsPkgs."hw-hspec-hedgehog" or (buildDepError "hw-hspec-hedgehog"))
+            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+            (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
             ];
           };
         };
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bits-extra)
-            (hsPkgs.bytestring)
-            (hsPkgs.cassava)
-            (hsPkgs.criterion)
-            (hsPkgs.directory)
-            (hsPkgs.hw-bits)
-            (hsPkgs.hw-dsv)
-            (hsPkgs.hw-prim)
-            (hsPkgs.hw-rankselect)
-            (hsPkgs.hw-rankselect-base)
-            (hsPkgs.mmap)
-            (hsPkgs.vector)
-            (hsPkgs.weigh)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bits-extra" or (buildDepError "bits-extra"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cassava" or (buildDepError "cassava"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+            (hsPkgs."hw-dsv" or (buildDepError "hw-dsv"))
+            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+            (hsPkgs."mmap" or (buildDepError "mmap"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."weigh" or (buildDepError "weigh"))
             ];
           };
         };

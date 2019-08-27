@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { server-test = false; };
     package = {
@@ -17,44 +56,44 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.time)
-          (hsPkgs.vector)
-          (hsPkgs.greskell-websocket)
-          (hsPkgs.greskell)
-          (hsPkgs.aeson)
-          (hsPkgs.safe-exceptions)
-          (hsPkgs.text)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.hashable)
-          (hsPkgs.containers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."greskell-websocket" or (buildDepError "greskell-websocket"))
+          (hsPkgs."greskell" or (buildDepError "greskell"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."containers" or (buildDepError "containers"))
           ];
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.net-spider)
-            (hsPkgs.vector)
-            (hsPkgs.hspec)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."net-spider" or (buildDepError "net-spider"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
           };
         "server-test-suite" = {
           depends = (pkgs.lib).optionals (flags.server-test) [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.net-spider)
-            (hsPkgs.vector)
-            (hsPkgs.text)
-            (hsPkgs.greskell-websocket)
-            (hsPkgs.greskell)
-            (hsPkgs.aeson)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.text)
-            (hsPkgs.hashable)
-            (hsPkgs.time)
-            (hsPkgs.safe-exceptions)
-            (hsPkgs.hspec-need-env)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."net-spider" or (buildDepError "net-spider"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."greskell-websocket" or (buildDepError "greskell-websocket"))
+            (hsPkgs."greskell" or (buildDepError "greskell"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+            (hsPkgs."hspec-need-env" or (buildDepError "hspec-need-env"))
             ];
           };
         };

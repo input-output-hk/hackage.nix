@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildexamples = false; };
     package = {
@@ -17,85 +56,85 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bifunctors)
-          (hsPkgs.containers)
-          (hsPkgs.generics-sop)
-          (hsPkgs.profunctors)
-          (hsPkgs.threepenny-gui)
-          (hsPkgs.casing)
-          (hsPkgs.text)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
+          (hsPkgs."profunctors" or (buildDepError "profunctors"))
+          (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
+          (hsPkgs."casing" or (buildDepError "casing"))
+          (hsPkgs."text" or (buildDepError "text"))
           ];
         };
       exes = {
         "crud" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bifunctors)
-            (hsPkgs.containers)
-            (hsPkgs.generics-sop)
-            (hsPkgs.profunctors)
-            (hsPkgs.threepenny-gui)
-            (hsPkgs.casing)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
+            (hsPkgs."profunctors" or (buildDepError "profunctors"))
+            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
+            (hsPkgs."casing" or (buildDepError "casing"))
+            (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs.threepenny-editors)
-            (hsPkgs.containers)
+            (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "crud2" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bifunctors)
-            (hsPkgs.containers)
-            (hsPkgs.generics-sop)
-            (hsPkgs.profunctors)
-            (hsPkgs.threepenny-gui)
-            (hsPkgs.casing)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
+            (hsPkgs."profunctors" or (buildDepError "profunctors"))
+            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
+            (hsPkgs."casing" or (buildDepError "casing"))
+            (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs.threepenny-editors)
-            (hsPkgs.containers)
+            (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "parser" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bifunctors)
-            (hsPkgs.containers)
-            (hsPkgs.generics-sop)
-            (hsPkgs.profunctors)
-            (hsPkgs.threepenny-gui)
-            (hsPkgs.casing)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
+            (hsPkgs."profunctors" or (buildDepError "profunctors"))
+            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
+            (hsPkgs."casing" or (buildDepError "casing"))
+            (hsPkgs."text" or (buildDepError "text"))
             ] ++ (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs.threepenny-editors)
-            (hsPkgs.haskell-src-exts)
+            (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"))
+            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
             ];
           };
         "person" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bifunctors)
-            (hsPkgs.containers)
-            (hsPkgs.generics-sop)
-            (hsPkgs.profunctors)
-            (hsPkgs.threepenny-gui)
-            (hsPkgs.casing)
-            (hsPkgs.text)
-            ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs.threepenny-editors);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
+            (hsPkgs."profunctors" or (buildDepError "profunctors"))
+            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
+            (hsPkgs."casing" or (buildDepError "casing"))
+            (hsPkgs."text" or (buildDepError "text"))
+            ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"));
           };
         "person2" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bifunctors)
-            (hsPkgs.containers)
-            (hsPkgs.generics-sop)
-            (hsPkgs.profunctors)
-            (hsPkgs.threepenny-gui)
-            (hsPkgs.casing)
-            (hsPkgs.text)
-            ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs.threepenny-editors);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."generics-sop" or (buildDepError "generics-sop"))
+            (hsPkgs."profunctors" or (buildDepError "profunctors"))
+            (hsPkgs."threepenny-gui" or (buildDepError "threepenny-gui"))
+            (hsPkgs."casing" or (buildDepError "casing"))
+            (hsPkgs."text" or (buildDepError "text"))
+            ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs."threepenny-editors" or (buildDepError "threepenny-editors"));
           };
         };
       };

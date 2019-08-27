@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { portable = false; portable-compiler = false; };
     package = {
@@ -17,107 +56,107 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.integer-gmp)
-          (hsPkgs.transformers)
-          (hsPkgs.monads-tf)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.containers)
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.random)
-          (hsPkgs.binary)
-          (hsPkgs.data-binary-ieee754)
-          (hsPkgs.bytestring)
-          (hsPkgs.websockets)
-          (hsPkgs.utf8-string)
-          (hsPkgs.shellmate)
-          (hsPkgs.data-default)
-          (hsPkgs.directory)
-          (hsPkgs.executable-path)
-          (hsPkgs.filepath)
-          (hsPkgs.process)
+          (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."monads-tf" or (buildDepError "monads-tf"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."websockets" or (buildDepError "websockets"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."shellmate" or (buildDepError "shellmate"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."executable-path" or (buildDepError "executable-path"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."process" or (buildDepError "process"))
           ];
         };
       exes = {
         "haste-boot" = {
           depends = [
-            (hsPkgs.ghc)
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.process)
-            (hsPkgs.bytestring)
-            (hsPkgs.tar)
-            (hsPkgs.bzlib)
-            (hsPkgs.zip-archive)
-            (hsPkgs.filepath)
-            (hsPkgs.temporary)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.network)
-            (hsPkgs.HTTP)
-            (hsPkgs.executable-path)
-            (hsPkgs.shellmate)
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."tar" or (buildDepError "tar"))
+            (hsPkgs."bzlib" or (buildDepError "bzlib"))
+            (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."executable-path" or (buildDepError "executable-path"))
+            (hsPkgs."shellmate" or (buildDepError "shellmate"))
             ];
           };
         "hastec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.ghc)
-            (hsPkgs.mtl)
-            (hsPkgs.binary)
-            (hsPkgs.containers)
-            (hsPkgs.data-default)
-            (hsPkgs.bytestring)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.array)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.process)
-            (hsPkgs.random)
-            (hsPkgs.system-fileio)
-            (hsPkgs.executable-path)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
+            (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
           };
         "haste-inst" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.process)
-            (hsPkgs.directory)
-            (hsPkgs.executable-path)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
           };
         "haste-pkg" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.executable-path)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
           };
         "haste-install-his" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.process)
-            (hsPkgs.executable-path)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."executable-path" or (buildDepError "executable-path"))
             ];
           };
         "haste-copy-pkg" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.process)
-            (hsPkgs.temporary)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.executable-path)
-            (hsPkgs.shellmate)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."executable-path" or (buildDepError "executable-path"))
+            (hsPkgs."shellmate" or (buildDepError "shellmate"))
             ];
           };
         };

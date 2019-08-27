@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -16,59 +55,63 @@
       };
     components = {
       "library" = {
-        depends = [ (hsPkgs.base) (hsPkgs.cql-io-lib) (hsPkgs.cql) ];
+        depends = [
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."cql-io-lib" or (buildDepError "cql-io-lib"))
+          (hsPkgs."cql" or (buildDepError "cql"))
+          ];
         };
       sublibs = {
         "cql-io-lib" = {
           depends = [
-            (hsPkgs.async)
-            (hsPkgs.auto-update)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.cql)
-            (hsPkgs.cryptonite)
-            (hsPkgs.data-default-class)
-            (hsPkgs.exceptions)
-            (hsPkgs.hashable)
-            (hsPkgs.iproute)
-            (hsPkgs.HsOpenSSL)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.mwc-random)
-            (hsPkgs.retry)
-            (hsPkgs.network)
-            (hsPkgs.semigroups)
-            (hsPkgs.stm)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.unliftio-core)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.uuid)
-            (hsPkgs.vector)
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."auto-update" or (buildDepError "auto-update"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."cql" or (buildDepError "cql"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."iproute" or (buildDepError "iproute"))
+            (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."retry" or (buildDepError "retry"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unliftio-core" or (buildDepError "unliftio-core"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       tests = {
         "cql-io-tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.async)
-            (hsPkgs.containers)
-            (hsPkgs.cql)
-            (hsPkgs.cql-io)
-            (hsPkgs.cql-io-lib)
-            (hsPkgs.Decimal)
-            (hsPkgs.iproute)
-            (hsPkgs.mtl)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.text)
-            (hsPkgs.primes)
-            (hsPkgs.raw-strings-qq)
-            (hsPkgs.time)
-            (hsPkgs.uuid)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."cql" or (buildDepError "cql"))
+            (hsPkgs."cql-io" or (buildDepError "cql-io"))
+            (hsPkgs."cql-io-lib" or (buildDepError "cql-io-lib"))
+            (hsPkgs."Decimal" or (buildDepError "Decimal"))
+            (hsPkgs."iproute" or (buildDepError "iproute"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."primes" or (buildDepError "primes"))
+            (hsPkgs."raw-strings-qq" or (buildDepError "raw-strings-qq"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
             ];
           };
         };

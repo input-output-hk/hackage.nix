@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { openblas = false; };
     package = {
@@ -17,30 +56,30 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.array)
-          (hsPkgs.deepseq)
-          (hsPkgs.random)
-          (hsPkgs.split)
-          (hsPkgs.bytestring)
-          (hsPkgs.storable-complex)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."storable-complex" or (buildDepError "storable-complex"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         libs = ((if flags.openblas
-          then [ (pkgs."openblas") ]
+          then [ (pkgs."openblas" or (sysDepError "openblas")) ]
           else [
-            (pkgs."blas")
-            (pkgs."lapack")
+            (pkgs."blas" or (sysDepError "blas"))
+            (pkgs."lapack" or (sysDepError "lapack"))
             ]) ++ (pkgs.lib).optionals (system.isFreebsd) [
-          (pkgs."blas")
-          (pkgs."lapack")
-          (pkgs."gfortran")
+          (pkgs."blas" or (sysDepError "blas"))
+          (pkgs."lapack" or (sysDepError "lapack"))
+          (pkgs."gfortran" or (sysDepError "gfortran"))
           ]) ++ (pkgs.lib).optionals (system.isWindows) [
-          (pkgs."blas")
-          (pkgs."lapack")
+          (pkgs."blas" or (sysDepError "blas"))
+          (pkgs."lapack" or (sysDepError "lapack"))
           ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate");
+        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (sysDepError "Accelerate"));
         };
       };
     }

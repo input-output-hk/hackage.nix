@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,61 +56,61 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.log-base)
-          (hsPkgs.log-elasticsearch)
-          (hsPkgs.log-postgres)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."log-base" or (buildDepError "log-base"))
+          (hsPkgs."log-elasticsearch" or (buildDepError "log-elasticsearch"))
+          (hsPkgs."log-postgres" or (buildDepError "log-postgres"))
           ];
         };
       tests = {
         "log-test" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.bloodhound)
-            (hsPkgs.bytestring)
-            (hsPkgs.http-client)
-            (hsPkgs.http-types)
-            (hsPkgs.log)
-            (hsPkgs.random)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.time)
-            (hsPkgs.text)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bloodhound" or (buildDepError "bloodhound"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."log" or (buildDepError "log"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "log-test-integration" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.bloodhound)
-            (hsPkgs.bytestring)
-            (hsPkgs.exceptions)
-            (hsPkgs.http-client)
-            (hsPkgs.http-types)
-            (hsPkgs.log)
-            (hsPkgs.process)
-            (hsPkgs.random)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.time)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bloodhound" or (buildDepError "bloodhound"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."log" or (buildDepError "log"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };
       benchmarks = {
         "log-bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ekg)
-            (hsPkgs.log)
-            (hsPkgs.hpqtypes)
-            (hsPkgs.random)
-            (hsPkgs.text)
-            (hsPkgs.text-show)
-            (hsPkgs.transformers)
-            (hsPkgs.transformers-base)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ekg" or (buildDepError "ekg"))
+            (hsPkgs."log" or (buildDepError "log"))
+            (hsPkgs."hpqtypes" or (buildDepError "hpqtypes"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."text-show" or (buildDepError "text-show"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debug = false; conduit11 = true; };
     package = {
@@ -17,53 +56,59 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.lifted-base)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-base)
-          (hsPkgs.monad-control)
-          (hsPkgs.resourcet)
-          (hsPkgs.data-default)
-          (hsPkgs.http-types)
-          (hsPkgs.http-conduit)
-          (hsPkgs.attoparsec)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.aeson)
-          (hsPkgs.base16-bytestring)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.time)
-          (hsPkgs.old-locale)
-          (hsPkgs.cereal)
-          (hsPkgs.crypto-api)
-          (hsPkgs.cryptohash)
-          (hsPkgs.cryptohash-cryptoapi)
-          (hsPkgs.monad-logger)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."cryptohash-cryptoapi" or (buildDepError "cryptohash-cryptoapi"))
+          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
           ] ++ (if flags.conduit11
-          then [ (hsPkgs.conduit) (hsPkgs.conduit-extra) ]
-          else [ (hsPkgs.conduit) (hsPkgs.attoparsec-conduit) ]);
+          then [
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            ]
+          else [
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."attoparsec-conduit" or (buildDepError "attoparsec-conduit"))
+            ]);
         };
       tests = {
         "runtests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.lifted-base)
-            (hsPkgs.transformers)
-            (hsPkgs.bytestring)
-            (hsPkgs.resourcet)
-            (hsPkgs.conduit)
-            (hsPkgs.http-conduit)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.aeson)
-            (hsPkgs.monad-control)
-            (hsPkgs.containers)
-            (hsPkgs.data-default)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.hspec)
-            (hsPkgs.fb)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."fb" or (buildDepError "fb"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { servant-spec = false; };
     package = {
@@ -17,53 +56,53 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.QuickCheck)
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.file-embed)
-          (hsPkgs.filepath)
-          (hsPkgs.formatting)
-          (hsPkgs.hspec)
-          (hsPkgs.hspec-golden-aeson)
-          (hsPkgs.mtl)
-          (hsPkgs.quickcheck-arbitrary-adt)
-          (hsPkgs.servant)
-          (hsPkgs.servant-server)
-          (hsPkgs.singletons)
-          (hsPkgs.split)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.wl-pprint-text)
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."file-embed" or (buildDepError "file-embed"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."formatting" or (buildDepError "formatting"))
+          (hsPkgs."hspec" or (buildDepError "hspec"))
+          (hsPkgs."hspec-golden-aeson" or (buildDepError "hspec-golden-aeson"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."quickcheck-arbitrary-adt" or (buildDepError "quickcheck-arbitrary-adt"))
+          (hsPkgs."servant" or (buildDepError "servant"))
+          (hsPkgs."servant-server" or (buildDepError "servant-server"))
+          (hsPkgs."singletons" or (buildDepError "singletons"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
           ];
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.QuickCheck)
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-golden-aeson)
-            (hsPkgs.ocaml-export)
-            (hsPkgs.process)
-            (hsPkgs.quickcheck-arbitrary-adt)
-            (hsPkgs.servant)
-            (hsPkgs.servant-server)
-            (hsPkgs.singletons)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.wai)
-            (hsPkgs.wai-extra)
-            (hsPkgs.warp)
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-golden-aeson" or (buildDepError "hspec-golden-aeson"))
+            (hsPkgs."ocaml-export" or (buildDepError "ocaml-export"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."quickcheck-arbitrary-adt" or (buildDepError "quickcheck-arbitrary-adt"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."singletons" or (buildDepError "singletons"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."warp" or (buildDepError "warp"))
             ];
           };
         };

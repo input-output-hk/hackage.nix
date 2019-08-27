@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { example = false; };
     package = {
@@ -17,60 +56,60 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.bytestring)
-          (hsPkgs.data-default)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.hamlet)
-          (hsPkgs.language-javascript)
-          (hsPkgs.mime-types)
-          (hsPkgs.shakespeare-js)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.yesod-core)
-          (hsPkgs.yesod-static)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hamlet" or (buildDepError "hamlet"))
+          (hsPkgs."language-javascript" or (buildDepError "language-javascript"))
+          (hsPkgs."mime-types" or (buildDepError "mime-types"))
+          (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+          (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
           ];
         };
       exes = {
         "example-production" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.data-default)
-            (hsPkgs.shakespeare-css)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-static)
-            (hsPkgs.yesod-static-angular)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
+            (hsPkgs."yesod-static-angular" or (buildDepError "yesod-static-angular"))
             ];
           };
         "example-dev" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.data-default)
-            (hsPkgs.shakespeare-css)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-static)
-            (hsPkgs.yesod-static-angular)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."shakespeare-css" or (buildDepError "shakespeare-css"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
+            (hsPkgs."yesod-static-angular" or (buildDepError "yesod-static-angular"))
             ];
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.hamlet)
-            (hsPkgs.hspec)
-            (hsPkgs.HUnit)
-            (hsPkgs.text)
-            (hsPkgs.template-haskell)
-            (hsPkgs.yesod-core)
-            (hsPkgs.yesod-test)
-            (hsPkgs.yesod-static)
-            (hsPkgs.yesod-static-angular)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."hamlet" or (buildDepError "hamlet"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
+            (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
+            (hsPkgs."yesod-static-angular" or (buildDepError "yesod-static-angular"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,68 +57,68 @@
       exes = {
         "netwire-vinylglfw-style0" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.lens)
-            (hsPkgs.vinyl)
-            (hsPkgs.netwire)
-            (hsPkgs.netwire-input)
-            (hsPkgs.netwire-input-glfw)
-            (hsPkgs.OpenGL)
-            (hsPkgs.GLFW-b)
-            (hsPkgs.linear)
-            (hsPkgs.GLUtil)
-            (hsPkgs.vinyl-gl)
-            (hsPkgs.transformers)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.mtl)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."vinyl" or (buildDepError "vinyl"))
+            (hsPkgs."netwire" or (buildDepError "netwire"))
+            (hsPkgs."netwire-input" or (buildDepError "netwire-input"))
+            (hsPkgs."netwire-input-glfw" or (buildDepError "netwire-input-glfw"))
+            (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
+            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
+            (hsPkgs."linear" or (buildDepError "linear"))
+            (hsPkgs."GLUtil" or (buildDepError "GLUtil"))
+            (hsPkgs."vinyl-gl" or (buildDepError "vinyl-gl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         "netwire-vinylglfw-style1" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.lens)
-            (hsPkgs.vinyl)
-            (hsPkgs.netwire)
-            (hsPkgs.netwire-input)
-            (hsPkgs.netwire-input-glfw)
-            (hsPkgs.OpenGL)
-            (hsPkgs.GLFW-b)
-            (hsPkgs.linear)
-            (hsPkgs.GLUtil)
-            (hsPkgs.vinyl-gl)
-            (hsPkgs.transformers)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.mtl)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."vinyl" or (buildDepError "vinyl"))
+            (hsPkgs."netwire" or (buildDepError "netwire"))
+            (hsPkgs."netwire-input" or (buildDepError "netwire-input"))
+            (hsPkgs."netwire-input-glfw" or (buildDepError "netwire-input-glfw"))
+            (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
+            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
+            (hsPkgs."linear" or (buildDepError "linear"))
+            (hsPkgs."GLUtil" or (buildDepError "GLUtil"))
+            (hsPkgs."vinyl-gl" or (buildDepError "vinyl-gl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         "netwire-vinylglfw-style2" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.lens)
-            (hsPkgs.vinyl)
-            (hsPkgs.netwire)
-            (hsPkgs.netwire-input)
-            (hsPkgs.netwire-input-glfw)
-            (hsPkgs.OpenGL)
-            (hsPkgs.GLFW-b)
-            (hsPkgs.linear)
-            (hsPkgs.GLUtil)
-            (hsPkgs.vinyl-gl)
-            (hsPkgs.transformers)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.mtl)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."vinyl" or (buildDepError "vinyl"))
+            (hsPkgs."netwire" or (buildDepError "netwire"))
+            (hsPkgs."netwire-input" or (buildDepError "netwire-input"))
+            (hsPkgs."netwire-input-glfw" or (buildDepError "netwire-input-glfw"))
+            (hsPkgs."OpenGL" or (buildDepError "OpenGL"))
+            (hsPkgs."GLFW-b" or (buildDepError "GLFW-b"))
+            (hsPkgs."linear" or (buildDepError "linear"))
+            (hsPkgs."GLUtil" or (buildDepError "GLUtil"))
+            (hsPkgs."vinyl-gl" or (buildDepError "vinyl-gl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         };

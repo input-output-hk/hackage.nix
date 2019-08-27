@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { static = false; };
     package = {
@@ -17,126 +56,126 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.blaze-html)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.bytestring)
-          (hsPkgs.cmark)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.email-validate)
-          (hsPkgs.filepath)
-          (hsPkgs.fsnotify)
-          (hsPkgs.heterocephalus)
-          (hsPkgs.htoml)
-          (hsPkgs.interpolatedstring-perl6)
-          (hsPkgs.megaparsec)
-          (hsPkgs.mtl)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.parsec)
-          (hsPkgs.pretty)
-          (hsPkgs.semver)
-          (hsPkgs.shakespeare)
-          (hsPkgs.stm)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.uri)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."cmark" or (buildDepError "cmark"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."email-validate" or (buildDepError "email-validate"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
+          (hsPkgs."heterocephalus" or (buildDepError "heterocephalus"))
+          (hsPkgs."htoml" or (buildDepError "htoml"))
+          (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."semver" or (buildDepError "semver"))
+          (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."uri" or (buildDepError "uri"))
           ];
         };
       exes = {
         "nirum" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.blaze-html)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.email-validate)
-            (hsPkgs.filepath)
-            (hsPkgs.htoml)
-            (hsPkgs.interpolatedstring-perl6)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.nirum)
-            (hsPkgs.parsec)
-            (hsPkgs.pretty)
-            (hsPkgs.semver)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."email-validate" or (buildDepError "email-validate"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."htoml" or (buildDepError "htoml"))
+            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."nirum" or (buildDepError "nirum"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."semver" or (buildDepError "semver"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };
       tests = {
         "hlint" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.blaze-html)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.email-validate)
-            (hsPkgs.filepath)
-            (hsPkgs.hlint)
-            (hsPkgs.htoml)
-            (hsPkgs.interpolatedstring-perl6)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.parsec)
-            (hsPkgs.pretty)
-            (hsPkgs.semver)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."email-validate" or (buildDepError "email-validate"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."htoml" or (buildDepError "htoml"))
+            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."semver" or (buildDepError "semver"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.blaze-html)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.email-validate)
-            (hsPkgs.filepath)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-core)
-            (hsPkgs.hspec-meta)
-            (hsPkgs.htoml)
-            (hsPkgs.hxt)
-            (hsPkgs.interpolatedstring-perl6)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.nirum)
-            (hsPkgs.parsec)
-            (hsPkgs.pretty)
-            (hsPkgs.process)
-            (hsPkgs.semigroups)
-            (hsPkgs.semver)
-            (hsPkgs.string-qq)
-            (hsPkgs.temporary)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."email-validate" or (buildDepError "email-validate"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-core" or (buildDepError "hspec-core"))
+            (hsPkgs."hspec-meta" or (buildDepError "hspec-meta"))
+            (hsPkgs."htoml" or (buildDepError "htoml"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."nirum" or (buildDepError "nirum"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."semver" or (buildDepError "semver"))
+            (hsPkgs."string-qq" or (buildDepError "string-qq"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         "targets" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.blaze-html)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.email-validate)
-            (hsPkgs.filepath)
-            (hsPkgs.htoml)
-            (hsPkgs.interpolatedstring-perl6)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.parsec)
-            (hsPkgs.pretty)
-            (hsPkgs.semver)
-            (hsPkgs.text)
-            (hsPkgs.turtle)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."email-validate" or (buildDepError "email-validate"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."htoml" or (buildDepError "htoml"))
+            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."semver" or (buildDepError "semver"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."turtle" or (buildDepError "turtle"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };

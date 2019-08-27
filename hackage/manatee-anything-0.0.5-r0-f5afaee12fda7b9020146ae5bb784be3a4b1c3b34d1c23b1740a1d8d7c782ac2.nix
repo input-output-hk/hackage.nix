@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,26 +56,26 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.gtk)
-          (hsPkgs.containers)
-          (hsPkgs.text)
-          (hsPkgs.gio)
-          (hsPkgs.filepath)
-          (hsPkgs.manatee-core)
-          (hsPkgs.dbus-client)
-          (hsPkgs.network)
-          (hsPkgs.utf8-string)
-          (hsPkgs.proc)
-          (hsPkgs.mtl)
-          (hsPkgs.stm)
-          (hsPkgs.unix)
-          (hsPkgs.regex-tdfa)
-          (hsPkgs.bytestring)
-          (hsPkgs.GoogleSuggest)
-          (hsPkgs.dataenc)
-          (hsPkgs.dbus-core)
-          (hsPkgs.split)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."gtk" or (buildDepError "gtk"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."gio" or (buildDepError "gio"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."manatee-core" or (buildDepError "manatee-core"))
+          (hsPkgs."dbus-client" or (buildDepError "dbus-client"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."proc" or (buildDepError "proc"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."GoogleSuggest" or (buildDepError "GoogleSuggest"))
+          (hsPkgs."dataenc" or (buildDepError "dataenc"))
+          (hsPkgs."dbus-core" or (buildDepError "dbus-core"))
+          (hsPkgs."split" or (buildDepError "split"))
           ];
         };
       exes = { "manatee-anything" = {}; };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; llvm = false; debug = false; };
     package = {
@@ -17,70 +56,70 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bits)
-          (hsPkgs.mmorph)
-          (hsPkgs.monad-primitive)
-          (hsPkgs.mtl)
-          (hsPkgs.OrderedBits)
-          (hsPkgs.primitive)
-          (hsPkgs.PrimitiveArray)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.strict)
-          (hsPkgs.template-haskell)
-          (hsPkgs.transformers)
-          (hsPkgs.tuple)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bits" or (buildDepError "bits"))
+          (hsPkgs."mmorph" or (buildDepError "mmorph"))
+          (hsPkgs."monad-primitive" or (buildDepError "monad-primitive"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."OrderedBits" or (buildDepError "OrderedBits"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."strict" or (buildDepError "strict"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."tuple" or (buildDepError "tuple"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       exes = {
         "NeedlemanWunsch" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs.base)
-            (hsPkgs.ADPfusion)
-            (hsPkgs.PrimitiveArray)
-            (hsPkgs.template-haskell)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
+            (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "Nussinov" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs.base)
-            (hsPkgs.ADPfusion)
-            (hsPkgs.PrimitiveArray)
-            (hsPkgs.template-haskell)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
+            (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "PartNussinov" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs.base)
-            (hsPkgs.ADPfusion)
-            (hsPkgs.log-domain)
-            (hsPkgs.PrimitiveArray)
-            (hsPkgs.template-haskell)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
+            (hsPkgs."log-domain" or (buildDepError "log-domain"))
+            (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "Durbin" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs.base)
-            (hsPkgs.ADPfusion)
-            (hsPkgs.PrimitiveArray)
-            (hsPkgs.template-haskell)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
+            (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       tests = {
         "properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ADPfusion)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework-th)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ADPfusion" or (buildDepError "ADPfusion"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             ];
           };
         };

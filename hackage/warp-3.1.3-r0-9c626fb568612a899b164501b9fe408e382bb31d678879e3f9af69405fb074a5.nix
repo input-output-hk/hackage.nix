@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       network-bytestring = false;
@@ -21,86 +60,100 @@
     components = {
       "library" = {
         depends = (([
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.auto-update)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.bytestring)
-          (hsPkgs.bytestring-builder)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.containers)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.http-types)
-          (hsPkgs.iproute)
-          (hsPkgs.http2)
-          (hsPkgs.simple-sendfile)
-          (hsPkgs.unix-compat)
-          (hsPkgs.wai)
-          (hsPkgs.text)
-          (hsPkgs.streaming-commons)
-          (hsPkgs.vault)
-          (hsPkgs.stm)
-          (hsPkgs.word8)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."auto-update" or (buildDepError "auto-update"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."iproute" or (buildDepError "iproute"))
+          (hsPkgs."http2" or (buildDepError "http2"))
+          (hsPkgs."simple-sendfile" or (buildDepError "simple-sendfile"))
+          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
+          (hsPkgs."vault" or (buildDepError "vault"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."word8" or (buildDepError "word8"))
           ] ++ (if flags.network-bytestring
-          then [ (hsPkgs.network) (hsPkgs.network-bytestring) ]
+          then [
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network-bytestring" or (buildDepError "network-bytestring"))
+            ]
           else [
-            (hsPkgs.network)
-            ])) ++ (pkgs.lib).optional ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) (hsPkgs.hashable)) ++ (if system.isWindows
-          then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-          else [ (hsPkgs.unix) (hsPkgs.http-date) ]);
+            (hsPkgs."network" or (buildDepError "network"))
+            ])) ++ (pkgs.lib).optional ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) (hsPkgs."hashable" or (buildDepError "hashable"))) ++ (if system.isWindows
+          then [
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            ]
+          else [
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."http-date" or (buildDepError "http-date"))
+            ]);
         };
       tests = {
-        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        "doctest" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            ];
+          };
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.auto-update)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.bytestring)
-            (hsPkgs.bytestring-builder)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.HTTP)
-            (hsPkgs.http-types)
-            (hsPkgs.iproute)
-            (hsPkgs.lifted-base)
-            (hsPkgs.simple-sendfile)
-            (hsPkgs.transformers)
-            (hsPkgs.unix-compat)
-            (hsPkgs.wai)
-            (hsPkgs.network)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.hspec)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.text)
-            (hsPkgs.streaming-commons)
-            (hsPkgs.async)
-            (hsPkgs.vault)
-            (hsPkgs.stm)
-            (hsPkgs.directory)
-            (hsPkgs.process)
-            (hsPkgs.containers)
-            (hsPkgs.http2)
-            (hsPkgs.word8)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."auto-update" or (buildDepError "auto-update"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."iproute" or (buildDepError "iproute"))
+            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."simple-sendfile" or (buildDepError "simple-sendfile"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."vault" or (buildDepError "vault"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."http2" or (buildDepError "http2"))
+            (hsPkgs."word8" or (buildDepError "word8"))
             ] ++ (pkgs.lib).optionals ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) [
-            (hsPkgs.unix)
-            (hsPkgs.hashable)
-            (hsPkgs.http-date)
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."http-date" or (buildDepError "http-date"))
             ];
           };
         };
       benchmarks = {
         "parser" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.criterion)
-            (hsPkgs.http-types)
-            (hsPkgs.network)
-            (hsPkgs.network)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."network" or (buildDepError "network"))
             ];
           };
         };

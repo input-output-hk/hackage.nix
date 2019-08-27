@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       forcechar8 = false;
@@ -32,291 +71,318 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.array)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.bytestring-builder)
-          (hsPkgs.clock)
-          (hsPkgs.containers)
-          (hsPkgs.data-default-class)
-          (hsPkgs.data-interval)
-          (hsPkgs.deepseq)
-          (hsPkgs.extended-reals)
-          (hsPkgs.filepath)
-          (hsPkgs.finite-field)
-          (hsPkgs.hashable)
-          (hsPkgs.hashtables)
-          (hsPkgs.heaps)
-          (hsPkgs.intern)
-          (hsPkgs.log-domain)
-          (hsPkgs.loop)
-          (hsPkgs.mtl)
-          (hsPkgs.multiset)
-          (hsPkgs.mwc-random)
-          (hsPkgs.OptDir)
-          (hsPkgs.lattices)
-          (hsPkgs.megaparsec)
-          (hsPkgs.prettyclass)
-          (hsPkgs.primes)
-          (hsPkgs.primitive)
-          (hsPkgs.process)
-          (hsPkgs.pseudo-boolean)
-          (hsPkgs.queue)
-          (hsPkgs.scientific)
-          (hsPkgs.semigroups)
-          (hsPkgs.sign)
-          (hsPkgs.stm)
-          (hsPkgs.template-haskell)
-          (hsPkgs.temporary)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-compat)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.vector-space)
-          (hsPkgs.xml-conduit)
-          ] ++ (pkgs.lib).optional (flags.opencl) (hsPkgs.OpenCL)) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
+          (hsPkgs."clock" or (buildDepError "clock"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+          (hsPkgs."data-interval" or (buildDepError "data-interval"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."extended-reals" or (buildDepError "extended-reals"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."finite-field" or (buildDepError "finite-field"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."hashtables" or (buildDepError "hashtables"))
+          (hsPkgs."heaps" or (buildDepError "heaps"))
+          (hsPkgs."intern" or (buildDepError "intern"))
+          (hsPkgs."log-domain" or (buildDepError "log-domain"))
+          (hsPkgs."loop" or (buildDepError "loop"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."multiset" or (buildDepError "multiset"))
+          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+          (hsPkgs."OptDir" or (buildDepError "OptDir"))
+          (hsPkgs."lattices" or (buildDepError "lattices"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
+          (hsPkgs."primes" or (buildDepError "primes"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
+          (hsPkgs."queue" or (buildDepError "queue"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."sign" or (buildDepError "sign"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."temporary" or (buildDepError "temporary"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-space" or (buildDepError "vector-space"))
+          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+          ] ++ (pkgs.lib).optional (flags.opencl) (hsPkgs."OpenCL" or (buildDepError "OpenCL"))) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
         };
       exes = {
         "toysolver" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.data-default-class)
-            (hsPkgs.filepath)
-            (hsPkgs.OptDir)
-            (hsPkgs.pseudo-boolean)
-            (hsPkgs.scientific)
-            (hsPkgs.toysolver)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."OptDir" or (buildDepError "OptDir"))
+            (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "toysat" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.clock)
-            (hsPkgs.data-default)
-            (hsPkgs.data-default-class)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mwc-random)
-            (hsPkgs.process)
-            (hsPkgs.pseudo-boolean)
-            (hsPkgs.scientific)
-            (hsPkgs.temporary)
-            (hsPkgs.time)
-            (hsPkgs.toysolver)
-            (hsPkgs.unbounded-delays)
-            (hsPkgs.vector)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."clock" or (buildDepError "clock"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."unbounded-delays" or (buildDepError "unbounded-delays"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "toysmt" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.data-default-class)
-            (hsPkgs.intern)
-            (hsPkgs.mtl)
-            (hsPkgs.parsec)
-            (hsPkgs.toysolver)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.transformers-compat)
-            ] ++ (pkgs.lib).optional (flags.usehaskeline) (hsPkgs.haskeline);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+            ] ++ (pkgs.lib).optional (flags.usehaskeline) (hsPkgs."haskeline" or (buildDepError "haskeline"));
           };
         "toyqbf" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.data-default-class)
-            (hsPkgs.toysolver)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "toyfmf" = {
           depends = (pkgs.lib).optionals (flags.buildtoyfmf) ([
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.intern)
-            (hsPkgs.logic-TPTP)
-            (hsPkgs.text)
-            (hsPkgs.toysolver)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."logic-TPTP" or (buildDepError "logic-TPTP"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.9") (if flags.logictptp045
-            then [ (hsPkgs.logic-TPTP) ]
-            else [ (hsPkgs.transformers-compat) ]));
+            then [ (hsPkgs."logic-TPTP" or (buildDepError "logic-TPTP")) ]
+            else [
+              (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+              ]));
           };
         "toyconvert" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.bytestring-builder)
-            (hsPkgs.data-default-class)
-            (hsPkgs.filepath)
-            (hsPkgs.pseudo-boolean)
-            (hsPkgs.scientific)
-            (hsPkgs.text)
-            (hsPkgs.toysolver)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "sudoku" = {
-          depends = [ (hsPkgs.array) (hsPkgs.base) (hsPkgs.toysolver) ];
+          depends = [
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            ];
           };
         "nonogram" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.toysolver)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "nqueens" = {
-          depends = [ (hsPkgs.array) (hsPkgs.base) (hsPkgs.toysolver) ];
+          depends = [
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            ];
           };
         "numberlink" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.data-default-class)
-            (hsPkgs.parsec)
-            (hsPkgs.pseudo-boolean)
-            (hsPkgs.toysolver)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
-        "knapsack" = { depends = [ (hsPkgs.base) (hsPkgs.toysolver) ]; };
+        "knapsack" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            ];
+          };
         "assign" = {
           depends = [
-            (hsPkgs.attoparsec)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.toysolver)
-            (hsPkgs.vector)
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "shortest-path" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.toysolver)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "htc" = {
-          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.toysolver) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            ];
           };
         "svm2lp" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.data-default-class)
-            (hsPkgs.scientific)
-            (hsPkgs.split)
-            (hsPkgs.text)
-            (hsPkgs.toysolver)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "survey-propagation" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.data-default-class)
-            (hsPkgs.toysolver)
-            ] ++ (pkgs.lib).optional (flags.opencl) (hsPkgs.OpenCL);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            ] ++ (pkgs.lib).optional (flags.opencl) (hsPkgs."OpenCL" or (buildDepError "OpenCL"));
           };
         "pigeonhole" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.pseudo-boolean)
-            (hsPkgs.toysolver)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "maxsatverify" = {
-          depends = [ (hsPkgs.array) (hsPkgs.base) (hsPkgs.toysolver) ];
+          depends = [
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            ];
           };
         "pbverify" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.pseudo-boolean)
-            (hsPkgs.toysolver)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         };
       tests = {
         "TestPolynomial" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.data-interval)
-            (hsPkgs.finite-field)
-            (hsPkgs.prettyclass)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-th)
-            (hsPkgs.toysolver)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-interval" or (buildDepError "data-interval"))
+            (hsPkgs."finite-field" or (buildDepError "finite-field"))
+            (hsPkgs."prettyclass" or (buildDepError "prettyclass"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "TestSuite" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.bytestring-builder)
-            (hsPkgs.containers)
-            (hsPkgs.data-default-class)
-            (hsPkgs.data-interval)
-            (hsPkgs.deepseq)
-            (hsPkgs.hashable)
-            (hsPkgs.intern)
-            (hsPkgs.lattices)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.mwc-random)
-            (hsPkgs.OptDir)
-            (hsPkgs.parsec)
-            (hsPkgs.pseudo-boolean)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-th)
-            (hsPkgs.text)
-            (hsPkgs.toysolver)
-            (hsPkgs.transformers)
-            (hsPkgs.transformers-compat)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.vector-space)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."data-interval" or (buildDepError "data-interval"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."lattices" or (buildDepError "lattices"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."OptDir" or (buildDepError "OptDir"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pseudo-boolean" or (buildDepError "pseudo-boolean"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-space" or (buildDepError "vector-space"))
             ];
           };
         };
       benchmarks = {
         "BenchmarkSATLIB" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.data-default-class)
-            (hsPkgs.toysolver)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
             ];
           };
         "BenchmarkKnapsack" = {
-          depends = [ (hsPkgs.base) (hsPkgs.criterion) (hsPkgs.toysolver) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            ];
           };
         "BenchmarkSubsetSum" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.toysolver)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."toysolver" or (buildDepError "toysolver"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };

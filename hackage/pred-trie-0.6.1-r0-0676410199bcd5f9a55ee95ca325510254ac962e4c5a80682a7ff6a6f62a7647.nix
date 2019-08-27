@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,68 +56,68 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.QuickCheck)
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.hashable)
-          (hsPkgs.hashtables)
-          (hsPkgs.mtl)
-          (hsPkgs.poly-arity)
-          (hsPkgs.pred-set)
-          (hsPkgs.semigroups)
-          (hsPkgs.strict)
-          (hsPkgs.tries)
-          (hsPkgs.unordered-containers)
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."hashtables" or (buildDepError "hashtables"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."poly-arity" or (buildDepError "poly-arity"))
+          (hsPkgs."pred-set" or (buildDepError "pred-set"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."strict" or (buildDepError "strict"))
+          (hsPkgs."tries" or (buildDepError "tries"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
         };
       tests = {
         "pred-trie-test" = {
           depends = [
-            (hsPkgs.QuickCheck)
-            (hsPkgs.attoparsec)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.errors)
-            (hsPkgs.hashable)
-            (hsPkgs.hashtables)
-            (hsPkgs.mtl)
-            (hsPkgs.poly-arity)
-            (hsPkgs.pred-set)
-            (hsPkgs.pred-trie)
-            (hsPkgs.semigroups)
-            (hsPkgs.strict)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.text)
-            (hsPkgs.tries)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."errors" or (buildDepError "errors"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."hashtables" or (buildDepError "hashtables"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."poly-arity" or (buildDepError "poly-arity"))
+            (hsPkgs."pred-set" or (buildDepError "pred-set"))
+            (hsPkgs."pred-trie" or (buildDepError "pred-trie"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."tries" or (buildDepError "tries"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };
       benchmarks = {
         "pred-trie-bench" = {
           depends = [
-            (hsPkgs.QuickCheck)
-            (hsPkgs.attoparsec)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.hashable)
-            (hsPkgs.hashtables)
-            (hsPkgs.mtl)
-            (hsPkgs.poly-arity)
-            (hsPkgs.pred-set)
-            (hsPkgs.pred-trie)
-            (hsPkgs.semigroups)
-            (hsPkgs.sets)
-            (hsPkgs.strict)
-            (hsPkgs.text)
-            (hsPkgs.tries)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."hashtables" or (buildDepError "hashtables"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."poly-arity" or (buildDepError "poly-arity"))
+            (hsPkgs."pred-set" or (buildDepError "pred-set"))
+            (hsPkgs."pred-trie" or (buildDepError "pred-trie"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."sets" or (buildDepError "sets"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."tries" or (buildDepError "tries"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };

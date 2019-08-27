@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { base3 = true; travis = false; };
     package = {
@@ -18,59 +57,59 @@
       exes = {
         "c2hs" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.language-c)
-            (hsPkgs.filepath)
-            (hsPkgs.dlist)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."language-c" or (buildDepError "language-c"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."dlist" or (buildDepError "dlist"))
             ] ++ (if flags.base3
             then [
-              (hsPkgs.base)
-              (hsPkgs.process)
-              (hsPkgs.directory)
-              (hsPkgs.array)
-              (hsPkgs.containers)
-              (hsPkgs.pretty)
+              (hsPkgs."base" or (buildDepError "base"))
+              (hsPkgs."process" or (buildDepError "process"))
+              (hsPkgs."directory" or (buildDepError "directory"))
+              (hsPkgs."array" or (buildDepError "array"))
+              (hsPkgs."containers" or (buildDepError "containers"))
+              (hsPkgs."pretty" or (buildDepError "pretty"))
               ]
-            else [ (hsPkgs.base) ]);
+            else [ (hsPkgs."base" or (buildDepError "base")) ]);
           };
         "regression-suite" = {
           depends = (pkgs.lib).optionals (flags.travis) [
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.shelly)
-            (hsPkgs.text)
-            (hsPkgs.yaml)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."shelly" or (buildDepError "shelly"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         };
       tests = {
         "test-bugs" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.HUnit)
-            (hsPkgs.shelly)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."shelly" or (buildDepError "shelly"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
             ];
           };
         "test-system" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.HUnit)
-            (hsPkgs.shelly)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."shelly" or (buildDepError "shelly"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           build-tools = [
-            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+            (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
             ];
           };
         };

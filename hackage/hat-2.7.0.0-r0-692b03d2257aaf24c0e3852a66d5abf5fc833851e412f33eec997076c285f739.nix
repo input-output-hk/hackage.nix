@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,52 +56,114 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.directory)
-          (hsPkgs.random)
-          (hsPkgs.process)
-          (hsPkgs.old-time)
-          (hsPkgs.old-locale)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ];
         };
       exes = {
         "hat-trans" = {
-          depends = [ (hsPkgs.base) (hsPkgs.bytestring) (hsPkgs.directory) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            ];
           };
         "hat-trail" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.process)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."process" or (buildDepError "process"))
             ];
           };
         "hat-observe" = {
-          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.haskeline) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            ];
           };
-        "hat-stack" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
-        "hat-explore" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
+        "hat-stack" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            ];
+          };
+        "hat-explore" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            ];
+          };
         "hat-detect" = {
-          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.containers) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            ];
           };
-        "hat-check" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
+        "hat-check" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            ];
+          };
         "hat-view" = {
-          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.directory) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            ];
           };
-        "hat-cover" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
-        "black-hat" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
-        "hat-nonterm" = { depends = [ (hsPkgs.base) (hsPkgs.process) ]; };
+        "hat-cover" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            ];
+          };
+        "black-hat" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            ];
+          };
+        "hat-nonterm" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            ];
+          };
         "hat-anim" = {
-          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.containers) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            ];
           };
         "pretty-hat" = {
-          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.containers) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            ];
           };
         "hat-delta" = {
-          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.containers) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            ];
           };
         "hat-make" = {
-          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.directory) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            ];
           };
         };
       };

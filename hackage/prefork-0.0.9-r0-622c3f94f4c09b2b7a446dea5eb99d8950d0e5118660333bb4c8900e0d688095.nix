@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { sample = false; };
     package = {
@@ -17,79 +56,79 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.stm)
-          (hsPkgs.containers)
-          (hsPkgs.unix)
-          (hsPkgs.system-argv0)
-          (hsPkgs.system-filepath)
-          (hsPkgs.data-default)
-          (hsPkgs.process)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."system-argv0" or (buildDepError "system-argv0"))
+          (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."process" or (buildDepError "process"))
           ];
         };
       exes = {
         "prefork-sample-simple" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.network)
-            (hsPkgs.unix)
-            (hsPkgs.prefork)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."prefork" or (buildDepError "prefork"))
             ];
           };
         "prefork-sample-various-workers" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.network)
-            (hsPkgs.unix)
-            (hsPkgs.prefork)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."prefork" or (buildDepError "prefork"))
             ];
           };
         "prefork-sample-warp" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.network)
-            (hsPkgs.wai)
-            (hsPkgs.warp)
-            (hsPkgs.stm)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.http-types)
-            (hsPkgs.unix)
-            (hsPkgs.prefork)
-            (hsPkgs.cmdargs)
-            (hsPkgs.async)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."prefork" or (buildDepError "prefork"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."async" or (buildDepError "async"))
             ];
           };
         };
       tests = {
         "test-prefork" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.prefork)
-            (hsPkgs.hspec)
-            (hsPkgs.containers)
-            (hsPkgs.stm)
-            (hsPkgs.unix)
-            (hsPkgs.process)
-            (hsPkgs.cab)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."prefork" or (buildDepError "prefork"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."cab" or (buildDepError "cab"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         "test-prefork-server" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.prefork)
-            (hsPkgs.hspec)
-            (hsPkgs.containers)
-            (hsPkgs.stm)
-            (hsPkgs.unix)
-            (hsPkgs.process)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."prefork" or (buildDepError "prefork"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."process" or (buildDepError "process"))
             ];
           };
         };

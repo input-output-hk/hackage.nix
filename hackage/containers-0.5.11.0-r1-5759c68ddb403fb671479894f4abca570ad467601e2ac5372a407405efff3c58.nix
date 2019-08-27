@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,246 +56,262 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.deepseq)
-          ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs.ghc-prim);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
         };
       tests = {
         "map-lazy-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "map-strict-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "bitqueue-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         "set-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "intmap-lazy-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         "intmap-strict-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         "intset-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         "deprecated-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         "seq-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "tree-properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "map-strictness-properties" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.ChasingBottoms)
-            (hsPkgs.deepseq)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         "intmap-strictness-properties" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.ChasingBottoms)
-            (hsPkgs.deepseq)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         "intset-strictness-properties" = {
           depends = [
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.ChasingBottoms)
-            (hsPkgs.deepseq)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         };
       benchmarks = {
         "intmap-benchmarks" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
           };
         "intset-benchmarks" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
           };
         "map-benchmarks" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "sequence-benchmarks" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.random)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "set-benchmarks" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
           };
         "set-operations-intmap" = {
-          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.criterion) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            ];
           };
         "set-operations-intset" = {
-          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.criterion) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            ];
           };
         "set-operations-map" = {
-          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.criterion) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            ];
           };
         "set-operations-set" = {
-          depends = [ (hsPkgs.base) (hsPkgs.containers) (hsPkgs.criterion) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            ];
           };
         "lookupge-intmap" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
           };
         "lookupge-map" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
           };
         };

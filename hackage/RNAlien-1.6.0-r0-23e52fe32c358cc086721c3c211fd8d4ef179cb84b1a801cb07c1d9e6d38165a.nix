@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,90 +56,90 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.cmdargs)
-          (hsPkgs.ViennaRNAParser)
-          (hsPkgs.process)
-          (hsPkgs.directory)
-          (hsPkgs.parsec)
-          (hsPkgs.random)
-          (hsPkgs.bytestring)
-          (hsPkgs.Taxonomy)
-          (hsPkgs.either-unwrap)
-          (hsPkgs.containers)
-          (hsPkgs.ClustalParser)
-          (hsPkgs.vector)
-          (hsPkgs.edit-distance)
-          (hsPkgs.cassava)
-          (hsPkgs.matrix)
-          (hsPkgs.hierarchical-clustering)
-          (hsPkgs.filepath)
-          (hsPkgs.HTTP)
-          (hsPkgs.http-conduit)
-          (hsPkgs.hxt)
-          (hsPkgs.network)
-          (hsPkgs.aeson)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.pureMD5)
-          (hsPkgs.http-types)
-          (hsPkgs.text-metrics)
-          (hsPkgs.BiobaseTypes)
-          (hsPkgs.BiobaseFasta)
-          (hsPkgs.BiobaseBlast)
-          (hsPkgs.BlastHTTP)
-          (hsPkgs.BiobaseHTTP)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+          (hsPkgs."ViennaRNAParser" or (buildDepError "ViennaRNAParser"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."Taxonomy" or (buildDepError "Taxonomy"))
+          (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."ClustalParser" or (buildDepError "ClustalParser"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."edit-distance" or (buildDepError "edit-distance"))
+          (hsPkgs."cassava" or (buildDepError "cassava"))
+          (hsPkgs."matrix" or (buildDepError "matrix"))
+          (hsPkgs."hierarchical-clustering" or (buildDepError "hierarchical-clustering"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."HTTP" or (buildDepError "HTTP"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."hxt" or (buildDepError "hxt"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."text-metrics" or (buildDepError "text-metrics"))
+          (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
+          (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
+          (hsPkgs."BiobaseBlast" or (buildDepError "BiobaseBlast"))
+          (hsPkgs."BlastHTTP" or (buildDepError "BlastHTTP"))
+          (hsPkgs."BiobaseHTTP" or (buildDepError "BiobaseHTTP"))
           ];
         };
       exes = {
         "RNAlien" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.directory)
-            (hsPkgs.random)
-            (hsPkgs.containers)
-            (hsPkgs.RNAlien)
-            (hsPkgs.time)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
-            (hsPkgs.BiobaseFasta)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
             ];
           };
         "RNAlienStatistics" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.cassava)
-            (hsPkgs.vector)
-            (hsPkgs.process)
-            (hsPkgs.bytestring)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.RNAlien)
-            (hsPkgs.directory)
-            (hsPkgs.split)
-            (hsPkgs.filepath)
-            (hsPkgs.ViennaRNAParser)
-            (hsPkgs.BiobaseFasta)
-            (hsPkgs.BiobaseTypes)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."cassava" or (buildDepError "cassava"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ViennaRNAParser" or (buildDepError "ViennaRNAParser"))
+            (hsPkgs."BiobaseFasta" or (buildDepError "BiobaseFasta"))
+            (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
             ];
           };
         "cmsearchToBed" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.RNAlien)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "RNAcentralHTTPRequest" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.RNAlien)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."RNAlien" or (buildDepError "RNAlien"))
             ];
           };
         };

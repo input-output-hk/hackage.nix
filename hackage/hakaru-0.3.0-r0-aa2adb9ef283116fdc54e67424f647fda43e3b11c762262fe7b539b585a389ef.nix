@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { tracedisintegrate = false; };
     package = {
@@ -17,147 +56,151 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.Cabal)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.transformers)
-          (hsPkgs.containers)
-          (hsPkgs.semigroups)
-          (hsPkgs.pretty)
-          (hsPkgs.logfloat)
-          (hsPkgs.math-functions)
-          (hsPkgs.vector)
-          (hsPkgs.indentation-parsec)
-          (hsPkgs.ansi-terminal)
-          (hsPkgs.text)
-          (hsPkgs.parsec)
-          (hsPkgs.mwc-random)
-          (hsPkgs.directory)
-          (hsPkgs.integration)
-          (hsPkgs.primitive)
-          (hsPkgs.process)
-          (hsPkgs.HUnit)
-          (hsPkgs.mtl)
-          (hsPkgs.filepath)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."logfloat" or (buildDepError "logfloat"))
+          (hsPkgs."math-functions" or (buildDepError "math-functions"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."indentation-parsec" or (buildDepError "indentation-parsec"))
+          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."integration" or (buildDepError "integration"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."HUnit" or (buildDepError "HUnit"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
         };
       exes = {
         "hakaru" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mwc-random)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         "compile" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mwc-random)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.filepath)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         "simplify" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mwc-random)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         "density" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mwc-random)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         "disintegrate" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mwc-random)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         "pretty" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         "momiji" = {
-          depends = [ (hsPkgs.base) (hsPkgs.text) (hsPkgs.hakaru) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
+            ];
           };
         "normalize" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mwc-random)
-            (hsPkgs.text)
-            (hsPkgs.mtl)
-            (hsPkgs.pretty)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         "hkc" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.text)
-            (hsPkgs.mtl)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.pretty)
-            (hsPkgs.process)
-            (hsPkgs.hakaru)
-            (hsPkgs.semigroups)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
             ];
           };
         "mh" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mwc-random)
-            (hsPkgs.text)
-            (hsPkgs.mtl)
-            (hsPkgs.pretty)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         };
       tests = {
         "system-testsuite" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.indentation-parsec)
-            (hsPkgs.transformers)
-            (hsPkgs.containers)
-            (hsPkgs.semigroups)
-            (hsPkgs.logfloat)
-            (hsPkgs.parsec)
-            (hsPkgs.primitive)
-            (hsPkgs.pretty)
-            (hsPkgs.mwc-random)
-            (hsPkgs.math-functions)
-            (hsPkgs.integration)
-            (hsPkgs.ansi-terminal)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.process)
-            (hsPkgs.mtl)
-            (hsPkgs.vector)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."indentation-parsec" or (buildDepError "indentation-parsec"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."logfloat" or (buildDepError "logfloat"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."math-functions" or (buildDepError "math-functions"))
+            (hsPkgs."integration" or (buildDepError "integration"))
+            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

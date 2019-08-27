@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,29 +56,29 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.http-client)
-          (hsPkgs.http-client-tls)
-          (hsPkgs.http-types)
-          (hsPkgs.text)
-          (hsPkgs.aeson)
-          (hsPkgs.bytestring)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.iproute)
-          (hsPkgs.bytestring-lexing)
-          (hsPkgs.mtl)
-          (hsPkgs.thyme)
-          (hsPkgs.old-locale)
-          (hsPkgs.wai)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."iproute" or (buildDepError "iproute"))
+          (hsPkgs."bytestring-lexing" or (buildDepError "bytestring-lexing"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."thyme" or (buildDepError "thyme"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."wai" or (buildDepError "wai"))
           ];
         };
       tests = {
         "fastly-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.fastly)
-            (hsPkgs.text)
-            (hsPkgs.hspec)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."fastly" or (buildDepError "fastly"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
           };
         };

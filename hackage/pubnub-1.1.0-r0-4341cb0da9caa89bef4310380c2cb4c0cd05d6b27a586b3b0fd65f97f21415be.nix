@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,79 +56,79 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.conduit)
-          (hsPkgs.conduit-extra)
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-client)
-          (hsPkgs.bytestring)
-          (hsPkgs.transformers)
-          (hsPkgs.vector)
-          (hsPkgs.text)
-          (hsPkgs.lifted-base)
-          (hsPkgs.mtl)
-          (hsPkgs.http-types)
-          (hsPkgs.uuid)
-          (hsPkgs.async)
-          (hsPkgs.data-default)
-          (hsPkgs.SHA)
-          (hsPkgs.cipher-aes)
-          (hsPkgs.crypto-api)
-          (hsPkgs.crypto-cipher-types)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.time)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."uuid" or (buildDepError "uuid"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."SHA" or (buildDepError "SHA"))
+          (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
+          (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
+          (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."time" or (buildDepError "time"))
           ];
         };
       exes = {
         "hello_world" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.pubnub)
-            (hsPkgs.aeson)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."pubnub" or (buildDepError "pubnub"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "chat" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
-            (hsPkgs.async)
-            (hsPkgs.pubnub)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."pubnub" or (buildDepError "pubnub"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "test-pubnub-haskell" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.pubnub)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.smallcheck)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-smallcheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."pubnub" or (buildDepError "pubnub"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
             ];
           };
         };
       tests = {
         "Tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.pubnub)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.smallcheck)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-smallcheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."pubnub" or (buildDepError "pubnub"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-smallcheck" or (buildDepError "tasty-smallcheck"))
             ];
           };
         };

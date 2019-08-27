@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -14,59 +53,59 @@
       description = "Pure C++ code analysis with libclang.\n\nRefer to <http://clang.llvm.org/doxygen/group__CINDEX.html libclang's documentation> for usage.\nIn general, the naming scheme is @clang_getCursorType -> cursorType@, @CXCursor -> `Cursor`@.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
-        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process))
-        (hsPkgs.buildPackages.inline-c or (pkgs.buildPackages.inline-c))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (buildToolDepError "process")))
+        (hsPkgs.buildPackages.inline-c or (pkgs.buildPackages.inline-c or (buildToolDepError "inline-c")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.contravariant)
-          (hsPkgs.inline-c)
-          (hsPkgs.containers)
-          (hsPkgs.template-haskell)
-          (hsPkgs.vector)
-          (hsPkgs.bytestring)
-          (hsPkgs.stm)
-          (hsPkgs.singletons)
-          (hsPkgs.microlens)
-          (hsPkgs.microlens-contra)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."contravariant" or (buildDepError "contravariant"))
+          (hsPkgs."inline-c" or (buildDepError "inline-c"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."singletons" or (buildDepError "singletons"))
+          (hsPkgs."microlens" or (buildDepError "microlens"))
+          (hsPkgs."microlens-contra" or (buildDepError "microlens-contra"))
           ];
-        libs = [ (pkgs."clang") ];
+        libs = [ (pkgs."clang" or (sysDepError "clang")) ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
         };
       exes = {
         "find-classes" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.clang-pure)
-            (hsPkgs.lens)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.hashable)
-            (hsPkgs.bytestring)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."clang-pure" or (buildDepError "clang-pure"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         };
       tests = {
         "list-fun-types" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.clang-pure)
-            (hsPkgs.lens)
-            (hsPkgs.bytestring)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."clang-pure" or (buildDepError "clang-pure"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         "list-structs" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.clang-pure)
-            (hsPkgs.lens)
-            (hsPkgs.bytestring)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."clang-pure" or (buildDepError "clang-pure"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         };

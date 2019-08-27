@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,32 +56,32 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.attoparsec)
-          (hsPkgs.array)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.text)
-          (hsPkgs.blaze-html)
-          (hsPkgs.file-embed)
-          (hsPkgs.filepath)
-          (hsPkgs.ghc-events)
-          (hsPkgs.hashtables)
-          (hsPkgs.hvega)
-          (hsPkgs.mtl)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.semigroups)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."file-embed" or (buildDepError "file-embed"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."ghc-events" or (buildDepError "ghc-events"))
+          (hsPkgs."hashtables" or (buildDepError "hashtables"))
+          (hsPkgs."hvega" or (buildDepError "hvega"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
           ];
         };
       exes = {
         "eventlog2html" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.eventlog2html)
-            (hsPkgs.aeson)
-            (hsPkgs.text)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."eventlog2html" or (buildDepError "eventlog2html"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         };

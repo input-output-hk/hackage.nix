@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,64 +56,64 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.random)
-          (hsPkgs.transformers)
-          (hsPkgs.containers)
-          (hsPkgs.pretty)
-          (hsPkgs.logfloat)
-          (hsPkgs.hmatrix)
-          (hsPkgs.math-functions)
-          (hsPkgs.vector)
-          (hsPkgs.cassava)
-          (hsPkgs.zlib)
-          (hsPkgs.bytestring)
-          (hsPkgs.aeson)
-          (hsPkgs.text)
-          (hsPkgs.statistics)
-          (hsPkgs.parsec)
-          (hsPkgs.array)
-          (hsPkgs.mwc-random)
-          (hsPkgs.directory)
-          (hsPkgs.integration)
-          (hsPkgs.primitive)
-          (hsPkgs.parallel)
-          (hsPkgs.monad-loops)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."logfloat" or (buildDepError "logfloat"))
+          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
+          (hsPkgs."math-functions" or (buildDepError "math-functions"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."cassava" or (buildDepError "cassava"))
+          (hsPkgs."zlib" or (buildDepError "zlib"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."statistics" or (buildDepError "statistics"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."integration" or (buildDepError "integration"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."parallel" or (buildDepError "parallel"))
+          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
           ];
         };
       tests = {
         "hakaru-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.random)
-            (hsPkgs.pretty)
-            (hsPkgs.containers)
-            (hsPkgs.logfloat)
-            (hsPkgs.math-functions)
-            (hsPkgs.statistics)
-            (hsPkgs.hmatrix)
-            (hsPkgs.vector)
-            (hsPkgs.hakaru)
-            (hsPkgs.mwc-random)
-            (hsPkgs.primitive)
-            (hsPkgs.monad-loops)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."logfloat" or (buildDepError "logfloat"))
+            (hsPkgs."math-functions" or (buildDepError "math-functions"))
+            (hsPkgs."statistics" or (buildDepError "statistics"))
+            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
             ];
           };
         };
       benchmarks = {
         "bench-all" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.criterion)
-            (hsPkgs.hakaru)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."hakaru" or (buildDepError "hakaru"))
             ];
           };
         };

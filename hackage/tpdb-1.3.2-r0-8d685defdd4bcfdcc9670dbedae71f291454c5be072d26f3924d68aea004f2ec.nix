@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,47 +56,64 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.hxt)
-          (hsPkgs.wl-pprint-text)
-          (hsPkgs.text)
-          (hsPkgs.mtl)
-          (hsPkgs.parsec)
-          (hsPkgs.time)
-          (hsPkgs.containers)
-          (hsPkgs.HaXml)
-          (hsPkgs.filepath)
-          (hsPkgs.hashable)
-          (hsPkgs.bytestring)
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs.transformers);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."hxt" or (buildDepError "hxt"))
+          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."HaXml" or (buildDepError "HaXml"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."transformers" or (buildDepError "transformers"));
         };
       tests = {
-        "XML" = { depends = [ (hsPkgs.base) (hsPkgs.tpdb) ]; };
+        "XML" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            ];
+          };
         "TRS" = {
-          depends = [ (hsPkgs.base) (hsPkgs.tpdb) (hsPkgs.bytestring) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            ];
           };
         "TRS_02" = {
-          depends = [ (hsPkgs.base) (hsPkgs.tpdb) (hsPkgs.bytestring) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            ];
           };
         "SRS" = {
-          depends = [ (hsPkgs.base) (hsPkgs.tpdb) (hsPkgs.bytestring) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            ];
           };
         "Speed" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.tpdb)
-            (hsPkgs.HaXml)
-            (hsPkgs.bytestring)
-            (hsPkgs.pretty)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."HaXml" or (buildDepError "HaXml"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
           };
         "Attributes" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.tpdb)
-            (hsPkgs.HaXml)
-            (hsPkgs.bytestring)
-            (hsPkgs.pretty)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tpdb" or (buildDepError "tpdb"))
+            (hsPkgs."HaXml" or (buildDepError "HaXml"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
             ];
           };
         };

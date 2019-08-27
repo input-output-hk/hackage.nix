@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,47 +56,47 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.template-haskell)
-          (hsPkgs.cognimeta-utils)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.strict)
-          (hsPkgs.mtl)
-          (hsPkgs.transformers)
-          (hsPkgs.filepath)
-          (hsPkgs.containers)
-          (hsPkgs.binary)
-          (hsPkgs.collections-api)
-          (hsPkgs.cryptohash)
-          (hsPkgs.bytestring)
-          (hsPkgs.array)
-          (hsPkgs.stm)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.primitive)
-          (hsPkgs.tagged)
-          (hsPkgs.data-lens)
-          (hsPkgs.data-lens-fd)
-          (hsPkgs.data-lens-template)
-          (hsPkgs.comonad-transformers)
-          (hsPkgs.time)
-          (hsPkgs.unix)
-          (hsPkgs.data-binary-ieee754)
-          (hsPkgs.MonadRandom)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."cognimeta-utils" or (buildDepError "cognimeta-utils"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."strict" or (buildDepError "strict"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."collections-api" or (buildDepError "collections-api"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."data-lens" or (buildDepError "data-lens"))
+          (hsPkgs."data-lens-fd" or (buildDepError "data-lens-fd"))
+          (hsPkgs."data-lens-template" or (buildDepError "data-lens-template"))
+          (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."data-binary-ieee754" or (buildDepError "data-binary-ieee754"))
+          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
           ];
         };
       exes = {
         "perdure" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.template-haskell)
-            (hsPkgs.cognimeta-utils)
-            (hsPkgs.mtl)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.perdure)
-            (hsPkgs.transformers)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.MonadRandom)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."cognimeta-utils" or (buildDepError "cognimeta-utils"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."perdure" or (buildDepError "perdure"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
           };
         };

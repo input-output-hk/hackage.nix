@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,48 +56,48 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.network)
-          (hsPkgs.old-time)
-          (hsPkgs.process)
-          (hsPkgs.random)
-          (hsPkgs.syb)
-          (hsPkgs.unix)
-          (hsPkgs.curry-frontend)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."curry-frontend" or (buildDepError "curry-frontend"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.kics or (pkgs.buildPackages.kics))
+          (hsPkgs.buildPackages.kics or (pkgs.buildPackages.kics or (buildToolDepError "kics")))
           ];
         };
       exes = {
         "kics" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.old-time)
-            (hsPkgs.process)
-            (hsPkgs.curry-base)
-            (hsPkgs.curry-frontend)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."curry-base" or (buildDepError "curry-base"))
+            (hsPkgs."curry-frontend" or (buildDepError "curry-frontend"))
             ];
           };
         "kicsi" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.old-time)
-            (hsPkgs.process)
-            (hsPkgs.readline)
-            (hsPkgs.curry-base)
-            (hsPkgs.curry-frontend)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."readline" or (buildDepError "readline"))
+            (hsPkgs."curry-base" or (buildDepError "curry-base"))
+            (hsPkgs."curry-frontend" or (buildDepError "curry-frontend"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { buildreadme = false; };
     package = {
@@ -14,51 +53,51 @@
       description = "Please see <https://github.com/cdepillabout/focuslist#readme README.md>.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (buildToolDepError "cabal-doctest")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.lens)
-          (hsPkgs.mono-traversable)
-          (hsPkgs.QuickCheck)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
           ];
         };
       exes = {
         "focuslist-readme" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.focuslist)
-            (hsPkgs.markdown-unlit)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."focuslist" or (buildDepError "focuslist"))
+            (hsPkgs."markdown-unlit" or (buildDepError "markdown-unlit"))
             ];
           };
         };
       tests = {
         "focuslist-doctests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.doctest)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.template-haskell)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
           };
         "focuslist-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.focuslist)
-            (hsPkgs.genvalidity-containers)
-            (hsPkgs.genvalidity-hspec)
-            (hsPkgs.hedgehog)
-            (hsPkgs.lens)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hedgehog)
-            (hsPkgs.tasty-hspec)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."focuslist" or (buildDepError "focuslist"))
+            (hsPkgs."genvalidity-containers" or (buildDepError "genvalidity-containers"))
+            (hsPkgs."genvalidity-hspec" or (buildDepError "genvalidity-hspec"))
+            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
+            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { templatehaskell = true; };
     package = {
@@ -17,35 +56,41 @@
     components = {
       "library" = {
         depends = (((([
-          (hsPkgs.base)
-          (hsPkgs.random)
-          (hsPkgs.containers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."containers" or (buildDepError "containers"))
           ] ++ (pkgs.lib).optionals (compiler.isGhc && true) [
-          (hsPkgs.transformers)
-          (hsPkgs.deepseq)
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && true && flags.templatehaskell) (hsPkgs.template-haskell)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs.ghc-prim)) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs.tf-random)) ++ (pkgs.lib).optionals (compiler.isUhc && true) [
-          (hsPkgs.old-time)
-          (hsPkgs.old-locale)
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          ]) ++ (pkgs.lib).optional (compiler.isGhc && true && flags.templatehaskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."tf-random" or (buildDepError "tf-random"))) ++ (pkgs.lib).optionals (compiler.isUhc && true) [
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
           ];
         };
       tests = {
         "test-quickcheck" = {
-          depends = [ (hsPkgs.base) (hsPkgs.QuickCheck) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            ];
           };
         "test-quickcheck-gcoarbitrary" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.QuickCheck)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs.ghc-prim);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
           };
         "test-quickcheck-generators" = {
-          depends = [ (hsPkgs.base) (hsPkgs.QuickCheck) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            ];
           };
         "test-quickcheck-gshrink" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.QuickCheck)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs.ghc-prim);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
           };
         };
       };

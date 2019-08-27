@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       benchmark-uniplate = false;
@@ -28,104 +67,111 @@
     components = {
       "library" = {
         depends = (([
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.comonad)
-          (hsPkgs.comonad-transformers)
-          (hsPkgs.comonads-fd)
-          (hsPkgs.containers)
-          (hsPkgs.hashable)
-          (hsPkgs.mtl)
-          (hsPkgs.semigroups)
-          (hsPkgs.split)
-          (hsPkgs.text)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.array)
-          (hsPkgs.filepath)
-          (hsPkgs.parallel)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."comonad" or (buildDepError "comonad"))
+          (hsPkgs."comonad-transformers" or (buildDepError "comonad-transformers"))
+          (hsPkgs."comonads-fd" or (buildDepError "comonads-fd"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."parallel" or (buildDepError "parallel"))
           ] ++ [
-          (hsPkgs.transformers)
-          ]) ++ (pkgs.lib).optional (flags.template-haskell) (hsPkgs.template-haskell)) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-          then [ (hsPkgs.ghc-prim) ]
-          else [ (hsPkgs.generic-deriving) ]);
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          ]) ++ (pkgs.lib).optional (flags.template-haskell) (hsPkgs."template-haskell" or (buildDepError "template-haskell"))) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+          then [ (hsPkgs."ghc-prim" or (buildDepError "ghc-prim")) ]
+          else [
+            (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
+            ]);
         };
       tests = {
-        "templates" = { depends = [ (hsPkgs.base) (hsPkgs.lens) ]; };
+        "templates" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            ];
+          };
         "properties" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.lens)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "hunit" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.HUnit)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-th)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
             ];
           };
         "doctests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.doctest)
-            (hsPkgs.filepath)
-            (hsPkgs.mtl)
-            (hsPkgs.parallel)
-            (hsPkgs.simple-reflect)
-            (hsPkgs.split)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."parallel" or (buildDepError "parallel"))
+            (hsPkgs."simple-reflect" or (buildDepError "simple-reflect"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       benchmarks = {
         "plated" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.comonad)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.lens)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."comonad" or (buildDepError "comonad"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
-            then [ (hsPkgs.ghc-prim) ]
+            then [ (hsPkgs."ghc-prim" or (buildDepError "ghc-prim")) ]
             else [
-              (hsPkgs.generic-deriving)
-              ])) ++ (pkgs.lib).optional (flags.benchmark-uniplate) (hsPkgs.uniplate);
+              (hsPkgs."generic-deriving" or (buildDepError "generic-deriving"))
+              ])) ++ (pkgs.lib).optional (flags.benchmark-uniplate) (hsPkgs."uniplate" or (buildDepError "uniplate"));
           };
         "alongside" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.comonad)
-            (hsPkgs.comonads-fd)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.lens)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."comonad" or (buildDepError "comonad"))
+            (hsPkgs."comonads-fd" or (buildDepError "comonads-fd"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "unsafe" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.comonad)
-            (hsPkgs.comonads-fd)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.lens)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."comonad" or (buildDepError "comonad"))
+            (hsPkgs."comonads-fd" or (buildDepError "comonads-fd"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };

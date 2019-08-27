@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { setindex = true; };
     package = {
@@ -17,30 +56,30 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.primitive)
-          (hsPkgs.guarded-allocation)
-          (hsPkgs.storable-record)
-          (hsPkgs.tagged)
-          (hsPkgs.deepseq)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.semigroups)
-          (hsPkgs.containers)
-          (hsPkgs.transformers)
-          (hsPkgs.non-empty)
-          (hsPkgs.utility-ht)
-          (hsPkgs.prelude-compat)
-          (hsPkgs.base)
-          ] ++ (pkgs.lib).optional (flags.setindex) (hsPkgs.containers);
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."guarded-allocation" or (buildDepError "guarded-allocation"))
+          (hsPkgs."storable-record" or (buildDepError "storable-record"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."non-empty" or (buildDepError "non-empty"))
+          (hsPkgs."utility-ht" or (buildDepError "utility-ht"))
+          (hsPkgs."prelude-compat" or (buildDepError "prelude-compat"))
+          (hsPkgs."base" or (buildDepError "base"))
+          ] ++ (pkgs.lib).optional (flags.setindex) (hsPkgs."containers" or (buildDepError "containers"));
         };
       tests = {
         "comfort-array-test" = {
           depends = [
-            (hsPkgs.comfort-array)
-            (hsPkgs.ChasingBottoms)
-            (hsPkgs.tagged)
-            (hsPkgs.containers)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
+            (hsPkgs."comfort-array" or (buildDepError "comfort-array"))
+            (hsPkgs."ChasingBottoms" or (buildDepError "ChasingBottoms"))
+            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
             ];
           };
         };

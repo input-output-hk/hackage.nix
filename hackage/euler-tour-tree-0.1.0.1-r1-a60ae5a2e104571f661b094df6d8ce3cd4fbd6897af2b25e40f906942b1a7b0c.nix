@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { enable-hlint-test = false; };
     package = {
@@ -17,38 +56,43 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.fingertree)
-          (hsPkgs.mtl)
-          (hsPkgs.parser-combinators)
-          (hsPkgs.transformers)
-          (hsPkgs.Unique)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."fingertree" or (buildDepError "fingertree"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."parser-combinators" or (buildDepError "parser-combinators"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."Unique" or (buildDepError "Unique"))
           ];
         };
       tests = {
         "unit-tests" = {
           depends = [
-            (hsPkgs.euler-tour-tree)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
+            (hsPkgs."euler-tour-tree" or (buildDepError "euler-tour-tree"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
           };
         "property-tests" = {
           depends = [
-            (hsPkgs.euler-tour-tree)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.keys)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.sequence)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-quickcheck)
+            (hsPkgs."euler-tour-tree" or (buildDepError "euler-tour-tree"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."keys" or (buildDepError "keys"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."sequence" or (buildDepError "sequence"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
           };
-        "hlint-tests" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
+        "hlint-tests" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hlint" or (buildDepError "hlint"))
+            ];
+          };
         };
       };
     }

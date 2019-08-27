@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { atomic_writes = false; };
     package = {
@@ -17,51 +56,51 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.mtl)
-          (hsPkgs.containers)
-          (hsPkgs.uuid)
-          (hsPkgs.async)
-          (hsPkgs.hspec)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."uuid" or (buildDepError "uuid"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."hspec" or (buildDepError "hspec"))
           ];
-        libs = [ (pkgs."rados") ];
+        libs = [ (pkgs."rados" or (sysDepError "rados")) ];
         };
       tests = {
         "check" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.hspec)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.uuid)
-            (hsPkgs.async)
-            (hsPkgs.rados-haskell)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."rados-haskell" or (buildDepError "rados-haskell"))
             ];
-          libs = [ (pkgs."rados") ];
+          libs = [ (pkgs."rados" or (sysDepError "rados")) ];
           };
         };
       benchmarks = {
         "async" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.criterion)
-            (hsPkgs.transformers)
-            (hsPkgs.mtl)
-            (hsPkgs.rados-haskell)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."rados-haskell" or (buildDepError "rados-haskell"))
             ];
           };
         "concurrency" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.criterion)
-            (hsPkgs.transformers)
-            (hsPkgs.mtl)
-            (hsPkgs.async)
-            (hsPkgs.rados-haskell)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."rados-haskell" or (buildDepError "rados-haskell"))
             ];
           };
         };

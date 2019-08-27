@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,17 +57,17 @@
       exes = {
         "xml-to-json" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hxt)
-            (hsPkgs.hxt-curl)
-            (hsPkgs.aeson)
-            (hsPkgs.text)
-            (hsPkgs.containers)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.bytestring)
-            (hsPkgs.hxt-tagsoup)
-            (hsPkgs.hxt-expat)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."hxt-curl" or (buildDepError "hxt-curl"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."hxt-tagsoup" or (buildDepError "hxt-tagsoup"))
+            (hsPkgs."hxt-expat" or (buildDepError "hxt-expat"))
             ];
           };
         };

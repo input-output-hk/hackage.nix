@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { nooverlap = false; };
     package = {
@@ -17,68 +56,68 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.transformers)
-          (hsPkgs.time)
-          (hsPkgs.old-locale)
-          (hsPkgs.text)
-          (hsPkgs.containers)
-          (hsPkgs.conduit)
-          (hsPkgs.resourcet)
-          (hsPkgs.exceptions)
-          (hsPkgs.monad-control)
-          (hsPkgs.lifted-base)
-          (hsPkgs.resource-pool)
-          (hsPkgs.path-pieces)
-          (hsPkgs.http-api-data)
-          (hsPkgs.aeson)
-          (hsPkgs.monad-logger)
-          (hsPkgs.transformers-base)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.attoparsec)
-          (hsPkgs.template-haskell)
-          (hsPkgs.blaze-html)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.silently)
-          (hsPkgs.mtl)
-          (hsPkgs.fast-logger)
-          (hsPkgs.scientific)
-          (hsPkgs.tagged)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
+          (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
+          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."silently" or (buildDepError "silently"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
           ];
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.containers)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.bytestring)
-            (hsPkgs.vector)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.attoparsec)
-            (hsPkgs.transformers)
-            (hsPkgs.path-pieces)
-            (hsPkgs.http-api-data)
-            (hsPkgs.aeson)
-            (hsPkgs.resourcet)
-            (hsPkgs.monad-logger)
-            (hsPkgs.conduit)
-            (hsPkgs.monad-control)
-            (hsPkgs.blaze-html)
-            (hsPkgs.scientific)
-            (hsPkgs.tagged)
-            (hsPkgs.fast-logger)
-            (hsPkgs.lifted-base)
-            (hsPkgs.mtl)
-            (hsPkgs.template-haskell)
-            (hsPkgs.resource-pool)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."path-pieces" or (buildDepError "path-pieces"))
+            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
             ];
           };
         };

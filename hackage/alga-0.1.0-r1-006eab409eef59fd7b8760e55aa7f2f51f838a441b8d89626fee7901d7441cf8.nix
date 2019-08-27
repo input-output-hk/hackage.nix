@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,60 +56,60 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.exceptions)
-          (hsPkgs.haskeline)
-          (hsPkgs.hxt)
-          (hsPkgs.megaparsec)
-          (hsPkgs.mtl)
-          (hsPkgs.path)
-          (hsPkgs.random)
-          (hsPkgs.text)
-          (hsPkgs.tf-random)
-          (hsPkgs.transformers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."haskeline" or (buildDepError "haskeline"))
+          (hsPkgs."hxt" or (buildDepError "hxt"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."path" or (buildDepError "path"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."tf-random" or (buildDepError "tf-random"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         };
       exes = {
         "alga" = {
           depends = [
-            (hsPkgs.alga)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.exceptions)
-            (hsPkgs.filepath)
-            (hsPkgs.formatting)
-            (hsPkgs.haskeline)
-            (hsPkgs.hxt)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.path)
-            (hsPkgs.random)
-            (hsPkgs.temporary)
-            (hsPkgs.text)
-            (hsPkgs.tf-random)
-            (hsPkgs.transformers)
+            (hsPkgs."alga" or (buildDepError "alga"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."formatting" or (buildDepError "formatting"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."path" or (buildDepError "path"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."tf-random" or (buildDepError "tf-random"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.QuickCheck)
-            (hsPkgs.alga)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.hxt)
-            (hsPkgs.megaparsec)
-            (hsPkgs.mtl)
-            (hsPkgs.random)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.text)
-            (hsPkgs.tf-random)
-            (hsPkgs.transformers)
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."alga" or (buildDepError "alga"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."tf-random" or (buildDepError "tf-random"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { no-pkg-config = false; integer-simple = false; };
     package = {
@@ -17,51 +56,53 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.primitive)
-          (hsPkgs.exceptions)
-          (hsPkgs.word8)
-          (hsPkgs.scientific)
-          (hsPkgs.hashable)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.time)
-          (hsPkgs.deepseq)
-          (hsPkgs.template-haskell)
-          (hsPkgs.stm)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."word8" or (buildDepError "word8"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."stm" or (buildDepError "stm"))
           ] ++ (if flags.integer-simple
-          then [ (hsPkgs.integer-simple) ]
-          else [ (hsPkgs.integer-gmp) ]);
+          then [ (hsPkgs."integer-simple" or (buildDepError "integer-simple")) ]
+          else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
         libs = (pkgs.lib).optionals (!flags.integer-simple) (if system.isWindows
           then [
-            (pkgs."psapi")
-            (pkgs."Iphlpapi")
-            (pkgs."userenv")
-            (pkgs."Ws2_32")
+            (pkgs."psapi" or (sysDepError "psapi"))
+            (pkgs."Iphlpapi" or (sysDepError "Iphlpapi"))
+            (pkgs."userenv" or (sysDepError "userenv"))
+            (pkgs."Ws2_32" or (sysDepError "Ws2_32"))
             ]
-          else (pkgs.lib).optional (flags.no-pkg-config) (pkgs."uv"));
-        pkgconfig = (pkgs.lib).optionals (!flags.integer-simple) ((pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!flags.no-pkg-config) (pkgconfPkgs."libuv")));
+          else (pkgs.lib).optional (flags.no-pkg-config) (pkgs."uv" or (sysDepError "uv")));
+        pkgconfig = (pkgs.lib).optionals (!flags.integer-simple) ((pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!flags.no-pkg-config) (pkgconfPkgs."libuv" or (pkgConfDepError "libuv"))));
         build-tools = (pkgs.lib).optionals (!flags.integer-simple) [
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
-          (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
+          (hsPkgs.buildPackages.hspec-discover or (pkgs.buildPackages.hspec-discover or (buildToolDepError "hspec-discover")))
           ];
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.stdio)
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.hashable)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.word8)
-            (hsPkgs.scientific)
-            (hsPkgs.primitive)
+            (hsPkgs."stdio" or (buildDepError "stdio"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."word8" or (buildDepError "word8"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
             ] ++ (if flags.integer-simple
-            then [ (hsPkgs.integer-simple) ]
-            else [ (hsPkgs.integer-gmp) ]);
+            then [
+              (hsPkgs."integer-simple" or (buildDepError "integer-simple"))
+              ]
+            else [ (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")) ]);
           };
         };
       };

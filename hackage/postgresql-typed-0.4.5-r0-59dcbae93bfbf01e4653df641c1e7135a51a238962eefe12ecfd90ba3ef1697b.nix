@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       md5 = true;
@@ -25,51 +64,51 @@
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.binary)
-          (hsPkgs.containers)
-          (hsPkgs.old-locale)
-          (hsPkgs.time)
-          (hsPkgs.bytestring)
-          (hsPkgs.template-haskell)
-          (hsPkgs.haskell-src-meta)
-          (hsPkgs.network)
-          (hsPkgs.attoparsec)
-          (hsPkgs.utf8-string)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."haskell-src-meta" or (buildDepError "haskell-src-meta"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ (pkgs.lib).optionals (flags.md5) [
-          (hsPkgs.cryptonite)
-          (hsPkgs.memory)
+          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+          (hsPkgs."memory" or (buildDepError "memory"))
           ]) ++ (if flags.binary
           then [
-            (hsPkgs.postgresql-binary)
-            (hsPkgs.text)
-            (hsPkgs.uuid)
-            (hsPkgs.scientific)
+            (hsPkgs."postgresql-binary" or (buildDepError "postgresql-binary"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
             ]
-          else ((pkgs.lib).optional (flags.text) (hsPkgs.text) ++ (pkgs.lib).optional (flags.uuid) (hsPkgs.uuid)) ++ (pkgs.lib).optional (flags.scientific) (hsPkgs.scientific))) ++ (pkgs.lib).optional (flags.aeson) (hsPkgs.aeson)) ++ (pkgs.lib).optional (flags.hdbc) (hsPkgs.HDBC);
+          else ((pkgs.lib).optional (flags.text) (hsPkgs."text" or (buildDepError "text")) ++ (pkgs.lib).optional (flags.uuid) (hsPkgs."uuid" or (buildDepError "uuid"))) ++ (pkgs.lib).optional (flags.scientific) (hsPkgs."scientific" or (buildDepError "scientific")))) ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.hdbc) (hsPkgs."HDBC" or (buildDepError "HDBC"));
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.network)
-            (hsPkgs.time)
-            (hsPkgs.bytestring)
-            (hsPkgs.postgresql-typed)
-            (hsPkgs.QuickCheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."postgresql-typed" or (buildDepError "postgresql-typed"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           };
         "hdbc" = {
           depends = (pkgs.lib).optionals (flags.hdbc) [
-            (hsPkgs.base)
-            (hsPkgs.network)
-            (hsPkgs.time)
-            (hsPkgs.containers)
-            (hsPkgs.convertible)
-            (hsPkgs.postgresql-typed)
-            (hsPkgs.HDBC)
-            (hsPkgs.HUnit)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."convertible" or (buildDepError "convertible"))
+            (hsPkgs."postgresql-typed" or (buildDepError "postgresql-typed"))
+            (hsPkgs."HDBC" or (buildDepError "HDBC"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
             ];
           };
         };

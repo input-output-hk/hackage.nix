@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,35 +56,35 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.conduit)
-          (hsPkgs.conduit-extra)
-          (hsPkgs.cryptonite)
-          (hsPkgs.data-default-class)
-          (hsPkgs.directory)
-          (hsPkgs.exceptions)
-          (hsPkgs.filepath)
-          (hsPkgs.gogol-core)
-          (hsPkgs.http-client)
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-media)
-          (hsPkgs.http-types)
-          (hsPkgs.lens)
-          (hsPkgs.memory)
-          (hsPkgs.mime-types)
-          (hsPkgs.monad-control)
-          (hsPkgs.mtl)
-          (hsPkgs.resourcet)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-base)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.x509)
-          (hsPkgs.x509-store)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."gogol-core" or (buildDepError "gogol-core"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-media" or (buildDepError "http-media"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."mime-types" or (buildDepError "mime-types"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."x509" or (buildDepError "x509"))
+          (hsPkgs."x509-store" or (buildDepError "x509-store"))
           ];
         };
       };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { export-properties = true; };
     package = {
@@ -17,27 +56,27 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.free-algebras)
-          (hsPkgs.hashable)
-          (hsPkgs.lattices)
-          (hsPkgs.tagged)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.universe-base)
-          ] ++ (pkgs.lib).optional (flags.export-properties) (hsPkgs.QuickCheck);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."free-algebras" or (buildDepError "free-algebras"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."lattices" or (buildDepError "lattices"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."universe-base" or (buildDepError "universe-base"))
+          ] ++ (pkgs.lib).optional (flags.export-properties) (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"));
         };
       tests = {
         "heyting-algebras-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.lattices)
-            (hsPkgs.universe-base)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.heyting-algebras)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-quickcheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."lattices" or (buildDepError "lattices"))
+            (hsPkgs."universe-base" or (buildDepError "universe-base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."heyting-algebras" or (buildDepError "heyting-algebras"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
             ];
           };
         };

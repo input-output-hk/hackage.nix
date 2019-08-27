@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { developer = false; };
     package = {
@@ -17,229 +56,234 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.binary)
-          (hsPkgs.containers)
-          (hsPkgs.array)
-          (hsPkgs.polyparse)
-          (hsPkgs.old-locale)
-          (hsPkgs.time)
-          (hsPkgs.mtl)
-          (hsPkgs.network)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.hashable)
-          (hsPkgs.intern)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."polyparse" or (buildDepError "polyparse"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."intern" or (buildDepError "intern"))
           ];
         };
       exes = {
         "Swish" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.binary)
-            (hsPkgs.containers)
-            (hsPkgs.array)
-            (hsPkgs.polyparse)
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-            (hsPkgs.mtl)
-            (hsPkgs.network)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.hashable)
-            (hsPkgs.intern)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."intern" or (buildDepError "intern"))
             ];
           };
         };
       tests = {
         "test-builtinmap" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.old-locale)
-            (hsPkgs.network)
-            (hsPkgs.hashable)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.mtl)
-            (hsPkgs.polyparse)
-            (hsPkgs.time)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
+            (hsPkgs."time" or (buildDepError "time"))
             ];
           };
         "test-graphpartition" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           };
         "test-graph" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           };
         "test-nt" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-            (hsPkgs.polyparse)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
           };
         "test-n3parser" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-            (hsPkgs.polyparse)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
           };
         "test-n3formatter" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-            (hsPkgs.polyparse)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
           };
         "test-rdfdatatypexsdinteger" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-            (hsPkgs.polyparse)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
           };
         "test-rdfgraph" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
             ];
           };
         "test-rdfproofcontext" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.time)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.old-locale)
-            (hsPkgs.polyparse)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
           };
         "test-rdfproof" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.time)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.old-locale)
-            (hsPkgs.polyparse)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
           };
         "test-rdfquery" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.time)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.old-locale)
-            (hsPkgs.polyparse)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
           };
         "test-rdfruleset" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.hashable)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.time)
-            (hsPkgs.intern)
-            (hsPkgs.directory)
-            (hsPkgs.old-locale)
-            (hsPkgs.polyparse)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."polyparse" or (buildDepError "polyparse"))
             ];
           };
         "test-varbinding" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.intern)
-            (hsPkgs.hashable)
-            (hsPkgs.directory)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."directory" or (buildDepError "directory"))
             ];
           };
-        "test-lookupmap" = { depends = [ (hsPkgs.HUnit) (hsPkgs.base) ]; };
+        "test-lookupmap" = {
+          depends = [
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
+          };
         "test-qname" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.text)
-            (hsPkgs.network)
-            (hsPkgs.intern)
-            (hsPkgs.hashable)
-            (hsPkgs.directory)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."intern" or (buildDepError "intern"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."directory" or (buildDepError "directory"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { previewserver = true; checkexternal = true; };
     package = {
@@ -17,91 +56,95 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.blaze-html)
-          (hsPkgs.blaze-markup)
-          (hsPkgs.bytestring)
-          (hsPkgs.citeproc-hs)
-          (hsPkgs.cmdargs)
-          (hsPkgs.containers)
-          (hsPkgs.cryptohash)
-          (hsPkgs.data-default)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.lrucache)
-          (hsPkgs.mtl)
-          (hsPkgs.network)
-          (hsPkgs.old-locale)
-          (hsPkgs.old-time)
-          (hsPkgs.pandoc)
-          (hsPkgs.parsec)
-          (hsPkgs.process)
-          (hsPkgs.random)
-          (hsPkgs.regex-base)
-          (hsPkgs.regex-tdfa)
-          (hsPkgs.tagsoup)
-          (hsPkgs.text)
-          (hsPkgs.time)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"))
+          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."lrucache" or (buildDepError "lrucache"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."pandoc" or (buildDepError "pandoc"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."regex-base" or (buildDepError "regex-base"))
+          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+          (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
           ] ++ (pkgs.lib).optionals (flags.previewserver) [
-          (hsPkgs.snap-core)
-          (hsPkgs.snap-server)
-          (hsPkgs.fsnotify)
-          (hsPkgs.system-filepath)
+          (hsPkgs."snap-core" or (buildDepError "snap-core"))
+          (hsPkgs."snap-server" or (buildDepError "snap-server"))
+          (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
+          (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
           ]) ++ (pkgs.lib).optionals (flags.checkexternal) [
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-types)
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
           ];
         };
       exes = {
         "hakyll-init" = {
-          depends = [ (hsPkgs.base) (hsPkgs.directory) (hsPkgs.filepath) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            ];
           };
         };
       tests = {
         "hakyll-tests" = {
           depends = ([
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.bytestring)
-            (hsPkgs.citeproc-hs)
-            (hsPkgs.cmdargs)
-            (hsPkgs.containers)
-            (hsPkgs.cryptohash)
-            (hsPkgs.data-default)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.lrucache)
-            (hsPkgs.mtl)
-            (hsPkgs.network)
-            (hsPkgs.old-locale)
-            (hsPkgs.old-time)
-            (hsPkgs.pandoc)
-            (hsPkgs.parsec)
-            (hsPkgs.process)
-            (hsPkgs.random)
-            (hsPkgs.regex-base)
-            (hsPkgs.regex-tdfa)
-            (hsPkgs.tagsoup)
-            (hsPkgs.text)
-            (hsPkgs.time)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."citeproc-hs" or (buildDepError "citeproc-hs"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."lrucache" or (buildDepError "lrucache"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."pandoc" or (buildDepError "pandoc"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."regex-base" or (buildDepError "regex-base"))
+            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+            (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
             ] ++ (pkgs.lib).optionals (flags.previewserver) [
-            (hsPkgs.snap-core)
-            (hsPkgs.snap-server)
-            (hsPkgs.fsnotify)
-            (hsPkgs.system-filepath)
+            (hsPkgs."snap-core" or (buildDepError "snap-core"))
+            (hsPkgs."snap-server" or (buildDepError "snap-server"))
+            (hsPkgs."fsnotify" or (buildDepError "fsnotify"))
+            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
             ]) ++ (pkgs.lib).optionals (flags.checkexternal) [
-            (hsPkgs.http-conduit)
-            (hsPkgs.http-types)
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
             ];
           };
         };

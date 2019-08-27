@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -17,86 +56,86 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-          (hsPkgs.pipes-core)
-          (hsPkgs.bytestring)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         };
       exes = {
         "telnet" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs.base)
-            (hsPkgs.pipes-core)
-            (hsPkgs.pipes-extra)
-            (hsPkgs.transformers)
-            (hsPkgs.network)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
+            (hsPkgs."pipes-extra" or (buildDepError "pipes-extra"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."network" or (buildDepError "network"))
             ];
           };
         "compress" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs.base)
-            (hsPkgs.pipes-core)
-            (hsPkgs.pipes-extra)
-            (hsPkgs.pipes-zlib)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
+            (hsPkgs."pipes-extra" or (buildDepError "pipes-extra"))
+            (hsPkgs."pipes-zlib" or (buildDepError "pipes-zlib"))
             ];
           };
         "decompress" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs.base)
-            (hsPkgs.pipes-core)
-            (hsPkgs.pipes-extra)
-            (hsPkgs.pipes-zlib)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
+            (hsPkgs."pipes-extra" or (buildDepError "pipes-extra"))
+            (hsPkgs."pipes-zlib" or (buildDepError "pipes-zlib"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.bytestring)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-th-prime)
-            (hsPkgs.mtl)
-            (hsPkgs.pipes-core)
-            (hsPkgs.pipes-extra)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-th-prime" or (buildDepError "test-framework-th-prime"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
+            (hsPkgs."pipes-extra" or (buildDepError "pipes-extra"))
             ];
           };
         };
       benchmarks = {
         "bench-general" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.pipes-core)
-            (hsPkgs.bytestring)
-            (hsPkgs.transformers)
-            (hsPkgs.conduit)
-            (hsPkgs.criterion)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "bench-simple" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.pipes-core)
-            (hsPkgs.transformers)
-            (hsPkgs.criterion)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "bench-zlib" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.pipes-core)
-            (hsPkgs.pipes-zlib)
-            (hsPkgs.bytestring)
-            (hsPkgs.transformers)
-            (hsPkgs.enumerator)
-            (hsPkgs.zlib-enum)
-            (hsPkgs.conduit)
-            (hsPkgs.zlib-conduit)
-            (hsPkgs.zlib)
-            (hsPkgs.criterion)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."pipes-core" or (buildDepError "pipes-core"))
+            (hsPkgs."pipes-zlib" or (buildDepError "pipes-zlib"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."enumerator" or (buildDepError "enumerator"))
+            (hsPkgs."zlib-enum" or (buildDepError "zlib-enum"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."zlib-conduit" or (buildDepError "zlib-conduit"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -20,117 +59,117 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.async)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.data-default)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.hostname)
-          (hsPkgs.exceptions)
-          (hsPkgs.safe-exceptions)
-          (hsPkgs.filepath)
-          (hsPkgs.time)
-          (hsPkgs.mtl)
-          (hsPkgs.containers)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.lens)
-          (hsPkgs.parallel)
-          (hsPkgs.process)
-          (hsPkgs.monad-control)
-          (hsPkgs.extensible-effects)
-          (hsPkgs.stm)
-          (hsPkgs.tagged)
-          (hsPkgs.transformers-base)
-          (hsPkgs.text)
-          (hsPkgs.network)
-          (hsPkgs.pretty-types)
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."hostname" or (buildDepError "hostname"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."parallel" or (buildDepError "parallel"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
           ];
         };
       exes = {
         "extensible-effects-concurrent-example-1" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.data-default)
-            (hsPkgs.extensible-effects-concurrent)
-            (hsPkgs.extensible-effects)
-            (hsPkgs.lens)
-            (hsPkgs.text)
-            (hsPkgs.deepseq)
-            (hsPkgs.pretty-types)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
           };
         "extensible-effects-concurrent-example-2" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.data-default)
-            (hsPkgs.extensible-effects-concurrent)
-            (hsPkgs.extensible-effects)
-            (hsPkgs.lens)
-            (hsPkgs.text)
-            (hsPkgs.deepseq)
-            (hsPkgs.pretty-types)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
           };
         "extensible-effects-concurrent-example-3" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.data-default)
-            (hsPkgs.directory)
-            (hsPkgs.extensible-effects-concurrent)
-            (hsPkgs.extensible-effects)
-            (hsPkgs.filepath)
-            (hsPkgs.lens)
-            (hsPkgs.text)
-            (hsPkgs.pretty-types)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
           };
         "extensible-effects-concurrent-example-4" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.extensible-effects-concurrent)
-            (hsPkgs.extensible-effects)
-            (hsPkgs.deepseq)
-            (hsPkgs.text)
-            (hsPkgs.deepseq)
-            (hsPkgs.pretty-types)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
           };
         "extensible-effects-concurrent-example-embedded-protocols" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.deepseq)
-            (hsPkgs.extensible-effects-concurrent)
-            (hsPkgs.extensible-effects)
-            (hsPkgs.lens)
-            (hsPkgs.pretty-types)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };
       tests = {
         "extensible-effects-concurrent-test" = {
           depends = [
-            (hsPkgs.async)
-            (hsPkgs.base)
-            (hsPkgs.data-default)
-            (hsPkgs.deepseq)
-            (hsPkgs.extensible-effects-concurrent)
-            (hsPkgs.extensible-effects)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-discover)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.text)
-            (hsPkgs.containers)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.lens)
-            (hsPkgs.HUnit)
-            (hsPkgs.stm)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.filepath)
-            (hsPkgs.hostname)
-            (hsPkgs.pretty-types)
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."extensible-effects-concurrent" or (buildDepError "extensible-effects-concurrent"))
+            (hsPkgs."extensible-effects" or (buildDepError "extensible-effects"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hostname" or (buildDepError "hostname"))
+            (hsPkgs."pretty-types" or (buildDepError "pretty-types"))
             ];
           };
         };

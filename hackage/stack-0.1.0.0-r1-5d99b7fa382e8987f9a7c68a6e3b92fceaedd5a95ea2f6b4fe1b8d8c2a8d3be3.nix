@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { integration-tests = false; };
     package = {
@@ -17,136 +56,136 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.Cabal)
-          (hsPkgs.aeson)
-          (hsPkgs.async)
-          (hsPkgs.attoparsec)
-          (hsPkgs.base)
-          (hsPkgs.base16-bytestring)
-          (hsPkgs.bifunctors)
-          (hsPkgs.binary)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.bytestring)
-          (hsPkgs.conduit-combinators)
-          (hsPkgs.conduit)
-          (hsPkgs.conduit-extra)
-          (hsPkgs.containers)
-          (hsPkgs.cryptohash)
-          (hsPkgs.cryptohash-conduit)
-          (hsPkgs.directory)
-          (hsPkgs.enclosed-exceptions)
-          (hsPkgs.exceptions)
-          (hsPkgs.fast-logger)
-          (hsPkgs.filepath)
-          (hsPkgs.hashable)
-          (hsPkgs.http-client)
-          (hsPkgs.http-client-tls)
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-types)
-          (hsPkgs.lifted-base)
-          (hsPkgs.monad-control)
-          (hsPkgs.monad-logger)
-          (hsPkgs.monad-loops)
-          (hsPkgs.mtl)
-          (hsPkgs.old-locale)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.path)
-          (hsPkgs.persistent)
-          (hsPkgs.persistent-sqlite)
-          (hsPkgs.persistent-template)
-          (hsPkgs.pretty)
-          (hsPkgs.process)
-          (hsPkgs.resourcet)
-          (hsPkgs.safe)
-          (hsPkgs.stm)
-          (hsPkgs.streaming-commons)
-          (hsPkgs.tar)
-          (hsPkgs.template-haskell)
-          (hsPkgs.temporary)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-base)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.vector-binary-instances)
-          (hsPkgs.void)
-          (hsPkgs.yaml)
-          (hsPkgs.zlib)
-          (hsPkgs.deepseq)
-          (hsPkgs.file-embed)
-          (hsPkgs.word8)
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."cryptohash-conduit" or (buildDepError "cryptohash-conduit"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."enclosed-exceptions" or (buildDepError "enclosed-exceptions"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+          (hsPkgs."monad-loops" or (buildDepError "monad-loops"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."path" or (buildDepError "path"))
+          (hsPkgs."persistent" or (buildDepError "persistent"))
+          (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
+          (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."streaming-commons" or (buildDepError "streaming-commons"))
+          (hsPkgs."tar" or (buildDepError "tar"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."temporary" or (buildDepError "temporary"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
+          (hsPkgs."void" or (buildDepError "void"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."zlib" or (buildDepError "zlib"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."file-embed" or (buildDepError "file-embed"))
+          (hsPkgs."word8" or (buildDepError "word8"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
         };
       exes = {
         "stack" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.exceptions)
-            (hsPkgs.filepath)
-            (hsPkgs.http-conduit)
-            (hsPkgs.monad-logger)
-            (hsPkgs.mtl)
-            (hsPkgs.old-locale)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.optparse-simple)
-            (hsPkgs.path)
-            (hsPkgs.process)
-            (hsPkgs.resourcet)
-            (hsPkgs.stack)
-            (hsPkgs.text)
-            (hsPkgs.either)
-            (hsPkgs.directory)
-            (hsPkgs.split)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.hashable)
-            (hsPkgs.conduit)
-            (hsPkgs.transformers)
-            (hsPkgs.http-client)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."optparse-simple" or (buildDepError "optparse-simple"))
+            (hsPkgs."path" or (buildDepError "path"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."stack" or (buildDepError "stack"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."either" or (buildDepError "either"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
             ];
           };
         };
       tests = {
         "stack-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.exceptions)
-            (hsPkgs.filepath)
-            (hsPkgs.path)
-            (hsPkgs.temporary)
-            (hsPkgs.stack)
-            (hsPkgs.monad-logger)
-            (hsPkgs.http-conduit)
-            (hsPkgs.cryptohash)
-            (hsPkgs.transformers)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.resourcet)
-            (hsPkgs.Cabal)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."path" or (buildDepError "path"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."stack" or (buildDepError "stack"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
             ];
           };
         "stack-integration-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.temporary)
-            (hsPkgs.hspec)
-            (hsPkgs.process)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.text)
-            (hsPkgs.unix-compat)
-            (hsPkgs.containers)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.resourcet)
-            (hsPkgs.async)
-            (hsPkgs.transformers)
-            (hsPkgs.bytestring)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         };

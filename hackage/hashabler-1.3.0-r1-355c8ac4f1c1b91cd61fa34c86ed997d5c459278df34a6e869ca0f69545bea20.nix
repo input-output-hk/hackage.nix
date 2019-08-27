@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { integer-gmp = true; dev = false; instrumented = false; };
     package = {
@@ -17,62 +56,62 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-          (hsPkgs.primitive)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.template-haskell)
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.9") (hsPkgs.transformers)) ++ (pkgs.lib).optional (flags.integer-gmp) (hsPkgs.integer-gmp);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.9") (hsPkgs."transformers" or (buildDepError "transformers"))) ++ (pkgs.lib).optional (flags.integer-gmp) (hsPkgs."integer-gmp" or (buildDepError "integer-gmp"));
         };
       tests = {
         "tests" = {
           depends = (pkgs.lib).optionals (flags.dev) ([
-            (hsPkgs.base)
-            (hsPkgs.hashabler)
-            (hsPkgs.directory)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.primitive)
-            (hsPkgs.random)
-            (hsPkgs.QuickCheck)
-            ] ++ (pkgs.lib).optional (flags.integer-gmp) (hsPkgs.integer-gmp));
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashabler" or (buildDepError "hashabler"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            ] ++ (pkgs.lib).optional (flags.integer-gmp) (hsPkgs."integer-gmp" or (buildDepError "integer-gmp")));
           };
         };
       benchmarks = {
         "bench" = {
           depends = (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.primitive)
-            (hsPkgs.hashabler)
-            (hsPkgs.hashable)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."hashabler" or (buildDepError "hashabler"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
           };
         "viz" = {
           depends = (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.primitive)
-            (hsPkgs.JuicyPixels)
-            (hsPkgs.mwc-random)
-            (hsPkgs.vector)
-            (hsPkgs.hashabler)
-            (hsPkgs.hashable)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."JuicyPixels" or (buildDepError "JuicyPixels"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."hashabler" or (buildDepError "hashabler"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
             ];
           };
         "core" = {
           depends = (pkgs.lib).optionals (flags.dev) [
-            (hsPkgs.base)
-            (hsPkgs.hashabler)
-            (hsPkgs.bytestring)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hashabler" or (buildDepError "hashabler"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         };

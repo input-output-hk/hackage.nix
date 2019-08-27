@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,39 +56,39 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.exceptions)
-          (hsPkgs.lifted-async)
-          (hsPkgs.monad-control)
-          (hsPkgs.stm)
-          (hsPkgs.streaming)
-          (hsPkgs.streaming-with)
-          (hsPkgs.transformers-base)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."streaming" or (buildDepError "streaming"))
+          (hsPkgs."streaming-with" or (buildDepError "streaming-with"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
           ];
         };
       tests = {
         "merging" = {
           depends = [
-            (hsPkgs.streaming-concurrency)
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.streaming)
+            (hsPkgs."streaming-concurrency" or (buildDepError "streaming-concurrency"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."streaming" or (buildDepError "streaming"))
             ];
           };
         };
       benchmarks = {
         "mapping" = {
           depends = [
-            (hsPkgs.streaming-concurrency)
-            (hsPkgs.base)
-            (hsPkgs.exceptions)
-            (hsPkgs.HUnit)
-            (hsPkgs.lifted-async)
-            (hsPkgs.monad-control)
-            (hsPkgs.streaming)
-            (hsPkgs.testbench)
+            (hsPkgs."streaming-concurrency" or (buildDepError "streaming-concurrency"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."streaming" or (buildDepError "streaming"))
+            (hsPkgs."testbench" or (buildDepError "testbench"))
             ];
           };
         };

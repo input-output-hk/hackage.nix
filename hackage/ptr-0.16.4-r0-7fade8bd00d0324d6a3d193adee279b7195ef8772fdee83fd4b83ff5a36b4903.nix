@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,30 +56,30 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
-          (hsPkgs.time)
-          (hsPkgs.semigroups)
-          (hsPkgs.profunctors)
-          (hsPkgs.contravariant)
-          (hsPkgs.mtl)
-          (hsPkgs.transformers)
-          (hsPkgs.bug)
-          (hsPkgs.base-prelude)
-          (hsPkgs.base)
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."profunctors" or (buildDepError "profunctors"))
+          (hsPkgs."contravariant" or (buildDepError "contravariant"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."bug" or (buildDepError "bug"))
+          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
+          (hsPkgs."base" or (buildDepError "base"))
           ];
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.ptr)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.bug)
-            (hsPkgs.rerebase)
+            (hsPkgs."ptr" or (buildDepError "ptr"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."bug" or (buildDepError "bug"))
+            (hsPkgs."rerebase" or (buildDepError "rerebase"))
             ];
           };
         };

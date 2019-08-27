@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,85 +56,85 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.hasktorch-types-th)
-          (hsPkgs.hasktorch-types-thc)
-          (hsPkgs.hasktorch-signatures-types)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
+          (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
+          (hsPkgs."hasktorch-signatures-types" or (buildDepError "hasktorch-signatures-types"))
           ];
         };
       sublibs = {
         "hasktorch-partial-floating" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-signatures-partial)
-            (hsPkgs.hasktorch-signatures-support)
-            (hsPkgs.hasktorch-signatures)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-signatures-partial" or (buildDepError "hasktorch-signatures-partial"))
+            (hsPkgs."hasktorch-signatures-support" or (buildDepError "hasktorch-signatures-support"))
+            (hsPkgs."hasktorch-signatures" or (buildDepError "hasktorch-signatures"))
             ];
           };
         "hasktorch-partial-signed" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-signatures-partial)
-            (hsPkgs.hasktorch-signatures-support)
-            (hsPkgs.hasktorch-signatures)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-signatures-partial" or (buildDepError "hasktorch-signatures-partial"))
+            (hsPkgs."hasktorch-signatures-support" or (buildDepError "hasktorch-signatures-support"))
+            (hsPkgs."hasktorch-signatures" or (buildDepError "hasktorch-signatures"))
             ];
           };
         "hasktorch-partial-unsigned" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-signatures-partial)
-            (hsPkgs.hasktorch-signatures-support)
-            (hsPkgs.hasktorch-signatures)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-signatures-partial" or (buildDepError "hasktorch-signatures-partial"))
+            (hsPkgs."hasktorch-signatures-support" or (buildDepError "hasktorch-signatures-support"))
+            (hsPkgs."hasktorch-signatures" or (buildDepError "hasktorch-signatures"))
             ];
           };
         };
       exes = {
         "isdefinite-unsigned-th" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-ffi-th)
-            (hsPkgs.hasktorch-types-th)
-            (hsPkgs.hasktorch-partial-unsigned)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-ffi-th" or (buildDepError "hasktorch-ffi-th"))
+            (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
+            (hsPkgs."hasktorch-partial-unsigned" or (buildDepError "hasktorch-partial-unsigned"))
             ];
           };
         "isdefinite-unsigned-thc" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-ffi-thc)
-            (hsPkgs.hasktorch-types-thc)
-            (hsPkgs.hasktorch-partial-unsigned)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-ffi-thc" or (buildDepError "hasktorch-ffi-thc"))
+            (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
+            (hsPkgs."hasktorch-partial-unsigned" or (buildDepError "hasktorch-partial-unsigned"))
             ];
           };
         "isdefinite-signed-th" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-ffi-th)
-            (hsPkgs.hasktorch-types-th)
-            (hsPkgs.hasktorch-partial-signed)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-ffi-th" or (buildDepError "hasktorch-ffi-th"))
+            (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
+            (hsPkgs."hasktorch-partial-signed" or (buildDepError "hasktorch-partial-signed"))
             ];
           };
         "isdefinite-signed-thc" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-ffi-thc)
-            (hsPkgs.hasktorch-types-thc)
-            (hsPkgs.hasktorch-partial-signed)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-ffi-thc" or (buildDepError "hasktorch-ffi-thc"))
+            (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
+            (hsPkgs."hasktorch-partial-signed" or (buildDepError "hasktorch-partial-signed"))
             ];
           };
         "isdefinite-floating-th" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-ffi-th)
-            (hsPkgs.hasktorch-types-th)
-            (hsPkgs.hasktorch-partial-floating)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-ffi-th" or (buildDepError "hasktorch-ffi-th"))
+            (hsPkgs."hasktorch-types-th" or (buildDepError "hasktorch-types-th"))
+            (hsPkgs."hasktorch-partial-floating" or (buildDepError "hasktorch-partial-floating"))
             ];
           };
         "isdefinite-floating-thc" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hasktorch-ffi-thc)
-            (hsPkgs.hasktorch-types-thc)
-            (hsPkgs.hasktorch-partial-floating)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hasktorch-ffi-thc" or (buildDepError "hasktorch-ffi-thc"))
+            (hsPkgs."hasktorch-types-thc" or (buildDepError "hasktorch-types-thc"))
+            (hsPkgs."hasktorch-partial-floating" or (buildDepError "hasktorch-partial-floating"))
             ];
           };
         };

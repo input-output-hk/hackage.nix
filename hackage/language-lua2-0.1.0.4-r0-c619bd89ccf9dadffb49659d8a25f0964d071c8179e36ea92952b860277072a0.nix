@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { exes = false; };
     package = {
@@ -17,54 +56,54 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.Earley)
-          (hsPkgs.lexer-applicative)
-          (hsPkgs.microlens)
-          (hsPkgs.regex-applicative)
-          (hsPkgs.semigroups)
-          (hsPkgs.srcloc)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.wl-pprint)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."Earley" or (buildDepError "Earley"))
+          (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
+          (hsPkgs."microlens" or (buildDepError "microlens"))
+          (hsPkgs."regex-applicative" or (buildDepError "regex-applicative"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."srcloc" or (buildDepError "srcloc"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
           ];
         };
       exes = {
         "parse" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Earley)
-            (hsPkgs.lexer-applicative)
-            (hsPkgs.language-lua2)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.srcloc)
-            (hsPkgs.wl-pprint)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Earley" or (buildDepError "Earley"))
+            (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
+            (hsPkgs."language-lua2" or (buildDepError "language-lua2"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."srcloc" or (buildDepError "srcloc"))
+            (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
             ];
           };
         "lex" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.lexer-applicative)
-            (hsPkgs.language-lua2)
-            (hsPkgs.srcloc)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
+            (hsPkgs."language-lua2" or (buildDepError "language-lua2"))
+            (hsPkgs."srcloc" or (buildDepError "srcloc"))
             ];
           };
         };
       tests = {
         "language-lua2-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.deepseq)
-            (hsPkgs.lexer-applicative)
-            (hsPkgs.language-lua2)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.semigroups)
-            (hsPkgs.srcloc)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."lexer-applicative" or (buildDepError "lexer-applicative"))
+            (hsPkgs."language-lua2" or (buildDepError "language-lua2"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."semigroups" or (buildDepError "semigroups"))
+            (hsPkgs."srcloc" or (buildDepError "srcloc"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };

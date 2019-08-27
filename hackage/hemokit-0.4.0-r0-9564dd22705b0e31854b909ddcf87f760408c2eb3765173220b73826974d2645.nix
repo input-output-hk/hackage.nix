@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,78 +56,82 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.cipher-aes)
-          (hsPkgs.deepseq)
-          (hsPkgs.deepseq-generics)
-          (hsPkgs.hidapi)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
+          (hsPkgs."hidapi" or (buildDepError "hidapi"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       exes = {
         "hemokit-mouse" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hemokit)
-            (hsPkgs.pretty-show)
-            (hsPkgs.robot)
-            (hsPkgs.xhb)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hemokit" or (buildDepError "hemokit"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."robot" or (buildDepError "robot"))
+            (hsPkgs."xhb" or (buildDepError "xhb"))
             ];
           };
         "hemokit-dump" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hemokit)
-            (hsPkgs.aeson)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.pretty-show)
-            (hsPkgs.split)
-            (hsPkgs.transformers)
-            (hsPkgs.websockets)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hemokit" or (buildDepError "hemokit"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
           };
         "hemokit-fft" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hemokit)
-            (hsPkgs.conduit)
-            (hsPkgs.mtl)
-            (hsPkgs.pretty-show)
-            (hsPkgs.vector)
-            (hsPkgs.vector-fftw)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hemokit" or (buildDepError "hemokit"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-fftw" or (buildDepError "vector-fftw"))
             ];
           };
         "hemokit-headmap" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hemokit)
-            (hsPkgs.cairo)
-            (hsPkgs.gtk)
-            (hsPkgs.mtl)
-            (hsPkgs.pretty-show)
-            (hsPkgs.svgcairo)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hemokit" or (buildDepError "hemokit"))
+            (hsPkgs."cairo" or (buildDepError "cairo"))
+            (hsPkgs."gtk" or (buildDepError "gtk"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."svgcairo" or (buildDepError "svgcairo"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hemokit)
-            (hsPkgs.bytestring)
-            (hsPkgs.HUnit)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hemokit" or (buildDepError "hemokit"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       benchmarks = {
         "bench" = {
-          depends = [ (hsPkgs.base) (hsPkgs.hemokit) (hsPkgs.criterion) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hemokit" or (buildDepError "hemokit"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            ];
           };
         };
       };

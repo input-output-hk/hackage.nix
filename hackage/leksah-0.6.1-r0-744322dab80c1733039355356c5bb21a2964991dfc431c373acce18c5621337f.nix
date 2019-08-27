@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,31 +57,31 @@
       exes = {
         "leksah" = {
           depends = [
-            (hsPkgs.Cabal)
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc)
-            (hsPkgs.glib)
-            (hsPkgs.gtk)
-            (hsPkgs.gtksourceview2)
-            (hsPkgs.mtl)
-            (hsPkgs.old-time)
-            (hsPkgs.parsec)
-            (hsPkgs.pretty)
-            (hsPkgs.process)
-            (hsPkgs.regex-posix)
-            (hsPkgs.regex-compat)
-            (hsPkgs.regex-base)
-            (hsPkgs.utf8-string)
-            (hsPkgs.array)
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."glib" or (buildDepError "glib"))
+            (hsPkgs."gtk" or (buildDepError "gtk"))
+            (hsPkgs."gtksourceview2" or (buildDepError "gtksourceview2"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
+            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
+            (hsPkgs."regex-base" or (buildDepError "regex-base"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."array" or (buildDepError "array"))
             ] ++ (if system.isWindows
-            then [ (hsPkgs.Win32) ]
-            else [ (hsPkgs.unix) ]);
-          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32") ++ (pkgs.lib).optional (system.isOsx) (pkgs."igemacintegration");
+            then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+            else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
+          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (sysDepError "kernel32")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."igemacintegration" or (sysDepError "igemacintegration"));
           };
         "leksahecho" = {};
         };

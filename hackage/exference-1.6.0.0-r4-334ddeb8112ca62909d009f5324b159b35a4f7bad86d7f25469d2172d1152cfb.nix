@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       build-executables = true;
@@ -22,48 +61,48 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.base-orphans)
-          (hsPkgs.containers)
-          (hsPkgs.pretty)
-          (hsPkgs.deepseq)
-          (hsPkgs.deepseq-generics)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.hashable)
-          (hsPkgs.pqueue)
-          (hsPkgs.mmorph)
-          (hsPkgs.transformers)
-          (hsPkgs.mtl)
-          (hsPkgs.vector)
-          (hsPkgs.either)
-          (hsPkgs.haskell-src-exts)
-          (hsPkgs.hood)
-          (hsPkgs.process)
-          (hsPkgs.parsec)
-          (hsPkgs.directory)
-          (hsPkgs.bifunctors)
-          (hsPkgs.safe)
-          (hsPkgs.lens)
-          (hsPkgs.split)
-          (hsPkgs.multistate)
-          (hsPkgs.template-haskell)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."deepseq-generics" or (buildDepError "deepseq-generics"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."pqueue" or (buildDepError "pqueue"))
+          (hsPkgs."mmorph" or (buildDepError "mmorph"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."either" or (buildDepError "either"))
+          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
+          (hsPkgs."hood" or (buildDepError "hood"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."multistate" or (buildDepError "multistate"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
           ];
         };
       exes = {
         "exference" = {
           depends = (pkgs.lib).optionals (flags.build-executables) [
-            (hsPkgs.exference)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.transformers)
-            (hsPkgs.mtl)
-            (hsPkgs.haskell-src-exts)
-            (hsPkgs.data-pprint)
-            (hsPkgs.deepseq)
-            (hsPkgs.hood)
-            (hsPkgs.process)
-            (hsPkgs.either)
-            (hsPkgs.multistate)
+            (hsPkgs."exference" or (buildDepError "exference"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
+            (hsPkgs."data-pprint" or (buildDepError "data-pprint"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."hood" or (buildDepError "hood"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."either" or (buildDepError "either"))
+            (hsPkgs."multistate" or (buildDepError "multistate"))
             ];
           };
         };

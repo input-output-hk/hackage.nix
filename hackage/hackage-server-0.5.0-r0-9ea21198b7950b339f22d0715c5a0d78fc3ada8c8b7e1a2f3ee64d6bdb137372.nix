@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       minimal = false;
@@ -26,190 +65,190 @@
       exes = {
         "hackage-server" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.random)
-            (hsPkgs.array)
-            (hsPkgs.vector)
-            (hsPkgs.containers)
-            (hsPkgs.pretty)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.base16-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.text)
-            (hsPkgs.split)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.deepseq)
-            (hsPkgs.transformers)
-            (hsPkgs.mtl)
-            (hsPkgs.parsec)
-            (hsPkgs.network)
-            (hsPkgs.unix)
-            (hsPkgs.zlib)
-            (hsPkgs.tar)
-            (hsPkgs.async)
-            (hsPkgs.cereal)
-            (hsPkgs.safecopy)
-            (hsPkgs.crypto-api)
-            (hsPkgs.pureMD5)
-            (hsPkgs.xhtml)
-            (hsPkgs.aeson)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.rss)
-            (hsPkgs.HaXml)
-            (hsPkgs.Cabal)
-            (hsPkgs.csv)
-            (hsPkgs.stm)
-            (hsPkgs.acid-state)
-            (hsPkgs.happstack-server)
-            (hsPkgs.hslogger)
-            (hsPkgs.mime-mail)
-            (hsPkgs.HStringTemplate)
-            (hsPkgs.lifted-base)
-            (hsPkgs.QuickCheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."tar" or (buildDepError "tar"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
+            (hsPkgs."pureMD5" or (buildDepError "pureMD5"))
+            (hsPkgs."xhtml" or (buildDepError "xhtml"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."rss" or (buildDepError "rss"))
+            (hsPkgs."HaXml" or (buildDepError "HaXml"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."csv" or (buildDepError "csv"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."acid-state" or (buildDepError "acid-state"))
+            (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
+            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."mime-mail" or (buildDepError "mime-mail"))
+            (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
+            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ] ++ (pkgs.lib).optionals (!flags.minimal) [
-            (hsPkgs.snowball)
-            (hsPkgs.tokenize)
+            (hsPkgs."snowball" or (buildDepError "snowball"))
+            (hsPkgs."tokenize" or (buildDepError "tokenize"))
             ];
-          libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt");
+          libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt" or (sysDepError "crypt"));
           build-tools = [
-            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex))
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
             ];
           };
         "hackage-mirror" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.array)
-            (hsPkgs.vector)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.random)
-            (hsPkgs.tar)
-            (hsPkgs.zlib)
-            (hsPkgs.network)
-            (hsPkgs.HTTP)
-            (hsPkgs.Cabal)
-            (hsPkgs.safecopy)
-            (hsPkgs.cereal)
-            (hsPkgs.binary)
-            (hsPkgs.mtl)
-            (hsPkgs.unix)
-            (hsPkgs.aeson)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tar" or (buildDepError "tar"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
           };
         "hackage-build" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.array)
-            (hsPkgs.vector)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.process)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.tar)
-            (hsPkgs.zlib)
-            (hsPkgs.network)
-            (hsPkgs.HTTP)
-            (hsPkgs.Cabal)
-            (hsPkgs.safecopy)
-            (hsPkgs.cereal)
-            (hsPkgs.binary)
-            (hsPkgs.mtl)
-            (hsPkgs.aeson)
-            (hsPkgs.random)
-            (hsPkgs.unix)
-            (hsPkgs.hscolour)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."tar" or (buildDepError "tar"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."hscolour" or (buildDepError "hscolour"))
             ];
           };
         "hackage-import" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.array)
-            (hsPkgs.vector)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.pretty)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.random)
-            (hsPkgs.tar)
-            (hsPkgs.zlib)
-            (hsPkgs.network)
-            (hsPkgs.HTTP)
-            (hsPkgs.Cabal)
-            (hsPkgs.safecopy)
-            (hsPkgs.cereal)
-            (hsPkgs.binary)
-            (hsPkgs.mtl)
-            (hsPkgs.csv)
-            (hsPkgs.async)
-            (hsPkgs.attoparsec)
-            (hsPkgs.aeson)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tar" or (buildDepError "tar"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."safecopy" or (buildDepError "safecopy"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."csv" or (buildDepError "csv"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };
       tests = {
         "HighLevelTest" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.Cabal)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.HTTP)
-            (hsPkgs.network)
-            (hsPkgs.process)
-            (hsPkgs.tar)
-            (hsPkgs.unix)
-            (hsPkgs.zlib)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.aeson)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.xml)
-            (hsPkgs.random)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."tar" or (buildDepError "tar"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         "CreateUserTest" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.Cabal)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.HTTP)
-            (hsPkgs.network)
-            (hsPkgs.process)
-            (hsPkgs.tar)
-            (hsPkgs.unix)
-            (hsPkgs.zlib)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.aeson)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.xml)
-            (hsPkgs.random)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."tar" or (buildDepError "tar"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."random" or (buildDepError "random"))
             ];
           };
         };

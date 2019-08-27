@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,51 +56,66 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.template-haskell)
-          (hsPkgs.parallel)
-          (hsPkgs.deepseq)
-          (hsPkgs.primitive)
-          (hsPkgs.monad-primitive)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.erf)
-          (hsPkgs.gamma)
-          (hsPkgs.vector)
-          (hsPkgs.hmatrix)
-          (hsPkgs.mtl)
-          (hsPkgs.MonadRandom)
-          (hsPkgs.pipes)
-          (hsPkgs.bytestring)
-          (hsPkgs.bloomfilter)
-          (hsPkgs.cassava)
-          (hsPkgs.containers)
-          (hsPkgs.hyperloglog)
-          (hsPkgs.semigroups)
-          (hsPkgs.bytes)
-          (hsPkgs.approximate)
-          (hsPkgs.lens)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."parallel" or (buildDepError "parallel"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."monad-primitive" or (buildDepError "monad-primitive"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."erf" or (buildDepError "erf"))
+          (hsPkgs."gamma" or (buildDepError "gamma"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+          (hsPkgs."pipes" or (buildDepError "pipes"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."bloomfilter" or (buildDepError "bloomfilter"))
+          (hsPkgs."cassava" or (buildDepError "cassava"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."hyperloglog" or (buildDepError "hyperloglog"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."bytes" or (buildDepError "bytes"))
+          (hsPkgs."approximate" or (buildDepError "approximate"))
+          (hsPkgs."lens" or (buildDepError "lens"))
           ];
         };
       tests = {
         "TestSuite-Unoptimized" = {
           depends = [
-            (hsPkgs.subhask)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework)
+            (hsPkgs."subhask" or (buildDepError "subhask"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
             ];
           };
-        "Example0001" = { depends = [ (hsPkgs.subhask) (hsPkgs.base) ]; };
-        "Example0002" = { depends = [ (hsPkgs.subhask) (hsPkgs.base) ]; };
-        "Example0003" = { depends = [ (hsPkgs.subhask) (hsPkgs.base) ]; };
+        "Example0001" = {
+          depends = [
+            (hsPkgs."subhask" or (buildDepError "subhask"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
+          };
+        "Example0002" = {
+          depends = [
+            (hsPkgs."subhask" or (buildDepError "subhask"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
+          };
+        "Example0003" = {
+          depends = [
+            (hsPkgs."subhask" or (buildDepError "subhask"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
+          };
         };
       benchmarks = {
         "Vector" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.subhask)
-            (hsPkgs.criterion)
-            (hsPkgs.MonadRandom)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."subhask" or (buildDepError "subhask"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
           };
         };

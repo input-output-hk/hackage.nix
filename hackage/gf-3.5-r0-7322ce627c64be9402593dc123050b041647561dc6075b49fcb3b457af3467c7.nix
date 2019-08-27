@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { interrupt = true; server = true; new-comp = true; };
     package = {
@@ -17,46 +56,46 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.fst)
-          (hsPkgs.containers)
-          (hsPkgs.bytestring)
-          (hsPkgs.random)
-          (hsPkgs.pretty)
-          (hsPkgs.mtl)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."fst" or (buildDepError "fst"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
           ];
         };
       exes = {
         "gf" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.filepath)
-            (hsPkgs.fst)
-            (hsPkgs.directory)
-            (hsPkgs.random)
-            (hsPkgs.time)
-            (hsPkgs.time-compat)
-            (hsPkgs.old-locale)
-            (hsPkgs.process)
-            (hsPkgs.pretty)
-            (hsPkgs.mtl)
-            (hsPkgs.haskeline)
-            (hsPkgs.parallel)
-            (hsPkgs.utf8-string)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."fst" or (buildDepError "fst"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."time-compat" or (buildDepError "time-compat"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            (hsPkgs."parallel" or (buildDepError "parallel"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
             ] ++ (pkgs.lib).optionals (flags.server) [
-            (hsPkgs.httpd-shed)
-            (hsPkgs.network)
-            (hsPkgs.json)
-            (hsPkgs.cgi)
+            (hsPkgs."httpd-shed" or (buildDepError "httpd-shed"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."json" or (buildDepError "json"))
+            (hsPkgs."cgi" or (buildDepError "cgi"))
             ]) ++ (if system.isWindows
-            then [ (hsPkgs.Win32) ]
-            else [ (hsPkgs.unix) ]);
+            then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+            else [ (hsPkgs."unix" or (buildDepError "unix")) ]);
           build-tools = [
-            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy))
+            (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
             ];
           };
         };

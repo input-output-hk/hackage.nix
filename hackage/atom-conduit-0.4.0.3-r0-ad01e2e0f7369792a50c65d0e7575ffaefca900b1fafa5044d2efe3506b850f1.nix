@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,44 +56,44 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.conduit)
-          (hsPkgs.conduit-combinators)
-          (hsPkgs.safe-exceptions)
-          (hsPkgs.lens-simple)
-          (hsPkgs.mono-traversable)
-          (hsPkgs.parsers)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.timerep)
-          (hsPkgs.uri-bytestring)
-          (hsPkgs.xml-conduit)
-          (hsPkgs.xml-types)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."conduit-combinators" or (buildDepError "conduit-combinators"))
+          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+          (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
+          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+          (hsPkgs."parsers" or (buildDepError "parsers"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."timerep" or (buildDepError "timerep"))
+          (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+          (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+          (hsPkgs."xml-types" or (buildDepError "xml-types"))
           ];
         };
       tests = {
         "Tests" = {
           depends = [
-            (hsPkgs.atom-conduit)
-            (hsPkgs.base)
-            (hsPkgs.conduit)
-            (hsPkgs.data-default)
-            (hsPkgs.safe-exceptions)
-            (hsPkgs.hlint)
-            (hsPkgs.lens-simple)
-            (hsPkgs.mono-traversable)
-            (hsPkgs.parsers)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.resourcet)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.time)
-            (hsPkgs.text)
-            (hsPkgs.uri-bytestring)
-            (hsPkgs.xml-conduit)
-            (hsPkgs.xml-types)
+            (hsPkgs."atom-conduit" or (buildDepError "atom-conduit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+            (hsPkgs."hlint" or (buildDepError "hlint"))
+            (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
+            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+            (hsPkgs."parsers" or (buildDepError "parsers"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."uri-bytestring" or (buildDepError "uri-bytestring"))
+            (hsPkgs."xml-conduit" or (buildDepError "xml-conduit"))
+            (hsPkgs."xml-types" or (buildDepError "xml-types"))
             ];
           };
         };

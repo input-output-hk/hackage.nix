@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { use-pkgconfig = false; force-narrow-library = false; };
     package = {
@@ -17,19 +56,33 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         libs = (pkgs.lib).optionals (!flags.use-pkgconfig) (if system.isOsx || flags.force-narrow-library
-          then [ (pkgs."panel") (pkgs."ncurses") (pkgs."pthread") ]
-          else [ (pkgs."panelw") (pkgs."ncursesw") (pkgs."pthread") ]);
+          then [
+            (pkgs."panel" or (sysDepError "panel"))
+            (pkgs."ncurses" or (sysDepError "ncurses"))
+            (pkgs."pthread" or (sysDepError "pthread"))
+            ]
+          else [
+            (pkgs."panelw" or (sysDepError "panelw"))
+            (pkgs."ncursesw" or (sysDepError "ncursesw"))
+            (pkgs."pthread" or (sysDepError "pthread"))
+            ]);
         pkgconfig = (pkgs.lib).optionals (flags.use-pkgconfig) (if flags.force-narrow-library
-          then [ (pkgconfPkgs."ncurses") (pkgconfPkgs."panel") ]
-          else [ (pkgconfPkgs."ncursesw") (pkgconfPkgs."panelw") ]);
+          then [
+            (pkgconfPkgs."ncurses" or (pkgConfDepError "ncurses"))
+            (pkgconfPkgs."panel" or (pkgConfDepError "panel"))
+            ]
+          else [
+            (pkgconfPkgs."ncursesw" or (pkgConfDepError "ncursesw"))
+            (pkgconfPkgs."panelw" or (pkgConfDepError "panelw"))
+            ]);
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
           ];
         };
       };

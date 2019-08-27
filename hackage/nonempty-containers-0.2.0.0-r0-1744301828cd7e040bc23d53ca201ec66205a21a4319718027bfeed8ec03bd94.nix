@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,28 +56,28 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.comonad)
-          (hsPkgs.containers)
-          (hsPkgs.data-or)
-          (hsPkgs.deepseq)
-          (hsPkgs.semigroupoids)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."comonad" or (buildDepError "comonad"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."data-or" or (buildDepError "data-or"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
           ];
         };
       tests = {
         "nonempty-containers-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.comonad)
-            (hsPkgs.containers)
-            (hsPkgs.data-or)
-            (hsPkgs.hedgehog)
-            (hsPkgs.hedgehog-fn)
-            (hsPkgs.nonempty-containers)
-            (hsPkgs.semigroupoids)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hedgehog)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."comonad" or (buildDepError "comonad"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-or" or (buildDepError "data-or"))
+            (hsPkgs."hedgehog" or (buildDepError "hedgehog"))
+            (hsPkgs."hedgehog-fn" or (buildDepError "hedgehog-fn"))
+            (hsPkgs."nonempty-containers" or (buildDepError "nonempty-containers"))
+            (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hedgehog" or (buildDepError "tasty-hedgehog"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

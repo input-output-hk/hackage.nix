@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; library-only = false; };
     package = {
@@ -17,83 +56,85 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.yesod)
-          (hsPkgs.yesod-core)
-          (hsPkgs.yesod-static)
-          (hsPkgs.yesod-routes)
-          (hsPkgs.hamlet)
-          (hsPkgs.shakespeare-text)
-          (hsPkgs.wai-extra)
-          (hsPkgs.wai-logger)
-          (hsPkgs.cookie)
-          (hsPkgs.hjsmin)
-          (hsPkgs.mtl)
-          (hsPkgs.MonadRandom)
-          (hsPkgs.bytestring)
-          (hsPkgs.text)
-          (hsPkgs.aeson)
-          (hsPkgs.containers)
-          (hsPkgs.array)
-          (hsPkgs.blaze-svg)
-          (hsPkgs.diagrams-svg)
-          (hsPkgs.diagrams-lib)
-          (hsPkgs.colour)
-          (hsPkgs.template-haskell)
-          (hsPkgs.data-default)
-          (hsPkgs.fast-logger)
-          (hsPkgs.cereal)
-          (hsPkgs.transformers)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.SimpleAES)
-          (hsPkgs.attoparsec)
-          (hsPkgs.word8)
-          (hsPkgs.shakespeare-js)
-          (hsPkgs.yaml)
-          (hsPkgs.filepath)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."yesod" or (buildDepError "yesod"))
+          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+          (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
+          (hsPkgs."yesod-routes" or (buildDepError "yesod-routes"))
+          (hsPkgs."hamlet" or (buildDepError "hamlet"))
+          (hsPkgs."shakespeare-text" or (buildDepError "shakespeare-text"))
+          (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+          (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
+          (hsPkgs."cookie" or (buildDepError "cookie"))
+          (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."blaze-svg" or (buildDepError "blaze-svg"))
+          (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
+          (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+          (hsPkgs."colour" or (buildDepError "colour"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."SimpleAES" or (buildDepError "SimpleAES"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."word8" or (buildDepError "word8"))
+          (hsPkgs."shakespeare-js" or (buildDepError "shakespeare-js"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
           ] ++ (pkgs.lib).optionals (flags.library-only) [
-          (hsPkgs.warp)
-          (hsPkgs.directory)
+          (hsPkgs."warp" or (buildDepError "warp"))
+          (hsPkgs."directory" or (buildDepError "directory"))
           ];
         };
       exes = {
         "main.fcgi" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.battleships)
-            (hsPkgs.yesod)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."battleships" or (buildDepError "battleships"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
             ] ++ (if flags.dev
-            then [ (hsPkgs.warp) ]
-            else [ (hsPkgs.wai-handler-fastcgi) ]);
+            then [ (hsPkgs."warp" or (buildDepError "warp")) ]
+            else [
+              (hsPkgs."wai-handler-fastcgi" or (buildDepError "wai-handler-fastcgi"))
+              ]);
           };
         "img-gen" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.battleships)
-            (hsPkgs.bytestring)
-            (hsPkgs.blaze-svg)
-            (hsPkgs.diagrams-svg)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."battleships" or (buildDepError "battleships"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."blaze-svg" or (buildDepError "blaze-svg"))
+            (hsPkgs."diagrams-svg" or (buildDepError "diagrams-svg"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         "aibenchmark" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.battleships)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.containers)
-            (hsPkgs.MonadRandom)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."battleships" or (buildDepError "battleships"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
             ];
           };
         "key-gen" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.bytestring)
-            (hsPkgs.crypto-random)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
             ];
           };
         };

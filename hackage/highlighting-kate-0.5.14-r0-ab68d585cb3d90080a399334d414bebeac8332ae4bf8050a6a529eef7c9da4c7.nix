@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { splitbase = true; executable = false; pcre-light = false; };
     package = {
@@ -17,38 +56,45 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.parsec)
-          (hsPkgs.mtl)
-          (hsPkgs.blaze-html)
-          (hsPkgs.utf8-string)
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
           ] ++ (if flags.splitbase
-          then [ (hsPkgs.base) (hsPkgs.containers) ]
-          else [ (hsPkgs.base) ])) ++ (if flags.pcre-light
-          then [ (hsPkgs.pcre-light) ]
-          else [ (hsPkgs.regex-pcre-builtin) ]);
+          then [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            ]
+          else [
+            (hsPkgs."base" or (buildDepError "base"))
+            ])) ++ (if flags.pcre-light
+          then [ (hsPkgs."pcre-light" or (buildDepError "pcre-light")) ]
+          else [
+            (hsPkgs."regex-pcre-builtin" or (buildDepError "regex-pcre-builtin"))
+            ]);
         };
       exes = {
         "Highlight" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.blaze-html)
-            (hsPkgs.filepath)
-            (hsPkgs.highlighting-kate)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
             ];
           };
         };
       tests = {
         "test-highlighting-kate" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.highlighting-kate)
-            (hsPkgs.filepath)
-            (hsPkgs.process)
-            (hsPkgs.Diff)
-            (hsPkgs.containers)
-            (hsPkgs.blaze-html)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."Diff" or (buildDepError "Diff"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
             ];
           };
         };

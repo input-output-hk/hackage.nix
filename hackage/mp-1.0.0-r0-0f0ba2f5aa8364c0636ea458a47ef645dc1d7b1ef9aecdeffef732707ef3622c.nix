@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,38 +57,38 @@
       exes = {
         "mp" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.haskell-gi-base)
-            (hsPkgs.haskell-gi-overloading)
-            (hsPkgs.gi-gobject)
-            (hsPkgs.gi-glib)
-            (hsPkgs.gi-gst)
-            (hsPkgs.transformers)
-            (hsPkgs.transformers-base)
-            (hsPkgs.text)
-            (hsPkgs.mtl)
-            (hsPkgs.random)
-            (hsPkgs.binary)
-            (hsPkgs.network)
-            (hsPkgs.directory)
-            (hsPkgs.unix)
-            (hsPkgs.filepath)
-            (hsPkgs.utf8-string)
-            (hsPkgs.ConfigFile)
-            (hsPkgs.MissingH)
-            (hsPkgs.resourcet)
-            (hsPkgs.exceptions)
-            (hsPkgs.async)
-            (hsPkgs.daemons)
-            (hsPkgs.vty)
-            (hsPkgs.lens)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.vector)
-            (hsPkgs.data-default-class)
-            (hsPkgs.template-haskell)
-            (hsPkgs.stm)
-            (hsPkgs.simple-ui)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."haskell-gi-base" or (buildDepError "haskell-gi-base"))
+            (hsPkgs."haskell-gi-overloading" or (buildDepError "haskell-gi-overloading"))
+            (hsPkgs."gi-gobject" or (buildDepError "gi-gobject"))
+            (hsPkgs."gi-glib" or (buildDepError "gi-glib"))
+            (hsPkgs."gi-gst" or (buildDepError "gi-gst"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
+            (hsPkgs."MissingH" or (buildDepError "MissingH"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."daemons" or (buildDepError "daemons"))
+            (hsPkgs."vty" or (buildDepError "vty"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."simple-ui" or (buildDepError "simple-ui"))
             ];
           };
         };

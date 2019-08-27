@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,103 +56,103 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.ansi-wl-pprint)
-          (hsPkgs.array)
-          (hsPkgs.attoparsec)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.conduit)
-          (hsPkgs.containers)
-          (hsPkgs.dlist)
-          (hsPkgs.hw-balancedparens)
-          (hsPkgs.hw-bits)
-          (hsPkgs.hw-conduit)
-          (hsPkgs.hw-mquery)
-          (hsPkgs.hw-parser)
-          (hsPkgs.hw-prim)
-          (hsPkgs.hw-rankselect)
-          (hsPkgs.hw-rankselect-base)
-          (hsPkgs.mmap)
-          (hsPkgs.mono-traversable)
-          (hsPkgs.resourcet)
-          (hsPkgs.text)
-          (hsPkgs.vector)
-          (hsPkgs.word8)
+          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."dlist" or (buildDepError "dlist"))
+          (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
+          (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+          (hsPkgs."hw-conduit" or (buildDepError "hw-conduit"))
+          (hsPkgs."hw-mquery" or (buildDepError "hw-mquery"))
+          (hsPkgs."hw-parser" or (buildDepError "hw-parser"))
+          (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+          (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+          (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+          (hsPkgs."mmap" or (buildDepError "mmap"))
+          (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."word8" or (buildDepError "word8"))
           ];
         };
       exes = {
         "hw-json-example" = {
           depends = [
-            (hsPkgs.ansi-wl-pprint)
-            (hsPkgs.array)
-            (hsPkgs.attoparsec)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.conduit)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.dlist)
-            (hsPkgs.hw-balancedparens)
-            (hsPkgs.hw-bits)
-            (hsPkgs.hw-conduit)
-            (hsPkgs.hw-diagnostics)
-            (hsPkgs.hw-json)
-            (hsPkgs.hw-mquery)
-            (hsPkgs.hw-parser)
-            (hsPkgs.hw-prim)
-            (hsPkgs.hw-rankselect)
-            (hsPkgs.hw-rankselect-base)
-            (hsPkgs.mmap)
-            (hsPkgs.mono-traversable)
-            (hsPkgs.resourcet)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.word8)
+            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."dlist" or (buildDepError "dlist"))
+            (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
+            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+            (hsPkgs."hw-conduit" or (buildDepError "hw-conduit"))
+            (hsPkgs."hw-diagnostics" or (buildDepError "hw-diagnostics"))
+            (hsPkgs."hw-json" or (buildDepError "hw-json"))
+            (hsPkgs."hw-mquery" or (buildDepError "hw-mquery"))
+            (hsPkgs."hw-parser" or (buildDepError "hw-parser"))
+            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+            (hsPkgs."mmap" or (buildDepError "mmap"))
+            (hsPkgs."mono-traversable" or (buildDepError "mono-traversable"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."word8" or (buildDepError "word8"))
             ];
           };
         };
       tests = {
         "hw-json-test" = {
           depends = [
-            (hsPkgs.QuickCheck)
-            (hsPkgs.attoparsec)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.conduit)
-            (hsPkgs.containers)
-            (hsPkgs.hspec)
-            (hsPkgs.hw-balancedparens)
-            (hsPkgs.hw-bits)
-            (hsPkgs.hw-conduit)
-            (hsPkgs.hw-json)
-            (hsPkgs.hw-prim)
-            (hsPkgs.hw-rankselect)
-            (hsPkgs.hw-rankselect-base)
-            (hsPkgs.mmap)
-            (hsPkgs.parsec)
-            (hsPkgs.resourcet)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
+            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+            (hsPkgs."hw-conduit" or (buildDepError "hw-conduit"))
+            (hsPkgs."hw-json" or (buildDepError "hw-json"))
+            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+            (hsPkgs."mmap" or (buildDepError "mmap"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.conduit)
-            (hsPkgs.criterion)
-            (hsPkgs.hw-balancedparens)
-            (hsPkgs.hw-bits)
-            (hsPkgs.hw-conduit)
-            (hsPkgs.hw-json)
-            (hsPkgs.hw-prim)
-            (hsPkgs.hw-rankselect)
-            (hsPkgs.hw-rankselect-base)
-            (hsPkgs.mmap)
-            (hsPkgs.resourcet)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."hw-balancedparens" or (buildDepError "hw-balancedparens"))
+            (hsPkgs."hw-bits" or (buildDepError "hw-bits"))
+            (hsPkgs."hw-conduit" or (buildDepError "hw-conduit"))
+            (hsPkgs."hw-json" or (buildDepError "hw-json"))
+            (hsPkgs."hw-prim" or (buildDepError "hw-prim"))
+            (hsPkgs."hw-rankselect" or (buildDepError "hw-rankselect"))
+            (hsPkgs."hw-rankselect-base" or (buildDepError "hw-rankselect-base"))
+            (hsPkgs."mmap" or (buildDepError "mmap"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };

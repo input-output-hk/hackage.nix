@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,71 +56,71 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.filepath)
-          (hsPkgs.mtl)
-          (hsPkgs.directory)
-          (hsPkgs.Cabal)
-          (hsPkgs.process)
-          (hsPkgs.regex-tdfa)
-          (hsPkgs.ghc)
-          (hsPkgs.ghc-paths)
-          (hsPkgs.syb)
-          (hsPkgs.ghc-syb-utils)
-          (hsPkgs.text)
-          (hsPkgs.containers)
-          (hsPkgs.vector)
-          (hsPkgs.haskell-src-exts)
-          (hsPkgs.cpphs)
-          (hsPkgs.old-time)
-          (hsPkgs.aeson)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
+          (hsPkgs."cpphs" or (buildDepError "cpphs"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
         };
       exes = {
         "buildwrapper" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.buildwrapper)
-            (hsPkgs.cmdargs)
-            (hsPkgs.filepath)
-            (hsPkgs.Cabal)
-            (hsPkgs.directory)
-            (hsPkgs.mtl)
-            (hsPkgs.ghc)
-            (hsPkgs.cpphs)
-            (hsPkgs.haskell-src-exts)
-            (hsPkgs.old-time)
-            (hsPkgs.ghc-syb-utils)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.vector)
-            (hsPkgs.containers)
-            (hsPkgs.syb)
-            (hsPkgs.process)
-            (hsPkgs.regex-tdfa)
-            (hsPkgs.text)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."buildwrapper" or (buildDepError "buildwrapper"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."cpphs" or (buildDepError "cpphs"))
+            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         };
       tests = {
         "buildwrapper-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.buildwrapper)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.Cabal)
-            (hsPkgs.old-time)
-            (hsPkgs.aeson)
-            (hsPkgs.text)
-            (hsPkgs.process)
-            (hsPkgs.bytestring)
-            (hsPkgs.attoparsec)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."buildwrapper" or (buildDepError "buildwrapper"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
           };
         };

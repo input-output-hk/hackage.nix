@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { no-cabal-dev = false; build-tests = false; };
     package = {
@@ -18,43 +57,50 @@
       exes = {
         "cabal-dev" = {
           depends = (pkgs.lib).optionals (!flags.no-cabal-dev) (((([
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.Cabal)
-            (hsPkgs.HTTP)
-            (hsPkgs.mtl)
-            (hsPkgs.network)
-            (hsPkgs.pretty)
-            (hsPkgs.process)
-            (hsPkgs.tar)
-            (hsPkgs.zlib)
-            (hsPkgs.transformers)
-            (hsPkgs.template-haskell)
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."tar" or (buildDepError "tar"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ] ++ [
-            (hsPkgs.base)
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.12") (hsPkgs.containers)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "6.10") (hsPkgs.containers)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "6.8") (hsPkgs.containers)) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+            (hsPkgs."base" or (buildDepError "base"))
+            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.12") (hsPkgs."containers" or (buildDepError "containers"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "6.10") (hsPkgs."containers" or (buildDepError "containers"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "6.8") (hsPkgs."containers" or (buildDepError "containers"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (buildToolDepError "cabal")))
             ];
           };
-        "ghc-pkg-6_8-compat" = { depends = [ (hsPkgs.base) (hsPkgs.Cabal) ]; };
+        "ghc-pkg-6_8-compat" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            ];
+          };
         "cabal-dev-test" = {
           depends = (pkgs.lib).optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
-            (hsPkgs.MonadRandom)
-            (hsPkgs.random)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.HUnit)
-            (hsPkgs.containers)
-            (hsPkgs.network)
-            (hsPkgs.array)
-            (hsPkgs.pretty)
+            (hsPkgs."MonadRandom" or (buildDepError "MonadRandom"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
             ] ++ [
-            (hsPkgs.base)
-            ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.Win32);
+            (hsPkgs."base" or (buildDepError "base"))
+            ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (buildDepError "Win32"));
           };
-        "fake-ghc-cabal-dev" = { depends = [ (hsPkgs.base) ]; };
+        "fake-ghc-cabal-dev" = {
+          depends = [ (hsPkgs."base" or (buildDepError "base")) ];
+          };
         };
       };
     }

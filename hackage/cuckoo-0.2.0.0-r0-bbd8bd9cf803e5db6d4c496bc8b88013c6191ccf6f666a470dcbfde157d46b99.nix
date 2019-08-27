@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { mwc-random = false; pcg-random = false; };
     package = {
@@ -17,53 +56,64 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.random-internal)
-          (hsPkgs.base)
-          (hsPkgs.memory)
-          (hsPkgs.primitive)
-          (hsPkgs.vector)
+          (hsPkgs."random-internal" or (buildDepError "random-internal"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       sublibs = {
         "random-internal" = {
-          depends = [ (hsPkgs.base) (hsPkgs.primitive) ] ++ (if flags.pcg-random
-            then [ (hsPkgs.pcg-random) ]
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            ] ++ (if flags.pcg-random
+            then [ (hsPkgs."pcg-random" or (buildDepError "pcg-random")) ]
             else if flags.mwc-random
-              then [ (hsPkgs.mwc-random) (hsPkgs.vector) ]
-              else [ (hsPkgs.random) ]);
+              then [
+                (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+                (hsPkgs."vector" or (buildDepError "vector"))
+                ]
+              else [ (hsPkgs."random" or (buildDepError "random")) ]);
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.cuckoo)
-            (hsPkgs.random-internal)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.cryptonite)
-            (hsPkgs.hashable)
-            (hsPkgs.memory)
-            (hsPkgs.stopwatch)
+            (hsPkgs."cuckoo" or (buildDepError "cuckoo"))
+            (hsPkgs."random-internal" or (buildDepError "random-internal"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."memory" or (buildDepError "memory"))
+            (hsPkgs."stopwatch" or (buildDepError "stopwatch"))
             ];
           };
-        "doctests" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        "doctests" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            ];
+          };
         };
       benchmarks = {
         "spellchecker" = {
           depends = [
-            (hsPkgs.cuckoo)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.memory)
-            (hsPkgs.stopwatch)
+            (hsPkgs."cuckoo" or (buildDepError "cuckoo"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."memory" or (buildDepError "memory"))
+            (hsPkgs."stopwatch" or (buildDepError "stopwatch"))
             ];
           };
         "internal-benchmarks" = {
           depends = [
-            (hsPkgs.cuckoo)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."cuckoo" or (buildDepError "cuckoo"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         };

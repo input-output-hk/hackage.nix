@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,46 +56,50 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.lens)
-          (hsPkgs.lens-aeson)
-          (hsPkgs.mtl)
-          (hsPkgs.parsec)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.regex-tdfa)
-          (hsPkgs.text)
-          (hsPkgs.wreq)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."wreq" or (buildDepError "wreq"))
           ];
         };
       exes = {
         "psc-ide" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.psc-ide)
-            (hsPkgs.mtl)
-            (hsPkgs.text)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.network)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."psc-ide" or (buildDepError "psc-ide"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."network" or (buildDepError "network"))
             ];
           };
         "psc-ide-server" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.network)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.directory)
-            (hsPkgs.psc-ide)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."psc-ide" or (buildDepError "psc-ide"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };
       tests = {
         "spec" = {
-          depends = [ (hsPkgs.base) (hsPkgs.psc-ide) (hsPkgs.hspec) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."psc-ide" or (buildDepError "psc-ide"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            ];
           };
         };
       };

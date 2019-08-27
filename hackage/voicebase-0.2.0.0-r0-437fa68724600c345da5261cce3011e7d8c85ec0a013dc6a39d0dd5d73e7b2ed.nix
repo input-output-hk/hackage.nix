@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,44 +56,44 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.HsOpenSSL)
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.http-client)
-          (hsPkgs.http-client-openssl)
-          (hsPkgs.lens)
-          (hsPkgs.lens-aeson)
-          (hsPkgs.mime-types)
-          (hsPkgs.mtl)
-          (hsPkgs.roundtrip)
-          (hsPkgs.roundtrip-aeson)
-          (hsPkgs.text)
-          (hsPkgs.wreq)
+          (hsPkgs."HsOpenSSL" or (buildDepError "HsOpenSSL"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."http-client-openssl" or (buildDepError "http-client-openssl"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
+          (hsPkgs."mime-types" or (buildDepError "mime-types"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."roundtrip" or (buildDepError "roundtrip"))
+          (hsPkgs."roundtrip-aeson" or (buildDepError "roundtrip-aeson"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."wreq" or (buildDepError "wreq"))
           ];
         };
       exes = {
         "voicebase" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.filepath)
-            (hsPkgs.mime-types)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.text)
-            (hsPkgs.voicebase)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."mime-types" or (buildDepError "mime-types"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."voicebase" or (buildDepError "voicebase"))
             ];
           };
         };
       tests = {
         "voicebase-test" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.roundtrip-aeson)
-            (hsPkgs.voicebase)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."roundtrip-aeson" or (buildDepError "roundtrip-aeson"))
+            (hsPkgs."voicebase" or (buildDepError "voicebase"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { developer = false; tests = false; hpc = false; };
     package = {
@@ -17,65 +56,65 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.text)
-          (hsPkgs.binary)
-          (hsPkgs.containers)
-          (hsPkgs.array)
-          (hsPkgs.polyparse)
-          (hsPkgs.old-locale)
-          (hsPkgs.time)
-          (hsPkgs.mtl)
-          (hsPkgs.network)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."polyparse" or (buildDepError "polyparse"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
           ];
         };
       exes = {
         "BuiltInMapTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "GraphPartitionTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "GraphTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "NTTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "N3ParserTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "N3FormatterTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "RDFDatatypeXsdIntegerTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "RDFGraphTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "RDFProofContextTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "RDFProofTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "RDFQueryTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "RDFRulesetTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "VarBindingTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "LookupMapTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "QNameTest" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs.HUnit);
+          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (buildDepError "HUnit"));
           };
         "Swish" = {};
         };

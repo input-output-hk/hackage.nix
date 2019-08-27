@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       dev = false;
@@ -22,133 +61,154 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.bytestring)
-          (hsPkgs.cereal)
-          (hsPkgs.cereal-time)
-          (hsPkgs.cookie)
-          (hsPkgs.cryptonite)
-          (hsPkgs.data-default)
-          (hsPkgs.exceptions)
-          (hsPkgs.http-types)
-          (hsPkgs.memory)
-          (hsPkgs.mtl)
-          (hsPkgs.servant)
-          (hsPkgs.servant-server)
-          (hsPkgs.tagged)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.wai)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."cereal-time" or (buildDepError "cereal-time"))
+          (hsPkgs."cookie" or (buildDepError "cookie"))
+          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."servant" or (buildDepError "servant"))
+          (hsPkgs."servant-server" or (buildDepError "servant-server"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."wai" or (buildDepError "wai"))
           ] ++ (if flags.servant9
-          then [ (hsPkgs.servant) (hsPkgs.http-api-data) ]
+          then [
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+            ]
           else if flags.servant91
-            then [ (hsPkgs.servant) (hsPkgs.http-api-data) ]
-            else [ (hsPkgs.servant) (hsPkgs.bytestring-conversion) ]);
+            then [
+              (hsPkgs."servant" or (buildDepError "servant"))
+              (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+              ]
+            else [
+              (hsPkgs."servant" or (buildDepError "servant"))
+              (hsPkgs."bytestring-conversion" or (buildDepError "bytestring-conversion"))
+              ]);
         };
       exes = {
         "example" = {
           depends = (pkgs.lib).optionals (flags.build-examples) ([
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.cryptonite)
-            (hsPkgs.data-default)
-            (hsPkgs.directory)
-            (hsPkgs.exceptions)
-            (hsPkgs.filepath)
-            (hsPkgs.http-media)
-            (hsPkgs.http-types)
-            (hsPkgs.mtl)
-            (hsPkgs.servant)
-            (hsPkgs.servant-auth-cookie)
-            (hsPkgs.servant-blaze)
-            (hsPkgs.servant-server)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.wai)
-            (hsPkgs.warp)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."http-media" or (buildDepError "http-media"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."servant-auth-cookie" or (buildDepError "servant-auth-cookie"))
+            (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."warp" or (buildDepError "warp"))
             ] ++ (if flags.servant9
-            then [ (hsPkgs.servant) (hsPkgs.http-api-data) ]
-            else [ (hsPkgs.servant) (hsPkgs.bytestring-conversion) ]));
+            then [
+              (hsPkgs."servant" or (buildDepError "servant"))
+              (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+              ]
+            else [
+              (hsPkgs."servant" or (buildDepError "servant"))
+              (hsPkgs."bytestring-conversion" or (buildDepError "bytestring-conversion"))
+              ]));
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.cryptonite)
-            (hsPkgs.data-default)
-            (hsPkgs.deepseq)
-            (hsPkgs.exceptions)
-            (hsPkgs.hspec)
-            (hsPkgs.servant-auth-cookie)
-            (hsPkgs.servant-server)
-            (hsPkgs.tagged)
-            (hsPkgs.template-haskell)
-            (hsPkgs.transformers)
-            (hsPkgs.time)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."servant-auth-cookie" or (buildDepError "servant-auth-cookie"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."time" or (buildDepError "time"))
             ];
           };
         "example-tests" = {
           depends = (pkgs.lib).optionals (flags.build-examples) (([
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.blaze-html)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.cookie)
-            (hsPkgs.exceptions)
-            (hsPkgs.cryptonite)
-            (hsPkgs.data-default)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.http-media)
-            (hsPkgs.http-types)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-wai)
-            (hsPkgs.mtl)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.servant-auth-cookie)
-            (hsPkgs.servant-blaze)
-            (hsPkgs.servant-server)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.wai)
-            (hsPkgs.wai-extra)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."cookie" or (buildDepError "cookie"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."http-media" or (buildDepError "http-media"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-wai" or (buildDepError "hspec-wai"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."servant-auth-cookie" or (buildDepError "servant-auth-cookie"))
+            (hsPkgs."servant-blaze" or (buildDepError "servant-blaze"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
             ] ++ (if flags.servant9
-            then [ (hsPkgs.servant) (hsPkgs.http-api-data) ]
+            then [
+              (hsPkgs."servant" or (buildDepError "servant"))
+              (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+              ]
             else if flags.servant91
-              then [ (hsPkgs.servant) (hsPkgs.http-api-data) ]
+              then [
+                (hsPkgs."servant" or (buildDepError "servant"))
+                (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+                ]
               else [
-                (hsPkgs.servant)
-                (hsPkgs.bytestring-conversion)
-                ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs.tagged));
+                (hsPkgs."servant" or (buildDepError "servant"))
+                (hsPkgs."bytestring-conversion" or (buildDepError "bytestring-conversion"))
+                ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."tagged" or (buildDepError "tagged")));
           };
         };
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.criterion)
-            (hsPkgs.cryptonite)
-            (hsPkgs.servant-auth-cookie)
-            (hsPkgs.servant-server)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."servant-auth-cookie" or (buildDepError "servant-auth-cookie"))
+            (hsPkgs."servant-server" or (buildDepError "servant-server"))
             ];
           };
         };

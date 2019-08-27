@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,39 +56,39 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.ansi-terminal)
-          (hsPkgs.attoparsec)
-          (hsPkgs.base)
-          (hsPkgs.classy-prelude)
-          (hsPkgs.directory)
-          (hsPkgs.file-embed)
-          (hsPkgs.http-client)
-          (hsPkgs.http-conduit)
-          (hsPkgs.text)
-          (hsPkgs.time)
+          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."file-embed" or (buildDepError "file-embed"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
           ];
         };
       exes = {
         "brok" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.brok)
-            (hsPkgs.classy-prelude)
-            (hsPkgs.file-embed)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."brok" or (buildDepError "brok"))
+            (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
+            (hsPkgs."file-embed" or (buildDepError "file-embed"))
             ];
           };
         };
       tests = {
         "brok-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.brok)
-            (hsPkgs.classy-prelude)
-            (hsPkgs.file-embed)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-discover)
-            (hsPkgs.tasty-expected-failure)
-            (hsPkgs.tasty-hunit)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."brok" or (buildDepError "brok"))
+            (hsPkgs."classy-prelude" or (buildDepError "classy-prelude"))
+            (hsPkgs."file-embed" or (buildDepError "file-embed"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or (buildDepError "tasty-discover"))
+            (hsPkgs."tasty-expected-failure" or (buildDepError "tasty-expected-failure"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
             ];
           };
         };

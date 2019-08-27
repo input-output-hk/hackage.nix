@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demos = false; minimal-demo = false; };
     package = {
@@ -17,67 +56,67 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.time)
-          (hsPkgs.text)
-          (hsPkgs.authenticate-oauth)
-          (hsPkgs.http-types)
-          (hsPkgs.http-conduit)
-          (hsPkgs.resourcet)
-          (hsPkgs.transformers)
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
-          (hsPkgs.aeson)
-          (hsPkgs.lifted-base)
-          (hsPkgs.monad-control)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
           ];
         };
       exes = {
         "xing-api-cli-demo" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.monad-control)
-            (hsPkgs.resourcet)
-            (hsPkgs.text)
-            (hsPkgs.xing-api)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."xing-api" or (buildDepError "xing-api"))
             ];
           };
         "xing-api-yesod-demo" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.hamlet)
-            (hsPkgs.http-conduit)
-            (hsPkgs.shakespeare-i18n)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.warp)
-            (hsPkgs.xing-api)
-            (hsPkgs.yesod-core)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hamlet" or (buildDepError "hamlet"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."shakespeare-i18n" or (buildDepError "shakespeare-i18n"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."xing-api" or (buildDepError "xing-api"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
             ];
           };
         "xing-api-minimal-demo" = {
           depends = (pkgs.lib).optionals (flags.minimal-demo) [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.xing-api)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."xing-api" or (buildDepError "xing-api"))
             ];
           };
         };
       tests = {
         "TestMain" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HTF)
-            (hsPkgs.text)
-            (hsPkgs.bytestring)
-            (hsPkgs.aeson)
-            (hsPkgs.containers)
-            (hsPkgs.time)
-            (hsPkgs.xing-api)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HTF" or (buildDepError "HTF"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."xing-api" or (buildDepError "xing-api"))
             ];
           };
         };

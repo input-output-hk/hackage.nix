@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,41 +56,41 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.base-orphans)
-          (hsPkgs.binary)
-          (hsPkgs.deepseq)
-          (hsPkgs.erf)
-          (hsPkgs.math-functions)
-          (hsPkgs.monad-par)
-          (hsPkgs.mwc-random)
-          (hsPkgs.primitive)
-          (hsPkgs.vector)
-          (hsPkgs.vector-algorithms)
-          (hsPkgs.vector-th-unbox)
-          (hsPkgs.vector-binary-instances)
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs.ghc-prim);
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-orphans" or (buildDepError "base-orphans"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."erf" or (buildDepError "erf"))
+          (hsPkgs."math-functions" or (buildDepError "math-functions"))
+          (hsPkgs."monad-par" or (buildDepError "monad-par"))
+          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
+          (hsPkgs."vector-th-unbox" or (buildDepError "vector-th-unbox"))
+          (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"));
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.erf)
-            (hsPkgs.aeson)
-            (hsPkgs.ieee754)
-            (hsPkgs.math-functions)
-            (hsPkgs.mwc-random)
-            (hsPkgs.primitive)
-            (hsPkgs.statistics)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.vector)
-            (hsPkgs.vector-algorithms)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."erf" or (buildDepError "erf"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."ieee754" or (buildDepError "ieee754"))
+            (hsPkgs."math-functions" or (buildDepError "math-functions"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."statistics" or (buildDepError "statistics"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
             ];
           };
         };

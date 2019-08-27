@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -14,5 +53,7 @@
       description = "This provides a set of feature macros describing features of @base@ in a semantic way.\n\nSee <base-feature-macros/src/base-feature-macros.h base-feature-macros.h> for set of currently provided macros.\n\nIn order to use the CPP header provided by this package, add this package as a dependency to your @.cabal@ file, i.e.\n\n> build-depends: base-feature-macros: >= 0.1 && < 0.2\n\nwhile making sure that the version specified as lower bound defines the feature-macros your code tests for. This is particularly important as CPP will implicitly treat undefined CPP macros as having the value @0@. See also GNU CPP/CC's @-Wundef@ warning to detect such errors.\n\nThen in your code, you can include and use the @\\<base-feature-macros.h\\>@ header like so\n\n> module M where\n>\n> #include <base-feature-macros.h>\n>\n> #if !HAVE_FOLDABLE_TRAVERSABLE_IN_PRELUDE\n> import Data.Foldable (Foldable (..))\n> import Prelude       hiding (foldr, foldr1)\n> #endif\n> #if !HAVE_MONOID_IN_PRELUDE\n> import Data.Monoid hiding ((<>))\n> #endif\n\nThis package is inspired by the blogpost\n<https://github.com/quchen/articles/blob/master/haskell-cpp-compatibility.md \"Make macros mean something – readable backwards compatibility with CPP\">.";
       buildType = "Simple";
       };
-    components = { "library" = { depends = [ (hsPkgs.base) ]; }; };
+    components = {
+      "library" = { depends = [ (hsPkgs."base" or (buildDepError "base")) ]; };
+      };
     }

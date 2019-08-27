@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,68 +56,68 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.ConfigFile)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.aeson)
-          (hsPkgs.async)
-          (hsPkgs.base)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.binary)
-          (hsPkgs.bytestring)
-          (hsPkgs.conduit)
-          (hsPkgs.conduit-extra)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.hashable)
-          (hsPkgs.lens)
-          (hsPkgs.mtl)
-          (hsPkgs.time)
-          (hsPkgs.parallel)
-          (hsPkgs.parsec)
-          (hsPkgs.pretty-show)
-          (hsPkgs.pretty)
-          (hsPkgs.process)
-          (hsPkgs.random)
-          (hsPkgs.shake)
-          (hsPkgs.syb)
-          (hsPkgs.template)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.yaml)
-          (hsPkgs.bifunctors)
-          (hsPkgs.free)
-          (hsPkgs.boxes)
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+          (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."parallel" or (buildDepError "parallel"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."shake" or (buildDepError "shake"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."template" or (buildDepError "template"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."bifunctors" or (buildDepError "bifunctors"))
+          (hsPkgs."free" or (buildDepError "free"))
+          (hsPkgs."boxes" or (buildDepError "boxes"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
         };
       exes = {
         "b9c" = {
           depends = [
-            (hsPkgs.b9)
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.bytestring)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.lens)
+            (hsPkgs."b9" or (buildDepError "b9"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."lens" or (buildDepError "lens"))
             ];
           };
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.b9)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-expectations)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.aeson)
-            (hsPkgs.yaml)
-            (hsPkgs.vector)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."b9" or (buildDepError "b9"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-expectations" or (buildDepError "hspec-expectations"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"));
           };
         };
       };

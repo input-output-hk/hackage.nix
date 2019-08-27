@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,39 +56,39 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.amazonka)
-          (hsPkgs.amazonka-core)
-          (hsPkgs.amazonka-s3)
-          (hsPkgs.resourcet)
-          (hsPkgs.conduit)
-          (hsPkgs.bytestring)
-          (hsPkgs.mmorph)
-          (hsPkgs.lens)
-          (hsPkgs.mtl)
-          (hsPkgs.exceptions)
-          (hsPkgs.dlist)
-          (hsPkgs.lifted-async)
-          (hsPkgs.mmap)
-          (hsPkgs.deepseq)
-          (hsPkgs.http-client)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."amazonka" or (buildDepError "amazonka"))
+          (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
+          (hsPkgs."amazonka-s3" or (buildDepError "amazonka-s3"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."mmorph" or (buildDepError "mmorph"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."dlist" or (buildDepError "dlist"))
+          (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
+          (hsPkgs."mmap" or (buildDepError "mmap"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
           ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.11") [
-          (hsPkgs.semigroups)
-          (hsPkgs.transformers)
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         };
       exes = {
         "s3upload" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.amazonka)
-            (hsPkgs.amazonka-core)
-            (hsPkgs.amazonka-s3)
-            (hsPkgs.amazonka-s3-streaming)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.conduit)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."amazonka" or (buildDepError "amazonka"))
+            (hsPkgs."amazonka-core" or (buildDepError "amazonka-core"))
+            (hsPkgs."amazonka-s3" or (buildDepError "amazonka-s3"))
+            (hsPkgs."amazonka-s3-streaming" or (buildDepError "amazonka-s3-streaming"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

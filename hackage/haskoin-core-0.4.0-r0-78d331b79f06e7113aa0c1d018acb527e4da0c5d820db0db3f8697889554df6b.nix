@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,56 +56,56 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.byteable)
-          (hsPkgs.bytestring)
-          (hsPkgs.base16-bytestring)
-          (hsPkgs.cereal)
-          (hsPkgs.conduit)
-          (hsPkgs.containers)
-          (hsPkgs.cryptohash)
-          (hsPkgs.deepseq)
-          (hsPkgs.either)
-          (hsPkgs.mtl)
-          (hsPkgs.murmur3)
-          (hsPkgs.network)
-          (hsPkgs.pbkdf)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.split)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.string-conversions)
-          (hsPkgs.vector)
-          (hsPkgs.secp256k1)
-          (hsPkgs.largeword)
-          (hsPkgs.entropy)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."byteable" or (buildDepError "byteable"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."either" or (buildDepError "either"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."murmur3" or (buildDepError "murmur3"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."pbkdf" or (buildDepError "pbkdf"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."secp256k1" or (buildDepError "secp256k1"))
+          (hsPkgs."largeword" or (buildDepError "largeword"))
+          (hsPkgs."entropy" or (buildDepError "entropy"))
           ];
         };
       tests = {
         "test-haskoin-core" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.containers)
-            (hsPkgs.haskoin-core)
-            (hsPkgs.mtl)
-            (hsPkgs.split)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.string-conversions)
-            (hsPkgs.largeword)
-            (hsPkgs.secp256k1)
-            (hsPkgs.safe)
-            (hsPkgs.vector)
-            (hsPkgs.scientific)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."haskoin-core" or (buildDepError "haskoin-core"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."string-conversions" or (buildDepError "string-conversions"))
+            (hsPkgs."largeword" or (buildDepError "largeword"))
+            (hsPkgs."secp256k1" or (buildDepError "secp256k1"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
             ];
           };
         };

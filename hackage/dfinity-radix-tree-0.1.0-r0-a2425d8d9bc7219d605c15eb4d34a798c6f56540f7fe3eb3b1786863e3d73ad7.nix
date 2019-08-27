@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,51 +56,51 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.BoundedChan)
-          (hsPkgs.base)
-          (hsPkgs.base16-bytestring)
-          (hsPkgs.bloomfilter)
-          (hsPkgs.bytestring)
-          (hsPkgs.conduit)
-          (hsPkgs.containers)
-          (hsPkgs.cryptohash-sha256)
-          (hsPkgs.data-default-class)
-          (hsPkgs.deepseq)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.lens-simple)
-          (hsPkgs.leveldb-haskell)
-          (hsPkgs.lrucaching)
-          (hsPkgs.resourcet)
-          (hsPkgs.semigroups)
-          (hsPkgs.serialise)
+          (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+          (hsPkgs."bloomfilter" or (buildDepError "bloomfilter"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cryptohash-sha256" or (buildDepError "cryptohash-sha256"))
+          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."lens-simple" or (buildDepError "lens-simple"))
+          (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
+          (hsPkgs."lrucaching" or (buildDepError "lrucaching"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."semigroups" or (buildDepError "semigroups"))
+          (hsPkgs."serialise" or (buildDepError "serialise"))
           ];
         };
       exes = {
         "dfinity-radix-tree-unit-tests" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.base16-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.cmdargs)
-            (hsPkgs.data-default-class)
-            (hsPkgs.dfinity-radix-tree)
-            (hsPkgs.leveldb-haskell)
-            (hsPkgs.resourcet)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."dfinity-radix-tree" or (buildDepError "dfinity-radix-tree"))
+            (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         "dfinity-radix-tree-benchmarks" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.cmdargs)
-            (hsPkgs.cryptohash-sha256)
-            (hsPkgs.data-default-class)
-            (hsPkgs.dfinity-radix-tree)
-            (hsPkgs.leveldb-haskell)
-            (hsPkgs.resourcet)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."cryptohash-sha256" or (buildDepError "cryptohash-sha256"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."dfinity-radix-tree" or (buildDepError "dfinity-radix-tree"))
+            (hsPkgs."leveldb-haskell" or (buildDepError "leveldb-haskell"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
             ];
           };
         };

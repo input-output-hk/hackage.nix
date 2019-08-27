@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { network--ge-3_0_0 = true; };
     package = {
@@ -17,41 +56,44 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.array)
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.hslogger)
-          (hsPkgs.mtl)
-          (hsPkgs.old-locale)
-          (hsPkgs.old-time)
-          (hsPkgs.parsec)
-          (hsPkgs.process)
-          (hsPkgs.random)
-          (hsPkgs.regex-compat)
-          (hsPkgs.time)
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hslogger" or (buildDepError "hslogger"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
+          (hsPkgs."time" or (buildDepError "time"))
           ] ++ (if flags.network--ge-3_0_0
-          then [ (hsPkgs.network-bsd) (hsPkgs.network) ]
+          then [
+            (hsPkgs."network-bsd" or (buildDepError "network-bsd"))
+            (hsPkgs."network" or (buildDepError "network"))
+            ]
           else [
-            (hsPkgs.network)
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+            (hsPkgs."network" or (buildDepError "network"))
+            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
         };
       tests = {
         "runtests" = {
           depends = [
-            (hsPkgs.MissingH)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.old-time)
-            (hsPkgs.parsec)
-            (hsPkgs.regex-compat)
-            (hsPkgs.time)
-            (hsPkgs.HUnit)
-            (hsPkgs.errorcall-eq-instance)
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+            (hsPkgs."MissingH" or (buildDepError "MissingH"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."errorcall-eq-instance" or (buildDepError "errorcall-eq-instance"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
           };
         };
       };

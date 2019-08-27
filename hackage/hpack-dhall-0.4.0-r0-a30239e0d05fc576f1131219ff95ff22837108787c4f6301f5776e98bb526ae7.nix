@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,122 +56,122 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.aeson-pretty)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.dhall)
-          (hsPkgs.dhall-json)
-          (hsPkgs.filepath)
-          (hsPkgs.hpack)
-          (hsPkgs.megaparsec)
-          (hsPkgs.microlens)
-          (hsPkgs.prettyprinter)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.yaml)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."dhall" or (buildDepError "dhall"))
+          (hsPkgs."dhall-json" or (buildDepError "dhall-json"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hpack" or (buildDepError "hpack"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."microlens" or (buildDepError "microlens"))
+          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
         };
       exes = {
         "dhall-hpack-cabal" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.dhall)
-            (hsPkgs.dhall-json)
-            (hsPkgs.filepath)
-            (hsPkgs.hpack)
-            (hsPkgs.megaparsec)
-            (hsPkgs.microlens)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.prettyprinter)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.yaml)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."dhall" or (buildDepError "dhall"))
+            (hsPkgs."dhall-json" or (buildDepError "dhall-json"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hpack" or (buildDepError "hpack"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         "dhall-hpack-dhall" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.dhall)
-            (hsPkgs.dhall-json)
-            (hsPkgs.filepath)
-            (hsPkgs.hpack)
-            (hsPkgs.megaparsec)
-            (hsPkgs.microlens)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.prettyprinter)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.yaml)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."dhall" or (buildDepError "dhall"))
+            (hsPkgs."dhall-json" or (buildDepError "dhall-json"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hpack" or (buildDepError "hpack"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         "dhall-hpack-json" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.dhall)
-            (hsPkgs.dhall-json)
-            (hsPkgs.filepath)
-            (hsPkgs.hpack)
-            (hsPkgs.megaparsec)
-            (hsPkgs.microlens)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.prettyprinter)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.yaml)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."dhall" or (buildDepError "dhall"))
+            (hsPkgs."dhall-json" or (buildDepError "dhall-json"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hpack" or (buildDepError "hpack"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         "dhall-hpack-yaml" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.dhall)
-            (hsPkgs.dhall-json)
-            (hsPkgs.filepath)
-            (hsPkgs.hpack)
-            (hsPkgs.megaparsec)
-            (hsPkgs.microlens)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.prettyprinter)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.yaml)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."dhall" or (buildDepError "dhall"))
+            (hsPkgs."dhall-json" or (buildDepError "dhall-json"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hpack" or (buildDepError "hpack"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         };
       tests = {
         "golden" = {
           depends = [
-            (hsPkgs.Cabal)
-            (hsPkgs.Diff)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.dhall)
-            (hsPkgs.dhall-json)
-            (hsPkgs.filepath)
-            (hsPkgs.hpack)
-            (hsPkgs.megaparsec)
-            (hsPkgs.microlens)
-            (hsPkgs.prettyprinter)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-golden)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.utf8-string)
-            (hsPkgs.yaml)
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."Diff" or (buildDepError "Diff"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."dhall" or (buildDepError "dhall"))
+            (hsPkgs."dhall-json" or (buildDepError "dhall-json"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hpack" or (buildDepError "hpack"))
+            (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         };

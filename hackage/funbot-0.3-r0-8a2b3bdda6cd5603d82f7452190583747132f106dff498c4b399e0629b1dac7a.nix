@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,31 +57,31 @@
       exes = {
         "funbot" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.feed)
-            (hsPkgs.feed-collect)
-            (hsPkgs.funbot-ext-events)
-            (hsPkgs.HTTP)
-            (hsPkgs.http-client)
-            (hsPkgs.http-client-tls)
-            (hsPkgs.http-listen)
-            (hsPkgs.irc-fun-bot)
-            (hsPkgs.irc-fun-color)
-            (hsPkgs.json-state)
-            (hsPkgs.network-uri)
-            (hsPkgs.settings)
-            (hsPkgs.tagsoup)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.time-interval)
-            (hsPkgs.time-units)
-            (hsPkgs.transformers)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.utf8-string)
-            (hsPkgs.vcs-web-hook-parse)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."feed" or (buildDepError "feed"))
+            (hsPkgs."feed-collect" or (buildDepError "feed-collect"))
+            (hsPkgs."funbot-ext-events" or (buildDepError "funbot-ext-events"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
+            (hsPkgs."http-listen" or (buildDepError "http-listen"))
+            (hsPkgs."irc-fun-bot" or (buildDepError "irc-fun-bot"))
+            (hsPkgs."irc-fun-color" or (buildDepError "irc-fun-color"))
+            (hsPkgs."json-state" or (buildDepError "json-state"))
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."settings" or (buildDepError "settings"))
+            (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."time-interval" or (buildDepError "time-interval"))
+            (hsPkgs."time-units" or (buildDepError "time-units"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."vcs-web-hook-parse" or (buildDepError "vcs-web-hook-parse"))
             ];
           };
         };

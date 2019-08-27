@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,70 +57,153 @@
       exes = {
         "gloss-bitmap" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.gloss)
-            (hsPkgs.bmp)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."bmp" or (buildDepError "bmp"))
             ];
           };
-        "gloss-boids" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
-        "gloss-clock" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
+        "gloss-boids" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
+        "gloss-clock" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
         "gloss-conway" = {
-          depends = [ (hsPkgs.base) (hsPkgs.gloss) (hsPkgs.vector) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            ];
           };
-        "gloss-draw" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
-        "gloss-easy" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
+        "gloss-draw" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
+        "gloss-easy" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
         "gloss-eden" = {
-          depends = [ (hsPkgs.base) (hsPkgs.gloss) (hsPkgs.random) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."random" or (buildDepError "random"))
+            ];
           };
-        "gloss-flake" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
-        "gloss-gameevent" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
-        "gloss-hello" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
+        "gloss-flake" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
+        "gloss-gameevent" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
+        "gloss-hello" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
         "gloss-lifespan" = {
-          depends = [ (hsPkgs.base) (hsPkgs.gloss) (hsPkgs.random) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."random" or (buildDepError "random"))
+            ];
           };
-        "gloss-machina" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
-        "gloss-occlusion" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
+        "gloss-machina" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
+        "gloss-occlusion" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
         "gloss-styrene" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.gloss)
-            (hsPkgs.containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
-        "gloss-tree" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
-        "gloss-visibility" = {
-          depends = [ (hsPkgs.base) (hsPkgs.vector) (hsPkgs.gloss) ];
+        "gloss-tree" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
           };
-        "gloss-zen" = { depends = [ (hsPkgs.base) (hsPkgs.gloss) ]; };
+        "gloss-visibility" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
+        "gloss-zen" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            ];
+          };
         "gloss-crystal" = {
-          depends = [ (hsPkgs.base) (hsPkgs.gloss) (hsPkgs.gloss-raster) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."gloss-raster" or (buildDepError "gloss-raster"))
+            ];
           };
         "gloss-ray" = {
-          depends = [ (hsPkgs.base) (hsPkgs.gloss) (hsPkgs.gloss-raster) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."gloss-raster" or (buildDepError "gloss-raster"))
+            ];
           };
         "gloss-pulse" = {
-          depends = [ (hsPkgs.base) (hsPkgs.gloss) (hsPkgs.gloss-raster) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."gloss-raster" or (buildDepError "gloss-raster"))
+            ];
           };
         "gloss-wave" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.vector)
-            (hsPkgs.gloss)
-            (hsPkgs.gloss-raster)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."gloss-raster" or (buildDepError "gloss-raster"))
             ];
           };
         "gloss-fluid" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.vector)
-            (hsPkgs.gloss)
-            (hsPkgs.repa)
-            (hsPkgs.repa-io)
-            (hsPkgs.repa-algorithms)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."gloss" or (buildDepError "gloss"))
+            (hsPkgs."repa" or (buildDepError "repa"))
+            (hsPkgs."repa-io" or (buildDepError "repa-io"))
+            (hsPkgs."repa-algorithms" or (buildDepError "repa-algorithms"))
             ];
           };
         "gloss-snow" = {};

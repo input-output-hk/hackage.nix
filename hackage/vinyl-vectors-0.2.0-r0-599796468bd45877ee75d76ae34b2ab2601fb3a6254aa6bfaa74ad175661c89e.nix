@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -17,26 +56,26 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.vinyl)
-          (hsPkgs.vector)
-          (hsPkgs.primitive)
-          (hsPkgs.constraints)
-          (hsPkgs.data-default)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."vinyl" or (buildDepError "vinyl"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."constraints" or (buildDepError "constraints"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
           ];
         };
       exes = {
         "sorting" = {
           depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs.vinyl-vectors)
-            (hsPkgs.base)
-            (hsPkgs.vector-algorithms)
-            (hsPkgs.text)
-            (hsPkgs.vinyl)
-            (hsPkgs.microlens)
+            (hsPkgs."vinyl-vectors" or (buildDepError "vinyl-vectors"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vinyl" or (buildDepError "vinyl"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
             ];
           };
         };

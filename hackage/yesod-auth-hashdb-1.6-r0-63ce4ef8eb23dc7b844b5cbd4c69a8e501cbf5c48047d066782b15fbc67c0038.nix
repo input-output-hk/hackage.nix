@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,49 +56,49 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.yesod-core)
-          (hsPkgs.yesod-auth)
-          (hsPkgs.text)
-          (hsPkgs.yesod-persistent)
-          (hsPkgs.persistent)
-          (hsPkgs.yesod-form)
-          (hsPkgs.pwstore-fast)
-          (hsPkgs.aeson)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+          (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
+          (hsPkgs."persistent" or (buildDepError "persistent"))
+          (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
+          (hsPkgs."pwstore-fast" or (buildDepError "pwstore-fast"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
           ];
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.yesod-auth-hashdb)
-            (hsPkgs.hspec)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."yesod-auth-hashdb" or (buildDepError "yesod-auth-hashdb"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "integration" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
-            (hsPkgs.basic-prelude)
-            (hsPkgs.containers)
-            (hsPkgs.hspec)
-            (hsPkgs.http-conduit)
-            (hsPkgs.http-types)
-            (hsPkgs.monad-logger)
-            (hsPkgs.network-uri)
-            (hsPkgs.persistent-sqlite)
-            (hsPkgs.resourcet)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.wai-extra)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-auth)
-            (hsPkgs.yesod-auth-hashdb)
-            (hsPkgs.yesod-core)
-            (hsPkgs.yesod-test)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."basic-prelude" or (buildDepError "basic-prelude"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."persistent-sqlite" or (buildDepError "persistent-sqlite"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
+            (hsPkgs."yesod-auth-hashdb" or (buildDepError "yesod-auth-hashdb"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
             ];
           };
         };

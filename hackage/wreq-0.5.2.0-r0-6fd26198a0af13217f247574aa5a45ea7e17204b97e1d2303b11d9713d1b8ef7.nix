@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       doctest = true;
@@ -19,101 +58,101 @@
       description = "\nA web client library that is designed for ease of use.\n\nTutorial: <http://www.serpentine.com/wreq/tutorial.html>\n\nFeatures include:\n\n* Simple but powerful `lens`-based API\n\n* A solid test suite, and built on reliable libraries like\nhttp-client and lens\n\n* Session handling includes connection keep-alive and pooling, and\ncookie persistence\n\n* Automatic response body decompression\n\n* Powerful multipart form and file upload handling\n\n* Support for JSON requests and responses, including navigation of\nschema-less responses\n\n* Basic and OAuth2 bearer authentication\n\n* Early TLS support via the tls package";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (buildToolDepError "cabal-doctest")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs.psqueues)
-          (hsPkgs.aeson)
-          (hsPkgs.attoparsec)
-          (hsPkgs.authenticate-oauth)
-          (hsPkgs.base)
-          (hsPkgs.base16-bytestring)
-          (hsPkgs.byteable)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.containers)
-          (hsPkgs.cryptohash)
-          (hsPkgs.exceptions)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.hashable)
-          (hsPkgs.http-client)
-          (hsPkgs.http-client-tls)
-          (hsPkgs.http-types)
-          (hsPkgs.lens)
-          (hsPkgs.lens-aeson)
-          (hsPkgs.mime-types)
-          (hsPkgs.time-locale-compat)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.unordered-containers)
+          (hsPkgs."psqueues" or (buildDepError "psqueues"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."authenticate-oauth" or (buildDepError "authenticate-oauth"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+          (hsPkgs."byteable" or (buildDepError "byteable"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."http-client" or (buildDepError "http-client"))
+          (hsPkgs."http-client-tls" or (buildDepError "http-client-tls"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
+          (hsPkgs."mime-types" or (buildDepError "mime-types"))
+          (hsPkgs."time-locale-compat" or (buildDepError "time-locale-compat"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
         };
       exes = {
         "httpbin" = {
           depends = (pkgs.lib).optionals (!(!flags.httpbin)) [
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.base)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.snap-core)
-            (hsPkgs.snap-server)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.unix-compat)
-            (hsPkgs.uuid)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."snap-core" or (buildDepError "snap-core"))
+            (hsPkgs."snap-server" or (buildDepError "snap-server"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.base)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.hashable)
-            (hsPkgs.http-client)
-            (hsPkgs.http-types)
-            (hsPkgs.lens)
-            (hsPkgs.lens-aeson)
-            (hsPkgs.network-info)
-            (hsPkgs.snap-core)
-            (hsPkgs.snap-server)
-            (hsPkgs.temporary)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.unix-compat)
-            (hsPkgs.uuid)
-            (hsPkgs.vector)
-            (hsPkgs.wreq)
-            ] ++ (pkgs.lib).optional (flags.aws) (hsPkgs.base);
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."lens-aeson" or (buildDepError "lens-aeson"))
+            (hsPkgs."network-info" or (buildDepError "network-info"))
+            (hsPkgs."snap-core" or (buildDepError "snap-core"))
+            (hsPkgs."snap-server" or (buildDepError "snap-server"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."wreq" or (buildDepError "wreq"))
+            ] ++ (pkgs.lib).optional (flags.aws) (hsPkgs."base" or (buildDepError "base"));
           };
         "doctests" = {
           depends = (pkgs.lib).optionals (!(!flags.doctest)) [
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.doctest)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; library-only = true; };
     package = {
@@ -17,59 +56,59 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.mangopay)
-          (hsPkgs.containers)
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-types)
-          (hsPkgs.lifted-base)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.yesod)
-          (hsPkgs.yesod-core)
-          (hsPkgs.persistent-template)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."mangopay" or (buildDepError "mangopay"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."yesod" or (buildDepError "yesod"))
+          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+          (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
           ];
         };
       exes = {
         "yesod-mangopay" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.http-conduit)
-            (hsPkgs.mangopay)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.yesod)
-            (hsPkgs.yesod-core)
-            (hsPkgs.yesod-mangopay)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.data-default)
-            (hsPkgs.directory)
-            (hsPkgs.fast-logger)
-            (hsPkgs.hamlet)
-            (hsPkgs.hjsmin)
-            (hsPkgs.monad-control)
-            (hsPkgs.monad-logger)
-            (hsPkgs.persistent)
-            (hsPkgs.persistent-postgresql)
-            (hsPkgs.persistent-template)
-            (hsPkgs.resourcet)
-            (hsPkgs.shakespeare)
-            (hsPkgs.template-haskell)
-            (hsPkgs.wai)
-            (hsPkgs.wai-extra)
-            (hsPkgs.wai-logger)
-            (hsPkgs.warp)
-            (hsPkgs.yaml)
-            (hsPkgs.yesod-auth)
-            (hsPkgs.yesod-form)
-            (hsPkgs.yesod-persistent)
-            (hsPkgs.yesod-static)
-            (hsPkgs.lifted-base)
-            (hsPkgs.country-codes)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+            (hsPkgs."mangopay" or (buildDepError "mangopay"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."yesod" or (buildDepError "yesod"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."yesod-mangopay" or (buildDepError "yesod-mangopay"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+            (hsPkgs."hamlet" or (buildDepError "hamlet"))
+            (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."monad-logger" or (buildDepError "monad-logger"))
+            (hsPkgs."persistent" or (buildDepError "persistent"))
+            (hsPkgs."persistent-postgresql" or (buildDepError "persistent-postgresql"))
+            (hsPkgs."persistent-template" or (buildDepError "persistent-template"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."shakespeare" or (buildDepError "shakespeare"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."wai-logger" or (buildDepError "wai-logger"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."yesod-auth" or (buildDepError "yesod-auth"))
+            (hsPkgs."yesod-form" or (buildDepError "yesod-form"))
+            (hsPkgs."yesod-persistent" or (buildDepError "yesod-persistent"))
+            (hsPkgs."yesod-static" or (buildDepError "yesod-static"))
+            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."country-codes" or (buildDepError "country-codes"))
             ];
           };
         };

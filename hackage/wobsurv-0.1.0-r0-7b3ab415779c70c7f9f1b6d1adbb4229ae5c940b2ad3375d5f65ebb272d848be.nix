@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,68 +56,68 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.system-filepath)
-          (hsPkgs.system-fileio)
-          (hsPkgs.network)
-          (hsPkgs.network-simple)
-          (hsPkgs.http-types)
-          (hsPkgs.pipes-network)
-          (hsPkgs.pipes)
-          (hsPkgs.pipes-parse)
-          (hsPkgs.pipes-bytestring)
-          (hsPkgs.pipes-text)
-          (hsPkgs.pipes-safe)
-          (hsPkgs.hastache)
-          (hsPkgs.attoparsec)
-          (hsPkgs.stm-containers)
-          (hsPkgs.old-locale)
-          (hsPkgs.time)
-          (hsPkgs.text)
-          (hsPkgs.bytestring)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.stm)
-          (hsPkgs.monad-control)
-          (hsPkgs.transformers)
-          (hsPkgs.base-prelude)
+          (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
+          (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."network-simple" or (buildDepError "network-simple"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."pipes-network" or (buildDepError "pipes-network"))
+          (hsPkgs."pipes" or (buildDepError "pipes"))
+          (hsPkgs."pipes-parse" or (buildDepError "pipes-parse"))
+          (hsPkgs."pipes-bytestring" or (buildDepError "pipes-bytestring"))
+          (hsPkgs."pipes-text" or (buildDepError "pipes-text"))
+          (hsPkgs."pipes-safe" or (buildDepError "pipes-safe"))
+          (hsPkgs."hastache" or (buildDepError "hastache"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."stm-containers" or (buildDepError "stm-containers"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
           ];
         };
       exes = {
         "wobsurv" = {
           depends = [
-            (hsPkgs.wobsurv)
-            (hsPkgs.system-filepath)
-            (hsPkgs.system-fileio)
-            (hsPkgs.network)
-            (hsPkgs.yaml)
-            (hsPkgs.aeson)
-            (hsPkgs.text)
-            (hsPkgs.bytestring)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.safe)
-            (hsPkgs.base-prelude)
+            (hsPkgs."wobsurv" or (buildDepError "wobsurv"))
+            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
+            (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.wobsurv)
-            (hsPkgs.HTF)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
-            (hsPkgs.system-filepath)
-            (hsPkgs.system-fileio)
-            (hsPkgs.network)
-            (hsPkgs.http-client)
-            (hsPkgs.http-types)
-            (hsPkgs.text)
-            (hsPkgs.bytestring)
-            (hsPkgs.lifted-async)
-            (hsPkgs.mwc-random)
-            (hsPkgs.safe)
-            (hsPkgs.transformers)
-            (hsPkgs.base-prelude)
+            (hsPkgs."wobsurv" or (buildDepError "wobsurv"))
+            (hsPkgs."HTF" or (buildDepError "HTF"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."system-filepath" or (buildDepError "system-filepath"))
+            (hsPkgs."system-fileio" or (buildDepError "system-fileio"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."lifted-async" or (buildDepError "lifted-async"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."base-prelude" or (buildDepError "base-prelude"))
             ];
           };
         };

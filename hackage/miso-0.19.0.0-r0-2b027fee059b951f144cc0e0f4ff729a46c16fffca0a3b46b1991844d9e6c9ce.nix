@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -17,136 +56,140 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.http-api-data)
-          (hsPkgs.http-types)
-          (hsPkgs.network-uri)
-          (hsPkgs.servant)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."network-uri" or (buildDepError "network-uri"))
+          (hsPkgs."servant" or (buildDepError "servant"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
           ] ++ (if compiler.isGhcjs && true
           then [
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.containers)
-            (hsPkgs.scientific)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ]
-          else [ (hsPkgs.lucid) (hsPkgs.servant-lucid) (hsPkgs.vector) ]);
+          else [
+            (hsPkgs."lucid" or (buildDepError "lucid"))
+            (hsPkgs."servant-lucid" or (buildDepError "servant-lucid"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            ]);
         };
       exes = {
         "todo-mvc" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.miso)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "threejs" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.containers)
-            (hsPkgs.miso)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "file-reader" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.miso)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "xhr" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.miso)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "canvas2d" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.miso)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "router" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.miso)
-            (hsPkgs.servant)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."servant" or (buildDepError "servant"))
             ];
           };
         "websocket" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.miso)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "mario" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.miso)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "svg" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.aeson)
-            (hsPkgs.miso)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "compose-update" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.base)
-            (hsPkgs.miso)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "simple" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.miso)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."miso" or (buildDepError "miso"))
             ];
           };
         "tests" = {
           depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true))) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.ghcjs-base)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.miso)
-            (hsPkgs.http-types)
-            (hsPkgs.network-uri)
-            (hsPkgs.http-api-data)
-            (hsPkgs.containers)
-            (hsPkgs.scientific)
-            (hsPkgs.servant)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."ghcjs-base" or (buildDepError "ghcjs-base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."miso" or (buildDepError "miso"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."http-api-data" or (buildDepError "http-api-data"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."scientific" or (buildDepError "scientific"))
+            (hsPkgs."servant" or (buildDepError "servant"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };

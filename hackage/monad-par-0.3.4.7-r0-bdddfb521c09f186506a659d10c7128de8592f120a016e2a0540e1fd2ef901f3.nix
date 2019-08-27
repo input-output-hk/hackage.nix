@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { chaselev = false; newgeneric = false; };
     package = {
@@ -17,37 +56,37 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.base)
-          (hsPkgs.abstract-par)
-          (hsPkgs.abstract-deque)
-          (hsPkgs.monad-par-extras)
-          (hsPkgs.deepseq)
-          (hsPkgs.array)
-          (hsPkgs.mwc-random)
-          (hsPkgs.containers)
-          (hsPkgs.parallel)
-          (hsPkgs.mtl)
-          ] ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs.chaselev-deque)) ++ (pkgs.lib).optional (flags.newgeneric) (hsPkgs.par-classes);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."abstract-par" or (buildDepError "abstract-par"))
+          (hsPkgs."abstract-deque" or (buildDepError "abstract-deque"))
+          (hsPkgs."monad-par-extras" or (buildDepError "monad-par-extras"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."parallel" or (buildDepError "parallel"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          ] ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (buildDepError "chaselev-deque"))) ++ (pkgs.lib).optional (flags.newgeneric) (hsPkgs."par-classes" or (buildDepError "par-classes"));
         };
       tests = {
         "test-monad-par" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.abstract-par)
-            (hsPkgs.monad-par-extras)
-            (hsPkgs.array)
-            (hsPkgs.deepseq)
-            (hsPkgs.time)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.HUnit)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-th)
-            (hsPkgs.abstract-deque)
-            (hsPkgs.mwc-random)
-            (hsPkgs.mtl)
-            (hsPkgs.containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."abstract-par" or (buildDepError "abstract-par"))
+            (hsPkgs."monad-par-extras" or (buildDepError "monad-par-extras"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-th" or (buildDepError "test-framework-th"))
+            (hsPkgs."abstract-deque" or (buildDepError "abstract-deque"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,69 +56,69 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bits-extras)
-          (hsPkgs.pretty)
-          (hsPkgs.pretty-class)
-          (hsPkgs.deepseq)
-          (hsPkgs.lens)
-          (hsPkgs.mtl)
-          (hsPkgs.resourcet)
-          (hsPkgs.transformers)
-          (hsPkgs.SafeSemaphore)
-          (hsPkgs.BoundedChan)
-          (hsPkgs.stm)
-          (hsPkgs.conduit)
-          (hsPkgs.network-conduit)
-          (hsPkgs.cereal-conduit)
-          (hsPkgs.binary-conduit)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.data-default)
-          (hsPkgs.IntervalMap)
-          (hsPkgs.intset)
-          (hsPkgs.split)
-          (hsPkgs.text)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.cryptohash)
-          (hsPkgs.hashable)
-          (hsPkgs.aeson)
-          (hsPkgs.base16-bytestring)
-          (hsPkgs.base32-bytestring)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.bencoding)
-          (hsPkgs.binary)
-          (hsPkgs.cereal)
-          (hsPkgs.urlencoded)
-          (hsPkgs.old-locale)
-          (hsPkgs.time)
-          (hsPkgs.network)
-          (hsPkgs.HTTP)
-          (hsPkgs.krpc)
-          (hsPkgs.directory)
-          (hsPkgs.entropy)
-          (hsPkgs.filepath)
-          (hsPkgs.mmap)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bits-extras" or (buildDepError "bits-extras"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."pretty-class" or (buildDepError "pretty-class"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."SafeSemaphore" or (buildDepError "SafeSemaphore"))
+          (hsPkgs."BoundedChan" or (buildDepError "BoundedChan"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."network-conduit" or (buildDepError "network-conduit"))
+          (hsPkgs."cereal-conduit" or (buildDepError "cereal-conduit"))
+          (hsPkgs."binary-conduit" or (buildDepError "binary-conduit"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."IntervalMap" or (buildDepError "IntervalMap"))
+          (hsPkgs."intset" or (buildDepError "intset"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+          (hsPkgs."base32-bytestring" or (buildDepError "base32-bytestring"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."bencoding" or (buildDepError "bencoding"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."urlencoded" or (buildDepError "urlencoded"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."HTTP" or (buildDepError "HTTP"))
+          (hsPkgs."krpc" or (buildDepError "krpc"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."entropy" or (buildDepError "entropy"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."mmap" or (buildDepError "mmap"))
           ];
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.time)
-            (hsPkgs.aeson)
-            (hsPkgs.cereal)
-            (hsPkgs.network)
-            (hsPkgs.text)
-            (hsPkgs.hspec)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.bencoding)
-            (hsPkgs.bittorrent)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."bencoding" or (buildDepError "bencoding"))
+            (hsPkgs."bittorrent" or (buildDepError "bittorrent"))
             ];
           };
         };

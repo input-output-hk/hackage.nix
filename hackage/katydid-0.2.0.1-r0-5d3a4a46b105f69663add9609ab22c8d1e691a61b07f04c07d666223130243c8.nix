@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,51 +56,55 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.json)
-          (hsPkgs.hxt)
-          (hsPkgs.regex-tdfa)
-          (hsPkgs.mtl)
-          (hsPkgs.parsec)
-          (hsPkgs.deepseq)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."json" or (buildDepError "json"))
+          (hsPkgs."hxt" or (buildDepError "hxt"))
+          (hsPkgs."regex-tdfa" or (buildDepError "regex-tdfa"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
           ];
         };
       exes = {
         "katydid-exe" = {
-          depends = [ (hsPkgs.base) (hsPkgs.katydid) (hsPkgs.mtl) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."katydid" or (buildDepError "katydid"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            ];
           };
         };
       tests = {
         "katydid-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.katydid)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.containers)
-            (hsPkgs.json)
-            (hsPkgs.hxt)
-            (hsPkgs.HUnit)
-            (hsPkgs.parsec)
-            (hsPkgs.mtl)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."katydid" or (buildDepError "katydid"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."json" or (buildDepError "json"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
             ];
           };
         };
       benchmarks = {
         "criterion-benchmarks" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.katydid)
-            (hsPkgs.criterion)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.mtl)
-            (hsPkgs.hxt)
-            (hsPkgs.deepseq)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."katydid" or (buildDepError "katydid"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."hxt" or (buildDepError "hxt"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

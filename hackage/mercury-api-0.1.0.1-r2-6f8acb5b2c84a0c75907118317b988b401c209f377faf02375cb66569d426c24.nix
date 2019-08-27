@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,103 +56,103 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.ansi-terminal)
-          (hsPkgs.bytestring)
-          (hsPkgs.clock)
-          (hsPkgs.hashable)
-          (hsPkgs.text)
-          (hsPkgs.unordered-containers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."clock" or (buildDepError "clock"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
         };
       exes = {
         "tmr-params" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ansi-terminal)
-            (hsPkgs.bytestring)
-            (hsPkgs.mercury-api)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "tmr-firmware" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.mercury-api)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "tmr-read" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ansi-terminal)
-            (hsPkgs.bytestring)
-            (hsPkgs.mercury-api)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "tmr-write" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.ansi-terminal)
-            (hsPkgs.bytestring)
-            (hsPkgs.mercury-api)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "tmr-lock" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.mercury-api)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "tmr-gpio" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.mercury-api)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };
       tests = {
         "replay" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.mercury-api)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "unit" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.HUnit)
-            (hsPkgs.mercury-api)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "param-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mercury-api)
-            (hsPkgs.text)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mercury-api" or (buildDepError "mercury-api"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         };

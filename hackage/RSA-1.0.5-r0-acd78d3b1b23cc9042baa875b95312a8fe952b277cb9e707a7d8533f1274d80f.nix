@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       skiptests = true;
@@ -22,19 +61,31 @@
       };
     components = {
       "library" = {
-        depends = (([ (hsPkgs.bytestring) (hsPkgs.random) ] ++ [
-          (hsPkgs.base)
-          (hsPkgs.SHA)
-          ]) ++ (pkgs.lib).optional (flags.usebinary) (hsPkgs.binary)) ++ (pkgs.lib).optional (flags.includemd5 && flags.usebinary) (hsPkgs.pureMD5);
+        depends = (([
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."random" or (buildDepError "random"))
+          ] ++ [
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."SHA" or (buildDepError "SHA"))
+          ]) ++ (pkgs.lib).optional (flags.usebinary) (hsPkgs."binary" or (buildDepError "binary"))) ++ (pkgs.lib).optional (flags.includemd5 && flags.usebinary) (hsPkgs."pureMD5" or (buildDepError "pureMD5"));
         };
       exes = {
         "test_rsa" = {
           depends = (pkgs.lib).optionals (!flags.skiptests) ([
-            (hsPkgs.bytestring)
-            (hsPkgs.test-framework)
-            ] ++ [ (hsPkgs.base) (hsPkgs.SHA) ]) ++ (if flags.quickcheck1
-            then [ (hsPkgs.QuickCheck) (hsPkgs.test-framework-quickcheck) ]
-            else [ (hsPkgs.QuickCheck) (hsPkgs.test-framework-quickcheck2) ]);
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            ] ++ [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."SHA" or (buildDepError "SHA"))
+            ]) ++ (if flags.quickcheck1
+            then [
+              (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+              (hsPkgs."test-framework-quickcheck" or (buildDepError "test-framework-quickcheck"))
+              ]
+            else [
+              (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+              (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+              ]);
           };
         };
       };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       warnings = false;
@@ -22,299 +61,323 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.AbortT-transformers)
-          (hsPkgs.AbortT-mtl)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.cereal)
-          (hsPkgs.cmdtheline)
-          (hsPkgs.composition)
-          (hsPkgs.containers)
-          (hsPkgs.data-ivar)
-          (hsPkgs.derive)
-          (hsPkgs.directory)
-          (hsPkgs.hslogger)
-          (hsPkgs.hslogger-template)
-          (hsPkgs.lens)
-          (hsPkgs.MonadCatchIO-transformers)
-          (hsPkgs.monoid-statistics)
-          (hsPkgs.mtl)
-          (hsPkgs.multiset)
-          (hsPkgs.old-locale)
-          (hsPkgs.operational)
-          (hsPkgs.prefix-units)
-          (hsPkgs.pretty)
-          (hsPkgs.PSQueue)
-          (hsPkgs.sequential-index)
-          (hsPkgs.split)
-          (hsPkgs.stm)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.void)
-          (hsPkgs.yjtools)
+          (hsPkgs."AbortT-transformers" or (buildDepError "AbortT-transformers"))
+          (hsPkgs."AbortT-mtl" or (buildDepError "AbortT-mtl"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+          (hsPkgs."composition" or (buildDepError "composition"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."data-ivar" or (buildDepError "data-ivar"))
+          (hsPkgs."derive" or (buildDepError "derive"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."hslogger" or (buildDepError "hslogger"))
+          (hsPkgs."hslogger-template" or (buildDepError "hslogger-template"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
+          (hsPkgs."monoid-statistics" or (buildDepError "monoid-statistics"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."multiset" or (buildDepError "multiset"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."operational" or (buildDepError "operational"))
+          (hsPkgs."prefix-units" or (buildDepError "prefix-units"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."PSQueue" or (buildDepError "PSQueue"))
+          (hsPkgs."sequential-index" or (buildDepError "sequential-index"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."void" or (buildDepError "void"))
+          (hsPkgs."yjtools" or (buildDepError "yjtools"))
           ];
         };
       exes = {
         "readme-simple" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.containers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "readme-full" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cmdtheline)
-            (hsPkgs.containers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "count-all-nqueens-solutions" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cmdtheline)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
           };
         "print-all-nqueens-solutions" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cmdtheline)
-            (hsPkgs.containers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "print-an-nqueens-solution" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cmdtheline)
-            (hsPkgs.containers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "print-some-nqueens-solutions-using-pull" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cmdtheline)
-            (hsPkgs.containers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "print-some-nqueens-solutions-using-push" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cmdtheline)
-            (hsPkgs.containers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "count-all-trivial-tree-leaves" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cereal)
-            (hsPkgs.cmdtheline)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
           };
         "tutorial-1" = {
-          depends = [ (hsPkgs.LogicGrowsOnTrees) (hsPkgs.base) ];
+          depends = [
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
           };
         "tutorial-2" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.containers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
             ];
           };
         "tutorial-3" = {
-          depends = [ (hsPkgs.LogicGrowsOnTrees) (hsPkgs.base) ];
+          depends = [
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
           };
         "tutorial-4" = {
-          depends = [ (hsPkgs.LogicGrowsOnTrees) (hsPkgs.base) ];
+          depends = [
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
           };
         "tutorial-5" = {
-          depends = [ (hsPkgs.LogicGrowsOnTrees) (hsPkgs.base) ];
+          depends = [
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
           };
         "tutorial-6" = {
-          depends = [ (hsPkgs.LogicGrowsOnTrees) (hsPkgs.base) ];
+          depends = [
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
           };
         "tutorial-7" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.transformers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "tutorial-8" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.transformers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "tutorial-9" = {
-          depends = [ (hsPkgs.LogicGrowsOnTrees) (hsPkgs.base) ];
+          depends = [
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
           };
         "tutorial-10" = {
-          depends = [ (hsPkgs.LogicGrowsOnTrees) (hsPkgs.base) ];
+          depends = [
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
           };
         "tutorial-11" = {
-          depends = [ (hsPkgs.LogicGrowsOnTrees) (hsPkgs.base) ];
+          depends = [
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            ];
           };
         "tutorial-12" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cmdtheline)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
           };
         "tutorial-13" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cmdtheline)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdtheline" or (buildDepError "cmdtheline"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.composition)
-            (hsPkgs.containers)
-            (hsPkgs.data-ivar)
-            (hsPkgs.directory)
-            (hsPkgs.hslogger)
-            (hsPkgs.hslogger-template)
-            (hsPkgs.HUnit)
-            (hsPkgs.lens)
-            (hsPkgs.MonadCatchIO-transformers)
-            (hsPkgs.operational)
-            (hsPkgs.random)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.smallcheck)
-            (hsPkgs.stm)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.test-framework-smallcheck)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.uuid)
-            (hsPkgs.void)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."composition" or (buildDepError "composition"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."data-ivar" or (buildDepError "data-ivar"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."hslogger-template" or (buildDepError "hslogger-template"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."MonadCatchIO-transformers" or (buildDepError "MonadCatchIO-transformers"))
+            (hsPkgs."operational" or (buildDepError "operational"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."smallcheck" or (buildDepError "smallcheck"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."test-framework-smallcheck" or (buildDepError "test-framework-smallcheck"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."void" or (buildDepError "void"))
             ];
           };
         "test-nqueens" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };
       benchmarks = {
         "tree-versus-list-lopsided-trivial-tree" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-lopsided-null-tree" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-null-tree" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-trivial-tree" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-unit-tree" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.cereal)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ];
           };
         "tree-versus-list-nqueens" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-nqueens-using-sets" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-nqueens-using-bits" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-nqueens-with-list-at-bottom" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-nqueens-with-nothing-at-bottom" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-bind" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-bind-and-mplus" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tree-versus-list-fmap" = {
           depends = [
-            (hsPkgs.LogicGrowsOnTrees)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
+            (hsPkgs."LogicGrowsOnTrees" or (buildDepError "LogicGrowsOnTrees"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         };

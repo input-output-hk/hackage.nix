@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -14,128 +53,128 @@
       description = "Convert Cabal files into Nix build instructions. Users of Nix can install the latest version by running:\n\n> nix-env -i cabal2nix";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest))
+        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (buildToolDepError "Cabal")))
+        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (buildToolDepError "base")))
+        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (buildToolDepError "cabal-doctest")))
         ];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs.Cabal)
-          (hsPkgs.aeson)
-          (hsPkgs.ansi-wl-pprint)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.distribution-nixpkgs)
-          (hsPkgs.filepath)
-          (hsPkgs.hackage-db)
-          (hsPkgs.hopenssl)
-          (hsPkgs.hpack)
-          (hsPkgs.language-nix)
-          (hsPkgs.lens)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.pretty)
-          (hsPkgs.process)
-          (hsPkgs.split)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.yaml)
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."distribution-nixpkgs" or (buildDepError "distribution-nixpkgs"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hackage-db" or (buildDepError "hackage-db"))
+          (hsPkgs."hopenssl" or (buildDepError "hopenssl"))
+          (hsPkgs."hpack" or (buildDepError "hpack"))
+          (hsPkgs."language-nix" or (buildDepError "language-nix"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."split" or (buildDepError "split"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
           ];
         };
       exes = {
         "cabal2nix" = {
           depends = [
-            (hsPkgs.Cabal)
-            (hsPkgs.aeson)
-            (hsPkgs.ansi-wl-pprint)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.cabal2nix)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.distribution-nixpkgs)
-            (hsPkgs.filepath)
-            (hsPkgs.hackage-db)
-            (hsPkgs.hopenssl)
-            (hsPkgs.hpack)
-            (hsPkgs.language-nix)
-            (hsPkgs.lens)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.pretty)
-            (hsPkgs.process)
-            (hsPkgs.split)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.yaml)
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cabal2nix" or (buildDepError "cabal2nix"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."distribution-nixpkgs" or (buildDepError "distribution-nixpkgs"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hackage-db" or (buildDepError "hackage-db"))
+            (hsPkgs."hopenssl" or (buildDepError "hopenssl"))
+            (hsPkgs."hpack" or (buildDepError "hpack"))
+            (hsPkgs."language-nix" or (buildDepError "language-nix"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         "hackage2nix" = {
           depends = [
-            (hsPkgs.Cabal)
-            (hsPkgs.aeson)
-            (hsPkgs.ansi-wl-pprint)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.cabal2nix)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.distribution-nixpkgs)
-            (hsPkgs.filepath)
-            (hsPkgs.hackage-db)
-            (hsPkgs.hopenssl)
-            (hsPkgs.hpack)
-            (hsPkgs.language-nix)
-            (hsPkgs.lens)
-            (hsPkgs.monad-par)
-            (hsPkgs.monad-par-extras)
-            (hsPkgs.mtl)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.pretty)
-            (hsPkgs.process)
-            (hsPkgs.split)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.utf8-string)
-            (hsPkgs.yaml)
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cabal2nix" or (buildDepError "cabal2nix"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."distribution-nixpkgs" or (buildDepError "distribution-nixpkgs"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hackage-db" or (buildDepError "hackage-db"))
+            (hsPkgs."hopenssl" or (buildDepError "hopenssl"))
+            (hsPkgs."hpack" or (buildDepError "hpack"))
+            (hsPkgs."language-nix" or (buildDepError "language-nix"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."monad-par" or (buildDepError "monad-par"))
+            (hsPkgs."monad-par-extras" or (buildDepError "monad-par-extras"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         };
       tests = {
         "doctests" = {
           depends = [
-            (hsPkgs.Cabal)
-            (hsPkgs.aeson)
-            (hsPkgs.ansi-wl-pprint)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.distribution-nixpkgs)
-            (hsPkgs.doctest)
-            (hsPkgs.filepath)
-            (hsPkgs.hackage-db)
-            (hsPkgs.hopenssl)
-            (hsPkgs.hpack)
-            (hsPkgs.language-nix)
-            (hsPkgs.lens)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.pretty)
-            (hsPkgs.process)
-            (hsPkgs.split)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.yaml)
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."distribution-nixpkgs" or (buildDepError "distribution-nixpkgs"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hackage-db" or (buildDepError "hackage-db"))
+            (hsPkgs."hopenssl" or (buildDepError "hopenssl"))
+            (hsPkgs."hpack" or (buildDepError "hpack"))
+            (hsPkgs."language-nix" or (buildDepError "language-nix"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."split" or (buildDepError "split"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         };

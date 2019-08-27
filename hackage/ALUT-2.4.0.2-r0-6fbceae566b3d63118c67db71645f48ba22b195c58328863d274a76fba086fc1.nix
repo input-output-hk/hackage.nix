@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { usenativewindowslibraries = true; buildexamples = false; };
     package = {
@@ -17,36 +56,65 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.transformers)
-          (hsPkgs.StateVar)
-          (hsPkgs.OpenAL)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."StateVar" or (buildDepError "StateVar"))
+          (hsPkgs."OpenAL" or (buildDepError "OpenAL"))
           ];
         libs = if system.isWindows && flags.usenativewindowslibraries
-          then [ (pkgs."alut") ]
-          else (pkgs.lib).optional (!system.isIos) (pkgs."alut");
-        frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) ((pkgs.lib).optional (system.isIos) (pkgs."ALUT"));
+          then [ (pkgs."alut" or (sysDepError "alut")) ]
+          else (pkgs.lib).optional (!system.isIos) (pkgs."alut" or (sysDepError "alut"));
+        frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) ((pkgs.lib).optional (system.isIos) (pkgs."ALUT" or (sysDepError "ALUT")));
         };
       exes = {
-        "Basic-HelloWorld" = { depends = [ (hsPkgs.base) (hsPkgs.ALUT) ]; };
-        "Basic-OpenALInfo" = {
-          depends = [ (hsPkgs.base) (hsPkgs.pretty) (hsPkgs.ALUT) ];
+        "Basic-HelloWorld" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ALUT" or (buildDepError "ALUT"))
+            ];
           };
-        "Basic-PlayFile" = { depends = [ (hsPkgs.base) (hsPkgs.ALUT) ]; };
+        "Basic-OpenALInfo" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."ALUT" or (buildDepError "ALUT"))
+            ];
+          };
+        "Basic-PlayFile" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ALUT" or (buildDepError "ALUT"))
+            ];
+          };
         "TestSuite-TestErrorStuff" = {
-          depends = [ (hsPkgs.base) (hsPkgs.ALUT) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ALUT" or (buildDepError "ALUT"))
+            ];
           };
         "TestSuite-TestFileLoader" = {
-          depends = [ (hsPkgs.base) (hsPkgs.ALUT) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ALUT" or (buildDepError "ALUT"))
+            ];
           };
         "TestSuite-TestMemoryLoader" = {
-          depends = [ (hsPkgs.base) (hsPkgs.ALUT) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ALUT" or (buildDepError "ALUT"))
+            ];
           };
         "TestSuite-TestVersion" = {
-          depends = [ (hsPkgs.base) (hsPkgs.ALUT) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ALUT" or (buildDepError "ALUT"))
+            ];
           };
         "TestSuite-TestWaveforms" = {
-          depends = [ (hsPkgs.base) (hsPkgs.ALUT) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ALUT" or (buildDepError "ALUT"))
+            ];
           };
         };
       };

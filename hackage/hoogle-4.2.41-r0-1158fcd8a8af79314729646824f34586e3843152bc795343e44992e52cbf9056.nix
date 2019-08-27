@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,80 +56,80 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.process)
-          (hsPkgs.random)
-          (hsPkgs.safe)
-          (hsPkgs.binary)
-          (hsPkgs.bytestring)
-          (hsPkgs.conduit)
-          (hsPkgs.resourcet)
-          (hsPkgs.parsec)
-          (hsPkgs.deepseq)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.uniplate)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.http-types)
-          (hsPkgs.wai)
-          (hsPkgs.vector)
-          (hsPkgs.vector-algorithms)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.haskell-src-exts)
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."uniplate" or (buildDepError "uniplate"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
         };
       exes = {
         "hoogle" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.process)
-            (hsPkgs.random)
-            (hsPkgs.array)
-            (hsPkgs.containers)
-            (hsPkgs.time)
-            (hsPkgs.old-locale)
-            (hsPkgs.safe)
-            (hsPkgs.binary)
-            (hsPkgs.aeson)
-            (hsPkgs.cmdargs)
-            (hsPkgs.deepseq)
-            (hsPkgs.tagsoup)
-            (hsPkgs.blaze-builder)
-            (hsPkgs.http-types)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.vector-algorithms)
-            (hsPkgs.transformers)
-            (hsPkgs.uniplate)
-            (hsPkgs.conduit)
-            (hsPkgs.resourcet)
-            (hsPkgs.parsec)
-            (hsPkgs.wai)
-            (hsPkgs.warp)
-            (hsPkgs.Cabal)
-            (hsPkgs.shake)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.haskell-src-exts)
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."tagsoup" or (buildDepError "tagsoup"))
+            (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-algorithms" or (buildDepError "vector-algorithms"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."uniplate" or (buildDepError "uniplate"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."shake" or (buildDepError "shake"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."haskell-src-exts" or (buildDepError "haskell-src-exts"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
           };
         };
       tests = {
         "hoogle-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.temporary)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
             ];
           };
         };

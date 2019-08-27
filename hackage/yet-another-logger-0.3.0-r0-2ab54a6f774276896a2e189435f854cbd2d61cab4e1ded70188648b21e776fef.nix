@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-time = false; };
     package = {
@@ -17,62 +56,65 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.async)
-          (hsPkgs.aeson)
-          (hsPkgs.ansi-terminal)
-          (hsPkgs.base)
-          (hsPkgs.base-unicode-symbols)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.clock)
-          (hsPkgs.configuration-tools)
-          (hsPkgs.deepseq)
-          (hsPkgs.enclosed-exceptions)
-          (hsPkgs.exceptions)
-          (hsPkgs.lens)
-          (hsPkgs.lifted-base)
-          (hsPkgs.monad-control)
-          (hsPkgs.mtl)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.stm)
-          (hsPkgs.stm-chans)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-base)
-          (hsPkgs.void)
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs.nats)) ++ (if flags.old-time
-          then [ (hsPkgs.old-locale) (hsPkgs.time) ]
-          else [ (hsPkgs.time) ]);
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."clock" or (buildDepError "clock"))
+          (hsPkgs."configuration-tools" or (buildDepError "configuration-tools"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."enclosed-exceptions" or (buildDepError "enclosed-exceptions"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."stm-chans" or (buildDepError "stm-chans"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."void" or (buildDepError "void"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs."nats" or (buildDepError "nats"))) ++ (if flags.old-time
+          then [
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            ]
+          else [ (hsPkgs."time" or (buildDepError "time")) ]);
         };
       exes = {
         "example" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.yet-another-logger)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."yet-another-logger" or (buildDepError "yet-another-logger"))
             ];
           };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.async)
-            (hsPkgs.base)
-            (hsPkgs.base-unicode-symbols)
-            (hsPkgs.configuration-tools)
-            (hsPkgs.enclosed-exceptions)
-            (hsPkgs.lens)
-            (hsPkgs.lifted-base)
-            (hsPkgs.tagged)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.transformers-base)
-            (hsPkgs.void)
-            (hsPkgs.yet-another-logger)
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs.nats);
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
+            (hsPkgs."configuration-tools" or (buildDepError "configuration-tools"))
+            (hsPkgs."enclosed-exceptions" or (buildDepError "enclosed-exceptions"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."lifted-base" or (buildDepError "lifted-base"))
+            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+            (hsPkgs."void" or (buildDepError "void"))
+            (hsPkgs."yet-another-logger" or (buildDepError "yet-another-logger"))
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs."nats" or (buildDepError "nats"));
           };
         };
       };

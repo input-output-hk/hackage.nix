@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,57 +56,57 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.hashable)
-          (hsPkgs.mtl)
-          (hsPkgs.protocol-buffers)
-          (hsPkgs.protocol-buffers-descriptor)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."protocol-buffers" or (buildDepError "protocol-buffers"))
+          (hsPkgs."protocol-buffers-descriptor" or (buildDepError "protocol-buffers-descriptor"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       tests = {
         "vectortiles-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.hashable)
-            (hsPkgs.hex)
-            (hsPkgs.mtl)
-            (hsPkgs.protocol-buffers)
-            (hsPkgs.protocol-buffers-descriptor)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.vectortiles)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."hex" or (buildDepError "hex"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."protocol-buffers" or (buildDepError "protocol-buffers"))
+            (hsPkgs."protocol-buffers-descriptor" or (buildDepError "protocol-buffers-descriptor"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vectortiles" or (buildDepError "vectortiles"))
             ];
           };
         };
       benchmarks = {
         "vectortiles-bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.hashable)
-            (hsPkgs.microlens)
-            (hsPkgs.microlens-platform)
-            (hsPkgs.mtl)
-            (hsPkgs.protocol-buffers)
-            (hsPkgs.protocol-buffers-descriptor)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.vectortiles)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."microlens-platform" or (buildDepError "microlens-platform"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."protocol-buffers" or (buildDepError "protocol-buffers"))
+            (hsPkgs."protocol-buffers-descriptor" or (buildDepError "protocol-buffers-descriptor"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vectortiles" or (buildDepError "vectortiles"))
             ];
           };
         };

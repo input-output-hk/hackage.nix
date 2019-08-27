@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,99 +56,111 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.mmorph)
-          (hsPkgs.transformers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."mmorph" or (buildDepError "mmorph"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
           ];
         };
       tests = {
         "doctests" = {
-          depends = [ (hsPkgs.base) (hsPkgs.doctest) (hsPkgs.QuickCheck) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            ];
           };
         "unit_Applicative" = {
-          depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.deepcontrol) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
+            ];
           };
         "unit_Traversable" = {
-          depends = [ (hsPkgs.base) (hsPkgs.HUnit) (hsPkgs.deepcontrol) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
+            ];
           };
         "unit_Monad" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.deepcontrol)
-            (hsPkgs.mtl)
-            (hsPkgs.safe)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."safe" or (buildDepError "safe"))
             ];
           };
         "unit_Monad-Level1" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.containers)
-            (hsPkgs.deepcontrol)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
           };
         "unit_Monad-Level2" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.deepcontrol)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
           };
         "unit_Monad-factorial" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.deepcontrol)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
           };
         "unit_Monad-factorial2" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.deepcontrol)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
           };
         "unit_MonadTrans-ackermann" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.deepcontrol)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
           };
         "unit_MonadTrans" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.deepcontrol)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
           };
         "unit_MonadMorph" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.deepcontrol)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
           };
         "unit_MonadMorph-bind" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.deepcontrol)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."deepcontrol" or (buildDepError "deepcontrol"))
             ];
           };
         };

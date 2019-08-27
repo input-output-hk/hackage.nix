@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,29 +57,29 @@
       exes = {
         "sproxy-web" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.blaze-html)
-            (hsPkgs.blaze-markup)
-            (hsPkgs.bytestring)
-            (hsPkgs.data-default-class)
-            (hsPkgs.directory)
-            (hsPkgs.docopt)
-            (hsPkgs.fast-logger)
-            (hsPkgs.filepath)
-            (hsPkgs.http-types)
-            (hsPkgs.interpolatedstring-perl6)
-            (hsPkgs.mtl)
-            (hsPkgs.network)
-            (hsPkgs.postgresql-simple)
-            (hsPkgs.resource-pool)
-            (hsPkgs.scotty)
-            (hsPkgs.text)
-            (hsPkgs.unix)
-            (hsPkgs.wai)
-            (hsPkgs.wai-extra)
-            (hsPkgs.wai-middleware-static)
-            (hsPkgs.warp)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            (hsPkgs."blaze-markup" or (buildDepError "blaze-markup"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."docopt" or (buildDepError "docopt"))
+            (hsPkgs."fast-logger" or (buildDepError "fast-logger"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."interpolatedstring-perl6" or (buildDepError "interpolatedstring-perl6"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."postgresql-simple" or (buildDepError "postgresql-simple"))
+            (hsPkgs."resource-pool" or (buildDepError "resource-pool"))
+            (hsPkgs."scotty" or (buildDepError "scotty"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."wai-middleware-static" or (buildDepError "wai-middleware-static"))
+            (hsPkgs."warp" or (buildDepError "warp"))
             ];
           };
         };

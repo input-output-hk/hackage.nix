@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { plugins = true; };
     package = {
@@ -17,71 +56,71 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.pandoc)
-          (hsPkgs.pandoc-types)
-          (hsPkgs.filepath)
-          (hsPkgs.safe)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."pandoc" or (buildDepError "pandoc"))
+          (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."safe" or (buildDepError "safe"))
           ] ++ (pkgs.lib).optionals (flags.plugins) [
-          (hsPkgs.ghc)
-          (hsPkgs.ghc-paths)
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
           ];
         };
       exes = {
         "gitit" = {
           depends = (([
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.pretty)
-            (hsPkgs.xhtml)
-            (hsPkgs.containers)
-            (hsPkgs.pandoc)
-            (hsPkgs.pandoc-types)
-            (hsPkgs.process)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.mtl)
-            (hsPkgs.cgi)
-            (hsPkgs.old-time)
-            (hsPkgs.highlighting-kate)
-            (hsPkgs.bytestring)
-            (hsPkgs.random)
-            (hsPkgs.network)
-            (hsPkgs.utf8-string)
-            (hsPkgs.SHA)
-            (hsPkgs.HTTP)
-            (hsPkgs.HStringTemplate)
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-            (hsPkgs.recaptcha)
-            (hsPkgs.filestore)
-            (hsPkgs.zlib)
-            (hsPkgs.url)
-            (hsPkgs.happstack-server)
-            (hsPkgs.happstack-util)
-            (hsPkgs.xml)
-            (hsPkgs.hslogger)
-            (hsPkgs.ConfigFile)
-            (hsPkgs.feed)
-            (hsPkgs.xss-sanitize)
-            (hsPkgs.json)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."pretty" or (buildDepError "pretty"))
+            (hsPkgs."xhtml" or (buildDepError "xhtml"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."pandoc" or (buildDepError "pandoc"))
+            (hsPkgs."pandoc-types" or (buildDepError "pandoc-types"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."cgi" or (buildDepError "cgi"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."highlighting-kate" or (buildDepError "highlighting-kate"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."SHA" or (buildDepError "SHA"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."HStringTemplate" or (buildDepError "HStringTemplate"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."recaptcha" or (buildDepError "recaptcha"))
+            (hsPkgs."filestore" or (buildDepError "filestore"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
+            (hsPkgs."url" or (buildDepError "url"))
+            (hsPkgs."happstack-server" or (buildDepError "happstack-server"))
+            (hsPkgs."happstack-util" or (buildDepError "happstack-util"))
+            (hsPkgs."xml" or (buildDepError "xml"))
+            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
+            (hsPkgs."feed" or (buildDepError "feed"))
+            (hsPkgs."xss-sanitize" or (buildDepError "xss-sanitize"))
+            (hsPkgs."json" or (buildDepError "json"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.0.3") (hsPkgs.network)) ++ (pkgs.lib).optionals (flags.plugins) [
-            (hsPkgs.ghc)
-            (hsPkgs.ghc-paths)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.0.3") (hsPkgs."network" or (buildDepError "network"))) ++ (pkgs.lib).optionals (flags.plugins) [
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
             ];
           };
         "expireGititCache" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HTTP)
-            (hsPkgs.url)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HTTP" or (buildDepError "HTTP"))
+            (hsPkgs."url" or (buildDepError "url"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
-            (hsPkgs.base)
-            (hsPkgs.syb)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."syb" or (buildDepError "syb"))
             ];
           };
         };

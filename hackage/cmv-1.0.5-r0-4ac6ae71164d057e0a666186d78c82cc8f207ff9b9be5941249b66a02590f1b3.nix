@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,188 +56,188 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.parsec)
-          (hsPkgs.diagrams-lib)
-          (hsPkgs.BiobaseInfernal)
-          (hsPkgs.text)
-          (hsPkgs.vector)
-          (hsPkgs.ParsecTools)
-          (hsPkgs.diagrams-cairo)
-          (hsPkgs.filepath)
-          (hsPkgs.colour)
-          (hsPkgs.PrimitiveArray)
-          (hsPkgs.BiobaseXNA)
-          (hsPkgs.mtl)
-          (hsPkgs.directory)
-          (hsPkgs.either-unwrap)
-          (hsPkgs.SVGFonts)
-          (hsPkgs.BioHMM)
-          (hsPkgs.StockholmAlignment)
-          (hsPkgs.BiobaseTypes)
-          (hsPkgs.containers)
-          (hsPkgs.diagrams-core)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+          (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."ParsecTools" or (buildDepError "ParsecTools"))
+          (hsPkgs."diagrams-cairo" or (buildDepError "diagrams-cairo"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."colour" or (buildDepError "colour"))
+          (hsPkgs."PrimitiveArray" or (buildDepError "PrimitiveArray"))
+          (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+          (hsPkgs."SVGFonts" or (buildDepError "SVGFonts"))
+          (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
+          (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
+          (hsPkgs."BiobaseTypes" or (buildDepError "BiobaseTypes"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."diagrams-core" or (buildDepError "diagrams-core"))
           ];
         };
       exes = {
         "CMCV" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.BiobaseInfernal)
-            (hsPkgs.BiobaseXNA)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.parsec)
-            (hsPkgs.colour)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.cmv)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
-            (hsPkgs.StockholmAlignment)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
+            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmv" or (buildDepError "cmv"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
             ];
           };
         "CMV" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.BiobaseInfernal)
-            (hsPkgs.BiobaseXNA)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.parsec)
-            (hsPkgs.colour)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.cmv)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
-            (hsPkgs.StockholmAlignment)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
+            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmv" or (buildDepError "cmv"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
             ];
           };
         "CMCWStoCMCV" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.BiobaseInfernal)
-            (hsPkgs.BiobaseXNA)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.parsec)
-            (hsPkgs.colour)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.cmv)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
+            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmv" or (buildDepError "cmv"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
             ];
           };
         "CMCtoHMMC" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.BiobaseInfernal)
-            (hsPkgs.BiobaseXNA)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.parsec)
-            (hsPkgs.colour)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.cmv)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
-            (hsPkgs.BioHMM)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
+            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmv" or (buildDepError "cmv"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
             ];
           };
         "HMMCtoCMC" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.BiobaseInfernal)
-            (hsPkgs.BiobaseXNA)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.parsec)
-            (hsPkgs.colour)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.cmv)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
-            (hsPkgs.BioHMM)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
+            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmv" or (buildDepError "cmv"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
             ];
           };
         "CMVJson" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.BiobaseInfernal)
-            (hsPkgs.BiobaseXNA)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.cmv)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
-            (hsPkgs.aeson)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."BiobaseInfernal" or (buildDepError "BiobaseInfernal"))
+            (hsPkgs."BiobaseXNA" or (buildDepError "BiobaseXNA"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmv" or (buildDepError "cmv"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
           };
         "HMMCV" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.parsec)
-            (hsPkgs.colour)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.cmv)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
-            (hsPkgs.BioHMM)
-            (hsPkgs.StockholmAlignment)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmv" or (buildDepError "cmv"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
+            (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
             ];
           };
         "HMMV" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.cmdargs)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.parsec)
-            (hsPkgs.colour)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.cmv)
-            (hsPkgs.either-unwrap)
-            (hsPkgs.filepath)
-            (hsPkgs.BioHMM)
-            (hsPkgs.StockholmAlignment)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."colour" or (buildDepError "colour"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmv" or (buildDepError "cmv"))
+            (hsPkgs."either-unwrap" or (buildDepError "either-unwrap"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."BioHMM" or (buildDepError "BioHMM"))
+            (hsPkgs."StockholmAlignment" or (buildDepError "StockholmAlignment"))
             ];
           };
         };

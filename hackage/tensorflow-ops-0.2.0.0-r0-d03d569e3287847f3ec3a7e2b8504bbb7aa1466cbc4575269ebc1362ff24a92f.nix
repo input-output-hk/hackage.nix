@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,256 +56,256 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.proto-lens)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.fgl)
-          (hsPkgs.mtl)
-          (hsPkgs.data-default)
-          (hsPkgs.lens-family)
-          (hsPkgs.containers)
-          (hsPkgs.tensorflow)
-          (hsPkgs.tensorflow-proto)
-          (hsPkgs.tensorflow-core-ops)
-          (hsPkgs.text)
+          (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."fgl" or (buildDepError "fgl"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."lens-family" or (buildDepError "lens-family"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+          (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+          (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+          (hsPkgs."text" or (buildDepError "text"))
           ];
         };
       tests = {
         "RegressionTest" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.lens-family)
-            (hsPkgs.transformers)
-            (hsPkgs.random)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
             ];
           };
         "MatrixTest" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.random)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-test)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-test" or (buildDepError "tensorflow-test"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "BuildTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.proto-lens)
-            (hsPkgs.lens-family)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-proto)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "EmbeddingOpsTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.proto-lens)
-            (hsPkgs.lens-family)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-test)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-proto)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-test" or (buildDepError "tensorflow-test"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "ArrayOpsTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.proto-lens)
-            (hsPkgs.lens-family)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-proto)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "OpsTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.proto-lens)
-            (hsPkgs.lens-family)
-            (hsPkgs.temporary)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-proto)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "VariableTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "DataFlowOpsTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.proto-lens)
-            (hsPkgs.lens-family)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-proto)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "GradientTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.proto-lens)
-            (hsPkgs.lens-family)
-            (hsPkgs.random)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-proto)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "MiscTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.vector)
-            (hsPkgs.transformers)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-proto)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
           };
         "NNTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-test)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-test" or (buildDepError "tensorflow-test"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "QueueTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.proto-lens)
-            (hsPkgs.lens-family)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "TracingTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.data-default)
-            (hsPkgs.lens-family)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
             ];
           };
         "TypesTest" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.proto-lens)
-            (hsPkgs.lens-family)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-core-ops)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.tensorflow-proto)
-            (hsPkgs.transformers)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-hunit)
-            (hsPkgs.test-framework-quickcheck2)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."proto-lens" or (buildDepError "proto-lens"))
+            (hsPkgs."lens-family" or (buildDepError "lens-family"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-core-ops" or (buildDepError "tensorflow-core-ops"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."tensorflow-proto" or (buildDepError "tensorflow-proto"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       benchmarks = {
         "FeedFetchBench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.deepseq)
-            (hsPkgs.tensorflow)
-            (hsPkgs.tensorflow-ops)
-            (hsPkgs.transformers)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."tensorflow" or (buildDepError "tensorflow"))
+            (hsPkgs."tensorflow-ops" or (buildDepError "tensorflow-ops"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };

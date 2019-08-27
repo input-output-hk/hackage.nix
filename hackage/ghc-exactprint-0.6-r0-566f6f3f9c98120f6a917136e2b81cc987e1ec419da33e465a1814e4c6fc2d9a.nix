@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { roundtrip = false; dev = false; };
     package = {
@@ -17,81 +56,81 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.ghc)
-          (hsPkgs.ghc-paths)
-          (hsPkgs.mtl)
-          (hsPkgs.syb)
-          (hsPkgs.free)
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.fail)) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs.ghc-boot);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."free" or (buildDepError "free"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."fail" or (buildDepError "fail"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
         };
       exes = {
         "roundtrip" = {
           depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.10.2" && flags.roundtrip) ([
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filemanip)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc)
-            (hsPkgs.ghc-exactprint)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.syb)
-            (hsPkgs.temporary)
-            (hsPkgs.time)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs.ghc-boot));
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filemanip" or (buildDepError "filemanip"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."time" or (buildDepError "time"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot")));
           };
         "static" = {
           depends = (pkgs.lib).optionals (flags.roundtrip) ([
-            (hsPkgs.base)
-            (hsPkgs.directory)
-            (hsPkgs.filemanip)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc)
-            (hsPkgs.Diff)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs.ghc-boot));
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filemanip" or (buildDepError "filemanip"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."Diff" or (buildDepError "Diff"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot")));
           };
         "prepare-hackage" = {
           depends = (pkgs.lib).optionals (flags.roundtrip) ([
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filemanip)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.HUnit)
-            (hsPkgs.text)
-            (hsPkgs.turtle)
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs.ghc-boot));
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filemanip" or (buildDepError "filemanip"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."turtle" or (buildDepError "turtle"))
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot")));
           };
         };
       tests = {
         "test" = {
           depends = (([
-            (hsPkgs.HUnit)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.Diff)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.mtl)
-            (hsPkgs.syb)
-            (hsPkgs.silently)
-            (hsPkgs.filemanip)
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.fail)) ++ (if flags.dev
-            then [ (hsPkgs.free) ]
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."Diff" or (buildDepError "Diff"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."silently" or (buildDepError "silently"))
+            (hsPkgs."filemanip" or (buildDepError "filemanip"))
+            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."fail" or (buildDepError "fail"))) ++ (if flags.dev
+            then [ (hsPkgs."free" or (buildDepError "free")) ]
             else [
-              (hsPkgs.ghc-exactprint)
-              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs.ghc-boot);
+              (hsPkgs."ghc-exactprint" or (buildDepError "ghc-exactprint"))
+              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.11") (hsPkgs."ghc-boot" or (buildDepError "ghc-boot"));
           };
         };
       };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { debugandersenconstraints = false; debugandersengraph = false; };
     package = {
@@ -17,104 +56,104 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.vector)
-          (hsPkgs.transformers)
-          (hsPkgs.filemanip)
-          (hsPkgs.monad-par)
-          (hsPkgs.graphviz)
-          (hsPkgs.temporary)
-          (hsPkgs.lens)
-          (hsPkgs.hashable)
-          (hsPkgs.failure)
-          (hsPkgs.lens)
-          (hsPkgs.GenericPretty)
-          (hsPkgs.hoopl)
-          (hsPkgs.llvm-base-types)
-          (hsPkgs.fgl)
-          (hsPkgs.text)
-          (hsPkgs.boomerang)
-          (hsPkgs.ifscs)
-          (hsPkgs.array)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.process)
-          (hsPkgs.filepath)
-          (hsPkgs.directory)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.HUnit)
-          (hsPkgs.test-framework)
-          (hsPkgs.test-framework-hunit)
-          (hsPkgs.itanium-abi)
-          (hsPkgs.uniplate)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."filemanip" or (buildDepError "filemanip"))
+          (hsPkgs."monad-par" or (buildDepError "monad-par"))
+          (hsPkgs."graphviz" or (buildDepError "graphviz"))
+          (hsPkgs."temporary" or (buildDepError "temporary"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."failure" or (buildDepError "failure"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."GenericPretty" or (buildDepError "GenericPretty"))
+          (hsPkgs."hoopl" or (buildDepError "hoopl"))
+          (hsPkgs."llvm-base-types" or (buildDepError "llvm-base-types"))
+          (hsPkgs."fgl" or (buildDepError "fgl"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."boomerang" or (buildDepError "boomerang"))
+          (hsPkgs."ifscs" or (buildDepError "ifscs"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."HUnit" or (buildDepError "HUnit"))
+          (hsPkgs."test-framework" or (buildDepError "test-framework"))
+          (hsPkgs."test-framework-hunit" or (buildDepError "test-framework-hunit"))
+          (hsPkgs."itanium-abi" or (buildDepError "itanium-abi"))
+          (hsPkgs."uniplate" or (buildDepError "uniplate"))
           ];
         };
       tests = {
         "CallGraphTests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.HUnit)
-            (hsPkgs.filepath)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.llvm-analysis)
-            (hsPkgs.llvm-data-interop)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
+            (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             ];
           };
         "BlockReturnTests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.HUnit)
-            (hsPkgs.filepath)
-            (hsPkgs.llvm-analysis)
-            (hsPkgs.llvm-data-interop)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
+            (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
             ];
           };
         "ReturnTests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.transformers)
-            (hsPkgs.containers)
-            (hsPkgs.filepath)
-            (hsPkgs.HUnit)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.llvm-data-interop)
-            (hsPkgs.llvm-analysis)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
+            (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
             ];
           };
         "AccessPathTests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.filepath)
-            (hsPkgs.HUnit)
-            (hsPkgs.llvm-data-interop)
-            (hsPkgs.llvm-analysis)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
+            (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
             ];
           };
         "ClassHierarchyTests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.filepath)
-            (hsPkgs.HUnit)
-            (hsPkgs.uniplate)
-            (hsPkgs.llvm-analysis)
-            (hsPkgs.llvm-data-interop)
-            (hsPkgs.itanium-abi)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."uniplate" or (buildDepError "uniplate"))
+            (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
+            (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
+            (hsPkgs."itanium-abi" or (buildDepError "itanium-abi"))
             ];
           };
         "AndersenTests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.filepath)
-            (hsPkgs.HUnit)
-            (hsPkgs.llvm-data-interop)
-            (hsPkgs.llvm-analysis)
-            ] ++ (pkgs.lib).optional (flags.debugandersengraph) (hsPkgs.graphviz);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."llvm-data-interop" or (buildDepError "llvm-data-interop"))
+            (hsPkgs."llvm-analysis" or (buildDepError "llvm-analysis"))
+            ] ++ (pkgs.lib).optional (flags.debugandersengraph) (hsPkgs."graphviz" or (buildDepError "graphviz"));
           };
         };
       };

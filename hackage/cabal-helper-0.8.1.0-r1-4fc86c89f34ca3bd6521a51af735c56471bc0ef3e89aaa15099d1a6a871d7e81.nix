@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { dev = false; };
     package = {
@@ -17,96 +56,96 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.Cabal)
-          (hsPkgs.cabal-plan)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.transformers)
-          (hsPkgs.mtl)
-          (hsPkgs.process)
-          (hsPkgs.unix-compat)
-          (hsPkgs.semigroupoids)
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."cabal-plan" or (buildDepError "cabal-plan"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+          (hsPkgs."semigroupoids" or (buildDepError "semigroupoids"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
         };
       exes = {
         "cabal-helper-wrapper" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.mtl)
-            (hsPkgs.process)
-            (hsPkgs.template-haskell)
-            (hsPkgs.temporary)
-            (hsPkgs.transformers)
-            (hsPkgs.unix-compat)
-            (hsPkgs.utf8-string)
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.base)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install))
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install or (buildToolDepError "cabal-install")))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (buildToolDepError "cabal")))
             ];
           };
         "cabal-helper-main" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.containers)
-            (hsPkgs.bytestring)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.ghc-prim)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
             ];
           };
         };
       tests = {
         "compile-test" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.mtl)
-            (hsPkgs.process)
-            (hsPkgs.template-haskell)
-            (hsPkgs.temporary)
-            (hsPkgs.transformers)
-            (hsPkgs.unix-compat)
-            (hsPkgs.utf8-string)
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.base)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install))
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install or (buildToolDepError "cabal-install")))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (buildToolDepError "cabal")))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (buildToolDepError "cabal")))
             ];
           };
         "ghc-session" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.ghc)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.cabal-helper)
-            (hsPkgs.base)
-            (hsPkgs.Cabal)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.mtl)
-            (hsPkgs.process)
-            (hsPkgs.template-haskell)
-            (hsPkgs.temporary)
-            (hsPkgs.transformers)
-            (hsPkgs.unix-compat)
-            (hsPkgs.utf8-string)
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs.base)) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."cabal-helper" or (buildDepError "cabal-helper"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install))
-            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal))
+            (hsPkgs.buildPackages.cabal-install or (pkgs.buildPackages.cabal-install or (buildToolDepError "cabal-install")))
+            (hsPkgs.buildPackages.cabal or (pkgs.buildPackages.cabal or (buildToolDepError "cabal")))
             ];
           };
         };

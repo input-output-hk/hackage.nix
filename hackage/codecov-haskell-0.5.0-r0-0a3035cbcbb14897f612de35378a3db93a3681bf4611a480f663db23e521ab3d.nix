@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,46 +56,50 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.cmdargs)
-          (hsPkgs.curl)
-          (hsPkgs.hpc)
-          (hsPkgs.retry)
-          (hsPkgs.safe)
-          (hsPkgs.split)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+          (hsPkgs."curl" or (buildDepError "curl"))
+          (hsPkgs."hpc" or (buildDepError "hpc"))
+          (hsPkgs."retry" or (buildDepError "retry"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."split" or (buildDepError "split"))
           ];
         };
       exes = {
         "codecov-haskell" = {
           depends = [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.cmdargs)
-            (hsPkgs.curl)
-            (hsPkgs.hpc)
-            (hsPkgs.retry)
-            (hsPkgs.safe)
-            (hsPkgs.split)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."curl" or (buildDepError "curl"))
+            (hsPkgs."hpc" or (buildDepError "hpc"))
+            (hsPkgs."retry" or (buildDepError "retry"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."split" or (buildDepError "split"))
             ];
           };
         "run-cabal-test" = {
           depends = [
-            (hsPkgs.async)
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.regex-posix)
-            (hsPkgs.split)
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
+            (hsPkgs."split" or (buildDepError "split"))
             ];
           };
         };
       tests = {
         "test-all" = {
-          depends = [ (hsPkgs.base) (hsPkgs.codecov-haskell) (hsPkgs.HUnit) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."codecov-haskell" or (buildDepError "codecov-haskell"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            ];
           };
         };
       };

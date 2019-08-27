@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { old-locale = false; };
     package = {
@@ -18,124 +57,142 @@
       exes = {
         "arbtt-capture" = {
           depends = (([
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.transformers)
-            (hsPkgs.utf8-string)
-            (hsPkgs.aeson)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.deepseq)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
             ] ++ (if flags.old-locale
-            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
+            then [
+              (hsPkgs."time" or (buildDepError "time"))
+              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              ]
             else [
-              (hsPkgs.time)
-              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if system.isWindows
-            then [ (hsPkgs.Win32) ]
-            else (pkgs.lib).optional (!system.isOsx) (hsPkgs.X11));
+              (hsPkgs."time" or (buildDepError "time"))
+              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (if system.isWindows
+            then [ (hsPkgs."Win32" or (buildDepError "Win32")) ]
+            else (pkgs.lib).optional (!system.isOsx) (hsPkgs."X11" or (buildDepError "X11")));
           libs = if system.isWindows
-            then [ (pkgs."psapi") ]
-            else (pkgs.lib).optional (!system.isOsx) (pkgs."Xss");
+            then [ (pkgs."psapi" or (sysDepError "psapi")) ]
+            else (pkgs.lib).optional (!system.isOsx) (pkgs."Xss" or (sysDepError "Xss"));
           frameworks = (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optionals (system.isOsx) [
-            (pkgs."Foundation")
-            (pkgs."Carbon")
-            (pkgs."IOKit")
+            (pkgs."Foundation" or (sysDepError "Foundation"))
+            (pkgs."Carbon" or (sysDepError "Carbon"))
+            (pkgs."IOKit" or (sysDepError "IOKit"))
             ]);
           };
         "arbtt-stats" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.containers)
-            (hsPkgs.pcre-light)
-            (hsPkgs.binary)
-            (hsPkgs.deepseq)
-            (hsPkgs.bytestring)
-            (hsPkgs.utf8-string)
-            (hsPkgs.strict)
-            (hsPkgs.transformers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.aeson)
-            (hsPkgs.array)
-            (hsPkgs.terminal-progress-bar)
-            (hsPkgs.bytestring-progress)
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-            else [ (hsPkgs.time) ]);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."terminal-progress-bar" or (buildDepError "terminal-progress-bar"))
+            (hsPkgs."bytestring-progress" or (buildDepError "bytestring-progress"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (if flags.old-locale
+            then [
+              (hsPkgs."time" or (buildDepError "time"))
+              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              ]
+            else [ (hsPkgs."time" or (buildDepError "time")) ]);
           };
         "arbtt-dump" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.containers)
-            (hsPkgs.aeson)
-            (hsPkgs.array)
-            (hsPkgs.binary)
-            (hsPkgs.deepseq)
-            (hsPkgs.bytestring)
-            (hsPkgs.utf8-string)
-            (hsPkgs.strict)
-            (hsPkgs.transformers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-            else [ (hsPkgs.time) ]);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (if flags.old-locale
+            then [
+              (hsPkgs."time" or (buildDepError "time"))
+              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              ]
+            else [ (hsPkgs."time" or (buildDepError "time")) ]);
           };
         "arbtt-import" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.parsec)
-            (hsPkgs.containers)
-            (hsPkgs.binary)
-            (hsPkgs.deepseq)
-            (hsPkgs.bytestring)
-            (hsPkgs.utf8-string)
-            (hsPkgs.strict)
-            (hsPkgs.transformers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-            else [ (hsPkgs.time) ]);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (if flags.old-locale
+            then [
+              (hsPkgs."time" or (buildDepError "time"))
+              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              ]
+            else [ (hsPkgs."time" or (buildDepError "time")) ]);
           };
         "arbtt-recover" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.binary)
-            (hsPkgs.deepseq)
-            (hsPkgs.bytestring)
-            (hsPkgs.utf8-string)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-            else [ (hsPkgs.time) ]);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (if flags.old-locale
+            then [
+              (hsPkgs."time" or (buildDepError "time"))
+              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              ]
+            else [ (hsPkgs."time" or (buildDepError "time")) ]);
           };
         };
       tests = {
         "test" = {
           depends = ([
-            (hsPkgs.base)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-golden)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.process-extras)
-            (hsPkgs.deepseq)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.utf8-string)
-            (hsPkgs.directory)
-            (hsPkgs.parsec)
-            (hsPkgs.containers)
-            (hsPkgs.pcre-light)
-            (hsPkgs.transformers)
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix)) ++ (if flags.old-locale
-            then [ (hsPkgs.time) (hsPkgs.old-locale) ]
-            else [ (hsPkgs.time) ]);
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."process-extras" or (buildDepError "process-extras"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"))) ++ (if flags.old-locale
+            then [
+              (hsPkgs."time" or (buildDepError "time"))
+              (hsPkgs."old-locale" or (buildDepError "old-locale"))
+              ]
+            else [ (hsPkgs."time" or (buildDepError "time")) ]);
           };
         };
       };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -17,69 +56,69 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.aeson)
-          (hsPkgs.base)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.blaze-html)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.configurator)
-          (hsPkgs.containers)
-          (hsPkgs.data-default)
-          (hsPkgs.digestive-functors)
-          (hsPkgs.digestive-functors-heist)
-          (hsPkgs.digestive-functors-snap)
-          (hsPkgs.directory-tree)
-          (hsPkgs.errors)
-          (hsPkgs.filepath)
-          (hsPkgs.heist)
-          (hsPkgs.jmacro)
-          (hsPkgs.lens)
-          (hsPkgs.mtl)
-          (hsPkgs.pcre-light)
-          (hsPkgs.readable)
-          (hsPkgs.safe)
-          (hsPkgs.snap)
-          (hsPkgs.snap-core)
-          (hsPkgs.text)
-          (hsPkgs.time)
-          (hsPkgs.transformers)
-          (hsPkgs.wl-pprint-text)
-          (hsPkgs.xmlhtml)
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."configurator" or (buildDepError "configurator"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."digestive-functors" or (buildDepError "digestive-functors"))
+          (hsPkgs."digestive-functors-heist" or (buildDepError "digestive-functors-heist"))
+          (hsPkgs."digestive-functors-snap" or (buildDepError "digestive-functors-snap"))
+          (hsPkgs."directory-tree" or (buildDepError "directory-tree"))
+          (hsPkgs."errors" or (buildDepError "errors"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."heist" or (buildDepError "heist"))
+          (hsPkgs."jmacro" or (buildDepError "jmacro"))
+          (hsPkgs."lens" or (buildDepError "lens"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."pcre-light" or (buildDepError "pcre-light"))
+          (hsPkgs."readable" or (buildDepError "readable"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."snap" or (buildDepError "snap"))
+          (hsPkgs."snap-core" or (buildDepError "snap-core"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."wl-pprint-text" or (buildDepError "wl-pprint-text"))
+          (hsPkgs."xmlhtml" or (buildDepError "xmlhtml"))
           ];
         };
       exes = {
         "PollExample" = {
           depends = (pkgs.lib).optionals (!(!flags.examples)) [
-            (hsPkgs.aeson)
-            (hsPkgs.base)
-            (hsPkgs.containers)
-            (hsPkgs.heist)
-            (hsPkgs.lens)
-            (hsPkgs.mtl)
-            (hsPkgs.readable)
-            (hsPkgs.snap)
-            (hsPkgs.snap-core)
-            (hsPkgs.snap-extras)
-            (hsPkgs.snap-server)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."heist" or (buildDepError "heist"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."readable" or (buildDepError "readable"))
+            (hsPkgs."snap" or (buildDepError "snap"))
+            (hsPkgs."snap-core" or (buildDepError "snap-core"))
+            (hsPkgs."snap-extras" or (buildDepError "snap-extras"))
+            (hsPkgs."snap-server" or (buildDepError "snap-server"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.snap-core)
-            (hsPkgs.snap-extras)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.QuickCheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."snap-core" or (buildDepError "snap-core"))
+            (hsPkgs."snap-extras" or (buildDepError "snap-extras"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           };
         };

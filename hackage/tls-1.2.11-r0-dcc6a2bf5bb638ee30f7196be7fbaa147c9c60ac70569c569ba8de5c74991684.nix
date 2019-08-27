@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { compat = true; };
     package = {
@@ -17,68 +56,68 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.transformers)
-          (hsPkgs.cereal)
-          (hsPkgs.bytestring)
-          (hsPkgs.byteable)
-          (hsPkgs.network)
-          (hsPkgs.data-default-class)
-          (hsPkgs.cryptohash)
-          (hsPkgs.crypto-random)
-          (hsPkgs.crypto-numbers)
-          (hsPkgs.crypto-cipher-types)
-          (hsPkgs.crypto-pubkey)
-          (hsPkgs.crypto-pubkey-types)
-          (hsPkgs.cipher-rc4)
-          (hsPkgs.cipher-des)
-          (hsPkgs.cipher-aes)
-          (hsPkgs.asn1-types)
-          (hsPkgs.asn1-encoding)
-          (hsPkgs.x509)
-          (hsPkgs.x509-store)
-          (hsPkgs.x509-validation)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."byteable" or (buildDepError "byteable"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+          (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+          (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
+          (hsPkgs."crypto-numbers" or (buildDepError "crypto-numbers"))
+          (hsPkgs."crypto-cipher-types" or (buildDepError "crypto-cipher-types"))
+          (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
+          (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
+          (hsPkgs."cipher-rc4" or (buildDepError "cipher-rc4"))
+          (hsPkgs."cipher-des" or (buildDepError "cipher-des"))
+          (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
+          (hsPkgs."asn1-types" or (buildDepError "asn1-types"))
+          (hsPkgs."asn1-encoding" or (buildDepError "asn1-encoding"))
+          (hsPkgs."x509" or (buildDepError "x509"))
+          (hsPkgs."x509-store" or (buildDepError "x509-store"))
+          (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
           ];
         };
       tests = {
         "test-tls" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.cereal)
-            (hsPkgs.data-default-class)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.cprng-aes)
-            (hsPkgs.crypto-pubkey)
-            (hsPkgs.bytestring)
-            (hsPkgs.x509)
-            (hsPkgs.x509-validation)
-            (hsPkgs.tls)
-            (hsPkgs.hourglass)
-            (hsPkgs.crypto-random)
-            (hsPkgs.crypto-pubkey)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
+            (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."x509" or (buildDepError "x509"))
+            (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
+            (hsPkgs."tls" or (buildDepError "tls"))
+            (hsPkgs."hourglass" or (buildDepError "hourglass"))
+            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
+            (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
             ];
           };
         };
       benchmarks = {
         "bench-tls" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.tls)
-            (hsPkgs.x509)
-            (hsPkgs.x509-validation)
-            (hsPkgs.data-default-class)
-            (hsPkgs.crypto-random)
-            (hsPkgs.criterion)
-            (hsPkgs.cprng-aes)
-            (hsPkgs.mtl)
-            (hsPkgs.bytestring)
-            (hsPkgs.crypto-pubkey)
-            (hsPkgs.hourglass)
-            (hsPkgs.QuickCheck)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."tls" or (buildDepError "tls"))
+            (hsPkgs."x509" or (buildDepError "x509"))
+            (hsPkgs."x509-validation" or (buildDepError "x509-validation"))
+            (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+            (hsPkgs."crypto-random" or (buildDepError "crypto-random"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."cprng-aes" or (buildDepError "cprng-aes"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
+            (hsPkgs."hourglass" or (buildDepError "hourglass"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,89 +56,89 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.syb)
-          (hsPkgs.ghc)
-          (hsPkgs.ghc-paths)
-          (hsPkgs.ghc-syb-utils)
-          (hsPkgs.ghc-mod)
-          (hsPkgs.monad-journal)
-          (hsPkgs.filepath)
-          (hsPkgs.safe)
-          (hsPkgs.bytestring)
-          (hsPkgs.process)
-          (hsPkgs.process-streaming)
-          (hsPkgs.directory)
-          (hsPkgs.containers)
-          (hsPkgs.mtl)
-          (hsPkgs.transformers)
-          (hsPkgs.parsec)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.haddock-api)
-          (hsPkgs.hspec)
-          (hsPkgs.hspec-discover)
-          ] ++ [ (hsPkgs.Cabal) ];
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."ghc" or (buildDepError "ghc"))
+          (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+          (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
+          (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
+          (hsPkgs."monad-journal" or (buildDepError "monad-journal"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."safe" or (buildDepError "safe"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."process-streaming" or (buildDepError "process-streaming"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
+          (hsPkgs."hspec" or (buildDepError "hspec"))
+          (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
+          ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
         };
       exes = {
         "fake-ghc-for-ghc-imported-from" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.process)
-            (hsPkgs.process-streaming)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."process-streaming" or (buildDepError "process-streaming"))
             ];
           };
         "ghc-imported-from" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-            (hsPkgs.ghc)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.ghc-syb-utils)
-            (hsPkgs.ghc-mod)
-            (hsPkgs.monad-journal)
-            (hsPkgs.ghc-imported-from)
-            (hsPkgs.filepath)
-            (hsPkgs.safe)
-            (hsPkgs.bytestring)
-            (hsPkgs.process)
-            (hsPkgs.process-streaming)
-            (hsPkgs.directory)
-            (hsPkgs.containers)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.parsec)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.haddock-api)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-discover)
-            ] ++ [ (hsPkgs.Cabal) ];
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
+            (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
+            (hsPkgs."monad-journal" or (buildDepError "monad-journal"))
+            (hsPkgs."ghc-imported-from" or (buildDepError "ghc-imported-from"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."process-streaming" or (buildDepError "process-streaming"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
+            ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
           };
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.syb)
-            (hsPkgs.ghc)
-            (hsPkgs.ghc-paths)
-            (hsPkgs.ghc-syb-utils)
-            (hsPkgs.ghc-mod)
-            (hsPkgs.monad-journal)
-            (hsPkgs.filepath)
-            (hsPkgs.safe)
-            (hsPkgs.bytestring)
-            (hsPkgs.process)
-            (hsPkgs.process-streaming)
-            (hsPkgs.directory)
-            (hsPkgs.containers)
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.parsec)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.hspec)
-            (hsPkgs.hspec-discover)
-            (hsPkgs.haddock-api)
-            ] ++ [ (hsPkgs.Cabal) ];
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."ghc" or (buildDepError "ghc"))
+            (hsPkgs."ghc-paths" or (buildDepError "ghc-paths"))
+            (hsPkgs."ghc-syb-utils" or (buildDepError "ghc-syb-utils"))
+            (hsPkgs."ghc-mod" or (buildDepError "ghc-mod"))
+            (hsPkgs."monad-journal" or (buildDepError "monad-journal"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."safe" or (buildDepError "safe"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."process-streaming" or (buildDepError "process-streaming"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."hspec-discover" or (buildDepError "hspec-discover"))
+            (hsPkgs."haddock-api" or (buildDepError "haddock-api"))
+            ] ++ [ (hsPkgs."Cabal" or (buildDepError "Cabal")) ];
           };
         };
       };

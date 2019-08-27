@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,77 +56,77 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.containers)
-          (hsPkgs.old-time)
-          (hsPkgs.yesod-core)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.byteable)
-          (hsPkgs.bytestring)
-          (hsPkgs.template-haskell)
-          (hsPkgs.directory)
-          (hsPkgs.transformers)
-          (hsPkgs.wai-app-static)
-          (hsPkgs.wai)
-          (hsPkgs.text)
-          (hsPkgs.file-embed)
-          (hsPkgs.http-types)
-          (hsPkgs.unix-compat)
-          (hsPkgs.conduit)
-          (hsPkgs.cryptonite-conduit)
-          (hsPkgs.cryptonite)
-          (hsPkgs.memory)
-          (hsPkgs.data-default)
-          (hsPkgs.mime-types)
-          (hsPkgs.hjsmin)
-          (hsPkgs.filepath)
-          (hsPkgs.resourcet)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.process)
-          (hsPkgs.async)
-          (hsPkgs.attoparsec)
-          (hsPkgs.blaze-builder)
-          (hsPkgs.css-text)
-          (hsPkgs.hashable)
-          (hsPkgs.exceptions)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."byteable" or (buildDepError "byteable"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."file-embed" or (buildDepError "file-embed"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+          (hsPkgs."conduit" or (buildDepError "conduit"))
+          (hsPkgs."cryptonite-conduit" or (buildDepError "cryptonite-conduit"))
+          (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+          (hsPkgs."memory" or (buildDepError "memory"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."mime-types" or (buildDepError "mime-types"))
+          (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."blaze-builder" or (buildDepError "blaze-builder"))
+          (hsPkgs."css-text" or (buildDepError "css-text"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.hspec)
-            (hsPkgs.yesod-test)
-            (hsPkgs.wai-extra)
-            (hsPkgs.HUnit)
-            (hsPkgs.containers)
-            (hsPkgs.old-time)
-            (hsPkgs.yesod-core)
-            (hsPkgs.base64-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.byteable)
-            (hsPkgs.template-haskell)
-            (hsPkgs.directory)
-            (hsPkgs.transformers)
-            (hsPkgs.wai-app-static)
-            (hsPkgs.wai)
-            (hsPkgs.text)
-            (hsPkgs.file-embed)
-            (hsPkgs.http-types)
-            (hsPkgs.unix-compat)
-            (hsPkgs.conduit)
-            (hsPkgs.cryptonite-conduit)
-            (hsPkgs.cryptonite)
-            (hsPkgs.memory)
-            (hsPkgs.data-default)
-            (hsPkgs.mime-types)
-            (hsPkgs.hjsmin)
-            (hsPkgs.filepath)
-            (hsPkgs.resourcet)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.async)
-            (hsPkgs.process)
-            (hsPkgs.exceptions)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."yesod-test" or (buildDepError "yesod-test"))
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."yesod-core" or (buildDepError "yesod-core"))
+            (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."byteable" or (buildDepError "byteable"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."wai-app-static" or (buildDepError "wai-app-static"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."file-embed" or (buildDepError "file-embed"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."unix-compat" or (buildDepError "unix-compat"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."cryptonite-conduit" or (buildDepError "cryptonite-conduit"))
+            (hsPkgs."cryptonite" or (buildDepError "cryptonite"))
+            (hsPkgs."memory" or (buildDepError "memory"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."mime-types" or (buildDepError "mime-types"))
+            (hsPkgs."hjsmin" or (buildDepError "hjsmin"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."exceptions" or (buildDepError "exceptions"))
             ];
           };
         };

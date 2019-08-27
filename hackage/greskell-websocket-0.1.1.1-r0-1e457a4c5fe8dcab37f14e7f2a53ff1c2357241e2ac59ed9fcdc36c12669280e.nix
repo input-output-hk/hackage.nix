@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { server-test = false; };
     package = {
@@ -17,52 +56,52 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.greskell-core)
-          (hsPkgs.bytestring)
-          (hsPkgs.base64-bytestring)
-          (hsPkgs.text)
-          (hsPkgs.aeson)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.uuid)
-          (hsPkgs.async)
-          (hsPkgs.stm)
-          (hsPkgs.websockets)
-          (hsPkgs.hashtables)
-          (hsPkgs.safe-exceptions)
-          (hsPkgs.vector)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."greskell-core" or (buildDepError "greskell-core"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."base64-bytestring" or (buildDepError "base64-bytestring"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."uuid" or (buildDepError "uuid"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."websockets" or (buildDepError "websockets"))
+          (hsPkgs."hashtables" or (buildDepError "hashtables"))
+          (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       tests = {
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.greskell-websocket)
-            (hsPkgs.aeson)
-            (hsPkgs.uuid)
-            (hsPkgs.bytestring)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.greskell-core)
-            (hsPkgs.hspec)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."greskell-websocket" or (buildDepError "greskell-websocket"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."greskell-core" or (buildDepError "greskell-core"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
           };
         "server-test" = {
           depends = (pkgs.lib).optionals (flags.server-test) [
-            (hsPkgs.base)
-            (hsPkgs.greskell-websocket)
-            (hsPkgs.greskell-core)
-            (hsPkgs.aeson)
-            (hsPkgs.uuid)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.text)
-            (hsPkgs.async)
-            (hsPkgs.safe-exceptions)
-            (hsPkgs.websockets)
-            (hsPkgs.bytestring)
-            (hsPkgs.stm)
-            (hsPkgs.vector)
-            (hsPkgs.hspec)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."greskell-websocket" or (buildDepError "greskell-websocket"))
+            (hsPkgs."greskell-core" or (buildDepError "greskell-core"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."uuid" or (buildDepError "uuid"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."safe-exceptions" or (buildDepError "safe-exceptions"))
+            (hsPkgs."websockets" or (buildDepError "websockets"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
           };
         };

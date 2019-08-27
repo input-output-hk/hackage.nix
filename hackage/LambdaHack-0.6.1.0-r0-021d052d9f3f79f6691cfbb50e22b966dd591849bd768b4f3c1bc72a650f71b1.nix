@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {
       vty = false;
@@ -25,112 +64,115 @@
     components = {
       "library" = {
         depends = ([
-          (hsPkgs.assert-failure)
-          (hsPkgs.async)
-          (hsPkgs.base)
-          (hsPkgs.base-compat)
-          (hsPkgs.binary)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.deepseq)
-          (hsPkgs.directory)
-          (hsPkgs.enummapset-th)
-          (hsPkgs.filepath)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.hashable)
-          (hsPkgs.hsini)
-          (hsPkgs.keys)
-          (hsPkgs.miniutter)
-          (hsPkgs.time)
-          (hsPkgs.pretty-show)
-          (hsPkgs.random)
-          (hsPkgs.stm)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.vector)
-          (hsPkgs.vector-binary-instances)
+          (hsPkgs."assert-failure" or (buildDepError "assert-failure"))
+          (hsPkgs."async" or (buildDepError "async"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-compat" or (buildDepError "base-compat"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."enummapset-th" or (buildDepError "enummapset-th"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."hsini" or (buildDepError "hsini"))
+          (hsPkgs."keys" or (buildDepError "keys"))
+          (hsPkgs."miniutter" or (buildDepError "miniutter"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
           ] ++ (if compiler.isGhcjs && true
-          then [ (hsPkgs.ghcjs-dom) ]
+          then [ (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom")) ]
           else if flags.vty
-            then [ (hsPkgs.vty) ]
+            then [ (hsPkgs."vty" or (buildDepError "vty")) ]
             else if flags.curses
-              then [ (hsPkgs.hscurses) ]
+              then [ (hsPkgs."hscurses" or (buildDepError "hscurses")) ]
               else if flags.gtk
-                then [ (hsPkgs.gtk3) ]
+                then [ (hsPkgs."gtk3" or (buildDepError "gtk3")) ]
                 else if flags.sdl
-                  then [ (hsPkgs.sdl2) (hsPkgs.sdl2-ttf) ]
+                  then [
+                    (hsPkgs."sdl2" or (buildDepError "sdl2"))
+                    (hsPkgs."sdl2-ttf" or (buildDepError "sdl2-ttf"))
+                    ]
                   else if flags.jsaddle
-                    then [ (hsPkgs.ghcjs-dom) ]
+                    then [ (hsPkgs."ghcjs-dom" or (buildDepError "ghcjs-dom")) ]
                     else [
-                      (hsPkgs.sdl2)
-                      (hsPkgs.sdl2-ttf)
-                      ])) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.zlib);
+                      (hsPkgs."sdl2" or (buildDepError "sdl2"))
+                      (hsPkgs."sdl2-ttf" or (buildDepError "sdl2-ttf"))
+                      ])) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (buildDepError "zlib"));
         };
       exes = {
         "LambdaHack" = {
           depends = [
-            (hsPkgs.LambdaHack)
-            (hsPkgs.template-haskell)
-            (hsPkgs.assert-failure)
-            (hsPkgs.async)
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.enummapset-th)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.hashable)
-            (hsPkgs.hsini)
-            (hsPkgs.keys)
-            (hsPkgs.miniutter)
-            (hsPkgs.time)
-            (hsPkgs.pretty-show)
-            (hsPkgs.random)
-            (hsPkgs.stm)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.vector-binary-instances)
-            ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.zlib);
+            (hsPkgs."LambdaHack" or (buildDepError "LambdaHack"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."assert-failure" or (buildDepError "assert-failure"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."enummapset-th" or (buildDepError "enummapset-th"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."hsini" or (buildDepError "hsini"))
+            (hsPkgs."keys" or (buildDepError "keys"))
+            (hsPkgs."miniutter" or (buildDepError "miniutter"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
+            ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (buildDepError "zlib"));
           };
         };
       tests = {
         "test" = {
           depends = [
-            (hsPkgs.LambdaHack)
-            (hsPkgs.template-haskell)
-            (hsPkgs.assert-failure)
-            (hsPkgs.async)
-            (hsPkgs.base)
-            (hsPkgs.base-compat)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.deepseq)
-            (hsPkgs.directory)
-            (hsPkgs.enummapset-th)
-            (hsPkgs.filepath)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.hashable)
-            (hsPkgs.hsini)
-            (hsPkgs.keys)
-            (hsPkgs.miniutter)
-            (hsPkgs.time)
-            (hsPkgs.pretty-show)
-            (hsPkgs.random)
-            (hsPkgs.stm)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.vector-binary-instances)
-            ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs.zlib);
+            (hsPkgs."LambdaHack" or (buildDepError "LambdaHack"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."assert-failure" or (buildDepError "assert-failure"))
+            (hsPkgs."async" or (buildDepError "async"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."enummapset-th" or (buildDepError "enummapset-th"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."hashable" or (buildDepError "hashable"))
+            (hsPkgs."hsini" or (buildDepError "hsini"))
+            (hsPkgs."keys" or (buildDepError "keys"))
+            (hsPkgs."miniutter" or (buildDepError "miniutter"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."pretty-show" or (buildDepError "pretty-show"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."vector-binary-instances" or (buildDepError "vector-binary-instances"))
+            ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (buildDepError "zlib"));
           };
         };
       };

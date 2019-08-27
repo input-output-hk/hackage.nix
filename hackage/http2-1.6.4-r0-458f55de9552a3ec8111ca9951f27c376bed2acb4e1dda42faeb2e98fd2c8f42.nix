@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { devel = false; };
     package = {
@@ -17,161 +56,166 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.array)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.containers)
-          (hsPkgs.network-byte-order)
-          (hsPkgs.psqueues)
-          (hsPkgs.stm)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+          (hsPkgs."psqueues" or (buildDepError "psqueues"))
+          (hsPkgs."stm" or (buildDepError "stm"))
           ];
         };
       exes = {
         "hpack-encode" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.hex)
-            (hsPkgs.network-byte-order)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.word8)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hex" or (buildDepError "hex"))
+            (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."word8" or (buildDepError "word8"))
             ];
           };
         "hpack-debug" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.hex)
-            (hsPkgs.network-byte-order)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.word8)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hex" or (buildDepError "hex"))
+            (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."word8" or (buildDepError "word8"))
             ];
           };
         "hpack-stat" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.network-byte-order)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.word8)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."word8" or (buildDepError "word8"))
             ];
           };
         "frame-encode" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.bytestring)
-            (hsPkgs.hex)
-            (hsPkgs.http2)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."hex" or (buildDepError "hex"))
+            (hsPkgs."http2" or (buildDepError "http2"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };
       tests = {
-        "doctest" = { depends = [ (hsPkgs.base) (hsPkgs.doctest) ]; };
+        "doctest" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."doctest" or (buildDepError "doctest"))
+            ];
+          };
         "spec" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.hex)
-            (hsPkgs.hspec)
-            (hsPkgs.network-byte-order)
-            (hsPkgs.psqueues)
-            (hsPkgs.stm)
-            (hsPkgs.word8)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."hex" or (buildDepError "hex"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+            (hsPkgs."psqueues" or (buildDepError "psqueues"))
+            (hsPkgs."stm" or (buildDepError "stm"))
+            (hsPkgs."word8" or (buildDepError "word8"))
             ];
           };
         "hpack" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.hex)
-            (hsPkgs.hspec)
-            (hsPkgs.network-byte-order)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
-            (hsPkgs.word8)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hex" or (buildDepError "hex"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."word8" or (buildDepError "word8"))
             ];
           };
         "frame" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Glob)
-            (hsPkgs.aeson)
-            (hsPkgs.aeson-pretty)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.hex)
-            (hsPkgs.hspec)
-            (hsPkgs.http2)
-            (hsPkgs.network-byte-order)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Glob" or (buildDepError "Glob"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."aeson-pretty" or (buildDepError "aeson-pretty"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."hex" or (buildDepError "hex"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."http2" or (buildDepError "http2"))
+            (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };
       benchmarks = {
         "priority" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.heaps)
-            (hsPkgs.mwc-random)
-            (hsPkgs.network-byte-order)
-            (hsPkgs.psqueues)
-            (hsPkgs.stm)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."heaps" or (buildDepError "heaps"))
+            (hsPkgs."mwc-random" or (buildDepError "mwc-random"))
+            (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+            (hsPkgs."psqueues" or (buildDepError "psqueues"))
+            (hsPkgs."stm" or (buildDepError "stm"))
             ];
           };
         "header-compression" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.array)
-            (hsPkgs.bytestring)
-            (hsPkgs.case-insensitive)
-            (hsPkgs.containers)
-            (hsPkgs.criterion)
-            (hsPkgs.network-byte-order)
-            (hsPkgs.stm)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."network-byte-order" or (buildDepError "network-byte-order"))
+            (hsPkgs."stm" or (buildDepError "stm"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,63 +56,68 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.ansi-terminal)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.dhall)
-          (hsPkgs.directory)
-          (hsPkgs.file-embed-lzma)
-          (hsPkgs.filepath)
-          (hsPkgs.hashable)
-          (hsPkgs.hourglass)
-          (hsPkgs.http-conduit)
-          (hsPkgs.http-types)
-          (hsPkgs.megaparsec)
-          (hsPkgs.microlens)
-          (hsPkgs.microlens-th)
-          (hsPkgs.network-uri)
-          (hsPkgs.optparse-applicative)
-          (hsPkgs.parsec)
-          (hsPkgs.parsers)
-          (hsPkgs.pipes)
-          (hsPkgs.prettyprinter)
-          (hsPkgs.prettyprinter-ansi-terminal)
-          (hsPkgs.process)
-          (hsPkgs.random)
-          (hsPkgs.text)
-          (hsPkgs.transformers)
-          (hsPkgs.unix)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.utf8-string)
-          (hsPkgs.vector)
+          (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."dhall" or (buildDepError "dhall"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."file-embed-lzma" or (buildDepError "file-embed-lzma"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."hourglass" or (buildDepError "hourglass"))
+          (hsPkgs."http-conduit" or (buildDepError "http-conduit"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
+          (hsPkgs."megaparsec" or (buildDepError "megaparsec"))
+          (hsPkgs."microlens" or (buildDepError "microlens"))
+          (hsPkgs."microlens-th" or (buildDepError "microlens-th"))
+          (hsPkgs."network-uri" or (buildDepError "network-uri"))
+          (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
+          (hsPkgs."parsers" or (buildDepError "parsers"))
+          (hsPkgs."pipes" or (buildDepError "pipes"))
+          (hsPkgs."prettyprinter" or (buildDepError "prettyprinter"))
+          (hsPkgs."prettyprinter-ansi-terminal" or (buildDepError "prettyprinter-ansi-terminal"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."unix" or (buildDepError "unix"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+          (hsPkgs."vector" or (buildDepError "vector"))
           ];
         };
       exes = {
-        "dzen-dhall" = { depends = [ (hsPkgs.base) (hsPkgs.dzen-dhall) ]; };
+        "dzen-dhall" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dzen-dhall" or (buildDepError "dzen-dhall"))
+            ];
+          };
         };
       tests = {
         "tasty" = {
           depends = [
-            (hsPkgs.HUnit)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.base)
-            (hsPkgs.dhall)
-            (hsPkgs.dzen-dhall)
-            (hsPkgs.filepath)
-            (hsPkgs.generic-random)
-            (hsPkgs.hspec)
-            (hsPkgs.microlens)
-            (hsPkgs.network-uri)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.parsec)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hspec)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.template-haskell)
-            (hsPkgs.text)
-            (hsPkgs.unordered-containers)
-            (hsPkgs.vector)
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."dhall" or (buildDepError "dhall"))
+            (hsPkgs."dzen-dhall" or (buildDepError "dzen-dhall"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."generic-random" or (buildDepError "generic-random"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
+            (hsPkgs."microlens" or (buildDepError "microlens"))
+            (hsPkgs."network-uri" or (buildDepError "network-uri"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hspec" or (buildDepError "tasty-hspec"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };

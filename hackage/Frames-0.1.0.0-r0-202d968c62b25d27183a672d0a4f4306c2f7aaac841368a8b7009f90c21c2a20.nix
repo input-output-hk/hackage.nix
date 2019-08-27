@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { demos = false; };
     package = {
@@ -17,117 +56,117 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.primitive)
-          (hsPkgs.text)
-          (hsPkgs.template-haskell)
-          (hsPkgs.transformers)
-          (hsPkgs.vector)
-          (hsPkgs.readable)
-          (hsPkgs.pipes)
-          (hsPkgs.vinyl)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."readable" or (buildDepError "readable"))
+          (hsPkgs."pipes" or (buildDepError "pipes"))
+          (hsPkgs."vinyl" or (buildDepError "vinyl"))
           ];
         };
       exes = {
         "getdata" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.http-client)
-            (hsPkgs.zip-archive)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."http-client" or (buildDepError "http-client"))
+            (hsPkgs."zip-archive" or (buildDepError "zip-archive"))
             ];
           };
         "plot" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.Frames)
-            (hsPkgs.lens-family-core)
-            (hsPkgs.vector)
-            (hsPkgs.text)
-            (hsPkgs.template-haskell)
-            (hsPkgs.pipes)
-            (hsPkgs.Chart)
-            (hsPkgs.Chart-diagrams)
-            (hsPkgs.diagrams-rasterific)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.readable)
-            (hsPkgs.containers)
-            (hsPkgs.statistics)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Frames" or (buildDepError "Frames"))
+            (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."pipes" or (buildDepError "pipes"))
+            (hsPkgs."Chart" or (buildDepError "Chart"))
+            (hsPkgs."Chart-diagrams" or (buildDepError "Chart-diagrams"))
+            (hsPkgs."diagrams-rasterific" or (buildDepError "diagrams-rasterific"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."readable" or (buildDepError "readable"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
           };
         "plot2" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.Frames)
-            (hsPkgs.lens-family-core)
-            (hsPkgs.vector)
-            (hsPkgs.text)
-            (hsPkgs.template-haskell)
-            (hsPkgs.pipes)
-            (hsPkgs.Chart)
-            (hsPkgs.Chart-diagrams)
-            (hsPkgs.diagrams-rasterific)
-            (hsPkgs.diagrams-lib)
-            (hsPkgs.readable)
-            (hsPkgs.containers)
-            (hsPkgs.statistics)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Frames" or (buildDepError "Frames"))
+            (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."pipes" or (buildDepError "pipes"))
+            (hsPkgs."Chart" or (buildDepError "Chart"))
+            (hsPkgs."Chart-diagrams" or (buildDepError "Chart-diagrams"))
+            (hsPkgs."diagrams-rasterific" or (buildDepError "diagrams-rasterific"))
+            (hsPkgs."diagrams-lib" or (buildDepError "diagrams-lib"))
+            (hsPkgs."readable" or (buildDepError "readable"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."statistics" or (buildDepError "statistics"))
             ];
           };
         "demo" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.list-t)
-            (hsPkgs.lens-family-core)
-            (hsPkgs.transformers)
-            (hsPkgs.Frames)
-            (hsPkgs.vector)
-            (hsPkgs.text)
-            (hsPkgs.template-haskell)
-            (hsPkgs.ghc-prim)
-            (hsPkgs.readable)
-            (hsPkgs.pipes)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."list-t" or (buildDepError "list-t"))
+            (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."Frames" or (buildDepError "Frames"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+            (hsPkgs."readable" or (buildDepError "readable"))
+            (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
           };
         "tutorial" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.Frames)
-            (hsPkgs.lens-family-core)
-            (hsPkgs.vector)
-            (hsPkgs.text)
-            (hsPkgs.template-haskell)
-            (hsPkgs.readable)
-            (hsPkgs.foldl)
-            (hsPkgs.pipes)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Frames" or (buildDepError "Frames"))
+            (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."readable" or (buildDepError "readable"))
+            (hsPkgs."foldl" or (buildDepError "foldl"))
+            (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
           };
         "benchdemo" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.Frames)
-            (hsPkgs.lens-family-core)
-            (hsPkgs.foldl)
-            (hsPkgs.pipes)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Frames" or (buildDepError "Frames"))
+            (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
+            (hsPkgs."foldl" or (buildDepError "foldl"))
+            (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
           };
         "missing" = {
           depends = (pkgs.lib).optionals (flags.demos) [
-            (hsPkgs.base)
-            (hsPkgs.Frames)
-            (hsPkgs.vinyl)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Frames" or (buildDepError "Frames"))
+            (hsPkgs."vinyl" or (buildDepError "vinyl"))
             ];
           };
         };
       benchmarks = {
         "insurance" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.Frames)
-            (hsPkgs.lens-family-core)
-            (hsPkgs.transformers)
-            (hsPkgs.pipes)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."Frames" or (buildDepError "Frames"))
+            (hsPkgs."lens-family-core" or (buildDepError "lens-family-core"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."pipes" or (buildDepError "pipes"))
             ];
           };
         };

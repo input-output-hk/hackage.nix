@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { database = false; webtools = false; renderercairo = true; };
     package = {
@@ -17,20 +56,20 @@
     components = {
       "library" = {
         depends = (([
-          (hsPkgs.base)
-          (hsPkgs.random)
-          (hsPkgs.containers)
-          (hsPkgs.old-time)
-          (hsPkgs.mtl)
-          (hsPkgs.parsec)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."parsec" or (buildDepError "parsec"))
           ] ++ (pkgs.lib).optionals (flags.renderercairo) [
-          (hsPkgs.cairo)
-          (hsPkgs.gtk)
+          (hsPkgs."cairo" or (buildDepError "cairo"))
+          (hsPkgs."gtk" or (buildDepError "gtk"))
           ]) ++ (pkgs.lib).optionals (flags.database) [
-          (hsPkgs.HDBC-odbc)
-          (hsPkgs.HDBC)
-          (hsPkgs.random-shuffle)
-          ]) ++ (pkgs.lib).optional (flags.webtools) (hsPkgs.json);
+          (hsPkgs."HDBC-odbc" or (buildDepError "HDBC-odbc"))
+          (hsPkgs."HDBC" or (buildDepError "HDBC"))
+          (hsPkgs."random-shuffle" or (buildDepError "random-shuffle"))
+          ]) ++ (pkgs.lib).optional (flags.webtools) (hsPkgs."json" or (buildDepError "json"));
         };
       exes = {
         "runGarden" = {};

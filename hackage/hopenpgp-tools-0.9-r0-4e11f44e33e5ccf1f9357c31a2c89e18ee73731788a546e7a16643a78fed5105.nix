@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -18,73 +57,73 @@
       exes = {
         "hot" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.attoparsec)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.cereal-conduit)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.hOpenPGP)
-            (hsPkgs.lens)
-            (hsPkgs.openpgp-asciiarmor)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.resourcet)
-            (hsPkgs.text)
-            (hsPkgs.transformers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."cereal-conduit" or (buildDepError "cereal-conduit"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."hOpenPGP" or (buildDepError "hOpenPGP"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."openpgp-asciiarmor" or (buildDepError "openpgp-asciiarmor"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
             ];
           };
         "hokey" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.aeson)
-            (hsPkgs.ansi-wl-pprint)
-            (hsPkgs.base16-bytestring)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.cereal-conduit)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.containers)
-            (hsPkgs.crypto-pubkey)
-            (hsPkgs.cryptohash)
-            (hsPkgs.directory)
-            (hsPkgs.errors)
-            (hsPkgs.hOpenPGP)
-            (hsPkgs.ixset)
-            (hsPkgs.lens)
-            (hsPkgs.old-locale)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.resourcet)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.yaml)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."ansi-wl-pprint" or (buildDepError "ansi-wl-pprint"))
+            (hsPkgs."base16-bytestring" or (buildDepError "base16-bytestring"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."cereal-conduit" or (buildDepError "cereal-conduit"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
+            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."errors" or (buildDepError "errors"))
+            (hsPkgs."hOpenPGP" or (buildDepError "hOpenPGP"))
+            (hsPkgs."ixset" or (buildDepError "ixset"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."yaml" or (buildDepError "yaml"))
             ];
           };
         "hkt" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.attoparsec)
-            (hsPkgs.bytestring)
-            (hsPkgs.cereal)
-            (hsPkgs.cereal-conduit)
-            (hsPkgs.conduit)
-            (hsPkgs.conduit-extra)
-            (hsPkgs.containers)
-            (hsPkgs.crypto-pubkey)
-            (hsPkgs.directory)
-            (hsPkgs.fgl)
-            (hsPkgs.graphviz)
-            (hsPkgs.hOpenPGP)
-            (hsPkgs.ixset)
-            (hsPkgs.lens)
-            (hsPkgs.optparse-applicative)
-            (hsPkgs.resourcet)
-            (hsPkgs.text)
-            (hsPkgs.time)
-            (hsPkgs.transformers)
-            (hsPkgs.unordered-containers)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cereal" or (buildDepError "cereal"))
+            (hsPkgs."cereal-conduit" or (buildDepError "cereal-conduit"))
+            (hsPkgs."conduit" or (buildDepError "conduit"))
+            (hsPkgs."conduit-extra" or (buildDepError "conduit-extra"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."crypto-pubkey" or (buildDepError "crypto-pubkey"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."fgl" or (buildDepError "fgl"))
+            (hsPkgs."graphviz" or (buildDepError "graphviz"))
+            (hsPkgs."hOpenPGP" or (buildDepError "hOpenPGP"))
+            (hsPkgs."ixset" or (buildDepError "ixset"))
+            (hsPkgs."lens" or (buildDepError "lens"))
+            (hsPkgs."optparse-applicative" or (buildDepError "optparse-applicative"))
+            (hsPkgs."resourcet" or (buildDepError "resourcet"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
             ];
           };
         };

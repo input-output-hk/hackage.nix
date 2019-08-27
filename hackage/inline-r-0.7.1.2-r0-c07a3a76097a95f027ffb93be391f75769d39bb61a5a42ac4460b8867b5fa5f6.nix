@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,99 +56,99 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.aeson)
-          (hsPkgs.bytestring)
-          (hsPkgs.data-default-class)
-          (hsPkgs.deepseq)
-          (hsPkgs.exceptions)
-          (hsPkgs.mtl)
-          (hsPkgs.pretty)
-          (hsPkgs.primitive)
-          (hsPkgs.process)
-          (hsPkgs.setenv)
-          (hsPkgs.singletons)
-          (hsPkgs.template-haskell)
-          (hsPkgs.text)
-          (hsPkgs.th-lift)
-          (hsPkgs.th-orphans)
-          (hsPkgs.transformers)
-          (hsPkgs.vector)
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs.unix);
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."R");
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libR");
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."aeson" or (buildDepError "aeson"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."data-default-class" or (buildDepError "data-default-class"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."setenv" or (buildDepError "setenv"))
+          (hsPkgs."singletons" or (buildDepError "singletons"))
+          (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."th-lift" or (buildDepError "th-lift"))
+          (hsPkgs."th-orphans" or (buildDepError "th-orphans"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (buildDepError "unix"));
+        libs = (pkgs.lib).optional (system.isWindows) (pkgs."R" or (sysDepError "R"));
+        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libR" or (pkgConfDepError "libR"));
         build-tools = [
-          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs))
-          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs))
+          (hsPkgs.buildPackages.c2hs or (pkgs.buildPackages.c2hs or (buildToolDepError "c2hs")))
+          (hsPkgs.buildPackages.hsc2hs or (pkgs.buildPackages.hsc2hs or (buildToolDepError "hsc2hs")))
           ];
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.inline-r)
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.ieee754)
-            (hsPkgs.mtl)
-            (hsPkgs.process)
-            (hsPkgs.quickcheck-assertions)
-            (hsPkgs.singletons)
-            (hsPkgs.strict)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-golden)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.temporary)
-            (hsPkgs.text)
-            (hsPkgs.unix)
-            (hsPkgs.vector)
+            (hsPkgs."inline-r" or (buildDepError "inline-r"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."ieee754" or (buildDepError "ieee754"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."quickcheck-assertions" or (buildDepError "quickcheck-assertions"))
+            (hsPkgs."singletons" or (buildDepError "singletons"))
+            (hsPkgs."strict" or (buildDepError "strict"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-golden" or (buildDepError "tasty-golden"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."temporary" or (buildDepError "temporary"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "test-qq" = {
           depends = [
-            (hsPkgs.inline-r)
-            (hsPkgs.base)
-            (hsPkgs.mtl)
-            (hsPkgs.process)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.singletons)
-            (hsPkgs.text)
+            (hsPkgs."inline-r" or (buildDepError "inline-r"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."singletons" or (buildDepError "singletons"))
+            (hsPkgs."text" or (buildDepError "text"))
             ];
           };
         "test-shootout" = {
           depends = [
-            (hsPkgs.inline-r)
-            (hsPkgs.base)
-            (hsPkgs.filepath)
-            (hsPkgs.process)
-            (hsPkgs.silently)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.template-haskell)
+            (hsPkgs."inline-r" or (buildDepError "inline-r"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."silently" or (buildDepError "silently"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
           };
         };
       benchmarks = {
         "bench-qq" = {
           depends = [
-            (hsPkgs.inline-r)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.filepath)
-            (hsPkgs.process)
-            (hsPkgs.template-haskell)
+            (hsPkgs."inline-r" or (buildDepError "inline-r"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
             ];
           };
         "bench-hexp" = {
           depends = [
-            (hsPkgs.inline-r)
-            (hsPkgs.base)
-            (hsPkgs.criterion)
-            (hsPkgs.primitive)
-            (hsPkgs.vector)
-            (hsPkgs.singletons)
+            (hsPkgs."inline-r" or (buildDepError "inline-r"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."primitive" or (buildDepError "primitive"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."singletons" or (buildDepError "singletons"))
             ];
           };
         };

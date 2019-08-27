@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,76 +56,76 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.mtl)
-          (hsPkgs.text)
-          (hsPkgs.vector)
-          (hsPkgs.unordered-containers)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
           ];
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.buffer-builder)
-            (hsPkgs.text)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.tasty-th)
-            (hsPkgs.tasty-quickcheck)
-            (hsPkgs.HUnit)
-            (hsPkgs.text)
-            (hsPkgs.vector)
-            (hsPkgs.bytestring)
-            (hsPkgs.attoparsec)
-            (hsPkgs.aeson)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."buffer-builder" or (buildDepError "buffer-builder"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-th" or (buildDepError "tasty-th"))
+            (hsPkgs."tasty-quickcheck" or (buildDepError "tasty-quickcheck"))
+            (hsPkgs."HUnit" or (buildDepError "HUnit"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
             ];
           };
         "tinyjson" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.buffer-builder)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.deepseq)
-            (hsPkgs.criterion)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."buffer-builder" or (buildDepError "buffer-builder"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "tinyjson2" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.buffer-builder)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
-            (hsPkgs.deepseq)
-            (hsPkgs.criterion)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."buffer-builder" or (buildDepError "buffer-builder"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };
       benchmarks = {
         "bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.buffer-builder)
-            (hsPkgs.criterion)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."buffer-builder" or (buildDepError "buffer-builder"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
             ];
           };
         "json-bench" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.buffer-builder)
-            (hsPkgs.aeson)
-            (hsPkgs.bytestring)
-            (hsPkgs.text)
-            (hsPkgs.deepseq)
-            (hsPkgs.vector)
-            (hsPkgs.criterion)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."buffer-builder" or (buildDepError "buffer-builder"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         };

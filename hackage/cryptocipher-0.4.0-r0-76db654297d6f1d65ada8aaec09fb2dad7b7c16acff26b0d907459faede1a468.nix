@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { benchmark = false; };
     package = {
@@ -17,45 +56,45 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.bytestring)
-          (hsPkgs.vector)
-          (hsPkgs.cpu)
-          (hsPkgs.ghc-prim)
-          (hsPkgs.primitive)
-          (hsPkgs.cipher-aes)
-          (hsPkgs.cipher-rc4)
-          (hsPkgs.crypto-api)
-          (hsPkgs.crypto-pubkey-types)
-          (hsPkgs.tagged)
-          (hsPkgs.cereal)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."cpu" or (buildDepError "cpu"))
+          (hsPkgs."ghc-prim" or (buildDepError "ghc-prim"))
+          (hsPkgs."primitive" or (buildDepError "primitive"))
+          (hsPkgs."cipher-aes" or (buildDepError "cipher-aes"))
+          (hsPkgs."cipher-rc4" or (buildDepError "cipher-rc4"))
+          (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
+          (hsPkgs."crypto-pubkey-types" or (buildDepError "crypto-pubkey-types"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."cereal" or (buildDepError "cereal"))
           ];
         };
       exes = {
         "Benchmarks" = {
           depends = (pkgs.lib).optionals (flags.benchmark) [
-            (hsPkgs.base)
-            (hsPkgs.bytestring)
-            (hsPkgs.crypto-api)
-            (hsPkgs.cryptocipher)
-            (hsPkgs.criterion)
-            (hsPkgs.mtl)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
+            (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           };
         };
       tests = {
         "test-cryptocipher" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.crypto-api)
-            (hsPkgs.cryptocipher)
-            (hsPkgs.bytestring)
-            (hsPkgs.cryptohash)
-            (hsPkgs.vector)
-            (hsPkgs.entropy)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.test-framework)
-            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."crypto-api" or (buildDepError "crypto-api"))
+            (hsPkgs."cryptocipher" or (buildDepError "cryptocipher"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."cryptohash" or (buildDepError "cryptohash"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."entropy" or (buildDepError "entropy"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."test-framework" or (buildDepError "test-framework"))
+            (hsPkgs."test-framework-quickcheck2" or (buildDepError "test-framework-quickcheck2"))
             ];
           };
         };

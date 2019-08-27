@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { gtk = false; vty = false; curses = false; std = false; };
     package = {
@@ -17,50 +56,55 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.ConfigFile)
-          (hsPkgs.array)
-          (hsPkgs.base)
-          (hsPkgs.binary)
-          (hsPkgs.bytestring)
-          (hsPkgs.containers)
-          (hsPkgs.directory)
-          (hsPkgs.filepath)
-          (hsPkgs.miniutter)
-          (hsPkgs.mtl)
-          (hsPkgs.old-time)
-          (hsPkgs.random)
-          (hsPkgs.text)
-          (hsPkgs.zlib)
+          (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."binary" or (buildDepError "binary"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."miniutter" or (buildDepError "miniutter"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."zlib" or (buildDepError "zlib"))
           ] ++ (if flags.gtk
-          then [ (hsPkgs.gtk) ]
+          then [ (hsPkgs."gtk" or (buildDepError "gtk")) ]
           else if flags.vty
-            then [ (hsPkgs.vty) ]
+            then [ (hsPkgs."vty" or (buildDepError "vty")) ]
             else if flags.curses
-              then [ (hsPkgs.hscurses) ]
-              else (pkgs.lib).optional (!(flags.std || compiler.isGhc && (compiler.version).eq "7.6.1")) (hsPkgs.gtk));
+              then [ (hsPkgs."hscurses" or (buildDepError "hscurses")) ]
+              else (pkgs.lib).optional (!(flags.std || compiler.isGhc && (compiler.version).eq "7.6.1")) (hsPkgs."gtk" or (buildDepError "gtk")));
         };
       exes = {
         "LambdaHack" = {
           depends = [
-            (hsPkgs.LambdaHack)
-            (hsPkgs.template-haskell)
-            (hsPkgs.ConfigFile)
-            (hsPkgs.array)
-            (hsPkgs.base)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.containers)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.miniutter)
-            (hsPkgs.mtl)
-            (hsPkgs.old-time)
-            (hsPkgs.random)
-            (hsPkgs.text)
-            (hsPkgs.zlib)
+            (hsPkgs."LambdaHack" or (buildDepError "LambdaHack"))
+            (hsPkgs."template-haskell" or (buildDepError "template-haskell"))
+            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
+            (hsPkgs."array" or (buildDepError "array"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."miniutter" or (buildDepError "miniutter"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."random" or (buildDepError "random"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."zlib" or (buildDepError "zlib"))
             ];
           };
-        "DumbBot" = { depends = [ (hsPkgs.base) (hsPkgs.random) ]; };
+        "DumbBot" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."random" or (buildDepError "random"))
+            ];
+          };
         };
       };
     }

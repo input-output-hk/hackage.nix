@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,46 +56,60 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.network)
-          (hsPkgs.ini)
-          (hsPkgs.data-default)
-          (hsPkgs.text)
-          (hsPkgs.filepath)
-          (hsPkgs.process)
-          (hsPkgs.temporary)
-          (hsPkgs.directory)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.spawn)
-          (hsPkgs.yaml)
-          (hsPkgs.time)
-          (hsPkgs.old-locale)
-          (hsPkgs.formatting)
-          (hsPkgs.bytestring)
-          (hsPkgs.stm)
-          (hsPkgs.mtl)
-          (hsPkgs.either)
-          (hsPkgs.exceptions)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."network" or (buildDepError "network"))
+          (hsPkgs."ini" or (buildDepError "ini"))
+          (hsPkgs."data-default" or (buildDepError "data-default"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."temporary" or (buildDepError "temporary"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."spawn" or (buildDepError "spawn"))
+          (hsPkgs."yaml" or (buildDepError "yaml"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."old-locale" or (buildDepError "old-locale"))
+          (hsPkgs."formatting" or (buildDepError "formatting"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."stm" or (buildDepError "stm"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."either" or (buildDepError "either"))
+          (hsPkgs."exceptions" or (buildDepError "exceptions"))
           ];
         };
       exes = {
-        "saturnin" = { depends = [ (hsPkgs.base) (hsPkgs.Saturnin) ]; };
+        "saturnin" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Saturnin" or (buildDepError "Saturnin"))
+            ];
+          };
         };
       tests = {
         "tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.Saturnin)
-            (hsPkgs.mtl)
-            (hsPkgs.either)
-            (hsPkgs.data-default)
-            (hsPkgs.hspec)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."Saturnin" or (buildDepError "Saturnin"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."either" or (buildDepError "either"))
+            (hsPkgs."data-default" or (buildDepError "data-default"))
+            (hsPkgs."hspec" or (buildDepError "hspec"))
             ];
           };
         "documentation" = {
-          depends = [ (hsPkgs.base) (hsPkgs.process) (hsPkgs.regex-compat) ];
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."regex-compat" or (buildDepError "regex-compat"))
+            ];
           };
-        "style" = { depends = [ (hsPkgs.base) (hsPkgs.hlint) ]; };
+        "style" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hlint" or (buildDepError "hlint"))
+            ];
+          };
         };
       };
     }

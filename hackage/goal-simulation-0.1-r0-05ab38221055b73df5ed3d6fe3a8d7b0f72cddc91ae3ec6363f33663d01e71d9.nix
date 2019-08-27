@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,113 +56,113 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.goal-core)
-          (hsPkgs.goal-geometry)
-          (hsPkgs.goal-probability)
-          (hsPkgs.machines)
-          (hsPkgs.vector)
-          (hsPkgs.hmatrix)
-          (hsPkgs.cairo)
-          (hsPkgs.gtk)
-          (hsPkgs.clock)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."goal-core" or (buildDepError "goal-core"))
+          (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+          (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+          (hsPkgs."machines" or (buildDepError "machines"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
+          (hsPkgs."cairo" or (buildDepError "cairo"))
+          (hsPkgs."gtk" or (buildDepError "gtk"))
+          (hsPkgs."clock" or (buildDepError "clock"))
           ];
         };
       exes = {
         "rk4" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "markov-chain" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-probability)
-            (hsPkgs.vector)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.hmatrix)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             ];
           };
         "ito-process" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-probability)
-            (hsPkgs.vector)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.hmatrix)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."hmatrix" or (buildDepError "hmatrix"))
             ];
           };
         "pendulum-vector-field" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-probability)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "pendulum-simulation" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-probability)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.vector)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."vector" or (buildDepError "vector"))
             ];
           };
         "pendulum-filter-histogram" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-probability)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
             ];
           };
         "pendulum-filter-simulation" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-probability)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
             ];
           };
         "pendulum-filter-train" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-probability)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
             ];
           };
         "pendulum-filter-code" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.goal-core)
-            (hsPkgs.goal-geometry)
-            (hsPkgs.goal-probability)
-            (hsPkgs.goal-simulation)
-            (hsPkgs.vector)
-            (hsPkgs.directory)
-            (hsPkgs.mtl)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."goal-core" or (buildDepError "goal-core"))
+            (hsPkgs."goal-geometry" or (buildDepError "goal-geometry"))
+            (hsPkgs."goal-probability" or (buildDepError "goal-probability"))
+            (hsPkgs."goal-simulation" or (buildDepError "goal-simulation"))
+            (hsPkgs."vector" or (buildDepError "vector"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
             ];
           };
         };

@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = {};
     package = {
@@ -17,74 +56,74 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.grm)
-          (hsPkgs.Cabal)
-          (hsPkgs.uniplate)
-          (hsPkgs.derive)
-          (hsPkgs.wl-pprint)
-          (hsPkgs.syb)
-          (hsPkgs.deepseq)
-          (hsPkgs.array)
-          (hsPkgs.containers)
-          (hsPkgs.shake)
-          (hsPkgs.cmdargs)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."grm" or (buildDepError "grm"))
+          (hsPkgs."Cabal" or (buildDepError "Cabal"))
+          (hsPkgs."uniplate" or (buildDepError "uniplate"))
+          (hsPkgs."derive" or (buildDepError "derive"))
+          (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
+          (hsPkgs."syb" or (buildDepError "syb"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."shake" or (buildDepError "shake"))
+          (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
           ];
         };
       exes = {
         "pecgen" = {
           depends = [
-            (hsPkgs.pec)
-            (hsPkgs.base)
-            (hsPkgs.derive)
-            (hsPkgs.wl-pprint)
-            (hsPkgs.filepath)
-            (hsPkgs.cmdargs)
-            (hsPkgs.grm)
-            (hsPkgs.Cabal)
-            (hsPkgs.syb)
-            (hsPkgs.deepseq)
-            (hsPkgs.uniplate)
-            (hsPkgs.mtl)
-            (hsPkgs.directory)
-            (hsPkgs.shake)
+            (hsPkgs."pec" or (buildDepError "pec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."derive" or (buildDepError "derive"))
+            (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."grm" or (buildDepError "grm"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."uniplate" or (buildDepError "uniplate"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."shake" or (buildDepError "shake"))
             ];
           };
         "pec" = {
           depends = [
-            (hsPkgs.pec)
-            (hsPkgs.base)
-            (hsPkgs.old-time)
-            (hsPkgs.process)
-            (hsPkgs.filepath)
-            (hsPkgs.directory)
-            (hsPkgs.cmdargs)
-            (hsPkgs.grm)
-            (hsPkgs.Cabal)
-            (hsPkgs.wl-pprint)
-            (hsPkgs.syb)
-            (hsPkgs.deepseq)
-            (hsPkgs.uniplate)
-            (hsPkgs.mtl)
-            (hsPkgs.shake)
+            (hsPkgs."pec" or (buildDepError "pec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."old-time" or (buildDepError "old-time"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."grm" or (buildDepError "grm"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."uniplate" or (buildDepError "uniplate"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."shake" or (buildDepError "shake"))
             ];
           };
         "pecgencnt" = {
           depends = [
-            (hsPkgs.pec)
-            (hsPkgs.base)
-            (hsPkgs.derive)
-            (hsPkgs.cmdargs)
-            (hsPkgs.grm)
-            (hsPkgs.Cabal)
-            (hsPkgs.wl-pprint)
-            (hsPkgs.syb)
-            (hsPkgs.deepseq)
-            (hsPkgs.uniplate)
-            (hsPkgs.mtl)
-            (hsPkgs.filepath)
-            (hsPkgs.shake)
+            (hsPkgs."pec" or (buildDepError "pec"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."derive" or (buildDepError "derive"))
+            (hsPkgs."cmdargs" or (buildDepError "cmdargs"))
+            (hsPkgs."grm" or (buildDepError "grm"))
+            (hsPkgs."Cabal" or (buildDepError "Cabal"))
+            (hsPkgs."wl-pprint" or (buildDepError "wl-pprint"))
+            (hsPkgs."syb" or (buildDepError "syb"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."uniplate" or (buildDepError "uniplate"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."shake" or (buildDepError "shake"))
             ];
           };
         };

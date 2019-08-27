@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { transformers-3 = false; wai-1 = false; wai-2 = false; };
     package = {
@@ -17,57 +56,61 @@
     components = {
       "library" = {
         depends = ((([
-          (hsPkgs.attoparsec)
-          (hsPkgs.base)
-          (hsPkgs.base-unicode-symbols)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.http-types)
+          (hsPkgs."attoparsec" or (buildDepError "attoparsec"))
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."http-types" or (buildDepError "http-types"))
           ] ++ (pkgs.lib).optionals (flags.wai-1 && !flags.wai-2) [
-          (hsPkgs.wai)
-          (hsPkgs.resourcet)
-          (hsPkgs.transformers)
-          ]) ++ (pkgs.lib).optional (flags.wai-2) (hsPkgs.wai)) ++ (pkgs.lib).optional (!flags.wai-1 && !flags.wai-2) (hsPkgs.wai)) ++ (if flags.transformers-3
+          (hsPkgs."wai" or (buildDepError "wai"))
+          (hsPkgs."resourcet" or (buildDepError "resourcet"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          ]) ++ (pkgs.lib).optional (flags.wai-2) (hsPkgs."wai" or (buildDepError "wai"))) ++ (pkgs.lib).optional (!flags.wai-1 && !flags.wai-2) (hsPkgs."wai" or (buildDepError "wai"))) ++ (if flags.transformers-3
           then [
-            (hsPkgs.mtl)
-            (hsPkgs.transformers)
-            (hsPkgs.transformers-compat)
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
             ]
-          else [ (hsPkgs.mtl) (hsPkgs.transformers) (hsPkgs.wai) ]);
+          else [
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            ]);
         };
       tests = {
         "phantomjs" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.base-unicode-symbols)
-            (hsPkgs.directory)
-            (hsPkgs.filepath)
-            (hsPkgs.http-types)
-            (hsPkgs.network)
-            (hsPkgs.process)
-            (hsPkgs.text)
-            (hsPkgs.wai-cors)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."process" or (buildDepError "process"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."wai-cors" or (buildDepError "wai-cors"))
             ] ++ (pkgs.lib).optionals (!(flags.wai-1 || flags.wai-2)) [
-            (hsPkgs.wai-websockets)
-            (hsPkgs.warp)
-            (hsPkgs.wai)
-            (hsPkgs.websockets)
+            (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
           };
         "unit-tests" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.base-unicode-symbols)
-            (hsPkgs.http-types)
-            (hsPkgs.tasty)
-            (hsPkgs.tasty-hunit)
-            (hsPkgs.wai-cors)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-unicode-symbols" or (buildDepError "base-unicode-symbols"))
+            (hsPkgs."http-types" or (buildDepError "http-types"))
+            (hsPkgs."tasty" or (buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (buildDepError "tasty-hunit"))
+            (hsPkgs."wai-cors" or (buildDepError "wai-cors"))
             ] ++ (pkgs.lib).optionals (!(flags.wai-1 || flags.wai-2)) [
-            (hsPkgs.wai-extra)
-            (hsPkgs.wai-websockets)
-            (hsPkgs.warp)
-            (hsPkgs.wai)
-            (hsPkgs.websockets)
+            (hsPkgs."wai-extra" or (buildDepError "wai-extra"))
+            (hsPkgs."wai-websockets" or (buildDepError "wai-websockets"))
+            (hsPkgs."warp" or (buildDepError "warp"))
+            (hsPkgs."wai" or (buildDepError "wai"))
+            (hsPkgs."websockets" or (buildDepError "websockets"))
             ];
           };
         };

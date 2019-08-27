@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { bytestring-builder = false; };
     package = {
@@ -17,52 +56,55 @@
     components = {
       "library" = {
         depends = (([
-          (hsPkgs.base)
-          (hsPkgs.QuickCheck)
-          (hsPkgs.splitmix)
-          (hsPkgs.array)
-          (hsPkgs.base-compat)
-          (hsPkgs.bytestring)
-          (hsPkgs.case-insensitive)
-          (hsPkgs.containers)
-          (hsPkgs.hashable)
-          (hsPkgs.old-time)
-          (hsPkgs.scientific)
-          (hsPkgs.tagged)
-          (hsPkgs.text)
-          (hsPkgs.time-compat)
-          (hsPkgs.transformers)
-          (hsPkgs.transformers-compat)
-          (hsPkgs.unordered-containers)
-          (hsPkgs.uuid-types)
-          (hsPkgs.vector)
-          (hsPkgs.time)
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs.semigroups)) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.10")) [
-          (hsPkgs.nats)
-          (hsPkgs.void)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+          (hsPkgs."splitmix" or (buildDepError "splitmix"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."base-compat" or (buildDepError "base-compat"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."case-insensitive" or (buildDepError "case-insensitive"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."hashable" or (buildDepError "hashable"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
+          (hsPkgs."scientific" or (buildDepError "scientific"))
+          (hsPkgs."tagged" or (buildDepError "tagged"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."time-compat" or (buildDepError "time-compat"))
+          (hsPkgs."transformers" or (buildDepError "transformers"))
+          (hsPkgs."transformers-compat" or (buildDepError "transformers-compat"))
+          (hsPkgs."unordered-containers" or (buildDepError "unordered-containers"))
+          (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
+          (hsPkgs."vector" or (buildDepError "vector"))
+          (hsPkgs."time" or (buildDepError "time"))
+          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (buildDepError "semigroups"))) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.10")) [
+          (hsPkgs."nats" or (buildDepError "nats"))
+          (hsPkgs."void" or (buildDepError "void"))
           ]) ++ (if flags.bytestring-builder
-          then [ (hsPkgs.bytestring-builder) (hsPkgs.bytestring) ]
-          else [ (hsPkgs.bytestring) ]);
+          then [
+            (hsPkgs."bytestring-builder" or (buildDepError "bytestring-builder"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            ]
+          else [ (hsPkgs."bytestring" or (buildDepError "bytestring")) ]);
         };
       tests = {
         "self-test" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.containers)
-            (hsPkgs.tagged)
-            (hsPkgs.uuid-types)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."tagged" or (buildDepError "tagged"))
+            (hsPkgs."uuid-types" or (buildDepError "uuid-types"))
             ];
           };
         };
       benchmarks = {
         "bytestring-gen" = {
           depends = [
-            (hsPkgs.base)
-            (hsPkgs.QuickCheck)
-            (hsPkgs.quickcheck-instances)
-            (hsPkgs.bytestring)
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."QuickCheck" or (buildDepError "QuickCheck"))
+            (hsPkgs."quickcheck-instances" or (buildDepError "quickcheck-instances"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
             ];
           };
         };

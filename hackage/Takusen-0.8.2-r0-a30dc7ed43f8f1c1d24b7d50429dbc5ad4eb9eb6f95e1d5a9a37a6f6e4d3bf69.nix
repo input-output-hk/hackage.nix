@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { odbc = false; oracle = false; postgres = false; sqlite = false; };
     package = {
@@ -17,22 +56,22 @@
     components = {
       "library" = {
         depends = [
-          (hsPkgs.base)
-          (hsPkgs.mtl)
-          (hsPkgs.time)
-          (hsPkgs.old-time)
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."old-time" or (buildDepError "old-time"))
           ];
         libs = (((pkgs.lib).optionals (flags.odbc) (if system.isWindows
-          then [ (pkgs."odbc32") ]
+          then [ (pkgs."odbc32" or (sysDepError "odbc32")) ]
           else [
-            (pkgs."odbc")
+            (pkgs."odbc" or (sysDepError "odbc"))
             ]) ++ (pkgs.lib).optionals (flags.oracle) (if system.isWindows
-          then [ (pkgs."oci") ]
+          then [ (pkgs."oci" or (sysDepError "oci")) ]
           else [
-            (pkgs."clntsh")
-            ])) ++ (pkgs.lib).optional (flags.postgres) (pkgs."pq")) ++ (pkgs.lib).optional (flags.sqlite) (pkgs."sqlite3");
-        pkgconfig = (pkgs.lib).optionals (flags.sqlite) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."sqlite3"));
-        build-tools = (((pkgs.lib).optional (flags.odbc) (hsPkgs.buildPackages.odbcconf or (pkgs.buildPackages.odbcconf)) ++ (pkgs.lib).optional (flags.oracle) (hsPkgs.buildPackages.sqlplus or (pkgs.buildPackages.sqlplus))) ++ (pkgs.lib).optional (flags.postgres) (hsPkgs.buildPackages.pg_config or (pkgs.buildPackages.pg_config))) ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs.buildPackages.sqlite3 or (pkgs.buildPackages.sqlite3));
+            (pkgs."clntsh" or (sysDepError "clntsh"))
+            ])) ++ (pkgs.lib).optional (flags.postgres) (pkgs."pq" or (sysDepError "pq"))) ++ (pkgs.lib).optional (flags.sqlite) (pkgs."sqlite3" or (sysDepError "sqlite3"));
+        pkgconfig = (pkgs.lib).optionals (flags.sqlite) ((pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."sqlite3" or (pkgConfDepError "sqlite3")));
+        build-tools = (((pkgs.lib).optional (flags.odbc) (hsPkgs.buildPackages.odbcconf or (pkgs.buildPackages.odbcconf or (buildToolDepError "odbcconf"))) ++ (pkgs.lib).optional (flags.oracle) (hsPkgs.buildPackages.sqlplus or (pkgs.buildPackages.sqlplus or (buildToolDepError "sqlplus")))) ++ (pkgs.lib).optional (flags.postgres) (hsPkgs.buildPackages.pg_config or (pkgs.buildPackages.pg_config or (buildToolDepError "pg_config")))) ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs.buildPackages.sqlite3 or (pkgs.buildPackages.sqlite3 or (buildToolDepError "sqlite3")));
         };
       };
     }

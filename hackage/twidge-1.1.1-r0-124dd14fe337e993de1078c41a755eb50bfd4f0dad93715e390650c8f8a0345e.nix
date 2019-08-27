@@ -1,4 +1,43 @@
-{ system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
   {
     flags = { withbitly = false; };
     package = {
@@ -18,27 +57,27 @@
       exes = {
         "twidge" = {
           depends = [
-            (hsPkgs.network)
-            (hsPkgs.unix)
-            (hsPkgs.parsec)
-            (hsPkgs.MissingH)
-            (hsPkgs.mtl)
-            (hsPkgs.base)
-            (hsPkgs.hslogger)
-            (hsPkgs.hoauth)
-            (hsPkgs.ConfigFile)
-            (hsPkgs.directory)
-            (hsPkgs.HSH)
-            (hsPkgs.regex-posix)
-            (hsPkgs.utf8-string)
-            (hsPkgs.binary)
-            (hsPkgs.bytestring)
-            (hsPkgs.curl)
-            (hsPkgs.old-locale)
-            (hsPkgs.time)
-            (hsPkgs.aeson)
-            (hsPkgs.text)
-            ] ++ (pkgs.lib).optional (flags.withbitly) (hsPkgs.Bitly);
+            (hsPkgs."network" or (buildDepError "network"))
+            (hsPkgs."unix" or (buildDepError "unix"))
+            (hsPkgs."parsec" or (buildDepError "parsec"))
+            (hsPkgs."MissingH" or (buildDepError "MissingH"))
+            (hsPkgs."mtl" or (buildDepError "mtl"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."hslogger" or (buildDepError "hslogger"))
+            (hsPkgs."hoauth" or (buildDepError "hoauth"))
+            (hsPkgs."ConfigFile" or (buildDepError "ConfigFile"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."HSH" or (buildDepError "HSH"))
+            (hsPkgs."regex-posix" or (buildDepError "regex-posix"))
+            (hsPkgs."utf8-string" or (buildDepError "utf8-string"))
+            (hsPkgs."binary" or (buildDepError "binary"))
+            (hsPkgs."bytestring" or (buildDepError "bytestring"))
+            (hsPkgs."curl" or (buildDepError "curl"))
+            (hsPkgs."old-locale" or (buildDepError "old-locale"))
+            (hsPkgs."time" or (buildDepError "time"))
+            (hsPkgs."aeson" or (buildDepError "aeson"))
+            (hsPkgs."text" or (buildDepError "text"))
+            ] ++ (pkgs.lib).optional (flags.withbitly) (hsPkgs."Bitly" or (buildDepError "Bitly"));
           };
         };
       };
