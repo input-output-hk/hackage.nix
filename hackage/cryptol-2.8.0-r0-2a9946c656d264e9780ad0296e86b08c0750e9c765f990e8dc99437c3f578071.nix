@@ -1,0 +1,131 @@
+let
+  buildDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (build dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  sysDepError = pkg:
+    builtins.throw ''
+      The Nixpkgs package set does not contain the package: ${pkg} (system dependency).
+      
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      '';
+  pkgConfDepError = pkg:
+    builtins.throw ''
+      The pkg-conf packages does not contain the package: ${pkg} (pkg-conf dependency).
+      
+      You may need to augment the pkg-conf package mapping in haskell.nix so that it can be found.
+      '';
+  exeDepError = pkg:
+    builtins.throw ''
+      The local executable components do not include the component: ${pkg} (executable dependency).
+      '';
+  legacyExeDepError = pkg:
+    builtins.throw ''
+      The Haskell package set does not contain the package: ${pkg} (executable dependency).
+      
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+  buildToolDepError = pkg:
+    builtins.throw ''
+      Neither the Haskell package set or the Nixpkgs package set contain the package: ${pkg} (build tool dependency).
+      
+      If this is a system dependency:
+      You may need to augment the system package mapping in haskell.nix so that it can be found.
+      
+      If this is a Haskell dependency:
+      If you are using Stackage, make sure that you are using a snapshot that contains the package. Otherwise you may need to update the Hackage snapshot you are using, usually by updating haskell.nix.
+      '';
+in { system, compiler, flags, pkgs, hsPkgs, pkgconfPkgs, ... }:
+  {
+    flags = { static = false; relocatable = true; };
+    package = {
+      specVersion = "1.18";
+      identifier = { name = "cryptol"; version = "2.8.0"; };
+      license = "BSD-3-Clause";
+      copyright = "2013-2019 Galois Inc.";
+      maintainer = "cryptol@galois.com";
+      author = "Galois, Inc.";
+      homepage = "http://www.cryptol.net/";
+      url = "";
+      synopsis = "Cryptol: The Language of Cryptography";
+      description = "Cryptol is a domain-specific language for specifying cryptographic algorithms. A Cryptol implementation of an algorithm resembles its mathematical specification more closely than an implementation in a general purpose language. For more, see <http://www.cryptol.net/>.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (buildDepError "base"))
+          (hsPkgs."base-compat" or (buildDepError "base-compat"))
+          (hsPkgs."bytestring" or (buildDepError "bytestring"))
+          (hsPkgs."array" or (buildDepError "array"))
+          (hsPkgs."containers" or (buildDepError "containers"))
+          (hsPkgs."cryptohash-sha1" or (buildDepError "cryptohash-sha1"))
+          (hsPkgs."deepseq" or (buildDepError "deepseq"))
+          (hsPkgs."directory" or (buildDepError "directory"))
+          (hsPkgs."filepath" or (buildDepError "filepath"))
+          (hsPkgs."gitrev" or (buildDepError "gitrev"))
+          (hsPkgs."GraphSCC" or (buildDepError "GraphSCC"))
+          (hsPkgs."heredoc" or (buildDepError "heredoc"))
+          (hsPkgs."monad-control" or (buildDepError "monad-control"))
+          (hsPkgs."monadLib" or (buildDepError "monadLib"))
+          (hsPkgs."pretty" or (buildDepError "pretty"))
+          (hsPkgs."process" or (buildDepError "process"))
+          (hsPkgs."random" or (buildDepError "random"))
+          (hsPkgs."sbv" or (buildDepError "sbv"))
+          (hsPkgs."simple-smt" or (buildDepError "simple-smt"))
+          (hsPkgs."strict" or (buildDepError "strict"))
+          (hsPkgs."text" or (buildDepError "text"))
+          (hsPkgs."tf-random" or (buildDepError "tf-random"))
+          (hsPkgs."transformers-base" or (buildDepError "transformers-base"))
+          (hsPkgs."mtl" or (buildDepError "mtl"))
+          (hsPkgs."time" or (buildDepError "time"))
+          (hsPkgs."panic" or (buildDepError "panic"))
+          ];
+        build-tools = [
+          (hsPkgs.buildPackages.alex or (pkgs.buildPackages.alex or (buildToolDepError "alex")))
+          (hsPkgs.buildPackages.happy or (pkgs.buildPackages.happy or (buildToolDepError "happy")))
+          ];
+        };
+      exes = {
+        "cryptol" = {
+          depends = [
+            (hsPkgs."ansi-terminal" or (buildDepError "ansi-terminal"))
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."base-compat" or (buildDepError "base-compat"))
+            (hsPkgs."containers" or (buildDepError "containers"))
+            (hsPkgs."cryptol" or (buildDepError "cryptol"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."haskeline" or (buildDepError "haskeline"))
+            (hsPkgs."monad-control" or (buildDepError "monad-control"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."transformers" or (buildDepError "transformers"))
+            ];
+          };
+        "cryptol-html" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."text" or (buildDepError "text"))
+            (hsPkgs."cryptol" or (buildDepError "cryptol"))
+            (hsPkgs."blaze-html" or (buildDepError "blaze-html"))
+            ];
+          };
+        };
+      benchmarks = {
+        "cryptol-bench" = {
+          depends = [
+            (hsPkgs."base" or (buildDepError "base"))
+            (hsPkgs."criterion" or (buildDepError "criterion"))
+            (hsPkgs."cryptol" or (buildDepError "cryptol"))
+            (hsPkgs."deepseq" or (buildDepError "deepseq"))
+            (hsPkgs."directory" or (buildDepError "directory"))
+            (hsPkgs."filepath" or (buildDepError "filepath"))
+            (hsPkgs."sbv" or (buildDepError "sbv"))
+            (hsPkgs."text" or (buildDepError "text"))
+            ];
+          };
+        };
+      };
+    }
